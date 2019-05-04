@@ -7,6 +7,7 @@
 <!--- Last update: 2016-11-06 Fout in encoding hersteld. Smileys opnieuw toegevoegd. Nog een paar taalfouten eruit gehaald. -->
 <!--- Last update: 2018-09-18 Alle missende strings toegevoegd en deze file is nu up to date met de engelse file. Isgif en deprecated toegevoegd. Gedaan door @REXOTIUM en @Mipsels-->
 <!--- Last update: 2019-01-04 Fix voor 30 seconde join message. Nieuwe rollen toegevoegd (Troublemaker, chemist en snow wolf). Gedaan door @REXOTIUM -->
+<!--- Last update: 2019-03-26 Fix voor nieuw spel message. Nieuwe rollen toegevoegd (Gravedigger, Arsonist en Augur). Gedaan door @Raponsje en @Mipsels -->
 
 <strings>
   <language name="Nederlands" base="Nederlands" variant="Normal"/>
@@ -803,7 +804,7 @@
   </string>
   <string key="NotifyNewGame">
     <!-- 0 - target's name -->
-    <value>Een nieuwe spel start in {0}</value>
+    <value>Een nieuw spel start in {0}</value>
   </string>
   <string key="SerialKillerWinsOverpower">
     <!-- 0 - SK's name -->
@@ -1546,13 +1547,13 @@
     <value>De Hippie kan eens per spel iedereen overtuigen niemand te executeren.</value>
   </string>
   <string key="RoleInfoWiseElder">
-    <value>Je bent de Wijze Geleerde 📚. Door al je kennis kan je een wolven aanval overleven. De wolven zijn echter ook niet dom en leren snel van je truckjes, de tweede keer zal je een aanval niet overleven. Als de Konstabel of Jager je neer schiet zullen ze van schrik hun taken neer legen en een gewone suffe saaie bruger worden.</value>
+    <value>Je bent de Dorpsoudste 📚. Door al je kennis kan je een wolven aanval overleven. De wolven zijn echter ook niet dom en leren snel van je truckjes, de tweede keer zal je een aanval niet overleven. Als de Konstabel of Jager je neer schiet zullen ze van schrik hun taken neer legen en een gewone suffe saaie bruger worden.</value>
   </string>
   <string key="WiseElder">
-    <value>De Wijze Geleerde 📚</value>
+    <value>De Dorpsoudste 📚</value>
   </string>
   <string key="AboutWiseElder">
-    <value>De Wijze Geleerde 📚 Door alle kennis kan een wolven aanval overleefd worden. De wolven zijn echter ook niet dom en leren snel van die truckjes, de tweede keer zal een aanval niet overleefd worden. Als de Konstabel of Jager de Wijze Geleerde neer schiet zullen ze van schrik hun taken neer legen en een gewone suffe saaie bruger worden.</value>
+    <value>De Dorpsoudste 📚 Door alle kennis kan een wolven aanval overleefd worden. De wolven zijn echter ook niet dom en leren snel van die truckjes, de tweede keer zal een aanval niet overleefd worden. Als de Konstabel of Jager de Dorpsoudste neer schiet zullen ze van schrik hun taken neer legen en een gewone suffe saaie bruger worden.</value>
   </string>
   <string key="RoleInfoThief">
     <value>Jij Dief 😈! De eerste nacht kan je de rol van een speler stelen, die speler zal veranderen in een burger!</value>
@@ -1579,10 +1580,10 @@
   </string>
   <string key="WolvesTriedToEatWiseElder">
 	<!-- 0 - Wise Elder's name -->
-    <value>Je hebt geprobeerd {0}'s huis binnen te dringen, maar dat is mislukt... {0} is de Wijze Geleerde 📚 en heeft jullie met succes buiten weten te houden, gelukkig is er verder niemand herkend.</value>
+    <value>Je hebt geprobeerd {0}'s huis binnen te dringen, maar dat is mislukt... {0} is de Dorpsoudste 📚 en heeft jullie met succes buiten weten te houden, gelukkig is er verder niemand herkend.</value>
   </string>
   <string key="WolvesAteWiseElderPM">
-    <value>De wolven hebben geprobeerd je op te eten, maar je hebt niet al die tijd met je neus in de boeken gezeten en niets bij geleerd. Jij bent de Wijze Geleerde 📚 het is je dan ook gelukt de wolven buiten te houden! Helaas heb je niemand kunnen herkennen :(</value>
+    <value>De wolven hebben geprobeerd je op te eten, maar je hebt niet al die tijd met je neus in de boeken gezeten en niets bij geleerd. Jij bent de Dorpsoudste 📚 het is je dan ook gelukt de wolven buiten te houden! Helaas heb je niemand kunnen herkennen :(</value>
   </string>
   <string key="HunterKilledWiseElder">
 	<!-- {0} - Hunter's Name -->
@@ -1613,7 +1614,7 @@
   <string key="ThiefToMason">
     <!-- 0 - old mason's name -->
     <!-- 1 - new mason's name -->
-    <value>{0} heeft het bedrijf verlaten en {1} is nu je nieuwe mede metselaar!</value>
+    <value>{0} heeft het bedrijf verlaten en {1} is nu je nieuwe medemetselaar!</value>
   </string>
   <string key="ThiefTransformToMason">
     <!-- 0 - mason collegues's name -->
@@ -1622,7 +1623,7 @@
   <string key="ThiefToCult">
     <!-- 0 - old cultist's name -->
     <!-- 1 - new cultist's name -->
-    <value>{0} is van het geloof gevallen en {1} heeft spontaan het licht gezien!</value>
+    <value>{0} is van zijn/haar geloof gevallen en {1} heeft spontaan het licht gezien!</value>
   </string>
   <string key="ThiefToWolf">
     <!-- 0 - old wolf's name -->
@@ -1876,4 +1877,305 @@
     <!-- 0 - target's name -->
     <value>De Sneeuwwolf 🐺☃️ wilde vannacht de Jager 🎯 bevriezen, maar de Jager was sneller bij zijn geweer! {0} is niet meer onder de levenden!</value>
   </string>
+      <string key="Lang">
+    <value>Kies taal</value>
+  </string>
+  <string key="Mode">
+    <value>Verander Speelmodus</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Stel max spelers in</value>
+  </string>
+  <string key="EndRoles">
+    <value>Toon rollen aan einde spel</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Stel max verlengtijd in</value>
+  </string>
+  <string key="DayTimer">
+    <value>Stel duur van de dag in</value>
+  </string>
+  <string key="NightTimer">
+    <value>Stel duur van de nacht in</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Stel lynchtijd in</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Rol Configuratie</value>
+  </string>
+  <string key="Mechanics">
+	<value>Spel Mechanisme</value>
+  </string>
+  <string key="GroupSettings">
+	<value>Groepsinstellingen</value>
+  </string>
+  <string key="Timers">
+	<value>Spel timers</value>
+  </string>
+  <string key="Done">
+	<value>Klaar!</value>
+  </string>
+  <string key="Back">
+	<value>Terug</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Spelerslijst husselen</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Spelerslijst elke keer husselen? Nu: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>Spelerslijst wordt gehusseld elke keer: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+	<value>Jij bent de Grafdelver ☠️. 's Nachts graaf jij de graven voor de dorpelingen, die overleden zijn en nog geen graf hebben. (Ja, ook weerwolven verdienen een laatste rustplaats.) Omdat je daar de hele nacht mee bezig bent, kunnen de wolven en sekteleden je niet vinden. Alleen als er geen nieuwe graven gedolven hoeven te worden. Dan ben je wel gewoon thuis. Iedereen, die jou thuis probeert te bezoeken, kan in een versgegraven graf vallen. Hoe meer graven je gegraven hebt, hoe groter de kans. Onschuldige dorpelingen hebben een kleinere kans om in jouw graven te vallen. Aan de andere kant: Hoe meer werk je te doen hebt, hoe groter de kans dat de wolven of seriemoordenaar je 's nachts rond zien lopen. Dan ben je de pineut! Oja, kijk uit voor de seriemoordenaar. Die kan jou namelijk thuis opwachten. Maar hij loopt ook het risico om in een graf te vallen! In dat geval kan hij zich verwonden, waardoor het voor heb de volgende nacht lastiger wordt een slachtoffer te vermoorden!</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>Je bent de Grafdelver ☠️. Het is jouw verantwoordelijkheid om alle doden een laatste rustplaats te geven. 's Nachts graaf jij een graf voor iedereen, die sinds vorige nacht gestorven is. Echter, je bent een luie donder en verzuint het om de graven ook netjes dicht te gooien. Wanneer iemand jou bezoekt, lopen ze het risico in een open graf te vallen, en dat overleven de meesten niet!</value>
+  </string>
+  <string key="GraveDigger">
+	<value>de Grafdelver ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>De doden zijn begraven en de levenden lopen nog rond. Alles is zoals het moet zijn. Je kunt met een gerust hart gaan slapen.</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+	<value>Tot vroeg in de ochtend ben jij bezig met het graven van het graf van {0}. Moge hun ziel de rust vinden, die zij verdienen.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+  <value>Je verlaat je huis, om de overledenen te begraven. Een ijskoude windvlaag bevriest je op de drempel! Op je plek bevroren, wacht je vol angst de nacht uit tot de eerste zonnestralen je ontdooien. De doden moeten nog een dagje wachten voor ze hun laatste rustplaats kunnen innemen. </value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+  <value>De roedel rent hongerig naar de woning van {0}, maar het huis is leeg! Er brandt een eenzaam kaarsje bij een graf langs het tuinpad. </value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+  <value>De roedel rent hongerig naar de woning van {0}. Bij het huis aangekomen, valt {1} ineens in een donker gat van 2 meter diep. *KRAK* Nek gebroken. RIP {1}.</value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+  <value>In het eerste ochtendlicht inspecteer je nog even alle graven. Tot je verbazing zie je een lichaam in het meest verse graf liggen. Het is {0} met een een gebroken nek! Wie sluipt er dan ook in het pikkedonker rond?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+  <value>Voor je verzameling snijd je nog even de lever van {0} uit het lichaam en je vertrekt richting huis. Vol fantaserend over hoe het zal smaken, merk je het open graf te laat op en je valt er in. Au! Je hebt je voet zwaar geneusd! Morgen maar even rustig aan doen...</value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+  <value>Onderweg naar het huis van {0}, voel je een scherpe pijn in je rechterbeen. Je bedenkt dat je beter {1} te grazen kunt nemen. Die woont veel dichterbij. Scheelt een eind lopen.</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+  <value>Je arriveert bij het huis van {0}, maar je ziet een beschermengel op het dak staan! Je vecht voor je leven, maar bent totaal kansloos. Wat een verschrikkelijke klotenacht is dit!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+  <value>Deze nacht alweer geen sekteleden kunnen vinden! Gefrustreerd loop je over het kerkhof naar huis. Als je je gedachten er nou bij had gehad, dan had je dat open graf wel gezien! Met een schreeuw val je in het gat wat {0} vannacht gegraven heeft. De plof die volgt is het laatste geluid wat je produceert voor je de pijp aan Maarten geeft.</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+  <value>In het ochtendgloren loop je terug naar huis. Vlak voor je thuis bent, zie je een glanzend zwaard liggen naast een open graf. Als je je voorover buigt om het zwaard te pakken, zie je in het graf het lichaam van {0} liggen. Schijnbaar wilde de sektejager jou vannacht een bezoekje brengen, maar haalde hij je voordeur niet eens!</value>
+  </string>
+  <!--{0}: cultist-->
+  <string key="CultFell">
+  <value>Je wil net weer in bed stappen, als je een schreeuw van buiten hoort komen. Snel inspecteer je de omgeving en je vind het lichaam van {0} in een van je open graven liggen. Pffff... wie probeert er dan ook een grafdelver te bekeren?</value>
+  </string>
+  <!--{0}: cultist who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+  <value>Onderweg naar het huis van {1} besluit de sekteleider ineens dat het cool is om de kerk plat te branden. Terwijl de sekte het kerkhof oversteekt, hoor je een gil en je ziet {0} in een open graf vallen, om hier nooit meer uit op te staan.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+	<value>Onderweg naar het huis van {0} probeer je je te herinneren welke van je drankjes nou giftig is en je struikelt, Je valt in een open graf, een zilveren speer steekt precies door je hart heen. Nog voor je een geluid kan maken, ben je dood.</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+	<value>"Ik zou best een wijntje lusten" denk je bij jezelf. Om de een of andere rede kijk je in het graf naast je, en alsof het universum je hartewens gehoord heeft zie je daar een fles wijn liggen! Helaas ligt daar ook {0} levenloze lichaam... Ineens heb je niet zo'n trek meer.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">	<value>Je doet je favoriete lipstick op en gaat naar {0}'s huis voor wat plezier. Helaas kom je daar nooit aan, want je stapt in een beerklem en valt in een graf op je weg er naartoe... Als je het dan toch hebt over risico van het vak!</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+	<value> Blijkbaar wilt het lot niet dat je een pleziertje beleeft... Niet alleen moet je de hele nacht, nu vind je ook nog {0}, de hoer, dood in een van je open graven. Geen pleziertje voor jou vannacht!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+	<value>Je bent onderweg naar {0}'s huis terwijl je voorzichtig alle open graven ontwijkt, maar als je arriveert is het huis leeg... Blijkbaar is {0} weer de hele nacht graven aan het graven!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+	<value>Het geluk is absoluut niet aan jouw kant vannacht... Je wilde alleen {0} beschermen, maar in plaats daarvan ben je in een open graf gevallen nadat je in een berenklem was gelopen en nu ben je dood! Waarom moet de grafdelver die graven uberhaupt beveiligen?</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+	<value>Onderweg naar huis zie een veer op de grond liggen... Je hoeft niet lang te zoeken om ou don't have to search long to find {0}, de Beschermengel, dood in een van je graven te vinden! Je "veiligheids maatregelen" pakken soms echt de verkeerde mensen aan.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+	<value>Je sluipt over de begraafplaats om {0}'s rol te stelen, maar je bent zo gefocussed om geen geluid te maken dat je de berenklem niet hebt gezien en die slaat dicht om je enkel! Alsof het nog niet erg genoeg is dat je gehoort bent, val je ook nog in een graf en breek je je nek!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+	<value>Het is maar goed dat je veiligheidsmaatregelingen treft rond je graven... {0} heeft vannacht geprobeerd je rol te stelen, maar zijn in een van je berenklemmen gelopen en vervolgend in een graf gevallen! Misschien zal het dorp nu geloven dat die vallen echt nodig zijn.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+	<value>Je zou beter op moeten letten de volgende keer dat je iemands huis gaat besprenkelen... Je bent in een beren klem gelopen, in een graf gevallen met een speer dwars door je hart! Net goed, jij kleine brandstichter.</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key="ArsonistFellDigger">
+	<value>Je ruikt een benzine lucht. Ongerust ga je opzoek en vind je {0}, de pyromaan, dood in een open graf. Ach, gelukkig is je huis nog schoon...</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+	<value>Een van de graven op de begraafplaats bevatte te veel mensen vannacht... Blijkbaar heeft {0} geprobeert de grafzelver te bezoeken, is en een graf gevallen en is nu dood! {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+	<value>Terwijl de hoer {0} naar huis ging na een nachtje plezier wilde ze even afsteken over de begraafplaats. Waarschijnlijk was ze nog een beetje duizelig en heeft daarom niet gezien dat er nog een open graf was tot er ineens geen grond was onder de volgende stap. Misschien had ze toch dat 9 tot 5 baantje moeten aannemen dat ze gister aangeboden had gekregen!</value>
+  </string>
+  <!--{0}: cultist who died-->
+  <string key="CultistFellPublic">
+	<value>De sekte heeft geprobeert de kerk af te branden, maar terwijl {0} voor de groep uit liep over de begraafplaats lag daar ineens een berenklem! Een luide schreew, een val in een open graf en de rest van de sekte is vol angst gevlucht...</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+	<value>Misschien probeerde {0} de dief te stelen van de doden. Misschien was het karma. Alles wat we weten dat hij tijdens het rondsluipen op de begraafplaats een berenklem om zijn enkel is dicht geslagen. Terwijl hij in een graf voel vroeg hij zich af of hij misschien een "zakenpartner" had moeten aanstellen. {0} zal niet meer stelen, dat is een ding dat zeker is!</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+	<value>Terwijl de roedel gaat jagen, ruikt {0} een mogelijk slachttoffer en heeft niet door dat daar een beren klem ligt! Verbaasd valt {0} in het graf, waar een silever speer zijn lichaam doorboort. Gelukkig beveiligt dat Grafdelver de graven! {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>Je probeerde gewoon je werk te doen, wanneer ineens een gestoorde moordenaar je ziet en je neersteekt! Dat is zonde...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+	<value>Terwijl je langs de begraafplaats loopt met een bebloed mes zie je {0}, the Grafdelver. Je geeft toe aan je instincten en besluit dat er 2 slachtoffers zullen zijn vandaag...</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>Je probeert gewoon je werk te doen als er ineens een wolf je van achter bespringt en vermoord!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+	<value>De roedel rent langs de begraafplaats en zien {0}, de Grafdelver. Voor die kan reageren springt een van jullie er bovenop en neemt een dodelijke hap.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+	<value>{0} komt niet naar de dorpsvergadering. Weer verslapen? ullie gaan opzoek en vinden een het lijk op de begraafplaats, schep nog in de hand. Het lijkt er op dat de wolven een lekkere snack hadden vannacht...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+	<value>{0} is er niet vandaag... Misschien verslapen? Jullie gaan opzoek en vinden een het lijk op de begraafplaats, schep nog in de hand. Het lijkt er op dat verschillende steekwonden de doodsoorzaak zijn...</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Pyromaan</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistQ">
+	<value>Pyromaan toestaan? Nu: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistA">
+	<value>Pyromaan staat nu op {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Oppermachtige brand</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillQ">
+	<value>Toestaan dat de Pyromaan en Seriemoordenaar in hetzelfde spel voorkomen? Kan nogal dodelijk zijn! 😈 Nu: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillA">
+	<value>Pyromaan en Seriemoordenaar in hetzelfde spel zijn nu {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>Je bent de Pyromaan. Net als de seriemoordenaar ben je een solo speler. Iedere nacht mag je een slachtoffers huis besprenkelen in benzine. Als je eenmaan een of meerderdere huizen hebt besprenkelt kan je er voor kiezen die in de brand te steken, samen met iedereen die daar dan binnen is, inclusief het bezoek. Je wint als je als enige overblijft.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>Je bent de Pyromaan 🔥. Iederen nacht kan je er voor kiezen een huis te besprenkelen met benzine of alle eerder besprenkelde huizen in de fik te steken. Je kunt alleen winnen als je als enige over blijft.</value>
+  </string>
+  <string key="Arsonist">
+	<value>de Pyromaan 🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>Wie je nog een huis besprenkelen of wil je alle besprenkelde huizen zien branden?</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key ="ArsonistVisitKiller">
+	<value>De Pyromaan {0} heeft geprobeert het huis van de seriemoordenaar te besprenkelen met benzine... Dat heeft hij niet helemaal overleefd.</value>
+  </string>
+  <string key="Spark">
+	<value>Vonk</value>
+	<value>Vlammetje</value>
+	<value>Ontsteek</value>
+  </string>
+  <!--{0}: person whose house was doused-->
+  <string key="Doused">
+	<value>Je hebt succesvol {0}'s huis besprenkelt met benzine!</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>Een brand is uitgebroken in je huis, maar gelukkig was de beschermengel er om het gelijk te blussen! Ze zou een goede brandweer zijn, als ze niet zo druk was met mensen beschermen...</value>
+  </string>
+  <!--{0}: saved person-->
+  <string key="GuardSavedFromFire">
+	<value>Je had niet helemaal verwacht dat er brand uit zou breken toen je {0} bezocht, maar je hebt toch een leven gered! Niemand kan je een slechte beschermer noemen...</value>
+  </string>
+  <!--{0}: person whose house was cleaned-->
+  <string key="CleanDoused">
+	<value>Je hoefde vandaag geen vijanden te bevechten bij {0} thuis vannacht, dus had je tijd om wat rond te kijken en zag dat het huis was besprenkelt met benzine! Omdat je verder toch niets beters te doen had heb je het huis maar schoongemaakt...</value>
+  </string>
+  <!--{0}: list of people who died in the flames-->
+  <string key="Burning">
+	<value>De dorpelingen ontwaken in een brandlucht... Het brand! Jullie proberen samen het dorp te blussen, maar jullie zijn te laat om de mensen te redden van wie de huizen op de een of andere manier zijn besprenkelt met benzine. Vandaag rouwen jullie om de dood van de volgende mensen:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>De enige die nog over is is de pyromaan, staand in een berg as. De pyromaan wint...</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>Je had een brandblusser bij de hand moeten houden! Nu is je huis afgebrand en jij bent dood gegaan door de vlammen...</value>
+  </string>
+  <string key="Augur">
+	<value>de Priesteres 🦅</value>
+  </string>
+  <!--{0}: role that is not part of the village-->
+  <string key="AugurSees">
+	<value>Terwijl je naar de hemel staart zie je de vogels een vreemd patroon vormen. Dat kan alleen maar betekenen dat {0} niet in het dorp is.</value>
+	<value>The birds tell you that {0} is not part of the village right now.</value>
+  </string>
+  <string key="AboutAugur">
+	<value>Jij bent de Priesteres 🦅. Iedere ochtend observeer je de vogels en achterhaald een rol die zeker niet in het spel voorkomt dit potje door hoe ze vliegen. Ze zullen je ook nooit een rol dubbel vertellen, dus gebruik die informatie goed!</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>Jij bent de Priesteres 🦅. Je hebt de kracht om dingen te zien, maar wel flink anders dan de ziener of het orakel. Jij bent de enige die rollen kan zien die niet in het dorp aanwezig zijn, en je zult ze altijd maar een keer zien!</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>Er zijn helemaal geen vogels in de lucht vandaag. Dat betekent waarschijnlijk dat je alle rollen die niet in het dorp aanwezig zijn al gezien hebt...</value>
+  </string>
+  <!--{0}: chosen victim, {1}: wolf who died in flames-->
+  <string key="WolvesVisitBurn">
+	<value>De roedel stormt {0}'s huis binnen en merken ineens dat het vol staat met rook. Jullie proberen te ontsnappen, maar het is al te laat, {1} sterft in de vlammen.</value>	  
+  </string>
+  <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+  <string key="DefaultVisitBurn">
+	<value>{0} had vannacht thuis moeten blijven... {0} is op bezoek gegaan in het afgebrande huis en is in vlammen opgegaan! {1}</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+  <string key="WolfVisitBurn">
+	<value>De wolven hebben vannacht weer geprobeert iemand op te eten, maar de pyromaan was sneller! {0} kon dit keer niet ontsnappen uit het brandende huis... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+	<value>Hoewel het nog niet helemaal zeker is wie de de Gestoorde Chemicus is, het is wel zeker dat die nooit meer zo een grote fout zal maken. De Gestoorde Chemicus heeft zijn hobby achter zich gelaten en zal verder door het leven gaan als gewone burger!</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value>Alleen {0} en {1} zijn nog over... Dan begint {0} te lachen, treken een licifer tevoorschijn, steekt die aan en gooit hem neer voor de voeten van {1}, die in vlamen op gaat!</value>
+  </string>
+  <string key="ArsonistTeamEnd">
+	<value>Pyromaan Team</value>
+	</string>
 </strings>

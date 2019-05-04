@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-	<language name="简体中文" base="简体中文" variant="SFW" version="2019.03.16"/>
-	<!--Last Updated 最后更新2019-03-16 22:14:06-->
-	<!--也请在 StartingGameWait 处添加最后更新时间-->
+	<language name="简体中文" base="简体中文" variant="SFW" version="2019.04.20"/>
+	<!--Last Updated 最后更新时间2019-04-20 21:08:39-->
 	<!--也请在 头部version处 添加最后更新时间-->
 
 
 	<!-- Update Logs 更新日志-->
 		<!-- 2019-2-06 补全 正式补全翻译-->
-		<!-- 2019-2-08 调整 调整翻译-->
 		<!-- 2019-2-14 更新 同步翻译（官方2019.2.12更新）-->
 		<!-- 2019-2-21~24 更新 同步翻译（官方2019.2.21更新-->
 		<!-- 2019-2-24 修正扩展补充 扩展SecondsLeftToJoin，重命名CultFellPublic成CultistFellPublic （官方2019.2.22修正），添加
@@ -16,9 +14,11 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 	    <!-- 2019-3-2   修复ArsonistFell-->
 		<!-- 2019-3-3   重命名 守护神＞守卫，普通人＞普通村民，源狼＞头狼-->
 		<!-- 2019-3-3   修复 emoji 混乱-->
-		<!-- 2019-3-3   补充调整 -->
 		<!-- 2019-3-10 补充 为每个Roleinfo添加能力说明-->
 		<!-- 2019-3-16 为每个字符添加emoji 未完成  -->
+		<!-- 2019-3-23 补充ArsonistTeamEnd（官方3-18补充）  -->
+		<!-- 2019-4-5    删除无关内容-->
+		<!-- 2019-4-6   添加更多ending-->
 			
 	<string key="NotInGame">
 		<value>你现在似乎并不在这场游戏中……</value>
@@ -34,8 +34,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>{0} 开启了一场混乱的生存竞赛！现实世界从不曾有公平！输入 点击按钮 加入！如果人类全灭，你就是罪人！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
 	</string>
 	<string key="NoJoinGameRunning">
-		<value>死亡游戏已经开始了，遗憾的是你错过了这场盛会，等下一次吧。 /nextgame 以收到下局游戏的提醒。</value>
-		<value>看起来你错过了这场游戏，再等等吧。 /nextgame 以收到下局游戏的提醒。</value>
+		<value>看起来你错过了这场游戏，再等等吧。 发送/nextgame 以收到下局游戏的提醒。</value>
 	</string>
 	<string key="AlreadyJoined">
 		<value>你已经加入游戏！</value>
@@ -50,7 +49,9 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>人数不足，游戏启动失败。</value>
 	</string>
 	<string key="StartingGameWait">
-		<value>游戏启动中，正在分配角色及建立数据库，稍安勿躁。		\n 提示：向机器人发送 /rolelist 以获取角色说明（记得先 /setlang 设置语言）  \n⬆️翻译仍在完善中\n 最后更新于2019-03-16 22:15:03</value>
+		<value>游戏启动中，正在分配角色及建立数据库，稍安勿躁。
+\n 提示：向机器人发送 /rolelist 以获取角色说明（记得先 /setlang 设置语言） 
+</value>
 	</string>
 	<string key="BannedForExploit">
 		<value>警告：{0} ，请不要以 / 作为名字开头。</value>
@@ -66,7 +67,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>{0} 加入了这场生存挑战\n{1} / {3} (最少 {2} 人)。</value>
 	</string>
 	<string key="PMTheBot">
-		<value>{0}, bot 还没有 PM 你！请立刻私聊 {1} 发送 /start , 这样你才能正常游戏哦！。</value>
+		<value>{0}, bot 还没有私聊你！请立刻私聊 {1} 发送 /start , 这样你才能正常游戏哦！。</value>
 	</string>
 	<string key="DeadFlee">
 		<value>诶呀诶呀，死人怎么会逃跑呢？回到墓地躺着吧。</value>
@@ -112,16 +113,16 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>已选择</value>
 	</string>
 	<string key="BeholderSeer">
-		<value>\n带着无神论者冷静的目光，你知道所谓的“👳👳先知”是 {0} 。</value>
-		<value>\n你看到“👳👳先知” {0} 在布道。</value>
+		<value>\n带着无神论者冷静的目光，你知道所谓的“👳先知”是 {0} 。</value>
+		<value>\n你看到“👳先知” {0} 在布道。</value>
 	</string>
 	<string key="ApprenticeNowSeer">
-		<value>{0} 曾经是一名👳👳先知，在他回归主的身边之后，为了给人类带来希望，你受到了神启。你现在不是👳先知学徒了，而是一名伟大的👳👳先知。</value>
-		<value>学徒啊，请感受神明的号召，像 {0} 一样成为👳👳先知吧！。</value>
+		<value>{0} 曾经是一名👳先知，在他回归主的身边之后，为了给人类带来希望，你受到了神启。你现在不是👳先知学徒了，而是一名伟大的👳先知。</value>
+		<value>学徒啊，请感受神明的号召，像 {0} 一样成为👳先知吧！。</value>
 	</string>
 	<string key="BeholderNewSeer">
-		<value>{0} 曾经是👳先知学徒，现在他响应主的神启，代替 {1} 成为了“👳👳先知”。</value>
-		<value>现在 {0} 代替 {1} 成为“👳👳先知”了，虽然你对这一切看得清清楚楚，但是你还是不知道教堂的人在搞什么幺蛾子。</value>
+		<value>{0} 曾经是👳先知学徒，现在他响应主的神启，代替 {1} 成为了“👳先知”。</value>
+		<value>现在 {0} 代替 {1} 成为“👳先知”了，虽然你对这一切看得清清楚楚，但是你还是不知道教堂的人在搞什么幺蛾子。</value>
 	</string>
 	<string key="SeerSees">
 		<value>你从梦中惊醒，虽然记不清梦境里的内容，但是你隐隐约约的想起， {0} 是 {1}。</value>
@@ -174,7 +175,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>你是众所周知的酗酒艺术家，能不能把酒瓶放下？\n [能力被动，当被狼人吃掉后，能力才被使用，使狼人无法进行下一次攻击 ]</value>
 	</string>
 	<string key="RoleInfoGuardianAngel">
-		<value>身为守卫，每当夜幕降临，你可以保护一个人。但是，如果你保护了🐺狼人，你有一半的几率会死。\n [能力主动；夜间使用能力 ]</value>
+		<value>身为守卫，每当夜幕降临，你可以保护一个人。但是，如果你保护了🐺狼人，你有一半的几率会死；如果你保护了🔪变态杀人狂，那么你会死。\n [能力主动；夜间使用能力 ]</value>
 	</string>
 	<string key="RoleInfoGunner">
 		<value>你是枪手，有两颗子弹。每日你可以射杀一个人，一旦你出手了，大家就都知道你是枪手了。\n [能力主动；日间使用能力 ]</value>
@@ -186,7 +187,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>你是人类中出的叛徒，你憎恨人类已久，只要其他🐺狼人全部死亡，诅咒之力就会附着到你身上，享受你仅剩的人类生活吧！\n [能力被动，但所有狼人死亡时，能力才被使用（变成狼人）]</value>
 	</string>
 	<string key="RoleInfoWolf">
-		<value>你是🐺狼人！每晚你都可以大开杀戒！\n [能力主动；夜间使用能力 ]</value>
+		<value>你是🐺狼人！每晚你都可以大开杀戒！\n [能力主动；夜间使用能力（需和其他狼人协商） ]</value>
 	</string>
 	<string key="RoleInfoSeer">
 		<value>你是👳先知。夜深人静时，你可以占卜他人的身份。\n [能力主动；夜间使用能力 ]</value>
@@ -209,20 +210,20 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>你是👳先知学徒，当你的老师回到主的身边，你就会成为👳先知引领人类继续斗争。\n [能力被动，当先知死亡时，能力才被使用（变成先知）]</value>
 	</string>
 	<string key="RoleInfoCultist">
-		<value>你是👤邪教徒。你可以在晚上施洗任意一名玩家，让他们成为你的一员。如果所有玩家都受洗成👤邪教徒，👤邪教徒就赢了。\n [能力主动；夜间使用能力 ]</value>
+		<value>你是👤邪教徒。你可以在晚上施洗任意一名玩家，让他们成为你的一员。如果所有玩家都受洗成👤邪教徒，👤邪教徒就赢了。注意：施洗狼人或变态杀人狂时，会施洗失败且邪教会中一人会死亡。\n [能力主动；夜间使用能力 ]</value>
 	</string>
 	<string key="RoleInfoCultistHunter">
 		<value>村里出现了邪教活动，所有人的思想自由都受到了威胁！作为邪教捕手，你的任务是每晚捕捉一名玩家，如果刚好是👤邪教徒，他就会死。如果有人想施洗你，最新加入的那位👤邪教徒就会死于非命。\n [能力主动；夜间使用能力 ]</value>
 	</string>
 	
 	<string key="LynchTime">
-		<value>黄昏将至，全民公投。\n请在 {0} 秒内投票!\n🕠现在时间：黄昏（投票处决）时间，请私聊该机器人，进行投票。</value>
+		<value>黄昏将至，全民公投。\n请在 {0} 秒内投票!\n请私聊该机器人，及时进行投票。</value>
 	</string>
 	<string key="DayTime">
-		<value>日上三竿，大家有 {0} 秒的时间讨论和行动\n🕗现在时间：白天，请所有白天（主动）行动的角色，私聊机器人以使用自己能力。</value>
+		<value>日上三竿，大家有 {0} 秒的时间讨论和行动\n请所有白天（主动）行动的角色，私聊机器人以使用自己能力。</value>
 	</string>
 	<string key="NightTime">
-		<value>夜幕降临，人们都活在恐惧中，彻夜难眠。这漫长的夜晚竟然有 {0} 秒！\n🕢现在时间：夜晚，请所有夜晚（主动）行动的角色，私聊机器人以使用自己能力。</value>
+		<value>夜幕降临，人们都活在恐惧中，彻夜难眠。这漫长的夜晚竟然有 {0} 秒！\n请所有夜晚（主动）行动的角色，私聊机器人以使用自己能力。</value>
 	</string>
 	<string key="LynchKill">
 		<value>所有人投票后，还是惶惶不安。{0} 被全民公审\n{1}。</value>
@@ -234,29 +235,29 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>这回怪了，没人投票？你们终于意识到投票杀人是不人道的了吗？。</value>
 	</string>
 	<string key="DetectiveEaten">
-		<value>📣新闻：居民闻到恶臭后报警，警察打开房门后发现， {0} 惨遭杀害，{0}尸体仅剩少量碎片，犯罪现场留下了动物毛发。</value>
+		<value>📰新闻：居民闻到恶臭后报警，警察打开房门后发现， {0} 惨遭杀害，{0}尸体仅剩少量碎片，犯罪现场留下了动物毛发。</value>
 	</string>
 	<string key="GuardianEaten">
-		<value>📣新闻：守卫 {0} 惨死在自己家中，{0}尸体仅剩少量碎片，凶手未知。但村民们认为和近日出现的狼人有关。</value>
+		<value>📰新闻：守卫 {0} 惨死在自己家中，{0}尸体仅剩少量碎片，凶手未知。但村民们认为和近日出现的狼人有关。</value>
 	</string>
 	<string key="GunnerEaten">
-		<value>📣新闻：著名神枪手 {0} 被🐺狼人杀死了！据说满地都是枪械零件！</value>
+		<value>📰新闻：著名神枪手 {0} 被🐺狼人杀死了！据说满地都是枪械零件！</value>
 	</string>
  <string key="SeerEaten">
-		<value>📣新闻：👳先知{0} 死在了天文台上面，身边还散落着写满占星结果的羊皮纸，但村民们认为和近日出现的狼人有关。</value>
-		<value>📣新闻：👳先知死了{0} 死在了塔罗牌前，最后一张牌似乎在预示着凶手的身份，但遗憾的是，没人能够知道👳先知的占卜结果了。</value>
+		<value>📰新闻：👳先知{0} 死在了天文台上面，身边还散落着写满占星结果的羊皮纸，但村民们认为和近日出现的狼人有关。</value>
+		<value>📰新闻：👳先知死了{0} 死在了塔罗牌前，最后一张牌似乎在预示着凶手的身份——狼人，但遗憾的是，没人能够知道它是谁了。</value>
 	</string>
 	<string key="DrunkEaten">
-		<value>📣新闻：著名艺术家 {0} 死于火灾，警察调查后表示是纵火，罪犯还在犯罪现场留下了动物的毛发。</value>
+		<value>📰新闻：酗酒艺术家{0} 在家中被杀害，尸体仅剩碎片，犯罪现场留下了动物毛发。</value>
 	</string>
 	<string key="FoolEaten">
-		<value>👳先知死了？怎么可能？……唔……让我仔细看看，天哪，大家这么信任的👳先知 {0} 竟然是用 Uno 牌占卜的！好吧，看来 {0} 是个冒牌👳先知呢……</value>
+		<value>📰新闻：🤓冒牌先知{0}昨晚遇害，经警方调查，附近有动物脚印和未知毛发。</value>
 	</string>
 	<string key="DefaultEaten">
-		<value>📣新闻：{0} 在家中被杀害，尸体仅剩碎片，犯罪现场留下了动物毛发。\n{1}</value>
+		<value>📰新闻：{0} 在家中被杀害，尸体仅剩碎片，犯罪现场留下了动物脚印和未知毛发。\n{1}</value>
 	</string>
 	<string key="HunterKilledCultist">
-		<value>📣新闻：知名的公众人物 {0} 竟是邪教成员！\n{0} 被发现死在祭坛上，亲友纷纷表示震惊，并表示理解邪教猎人的工作。</value>
+		<value>📰新闻：知名的公众人物 {0} 竟是邪教成员！\n{0} 被发现死在祭坛上，亲友纷纷表示震惊，并表示理解邪教猎人的工作。</value>
 	</string>
 	<string key="NoAttack">
 		<value>今天是个平常的一天，大家都在各自摸鱼🐟。</value>
@@ -270,19 +271,18 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>你的🐺狼人队友是 {0}。</value>
 	</string>
 	<string key="CursedBittenToWolves">
-		<value>{0} 被🐺狼人袭击，但他似乎先天基因有缺陷，不但没死，还在《狼人独立宣言》上签下了他的名字，成为了你们的一员。恭喜，你们是同志了！</value>
+		<value>{0} 被🐺狼人袭击，但他似乎先天基因有缺陷，不但没死，还在《狼人独立宣言》上签下了他的名字，成为了你们的一员。恭喜！</value>
 	</string>
 	<string key="WolvesEatYou">
 		<value>糟糕！你已被🐺狼人吃掉。</value>
 	</string>
 	<string key="WolvesEatDrunk">
 		<value>不，{0} 是职业酒鬼，由于{0} 已经宿醉多年，现在你似乎已经也醉了，安心在家休息吧！</value>
-		<value>不，{0} 是职业酒鬼，由于{0} 已经宿醉多年，现在你似乎已经也醉了。</value>
 		<value>不，{0} 是职业酒鬼，由于{0} 已经宿醉多年，现在你似乎已经也醉了，所以好好上床睡觉休息吧。</value>
 
 	</string>
 	<string key="GuardWolf">
-		<value>真是可惜，你保护了🐺狼人，他却吃了你，真美味啊。</value>
+		<value>真是可惜，你保护了🐺狼人...一路走好</value>
 	</string>
 	<string key="GuardSaved">
 		<value>你保住了 {0} 的性命！</value>
@@ -298,7 +298,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>守卫在你家看守了一整夜，甚至还赶走了🐺狼人！</value>
 	</string>
 	<string key="HarlotEaten">
-		<value>📣新闻：{0} 意外死亡，身份曝光，竟然是👮秘密警察！\n{0} 昨夜没有出勤，被在家中杀害，犯罪现场留下了动物毛发。</value>
+		<value>📰新闻：{0} 意外死亡，身份曝光，竟然是👮秘密警察！\n{0} 昨夜没有出勤，被在家中杀害，犯罪现场留下了动物毛发。</value>
 	</string>
 	<string key="HarlotNotHome">
 		<value>哎呀……{0} 不在家中呢！今晚晚餐落空了。</value>
@@ -307,7 +307,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>你到了 {0} 的家搜查反动内容，突然你发现他是🐺狼人，你死了。</value>
 	</string>
 	<string key="HarlotFuckedWolfPublic">
-		<value>“昨晚，👮秘密警察 {0} 突然失踪，说不定是有人报复？想必是凶多吉少了……”酒店老板在收了一笔可观的小费之后，告诉了大家这个情报。</value>
+		<value>“昨晚，👮秘密警察 {0} 突然失踪，说不定是遭到狼人袭击了...想必是凶多吉少了……”酒店老板在收了一笔可观的小费之后，告诉了大家这个情报。</value>
 	</string>
 	<string key="HarlotFuckedVictimPublic">
 		<value>👮秘密警察 {0} 走进了 {1} 的家，原本想搜查的时候，发现🐺狼人闯入，{0} 惨遭不测。</value>
@@ -320,7 +320,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 	</string>
 	<string key="HarlotVisitYou">
 		<value>昨晚👮秘密警察闯入你家，一通搜查之后并没有发现什么问题，离开了，真是惊险！</value>
-		<value>秘密警察搜查结束了！赶紧发个微博庆祝一下！</value>
+		<value>不！秘密警察搜查了你家！</value>
 	</string>
 	<string key="DetectiveCaught">
 		<value>你看到 {0} 正在鬼鬼祟祟的打探！他是侦探。</value>
@@ -333,7 +333,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>{0} 和 {1} 昨晚在一间屋子，不过枪手还是把 {1} 射死了。</value>
 	</string>
 	<string key="DefaultShot">
-		<value>📣新闻：我市发生一起枪击案，{0} 将 {1} 射杀，原因不明，目前 {0} 行踪不明，请有线索者联系警方\n{2}。</value>
+		<value>📰新闻：我市发生一起枪击案，{0} 将 {1} 射杀，原因不明，目前 {0} 行踪不明，请有线索者联系警方\n{2}。</value>
 	</string>
 	<string key="WolfWins">
 		<value>#狼人胜！ 看来这届村民不行啊！</value>
@@ -372,7 +372,8 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>{0} 被派往将 {1} 受洗，但他家没人。</value>
 	</string>
 	<string key="CultWins">
-		<value>所有狼人都死光之余，其他人也受洗成为👤邪教徒 —— #邪教徒胜！</value>
+		<value> 所有人都死光之余，其他人也受洗成为👤邪教徒 —— #邪教徒胜！</value>
+		<value>次日清晨，所有人👤邪教徒走上街头，最后一个人也受洗成为👤邪教徒 —— #邪教徒胜！</value>
 	</string>
 	<string key="HunterVisitDead">
 		<value>你想审判 {0} ，但你眼前只看到他冰冷的尸体。</value>
@@ -404,7 +405,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>👳先知</value>
 	</string>
 	<string key="Traitor">
-		<value>☹ 叛徒</value>
+		<value>🖕叛徒</value>
 	</string>
 	<string key="GuardianAngel">
 		<value>⚔守卫</value>
@@ -425,13 +426,13 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>👺圣战者</value>
 	</string>
 	<string key="Fool">
-		<value>🤓 冒牌先知</value>
+		<value>🤓 冒牌先知🃏</value>
 	</string>
 	<string key="WildChild">
 		<value>😶 孤儿</value>
 	</string>
 	<string key="Beholder">
-		<value>🌝 无神论者</value>
+		<value>👁无神论者</value>
 	</string>
 	<string key="ApprenticeSeer">
 		<value>🙇先知学徒</value>
@@ -444,10 +445,10 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 	</string>
 	<!-- These are for the player list -->
 	<string key="RanAway">
-		<value>🚩 已逃跑</value>
+		<value>🏳️ 已逃跑</value>
 	</string>
 	<string key="Dead">
-		<value>✖️ 死亡</value>
+		<value>❌ 死亡</value>
 	</string>
 	<string key="Alive">
 		<value>✅ 存活</value>
@@ -463,7 +464,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>你是拖延症患者，每天除了摸鱼🐟什么都不干，你很忧心，为此加入了拖延症患者互助协会。\n [能力被动，仅告知信息 ] </value>
 	</string>
 	<string key="MasonEaten">
-		<value>📣新闻：拖延症患者互助协会的成员{0}被人杀害！犯罪现场还留下了动物毛发。</value>
+		<value>📰新闻：拖延症患者互助协会的成员{0}被人杀害！犯罪现场还留下了动物毛发。</value>
 	</string>
 	<string key="MasonTeam">
 		<value>你来到了拖延症患者互助协会，这里的人都和你有一样的毛病，来认识一下大家吧: {0}</value>
@@ -495,11 +496,11 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>哦，人们发现 {0} 死在街上，这可真奇怪。</value>
 	</string>
 	<string key="MasonConverted">
-		<value>怪了，{0} 今天没出席拖延症患者互助协会的活动……</value>
+		<value>怪了，{0} 今天没出席拖延症患者互助协会的活动，难道……</value>
 	</string>
 	<!-- new string May 16 2016-->
 	<string key="FleeDisabled">
-		<value>很抱歉, 城市已经被封锁，禁止逃离。</value>
+		<value>很抱歉, 本县应发生瘟疫而被封锁，禁止逃离。</value>
 	</string>
 	<string key="IsDead"> <!-- used when gunner shoots a player -->
 		<value>已经死了 ✖️</value>
@@ -534,10 +535,10 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>抱歉，你不是管理员。将 bot 加入此群组的人才是。</value>
 	</string>
 	<string key="ShuttingDown">
-		<value>本局游戏结束后，将进行更新。</value>
+		<value>❗本局游戏结束后，将进行 狼人杀 的系统更新。</value>
 	</string>
 	<string key="ShuttingDownUpdate">
-		<value>本局游戏结束后将自动更新，请稍后。</value>
+		<value>❗本局游戏结束后将进行更新，请稍后。</value>
 	</string>
 	<string key="NullIdAdmin">
 		<value>找不到使用者 id, 你确定你是用回复( reply )来下指令的吗?。</value>
@@ -555,7 +556,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>语言设定为 {0}。</value>
 	</string>
 	<string key="NoSeer">
-		<value>没有👳先知！</value>
+		<value>没有先知！</value>
 	</string>
 	<string key="TimesUp">
 		<value>时间到！</value>
@@ -571,14 +572,8 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>你是猎人。手上没枪你就睡不踏实。如果你死了，你可以选择一名玩家和你陪葬。如果你被🐺狼人咬了，那你有机会把这个狼人杀死，但却不能再选择杀死其他人。\n [能力被动，被攻击时，能力才被使用]</value>
 	</string>
 	<string key="RoleInfoSerialKiller">
-		<value>你是🔪变态杀人狂。最近刚从精神病院逃出来，想要杀死所有的人。每晚你可以在你的死亡清单上添加一名玩家（包括🐺狼人）。\n [能力主动；夜间使用能力 ]</value>
+		<value>你是🔪变态杀人狂。最近刚从精神病院逃出来，想要杀死所有的人。每晚你可以选择杀死一名玩家（包括🐺狼人）。\n [能力主动；夜间使用能力 ]</value>
 	</string>
-	<!--重复
-	<string key="CupidChosen">
-		<value>你已陷入爱河，{0} 的微笑和身影一直萦绕在你的脑海里，无法抹去。你一定要努力活着，不然，你死的时候， {0} 也将随你而去。</value>
-		<value>爱神的箭射中了你！你和 {0} 成为了灵魂伴侣，无法自拔！如果他死了，你也活不了。如果你们能共同走到最后，你们将获得胜利。</value>
-	</string>
-	-->
 	<string key="HunterLynchedChoice">
 		<value>你被公审了，这是你最后的机会，快！选择一名玩家和你陪葬吧！</value>
 	</string>
@@ -617,7 +612,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>昨晚🐺狼人闯入一个屋子想饱餐一顿，没想到进的是变态杀人魔的家！🐺狼人 {0} 在战斗中被杀死了！</value>
 	</string>
 	<string key="DefaultKilled">
-		<value>📣新闻：市中出现连环杀人案，疑杀人狂所为，{0} 惨遭不测，被折磨致死\n{1} </value>
+		<value>📰新闻：市中出现连环杀人案，疑杀人狂所为，{0} 惨遭不测，被折磨致死\n{1} </value>
 	</string>
 	<string key="GuardBlockedKiller">
 		<value>你想要收集 {0} 的身体来完成你的死亡清单，但守卫的出现，令你的计划泡汤，白白浪费了一晚……</value>
@@ -693,6 +688,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 	</string>
 	<string key="LoversWin">
 		<value>真爱永存！ #情侣胜！</value>
+		<value>胜利属于爱神！ #情侣胜！</value>
 	</string>
 	<string key="HunterKilledVisiter">
 		<value>市民们在中央广场中央发现一具血迹斑斑周身布满枪孔的尸体，正是 {0} ！看来是他偷袭猎人失败被反杀了。{1}</value>
@@ -701,22 +697,24 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>一个头戴连帽的人试图说服你成为邪教的一员，但你心念坚定不为所动。</value>
 	</string>
 		<string key="AlreadyOnWaitList">
-		<value>你已经在 {0} 排队了。</value>
+		<value>你已经在群组 {0} 排队了。</value>
 	</string>
 	<string key="AddedToWaitList">
-		<value>你已经在 {0} 排队了。当游戏开始时，我会通知你。</value>
+		<value>你已经在群组 {0} 排队了。当下次游戏开始时，我会通知你。</value>
 	</string>
 	<string key="NotifyNewGame">
 		<value>新游戏即将在 {0} 开始，请把握时间加入！</value>
 	</string>
 	<string key="SerialKillerWinsOverpower" isgif="true">
 		<value>这天早上，剩下的两个市民走到广场中央， {0} 看了一眼 {1} ，脸上露出邪恶的笑容，「唰！」的一声抽出一把匕首，手起刀落，只见 {1} 已倒下。整个城市只剩下 {0} 是活着的…… #杀人狂胜</value>
+		<value>
+		这天早上，最后的两个人走上街头，可{0}露出了邪恶的笑容，{1}不禁战栗了一下，并后退了几步。然而，{0}拿出了一把小刀，用力刺向{1}...沾满鲜血的小刀落下，而{1}也随即倒下 #杀人狂胜</value>
 	</string>
 	<string key="NoWinner" isgif="true">
-		<value>所有人都死了。这届人类不行啊。 #无人胜</value>
+		<value>所有人都死了。这届人类不行啊。 #无人胜 #空城</value>
 	</string>
 	<string key="SKHunterEnd" isgif="true">
-		<value>曙光乍现， {0} 和 {1} 并排前行，忽然 {0} 拔出了匕首，跳到 {1} 身上，把匕首狠狠刺入 {1} 胸部的同时， {1} 也反应迅敏地拔出枪，对着 {0} 的脸就是一枪，把 {0} 的头打爆了。\n {1} 也好不到哪儿去，匕首已经刺穿了他的心脏……最后两人都死了……\n这就是传说中的相爱相杀？</value>
+		<value>曙光乍现， {0} 和 {1} 并排前行，忽然 {0} 拔出了匕首，跳到 {1} 身上，把匕首狠狠刺入 {1} 胸部的同时， {1} 也反应迅敏地拔出枪，对着 {0} 的脸就是一枪，把 {0} 的头打爆了。\n {1} 也好不到哪儿去，匕首已经刺穿了他的心脏……最后两人都死了……\n这就是传说中的相爱相杀？ #空城</value>
 	</string>
     <string key="RoleModelChosen">
     <!-- 0 - target's name -->
@@ -738,7 +736,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>你不过是一个普通村民罢了，为了能活下来，机智一点，好好利用手中的票！</value>
   </string>
   <string key="AboutSeer">
-    <value>你是👳先知。每当夜深人静时，你就可以预知其中一个玩家的身份。除非你希望被狼人杀掉，不要暴露你的身份！</value>
+    <value>你是👳先知。每夜你就可以选择预知其中一个玩家的身份。除非你希望被狼人杀掉，不要暴露你的身份！</value>
   </string>
   <string key="AboutWw">
     <value>你是🐺狼人！每晚你都可以大开杀戒！不过如果你咬到了酗酒的艺术家，你会因为醉酒而在下回合无法行动。如果你咬到了基因缺陷者，他也会变成🐺狼人，准备好欢迎你的新队友吧！</value>
@@ -753,10 +751,10 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>你是被你是基因缺陷者，一旦被狼人咬到，潜伏在你基因中的钥匙就会被激活，成为一名🐺狼人，小心了……或者，准备好加入杀戮了么？</value>
   </string>
   <string key="AboutTraitor">
-    <value>你是人类中出的叛徒，你憎恨人类已久，只要其他狼人全部死亡，诅咒之力就会附着到你身上，享受你仅剩的人类生活，或者在狼人全部死掉之后转而向你曾经的队友展开屠杀吧！不过作为叛徒，👳先知也有可能会把你当成真的🐺狼人。</value>
+    <value>你是人类中出的叛徒，你憎恨人类已久，只要其他狼人全部死亡，诅咒之力就会附着到你身上，享受你仅剩的人类生活，或者在狼人全部死掉之后转而向你曾经的队友展开屠杀吧！不过作为叛徒，👳先知也有可能会把你当成真的狼人。</value>
   </string>
   <string key="AboutGA">
-    <value>身为守卫，每当夜幕降临，你可以保护一个人。但是，如果你保护了🐺狼人，你有一半的几率会死。</value>
+    <value>身为守卫，每当夜幕降临，你可以保护一个人。但是，如果你保护了🐺狼人，你有一半的几率会死；如果你保护了🔪变态杀人狂，你会死。</value>
   </string>
   <string key="AboutDetective">
     <value>你是一名侦探。你可以在白天调查一名玩家的身份，不过要小心的选择调查的目标！调查时，🐺狼人们有40%的机率会发现你是侦探。</value>
@@ -771,7 +769,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>你认为你是👳先知，但可惜你是冒牌的。当你去看他人的身份时，bot会随便告知你，比如你想看狼人的身份，bot却说他是守护天使。</value>
   </string>
   <string key="AboutCult">
-    <value>你是👤邪教徒。你可以在晚上施洗一名玩家（除了🐺狼人），让他们成为你的一员。如果所有玩家都失掉了原来的身份受洗成👤邪教徒，👤邪教徒就赢了。</value>
+    <value>你是👤邪教徒。你可以在晚上施洗一名玩家（除了🐺狼人），让他们成为你的一员。如果所有玩家都失掉了原来的身份受洗成👤邪教徒，👤邪教徒就赢了。注意：施洗狼人或变态杀人狂时，会施洗失败且邪教会中一人会死亡。</value>
   </string>
   <string key="AboutCH">
     <value>作为邪教捕手，你的任务是每晚捕捉一名玩家，如果刚好是👤邪教徒，他就会死。如果有人想施洗你，最新加入的那位👤邪教徒就会死于非命。</value>
@@ -824,7 +822,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>第{0}天</value>
   </string>
   <string key="NodeShutsDown">
-    <value>发生了错误，然后此节点已经关闭 :/</value>
+    <value>发生了错误，此节点已经关闭 :/</value>
   </string>
   <string key="SentPrivate">
     <value>已通过私聊发送了详细信息</value>
@@ -833,7 +831,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>为了能收到机器人的消息请先私聊 @werewolfbot 发送一个 /start 。</value>
   </string>
   <string key="PMTrue">
-    <value>很好！我已经可以私聊你了😃</value>
+    <value> 很好！我已经可以私聊你了😃</value>
   </string>
   <string key="MustReplySmite">
     <value>你需要回复你想赶走的玩家这个命令。</value>
@@ -872,7 +870,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>你不是全局管理员...</value>
   </string>
   <string key="NotPara">
-    <value>你不是 Para!</value>
+    <value>你不是 Para(机器人的所有者）!</value>
   </string>
   <string key="Yes">
     <value>是</value>
@@ -894,13 +892,13 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   <!-- Game Mode Choices-->
   <string key="NormalOnly">
-    <value>普通模式</value>
+    <value>仅普通模式</value>
   </string>
   <string key="ChaosOnly">
-    <value>混乱模式</value>
+    <value>仅混乱模式</value>
   </string>
   <string key="PlayerChoice">
-    <value>由玩家选择</value>
+    <value>由玩家自由选择</value>
   </string>
 
   <!-- Show Roles on End Game -->
@@ -966,10 +964,10 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>把投票阶段的时间设置成了 {0} 秒</value>
   </string>
   <string key="AllowFoolQ">
-    <value>允许游戏中出现冒牌👳先知?\n当前是：{0}</value>
+    <value>允许游戏中出现冒牌先知?\n当前是：{0}</value>
   </string>
   <string key="AllowFoolA">
-    <value>现在游戏中{0}出现冒牌👳先知</value>
+    <value>现在游戏中{0}出现冒牌先知</value>
   </string>
   <string key="AllowTannerQ">
     <value>允许游戏中出现圣战者?\n当前是：{0}</value>
@@ -1008,14 +1006,12 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>没能获得玩家列表 Σ( ° △ °|||)</value>
   </string>
   
-  
-  
   <!--updated at 2019-2-3-->
   	
   
   <string key="YouJoined">
     <!-- 0 - Group Name -->
-    <value>你成功加入了{0}的游戏</value>
+    <value>你成功加入了在群组{0}的游戏</value>
   </string>
   <string key="Ping2">
     <value>Pong！ping通时间 {0}</value>
@@ -1032,31 +1028,31 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>清晨的雾气消散了，死寂的村庄中，迎来第一缕阳光。但世界还会继续孤僻地运转，村庄已死，但{0}离开了村庄，离开了他的狼群，寻找下一个即将灭亡的村庄。</value>
   </string>
   <string key="WhatVariantVets">
-    <value>什么变种?\n现在: {0}\n当你进行500次游戏，才可以加入(As you have played over 500 games you can also join): </value>
+    <value>什么变种?\n现在: {0}\n当你进行500次游戏，才可以加入 ：</value>
   </string>
    <string key="Skip">
-    <value>跳过</value>
+    <value>➡️跳过</value>
     </string>
 <string key="All">
     <!-- used when searching for groups in all the variants -->
-    <value>#⃣全部</value>
+    <value>✳️全部</value>
   </string>
   <string key="RandomModeQ">
     <value>开启随机模式?\n随机模式开启后，每次 混乱模式，秘密投票处决，展示玩家死亡，允许邪教，允许冒牌👳先知，允许圣战者，将会随机开启或关闭。\n现在:{0}</value>
   </string>
   <string key="RandomModeA">
-    <value>随机模式的设置(set to): {0}</value>
+    <value>随机模式的设置: {0}</value>
   </string>
   <string key="EnableSecretLynchQ">
     <value>开启秘密投票处决?\n现在: {0}</value>
   </string>
   <string key="EnableSecretLynchA">
-    <value>秘密投票处决设置(set to): {0}</value>
+    <value>秘密投票处决设置: {0}</value>
   </string>
 
 
 <string key="AllowNSFW">
-    <value>允许 NSFW Gif</value>
+    <value> NSFW Gif</value>
   </string>
   <string key="AllowNSFWQ">
     <value>允许NSFW gif ?\n现在: {0}</value>
@@ -1066,16 +1062,16 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   
     <string key="RandomMode">
-    <value>开启随机模式</value>
+    <value>随机模式相关设置</value>
       </string>
 <string key="AllowExtend">
-    <value>允许延长时间</value>
+    <value>延长时间设置</value>
   </string>
   <string key="ShowRolesDeath">
     <value>死亡时展示玩家身份</value>
    </string>
   <string key="AllowFlee">
-    <value>允许逃跑</value>
+    <value>逃跑设置</value>
   </string>
   <string key="ShowIDs">
     <value>进入游戏时展示ID</value>
@@ -1086,7 +1082,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   <string key="ShowIDsA">
     <value>{0} IDs</value>
   </string>
-
+ 
    <string key="RoleInfoMayor">
     <value>你是市长。一旦你透露自己身份，你的权重将上升，投票处决中将计算两票。你在村民阵营。\n [能力主动；日间使用能力 ]</value> </string>
   <string key="RoleInfoPrince">
@@ -1150,7 +1146,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>🐺⚡️头狼(源狼)</value>
   </string>
   <string key="WolfCub">
-    <value>🐺幼狼(the Wolf Cub)</value>
+    <value>🐶幼狼</value>
   </string>
   
   <string key="PlayerBittenWolves">
@@ -1193,13 +1189,14 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   <string key="DGTransformToAlpha">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} 死了，你变成了头狼，你的队友(if any) : {1}</value>
+    <value>{0} 死了，你变成了头狼，你的队友(如果有的话) : {1}</value>
   </string>
   <string key="DGTransformToWolfCub">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} 死了，你变成了幼狼，你的队友 (if any) : {1}</value>
+    <value>{0} 死了，你变成了幼狼，你的队友 (如果有的话) : {1}</value>
   </string>
+  
   <string key="VillageTeam" deprecated="true">
     <value>村民阵营</value>
   </string>
@@ -1250,10 +1247,10 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   
   <!--New Death Strings 05 DEC-->
   <string key="ApprenticeSeerEaten">
-    <value>📣新闻：今日，村民们发现👳先知学徒 {0}的心脏不在了...一路走好 </value>
+    <value>📰新闻：今日，村民们发现👳先知学徒 {0}的心脏不在了...一路走好 </value>
   </string>
   <string key="BlacksmithKilled">
-    <value>📣新闻：今日，村民们发展铁匠{0}的肝不见了... 一路走好</value>
+    <value>📰新闻：今日，村民们发展铁匠{0}的肝不见了... 一路走好</value>
   </string>
   <string key="CultistKilled">
     <value>次日清晨，👤邪教徒{0}发现自己的肾不见了（雾） ...</value>
@@ -1262,92 +1259,92 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>天哪，不，我的上帝，看看发生了什么。我们的💘爱神{0}的心不见了，噢，可怜的孩子。伙计们，让我们为她默哀一分钟，一路走好！</value>
   </string>
   <string key="DrunkKilled">
-    <value>📣新闻：酒鬼 {0} 的肝和一把刀发现在他家门口。 由于多年的酗酒，似乎🔪变态杀人狂都不要他的肝了！刑警温馨提示您：珍爱生命，远离酗酒！</value>
+    <value>📰新闻：酒鬼 {0} 的肝和一把刀发现在他家门口。 由于多年的酗酒，似乎🔪变态杀人狂都不要他的肝了！刑警温馨提示您：珍爱生命，远离酗酒！</value>
   </string>
    <string key="GuardianAngelKilled">
-    <value>📣新闻：守卫{0} 惨死在自己家中，五脏六腑不翼而飞，其他细节警方拒绝透露。</value>
+    <value>📰新闻：守卫{0} 惨死在自己家中，五脏六腑不翼而飞，其他细节警方拒绝透露。</value>
   </string>
   <string key="GunnerKilled">
-    <value>📣新闻：震惊，枪手{0} 的尸首和枪出现在村庄水井，警方开始调查此事。</value>
+    <value>📰新闻：震惊，枪手{0} 的尸首和枪出现在村庄水井，警方开始调查此事。</value>
   </string>
   <string key="MayorKilled">
-    <value>📣新闻：市长{0} 今日未上班，警方封锁其住宅。有知情人士透露，市长昨晚惨遭毒手，但警方拒绝透露任何细节，我们将继续跟踪报道。</value>
+    <value>📰新闻：市长{0} 今日未上班，警方封锁其住宅。有知情人士透露，市长昨晚惨遭毒手，但警方拒绝透露任何细节，我们将继续跟踪报道。</value>
   </string>
   <string key="PrinceKilled">
-    <value>📣新闻：士兵封锁{0}住宅，警方开始调查此事。据称，{0}是秘密公主，目前已被🔪变态杀人狂杀害。</value>
-    <value>📣新闻：水库打捞起一无头死尸，身上有皇家戒指。结果法医鉴定，认为是秘密公主{0}，但皇家成员，尤其是国王，拒绝承认此事。</value>
+    <value>📰新闻：士兵封锁{0}住宅，警方开始调查此事。据称，{0}是秘密公主，目前已被🔪变态杀人狂杀害。</value>
+    <value>📰新闻：水库打捞起一无头死尸，身上有皇家戒指。结果法医鉴定，认为是秘密公主{0}，但皇家成员，尤其是国王，拒绝承认此事。</value>
   </string>
   <string key="SeerKilled">
     <value>震惊！👳先知{0} 的大脑不易而飞。</value>
   </string>
   <string key="SorcererEaten">
     <value>震惊！黑暗法师{0} 惨死街头，周围有狼人痕迹。</value>
-    <value>📣新闻：震惊黑暗法师{0}惨死在街头，村民认为和狼人近期活动有关</value>
+    <value>📰新闻：震惊黑暗法师{0}惨死在街头，村民认为和狼人近期活动有关</value>
   </string>
   <string key="WildChildEaten">
-    <value>📣新闻：震惊！！！幼狼{0} 惨死在街头，村民认为和狼人近期活动有关</value>
+    <value>📰新闻：震惊！！！幼狼{0} 惨死在街头，村民认为和狼人近期活动有关</value>
   </string>
   <string key="SerialKillerKilledCH">
     <!--used when CH visits SK-->
-    <value>📣新闻：震惊，异端审判官{0}的肺被发现在水井中，村民表示并不知情。</value>
-    <value>📣新闻：震惊，异端审判官{0}的肝被发现在水井中，村民表示并不知情。</value>
+    <value>📰新闻：震惊，异端审判官{0}的肺被发现在水井中，村民表示并不知情。</value>
+    <value>📰新闻：震惊，异端审判官{0}的肝被发现在水井中，村民表示并不知情。</value>
   </string>
   <string key="CultConvertWolfPublic">
     <!--used when Cultists convert the wolves, only if wolves stayed home-->
-    <value>📣新闻：震惊！👤邪教徒{0}惨死在街头，原因未知。警方调查显示，可能和近期狼人频繁活动有关。</value>
-    <value>📣新闻：👤邪教徒{0}惨死在街头，原因未知，街坊邻居认为这可能与最近小镇出现的狼人有关。</value>
+    <value>📰新闻：震惊！👤邪教徒{0}惨死在街头，原因未知。警方调查显示，可能和近期狼人频繁活动有关。</value>
+    <value>📰新闻：👤邪教徒{0}惨死在街头，原因未知，街坊邻居认为这可能与最近小镇出现的狼人有关。</value>
   </string>
   <string key="CultConvertKillerPublic">
     <!--used when Cultists convert the SK-->
-    <value>📣新闻：👤邪教徒{0}惨死在街头，原因未知，街坊邻居认为这可能与最近小镇出现的变态杀人狂有关。</value>
-    <value>📣新闻：👤邪教徒{0}惨死在广场，原因未知，警方认为这可能与最近小镇出现的变态杀人狂有关。</value>
+    <value>📰新闻：👤邪教徒{0}惨死在街头，原因未知，街坊邻居认为这可能与最近小镇出现的变态杀人狂有关。</value>
+    <value>📰新闻：👤邪教徒{0}惨死在广场，原因未知，警方认为这可能与最近小镇出现的变态杀人狂有关。</value>
   </string>
   <string key="GAGuardedKiller">
     <!-- used when GA guards SK -->
-    <value>📣新闻：震惊守卫{0}惨死在街头，原因未知，街坊邻居认为这可能与最近小镇出现的变态杀人狂有关。</value>
+    <value>📰新闻：震惊守卫{0}惨死在街头，原因未知，街坊邻居认为这可能与最近小镇出现的变态杀人狂有关。</value>
   </string>
   <string key="GAGuardedWolf">
     <!-- used when GA guards a wolf -->
-    <value>📣新闻：{0} 昨晚尝试守护一只狼。 似乎，事情进行得不太愉快。</value>
+    <value>📰新闻：{0} 昨晚尝试守护一只狼。 似乎，事情进行得不太愉快。</value>
   </string>
 
   <!--1vs1 finales-->
   <string key="HunterKillsWolfEnd">
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>
-      知道只剩{0} 了，{1} 尝试吃掉 {0} , 但 {0}的枪法似乎还不错。
+      清晨，知道只剩{0} 了，狼人{1} 尝试吃掉猎人{0}，而猎人{0}也意识道了这一点, 还好{0}的枪法似乎还不错。#村民胜
     </value>
   </string>
   <string key="WolfKillsHunterEnd">
     <!--{0} = hunter's name, {1} = wolf's name-->
-    <value>知道只剩 {0} 了, {1} 找到了一个好时机，趁机杀死了{0}。 </value>
+    <value>知道只剩 猎人{0} 了,狼人 {1} 找到了一个好时机，趁机杀死了{0}。 #狼人胜</value>
   </string>
   <string key="CHKillsCultistEnd">
     <!--{0} = last cultist's name, {1} = CH's name -->
-    <value>村里只剩{1} 和 {0} 了，可惜最后{0}的邪教仪式 还是被{1} 发现了</value>
+    <value>最后，村里只剩邪教捕手 {1} 和 邪徒 {0} 了...可惜{0}最后的邪教仪式，还是被 {1} 发现了... #村民胜 </value>
   </string>
 
   <!-- Extend time -->
   <string key="SecondsAdded">
     <!-- 0 - Seconds added by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>时间延长{0} 秒!\n剩余{1} </value>
+    <value>时间延长{0} 秒!\n剩余时间{1} </value>
   </string>
   <string key="SecondsRemoved">
     <!-- 0 - Seconds removed by /extend command -->
     <!-- 1 - Total seconds remaining -->
-    <value>时间缩短{0} 秒!\n剩余{1}</value>
+    <value>时间缩短{0} 秒!\n剩余时间{1}</value>
   </string>
   <string key="CantExtend">
-    <value>只能管理员延长时间</value>
+    <value>抱歉，只能管理员延长时间（bot管理员可以通过 /config 配置bot，允许其他人延长时间）</value>
   </string>
   <string key="AllowExtendQ">
     <!--{0} = "Allow" / "Disallow" string-->
-    <value>允许玩家延长时间?\n现在: {0} extending\nNote: 管理员总可以延长时间</value>
+    <value>允许玩家延长时间?\n现在: {0} \n注意： 管理员总可以延长时间</value>
   </string>
   <string key="AllowExtendA">
     <!--{0} = "Allow" / "Disallow" string-->
-    <value>{0} 玩家延长</value>
+    <value>{0} 玩家延长时间</value>
   </string>
   <string key="MaxExtendQ">
     <value>可以通过/extend 按钮延长的最大时间（秒）.\n默认: {0}\n现在:{1}</value>
@@ -1375,15 +1372,15 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   <string key="GroupNotFound">
     <!--This string might need rewording from some native speaker-->
-    <value>找不到群组，请在群组中发送这个命令以停止等待（Please run this command in the group you want to stop waiting for）,或添加链接，ID，用户名在命令后。</value>
+    <value>找不到群组，请在群组中发送这个命令以停止等待,或添加链接，ID，用户名在命令后。</value>
   </string>
   <string key="DeletedFromWaitList">
-    <value>你已经从等待清单（wait list for {0}）中移除了</value>
+    <value>你已经将{0}从排队清单中移除了</value>
   </string>
   <string key="HaveJoined">
     <!-- {0} = list of people who have joined -->
     <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
-    <value>{0}在30s内加入了游戏</value>
+    <value>{0}在最近30秒内加入了游戏</value>
   </string>
   <string key="AllowCult">
     <value>允许邪教</value>
@@ -1392,7 +1389,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>允许圣战者</value>
   </string>
   <string key="AllowFool">
-    <value>允许冒牌👳先知</value>
+    <value>允许冒牌先知</value>
   </string>
   <string key="EnableSecretLynch">
     <value>开启秘密投票处决</value>
@@ -1402,10 +1399,10 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>你是👻小偷！\n 小偷模式-默认：👻小偷第一晚可以偷取某人能力，且被偷取能力的玩家将变成普通村民。\n [能力主动；仅第一晚使用能力 ]</value>
   </string>
   <string key="RoleInfoThiefFull">
-    <value>你是👻小偷！\n  小偷模式-完整(Full Thief)：👻小偷每晚可以偷取某人能力，有50%几率成功，如果成功，则 被偷取能力的玩家 将变成👻小偷。（其实就是交换能力.）\n [能力主动；仅第一晚使用能力 ]</value>
+    <value>你是👻小偷！\n  小偷模式-完整：👻小偷每晚可以偷取某人能力，有50%几率成功，如果成功，则 被偷取能力的玩家 将变成👻小偷。（其实就是交换能力.）\n [能力主动；仅第一晚使用能力 ]</value>
   </string>
   <string key="Thief">
-    <value>👻小偷</value>
+    <value>👻小偷😈</value>
   </string>
   <string key="AboutThief">
     <value>小偷模式-默认：👻小偷第一晚可以偷取某人能力，且被偷取能力的玩家将变成普通村民\n小偷模式-完整(Full Thief)：👻小偷每晚可以偷取某人能力，有50%几率成功，如果成功，则 被偷取能力的玩家 将变成👻小偷。（其实就是交换能力）</value>
@@ -1445,7 +1442,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>{0}死了，你变身成了 🐺狼人（潜隐者）. 你的队友： {1} 以及雪狼：{2}</value>
   </string>
   <string key="DGTransformToSnowWolf">
-    <value>{0}死了，你变身成了 雪狼. 你的队友（如果有）： {1} </value>
+    <value>{0}死了，你变身成了 雪狼. 你的队友（如果有的话）： {1} </value>
     
   </string>
   <string key="DGToSnowWolf">
@@ -1507,7 +1504,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
      <string key="DGTransformToLycan">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0}死了，你变成了🐺狼人（潜隐者） , 你的队友(如果有) : {1}</value>
+    <value>{0}死了，你变成了🐺狼人（潜隐者） , 你的队友(如果有的话) : {1}</value>
   </string>
   <string key="NegSeerSees">
     <!-- 0 - target's name -->
@@ -1518,27 +1515,22 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>打算让所有人安睡了吗?</value>
   </string>
   <string key="SandmanSleepAll">
-        <value>只见睡神{0}的手轻轻一挥，不久，黑夜立即笼罩了小镇，所有人都该入睡了。</value>
         <value>只见睡神{0}的手轻轻一挥，不久，星月立即升上了小镇的夜空，灯也熄灭了，所有人都该入睡了。</value>
         <value>只见睡神{0}的手轻轻一挥，不久，夜色瞬间笼罩了小镇，所有人都该入睡了，今晚没有人再会活动。</value>
-        <value>只见睡神{0}走上了神坛，不久，黑夜立即笼罩了小镇，所有人都该入睡了。</value>
-        <value>只见睡神{0}走上了神坛，不久，星月立即升上了小镇的夜空，所有人都该入睡了。</value>
         <value>只见睡神{0}走上了神坛，不久，夜幕瞬间笼罩了小镇，所有人都该入睡了，今晚没有人再会活动。</value>
         <value>只见睡神{0}走上了神坛，不久，夜幕瞬间笼罩了小镇，灯也熄灭了，所有人都该入睡了，今晚没有人再会活动。</value>
         <value>只见睡神{0}的手轻轻一挥，不久，黑夜立即笼罩了小镇，所有人都该入睡了，今晚没有人再会活动。</value>
-        <value>只见睡神{0}的手轻轻一挥，不久，星月立即升上了小镇的夜空，灯也熄灭了，所有人都该入睡了，。</value>
   </string>
   
   <string key="SandmanNight">
         <value>💤奇怪，天怎么突然这么黑，好像也停电了，火也点不燃，该回家睡觉了，今晚注定是个宁静的夜晚。今晚没有人会活动</value>
-        <value>💤奇怪，天怎么突然这么黑，好像也停电了，火也点不燃，今晚注定是个宁静的夜晚。今晚没有人会活动。</value> 
 </string>
 
   <string key="AllowThiefQ">
-    <value>允许👻小偷?\n现在: {0}</value>
+    <value>允许小偷?\n现在: {0}</value>
   </string>
   <string key="AllowThiefA">
-    <value>小偷模式设置（set to）: {0}</value>
+    <value>小偷模式设置: {0}</value>
   </string>
   <string key="ThiefFullQ">
     <value>小偷可以每晚使用吗？\n现在: {0}</value>
@@ -1557,30 +1549,30 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>你是“狼”人--村民，但由于你经常在树林里，似乎👳先知把你当🐺狼人看。\n [能力被动，被👳先知查验时]</value>
   </string>
   <string key="WolfMan">
-    <value>👱🌚狼语者</value>
+    <value>👨🌚“狼”人</value>
   </string>
   <string key="AboutWolfMan">
     <value>“狼”人--村民，但由于经常在树林里，似乎👳先知把他当🐺狼人看。</value>
   </string>
 
   <string key="RoleInfoLycan">
-    <value>你是普通狼人，但经过多年隐匿，逐渐学会隐藏自己踪迹的能力，现在你可以不被👳先知发现你的身份。\n [能力被动，被👳先知查验时]</value>
+    <value>你是普通狼人，但经过多年隐匿，逐渐学会隐藏自己踪迹的能力，现在你可以不被👳先知发现你的身份。\n [能力被动，被先知查验时]</value>
   </string>
   <string key="Lycan">
-    <value>🐺狼人( 潜隐者 )</value>
+    <value>🐺🌝狼人(潜隐者)</value>
   </string>
   <string key="AboutLycan">
-    <value>🐺狼人( 潜隐者 )，普通狼人，但经过多年隐匿，逐渐学会隐藏自己踪迹的能力，现在可以不被👳先知发现你的身份。。</value>
+    <value>🐺狼人( 潜隐者 )，普通狼人，但经过多年隐匿，逐渐学会隐藏自己踪迹的能力，现在可以不被👳先知发现你的身份。</value>
   </string>
 
   <string key="RoleInfoOracle">
-    <value>你是神谕，每天晚上你可以知道一个人（只能是活人） ** 不是 ** 什么身份。\n [能力被动，仅告知信息 ]</value>
+    <value>🏛️你是神谕，每天晚上你可以知道一个人（只能是活人）不是什么身份。\n [能力被动，仅告知信息 ]</value>
   </string>
   <string key="Oracle">
-    <value>🏛神谕</value>
+    <value>🏛神谕🌀</value>
   </string>
   <string key="AboutOracle">
-    <value>神谕，每天晚上你可以知道一个人（只能是活人） ** 不是 ** 什么身份。 Oracle will be told what role someone is NOT, choosing from roles that are still alive in the game</value>
+    <value>🏛️神谕，每天晚上你可以知道一个人（只能是活人）不是 什么身份。</value>
   </string>
 
   <string key="RoleInfoSandman">
@@ -1592,35 +1584,6 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   <string key="AboutSandman">
     <value> 睡神，可以催眠一切生物，让所有人入睡，夜间不再活动。（仅一次）</value>
   </string>
-   
-    <string key="AskPacifist">
-    <value>点击这里，开始你的关于和平与爱的演讲，以停止投票处决</value>
-  </string>
-  <string key="PacifistNoLynch">
-  <!-- {0} - Pacifist's name -->
-    <value>和平演讲家 {0}, 开始了他关于和平、爱、友谊和原谅的演讲，残暴的村民们感动得洗心革面。不再杀戮，不再杀戮，世界和平！于是乎，今天没有人会被处决！</value>
-  </string>
-  <string key="PacifistNoLynchNow">
-    <value>因为和平演说家的灵魂演说（雾），今天没有人被处决。</value>
-  </string>
-  <string key="WolvesTriedToEatWiseElder">
-  <!-- 0 - Wise Elder's name -->
-    <value>你曾试图侵入{0}的家，但不幸的是长老{0}成功阻止了这次攻击，幸运的是他们没有认出你们。</value>
-  </string>
-  <string key="WolvesAteWiseElderPM">
-    <value>🐺狼人似乎想吃掉你, 但是你没有 become the Wise Elder by being easy to kill by an intruder!你成功地阻止了攻击，但不幸的是你没有认出任何攻击者。.</value>
-  </string>
-  <string key="HunterKilledWiseElder">
-  <!-- {0} - Hunter's Name -->
-  <!-- {1} - Wise Elder's Name -->
-    <value>猎人{0} 向长老 {1}开枪 ，但很快就后悔了，因此放弃了他的身份，成为了一位普通村民。</value>
-  </string>
-  <string key="GunnerShotWiseElder">
-  <!-- {0} - Gunner's Name -->
-  <!-- {1} - Wise Elder's Name -->
-    <value>枪手{0} 向长老 {1}开枪 ，但很快就后悔了，因此放弃了他的身份，成为了一位普通村民。</value>
-  </string>
-  
   <string key="ThiefStealFailed">
   <!-- {0} - The name of the thief's target -->
     <value>失败❌，偷取{0}的能力失败。</value>
@@ -1631,7 +1594,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   <string key="ThiefStoleYourRole" deprecated="true">
   <!-- {0} - The new role -->
-    <value>你的身份被👻小偷偷了，你现在是{0}.</value>
+    <value>你的身份被👻小偷偷了，你现在的身份是{0}.</value>
   </string>
   <string key="ThiefStoleRole">
   <!-- {0} - The name of the thief's target -->
@@ -1640,11 +1603,11 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   <string key="ThiefToMason">
     <!-- 0 - old mason's name -->
     <!-- 1 - new mason's name -->
-    <value>{0} 不再是你的队友 而且{1}现在变成了一个 重症拖延症患者。</value>
+    <value>{0} 不再是你的队友 而且{1}现在变成了一个 🙈重症拖延症患者。</value>
   </string>
   <string key="ThiefTransformToMason">
     <!-- 0 - mason collegues's name -->
-    <value>你的队友(if any) ： {0}</value>
+    <value>你的队友(如果有的话) ： {0}</value>
   </string>
   <string key="ThiefToCult">
     <!-- 0 - old cultist's name -->
@@ -1654,15 +1617,15 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   <string key="ThiefToWolf">
     <!-- 0 - old wolf's name -->
     <!-- 1 - new wolf's name -->
-    <value>{0} 不再是你的队友 而且{1}现在变成了一只狼。</value>
+    <value>{0} 不再是你的队友 而且{1}现在变成了一只狼人。</value>
   </string>
   <string key="ThiefTransformNewTeammates" deprecated="true">
     <!-- 0 - teammates's name -->
-    <value>你的队友(if any) ： {0}</value>
+    <value>你的队友(如果有的话) ： {0}</value>
   </string>
   <string key="ThiefEnd">
   <!-- 0 - Thief's name -->
-    <value>👻小偷{0} 离开了这个落后的小村庄，去追寻 诗和远方 （划去）..更好更多的职业</value>
+    <value>👻小偷{0} 离开了这个落后的小村庄，去追寻 诗和远方 （划去）..更好更多的职业 #小偷胜</value>
   </string>
   <string key="ThiefStealChosen">
   <!-- 0 - target's name -->
@@ -1697,7 +1660,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>秘密处决允许时, 最终投票计数将: {0}</value>
   </string>
   <string key="SecretLynchShowVoters">
-    <value>秘密 投票者</value>
+    <value>秘密投票者</value>
   </string>
   <string key="SecretLynchShowVotersQ">
     <value>秘密处决允许时 且 投票计数开启时, 允许非匿名投票?\n现在: {0}</value>
@@ -1707,7 +1670,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   <string key="CultistBitten">
   <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
-	<value>Σ( ° △ °|||)？？？ {0} 好像不在家，看来咬不成了。</value>
+	<value>奇怪，当你们决定今晚让谁入会时，邪教徒 {0} 好像不在家。</value>
   </string>
   
   <string key="Peace">
@@ -1740,21 +1703,31 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   <string key="ThiefStoleKiller">
     <!-- used when Thief steals SK -->
-    <value>👻小偷{0}尝试偷取 🔪变态杀人狂 的能力。\n 📣新闻：震惊！路上惊现无头死尸...</value>
+    <value>👻小偷{0}尝试偷取 🔪变态杀人狂 的能力。\n 📰新闻：震惊！路上惊现无头死尸...</value>
   </string>
   <string key="BeholderSeerStolen">
 	<value>👻小偷偷取了👳先知的能力！现在{0} 是👳先知，{1} 不再是👳先知了。</value>
   </string>
   
-  <string key="RoleInfoPacifist">
+<string key="RoleInfoPacifist">
     <value>你是和平演说者，你可以选择进行一次和平演说，劝说所有人不投票处决一次（仅一次）\n [能力主动；日间使用能力 ]</value>
   </string>
-  <string key="Pacifist">
-    <value>😇和平演说者</value>
-  </string>
-  <string key="AboutPacifist">
+<string key="Pacifist">
+    <value>☮️和平演说者</value>
+</string>
+<string key="AboutPacifist">
     <value>和平演说者\n可以选择进行一次和平演说，劝说所有人不投票处决一次（仅一次）</value>
-  </string>
+</string>
+<string key="AskPacifist">
+  <value>点击这里，开始你的关于和平与爱的演讲，以停止今天的投票处决</value>
+</string>
+<string key="PacifistNoLynch">
+  <!-- {0} - Pacifist's name -->
+  <value>和平演讲家 {0}, 开始了他关于和平、爱、友谊和原谅的演讲，残暴的村民们感动得洗心革面。不再杀戮，不再杀戮，世界和平！于是乎，今天没有人会被处决！</value>
+</string>
+<string key="PacifistNoLynchNow">
+    <value>因为和平演说家的灵魂演说（雾），今天没有人被处决。</value>
+</string>
 
   <string key="RoleInfoWiseElder">
     <value>你是长老，苍老但睿智。\n你可以躲避🐺狼人的一次攻击（仅一次）。\n如果枪手或猎人杀死了你，出于慈悲，他们都会后悔，失去他们的能力，变成普通村民。\n [能力被动，当被攻击时，能力才被使用 ]</value>
@@ -1765,9 +1738,27 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   <string key="AboutWiseElder">
     <value>长老，苍老但睿智。\n你可以躲避🐺狼人的一次攻击（仅一次）。\n如果枪手或猎人杀死了你，出于慈悲，他们都会后悔，失去他们的能力，变成普通村民。</value>
   </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>你曾试图侵入{0}的家，但不幸的是{0}是长老，{0}成功阻止了这次攻击，幸运的是他没有认出你们。</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>🐺狼人似乎想吃掉你, 但是你成功地阻止了攻击，但不幸的是你没有认出任何攻击者。.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>猎人{0} 向长老 {1}开枪 ，但很快就后悔了，因此放弃了他的身份，成为了一位普通村民。</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>枪手{0} 向长老 {1}开枪 ，但很快就后悔了，因此放弃了他的身份，成为了一位普通村民。</value>
+  </string>
   
+
     <string key="Troublemaker">
-	<value>👲捣乱者 </value>
+	<value>👲捣乱者🤯 </value>
   </string>
   <string key="AboutTroublemaker">
 	<value>👲捣乱者，小镇里的无业青年，经常闹事情。当他们捣乱时，整个村都炸了。因此，那天要处决两次!</value>
@@ -1782,17 +1773,17 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 	<value>👲捣乱者{0},开始在镇上闹事...因此今天将投票处决两次！</value>
   </string>
   <string key="TroubleDoubleLynchNow">
-	<value>由于👲捣乱者开始在镇上闹事，我们将投票处决两次。希望有用。</value>
+	<value>由于👲捣乱者刚刚在镇上闹事，我们现在将投票处决两次。希望有用。</value>
   </string>
   
   <string key="Chemist">
-	<value>🎲💊疯狂化学家</value>
+	<value>🎲疯狂化学家👨‍🔬</value>
   </string>
   <string key="AboutChemist">
-	<value>疯狂化学家，拥有两片药，一片毒药，一片是糖。当他们逃出来时，会强制让人吞服其中一片，而他吞服另一片。所以，祝你好运。</value>
+	<value>疯狂化学家👨‍🔬你拥有两片药，一片毒药，一片是糖。每当夜晚，你会拜访一个人，会强制让人随机吞服其中一片，而你吞服另一片。所以，祝你好运。</value>
   </string>
   <string key="RoleInfoChemist">
-	<value>你是疯狂化学家，拥有两片药，一片毒药，一片是糖。当他们逃出来时，会强制让人吞服其中一片，而他吞服另一片。所以，祝你好运。\n [能力主动；夜间使用能力，随机决定能力使用结果 ]</value>
+	<value>你是疯狂化学家👨‍🔬，你拥有两片药，一片毒药，一片是糖。每当夜晚，你会拜访一个人，会强制让人随机吞服其中一片，而你吞服另一片。\n [能力主动；夜间使用能力，随机决定能力使用结果 ]</value>
   </string>
   <string key="ChemistBrewing">
 	<value>夜深人静，疯狂的化学家开始制药了，希望不被人发现。</value>
@@ -1804,16 +1795,16 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 	<value>你要访问的人{0}，似乎🤔——已经死了。</value>
   </string>
   <string key="ChemistVisitYouSK">
-	<value>你被疯狂化学家{0}拜访了。他用刀强制让你服药，但似乎你随身携带的刀更锋利。</value>
+	<value>你被疯狂化学家👨‍🔬{0}拜访了。他用刀强制让你服药，但似乎你随身携带的刀更锋利。</value>
   </string>
   <string key="ChemistSK">
 	<value>你似乎反而被{0}杀死了</value>
   </string>
   <string key="ChemistSKPublic">
-	<value>疯狂化学家{0}在玩毒药与糖的俄罗斯转盘中时，似乎对方对他不满，直接杀死他了</value>
+	<value>疯狂化学家👨‍🔬{0}在玩毒药与糖的俄罗斯转盘中时，似乎对方对他不满，直接杀死他了</value>
   </string>
   <string key="ChemistVisitYouSuccess">
-	<value>你被疯狂化学家拜访了。他用刀强制让你服药。...RIP，一路走好。</value>
+	<value>你被疯狂化学家👨‍🔬拜访了。他用刀强制让你服药。...RIP，一路走好。</value>
   </string>
   <string key="ChemistSuccess">
 	<value>玩家{0}抽到了毒药，你又赢了！</value>
@@ -1821,16 +1812,16 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   <string key="ChemistSuccessPublic">
   <!-- {0} - Chemist's victim -->
   <!-- {1} - Will be replaced by "(victim) was (role)" -->
-	<value>疯狂化学家今晚拜访了 {0} ，他他们进行了毒药与糖的俄罗斯转盘。然而疯狂的化学家抽到了糖，而 {0} 抽到了毒药... {0} 死了. {1}</value>
+	<value>疯狂化学家👨‍🔬今晚拜访了 {0} ，他他们进行了毒药与糖的俄罗斯转盘。然而疯狂的化学家抽到了糖，而 {0} 抽到了毒药... {0} 死了. {1}</value>
   </string>
   <string key="ChemistVisitYouFail">
-	<value>你被疯狂化学家 {0} 拜访了, 他强制让你吃药片，幸运的是，你似乎吃到的不是毒药!</value>
+	<value>你被疯狂化学家👨‍🔬{0} 拜访了, 他强制让你吃药片，幸运的是，你似乎吃到的不是毒药!</value>
   </string>
   <string key="ChemistFail">
 	<value>你访问了 {0} 并进行了毒药与糖的俄罗斯转盘。然而，似乎他抽到了糖，而你抽到了毒药。一路走好，希望你下辈子换个好工作😞...</value>
   </string>
   <string key="ChemistFailPublic">
-	<value>疯狂化学家{0} 被发现已经死了！显然，,{0}似乎昨夜抽到了他的毒药...</value>
+	<value>疯狂化学家👨‍🔬{0} 被发现已经死了！显然，,{0}似乎昨夜抽到了他的毒药...</value>
   </string>
   <string key="ChemistTargetEmpty">
 	<value>{0}似乎不在家</value>
@@ -1879,7 +1870,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 	<value>返回🔙</value>
   </string>
   <string key="ShufflePlayerList">
-    <value>对玩家列表随机安排\nShuffle Player List</value>
+    <value>随机玩家列表(Shuffle Player List)</value>
   </string>
   <string key="ShufflePlayerListQ">
     <value>每次对玩家列表随机安排?\nShuffle player list every time? \n现在: {0}</value>
@@ -1890,27 +1881,27 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   
   <!-- 2019－2－21 更新-->
     <string key="AboutGraveDigger">
-	<value>掘墓人👷，每天晚上，你为上次死去的所有人挖掘坟墓（是的，甚至🐺狼人都应该得到适当的埋葬）。 因为你整晚都在外面，狼和邪教会找不到你，除非你真的没事做了（即没有人死亡） ,在这种情况下你只会待在家里。 每个访问你的人都有可能掉进你新挖的坟墓里，这取决于你挖了多少坟墓. 此外，每个对你有好意的人掉进你挖的坑（雾）的机会将减半。 但是因为你晚上外出，🐺狼人或🔪变态杀人狂可能会发现并杀死你，你挖掘的坑（划去）坟墓越多，就越有可能被发现。 此外，连环杀手可以知道你是否在家，但他可能至少在你的一个坟墓中绊倒并负伤，导致他可能在第二天晚上失去杀人对象的决定权...</value>
+	<value>☠️掘墓人：1.每天晚上，你为上次死去的所有人挖掘坟墓，因此你整晚都在外面，狼和邪教会等找不到你;2.除非那天没有人死亡 ,在这种情况下你只会待在家里，狼人和邪教会等可以找到你。;3.每个访问你的人都有可能掉进你新挖的坟墓里，这取决于你挖了多少坟墓. 4.此外，每个对你有好意的人(如守卫)掉进你挖的坑（雾）的机会将减半;5. 但是因为你晚上外出，🐺狼人或🔪变态杀人狂可能会在墓地发现并杀死你，且你挖掘的坑（划去）坟墓越多，就越有可能被发现。;6.此外，连环杀手可以知道你是否在家，但他可能至少在你的一个坟墓中绊倒并负伤，导致他可能在第二天晚上失去杀人对象的决定权...</value>
   </string>
   <string key="RoleInfoGraveDigger">
-	<value>你是掘墓人👷， 每天晚上，你为上次死去的所有人挖掘坟墓（是的，甚至🐺狼人都应该得到适当的埋葬）。 因为你整晚都在外面，狼和邪教会找不到你，除非你真的没事做了（即没有人死亡） ,在这种情况下你只会待在家里。 \n每个访问你的人都有可能掉进你新挖的坟墓里，这取决于你挖了多少坟墓. 此外，每个对你有好意的人掉进你挖的坑（雾）的机会将减半。 \n但是因为你晚上外出，🐺狼人或🔪变态杀人狂可能会发现并杀死你，你挖掘的坑（划去）坟墓越多，就越有可能被发现。 \n此外，连环杀手可以知道你是否在家，但他可能至少在你的一个坟墓中绊倒并负伤，导致他可能在第二天晚上失去杀人对象的决定权... \n [能力被动 ]</value>
+	<value>你是☠️掘墓人：1.每天晚上，你为上次死去的所有人挖掘坟墓，因此你整晚都在外面，狼和邪教会等找不到你;2.除非那天没有人死亡 ,在这种情况下你只会待在家里，狼人和邪教会等可以找到你。;3.每个访问你的人都有可能掉进你新挖的坟墓里，这取决于你挖了多少坟墓. 4.此外，每个对你有好意的人(如守卫)掉进你挖的坑（雾）的机会将减半;5. 但是因为你晚上外出，🐺狼人或🔪变态杀人狂可能会在墓地发现并杀死你，且你挖掘的坑（划去）坟墓越多，就越有可能被发现。;6.此外，连环杀手可以知道你是否在家，但他可能至少在你的一个坟墓中绊倒并负伤，导致他可能在第二天晚上失去杀人对象的决定权... \n [能力被动 ]</value>
   </string>
   <string key="GraveDigger">
-	<value>👷掘墓人</value>
+	<value>☠️掘墓人</value>
   </string>
   <string key="DigNoGraves">
     <value>逝者已去，生者未亡。一切都安排好了，似乎你今晚没有事可做了。</value>
   </string>
   <!--{0}: list of people who died since last grave-->
   <string key="DigGraves">
-	<value>直到深夜，你还在为{0}挖掘坟墓。 May愿他们的灵魂安息，他们的身体安息。</value>
+	<value>直到深夜，你还在为{0}挖掘坟墓。愿他们的灵魂安息，他们的身体安息。</value>
   </string>
   <string key="GraveDiggerFrozen">
 	<value>当你准备离开你家，去为那些死去的村民挖掘坟墓时，一阵风，似乎把你你家的房子冻住了...似乎，今天死者可能要再等一天了...</value>
   </string>
   <!--{0}: grave digger-->
   <string key="GraveDiggerNotHome">
-	<value>走进{0}家里后，发现他根本没在家！不过，远处小树林里似乎有亮光...</value>
+	<value>走进{0}家里后，发现他根本没在家！不过，远处小树林（中的公墓）里似乎有亮光...</value>
   </string>
   <!--{0}: grave digger, {1}: wolf who fell into the grave-->
   <string key="WolfFellWolves">
@@ -1922,7 +1913,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   <!--{0}: grave digger-->
   <string key="KillerStumbled">
-	<value>在你回家的路上，你和{0}刚切下来的肝滚到了一个坑里...现在你可能要养几天伤了。</value>
+	<value>在你回家的路上，你和刚从{0}切下来的肝滚到了一个坑里...现在你可能要养几天伤了。</value>
   </string>
   <!--{0}: intended victim, {1}: actual victim-->
   <string key="KillerRandomKill">
@@ -2024,7 +2015,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   <!--{0}: grave digger-->
   <string key="WolvesSpotted">
-	<value>当🐺狼人们走过墓地时，发现墓地里有火光。走近一看，却发现是掘墓者{0}...这时，所以🐺狼人互相看了看，笑了起来...</value>
+	<value>当狼人们走过墓地时，发现墓地里有火光。走近一看，却发现是掘墓者{0}...这时，所以狼人互相看了看，笑了起来...</value>
   </string>
   <!--{0}: grave digger-->
   <string key="WolvesSpottedDiggerPublic">
@@ -2046,11 +2037,11 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 	<value>纵火犯设置：{0}.</value>
   </string>
   <string key="BurningOverkill">
-	<value>过度纵火(Burning Overkill)</value>
+	<value>纵火犯和变态杀人狂同时存在(Burning Overkill)</value>
   </string>
   <!--{0}: Allow/Disallow-->
   <string key="BurningOverkillQ">
-	<value>允许纵火犯和变态杀人狂同时存在？ Might be deadly!\n现在: {0}</value>
+	<value>允许纵火犯和变态杀人狂同时存在？ 可能造成僵局（Might be deadly!）\n现在: {0}</value>
   </string>
   <!--{0}: Allow/Disallow-->
   <string key="BurningOverkillA">
@@ -2070,7 +2061,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   <!--{0}: arsonist-->
   <string key ="ArsonistVisitKiller">
-	<value>昨夜，纵火犯{0} 试图在🔪变态杀人狂的家上浇汽油... 可惜，他🔪变态杀人狂还没有睡着...</value>
+	<value>昨夜，纵火犯{0} 试图在🔪变态杀人狂的家上浇汽油... 可惜，他变态杀人狂还没有睡着...</value>
   </string>
   <string key="Spark">
 	<value>放一把火</value>
@@ -2084,7 +2075,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   <!--{0}: saved person-->
   <string key="GuardSavedFromFire">
-	<value>当你去拜访{0}时，你并不认为火灾会爆发，但你还是保护了他们！至少没有人会称你为坏守卫...（You didn't quite expect a fire to break out when you went to visited {0}, but you saved them nevertheless! Ain't nobody gonna call you a bad protector...）</value>
+	<value>当你去拜访{0}时，你并不认为火灾会爆发，但你还是保护了他们！至少没有人会称你为坏守卫...（原文：You didn't quite expect a fire to break out when you went to visited {0}, but you saved them nevertheless! Ain't nobody gonna call you a bad protector...）</value>
   </string>
   <!--{0}: person whose house was cleaned-->
   <string key="CleanDoused">
@@ -2092,26 +2083,27 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   <!--{0}: list of people who died in the flames-->
   <string key="Burning">
-	<value>📣新闻：近日，本县纵火狂猖獗。今日，本村村民{0}的房子昨晚被人恶意纵火，可惜，虽然在本地消防队的大力扑救、营救下，仍然无法控制火势，以致...\n{0}的追悼会将在..举行...</value>
+	<value>📰新闻：近日，本县纵火狂猖獗。今日，本村村民{0}的房子昨晚被人恶意纵火，可惜，虽然在本地消防队的大力扑救、营救下，仍然无法控制火势，以至...\n{0}的追悼会将在今天举行...</value>
   </string>
   <string key="ArsonistWins">
-	<value>最后，除了纵火犯的家，村子里只剩一片火海。纵火犯胜利...</value>
+	<value>最后，除了纵火犯的家，村子里只剩一片火海。#纵火犯胜...</value>
+	<value>清晨，昨夜的大火刚刚熄灭，除了纵火犯，小镇空无一人。#纵火犯胜...</value>
   </string>
   <string key="Burn" isgif="true">
 	<value>珍爱生命，远离火海。你和你的家，一起葬身火海...至于谁干的？额...</value>
   </string>
   <string key="Augur">
-	<value>☁️占卜者</value>
+	<value>☁️占卜者🦅</value>
   </string>
   <!--{0}: role that is not part of the village-->
   <string key="AugurSees">
 	<value>根据今天的云彩变化，似乎游戏中{0}不存在。</value>
   </string>
   <string key="AboutAugur">
-	<value>占卜家，每天早上，你观察早霞的颜色和云彩变化，以及物像，预知村子里没有的角色（雾）。提示：每个不存在的角色只会告诉你一次。</value>
+	<value>占卜家，每天早上，你观察早霞的颜色和云彩变化，以及物象，预知村子里没有的角色（雾）。提示：每个不存在的角色只会告诉你一次。</value>
   </string>
   <string key="RoleInfoAugur">
-	<value>你是占卜家，每天早上，你观察早霞的颜色和云彩变化，以及物像，预知村子里没有的角色（雾）。：每个不存在的角色只会告诉你一次。\n [能力被动，仅告知信息 ]</value>
+	<value>你是占卜家，每天早上，你观察早霞的颜色和云彩变化，以及物象，预知村子里没有的角色（雾）。：每个不存在的角色只会告诉你一次。\n [能力被动，仅告知信息 ]</value>
   </string>
   <string key="AugurSeesNothing">
 	<value>天上没有云了，看来你已经得到所有不存在的玩家了</value>
@@ -2124,17 +2116,20 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
   <string key="DefaultVisitBurn">
-	<value>📣新闻：..{0}今晚应该好好呆在家... 但他（们）昨夜拜访了他人住所时，屋内突然失火...经警方确认：{1}。民警温馨提示广大村民：房屋千万所，安全第一条。拜访不判断，村民两行泪！</value>
+	<value>📰新闻：..{0}今晚应该好好呆在家... 但他（们）昨夜拜访了他人住所时，屋内突然失火...经警方确认：{1}。民警温馨提示广大村民：房屋千万所，安全第一条。拜访不判断，村民两行泪！</value>
   </string>
   <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
   <string key="WolfVisitBurn">
-	<value>🐺狼人昨晚尝试袭击某人，但纵火犯抢先一步了！📣新闻：震惊！昨夜某村民家中失火，发现屋中内有一名死尸，经辨认，尸体为{0}。而且 {1}！</value>
+	<value>🐺狼人昨晚尝试袭击某人，但纵火犯抢先一步了！📰新闻：震惊！昨夜某村民家中失火，发现屋中内有一名死尸，经辨认，尸体为{0}。而且 {1}！</value>
   </string>
   <!--2019.2.21 更新-->
     <string key="ChemistKillWiseElder">
-	<value>疯狂化学家袭击了长老 ，但很快就后悔了，因此放弃了他的身份，成为了一位普通村民!</value>
+	<value>疯狂化学家👨🏻‍🔬袭击了长老 ，但很快就后悔了，因此放弃了他的身份，成为了一位普通村民!</value>
   </string>
   <string key="ArsonistWinsOverpower">
-	<value>只剩下{0} 和 {1} ... 突然 {0} 笑起来, 划了一根火柴，丢向了了 {1}，{1}瞬间燃烧起来了...</value>
+	<value>只剩纵火犯{0} 和 {1} ... 突然 {0} 笑起来, 划了一根火柴，丢向了了 {1}，{1}瞬间燃烧起来了... #纵火犯胜 </value>
+  </string>
+  <string key="ArsonistTeamEnd">
+    <value>纵火犯队伍</value>
   </string>
 </strings>

@@ -313,7 +313,7 @@
 		<value>{0} пришел к {1}, но тот культхант.</value>
 	</string>
 	<string key="CultHunterKilledCultVisit">
-		<value>{0} попытался тебя завербовать.О сталось {1} секты.</value>
+		<value>{0} попытался тебя завербовать. Осталось {1} секты.</value>
 	</string>
 	<string key="CultConvertYou">
 		<value>Секта завербовала тебя.</value>
@@ -1697,5 +1697,253 @@
 	</string>
 	<string key="ThiefTeamEnd">
 		<value>Воры</value>
+	</string>
+	<string key="AboutGraveDigger">
+		<value>Ты - гроб ☠️. </value>
+	</string>
+	<string key="RoleInfoGraveDigger">
+		<value>Ты - гроб ☠️. </value>
+	</string>
+	<string key="GraveDigger">
+		<value>Гроб ☠️</value>
+	</string>
+	<string key="DigNoGraves">
+		<value>Могилы не выкопаны.</value>
+	</string>
+	<!--{0}: list of people who died since last grave-->
+	<string key="DigGraves">
+		<value>Выкопаны могилы для {0}.</value>
+	</string>
+	<string key="GraveDiggerFrozen">
+		<value>Снежный заморозил тебя.</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="GraveDiggerNotHome">
+		<value>Гроб {0} не дома.</value>
+	</string>
+	<!--{0}: grave digger, {1}: wolf who fell into the grave-->
+	<string key="WolfFellWolves">
+		<value>{0} - гроб, {1} мёртв.</value>
+	</string>
+	<!--{0}: the wolf who fell into the grave-->
+	<string key="WolfFell">
+		<value>Волк {0} мёртв.</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="KillerStumbled">
+		<value>{0} - гроб, следующая жертва случайна.</value>
+	</string>
+	<!--{0}: intended victim, {1}: actual victim-->
+	<string key="KillerRandomKill">
+		<value>Вместо {0} ты пришел к {1}.</value>
+	</string>
+	<!--{0}: victim-->
+	<string key="GuardBlockedRandomKiller">
+		<value>Ангел спас {0}.</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="HunterFell">
+		<value>{0} - гроб, ты мёртв.</value>
+	</string>
+	<!--{0}: cult hunter-->
+	<string key="HunterFellDigger">
+		<value>Культхант {0} мёртв.</value>
+	</string>
+	<!--{0}: cultist-->
+	<string key="CultFell">
+		<value>Секта {0} мёртв.</value>
+	</string>
+	<!--{0}: cultist who fell, {1}: grave digger-->
+	<string key="CultConvertGraveDigger">
+		<value>{1} - гроб, {0} - мёртв.</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="ChemistFell">
+		<value>{0} - гроб, ты мёртв.</value>
+	</string>
+	<!--{0}: chemist-->
+	<string key="ChemistFellDigger">
+		<value>Химик {0} мёртв.</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="HarlotFell">
+		<value>{0} - гроб, ты мёртв.</value>
+	</string>
+	<!--{0}: harlot-->
+	<string key="HarlotFellDigger">
+		<value>Члп {0} мёртв.</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="HarlotVisitDigger">
+		<value>Гроб {0} не дома.</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="GAFell">
+		<value>{0} - гроб, ты мёртв.</value>
+	</string>
+	<!--{0}: guardian angel-->
+	<string key="GAFellDigger">
+		<value>Ангел {0} мёртв.</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="ThiefFell">
+		<value>{0} - гроб, ты мёртв.</value>
+	</string>
+	<!--{0}: thief-->
+	<string key="ThiefFellDigger">
+		<value>Вор {0} мёртв.</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="ArsonistFell">
+		<value>Ты мёртв из-за гроба.</value>
+	</string>
+	<!--{0}: arsonist-->
+	<string key="ArsonistFellDigger">
+		<value>Жига {0} мёртв.</value>
+	</string>
+	<!--{0}: person that died, {1}: "(person) was (role)"-->
+	<string key="DefaultFellPublic">
+		<value>{0} пришел к гробу. {1}</value>
+	</string>
+	<!--{0}: harlot-->
+	<string key="HarlotFellPublic">
+		<value>Члп {0} пришел к гробу.</value>
+	</string>
+	<!--{0}: cultist who died-->
+	<string key="CultistFellPublic">
+		<value>Секта {0} пришел к гробу.</value>
+	</string>
+	<!--{0}: thief-->
+	<string key="ThiefFellPublic">
+		<value>Вор {0} пришел к гробу.</value>
+	</string>
+	<!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+	<string key="WolfFellPublic">
+		<value>Волк {0} пришел к гробу. {1}</value>
+	</string>
+	<string key="SerialKillerSpottedYou" isgif="true">
+		<value>Серия случайно тебя убил</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="SerialKillerSpotted">
+		<value>Гроб {0} случайно убит тобой.</value>
+	</string>
+	<string key="WolvesSpottedYou" isgif="true">
+		<value>Волк случайно тебя убил.</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="WolvesSpotted">
+		<value>Гроб {0} случайно убит.</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="WolvesSpottedDiggerPublic">
+		<value>Гроб {0} случайно убит волками.</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="KillerSpottedDiggerPublic">
+		<value>Гроб {0} случайно убит серией.</value>
+	</string>
+	<string key="AllowArsonist">
+		<value>Пиромант</value>
+	</string>
+	<!--{0}: Allow/Disallow-->
+	<string key="AllowArsonistQ">
+		<value>Разрешить пироманта? Текущее: {0}</value>
+	</string>
+	<!--{0}: Allow/Disallow-->
+	<string key="AllowArsonistA">
+		<value>Пиромант теперь: {0}.</value>
+	</string>
+	<string key="BurningOverkill">
+		<value>Пироманьяки</value>
+	</string>
+	<!--{0}: Allow/Disallow-->
+	<string key="BurningOverkillQ">
+		<value>Разрешить пироманту и серийному быть в одной игре? Текущее: {0}</value>
+	</string>
+	<!--{0}: Allow/Disallow-->
+	<string key="BurningOverkillA">
+		<value>Пиромант и серийный: {0}.</value>
+	</string>
+	<string key="AboutArsonist">
+		<value>Ты жига.</value>
+	</string>
+	<string key="RoleInfoArsonist">
+		<value>Ты Жига 🔥.</value>
+	</string>
+	<string key="Arsonist">
+		<value>Жига 🔥</value>
+	</string>
+	<string key="AskArsonist">
+		<value>Поливаем/поджигаем?</value>
+	</string>
+	<!--{0}: arsonist-->
+	<string key ="ArsonistVisitKiller">
+		<value>Жига {0} пришел к серии.</value>
+	</string>
+	<string key="Spark">
+		<value>🔥🔥🔥 СЖЕЧЬ ИХ ВСЕХ 🔥🔥🔥</value>
+	</string>
+	<!--{0}: person whose house was doused-->
+	<string key="Doused">
+		<value>{0} готов сгореть.</value>
+	</string>
+	<string key="GuardSavedYouFromFire">
+		<value>Ангел спас тебя из пожара.</value>
+	</string>
+	<!--{0}: saved person-->
+	<string key="GuardSavedFromFire">
+		<value>{0} спасён из пожара.</value>
+	</string>
+	<!--{0}: person whose house was cleaned-->
+	<string key="CleanDoused">
+		<value>{0} очищен от керосина.</value>
+	</string>
+	<!--{0}: list of people who died in the flames-->
+	<string key="Burning">
+		<value>Сгорели:\n{0}</value>
+	</string>
+	<string key="ArsonistWins">
+		<value>Жига затащил</value>
+	</string>
+	<string key="Burn" isgif="true">
+		<value>Ты сгорел.</value>
+	</string>
+	<string key="Augur">
+		<value>Авгур 🦅</value>
+	</string>
+	<!--{0}: role that is not part of the village-->
+	<string key="AugurSees">
+		<value>В игре нет {0}</value>
+	</string>
+	<string key="AboutAugur">
+		<value>Ты Авгур 🦅. </value>
+	</string>
+	<string key="RoleInfoAugur">
+		<value>Ты Авгур 🦅. </value>
+	</string>
+	<string key="AugurSeesNothing">
+		<value>Больше нет инфы.</value>
+	</string>
+	<!--{0}: chosen victim, {1}: wolf who died in flames-->
+	<string key="WolvesVisitBurn">
+		<value>{0} сгорел  вместе с {1}.</value>
+	</string>
+	<!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+	<string key="DefaultVisitBurn">
+		<value>{0} пришел на огонёк. {1}</value>
+	</string>
+	<!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+	<string key="WolfVisitBurn">
+		<value>{0} пришел на огонёк. {1}</value>
+	</string>
+	<string key="ChemistKillWiseElder">
+		<value>Теперь ты село.</value>
+	</string>
+	<string key="ArsonistWinsOverpower">
+		<value>Жига {0} убивает {1}.</value>
+	</string>
+	<string key="ArsonistTeamEnd">
+		<value>Поджигатели</value>
 	</string>
 </strings>

@@ -1,12 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--
     ==UPDATE LOG==
-	Current version: v1.9.3
+	Current version: v1.10.1
 	Author: @calvinwong_1994
 	Credit: 中大學霸狼人群組
-	LAST UPDATE 31/01/2019 by people listed below
+	LAST UPDATE 24/03/2019 by people listed below
 	
-	31/01/2019 (v1.9.3)：(released in -/-/2019)
+	24/03/2019 (v1.10.1)：(released in -/-/2019)
+	@calvinwong_1994 因應TG狼人更新，新增三種新角色：「The Troublemaker」（角色：五毛）、「The Chemist」（角色：CHEM LAB導師）和「The Snow Wolf」（角色：講座教授）；另修正部份對白
+	此爲第十五屆臺主賽特別更新，設指定對白
+	(contributors: @Sei_Shounagon, @Fenrirwuff, @wongjoengming, @alau_hkg )
+	
+	23/03/2019 (v1.9.4)：(released in 23/03/2019)
+	@calvinwong_1994 結束特別更新，恢復原開場白
+	此爲第十五屆臺主賽特別更新，設指定對白
+	(contributors: - )
+	
+	31/01/2019 (v1.9.3)：(released in 31/01/2019)
 	@calvinwong_1994 修正農曆新年特別更新對白
 	此爲第十三屆臺主賽暨農曆新年特別更新，設指定對白
 	(contributors: - )
@@ -126,21 +136,19 @@
   <language name="科大" base="廣東話" variant="科大" owner="calvinwong_0831010" code="zh-yue"/>
 
   <string key="PlayerStartedGame">
-    <!--<value>DSE雞【{0}】話要報科大，開始咗「正常版」新遊戲！\n撳下面粒制加入，祝你過三爆四 😊</value>
+    <value>DSE雞【{0}】話要報科大，開始咗「正常版」新遊戲！\n撳下面粒制加入，祝你過三爆四 😊</value>
     <value>九巴車長【{0}】就嚟喺鑽石山開車，開始咗「正常版」新遊戲！\n撳下面粒制加入，一齊翻山越嶺、騰雲駕霧啦 😜</value>
     <value>7科狀元【{0}】話要入科大攪基，開始咗「正常版」新遊戲！\n撳下面粒制加入，食勻全校仔仔啦 😁</value>
 	<value>今日科大開學！【{0}】率先返咗科大上9點堂。大家一齊同繁昌BB瘋狂食energy bar啦！❤️</value>
-	<value>「獨在異鄉為異客，每逢佳節上高登。」巴打【{0}】唔想毒自過中秋節，想搵人陪佢玩科大版狼人。撳下面粒制加入，一齊賞月啦！</value>-->
-	<value>「恭喜你！恭喜你！大家新年添新禧。」又到新一年啦，除咗拜年、去旅行之外，【{0}】都想同各位一齊玩科大版狼人。撳下面粒制加入，同各位同學拜年啦！</value>
+	<value>「獨在異鄉為異客，每逢佳節上高登。」巴打【{0}】唔想毒自過中秋節，想搵人陪佢玩科大版狼人。撳下面粒制加入，一齊賞月啦！</value>
   </string>
   <string key="PlayerStartedChaosGame">
-    <!--<value>新界馬二世【{0}】話要喺科大開Campus TV，開始咗「混亂版」新遊戲！\n撳下面粒制加入，一齊上電視啦 😝</value>
+    <value>新界馬二世【{0}】話要喺科大開Campus TV，開始咗「混亂版」新遊戲！\n撳下面粒制加入，一齊上電視啦 😝</value>
     <value>FYS Secrets版主【{0}】招緊admin，開始咗「混亂版」新遊戲！\n撳下面粒制加入，一齊做admin啦 😈</value>
     <value>【{0}】泊好多新船入科大，小至洗頭艇大至豪華郵輪都有。佢開始咗「混亂版」新遊戲！\n撳下面粒制加入，一齊瘋狂船P啦 😂</value>
  <value>【{0}】包晒全個LC d位，開始咗「混亂版」新遊戲！\n撳下面粒制加入，一齊同學霸瘋狂溫書啦 😂</value>
  <value>今日科大開學！【{0}】率先返咗科大上9點堂。大家一齊同繁昌BB瘋狂食energy bar啦！❤️</value>
- <value>「獨在異鄉為異客，每逢佳節上高登。」巴打【{0}】唔想毒自過中秋節，想搵人陪佢玩科大版狼人。撳下面粒制加入，一齊賞月啦！</value>-->
- <value>「恭喜你！恭喜你！大家新年添新禧。」又到新一年啦，除咗拜年、去旅行之外，【{0}】都想同各位一齊玩科大版狼人。撳下面粒制加入，同各位同學拜年啦！</value>
+ <value>「獨在異鄉為異客，每逢佳節上高登。」巴打【{0}】唔想毒自過中秋節，想搵人陪佢玩科大版狼人。撳下面粒制加入，一齊賞月啦！</value>
   </string>
 
   <string key="MinuteLeftToJoin">
@@ -155,8 +163,7 @@
     <value>唔夠同學，Programme已被取消！</value>
   </string>
   <string key="StartingGameWait">
-    <!--<value>科大開學了，而家ARRO會派發Student ID畀大家。\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>-->
-	<value>「財神到！財神到！」新年嚟啦！而家ARRO會派發大利是（midterm）畀大家。\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10</value>
+    <value>科大開學了，而家ARRO會派發Student ID畀大家。\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
 	</string>
 
   <string key="ChangeNameToJoin">
@@ -175,7 +182,7 @@
     <value>你已經被勒令退學喇，做咩仲扮科大人交Quit U Form？</value>
   </string>
   <string key="Flee">
-    <!--<value>【{0}】覺得科大D canteen仲難食過明將，唔鬼報！</value>
+    <value>【{0}】覺得科大D canteen仲難食過明將，唔鬼報！</value>
 	<value>【{0}】嫌91M班次太疏，放棄讀科大嘅念頭！</value>
 	<value>【{0}】收到哈佛Offer，唔通仲同你讀科大咩！</value>
 	<value>【{0}】收到MIT Offer，唔通仲同你讀亞洲MIT咩！</value>
@@ -183,9 +190,7 @@
 	<value>【{0}】去完OCamp之後，發覺D組媽、組女都係偽娘，因此對UST失去信心。佢學已退！</value>
     <value>【{0}】原本報科大，點知之後竟然收到臺大電機Offer！佢學已退！</value>
 	<value>【{0}】聽講就快考試，佢成塊面白晒，猛咁話：「Final殺到嚟，science、engine、busi無得避，要化身繁昌BB打救蒼生；Final殺到嚟，science、engine、busi無得避，要化身繁昌BB打救蒼生......」然後就跳咗蘑菇！</value>
-	<value>【{0}】嫌UST個月光唔夠圓，佢聽講CU個月光靚好多，於是trans咗去讀書了。</value>-->
-	<value>【{0}】同親戚拜緊年，唔得閒同你哋玩住！</value>
-	<value>【{0}】同屋企人去緊旅行，記得叫佢畀手信啊！</value>
+	<value>【{0}】嫌UST個月光唔夠圓，佢聽講CU個月光靚好多，於是trans咗去讀書了。</value>
   </string>
   <string key="PlayerRoleWas">
     <value>【{0}】係【{1}】</value>
@@ -203,16 +208,15 @@
   </string>
 
   <string key="WolfVotedKill">
-    <!--<value>【{0}】話佢想去【{1}】到擾敵。</value>
+    <value>【{0}】話佢想去【{1}】到擾敵。</value>
 	<value>【{0}】話佢想推【{1}】落蘑菇。</value>
 	<value>【{0}】話佢想掟【{1}】落蚊池。</value>
 	<value>【{0}】咒【{1}】食完LG7之後食物中毒。</value>
 	<value>【{0}】祝【{1}】早日爆肝。</value>
-	<value>【{0}】話佢想捉【{1}】去con火雞。</value>-->
-	<value>【{0}】話佢想搶【{1}】封利是。</value>
+	<value>【{0}】話佢想捉【{1}】去con火雞。</value>
   </string>
   <string key="PlayerVotedLynch">
-    <!--<value>【{0}】話唔想喺科大再見到【{1}】！</value>
+    <value>【{0}】話唔想喺科大再見到【{1}】！</value>
     <value>【{0}】想【{1}】跳蘑菇！</value>
     <value>【{0}】話【{1}】係死毒L！</value>
     <value>【{0}】話想【{1}】跳蚊池！</value>
@@ -249,29 +253,7 @@
     <value>【{0}】唔gur【{1}】年年畀女圍！</value>
 	<value>【{0}】唔gur【{1}】年年畀仔圍！</value>
 	<value>【{0}】叫【{1}】唔好再問佢出pool未！</value>
-	<value>【{0}】叫【{1}】唔好成日派佢膠！</value>-->
-	<value>【{0}】想【{1}】返屋企！</value>
-    <value>【{0}】話【{1}】唔識拜年！</value>
-    <value>【{0}】葡萄【{1}】封利是大過佢！</value>
-    <value>【{0}】話【{1}】收到一萬蚊利是！</value>
-    <value>【{0}】唔gur【{1}】年年畀女圍！</value>
-	<value>【{0}】唔gur【{1}】年年畀仔圍！</value>
-    <value>【{0}】話【{1}】搶晒啲糖！</value>
-    <value>【{0}】話【{1}】搶咗佢嚿年糕！</value>
-    <value>【{0}】話【{1}】無啦啦對長輩爆粗！</value>
-    <value>【{0}】話【{1}】食晒成碟乳豬！</value>
-    <value>【{0}】話【{1}】一路拜年，一路玩狼！</value>
-    <value>【{0}】話【{1}】祝佢早登極樂！</value>
-    <value>【{0}】話【{1}】唔識唱歌就咪唱啦！</value>
-	<value>【{0}】話【{1}】成個三姑六婆咁！</value>
-	<value>【{0}】叫【{1}】唔好再問佢出pool未！</value>
-	<value>【{0}】叫【{1}】唔好未到年十五就拆利是！</value>
-	<value>【{0}】嫌【{1}】封得一蚊美金利是！</value>
-	<value>【{0}】問【{1}】今年開咗年未！</value>
-	<value>【{0}】話【{1}】拜年唔送禮！</value>
-	<value>【{0}】話【{1}】拜年送嘉頓什餅！</value>
-	<value>【{0}】話【{1}】團年飯遲到要全家人等！</value>
-	<value>【{0}】話【{1}】年初一叫佢返科大做lab！</value>
+	<value>【{0}】叫【{1}】唔好成日派佢膠！</value>
 	
   </string>
   <string key="IdleKill">
@@ -281,18 +263,12 @@
     <value>你個二五仔！！不枉你死鋤爛鋤四年，終於變咗做真學霸喇！！</value>
   </string>
   <string key="ChoiceAccepted">
-    <!--<value>菇底見！</value>
+    <value>菇底見！</value>
     <value>中大見！（蚊池出口？）</value>
     <value>Canvas收到你嘅回應</value>
     <value>EGM預備中......</value>
     <value>我哋一齊爲佢默哀三秒鐘！</value>
-    <value>Quit U飯（金兜出品）已經準備好啦！</value>-->
-	<value>新年快樂</value>
-	<value>學業進步</value>
-	<value>笑口常開</value>
-	<value>青春常駐</value>
-	<value>龍馬精神</value>
-	<value>身體健康</value>
+    <value>Quit U飯（金兜出品）已經準備好啦！</value>
 	
   </string>
   <string key="BeholderSeer">
@@ -416,27 +392,17 @@
 	<value>一年容易又開Sem，你地有 {0} 秒搵啲嘢玩下，例如落LG4做gym或上Barn B玩flash game等。\n或者打 /players 去睇邊個仲喺清水灣。</value>
 	<value>「中秋你注定一人，無嘢食又無氣氛。」你哋有 {0} 秒去碼頭食月餅賞月、玩蠟燭。\n或者打 /players 去睇邊個仲喺清水灣陪你讀獨毒。</value>
 	<value>「熱烈地彈琴，熱烈地唱！歌聲多奔放，個個喜氣洋洋。」你哋有 {0} 秒去LG5食年糕。\n或者打 /players 去睇邊個喺清水灣同你拜年。</value>-->
-	<!--<value>震廁即時新聞：第十二屆臺主賽\n第一號新聞\n遊戲管理員即場抽出一名幸運兒，佢會喺LT執到某教授嘅ITSC密碼。佢可以選擇同惡魔立約，hack入學系電腦改自己D分，搞到今場無人可以quit佢U（包括投票、打蛇等，freerider E錯佢或任何人quit佢另一半U不在此限，違者扣一分）。\n
+	<value>震廁即時新聞：第十五屆臺主賽\n第一號新聞\n遊戲管理員即場抽出一名幸運兒，佢會喺LT執到某教授嘅ITSC密碼。佢可以選擇同惡魔立約，hack入學系電腦改自己D分，搞到今場無人可以quit佢U（包括投票、打蛇等，freerider E錯佢或任何人quit佢另一半U不在此限，違者扣一分）。\n
 	注意：如果同惡魔立約，並最終獲勝，將不可加入下一場遊戲。\n你地有 {0} 秒去天一泉同小女孩一齊數「99，99，99......」。\n或者打 /players 去睇邊個仲喺清水灣。</value>
-	<value>震廁即時新聞：第十二屆臺主賽\n第二號新聞\n蝌大SU將舉行會員大會，遊戲管理員即場抽出一名幸運兒做主席，喺今個sem入面，當佢未E人，邊個都唔准E，違者扣一分。\n你地有 {0} 秒喺Concourse行Mega Sale。\n或者打 /players 去睇邊個仲喺清水灣。</value>
-	<value>震廁即時新聞：第十二屆臺主賽\n第三號新聞\n啱啱畀學霸或killer quit U嘅同學因壓力太大，跳菇身亡。蝌大決定追授佢學位，佢可以揀另一位同學，今場有福同享，有禍同當。\n注意：今場佢揀嘅人得到幾多分（不扣除違規扣分），佢就有幾多分。\n你地有 {0} 秒去Bridge Link吸收智慧石嘅靈氣。\n或者打 /players 去睇邊個仲喺清水灣。</value>
-	<value>震厕即时新闻：第十二届台主赛\n第四号新闻\n蝌大希望同学当文明人，做文明事，讲文明话！在这学期里面，同学只准用简体字或普通话拼音发言，否则会被暂时停学，不能投票。违者扣一分。\n你们有 {0} 秒去看教授三十页的简报，然后你们吃鲸了，一脸傻逼。\n或打 /players 去看看谁还在Qing Shui Wan。</value>
-	<value>震廁即時新聞：第十二屆臺主賽\n第五號新聞\n現實中仲讀緊書嘅同學去咗玩校服party。今個sem內（包括而家、投票同考試周）佢哋唔准E人，亦唔准quit人U；反之其他人都唔准E或者quit佢哋。違者扣一分。\n你地有 {0} 秒去去蘑菇觀夜空天象，然後跳蘑菇自我了斷。\n或者打 /players 去睇邊個仲喺清水灣。</value>
-	<value>震廁即時新聞：第十二屆臺主賽\n第六號新聞\n正所謂：「quit者爲大。」如果今個sem E死咗學渣陣營嘅人，佢可以禁止任何人喺下個sem投票，違者扣一分。\n你地有 {0} 秒去上莊、屈蛇、Part-time、做厹、R梳史等。\n或者打 /players 去睇邊個仲喺清水灣。</value>
-	<value>震廁即時新聞：第十二屆臺主賽\n第七號新聞\n現實中讀完書嘅同學去咗畢業晚宴。今個sem內（包括而家、投票同考試周）佢哋唔准E人，亦唔准quit人U；反之其他人都唔准E或者quit佢哋。違者扣一分。\n你地有 {0} 秒去蚊池游水。\n或者打 /players 去睇邊個仲喺清水灣。</value>
-	<value>震廁即時新聞：第十二屆臺主賽\n第八號新聞\n蝌大致力捍衛學術自由。如果今個sem舍監打蛇打中學霸或killer，將會被革職，今場唔准再打蛇（繼承佢嘅孖生兄弟不在此限），違者扣一分。\n你地有 {0} 秒落坑口食聰嫂糖水、薩利亞、大排檔等。\n或者打 /players 去睇邊個仲喺清水灣。</value>
-	<value>震廁即時新聞：第十二屆臺主賽\n第九號新聞\n蝌大而家走火警。今個sem唔准E人，學霸同killer都只可以quit同性別嘅人U，違者扣一分。\n你地有 {0} 秒搵啲嘢玩下，例如落LG4做gym或上Barn B玩flash game等。\n或者打 /players 去睇邊個仲喺清水灣。</value>-->
-	<value>震廁即時新聞：第十三屆臺主賽\n第一號新聞\n遊戲管理員即場抽出一名幸運兒，佢會喺LT執到某教授嘅ITSC密碼。佢可以選擇同惡魔立約，hack入學系電腦改自己D分，搞到今場無人可以quit佢U（包括投票、打蛇等，freerider E錯佢或任何人quit佢另一半U不在此限，違者扣一分）。\n
-	注意：如果同惡魔立約，並最終獲勝，將不可加入下一場遊戲。\n「唏呀！唏呀！唏！呀！唏！呀！唏！」你哋有 {0} 秒去LG5食年糕。\n或者打 /players 去睇邊個喺清水灣同你拜年。</value>
-	<value>震廁即時新聞：第十三屆臺主賽\n第二號新聞\n蝌大SU將舉行會員大會，遊戲管理員即場抽出一名幸運兒做主席，喺今個sem入面，當佢未E人，邊個都唔准E，違者扣一分。\n「唏呀！唏呀！唏！呀！唏！呀！唏！」你哋有 {0} 秒去LG5食年糕。\n或者打 /players 去睇邊個喺清水灣同你拜年。</value>
-	<value>震廁即時新聞：第十三屆臺主賽\n第三號新聞\n啱啱畀學霸或killer quit U嘅同學因壓力太大，跳菇身亡。蝌大決定追授佢學位，佢可以揀另一位同學，今場有福同享，有禍同當。\n注意：今場佢揀嘅人得到幾多分（不扣除違規扣分），佢就有幾多分。\n「唏呀！唏呀！唏！呀！唏！呀！唏！」你哋有 {0} 秒去LG5食年糕。\n或者打 /players 去睇邊個喺清水灣同你拜年。</value>
-	<value>震厕即时新闻：第十三届台主赛\n第四号新闻\n蝌大希望同学当文明人，做文明事，讲文明话！在这学期里面，同学只准用简体字或普通话拼音发言，否则会被暂时停学，不能投票。违者扣一分。\n你们有 {0} 秒去看教授三十页的简报，然后你们吃鲸了，一脸傻逼。\n或打 /players 去看看谁还在Qing Shui Wan。</value>
-	<value>震廁即時新聞：第十三屆臺主賽\n第五號新聞\n現實中仲讀緊書嘅同學去咗玩校服party。今個sem內（包括而家、投票同考試周）佢哋唔准E人，亦唔准quit人U；反之其他人都唔准E或者quit佢哋。違者扣一分。\n「唏呀！唏呀！唏！呀！唏！呀！唏！」你哋有 {0} 秒去LG5食年糕。\n或者打 /players 去睇邊個喺清水灣同你拜年。</value>
-	<value>震廁即時新聞：第十三屆臺主賽\n第六號新聞\n正所謂：「quit者爲大。」如果今個sem E死咗學渣陣營嘅人，佢可以禁止任何人喺下個sem投票，違者扣一分。\n「唏呀！唏呀！唏！呀！唏！呀！唏！」你哋有 {0} 秒去LG5食年糕。\n或者打 /players 去睇邊個喺清水灣同你拜年。</value>
-	<value>震廁即時新聞：第十三屆臺主賽\n第七號新聞\n現實中讀完書嘅同學去咗畢業晚宴。今個sem內（包括而家、投票同考試周）佢哋唔准E人，亦唔准quit人U；反之其他人都唔准E或者quit佢哋。違者扣一分。\n「唏呀！唏呀！唏！呀！唏！呀！唏！」你哋有 {0} 秒去LG5食年糕。\n或者打 /players 去睇邊個喺清水灣同你拜年。</value>
-	<value>震廁即時新聞：第十三屆臺主賽\n第八號新聞\n蝌大致力捍衛學術自由。如果今個sem舍監打蛇打中學霸或killer，將會被革職，今場唔准再打蛇（繼承佢嘅孖生兄弟不在此限），違者扣一分。\n「唏呀！唏呀！唏！呀！唏！呀！唏！」你哋有 {0} 秒去LG5食年糕。\n或者打 /players 去睇邊個喺清水灣同你拜年。</value>
-	<value>震廁即時新聞：第十三屆臺主賽\n第九號新聞\n蝌大而家走火警。今個sem唔准E人，學霸同killer都只可以quit同性別嘅人U，違者扣一分。\n「唏呀！唏呀！唏！呀！唏！呀！唏！」你哋有 {0} 秒去LG5食年糕。\n或者打 /players 去睇邊個喺清水灣同你拜年。</value>
-	<value>震廁即時新聞：第十三屆臺主賽\n第十號新聞\n大家急住去拜年，只能喺今個sem投票階段嘅頭五秒E人，違者扣一分。\n「唏呀！唏呀！唏！呀！唏！呀！唏！」你哋有 {0} 秒去LG5食年糕。\n或者打 /players 去睇邊個喺清水灣同你拜年。</value>
+	<value>震廁即時新聞：第十五屆臺主賽\n第二號新聞\n蝌大SU將舉行會員大會，遊戲管理員即場抽出一名幸運兒做主席，喺今個sem入面，當佢未E人，邊個都唔准E，違者扣一分。\n你地有 {0} 秒喺Concourse行Mega Sale。\n或者打 /players 去睇邊個仲喺清水灣。</value>
+	<value>震廁即時新聞：第十五屆臺主賽\n第三號新聞\n啱啱畀學霸或killer quit U嘅同學因壓力太大，跳菇身亡。蝌大決定追授佢學位，佢可以揀另一位同學，今場有福同享，有禍同當。\n注意：今場佢揀嘅人得到幾多分（不扣除違規扣分），佢就有幾多分。\n你地有 {0} 秒去Bridge Link吸收智慧石嘅靈氣。\n或者打 /players 去睇邊個仲喺清水灣。</value>
+	<value>震厕即时新闻：第十五届台主赛\n第四号新闻\n蝌大希望同学当文明人，做文明事，讲文明话！在这学期里面，同学只准用简体字或普通话拼音发言，否则会被暂时停学，不能投票。违者扣一分。\n你们有 {0} 秒去看教授三十页的简报，然后你们吃鲸了，一脸傻逼。\n或打 /players 去看看谁还在Qing Shui Wan。</value>
+	<value>震廁即時新聞：第十五屆臺主賽\n第五號新聞\n現實中仲讀緊書嘅同學去咗玩校服party。今個sem內（包括而家、投票同考試周）佢哋唔准E人，亦唔准quit人U；反之其他人都唔准E或者quit佢哋。違者扣一分。\n你地有 {0} 秒去去蘑菇觀夜空天象，然後跳蘑菇自我了斷。\n或者打 /players 去睇邊個仲喺清水灣。</value>
+	<value>震廁即時新聞：第十五屆臺主賽\n第六號新聞\n正所謂：「quit者爲大。」如果今個sem E死咗學渣陣營嘅人，佢可以禁止任何人喺下個sem投票，違者扣一分。\n你地有 {0} 秒去上莊、屈蛇、Part-time、做厹、R梳史等。\n或者打 /players 去睇邊個仲喺清水灣。</value>
+	<value>震廁即時新聞：第十五屆臺主賽\n第七號新聞\n現實中讀完書嘅同學去咗畢業晚宴。今個sem內（包括而家、投票同考試周）佢哋唔准E人，亦唔准quit人U；反之其他人都唔准E或者quit佢哋。違者扣一分。\n你地有 {0} 秒去蚊池游水。\n或者打 /players 去睇邊個仲喺清水灣。</value>
+	<value>震廁即時新聞：第十五屆臺主賽\n第八號新聞\n蝌大致力捍衛學術自由。如果今個sem舍監打蛇打中學霸或killer，將會被革職，今場唔准再打蛇（繼承佢嘅孖生兄弟不在此限），違者扣一分。\n你地有 {0} 秒落坑口食聰嫂糖水、薩利亞、大排檔等。\n或者打 /players 去睇邊個仲喺清水灣。</value>
+	<value>震廁即時新聞：第十五屆臺主賽\n第九號新聞\n蝌大而家走火警。今個sem唔准E人，學霸同killer都只可以quit同性別嘅人U，違者扣一分。\n你地有 {0} 秒搵啲嘢玩下，例如落LG4做gym或上Barn B玩flash game等。\n或者打 /players 去睇邊個仲喺清水灣。</value>
+	<value>震廁即時新聞：第十五屆臺主賽\n第十號新聞\n大家急住去拜山，只能喺今個sem投票階段嘅頭五秒E人，違者扣一分。\n你哋有 {0} 秒去蘑菇底送花。\n或者打 /players 去睇邊個喺清水灣同你拜山。</value>
   </string>
   <string key="NightTime">
     <value>上堂日子完晒，大家返去準備考試～\n考試期間有嘢搞嘅人請注意：你有 {0} 秒可以比你出動！</value>
@@ -568,8 +534,7 @@
     <value>「要做亞洲第零學府嘅門生，就要打低全世界！」學霸憑藉呢句座右銘，quit晒所有學渣U！\n學霸 勝出！</value>
   </string>
   <string key="VillageWins">
-    <!--<value>科大學渣試盡大學五件事：爛grade、上頹莊、摺hall、單身同埋R intern，終於有驚無險咁讀到畢業。\n學渣 勝出！</value>-->
-	<value>「大眾慶新春，望財神到！」科大學渣又生存多一年，祝各位過三爆四、first hon畢業、搵到好工！\n學渣 勝出！</value>
+    <value>科大學渣試盡大學五件事：爛grade、上頹莊、摺hall、單身同埋R intern，終於有驚無險咁讀到畢業。\n學渣 勝出！</value>
   </string>
   <string key="TannerWins">
     <value>大鑊啦！你地拆咗asshole，搞到人人無hall住！校園一片愁雲慘霧，唯獨無家可歸嘅楊處長暗忖：「拆啊！拆得你哋咁開心！」……\nAsshole 勝出！</value>
@@ -999,7 +964,7 @@
     <value>【邊緣人 👤】學渣陣營\n逢考試週：可以打聽一個人嘅身份。\n注意：\n1）系統會同你講你係chief組爸；\n2）你打聽到嘅多數都係流料。</value>
   </string>
   <string key="AboutCult">
-    <value>【MECH痴線佬 🕺】MECH陣營\n逢考試週：成班MECH痴線佬可以拉一個人去發癲（除咗學霸、孖生兄弟同M嘢王），但係啲人如果唔喺hall就唔會俾你搵到。變咗MECH痴線佬嘅人會失去原來嘅身份。輔導員／Killer會令你Quit U。\n一定會變MECH痴線佬：Roommate、學渣、宿舍酒鬼、跟組exco、組爸媽、邊緣人、花生友、Freerider、學生會會長、Sources王、舍監、二五仔、純情小毒L、Asshole、偽．學．霸\n其他人發癲機率︰\n30% ：校長\n40% ：chief組爸、名校仔\n50% ：TA、社交大亨\n60% ：大西北難民、Petergao、學務長\n70% ：house exco、Hell雞\n75% ：USTSpace\n80% ：佛系青年\n如果你拉唔到TA發癲，佢有 50% 機會會令你Quit U。最後如果冇晒學霸同Killer，而且全科大都變晒MECH痴線佬，咁你就贏啦。</value>
+    <value>【MECH痴線佬 🕺】MECH陣營\n逢考試週：成班MECH痴線佬可以拉一個人去發癲（除咗學霸、孖生兄弟同M嘢王），但係啲人如果唔喺hall就唔會俾你搵到。變咗MECH痴線佬嘅人會失去原來嘅身份。輔導員／Killer會令你Quit U。\n一定會變MECH痴線佬：Roommate、學渣、宿舍酒鬼、跟組exco、組爸媽、邊緣人、花生友、Freerider、學生會會長、Sources王、舍監、二五仔、純情小毒L、Asshole、偽．學．霸、五毛、CHEM LAB導師\n其他人發癲機率︰\n30% ：校長\n40% ：chief組爸、名校仔\n50% ：TA、社交大亨\n60% ：大西北難民、Petergao、學務長\n70% ：house exco、Hell雞\n75% ：USTSpace\n80% ：佛系青年\n如果你拉唔到TA發癲，佢有 50% 機會會令你Quit U。最後如果冇晒學霸同Killer，而且全科大都變晒MECH痴線佬，咁你就贏啦。</value>
   </string>
   <string key="AboutCH">
     <value>【輔導員 🤗】學渣陣營\n逢考試週：去一個人嘅宿舍房間，如果佢係MECH痴線佬，你就會用愛感化佢令佢Quit U。如果MECH痴線佬嚟咗搵你，佢地其中一位成員會畀你感化而Quit U。</value>
@@ -1223,34 +1188,28 @@
   </string>
   <string key="YouJoined">
     <!-- 0 - Group Name -->
-	<!--<value>你成功入亞洲第零學府：【{0}】讀書。祝你過二爆三！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-<value>你成功入亞洲第零學府：【{0}】讀書。祝你過三爆四！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀讀Physics，等失業啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀揀晒銀時，等失業啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。恭喜你入咗晒銀時，做科學家，拎諾貝爾獎啦！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀揀N展，等失業啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀揀CS，等A0 Grad啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。恭喜你入咗N展，等做女神啦！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀揀GBUS，等做供樓神器啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。恭喜你入咗GBUS，等收後宮啦！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀讀GCS，仙風傲骨嘅你等食西北風啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀讀Maths，等做教畜啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。以為上SU莊遲啲可以做議員咁沾沾自喜呀嗱，你望下啱啱俾人DQ咗嗰六個議員……他朝君體也相同啊。（如果你做到議員嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀揀UST，等跳蘑菇啦。（如果你唔Quit U嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-	<value>你成功入【{0}】讀書。唉，做咩好揀唔揀揀UST，等斷六親啦。（如果你唔Quit U嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-	<value>你成功入【{0}】讀書。以為讀bio遲啲可以做醫生咁沾沾自喜呀嗱，你望下解剖室俾你解剖完啲屍體……他朝君體也相同啊。\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。恭喜你入咗QFin，將來做金融才子啦！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-    <value>你成功入【{0}】讀書。唉，樹大有枯枝，科大MAE，等爆肝啦。（如果你唔Quit U嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-	<value>你成功入【{0}】讀書。若要生活好，咪L做機佬！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-	<value>你成功入【{0}】讀書。恭喜你入咗科大，搵日上LSK睇星啦！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-	<value>你成功入【{0}】讀書。恭喜你入咗envir，入面有好多pure同true嘅女神（聽講係）。\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-	<value>你成功入【{0}】讀書。祝你同仔仔人月兩團圓。\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>-->
-	<value>你成功入亞洲第零學府：【{0}】讀書。祝你過三爆四！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-	<value>你成功入亞洲第零學府：【{0}】讀書。祝你龍馬精神！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-	<value>你成功入亞洲第零學府：【{0}】讀書。祝你身體健康！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-	<value>你成功入亞洲第零學府：【{0}】讀書。祝你大吉大利！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-	<value>你成功入亞洲第零學府：【{0}】讀書。祝你學業進步！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
-	<value>你成功入亞洲第零學府：【{0}】讀書。祝你今年出pool！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/10 </value>
+	<value>你成功入亞洲第零學府：【{0}】讀書。祝你過二爆三！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+<value>你成功入亞洲第零學府：【{0}】讀書。祝你過三爆四！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀讀Physics，等失業啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀揀晒銀時，等失業啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。恭喜你入咗晒銀時，做科學家，拎諾貝爾獎啦！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀揀N展，等失業啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀揀CS，等A0 Grad啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。恭喜你入咗N展，等做女神啦！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀揀GBUS，等做供樓神器啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。恭喜你入咗GBUS，等收後宮啦！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀讀GCS，仙風傲骨嘅你等食西北風啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀讀Maths，等做教畜啦。（如果你畢到業嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。以為上SU莊遲啲可以做議員咁沾沾自喜呀嗱，你望下啱啱俾人DQ咗嗰六個議員……他朝君體也相同啊。（如果你做到議員嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。唉，做咩好揀唔揀揀UST，等跳蘑菇啦。（如果你唔Quit U嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+	<value>你成功入【{0}】讀書。唉，做咩好揀唔揀揀UST，等斷六親啦。（如果你唔Quit U嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+	<value>你成功入【{0}】讀書。以為讀bio遲啲可以做醫生咁沾沾自喜呀嗱，你望下解剖室俾你解剖完啲屍體……他朝君體也相同啊。\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。恭喜你入咗QFin，將來做金融才子啦！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+    <value>你成功入【{0}】讀書。唉，樹大有枯枝，科大MAE，等爆肝啦。（如果你唔Quit U嘅話）\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+	<value>你成功入【{0}】讀書。若要生活好，咪L做機佬！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+	<value>你成功入【{0}】讀書。恭喜你入咗科大，搵日上LSK睇星啦！\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+	<value>你成功入【{0}】讀書。恭喜你入咗envir，入面有好多pure同true嘅女神（聽講係）。\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
+	<value>你成功入【{0}】讀書。祝你同仔仔人月兩團圓。\n如果大家唔清楚此版遊戲有咩嘢角色，可瀏覽：\n t.me/hkust_werewolfinfo/16 </value>
   </string>
   <string key="Ping2">
     <value>傳送Ping訊息所需時間： {0}</value>
@@ -1788,7 +1747,7 @@
   <string key="ThiefToMason">
     <!-- 0 - old mason's name -->
     <!-- 1 - new mason's name -->
-    <value>M嘢王【{0}】M咗【{1}】個張Student ID！佢依家係你嘅Roommate，就好似你咁！</value>
+    <value>M嘢王【{1}】M咗【{0}】個張Student ID！佢依家係你嘅Roommate，就好似你咁！</value>
   </string>
   <string key="ThiefTransformToMason">
     <!-- 0 - mason collegues's name -->
@@ -1797,12 +1756,12 @@
   <string key="ThiefToCult">
     <!-- 0 - old cultist's name -->
     <!-- 1 - new cultist's name -->
-    <value>M嘢王【{0}】M咗【{1}】個張Student ID！佢依家係MECH痴線佬，就好似你咁！</value>
+    <value>M嘢王【{1}】M咗【{0}】個張Student ID！佢依家係MECH痴線佬，就好似你咁！</value>
   </string>
   <string key="ThiefToWolf">
     <!-- 0 - old wolf's name -->
     <!-- 1 - new wolf's name -->
-    <value>M嘢王【{0}】M咗【{1}】個張Student ID！佢依家係學霸，就好似你咁！</value>
+    <value>M嘢王【{1}】M咗【{0}】個張Student ID！佢依家係學霸，就好似你咁！</value>
   </string>
   <string key="ThiefTransformNewTeammates">
     <!-- 0 - teammates's name -->
@@ -1898,6 +1857,221 @@
 	<value>【{1}】畀【{0}】M咗身份！【{0}】而家代替【{1}】幫冰川揸旗。</value>
 	<value>【{1}】畀【{0}】M咗身份！【{0}】而家代替【{1}】幫嶄越揸旗。</value>
 	<value>【{1}】畀【{0}】M咗身份！【{0}】而家代替【{1}】幫卓毅揸旗。</value>
+  </string>
+  
+  <!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+	<value>五毛 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>有一次機會喺FYS洗版，搞到d人頂唔順要連續投兩次票。佛系青年緊接其後使用技能的話，五毛嘅效果會被抵銷</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>你係五毛 🤯。你有一次機會喺FYS洗版，搞到d人頂唔順要連續投兩次票。佛系青年緊接其後使用技能的話，五毛嘅效果會被抵銷。</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>你今個Sem想唔想喺FYS洗版，煩死d人呢？</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>正當班莘莘學子預備緊考Midterm嘅時候，五毛【{0}】喺度洗版，搞到FYS烏煙瘴氣，人人都頂唔順想快D quit多個人。</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>由於大家群情洶湧，科大決定格外開恩，畀大家今個sem填多份evaluation form。</value>
+  </string>
+  <string key="Chemist">
+	<value>CHEM LAB導師 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>由第二次final開始，可以搵一條友喺考完試之後飲杯，雙方其中一人會飲到毒酒而死。佢毒死人之後要隔一個sem先可以再搵人飲。但如果唔好彩搵中killer，就會被對方quit U</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>你係CHEM LAB導師 👨‍🔬。由第二次final開始，你可以搵一條友喺考完試之後飲杯，雙方其中一人會飲到毒酒而死。你毒死人之後要隔一個sem先可以再搵人飲。但如果唔好彩搵中killer，就會被對方quit U</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>當班愚蠢嘅同學上晒床時，你喺房靜靜雞用緊大麻煉丹。小心唔好畀學霸或者killer斷正！</value>
+  </string>
+  <string key="AskChemist">
+	<value>你想搵邊個陪你飲杯？</value>
+  </string>
+  <string key="ChemistTargetDead">
+	<value>你去到【{0}】間房，發現佢已經quit咗U！</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>當你睡夢正酣嗰陣，突然聽到有人好大聲咁拍門。打開一睇，原來係CHEM LAB導師 👨‍🔬【{0}】！你二話不說，灌佢飲晒兩杯酒，送佢歸西。</value>
+	<value>當你睡夢正酣嗰陣，突然聽到有人好大聲咁拍門。打開一睇，原來係CHEM LAB導師 👨‍🔬【{0}】！你二話不說，直接炒咗佢魷魚。</value>
+  </string>
+  <string key="ChemistSK">
+	<value>你想搵人飲杯，點知唔好彩入咗killer【{0}】間房！Killer見到你，話：「憑你一個demonstrator，竟然斗膽摷醒我！」跟住發癲灌你飲晒兩杯酒。你當堂七孔流血，魂歸天國！</value>
+    <value>你想搵人飲杯，點知唔好彩入咗killer【{0}】間房！Killer見到你，話：「憑你一個demonstrator，竟然斗膽摷醒我！」跟住直接開電腦踢你出校。你即時變成失業人士！</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<value>【{0}】想搵人飲杯，點知唔好彩入咗killer間房！Killer見到佢，話：「憑你一個demonstrator，竟然斗膽摷醒我！」跟住發癲隊死左佢。佢仲要七孔流血，畀killer曝屍common room。惡臭通天，烏蠅滿布......。\n【CHEM LAB導師 👨‍🔬】皮已收。</value>
+	<value>【{0}】想搵人飲杯，點知唔好彩入咗killer間房！Killer見到佢，二話不說，直接炒咗佢魷魚。</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>當你睡夢正酣嗰陣，突然聽到有人好大聲咁拍門。打開一睇，原來係CHEM LAB導師 👨‍🔬！佢迫你從兩杯酒當中揀一杯嚟飲，你好唔好彩，揀中杯毒酒，就咁歸西。</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>你去到【{0}】間房，迫佢從兩杯酒當中揀一杯嚟飲，佢好唔好彩，揀中杯毒酒，就咁歸西。</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+	<value>CHEM LAB導師 👨‍🔬去到【{0}】間房，迫佢從兩杯酒當中揀一杯嚟飲，佢好唔好彩，揀中杯毒酒，就咁歸西。【{1}】</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>當你睡夢正酣嗰陣，突然聽到有人好大聲咁拍門。打開一睇，原來係CHEM LAB導師 👨‍🔬【{0}】！佢迫你從兩杯酒當中揀一杯嚟飲，你好好彩，揀中杯正常酒。佢飲完另一杯酒之後就一睡不起。</value>
+  </string>
+  <string key="ChemistFail">
+	<value>你去到【{0}】間房，迫佢從兩杯酒當中揀一杯嚟飲，佢好好彩，揀中杯正常酒。你飲完另一杯酒之後就一睡不起。</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>Common room傳出惡臭，開門一睇，原來CHEM LAB導師 👨‍🔬【{0}】曝屍於此！經過初步驗屍，發現佢體內有多種毒藥......</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>你去到【{0}】間房，發現佢間房冇人！</value>
+  </string>
+  <string key="CultistsList">
+	<value>MECH痴線佬名單：【{0}】</value>
+  </string>
+  <string key="SnowWolf">
+	<value>講座教授 👨🏻‍🏫☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>你係講座教授 👨🏻‍🏫☃️。因賞識學霸而決定同佢哋組隊做學霸。特別功能為禁止一玩家喺該sem使用final技能。如為唯一未quit U學霸則與普通學霸無異</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>講座教授 👨🏻‍🏫☃️因賞識學霸而決定同佢哋組隊做學霸。特別功能為禁止一玩家喺該sem使用final技能。如為唯一未quit U學霸則與普通學霸無異</value>
+  </string>
+  <string key="AskFreeze">
+	<value>你想禁止邊個使用final技能？</value>
+  </string>
+  <string key="WolfPackList">
+    <value>你嘅學霸朋友：【{0}】</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>你嘅學霸朋友：【{0}】同講座教授 👨🏻‍🏫☃️【{1}】</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>【{0}】已Quit U，你攞咗佢張Student ID做PSP，你班學霸同伴係（如有）：【{1}】\n幫你蹂躪學渣嘅講座教授 👨🏻‍🏫☃️【{2}】</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>【{0}】已Quit U，你攞咗佢張Student ID做女神，你班學霸同伴係（如有）：【{1}】\n幫你蹂躪學渣嘅講座教授 👨🏻‍🏫☃️【{2}】</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>【{0}】已Quit U，你攞咗佢張Student ID做學霸，你班學霸同伴係（如有）：【{1}】\n幫你蹂躪學渣嘅講座教授 👨🏻‍🏫☃️【{2}】</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>【{0}】已Quit U，你攞咗佢張Student ID做偽．學．渣，你班學霸同伴係（如有）：【{1}】\n幫你蹂躪學渣嘅講座教授 👨🏻‍🏫☃️【{2}】</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>【{0}】已Quit U，你攞咗佢張Student ID做講座教授，你班學霸同伴係（如有）：【{1}】</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>孖生兄弟【{0}】攞咗佢兄弟張Student ID，佢依家係講座教授，幫你蹂躪學渣！</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>【{0}】已遠走高飛！生無可戀的你專心讀書變咗做學霸，你班學霸朋友係：【{1}】\n幫你蹂躪學渣嘅講座教授 👨🏻‍🏫☃️【{2}】</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>M嘢王【{1}】M咗【{0}】個張Student ID！佢依家係講座教授，幫你蹂躪學渣！</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>你想到處尋歡，點知講座教授突然叫保安封鎖你間房，唔畀你出入！</value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>你想搵人飲杯，點知講座教授突然叫保安封鎖你間房，唔畀你出入！</value>
+  </string>
+  <string key="CultistFrozen">
+    <value>你想搵人一齊發癲，點知講座教授突然叫保安封鎖你間房，唔畀你出入！</value>
+  </string>
+  <string key="CHFrozen">
+    <value>你想出去感化同學，點知講座教授突然叫保安封鎖你間房，唔畀你出入！</value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>你想出common同人吹水，點知講座教授突然叫保安封鎖你間房，唔畀你出入！</value>
+  </string>
+  <string key="GAFrozen">
+    <value>你想去畀人Source，點知講座教授突然叫保安封鎖你間房，唔畀你出入！</value>
+  </string>
+  <string key="SKFrozen">
+    <value>你想踢人出校，點知講座教授突然叫保安沒收你部電腦，唔畀你kill人！</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>你想去M身份，點知講座教授突然叫保安封鎖你間房，唔畀你出入！</value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>有一晚你想去廁所，點知講座教授突然叫保安封鎖你間房，唔畀你出入！</value>
+	<value>有一晚你想去拉把溫書，點知講座教授突然叫保安封鎖你間房，唔畀你出入！</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>當你帶保安想去封鎖【{0}】間房嘅時候，發現佢房門貼滿Petergao d咒語！你當堂拜倒門前，決定收隊。</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>你成功封鎖【{0}】間房！佢今個sem將無法使用final技能。</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>你成功沒收killer【{0}】部電腦，但佢喺最後一刻成功用電腦quit你U！</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>由於你班學霸朋友quit晒U，所以你要親自出馬去擾敵！</value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>當你帶保安想去封鎖【{0}】間房嘅時候，發現佢原來係舍監親信嘅TA！佢即刻命令保安離開，並同舍監及校方報串，quit你U。</value>
+  </string>
+    <string key="Lang">
+    <value>變更語言</value>
+  </string>
+  <string key="Mode">
+    <value>變更遊戲模式</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>變更每場人數上限</value>
+  </string>
+  <string key="EndRoles">
+    <value>遊戲結束時公開玩家Student ID（身份）</value>
+  </string>
+  <string key="MaxExtend">
+    <value>設定每次用 /extend 更改加入時間既秒數</value>
+  </string>
+  <string key="DayTimer">
+    <value>設定一個Sem嘅基本時間</value>
+  </string>
+  <string key="NightTimer">
+    <value>設定Final Period嘅基本時間</value>
+  </string>
+  <string key="LynchTimer">
+    <value>設定收Evaluation Form嘅時間</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Student ID（身份）設定</value>
+  </string>
+  <string key="Mechanics">
+	<value>遊戲機制</value>
+  </string>
+  <string key="GroupSettings">
+	<value>群組設定</value>
+  </string>
+  <string key="Timers">
+	<value>遊戲計時器</value>
+  </string>
+  <string key="Done">
+	<value>完成！</value>
+  </string>
+  <string key="Back">
+	<value>返回</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>撈亂清水灣人名單</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>每個sem撈亂清水灣人名單？\n當前設定︰{0} 。</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>已 {0} 每個sem撈亂清水灣人名單。</value>
   </string>
 </strings>
 
