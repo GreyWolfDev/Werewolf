@@ -2546,7 +2546,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     }
                     return VisitResult.VisitorDied;
                 }
-                else return VisitResult.Success;
+                else return VisitResult.Fail;
             }
             // An arsonist also usually doesn't care whether harlot or GA are home
             if (visitor.PlayerRole == IRole.Arsonist) return VisitResult.Success;
@@ -3119,7 +3119,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         List<IPlayer> oldTeamMembers = p.PlayerRole == IRole.Cultist
                             ? Players.Where(x => x.PlayerRole == IRole.Cultist && !x.IsDead && x.Id != p.Id).ToList()
                             : Players.Where(x => x.PlayerRole == IRole.Mason && !x.IsDead && x.Id != p.Id).ToList();
-                        Transform(p, IRole.Wolf, TransformationMethod.AlphaBitten, oldTeamMates: Players.Where(x => x.PlayerRole == IRole.Mason & !x.IsDead && x.Id != p.Id),
+                        Transform(p, IRole.Wolf, TransformationMethod.AlphaBitten, oldTeamMates: oldTeamMembers,
                             newTeamMembers: Players.Where(x => !x.IsDead && (WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf)));
                     }
                 }
@@ -3992,6 +3992,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             case IRole.GraveDigger:
                                 Send(GetLocaleString("HarlotVisitDigger", target.GetName()), harlot.Id);
                                 break;
+                            default:
+                                Send(GetLocaleString("HarlotVisitNotHome", target.GetName()), harlot.Id);
+                                break;
                         }
                         break;
                 }
@@ -4520,9 +4523,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         {
             int cultists = 0;
             // check for alive cultists
-            cultists += Players.Count(x => x.PlayerRole == IRole.Cultist);
+            cultists += Players.Count(x => x.PlayerRole == IRole.Cultist && !x.IsDead);
             // check for dg about to transform
-            cultists += Players.Count(x => x.PlayerRole == IRole.Doppelgänger && Players.FirstOrDefault(rm => rm.Id == x.RoleModel && rm.IsDead)?.PlayerRole == IRole.Cultist);
+            cultists += Players.Count(x => x.PlayerRole == IRole.Doppelgänger && !x.IsDead && Players.FirstOrDefault(rm => rm.Id == x.RoleModel && rm.IsDead)?.PlayerRole == IRole.Cultist);
             // return the sum
             return cultists;
         }
