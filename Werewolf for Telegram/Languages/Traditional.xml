@@ -57,15 +57,15 @@
   </string>
   <string key="PlayerStartedGame">
     <!-- 0 - Player name -->
-    <value>{0} 已經啟動了一場遊戲! 按下 [加入遊戲] 按鈕 來參加這場獵殺盛宴...不排除有忽然死亡的可能😜\n ℹ️提示：點擊按鈕後請向機器人發送 /setlang 設置語言（選擇“正體中文”-SFW）</value>
-    <value>{0} 已經啟動了一場遊戲! 按下 [加入遊戲] 按鈕 來參加這場智力測驗...不排除有暴民出現的可能😜\n ℹ️提示：點擊按鈕後請向機器人發送 /setlang 設置語言（選擇“正體中文”-SFW）</value>
-    <value>{0} 已開始一場新遊戲! 按下 [加入遊戲] 按鈕 來被吃掉吧!\n ℹ️提示：點擊按鈕後請向機器人發送 /setlang 設置語言（選擇“正體中文”-SFW）</value>
+    <value>{0} 已經啟動了一場遊戲! 按下 [加入遊戲] 按鈕 來參加這場獵殺盛宴...不排除有忽然死亡的可能😜\n ℹ️提示：點擊按鈕後請向機器人發送 /setlang 設置語言（選擇“正體中文”-“正體中文”）</value>
+    <value>{0} 已經啟動了一場遊戲! 按下 [加入遊戲] 按鈕 來參加這場智力測驗...不排除有暴民出現的可能😜\n ℹ️提示：點擊按鈕後請向機器人發送 /setlang 設置語言（選擇“正體中文”-“正體中文”）</value>
+    <value>{0} 已開始一場新遊戲! 按下 [加入遊戲] 按鈕 來被吃掉吧!\n ℹ️提示：點擊按鈕後請向機器人發送 /setlang 設置語言（選擇“正體中文”-“正體中文”）</value>
   </string>
   <string key="PlayerStartedChaosGame">
     <!-- 0 - Player name -->
-    <value>{0} 已經啟動了混亂模式! 按下 [加入遊戲] 按鈕 來成為暴民... 或許混亂比起秩序更適合現實😜\n ℹ️提示：點擊按鈕後請向機器人發送 /setlang 設置語言（選擇“正體中文”-SFW）</value>
-    <value>{0} 已經啟動了混亂模式! 按下 [加入遊戲] 按鈕 來成為殺人魔... 或許你有殺手的天賦喔!\n ℹ️提示：點擊按鈕後請向機器人發送 /setlang 設置語言（選擇“正體中文”-SFW）</value>
-    <value>在 {0} 的帶領下, 混亂模式正式啟動! 按下 [加入遊戲] 按鈕, 恐慌將會全面進場!\n ℹ️提示：點擊按鈕後請向機器人發送 /setlang 設置語言（選擇“正體中文”-SFW）</value>
+    <value>{0} 已經啟動了混亂模式! 按下 [加入遊戲] 按鈕 來成為暴民... 或許混亂比起秩序更適合現實😜\n ℹ️提示：點擊按鈕後請向機器人發送 /setlang 設置語言（選擇“正體中文”-“正體中文”）</value>
+    <value>{0} 已經啟動了混亂模式! 按下 [加入遊戲] 按鈕 來成為殺人魔... 或許你有殺手的天賦喔!\n ℹ️提示：點擊按鈕後請向機器人發送 /setlang 設置語言（選擇“正體中文”-“正體中文”）</value>
+    <value>在 {0} 的帶領下, 混亂模式正式啟動! 按下 [加入遊戲] 按鈕, 恐慌將會全面進場!\n ℹ️提示：點擊按鈕後請向機器人發送 /setlang 設置語言（選擇“正體中文”-“正體中文”）</value>
   </string>
   <string key="NoJoinGameRunning">
     <value>不能加入已經開始的遊戲! 使用 /nextgame 指令來接收下一局開始的通知吧?</value>
@@ -958,7 +958,7 @@
     <value>皮匠是目標很簡單「想辦法被村民處死」, 如果你被村民給處死你就成了唯一贏家, 其他所有人都輸.</value>
   </string>
   <string key="AboutFool">
-    <value>傻瓜一開始會以為自己是先知, 當看著水晶球, 水晶球會隨機告知這個玩家是任何一個可能的腳色, 而你還相信你真的是先知, 因為你就是個傻瓜.</value>
+    <value>傻瓜一開始會以為自己是先知, 當看著水晶球, 水晶球會隨機告知這個玩家是任何一個可能的腳色（但該腳色在該局存在！）, 而你還相信你真的是先知, 因為你就是個傻瓜.</value>
   </string>
   <string key="AboutCult">
     <value>身為一個邪教崇拜者, 你的目標是把除了狼人以外的玩家都轉為邪教分子, 如果最後所有活著的玩家都是邪教徒, 那你就贏了.\nPS. 小心! 不是所有的狼人以外的腳色你都能轉換的喔.</value>
@@ -1016,7 +1016,7 @@
     <value>我已經將資訊私訊給你了.</value>
   </string>
   <string key="StartPM">
-    <value>請先對我 @werewolfbot 發送一則私訊, 我才能私訊你\nPS. Telegram系統規定Bot(機器人)不得主動私訊給使用者, 除非使用者曾經私訊過給Bot. </value>
+    <value>請先對我 @werewolfbot 發送一則私訊, 我才能私訊你\nPS： Telegram系統規定Bot(機器人)不得主動私訊給使用者, 除非使用者曾經私訊過給Bot. </value>
   </string>
   <string key="PMTrue">
     <value>感謝你, 啟動程序( /Start )已經完成, 現在起我可以私訊給你了.</value>
@@ -1213,7 +1213,7 @@
     <value>你是村長, 一村之長. 一旦你公開了你的身份, 你的一票將被視為兩票. 你是屬於村民陣營, 無庸置疑!</value>
   </string>
   <string key="RoleInfoPrince">
-    <value>你是秘密逃出皇室枯調生活的王子, 享受鄉野間放蕩不羈的生活. 當村民投票處決你時, 他們會發現錯了, 當天的處決也會因此取消. 沒有人會被處死.</value>
+    <value>你是秘密逃出皇室枯調生活的王子, 享受鄉野間放蕩不羈的生活. 當村民公投你時, 他們會發現錯了, 當天的處決也會因此取消. 沒有人會被處死.</value>
   </string>
   <string key="RoleInfoClumsyGuy">
     <value>你是個蠢蛋, 你的眼睛該死的啥都看不清了, 無論你如何試著好好投票, 你總有一半的機率投錯人, 而非心中所想的那人. 不過你依然是屬於村民陣營.</value>
@@ -1707,27 +1707,27 @@
     <value>♯全部</value>
   </string>
   <string key="RandomModeQ">
-    <value>開啟隨機模式?\n隨機模式開啟後，每次 混亂模式，秘密投票處決，顯示玩家死亡，允許邪教，允許傻瓜，允許皮匠，將會隨機開啟或關閉。 \n現在:{0}</value>
+    <value>開啟隨機模式?\n隨機模式開啟後，每次 混亂模式，秘密公投，顯示玩家死亡，允許邪教，允許傻瓜，允許皮匠，將會隨機開啟或關閉。 \n現在:{0}</value>
   </string>
   <string key="RandomModeA">
     <value>隨機模式的設置(set to): {0}</value>
   </string>
   <string key="EnableSecretLynchQ">
-    <value>開啟秘密投票處決?\n現在: {0}</value>
+    <value>開啟秘密公投?\n現在: {0}</value>
   </string>
   <string key="EnableSecretLynchA">
-    <value>秘密投票處決設置(set to): {0}</value>
+    <value>秘密公投設置(set to): {0}</value>
   </string>
 
 
 <string key="AllowNSFW">
-    <value>允許 NSFW Gif</value>
+    <value>允許 18禁 Gif</value>
   </string>
   <string key="AllowNSFWQ">
-    <value>允許NSFW gif ?\n現在: {0}</value>
+    <value>允許 18禁 gif ?\n現在: {0}</value>
   </string>
   <string key="AllowNSFWA">
-    <value>{0} NSFW Gifs</value>
+    <value>{0} 18禁 Gifs</value>
   </string>
   
     <string key="RandomMode">
@@ -1752,7 +1752,7 @@
     <value>{0} IDs</value>
   </string>
 <string key="AskPacifist">
-    <value>點擊這裡，開始你的關於和平與愛的演講，以停止投票處決</value>
+    <value>點擊這裡，開始你的關於和平與愛的演講，以停止公投</value>
   </string>
   <string key="PacifistNoLynch">
   <!-- {0} - Pacifist's name -->
@@ -1846,7 +1846,7 @@
     <value>{0} 票投給 {1}.</value>
   </string>
   <string key="SecretLynchShowVotes">
-    <value>秘密投票處決</value>
+    <value>秘密公投</value>
   </string>
   <string key="SecretLynchShowVotesQ">
     <value>秘密處決允許時, 展示最終投票計數?\n 現在: {0}</value>
@@ -1902,7 +1902,7 @@
   </string>
   <string key="ThiefStoleKiller">
     <!-- used when Thief steals SK -->
-    <value>職業小偷{0}嘗試偷取 🔪殺人魔 的能力。 \n 📣新聞：震驚！路上惊現無頭死屍...</value>
+    <value>職業小偷{0}嘗試偷取 🔪殺人魔 的能力。 \n 📰新聞：震驚！路上惊現無頭死屍...</value>
   </string>
   <string key="BeholderSeerStolen">
 <value>職業小偷偷取了👳先知的能力！現在{0} 是👳先知，{1} 不再是👳先知了。 </value>
@@ -1926,10 +1926,10 @@
 <value>要去小鎮裡鬧事嗎？ </value>
   </string>
   <string key="TroublemakerDoubleLynch">
-<value>搗亂者🤯{0},開始在鎮上鬧事...因此今天將投票處決兩次！ </value>
+<value>搗亂者🤯{0},開始在鎮上鬧事...因此今天將公投兩次！ </value>
   </string>
   <string key="TroubleDoubleLynchNow">
-<value>由於搗亂者🤯開始在鎮上鬧事，我們將投票處決兩次。希望有用。 </value>
+<value>由於搗亂者🤯剛才在鎮上鬧事，我們現在將公投兩次。希望有用。 </value>
   </string>
   
   <string key="Chemist">
@@ -2095,7 +2095,7 @@
         <value>設置夜晚(時間)長度</value>
     </string>
     <string key="LynchTimer">
-        <value>設置投票處決(時間)長度</value>
+        <value>設置公投(時間)長度</value>
     </string>
     <string key="RoleConfig">
 <value>角色設置</value>
@@ -2126,10 +2126,14 @@
     </string>  
     
 <string key="AboutGraveDigger">
-<value>掘墓人☠️：1.每天晚上，你為上次死去的所有人挖掘墳墓，因此你整晚都在外面，狼和邪教會等找不到你;2.除非那天沒有人死亡,在這種情況下你只會待在家裡，狼人和邪教會等可以找到你。 ;3.每個訪問你的人都有可能掉進你新挖的墳墓裡，這取決於你挖了多少墳墓. 4.此外，每個對你有好意的人(如守護天使)掉進你挖的墓穴的機會將減半;5. 但是因為你晚上外出，🐺狼人或🔪殺人魔可能會在墓地發現並殺死你，且你挖掘的墓穴越多，就越有可能被發現。 ;6.此外，連環殺手可以知道你是否在家，但他可能至少在你的一個墳穴中絆倒並負傷，導致他可能在第二天晚上失去殺人對象的決定權...</value>
+<value>
+你是☠️掘墓人：\n1.每天晚上，你為上次死去的所有人挖掘墳墓，因此你整晚都在外面，狼和邪教會等找不到你;2.除非那天沒有人死亡 ,在這種情況下你只會待在家裡，狼人和邪教會等可以找到你;\n3.每個訪問你的人都有可能掉進你新挖的墳墓裡，這取決於你挖了多少墳墓. 4.此外，守護天使，妓女，邪教獵人 掉進你挖的坑的機會將減半;\n5. 但是因為你晚上外出，🐺狼人或🔪殺人魔可能會在墓地發現並殺死你，且你挖掘的坑墳墓越多，就越有可能被發現。;6.此外，殺人魔無論你在不在家都可以找到你，但他會在你的一個墳墓中絆倒並負傷，導致他有一半機率在第二天晚上失去殺人對象的決定權... 
+</value>
   </string>
   <string key="RoleInfoGraveDigger">
-<value>你是掘墓人☠️：1.每天晚上，你為上次死去的所有人挖掘墳墓，因此你整晚都在外面，狼和邪教會等找不到你;2.除非那天沒有人死亡,在這種情況下你只會待在家裡，狼人和邪教會等可以找到你。 ;3.每個訪問你的人都有可能掉進你新挖的墳墓裡，這取決於你挖了多少墳墓. 4.此外，每個對你有好意的人(如守護天使)掉進你挖的墓穴的機會將減半;5. 但是因為你晚上外出，🐺狼人或🔪殺人魔可能會在墓地發現並殺死你，且你挖掘的墳墓越多，就越有可能被發現。 ;6.此外，連環殺手可以知道你是否在家，但他可能至少在你的一個墳墓中絆倒並負傷，導致他可能在第二天晚上失去殺人對象的決定權... \n </value >
+<value>
+你是☠️掘墓人：\n1.每天晚上，你為上次死去的所有人挖掘墳墓，因此你整晚都在外面，狼和邪教會等找不到你;2.除非那天沒有人死亡 ,在這種情況下你只會待在家裡，狼人和邪教會等可以找到你;\n3.每個訪問你的人都有可能掉進你新挖的墳墓裡，這取決於你挖了多少墳墓. 4.此外，守護天使，妓女，邪教獵人 掉進你挖的坑的機會將減半;\n5. 但是因為你晚上外出，🐺狼人或🔪殺人魔可能會在墓地發現並殺死你，且你挖掘的坑墳墓越多，就越有可能被發現。;6.此外，殺人魔無論你在不在家都可以找到你，但他會在你的一個墳墓中絆倒並負傷，導致他有一半機率在第二天晚上失去殺人對象的決定權... 
+</value>
   </string>
   <string key="GraveDigger">
 <value>掘墓人☠️</value>
@@ -2331,7 +2335,7 @@
   </string>
   <!--{0}: list of people who died in the flames-->
   <string key="Burning">
-<value>📣新聞：近日，本縣縱火狂猖獗。今日，本村村民{0}的房子昨晚被人惡意縱火，可惜，雖然在本地消防隊的大力撲救、營救下，仍然無法控制火勢，以至...\n{0}的追悼會將在明天舉行...</value>
+<value>📰新聞：近日，本縣縱火狂猖獗。今日，本村村民{0}的房子昨晚被人惡意縱火，可惜，雖然在本地消防隊的大力撲救、營救下，仍然無法控制火勢，以至...\n{0}的追悼會將在明天舉行...</value>
   </string>
   <string key="ArsonistWins">
 <value>最後，除了縱火犯的家，村子裡只剩一片火海。縱火犯勝利...</value>
@@ -2363,11 +2367,11 @@
   </string>
   <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
   <string key="DefaultVisitBurn">
-<value>📣新聞：..{0}今晚應該好好呆在家... 但他（們）昨夜拜訪了他人住所時，屋內突然失火...經警方確認：{1}。</value>
+<value>📰新聞：..{0}今晚應該好好呆在家... 但他（們）昨夜拜訪了他人住所時，屋內突然失火...經警方確認：{1}。</value>
   </string>
   <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
   <string key="WolfVisitBurn">
-<value>🐺狼人昨晚嘗試襲擊某人，但縱火犯搶先一步了！ 📣新聞：震驚！昨夜某村民家中失火，發現屋中內有一名死屍，經辨認，屍體為{0}。而且 {1}！ </value>
+<value>🐺狼人昨晚嘗試襲擊某人，但縱火犯搶先一步了！ 📰新聞：震驚！昨夜某村民家中失火，發現屋中內有一名死屍，經辨認，屍體為{0}。而且 {1}！ </value>
   </string>
     <string key="ChemistKillWiseElder">
 <value>瘋狂化學家襲擊了老賢者 ，但很快就後悔了，因此放棄了他的身份，成為了一位普通村民!</value>
@@ -2377,5 +2381,8 @@
   </string>
   <string key="ArsonistTeamEnd">
     <value>縱火犯隊伍</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+	<value>你去拜訪了{0}的家，可是房子裡空無一人，他去哪了？</value>
   </string>
 </strings>
