@@ -64,26 +64,45 @@ namespace ClearUpdates
 
         private static void Api_OnCallbackQuery(object sender, Telegram.Bot.Args.CallbackQueryEventArgs e)
         {
-            if (!Devs.Contains(e.CallbackQuery.From.Id))
-                return;
-            var q = e.CallbackQuery;
-            if (q.Data == "close")
+            try
             {
-                Api.DeleteMessageAsync(DevGroup, q.Message.MessageId);
-                return;
+                if (!Devs.Contains(e.CallbackQuery.From.Id))
+                    return;
+                var q = e.CallbackQuery;
+                if (q.Data == "close")
+                {
+                    Api.DeleteMessageAsync(DevGroup, q.Message.MessageId);
+                    return;
+                }
+                var id = int.Parse(q.Data);
+                if (!Commands.TryGetValue(id, out var t))
+                {
+                    Api.AnswerCallbackQueryAsync(q.Id, "Sorry, this flood isn't in my memory anymore! :(", true).Wait();
+                    return;
+                }
+                var user = t[0].From;
+                var startTime = t[0].Date;
+                var endTime = t[t.Count - 1].Date;
+                var ticks = (endTime - startTime).Ticks;
+                ticks /= t.Count;
+                var avg = new TimeSpan(ticks);
+                var msg = ($"User @{user.Username} ({user.Id}): {t.Count} - Average time between commands: {avg}\n");
+                msg = t.Aggregate(msg, (a, b) => a + $"{b.Text}: {b.Date}\n");
+                Api.SendTextMessageAsync(DevGroup, msg);
+                Api.AnswerCallbackQueryAsync(q.Id);
             }
-            var id = int.Parse(q.Data);
-            var t = Commands[id];
-            var user = t[0].From;
-            var startTime = t[0].Date;
-            var endTime = t[t.Count - 1].Date;
-            var ticks = (endTime - startTime).Ticks;
-            ticks /= t.Count;
-            var avg = new TimeSpan(ticks);
-            var msg = ($"User @{user.Username} ({user.Id}): {t.Count} - Average time between commands: {avg}\n");
-            msg = t.Aggregate(msg, (a, b) => a + $"{b.Text}: {b.Date}\n");
-            Api.SendTextMessageAsync(DevGroup, msg);
-            Api.AnswerCallbackQueryAsync(q.Id);
+            catch (Exception exc)
+            {
+                var trace = exc.StackTrace;
+                var error = "";
+                do
+                {
+                    error += exc.Message + "\n\n";
+                    exc = exc.InnerException;
+                }
+                while (exc != null);
+                Api.SendTextMessageAsync(DevGroup, error + trace).Wait();
+            }
         }
 
         private static void Api_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
@@ -219,7 +238,22 @@ namespace ClearUpdates
             }
             using (var fs = new FileStream("log.log", FileMode.Open))
             {
-                Api.SendDocumentAsync(DevGroup, new InputOnlineFile(fs, "Spam Log.txt"));
+                try
+                {
+                    Api.SendDocumentAsync(DevGroup, new InputOnlineFile(fs, "Spam Log.txt")).Wait();
+                }
+                catch (Exception exc)
+                {
+                    var trace = exc.StackTrace;
+                    var error = "";
+                    do
+                    {
+                        error += exc.Message + "\n\n";
+                        exc = exc.InnerException;
+                    }
+                    while (exc != null);
+                    Api.SendTextMessageAsync(DevGroup, error + trace).Wait();
+                }
             }
         }
     }

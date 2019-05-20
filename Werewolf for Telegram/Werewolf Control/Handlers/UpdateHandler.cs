@@ -778,7 +778,6 @@ namespace Werewolf_Control.Handler
             new Task(() => { HandleCallback(e.CallbackQuery); }).Start();
         }
 
-
         internal static void HandleCallback(CallbackQuery query)
         {
             Bot.MessagesProcessed++;
