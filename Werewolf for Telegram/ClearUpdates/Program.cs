@@ -235,24 +235,25 @@ namespace ClearUpdates
             {
                 menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Close", "close"));
                 Api.SendTextMessageAsync(DevGroup, "Here is the report:", replyMarkup: menu.CreateMarkupFromMenu());
-            }
-            using (var fs = new FileStream("log.log", FileMode.Open))
-            {
-                try
+
+                using (var fs = new FileStream("log.log", FileMode.Open))
                 {
-                    Api.SendDocumentAsync(DevGroup, new InputOnlineFile(fs, "Spam Log.txt")).Wait();
-                }
-                catch (Exception exc)
-                {
-                    var trace = exc.StackTrace;
-                    var error = "";
-                    do
+                    try
                     {
-                        error += exc.Message + "\n\n";
-                        exc = exc.InnerException;
+                        Api.SendDocumentAsync(DevGroup, new InputOnlineFile(fs, "Spam Log.txt")).Wait();
                     }
-                    while (exc != null);
-                    Api.SendTextMessageAsync(DevGroup, error + trace).Wait();
+                    catch (Exception exc)
+                    {
+                        var trace = exc.StackTrace;
+                        var error = "";
+                        do
+                        {
+                            error += exc.Message + "\n\n";
+                            exc = exc.InnerException;
+                        }
+                        while (exc != null);
+                        Api.SendTextMessageAsync(DevGroup, error + trace).Wait();
+                    }
                 }
             }
         }
