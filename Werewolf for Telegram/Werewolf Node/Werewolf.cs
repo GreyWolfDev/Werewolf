@@ -3076,7 +3076,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     Send(GetLocaleString("DetectiveSnoop", check.GetName(), GetDescription(check.PlayerRole)), detect.Id);
 
                     //if snooped non-bad-roles:
-                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan, IRole.Cultist, IRole.SerialKiller, IRole.SnowWolf }.Contains(check.PlayerRole))
+                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan, IRole.Cultist, IRole.SerialKiller, IRole.SnowWolf, IRole.Arsonist }.Contains(check.PlayerRole))
                         detect.CorrectSnooped.Clear();     //clear correct snoop list
                     else
                     {
