@@ -107,7 +107,7 @@ namespace ClearUpdates
 
         private static void Api_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
-            if (e == null || e.Message == null) return;
+            if (e == null || e.Message == null || string.IsNullOrEmpty(e.Message.Text)) return;
 
             var m = e.Message;
             if (m.From == null)
