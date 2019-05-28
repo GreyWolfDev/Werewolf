@@ -107,8 +107,23 @@ namespace ClearUpdates
 
         private static void Api_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
-            var m = e.Message;
+            if (e == null || e.Message == null) return;
 
+            var m = e.Message;
+            if (m.From == null)
+            {
+                Console.WriteLine("MESSAGE UPDATE WITH EMPTY SENDER!");
+                using (var sw = new StreamWriter("empty_message_sender.log", true))
+                {
+                    sw.WriteLine("--------------------------------------------------");
+                    sw.WriteLine($"Message update with empty sender! At {DateTime.UtcNow} UTC");
+                    sw.Write(Newtonsoft.Json.JsonConvert.SerializeObject(m, Newtonsoft.Json.Formatting.Indented));
+                    sw.WriteLine();
+                    sw.WriteLine();
+                }
+                Api.SendTextMessageAsync(DevGroup, "Message update with empty sender recieved! Check the server log for more information!");
+                return;
+            }
             if (Devs.Contains(m.From.Id))
             {
                 Console.WriteLine($"{m.MessageId} - {m.From.FirstName}: {m.Text}");
