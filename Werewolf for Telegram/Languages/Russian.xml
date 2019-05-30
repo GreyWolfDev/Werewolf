@@ -967,6 +967,9 @@
   <string key="AllowFleeA">
     <value>Нынешний статус настройки: {0}.</value>
   </string>
+  <string key="MaxPlayer">
+    <value>Задать максимум игроков</value>
+  </string>
   <string key="MaxPlayersQ">
     <value>Какой максимум игроков ты хочешь выставить?\nВ данный момент в твоей группе выставлен максимум в {0} игроков.</value>
   </string>
@@ -979,11 +982,17 @@
   <string key="ShowRolesDeathA">
     <value>Нынешний статус настройки: {0}.</value>
   </string>
+  <string key="Mode">
+    <value>Сменить режим</value>
+  </string>
   <string key="GameModeQ">
     <value>Какой режим игры хочешь ты использовать для своей группы?\nВ данный момент выбрана настройка «{0}».</value>
   </string>
   <string key="GameModeA">
     <value>Выбрана настройка «{0}».</value>
+  </string>
+  <string key="EndRoles">
+    <value>Показывать роли после игры</value>
   </string>
   <string key="ShowRolesEndQ">
     <value>Как ты хочешь показывать роли игроков в конце игры?\nВ данный момент выбрана настройка «{0}»</value>
@@ -991,11 +1000,20 @@
   <string key="ShowRolesEndA">
     <value>Выбрана настройка «{0}».</value>
   </string>
+  <string key="Timers">
+    <value>Таймеры игры</value>
+  </string>
+  <string key="DayTimer">
+    <value>Дневной</value>
+  </string>
   <string key="SetDayTimeQ">
     <value>Выбери основную длительность дня (в секундах). Она всё ещё может модифицироваться, основываясь на количестве игроков.\nМинимальная длительность, основывающаяся на игроках, — 60 секунд. Настройка по умолчанию: {0}\nНастройка, выбранная на данный момент: {1}.</value>
   </string>
   <string key="SetDayTimeA">
     <value>Основная длительность дня ({0}) выставлена.</value>
+  </string>
+  <string key="NightTimer">
+    <value>Ночной</value>
   </string>
   <string key="SetNightTimeQ">
     <value>Выбери длительность ночи (в секундах). Настройка по умолчанию: {0}\nНастройка, выбранная в данный момент: {1}.</value>
@@ -1003,11 +1021,17 @@
   <string key="SetNightTimeA">
     <value>Длительность ночи ({0}) выставлена.</value>
   </string>
+  <string key="LynchTimer">
+    <value>Голосование</value>
+  </string>
   <string key="SetLynchTimeQ">
     <value>Выбери длительность голосования на казнь (в секундах). Настройка по умолчанию: {0}\nНастройка, выбранная на данный момент: {1}.</value>
   </string>
   <string key="SetLynchTimeA">
     <value>Длительность голосования на казнь ({0}) выставлена.</value>
+  </string>
+  <string key="RoleConfig">
+    <value>Настройки ролей</value>
   </string>
   <string key="AllowFoolQ">
     <value>Разрешить роль «Дурак» в игре?\nСтатус настройки: {0}.</value>
@@ -1026,6 +1050,24 @@
   </string>
   <string key="AllowCultA">
     <value>Нынешний статус настройки: {0}.</value>
+  </string>
+  <string key="Mechanics">
+    <value>Механика игры</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Перемешать игроков</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Перемешивать список игроков каждый раз? Текущее: {0}.</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>Список игроков будет перемешиваться каждый раз: {0}.</value>
+  </string>
+  <string key="Back">
+    <value>Назад</value>
+  </string>
+  <string key="Done">
+    <value>Готово!</value>
   </string>
   <string key="ThankYou">
     <value>Спасибо огромное тебе, хорошего дня и игр. :)</value>
@@ -1273,6 +1315,9 @@
   <string key="AllowExtendA">
 <!--{0} = "Allow" / "Disallow" string-->
     <value>Игрокам {0} увеличивать время.</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Ограничить продление</value>
   </string>
   <string key="MaxExtendQ">
     <value>На сколько максимально можно увеличивать время ожидания командой /extend.\nПо умолчанию: {0}\nТекущее:{1}.</value>
@@ -1576,6 +1621,40 @@
   </string>
   <string key="AskThief">
     <value>У кого будем красть роль?</value>
+  </string>
+
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} голос(ов) против {1}: {2}.</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Итоги на сегодня:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} голос(ов) против {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Голоса (тайное)</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Если включено тайное голосование, показывать количество голосов в конце дня?\nТекущее: {0}.</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>{0} количество голосов на тайном голосовании.</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Голосующие (тайное)</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Если включено тайное голосование и показываются голоса, показывать в конце дня, кто конкретно проголосовал?\nТекущее: {0}.</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>{0} имена проголосовавших на тайном голосовании.</value>
   </string>
   <string key="RoleInfoThiefFull">
     <value>Вор каждую ночь с вероятностью 50% меняется ролью с игроком.</value>
@@ -1985,7 +2064,7 @@
   </string>
     <!--{0}: list of people who died in the flames-->
   <string key="Burning">
-    <value>Пожар! Ночью сгрело несколько домов! А вот этих людей с нами больше нет:\n{0}.</value>
+    <value>Пожар! Ночью сгрело несколько домов! А вот этих людей с нами больше нет:\n{0}</value>
   </string>
   <string key="ArsonistWins">
     <value>Кероси-и-инчик! Поджигатель выиграл! Теперь он может призвать Рагнароса.</value>
@@ -2032,5 +2111,8 @@
   </string>
   <string key="ArsonistTeamEnd">
     <value>Поджигатели</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+    <value>Ты пошёл(ла) было повеселиться с {0}, но его(её) не оказалось дома!</value>
   </string>
 </strings>
