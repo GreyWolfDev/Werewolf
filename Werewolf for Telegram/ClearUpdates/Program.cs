@@ -250,6 +250,13 @@ namespace ClearUpdates
                             permanent = permanent | ++player.TempBanCount > 3;
                         }
 
+                        var globalban = db.GlobalBans.FirstOrDefault(x => x.TelegramId == id);
+                        if (globalban != null)
+                        {
+                            if (globalban.Expires > new DateTime(3000, 1, 1)) continue; // ignore if alr perm banned
+                            db.GlobalBans.Remove(globalban); // else, remove the old ban so the new one counts.
+                        }
+
                         //add the ban
                         var ban = new GlobalBan
                         {
