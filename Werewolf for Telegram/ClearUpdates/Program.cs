@@ -13,6 +13,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
 using Database;
 using Telegram.Bot.Types.InputFiles;
+using System.Data.SqlTypes;
 
 namespace ClearUpdates
 {
@@ -110,20 +111,6 @@ namespace ClearUpdates
             if (e == null || e.Message == null || string.IsNullOrEmpty(e.Message.Text)) return;
 
             var m = e.Message;
-            if (m.From == null)
-            {
-                Console.WriteLine("MESSAGE UPDATE WITH EMPTY SENDER!");
-                using (var sw = new StreamWriter("empty_message_sender.log", true))
-                {
-                    sw.WriteLine("--------------------------------------------------");
-                    sw.WriteLine($"Message update with empty sender! At {DateTime.UtcNow} UTC");
-                    sw.Write(Newtonsoft.Json.JsonConvert.SerializeObject(m, Newtonsoft.Json.Formatting.Indented));
-                    sw.WriteLine();
-                    sw.WriteLine();
-                }
-                Api.SendTextMessageAsync(DevGroup, "Message update with empty sender recieved! Check the server log for more information!");
-                return;
-            }
             if (Devs.Contains(m.From.Id))
             {
                 Console.WriteLine($"{m.MessageId} - {m.From.FirstName}: {m.Text}");
@@ -228,6 +215,7 @@ namespace ClearUpdates
 
             var top = Commands.Where(x => x.Value.Count > 15).OrderByDescending(x => x.Value.Count).Select(x => x.Value).ToList();
             var menu = new Menu(2);
+            Dictionary<int, bool> ToBan = new Dictionary<int, bool>();
             using (var sw = new StreamWriter("log.log"))
             {
                 foreach (var t in top)
@@ -243,11 +231,42 @@ namespace ClearUpdates
                     msg += "\r\n";
                     sw.WriteLine(msg);
                     Console.WriteLine(msg);
+                    ToBan.Add(user.Id, t.Count >= 40); // if it's 40 or more messages, ban permanently immediately
                     menu.Buttons.Add(InlineKeyboardButton.WithCallbackData($"{user.Id}: {t.Count}", user.Id.ToString()));
                 }
             }
             if (menu.Buttons.Count > 0)
             {
+                using (var db = new WWContext())
+                {
+                    foreach (var spam in ToBan)
+                    {
+                        var id = spam.Key;
+                        var permanent = spam.Value;
+                        var player = db.Players.FirstOrDefault(x => x.TelegramId == id);
+
+                        if (player != null)
+                        {
+                            permanent = permanent | ++player.TempBanCount > 3;
+                        }
+
+                        //add the ban
+                        var ban = new GlobalBan
+                        {
+                            Expires = permanent
+                                ? (DateTime)SqlDateTime.MaxValue
+                                : DateTime.UtcNow.AddDays(7),
+                            Reason = $"{(spam.Value ? "INSANE" : "HEAVY")} Spam / Flood",
+                            TelegramId = id,
+                            BanDate = DateTime.UtcNow,
+                            BannedBy = "AntiFlood System",
+                            Name = player?.Name ?? "Unknown User"
+                        };
+                        db.GlobalBans.Add(ban);
+                    }
+                    db.SaveChanges();
+                }
+
                 menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Close", "close"));
                 Api.SendTextMessageAsync(DevGroup, "Here is the report:", replyMarkup: menu.CreateMarkupFromMenu());
 
