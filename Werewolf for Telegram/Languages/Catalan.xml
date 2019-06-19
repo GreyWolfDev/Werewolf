@@ -922,7 +922,7 @@
     <value>Vols permetre fugir una vegada ha començat la partida?\nNota: els jugadors encara podran fugir durant la fase d'unir-s'hi.\nActual: {0} fugir</value>
   </string>
   <string key="AllowFleeA">
-    <value>{0} fugir després de començar la partida.</value>
+    <value>Fugir després de començar la partida definit a: {0}</value>
   </string>
   <string key="MaxPlayersQ">
     <value>Quants jugadors vols definir com a màxim?\nActual: {0}</value>
@@ -934,7 +934,7 @@
     <value>Vols mostrar o amagar els rols en morir?\nActual: {0}</value>
   </string>
   <string key="ShowRolesDeathA">
-    <value>Els rols es {0} en morir.</value>
+    <value>Mostra els rols en morir definit a: {0}</value>
   </string>
   <string key="GameModeQ">
     <value>Quin mode de joc ha de tenir el grup?\nActual: {0}</value>
@@ -955,13 +955,13 @@
     <value>Temps base del dia definit a {0} segons.</value>
   </string>
   <string key="SetNightTimeQ">
-    <value>Tria el temps (en segons) per a la nit. Valor per defecte: {0}\nActual:{1}</value>
+    <value>Tria el temps (en segons) per a la nit. Valor per defecte: {0}\nActual: {1}</value>
   </string>
   <string key="SetNightTimeA">
     <value>Temps de la nit definit a {0} segons.</value>
   </string>
   <string key="SetLynchTimeQ">
-    <value>Tria el temps (en segons) per a les votacions de linxament. Valor per defecte: {0}\nActual:{1}</value>
+    <value>Tria el temps (en segons) per a les votacions de linxament. Valor per defecte: {0}\nActual: {1}</value>
   </string>
   <string key="SetLynchTimeA">
     <value>Temps per a les votacions de linxament definit a {0} segons.</value>
@@ -1257,10 +1257,10 @@
   </string>
   <string key="AllowExtendA">
     <!--{0} = "Allow" / "Disallow" string-->
-    <value>{0} que els jugadors allarguin el temps per unir-s'hi.</value>
+    <value>Els jugadors poden allargar el temps per unir-s'hi definit a: {0}</value>
   </string>
   <string key="MaxExtendQ">
-    <value>Tria el nombre màxim de segons que es poden afegir al temporitzador per unir-s'hi amb una sola ordre /extend.\nValor per defecte: {0}\nActual:{1}</value>
+    <value>Tria el nombre màxim de segons que es poden afegir al temporitzador per unir-s'hi amb una sola ordre /extend.\nValor per defecte: {0}\nActual: {1}</value>
   </string>
   <string key="MaxExtendA">
     <value>Temps màxim per afegir definit a {0} segons.</value>
@@ -1311,7 +1311,7 @@
     <value>Activa el mode aleatori</value>
   </string>
   <string key="AllowExtend">
-    <value>Permet allargar el temporitzador</value>
+    <value>Permet allargar el temps</value>
   </string>
   <string key="ShowRolesDeath">
     <value>Mostra els rols en morir</value>
@@ -1320,13 +1320,13 @@
     <value>Permet fugir</value>
   </string>
   <string key="ShowIDs">
-    <value>Mostra els identificadors en unir-s'hi</value>
+    <value>Mostra els ident. en unir-s'hi</value>
   </string>
   <string key="ShowIDsQ">
     <value>Vols mostrar els identificadors dels jugadors quan s'uneixin a la partida?\nActual: {0}</value>
   </string>
   <string key="ShowIDsA">
-    <value>{0} els identificadors</value>
+    <value>Mostra els identificadors definit a: {0}</value>
   </string>
   
   <string key="All">
@@ -1341,13 +1341,13 @@
   </string>
 
   <string key="AllowNSFW">
-    <value>Permet els paquets de GIFs NSFW</value>
+    <value>Permet paquets de GIFs NSFW</value>
   </string>
   <string key="AllowNSFWQ">
     <value>Vols permetre que els jugadors tinguin paquets de GIFs NSFW?\nActual: {0}</value>
   </string>
   <string key="AllowNSFWA">
-    <value>{0} els GIFs NSFW</value>
+    <value>GIFs NSFW definit a: {0}</value>
   </string>
   
   <string key="TannerEnd">
@@ -1403,7 +1403,7 @@
     <value>Permet el lladre</value>
   </string>
   <string key="ThiefFull">
-    <value>Partida completa del lladre</value>
+    <value>Lladre complet</value>
   </string>
 
   <string key="RoleInfoWolfMan">
@@ -1573,7 +1573,7 @@
     <value>Quan el linxament secret està activat, vols mostrar el recompte de vots al final del linxament?\nActual: {0}</value>
   </string>
   <string key="SecretLynchShowVotesA">
-    <value>Quan el linxament secret està activat, el recompte de vots al final del linxament: {0}</value>
+    <value>Recompte de vots al final del linxament secret: {0}</value>
   </string>
   <string key="SecretLynchShowVoters">
     <value>Secret: Votants</value>
@@ -1582,7 +1582,7 @@
     <value>Quan el linxament secret està activat i es mostra el recompte de vots, vols mostrar el nom dels votants de cada jugador votat?\nActual: {0}</value>
   </string>
   <string key="SecretLynchShowVotersA">
-    <value>Quan el linxament secret està activat i es mostra el recompte de vots, el nom dels votants de cada jugador: {0}</value>
+    <value>Nom dels votants al recompte de vots del linxament secret: {0}</value>
   </string>
   <string key="CultistBitten">
   <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
@@ -1791,22 +1791,22 @@
     <value>Canvia el mode de joc</value>
   </string>
   <string key="MaxPlayer">
-    <value>Defineix el màxim de jugadors</value>
+    <value>Màxim de jugadors</value>
   </string>
   <string key="EndRoles">
-    <value>Mostra els rols en acabar la partida</value>
+    <value>Mostra els rols en acabar</value>
   </string>
   <string key="MaxExtend">
-    <value>Defineix el temps màxim per unir-s'hi</value>
+    <value>Temps màxim per unir-s'hi</value>
   </string>
   <string key="DayTimer">
-    <value>Defineix la durada del dia</value>
+    <value>Durada del dia</value>
   </string>
   <string key="NightTimer">
-    <value>Defineix la durada de la nit</value>
+    <value>Durada de la nit</value>
   </string>
   <string key="LynchTimer">
-    <value>Defineix la durada del linxament</value>
+    <value>Durada del linxament</value>
   </string>
   <string key="RoleConfig">
     <value>Configuració dels rols</value>
@@ -1827,7 +1827,7 @@
     <value>Endarrere</value>
   </string>
   <string key="ShufflePlayerList">
-    <value>Reordena aleatòriament la llista de jugadors</value>
+    <value>Reordena aleat. llista de jugadors</value>
   </string>
   <string key="ShufflePlayerListQ">
     <value>Vols que la llista de jugadors es reordeni aleatòriament cada vegada? Actual: {0}</value>
@@ -1836,7 +1836,7 @@
     <value>La llista de jugadors es reordenarà aleatòriament cada vegada: {0}</value>
   </string>
   <string key="AboutGraveDigger">
-    <value>Ets l'enterramorts ☠️. Cada nit, caves les tombes de tota la gent que ha mort des de l'anterior vegada (sí, fins i tot els llops es mereixen un bon enterrament). Com que ets fora tota la nit, els llops i la secta no et podran trobar, llevat que no tinguis res a fer (per exemple, si no ha mort ningú), en aquest cas, romandràs a casa. Tothom qui et visiti té la possibilitat de caure a les tombes acabades de cavar, depenent de quantes n'hagis cavat. A més, la probabilitat es redueix a la meitat si és algú que té bones intencions. Però com que ets fora durant la nit, els llops o l'assassí en sèrie poden veure't i matar-te, i com més tombes cavis, més probable és. I pel que sembla, l'assassí en sèrie et pot trobar tant si ets a casa com si no, però almenys pot ser que caigui en una de les teves tombes i es faci mal a la cama, provocant que perdi el control sobre qui serà la víctima la nit següent...</value>
+    <value>Ets l'enterramorts ☠️. Cada nit, caves les tombes de tota la gent que ha mort des de l'anterior vegada (sí, fins i tot els llops es mereixen un bon enterrament). Com que ets fora tota la nit, els llops i la secta no et podran trobar, llevat que no tinguis res a fer (per exemple, si no ha mort ningú), en aquest cas, romandràs a casa. Tothom qui et visiti té la possibilitat de caure a les tombes acabades de cavar, depenent de quantes n'hagis cavat. A més, la probabilitat es redueix a la meitat si és algú que pertany a l'equip de vilatans com tu. Però com que ets fora durant la nit, els llops o l'assassí en sèrie poden veure't i matar-te, i com més tombes cavis, més probable és. I pel que sembla, l'assassí en sèrie et pot trobar tant si ets a casa com si no, però almenys pot ser que caigui en una de les teves tombes i es faci mal a la cama, provocant que perdi el control sobre qui serà la víctima la nit següent...</value>
   </string>
   <string key="RoleInfoGraveDigger">
     <value>Ets l'enterramorts ☠️. La teva responsabilitat és desfer-te dels cossos dels morts de la vila. Caves una tomba per a cadascú que hagi mort. No obstant això, sovint et canses de tant cavar, i la deixes sense tapar. Alguns visitants poden caure-hi i morir... Almenys, els llops no et poden menjar, perquè ets fora tota la nit.</value>
@@ -2061,7 +2061,7 @@
     <value>Ets l'auguri 🦅. Tens el poder de veure coses, però força diferent de la vident o l'oracle. Ets l'única persona que pot veure rols que no són a la vila, i no en veuràs cap de repetit!</value>
   </string>
   <string key="AugurSeesNothing">
-    <value>Avui no hi ha cap ocell al cel. Segurament, això vol dri que ja has vist tots els rols que no són a la vila...</value>
+    <value>Avui no hi ha cap ocell al cel. Segurament, això vol dir que ja has vist tots els rols que no són a la vila...</value>
   </string>
   <!--{0}: chosen victim, {1}: wolf who died in flames-->
   <string key="WolvesVisitBurn">
@@ -2080,6 +2080,9 @@
   </string>
   <string key="ArsonistWinsOverpower">
     <value>Només resten {0} i {1}... De sobte, {0} somriu, treu un llumí, l'encén i el llança als peus de {1}, que mor entre les flames!</value>
+  </string>
+  <string key="ArsonistTeamEnd">
+    <value>Equip del piròman</value>
   </string>
 </strings>
 

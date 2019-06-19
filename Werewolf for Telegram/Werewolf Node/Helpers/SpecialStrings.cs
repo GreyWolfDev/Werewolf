@@ -16,7 +16,10 @@ namespace Werewolf_Node.Helpers
             { "AboutSpumpkin", "The Spumpkin 🎃 is a pumpkin grower known for his plump pumpkins, which can grow large enough to explode! When detonated, the Spumpkin and another player of their choice die from the impact. The Spumpkin wins with the rest of the villagers." },
             { "RoleInfoSpumpkin", "You are the Spumpkin! Known in the village to grow the biggest, ripest, most delicious pumpkins, you carry your prized possession wherever you go. One pumpkin grows too big, and might explode at any moment! In your panic, you may run to someone else just as it explodes, killing both of you." },
             { "Spumpkin", "the Spumpkin 🎃" },
-            { "SpumpkinFailDetonate", "You carried the large pumpkin towards {0} and... seems like this pumpkin is not big enough for it to detonate... Go home and keep plowing!" }
+            { "SpumpkinFailDetonate", "You carried the large pumpkin towards {0} and... seems like this pumpkin is not big enough for it to detonate... Go home and keep plowing!" },
+            { "BlackDeathWinner", "Congratulations, {0}, YOU survived the {1} alone! Happy April Fool's!" },
+            { "BlackDeathKilledAll", "Everybody in the village was killed by the {0} and only corpses are lying around! Happy April Fool's!" },
+            { "BlackDeathLovers", "Congratulations, {0} and {1}, you are so madly in love that you even managed to survive the {2} together! Happy April Fool's!" },
         };
     }
 }

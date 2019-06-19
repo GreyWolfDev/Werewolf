@@ -10,9 +10,10 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Database;
+using Telegram.Bot.Types.InputFiles;
+using System.Data.SqlTypes;
 
 namespace ClearUpdates
 {
@@ -21,10 +22,15 @@ namespace ClearUpdates
         static int total = 0;
         static TelegramBotClient WWAPI;
         static TelegramBotClient Api;
-        internal static int[] Devs = new[] { 129046388, 133748469, 125311351 };
-        static long DevGroup = -1001076212715;
+        internal static int[] Devs = new[] { 129046388, 133748469, 295152997, 106665913 };
+        static long DevGroup = -1001077134233;
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
+            {
+                var exc = (Exception)e.ExceptionObject;
+                Console.WriteLine("==" + exc.Message + "==\n" + exc.StackTrace);
+            };
 
             var key =
                     RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
@@ -59,36 +65,56 @@ namespace ClearUpdates
 
         private static void Api_OnCallbackQuery(object sender, Telegram.Bot.Args.CallbackQueryEventArgs e)
         {
-            if (!Devs.Contains(e.CallbackQuery.From.Id))
-                return;
-            var q = e.CallbackQuery;
-            if (q.Data == "close")
+            try
             {
-                Api.DeleteMessageAsync(DevGroup, q.Message.MessageId);
-                return;
+                if (!Devs.Contains(e.CallbackQuery.From.Id))
+                    return;
+                var q = e.CallbackQuery;
+                if (q.Data == "close")
+                {
+                    Api.DeleteMessageAsync(DevGroup, q.Message.MessageId);
+                    return;
+                }
+                var id = int.Parse(q.Data);
+                if (!Commands.TryGetValue(id, out var t))
+                {
+                    Api.AnswerCallbackQueryAsync(q.Id, "Sorry, this flood isn't in my memory anymore! :(", true).Wait();
+                    return;
+                }
+                var user = t[0].From;
+                var startTime = t[0].Date;
+                var endTime = t[t.Count - 1].Date;
+                var ticks = (endTime - startTime).Ticks;
+                ticks /= t.Count;
+                var avg = new TimeSpan(ticks);
+                var msg = ($"User @{user.Username} ({user.Id}): {t.Count} - Average time between commands: {avg}\n");
+                msg = t.Aggregate(msg, (a, b) => a + $"{b.Text}: {b.Date}\n");
+                Api.SendTextMessageAsync(DevGroup, msg);
+                Api.AnswerCallbackQueryAsync(q.Id);
             }
-            var id = int.Parse(q.Data);
-            var t = Commands[id];
-            var user = t[0].From;
-            var startTime = t[0].Date;
-            var endTime = t[t.Count - 1].Date;
-            var ticks = (endTime - startTime).Ticks;
-            ticks /= t.Count;
-            var avg = new TimeSpan(ticks);
-            var msg = ($"User @{user.Username} ({user.Id}): {t.Count} - Average time between commands: {avg}\n");
-            msg = t.Aggregate(msg, (a, b) => a + $"{b.Text}: {b.Date}\n");
-            Api.SendTextMessageAsync(DevGroup, msg);
-            Api.AnswerCallbackQueryAsync(q.Id);
+            catch (Exception exc)
+            {
+                var trace = exc.StackTrace;
+                var error = "";
+                do
+                {
+                    error += exc.Message + "\n\n";
+                    exc = exc.InnerException;
+                }
+                while (exc != null);
+                Api.SendTextMessageAsync(DevGroup, error + trace).Wait();
+            }
         }
 
         private static void Api_OnMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
         {
+            if (e == null || e.Message == null || string.IsNullOrEmpty(e.Message.Text)) return;
+
             var m = e.Message;
-            
             if (Devs.Contains(m.From.Id))
             {
                 Console.WriteLine($"{m.MessageId} - {m.From.FirstName}: {m.Text}");
-                switch (m.Text.Replace("@wwcleanbot",""))
+                switch (m.Text.Replace("@wwcleanbot", ""))
                 {
                     case "/clearqueue":
                         if (m.Date < DateTime.Now.AddSeconds(-1))
@@ -189,6 +215,7 @@ namespace ClearUpdates
 
             var top = Commands.Where(x => x.Value.Count > 15).OrderByDescending(x => x.Value.Count).Select(x => x.Value).ToList();
             var menu = new Menu(2);
+            Dictionary<int, bool> ToBan = new Dictionary<int, bool>();
             using (var sw = new StreamWriter("log.log"))
             {
                 foreach (var t in top)
@@ -204,17 +231,71 @@ namespace ClearUpdates
                     msg += "\r\n";
                     sw.WriteLine(msg);
                     Console.WriteLine(msg);
-                    menu.Buttons.Add(new InlineKeyboardCallbackButton($"{user.Id}: {t.Count}", user.Id.ToString()));
+                    ToBan.Add(user.Id, t.Count >= 40); // if it's 40 or more messages, ban permanently immediately
+                    menu.Buttons.Add(InlineKeyboardButton.WithCallbackData($"{user.Id}: {t.Count}", user.Id.ToString()));
                 }
             }
             if (menu.Buttons.Count > 0)
             {
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("Close", "close"));
+                using (var db = new WWContext())
+                {
+                    foreach (var spam in ToBan)
+                    {
+                        var id = spam.Key;
+                        var permanent = spam.Value;
+                        var player = db.Players.FirstOrDefault(x => x.TelegramId == id);
+
+                        if (player != null)
+                        {
+                            permanent = permanent | ++player.TempBanCount > 3;
+                        }
+
+                        var globalban = db.GlobalBans.FirstOrDefault(x => x.TelegramId == id);
+                        if (globalban != null)
+                        {
+                            if (globalban.Expires > new DateTime(3000, 1, 1)) continue; // ignore if alr perm banned
+                            db.GlobalBans.Remove(globalban); // else, remove the old ban so the new one counts.
+                        }
+
+                        //add the ban
+                        var ban = new GlobalBan
+                        {
+                            Expires = permanent
+                                ? (DateTime)SqlDateTime.MaxValue
+                                : DateTime.UtcNow.AddDays(7),
+                            Reason = $"{(spam.Value ? "INSANE" : "HEAVY")} Spam / Flood",
+                            TelegramId = id,
+                            BanDate = DateTime.UtcNow,
+                            BannedBy = "AntiFlood System",
+                            Name = player?.Name ?? "Unknown User"
+                        };
+                        db.GlobalBans.Add(ban);
+                    }
+                    db.SaveChanges();
+                }
+
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Close", "close"));
                 Api.SendTextMessageAsync(DevGroup, "Here is the report:", replyMarkup: menu.CreateMarkupFromMenu());
-            }
-            using (var fs = new FileStream("log.log", FileMode.Open))
-            {
-                Api.SendDocumentAsync(DevGroup, new FileToSend("Spam Log.txt", fs));
+
+                using (var fs = new FileStream("log.log", FileMode.Open))
+                {
+                    try
+                    {
+                        Api.SendDocumentAsync(DevGroup, new InputOnlineFile(fs, "Spam Log.txt")).Wait();
+                    }
+                    catch (Exception exc)
+                    {
+                        var trace = exc.StackTrace;
+                        var error = "";
+                        do
+                        {
+                            error += exc.Message + "\n\n";
+                            exc = exc.InnerException;
+                        }
+                        while (exc != null);
+                        Api.SendTextMessageAsync(DevGroup, error + trace).Wait();
+                    }
+                }
             }
         }
     }

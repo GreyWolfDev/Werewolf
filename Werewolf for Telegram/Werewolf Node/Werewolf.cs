@@ -77,12 +77,6 @@ namespace Werewolf_Node
 
         public Dictionary<int, string> CustomWinMessages = new Dictionary<int, string>
         {
-            // 2 months
-            { 284884986, @"-give me an order,my MASTER! i can kill him,i can slaughter him without the slightest hesition or remorse. for i am a monster and you are integra.i wield the gun.i am the sights.i chamber the round.i pull the slide.i release the safety.
-but... the killing intent is yours.what should i do?give me an order,my MASTER.
--search and destroy! servent! we destroy all those who oppose us! we grind all who stand in our way to dust! no matter who they are! no matter what they are!
--yes,my MASTER!" },
-
             // 4 months
             { 519782620, @"The biggest stat padder, hardest kill chaser, top avenger has come. Framing is my way, hatred is my right. The unexpected Rave is here taking over.
 
@@ -90,17 +84,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
 🦊RAVE VICTORY!!!🦊 #RaveWin" },
 
-            // 2 months
-            { 229477366, @"Congrats to my amazing, winning team! To the losers— better luck next time😈🥳" },
-
-            // 2 months
-            { 548045880, @"Wow I guess you don’t sak after all 🤪" },
-
             // 4 months
             { 501853952, @"Congrats on winning, if you ever lose a game, there's always next game button! Better luck next time!" },
-            
-            // 2 months
-            { 753940931, @"How did Crash win? He doesn't even deserve it." },
 
             // 4 months
             { 358319071, @"نـــه از اینم نــه از آنم مــن از آن شهر کـلانم
@@ -3091,7 +3076,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     Send(GetLocaleString("DetectiveSnoop", check.GetName(), GetDescription(check.PlayerRole)), detect.Id);
 
                     //if snooped non-bad-roles:
-                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan, IRole.Cultist, IRole.SerialKiller, IRole.SnowWolf }.Contains(check.PlayerRole))
+                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan, IRole.Cultist, IRole.SerialKiller, IRole.SnowWolf, IRole.Arsonist }.Contains(check.PlayerRole))
                         detect.CorrectSnooped.Clear();     //clear correct snoop list
                     else
                     {

@@ -228,7 +228,7 @@ namespace Werewolf_Control.Handler
                     HandlePayment(update.PreCheckoutQuery);
                     return;
                 }
-                if (update.Message == null) return;
+                if (update.Message == null || update.Message.From.Id == 777000) return;
                 Program.Analytics.TrackAsync("message", update.Message, update.Message.From.Id.ToString());
                 //ignore previous messages
                 if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
@@ -778,7 +778,6 @@ namespace Werewolf_Control.Handler
             new Task(() => { HandleCallback(e.CallbackQuery); }).Start();
         }
 
-
         internal static void HandleCallback(CallbackQuery query)
         {
             Bot.MessagesProcessed++;
@@ -871,6 +870,9 @@ namespace Werewolf_Control.Handler
                                     Thread.Sleep(250);
                                     Bot.Api.SendDocumentAsync(id, pack.WolvesWin, "Wolf Pack Wins");
                                     Bot.Api.SendDocumentAsync(id, pack.SKKilled, "SK Killed");
+                                    Thread.Sleep(250);
+                                    Bot.Api.SendDocumentAsync(id, pack.ArsonistWins, "Arsonist Wins");
+                                    Bot.Api.SendDocumentAsync(id, pack.BurnToDeath, "Arsonist Burnt");
                                     Thread.Sleep(500);
                                     var msg = $"Approval Status: ";
                                     switch (pack.Approved)

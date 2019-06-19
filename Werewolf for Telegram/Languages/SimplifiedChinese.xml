@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-	<language name="简体中文" base="简体中文" variant="SFW" version="2019.05.01"/>
-	<!--Last Updated 最后更新时间2019-05-01 10:02-->
+	<language name="简体中文(普通)" base="简体中文" variant="简体中文(普通)" code="zh-CN" version="2019.05.25"/>
+	<!--Last Updated 最后更新时间2019-05-25 21:24-->
 	<!--也请在 头部version处 添加最后更新时间-->
 
 
@@ -20,19 +20,23 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<!-- 2019-4-5    删除无关内容-->
 		<!-- 2019-4-6   添加更多ending-->
 		<!-- 2019-5-1    新增HarlotVisitNotHome（官方3-29更新）-->
+		<!-- 2019-5-25  更改修复菜单项-->
 			
+		<!-- 2019-5-25  ！！！ 修改name SFW→简体中文(普通) -->
+
+
 	<string key="NotInGame">
 		<value>你现在似乎并不在这场游戏中……</value>
 	</string>
 	<string key="PlayerStartedGame">
-		<value>{0} 已经敲响了末日的钟声！ 点击按钮来参加这场屠杀宴会……说不定会暴死当场！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
-		<value>{0} 已经召唤出了血月！ 点击按钮 来互相伤害！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
-		<value>反人类的 {0} 开启了一场死亡游戏！ 点击按钮 来参加这场互相伤害的盛会！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
+		<value>{0} 已经敲响了末日的钟声！ 点击按钮来参加这场屠杀宴会……说不定会暴死当场！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-“简体中文(普通)”）</value>
+		<value>{0} 已经召唤出了血月！ 点击按钮 来互相伤害！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-“简体中文(普通)”）</value>
+		<value>反人类的 {0} 开启了一场死亡游戏！ 点击按钮 来参加这场互相伤害的盛会！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-“简体中文(普通)”）</value>
 	</string>
 	<string key="PlayerStartedChaosGame">
-		<value>{0} 召唤出了隐藏着黑暗力量的钥匙……点击按钮 来成为暴徒……混乱才是现实的真正模样。\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
-		<value>以 {0} 为先锋，混乱模式全面启动！点击按钮来响应 {0} 的号召。\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
-		<value>{0} 开启了一场混乱的生存竞赛！现实世界从不曾有公平！输入 点击按钮 加入！如果人类全灭，你就是罪人！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-SFW）</value>
+		<value>{0} 召唤出了隐藏着黑暗力量的钥匙……点击按钮 来成为暴徒……混乱才是现实的真正模样。\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-"简体中文(普通)”）</value>
+		<value>以 {0} 为先锋，混乱模式全面启动！点击按钮来响应 {0} 的号召。\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-“简体中文(普通)”）</value>
+		<value>{0} 开启了一场混乱的生存竞赛！现实世界从不曾有公平！输入 点击按钮 加入！如果人类全灭，你就是罪人！\n ℹ️提示：点击按钮后请向机器人发送 /setlang 设置语言（选择“简体中文”-“简体中文(普通)”）</value>
 	</string>
 	<string key="NoJoinGameRunning">
 		<value>看起来你错过了这场游戏，再等等吧。 发送/nextgame 以收到下局游戏的提醒。</value>
@@ -349,7 +353,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 		<value>糟糕！你们竟然昏了头脑把圣战者公审了！他引爆了藏在衣服里的炸弹，和所有人同归于尽了 #圣战者胜。</value>
 	</string>
 	<string key="RemainingPlayersEnd">
-		<value>剩下的玩家、角色和所属团队：。</value>
+		<value>剩下的玩家、角色和所属团队:</value>
 	</string>
 	<string key="CultistVotedConvert">
 		<value>{0} 希望为 {1} 受洗</value>
@@ -917,10 +921,10 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>取消</value>
   </string>
   <string key="AllowFleeQ">
-    <value>是否允许游戏中逃跑?\n提示：玩家总是可以在游戏开始前逃跑。\n游戏中允许逃跑的状态为： {0}（不是 not 即表示允许）</value>
+    <value>允许玩家逃跑?\n提示：玩家默认可以在游戏开始前逃跑。\n现在： {0}</value>
   </string>
   <string key="AllowFleeA">
-    <value>游戏中允许逃跑的状态为： {0}。</value>
+    <value>现在，玩家{0}逃跑。</value>
   </string>
   <string key="MaxPlayersQ">
     <value>最大玩家数量?\n当前是: {0}</value>
@@ -941,10 +945,10 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>现在的游戏模式是{0}</value>
   </string>
   <string key="ShowRolesEndQ">
-    <value>是否在游戏结束时显示角色?\n当前是: {0}</value>
+    <value>是否在游戏结束时显示角色?\n当前是: {0}\n All为所有玩家，Living为幸存玩家，None为不显示</value>
   </string>
   <string key="ShowRolesEndA">
-    <value>现在游戏结束后{0}角色</value>
+    <value>现在，游戏结束后，显示其角色的玩家，的类型为{0}</value>
   </string>
   <string key="SetDayTimeQ">
     <value>设置白天的基准时间（按秒计，会根据玩家的数量增加适量的基数，最少为60秒）。\n默认为 {0} 秒，当前为 {1} 秒。</value>
@@ -1039,7 +1043,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>✳️全部</value>
   </string>
   <string key="RandomModeQ">
-    <value>开启随机模式?\n随机模式开启后，每次 混乱模式，秘密投票处决，展示玩家死亡，允许邪教，允许冒牌👳先知，允许圣战者，将会随机开启或关闭。\n现在:{0}</value>
+    <value>开启随机模式?\n注:随机模式开启后，每次都是混乱模式，秘密投票处决，展示玩家死亡，允许邪教，允许冒牌先知，允许圣战者，将会随机开启或关闭。\n现在:{0}</value>
   </string>
   <string key="RandomModeA">
     <value>随机模式的设置: {0}</value>
@@ -1048,7 +1052,7 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>开启秘密投票处决?\n现在: {0}</value>
   </string>
   <string key="EnableSecretLynchA">
-    <value>秘密投票处决设置: {0}</value>
+    <value>现在，「秘密投票」将: {0}</value>
   </string>
 
 
@@ -1063,10 +1067,10 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   </string>
   
     <string key="RandomMode">
-    <value>随机模式相关设置</value>
+    <value>「随机模式」设置</value>
       </string>
 <string key="AllowExtend">
-    <value>延长时间设置</value>
+    <value>设置「延长时间」</value>
   </string>
   <string key="ShowRolesDeath">
     <value>死亡时展示玩家身份</value>
@@ -1384,16 +1388,16 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>{0}在最近30秒内加入了游戏</value>
   </string>
   <string key="AllowCult">
-    <value>允许邪教</value>
+    <value>允许「邪教」</value>
   </string>
   <string key="AllowTanner">
-    <value>允许圣战者</value>
+    <value>允许「圣战者」</value>
   </string>
   <string key="AllowFool">
-    <value>允许冒牌先知</value>
+    <value>允许「冒牌先知」</value>
   </string>
   <string key="EnableSecretLynch">
-    <value>开启秘密投票处决</value>
+    <value>秘密投票处决</value>
    </string>
  
   	<string key="RoleInfoThief">
@@ -1526,24 +1530,24 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
   <string key="SandmanNight">
         <value>💤奇怪，天怎么突然这么黑，好像也停电了，火也点不燃，该回家睡觉了，今晚注定是个宁静的夜晚。今晚没有人会活动</value>
 </string>
-
+  <string key="AllowThief">
+      <value>允许「小偷」</value>
+  </string>
   <string key="AllowThiefQ">
-    <value>允许小偷?\n现在: {0}</value>
+    <value>允许「小偷」存在?\n现在: {0}</value>
   </string>
   <string key="AllowThiefA">
-    <value>小偷模式设置: {0}</value>
+    <value>现在，{0}「小偷」存在</value>
   </string>
+  
   <string key="ThiefFullQ">
-    <value>小偷可以每晚使用吗？\n现在: {0}</value>
+    <value>「小偷」可以每晚使用其能力吗？\n现在: {0}</value>
   </string>
   <string key="ThiefFullA">
-    <value>小偷每晚都可以使用: {0}</value>
-  </string>
-  <string key="AllowThief">
-    <value>允许👻小偷</value>
+    <value>「小偷」能力每晚都可以使用: {0}</value>
   </string>
   <string key="ThiefFull">
-    <value>小偷模式-完整(Thief Full)</value>
+    <value>小偷模式设置</value>
   </string>
 
   <string key="RoleInfoWolfMan">
@@ -1652,22 +1656,22 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
     <value>{0} 票投给 {1}.</value>
   </string>
   <string key="SecretLynchShowVotes">
-    <value>秘密投票处决</value>
+    <value>秘密投票-投票计数</value>
   </string>
   <string key="SecretLynchShowVotesQ">
-    <value>秘密处决允许时, 展示最终投票计数?\n 现在: {0}</value>
+    <value>秘密投票开启时, 展示(某被票玩家)最终投票计数?\n 现在: {0}</value>
   </string>
   <string key="SecretLynchShowVotesA">
-    <value>秘密处决允许时, 最终投票计数将: {0}</value>
+    <value>现在「投票计数」将: {0}</value>
   </string>
   <string key="SecretLynchShowVoters">
-    <value>秘密投票者</value>
+    <value>秘密投票-投票者显示</value>
   </string>
   <string key="SecretLynchShowVotersQ">
-    <value>秘密处决允许时 且 投票计数开启时, 允许非匿名投票?\n现在: {0}</value>
+    <value>每天展示投票结果时，显示投票者及其投票?(仅「秘密投票」开启时且「投票计数」开启时该项设置有效)\n现在: {0}</value>
   </string>
   <string key="SecretLynchShowVotersA">
-    <value>秘密处决允许时 且 投票计数开启时, 投票者姓名将: {0}</value>
+    <value>现在，每天展示投票结果时，「显示投票者及其投票」 将: {0}</value>
   </string>
   <string key="CultistBitten">
   <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
@@ -2027,26 +2031,26 @@ ChemistKillWiseElder, ArsonistWinsOverpower（官方2019.2.22添加）-->
 	<value>{0}消失了，村民们找了一天，发现 {0} 的尸体躺在一个未挖完的墓穴里，同时，{0}的肝也不在了...似乎掘墓人{0}昨天惨遭🔪变态杀人狂的杀害...</value>
   </string>
   <string key="AllowArsonist">
-	<value>允许纵火犯</value>
+	<value>允许「纵火犯」</value>
   </string>
   <!--{0}: Allow/Disallow-->
   <string key="AllowArsonistQ">
-	<value>允许纵火犯？\n现在: {0}</value>
+	<value>允许「纵火犯」？\n现在: {0}</value>
   </string>
   <!--{0}: Allow/Disallow-->
   <string key="AllowArsonistA">
-	<value>纵火犯设置：{0}.</value>
+	<value>现在，{0}「纵火犯」存在</value>
   </string>
   <string key="BurningOverkill">
-	<value>纵火犯和变态杀人狂同时存在(Burning Overkill)</value>
+	<value>「纵」「杀」并存？</value>
   </string>
   <!--{0}: Allow/Disallow-->
   <string key="BurningOverkillQ">
-	<value>允许纵火犯和变态杀人狂同时存在？ 可能造成僵局（Might be deadly!）\n现在: {0}</value>
+	<value>允许「纵火犯」和「变态杀人狂」同时存在？ 可能造成僵局（Might be deadly!）\n现在: {0}</value>
   </string>
   <!--{0}: Allow/Disallow-->
   <string key="BurningOverkillA">
-	<value>纵火犯和🔪变态杀人狂同时存在： {0}.</value>
+	<value>现在，「纵火犯」和「变态杀人狂」{0}同时存在</value>
   </string>
   <string key="AboutArsonist">
 	<value>纵火犯，你孤身一人。你每天可以对别人家的房子浇汽油，然后在另一天放一把火，一起烧掉。</value>

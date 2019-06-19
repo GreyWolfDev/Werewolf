@@ -180,7 +180,7 @@ namespace Database
         Indestructible = 82,
         [Display(Name = "Psychopath Killer"), Description("As the serial killer, win a game with 35 players!")]
         PsychopathKiller = 83,
-        [Display(Name = "Today's Special!"), Description("Be the role only available on special events!")]
+        [Display(Name = "Today's Special!"), Description("Take part in a special werewolf event!")]
         TodaysSpecial = 84,
         [Display(Name = "Romeo and Juliet"), Description("Be in love with the tanner, and win by lynching your lover!")]
         RomeoAndJuliet = 85,
