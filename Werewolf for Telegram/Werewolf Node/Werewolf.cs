@@ -1590,6 +1590,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         balanced = true;
                     //else, redo role assignment. better to rely on randomness, than trying to fix it
 
+                    //also make sure that baddie count is lower than village count
+                    if (rolesToAssign.Count(x => nonVgRoles.Contains(x)) >= rolesToAssign.Count(x => !nonVgRoles.Contains(x))) balanced = false;
+
                     if (rolesToAssign.Contains(IRole.SerialKiller) && rolesToAssign.Contains(IRole.Arsonist))
                         balanced = balanced && BurningOverkill;
 
@@ -3674,7 +3677,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         }
                         break;
                     case VisitResult.Fail:
-                        fail:
+                    fail:
                         Send(GetLocaleString("HunterFailedToFind", hunted.GetName()), hunter.Id);
                         break;
                     case VisitResult.AlreadyDead:
@@ -3950,7 +3953,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
                 switch (VisitPlayer(harlot, target))
                 {
-                    case VisitResult.Success: success:
+                    case VisitResult.Success:
                         Send(
                             (target.PlayerRole == IRole.Cultist && Program.R.Next(100) < Settings.HarlotDiscoverCultChance) ?
                                 GetLocaleString("HarlotDiscoverCult", target.GetName()) :
@@ -3984,7 +3987,10 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             KillPlayer(harlot, KillMthd.VisitVictim, killer: target, diedByVisitingVictim: true, killedByRole: target.KilledByRole);
                             harlot.RoleModel = target.Id; //store who they visited
                         }
-                        else goto success;
+                        else
+                        {
+                            Send(GetLocaleString("HarlotVisitNotHome", target.GetName()), harlot.Id);
+                        }
                         break;
                     case VisitResult.Fail:
                         switch (target.PlayerRole)
@@ -4246,7 +4252,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             else if (target.PlayerRole == IRole.SerialKiller) Send(GetLocaleString("StealKiller"), thief.Id);
                             break;
                         case VisitResult.Fail:
-                            fail:
+                        fail:
                             Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
                             break;
                     }
