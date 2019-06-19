@@ -2608,6 +2608,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     }
                 }
             }
+
+            if (VisitPlayer(thief, target) != VisitResult.Success) return; 
+
             //swap roles
             var targetRole = target.PlayerRole;
             var targetRoleModel = target.RoleModel;
