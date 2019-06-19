@@ -3648,7 +3648,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         }
                         break;
                 }
-
+                sk.StumbledGrave = false;
                 var gd = Players.FirstOrDefault(x => x.PlayerRole == IRole.GraveDigger && !x.IsDead && x.DugGravesLastNight > 0);
                 if (gd != null)
                 {
