@@ -4167,7 +4167,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
             #region GA Night
 
-            if (ga != null && !ga.Frozen)
+            if (ga != null && !ga.Frozen && !ga.IsDead)
             {
                 var save = Players.FirstOrDefault(x => x.Id == ga.Choice);
                 switch (VisitPlayer(ga, save))
