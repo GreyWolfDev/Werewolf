@@ -2112,6 +2112,18 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         /// <param name="roleModel">The role model of the player to transform if they were DG or WC, or the old seer if they were apprentice, or the victim if they were thief</param>
         private void Transform(IPlayer p, IRole toRole, TransformationMethod method, int newRoleModel = 0, IEnumerable<IPlayer> newTeamMembers = null, int? bullet = null, bool? hasUsedAbility = null, IPlayer roleModel = null, IEnumerable<IPlayer> oldTeamMates = null)
         {
+            if (p.IsDead)
+            {
+                // most transformations don't work for dead people
+                switch (method)
+                {
+                    case TransformationMethod.KillElder:
+                    case TransformationMethod.AutoConvertToCult:
+                        break;
+                    default:
+                        return;
+                }
+            }
             if (toRole == IRole.Thief && !ThiefFull) toRole = IRole.Villager;
             // increase change roles count
             p.ChangedRolesCount++;
