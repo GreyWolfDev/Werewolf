@@ -1590,6 +1590,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         balanced = true;
                     //else, redo role assignment. better to rely on randomness, than trying to fix it
 
+                    //also make sure that baddie count is lower than village count
+                    if (rolesToAssign.Count(x => nonVgRoles.Contains(x)) >= rolesToAssign.Count(x => !nonVgRoles.Contains(x))) balanced = false;
+
                     if (rolesToAssign.Contains(IRole.SerialKiller) && rolesToAssign.Contains(IRole.Arsonist))
                         balanced = balanced && BurningOverkill;
 
@@ -2109,6 +2112,18 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
         /// <param name="roleModel">The role model of the player to transform if they were DG or WC, or the old seer if they were apprentice, or the victim if they were thief</param>
         private void Transform(IPlayer p, IRole toRole, TransformationMethod method, int newRoleModel = 0, IEnumerable<IPlayer> newTeamMembers = null, int? bullet = null, bool? hasUsedAbility = null, IPlayer roleModel = null, IEnumerable<IPlayer> oldTeamMates = null)
         {
+            if (p.IsDead)
+            {
+                // most transformations don't work for dead people
+                switch (method)
+                {
+                    case TransformationMethod.KillElder:
+                    case TransformationMethod.AutoConvertToCult:
+                        break;
+                    default:
+                        return;
+                }
+            }
             if (toRole == IRole.Thief && !ThiefFull) toRole = IRole.Villager;
             // increase change roles count
             p.ChangedRolesCount++;
@@ -2605,6 +2620,9 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     }
                 }
             }
+
+            if (VisitPlayer(thief, target) != VisitResult.Success) return; 
+
             //swap roles
             var targetRole = target.PlayerRole;
             var targetRoleModel = target.RoleModel;
@@ -3630,7 +3648,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         }
                         break;
                 }
-
+                sk.StumbledGrave = false;
                 var gd = Players.FirstOrDefault(x => x.PlayerRole == IRole.GraveDigger && !x.IsDead && x.DugGravesLastNight > 0);
                 if (gd != null)
                 {
@@ -3674,7 +3692,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                         }
                         break;
                     case VisitResult.Fail:
-                        fail:
+                    fail:
                         Send(GetLocaleString("HunterFailedToFind", hunted.GetName()), hunter.Id);
                         break;
                     case VisitResult.AlreadyDead:
@@ -3950,7 +3968,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
                 switch (VisitPlayer(harlot, target))
                 {
-                    case VisitResult.Success: success:
+                    case VisitResult.Success:
                         Send(
                             (target.PlayerRole == IRole.Cultist && Program.R.Next(100) < Settings.HarlotDiscoverCultChance) ?
                                 GetLocaleString("HarlotDiscoverCult", target.GetName()) :
@@ -3984,7 +4002,10 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             KillPlayer(harlot, KillMthd.VisitVictim, killer: target, diedByVisitingVictim: true, killedByRole: target.KilledByRole);
                             harlot.RoleModel = target.Id; //store who they visited
                         }
-                        else goto success;
+                        else
+                        {
+                            Send(GetLocaleString("HarlotVisitNotHome", target.GetName()), harlot.Id);
+                        }
                         break;
                     case VisitResult.Fail:
                         switch (target.PlayerRole)
@@ -4146,7 +4167,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
 
             #region GA Night
 
-            if (ga != null && !ga.Frozen)
+            if (ga != null && !ga.Frozen && !ga.IsDead)
             {
                 var save = Players.FirstOrDefault(x => x.Id == ga.Choice);
                 switch (VisitPlayer(ga, save))
@@ -4246,7 +4267,7 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                             else if (target.PlayerRole == IRole.SerialKiller) Send(GetLocaleString("StealKiller"), thief.Id);
                             break;
                         case VisitResult.Fail:
-                            fail:
+                        fail:
                             Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
                             break;
                     }
