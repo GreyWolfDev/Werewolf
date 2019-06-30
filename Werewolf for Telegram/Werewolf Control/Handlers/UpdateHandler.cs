@@ -1481,6 +1481,7 @@ namespace Werewolf_Control.Handler
                         //    DB.SaveChanges();
                         //    break;
                         case "maxplayer":
+                            buttons.Add(new InlineKeyboardCallbackButton("5", $"setmaxplayer|{groupid}|5"));
                             buttons.Add(new InlineKeyboardCallbackButton("10", $"setmaxplayer|{groupid}|10"));
                             buttons.Add(new InlineKeyboardCallbackButton("15", $"setmaxplayer|{groupid}|15"));
                             buttons.Add(new InlineKeyboardCallbackButton("20", $"setmaxplayer|{groupid}|20"));
@@ -1494,7 +1495,6 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setmaxplayer":
-
                             grp.MaxPlayers = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("MaxPlayersA", language, choice));
                             Bot.ReplyToCallback(query,

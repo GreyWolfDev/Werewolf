@@ -42,7 +42,7 @@ namespace Werewolf_Web.Controllers
                 using (var DB = new WWContext())
                 {
                     var user = DB.Players.FirstOrDefault(x => x.TelegramId == id);
-                    return Json(user);
+                    return Json(user, JsonRequestBehavior.AllowGet);
                 }
             }
             ViewBag.Id = id;
@@ -219,7 +219,7 @@ namespace Werewolf_Web.Controllers
             using (var DB = new WWContext())
             {
                 var p = DB.Players.FirstOrDefault(x => x.TelegramId == pid);
-                if (p == null)
+                if (p == null || p.GamePlayers.Count == 0)
                 {
                     return Json("", JsonRequestBehavior.AllowGet);
                 }
@@ -258,12 +258,10 @@ namespace Werewolf_Web.Controllers
                         mostCommonRole = roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "WHAT? YOU HAVEN'T PLAYED?",
                         mostKilled = killed != null ? new { name = killed.Name, id = killed.TelegramId, link = killedlink, times = killed.times } : null,
                         mostKilledBy = killedby != null ? new { name = killedby.Name, id = killedby.TelegramId, link = killedbylink, times = killedby.times } : null,
-                        achievements = p.Achievements
+                        //achievements = p.Achievements // achievements aren't stored this way anymore anyway
                     };
                     return Json(reply, JsonRequestBehavior.AllowGet);
                 }
-
-
             }
         }
 
@@ -408,7 +406,7 @@ namespace Werewolf_Web.Controllers
             {
                 var p = db.Players.FirstOrDefault(x => x.TelegramId == pid);
                 if (p == null || String.IsNullOrEmpty(p.ImageFile))
-                    return Json("", JsonRequestBehavior.DenyGet);
+                    return Json("", JsonRequestBehavior.AllowGet);
 
                 return Json("/Images/" + p.ImageFile, JsonRequestBehavior.AllowGet);
             }

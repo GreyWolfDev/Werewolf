@@ -779,8 +779,8 @@ Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam 
                     user.Name = $"{u.FirstName} {u.LastName}".Trim();
                     if (!String.IsNullOrEmpty(user.CustomGifSet))
                         p.GifPack = JsonConvert.DeserializeObject<CustomGifData>(user.CustomGifSet);
-                    if (user.Achievements == null)
-                        user.Achievements = 0;
+                    if (user.NewAchievements == null)
+                        user.NewAchievements = new BitArray(200).ToByteArray();
                     // switch achv system
                     //SwitchAchievementsSystem(p);
 
