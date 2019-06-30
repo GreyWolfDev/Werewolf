@@ -247,7 +247,8 @@ namespace ClearUpdates
 
                         if (player != null)
                         {
-                            permanent = permanent | ++player.TempBanCount > 3;
+                            if (player.TempBanCount == null) player.TempBanCount = 0;
+                            permanent = ++player.TempBanCount > 3 || permanent;
                         }
 
                         var globalban = db.GlobalBans.FirstOrDefault(x => x.TelegramId == id);
