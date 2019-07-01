@@ -1039,7 +1039,7 @@ namespace Werewolf_Control.Handler
                             return;
                         }
                     }
-                    
+
                     //config helpers
                     if (choice == "back")
                     {
@@ -1119,6 +1119,26 @@ namespace Werewolf_Control.Handler
                             var oldid = int.Parse(args[1]);
                             var newid = int.Parse(args[2]);
                             var result = DB.RestoreAccount(oldid, newid);
+                            using (var db = new WWContext())
+                            {
+                                var oldPlayer = db.Players.FirstOrDefault(x => x.TelegramId == oldid);
+                                var newPlayer = db.Players.FirstOrDefault(x => x.TelegramId == newid);
+
+                                if (oldPlayer.NewAchievements != null)
+                                {
+                                    var oldach = new BitArray(oldPlayer.NewAchievements);
+                                    var newach = newPlayer.NewAchievements == null
+                                        ? new BitArray(200)
+                                        : new BitArray(newPlayer.NewAchievements);
+
+                                    for (int i = 0; i < 200; i++)
+                                    {
+                                        newach[i] = newach[i] | oldach[i];
+                                    }
+                                    newPlayer.NewAchievements = newach.ToByteArray();
+                                    db.SaveChanges();
+                                }
+                            }
                             var oldname = DB.Players.FirstOrDefault(x => x.TelegramId == oldid)?.Name;
                             var newname = DB.Players.FirstOrDefault(x => x.TelegramId == newid)?.Name;
                             Bot.Edit(query, $"Restored stats from {oldname} to {newname}");
@@ -1132,7 +1152,7 @@ namespace Werewolf_Control.Handler
                             var players = (from pl in DB.Players where pl.Language == oldfilename select pl).ToList();
                             var grouprankings = (from gr in DB.GroupRanking where gr.Language == oldfilename select gr).ToList();
                             var dblang = DB.Language.FirstOrDefault(x => x.FileName == oldfilename);
-                            
+
                             if (dblang != null)
                             {
                                 DB.Language.Remove(dblang);
