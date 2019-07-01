@@ -77,28 +77,6 @@ namespace Werewolf_Node
 
         public Dictionary<int, string> CustomWinMessages = new Dictionary<int, string>
         {
-            // 4 months
-            { 519782620, @"The biggest stat padder, hardest kill chaser, top avenger has come. Framing is my way, hatred is my right. The unexpected Rave is here taking over.
-
-Aku adalah kunang-kunang, dan kau adalah senja, dalam gelap kita berbagi, dalam gelap kita abadi, dan setelah hujan ada aku yang akan datang menjadi pelangi, dan memelukmu.
-
-🦊RAVE VICTORY!!!🦊 #RaveWin" },
-
-            // 4 months
-            { 501853952, @"Congrats on winning, if you ever lose a game, there's always next game button! Better luck next time!" },
-
-            // 4 months
-            { 358319071, @"نـــه از اینم نــه از آنم مــن از آن شهر کـلانم
-نـــه پـــی زمــــر و قمــارم نه پی خمر و عقارم
-نـــه خمیـــرم نــــه خمـــارم نــه چنینم نه چنانم
-مـــن اگـــر مست و خرابم نه چو تو مست شرابم
-نه ز خاکم نه ز آبم نه از این اهــــل زمــــانم
-خـــرد پـــوره آدم چـــه خبـــر دارد از ایــن دم
-کــــه مــن از جمــله عالــم به دو صد پرده نهانم
-مشنـو این سخن از من و نه زین خاطر روشن
-که از این ظاهر و باطن نه پذیرم نه ستانم
-
-ᵂᵉˡˡ ᶜᵒⁿᵍʳᵃᵗᵘˡᵃᵗᶦᵒⁿˢ ᶜᵘᶻ ʸᵃˡˡ ʰᵃᵛᵉ ᵖˡᵃʸᵉᵈ ᵃ ᵍᵃᵐᵉ ʷᶦᵗʰ ᵗʰᵉ ᵖʳᵒᵉˢᵗ ᵖˡᵃʸᵉʳ ᶦⁿ ʷᵉʳᵉʷᵒˡᶠ ʰᶦˢᵗᵒʳʸ ˢᵒ ʲᵘˢᵗ ᵏᵉᵉᵖ ᶜᵃˡᵐ ᵃⁿᵈ ᵉⁿʲᵒʸ ᵘʳ ˢᵉˡᶠ.ʳᵉᵃˡᵐᵘˢᵗᶠᵃ" },
         };
 
         #region Constructor
