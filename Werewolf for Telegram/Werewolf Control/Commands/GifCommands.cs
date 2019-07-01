@@ -204,6 +204,11 @@ namespace Werewolf_Control
                     if (p != null)
                     {
                         var json = p?.CustomGifSet;
+                        if ((p.DonationLevel ?? 0) < 10)
+                        {
+                            Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", q.From.Id);
+                            return;
+                        }
                         var data = JsonConvert.DeserializeObject<CustomGifData>(json);
                         if (data.Approved != null)
                         {
@@ -235,6 +240,11 @@ namespace Werewolf_Control
                 using (var db = new WWContext())
                 {
                     var p = db.Players.FirstOrDefault(x => x.TelegramId == q.From.Id);
+                    if ((p.DonationLevel ?? 0) < 10)
+                    {
+                        Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", q.From.Id);
+                        return;
+                    }
                     var json = p?.CustomGifSet;
                     var data = JsonConvert.DeserializeObject<CustomGifData>(json);
                     data.ShowBadge = !data.ShowBadge;
@@ -291,7 +301,7 @@ namespace Werewolf_Control
                 var p = db.Players.FirstOrDefault(x => x.TelegramId == m.From.Id);
                 var json = p?.CustomGifSet;
 
-                if (String.IsNullOrEmpty(json))
+                if (String.IsNullOrEmpty(json) || (p.DonationLevel ?? 0) < 10)
                 {
                     Bot.Send("You have not unlocked a custom GIF pack.  Please use /donate", m.From.Id);
                     return;
@@ -368,12 +378,6 @@ namespace Werewolf_Control
                 db.SaveChanges();
                 Bot.Send("Got it! Any more?", m.From.Id, customMenu: GetGifMenu(data));
             }
-        }
-
-        [Attributes.Command(Trigger = "submitgif")]
-        public static void SubmitGifs(Update u, string[] args)
-        {
-
         }
 
         public static string CreateXsollaJson(User from)
