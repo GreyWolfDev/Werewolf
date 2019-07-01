@@ -57,7 +57,7 @@ namespace Werewolf_Node
         public bool SecretLynchShowVoters, SecretLynchShowVotes;
         public bool ShufflePlayerList;
         public string ShowRolesEnd;
-        private readonly List<IPlayer> DiedSinceLastGrave = new List<IPlayer>();
+        private DateTime lastGrave = DateTime.MinValue, secondLastGrave = DateTime.MinValue;
         private List<IRole> PossibleRoles;
 
         public List<string> VillagerDieImages,
@@ -3281,6 +3281,7 @@ namespace Werewolf_Node
                                         Send(GetLocaleString("DefaultFrozen"), target.Id);
                                     else
                                     {
+                                        lastGrave = secondLastGrave; // tonight's graves have never been dug
                                         Send(GetLocaleString("GraveDiggerFrozen"), target.Id);
                                         target.DugGravesLastNight = 0;
                                     }
@@ -4253,14 +4254,6 @@ namespace Werewolf_Node
             }
             #endregion
 
-            #region Grave Digger Night
-            var graveDigger = Players.FirstOrDefault(x => x.PlayerRole == IRole.GraveDigger && !x.IsDead);
-            if (graveDigger != null && !graveDigger.Frozen)
-            {
-                if (graveDigger.DugGravesLastNight > 0) DiedSinceLastGrave.Clear();
-            }
-            #endregion
-
             #region Night Death Notifications to Group
 
 
@@ -4270,7 +4263,6 @@ namespace Werewolf_Node
                 if (!secret && Players.Any(x => x.DiedLastNight && !x.DiedByVisitingVictim && x.KilledByRole == IRole.Arsonist))
                 {
                     var burnDeaths = Players.Where(x => x.DiedLastNight && !x.DiedByVisitingVictim && x.KilledByRole == IRole.Arsonist);
-                    DiedSinceLastGrave.AddRange(burnDeaths);
                     SendWithQueue(GetLocaleString("Burning", string.Join("\n", burnDeaths.Select(x => $"{x.GetName()} {GetLocaleString("Was")} {GetDescription(x.PlayerRole)}"))));
                     foreach (var p in burnDeaths.Where(x => x.InLove && !burnDeaths.Any(y => y.Id == x.LoverId) && Players.Any(y => !string.IsNullOrEmpty(y.LoverMsg) && y.Id == x.LoverId)))
                         SendWithQueue(Players.First(x => x.Id == p.LoverId).LoverMsg);
@@ -5288,15 +5280,20 @@ namespace Werewolf_Node
                         qtype = QuestionType.Douse;
                         break;
                     case IRole.GraveDigger:
-                        player.DugGravesLastNight = DiedSinceLastGrave.Count;
+                        var diedSinceLastGrave = Players
+                            .Where(x => x.IsDead && x.TimeDied > lastGrave && !x.DiedByFleeOrIdle).ToList();
+
+                        secondLastGrave = lastGrave;
+                        lastGrave = DateTime.Now;
+                        player.DugGravesLastNight = diedSinceLastGrave.Count;
                         player.Choice = -1;
-                        if (DiedSinceLastGrave.Count < 1)
+                        if (diedSinceLastGrave.Count < 1)
                         {
                             Send(GetLocaleString("DigNoGraves"), player.Id);
                         }
                         else
                         {
-                            string playersDead = string.Join(GetLocaleString("And"), DiedSinceLastGrave.Select(x => x.GetName()));
+                            string playersDead = string.Join(GetLocaleString("And"), diedSinceLastGrave.Select(x => x.GetName()));
                             Send(GetLocaleString("DigGraves", playersDead), player.Id);
                         }
                         break;
@@ -5580,9 +5577,11 @@ namespace Werewolf_Node
             p.IsDead = true;
             if (killers != null && killMethod.HasValue) DBKill(killers, p, killMethod.Value);
             // if it was an idle kill or flee, all further consequences will be skipped
-            if (killMethod == KillMthd.Idle || killMethod == KillMthd.Flee) return;
-            //add the player to the list of graves for the grave digger
-            DiedSinceLastGrave.Add(p);
+            if (killMethod == KillMthd.Idle || killMethod == KillMthd.Flee)
+            {
+                p.DiedByFleeOrIdle = true;
+                return;
+            }
             if (p.InLove && Players.Any(x => x.Id == p.LoverId && !x.IsDead))
                 KillLover(p, sendNoMessage: isNight);
             switch (p.PlayerRole)
