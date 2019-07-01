@@ -481,7 +481,7 @@ namespace Werewolf_Control.Handler
                                 {
                                     if (m.LeftChatMember.Id == Bot.Me.Id)
                                     {
-                                       //removed from group
+                                        //removed from group
                                         var grps = DB.Groups.Where(x => x.GroupId == id);
                                         if (!grps.Any())
                                         {
@@ -785,7 +785,7 @@ namespace Werewolf_Control.Handler
                         return;
                     }
                     string[] args = query.Data.Split('|');
-                    
+
                     if (args[0] == "donatetg")
                     {
                         Commands.GetDonationInfo(query);
@@ -1934,6 +1934,8 @@ namespace Werewolf_Control.Handler
 
         internal static InlineKeyboardMarkup GetConfigSubmenu(long id, ConfigGroup configGroup)
         {
+            if (configGroup == ConfigGroup.RoleConfig) return GetRoleConfigMenu(id);
+
             List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
 
             if (ConfigGroupAttribute.hardcodedConfigOptions.ContainsKey(configGroup))
@@ -1983,6 +1985,56 @@ namespace Werewolf_Control.Handler
 
             var menu = new InlineKeyboardMarkup(twoMenu.ToArray());
             return menu;
+        }
+
+        public static InlineKeyboardMarkup GetRoleConfigMenu(long id)
+        {
+            var buttons = new List<InlineKeyboardButton>();
+
+            using (var db = new WWContext())
+            {
+                var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
+                var disabledRoles = (DisabledRole)grp.Flags.Value; // TODO: Make an actual column for role config!
+
+                foreach (DisabledRole role in RoleConfigHelper.GetRoles())
+                {
+                    if (role == DisabledRole.None || role == DisabledRole.VALID) continue;
+                    var roleAttr = role.GetRoleAttribute();
+                    if (!roleAttr.CanBeDisabled) continue;
+                    buttons.Add(new InlineKeyboardCallbackButton(
+                        $"{roleAttr.Emoji} {(disabledRoles.HasFlag(role) ? "❌" : "✅")}",
+                        $"toggleRole|{id}|{role.ToString()}"));
+                }
+
+                var threeMenu = new List<InlineKeyboardButton[]>();
+                for (var i = 0; i < buttons.Count; i += 3)
+                {
+                    if (buttons.Count - 1 == i)
+                    {
+                        threeMenu.Add(new[] { buttons[i] });
+                    }
+                    else if (buttons.Count - 2 == i)
+                    {
+                        threeMenu.Add(new[] { buttons[i], buttons[i + 1] });
+                    }
+                    else
+                        threeMenu.Add(new[] { buttons[i], buttons[i + 1], buttons[i + 2] });
+                }
+
+                List<InlineKeyboardButton> lastRow = new List<InlineKeyboardButton>
+                {
+                    disabledRoles.HasFlag(DisabledRole.VALID)
+                        ? new InlineKeyboardCallbackButton("✅ Valid! ✅", $"dummmy")
+                        : new InlineKeyboardCallbackButton("❗️ Validate ❗️", $"validateroles|{id}"),
+
+                    new InlineKeyboardCallbackButton(GetLocaleString("Back", GetLanguage(id)), $"{ConfigGroup.RoleConfig.ToString()}|{id}|back")
+                };
+
+                threeMenu.Add(lastRow.ToArray());
+
+                var menu = new InlineKeyboardMarkup(threeMenu.ToArray());
+                return menu;
+            }
         }
 
 
