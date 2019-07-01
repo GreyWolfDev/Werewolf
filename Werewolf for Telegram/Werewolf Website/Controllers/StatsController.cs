@@ -42,7 +42,15 @@ namespace Werewolf_Web.Controllers
                 using (var DB = new WWContext())
                 {
                     var user = DB.Players.FirstOrDefault(x => x.TelegramId == id);
-                    return Json(user, JsonRequestBehavior.AllowGet);
+                    var userReply = new
+                    {
+                        id = user.Id,
+                        telegramId = user.TelegramId,
+                        name = user.Name,
+                        username = user.UserName,
+                        language = user.Language,
+                    };
+                    return Json(userReply, JsonRequestBehavior.AllowGet);
                 }
             }
             ViewBag.Id = id;
