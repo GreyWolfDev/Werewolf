@@ -135,7 +135,6 @@ namespace Werewolf_Node
             MaxJoinTime = 300;
 
 
-
 #if DEBUG
         //public static long MainChatId = -134703013;
         public static long MainChatId = -1001049529775; //Beta group

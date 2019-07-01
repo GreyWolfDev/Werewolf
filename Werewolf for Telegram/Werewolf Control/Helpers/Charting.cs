@@ -200,7 +200,6 @@ sum(count(x.Gameid)) over (partition by players) as Games
 
 
 
-
             var path = Path.Combine(Bot.RootDirectory, "myChart.png");
             chart.SaveImage(path, ChartImageFormat.Png);
             SendImage(path, u.Message.Chat.Id);
