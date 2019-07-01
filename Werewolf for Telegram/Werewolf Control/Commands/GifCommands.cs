@@ -71,8 +71,10 @@ namespace Werewolf_Control
                 CustomGifData data;
                 if (String.IsNullOrEmpty(json))
                 {
-                    data = new CustomGifData();
-                    data.HasPurchased = true;
+                    data = new CustomGifData
+                    {
+                        HasPurchased = true
+                    };
                     p.GifPurchased = true;
                     p.CustomGifSet = JsonConvert.SerializeObject(data);
                     db.SaveChanges();

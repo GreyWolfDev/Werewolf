@@ -179,7 +179,8 @@ namespace Werewolf_Web.Controllers
                 //var timesTannerWon =
                 //    DB.Games.Count(x => x.Winner == "Tanner" && x.GroupName == groupName);
                 //now build the reply
-                string night1dielink, day1lynchlink, day1dielink, survivorlink;
+                //string night1dielink, day1lynchlink, day1dielink;
+                string survivorlink;
                 //night1dielink = night1DieInfo != null ? $"<a href='../Player/{night1DieInfo.TelegramId}'>{night1DieInfo.Name}</a>" : "Not enough games";
                 //day1lynchlink = day1LynchInfo != null ? $"<a href='../Player/{day1LynchInfo.TelegramId}'>{day1LynchInfo.Name}</a>" : "Not enough games";
                 //day1dielink = day1DieInfo != null ? $"<a href='../Player/{day1DieInfo.TelegramId}'>{day1DieInfo.Name}</a>" : "Not enough games";

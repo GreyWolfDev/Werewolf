@@ -36,7 +36,6 @@ namespace Werewolf_Control
 #if BETA
         public static bool BetaUnlocked = false;
 #endif
-        internal static BotanIO.Api.Botan Analytics;
         internal static string XsollaLink = null;
         internal static string XsollaApiId = null;
         internal static string XsollaApiKey = null;
@@ -80,14 +79,6 @@ namespace Werewolf_Control
             {
                 updateid = args[0];
             }
-
-            //initialize analytics
-#if BETA || DEBUG
-            var aToken = Helpers.RegHelper.GetRegValue("BotanBetaAPI");
-#else
-            var aToken = Helpers.RegHelper.GetRegValue("BotanReleaseAPI");
-#endif
-            Analytics = new BotanIO.Api.Botan(aToken);
 
             XsollaLink = Helpers.RegHelper.GetRegValue("XsollaLink");
             XsollaApiId = Helpers.RegHelper.GetRegValue("XsollaApiId");

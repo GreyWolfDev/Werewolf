@@ -98,18 +98,22 @@ sum(count(x.Gameid)) over (partition by players) as Games
             dataSet.Tables.Add(dt);
 
             //now build the chart
-            Chart chart = new Chart();
+            Chart chart = new Chart
+            {
+                Width = 1000,
+                Height = 400
+            };
             //chart.DataSource = dataSet.Tables[0];
-            chart.Width = 1000;
-            chart.Height = 400;
             var legend = new Legend();
             //create serie...
             foreach (var team in new[] { "Wolf", "Village", "Tanner", "Cult", "SerialKiller", "Arsonist", "Lovers" })
             {
-                Series serie1 = new Series();
+                Series serie1 = new Series
+                {
+                    LegendText = team,
+                    Name = team
+                };
                 //serie1.Label = team;
-                serie1.LegendText = team;
-                serie1.Name = team;
                 switch (team)
                 {
                     case "Wolf":
@@ -178,14 +182,16 @@ sum(count(x.Gameid)) over (partition by players) as Games
                 chart.Series.Add(serie1);
             }
             //create chartareas...
-            ChartArea ca = new ChartArea();
-            ca.Name = "ChartArea1";
-            ca.BackColor = Color.White;
-            ca.BorderColor = Color.FromArgb(26, 59, 105);
-            ca.BorderWidth = 0;
-            ca.BorderDashStyle = ChartDashStyle.Solid;
-            ca.AxisX = new Axis();
-            ca.AxisY = new Axis();
+            ChartArea ca = new ChartArea
+            {
+                Name = "ChartArea1",
+                BackColor = Color.White,
+                BorderColor = Color.FromArgb(26, 59, 105),
+                BorderWidth = 0,
+                BorderDashStyle = ChartDashStyle.Solid,
+                AxisX = new Axis(),
+                AxisY = new Axis()
+            };
             chart.ChartAreas.Add(ca);
             chart.Legends.Add(legend);
             //databind...
@@ -198,7 +204,7 @@ sum(count(x.Gameid)) over (partition by players) as Games
             var path = Path.Combine(Bot.RootDirectory, "myChart.png");
             chart.SaveImage(path, ChartImageFormat.Png);
             SendImage(path, u.Message.Chat.Id);
-            UpdateHandler.Send(result.Select(x => new {Players = x.Players, Games = x.Games}).Distinct().Aggregate("", (a, b) => $"{a}\n{b.Players}: {b.Games}"), u.Message.Chat.Id);
+            UpdateHandler.Send(result.Select(x => new { x.Players, x.Games}).Distinct().Aggregate("", (a, b) => $"{a}\n{b.Players}: {b.Games}"), u.Message.Chat.Id);
         }
 
         private static void SendImage(string path, long id)

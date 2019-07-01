@@ -89,13 +89,8 @@ namespace Werewolf_Node
         /// <param name="chaos">Chaos mode yes or no</param>
         public Werewolf(long chatid, User u, string chatGroup, bool chaos = false)
         {
-            //int debugid = 295152997;
-            //bool debuglog = u.Id == debugid;
-
             try
             {
-                //if (debuglog) Send("GAME: Reached constructor. Initializing.", debugid).Wait();
-
                 do
                 {
                     Guid = Convert.ToBase64String(System.Guid.NewGuid().ToByteArray()).Substring(0, 22); // Since a GUID is always 128 bits, we can omit the "==" that we know will always be present at the end
@@ -237,12 +232,9 @@ namespace Werewolf_Node
                 SendPlayerList(true);
 
                 new Thread(GameTimer).Start();
-
-                //if (debuglog) Send("GAME: Initializing complete, no exception occured", debugid).Wait();
             }
             catch (Exception ex)
             {
-                //if (debuglog) Send("GAME: Exception during initializing: " + ex.Message + "\n" + ex.StackTrace, debugid).Wait();
 
                 while (ex.InnerException != null)
                     ex = ex.InnerException;
@@ -544,7 +536,6 @@ namespace Werewolf_Node
                     Send(cMsg);
                 }
 #endif
-                Program.Analytics.TrackAsync("gamestart", new { players = Players, playerCount = Players.Count(), mode = Chaos ? "Chaos" : "Normal" }, "0");
                 IsRunning = true;
                 AssignRoles();
                 //create new game for database
@@ -4923,7 +4914,6 @@ namespace Werewolf_Node
                 //Program.Bot.SendTextMessage(ChatId, "[Enjoy playing? Support the developers and get some swag!](https://teespring.com/stores/werewolf-for-telegram)", parseMode: ParseMode.Markdown, disableWebPagePreview: true);
                 UpdateAchievements();
                 UpdateGroupRanking();
-                Program.Analytics.TrackAsync("gameend", new { winner = team.ToString(), groupid = ChatId, mode = Chaos ? "Chaos" : "Normal", size = Players.Count() }, "0");
                 //if (ChatId == -1001094614730)
                 //{
                 //    foreach (var p in Players.Where(x => x.IsDead))

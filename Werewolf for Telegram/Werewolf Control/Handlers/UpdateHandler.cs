@@ -203,16 +203,14 @@ namespace Werewolf_Control.Handler
                                 temp[key].Messages.Clear();
                             }
                         }
-                        catch (Exception e)
+                        catch
                         {
-                            //Console.WriteLine(e.Message);
                         }
                     }
                     UserMessages = temp;
                 }
-                catch (Exception e)
+                catch
                 {
-                    //Console.WriteLine(e.Message);
                 }
                 Thread.Sleep(2000);
             }
@@ -229,7 +227,6 @@ namespace Werewolf_Control.Handler
                     return;
                 }
                 if (update.Message == null || update.Message.From.Id == 777000) return;
-                Program.Analytics.TrackAsync("message", update.Message, update.Message.From.Id.ToString());
                 //ignore previous messages
                 if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
                     return; //toss it
@@ -323,9 +320,6 @@ namespace Werewolf_Control.Handler
                                 var args = GetParameters(update.Message.Text);
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
                                 //command is args[0]
-                                Program.Analytics.TrackAsync("/" + args[0],
-                                    new { groupid = update.Message.Chat.Id, user = update.Message.From },
-                                    update.Message.From.Id.ToString());
                                 if (args[0].StartsWith("about"))
                                 {
                                     var reply = Commands.GetAbout(update, args);
@@ -342,7 +336,7 @@ namespace Werewolf_Control.Handler
                                             //        update.Message.Chat.Id);
 
                                         }
-                                        catch (Exception e)
+                                        catch
                                         {
                                             Commands.RequestPM(update.Message.Chat.Id);
                                         }
@@ -487,8 +481,7 @@ namespace Werewolf_Control.Handler
                                 {
                                     if (m.LeftChatMember.Id == Bot.Me.Id)
                                     {
-                                        Program.Analytics.TrackAsync("botremoved", m, m.From?.Id.ToString() ?? "0");
-                                        //removed from group
+                                       //removed from group
                                         var grps = DB.Groups.Where(x => x.GroupId == id);
                                         if (!grps.Any())
                                         {
@@ -510,7 +503,6 @@ namespace Werewolf_Control.Handler
                                 }
                                 if (m.NewChatMember?.Id == Bot.Me.Id)
                                 {
-                                    Program.Analytics.TrackAsync("botadded", m, m.From?.Id.ToString() ?? "0");
                                     //added to a group
                                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == id);
                                     if (grp == null)
@@ -781,7 +773,6 @@ namespace Werewolf_Control.Handler
         internal static void HandleCallback(CallbackQuery query)
         {
             Bot.MessagesProcessed++;
-            Program.Analytics.TrackAsync("callback", query, query.From.Id.ToString());
             //Bot.CommandsReceived++;
             using (var DB = new WWContext())
             {
@@ -794,8 +785,7 @@ namespace Werewolf_Control.Handler
                         return;
                     }
                     string[] args = query.Data.Split('|');
-                    Program.Analytics.TrackAsync($"cb:{args[0]}", new { args = args }, query.From.Id.ToString());
-
+                    
                     if (args[0] == "donatetg")
                     {
                         Commands.GetDonationInfo(query);
@@ -1882,7 +1872,7 @@ namespace Werewolf_Control.Handler
                 }
                 return String.Format(selected.Value.FormatHTML(), args).Replace("\\n", Environment.NewLine);
             }
-            catch (Exception e)
+            catch
             {
                 return "";
             }
@@ -2025,7 +2015,6 @@ namespace Werewolf_Control.Handler
                 var com = q.Query;
                 choices = commands.Where(command => command.Command.StartsWith(com) || Commands.ComputeLevenshtein(com, command.Command) < 3).ToList();
             }
-            Program.Analytics.TrackAsync("inline", q, q.From.Id.ToString());
             Bot.Api.AnswerInlineQueryAsync(q.Id, choices.Select(c => new InlineQueryResultArticle()
             {
                 Description = c.Description,

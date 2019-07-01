@@ -44,7 +44,6 @@ namespace Werewolf_Node
         internal static int DupGamesKilled = 0;
         internal static int TotalPlayers = 0;
         internal static string APIToken;
-        internal static BotanIO.Api.Botan Analytics;
 #if DEBUG
         internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\..\Languages"));
 #else
@@ -84,13 +83,6 @@ namespace Werewolf_Node
             var key =
                     RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
                         .OpenSubKey("SOFTWARE\\Werewolf");
-
-#if BETA || DEBUG
-            var aToken = key.GetValue("BotanBetaAPI").ToString();
-#else
-            var aToken = key.GetValue("BotanReleaseAPI").ToString();
-#endif
-            Analytics = new BotanIO.Api.Botan(aToken);
 
 #if DEBUG
             APIToken = key.GetValue("DebugAPI").ToString();
@@ -139,13 +131,9 @@ namespace Werewolf_Node
         {
             try
             {
-                //int debugid = 295152997;
-                //bool debuglog = message.MessageString.Contains($"{debugid}");
-
                 var messages = message.MessageString.Split('\u0013');
                 foreach (var msg in messages)
                 {
-                    //if (debuglog) Bot.SendTextMessageAsync(debugid, $"{msg}").Wait();
                     if (msg == "ping" || String.IsNullOrWhiteSpace(msg)) return; //ignore
                     if (msg.StartsWith("reload:"))
                     {
@@ -181,7 +169,6 @@ namespace Werewolf_Node
                                 {
                                     //double check we don't already have a game...
                                     game = Games.FirstOrDefault(x => x.ChatId == gsi.Chat.Id);
-                                    //if (debuglog) Bot.SendTextMessageAsync(debugid, $"NODE: GameStartInfo received. Existing game{(game == null ? " not" : "")} found.").Wait();
                                     if (game != null)
                                     {
                                         game.ShowJoinButton();
@@ -192,7 +179,6 @@ namespace Werewolf_Node
                                             gsi.Chaos);
                                         Games.Add(game);
                                         GamesStarted++;
-                                        //if (debuglog) Bot.SendTextMessageAsync(debugid, $"NODE: New game created and added.").Wait();
                                     }
                                 }
                                 catch (Exception e)

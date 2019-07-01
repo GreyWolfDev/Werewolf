@@ -44,7 +44,6 @@ namespace Werewolf_Control.Models
                 Users = new HashSet<int> {update.Message.From.Id},
                 State = GameState.Joining
             });
-            //if (update.Message.From.Id == 295152997) Bot.Send("CONTROL: GameStartInfo broadcasted, GameInfo added.", 295152997).Wait(); //debuglog
         }
 
         public void EndGame(GameEndInfo gei)
@@ -78,7 +77,7 @@ namespace Werewolf_Control.Models
             {
                 return JsonConvert.DeserializeObject<GameInfo>(this.WriteLineAndGetReply(JsonConvert.SerializeObject(ggi)).MessageString);
             }
-            catch (Exception e)
+            catch
             {
                 return null;
             }
