@@ -1716,6 +1716,32 @@ namespace Werewolf_Control.Handler
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("ThankYou", language));
                             break;
+                        case "togglerole":
+                            var role = (DisabledRole)long.Parse(choice);
+                            var disabledRoles = (DisabledRole)(grp.RoleFlags ?? 0);
+                            disabledRoles ^= role; // Toggle the role
+                            disabledRoles &= ~DisabledRole.VALID; // Remove the "VALID" flag
+                            grp.RoleFlags = (long)disabledRoles;
+                            DB.SaveChanges();
+                            Bot.Edit(query, GetLocaleString("WhatToDo", language), GetRoleConfigMenu(groupid));
+                            break;
+                        case "validateroles":
+                            disabledRoles = (DisabledRole)(grp.RoleFlags ?? 0);
+                            bool valid = GameBalancing.TryBalance(disabledRoles);
+                            if (valid)
+                            {
+                                disabledRoles |= DisabledRole.VALID; // Add the "VALID" flag
+                                Bot.ReplyToCallback(query, GetLocaleString("RoleConfigValid", language), false, true);
+                            }
+                            else
+                            {
+                                disabledRoles &= ~DisabledRole.VALID; // Remove the "VALID" flag
+                                Bot.ReplyToCallback(query, GetLocaleString("RoleConfigInvalid", language), false, true);
+                            }
+                            grp.RoleFlags = (long)disabledRoles;
+                            DB.SaveChanges();
+                            Bot.Edit(query, GetLocaleString("WhatToDo", language), GetRoleConfigMenu(groupid));
+                            break;
                         default:
                             //check the statement against various flags to see if it a boolean group setting.  If so, build out the response.
                             var settings = Enum.GetValues(typeof(GroupConfig)).Cast<GroupConfig>()
@@ -1994,16 +2020,15 @@ namespace Werewolf_Control.Handler
             using (var db = new WWContext())
             {
                 var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
-                var disabledRoles = (DisabledRole)grp.Flags.Value; // TODO: Make an actual column for role config!
+                var disabledRoles = (DisabledRole)(grp.RoleFlags ?? 0);
 
                 foreach (DisabledRole role in RoleConfigHelper.GetRoles())
                 {
-                    if (role == DisabledRole.None || role == DisabledRole.VALID) continue;
                     var roleAttr = role.GetRoleAttribute();
                     if (!roleAttr.CanBeDisabled) continue;
                     buttons.Add(new InlineKeyboardCallbackButton(
                         $"{roleAttr.Emoji} {(disabledRoles.HasFlag(role) ? "❌" : "✅")}",
-                        $"toggleRole|{id}|{role.ToString()}"));
+                        $"togglerole|{id}|{(long)role}"));
                 }
 
                 var threeMenu = new List<InlineKeyboardButton[]>();
@@ -2021,13 +2046,15 @@ namespace Werewolf_Control.Handler
                         threeMenu.Add(new[] { buttons[i], buttons[i + 1], buttons[i + 2] });
                 }
 
+                var l = GetLanguage(id);
+
                 List<InlineKeyboardButton> lastRow = new List<InlineKeyboardButton>
                 {
                     disabledRoles.HasFlag(DisabledRole.VALID)
-                        ? new InlineKeyboardCallbackButton("✅ Valid! ✅", $"dummmy")
-                        : new InlineKeyboardCallbackButton("❗️ Validate ❗️", $"validateroles|{id}"),
+                        ? new InlineKeyboardCallbackButton(GetLocaleString("Valid", l), $"dummmy")
+                        : new InlineKeyboardCallbackButton(GetLocaleString("Validate", l), $"validateroles|{id}"),
 
-                    new InlineKeyboardCallbackButton(GetLocaleString("Back", GetLanguage(id)), $"{ConfigGroup.RoleConfig.ToString()}|{id}|back")
+                    new InlineKeyboardCallbackButton(GetLocaleString("Back", l), $"{ConfigGroup.RoleConfig.ToString()}|{id}|back")
                 };
 
                 threeMenu.Add(lastRow.ToArray());

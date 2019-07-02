@@ -1424,14 +1424,19 @@ namespace Werewolf_Node
             return GetLocaleString(en.ToString()).ToBold();
         }
 
-        private List<IRole> GetRoleList(int playerCount)
+        private List<IRole> GetRoleList(int playerCount, List<DisabledRole> disabledRoles)
         {
             var rolesToAssign = new List<IRole>();
             //need to set the max wolves so game doesn't end immediately - 25% max wolf population
             //25% was too much, max it at 5 wolves.
-            var possiblewolves = new List<IRole>() { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
+            var possiblewolves = new List<IRole>()
+            { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan }
+                .Where(x => !disabledRoles.Any(y => y.ToString() == x.ToString())).ToList();
+
             var wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
-            possiblewolves.Add(IRole.SnowWolf); // add snow wolf only after one other wolf has been chosen already
+            if (!disabledRoles.Contains(DisabledRole.SnowWolf))
+                possiblewolves.Add(IRole.SnowWolf); // add snow wolf only after one other wolf has been chosen already
+
             for (int i = 0; i < Math.Min(Math.Max(playerCount / 5, 1), 5); i++)
             {
                 rolesToAssign.Add(wolftoadd);
@@ -1452,26 +1457,10 @@ namespace Werewolf_Node
                         break;
                     case IRole.CultistHunter:
                     case IRole.Cultist:
-                        if (AllowCult && playerCount > 10)
-                            rolesToAssign.Add(role);
-                        break;
-                    case IRole.Tanner:
-                        if (AllowTanner)
-                            rolesToAssign.Add(role);
-                        break;
-                    case IRole.Fool:
-                        if (AllowFool)
-                            rolesToAssign.Add(role);
-                        break;
-                    case IRole.Thief:
-                        if (AllowThief)
+                        if (playerCount > 10)
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Spumpkin:
-                        break;
-                    case IRole.Arsonist:
-                        if (AllowArsonist)
-                            rolesToAssign.Add(role);
                         break;
                     default:
                         rolesToAssign.Add(role);
@@ -1494,6 +1483,7 @@ namespace Werewolf_Node
             //now fill rest of the slots with villagers (for large games)
             for (int i = 0; i < playerCount / 4; i++)
                 rolesToAssign.Add(IRole.Villager);
+            rolesToAssign = rolesToAssign.Where(x => !disabledRoles.Any(y => x.ToString() == x.ToString())).ToList();
             return rolesToAssign;
         }
 
@@ -1502,6 +1492,11 @@ namespace Werewolf_Node
             try
             {
                 List<IRole> rolesToAssign;
+                var roleflags = (DisabledRole)(DbGroup.RoleFlags ?? 0);
+                List<DisabledRole> disabledRoles = roleflags.HasFlag(DisabledRole.VALID)
+                    ? roleflags.GetUniqueRoles().ToList()
+                    : new List<DisabledRole>();
+
                 var count = Players.Count;
 
                 var balanced = false;
@@ -1518,7 +1513,7 @@ namespace Werewolf_Node
 
 
                     //determine which roles should be assigned
-                    rolesToAssign = GetRoleList(count);
+                    rolesToAssign = GetRoleList(count, disabledRoles);
                     PossibleRoles = rolesToAssign;
                     rolesToAssign.Shuffle();
                     rolesToAssign = rolesToAssign.Take(count).ToList();

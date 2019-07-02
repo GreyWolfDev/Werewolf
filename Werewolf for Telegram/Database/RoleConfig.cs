@@ -154,7 +154,8 @@ namespace Database
     public static class RoleConfigHelper
     {
         public static List<DisabledRole> GetRoles()
-            => Enum.GetValues(typeof(DisabledRole)).Cast<DisabledRole>().ToList();
+            => Enum.GetValues(typeof(DisabledRole)).Cast<DisabledRole>()
+                .Where(x => x != DisabledRole.None && x != DisabledRole.VALID).ToList();
 
         public static RoleAttribute GetRoleAttribute(this DisabledRole role)
         {
@@ -165,6 +166,17 @@ namespace Database
 
             if (qA == null) return null;
             return (qA.Length > 0) ? qA[0] : null;
+        }
+
+        public static IEnumerable<DisabledRole> GetUniqueRoles(this DisabledRole roles)
+        {
+            foreach(var r in GetRoles())
+            {
+                if (roles.HasFlag(r))
+                {
+                    yield return r;
+                }
+            }
         }
     }
 }
