@@ -39,10 +39,6 @@ Vecchio Saggio: Nicolas Flamel📚 -->
 <strings> 
 <language name="Italian Harry Potter" base="Italiano" variant="Harry Potter" code="it" isDefault="false"/>
 
-<string key="NotInGame" deprecated="true">
-<value>L’anno ad Hogwarts non è ancora iniziato. Puoi iniziare un anno tranquillo con /startgame o un anno caotico con /startchaos</value> 
-</string>
-
 <string key="PlayerStartedGame" isgif="true">
 <!-- 0 - Player name -->
 <value>{0} ha iniziato un nuovo anno scolastico. Clicca Join per salire sull'Hogwarts Express e... probabilmente ricevere un Avada Kedavra.</value>
@@ -53,34 +49,21 @@ Vecchio Saggio: Nicolas Flamel📚 -->
 <value>{0} ha iniziato un anno caotico ad Hogwarts! Unisciti per perderti nei corridoi e morire!</value>
 </string>
 
-<string key="NoJoinGameRunning" deprecated="true">
-<value>Hai perso l’Hogwarts Express! L’anno è gia iniziato!</value>
-</string>
-
-<string key="AlreadyJoined" deprecated="true">
-<value>Sei gia nell’Hogwarts Express!</value>
-</string>
-
 <string key="MinuteLeftToJoin">
-<value>Ancora 1 minuto per cliccare Join!</value>
+<value>Ancora 1 minuto per salire sull’Hogwarts Express!</value>
 </string>
 
 <string key="SecondsLeftToJoin">
-<value>Ancora {0} secondi per cliccare Join!</value>
+<value>Ancora {0} secondi per salire sull’Hogwarts Express!</value>
 </string>
 
 <string key="NotEnoughPlayers">
-<value>Pochi maghi si sono iscritti ad Hogwarts, non è successo niente di speciale quest’anno. Le classi sono cancellate!</value>
+<value>Pochi maghi si sono iscritti ad Hogwarts, non è successo niente di speciale quest’anno. Le classi sono state cancellate!</value>
 </string>
 
 <string key="StartingGameWait">
 <value>L'anno scolastico di Hogwarts sta iniziando, per favore aspetta mentre io, il Cappello Parlante distribuisco i documenti.</value>
 </string>  
-
-<string key="BannedForExploit" deprecated="true">
-<!-- 0 - Player name -->
-<value>{0} viene espulso per aver tentato di esplorare le sale maledette di Hogwarts (i nomi iniziati da / non sono ammessi)</value>
-</string>
 
 <string key="ChangeNameToJoin">
 <!-- 0 - Player name -->
@@ -92,7 +75,7 @@ Vecchio Saggio: Nicolas Flamel📚 -->
 </string>
 
 <string key="PlayerJoined">
-<value>{0} si è unito. {1}/{3} giocatori, {2} minimo.</value>
+<value>{0} è salito sul treno. {1}/{3} studenti, {2} minimo.</value>
 </string>
 
 <string key="PMTheBot">
@@ -121,20 +104,12 @@ Vecchio Saggio: Nicolas Flamel📚 -->
 <value>{0} maghi rimasti ad Hogwarts.</value>
 </string>
 
-<string key="DidntAsk" deprecated="true">
-<value>Hey, non ti ho ancora chiesto nulla!</value>
-</string>
-
 <string key="NotPlaying">
-<value>Sembra che tu non sia andato sull'Hogwarts Express...</value>
+<value>Sembra che tu non sia salito sull'Hogwarts Express...</value>
 </string>
 
 <string key="NoPlayerName">
 <value>Non sono stato in grado di trovare un mago / strega con quel nome.</value>
-</string>
-
-<string key="AnswerNonValid" deprecated="true">
-<value>Questa non è una risposta valida!</value>
 </string>
 
 <string key="WolfVotedKill">
@@ -238,7 +213,7 @@ Vecchio Saggio: Nicolas Flamel📚 -->
 </string>
 
 <string key="RoleInfoDetective">
-<value>Tu sei Hermione Granger🕵️‍♂️, combattente di Hogwarts. Durante il giorno, puoi scegliere un mago per seguirlo attraverso la scuola e scoprire il suo ruolo. Tuttavia, nel fare ciò, il tuo ruolo potrebbe essere rivelato ai Mangiamorte! (40% di probabilità)</value>
+<value>Tu sei Hermione Granger🕵️‍♂️, combattente di Hogwarts. Durante il giorno, puoi scegliere un mago da seguire e scoprire il suo ruolo. Tuttavia, nel fare ciò, il tuo ruolo potrebbe essere rivelato ai Mangiamorte! (40% di probabilità)</value>
 </string>
 
 <string key="RoleInfoDrunk">
@@ -254,11 +229,11 @@ Vecchio Saggio: Nicolas Flamel📚 -->
 </string>
 
 <string key="RoleInfoHarlot">
-<value>Tu sei Cho Chang💋. Sei una delle streghe più corteggiate. Durante la notte, puoi scegliere qualcuno da affascinare con la pozione Viritaserum e scoprire se il mago è un Mangiamorte o no. Tuttavia, se cerchi di incantare un Mangiamorte o qualcuno che viene attaccato da loro, muori. Se stai corteggiando qualcuno e i Mangiamorte cercano di ucciderti nella tua camera da letto, sopravvivrai.</value>
+<value>Tu sei Cho Chang💋. Sei una delle streghe più corteggiate. Durante la notte, puoi scegliere qualcuno da affascinare con la pozione Viritaserum e scoprire se il mago è un Mangiamorte o no. Tuttavia, se cerchi di incantare un Mangiamorte o qualcuno che viene attaccato da loro, morirai. Se i Mangiamorte ti attaccano mentre non sei in camera sopravvivrai.</value>
 </string>
 
 <string key="RoleInfoTraitor">
-<value> Tu sei Peter Minus🖕, il grande traditore! Per ora, sei un animagus che vive clandestinamente come un topo, ma una volta che tutti i Mangiamorte saranno morti, diventerai uno di loro. 
+<value> Tu sei Peter Minus🖕, il grande traditore! Per ora, sei un animagus che vive clandestinamente come un topo, ma una volta che tutti i Mangiamorte saranno morti, uscirai allo scoperto e diverrai uno di loro. 
 Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno essere identificato come Mangiamorte.</value>
 </string>
 
@@ -275,7 +250,7 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 </string>
 
 <string key="RoleInfoTanner" >
-<value>Sei Severus Piton👺! Se riesci a farti mandare ad Azkaban, vinci automaticamente. Sii egoista!</value>
+<value>Sei Antonin Dolohov👺! Sei riuscito ad evadere da Azkaban per ben due volte! Ormai ci hai preso gusto e non fai altro che aspettare che qualcun altro ti mandi ad Azkaban per sfidare te stesso nelle tue abilità di evasione.</value>
 </string>
 
 <string key="RoleInfoWildChild" >
@@ -287,7 +262,7 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 </string>
 
 <string key="RoleInfoApprenticeSeer" >
-<value>Sei Fiorenzo🙇‍♂️, l'apprendista Professore di Divinazione e un combattente di Hogwarts. Se il Professore di Divinazione muore, prenderai la sfera di cristallo e sarai il nuovo Professore di Divinazione.</value>
+<value>Sei Fiorenzo🙇‍♂️, l'apprendista Professore di Divinazione e un combattente di Hogwarts. Se il Professore di Divinazione muore, prenderai la sua sfera di cristallo e il suo posto.</value>
 </string>
 
 <string key="RoleInfoCultist" >
@@ -295,7 +270,7 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 </string>
 
 <string key="RoleInfoCultistHunter" >
-<value>I Dissennatori sono a Hogwarts e cercano di inalare tutta la felicità e diffondere paura e tristezza, e tu, Remus Lupin💂‍♂️, devi difendere la scuola! Durante la notte puoi usare l'incantesimo patronus per investigare su un mago. Se lui / lei è un Dissennatore, lui / lei morirà. Se i Dissennatori ti attaccano, il Dissennatore più debole morirà.</value>
+<value>I Dissennatori sono a Hogwarts e cercano di inalare tutta la felicità e diffondere paura e tristezza, e tu, Remus Lupin💂‍♂️, devi difendere la scuola! Durante la notte puoi usare l'incantesimo patronus per investigare su un mago. Se lui / lei è un Dissennatore verra ucciso. Se i Dissennatori ti attaccano, il Dissennatore più debole morirà.</value>
 </string>
 
 <string key="LynchTime" >
@@ -305,8 +280,7 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 
 <string key="DayTime" >
 <!-- 0 - number of seconds -->
-<value>È l’alba ad Hogwarts.
-Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
+<value>È l’alba ad Hogwarts. /nAvete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 </string>
 
 <string key="NightTime" >
@@ -340,7 +314,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 
 <string key="GunnerEaten" >
 <!-- 0 - victim name -->
-<value>Tutti lasciano le loro stanze e poi trovano una bacchetta divisa a metà... poi le gambe... poi le dita... e fluttuante nel lago di Hogwarts, il corpo di {0}, ucciso dai Mangiamorte. Hanno ucciso Sirius Black🔫.</value>
+<value>Gli studenti dopo aver lasciato la stanza trovano una bacchetta divisa a metà... poi le gambe... poi le dita... e infine fluttuante nel lago di Hogwarts, il corpo di {0}, ucciso dai Mangiamorte. Hanno ucciso Sirius Black🔫.</value>
 </string>
 
 <string key="SeerEaten" >
@@ -361,12 +335,12 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 <string key="DefaultEaten" >
 <!-- 0 - victim name -->
 <!-- 1 - victim role -->
-<value>Mentre tutti si alzano per svolgere i loro compiti quotidiani, sentono un odore orribile. Seguono l'odore per trovare {0} squartato nella foresta, ucciso da un terribile incantesimo proibito. AVADA KEDAVRA.\n{1}</value>
+<value>Mentre tutti si alzano per svolgere i loro compiti quotidiani, sentono un odore orribile. Seguendo l'odore trovano {0} squartato nella foresta, ucciso da un terribile incantesimo proibito. AVADA KEDAVRA.\n{1}</value>
 </string>
 
 <string key="HunterKilledCultist">
 <!-- 0 - victim name -->
-<value>La camera da letto di {0} è piuttosto fredda... Studenti e insegnanti decidono quindi di entrare e sentono un vuoto, come se non ci fosse più felicità nel mondo... Arriva Remus Lupin che evoca il suo Patronus, riempiendo il luogo di luce, spedendo il Dissennatore ad Azkaban!</value>
+<value>La camera da letto di {0} è piuttosto fredda... Studenti e insegnanti decidono quindi di entrare, entrando sentono un vuoto, come se non ci fosse più felicità nel mondo... Poi però arriva Remus Lupin che evoca il suo Patronus, riempiendo il luogo di luce e uccidendo il Dissennatore!</value>
 </string>
 
 <string key="NoAttack" >
@@ -393,7 +367,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 
 <string key="WolvesEatDrunk" >
 <!-- 0 - victim name -->
-<value>Oh no! {0} era Horace Lumacorno🍻! Ora sei stordito per via delle pozioni che ha bevutoa, non potrai attaccare la prossima notte...</value>
+<value>Oh no! {0} era Horace Lumacorno🍻! Ora sei stordito per via delle pozioni che ha bevuto e, non potrai attaccare la prossima notte...</value>
 </string>
 
 <string key="GuardWolf" >
@@ -416,7 +390,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 </string>
   
 <string key="GuardSavedYou" >
-<value>Lily J. Potter si è presa cura di te la scorsa notte e ha spaventato i Mangiamorte! Che benedizione!</value>
+<value>Lily J. Potter si è presa cura di te la scorsa notte e ha scacciato i Mangiamorte! Che benedizione!</value>
 </string>
   
 <string key="HarlotEaten" >
@@ -426,12 +400,12 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 
 <string key="HarlotNotHome" >
 <!-- 0 - player name -->
-<value>Strano... {0} non era a casa! Niente omicidi sta sera...</value>
+<value>Strano... {0} non era a casa! Niente incantesimi proibiti questa sera...</value>
 </string>
 
 <string key="HarlotFuckWolf" >
 <!-- 0 - player name -->
-<value>Sei andato nella camera da letto di {0} per sbaciucchiare un po' e scoprire alcune verità, ma hai scoperto troppo tardi che era un Mangiamorte. Sei morta.</value>
+<value>Sei andato nella camera da letto di {0} per sbaciucchiarlo un po' e scoprire alcuni segreti, ma hai scoperto troppo tardi che era un Mangiamorte. Sei morta.</value>
 </string>
 
 <string key="HarlotFuckedWolfPublic" >
@@ -442,12 +416,12 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 <string key="HarlotFuckedVictimPublic" >
 <!-- 0 - harlot name -->
 <!-- 1 - victim name -->
-<value>{0} è andato a dormire nella casa di {1}, pronto per divertirsi e scoprire le verità. Tuttavia, ha trovato un Mangiamorte uccidere {1}! Il Mangiamorte gira rapidamente e... {0} muore anche lui.</value>
+<value>{0} è andato a visitare {1}, pronto per scoprire alcuni segreti. Tuttavia, ha trovato un Mangiamorte uccidere {1}! Il Mangiamorte si è girato rapidamente e... anche {0} ha ricevuto un AVADA KEDAVRA.</value>
 </string>
 
 <string key="HarlotVisitNonWolf" >
 <!-- 0 - target name -->
-<value>Percepisci che {0} non è un Mangiamorte, dal momento che i tuoi baci lo hanno convinto a bere la pozione e rivelare la verità!</value>
+<value>Percepisci che {0} non è un Mangiamorte, dal momento che i tuoi baci lo hanno convinto a bere la pozione e a rivelare i suoi segreti!</value>
 </string>
 
 <string key="HarlotVisitYou" >
@@ -456,7 +430,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 
 <string key="DetectiveCaught" >
 <!-- 0 - detective name -->
-<value>Hai notato {0} curiosare in giro! {0} è Hermione Granger🕵️‍♂️, il detective!</value>
+<value>Hai notato {0} curiosare in giro! {0} è Hermione Granger🕵️‍♂️!</value>
 </string>
 
 <string key="DetectiveSnoop" >
@@ -468,7 +442,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 <string key="HarlotShot" >
 <!-- 0 - gunner's name -->
 <!-- 1 - Harlot's name -->
-<value>Sembra che una notte con la Cho Chang💋 abbia giovato a {0}! Sirius Black🔫 ha avuto la sua vendetta. {1} è morto</value>
+<value>Sembra che una notte con Cho Chang💋 abbia confuso {0}! Sirius Black🔫 ha rivelato troppi segreti la notte scorsa e questa è stata la sua vendetta. {1} è morto</value>
 </string>
 
 <string key="DefaultShot" >
@@ -491,7 +465,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 </string>
 
 <string key="TannerWins" isgif="true" >
-<value>Oh no! Hai mandato Severus Piton ad Azkaban! Ha vinto la partita.</value>
+<value>Oh no! Hai mandato Antonin Dolohov ad Azkaban! Ha vinto la partita.</value>
 </string>
 
 <string key="RemainingPlayersEnd">
@@ -507,7 +481,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 <string key="CultConvertCultHunter">
 <!-- 0 - Yougest Cultist (killed)'s name' -->
 <!-- 1 - CultHunter's name -->
-<value>{0} è stato inviato per baciare {1} e farlo diventare un Dissennatore... Tuttavia, era Remus Lupin e aveva un ottimo modo per allontanare i Dissennatori! Ritornò ad Azkaban.</value>
+<value>{0} è stato inviato per baciare {1} e farlo diventare un Dissennatore... Tuttavia, era Remus Lupin e aveva un ottimo modo per allontanare i Dissennatori!</value>
 </string>
 
 <string key="CultHunterKilledCultVisit">
@@ -517,7 +491,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 </string>
  
 <string key="CultConvertYou">
-<value>Hai ricevuto il bacio della morte di un Dissennatore e ti sei trasformato in uno di loro. Durante la notte, puoi provare a baciar la morte e trasformare altri maghi...</value>
+<value>Hai ricevuto il bacio della morte di un Dissennatore e ti sei trasformato in uno di loro. Durante la notte, puoi provare a baciar la morte e trasformare altri maghi in Dissennatori...</value>
 </string>
 
 <string key="CultTeam">
@@ -527,7 +501,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 
 <string key="CultJoin">
 <!-- 0 - new cultist's name -->
-<value>{0} Ha ricevuto il bacio della morte ed è stato trasformato in un Dissennatore!</value>
+<value>{0} ha ricevuto il bacio della morte ed è stato trasformato in un Dissennatore!</value>
 </string>
   
 <string key="CultVisitEmpty">
@@ -542,12 +516,12 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 
 <string key="HunterVisitDead">
 <!-- 0 - target name -->
-<value>Sei andato a investigare {0}, ma quando sei arrivato hai trovato solo i sentimenti di tristezza e solitudine!</value>
+<value>Sei andato a investigare su {0}, ma quando sei arrivato hai trovato hai trovato solo un corpo senza vita!</value>
 </string>
 
 <string key="HunterFindCultist">
 <!-- 0 - target name -->
-<value>Entri nella stanza {0} e senti un'aria di tristezza e depressione. Sai benissimo cosa fare in queste occasioni: invochi l'incantesimo Patronus.</value>
+<value>Entri nella stanza di {0} e senti un'aria di tristezza e depressione. Sai benissimo cosa fare in queste occasioni: invochi l'incantesimo Patronus.</value>
 </string>
 
 <string key="HunterFailedToFind">
@@ -609,7 +583,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 </string>
 
 <string key="Tanner">
-<value>Severus Piton👺</value>
+<value>Antonin Dolohov👺</value>
 </string>
 
 <string key="Fool">
@@ -659,7 +633,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 </string>
 
 <string key="RoleInfoMason">
-<value>Sei un membro dell'Esercito di Silente👷‍♂️, una società segreta di maghi che si sono uniti per aiutare Hogwarts contro gli attacchi dei Mangiamorte. Se ci sono altri dell'Armata, saprai il loro nome</value>
+<value>Sei un membro dell'Esercito di Silente👷‍♂️, una società segreta di maghi che si sono uniti per aiutare Hogwarts contro gli attacchi dei Mangiamorte. Se ci sono altri dell'Esercito, saprai il loro nome</value>
 </string>
 
 <string key="MasonEaten">
@@ -679,14 +653,14 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 
 <string key="GuardBlockedWolf">
 <!-- 0 - target's name -->
-<value>I Mangiamorte si introducono nella casa di {0}, ma improvvisamente incontrano un'alta oscura figura, armata fino ai denti. È Lily J. Potter👼. Combattete a lungo ma sei costretto a tornare a casa sconfitto.</value>
+<value>I Mangiamorte si introducono nella casa di {0}, ma improvvisamente incontrano una figura oscura, esperta di incantesimi di protezione. È Lily J. Potter👼. Combattete a lungo ma sei costretto a tornare a casa sconfitto.</value>
 </string>
 
 <!-- new strings May 9 2016-->
 <string key="CultUnableToConvert">
 <!-- 0 - newest  -->
 <!-- 1 - target's name -->
-<value>{0} è stato inviato per dare il colpo di grazia e trasformare {1} in un Dissennatore, ma il suo Patronus era troppo forte. :(</value>
+<value>{0} è stato inviato per trasformare {1} in un Dissennatore, ma il suo Patronus era troppo forte. :(</value>
 </string>
 
 <!-- new string May 12 2016-->
@@ -698,7 +672,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 
 <string key="HarlotDiscoverCult">
 <!-- 0 - target's name -->
-<value>Sei andato nella camera da letto di {0} per baciarti un po', ma quando sei arrivato senti una sensazione di vuoto, come se la tua anima lasciasse il tuo corpo. </value>
+<value>Sei andato nella camera da letto di {0} per scoprire un po' di segreti, ma quando sei arrivato hai sentito una sensazione di vuoto, come se la tua anima lasciasse il tuo corpo. </value>
 </string>
 
 <!-- new string May 13 2016-->
@@ -725,36 +699,16 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 <value>è morto</value>
 </string>
 
-<string key="AdminAdded" deprecated="true">
-<value>{0} E' stato aggiunto alla lista degli admin. usa /config per cambiare le impostazioni del gruppo.</value>
-</string>
-
 <string key="AlreadyInGame">
 <value>Sei gia' nella partita! ({0})</value>
-</string>
-
-<string key="MultipleGames" deprecated="true">
-<value>Il tuo gruppo e' stato settato per far cominciare piu' partite... Uccisioni extra.</value>
-</string>
-
-<string key="GroupQueue" deprecated="true">
-<value>Il gruppo e' attualmente in lista d'attesa. Posizione:{0} / {1}</value>
 </string>
 
 <string key="MaintBreak">
 <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @greywolfdev per altre informazioni.</value>
 </string>
 
-<string key="MaxGames" deprecated="true">
-<value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
-</string>
-
-<string key="SkipQueue" deprecated="true">
-<value>{0} e' un gruppo ufficiale, ed ha saltato la lista d'attesa!</value>
-</string>
-
 <string key="NoGame">
-<value>Non ci sono partite in corso. Cominciane una con /startgame o comincia una partita Chaos con /startchaos</value>
+<value>Non ci sono lezioni in corso. Cominciane una con /startgame o con /startchaos</value>
 </string>
 
 <string key="GroupAdminOnly">
@@ -767,26 +721,6 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 
 <string key="ShuttingDownUpdate">
 <value>Dopo questa partita, mi spegnero' momentaneamente per un aggiornamento (automatizzato).</value>
-</string>
-
-<string key="NullIdAdmin" deprecated="true">
-<value>UserId nullo.  Sei sicuro di aver mandato questo comando come risposta?</value>
-</string>
-
-<string key="AlreadyAdmin" deprecated="true">
-<value>{0} E' gia' un admin!</value>
-</string>
-
-<string key="NotAdmin" deprecated="true">
-<value>{0} Non e' un admin!</value>
-</string>
-
-<string key="AdminRemoved" deprecated="true">
-<value>{0} E' stato rimosso dalla lista degli admin.</value>
-</string>
-
-<string key="LanguageSet" deprecated="true">
-<value>Lingua settata su {0}</value>
 </string>
 
 <string key="NoSeer">
@@ -803,11 +737,11 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 </string>
 
 <string key="RoleInfoDoppelganger">
-<value>Tu sei Ninfadora Tonks🎭. Un metamorphmagus, capace di modificare il proprio aspetto senza l'uso di magie o pozioni. Scegli un mago e quando morirà assumerai il suo ruolo ad Hogwarts.</value>
+<value>Tu sei Ninfadora Tonks🎭. Un metamorphmagus, capace di modificare il tuo aspetto senza l'uso di magie o pozioni. Scegli un mago e quando morirà assumerai il suo ruolo ad Hogwarts.</value>
 </string>
 
 <string key="RoleInfoHunter">
-<value>Sei Harry Potter🎯! La sua bacchetta è il suo amante e lui è con lei tutto il tempo, anche mentre dormi. Se muori, puoi scegliere un mago da uccidere. Se i Mangiamorte ti visitano di notte hai la possibilità di ucciderne uno, ma nel caso ce ne fossero altri, verresti accerchiato ed ucciso comunque.</value>
+<value>Sei Harry Potter🎯! La tua bacchetta è la tua fidanzata e tu stai con lei tutto il tempo, anche mentre dormi. Se muori, puoi scegliere un mago da uccidere. Se i Mangiamorte ti visitano di notte hai la possibilità di ucciderne uno, ma nel caso ce ne fossero altri, verresti accerchiato ed ucciso comunque.</value>
 </string>
 
 <string key="RoleInfoSerialKiller">
@@ -834,7 +768,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 <!-- 0 - hunter's name -->
 <!-- 1 - target's name -->
 <!-- 2 - target's role -->
-<value>All'arrivo ad Azkaban, {0} tira fuori la sua bacchetta e, rapido come un cobra, lancia un incantesimo su {1}! EXPELIARMUS... dice Harry Potter🎯 a {1}, lui / lei {2}, cade senza vita a terra.</value>
+<value>All'arrivo ad Azkaban, {0} tira fuori la sua bacchetta e, rapido come un cobra, lancia un incantesimo su {1}! EXPELIARMUS... dice Harry Potter🎯 a {1}, {2} cade senza vita a terra.</value>
 </string>
 
 <string key="HunterKilledFinalShot">
@@ -930,7 +864,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 
 <string key="DGToWolf">
 <!-- 0 - DG's name -->
-<value>Ninfadora Tonks🎭 {0} è diventato un Mangiamorte, uno in più per il clan!</value>
+<value>Ninfadora Tonks🎭 {0} è diventato un Mangiamorte!</value>
 </string>
 
 <string key="DGTransformToWolf">
@@ -959,11 +893,11 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 </string>
 
 <string key="AskCupid1">
-<value>Chi vuoi che siano gli innamorati? Scegli il primo giocatore</value>
+<value>Chi vuoi che siano gli innamorati? Scegli il primo studente</value>
 </string>
 
 <string key="AskCupid2">
-<value>Chi vuoi che siano gli innamorati? Scegli il secondo giocatore</value>
+<value>Chi vuoi che siano gli innamorati? Scegli il secondo studente</value>
 </string>
 
 <string key="Hunter">
@@ -994,11 +928,11 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 <string key="HunterKilledVisiter">
 <!-- 0 - target's name -->
 <!-- 1 - role -->
-<value>Quando si svegliano, trovano {0} morto nel mezzo della Sala Grande, completamente deperito a causa del Sectumsempra. Sembra che qualcuno abbia visitato Harry Potter🎯 e qualcosa sia andato storto! {1}</value>
+<value>Quando gli studenti si svegliano, trovano {0} morto nel mezzo della Sala Grande, completamente deperito a causa del Sectumsempra. Sembra che qualcuno abbia visitato Harry Potter🎯 e qualcosa sia andato storto! {1}</value>
 </string>
 
 <string key="CultAttempt">
-<value> Nel mezzo della notte senti una tristezza, un vuoto, come se la tua felicità fosse allegria. Usi il tuo patronus per proteggerti</value>
+<value> Nel mezzo della notte senti una tristezza, un vuoto, come se la tua felicità fosse sparita. Usi il tuo patronus per proteggerti e tutto ritorna alla normalita.</value>
 </string>
 
 <string key="AlreadyOnWaitList">
@@ -1013,7 +947,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 
 <string key="NotifyNewGame">
 <!-- 0 - target's name -->
-<value>Inizia un nuovo anno ad Hogwarts tra {0}.</value>
+<value>Sta iniziando un nuovo anno ad Hogwarts su {0}.</value>
 </string>
 
 <string key="SerialKillerWinsOverpower">
@@ -1029,11 +963,11 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 <string key="SKHunterEnd">
 <!-- 0 - SK's name -->
 <!-- 1 - Hunter's name -->
-<value>Il sole sorge all'orizzonte, {0} e {1} sono gli unici sopravvissuti. {0} si avvicina a {1} sorridendo e lo invita a uno giocare. {1} Veloce come un tuono tira fuori la sua bacchetta e lancia un incantesimo mortale su {0}. {0}, con il suo ultimo respiro,  un Avada Kedavra contro {1}. Entrambi sono morti, il giorno è finito e non c'è nessun vincitore per raccontare la storia...</value>
+<value>Il sole sorge all'orizzonte, {0} e {1} sono gli unici sopravvissuti. {0} si avvicina a {1} sorridendo e lo invita a uno giocare. {1} veloce come un tuono tira fuori la sua bacchetta e lancia un incantesimo mortale su {0}. {0}, con il suo ultimo respiro, lancia un Avada Kedavra contro {1}. Entrambi sono morti, il giorno è finito e non c'è nessun vincitore per raccontare la storia...</value>
 </string>
 
 <string key="RoleModelChosen">
-<value>Non hai fatto una scelta, quindi il bot ti ha scelto {0}</value>
+<value>Non hai fatto una scelta, quindi i potenti maghi hanno scelto per te {0}</value>
 </string>
 
 <string key="Won">
@@ -1045,7 +979,7 @@ Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
 </string>
 
 <string key="IdleCount">
-<value>Il giocatore {0} è stato ucciso per non aver votato {1} volte nelle ultime 24 ore.</value>
+<value>Lo studente {0} è stato ucciso per non aver votato {1} volte nelle ultime 24 ore.</value>
 </string>
 
 <!--New strings 7th of July-->
@@ -1094,7 +1028,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="AboutTanner">
-<value> Sei Severus Piton! Se riesci a farti mandare ad Azkaban, vinci automaticamente. Sii egoista!</value>
+<value> Sei Antonin Dolohov! Se riesci a farti mandare ad Azkaban, vinci automaticamente. Sii egoista!</value>
 </string>
 
 <string key="AboutFool">
@@ -1171,7 +1105,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="MustReplySmite">
-<value>Devi rispondere all'utente che vuoi cacciare!</value>
+<value>Devi rispondere allo studente che vuoi cacciare!</value>
 </string>
 
 <string key="WhatToDo">
@@ -1406,19 +1340,19 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 
 <!-- Update 4.0-->
 <string key="RoleInfoMayor">
-<value>Tu sei Cornelius Caramell🎖. Una volta che tutti sapranno che sei il capo dei maghi, il tuo voto sarà doppio.</value>
+<value>Tu sei Cornelius Caramell🎖. Sei una persona di una certa popolarità nel mondo magico, una volta che tutti sapranno che sei il capo dei maghi, il tuo voto sarà doppio.</value>
 </string>
 
 <string key="RoleInfoPrince">
-<value>Sei Gilderoy Allock👑. Quando Hogwarts deciderà di spedirti ad Azkaban, le tue bugie riusciranno a salvarti facendo cambiare idea a tutti. Puoi mentire una sola volta, alla seconda nessuno ti crederà.</value>
+<value>Sei Gilderoy Allock👑. Quando gli altri maghi decideranno di spedirti ad Azkaban, le tue bugie riusciranno a salvarti facendo cambiare idea a tutti. Puoi mentire una sola volta, alla seconda nessuno ti crederà.</value>
 </string>
 
 <string key="RoleInfoClumsyGuy">
-<value>Tu sei Neville Paciock🤕. Sei talmente maldestro che potresti sbagliare al 50% a votare.</value>
+<value>Tu sei Neville Paciock🤕. Sei un ragazzo talmente maldestro che potresti sbagliare a votare.</value>
 </string>
 
 <string key="RoleInfoSorcerer">
-<value>Tu sei Narcissa Malfoy🔮. Solo per proteggere tuo figlio, Draco, ti sei unito ai Mangiamorte, ma non sei mai stata davvero uno di loro. Quindi li stai solo aiutando a trovare il Professore di Divinazione, quando scruterai qualcuno saprai se è un Mangiamorte o il Professore di Divinazione.</value>
+<value>Tu sei Narcissa Malfoy🔮. Solo per proteggere tuo figlio, Draco, ti sei unita ai Mangiamorte, ma non sei mai stata davvero uno di loro. Quindi li stai solo aiutando a trovare il Professore di Divinazione, quando scruterai qualcuno saprai se è un Mangiamorte o il Professore di Divinazione.</value>
 </string>
 
 <string key="RoleInfoBlacksmith">
@@ -1434,7 +1368,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="PrinceLynched">
-<value>Poco prima che {0} venga baciato dai Dissennatori, Gilderoy Allock👑 inizia a dire un sacco di bugie raccontando come abbia salvato Hogwarts svariate volte. Storditi, ritirarono il loro verdetto e nessuno venne inviato ad Azkaban quel giorno.</value>
+<value>Poco prima che {0} venga baciato dai Dissennatori, Gilderoy Allock👑 inizia a dire un sacco di bugie raccontando come abbia salvato Hogwarts svariate volte. Storditi, i maghi ritirarono il loro verdetto e nessuno venne inviato ad Azkaban quel giorno.</value>
 </string>
 
 <string key="SorcererOther">
@@ -1562,7 +1496,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="TannerTeam">
-<value>Team Severus Piton</value>
+<value>Team Antonin Dolohov</value>
 </string>
 
 <string key="VillageTeamEnd">
@@ -1586,20 +1520,21 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="TannerTeamEnd">
-<value>Team Severus Piton</value>
+<value>Team Antonin Dolohov</value>
 </string>
 
 <string key="CultConvertWolf">
 <value>I Dissennatori hanno mandato {0} per provare a convertire {1}, ma all'improvviso si vede la testa di {0} volare fuori dalla finestra... Indovinate perchè pensavano fosse immangiabile! {0} è morto...</value>
 </string>
+
 <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
 <!--{0} = Harlot name, {1} = SK's victim name-->
-<value>{0} ha fatto visita a {1}, pronta a fare rivelare tutta la verita, solo per trovare Gellert Grindelwald🔪 uccidere {1}! Gellert Grindelwald🔪 decide di rispondere alle domande di {0} prima di aggiungerla alla sua collezione privata!</value>
+<value>{0} ha fatto visita a {1}, pronta a fargli rivelare tutti i suoi segreti, solo che finisce per trovare Gellert Grindelwald🔪 uccidere {1}! Gellert Grindelwald🔪 decide di rispondere alle domande di {0} prima di aggiungerla alla sua collezione privata!</value>
 </string>
 
 <!--New Death Strings 05 DEC-->
 <string key="ApprenticeSeerEaten">
-<value>Gli studenti si svegliano e trovano il corpo di {0} disteso sopra una tavola Ouija di seconda mano per praticare la chiromanzia, senza testa. Fiorenzo🙇 è morto.</value>
+<value>Gli studenti si svegliano e trovano il corpo di {0} disteso sopra uno dei tavoli della Sala Grande, affianco a lui c'era una sfera di cristallo di seconda mano. Fiorenzo🙇 è morto.</value>
 </string>
 
 <string key="BlacksmithKilled">
@@ -1607,7 +1542,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="CultistKilled">
-<value>{0} è stato trovato pugnalato a morte da un candeliere del suo altare. Gellert Grindelwald🔪 ha colpito ancora, indipendentemente da razza, lingua e religione! {0} era un Dissennatore👤.</value>
+<value>{0} è stato trovato ucciso. Gellert Grindelwald🔪 ha colpito ancora! {0} era un Dissennatore👤.</value>
 </string>
 
 <string key="CupidKilled">
@@ -1623,7 +1558,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="GunnerKilled">
-<value>Sembra che {0} sia stato preso alla sprovvista nel suo pisolino la scorsa notte! A notte fonda si sentì un colpo di pistola, e nel suo letto, il giorno seguente, si trovò il cadavere di Sirius Black🔫, con un buco in testa e una bacchetta nel petto. Gellert Grindelwald🔪 ha vinto, senza ombra di dubbio.</value>
+<value>Sembra che {0} sia stato preso alla sprovvista nel suo pisolino la scorsa notte! A notte fonda si sentì urlare un'incantesimo, e nel suo letto, il giorno seguente, si trovò il cadavere di Sirius Black🔫, con un buco in testa e una bacchetta nel petto. Gellert Grindelwald🔪 ha vinto, senza ombra di dubbio.</value>
 </string>
 
 <string key="MayorKilled">
@@ -1647,11 +1582,11 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
-<value>Il corpo di {0}, Remus Lupin💂‍♂️ è stato trovato nel centro della città, tagliato precisamente in cento pezzi. Controllare se Gellert Grindelwald🔪 fosse un Dissennatore👤 non sembra una buona idea..</value>
+<value>Il corpo di {0}, Remus Lupin💂‍♂️ è stato trovato nel centro del cortile di Hogwarts, con due bacchette ficcate negli occhi. Controllare se Gellert Grindelwald🔪 fosse un Dissennatore👤 non sembra essere stata una buona idea..</value>
 </string>
 
 <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
-<value>I Dissennatori hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a fare proseliti, è stato ucciso dal Mangiamorte che ha visitato. Sfortunatamente per {0}, i Mangiamorte non hanno interesse a far parte della loro setta.</value>
+<value>I Dissennatori hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a fare proseliti, è stato ucciso dal Mangiamorte che ha visitato. Sfortunatamente per {0}, i Mangiamorte non hanno interesse a diventare Dissennatori.</value>
 </string>
 
 <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
@@ -1659,7 +1594,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
-<value>Doveva essere una notte tranquilla dove {0} facesse il suo lavoro da protettore di Hogwarts, ma la magia di {0} è misteriosamente finita. Vicino al corpo, una nota "Posso proteggermi meglio di te". Qualcuno ha provato a proteggere Gellert Grindelwald🔪, questa notte.</value>
+<value>Doveva essere una notte tranquilla dove {0} facesse il suo lavoro da protettore di Hogwarts, ma la magia di {0} è misteriosamente finita. Vicino al corpo, una nota scritta col sangue "Posso proteggermi meglio di te". Qualcuno ha provato a proteggere Gellert Grindelwald🔪, questa notte.</value>
 </string>
 
 <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
@@ -1669,7 +1604,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <!--1vs1 finales-->
 <string key="HunterKillsWolfEnd">
 <!--{0} = hunter's name, {1} = wolf's name-->
-<value>Sapendo che solo {0} era rimasto in vita, {1} prova a lanciare un Avada Kedavra su {0}, ma l'addestramento di {0} si rivela efficace contro il malcapitato Mangiamorte! Tutto quello che rimane ormai è lo scheletro del Mangiamorte con due colpi nel cranio ed Harry Potter🎯.</value>
+<value>Sapendo che solo {0} era rimasto in vita, {1} prova a lanciare un Avada Kedavra su {0}, ma l'addestramento di {0} si rivela efficace contro il malcapitato Mangiamorte! Tutto quello che rimane ormai è lo scheletro del Mangiamorte ucciso da un AVADA KEDAVRA lanciata da Harry Potter🎯.</value>
 </string>
  
 <string key="WolfKillsHunterEnd">
@@ -1686,13 +1621,13 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <string key="SecondsAdded">
 <!-- 0 - Seconds added by /extend command -->
 <!-- 1 - Total seconds remaining -->
-<value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per cliccare Join</value>
+<value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per salire sull'Hogwarts Express!</value>
 </string>
  
 <string key="SecondsRemoved">
 <!-- 0 - Seconds removed by /extend command -->
 <!-- 1 - Total seconds remaining -->
-<value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per cliccare Join</value>
+<value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per salire sull'Hogwarts Express!</value>
 </string>
 
 <string key="CantExtend">
@@ -1730,7 +1665,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="JoinByButton">
-<value>Per favore non usare i comandi per joinare. Usa questo bottone invece.</value>
+<value>Per favore non usare i comandi per salire sul treno. Usa questo bottone invece.</value>
 </string>
 
 <string key="PlayerVoteCounts">
@@ -1746,7 +1681,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 	
 <string key="NoAutoJoin">
-<value>{0}, per favore ricordati di joinare cliccando sul bottone.</value>
+<value>{0}, per favore ricordati di salire sul treno cliccando sul bottone.</value>
 </string>
 
 <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
@@ -1759,7 +1694,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 
 <string key="HaveJoined">
 <!-- {0} = list of people who have joined -->
-<value>{0} sono entrati in partita negli ultimi 30 secondi.</value>
+<value>{0} sono saliti nell'Hogwarts Express negli ultimi 30 secondi.</value>
 </string>
 
 <string key="AllowCult">
@@ -1833,7 +1768,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 
 <string key="TannerEnd">
 <!-- 0 - Tanner name -->
-<value>{0} si svegliò all'alba, da solo. {0} vide quant'era un completo fallimento, non essendo stato in grado a indurre Hogwarts a soddisfare il suo masochistico desiderio di venir spedito ad Azkaban. {0} prese una bacchetta e si lancio un Avada Kedavra, rendendosi conto che nessuno può realizzare il suo sogno, visto che nessuno era rimasto.</value>
+<value>{0} si svegliò all'alba, da solo. {0} vide quant'era un completo fallimento, non essendo stato in grado a indurre Hogwarts a soddisfare il suo desiderio di venir spedito ad Azkaban. {0} prese una bacchetta e si lancio un Avada Kedavra, rendendosi conto che nessuno può realizzare il suo sogno, visto che nessuno era rimasto.</value>
 </string>
 
 <string key="SorcererEnd">
@@ -1859,7 +1794,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <string key="NegSeerSees">
 <!-- 0 - target's name -->
 <!-- 1 - role that they are not -->
-<value>Hai visto che\n{0} NON era {1}!</value>
+<value>Hai visto che {0} NON era {1}!</value>
 </string>
 
 <string key="AskSandman">
@@ -1867,11 +1802,11 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="SandmanSleepAll">
-<value>Mentre Hogwarts discute, {0} ritorna nella sua casa e inizia a fischiettare una dolce melodia. Questa notte, tutti dormiranno un sonno così profondo che non potranno svolgere le loro azioni notturne!</value>
+<value>Mentre Hogwarts discute, {0} ritorna nella sua aula e inizia a cantare una dolce melodia. Questa notte, tutti dormiranno un sonno così profondo che non potranno svolgere le loro azioni notturne!</value>
 </string>
 
 <string key="SandmanNight">
-<value>Mentre tutti tornano a casa, a malapena riescono ad arrivare nel letto dalla stanchezza. Si addormentano tutti così profondamente che non si ricordano nemmeno di essere andati a dormire...</value>
+<value>Mentre tutti tornano in stanza, a malapena riescono ad arrivare nel letto dalla stanchezza. Si addormentano tutti così profondamente che non si ricordano nemmeno di essere andati a dormire...</value>
 </string>
 
 <string key="AllowThiefQ">
@@ -1935,11 +1870,11 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="RoleInfoSandman">
-<value>Sei Hagrid💤. Una volta per partita, potrai usare la tua magia che addormenterà tutti in un sonno così profondo, che non potranno svolgere le loro azioni notturne.</value>
+<value>Sei Filius Vitious💤. Una volta per partita, potrai usare la tua voce per cantare una dolce melodia che addormenterà tutti in un sonno profondo.</value>
 </string>
 
 <string key="Sandman">
-<value>Hagrid💤</value>
+<value>Filius Vitious💤</value>
 </string>
 
 <string key="AboutSandman">
@@ -1960,7 +1895,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="RoleInfoWiseElder">
-<value>Sei Nicolas Flamel📚. Grazie alla Pietra Filosofale riuscirai a sopravvivere ad un attacco dei Mangiamorte - al secondo distruggeranno la Pietra e morirai. Se Sirius Black🔫 o Harry Potter🎯 proveranno ad ucciderti si sentiranno talmente in colpa da tornare ad essere semplici maghi.</value>
+<value>Sei Nicolas Flamel📚. Grazie alla Pietra Filosofale riuscirai a sopravvivere ad un attacco dei Mangiamorte - al secondo distruggeranno la Pietra e morirai. Se Sirius Black🔫 o Harry Potter🎯 proveranno ad ucciderti si sentiranno talmente in colpa da abbandonare il loro ruolo e torneranno ad essere semplici maghi.</value>
 </string>
 
 <string key="WiseElder">
@@ -1972,7 +1907,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="RoleInfoThief">
-<value>Sei Barty Crouch Jr.😈! Grazie alla tua Pozione Polisucco e all’incantesimo OBLIVION durante la notte puoi rubare l’identità di un altro giocatore(Il giocatore a cui rubi l’identità tornerà ad essere un semplice mago)</value>
+<value>Sei Barty Crouch Jr.😈! Grazie alla tua Pozione Polisucco e all’incantesimo OBLIVION durante la notte puoi rubare l’identità di un altro studente(Lo studente a cui rubi l’identità tornerà ad essere un semplice mago)</value>
 </string>
 
 <string key="RoleInfoThiefFull">
@@ -2029,11 +1964,6 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <string key="ThiefStealDead">
 <!-- {0} - The name of the thief's target -->
 <value>Hai provato a rubare l'identità di {0}, ma {0} è gia morto...</value>
-</string>
-
-<string key="ThiefStoleYourRole" deprecated="true">
-<!-- {0} - The new role -->
-<value>Oh no! Ti hanno rubato l'identità ed ora sei {0}.</value>
 </string>
 
 <string key="ThiefStoleRole">
@@ -2141,14 +2071,620 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
   
 <string key="ThiefStoleYourRoleThief">
-<value>Ti hanno rubato il ruolo! Ti hanno fatto un incantesimo che modifica i ricordi ed ora pensi di essere Barty Crouch Jr.😈 e grazie alla Pozione Polisucco la prossima notte ruberai l'identità di qualcuno!</value>
+<value>Ti hanno rubato l'identità! Ti hanno fatto un incantesimo che modifica i ricordi ed ora pensi di essere Barty Crouch Jr.😈 e grazie alla Pozione Polisucco la prossima notte ruberai l'identità di qualcuno!</value>
 </string>
 
 <string key="ThiefStoleYourRoleVillager">
-<value>Ti hanno rubato il ruolo! Ti hanno fatto l'incantesimo OBLIVION e dimentichi chi sei, quindi decidi di continuare la tua vita come semplice Mago👱.</value>
+<value>Ti hanno rubato l'identità! Ti hanno fatto l'incantesimo OBLIVION e dimentichi chi sei, quindi decidi di continuare la tua vita come semplice Mago👱.</value>
 </string>
   
 <string key="SerialKillerKilledYou" isgif="true">
 <value>AVADA KEDAVRA, Gellert Grindelwald🔪 ha fatto un salto nella tua stanza, SEI MORTO!</value>
 </string>
+  
+<string key="ThiefTeamEnd">
+<value>Team Barty Crouch Jr.</value>
+ </string>
+  
+<string key="StealKiller">
+<value>Hai provato a cancellare i ricordi di Gellert Grindelwald! A quanto pare non ha gradito e in un batter d'occhio ti ha lanciato un AVADA KEDAVRA.</value>
+</string>
+
+<string key="ThiefStoleKiller">
+<value>Barty Crouch Jr., {0}, aveva ambizioni troppo alte e ha provato a cancellare i ricordi di Gellert Grindelwald per spacciarsi per lui! Ciò non ha funzionato molto bene: {0} è stato ritrovato ucciso da una maledizione senza perdono...</value>
+</string>
+
+<string key="BeholderSeerStolen">
+<value>Barty Crouch Jr. ha cancellato la memoria del Professore di Divinazione! {0} è ora il nuovo Professore di Divinazione e {1} non ha più il dono della preveggenza!</value>
+</string>
+
+<string key="Troublemaker">
+<value>Pix 🤯</value>
+</string>
+
+<string key="AboutTroublemaker">
+<value>Pix sta combinando guai ad Hogwarts! Inizia a fare scherzi a tutti gli studenti. A causa di ciò gli studenti saranno innervositi e decideranno di mandare ad Azkaban addirittura due persone oggi!</value>
+</string>
+
+<string key="RoleInfoTroublemaker">
+<value>Sei Pix 🤯. Sei un poltergeist di Hogwarts ed il tuo intrattenimento preferito è fare scherzi ad Argus Gazza. Quando sei particolarmente annoiato inizi a fare scherzi a tutti e questo causa una confusione tale da riuscire a mandare due persone ad Azkaban quel giorno.</value>
+</string>
+
+<string key="AskTroublemaker">
+<value>Vuoi fare scherzi oggi?</value>
+</string>
+
+<string key="TroublemakerDoubleLynch">
+<value>{0}, Pix 🤯 sta facendo scherzi a tutti ad Hogwarts! Ha scelto però il giorno sbagliato, facendo infuriare l'intera Hogwarts, facendo mandare due persone ad Azkaban!</value>
+</string>
+
+<string key="TroubleDoubleLynchNow">
+<value>A causa di Pix, manderete due persone ad Azkaban oggi! Speriamo che Hogwarts si calmi per domani.</value>
+</string>
+
+<string key="Chemist">
+<value>Severus Piton 👨‍🔬</value>
+</string>
+
+<string key="AboutChemist">
+<value>Il chimico è una persona pazza a cui piace fabbricare pozioni e fare confusione con esse. Fabbricherà due pozioni, di cui una letale. Quando visiterà qualcuno, costringerà esso a scegliere una pozione, mentre il chimico berrà l'altra pozione. Ciò causerà la morte sicura di uno dei due giocatori!</value>
+</string>
+
+<string key="RoleInfoChemist">
+<value>Sei Severus Piton 👨‍🔬! Sei il professore di pozioni ad Hogwarts ed il tuo amore per le pozioni velenose è immenso. Ogni sera produci una pozione velenosa da far bere ai tuoi studenti, con i tempi che corrono e con Lord Voldemort in giro non ci si puo fidare di nessuno!/nRicordati che non tutti vogliono berla e potrebbero rivoltarsi.</value>
+</string>
+
+<string key="ChemistBrewing">
+<value>Mentre gli studenti vanno a dormire, tu sei nell'aulta di pozioni a mischiare strani intrugli per realizzare le tue pozioni.</value>
+</string>
+
+<string key="AskChemist">
+<value>A chi vuoi far bere la tua pozione?</value>
+</string>
+
+<string key="ChemistTargetDead">
+<value>Sei andato in camera di {0} per fargli bere la tua pozione, ma appena arrivi nella sua stanza, scopri che era già morto!</value>
+</string>
+
+<string key="ChemistVisitYouSK">
+<value>Sei stato visitato da Severus Piton 👨‍🔬 {0}! Ti ha costretto a bere la sua pozione, ma seccato dalla situazione gli lanci un AVADA KEDAVRA. 🤷‍♂️</value>
+</string>
+
+<string key="ChemistSK">
+<value>Sei andato a casa di {0} per fargli bere una pozione, sfortunamente però era il Gellert Grindelwald e ti ha lanciato un AVADA KEDAVRA! 🔪</value>
+</string>
+
+<string key="ChemistSKPublic">
+<value>Severus Piton 👨‍🔬 {0} voleva costringere Gellert Grindelwald a bere la sua pozione! Sembra che Gellert Grindelwald non avesse sete... {0} è stato ritrovato morto!</value>
+</string>
+
+<string key="ChemistVisitYouSuccess">
+<value>Sei stato visitato da Severus Piton 👨‍🔬, che ti ha costretto a bere una pozione e tu ovviamente ti sei fidato! Era velenosa e sei morto...</value>
+</string>
+
+<string key="ChemistSuccess">
+<value>Hai visitato {0} e l'hai costretto a bere la pozione! Ovviamente si è fidato ed è morto.</value>
+</string>
+
+<string key="ChemistSuccessPublic">
+<!-- {0} - Chemist's victim -->
+<!-- {1} - Will be replaced by "(victim) was (role)" -->
+<value>Il chimico 👨‍🔬 ha visitato {0} e gli ha fatto scegliere una pozione! Mentre il chimico è ancora vivo, {0} è morto. {1}</value>
+</string>
+
+<string key="ChemistVisitYouFail">
+<value>Sei stato visitato Severus Piton 👨‍🔬 {0}, che ti ha costretto a bere una pozione e tu ovviamente NON ti sei fidato! L'hai immobilizato e l'hai fatta bere a lui, era velenosa ed è morto...</value>
+</string>
+
+<string key="ChemistFail">
+<value>Hai visitato {0} e l'hai costretto a bere la pozione! Ovviamente NON si è fidato, ti ha immobilizato e ti ha costretto a berla, sei morto.</value>
+</string>
+
+<string key="ChemistFailPublic">
+<value>Severus Piton 👨‍🔬 {0} è stato trovato morto! A quanto pare, {0} è stato costretto a bere la sua stessa pozione velenosa durante la scorsa notte! Non tutti si fidano di lui..</value>
+</string>
+
+<string key="ChemistTargetEmpty">
+<value>{0} non era in stanza! Torni a casa deluso, che sfortuna.</value>
+</string>
+
+<string key="CultistsList">
+<value>I Dissennatori sono attualmente: {0}</value>
+</string>
+
+<string key="SnowWolf">
+<value>Il Mangiamorte Solitario🐺☃️</value>
+</string>
+
+<string key="RoleInfoSnowWolf">
+<value>Sei il Mangiamorte Solitario 🐺☃️. Ogni notte, invece di attaccare le vittime, vai solitario per case, immobilizzando gli studenti e impedendogli di usare le loro azioni! Nota però che un mago non può venir immobilizato due volte di fila.</value>
+</string>
+
+<string key="AboutSnowWolf">
+<value>Il lupo delle nevi 🐺☃️ è un lupo nato nelle montagne innevate vicino il villaggio. Essendo vissuto da solo a lungo preferisce cacciare da solo e date le condizioni climatiche dove ha vissuto è in grado di controllare il freddo. Invece di attaccare insieme agli altri lupi preferisce scegliere da solo una vittima da congelare in modo da non farle usare le sue azioni notturne per una notte. Tuttavia non può scegliere ogni notte la stessa persona che potrà essere però congelata una notte si e una note no. Se tutti gli altri lupi muoiono diventerà un lupo normale.</value>
+</string>
+
+<string key="AskFreeze">
+<value>Chi vuoi immobilizzare questa notte?</value>
+</string>
+
+<string key="WolfPackList">
+<value>I Mangiamorte sono {0}</value>
+</string>
+
+<string key="WolfPackSnowList">
+<value>I Mangiamorte sono {0} e il Mangiamorte Solitario {1}</value>
+</string>
+
+<string key="DGTransformToAlphaWithSnow">
+<value>{0} è morto, e tu ti trasformi in Lord Voldemort. I tuoi compagni sono: {1} mentre il Mangiamorte Solitario {2}</value>
+</string>
+
+<string key="DGTransformToWolfCubWithSnow">
+<value>{0} è morto, e tu ti trasformi in Draco Malfoy. I tuoi compagni sono: {1} e il Mangiamorte Solitario {2}</value>
+</string>
+
+<string key="DGTransformToWolfWithSnow">
+<value>{0} è morto, e tu ti trasformi in un Mangiamorte. I tuoi compagni sono: {1} e il Mangiamorte Solitario {2}</value>
+</string>
+
+<string key="DGTransformToLycanWithSnow">
+<value>{0} è morto, e tu ti trasformi in Bellatrix Lestrange. I tuoi compagni sono: {1} e il Mangiamorte Solitario {2}</value>
+</string>
+
+<string key="DGTransformToSnowWolf">
+<value>{0} è morto, e tu ti trasformi nel Mangiamorte Solitario. I tuoi compagni (se ci sono ancora) sono: {1}</value>
+</string>
+
+<string key="DGToSnowWolf">
+<value> {0} è diventato il Mangiamorte Solitario!</value>
+</string>
+
+<string key="WildChildSnowTransform">
+<value>{0} è morto! per la rabbia sei diventato un Mangiamorte! I tuoi compagni sono: {1} e il Mangiamorte Solitario {2}</value>
+</string>
+
+<string key="ThiefToSnowWolf">
+<value>{0} non è più un Mangiamorte Solitario, adesso {1} lo è!</value>
+</string>
+
+<string key="HarlotFrozen">
+<value>Appena apri la porta per uscire dalla tua stanza ti ritrovi immobilizata. Resti immobile sull'uscio della porta finchè non arriva il giorno. </value>
+</string>
+
+<string key="ChemistFrozen">
+<value>Dopo esserti svegliato pronto a preparare una delle tue pozioni velenose ri ritrovi immobilizato. Con la coda dell'occhio vedi che tutte le pozioni sono state distrutte.</value>
+</string>
+
+<string key="CultistFrozen">
+<value>Dopo esserti preparato per andare a convertire qualche mago ti ritrovi immobilizato sulla porta. Resti immobile finchè non arriva il giorno.</value>
+</string>
+
+<string key="CHFrozen">
+<value>Appena prendi la tua bacchetta pronto per mandare ad Azkaban qualche dissennatore ti ritrovi immobilizato in una posizione scomodissima. Dopo tutta la notte finalmente riesci a muoverti del tutto e riesci a metterti in una posizione comoda </value>
+</string>
+
+<string key="SeeingFrozen">
+<!-- used for seer, fool, oracle and sorcerer -->
+<value>Ti siedi al tavolo pronto ad usare i tuoi poteri quando all'improvviso ti ritrovi immobilizato. Fortunatamente il mattino dopo torna tutto alla normalità.</value>
+</string>
+
+<string key="GAFrozen">
+<value>Non appena esci di casa pronta per proteggere gli studenti di Hogwarts ti ritrovi immobilizata. Fortunatamente il mattino dopo torna tutto alla normalità.</value>
+</string>
+
+<string key="SKFrozen">
+<value>Mentre ti prepari per andare a torture qualche studente di Hogwarts ti ritrovi immobilizato sulla porta. ortunatamente il mattino dopo torna tutto alla normalità, gliela farai pagare al Mangiamorte che ti ha immobilizato.</value>
+</string>
+
+<string key="ThiefFrozen">
+<value>Mentre prepari una nuova pozione polisucco ti ritrovi immobilizato fino alla mattinata successiva. </value>
+</string>
+
+<string key="DefaultFrozen">
+<!-- used for all roles without (every-)night action -->
+<value>Mentre la scorsa notte dormivi hai iniziato a sentirti strano. Appena ti sei svegliato per controllare realizzi che non puoi muoverti! Sembra che il Mangiamorte Solitario abbia usato un'incantesimo su di te.</value>
+</string>
+
+<string key="GuardBlockedSnowWolf">
+<value>Sei andato a casa di {0} per immobilizzarlo ma appena sei arrivato hai incontrato un'oscura figura esperta di incantesimi di protezione. Inizi uno scontro contro Lily J. Potter che alla fine la vede vincitrice costringendoti ad andare via.</value>
+</string>
+
+<string key="SuccessfulFreeze">
+<value>Sei andato a casa di {0} e l'hai immobilizato! Questa notte non potrà agire.</value>
+</string>
+
+<string key="SnowFrozeKiller">
+<value>Il Mangiamorte {0} ha cercato di immobilizare Gellert Grindelwald! Gellert Grindelwald non appena ha visto {0} lanciare un incantesimo immobilizzante l'ha tempestivamente preceduto con un AVADA KEDAVRA.</value>
+</string>
+
+<string key="SnowWolfTurnWolf">
+<value>Tutti gli altri Mangiamorte sono morti, sei l'ultimo rimasto! Date le circostanze preferisci iniziare ad uccidere le persone piuttosto che immobilizarle!</value>
+</string>
+
+<string key="SnowFrozeHunter">
+<!-- 0 - target's name -->
+<value>Il Mangiamorte Solitario {0} ha provato a immobilizare Harry Potter la scorsa notte ma quest'ultimo se n'è accorto in tempo e gli ha lanciato un incantesimo mortale.</value>
+</string>
+
+<string key="Lang">
+<value>Cambia Linguaggio</value>
+</string>
+
+<string key="Mode">
+<value>Cambia Modalità di Gioco</value>
+</string>
+
+<string key="MaxPlayer">
+<value>Imposta Limite Giocatori</value>
+</string>
+
+<string key="EndRoles">
+<value>Mostra Ruoli a fine partita</value>
+</string>
+
+<string key="MaxExtend">
+<value>Imposta il tempo massimo di estensione</value>
+</string>
+
+<string key="DayTimer">
+<value>Imposta durata del giorno</value>
+</string>
+
+<string key="NightTimer">
+<value>Imposta durata della notte</value>
+</string>
+
+<string key="LynchTimer">
+<value>Imposta durata del linciaggio</value>
+</string>
+
+<string key="RoleConfig">
+<value>Configurazione Ruoli</value>
+</string>
+
+<string key="Mechanics">
+<value>Meccaniche del Gioco</value>
+</string>
+
+<string key="GroupSettings">
+<value>Impostazioni del Gruppo</value>
+</string>
+
+<string key="Timers">
+<value>Durata Fasi del gioco</value>
+</string>
+
+<string key="Done">
+<value>Fatto!</value>
+</string>
+
+<string key="Back">
+<value>Indietro</value>
+</string>
+
+<string key="ShufflePlayerList">
+<value>Mischia Lista dei Giocatori</value>
+</string>
+
+<string key="ShufflePlayerListQ">
+<value>Mischiare lista di giocatori ogni volta? Attualmente: {0}</value>
+</string>
+
+<string key="ShufflePlayerListA">
+<value>La Lista giocatori verrà mischiata ogni volta: {0}</value>
+</string>
+
+<string key="AboutGraveDigger">
+<value>Sei Aragog ☠️. Ogni notte, tessi le tue ragnatele per ogni persona morta dall'ultima volta che l'hai fatto (Sì, chiunque merita di diventare il pasto di qualcun altro). Visto che sei fuori tutta la notte, I mangiamorte e i dissennatori non possono trovarti nella tua tana, a meno che tu non abbia nulla da fare, in quel caso resterai alla tana.. Tutti quelli che ti visitano hanno una probabilità di restare intrappolati nelle tele che tessi, in base a quante ne hai tessuto. Inoltre, la probabilità è dimezzata per chiunque sia del team villaggio come te. Però i mangiamorte e Grindelwald potrebbero vederti mentre tessi, in base a quante volte lo hai fatto, e ucciderti. Inoltre il Gellert Grindelwald potrà trovarti comunque alla tana, indipendemente se scavi o meno, però potrebbe restare impigliato alla rgnatela e perdere il controllo della sua prossima vittima!</value>
+</string>
+
+<string key="RoleInfoGraveDigger">
+<value>Sei Aragog ☠️. Sei la pericolosissima Acromantula cieca, allevata da Hagrid e poi lasciata in una tana nella foresta. Ogni notte esci e raccatti i cadaveri dei morti, del giorno precedente. Tessi la tua tela e li rinchiudi nei bozzoli. Chiunque si addentri nella tua tana, corre il rischio di restare impigliato nella tua ragnatela e purtoppo la tua cecità non ti aiuta a distinguere buoni e cattivi. Se i mangiamorte dovessero farti visita, non ti troverebbero nella tua tana.  </value>
+</string>
+
+<string key="GraveDigger">
+<value>Aragog ☠️</value>
+</string>
+
+<string key="DigNoGraves">
+<value>I morti sono nei loro bozzoli e vivi non ancora. Tuttotace e tu attendi immobile ed in silenzio nella tua tana.</value>
+</string>
+
+<!--{0}: list of people who died since last grave-->
+<string key="DigGraves">
+<value>Tessi fino a tarda notte un bozzolo per {0}. Possa il suo corpo essere un buon pasto per te e i tuoi figli.</value>
+</string>
+
+<string key="GraveDiggerFrozen">
+<value>Appena uscito dalla tua tana per raccattare coloro che sono passati a miglior vita, vieni colpito da un incantesimo che ti immobilizza. Impossibilitato a muoverti, aspetti che l'incantesimo finisca. I morti dovranno aspettare un'altra notte prima di diventare scorte per l'inverno...</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="GraveDiggerNotHome">
+<value>I mangiamorte si addentrano nella tana di {0}, tuttavia la trovano vuota. Non si vede nulla e c'è un silenzio tombale...</value>
+</string>
+
+<!--{0}: grave digger, {1}: wolf who fell into the grave-->
+<string key="WolfFellWolves">
+<value>I mangiamorte si dirigono nella tana di {0}, {1} improvvisamente resta imprigionato in una ragnatela, più si dimena e più la ragnatela lo avvolge, fino a soffocarlo completamente!</value>
+</string>
+
+<!--{0}: the wolf who fell into the grave-->
+<string key="WolfFell">
+<value>Mentre chiudi i bozzoli con i cadaveri recuperati la notte precedente, ti accorgi che c'è ne uno nuovo, diverso dal solito... Il mangiamorte {0} è rimasto vittima della tua ragnatela!</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="KillerStumbled">
+<value>Hai ucciso {0}, ma mentre uscivi dalla sua tana ti sei avvicinato troppo a una ragnatela che ti è rimasta appiccicata addosso.. Ora non riesci a tenre la bacchetta come si deve...</value>
+</string>
+
+<!--{0}: intended victim, {1}: actual victim-->
+<string key="KillerRandomKill">
+<value>Mentre ti prepari a colpire {0} con l'incantesimo mortale, provi a fare il solito movimento, ma le ragnatele che hai ancora addosso, te lo impediscono. L'incantesimo finisce per colpire {1}, che muore sul colpo!</value>
+</string>
+
+<!--{0}: victim-->
+<string key="GuardBlockedRandomKiller">
+<value>Arrivi a casa di {0}, ma trovi Lily J. Potter, pronta a proteggerlo! Dato che non potresti dare il 100%, ti ritiri senza nemmeno combattere.</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="HunterFell">
+<value>Un'altra notte inutile senza riuscire ad uccidere nessun Dissenatore! Frustrato, corri freneticamente nella foresta, ti addentri in una grotta, e prima che tu te ne accorga, sei imprigionato in una ragnatela. Urli e ti dimeni, ma è troppo tardi. Ben presto la tela di {0} ti avvolge completamente e  di te non resta che un corpo senza vita.</value>
+</string>
+
+<!--{0}: cult hunter-->
+<string key="HunterFellDigger">
+<value>Dopo un'altra lunga e faticosa notte, ritorni alla tua tana mentre il sole sta già sorgendo. Camminando sulla ragnatela, vieni punto da qualcosa, è una spada. Dentro al bozzolo c'è il cadavere di {0}. Remus Lupin non avrebbe dovuto sospettare di te...</value>
+</string>
+
+<!--{0}: cultist-->
+<string key="CultFell">
+<value>Ritorni alla tana dopo una faticosa nottata, quando senti un urlo provenire dalle gallerie! Ti rechi subito sul posto, solo per trovare {0} morto stecchito. Da quando i Dissennatori provano a convertire i ragni giganti?</value>
+</string>
+
+<!--{0}: cultist who fell, {1}: grave digger-->
+<string key="CultConvertGraveDigger">
+<value>Mentre vai a casa di {1}, {0} suggerisce che sarebbe una buona passare per la foresta. Ti guidano tramite una grotta, che dovrebbe essere una scorciatoia, quando improvvisamente qualcosa lo immobilizza! Provate a liberarlo ma rischiate di restare intrappolati anche voi, così decidete  di scappare e lasciarlo lì.</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="ChemistFell">
+<value>Mentre entri nella tana di {0}, provi a ricordarti a mente quale delle due pozioni è quella velenosa e inciampi, cadendo di facca su una ragnatela e morendo asfissiato in pochi secondi.</value>
+</string>
+
+<!--{0}: chemist-->
+<string key="ChemistFellDigger">
+<value>Sarai cieco ma l'olfatto funziona benissimo, senti odore di pozioni. Fai un giro lungo la ragnatela fino a che non scorgi il cadavere di {0}, sarà un piacere gustare un cadavere aromatizzato.</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="HarlotFell">
+<value>Prepari la pozione e decidi di incantare {0}. Purtroppo, non fai molta strada, visto che resti imprigionata in una ragnatela...  </value>
+</string>
+
+<!--{0}: harlot-->
+<string key="HarlotFellDigger">
+<value>A quanto pare il fato non vuole farti divertire. Non solo hai passato tutta la notte a cercare cadaveri, ma tornando alla tana trovi {0} morta. Peccato, Cho Chang era passata solo a farti due carezze. Niente divertimento per stasera!</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="HarlotVisitDigger">
+<value>Ti rechi nella tana di {0}, stando attenta a tutte le ragnatele, ma non trovi nessuno... A quanto pare {0} è fuori a cercare cadaveri!</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="GAFell">
+<value>La fortuna non è dalla tua parte stanotte.. Volevi solo proteggere {0}, mentre perlustrando la sua tana, resti impigliata nella sua ragnatela. C'è davvero bisogno di tutta quella oscurità?</value>
+</string>
+
+<!--{0}: guardian angel-->
+<string key="GAFellDigger">
+<value>Mentre torni a casa, senti un profumo familiare. Non cerchi molto che trovi {0}, Lily J. Potter, morta nela tua ragnatela! Forse hai esagerato con le tue ragnatele.</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="ThiefFell">
+<value>Ti infiltri nella tana del ragno per rubare l'identità a {0}, ma concentrato a non far rumore non noti il filo invisibile della ragnatela che ti cattura! Non diverrai un ragno ma in un certo senso, sarai perte di esso!</value>
+</string>
+
+<!--{0}: thief-->
+<string key="ThiefFellDigger">
+<value>Questa volta le ragnatele hanno preso un malintenzionato. {0} ha provato a rubarti l'identità l'altra notte, ma è stato catturato dalle ragnatele, morendo poco dopo. Magari ora i maghi capiranno che le tue trappole non sono esagerate.</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="ArsonistFell">
+<value>Pensavi che dar fuoco alla foresta sarebbe stato memorabile, ma prima di addentrarti in quella grotta, avresti dovuto accendere almeno una torcia. Magari avresti visto la tela del ragno e non saresti morto!</value>
+</string>
+
+<!--{0}: Arsonist-->
+<string key="ArsonistFellDigger">
+<value>Nella grotta c'è una forte puzza di bruciato. Allarmato, ti appresti a controllarla e noti {0} Tiger, è morto!</value>
+</string>
+
+<!--{0}: person that died, {1}: "(person) was (role)"-->
+<string key="DefaultFellPublic">
+<value>Sull'enorme ragnatela ci sono più cadaveri di quanti ne siano morti. A quanto pare {0} ha provato a visitare la tana di Aragog, ed rimasto vittima della sua ragnatela! {1}</value>
+</string>
+
+<!--{0}: harlot-->
+<string key="HarlotFellPublic">
+<value>Mentre {0}, Cho Chang, tornava a casa, ha pensato di andare a far visita ad Aragog per fargli due carezze. Data la tarda ora non stava prestando molta attenzione, ed è rimasta vittima di una delle sue ragnatele...</value>
+</string>
+
+<!--{0}: cultist who died-->
+<string key="CultistFellPublic">
+<value>I dissennatori hanno preso una scorciatoia, e sono passati per la grotta di Aragog, ma {0} che guidava il gruppo in quei cunicoli, è stato colto di sorpresa da una ragnatela che lo ha avvolto completamente! Gli altri Dissennatori non hanno potuto fare nulla e sono fuggiti!</value>
+</string>
+
+<!--{0}: thief-->
+<string key="ThiefFellPublic">
+<value>Forse {0} ha pensato che potesse essere emozionante rubare l'identità ad un ragno gigante. Purtroppo gli è andata male. {0} non sarà di sicuro uno di loro, ma in un certo senso ne farà parte!</value>
+</string>
+
+<!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+<string key="WolfFellPublic">
+<value>Stanotte i mangiamorte hanno scelto il posto sbagliato da attaccare, {0} seguendo lo strano odore non si accorge della gigantesca ragnatela! {0} entra, così a far parte, della collezione di Aragog! {1}</value>
+</string>
+
+<string key="SerialKillerSpottedYou" isgif="true">
+<value>Stai tessendo la tela, quando un pazzo ti si avvicina e ti lancia un incantesimo mortale! Chi si prenderà cura della tua tana, adesso?</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="SerialKillerSpotted">
+<value>Camminando per la grotta che usi come scorciatoia, noti {0}, l'nerme ragno che tesse la sua tela. Seguendo il tuo istinto, lanci l'incantesimo mortale, oggi mieterai due vvittime anzichè una!</value>
+</string>
+
+<string key="WolvesSpottedYou" isgif="true">
+<value>Te ne stai nella tua tana, quando improvissamente un mangiamorte ti coglie di sorpresa e ti uccide!</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="WolvesSpotted">
+<value>I mangiamorte passano per la grotta di Aragog, quando notano che {0}, l'enorme ragno è intento a tessere i suoi bozzoli. Prima che possa reagire, uno di voi lo colpisce mortalmente con un incantesimo.</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="WolvesSpottedDiggerPublic">
+<value>{0} stanotte non è passato a ritirare i cadaveri. Si sarà preso una pausa? Vi recate alla sua tana, e trovate il suo corpo senza vita. Sembra che i mangiamorte l'abbiano attaccato di sorpresa!</value>
+</string>
+
+<!--{0}: grave digger-->
+<string key="KillerSpottedDiggerPublic">
+<value>{0} è sparito dalla circolazione... Si sarà preso una pausa? Vi recate alla sua tana, e trovate il suo corpo senza vita. Sembra che Gellert Grindelwald l'abbia colto di sorpresa, questa notte!</value>
+</string>
+
+<string key="AllowArsonist">
+<value>Piromane</value>
+</string>
+
+<!--{0}: Allow/Disallow-->
+<string key="AllowArsonistQ">
+<value>Ammettere il Piromane? Attualmente: {0}</value>
+</string>
+
+<!--{0}: Allow/Disallow-->
+<string key="AllowArsonistA">
+<value>il Piromane è ora {0}.</value>
+</string>
+
+<string key="BurningOverkill">
+<value>Burning Overkill</value>
+</string>
+
+<!--{0}: Allow/Disallow-->
+<string key="BurningOverkillQ">
+<value>Ammettere il Piromane e Serial killer nella stessa partita? Potrebbe essere mortale! 😈 Attualmente: {0}</value>
+</string>
+
+<!--{0}: Allow/Disallow-->
+<string key="BurningOverkillA">
+<value>Piromane e Serial Killer nella stessa partita sono ora {0}.</value>
+</string>
+
+<string key="AboutArsonist">
+<value>Sei il Piromane. Come il serial killer, sei da solo in squadra. Ogni notte, puoi riempire casa di qualcuno con il kerosene. Dopo che almeno una casa è cosparsa, puoi decidere di far scattare la Scintilla, bruciando tutte le case cosparse e uccidendo chiunque sia dentro, compresi potenziali visitatori. Vinci se rimani l'ultimo in vita.</value>
+</string>
+
+<string key="RoleInfoArsonist">
+<value>Sei Tiger 🔥. Eri amico di Draco Malfoy, difatti eri diventato un Mangiamorte ma, da quando hai scoperto questo fantastico incantesimo incendiario hai deciso di agire da solo, ogni notte potrai decidere di lanciare l'incantesimo attorno alle stanze degli studenti di Hogwarts e potrai attivarlo quando vorrai, uccidendo chiunque sia al suo interno.</value>
+</string>
+
+<string key="Arsonist">
+<value>Tiger 🔥</value>
+</string>
+
+<string key="AskArsonist">
+<value>Vuoi lanciare l'incatesimo su una nuova stanza o attivarlo sulle altre?</value>
+</string>
+
+<!--{0}: Arsonist-->
+<string key ="ArsonistVisitKiller">
+<value>Tiger {0} ha provato a lanciare l'incantesimo nella stanza di Gellert Grindelwald ma quest ultimo è stato più veloce con un AVADA KEDAVRA.</value>
+</string>
+
+<string key="Spark">
+<value>Brucia 🔥</value>
+</string>
+
+<!--{0}: person whose house was doused-->
+<string key="Doused">
+<value>Hai lanciato l'incatesimo con successo attorno la stanza di {0}!</value>
+</string>
+
+<string key="GuardSavedYouFromFire">
+<value>Un fuoco è stato appiccato nella tua stanza, ma per fortuna Lily J. Potter era lì ed è intervenuta in tempo!</value>
+</string>
+
+<!--{0}: saved person-->
+<string key="GuardSavedFromFire">
+<value>Non ti aspettavi che la stanza di {0} iniziasse a bruciare, ma li hai salvati senza problemi!</value>
+</string>
+  
+<!--{0}: person whose house was cleaned-->
+<string key="CleanDoused">
+<value>Non hai lottato contro nessuno nella stanza di {0}, quindi hai avuto tempo di perlustrarla e hai notato che attorno alla stanza c'era un potente incantesimo! Fortunatamente sei riuscita a disattivarlo in tempo.</value>
+</string>
+  
+<!--{0}: list of people who died in the flames-->
+<string key="Burning">
+<value>Hogwarts si sveglia con un forte odore di fumo... una delle stanze di Hogwarts sta bruciando con dentro le seguenti persone:\n{0}</value>
+</string>
+  
+<string key="ArsonistWins">
+<value>L'unico rimasto in vita è Tiger, in mezzo alle fiamme. Tiger ha vinto!</value>
+</string>
+  
+<string key="Burn" isgif="true">
+<value>Di te e della tua stanza non è rimasto più niente, c'è solo cenere in giro..</value>
+</string>
+  
+<string key="Augur">
+<value>Arthur Weasley🦅</value>
+</string>
+
+<!--{0}: role that is not part of the village-->
+<string key="AugurSees">
+<value>Consulti il registro del Ministero della Magia, noti qualcosa di strano, ciò può solo significare che {0} non è ad Hogwarts in questo momento.</value>
+</string>
+
+<string key="AboutAugur">
+<value>Sei l'Augure 🦅. Ogni mattina, guardi gli uccelli e ne deduci un ruolo che sicuramente non è in gioco dal modo in cui volano. Non ti diranno mai un ruolo due volte, quindi fai buon uso dell'informazione!</value>
+</string>
+  
+<string key="RoleInfoAugur">
+<value>Sei Arthur Weasley 🦅. Lavori al Ministero della Magia, sai bene chi c'è ad Hogwarts e chi no. Consultando i registri potrai capire chi non è ad Hogwarts in questo momento.</value>
+</string>
+
+<string key="AugurSeesNothing">
+<value>Consulti il registro e... strano, hai già controllato tutti gli studenti di Hogwarts, non c'è più nessuno da controllare.</value>
+</string>
+
+<!--{0}: chosen victim, {1}: wolf who died in flames-->
+<string key="WolvesVisitBurn">
+<value>I Mangiamorte entrano a casa di {0}, quando all'improvvisamente prende fuoco. È troppo tardi per salvare {1}, che muore tra le fiamme.</value>	  
+</string>
+
+<!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+<string key="DefaultVisitBurn">
+<value>{0} doveva rimanere nella sua stanza questa notte. Invece, è andato in una stanza che ha preso fuoco! {1}</value>
+</string>
+
+<!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+<string key="WolfVisitBurn">
+<value>I Mangiamorte hanno provato a uccidere qualcuno stanotte, ma Tiger è stato più veloce di loro! {0} non è riuscito a fuggire dalle fiamme in tempo... {1}</value>
+</string>
+  
+<string key="ChemistKillWiseElder">
+<value>Severus Piton ti ha visitato questa notte, ti ha convinto a bere la sua pozione e dopo la tua morte si è pentito a tal punto da aver deciso di smettere di produrre pozioni.</value>
+</string>
+  
+<string key="ArsonistWinsOverpower">
+<value>Solo {0} e {1} sono rimasti... Improvvisamente {0} ride, tira fuori la bacchetta e lancia il suo incantesimo su {1}, che viene avvolto dalle fiamme!</value>
+</string>
+
 </strings>

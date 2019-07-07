@@ -4,8 +4,9 @@
 	==UPDATE LOG==
 	LAST UPDATE 21/05/2019 by @Squideggsstickontobody, permission by @Firewood_Loki
 		埋屍仔 ☠️——村民陣營\n...
+	04/06/19	- 3rd batch (minor): added "Burning" string
 	21/05/19	- 2nd batch of up-to-date
-	20/05/19	- Added many Strings
+	20/05/19	- 1st batch of MAJOR OVERHAUL: Added many Strings
 	19/04/18	- Added String: TannerEnd, SorcererEnd
 	20/07/17	- Fixed String: "ChoiceAccpeted"
 	19/07/17  	- Added Value: "JoinButton"
@@ -289,7 +290,7 @@
 		<value>村民明明乜撚都唔知，都仲係要投死【{0}】。\n【{1}】</value>
 		<value>到底【{0}】係咩呢？用你條命嚟證明啦！\n【{1}】</value>
 		<value>冇辦法，犯眾憎嘅【{0}】係註定要死。\n【{1}】</value>
-		<value>既然大家都咁講啦，受死啦【{0}！\n【{1}】</value>
+		<value>既然大家都咁講啦，受死啦【{0}】！\n【{1}】</value>
 		<value>去死啦，【{0}】冇人想見到你啊柒頭！\n【{1}】</value>
 		<value>愚民一致決定要投你，永別了戇鳩仔【{0}】。\n【{1}】</value>
 		<value>再見啦【{0}】，要怪就怪投死你嗰班戇鳩啦！\n【{1}】</value>
@@ -309,7 +310,9 @@
 		<value>今日烏雲密佈，村民發現【{0}】蒼白嘅屍體，掛咗喺大教堂個十字架上面，守護天使已經唔可以再守護大家啦。😢</value>
 	</string>
 	<string key="GunnerEaten">
-		<value>大家一出門口，見到周圍都係子彈、手指同腳指……跟住你哋仲發現【{0}】條屍浮咗喺村中心個噴泉度，原來你哋個槍手已經被狼人殺咗。😱</value>
+		<value>大家一出門口，見到周圍都係子彈、手指同腳指……跟住你哋仲發現【{0}】條屍浮咗喺村中心個噴泉度，原來你哋個槍手已經被狼人殺咗。😱\n【槍手 🔫】皮已收。</value>
+		<value>大家一出門口，見到周圍都係子彈、手指同腳指……跟住你哋仲發現【{0}】條屍浮咗喺村廣場個音樂噴泉度，原來你哋個槍手已經被狼人嚼撚咗。😱\n【槍手 🔫】皮已收。</value>
+
 	</string>
 	<string key="SeerEaten">
 		<value>村民一覺醒來，發現【{0}】死咗喺佢張神枱同副塔羅牌隔離。\n【先知 👳】皮已收。</value>
@@ -345,6 +348,7 @@
 		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，噁，好撚難食！</value>
 		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，噁，早知唔撚食你啦！</value>
 		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，正，有啲想食多兩三次！</value>
+		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，正，和味過和味濃！</value>
 		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，超好食，食過返尋味！</value>
 		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，嘩，難食到仆街，咩撚嘢胃口都冇晒啦！</value>
 		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，好撚難食，枉我仲咁辛苦嚟咬你！</value>
@@ -1315,9 +1319,9 @@
 		<!-- 0 - Seconds added by /extend command -->
 		<!-- 1 - Total seconds remaining -->
 		<value>依家加咗【 {0} 秒】比你哋班垃圾！要加入嘅就快啲撳制啦！\n倒數最後【{1}】。</value>
-		<value>奉天承運，皇帝詔曰，今日朕高興，格外開恩俾多【 {0} 秒】你哋！未加入嘅仆街唔該快手啦！手快有手慢冇㗎啦！\n倒數最後【{1}】。</value>
+		<value>奉天承運，皇帝詔曰，今日朕高興，格外開恩俾多【 {0} 秒】你哋！未加入嘅仆街唔該快手啦！手快有手慢冇㗎啦！\n倒數最後【{1}】。欽此～</value>
 		<value>依家加咗【 {0} 秒】比你哋班垃圾！要加入嘅就快啲撳制啦！\n距離佛誕仲有【{1}】。</value>
-		<value>奉天承運，皇帝詔曰，今日朕高興，格外開恩俾多【 {0} 秒】你哋！未加入嘅仆街唔該快手啦！手快有手慢冇㗎啦！\n距離佛誕仲有【{1}】。</value>
+		<value>奉天承運，皇帝詔曰，今日朕高興，格外開恩俾多【 {0} 秒】你哋！未加入嘅仆街唔該快手啦！手快有手慢冇㗎啦！\n距離佛誕仲有【{1}】。欽此～</value>
 	</string>
 	<string key="SecondsRemoved">
 		<!-- 0 - Seconds removed by /extend command -->
@@ -1360,6 +1364,7 @@
 		<value>我不入地獄誰入地獄</value>
 		<value>點擊此處展開激情遊戲</value>
 		<value>地方的狼人需要村民</value>
+		<value>地方的村民需要狼人</value>
 		<value>千祈唔好撳呢個制</value>
 		<value>真係唔好撳</value>
 		<value>撳啦好嗎</value>
@@ -1489,7 +1494,7 @@
 	</string>
 	<string key="SorcererEnd">
 		<!-- 0 - Sorcerer name -->
-		<value>【{0}】尋晚發咗好夢，夢入面狼群食晒所有村民，好開心咁計劃緊下次應該去邊條村玩。但今朝佢瞓醒教，發覺村入面得返佢一個。「好可惜，明明差少少就可以食晒班撚屌，點解……」夢太甜美，現實太沉重。【{0}】忍住眼淚收拾心情，一邊收拾行裝。望住地圖，佢決定好要搵一條新嘅村落，扶育新嘅狼群，開始新嘅生活！冇人贏……</value>
+		<value>【{0}】尋晚發咗個好夢，夢入面狼群食晒所有村民，好開心咁計劃緊下次應該去邊條村玩。但今朝佢瞓醒教，發覺村入面得返佢一個。「好可惜，明明差少少就可以食晒班撚屌，點解……」夢太甜美，現實太沉重。【{0}】忍住眼淚收拾心情，一邊收拾行裝。望住地圖，佢決定好要搵一條新嘅村落，扶育新嘅狼群，開始新嘅生活！冇人贏……</value>
 	</string>
 	<string key="WhatVariantVets">
 		<value>邊個版本？\n當前版本︰{0}\n由於你已經玩咗超過 500 場狼人，你可以參加【英文狼人老手群】</value>
@@ -1779,7 +1784,6 @@
 	</string>
 	<string key="BeholderSeerStolen">
 		<value>先知嘅身份俾偷渡客搶咗！依家【{0}】係先知，而【{1}】已經冇撚用㗎啦！</value>
-		}
 	</string>
 	
 	<!-- New roles 28.12.2018 -->
@@ -1876,16 +1880,16 @@
 		<value>呢班就係你嘅狼友︰{0}，同埋雪狼 {1}</value>
 	</string>
 	<string key="DGTransformToAlphaWithSnow">
-		<value>【{0}】死咗，你成為了狼太宗，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}</value>
+		<value>【{0}】死咗，你成為了狼太宗，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}　。</value>
 	</string>
 	<string key="DGTransformToWolfCubWithSnow">
-		<value>【{0}】死咗，你成為了小狼，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}</value>
+		<value>【{0}】死咗，你成為了小狼，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}　。</value>
 	</string>
 	<string key="DGTransformToWolfWithSnow">
-		<value>【{0}】死咗，你成為了狼人，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}</value>
+		<value>【{0}】死咗，你成為了狼人，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}　。</value>
 	</string>
 	<string key="DGTransformToLycanWithSnow">
-		<value>【{0}】死咗，你成為了隱狼，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}</value>
+		<value>【{0}】死咗，你成為了隱狼，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}　。</value>
 	</string>
 	<string key="DGTransformToSnowWolf">
 		<value>【{0}】死咗，你成為了雪狼，呢班就係你嘅狼友︰{1}</value>
@@ -2053,7 +2057,7 @@
 	<!--{0}: grave digger-->
 	<string key="KillerStumbled">
 		<value>你一如既往咁以嫻熟嘅手法咁拎走【{0}】嘅一對腎腎，但月黑風高係殺蟲夜，唔係盜墓夜啊！你一個唔小心咁仆咗落佢整嘅其中一個墳墓到。你呢刻真係啞佬食咗黃蓮咁，又唔可以大嗌，唯有強忍劇痛咁拐下拐下返屋企。</value>
-		<value>你一刀捅穿【{0}】個心臟，但你出手太快， chok 親右膊頭，好死唔死你整傷你隻慣用手，你決定包紮佢返家休養一下。\n奇怪，點解你包紮嘅係左膊頭呢？唔撚係掛！？</value>
+		<value>你一刀捅穿【{0}】個心臟，但你出手太快，整親右膊頭，好死唔死你整傷你隻慣用手，你決定包紮佢返家休養一下。\n奇怪，點解你包紮嘅係左膊頭呢？唔撚係掛！？</value>
 	</string>
 	<!--{0}: intended victim, {1}: actual victim-->
 	<string key="KillerRandomKill">
@@ -2061,7 +2065,7 @@
 	</string>
 	<!--{0}: victim-->
 	<string key="GuardBlockedRandomKiller">
-		<value>你去到【{0}】間屋，發現佢道門光殘殘，仲閃過一對對情人，原來佢請咗守天做客。只見佢超～暴力咁拆咗你左膊頭上嘅繃帶，發現你嘅傷口其實喺右膊頭。「屌你老味！好心你好似我咁去參加急救與健康急救班啦，包錯手之餘仲要學人包個唔撚係掛，過主啦！」你除咗心裡罵着無數個粗口悻悻然返歸外，你乜都做唔撚到……</value>
+		<value>你開住電動輪椅去到【{0}】間屋，發現佢道門光殘殘，仲閃過一對對情人，原來佢請咗守天做客。只見佢超～暴力咁拆咗你左膊頭上嘅繃帶，發現你嘅傷口其實喺右膊頭。「屌你老味！好心你好似我咁去參加急救與健康急救班啦，包錯手之餘仲要學人包個唔撚係掛，過主啦！」你除咗心裡罵着無數個粗口悻悻然返歸外，你乜都做唔撚到……</value>
 	</string>
 	<!--{0}: grave digger-->
 	<string key="HunterFell">
@@ -2073,11 +2077,11 @@
 	</string>
 	<!--{0}: cultist-->
 	<string key="CultFell">
-		<value>You return from another tiring night, when suddenly you hear a scream from one of your unfinished graves! You hurry there, just to find {0} lying dead in an unfinished grave. What kind of cult tries to convert a grave digger, anyway?</value>
+		<value>「哎呀！」正當你收工返歸嗰陣，你聽到一聲大嗌。你急急腳咁返去睇睇，你發現【{0}】趴咗喺你未埋好堆屍體附近嘅狼門河下游。「信教信到路都唔睇，」你慨歎着：「依家啲邪教魔徒真係……唉……」。</value>
 	</string>
 	<!--{0}: cultist who fell, {1}: grave digger-->
 	<string key="CultConvertGraveDigger">
-		<value>On your way to {1}'s house, {0} suddenly decides that it would be a good idea to burn down the church as well. They lead you through the graveyard when suddenly a bear trap snaps around their ankle! All you can hear is their scream before they fall into a grave and you run for your lives.</value>
+		<value>喺你哋去緊【{1}】間屋嘅途中，【{0}】一路行，一路話：「咿呀，咁慢㗎，唔等你哋喇！」，佢行到狼門河邊摸着石頭過河。點知一個「哎呀！」就掉咗落水。教主以此為樣辦教精你哋「千祈咪亂行山澗呀！傳教一定要計劃好，地圖、水壺、指南針、電話同電筒都唔少得！」，然後收隊返歸從長計議。</value>
 	</string>
 	<!--{0}: grave digger-->
 	<string key="ChemistFell">
@@ -2210,12 +2214,12 @@
 		<value>藝術就是爆炸！💥</value>
 		<value>藝術就是派大星！💥</value>
 		<value>消失吧！🤞💥</value>
+		<value>燃燒吧！🤞💥</value>
 	</string>
 	<!--{0}: person whose house was doused-->
 	<string key="Doused">
 		<value>你成功喺【{0}】間屋淋咗無色無味嘅火水！</value>
 		<value>你成功喺【{0}】間屋淋咗火水，願烈焰與你同在！</value>
-		<value>你成功喺【{0}】間屋淋咗火水， may the flame be with you ！</value>
 	</string>
 	<string key="GuardSavedYouFromFire">
 		<value>A fire broke out in your house, but luckily the guardian angel was there and extinguished it right away! They'd make a good firefighter, if they weren't so busy protecting people...</value>
@@ -2230,7 +2234,8 @@
 	</string>
 	<!--{0}: list of people who died in the flames-->
 	<string key="Burning">
-		<value>The village awakens to the smell of fire... It's burning! You try to extinguish the fire altogether, but you're too late to save the people whose houses were mysteriously doused in kerosene. Today you mourn the deaths of the following people:\n{0}</value>
+		<value>［本報訊］本狼人村從 2016 年起落成。每年都有慶祝狼人村成立的週年營火晚會。縱火狂徒趁此機會推波助瀾，混入了不少工業用鹽。頃刻間火焰滿地，眾村民爭相走避，但有不少人罹難。鄰村「藝人村」消防員趕至救火，死者不但回天乏術，期間更有兩名消防員不幸殉職。\n眾「藝人村」村民紛紛在社交網站 Villter 上載其自拍照，手持白紙寫上「 #向前線消防員致敬 」及亮著手提電話亮燈或亮起小電筒，在描述上也打上了相同hashtag。惟「狼人村」村民大都對此壓倒性負評。\n以下是是次火災死難者名單：\n{0}</value>
+		<value>本狼人村從 2016 年起落成。由於三面環山、屏風屋一排排，加上九成嘅屋都係用木造嘅，勁易扯火，仲要一發不可收拾嗰隻。昨晚環迴山路啲屋着晒火！住喺嗰條路嘅人無一倖免。鄰村「藝人村」有消防員趕至救火，但期間有兩名消防員不幸殉職。\n眾「藝人村」村民紛紛在社交網站 Villter 上載其自拍照，手持白紙寫上「 #向前線消防員致敬 」及亮著手提電話亮燈或亮起小電筒，在描述上也打上了相同hashtag。惟「狼人村」村民大都對此壓倒性負評。\n以下是是次火災死難者名單：\n{0}</value>
 	</string>
 	<string key="ArsonistWins">
 		<value>呢條村得返一條縱火狂徒！\n【縱火狂徒 🔥】贏咗！</value>
@@ -2238,6 +2243,7 @@
 	</string>
 	<string key="Burn" isgif="true">
 		<value>叫咗你警醒做好預備架啦！家中又冇滅火筒，結果你俾縱火狂徒一把火滅咗你……</value>
+		<value>珍愛生命，遠離火海。\n火神祝融，向你示愛。\n喂，起身喇，懵炳！你俾人燒撚死咗呀！</value>
 	</string>
 	<string key="Augur">
 		<value>明燈 🦅</value>
