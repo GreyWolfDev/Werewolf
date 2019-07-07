@@ -1530,8 +1530,9 @@ namespace Werewolf_Node
                         rolesToAssign[towolf] = WolfRoles[Program.R.Next(WolfRoles.Count())]; //choose randomly from WolfRoles
                     }
 
-                    //cult without CH -> add CH
-                    if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter))
+                    //cult without CH -> add CH (unless the group REALLY doesn't want it...)
+                    if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter)
+                        && !disabledRoles.Contains(DisabledRole.CultistHunter))
                     {
                         //just pick a vg, and turn them to CH
                         var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));

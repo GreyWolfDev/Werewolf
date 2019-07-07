@@ -44,8 +44,9 @@ namespace Werewolf_Control.Helpers
                         rolesToAssign[towolf] = WolfRoles[R.Next(WolfRoles.Count())]; //choose randomly from WolfRoles
                     }
 
-                    //cult without CH -> add CH
-                    if (rolesToAssign.Contains(DisabledRole.Cultist) && !rolesToAssign.Contains(DisabledRole.CultistHunter))
+                    //cult without CH -> add CH (unless the group REALLY doesn't want it...)
+                    if (rolesToAssign.Contains(DisabledRole.Cultist) && !rolesToAssign.Contains(DisabledRole.CultistHunter) &&
+                        !disabledRoles.HasFlag(DisabledRole.CultistHunter))
                     {
                         //just pick a vg, and turn them to CH
                         var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
