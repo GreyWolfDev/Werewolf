@@ -1483,7 +1483,7 @@ namespace Werewolf_Node
             //now fill rest of the slots with villagers (for large games)
             for (int i = 0; i < playerCount / 4; i++)
                 rolesToAssign.Add(IRole.Villager);
-            rolesToAssign = rolesToAssign.Where(x => !disabledRoles.Any(y => x.ToString() == x.ToString())).ToList();
+            rolesToAssign = rolesToAssign.Where(x => !disabledRoles.Any(y => y.ToString() == x.ToString())).ToList();
             return rolesToAssign;
         }
 
