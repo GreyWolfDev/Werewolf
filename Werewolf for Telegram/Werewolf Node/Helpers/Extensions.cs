@@ -47,7 +47,7 @@ namespace Werewolf_Node.Helpers
 
         public static string TrimEnd(this string str, bool removeWhitespaces = true, params string[] trim)
         {
-            if (removeWhitespaces && char.IsWhiteSpace(str.Last())) return str.Remove(str.Length - 1).TrimEnd(removeWhitespaces, trim);
+            if (removeWhitespaces && str.Length > 0 && char.IsWhiteSpace(str.Last())) return str.Remove(str.Length - 1).TrimEnd(removeWhitespaces, trim);
             foreach (var s in trim)
             {
                 if (str.EndsWith(s)) return str.Remove(str.LastIndexOf(s)).TrimEnd(removeWhitespaces, trim);
