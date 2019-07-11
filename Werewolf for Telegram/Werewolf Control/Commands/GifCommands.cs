@@ -421,7 +421,7 @@ namespace Werewolf_Control
             }
             catch (Exception e)
             {
-                txt = "Error Occurred. This incident has been reported to the devs. Please try again later or seek help at @werewolfsupport.";
+                txt = "Error Occurred. This incident has been reported to the devs. Please try again later or seek help at @greywolfsupport.";
                 LogException(e, "Xsolla", m.Chat);
             }
             

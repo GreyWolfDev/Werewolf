@@ -625,7 +625,7 @@ namespace Werewolf_Control.Helpers
                     if (value.Value.ToLower().Contains("/join") && !fileErrors.Any(x => x.File == file.FileName && x.Key == key && x.Level == ErrorLevel.JoinLink))
                         fileErrors.Add(new LanguageError(file.FileName, key, "", ErrorLevel.JoinLink));
 
-                    if (new Regex(@"((https?:\/\/)?t(elegram)?\.me\/joinchat\/([a-zA-Z0-9_\-]+))|( @(?!werewolfbot)(?!werewolfbetabot)(?!greywolfdev)(?!werewolfsupport)(?!para949)\w)", RegexOptions.IgnoreCase).IsMatch(value.Value))
+                    if (new Regex(@"((https?:\/\/)?t(elegram)?\.me\/joinchat\/([a-zA-Z0-9_\-]+))|( @(?!werewolfbot)(?!werewolfbetabot)(?!greywolfdev)(?!werewolfsupport)(?!greywolfsupport)(?!para949)\w)", RegexOptions.IgnoreCase).IsMatch(value.Value))
                     {
                         fileErrors.Add(new LanguageError(file.FileName, key, "No usernames or links in the langfile!", ErrorLevel.Ads));
                     }

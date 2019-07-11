@@ -43,7 +43,7 @@ namespace Werewolf_Control
         {
             if (args[1] == null) //only send the message if there is no extra args (otherwise it's more likely for other bots)
             {
-                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, "[Website](http://www.tgwerewolf.com/?referrer=help)\n/rolelist (don't forget to /setlang first!)\n[Telegram Werewolf Support Group](http://telegram.me/werewolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/greywolfdev)",
+                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, "[Website](http://www.tgwerewolf.com/?referrer=help)\n/rolelist (don't forget to /setlang first!)\n[Telegram Werewolf Support Group](http://telegram.me/greywolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/greywolfdev)",
                                                             parseMode: ParseMode.Markdown, disableWebPagePreview: true);
             }
         }
@@ -216,7 +216,7 @@ namespace Werewolf_Control
                                   $"\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist." +
                                   $"\nFor role information, use /rolelist." +
                                   $"\nIf you want to set your default language, use /setlang." +
-                                  $"\nBe sure to stop by <a href=\"https://telegram.me/werewolfsupport\">Werewolf Support</a> for any questions, and subscribe to @greywolfdev for updates from the developer." +
+                                  $"\nBe sure to stop by <a href=\"https://telegram.me/greywolfsupport\">Werewolf Support</a> for any questions, and subscribe to @greywolfdev for updates from the developer." +
                                   $"\nMore infomation can be found <a href=\"https://www.tgwerewolf.com/?referrer=start\">here</a>!";
                         Bot.Send(msg, u.Message.Chat.Id);
                         return;
