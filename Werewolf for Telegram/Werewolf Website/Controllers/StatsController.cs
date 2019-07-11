@@ -243,16 +243,15 @@ namespace Werewolf_Web.Controllers
                 var killedbylink = killedby != null ? $"<a href='../Player/{killedby.TelegramId}'>{killedby.Name}</a>" : "Not killed?";
                 if (!json)
                 {
-
                     var reply =
                         "<table class=\"table table-hover\"><tbody>" +
                         $"<tr><td>Games played total</td><td><b>{gamesPlayed}</b></td></tr>" +
-                        $"<tr><td>Games won</td><td><b>{won}</td><td>{(won * 100 / gamesPlayed)}%</b></td></tr>" +
-                        $"<tr><td>Games lost</td><td><b>{lost}</td><td>{(lost * 100 / gamesPlayed)}%</b></td></tr>" +
-                        $"<tr><td>Games survived</td><td><b>{survived}</td><td>{(survived * 100 / gamesPlayed)}%</b></td></tr>" +
+                        $"<tr><td>Games won</td><td><b>{won}</td><td>{(gamesPlayed == 0 ? 0 : won * 100 / gamesPlayed)}%</b></td></tr>" +
+                        $"<tr><td>Games lost</td><td><b>{lost}</td><td>{(gamesPlayed == 0 ? 0 : lost * 100 / gamesPlayed)}%</b></td></tr>" +
+                        $"<tr><td>Games survived</td><td><b>{survived}</td><td>{(gamesPlayed == 0 ? 0 : survived * 100 / gamesPlayed)}%</b></td></tr>" +
                         $"<tr><td>Most common role</td><td><b>{roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.role ?? "WHAT? YOU HAVEN'T PLAYED?"}</td><td>{roleInfo.OrderByDescending(x => x.times).FirstOrDefault()?.times ?? 0} times</b></td></tr>" +
-                        $"<tr><td>Most killed</td><td><b>{killedlink}</td><td>{killed.times} times</b></td></tr>" +
-                        $"<tr><td>Most killed by</td><td><b>{killedbylink}</td><td>{killedby.times} times</b></td></tr>" +
+                        $"<tr><td>Most killed</td><td><b>{killedlink ?? "Nobody"}</td><td>{killed?.times ?? 0} times</b></td></tr>" +
+                        $"<tr><td>Most killed by</td><td><b>{killedbylink ?? "Nobody"}</td><td>{killedby?.times ?? 0} times</b></td></tr>" +
                         "</tbody></table>";
                     return Json(reply, JsonRequestBehavior.AllowGet);
                 }
@@ -387,9 +386,9 @@ namespace Werewolf_Web.Controllers
                 {
                     return Json("", JsonRequestBehavior.AllowGet);
                 }
-                if (p.NewAchievements == null)
-                    p.NewAchievements = new BitArray(200).ToByteArray();
-                var ach = new BitArray(p.NewAchievements);
+                var ach = p.NewAchievements != null
+                    ? new BitArray(p.NewAchievements)
+                    : new BitArray(200);
                 if (!json)
                 {
                     var reply = "<br/><table class=\"table table-hover\"><tbody>";
