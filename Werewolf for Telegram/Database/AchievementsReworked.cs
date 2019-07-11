@@ -188,6 +188,18 @@ namespace Database
         ReallyBadLuck = 86,
         [Display(Name = "Domino"), Description("As a hunter, shoot another hunter causing them to shoot as well.")]
         Domino = 87,
+        [Display(Name = "Double Shot"), Description("As the hunter or the gunner, shoot a bad role who is in love with another bad role!")]
+        DoubleShot = 88,
+        [Display(Name = "Playing with the Fire"), Description("As the arsonist, burn 5 or more houses in one night.")]
+        PlayingWithTheFire = 89,
+        [Display(Name = "Firework"), Description("As the arsonist, burn 10 or more houses in one night! What a nice firework :)")]
+        Firework = 90,
+        [Display(Name = "Cold as Ice"), Description("As the Snow Wolf, freeze the harlot. Their love is cold as ice.")]
+        ColdAsIce = 91,
+        [Display(Name = "Good Choice... For You"), Description("As the chemist, visit a player and survive 3 times in a single game.")]
+        GoodChoiceForYou = 92,
+        [Display(Name = "Increase the Pack!"), Description("After the wolf cub died, infect 2 players as the alpha wolf!")]
+        IncreaseThePack = 93,
     } // MAX VALUE: 9223372036854775807
       // Good luck reaching this XD
 

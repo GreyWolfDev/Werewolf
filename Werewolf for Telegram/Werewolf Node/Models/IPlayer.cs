@@ -136,12 +136,14 @@ namespace Werewolf_Node.Models
         public int GAGuardWolfCount { get; set; } = 0;
         public int MayorLynchAfterRevealCount { get; set; } = 0;
         public int BeingVisitedSameNightCount { get; set; } = 0;
+        public int ChemistVisitSurviveCount { get; set; } = 0;
         public bool BusyNight { get; set; } = false;
         public bool StrongestAlpha { get; set; } = false;
         public bool FoolCorrectlySeenBH { get; set; } = false;
         public bool Trustworthy { get; set; } = false;
         public bool CultLeader { get; set; } = false;
         public bool ConvertedToCult { get; set; } = false;
+        public bool FrozeHarlot { get; set; } = false;
 
         public int DonationLevel { get; set; } = 0;
         public bool Founder { get; set; } = false;

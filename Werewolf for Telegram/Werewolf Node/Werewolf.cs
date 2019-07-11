@@ -3236,6 +3236,7 @@ namespace Werewolf_Node
                             switch (target.PlayerRole)
                             {
                                 case IRole.Harlot:
+                                    snowwolf.FrozeHarlot = true;
                                     Send(GetLocaleString("HarlotFrozen"), target.Id);
                                     break;
                                 case IRole.Chemist:
@@ -3304,6 +3305,15 @@ namespace Werewolf_Node
                             burn.Doused = false;
                             burn.Burning = true;
                             SendGif(GetLocaleString("Burn"), GetRandomImage(BurnToDeath), burn.Id);
+                        }
+                    }
+
+                    if (Players.Count(x => x.Burning) >= 5)
+                    {
+                        AddAchievement(arsonist, AchievementsReworked.PlayingWithTheFire);
+                        if (Players.Count(x => x.Burning) >= 10)
+                        {
+                            AddAchievement(arsonist, AchievementsReworked.Firework);
                         }
                     }
                 }
@@ -3569,6 +3579,8 @@ namespace Werewolf_Node
                     var cub = Players.GetPlayersForRoles(new[] { IRole.WolfCub }, false).OrderByDescending(x => x.TimeDied).FirstOrDefault(x => x.IsDead);
                     if (cub != null)
                         AddAchievement(cub, AchievementsReworked.IHelped);
+                    if (Players.Count(x => choices.Contains(x.Id) && x.Bitten) == 2)
+                        AddAchievement(voteWolves.FirstOrDefault(x => x.PlayerRole == IRole.AlphaWolf), AchievementsReworked.IncreaseThePack);
                 }
 
                 eatCount = 0;
@@ -3881,6 +3893,8 @@ namespace Werewolf_Node
                             target.ChemistFailed = false;
                             Send(GetLocaleString("ChemistVisitYouSuccess"), target.Id);
                             Send(GetLocaleString("ChemistSuccess", target.GetName()), chemist.Id);
+                            if (++chemist.ChemistVisitSurviveCount == 3)
+                                AddAchievement(chemist, AchievementsReworked.GoodChoiceForYou);
                         }
                         else // chemist commits suicide by accident... oops!
                         {
@@ -5310,9 +5324,10 @@ namespace Werewolf_Node
 
             foreach (var p in Players)
             {
-                //reset drunk and frozen status
+                //reset drunk, frozen and burning status
                 p.Drunk = false;
                 p.Frozen = false;
+                p.Burning = false;
             }
         }
 
@@ -5569,7 +5584,12 @@ namespace Werewolf_Node
                 return;
             }
             if (p.InLove && Players.Any(x => x.Id == p.LoverId && !x.IsDead))
+            {
+                if (killMethod.HasValue && killMethod.Value == KillMthd.HunterShot && killers.Count() == 1
+                && !new[] { p, Players.First(x => x.Id == p.LoverId) }.Any(x => new[] { ITeam.Village, ITeam.Neutral, ITeam.Thief }.Contains(x.Team)))
+                    AddAchievement(killers.First(), AchievementsReworked.DoubleShot);
                 KillLover(p, sendNoMessage: isNight);
+            }
             switch (p.PlayerRole)
             {
                 case IRole.WolfCub:
@@ -5892,6 +5912,8 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.DeathVillage);
                         if (!ach2.HasFlag(AchievementsReworked.PsychopathKiller) && Players.Count >= 35 && player.PlayerRole == IRole.SerialKiller && player.Won)
                             newAch2.Set(AchievementsReworked.PsychopathKiller);
+                        if (!ach2.HasFlag(AchievementsReworked.ColdAsIce) && player.FrozeHarlot)
+                            newAch2.Set(AchievementsReworked.ColdAsIce);
 
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();
