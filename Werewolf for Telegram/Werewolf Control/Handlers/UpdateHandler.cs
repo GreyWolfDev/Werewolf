@@ -443,10 +443,10 @@ namespace Werewolf_Control.Handler
                             break;
                         case MessageType.VoiceMessage:
                             break;
-                        case MessageType.DocumentMessage:
+                        case MessageType.AnimationMessage:
                             if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
                             {
-                                var doc = update.Message.Document;
+                                var doc = update.Message.Animation;
                                 Send(doc.FileId, update.Message.Chat.Id);
                             }
                             else if (update.Message.Chat.Type == ChatType.Private &&
@@ -456,6 +456,23 @@ namespace Werewolf_Control.Handler
                                       false))
                             {
                                 Commands.AddGif(update.Message);
+                            }
+                            break;
+                        case MessageType.DocumentMessage:
+                            if (update.Message.Document.MimeType.ToLower().Equals("image/gif"))
+                            {
+                                if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
+                                {
+                                    Send("This is an old GIF, that is still in .gif format and not in .mp4 format. Please try reuploading it.", update.Message.Chat.Id);
+                                }
+                                else if (update.Message.Chat.Type == ChatType.Private &&
+                                         (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
+                                         (update.Message?.ReplyToMessage?.Text?.Contains(
+                                              "send me the GIF you want to use for this situation, as a reply") ??
+                                          false))
+                                {
+                                    Commands.AddGif(update.Message);
+                                }
                             }
                             break;
                         case MessageType.StickerMessage:

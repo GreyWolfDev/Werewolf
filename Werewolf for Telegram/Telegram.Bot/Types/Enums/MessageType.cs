@@ -87,6 +87,11 @@ namespace Telegram.Bot.Types.Enums
         /// The <see cref="Message"/> contains a <see cref="SuccessfulPayment"/>
         /// </summary>
         SuccessfulPayment,
+
+        /// <summary>
+        /// The <see cref="Message"/> contains a <see cref="Animation"/>
+        /// </summary>
+        AnimationMessage,
     }
 
     internal static class MessageTypeExtension
@@ -121,6 +126,8 @@ namespace Telegram.Bot.Types.Enums
                     return new KeyValuePair<string, string>("sendVideoNote", "video_note");
                 case MessageType.Invoice:
                     return new KeyValuePair<string, string>("sendInvoice", "title");
+                case MessageType.AnimationMessage:
+                    return new KeyValuePair<string, string>("sendAnimation", "animation");
                 default:
                     throw new NotImplementedException();
             }

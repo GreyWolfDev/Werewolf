@@ -100,6 +100,12 @@ namespace Telegram.Bot.Types
             => Entities.Select(entity => Text.Substring(entity.Offset, entity.Length)).ToList();
 
         /// <summary>
+        /// Optional. Message is an animation file, information about the file
+        /// </summary>
+        [JsonProperty("animation", Required = Required.Default)]
+        public Animation Animation { get; set; }
+
+        /// <summary>
         /// Optional. Message is an audio file, information about the file
         /// </summary>
         [JsonProperty("audio", Required = Required.Default)]
@@ -265,6 +271,9 @@ namespace Telegram.Bot.Types
         {
             get
             {
+                if (Animation != null)
+                    return MessageType.AnimationMessage;
+
                 if (Audio != null)
                     return MessageType.AudioMessage;
 

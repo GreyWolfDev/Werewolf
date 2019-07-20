@@ -320,7 +320,16 @@ namespace Werewolf_Control
                 var gifchoice = m.ReplyToMessage.Text;
                 gifchoice = gifchoice.Substring(gifchoice.IndexOf("#") + 1);
 				
-				if (m.Document.FileSize >= 1048576) // Maximum size is 1 MB
+                if (m.Animation == null && m.Document != null)
+                {
+                    Bot.Api.SendTextMessageAsync(m.From.Id, "This GIF is in old .gif format, but since iOS " +
+                        "users are unable to view them, we require you to use telegram's " +
+                        "[new GIFs in .mp4 format](https://telegram.org/blog/gif-revolution). " +
+                        "To fix this, try reuploading the GIF, your telegram app should then render it as .mp4. " +
+                        "Please send me the GIF you want to use for this situation, as a reply\n#" + gifchoice, replyMarkup: new ForceReply() { Force = true }, parseMode: ParseMode.Markdown);
+                    return;
+                }
+				if (m.Animation.FileSize >= 1048576) // Maximum size is 1 MB
 				{
 					Bot.Api.SendTextMessageAsync(m.From.Id, "This GIF is too large, the maximum allowed size is 1MB.\n\n" + 
 					"Please send me the GIF you want to use for this situation, as a reply\n#" + gifchoice, 
@@ -328,7 +337,7 @@ namespace Werewolf_Control
 					return;
 				}
 				
-                var id = m.Document.FileId;
+                var id = m.Animation.FileId;
                 switch (gifchoice)
                 {
                     case "Villager":
