@@ -96,11 +96,10 @@ namespace Werewolf_Control.Helpers
             //need to set the max wolves so game doesn't end immediately - 25% max wolf population
             //25% was too much, max it at 5 wolves.
             var possiblewolves = new List<DisabledRole>()
-            { DisabledRole.Wolf, DisabledRole.AlphaWolf, DisabledRole.WolfCub, DisabledRole.Lycan }
+            { DisabledRole.Wolf, DisabledRole.AlphaWolf, DisabledRole.WolfCub, DisabledRole.Lycan, DisabledRole.SnowWolf }
                 .Where(x => !disabledRoles.HasFlag(x)).ToList();
 
             var wolftoadd = possiblewolves[R.Next(possiblewolves.Count())];
-            if (!disabledRoles.HasFlag(DisabledRole.SnowWolf)) possiblewolves.Add(DisabledRole.SnowWolf); // add snow wolf only after one other wolf has been chosen already
             for (int i = 0; i < Math.Min(Math.Max(playerCount / 5, 1), 5); i++)
             {
                 rolesToAssign.Add(wolftoadd);
@@ -108,6 +107,10 @@ namespace Werewolf_Control.Helpers
                     possiblewolves.Remove(wolftoadd);
                 wolftoadd = possiblewolves[R.Next(possiblewolves.Count())];
             }
+
+            if (rolesToAssign.Count == 1 && rolesToAssign[0] == DisabledRole.SnowWolf) // avoid lone snow wolves
+                rolesToAssign[0] = DisabledRole.Wolf;
+
             //add remaining roles to 'card pile'
             foreach (var role in RoleConfigHelper.GetRoles())
             {

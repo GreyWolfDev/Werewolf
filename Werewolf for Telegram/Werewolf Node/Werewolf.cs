@@ -1430,13 +1430,10 @@ namespace Werewolf_Node
             //need to set the max wolves so game doesn't end immediately - 25% max wolf population
             //25% was too much, max it at 5 wolves.
             var possiblewolves = new List<IRole>()
-            { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan }
+            { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan, IRole.SnowWolf }
                 .Where(x => !disabledRoles.Any(y => y.ToString() == x.ToString())).ToList();
 
             var wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
-            if (!disabledRoles.Contains(DisabledRole.SnowWolf))
-                possiblewolves.Add(IRole.SnowWolf); // add snow wolf only after one other wolf has been chosen already
-
             for (int i = 0; i < Math.Min(Math.Max(playerCount / 5, 1), 5); i++)
             {
                 rolesToAssign.Add(wolftoadd);
@@ -1444,6 +1441,10 @@ namespace Werewolf_Node
                     possiblewolves.Remove(wolftoadd);
                 wolftoadd = possiblewolves[Program.R.Next(possiblewolves.Count())];
             }
+
+            if (rolesToAssign.Count == 1 && rolesToAssign[0] == IRole.SnowWolf) // avoid lone snow wolves
+                rolesToAssign[0] = IRole.Wolf;
+
             //add remaining roles to 'card pile'
             foreach (var role in Enum.GetValues(typeof(IRole)).Cast<IRole>())
             {
