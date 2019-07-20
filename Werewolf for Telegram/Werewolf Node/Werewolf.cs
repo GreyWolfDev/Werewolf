@@ -4153,6 +4153,7 @@ namespace Werewolf_Node
                 switch (VisitPlayer(ga, save))
                 {
                     case VisitResult.Success:
+                        if (WolfRoles.Contains(save.PlayerRole) && !save.WasSavedLastNight) ga.GAGuardWolfCount++;
                         bool cleanedDoused = false;
                         if (save.WasSavedLastNight)
                         {
