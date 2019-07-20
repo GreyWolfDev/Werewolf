@@ -46,7 +46,7 @@ namespace Database
         ShufflePlayerList = 32768,
         [Editable(true), Question("allowarsonist", SettingQuestion.AllowDisallow), DefaultValue(true), ConfigGroup(ConfigGroup.RoleConfig)]
         AllowArsonist = 65536,
-        [Editable(true), Question("burningoverkill", SettingQuestion.AllowDisallow), DefaultValue(false), ConfigGroup(ConfigGroup.RoleConfig)]
+        [Editable(true), Question("burningoverkill", SettingQuestion.AllowDisallow), DefaultValue(false), ConfigGroup(ConfigGroup.GroupSettings)]
         BurningOverkill = 131072,
 
         //this is a flag that will be set on ALL groups indicating we need to update the settings
