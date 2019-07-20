@@ -2476,7 +2476,7 @@ namespace Werewolf_Node
                         KillPlayer(visitor, KillMthd.VisitWolf, killer: visited, diedByVisitingKiller: true, killedByRole: IRole.Wolf);
                         return VisitResult.VisitorDied;
                     case IRole.GuardianAngel:
-                        if (Program.R.Next(100) < 50)
+                        if (!visited.WasSavedLastNight && Program.R.Next(100) < 50)
                         {
                             KillPlayer(visitor, KillMthd.GuardWolf, killer: visited, diedByVisitingKiller: true, killedByRole: IRole.Wolf);
                             return VisitResult.VisitorDied;
