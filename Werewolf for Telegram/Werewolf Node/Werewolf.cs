@@ -2493,7 +2493,7 @@ namespace Werewolf_Node
                 if (visited.DugGravesLastNight < 1) return VisitResult.Success;
                 if (visitor.PlayerRole == IRole.SerialKiller)
                 {
-                    visitor.StumbledGrave = true;
+                    visitor.StumbledGrave = GameDay;
                     Send(GetLocaleString("KillerStumbled", visited.GetName()), visitor.Id);
                     return VisitResult.Success;
                 }
@@ -3600,7 +3600,7 @@ namespace Werewolf_Node
                     // otherwise player is already dead
                     case VisitResult.Success:
                         IPlayer oldSkilled = null;
-                        if (sk.StumbledGrave && Program.R.Next(100) < 50)
+                        if (sk.StumbledGrave > 0 && sk.StumbledGrave + 1 == GameDay && Program.R.Next(100) < 50)
                         {
                             oldSkilled = skilled;
                             skilled = Players.Where(x => x.PlayerRole != IRole.SerialKiller && !x.IsDead).ElementAt(Program.R.Next(Players.Count(x => x.PlayerRole != IRole.SerialKiller && !x.IsDead)));
@@ -3627,7 +3627,6 @@ namespace Werewolf_Node
                         }
                         break;
                 }
-                sk.StumbledGrave = false;
                 var gd = Players.FirstOrDefault(x => x.PlayerRole == IRole.GraveDigger && !x.IsDead && x.DugGravesLastNight > 0);
                 if (gd != null)
                 {

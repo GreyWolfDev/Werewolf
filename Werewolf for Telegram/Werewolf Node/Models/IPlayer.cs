@@ -87,7 +87,7 @@ namespace Werewolf_Node.Models
         public bool ChemistFailed { get; set; } = false;
         public bool Frozen { get; set; } = false;
         public int DugGravesLastNight { get; set; } = 0;
-        public bool StumbledGrave { get; set; } = false;
+        public int StumbledGrave { get; set; } = 0;
         public int MessageId { get; set; }
         public string Name { get; set; }
         public bool InLove { get; set; } = false;
