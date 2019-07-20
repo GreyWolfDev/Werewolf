@@ -552,7 +552,7 @@ namespace Werewolf_Control.Handler
                                     Commands.KickChatMember(Settings.VeteranChatId, uid);
                                 }
                                 */
-                                else if (m.NewChatMember != null && m.Chat.Id == Settings.SupportChatId)
+                                else if (m.NewChatMember != null && (m.Chat.Id == Settings.SupportChatId || m.Chat.Id == Settings.PersianSupportChatId))
                                 {
                                     var uid = m.NewChatMember.Id;
                                     var p = DB.GlobalBans.FirstOrDefault(x => x.TelegramId == uid);
