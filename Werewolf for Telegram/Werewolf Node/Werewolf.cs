@@ -1199,142 +1199,149 @@ namespace Werewolf_Node
         private bool _requestPlayerListUpdate = false;
         private void GroupQueue()
         {
-            string final;
-            while (MessageQueueing)
+            try
             {
-                if (_requestPlayerListUpdate)
+                string final;
+                while (MessageQueueing)
                 {
-                    SendPlayerList(true);
-                    _requestPlayerListUpdate = false;
-                }
-                final = "";
-                bool requestPM = false;
-                bool byteMax = false;
-                bool pList = false;
-                var i = 0;
-                while (_messageQueue.Count > 0 && !byteMax)
-                {
-
-                    i++;
-                    var m = _messageQueue.Peek();
-
-                    if (m.Joining)
+                    if (_requestPlayerListUpdate)
                     {
-                        _messageQueue.Dequeue();
-                        if (_playerListId == 0)
-                        {
-                            try
-                            {
-                                _playerListId = Send(m.Msg).Result.MessageId;
-                            }
-                            catch
-                            {
-                                //ignored
-                            }
-                        }
-                        else
-                            Program.Bot.EditMessageTextAsync(ChatId, _playerListId, m.Msg, ParseMode.Html, disableWebPagePreview: true);
-                        continue;
+                        SendPlayerList(true);
+                        _requestPlayerListUpdate = false;
                     }
-
-                    if (!String.IsNullOrEmpty(m.GifId))
+                    final = "";
+                    bool requestPM = false;
+                    bool byteMax = false;
+                    bool pList = false;
+                    var i = 0;
+                    while (_messageQueue.Count > 0 && !byteMax)
                     {
-                        if (!String.IsNullOrEmpty(final))
-                            Send(final);
-                        Thread.Sleep(500);
+
+                        i++;
+                        var m = _messageQueue.Peek();
+
+                        if (m.Joining)
+                        {
+                            _messageQueue.Dequeue();
+                            if (_playerListId == 0)
+                            {
+                                try
+                                {
+                                    _playerListId = Send(m.Msg).Result.MessageId;
+                                }
+                                catch
+                                {
+                                    //ignored
+                                }
+                            }
+                            else
+                                Program.Bot.EditMessageTextAsync(ChatId, _playerListId, m.Msg, ParseMode.Html, disableWebPagePreview: true);
+                            continue;
+                        }
+
+                        if (!String.IsNullOrEmpty(m.GifId))
+                        {
+                            if (!String.IsNullOrEmpty(final))
+                                Send(final);
+                            Thread.Sleep(500);
 #if !DEBUG
                         _messageQueue.Dequeue();
                         SendGif(m.Msg, m.GifId);
                         Thread.Sleep(500);
                         final = "";
 #else
-                        var temp = final + m.Msg + Environment.NewLine + Environment.NewLine;
-                        if (Encoding.UTF8.GetByteCount(temp) > 512 && i > 1)
-                        {
-                            byteMax = true; //break and send
-                        }
-                        else
-                        {
-                            _messageQueue.Dequeue(); //remove the message, we are sending it.
-                            final += m.Msg + Environment.NewLine + Environment.NewLine;
-                            if (m.RequestPM)
-                                requestPM = true;
-                            if (m.PlayerList)
-                                pList = true;
+                            var temp = final + m.Msg + Environment.NewLine + Environment.NewLine;
+                            if (Encoding.UTF8.GetByteCount(temp) > 512 && i > 1)
+                            {
+                                byteMax = true; //break and send
+                            }
+                            else
+                            {
+                                _messageQueue.Dequeue(); //remove the message, we are sending it.
+                                final += m.Msg + Environment.NewLine + Environment.NewLine;
+                                if (m.RequestPM)
+                                    requestPM = true;
+                                if (m.PlayerList)
+                                    pList = true;
 
-                        }
+                            }
 #endif
 
-                    }
-                    else
-                    {
-                        var temp = final + m.Msg + Environment.NewLine + Environment.NewLine;
-                        if ((Encoding.UTF8.GetByteCount(temp) > 512 && i > 1))
-                        {
-                            byteMax = true; //break and send
                         }
                         else
                         {
-                            _messageQueue.Dequeue(); //remove the message, we are sending it.
-                            final += m.Msg + Environment.NewLine + Environment.NewLine;
-                            if (m.RequestPM)
-                                requestPM = true;
-                            if (m.PlayerList)
-                                pList = true;
+                            var temp = final + m.Msg + Environment.NewLine + Environment.NewLine;
+                            if ((Encoding.UTF8.GetByteCount(temp) > 512 && i > 1))
+                            {
+                                byteMax = true; //break and send
+                            }
+                            else
+                            {
+                                _messageQueue.Dequeue(); //remove the message, we are sending it.
+                                final += m.Msg + Environment.NewLine + Environment.NewLine;
+                                if (m.RequestPM)
+                                    requestPM = true;
+                                if (m.PlayerList)
+                                    pList = true;
+                            }
+
+                        }
+                    }
+                    if (!String.IsNullOrEmpty(final))
+                    {
+                        if (requestPM)
+                        {
+                            Send(final, 0, false, _requestPMButton);
+                        }
+                        else
+                        {
+                            if (pList)
+                            {
+                                try
+                                {
+                                    var result = Send(final).Result;
+                                    _playerListId = result.MessageId;
+                                }
+                                catch
+                                {
+                                    _playerListId = 0;
+                                }
+                            }
+                            else
+                                Send(final, notify: true);
                         }
 
                     }
+                    Thread.Sleep(4000);
+
+                }
+                //do one last send
+                final = "";
+                while (_messageQueue.Count > 0)
+                {
+                    var m = _messageQueue.Dequeue();
+                    if (m.GifId != null)
+                    {
+                        if (!String.IsNullOrEmpty(final))
+                            Send(final);
+                        Thread.Sleep(500);
+                        SendGif(m.Msg, m.GifId);
+                        Thread.Sleep(500);
+                        final = "";
+                    }
+                    else
+                    {
+                        final += m.Msg + Environment.NewLine;
+                    }
+
                 }
                 if (!String.IsNullOrEmpty(final))
-                {
-                    if (requestPM)
-                    {
-                        Send(final, 0, false, _requestPMButton);
-                    }
-                    else
-                    {
-                        if (pList)
-                        {
-                            try
-                            {
-                                var result = Send(final).Result;
-                                _playerListId = result.MessageId;
-                            }
-                            catch
-                            {
-                                _playerListId = 0;
-                            }
-                        }
-                        else
-                            Send(final, notify: true);
-                    }
-
-                }
-                Thread.Sleep(4000);
-
+                    Send(final);
             }
-            //do one last send
-            final = "";
-            while (_messageQueue.Count > 0)
+            catch (Exception e)
             {
-                var m = _messageQueue.Dequeue();
-                if (m.GifId != null)
-                {
-                    if (!String.IsNullOrEmpty(final))
-                        Send(final);
-                    Thread.Sleep(500);
-                    SendGif(m.Msg, m.GifId);
-                    Thread.Sleep(500);
-                    final = "";
-                }
-                else
-                {
-                    final += m.Msg + Environment.NewLine;
-                }
-
+                LogAllExceptions(e);
             }
-            if (!String.IsNullOrEmpty(final))
-                Send(final);
         }
 
         private void SendPlayerList(bool joining = false)
@@ -1345,51 +1352,58 @@ namespace Werewolf_Node
             {
                 new Thread(() =>
                 {
-                    var msg = "";
-                    if (joining)
+                    try
                     {
-                        msg = $"#players: {Players.Count}\n" +
-                        Players.Aggregate("", (current, p) => current + ($"{p.GetName()}\n"));
-                    }
-                    else
-                    {
-                        LastPlayersOutput = DateTime.Now;
-                        msg =
-                            $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count}\n";
-                        if (ShufflePlayerList)
+                        var msg = "";
+                        if (joining)
                         {
-                            msg += Players.Where(x => x.IsDead).OrderBy(x => x.TimeDied)
-                                .Aggregate("",
-                                    (current, p) =>
-                                        current +
-                                        p.GetName(dead: true) + ": " + (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "") + "\n");
-
-                            msg += Players.Where(x => !x.IsDead).OrderBy(x => Program.R.Next())
-                                .Aggregate("",
-                                    (current, p) =>
-                                        current +
-                                        p.GetName() + ": " + GetLocaleString("Alive") + "\n");
+                            msg = $"#players: {Players.Count}\n" +
+                            Players.Aggregate("", (current, p) => current + ($"{p.GetName()}\n"));
                         }
                         else
                         {
-                            //Thread.Sleep(4500); //wait a moment before sending
-                            msg +=
-                               Players.OrderBy(x => x.TimeDied)
-                                   .Aggregate("",
-                                       (current, p) =>
-                                           current +
-                                           ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
-                            //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
+                            LastPlayersOutput = DateTime.Now;
+                            msg =
+                                $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count}\n";
+                            if (ShufflePlayerList)
+                            {
+                                msg += Players.Where(x => x.IsDead).OrderBy(x => x.TimeDied)
+                                    .Aggregate("",
+                                        (current, p) =>
+                                            current +
+                                            p.GetName(dead: true) + ": " + (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "") + "\n");
+
+                                msg += Players.Where(x => !x.IsDead).OrderBy(x => Program.R.Next())
+                                    .Aggregate("",
+                                        (current, p) =>
+                                            current +
+                                            p.GetName() + ": " + GetLocaleString("Alive") + "\n");
+                            }
+                            else
+                            {
+                                //Thread.Sleep(4500); //wait a moment before sending
+                                msg +=
+                                   Players.OrderBy(x => x.TimeDied)
+                                       .Aggregate("",
+                                           (current, p) =>
+                                               current +
+                                               ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
+                                //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
+                            }
                         }
+                        _playerListChanged = false;
+                        SendWithQueue(new Message(msg) { PlayerList = true, Joining = joining });
                     }
-                    _playerListChanged = false;
-                    SendWithQueue(new Message(msg) { PlayerList = true, Joining = joining });
+                    catch (Exception exc)
+                    {
+                        LogException(exc);
+                    }
 
                 }).Start();
             }
             catch (Exception ex)
             {
-                LogException(ex);
+                LogAllExceptions(ex);
             }
         }
 
@@ -1397,7 +1411,11 @@ namespace Werewolf_Node
         {
             if (!((DateTime.Now - LastPlayersOutput).TotalSeconds > (10))) return;
             LastPlayersOutput = DateTime.Now;
-            Program.Bot.SendTextMessageAsync(ChatId, GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), parseMode: ParseMode.Html, replyToMessageId: _playerListId);
+            try
+            {
+                Program.Bot.SendTextMessageAsync(ChatId, GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), parseMode: ParseMode.Html, replyToMessageId: _playerListId);
+            }
+            catch { }
         }
 
         public async void ShowJoinButton()
