@@ -2418,14 +2418,14 @@ namespace Werewolf_Node
                     Send(GetLocaleString("NewWCRoleModel", Players.FirstOrDefault(x => x.Id == p.RoleModel)?.GetName() ?? "None was chosen!"), p.Id);
                     break;
                 case IRole.Mayor:
-                    if (!p.HasUsedAbility && GameDay != 1)
+                    if (!p.HasUsedAbility && (GameDay != 1 || Time != GameTime.Night))
                     {
                         var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Reveal"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Mayor}|reveal") } }.ToList();
                         SendMenu(choices, p, GetLocaleString("AskMayor"), QuestionType.Mayor);
                     }
                     break;
                 case IRole.Pacifist:
-                    if (!p.HasUsedAbility && GameDay != 1)
+                    if (!p.HasUsedAbility && (GameDay != 1 || Time != GameTime.Night))
                     {
                         var choices = new[] { new[] { new InlineKeyboardCallbackButton(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Pacifist}|peace") } }.ToList();
                         SendMenu(choices, p, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
