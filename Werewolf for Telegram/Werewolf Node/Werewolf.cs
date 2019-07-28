@@ -1071,15 +1071,15 @@ namespace Werewolf_Node
                     var lover11 = Players.FirstOrDefault(x => x.InLove);
                     if (lover11 == null)
                         return;
-                    if (lover11.Id == player.Id)
-                        AddAchievement(player, AchievementsReworked.SelfLoving);
                     lover11.LoverId = player.Choice;
                     lover11.InLove = true;
 
-                    var id = int.Parse(lover11.Id.ToString());
+                    var id = lover11.Id;
                     var lover2 = Players.FirstOrDefault(x => x.Id == player.Choice);
                     if (lover2 == null)
                         return;
+                    if (lover2.Id == player.Id)
+                        AddAchievement(player, AchievementsReworked.SelfLoving);
                     lover2.InLove = true;
                     lover2.LoverId = id;
                     player.Choice = -1;
@@ -2605,7 +2605,7 @@ namespace Werewolf_Node
                 }
             }
 
-            if (VisitPlayer(thief, target) != VisitResult.Success) return; 
+            if (VisitPlayer(thief, target) != VisitResult.Success) return;
 
             //swap roles
             var targetRole = target.PlayerRole;
@@ -3688,7 +3688,7 @@ namespace Werewolf_Node
                         }
                         break;
                     case VisitResult.Fail:
-                    fail:
+                        fail:
                         Send(GetLocaleString("HunterFailedToFind", hunted.GetName()), hunter.Id);
                         break;
                     case VisitResult.AlreadyDead:
@@ -4266,7 +4266,7 @@ namespace Werewolf_Node
                             else if (target.PlayerRole == IRole.SerialKiller) Send(GetLocaleString("StealKiller"), thief.Id);
                             break;
                         case VisitResult.Fail:
-                        fail:
+                            fail:
                             Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
                             break;
                     }
