@@ -144,24 +144,24 @@ namespace Werewolf_Control.Helpers
             //MessagesReceived += updateEventArgs.UpdateCount;
         }
 
-        internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default)
+        internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default, bool disableWebPagePreview = false)
         {
             //first answer the callback
             Bot.Api.AnswerCallbackQueryAsync(query.Id, edit ? null : text, showAlert);
             //edit the original message
             if (edit)
-                Edit(query, text, replyMarkup, parsemode);
+                Edit(query, text, replyMarkup, parsemode, disableWebPagePreview);
         }
 
-        internal static Task<Message> Edit(CallbackQuery query, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default)
+        internal static Task<Message> Edit(CallbackQuery query, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default, bool disableWebPagePreview = false)
         {
-            return Edit(query.Message.Chat.Id, query.Message.MessageId, text, replyMarkup, parsemode);
+            return Edit(query.Message.Chat.Id, query.Message.MessageId, text, replyMarkup, parsemode, disableWebPagePreview);
         }
 
-        internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default)
+        internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default, bool disableWebPagePreview = false)
         {
             Bot.MessagesSent++;
-            return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, replyMarkup: replyMarkup);
+            return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, disableWebPagePreview, replyMarkup);
         }
 
         private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)

@@ -22,32 +22,19 @@ namespace Werewolf_Control
         [Command(Trigger = "grouplist")]
         public static void GroupList(Update update, string[] args)
         {
-            
-            //var reply = "";
-            //using (var db = new WWContext())
-            //{
-            //    reply = Enumerable.Aggregate(db.v_PreferredGroups, "", (current, g) => current + $"{GetLanguageName(g.Language)}{(String.IsNullOrEmpty(g.Description) ? "" : $" - {g.Description}")}\n<a href=\"{g.GroupLink}\">{g.Name}</a>\n\n");
-            //}
-            //try
-            //{
-            //    var result = Bot.Api.SendTextMessageAsync(update.Message.From.Id, reply, parseMode: ParseMode.Html, disableWebPagePreview: true).Result;
-            //    if (update.Message.Chat.Type != ChatType.Private)
-            //        Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
-            //}
-            //catch (Exception e)
-            //{
-            //    Send(GetLocaleString("StartPM", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
-            //}
+            GroupList(update.Message.Chat.Id, update.Message.From.Id);
+        }
 
+        public static void GroupList(long chatId, int fromId, int messageId = 0)
+        {
             //new method, fun times....
-            //var groups = PublicGroups.GetAll();
             //now determine what languages are available in public groups.
             try
             {
                 string[] disabledLangs = new string[] { /*"فارسی"*/ }; // Language bases of which no grouplist is accessible
                 var langs = PublicGroups.GetBaseLanguages().Where(x => !disabledLangs.Contains(x)); // do not fetch disabled langs
                 //create a menu out of this
-                List<InlineKeyboardCallbackButton> buttons = langs.OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"groups|{update.Message.From.Id}|{x}|null")).ToList();
+                List<InlineKeyboardCallbackButton> buttons = langs.OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"groups|{fromId}|{x}|null")).ToList();
 
                 var baseMenu = new List<InlineKeyboardButton[]>();
                 for (var i = 0; i < buttons.Count; i++)
@@ -63,17 +50,26 @@ namespace Werewolf_Control
 
                 var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
 
-                try
+                if (messageId != 0)
                 {
-                    var result = Bot.Api.SendTextMessageAsync(update.Message.From.Id,
-                        GetLocaleString("WhatLangGroup", GetLanguage(update.Message.From.Id)),
-                        replyMarkup: menu).Result;
-                    if (update.Message.Chat.Type != ChatType.Private)
-                        Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
+                    var result = Bot.Api.EditMessageTextAsync(chatId, messageId,
+                            GetLocaleString("WhatLangGroup", GetLanguage(fromId)),
+                            replyMarkup: menu).Result;
                 }
-                catch
+                else
                 {
-                    RequestPM(update.Message.Chat.Id);
+                    try
+                    {
+                        var result = Bot.Api.SendTextMessageAsync(fromId,
+                            GetLocaleString("WhatLangGroup", GetLanguage(fromId)),
+                            replyMarkup: menu).Result;
+                        if (chatId != fromId)
+                            Send(GetLocaleString("SentPrivate", GetLanguage(fromId)), chatId);
+                    }
+                    catch
+                    {
+                        RequestPM(chatId);
+                    }
                 }
             }
             catch (Exception e)

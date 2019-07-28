@@ -1300,8 +1300,13 @@ namespace Werewolf_Control.Handler
                         #endregion
                         #region Other Commands
                         case "groups":
-                            var variant = args[3];
+                            if (choice == "null")
+                            {
+                                Commands.GroupList(query.Message.Chat.Id, query.From.Id, query.Message.MessageId);
+                                break;
+                            }
 
+                            var variant = args[3];
                             if (variant == "null")
                             {
                                 var variants = PublicGroups.GetVariants(choice);
@@ -1314,6 +1319,7 @@ namespace Werewolf_Control.Handler
                                     //create a menu out of this
                                     buttons = new List<InlineKeyboardButton>() { new InlineKeyboardCallbackButton(GetLocaleString("All", language), $"groups|{query.From.Id}|{choice}|all") };
                                     buttons.AddRange(variants.OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"groups|{query.From.Id}|{choice}|{x}")));
+                                    buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString("Back", language), $"groups|{query.From.Id}|null"));
                                     var playersGames = DB.Players.FirstOrDefault(x => x.TelegramId == query.From.Id);
                                     var gamecount = playersGames?.GamePlayers.Count ?? 0;
                                     var message = "";
@@ -1342,17 +1348,22 @@ namespace Werewolf_Control.Handler
                                 }
                             }
 
+                            var markup = new InlineKeyboardMarkup(
+                                new InlineKeyboardButton[] {
+                                    new InlineKeyboardCallbackButton(GetLocaleString("Back", language), $"groups|{query.From.Id}|{choice}|null")
+                                }
+                            );
 
                             var groups = PublicGroups.ForLanguage(choice, variant).ToList().GroupBy(x => x.GroupId).Select(x => x.First()).Where(x => x.LastRefresh >= DateTime.Now.Date.AddDays(-21)).OrderByDescending(x => x.LastRefresh).ThenByDescending(x => x.Ranking).Take(10).ToList();
                             var variantmsg = args[3] == "all" ? "" : (" " + variant);
 
-                            Bot.ReplyToCallback(query, GetLocaleString("HereIsList", language, choice + variantmsg));
-                            var reply = groups.Aggregate("",
+                            var reply = GetLocaleString("HereIsList", language, choice + variantmsg) + "\n\n" +
+                                groups.Aggregate("",
                                 (current, g) =>
                                     current +
                                     $"<a href=\"{g.GroupLink}\">{g.Name.FormatHTML()}</a>\n\n");
-                            Send(reply, query.Message.Chat.Id);
 
+                            Bot.ReplyToCallback(query, reply, replyMarkup: markup, parsemode: ParseMode.Html, disableWebPagePreview: true);
                             break;
                         case "getlang":
                             if (choice == "All")
