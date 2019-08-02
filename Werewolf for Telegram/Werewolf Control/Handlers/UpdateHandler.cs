@@ -1749,12 +1749,16 @@ namespace Werewolf_Control.Handler
                             var disabledRoles = (DisabledRole)(grp.RoleFlags ?? 0);
                             disabledRoles ^= role; // Toggle the role
                             disabledRoles &= ~DisabledRole.VALID; // Remove the "VALID" flag
+                            disabledRoles &= ~DisabledRole.Wolf;
+                            disabledRoles &= ~DisabledRole.Villager; // Make SURE ww and vg are not disabled
                             grp.RoleFlags = (long)disabledRoles;
                             DB.SaveChanges();
                             Bot.Edit(query, GetLocaleString("WhatToDo", language), GetRoleConfigMenu(groupid));
                             break;
                         case "validateroles":
                             disabledRoles = (DisabledRole)(grp.RoleFlags ?? 0);
+                            disabledRoles &= ~DisabledRole.Wolf;
+                            disabledRoles &= ~DisabledRole.Villager; // Make SURE ww and vg are not disabled
                             bool valid = GameBalancing.TryBalance(disabledRoles);
                             if (valid)
                             {
