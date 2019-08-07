@@ -1354,26 +1354,27 @@ namespace Werewolf_Node
                 {
                     try
                     {
+                        var players = new List<IPlayer>(Players);
                         var msg = "";
                         if (joining)
                         {
-                            msg = $"#players: {Players.Count}\n" +
-                            Players.Aggregate("", (current, p) => current + ($"{p.GetName()}\n"));
+                            msg = $"#players: {players.Count}\n" +
+                            players.Aggregate("", (current, p) => current + ($"{p.GetName()}\n"));
                         }
                         else
                         {
                             LastPlayersOutput = DateTime.Now;
                             msg =
-                                $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)}/{Players.Count}\n";
+                                $"{GetLocaleString("PlayersAlive")}: {players.Count(x => !x.IsDead)}/{players.Count}\n";
                             if (ShufflePlayerList)
                             {
-                                msg += Players.Where(x => x.IsDead).OrderBy(x => x.TimeDied)
+                                msg += players.Where(x => x.IsDead).OrderBy(x => x.TimeDied)
                                     .Aggregate("",
                                         (current, p) =>
                                             current +
                                             p.GetName(dead: true) + ": " + (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "") + "\n");
 
-                                msg += Players.Where(x => !x.IsDead).OrderBy(x => Program.R.Next())
+                                msg += players.Where(x => !x.IsDead).OrderBy(x => Program.R.Next())
                                     .Aggregate("",
                                         (current, p) =>
                                             current +
@@ -1383,7 +1384,7 @@ namespace Werewolf_Node
                             {
                                 //Thread.Sleep(4500); //wait a moment before sending
                                 msg +=
-                                   Players.OrderBy(x => x.TimeDied)
+                                   players.OrderBy(x => x.TimeDied)
                                        .Aggregate("",
                                            (current, p) =>
                                                current +
