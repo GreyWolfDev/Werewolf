@@ -672,7 +672,7 @@
   </string>
   <string key="HunterShotWolfMulti">
     <!-- 0 - target's name -->
-    <value>The wolves tried to attack the hunter last night, but the hunter was able to take one down with them as they died! {0} has died (wolf)</value>
+    <value>The wolves tried to attack the hunter last night, but the hunter was able to take one down with them as they died! {0} has died.</value>
   </string>
   <string key="HunterShotWolf">
     <!-- 0 - target's name -->
@@ -2225,5 +2225,11 @@
   </string>
   <string key="RoleConfigInvalid">
 	<value>The role configuration is invalid! Please try turning on more roles to allow the bot to create balanced games!</value>
+  </string>
+  
+  <string key="GroupIdleCount">
+  <!-- {0} - Idle count in the last 24 hours in the current group -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+	<value>{0} of those kills were in this group.</value>
   </string>
 </strings>
