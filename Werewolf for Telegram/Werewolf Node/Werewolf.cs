@@ -2870,7 +2870,11 @@ namespace Werewolf_Node
                         SendWithQueue(GetLocaleString("SecretLynchResultFull", sendMsg));
                     }
 
-                    if (lynched.Votes > 0)
+                    if (Players.All(x => x.IsDead || x.Votes == 0)) // ignore dead players
+                    {
+                        SendWithQueue(GetLocaleString("NoLynchVotes"));
+                    }
+                    else if (lynched.Votes > 0)
                     {
                         if (lynched.PlayerRole == IRole.Prince & !lynched.HasUsedAbility) //can only do this once
                         {
@@ -2910,16 +2914,12 @@ namespace Werewolf_Node
                             CheckRoleChanges(true);
                         }
                     }
-                    else if (lynched.Votes == -1)
+                    else
                     {
                         SendWithQueue(GetLocaleString("LynchTie"));
                         var t = choices.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
                         if (t != null && t.Votes > 0)
                             AddAchievement(t, AchievementsReworked.SoClose);
-                    }
-                    else
-                    {
-                        SendWithQueue(GetLocaleString("NoLynchVotes"));
                     }
 
                     if (CheckForGameEnd(true)) return;
