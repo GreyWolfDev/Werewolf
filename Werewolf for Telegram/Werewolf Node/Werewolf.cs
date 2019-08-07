@@ -3007,7 +3007,7 @@ namespace Werewolf_Node
                     //kill them
                     gunner.Bullet--;
                     gunner.HasUsedAbility = true;
-                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller, IRole.Lycan }.Contains(check.PlayerRole))
+                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller, IRole.Lycan, IRole.SnowWolf, IRole.Arsonist }.Contains(check.PlayerRole))
                         gunner.BulletHitVillager = true;
                     //update database
                     DBAction(gunner, check, "Shoot");
