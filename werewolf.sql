@@ -896,6 +896,39 @@ FROM            (SELECT        SUM(games) AS Games, Day, COUNT(GroupId) AS Group
 END
 
 GO
+/****** Object:  StoredProcedure [dbo].[GetGroupIdleKills24Hours]    Script Date: 8/7/2019 12:21:20 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[GetGroupIdleKills24Hours]
+	-- Add the parameters for the stored procedure here
+	@userid int,
+	@groupid bigint
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	select count(gameid) from 
+	gamekill gk
+join player p on p.Id = gk.VictimId
+join game g on g.id = gk.gameid
+where p.TelegramId = @userid
+and g.GroupId = @groupid
+and KillMethodId = 16
+and gk.TimeStamp > DATEADD(day,-1,GETDATE())
+
+END
+
+GO
 /****** Object:  StoredProcedure [dbo].[GetIdleKills24Hours]    Script Date: 26.03.2019 11:21:28 ******/
 SET ANSI_NULLS ON
 GO
