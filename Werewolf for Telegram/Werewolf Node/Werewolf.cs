@@ -2796,18 +2796,20 @@ namespace Werewolf_Node
                         p.NonVote++;
                         if (p.NonVote < 2) continue;
                         var idles24 = 0;
+                        var groupIdles24 = 0;
                         try
                         {
                             using (var db = new WWContext())
                             {
                                 idles24 = db.GetIdleKills24Hours(p.Id).FirstOrDefault() ?? 0;
+                                groupIdles24 = db.GetGroupIdleKills24Hours(p.Id, ChatId).FirstOrDefault() ?? 0;
                             }
                         }
                         catch
                         {
                             // ignored
                         }
-                        SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n" : "") + GetLocaleString("IdleCount", p.GetName() + $"(id: <code>{p.TeleUser.Id}</code>)", idles24 + 1)));
+                        SendWithQueue(GetLocaleString("IdleKill", p.GetName(), (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}\n" : "") + GetLocaleString("IdleCount", p.GetName() + $"(id: <code>{p.TeleUser.Id}</code>)", idles24 + 1) + " " + GetLocaleString("GroupIdleCount", groupIdles24 + 1)));
 
                         //if hunter has died from AFK, too bad....
                         KillPlayer(p, KillMthd.Idle, killer: p, isNight: false, hunterFinalShot: false);

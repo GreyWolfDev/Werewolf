@@ -185,5 +185,18 @@ namespace Database
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RestoreAccount", oldTGIdParameter, newTGIdParameter);
         }
+    
+        public virtual ObjectResult<Nullable<int>> GetGroupIdleKills24Hours(Nullable<int> userid, Nullable<long> groupid)
+        {
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            var groupidParameter = groupid.HasValue ?
+                new ObjectParameter("groupid", groupid) :
+                new ObjectParameter("groupid", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetGroupIdleKills24Hours", useridParameter, groupidParameter);
+        }
     }
 }
