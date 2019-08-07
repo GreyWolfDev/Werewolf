@@ -1216,9 +1216,9 @@ namespace Werewolf_Node
                     var i = 0;
                     while (_messageQueue.Count > 0 && !byteMax)
                     {
-
                         i++;
                         var m = _messageQueue.Peek();
+                        if (m == null) continue;
 
                         if (m.Joining)
                         {
@@ -1320,6 +1320,7 @@ namespace Werewolf_Node
                 while (_messageQueue.Count > 0)
                 {
                     var m = _messageQueue.Dequeue();
+                    if (m == null) continue;
                     if (m.GifId != null)
                     {
                         if (!String.IsNullOrEmpty(final))
