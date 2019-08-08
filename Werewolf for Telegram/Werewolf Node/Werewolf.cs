@@ -1787,7 +1787,7 @@ namespace Werewolf_Node
                         return GetLocaleString("RoleInfoSeer");
                     case IRole.Beholder:
                         msg = GetLocaleString("RoleInfoBeholder");
-                        var seer = Players?.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
+                        var seer = Players?.FirstOrDefault(x => x.PlayerRole == IRole.Seer && !x.IsDead);
                         if (seer != null)
                             msg += GetLocaleString("BeholderSeer", $"{seer.GetName()}");
                         else
@@ -1795,9 +1795,9 @@ namespace Werewolf_Node
                         return msg;
                     case IRole.Mason:
                         msg = GetLocaleString("RoleInfoMason");
-                        if (Players?.Count(x => x?.PlayerRole == IRole.Mason) > 1)
+                        if (Players?.Count(x => x?.PlayerRole == IRole.Mason && !x.IsDead) > 1)
                         {
-                            msg += " " + GetLocaleString("MasonTeam", Players.Where(x => x.PlayerRole == IRole.Mason).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next)).Trim();
+                            msg += " " + GetLocaleString("MasonTeam", Players.Where(x => x.PlayerRole == IRole.Mason && !x.IsDead).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next)).Trim();
                         }
                         return msg;
                     case IRole.Doppelgänger:
@@ -1813,7 +1813,7 @@ namespace Werewolf_Node
                     case IRole.Lycan:
                     case IRole.SnowWolf:
                         msg = GetLocaleString($"RoleInfo{role}");
-                        var wolves = Players?.Where(x => WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf);
+                        var wolves = Players?.Where(x => !x.IsDead && (WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf));
                         if (wolves?.Count() > 1)
                         {
                             if (wolves.Any(x => x.PlayerRole == IRole.SnowWolf))
@@ -1831,10 +1831,10 @@ namespace Werewolf_Node
                         return msg;
                     case IRole.Cultist:
                         msg = GetLocaleString("RoleInfoCultist");
-                        if (Players?.Count(x => x.PlayerRole == IRole.Cultist) > 1)
+                        if (Players?.Count(x => x.PlayerRole == IRole.Cultist && !x.IsDead) > 1)
                         {
                             msg += " " + GetLocaleString("CultistsList",
-                                Players?.Where(x => x.PlayerRole == IRole.Cultist).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
+                                Players?.Where(x => x.PlayerRole == IRole.Cultist && !x.IsDead).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
                         }
                         return msg;
                     default:
@@ -2870,7 +2870,11 @@ namespace Werewolf_Node
                         SendWithQueue(GetLocaleString("SecretLynchResultFull", sendMsg));
                     }
 
-                    if (lynched.Votes > 0)
+                    if (Players.All(x => x.IsDead || x.Votes == 0)) // ignore dead players
+                    {
+                        SendWithQueue(GetLocaleString("NoLynchVotes"));
+                    }
+                    else if (lynched.Votes > 0)
                     {
                         if (lynched.PlayerRole == IRole.Prince & !lynched.HasUsedAbility) //can only do this once
                         {
@@ -2910,16 +2914,12 @@ namespace Werewolf_Node
                             CheckRoleChanges(true);
                         }
                     }
-                    else if (lynched.Votes == -1)
+                    else
                     {
                         SendWithQueue(GetLocaleString("LynchTie"));
                         var t = choices.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
                         if (t != null && t.Votes > 0)
                             AddAchievement(t, AchievementsReworked.SoClose);
-                    }
-                    else
-                    {
-                        SendWithQueue(GetLocaleString("NoLynchVotes"));
                     }
 
                     if (CheckForGameEnd(true)) return;
@@ -3007,7 +3007,7 @@ namespace Werewolf_Node
                     //kill them
                     gunner.Bullet--;
                     gunner.HasUsedAbility = true;
-                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller, IRole.Lycan }.Contains(check.PlayerRole))
+                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller, IRole.Lycan, IRole.SnowWolf, IRole.Arsonist }.Contains(check.PlayerRole))
                         gunner.BulletHitVillager = true;
                     //update database
                     DBAction(gunner, check, "Shoot");
