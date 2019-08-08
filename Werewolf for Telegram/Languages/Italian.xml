@@ -285,18 +285,21 @@
   </string>
   <string key="WolvesEatYou" >
     <value >Oh no! I lupi hanno banchettato coi tuoi ossicini. NOMNOMNOMNOM</value>
+    <value >Stavi dormendo tranquillo nel tuo letto, quando un lupo ha fatto irruzione e ti ha mangiato! NOMNOMNOM</value>
+    <value >Sei stato mangiato dai lupi! Ora ciò che rimane di te sono solo ossicini... NOMNOMNOM</value>
   </string>
   <string key="WolvesEatDrunk" >
     <value >Oh no! {0} era un ubriaco!  Ora sei ubriaco a tua volta, non potrai attaccare la prossima notte...</value>
   </string>
   <string key="GuardWolf" >
     <value >Hai provato a proteggere un lupo! Che poi ti ha sbranato senza pietà...</value>
+    <value >Il tuo bersaglio non è stato attaccato dai lupi, siccome che era un lupo. Inoltre, ti ha anche mangiato...</value>
   </string>
   <string key="GuardSaved" >
     <value >Hai salvato la vita di {0}!</value>
   </string>
   <string key="GuardNoAttack" >
-    <value >{0} non è stato attaccato dai lupi, quindi non hai avuto molto da fare questa notte.</value>
+    <value >{0} non è stato attaccato, quindi non hai avuto molto da fare questa notte.</value>
   </string>
   <string key="GuardEmptyHouse">
     <value>Hai deciso di proteggere {0}, ma non era a casa!</value>
@@ -722,7 +725,7 @@
     <value>Perso</value>
   </string>
     <string key="IdleCount">
-    <value>Il giocatore {0} è stato ucciso per non aver votato {1} volte nelle ultime 24 ore.</value>
+    <value>Il giocatore {0} è stato ucciso per non aver votato {1} volte nelle ultime 24 ore,</value>
   </string>
   <!--New strings 7th of July-->
   <string key="AboutVG">
@@ -1278,37 +1281,37 @@
     <value>{0} sono entrati in partita negli ultimi 30 secondi.</value>
   </string>
   <string key="AllowCult">
-    <value>Allow Cult</value>
+    <value>Abilita i Satanisti</value>
   </string>
   <string key="AllowTanner">
-    <value>Allow Tanner</value>
+    <value>Abilita Conciatore</value>
   </string>
   <string key="AllowFool">
-    <value>Allow Fool</value>
+    <value>Abilita Folle</value>
   </string>
   <string key="EnableSecretLynch">
-    <value>Enable Secret Lynch</value>
+    <value>Abilita Linciaggio Segreto</value>
   </string>
   <string key="RandomMode">
-    <value>Enable Random Mode</value>
+    <value>Abilita modalità random</value>
   </string>
   <string key="AllowExtend">
-    <value>Allow Extending Timer</value>
+    <value>Abilita estensione del timer</value>
   </string>
   <string key="ShowRolesDeath">
-    <value>Show Roles on Death</value>
+    <value>Mostra ruoli alla morte</value>
   </string>
   <string key="AllowFlee">
-    <value>Allow Fleeing</value>
+    <value>Abilita di fuggire</value>
   </string>
   <string key="ShowIDs">
-    <value>Show IDs on joining</value>
+    <value>Mostra ID all'ingresso in partita</value>
   </string>
   <string key="ShowIDsQ">
-    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+    <value>Mostrare ID dei giocatori dopo l'ingresso in partita?\nAttualmente: {0}</value>
   </string>
   <string key="ShowIDsA">
-    <value>{0} IDs</value>
+    <value>{0} ID</value>
   </string>
   
   <string key="All">
@@ -2071,5 +2074,30 @@
 	<value>Solo {0} e {1} sono rimasti... Improvvisamente {0} ride, tira fuori un fiammifero, lo accende e lo tira ai piedi di {1}, che viene avvolto dalle fiamme!</value>
 	<value>Mentre riposa tranquillo nella propria abitazione, c'è {0} che si avvicina furtivamente al perimetro della casa, la cosparge di kerosene e ci butta uno zippo! Tutto ciò che rimane di {1} è cenere.</value>
   </string>
+    <string key="ArsonistTeamEnd">
+    <value>Team Piromane</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+	<value>Sei andato a divertirti con {0}, ma la casa era vuota!</value>
+  </string>
+  <string key="Validate">
+  <!-- Usato per il bottone sul menu della selezione ruoli -->
+	<value>‼ Convalida ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Usato per il bottone sul menu della selezione ruoli -->
+	<value>✅ Valido ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>La configurazione dei ruoli è valida! È stata abilitata e verrà usata da ora in poi!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>La configurazione dei ruoli NON è valida! Per favore abilita più ruoli per permettere al bot di creare partite bilanciate!</value>
+  </string>
+  <string key="GroupIdleCount">
+  <!-- {0} - Morti per AFK delle ultime 24 ore nel gruppo attuale -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+	<value> di cui {0} volte in questo gruppo</value>
+  </string>  
   <!-- Per qualsiasi problema inerente alle traduzioni, potete contattarmi su @Ponyta -->
 </strings>
