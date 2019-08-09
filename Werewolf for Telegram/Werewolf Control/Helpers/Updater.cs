@@ -42,13 +42,13 @@ namespace Werewolf_Control.Helpers
         public static void DoBuild(CallbackQuery query)
         {
             var msg = query.Message.Text + $"\n\nBeginning build...\n";
-            
+
             Bot.ReplyToCallback(query, msg);
             //determine what we are building
             var updateType = query.Data.Split('|')[1];
             var beta = updateType.StartsWith("beta");
-            var control = !updateType.Contains("node");
-            var node = !updateType.Contains("control");
+            var control = updateType.Contains("control");
+            var node = updateType.Contains("node");
             var website = updateType.Contains("website");
 
             msg += "Build Definition(s) to Use:";
@@ -57,14 +57,12 @@ namespace Werewolf_Control.Helpers
             //var what = control ? node ? "Both" : "Control" : "Node";
             if (website)
                 definitions.Add("Website");
-            else
-            {
-                if (control)
-                    definitions.Add($"{env} Control");
-                if (node)
-                    definitions.Add($"{env} Node");
-            }
-            
+            if (control)
+                definitions.Add($"{env} Control");
+            if (node)
+                definitions.Add($"{env} Node");
+
+
 
             msg = definitions.Aggregate(msg, (current, a) => current + "\n" + a);
             Thread.Sleep(500);
@@ -219,7 +217,7 @@ namespace Werewolf_Control.Helpers
                     });
                     return $"Queued build with id: {res.Id}";
                 }
-                catch(VssServiceException e)
+                catch (VssServiceException e)
                 {
                     return $"{e.Message}";
                 }
@@ -262,7 +260,7 @@ namespace Werewolf_Control.Helpers
                     }
                     if (currentChoice.Version > currentVersion)
                     {
-                        
+
                         currentVersion = currentChoice.Version;
                         //alert dev group
                         Bot.Send($"New node with version {currentVersion} found.  Stopping old nodes.", -1001077134233);

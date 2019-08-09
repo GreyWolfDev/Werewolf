@@ -44,6 +44,7 @@ namespace BuildAutomation.Controllers
                         //what was released
                         var beta = obj.resource.environment.name.Contains("Beta");
                         var node = obj.resource.environment.name.Contains("Node");
+                        var control = obj.resource.environment.name.Contains("Control");
                         var website = obj.resource.environment.name.Contains("Website");
 
 
@@ -53,19 +54,20 @@ namespace BuildAutomation.Controllers
                         {
                             if (website)
                             {
-                                msg += "The website will now be deployed.";
-                                menu = null;
+                                msg += "The website will now be deployed.\r\n";
                             }
-                            else
+
+                            if (node || control)
                             {
                                 msg += "\nDo you want me to copy the files and update?";
                                 menu = new InlineKeyboardMarkup(new[]
                                 {
-                                new InlineKeyboardCallbackButton("Yes",
-                                    $"update|{(beta ? "beta" : "release")}{(node ? "node" : "control")}"),
-                                new InlineKeyboardCallbackButton("No", "update|no")
+                                    new InlineKeyboardCallbackButton("Yes",
+                                        $"update|{(beta ? "beta" : "release")}{(node ? "node" : "control")}"),
+                                    new InlineKeyboardCallbackButton("No", "update|no")
                                 });
                             }
+
                         }
 
 
@@ -126,8 +128,11 @@ namespace BuildAutomation.Controllers
                     var node =
                         push.commits.Any(
                             x => x.modified.Union(x.added).Union(x.removed).Any(c => c.Contains("Werewolf Node")));
+                    var website =
+                        push.commits.Any(
+                            x => x.modified.Union(x.added).Union(x.removed).Any(c => c.Contains("Werewolf Website")));
 
-                    if ((!beta && !master) || (!control && !node)) //nothing to build
+                    if ((!beta && !master) || (!control && !node && !website)) //nothing to build
                     {
                         bot.SendTextMessageAsync(GroupId, msg, parseMode: ParseMode.Html,
                             disableWebPagePreview: true);
@@ -144,7 +149,11 @@ namespace BuildAutomation.Controllers
 
                     var releaseControl = new InlineKeyboardCallbackButton(yes, "build|releasecontrol");
                     var releaseNode = new InlineKeyboardCallbackButton(yes, "build|releasenode");
-                    var releaseBoth = new InlineKeyboardCallbackButton(yes, "build|releaseboth");
+                    //var releaseBoth = new InlineKeyboardCallbackButton(yes, "build|releaseboth");
+                    var releaseWebSite = new InlineKeyboardCallbackButton(yes, "build|releasewebsite");
+                    //var releaseWN = new InlineKeyboardCallbackButton(yes, "build|releasenodewebsite");
+                    //var releaseWC = new InlineKeyboardCallbackButton(yes, "build|releasecontrolwebsite");
+                    //var releaseAll = new InlineKeyboardCallbackButton(yes, "build|releasewebsitebot");
                     InlineKeyboardMarkup menu;
 
                     msg += "\nThis commit contains changes to ";
@@ -152,36 +161,84 @@ namespace BuildAutomation.Controllers
                     {
                         if (control && node)
                         {
-                            menu = new InlineKeyboardMarkup(new[] {betaBoth, none});
+                            menu = new InlineKeyboardMarkup(new[] { betaBoth, none });
                             msg += "Control and Node";
                         }
                         else if (control)
                         {
-                            menu = new InlineKeyboardMarkup(new[] {betaControl, none});
+                            menu = new InlineKeyboardMarkup(new[] { betaControl, none });
                             msg += "Control only";
                         }
                         else
                         {
-                            menu = new InlineKeyboardMarkup(new[] {betaNode, none});
+                            menu = new InlineKeyboardMarkup(new[] { betaNode, none });
                             msg += "Node only";
                         }
                     }
                     else
                     {
-                        if (control && node)
+                        if (control && node && website)
                         {
-                            menu = new InlineKeyboardMarkup(new[] {releaseBoth, none});
+                            menu = new InlineKeyboardMarkup(new InlineKeyboardButton[]
+                            {
+                                new InlineKeyboardCallbackButton("All of it!", "build|releasecontrolwebsitenode"),
+                                new InlineKeyboardCallbackButton("Control & Node", "build|releasecontrolnode"),
+                                new InlineKeyboardCallbackButton("Website & Control", "build|releasecontrolwebsite"),
+                                new InlineKeyboardCallbackButton("Website & Node", "build|releasenodewebsite"),
+                                new InlineKeyboardCallbackButton("Website Only", "build|releasewebsite"),
+                                new InlineKeyboardCallbackButton("Control Only", "build|releasecontrol"),
+                                new InlineKeyboardCallbackButton("Node Only", "build|releasenode"),
+                                none
+                            });
+                            msg += "Control, Node, and Website";
+                        }
+                        else if (control && node)
+                        {
+                            menu = new InlineKeyboardMarkup(new InlineKeyboardButton[]
+                            {
+                                new InlineKeyboardCallbackButton("Control & Node", "build|releasecontrolnode"),
+                                new InlineKeyboardCallbackButton("Control Only", "build|releasecontrol"),
+                                new InlineKeyboardCallbackButton("Node Only", "build|releasenode"),
+                                none
+                            });
                             msg += "Control and Node";
+                        }
+                        else if (control && website)
+                        {
+                            menu = new InlineKeyboardMarkup(new InlineKeyboardButton[]
+                            {
+                                new InlineKeyboardCallbackButton("Website & Control", "build|releasecontrolwebsite"),
+                                new InlineKeyboardCallbackButton("Website Only", "build|releasewebsite"),
+                                new InlineKeyboardCallbackButton("Control Only", "build|releasecontrol"),
+                                none
+                            });
+                            msg += "Control and Website";
+                        }
+                        else if (node && website)
+                        {
+                            menu = new InlineKeyboardMarkup(new InlineKeyboardButton[]
+                            {
+                                new InlineKeyboardCallbackButton("Website & Node", "build|releasenodewebsite"),
+                                new InlineKeyboardCallbackButton("Website Only", "build|releasewebsite"),
+                                new InlineKeyboardCallbackButton("Node Only", "build|releasenode"),
+                                none
+                            });
+                            msg += "Node and Website";
                         }
                         else if (control)
                         {
-                            menu = new InlineKeyboardMarkup(new[] {releaseControl, none});
+                            menu = new InlineKeyboardMarkup(new[] { releaseControl, none });
                             msg += "Control only";
                         }
-                        else
+                        else if (node)
                         {
-                            menu = new InlineKeyboardMarkup(new[] {releaseNode, none});
+                            menu = new InlineKeyboardMarkup(new[] { releaseNode, none });
                             msg += "Node only";
+                        }
+                        else //if (website)
+                        {
+                            menu = new InlineKeyboardMarkup(new[] { releaseWebSite, none });
+                            msg += "Website Only";
                         }
                     }
                     msg += $", on {(beta ? "Beta" : "Release")}\n";
@@ -190,13 +247,13 @@ namespace BuildAutomation.Controllers
                     var r = bot.SendTextMessageAsync(GroupId, msg, replyMarkup: menu, parseMode: ParseMode.Html,
                         disableWebPagePreview: true).Result;
 
-                    if (beta)
-                    {
-                        var m = "Changes on beta branch. Do you want to build the website too?";
-                        var websiteYes = new InlineKeyboardCallbackButton("Yes", "build|website");
-                        menu = new InlineKeyboardMarkup(new[] { websiteYes, none });
-                        bot.SendTextMessageAsync(GroupId, m, replyMarkup: menu, parseMode: ParseMode.Html, disableWebPagePreview: true);
-                    }
+                    //if (beta)
+                    //{
+                    //    var m = "Changes on beta branch. Do you want to build the website too?";
+                    //    var websiteYes = new InlineKeyboardCallbackButton("Yes", "build|website");
+                    //    menu = new InlineKeyboardMarkup(new[] { websiteYes, none });
+                    //    bot.SendTextMessageAsync(GroupId, m, replyMarkup: menu, parseMode: ParseMode.Html, disableWebPagePreview: true);
+                    //}
 
                 }
 
@@ -232,7 +289,7 @@ namespace BuildAutomation.Controllers
                 //}
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
             }
-            
+
 
         }
     }

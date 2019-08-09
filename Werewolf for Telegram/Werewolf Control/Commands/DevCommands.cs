@@ -81,6 +81,25 @@ namespace Werewolf_Control
             }
         }
 
+        [Attributes.Command(Trigger = "build", DevOnly = true)]
+        public static void Build(Update u, string[] args)
+        {
+            var menu = new InlineKeyboardMarkup(new InlineKeyboardButton[]
+            {
+                new InlineKeyboardCallbackButton("All of it!", "build|releasecontrolwebsitenode"),
+                new InlineKeyboardCallbackButton("Control & Node", "build|releasecontrolnode"),
+                new InlineKeyboardCallbackButton("Website & Control", "build|releasecontrolwebsite"),
+                new InlineKeyboardCallbackButton("Website & Node", "build|releasenodewebsite"),
+                new InlineKeyboardCallbackButton("Website Only", "build|releasewebsite"),
+                new InlineKeyboardCallbackButton("Control Only", "build|releasecontrol"),
+                new InlineKeyboardCallbackButton("Node Only", "build|releasenode"),
+                new InlineKeyboardCallbackButton("No", "build|no")
+            });
+
+            Send($"Select build to trigger", u.Message.Chat.Id,
+                customMenu: menu);
+        }
+
         [Attributes.Command(Trigger = "maintenance", DevOnly = true)]
         public static void Maintenenace(Update u, string[] args)
         {
