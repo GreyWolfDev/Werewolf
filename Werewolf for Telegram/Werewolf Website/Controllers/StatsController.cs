@@ -420,9 +420,9 @@ namespace Werewolf_Web.Controllers
                 var ach = p.NewAchievements != null
                     ? new BitArray(p.NewAchievements)
                     : new BitArray(200);
+                var has = ach.GetUniqueFlags().ToList();
                 if (!json)
                 {
-                    var has = ach.GetUniqueFlags().ToList();
                     var reply = "<table class=\"table table-hover\"><tbody style=\"color: red\">";
                     foreach (AchievementsReworked a in Enum.GetValues(typeof(AchievementsReworked)))
                     { 
@@ -436,8 +436,11 @@ namespace Werewolf_Web.Controllers
                 else
                 {
                     List<object> reply = new List<object>();
-                    foreach (var a in ach.GetUniqueFlags())
-                        reply.Add(new { name = a.GetName(), description = a.GetDescription() });
+                    foreach (AchievementsReworked a in Enum.GetValues(typeof(AchievementsReworked)))
+                    { 
+                        if (!has.Contains(a) && a != AchievementsReworked.None && a != AchievementsReworked.OHAIDER)
+                            reply.Add(a);
+                    }
                     return Json(reply, JsonRequestBehavior.AllowGet);
                 }
             }
