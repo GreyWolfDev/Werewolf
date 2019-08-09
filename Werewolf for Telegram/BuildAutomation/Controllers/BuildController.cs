@@ -154,24 +154,25 @@ namespace BuildAutomation.Controllers
                     //var releaseWN = new InlineKeyboardCallbackButton(yes, "build|releasenodewebsite");
                     //var releaseWC = new InlineKeyboardCallbackButton(yes, "build|releasecontrolwebsite");
                     //var releaseAll = new InlineKeyboardCallbackButton(yes, "build|releasewebsitebot");
-                    InlineKeyboardMarkup menu;
+                    Menu menu;
 
                     msg += "\nThis commit contains changes to ";
                     if (beta)
                     {
                         if (control && node)
                         {
-                            menu = new InlineKeyboardMarkup(new[] { betaBoth, none });
+                            menu = new Menu(1, new List<InlineKeyboardButton>
+                                { betaBoth, none });
                             msg += "Control and Node";
                         }
                         else if (control)
                         {
-                            menu = new InlineKeyboardMarkup(new[] { betaControl, none });
+                            menu = new Menu(1, new List<InlineKeyboardButton> { betaControl, none });
                             msg += "Control only";
                         }
                         else
                         {
-                            menu = new InlineKeyboardMarkup(new[] { betaNode, none });
+                            menu = new Menu(1, new List<InlineKeyboardButton> { betaNode, none });
                             msg += "Node only";
                         }
                     }
@@ -179,7 +180,7 @@ namespace BuildAutomation.Controllers
                     {
                         if (control && node && website)
                         {
-                            menu = new InlineKeyboardMarkup(new InlineKeyboardButton[]
+                            menu = new Menu(1, new List<InlineKeyboardButton>
                             {
                                 new InlineKeyboardCallbackButton("All of it!", "build|releasecontrolwebsitenode"),
                                 new InlineKeyboardCallbackButton("Control & Node", "build|releasecontrolnode"),
@@ -194,7 +195,7 @@ namespace BuildAutomation.Controllers
                         }
                         else if (control && node)
                         {
-                            menu = new InlineKeyboardMarkup(new InlineKeyboardButton[]
+                            menu = new Menu(1, new List<InlineKeyboardButton>
                             {
                                 new InlineKeyboardCallbackButton("Control & Node", "build|releasecontrolnode"),
                                 new InlineKeyboardCallbackButton("Control Only", "build|releasecontrol"),
@@ -205,7 +206,7 @@ namespace BuildAutomation.Controllers
                         }
                         else if (control && website)
                         {
-                            menu = new InlineKeyboardMarkup(new InlineKeyboardButton[]
+                            menu = new Menu(1, new List<InlineKeyboardButton>
                             {
                                 new InlineKeyboardCallbackButton("Website & Control", "build|releasecontrolwebsite"),
                                 new InlineKeyboardCallbackButton("Website Only", "build|releasewebsite"),
@@ -216,7 +217,7 @@ namespace BuildAutomation.Controllers
                         }
                         else if (node && website)
                         {
-                            menu = new InlineKeyboardMarkup(new InlineKeyboardButton[]
+                            menu = new Menu(1, new List<InlineKeyboardButton>
                             {
                                 new InlineKeyboardCallbackButton("Website & Node", "build|releasenodewebsite"),
                                 new InlineKeyboardCallbackButton("Website Only", "build|releasewebsite"),
@@ -227,24 +228,36 @@ namespace BuildAutomation.Controllers
                         }
                         else if (control)
                         {
-                            menu = new InlineKeyboardMarkup(new[] { releaseControl, none });
+                            menu = new Menu(1, new List<InlineKeyboardButton>
+                            {
+                                releaseControl,
+                                none
+                            });
                             msg += "Control only";
                         }
                         else if (node)
                         {
-                            menu = new InlineKeyboardMarkup(new[] { releaseNode, none });
+                            menu = new Menu(1, new List<InlineKeyboardButton>
+                            {
+                                releaseNode,
+                                none
+                            });
                             msg += "Node only";
                         }
                         else //if (website)
                         {
-                            menu = new InlineKeyboardMarkup(new[] { releaseWebSite, none });
+                            menu = new Menu(1, new List<InlineKeyboardButton>
+                            {
+                                releaseWebSite,
+                                none
+                            });
                             msg += "Website Only";
                         }
                     }
                     msg += $", on {(beta ? "Beta" : "Release")}\n";
                     msg += "Do you want to build?";
 
-                    var r = bot.SendTextMessageAsync(GroupId, msg, replyMarkup: menu, parseMode: ParseMode.Html,
+                    var r = bot.SendTextMessageAsync(GroupId, msg, replyMarkup: menu.CreateMarkup(), parseMode: ParseMode.Html,
                         disableWebPagePreview: true).Result;
 
                     //if (beta)
@@ -291,6 +304,45 @@ namespace BuildAutomation.Controllers
             }
 
 
+        }
+    }
+
+    public class Menu
+    {
+        /// <summary>
+        /// The buttons you want in your menu
+        /// </summary>
+        public List<InlineKeyboardButton> Buttons { get; set; }
+        /// <summary>
+        /// How many columns.  Defaults to 1.
+        /// </summary>
+        public int Columns { get; set; }
+
+        public Menu(int col = 1, List<InlineKeyboardButton> buttons = null)
+        {
+            Buttons = buttons ?? new List<InlineKeyboardButton>();
+            Columns = Math.Max(col, 1);
+        }
+
+        public InlineKeyboardMarkup CreateMarkup()
+        {
+            var col = Columns - 1;
+            //this is gonna be fun...
+            var final = new List<InlineKeyboardButton[]>();
+            for (var i = 0; i < Buttons.Count; i++)
+            {
+                var row = new List<InlineKeyboardButton>();
+                do
+                {
+                    row.Add(Buttons[i]);
+                    i++;
+                    if (i == Buttons.Count) break;
+                } while (i % (col + 1) != 0);
+                i--;
+                final.Add(row.ToArray());
+                if (i == Buttons.Count) break;
+            }
+            return new InlineKeyboardMarkup(final.ToArray());
         }
     }
 }
