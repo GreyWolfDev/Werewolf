@@ -35,6 +35,13 @@ namespace Werewolf_Website.Controllers
             return View();
         }
 
+        public ActionResult Achievements()
+        {
+            ViewBag.Title = "Werewolf Telegram - Achievements";
+            ViewBag.Description = "Werewolf for Telegram. Play werewolf while chatting with your friends on Telegram!";
+            return View();
+        }
+
         [HttpGet]
         public JsonResult GetBotStatus()
         {

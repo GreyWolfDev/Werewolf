@@ -60,11 +60,11 @@ namespace Werewolf_Website
             //   appSecret: "");
             var reg = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64).OpenSubKey("SOFTWARE\\Werewolf\\Web");
 
-            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            {
-                ClientId = reg.GetValue("GoogleClientId").ToString(),
-                ClientSecret = reg.GetValue("GoogleClientSecret").ToString()
-            });
+            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            //{
+            //    ClientId = reg.GetValue("GoogleClientId").ToString(),
+            //    ClientSecret = reg.GetValue("GoogleClientSecret").ToString()
+            //});
         }
     }
 }

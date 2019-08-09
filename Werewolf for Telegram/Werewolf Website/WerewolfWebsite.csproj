@@ -27,6 +27,7 @@
     </NuGetPackageImportStamp>
     <ApplicationInsightsResourceId>/subscriptions/71ee4800-f451-4cdd-933e-404a3db4e8fe/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/Werewolf Website</ApplicationInsightsResourceId>
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1593,6 +1594,7 @@
     <Content Include="Views\AspNetUsers\DisplayTemplates\RoleTemplate.cshtml" />
     <Content Include="Views\AdminApi\Search.cshtml" />
     <Content Include="Views\AdminApi\Bot.cshtml" />
+    <Content Include="Views\Home\Achievements.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

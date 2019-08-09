@@ -1,50 +1,73 @@
-﻿
-@*<h2><img id="playerImage" style="display: none; height: 2em; width: 2em; margin-right: 1.2em" class="img-circle" />@ViewBag.Title</h2>*@
+﻿@*<h2><img id="playerImage" style="display: none; height: 2em; width: 2em; margin-right: 1.2em" class="img-circle" />@ViewBag.Title</h2>*@
 @*<h3>@ViewBag.Message</h3>*@
 
-
+<style>
+    p {
+        margin-bottom: 0
+    }
+    h2 {
+        margin-bottom: 5px
+    }
+    h3 {
+        margin-bottom: 5px
+    }
+</style>
 <section>
-    <div class="box-static box-border-top padding-6">
-        <div class="box-title margin-bottom-30">
-            <h2 class="size-20">Player Stats</h2>
-            <p>@ViewBag.Title</p>
-        </div>
-        <div id="groupStats" class="table-responsive">
-            Loading...
-        </div>
-        <div class="table-responsive">
-            <div style="width: 33%; float: left;" class="table-responsive">
-                <h3>You killed...</h3>
-                <div id="playerKills" class="table-responsive">
-                    Loading...
+    <div class="container">
+        <div class="row">
+            <div class="box-static box-border-top padding-6">
+                <div class="box-title">
+                    <h3 class="size-20">Player Stats</h3>
+                    <p>@ViewBag.Title</p>
                 </div>
-            </div>
-            <div style="width: 33%; float: left;" class="table-responsive">
-                <h3>You were killed by:</h3>
-                <div id="playerKilledBy" class="table-responsive">
-                    Loading...
-                </div>
-            </div>
-            <div style="width: 33%; float: left;" class="table-responsive">
-                <h3>You died because of...</h3>
-                <div id="playerDeaths" class="table-responsive">
+                <div id="groupStats" class="table-responsive">
                     Loading...
                 </div>
             </div>
         </div>
+        <div class="divider divider-center"></div>
+        <div class="row">
+            <div class="box-static box-border-top padding-6">
+                <div class="box-title">
+                    <h3 class="size-20">Player Death Stats</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>You killed...</h3>
+                        <div id="playerKills" class="table-responsive">
+                            Loading...
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>You were killed by:</h3>
+                        <div id="playerKilledBy" class="table-responsive">
+                            Loading...
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>You died because of...</h3>
+                        <div id="playerDeaths" class="table-responsive">
+                            Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider divider-center"></div>
+        <div class="row">
+            <div class="box-static box-dark box-border-top padding-6">
+                <div class="box-title margin-bottom-30">
+                    <h2 class="size-20">Player Achievements</h2>
+                </div>
+                <div id="playerAchievement" class="table-responsive">
+                    Loading...
+                </div>
 
+            </div>
+        </div>
     </div>
-</section>
-<section class="alternate">
-    <div class="box-static box-dark box-border-top padding-6">
-        <div class="box-title margin-bottom-30">
-            <h2 class="size-20">Player Achievements</h2>
-        </div>
-        <div id="playerAchievement" class="table-responsive">
-            Loading...
-        </div>
 
-    </div>
+
 </section>
 
 
