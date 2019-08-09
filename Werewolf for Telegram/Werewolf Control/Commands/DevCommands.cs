@@ -84,16 +84,23 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "build", DevOnly = true)]
         public static void Build(Update u, string[] args)
         {
+            var build = "build|";
+#if BETA
+            build += "beta";
+#elif RELEASE
+            build += "release";
+#endif
+            
             var menu = new Menu(1,
                 new List<InlineKeyboardButton>
                 {
-                    new InlineKeyboardCallbackButton("All of it!", "build|releasecontrolwebsitenode"),
-                    new InlineKeyboardCallbackButton("Control & Node", "build|releasecontrolnode"),
-                    new InlineKeyboardCallbackButton("Website & Control", "build|releasecontrolwebsite"),
-                    new InlineKeyboardCallbackButton("Website & Node", "build|releasenodewebsite"),
-                    new InlineKeyboardCallbackButton("Website Only", "build|releasewebsite"),
-                    new InlineKeyboardCallbackButton("Control Only", "build|releasecontrol"),
-                    new InlineKeyboardCallbackButton("Node Only", "build|releasenode"),
+                    new InlineKeyboardCallbackButton("All of it!", build + "controlwebsitenode"),
+                    new InlineKeyboardCallbackButton("Control & Node", build + "releasecontrolnode"),
+                    new InlineKeyboardCallbackButton("Website & Control", build + "controlwebsite"),
+                    new InlineKeyboardCallbackButton("Website & Node", build + "nodewebsite"),
+                    new InlineKeyboardCallbackButton("Website Only", build + "website"),
+                    new InlineKeyboardCallbackButton("Control Only", build + "control"),
+                    new InlineKeyboardCallbackButton("Node Only", build + "node"),
                     new InlineKeyboardCallbackButton("No", "build|no")
                 });
 

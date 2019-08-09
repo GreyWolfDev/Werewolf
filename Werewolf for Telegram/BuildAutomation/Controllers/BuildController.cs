@@ -159,21 +159,80 @@ namespace BuildAutomation.Controllers
                     msg += "\nThis commit contains changes to ";
                     if (beta)
                     {
-                        if (control && node)
+                        if (control && node && website)
                         {
                             menu = new Menu(1, new List<InlineKeyboardButton>
-                                { betaBoth, none });
+                            {
+                                new InlineKeyboardCallbackButton("All of it!", "build|betacontrolwebsitenode"),
+                                new InlineKeyboardCallbackButton("Control & Node", "build|betacontrolnode"),
+                                new InlineKeyboardCallbackButton("Website & Control", "build|betacontrolwebsite"),
+                                new InlineKeyboardCallbackButton("Website & Node", "build|betanodewebsite"),
+                                new InlineKeyboardCallbackButton("Website Only", "build|betawebsite"),
+                                new InlineKeyboardCallbackButton("Control Only", "build|betacontrol"),
+                                new InlineKeyboardCallbackButton("Node Only", "build|betanode"),
+                                none
+                            });
+                            msg += "Control, Node, and Website";
+                        }
+                        else if (control && node)
+                        {
+                            menu = new Menu(1, new List<InlineKeyboardButton>
+                            {
+                                new InlineKeyboardCallbackButton("Control & Node", "build|betacontrolnode"),
+                                new InlineKeyboardCallbackButton("Control Only", "build|betacontrol"),
+                                new InlineKeyboardCallbackButton("Node Only", "build|betanode"),
+                                none
+                            });
                             msg += "Control and Node";
+                        }
+                        else if (control && website)
+                        {
+                            menu = new Menu(1, new List<InlineKeyboardButton>
+                            {
+                                new InlineKeyboardCallbackButton("Website & Control", "build|betacontrolwebsite"),
+                                new InlineKeyboardCallbackButton("Website Only", "build|betawebsite"),
+                                new InlineKeyboardCallbackButton("Control Only", "build|betacontrol"),
+                                none
+                            });
+                            msg += "Control and Website";
+                        }
+                        else if (node && website)
+                        {
+                            menu = new Menu(1, new List<InlineKeyboardButton>
+                            {
+                                new InlineKeyboardCallbackButton("Website & Node", "build|betanodewebsite"),
+                                new InlineKeyboardCallbackButton("Website Only", "build|betawebsite"),
+                                new InlineKeyboardCallbackButton("Node Only", "build|betanode"),
+                                none
+                            });
+                            msg += "Node and Website";
                         }
                         else if (control)
                         {
-                            menu = new Menu(1, new List<InlineKeyboardButton> { betaControl, none });
+                            menu = new Menu(1, new List<InlineKeyboardButton>
+                            {
+                                betaControl,
+                                none
+                            });
                             msg += "Control only";
                         }
-                        else
+                        else if (node)
                         {
-                            menu = new Menu(1, new List<InlineKeyboardButton> { betaNode, none });
+                            menu = new Menu(1, new List<InlineKeyboardButton>
+                            {
+                                betaNode,
+                                none
+                            });
                             msg += "Node only";
+                        }
+                        else //if (website)
+                        {
+                            menu = new Menu(1, new List<InlineKeyboardButton>
+                            {
+                                releaseWebSite,
+                                none
+                            });
+                            msg += "Website Only";
                         }
                     }
                     else
