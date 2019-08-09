@@ -391,9 +391,45 @@ namespace Werewolf_Web.Controllers
                     : new BitArray(200);
                 if (!json)
                 {
-                    var reply = "<br/><table class=\"table table-hover\"><tbody>";
+                    var reply = "<table class=\"table table-hover\"><tbody>";
                     foreach (var a in ach.GetUniqueFlags())
                         reply += "<tr><td><b>" + a.GetName() + "</b></td><td>" + a.GetDescription() + "</td></tr>";
+                    reply += "</tbody></table>";
+                    return Json(reply, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    List<object> reply = new List<object>();
+                    foreach (var a in ach.GetUniqueFlags())
+                        reply.Add(new { name = a.GetName(), description = a.GetDescription() });
+                    return Json(reply, JsonRequestBehavior.AllowGet);
+                }
+            }
+        }
+
+        [HttpGet]
+        public JsonResult PlayerLockedAchievements(int pid, bool json = false)
+        {
+            using (var DB = new WWContext())
+            {
+                var p = DB.Players.FirstOrDefault(x => x.TelegramId == pid);
+                if (p == null)
+                {
+                    return Json("", JsonRequestBehavior.AllowGet);
+                }
+                var ach = p.NewAchievements != null
+                    ? new BitArray(p.NewAchievements)
+                    : new BitArray(200);
+                if (!json)
+                {
+                    var has = ach.GetUniqueFlags().ToList();
+                    var reply = "<table class=\"table table-hover\"><tbody style=\"color: red\">";
+                    foreach (AchievementsReworked a in Enum.GetValues(typeof(AchievementsReworked)))
+                    { 
+                        if (!has.Contains(a) && a != AchievementsReworked.None && a != AchievementsReworked.OHAIDER)
+                            reply += "<tr><td><b>" + a.GetName() + "</b></td><td>" + a.GetDescription() + "</td></tr>";
+                    }
+
                     reply += "</tbody></table>";
                     return Json(reply, JsonRequestBehavior.AllowGet);
                 }

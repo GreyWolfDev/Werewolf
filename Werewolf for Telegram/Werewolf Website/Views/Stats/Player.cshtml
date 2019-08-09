@@ -5,9 +5,11 @@
     p {
         margin-bottom: 0
     }
+
     h2 {
         margin-bottom: 5px
     }
+
     h3 {
         margin-bottom: 5px
     }
@@ -56,13 +58,25 @@
         <div class="divider divider-center"></div>
         <div class="row">
             <div class="box-static box-dark box-border-top padding-6">
-                <div class="box-title margin-bottom-30">
+                <div class="box-title">
                     <h2 class="size-20">Player Achievements</h2>
                 </div>
                 <div id="playerAchievement" class="table-responsive">
                     Loading...
                 </div>
 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box-static box-dark box-border-top padding-6">
+                <div class="box-title">
+                    <h4 class="size-16">Locked Achievements</h4>
+                </div>
+                <div id="lockedAch" class="table-responsive">
+                    Loading...
+                </div>
+                
             </div>
         </div>
     </div>
@@ -128,6 +142,21 @@
         },
         success: function (d) {
             $('#playerAchievement').html(d);
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: { pid: id },
+        url: '/Stats/PlayerLockedAchievements/',
+        error: function (error) {
+            console.log(error);
+            $('#lockedAch').html(error);
+        },
+        success: function (d) {
+            $('#lockedAch').html(d);
         }
     });
 
