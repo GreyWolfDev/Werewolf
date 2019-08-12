@@ -3125,7 +3125,7 @@ namespace Werewolf_Node
                 if (p.Bitten)
                 { // p.Bitten may also still be true if the bitten player was wc or dg and turned ww by rm death the same day - in that case, do nothing
                     p.Bitten = false;
-                    if (!p.IsDead && !WolfRoles.Contains(p.PlayerRole))
+                    if (!p.IsDead && !WolfRoles.Contains(p.PlayerRole) && p.PlayerRole != IRole.SnowWolf)
                     {
                         List<IPlayer> oldTeamMembers = p.PlayerRole == IRole.Cultist
                             ? Players.Where(x => x.PlayerRole == IRole.Cultist && !x.IsDead && x.Id != p.Id).ToList()
