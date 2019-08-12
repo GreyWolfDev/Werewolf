@@ -2824,8 +2824,13 @@ namespace Werewolf_Node
                 {
                     var maxVotes = Players.Max(x => x.Votes);
                     var choices = Players.Where(x => x.Votes == maxVotes).ToList();
-                    IPlayer lynched = new IPlayer() { Votes = -1 };
-                    if (choices.Count > 1)
+                    IPlayer lynched = new IPlayer() { Votes = -1 }; // -1 = tie // -2 = no votes at all //
+
+                    if (Players.All(x => x.Votes == 0))
+                    {
+                        lynched.Votes = -2;
+                    }
+                    else if (choices.Count > 1)
                     {
                         //Log.WriteLine("Lynch tie");
                         if (Settings.RandomLynch)
@@ -2870,11 +2875,7 @@ namespace Werewolf_Node
                         SendWithQueue(GetLocaleString("SecretLynchResultFull", sendMsg));
                     }
 
-                    if (Players.All(x => x.IsDead || x.Votes == 0)) // ignore dead players
-                    {
-                        SendWithQueue(GetLocaleString("NoLynchVotes"));
-                    }
-                    else if (lynched.Votes > 0)
+                    if (lynched.Votes > 0)
                     {
                         if (lynched.PlayerRole == IRole.Prince & !lynched.HasUsedAbility) //can only do this once
                         {
@@ -2914,12 +2915,16 @@ namespace Werewolf_Node
                             CheckRoleChanges(true);
                         }
                     }
-                    else
+                    else if (lynched.Votes == -1) // Lynch tie
                     {
                         SendWithQueue(GetLocaleString("LynchTie"));
                         var t = choices.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
                         if (t != null && t.Votes > 0)
                             AddAchievement(t, AchievementsReworked.SoClose);
+                    }
+                    else // if (lynched.Votes == -2) // No lynch votes at all
+                    {
+                        SendWithQueue(GetLocaleString("NoLynchVotes"));
                     }
 
                     if (CheckForGameEnd(true)) return;
