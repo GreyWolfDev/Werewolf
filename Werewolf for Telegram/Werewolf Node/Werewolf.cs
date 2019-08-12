@@ -3225,7 +3225,7 @@ namespace Werewolf_Node
              */
 
             var ga = Players.FirstOrDefault(x => x.PlayerRole == IRole.GuardianAngel & !x.IsDead && x.Choice != 0 && x.Choice != -1);
-            #region Snow Wolf
+            #region Snow Wolf Night
             var snowwolf = Players.FirstOrDefault(x => x.PlayerRole == IRole.SnowWolf & !x.IsDead);
 
             if (snowwolf != null && snowwolf.Choice != -1 && snowwolf.Choice != 0)
@@ -3313,7 +3313,7 @@ namespace Werewolf_Node
             }
             #endregion
 
-            #region Arsonist
+            #region Arsonist Night
             var arsonist = Players.FirstOrDefault(x => !x.IsDead && x.PlayerRole == IRole.Arsonist);
             if (arsonist != null)
             {
@@ -3329,7 +3329,7 @@ namespace Werewolf_Node
                         }
                         else
                         {
-                            KillPlayer(burn, KillMthd.Burn, killer: arsonist);
+                            KillPlayer(burn, KillMthd.Burn, killer: arsonist, hunterFinalShot: false);
                             burn.Doused = false;
                             burn.Burning = true;
                             SendGif(GetLocaleString("Burn"), GetRandomImage(BurnToDeath), burn.Id);
@@ -4284,8 +4284,6 @@ namespace Werewolf_Node
             #endregion
 
             #region Night Death Notifications to Group
-
-
             var secret = !DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
             if (Players.Any(x => x.DiedLastNight))
             {
