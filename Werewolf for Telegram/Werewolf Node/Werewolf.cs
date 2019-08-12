@@ -5830,12 +5830,10 @@ namespace Werewolf_Node
             using (var db = new WWContext())
             {
                 //check for convention
-                var convention = Players.Count(x => x.PlayerRole == IRole.Cultist & !x.IsDead) >= 10;
+                var convention = Players.Count(x => x.PlayerRole == IRole.Cultist && !x.IsDead) >= 10;
                 foreach (var player in Players.Where(x => !x.Fled)) //flee / afk? no achievements for you.
                 {
                     var p = GetDBPlayer(player, db);
-
-
                     if (p != null)
                     {
 
@@ -5910,7 +5908,7 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.BrokenClock);
                         if (!ach2.HasFlag(AchievementsReworked.SmartGunner) && player.PlayerRole == IRole.Gunner & !player.BulletHitVillager && player.Bullet == 0)
                             newAch2.Set(AchievementsReworked.SmartGunner);
-                        if (!ach2.HasFlag(AchievementsReworked.CultCon) && player.PlayerRole == IRole.Cultist && convention)
+                        if (!ach2.HasFlag(AchievementsReworked.CultCon) && player.PlayerRole == IRole.Cultist && !player.IsDead && convention)
                             newAch2.Set(AchievementsReworked.CultCon);
                         if (!ach2.HasFlag(AchievementsReworked.SerialSamaritan) && player.PlayerRole == IRole.SerialKiller && player.SerialKilledWolvesCount >= 3)
                             newAch2.Set(AchievementsReworked.SerialSamaritan);
