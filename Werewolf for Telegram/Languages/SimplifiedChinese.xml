@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-	<language name="简体中文(普通)" base="简体中文" variant="简体中文(普通)" code="zh-CN" version="2019.07.31"/>
-	<!--Last Updated 最后更新时间2019-07-31 -->
+	<language name="简体中文(普通)" base="简体中文" variant="简体中文(普通)" code="zh-CN" version="2019.07.16"/>
+	<!--Last Updated 最后更新时间2019-07-16 19:32:42-->
 	<!--也请在 头部version处 添加最后更新时间-->
 
 	<!-- Update Logs 更新日志-->
@@ -1967,7 +1967,7 @@
   </string>
   <!--{0}: grave digger-->
   <string key="SerialKillerSpotted">
-	<value>当你走过墓地时，发现墓地里有火光。走近一看，却发现是掘墓者{0}...你突然一笑，自言自语：“看来，今天有两个受害者了...”</value>
+	<value>当你走过墓地时，发现墓地里有火光。走近一看，却发现是掘墓者{0}...你突然一笑，自言自语：“看了，今天有两个受害者了...”</value>
   </string>
   <string key="WolvesSpottedYou" isgif="true">
 	<value>当你正在努力挖坑时，突然，你发现地面上有人，影子刚好挡住了光...当你做准备回头时，你晕倒在地上，似乎头上有一只🐺狼人，可惜你在你看清之前，你已经失去意识了...</value>
@@ -1978,11 +1978,11 @@
   </string>
   <!--{0}: grave digger-->
   <string key="WolvesSpottedDiggerPublic">
-	<value>掘墓人{0}消失了，村民们找了一天，只发现 {0} 的工具在一个未挖完的墓穴里...周围还有🐺狼人的痕迹...似乎掘墓人{0}昨天遭遇了不测...</value>
+	<value>{0}消失了，村民们找了一天，只发现 {0} 的工具在一个未挖完的墓穴里...周围还有🐺狼人的痕迹...似乎掘墓人{0}昨天遭遇了不测...</value>
   </string>
   <!--{0}: grave digger-->
   <string key="KillerSpottedDiggerPublic">
-	<value>掘墓人{0}消失了，村民们找了一天，发现 {0} 的尸体躺在一个未挖完的墓穴里，同时，{0}的肝也不在了...似乎掘墓人{0}昨天惨遭🔪变态杀人狂的杀害...</value>
+	<value>{0}消失了，村民们找了一天，发现 {0} 的尸体躺在一个未挖完的墓穴里，同时，{0}的肝也不在了...似乎掘墓人{0}昨天惨遭🔪变态杀人狂的杀害...</value>
   </string>
   <string key="AllowArsonist">
 	<value>允许「纵火犯」</value>
@@ -2020,7 +2020,7 @@
   </string>
   <!--{0}: arsonist-->
   <string key ="ArsonistVisitKiller">
-	<value>昨夜，纵火犯{0} 试图在🔪变态杀人狂的家上浇汽油... 可惜，变态杀人狂还没有睡着...</value>
+	<value>昨夜，纵火犯{0} 试图在🔪变态杀人狂的家上浇汽油... 可惜，他变态杀人狂还没有睡着...</value>
   </string>
   <string key="Spark">
 	<value>放一把火</value>
@@ -2108,6 +2108,12 @@
   <string key="RoleConfigInvalid">
 	<value>配置失败！所选角色过少，或游戏不平衡!</value>
   </string>
+    <string key="GroupIdleCount">
+  <!-- {0} - Idle count in the last 24 hours in the current group -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+	<value>{0}次自动处决发生在这个群里。</value>
+  </string>
+
   <!--Old logs -->
         <!-- 2019-2-06 补全 正式补全翻译-->
 		<!-- 2019-2-14 更新 同步翻译（官方2019.2.12更新）-->
