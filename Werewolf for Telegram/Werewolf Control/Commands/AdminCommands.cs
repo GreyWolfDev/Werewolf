@@ -230,12 +230,14 @@ namespace Werewolf_Control
                 ids.Add(update.Message.ReplyToMessage.From.Id);
 
             var reply = "";
+            var language = GetLanguage(update.Message.Chat.Id);
             //now get the idle kills
             using (var db = new WWContext())
             {
                 foreach (var id in ids)
                 {
                     var idles = db.GetIdleKills24Hours(id).FirstOrDefault() ?? 0;
+                    var groupidles = db.GetGroupIdleKills24Hours(id, update.Message.Chat.Id);
                     //get the user
                     ChatMember user = null;
                     try
@@ -248,8 +250,8 @@ namespace Werewolf_Control
                     }
 
                     var str = $"{id} ({user?.User.FirstName})";
-                    reply += GetLocaleString("IdleCount", GetLanguage(update.Message.Chat.Id), str, idles);
-                    reply += "\n";
+                    reply += GetLocaleString("IdleCount", language, str, idles);
+                    reply += " " + GetLocaleString("GroupIdleCount", language, groupidles) + "\n";
                 }
             }
 
