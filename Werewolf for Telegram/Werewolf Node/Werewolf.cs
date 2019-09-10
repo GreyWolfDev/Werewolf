@@ -5622,7 +5622,7 @@ namespace Werewolf_Node
             }
             if (p.InLove && Players.Any(x => x.Id == p.LoverId && !x.IsDead))
             {
-                if (killMethod.HasValue && killMethod.Value == KillMthd.HunterShot && killers.Count() == 1
+                if (killMethod.HasValue && new[] { KillMthd.HunterShot, KillMthd.Shoot }.Contains(killMethod.Value) && killers.Count() == 1
                 && !new[] { p, Players.First(x => x.Id == p.LoverId) }.Any(x => new[] { ITeam.Village, ITeam.Neutral, ITeam.Thief }.Contains(x.Team)))
                     AddAchievement(killers.First(), AchievementsReworked.DoubleShot);
                 KillLover(p, sendNoMessage: isNight);
