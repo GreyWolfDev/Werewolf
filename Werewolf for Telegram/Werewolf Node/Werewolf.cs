@@ -138,7 +138,7 @@ namespace Werewolf_Node
                         // ignored
                     }
                     AllowNSFW = DbGroup.HasFlag(GroupConfig.AllowNSFW);
-#if !BETA
+
                     var player = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
                     if (player?.CustomGifSet != null)
                     {
@@ -160,7 +160,7 @@ namespace Werewolf_Node
                             }
                         }
                     }
-#endif
+
                     DbGroup.UpdateFlags();
                     ShowIDs = DbGroup.HasFlag(GroupConfig.ShowIDs);
                     ShufflePlayerList = DbGroup.HasFlag(GroupConfig.ShufflePlayerList);
