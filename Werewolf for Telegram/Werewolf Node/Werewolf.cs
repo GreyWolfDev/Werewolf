@@ -481,7 +481,7 @@ namespace Werewolf_Node
                     }
                     Thread.Sleep(1000);
                 }
-                Program.Bot.EditMessageCaptionAsync(ChatId, _joinMsgId, FirstMessage, null);
+                Program.Bot.EditMessageReplyMarkupAsync(ChatId, _joinMsgId, null);
                 IsJoining = false;
                 IsInitializing = true;
 
@@ -5414,7 +5414,7 @@ namespace Werewolf_Node
             try
             {
                 if (IsJoining) //try to remove the joining button...
-                    Program.Bot.EditMessageCaptionAsync(ChatId, _joinMsgId, "", null);
+                    Program.Bot.EditMessageReplyMarkupAsync(ChatId, _joinMsgId, null);
             }
             catch
             {
