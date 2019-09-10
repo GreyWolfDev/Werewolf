@@ -1158,9 +1158,15 @@ namespace Werewolf_Node
                 id = ChatId;
             //Log.WriteLine($"{id} -> {image} {text}");
 #if (DEBUG)
-            Send($"<a href='{GifPrefix}{image}.mp4'>\u200C</a>{text}", id, preview: true);
+            if (!String.IsNullOrWhiteSpace(image))
+                Send($"<a href='{GifPrefix}{image}.mp4'>\u200C</a>{text}", id, preview: true);
+            else
+                Send(text, id, preview: false);
 #else
-            Send($"<a href='{GifPrefix}{image}.mp4'>\u200C</a>{text}", id, preview: true);
+            if (!String.IsNullOrWhiteSpace(image))
+                Send($"<a href='{GifPrefix}{image}.mp4'>\u200C</a>{text}", id, preview: true);
+            else
+                Send(text, id, preview: false);
 #endif
         }
 
@@ -1271,7 +1277,7 @@ namespace Werewolf_Node
                         }
                         else
                         {
-                            var temp = $"<a href='{GifPrefix}{m.GifId}.mp4'>\u200C</a>{final}" + m.Msg + Environment.NewLine + Environment.NewLine;
+                            var temp = !String.IsNullOrWhiteSpace(m.GifId) ? $"<a href='{GifPrefix}{m.GifId}.mp4'>\u200C</a>{final}" : final + m.Msg + Environment.NewLine + Environment.NewLine;
                             if ((Encoding.UTF8.GetByteCount(temp) > 512 && i > 1))
                             {
                                 byteMax = true; //break and send
@@ -1279,7 +1285,7 @@ namespace Werewolf_Node
                             else
                             {
                                 _messageQueue.Dequeue(); //remove the message, we are sending it.
-                                final = $"<a href='{GifPrefix}{m.GifId}.mp4'>\u200C</a>{final}";
+                                final = !String.IsNullOrWhiteSpace(m.GifId) ? $"<a href='{GifPrefix}{m.GifId}.mp4'>\u200C</a>{final}" : final;
                                 final += m.Msg + Environment.NewLine + Environment.NewLine;
                                 if (m.RequestPM)
                                     requestPM = true;
@@ -1335,7 +1341,7 @@ namespace Werewolf_Node
                     else
                     {
                         if (!String.IsNullOrEmpty(m.GifId))
-                            final = $"<a href='{GifPrefix}{m.GifId}.mp4'>\u200C</a>{final}";
+                            final = !String.IsNullOrWhiteSpace(m.GifId) ? $"<a href='{GifPrefix}{m.GifId}.mp4'>\u200C</a>{final}" : final;
                         final += m.Msg + Environment.NewLine;
                     }
 
