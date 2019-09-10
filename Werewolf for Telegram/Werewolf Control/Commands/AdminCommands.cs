@@ -660,6 +660,52 @@ namespace Werewolf_Control
             Bot.Api.EditMessageTextAsync(u.Message.Chat.Id, r.MessageId, msg, parseMode: ParseMode.Markdown);
         }
 
+        private static void DownloadGifFromJson(CustomGifData pack, Update u)
+        {
+            if (!String.IsNullOrEmpty(pack.ArsonistWins))
+                DownloadGif(pack.ArsonistWins, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.BurnToDeath))
+                DownloadGif(pack.BurnToDeath, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.CultWins))
+                DownloadGif(pack.CultWins, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.LoversWin))
+                DownloadGif(pack.LoversWin, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.NoWinner))
+                DownloadGif(pack.NoWinner, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.SerialKillerWins))
+                DownloadGif(pack.SerialKillerWins, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.SKKilled))
+                DownloadGif(pack.SKKilled, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.StartChaosGame))
+                DownloadGif(pack.StartChaosGame, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.StartGame))
+                DownloadGif(pack.StartGame, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.TannerWin))
+                DownloadGif(pack.TannerWin, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.VillagerDieImage))
+                DownloadGif(pack.VillagerDieImage, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.VillagersWin))
+                DownloadGif(pack.VillagersWin, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.WolfWin))
+                DownloadGif(pack.WolfWin, u.Message.Chat);
+            if (!String.IsNullOrEmpty(pack.WolvesWin))
+                DownloadGif(pack.WolvesWin, u.Message.Chat);
+        }
+        private static void DownloadGif(string fileid, Chat chat)
+        {
+            try
+            {
+                var path = System.IO.Path.Combine(Settings.GifStoragePath, $"{fileid}.mp4");
+                if (!System.IO.File.Exists(path))
+                    using (var x = System.IO.File.OpenWrite(path))
+                        _ = Bot.Api.GetFileAsync(fileid, x).Result;
+            }
+            catch (Exception e)
+            {
+                LogException(e, "Custom Gif", chat);
+            }
+        }
+
         [Attributes.Command(Trigger = "approvegifs", GlobalAdminOnly = true, Blockable = true)]
         public static void ApproveGifs(Update u, string[] args)
         {
@@ -696,6 +742,9 @@ namespace Werewolf_Control
                     }
 
                     var pack = JsonConvert.DeserializeObject<CustomGifData>(json);
+                    // save gifs for external access
+                    DownloadGifFromJson(pack, u);
+                    // end
                     var id = u.Message.From.Id;
                     pack.Approved = true;
                     pack.ApprovedBy = id;

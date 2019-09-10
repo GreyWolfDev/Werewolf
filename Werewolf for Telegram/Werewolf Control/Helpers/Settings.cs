@@ -40,6 +40,9 @@ namespace Werewolf_Control.Helpers
         public static readonly long AdminChatId = -1001094155678;
         public static readonly long ErrorGroup = -1001098399855;
         public static readonly long BetaReportingChatId = -1001235990177;
+
+        public static readonly string GifStoragePath = @"C:/inetpub/gifs";
+
 #if RELEASE2
         public static List<string> VillagerDieImages = new List<string> { "BQADAwAD2QEAAnQXsQeU2FMN-2D3GgI", "BQADAwADggADdBexB1_X0udQaRs7Ag", "BQADBAADWAMAAt4cZAcXTtE-UCQXxAI" }; //1
         public static List<string> WolfWin = new List<string> { "BQADAwADgQADdBexB5kx2CsSNDp2Ag", "BQADAwADgAADdBexBx7XahnW5XBsAg" };
