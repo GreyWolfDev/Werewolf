@@ -1915,7 +1915,7 @@ namespace Werewolf_Control.Handler
             var isBase = args[4] == "base";
             if (isBase)
             {
-                var variants = langs.Where(x => x.Base == args[2]).ToList();
+                var variants = langs.Where(x => x.Base == args[2]).OrderBy(x => !x.IsDefault).ThenBy(x => x.Variant).ToList();
                 if (variants.Count() > 1)
                 {
                     var buttons = new List<InlineKeyboardButton>();
