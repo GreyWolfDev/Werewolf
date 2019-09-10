@@ -1350,9 +1350,13 @@ namespace Werewolf_Control.Handler
                                 }
                             }
 
+                            var callbackdata = PublicGroups.GetVariants(choice).Count == 1
+                                ? $"groups|{query.From.Id}|null|"
+                                : $"groups|{query.From.Id}|{choice}|null";
+
                             var markup = new InlineKeyboardMarkup(
                                 new InlineKeyboardButton[] {
-                                    new InlineKeyboardCallbackButton(GetLocaleString("Back", language), $"groups|{query.From.Id}|{choice}|null")
+                                    new InlineKeyboardCallbackButton(GetLocaleString("Back", language), callbackdata)
                                 }
                             );
 
