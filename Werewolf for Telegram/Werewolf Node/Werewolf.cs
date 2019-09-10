@@ -499,7 +499,7 @@ namespace Werewolf_Node
                 SendWithQueue(GetLocaleString("StartingGameWait"));
                 _playerListChanged = true;
 
-#if !BETA
+
                 if (Players.Count(x => x.GifPack?.Approved ?? false) > 0)
                 {
                     var cMsg = "Players with custom gif packs:\n";
@@ -536,7 +536,7 @@ namespace Werewolf_Node
                     }
                     Send(cMsg);
                 }
-#endif
+
                 IsRunning = true;
                 AssignRoles();
                 //create new game for database
