@@ -3290,6 +3290,7 @@ namespace Werewolf_Node
                                 case IRole.Seer:
                                 case IRole.Sorcerer:
                                 case IRole.Oracle:
+                                case IRole.Augur:
                                     Send(GetLocaleString("SeeingFrozen"), target.Id);
                                     break;
                                 case IRole.GuardianAngel:
@@ -4164,7 +4165,7 @@ namespace Werewolf_Node
 
             #region Augur
             var augur = Players.FirstOrDefault(x => !x.IsDead && x.PlayerRole == IRole.Augur);
-            if (augur != null)
+            if (augur != null && !augur.Frozen)
             {
                 bool isNotInGame(IRole x) => !augur.SawRoles.Contains(x) && !Players.Any(y => (!y.IsDead || y.DiedLastNight) && y.PlayerRole == x);
                 PossibleRoles.Shuffle();
