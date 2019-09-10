@@ -59,6 +59,7 @@ namespace Werewolf_Node
         public string ShowRolesEnd;
         private DateTime lastGrave = DateTime.MinValue, secondLastGrave = DateTime.MinValue;
         private List<IRole> PossibleRoles;
+        private static string GifPrefix = "https://tgwerewolf.com/gifs/";
 
         public List<string> VillagerDieImages,
             WolfWin,
@@ -221,10 +222,10 @@ namespace Werewolf_Node
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
 #if DEBUG
-                _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage((Chaos ? StartChaosGame : StartGame))}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
                 //_joinMsgId = Program.Bot.SendDocumentAsync(chatid, new FileToSend("CgADAwADmAIAAnQXsQdKO62ILjJQMQI"), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #else
-                _joinMsgId = Program.Bot.SendDocumentAsync(chatid, new FileToSend(GetRandomImage(Chaos ? StartChaosGame : StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage((Chaos ? StartChaosGame : StartGame))}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
 #endif
 
                 // This can stay turned off now I think. Can enable it again if players don't get it at all
@@ -1143,11 +1144,11 @@ namespace Werewolf_Node
             }
         }
 
-        private Task<Telegram.Bot.Types.Message> Send(string message, long id = 0, bool clearKeyboard = false, InlineKeyboardMarkup menu = null, bool notify = false)
+        private Task<Telegram.Bot.Types.Message> Send(string message, long id = 0, bool clearKeyboard = false, InlineKeyboardMarkup menu = null, bool notify = false, bool preview = false)
         {
             if (id == 0)
                 id = ChatId;
-            return Program.Send(message, id, clearKeyboard, menu, game: this, notify: notify);
+            return Program.Send(message, id, clearKeyboard, menu, game: this, notify: notify, preview: preview);
         }
 
         private void SendGif(string text, string image, long id = 0)
@@ -1157,9 +1158,9 @@ namespace Werewolf_Node
                 id = ChatId;
             //Log.WriteLine($"{id} -> {image} {text}");
 #if (DEBUG)
-            Send(text, id);
+            Send($"<a href='{GifPrefix}{image}.mp4'>\u200C</a>{text}", id, preview: true);
 #else
-            Program.Bot.SendDocumentAsync(id, new FileToSend(image), text);
+            Send($"<a href='{GifPrefix}{image}.mp4'>\u200C</a>{text}", id, preview: true);
 #endif
         }
 
@@ -1270,7 +1271,7 @@ namespace Werewolf_Node
                         }
                         else
                         {
-                            var temp = final + m.Msg + Environment.NewLine + Environment.NewLine;
+                            var temp = $"<a href='{GifPrefix}{m.GifId}.mp4'>\u200C</a>{final}" + m.Msg + Environment.NewLine + Environment.NewLine;
                             if ((Encoding.UTF8.GetByteCount(temp) > 512 && i > 1))
                             {
                                 byteMax = true; //break and send
@@ -1278,6 +1279,7 @@ namespace Werewolf_Node
                             else
                             {
                                 _messageQueue.Dequeue(); //remove the message, we are sending it.
+                                final = $"<a href='{GifPrefix}{m.GifId}.mp4'>\u200C</a>{final}";
                                 final += m.Msg + Environment.NewLine + Environment.NewLine;
                                 if (m.RequestPM)
                                     requestPM = true;
@@ -1308,7 +1310,7 @@ namespace Werewolf_Node
                                 }
                             }
                             else
-                                Send(final, notify: true);
+                                Send(final, notify: true, preview: true);
                         }
 
                     }
@@ -1332,12 +1334,14 @@ namespace Werewolf_Node
                     }
                     else
                     {
+                        if (!String.IsNullOrEmpty(m.GifId))
+                            final = $"<a href='{GifPrefix}{m.GifId}.mp4'>\u200C</a>{final}";
                         final += m.Msg + Environment.NewLine;
                     }
 
                 }
                 if (!String.IsNullOrEmpty(final))
-                    Send(final);
+                    Send(final, preview: true);
             }
             catch (Exception e)
             {
