@@ -5929,7 +5929,7 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.WuffieCult);
                         if (!ach2.HasFlag(AchievementsReworked.DidYouGuardYourself) && player.PlayerRole == IRole.GuardianAngel && player.GAGuardWolfCount >= 3)
                             newAch2.Set(AchievementsReworked.DidYouGuardYourself);
-                        if (!ach2.HasFlag(AchievementsReworked.ThreeLittleWolves) && player.PlayerRole == IRole.Sorcerer && Players.GetPlayersForRoles(WolfRoles, true).Count() >= 3)
+                        if (!ach2.HasFlag(AchievementsReworked.ThreeLittleWolves) && player.PlayerRole == IRole.Sorcerer && !player.IsDead && Players.GetPlayersForRoles(WolfRoles, true).Count() >= 3)
                             newAch2.Set(AchievementsReworked.ThreeLittleWolves);
                         if (!ach2.HasFlag(AchievementsReworked.President) && player.PlayerRole == IRole.Mayor && player.MayorLynchAfterRevealCount >= 3)
                             newAch2.Set(AchievementsReworked.President);
