@@ -16,6 +16,7 @@ using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 using System.Threading;
 using System.Collections;
+using System.Threading.Tasks;
 
 namespace Werewolf_Control
 {
@@ -662,45 +663,47 @@ namespace Werewolf_Control
             Bot.Api.EditMessageTextAsync(u.Message.Chat.Id, r.MessageId, msg, parseMode: ParseMode.Markdown);
         }
 
-        private static void DownloadGifFromJson(CustomGifData pack, Update u)
+        private static Task[] DownloadGifFromJson(CustomGifData pack, Update u)
         {
+            List<Task> downloadTasks = new List<Task>();
             if (!String.IsNullOrEmpty(pack.ArsonistWins))
-                DownloadGif(pack.ArsonistWins, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.ArsonistWins, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.BurnToDeath))
-                DownloadGif(pack.BurnToDeath, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.BurnToDeath, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.CultWins))
-                DownloadGif(pack.CultWins, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.CultWins, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.LoversWin))
-                DownloadGif(pack.LoversWin, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.LoversWin, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.NoWinner))
-                DownloadGif(pack.NoWinner, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.NoWinner, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.SerialKillerWins))
-                DownloadGif(pack.SerialKillerWins, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.SerialKillerWins, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.SKKilled))
-                DownloadGif(pack.SKKilled, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.SKKilled, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.StartChaosGame))
-                DownloadGif(pack.StartChaosGame, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.StartChaosGame, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.StartGame))
-                DownloadGif(pack.StartGame, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.StartGame, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.TannerWin))
-                DownloadGif(pack.TannerWin, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.TannerWin, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.VillagerDieImage))
-                DownloadGif(pack.VillagerDieImage, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.VillagerDieImage, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.VillagersWin))
-                DownloadGif(pack.VillagersWin, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.VillagersWin, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.WolfWin))
-                DownloadGif(pack.WolfWin, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.WolfWin, u.Message.Chat));
             if (!String.IsNullOrEmpty(pack.WolvesWin))
-                DownloadGif(pack.WolvesWin, u.Message.Chat);
+                downloadTasks.Add(DownloadGif(pack.WolvesWin, u.Message.Chat));
+            return downloadTasks.ToArray();
         }
-        private static void DownloadGif(string fileid, Chat chat)
+        private static async Task DownloadGif(string fileid, Chat chat)
         {
             try
             {
                 var path = System.IO.Path.Combine(Settings.GifStoragePath, $"{fileid}.mp4");
                 if (!System.IO.File.Exists(path))
                     using (var x = System.IO.File.OpenWrite(path))
-                        _ = Bot.Api.GetFileAsync(fileid, x).Result;
+                        await Bot.Api.GetFileAsync(fileid, x);
             }
             catch (Exception e)
             {
@@ -745,7 +748,7 @@ namespace Werewolf_Control
 
                     var pack = JsonConvert.DeserializeObject<CustomGifData>(json);
                     // save gifs for external access
-                    DownloadGifFromJson(pack, u);
+                    new Thread(() => Task.WhenAll(DownloadGifFromJson(pack, u)));
                     // end
                     var id = u.Message.From.Id;
                     pack.Approved = true;
