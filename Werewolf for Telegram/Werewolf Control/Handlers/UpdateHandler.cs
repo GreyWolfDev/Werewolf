@@ -897,7 +897,7 @@ namespace Werewolf_Control.Handler
                                     }
 
                                     pack = JsonConvert.DeserializeObject<CustomGifData>(json);
-                                    DownloadGifFromJson(pack, query.Message);
+                                    new Thread(() => Task.WhenAll(DownloadGifFromJson(pack, query.Message)));
                                     id = query.From.Id;
                                     pack.Approved = true;
                                     pack.ApprovedBy = id;
@@ -928,7 +928,7 @@ namespace Werewolf_Control.Handler
                                     }
 
                                     pack = JsonConvert.DeserializeObject<CustomGifData>(json);
-                                    DownloadGifFromJson(pack, query.Message);
+                                    new Thread(() => Task.WhenAll(DownloadGifFromJson(pack, query.Message)));
                                     id = query.From.Id;
                                     pack.Approved = true;
                                     pack.ApprovedBy = id;
@@ -1793,46 +1793,48 @@ namespace Werewolf_Control.Handler
             }
         }
 
-        private static void DownloadGifFromJson(CustomGifData pack, Message m)
+        private static Task[] DownloadGifFromJson(CustomGifData pack, Message m)
         {
+            List<Task> downloadTasks = new List<Task>();
             if (!String.IsNullOrEmpty(pack.ArsonistWins))
-                DownloadGif(pack.ArsonistWins, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.ArsonistWins, m.Chat));
             if (!String.IsNullOrEmpty(pack.BurnToDeath))
-                DownloadGif(pack.BurnToDeath, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.BurnToDeath, m.Chat));
             if (!String.IsNullOrEmpty(pack.CultWins))
-                DownloadGif(pack.CultWins, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.CultWins, m.Chat));
             if (!String.IsNullOrEmpty(pack.LoversWin))
-                DownloadGif(pack.LoversWin, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.LoversWin, m.Chat));
             if (!String.IsNullOrEmpty(pack.NoWinner))
-                DownloadGif(pack.NoWinner, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.NoWinner, m.Chat));
             if (!String.IsNullOrEmpty(pack.SerialKillerWins))
-                DownloadGif(pack.SerialKillerWins, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.SerialKillerWins, m.Chat));
             if (!String.IsNullOrEmpty(pack.SKKilled))
-                DownloadGif(pack.SKKilled, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.SKKilled, m.Chat));
             if (!String.IsNullOrEmpty(pack.StartChaosGame))
-                DownloadGif(pack.StartChaosGame, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.StartChaosGame, m.Chat));
             if (!String.IsNullOrEmpty(pack.StartGame))
-                DownloadGif(pack.StartGame, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.StartGame, m.Chat));
             if (!String.IsNullOrEmpty(pack.TannerWin))
-                DownloadGif(pack.TannerWin, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.TannerWin, m.Chat));
             if (!String.IsNullOrEmpty(pack.VillagerDieImage))
-                DownloadGif(pack.VillagerDieImage, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.VillagerDieImage, m.Chat));
             if (!String.IsNullOrEmpty(pack.VillagersWin))
-                DownloadGif(pack.VillagersWin, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.VillagersWin, m.Chat));
             if (!String.IsNullOrEmpty(pack.WolfWin))
-                DownloadGif(pack.WolfWin, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.WolfWin, m.Chat));
             if (!String.IsNullOrEmpty(pack.WolvesWin))
-                DownloadGif(pack.WolvesWin, m.Chat);
+                downloadTasks.Add(DownloadGif(pack.WolvesWin, m.Chat));
+            return downloadTasks.ToArray();
         }
 
-        private static void DownloadGif(string fileid, Chat chat)
+        private static async Task DownloadGif(string fileid, Chat chat)
         {
             try
             {
                 var path = System.IO.Path.Combine(Settings.GifStoragePath, $"{fileid}.mp4");
                 if (!System.IO.File.Exists(path))
                     using (var x = System.IO.File.OpenWrite(path))
-                        _ = Bot.Api.GetFileAsync(fileid, x).Result;
+                        await Bot.Api.GetFileAsync(fileid, x);
             }
             catch (Exception e)
             {
