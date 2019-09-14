@@ -748,7 +748,7 @@ namespace Werewolf_Control
 
                     var pack = JsonConvert.DeserializeObject<CustomGifData>(json);
                     // save gifs for external access
-                    new Thread(() => Task.WhenAll(DownloadGifFromJson(pack, u)));
+                    new Thread(() => Task.WhenAll(DownloadGifFromJson(pack, u))).Start(); ;
                     // end
                     var id = u.Message.From.Id;
                     pack.Approved = true;

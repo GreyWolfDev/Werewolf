@@ -914,7 +914,7 @@ namespace Werewolf_Control.Handler
                                     }
 
                                     pack = JsonConvert.DeserializeObject<CustomGifData>(json);
-                                    new Thread(() => Task.WhenAll(DownloadGifFromJson(pack, query.Message)));
+                                    new Thread(() => Task.WhenAll(DownloadGifFromJson(pack, query.Message))).Start();
                                     id = query.From.Id;
                                     pack.Approved = true;
                                     pack.ApprovedBy = id;
@@ -945,7 +945,7 @@ namespace Werewolf_Control.Handler
                                     }
 
                                     pack = JsonConvert.DeserializeObject<CustomGifData>(json);
-                                    new Thread(() => Task.WhenAll(DownloadGifFromJson(pack, query.Message)));
+                                    new Thread(() => Task.WhenAll(DownloadGifFromJson(pack, query.Message))).Start();
                                     id = query.From.Id;
                                     pack.Approved = true;
                                     pack.ApprovedBy = id;
