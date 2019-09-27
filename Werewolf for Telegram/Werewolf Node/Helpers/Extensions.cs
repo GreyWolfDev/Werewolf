@@ -59,7 +59,7 @@ namespace Werewolf_Node.Helpers
         {
             var name = player.Name;
 
-            string[] removeStrings = { "🥇", "🥈", "🥉", "💎", "📟" };
+            string[] removeStrings = { "🥇", "🥈", "🥉", "💎", "📟", "🏅" };
             var end = "";
             name = name.TrimEnd(true, removeStrings);
 
