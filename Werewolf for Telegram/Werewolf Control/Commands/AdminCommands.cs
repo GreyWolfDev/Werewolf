@@ -238,7 +238,7 @@ namespace Werewolf_Control
                 foreach (var id in ids)
                 {
                     var idles = db.GetIdleKills24Hours(id).FirstOrDefault() ?? 0;
-                    var groupidles = db.GetGroupIdleKills24Hours(id, update.Message.Chat.Id);
+                    var groupidles = db.GetGroupIdleKills24Hours(id, update.Message.Chat.Id).FirstOrDefault() ?? 0;
                     //get the user
                     ChatMember user = null;
                     try
