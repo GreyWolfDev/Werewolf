@@ -1030,7 +1030,7 @@ namespace Werewolf_Node
                     if (WolfCubKilled)
                     {
                         //need to let them have another menu for second kill
-                        var targets = Players.Where(x => !WolfRoles.Contains(x.PlayerRole) & !x.IsDead && x.Id != player.Choice).ToList();
+                        var targets = Players.Where(x => !WolfRoles.Contains(x.PlayerRole) & x.PlayerRole != IRole.SnowWolf & !x.IsDead && x.Id != player.Choice).ToList();
                         var msg = GetLocaleString("AskEat");
                         var newqtype = QuestionType.Kill2;
                         var buttons = targets.Select(x => new[] { new InlineKeyboardCallbackButton(x.Name, $"vote|{Program.ClientId}|{Guid}|{(int)newqtype}|{x.Id}") }).ToList();
