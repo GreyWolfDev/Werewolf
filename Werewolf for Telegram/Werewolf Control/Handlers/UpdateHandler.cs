@@ -395,7 +395,7 @@ namespace Werewolf_Control.Handler
                                     {
                                         if (!UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
                                         {
-                                            Send(GetLocaleString("NotGlobalAdmin", GetLanguage(id)), id);
+                                            if (command.Trigger != "user") Send(GetLocaleString("NotGlobalAdmin", GetLanguage(id)), id);
                                             return;
                                         }
                                     }
