@@ -1,1224 +1,2236 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="Thai (ภาษาไทย)" base="Thai" variant="Normal" owner="Mokarakom"/>
-  <string key="NotInGame">
-    <value>ดูเหมือนคุณจะไม่ได้อยู่ในเกมไหนเลยนะ...</value>
-  </string>
-  <string key="PlayerStartedGame" isgif="true">
-    <!-- 0 - Player name -->
-    <value>{0} ได้เริ่มเกมขึ้นแล้ว! ใช้คำสั่ง /join เพื่อร่วมสนุก... หรือไม่ก็... ตาย :P</value>
-    <value>เกมใหม่ได้เริ่มโดย {0} แล้ว! ใช้คำสั่ง /join เพื่อร่วมเกมกับเรา!</value>
-  </string>
-  <string key="PlayerStartedChaosGame" isgif="true">
-    <!-- 0 - Player name -->
-    <value>{0} ได้เริ่มเกมแห่งความวุ่นวาย! ใช้คำสั่ง /join เพื่อร่วมสนุก... หรือ... ตาย :P</value>
-    <value>เกมแห่งความวุ่นวายได้เริ่มโดย {0}! ใช้คำสั่ง /join เพื่อเริ่มถูกกิน!</value>
-  </string>
-  <string key="NoJoinGameRunning">
-    <value>คุณยังเข้าร่วมตอนนี้ไม่ได้! เกมกำลังดำเนินอยู่นะ</value>
-  </string>
-  <string key="AlreadyJoined">
-    <value>คุณเข้าร่วมเกมอยู่แล้ว!</value>
-  </string>
-  <string key="MinuteLeftToJoin">
-    <value>มีเวลาเหลืออีก 1 นาที ที่จะเข้าร่วมด้วยคำสั่ง /join</value>
-  </string>
-  <string key="SecondsLeftToJoin">
-    <!-- 0 - remaining seconds (number) -->
-    <value>มีเวลาเหลืออีก {0} วินาที ที่จะเข้าร่วมด้วยคำสั่ง /join</value>
-  </string>
-  <string key="NotEnoughPlayers">
-    <value>มีผู้เล่นไม่เพียงพอ เกมส์ถูกยกเลิก!</value>
-  </string>
-  <string key="StartingGameWait">
-    <value>เกมกำลังเริ่มต้นขึ้น โปรดรอสักครู่ระหว่างที่ระบบกำลังจัดตำแหน่งอาชัพและอัพเดตฐานข้อมูล</value>
-  </string>
-  <string key="BannedForExploit">
-    <!-- 0 - Player name -->
-    <value>{0} ถูกแบนหลังพยายามยิงข้อมูล (ไม่มีชื่อเริ่มด้วย /)</value>
-  </string>
-  <string key="ChangeNameToJoin">
-    <!-- 0 - Player name -->
-    <value>คุณ {0} กรุณาเปลี่ยนชื่อเพื่อเข้าร่วมด้วย</value>
-  </string>
-  <string key="PlayerLimitReached">
-    <value>ขอโทษด้วย ผู้เล่นเกินที่กำหนดแล้ว!</value>
-  </string>
-  <string key="PlayerJoined">
-    <!-- 0 - Player name -->
-    <!-- 1 - current players -->
-    <!-- 2 - Minimum players -->
-    <!-- 3 - Maximum players -->
-    <value>{0} ได้เข้าร่วมเกมแล้ว ผู้เล่นขณะนี้มี {1} คน, ผู้เล่นขั้นต่ำ {2} คน, ผู้เล่นสูงสุด {3} คน</value>
-  </string>
-  <string key="PMTheBot">
-    <!-- 0 - Player name -->
-    <!-- 1 - bot username -->
-    <value>{0} โปรดกดปุ่ม เริ่ม (start) ข้างล่าง หรือ {1} และกด ”เริ่มฉัน” (Start me), แล้วผมจึงจะสามารถส่งอาชีพของคุณให้ได้  คุณไม่สามารถเข้าร่วมได้จนกว่าคุณจะทำเช่นนั้นนะครับ</value>
-  </string>
-  <string key="DeadFlee">
-    <value>คุณหนีไม่ได้! คุณตาย!  กลับไปยังฝืนพิภพ... ให้ตายเถอะ!</value>
-  </string>
-  <string key="Flee">
-    <!-- 0 - Player name -->
-    <value>{0} หนีไปด้วยความหวาดกลัวซะแล้ว</value>
-  </string>
-  <string key="PlayerRoleWas">
-    <!-- 0 - Player name -->
-    <!-- 1 - Player role -->
-    <value>{0} มีอาชีพเป็น {1}</value>
-  </string>
-  <string key="CountPlayersRemain">
-    <!-- 0 - Number of players -->
-    <value>เหลืออีก {0} คน</value>
-  </string>
-  <string key="DidntAsk">
-    <value>ต..แต่... ผมยังไม่ได้ถามอะไรเลยนะ!</value>
-  </string>
-  <string key="NotPlaying">
-    <value>ดูเหมือนคุณไม่ได้เล่นอยู่นะ...</value>
-  </string>
-  <string key="NoPlayerName">
-    <value>หาผู้เล่นที่มีชื่อนั้นไม่เจอ!</value>
-  </string>
-  <string key="AnswerNonValid">
-    <value>ดูเหมือนคำตอบจะไม่ถูกต้องนะ!</value>
-  </string>
-  <string key="WolfVotedKill">
-    <!-- 0 - wolf teammate name -->
-    <!-- 1 - Victim name -->
-    <value>{0} เลือกโหวตให้กิน {1}</value>
-  </string>
-  <string key="PlayerVotedLynch">
-    <!-- 0 - Voter name -->
-    <!-- 1 - Target name -->
-    <value>{0} เลือกโหวตแขวนคอ {1}</value>
-  </string>
-  <string key="IdleKill">
-    <!-- 0 - player name -->
-    <!-- 1 - player role -->
-    <value>{0} ไม่ได้โหวต 2 คืนติดต่อกัน พลังแห่งความดีงามในสากลโลกมองว่านี่เป็นความชั่วร้ายที่อภัยให้ไม่ได้และดูเหมือน {0} ก็ได้ตายลงด้วยพลังแห่งความดี และดูเหมือน {0} จะมีอาชีพเป็น {1}</value>
-  </string>
-  <string key="TraitorTurnWolf">
-    <value>เจ้าคนทรยศ!!! ตอนนี้คุณได้เป็นหมาป่าแล้ว...</value>
-  </string>
-  <string key="ChoiceAccepted">
-    <value>ได้รับตัวเลือกแล้ว</value>
-  </string>
-  <string key="BeholderSeer">
-    <!-- 0 - seer name -->
-    <value>\nหมอดูคือ {0}</value>
-  </string>
-  <string key="ApprenticeNowSeer">
-    <!-- 0 - seer name -->
-    <value>{0} เคยเป็นหมอดูตอนนี้ {0} ได้รับการพักผ่อนชั่วนิรันด์แล้ว ในฐานะที่คุณเป็นลูกศิษย์ได้รับรับโอกาสอันยิ่งใหญ่ที่จะสานงานต่อ คุณได้มาเป็นหมอดูคนใหม่แล้ว</value>
-  </string>
-  <string key="BeholderNewSeer">
-    <!-- 0 - apprentice name -->
-    <!-- 1 - seer name -->
-    <value>{0} เป็นลูกศิษย์ และได้ถูกเลื่อนตำแหน่งเพื่อแทนที่ {1} เพื่อเป็นหมอดูคนใหม่</value>
-  </string>
-  <string key="SeerSees">
-    <!-- 0 - player name -->
-    <!-- 1 - player role -->
-    <value>คุณเจอว่า {0} มีอาชีพเป็น {1}!</value>
-  </string>
-  <string key="AskLynch">
-    <value>เอาล่ะคนดี วันนี้คุณอยากจะแขวนคอใครล่ะ?</value>
-  </string>
-  <string key="AskDetect">
-    <value>จะตรวจสอบใครดี?</value>
-  </string>
-  <string key="AskShoot">
-    <!-- 0 - bullet count -->
-    <value>อยากจะยิงใคร? ตอนนี้มีกระสุนเหลือ {0} นัด</value>
-  </string>
-  <string key="AskVisit">
-    <value>ใครที่อยากไปเยี่ยม?</value>
-  </string>
-  <string key="AskSee">
-    <value>ใครที่อยากจะเจอ?</value>
-  </string>
-  <string key="AskGuard">
-    <value>ใครที่อยากจะป้องกัน?</value>
-  </string>
-  <string key="AskEat">
-    <value>ใครที่อยากจะกิน?</value>
-  </string>
-  <string key="AskHunt">
-    <value>วันนี้จะล่าใครดี?</value>
-  </string>
-  <string key="AskRoleModel">
-    <value>ใครคืออาชีพ?</value>
-  </string>
-  <string key="AskConvert">
-    <value>ใครที่อยากจะให้เชื่อฟังคำสั่งของคุณ?</value>
-  </string>
-  <string key="DiscussWith">
-    <!--Leave the leading spaces here please-->
-    <!-- 0 - teammate names -->
-    <value>  อย่าลืมคุยกับเพื่อนร่วมทีม {0} นะ</value>
-  </string>
-  <string key="And">
-    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
-    <value> และ </value>
-  </string>
-  <string key="RoleInfoCursed">
-    <value>คุณเป็นเด็กต้องสาป ในตอนนี้คุณเป็นแค่ชาวบ้านธรรมดาๆ แต่ถ้าคุณถูกหมาป่าขย้ำแล้วล่ะก็.. คุณก็จะกลายเป็นหมาป่าไปด้วย !</value>
-  </string>
-  <string key="RoleInfoDetective">
-    <value>ความจริงมีเพียงหนึ่งเดียว ! คุณคือนักสืบ ถึงตัวจะเป็นคนแก่แต่พุงยังเป็นคนอ้วนชื่อของเขาคือ...นั่นแหละ ในช่วงกลางวันคุณสามารถเลือกผู้เล่นเพื่อเปิดเผยอาชีพของผู้เล่นนั้น แต่ถ้าทำแบบนั้นจะมีโอกาสที่จะเป็นการเปิดเผยตัวตนของคุณให้กับหมาป่า! (มีโอกาส 40%)</value>
-  </string>
-  <string key="RoleInfoDrunk">
-    <value>ยินดีด้วย! คุณได้เป็นคนขี้เมา! (และเอาจริงๆป่ะ ทุกคนรู้แหละ)</value>
-  </string>
-  <string key="RoleInfoGuardianAngel">
-    <value>คุณได้เป็นเทวดาฟันน้ำนม ในทุกๆคืนคุณต้องเลือกผู้เล่นเพื่อปกป้อง ยังไงก็ตาม ถ้าคุณเลือกหมาป่า มีโอกาส 50% ที่คุณจะตาย</value>
-  </string>
-  <string key="RoleInfoGunner">
-    <value>คุณเป็นมือปืน คุณจะมีลูกกระสุนสองนัด ในระหว่างวันคุณสามารถเลือกยิงใครก็ได้ ทุกๆคนสามารถถูกยิงได้ และเปิดเผยว่าคุณคือมือปืน (และจะรู้ว่าคุณไม่ใช่หมาป่า)</value>
-  </string>
-  <string key="RoleInfoHarlot">
-    <value>ร่านนะเรา! คุณได้เป็นโสเภณีล่ะ! คุณสามารถไปเยี่ยมใครก็ได้ในตอนกลางคืน เพื่อยืนยันว่าคนเหล่านั้นไม่ใช่หมาป่า แต่ยังไงก็ตาม ถ้าคนที่คุณไปเยี่ยมถูกหมาป่าขย้ำ คุณก็จะถูกขย้ำไปด้วย และในกรณีที่หมาป่าพยายามจะมาขย้ำคุณที่บ้าน ในคืนที่คุณไปเยียมคนอื่น คุณก็จะไม่ตายเพราะคุณไม่อยู่บ้านยังไงล่ะ! อ้อ! แต่ระวังไปเยี่ยมบ้านหมาป่าแล้วถูกขย้ำก็แล้วกัน...</value>
-  </string>
-  <string key="RoleInfoTraitor">
-    <value>ไอ้คนทรยศ! ตอนนี้คุณอาจจะเป็นแค่ชาวบ้านธรรมดา แต่ถ้าหากหมาป่าตายหมดแล้วล่ะก็ คุณจะกลายเป็นหมาป่าคนต่อไป! ถ้าหมอดูตรวจสอบคุณคุณอาจถูกบอกว่าเป็นหมาป่าหรือไม่ก็ได้แล้วแต่ดวงล่ะนะ</value>
-  </string>
-  <string key="RoleInfoWolf">
-    <value>คุณได้เป็นหมาป่า!! ในแต่ล่ะคืนคุณสามารถเลือกขย้ำใครก็ได้</value>
-  </string>
-  <string key="RoleInfoSeer" >
-    <value>คุณคือหมอดู ในแต่ล่ะคืน คุณสามารถเลือกที่จะ 'ตรวจสอบ' ใครก็ได้ และจะรู้ว่าเขาคนนั้นมีอาชีพอะไร</value>
-  </string>
-  <string key="RoleInfoVillager" >
-    <value>คุณเป็นชาวบ้านชนชั้นล่าง, ใช้ชีวิตธรรมดาๆ และเลือกผู้ที่สมควรได้รับโทษจากความผิดที่พวกเขาอาจก่อหรือไม่ก่อให้พวกเขาได้พักผ่อนอย่างเป็นสุข รู้สึกนั่นล่ะคือสิ่งเดียวที่คุณทำได้</value>
-  </string>
-  <string key="RoleInfoTanner" >
-    <value >คุณเป็นศูนย์กลางของจักรวาล ถ้าคุณถูกแขวนคอ โลกก็จะพังพินาจและคุณก็จะชนะทันที ยินดีด้วย!</value>
-  </string>
-  <string key="RoleInfoWildChild" >
-    <value >คุณได้เป็นรุ่นน้อง! เลือกผู้เล่นหนึ่งคนของคุณให้เป็น 'เซนไป (ไอดอล)' - ถ้าเขาตาย คุณจะเสียใจมากๆกลายเป็นหมาป่า</value>
-  </string>
-  <string key="RoleInfoBeholder" >
-    <value >คุณคือผู้มองเห็น คุณจะสามารถรู้ว่าใครคือหมอดูที่แท้จริง - คุณทำได้เท่านี้แหละ</value>
-  </string>
-  <string key="RoleInfoApprenticeSeer" >
-    <value >คุณคือลูกศิษย์ของหมอดู ถ้าหมอดูที่แท้จริงตายในฐานที่คุณเป็นลูกศิษย์อันดับหนึ่งคุณจะได้สานต่องานของอาจารย์ของคุณ</value>
-  </string>
-  <string key="RoleInfoCultist" >
-    <value >คุณเป็นพวกคลั่งลัทธิ ในทุกๆคืนคุณสามารถเลือกคนหนึ่งคนที่จะแปลงเป็นสาวก ถ้าคนที่มีชีวิตทั้งหมดที่เหลืออยู่เป็นสาวกของคุณ พวกคุณจะชนะ</value>
-  </string>
-  <string key="RoleInfoCultistHunter" >
-    <value >คุณเป็นนักล่าพวกคลั่งลัทธิ คุณพยายามที่จะปกป้องหมู่บ้านของคุณจากการถูกครอบงำโดยพวกลัทธินอกรีต ในทุกๆคืนเลือกผู้เล่นหนึ่งคน ถ้าเขาเป็นพวกคลั่งลักธิเขาจะตาย ถ้าพวกนั้นพยายามครอบงำคุณสมาชิกที่พึ่งเข้ามาใหม่ล่าสุดจะตาย</value>
-  </string>
-  <string key="LynchTime" >
-    <!-- 0 - number of seconds -->
-    <value>
+	<language name="Thai (ภาษาไทย)" base="Thai" variant="Normal" owner="Mokarakom and ThaiAnthro Team" code="th" isDefault="false"/>
+	<string key="NotInGame" deprecated="true">
+		<value>ดูเหมือนคุณจะไม่ได้อยู่ในเกมไหนเลยนะ...</value>
+	</string>
+	<string key="PlayerStartedGame" isgif="true">
+		<!-- 0 - Player name -->
+		<value>{0} ได้เริ่มเกมขึ้นแล้ว! กดปุ่มข้างล่างเพื่อเข้ามาร่วมสนุก... แล้วก็อาจจะตาย :P</value>
+		<value>เกมใหม่ได้ถูกเริ่มโดย {0} แล้ว! มาร่วมเกมแล้วถูกกินกัน!</value>
+	</string>
+	<string key="PlayerStartedChaosGame" isgif="true">
+		<!-- 0 - Player name -->
+		<value>{0} ได้เริ่มเกมแห่งความวุ่นวาย! กดปุ่มข้างล่างเพื่อเข้ามาร่วมสนุก... แล้วก็อาจจะตาย :P</value>
+		<value>เกมแห่งความวุ่นวายได้เริ่มโดย {0}! มาร่วมเกมแล้วถูกกินกัน!</value>
+	</string>
+	<string key="NoJoinGameRunning" deprecated="true">
+		<value>คุณยังเข้าร่วมตอนนี้ไม่ได้! เกมกำลังดำเนินอยู่นะ</value>
+	</string>
+	<string key="AlreadyJoined" deprecated="true">
+		<value>คุณเข้าร่วมเกมอยู่แล้ว!</value>
+	</string>
+	<string key="MinuteLeftToJoin">
+		<value>มีเวลาเหลืออีก 1 นาที ที่จะเข้าร่วมเกม</value>
+	</string>
+	<string key="SecondsLeftToJoin">
+		<!-- 0 - remaining seconds (number) -->
+		<value>มีเวลาเหลืออีก {0} วินาที ที่จะเข้าร่วมเกม</value>
+	</string>
+	<string key="NotEnoughPlayers">
+		<value>มีผู้เล่นไม่เพียงพอ เกมถูกยกเลิก!</value>
+	</string>
+	<string key="StartingGameWait">
+		<value>เกมกำลังเริ่มต้น โปรดรอสักครู่ระหว่างที่ระบบกำลังจัดตำแหน่งอาชีพและอัพเดตฐานข้อมูล</value>
+	</string>
+	<string key="BannedForExploit" deprecated="true">
+		<!-- 0 - Player name -->
+		<value>{0} ถูกแบนหลังพยายามยิงข้อมูล (ไม่มีชื่อเริ่มด้วย /)</value>
+	</string>
+	<string key="ChangeNameToJoin">
+		<!-- 0 - Player name -->
+		<value>คุณ {0} กรุณาเปลี่ยนชื่อเพื่อเข้าร่วมเกม</value>
+	</string>
+	<string key="PlayerLimitReached">
+		<value>ขอโทษด้วย ผู้เล่นเกินที่กำหนดแล้ว!</value>
+	</string>
+	<string key="PlayerJoined">
+		<!-- 0 - Player name -->
+		<!-- 1 - current players -->
+		<!-- 2 - Minimum players -->
+		<!-- 3 - Maximum players -->
+		<value>{0} ได้เข้าร่วมเกมแล้ว ผู้เล่นขณะนี้มี {1} คน, ผู้เล่นขั้นต่ำ {2} คน, ผู้เล่นสูงสุด {3} คน</value>
+	</string>
+	<string key="PMTheBot">
+		<!-- 0 - Player name -->
+		<!-- 1 - bot username -->
+		<value>{0} โปรดกดปุ่ม เริ่ม (start) ข้างล่าง หรือ {1} และกด ”เริ่มฉัน” (Start me), แล้วผมจึงจะสามารถส่งอาชีพของคุณให้ได้  คุณไม่สามารถเข้าร่วมได้จนกว่าคุณจะทำเช่นนั้นนะครับ</value>
+	</string>
+	<string key="DeadFlee">
+		<value>คุณหนีไม่ได้! คุณตายไปแล้ว! กลับลงโลงไป... ให้ตายเถอะ!</value>
+	</string>
+	<string key="Flee">
+		<!-- 0 - Player name -->
+		<value>{0} หนีไปด้วยความหวาดกลัวซะแล้ว</value>
+	</string>
+	<string key="PlayerRoleWas">
+		<!-- 0 - Player name -->
+		<!-- 1 - Player role -->
+		<value>{0} มีอาชีพเป็น {1}</value>
+	</string>
+	<string key="CountPlayersRemain">
+		<!-- 0 - Number of players -->
+		<value>เหลืออีก {0} คน</value>
+	</string>
+	<string key="DidntAsk" deprecated="true">
+		<value>ต..แต่... ผมยังไม่ได้ถามอะไรเลยนะ!</value>
+	</string>
+	<string key="NotPlaying">
+		<value>ดูเหมือนคุณไม่ได้เล่นอยู่นะ...</value>
+	</string>
+	<string key="NoPlayerName">
+		<value>หาผู้เล่นที่มีชื่อนั้นไม่เจอ!</value>
+	</string>
+	<string key="AnswerNonValid" deprecated="true">
+		<value>ดูเหมือนคำตอบจะไม่ถูกต้องนะ!</value>
+	</string>
+	<string key="WolfVotedKill">
+		<!-- 0 - wolf teammate name -->
+		<!-- 1 - Victim name -->
+		<value>{0} เลือกโหวตให้กิน {1}</value>
+	</string>
+	<string key="PlayerVotedLynch">
+		<!-- 0 - Voter name -->
+		<!-- 1 - Target name -->
+		<value>{0} เลือกโหวตแขวนคอ {1}</value>
+	</string>
+	<string key="IdleKill">
+		<!-- 0 - player name -->
+		<!-- 1 - player role -->
+		<value>{0} ไม่ได้โหวต 2 คืนติดต่อกัน พลังแห่งความดีงามในสากลโลกมองว่านี่เป็นความชั่วร้ายที่อภัยให้ไม่ได้และดูเหมือน {0} ก็ได้ตายลงด้วยพลังแห่งความดี {1}</value>
+	</string>
+	<string key="TraitorTurnWolf">
+		<value>เจ้าคนทรยศ!!! ตอนนี้คุณได้เป็นหมาป่าแล้ว...</value>
+	</string>
+	<string key="ChoiceAccepted">
+		<value>ได้รับตัวเลือกแล้ว</value>
+	</string>
+	<string key="BeholderSeer">
+		<!-- 0 - seer name -->
+		<value>\nหมอดูคือ {0}</value>
+	</string>
+	<string key="ApprenticeNowSeer">
+		<!-- 0 - seer name -->
+		<value>{0} เคยเป็นหมอดูตอนนี้ {0} ได้รับการพักผ่อนชั่วนิรันด์แล้ว ในฐานะที่คุณเป็นลูกศิษย์ได้รับรับโอกาสอันยิ่งใหญ่ที่จะสานงานต่อ คุณได้มาเป็นหมอดูคนใหม่แล้ว</value>
+	</string>
+	<string key="BeholderNewSeer">
+		<!-- 0 - apprentice name -->
+		<!-- 1 - seer name -->
+		<value>{0} เป็นลูกศิษย์ และได้ถูกเลื่อนตำแหน่งเพื่อแทนที่ {1} เพื่อเป็นหมอดูคนใหม่</value>
+	</string>
+	<string key="SeerSees">
+		<!-- 0 - player name -->
+		<!-- 1 - player role -->
+		<value>คุณเจอว่า {0} มีอาชีพเป็น {1}!</value>
+	</string>
+	<string key="AskLynch">
+		<value>เอาล่ะคนดี วันนี้คุณอยากจะแขวนคอใครล่ะ?</value>
+	</string>
+	<string key="AskDetect">
+		<value>จะตรวจสอบใครดี?</value>
+	</string>
+	<string key="AskShoot">
+		<!-- 0 - bullet count -->
+		<value>อยากจะยิงใคร? ตอนนี้มีกระสุนเหลือ {0} นัด</value>
+	</string>
+	<string key="AskVisit">
+		<value>ใครที่อยากไปเยี่ยม?</value>
+	</string>
+	<string key="AskSee">
+		<value>ใครที่อยากจะเจอ?</value>
+	</string>
+	<string key="AskGuard">
+		<value>ใครที่อยากจะป้องกัน?</value>
+	</string>
+	<string key="AskEat">
+		<value>ใครที่อยากจะกิน?</value>
+	</string>
+	<string key="AskHunt">
+		<value>วันนี้จะล่าใครดี?</value>
+	</string>
+	<string key="AskRoleModel">
+		<value>ใครคือเซนไปของคุณ?</value>
+	</string>
+	<string key="AskConvert">
+		<value>ใครที่อยากจะให้เชื่อฟังคำสั่งของคุณ?</value>
+	</string>
+	<string key="DiscussWith">
+		<!--Leave the leading spaces here please-->
+		<!-- 0 - teammate names -->
+		<value>  อย่าลืมคุยกับเพื่อนร่วมทีม {0} นะ</value>
+	</string>
+	<string key="And">
+		<!--this is paired with "DiscussWith".  again, leave the spaces!-->
+		<value> และ </value>
+	</string>
+	<string key="RoleInfoCursed">
+		<value>คุณเป็นเด็กต้องสาป ในตอนนี้คุณเป็นแค่ชาวบ้านธรรมดา ๆ แต่ถ้าคุณถูกหมาป่าขย้ำแล้วล่ะก็.. คุณก็จะกลายเป็นหมาป่าไปด้วย!</value>
+	</string>
+	<string key="RoleInfoDetective">
+		<value>ความจริงมีเพียงหนึ่งเดียว! คุณคือนักสืบ ถึงตัวจะเป็นคนแก่แต่พุงยังเป็นคนอ้วนชื่อของเขาคือ... นั่นแหละ ในช่วงกลางวันคุณสามารถเลือกผู้เล่นเพื่อเปิดเผยอาชีพของผู้เล่นนั้น แต่ถ้าทำแบบนั้นจะมีโอกาสที่จะเป็นการเปิดเผยตัวตนของคุณให้กับหมาป่า! (มีโอกาส 40%)</value>
+	</string>
+	<string key="RoleInfoDrunk">
+		<value>ยินดีด้วย! คุณได้เป็นคนขี้เมา! (และเอาจริง ๆ ป่ะ ทุกคนรู้แหละ)</value>
+	</string>
+	<string key="RoleInfoGuardianAngel">
+		<value>คุณได้เป็นเทวดาผู้พิทักษ์ ในทุก ๆ คืนคุณต้องเลือกปกป้องผู้เล่น แต่ยังไงก็ตาม ถ้าคุณเลือกหมาป่า จะมีโอกาส 50% ที่คุณจะตาย</value>
+	</string>
+	<string key="RoleInfoGunner">
+		<value>คุณเป็นมือปืน คุณมีลูกกระสุนสองนัด ในระหว่างวันคุณสามารถเลือกยิงใครก็ได้ ทุก ๆ คนจะได้ยินเสียงปืนของคุณ และรู้ว่าคุณคือมือปืน (และจะรู้ว่าคุณไม่ใช่หมาป่า)</value>
+	</string>
+	<string key="RoleInfoHarlot">
+		<value>ร่านนะเรา! คุณได้เป็นโสเภณีล่ะ! คุณสามารถไปเยี่ยมใครก็ได้ในตอนกลางคืนเพื่อยืนยันว่าคนเหล่านั้นไม่ใช่หมาป่า แต่ยังไงก็ตาม ถ้าคนที่คุณไปเยี่ยมเป็นหมาป่าหรือคนที่ถูกหมาป่าขย้ำ คุณก็จะถูกขย้ำไปด้วย และในกรณีที่หมาป่าพยายามจะมาขย้ำคุณที่บ้านในคืนที่คุณไปเยี่ยมคนอื่น คุณก็จะไม่ตายเพราะคุณไม่อยู่บ้านยังไงล่ะ!</value>
+	</string>
+	<string key="RoleInfoTraitor">
+		<value>ไอ้คนทรยศ! ตอนนี้คุณจะเป็นแค่ชาวบ้านธรรมดา แต่ถ้าหากหมาป่าตายหมดแล้วล่ะก็ คุณจะกลายเป็นหมาป่าคนต่อไป! ถ้าหมอดูตรวจสอบคุณ คุณอาจจะถูกมองว่าเป็นหมาป่าหรือไม่ก็ได้แล้วแต่ดวงล่ะนะ</value>
+	</string>
+	<string key="RoleInfoWolf">
+		<value>คุณได้เป็นหมาป่า!! xD ในแต่ละคืนคุณสามารถเลือกขย้ำใครก็ได้</value>
+	</string>
+	<string key="RoleInfoSeer">
+		<value>คุณคือหมอดู ในแต่ละคืน คุณสามารถเลือกที่จะ 'ตรวจสอบ' ใครก็ได้ และจะรู้ว่าเขาคนนั้นมีอาชีพอะไร</value>
+	</string>
+	<string key="RoleInfoVillager">
+		<value>คุณเป็นชาวบ้านชนชั้นล่าง, ใช้ชีวิตธรรมดาๆ และเลือกผู้ที่สมควรได้รับโทษจากความผิดที่พวกเขาอาจก่อหรือไม่ก่อให้พวกเขาได้พักผ่อนอย่างเป็นสุข นั่นแหละคือสิ่งเดียวที่คุณทำได้</value>
+	</string>
+	<string key="RoleInfoTanner">
+		<value>คุณเป็นศูนย์กลางของจักรวาล ถ้าคุณถูกแขวนคอ โลกก็จะพังพินาจและคุณก็จะชนะทันที ยินดีด้วย!</value>
+	</string>
+	<string key="RoleInfoWildChild">
+		<value>คุณได้เป็นรุ่นน้อง! เลือกผู้เล่นหนึ่งคนของคุณให้เป็น 'เซนไป (ไอดอล)' - ถ้าเขาตาย คุณจะเสียใจมาก ๆ จนกลายเป็นหมาป่า</value>
+	</string>
+	<string key="RoleInfoBeholder">
+		<value>คุณคือผู้มองเห็น คุณจะสามารถรู้ว่าใครคือหมอดูที่แท้จริง - คุณทำได้แค่นี้แหละ</value>
+	</string>
+	<string key="RoleInfoApprenticeSeer">
+		<value>คุณคือลูกศิษย์ของหมอดู ถ้าหมอดู (ที่แท้จริง) ตาย ในฐานะที่คุณเป็นลูกศิษย์อันดับหนึ่งคุณจะได้สานต่องานของอาจารย์ของคุณ</value>
+	</string>
+	<string key="RoleInfoCultist">
+		<value>คุณเป็นพวกคลั่งลัทธิ ในทุก ๆ คืนคุณสามารถเลือกคนหนึ่งคนที่จะแปลงเป็นสาวก ถ้าคนที่มีชีวิตทั้งหมดที่เหลืออยู่เป็นสาวกของคุณ พวกคุณจะชนะ</value>
+	</string>
+	<string key="RoleInfoCultistHunter">
+		<value>คุณเป็นนักล่าพวกคลั่งลัทธิ คุณพยายามที่จะปกป้องหมู่บ้านของคุณจากการถูกครอบงำโดยพวกลัทธินอกรีต ในทุก ๆ คืน เลือกผู้เล่นหนึ่งคน ถ้าเขาเป็นพวกคลั่งลัทธิเขาจะตาย ถ้าพวกนั้นพยายามจะครอบงำคุณ สมาชิกที่พึ่งเข้ามาใหม่ล่าสุดจะตาย</value>
+	</string>
+	<string key="LynchTime">
+		<!-- 0 - number of seconds -->
+		<value>
       ใกล้ค่ำแล้ว ผู้ใหญ่ลีตีกลองประชุม ชาวบ้านต่างมาชุมนุม มาประชุมที่บ้านผู้ใหญ่ลี
       ต่อไปนี้ผู้ใหญ่ลีจะขอกล่าว
       ทุกคนต้องตัดสินใจแล้วว่าจะให้ใครถูกแขวนคอเย็นนี้...
       ทุกคนมีเวลา {0} วินาทีเพื่อลงคะแนนเสียง!
     </value>
-  </string>
-  <string key="DayTime" >
-    <!-- 0 - number of seconds -->
-    <value >ตอนนี้เป็นเวลากลางวัน ทุกคนมีเวลา {0} วินาที เพื่อพูดคุยและแก้ต่างให้ตัวเอง!</value>
-  </string>
-  <string key="NightTime" >
-    <!-- 0 - number of seconds -->
-    <value >กลางคืนแล้ว ทุกคนกำลังไปนอนด้วยความหวาดระแวง... ท่ามกลาง... คืนหลอกลวง... อันแสนเหนื่อยล้า...
-      ผู้เล่นช่วงกลางคืน: คุณมี {0} วินาทีที่จะทำอะไรๆ!</value>
-  </string>
-  <string key="LynchKill" >
-    <!-- 0 - player name -->
-    <!-- 1 - player role -->
-    <value>ชาวบ้านได้ออกเสียงเลือดผู้สมควรได้รับการพันผ่อนเรียบร้อยแล้ว {0} ได้ตายลง {1}</value>
-  </string>
-  <string key="LynchTie" >
-    <value >ตัดสินไม่ได้ว่าใครจะถูกแขวนคอ กลุ่มคนกลับบ้านไปนอนต่ออย่างน่าผิดหวัง...</value>
-  </string>
-  <string key="NoLynchVotes" >
-    <value >มีบางอย่างแปลกๆนะ ไม่มีใครโหวตเลย!  คืนนี้ไม่มีการแขวนคอ...</value>
-  </string>
-  <string key="DetectiveEaten" >
-    <!-- 0 - victim name -->
-    <value >ชาวบ้านรวมตัวกันในตอนเช้า, แต่ไม่พบ {0} เลยสักที่ พวกเขาจึงรวมตัวกันไปที่บ้านของ {0} และพบเครื่องในเต็มไปหมด และเจอเหรียญตรานักสือของกระทรวงสวัสดิการสังคมเก่าๆอยู่ที่นั่น</value>
-  </string>
-  <string key="GuardianEaten" >
-    <!-- 0 - victim name -->
-    <value >เช้ามาเยือน และทุกคนต้องตกใจเมื่อพบว่ามีคนถูกตรึกไว้บนไม้กางเขงของโบสถ์นั่นคือ {0} เทวดาฟันน้ำนมของพวกเขา...</value>
-  </string>
-  <string key="GunnerEaten" >
-    <!-- 0 - victim name -->
-    <value >เมื่อทุกคนพยายามมาเก็บแชร์ในตอนเช้า มีหนึ่งคนที่ไม่ได้ส่งแชร์ ชาวบ้านต่างโกรธแค้นจึงไปค้นหาทีล่ะบ้าน และพบเศษนิ้วมือ เครื่องใน ปืน… ของ {0} พวกคุณได้สูญเสียมือปืนไปซะแล้ว</value>
-  </string>
-  <string key="SeerEaten" >
-    <!-- 0 - victim name -->
-    <value >ชาวบ้านตื่นมาตอนเช้าพบชิ้นเนื้อจำนวนมากที่เหลืออยู่ของ {0} ในกองซากนั้น ชาวบ้านยังได้พบกับไพ่ทาโร่ทำนายดวงชะตา หมอดูตายซะแล้ว</value>
-  </string>
-  <string key="DrunkEaten" >
-    <!-- 0 - victim name -->
-    <value >ทุกคนตื่นหลังจากได้กลิ่นของแอลกอฮอลที่ส่งกลิ่นไปทั่ว และพบชิ้นเนื้อของ {0} กระจายไปทั่ว</value>
-  </string>
-  <string key="FoolEaten" >
-    <!-- 0 - victim name -->
-    <value >หลังจากพระอาทิตย์ขึ้น ชาวบ้านทุกคนต่างพบซากของ {0} ขณะกำลังพยายามเปิดไพ่ทาโร่ดูดวงชะตาที่สั่งมาจากเว็บไซต์ในอินเตอร์เนต ดูเหมือนว่าเขาพยายามดูดวงตามวิธีการที่แชร์จากอีเมลส่งต่อกันมาและคิดว่าตัวเองสามารถเป็นหมอดูได้โดยไม่ต้องมีใบประกอบวิชาชีพ
+	</string>
+	<string key="DayTime">
+		<!-- 0 - number of seconds -->
+		<value>ตอนนี้เป็นเวลากลางวัน ทุกคนมีเวลา {0} วินาที เพื่อพูดคุยและแก้ต่างให้ตัวเอง!</value>
+	</string>
+	<string key="NightTime">
+		<!-- 0 - number of seconds -->
+		<value>กลางคืนแล้ว ทุกคนกำลังไปนอนด้วยความหวาดระแวง... ท่ามกลาง... คืนหลอกลวง... อันแสนเหนื่อยล้า...
+      ผู้เล่นช่วงกลางคืน: คุณมี {0} วินาทีที่จะทำกิจของคุณ!</value>
+	</string>
+	<string key="LynchKill">
+	    <!-- 0 - player name -->
+		<!-- 1 - player role -->
+		<value>ชาวบ้านได้ออกเสียงเลือกผู้สมควรได้รับการพักผ่อนเรียบร้อยแล้ว {0} ได้ตายลง {1}</value>
+	</string>
+	<string key="LynchTie">
+		<value>เมื่อตัดสินไม่ได้ว่าใครจะถูกแขวนคอ กลุ่มชาวบ้านก็กลับไปนอนต่ออย่างน่าผิดหวัง...</value>
+	</string>
+	<string key="NoLynchVotes">
+		<value>มีบางอย่างแปลกๆนะ ไม่มีใครโหวตเลย! คืนนี้ไม่มีการแขวนคอ...</value>
+	</string>
+	<string key="DetectiveEaten">
+	    <!-- 0 - victim name -->
+		<value>ชาวบ้านรวมตัวกันในตอนเช้า, แต่ไม่พบ {0} เลยสักที่ พวกเขาจึงรวมตัวกันไปที่บ้านของ {0} และพบเขาถูกล้วงเครื่องในเต็มไปหมด มีเหรียญตรานักสืบของกระทรวงสวัสดิการสังคมเก่า ๆ ยัดปากเขาอยู่</value>
+	</string>
+	<string key="GuardianEaten">
+	    <!-- 0 - victim name -->
+		<value>เช้ามาเยือน และทุกคนต้องตกใจเมื่อพบว่ามีคนถูกตรึกไว้บนไม้กางเขงของโบสถ์นั่นคือ {0} เทวดาผู้พิทักษ์ของพวกเขา...</value>
+	</string>
+	<string key="GunnerEaten">
+	    <!-- 0 - victim name -->
+		<value>เมื่อทุกคนพยายามมาเก็บแชร์ในตอนเช้า มีหนึ่งคนที่ไม่ได้ส่งแชร์ ชาวบ้านต่างโกรธแค้นจึงไปค้นหาทีล่ะบ้าน และพบเศษนิ้วมือ เครื่องใน ปืน… ของ {0} พวกคุณได้สูญเสียมือปืนไปซะแล้ว</value>
+	</string>
+	<string key="SeerEaten">
+	    <!-- 0 - victim name -->
+		<value>ชาวบ้านตื่นมาตอนเช้าพบชิ้นเนื้อจำนวนมากที่เหลืออยู่ของ {0} ในกองซากนั้น ชาวบ้านยังได้พบกับไพ่ทาโร่ทำนายดวงชะตา หมอดูตายซะแล้ว</value>
+	</string>
+	<string key="DrunkEaten">
+	    <!-- 0 - victim name -->
+		<value>ทุกคนตื่นหลังจากได้กลิ่นของแอลกอฮอลที่ส่งกลิ่นไปทั่ว และพบชิ้นเนื้อของ {0} กระจายไปทั่ว</value>
+	</string>
+	<string key="FoolEaten">
+	    <!-- 0 - victim name -->
+		<value>หลังจากพระอาทิตย์ขึ้น ชาวบ้านทุกคนต่างพบซากของ {0} ขณะกำลังพยายามเปิดไพ่ทาโร่ดูดวงชะตาที่สั่งมาจากเว็บไซต์ในอินเตอร์เนต ดูเหมือนว่าเขาพยายามดูดวงตามวิธีการที่แชร์จากอีเมลส่งต่อกันมาและคิดว่าตัวเองสามารถเป็นหมอดูได้โดยไม่ต้องมีใบประกอบวิชาชีพ
        ดันมาทำตอนที่หมาป่ากำลังออกล่า... ช่างโง่อะไรขนาดนี้...</value>
-  </string>
-  <string key="DefaultEaten" >
-    <!-- 0 - victim name -->
-    <!-- 1 - victim role -->
-    <value>เมื่อทุกคนตื่นเช้าขึ้นมา พวกเขาได้กลิ่นประหลาดๆ จึงได้เดินตามกลิ่นแปลกๆไปและได้พบกับ ชิ้นส่วนของ {0} เป็นชิ้นเล็กๆ หัวหายไป…. งำๆอร่อยจริงฮูว!\n{1}</value>
-  </string>
-  <string key="HunterKilledCultist">
-    <!-- 0 - victim name -->
-    <value>มีเสียงดังมาจากบ้านของ {0} ดูเหมือนจะมีพวกชาวลัทธิประหลาดๆ โดนล่าโดยนักล่าลัทธินอกรีตซะแล้ว!</value>
-  </string>
-  <string key="NoAttack" >
-    <value >ชาวบ้านตื่นมารวมตัวกันในตอนเช้า และดูเหมือนว่าคืนที่แล้ว ไม่มีอะไรเกิดขึ้น เย้!</value>
-  </string>
-  <string key="CursedBitten" >
-    <value >คุณถูกฆ่าโดยหมาป่า แต่เนื่องจากคุณเป็นเด็กต้องสาป! คุณจึงกลายเป็นหมาป่า!</value>
-  </string>
-  <string key="WolfTeam">
-    <!-- 0 - teammate names -->
-    <value>ทีมหมาป่าของคุณคือ: {0}</value>
-  </string>
-  <string key="CursedBittenToWolves" >
-    <!-- 0 - victim name -->
-    <value >คุณขย้ำ {0} ไปแล้ว แต่เนื่องจากเขาเป็นเด็กต้องสาป เขาจึงกลายเป็นหมาป่าไปด้วย!! ดีใจกับเพื่อนร่วมทีมคนใหม่ด้วยนะ !</value>
-  </string>
-  <string key="WolvesEatYou" isgif="true" >
-    <value >ไม่นะ! หมาป่ากินคุณ งึมๆๆๆ อร่อย</value>
-  </string>
-  <string key="WolvesEatDrunk" >
-    <!-- 0 - victim name -->
-    <value >ไม่นะ! {0} เป็นคนขี้เมา! ตอนนี้คุณเมาซะแล้ว นั่นหมายความว่าคุณจะไม่สามารถโจมตีคืนพรุ่งนี้ได้...</value>
-  </string>
-  <string key="GuardWolf" >
-    <value >คุณพยายามปกป้องชีวิตของหมาป่า! หมาป่ากินคุณซะแล้ว</value>
-  </string>
-  <string key="GuardSaved" >
-    <!-- 0 - saved player name -->
-    <value >คุณได้ปกป้องชีวิตของ {0}!</value>
-  </string>
-  <string key="GuardNoAttack" >
-    <!-- 0 - player name -->
-    <value >{0} ไม่ได้ถูกโจมตี คุณเลยไม่ได้ทำอะไรเลยเมื่อคืนนี้</value>
-  </string>
-  <string key="GuardEmptyHouse">
-    <!-- 0 - player name -->
-    <value>คุณไปปกป้อง {0} แต่ดันไม่อยู่บ้านนี่สิ!</value>
-  </string>
-  <string key="GuardSavedYou" >
-    <value >เทวดาฟันน้ำนมได้ช่วยปกป้องคนเมื่อคืนนี้และเผชิญหน้ากับเหล่าหมาป่า!</value>
-  </string>
-  <string key="HarlotEaten" >
-    <!-- 0 - player name -->
-    <value >คุณโสฯ วันนี้มาเยี่ยมผิดบ้านนะ {0} ได้ถูกกินโดยหมาป่า!</value>
-  </string>
-  <string key="HarlotNotHome" >
-    <!-- 0 - player name -->
-    <value >แปลก... {0} ไม่ได้อยู่บ้าน! อดกินไปนะ...</value>
-  </string>
-  <string key="HarlotFuckWolf" >
-    <!-- 0 - player name -->
-    <value >คุณย่องไปที่บ้านของ {0} เพื่อหาความสนุกนิดหน่อย แต่ที่คุณเจอดันเป็นหมาป่า... คุณเลยถูกขย้ำ! </value>
-  </string>
-  <string key="HarlotFuckedWolfPublic" >
-    <!-- 0 - player name -->
-    <value >{0} ย่องเข้าผิดบ้านเมื่อคืน!! ร่างหื่นกามของ {0} ได้ถูกพบในสภาพถูกเสียบด้วยแท่งเหล็กที่หน้าประตูโบสถ์ น่าเศร้าเหลือเกิน</value>
-  </string>
-  <string key="HarlotFuckedVictimPublic" >
-    <!-- 0 - harlot name -->
-    <!-- 1 - victim name -->
-    <value >{0} ย่องเข้าบ้านของ {1} กำลังจะคลายเครียดด้วย “อะไรสนุกๆ”... แต่ทว่า!! {0} กลับพบหมาป่ากำลังกิน {1}!  หมาป่าหันมาหาและกระโดดใส่ {0} ในทันใด!!... แล้ว {0} ก็ตาย...</value>
-  </string>
-  <string key="HarlotVisitNonWolf" >
-    <!-- 0 - target name -->
-    <value >ดูเหมือนว่า {0} จะไม่ใช่หมาป่านะ เพราะเมื่อคืนนั้นมันช่างหนักหน่วงและซู่วซ่าทั้งคืน!! อู๊ยยยยส์มันส์มาก</value>
-  </string>
-  <string key="HarlotVisitYou" >
-    <value >มันค่อนข้างมืดเลยมองไม่ค่อยชัด แต่คุณตื่นมากลางดึก พบว่ากำลังโดนโสเภณีขย่มอยู่ แล้วเขาก็หนีกลับไปหลังจากเสร็จสมอารมณ์หมายแล้ว</value>
-  </string>
-  <string key="DetectiveCaught" >
-    <!-- 0 - detective name -->
-    <value >คุณกำลังถูก {0} สอดรู้สอดเห็นเข้า! ไอนั่นน่าจะเป็นยอดนักสืบแน่นอน!</value>
-  </string>
-  <string key="DetectiveSnoop" >
-    <!-- 0 - target name -->
-    <!-- 1 - target role -->
-    <value >ด้วยความเก่งกาจในการสอดรู้สอดเห็นของคุณได้เปิดเผยว่า {0} คือ {1}</value>
-  </string>
-  <string key="HarlotShot" >
-    <!-- 0 - gunner's name -->
-    <!-- 1 - Harlot's name -->
-    <value >ดูเหมือน {0} จะเผลอยิงคุณโสฯไปโดยไม่ตั้งใจ {1} ตายซะแล้ว</value>
-  </string>
-  <string key="DefaultShot" >
-    <!-- 0 - Gunner's name -->
-    <!-- 1 - target name -->
-    <!-- 2 - Target's revealed name ( Target was a role) -->
-    <value >จู่ๆก็มีเสียงปืนดังขึ้น! ชาวบ้านหันไปมองเห็น {0} ถือปืนและกำลีงยืนอยู่เหนือศพของ {1} ({2})</value>
-  </string>
-  <string key="WolfWins" isgif="true" >
-    <value >หมาป่าเป็นผู้ชนะ!</value>
-  </string>
-  <string key="WolvesWin" isgif="true" >
-    <value >ทีมหมาป่าเป็นผู้ชนะ</value>
-  </string>
-  <string key="VillageWins" isgif="true" >
-    <value >ชาวบ้านเป็นผู้ชนะ!</value>
-  </string>
-  <string key="TannerWins" isgif="true" >
-    <value >โอ้ไม่นะ ! คุณศาลเตี้ยใส่ไอ้ศูนย์กลางจักรวาลนั่น! บ้าจริง....</value>
-  </string>
-  <string key="RemainingPlayersEnd">
-    <value>ผู้เล่นที่เหลืออยู่ อาชีพ และทีม:</value>
-  </string>
-  <string key="CultistVotedConvert" >
-    <!-- 0 - Voter's name -->
-    <!-- 1 - target name -->
-    <value >{0} ได้โหวตเพื่อให้ล่อลวง {1}</value>
-  </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
-    <value>{0} ได้ส่งคุณไปทำงานสกปรก และได้พยายามล่อลวง {1}... แต่โชคชะตาเล่นตลกเขาดันเป็นนักล่าลัทธินอกรีต! {0} ตายซะแล้ว!</value>
-  </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
-    <value>{0} ออกจากบ้านคุณเมื่อคืนนี้ และพร้อมที่จะล่อลวงคุณ แต่คุณเผลอฆ่าเขาโดยไม่ได้ตั้งใจพวกบ้าลัทธิตายไปอีกหนึ่ง ตอนนี้เหลืออีก {1}!</value>
-  </string>
-  <string key="CultConvertYou">
-    <value>พวกคลั่งลัทธิได้ล่อลวงคุณสำเร็จ!  ตอนนี้คุณเป็นพวกคลั่งลัทธิเหมือนกัน ทุกๆคืนคุณสามารถล่อลวงคนอื่นมาคลั่งลัทธิได้เหมือนกันนะ</value>
-  </string>
-  <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
-    <value>ทีมคลั่งลัทธิ: {0}</value>
-  </string>
-  <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
-    <value>{0} ได้เข้าร่วมลัทธิ!</value>
-  </string>
-  <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
-    <!-- 1 - target name -->
-    <value>{0} ได้ส่งคุณไปทำงานสกปรก และได้พยายามล่อลวง {1}... แต่ดันไม่มีใครอยู่บ้าน!</value>
-  </string>
-  <string key="CultWins" isgif="true">
-    <value >หมาป่าทุกตัวตายหมดแล้ว และทุกคนที่เหลืออยู่คือลัทธิแห่งความสุข ดูเหมือนชัยชนะจะตกเป็นของลัทธิ!</value>
-  </string>
-  <string key="HunterVisitDead">
-    <!-- 0 - target name -->
-    <value>คุณพยายามจะล่า {0}, แต่น่าเสียดายดูเหมือนเขาจะตายไปซะแล้ว!</value>
-  </string>
-  <string key="HunterFindCultist">
-    <!-- 0 - target name -->
-    <value>คุณไปที่บ้านของ {0} และพยายามดูว่าพวกเขากำลังสวดมนต์แปลกๆมี่ไม่ใช่คำลองคลองธรรมของหมู่บ้านนี้หรือเปล่า เจ้าพวกลัทธินอกรีต!</value>
-  </string>
-  <!-- 0 - target name -->
-  <string key="HunterFailedToFind">
-    <value>คุณไปที่บ้านของ {0} แต่ไม่ได้มีอะไรประหลาด คุณกลับบ้าน และเข้าใจว่า {0} ไม่ได้เป็นพวกคลั่งลัทธิประหลาดๆ</value>
-  </string>
-  <string key="WildChildToWolves">
-    <!-- 0 - Werechild's name -->
-    <value>{0} รุ่นพี่ได้ตายลง!  ด้วยความโกรธ ทำให้เขากลายเป็นหมาป่าแทน!</value>
-  </string>
-  <string key="WildChildTransform">
-    <!-- 0 - role's name -->
-    <!-- 0 - teamate's names -->
-    <value>{0} ได้ตาย! ด้วยความโกรธของคุณ คุณจึงกลายเป็นหมาป่าแทน เพื่อนร่วมทีมของคุณคือ: {1}</value>
-  </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
-  <string key="Villager">
-    <value>ชาวบ้าน 👱</value>
-  </string>
-  <string key="Drunk">
-    <value>คนขี้เมา 🍻</value>
-  </string>
-  <string key="Harlot">
-    <value>โสเภณี 💋</value>
-  </string>
-  <string key="Seer">
-    <value>หมอดู 👳</value>
-  </string>
-  <string key="Traitor">
-    <value>คนทรยศ 🖕</value>
-  </string>
-  <string key="GuardianAngel">
-    <value>เทวดาผู้พิทักษ์ 👼</value>
-  </string>
-  <string key="Detective">
-    <value>ยอดนักสืบ</value>
-  </string>
-  <string key="Wolf">
-    <value>หมาป่า 🐺</value>
-  </string>
-  <string key="Cursed">
-    <value>เด็กต้องสาป 😾</value>
-  </string>
-  <string key="Gunner">
-    <value>มือปืน 🔫</value>
-  </string>
-  <string key="Tanner">
-    <value>ศูนย์กลางของจักรวาล 👺</value>
-  </string>
-  <string key="Fool">
-    <value>คนโง่ 🃏</value>
-  </string>
-  <string key="WildChild">
-    <value>รุ่นน้อง 👶</value>
-  </string>
-  <string key="Beholder">
-    <value>ผู้มองเห็น 👁</value>
-  </string>
-  <string key="ApprenticeSeer">
-    <value>ลูกศิษย์ของหมอดู 🙇</value>
-  </string>
-  <string key="Cultist">
-    <value>พวกคลั่งลัทธิ 👤</value>
-  </string>
-  <string key="CultistHunter">
-    <value>นักล่าลัทธินอกรีต 💂</value>
-  </string>
-  <!-- These are for the player list -->
-  <string key="RanAway">
-    <value>วิ่งหนี</value>
-  </string>
-  <string key="Dead">
-    <value>💀 ตาย</value>
-  </string>
-  <string key="Alive">
-    <value>🙂 มีชีวิต</value>
-  </string>
-  <string key="PlayersAlive">
-    <value>ผู้เล่นที่มีชีวิต</value>
-  </string>
-  <!-- New strings 4 MAY 2016-->
-  <string key="Mason">
-    <value>เมสัน 👷</value>
-  </string>
-  <string key="RoleInfoMason">
-    <value>คุณเป็นเมสัน ถ้ามีคำอื่นเป็นเมสันคุณจะรู้ว่าเขาคือใคร ยังไงก็ตามคุณเป็นชาวบ้านนะ</value>
-  </string>
-  <string key="MasonEaten">
-    <!-- 0 - dead man's name -->
-    <value>เมื่อตื่นขึ้น มีคนพบร่างของ {0} เป็นชิ้นๆ เลือดสาดกระเซนไปทั่ว เมสันของคุณคนนึงตาย!</value>
-  </string>
-  <string key="MasonTeam">
-    <value>  เมสันมี: {0}</value>
-  </string>
-  <!-- new strings May 6 2016-->
-  <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
-    <value>สมาชิกใหม่ของคุณตรงไปที่บ้านของ {0} เพื่อโน้มนาว แต่สิ่งแรกที่พบคือเลือดจำนวนมาก และขนของหมาป่า</value>
-  </string>
-  <string key="GuardBlockedWolf">
-    <!-- 0 - target's name -->
-    <value>ฝูงหมาป่าได้ตรงไปที่บ้านของ {0} เพื่ออาหารอันโอชะ (ไม่ใช่จานโอชา) แต่น่าเสียดายเทวดาฟันน้ำนมปกป้องเขาอยู่และคุณก็ต้องล่าถอยไป</value>
-  </string>
-  <!-- new strings May 9 2016-->
-  <string key="CultUnableToConvert">
-    <!-- 0 - newest  -->
-    <!-- 1 - target's name -->
-    <value>คุณส่ง {0} เพื่อโน้มนาว {1} ยังไงก็ตามดูเหมือนความเชื่อของเขาจะสูงเกินไป คุณชักชวนเขาไม่สำเร็จนะ</value>
-  </string>
-  <!-- new string May 12 2016-->
-  <string key="NameExists">
-    <!-- 0 - target's name -->
-    <!-- 1 - name -->
-    <value>@{1}, ผู้เล่นชื่อ {0} ได้เข้าร่วมแล้ว ดูเหมือนจะมีชื่อซ่ำให้เลือกชื่ออื่นนะ</value>
-  </string>
-  <string key="HarlotDiscoverCult">
-    <!-- 0 - target's name -->
-    <value>คุณได้เข้าไปที่บ้านของ {0} เพื่อหาความสุขนิดหน่อย… แต่คุณก็ออกไปหลังจากที่เห็นอะไรแปลกๆ อีกมุมห้องนึง พวกเขากำลังบูชาอะไรบางอย่างที่มัน...ไม่ใช่...เรื่องปกติแน่ๆ</value>
-  </string>
-  <!-- new string May 13 2016-->
-  <string key="Was">
-    <value>เคย</value>
-  </string>
-  <string key="GenericDeathNoReveal">
-    <!-- 0 - Dead's name -->
-    <value>ทุกคนตื่นขึ้นมาในตอนเช้าและพบว่า {0} ไม่ได้อยู่ในบ้านแล้ว...   พวกเขาเข้าไปในบ้านและพบชิ้นส่วนที่เหลืออยู่ของ {0}</value>
-    <value>พวกเขาพบชิ้นส่วนที่เหลืออยู่ของ {0} หลังจากตายไปเมื่อคืน...</value>
-  </string>
-  <string key="MasonConverted">
-    <!-- 0 - mason's name -->
-    <value>แปลก.... {0} ไม่ได้แสดงตัวในการประชุมเมสันเมื่อเช้านี้...</value>
-  </string>
-  <!-- new string May 16 2016-->
-  <string key="FleeDisabled">
-    <value>การหนีระหว่างเกมถูกปิดไว้โดยผู้ดูแลระบบ!</value>
-  </string>
-  <string key="IsDead">
-    <!-- used when gunner shoots a player -->
-    <value>ได้ตาย</value>
-  </string>
-
-  <!-- MORE STRINGS May 16, 2016 -->
-  <string key="AdminAdded">
-    <!-- 0 - target's name -->
-    <value>{0} ถูกเพิ่มลงในรายชื่อผู้ดูแลระบบ ใช้ /config เพื่อเปลี่ยนการตั้งค่า</value>
-  </string>
-  <string key="AlreadyInGame">
-    <!-- 0 - target's name -->
-    <value>คุณกำลังอยู่ในเกม! ({0})</value>
-  </string>
-  <string key="MultipleGames">
-    <value>กลุ่มของคุณได้เริ่มแบบหลายเกม...  ฆ่าเยอะๆ</value>
-  </string>
-  <string key="GroupQueue">
-    <!-- 0 - target's name -->
-    <!-- 1 - target's name -->
-    <value>กลุ่มของคุณกำลังรอคิวอยู่ คิวที่: {0} / {1}</value>
-  </string>
-  <string key="MaintBreak">
-    <!-- 0 - target's name -->
-    <value>ขอโทษด้วย, ตอนนี้ระบบกำลังอยู่ระหว่างการซ่อมบำรุง ยังไม่สามารถเริ่มเกมตอนนี้ได้\nรอประมาณ {0} เกมเพื่อจบ...\nไปที่ @greywolfdev เพื่อดูข้อมูลเพิ่มเติม</value>
-  </string>
-  <string key="MaxGames">
-    <!-- 0 - target's name -->
-    <!-- 1 - target's name -->
-    <value>ขอโทษด้วย, จำนวนผู้เข้าเล่นสูงสุดได้ถึงเป้า ({0}).  \nตอนนี้อยู่ในคิวที่: {1} / {1}</value>
-  </string>
-  <string key="SkipQueue">
-    <!-- 0 - target's name -->
-    <value>{0} คือกลุ่มที่แนะนำ, และข้ามการรอคิว!</value>
-  </string>
-  <string key="NoGame">
-    <value>ไม่มีเกมดำเนินอยู่.  เริ่มเกมใหม่ด้วยคำสั่ง /startgame หรือเล่นเกมแห่งความวุ่นวายด้วยคำสั่ง /startchaos</value>
-  </string>
-  <string key="GroupAdminOnly">
-    <value>คำสั่งเฉพาะผู้ดูแลระบบเท่านั้น</value>
-  </string>
-  <string key="ShuttingDown">
-    <value>หลังจบเกมนี้ ระบบจะปิดตัวเพื่อซ่อมบำรุง</value>
-  </string>
-  <string key="ShuttingDownUpdate">
-    <value>หลังจบเกมนี้ ระบบจะปิดตัวเพื่อทำการอัพเดตใหม่ (อัตโนมัติ)</value>
-  </string>
-  <string key="NullIdAdmin">
-    <value>ชื่อผู้ใช้ (USERID) มีค่าว่างเปล่า คุณแน่ใจจะส่งการร้องขอนี้จริงๆเหรอ?</value>
-  </string>
-  <string key="AlreadyAdmin">
-    <!-- 0 - target's name -->
-    <value>{0} เป็นแอดมินอยู่แล้ว!</value>
-  </string>
-  <string key="NotAdmin">
-    <!-- 0 - target's name -->
-    <value>{0} ไม่ได้เป็นแอดมิน!</value>
-  </string>
-  <string key="AdminRemoved">
-    <!-- 0 - target's name -->
-    <value>{0} ถูกลบออกจากการเป็นแอดมิน</value>
-  </string>
-  <string key="LanguageSet">
-    <!-- 0 - language's name -->
-    <value>ภาษาถูกตั้งเป็น {0}</value>
-  </string>
-  <string key="NoSeer">
-    <value>ไม่มีหมอดู!</value>
-  </string>
-  <string key="TimesUp">
-    <value>หมดเวลา!</value>
-  </string>
-  <!-- new strings june 10 2016 -->
-  <string key="RoleInfoCupid">
-    <value>คุณเป็นกามเทพ ถูกส่งมาบนโลกมีเพียงแค่กางเกงใน และธนูกับลูกธนุเพียงสองอัน คุณต้องเลือกผู้เล่นสองคนเพื่อให้เขารักกันตลอดกาล ถ้าคนนึงตายไปอีกคนนึงก็จะตายตามไปเพราะความเศร้า</value>
-  </string>
-  <string key="RoleInfoDoppelganger">
-    <value>คุณคือ Doppelgänger ตำนานของคุณเป็นนิรันดร์! คุณสามารถเลือกที่จะเป็นใครก็ได้ ถ้าผู้เล่นคนนั้นตายคุณจะได้รับอาชีพของเรามาแทน!</value>
-  </string>
-  <string key="RoleInfoHunter">
-    <value>คุณเป็นนักล่าของเมือง คุณนอนไม่หลับ คุณออกสำรวจเมืองโดยเอาไรเฟิลไปด้วย ถ้าคุณตาย คุณสามารถเลือกใครตายตามไปกับคุณได้ ถ้าคุณถูกกินคุณมีโอกาสที่จะฆ่าหมาป่าไปพร้อมกับคุณ แต่คุณไม่สามารถเลือกฆ่าคนอื่นได้</value>
-  </string>
-  <string key="RoleInfoSerialKiller">
-    <value>คุณเป็นฆาตกรต่อเนื่องที่เพิ่งลี้ภัยมา เป้าหมายของคุณคือให้ทุกคนตาย ในทุกๆคืนคุณจะสามารถเก็บศพมาใส่ในคอลเล็คชั่นศพของของคุณได้</value>
-  </string>
-  <string key="CupidChosen">
-    <value>คุณถูกความรักปักหัวเข่า เอ๊ย! หัวใจ!! ความทรงจำกับ {0} จะไม่มีวันเลือนหายไปจากใจคุณ เป้าหมายของคุณคือให้คุณทั้งคู่รอดตาย ถ้าใครคนใดคนหนึ่งตาย อีกคนหนึ่งจะตรอมใจตายตาม</value>
-  </string>
-  <string key="HunterLynchedChoice">
-    <value>เจ้าพวกชาวบ้านชั้นต่ำพวกนั้นเลือกที่จะแขวนคอคุณ!! นี่คือโอกาสสุดท้าย เลือกที่จะยิงใครซักคนก่อนที่คุณจะตาย!!</value>
-  </string>
-  <string key="HunterNoChoiceLynched">
-    <value>{0} คว้าปืนของเขาในขณะที่เงื่อนกำลังแน่นขึ้น แต่น่าเสียดาย เขาคว้าไม่ทัน และตกลงไปคอหักดังแกร๊บ!! ตายในที่สุด</value>
-  </string>
-  <string key="HunterSkipChoiceLynched">
-    <value>{0} หยิบปืนออกมาและมองไปที่ผู้คน… แต่ก็ตัดสินใจไม่ได้ว่าจะยิงใคร เขาตกลงไปสู่ความตาย ยอมรับในชะตากรรมอันขมขื่น</value>
-  </string>
-  <string key="HunterKilledFinalLynched">
-    <!-- 0 - hunter's name -->
-    <!-- 1 - target's name -->
-    <!-- 2 - target's role -->
-    <value>เงื่อนกำลังแน่นขึ้นเรื่อยๆ!! {0} รีบหยิบปืนออกมา เล็ง และยิง {1} พอดีกับที่ประตูกลเปิดออก!! {1} ล้มลงและตายคาที่  {2}</value>
-  </string>
-  <string key="HunterShotChoice">
-    <value>คุณถูกฆาตกรรม!! ในวาระสุดท้ายนี้ คุณมีโอกาสเลือกที่จะยิงคนหนึ่งคน!! เร็วเข้า!!</value>
-  </string>
-  <string key="HunterNoChoiceShot">
-    <!-- 0 - target's name -->
-    <value>{0} ถูกทำร้ายเป็นแผลฉกรรจ์มาก!! มากเสียจนไม่สามารถเอื้อมมือไปหยิบปืนพกได้ และนอนจมกองเลือดในที่สุด...</value>
-  </string>
-  <string key="HunterSkipChoiceShot">
-    <!-- 0 - hunter's name -->
-    <value>ขณะ {0} ล้มลงไปกองกับพื้น หายใจเฮือกสุดท้าย แต่เขาก็ไม่สามารถตัดสินใจได้ว่าจะยิงใครและยอมรับชะตากรรมอันขมขื่นไปในที่สุด</value>
-  </string>
-  <string key="HunterKilledFinalShot">
-    <!-- 0 - hunter -->
-    <!-- 1 - target's name -->
-    <!-- 2 - target's role -->
-    <value>ขณะที่กระสุนเจาะทะลุร่างของ {0} จนล้มลงไปบนพื้น.... เขาหยิบปืนขึ้นมาและยิงใส่ {1} ได้ทัน!! กระสุนเข้าแสกหน้า!! {2}</value>
-  </string>
-  <string key="CultConvertSerialKiller">
-    <value>{0} ย่องเข้าบ้านของ {1} แล้วเปิดประตู แต่ทันใดก็พบกับคนบ้าถือมีด!! {1} แทงมีดเข้าใส่อวัยวะของ {0} เรียงตามตัวอักษรของชื่อ พร้อมหัวเราะคิกคักไปตลอดเวลา! {0} ได้ตายลง...</value>
-  </string>
-  <string key="HunterShotWolfMulti">
-    <!-- 0 - target's name -->
-    <value>หมาป่าพยายามโจมตีนักล่าเมื่อคืน แต่นักล่าก็สามารถฆ่าหมาป่าได้ตัวนึงก่อนที่จะเขาจะตาย! {0} ได้ตายลงไป (หมาป่า)</value>
-  </string>
-  <string key="HunterShotWolf">
-    <!-- 0 - target's name -->
-    <value>หมาป่าพยายามโจมตีนักล่าเมื่อคืน แต่นักล่าก็สามารถฆ่าหมาป่าได้ {0} ด้วยปืนไรเฟิลของเขา!</value>
-  </string>
-  <string key="SerialKillerKilledWolf">
-    <value>หมาป่ากำลังจะหาของว่างกินเมื่อคืน แต่กลับไปเจอกับฆาตกรโรคจิตแทน!! {0} ถูกฆ่าในการต่อสู้ครั้งนั้น!</value>
-  </string>
-  <string key="DefaultKilled">
-    <!-- 0 - target's name -->
-    <!-- 1 - target's role -->
-    <value>ดูเป็นค่ำคืนที่แสนสงบสำหรับ {0} แต่คิดผิดซะแล้วล่ะ!!  ชาวบ้านพบกันในตอนเช้าแล้วพบกับร่างของ {0} ถูกหั่นไม่เหลือชิ้นดี แต่ตับนั้น...หายไป...  ฆาตกรต่อเนื่องลงมืออีกแล้ว!! {1}</value>
-  </string>
-  <string key="GuardBlockedKiller">
-    <!-- 0 - target's name -->
-    <value>คุณพยายามจะเก็บร่างของ {0} มาใส่คอลเล็คชั่นสะสมของคุณ แต่เทวดาฟันน้ำนมปกป้องไว้ได้! อดเลย</value>
-  </string>
-  <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - target's name -->
-    <value>กลุ่มลัทธิส่ง {0} เพื่อพยายามชักชวน {1} ให้เข้าพวก แต่เสียงปืนกลับดังขึ้น ร่างของ {0} ปลิวออกมาจากหน้าต่าง! {0} ตาย....</value>
-  </string>
-  <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - target's name -->
-    <value>กลุ่มลัทธิส่ง {0} เพื่อพยายามชักชวน {1} แต่ร่างของ {0} กลับลอยออกมานอกหน้าต่างพร้อมมีดปักอยู่ทุกส่วนของร่างกาย! นี่มันโรคจิตชัดๆ!!!! {0} ตาย....</value>
-  </string>
-  <string key="GuardKiller">
-    <value>คุณพยายามที่จะปกป้องฆาตกรต่อเนื่อง แต่พวกเขากลับแทงข้างหลังคุณถึง 89 ครั้ง! และคุณก็ตาย...</value>  </string>
-  <string key="HarlotFuckKiller">
-    <!-- 0 - target's name -->
-    <value>คุณเข้าไปที่บ้านของ {0} เพื่อหาความสนุกนิดหน่อย ทุกอย่างกำลังมันมากเลยล่ะ จนกระทั่ง {0}  หยิบมีดออกมาแล้วเริ่มแทงคุณ และหัวเราะเหมือนคนบ้า! ... รู้ตัวอีกทีคุณก็ตายซะแล้ว....</value>
-  </string>
-  <string key="DGToMason">
-    <!-- 0 - target's name -->
-    <value>ตอนนี้ Doppelganger {0} ได้กลายร่างเป็นเมสัน.... เหมือนกับคุณ!</value>
-  </string>
-  <string key="DGTransformToMason">
-    <!-- 0 - dead mason's name -->
-    <!-- 1 - mason collegues's name -->
-    <value>{0} ได้ตายลงและคุณได้กลายร่างเป็นเมสัน เพื่อนร่วมทีม (ถ้ามี) ของคุณคือ: {1}</value>
-  </string>
-  <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
-    <value>ตอนนี้ doppelganger {0} ได้กลายเป็นพวกคลั่งลัทธิ… เหมือนกับคุณ!</value>
-  </string>
-  <string key="DGTransformToCult">
-    <!-- 0 - role's name -->
-    <!-- 1 - teammates's name -->
-    <value>{0} ได้ตายลง และคุณได้กลายร่างเป็นพวกคลั่งลัทธิ เพื่อร่วมทีม (ถ้ามี) ของคุณคือ: {1}</value>
-  </string>
-  <string key="DGToWolf">
-    <!-- 0 - DG's name -->
-    <value>ตอนนี้ doppelganger {0} ได้กลายเป็นหมาป่า… เหมือนกับคุณ!</value>
-  </string>
-  <string key="DGTransformToWolf">
-    <!-- 0 - target's name -->
-    <!-- 1 - teammates's name -->
-    <value>{0} ได้ตายลง และคุณได้กลายร่างเป็นหมาป่า เพื่อร่วมทีม (ถ้ามี) ของคุณคือ: {1}</value>
-  </string>
-  <string key="SerialKillerWins" isgif="true">
-    <value>ถ้าคนสุดท้ายที่ยังอยู่คือ ฆาตกรต่อเนื่อง เขาจะชนะ!</value>
-  </string>
-  <string key="AskKill">
-    <value>ใครที่คุณต้องการฆ่าคืนนี้?</value>
-  </string>
-  <string key="LoverDied">
-    <!-- 0 - dead's name -->
-    <!-- 1 - lover's name -->
-    <!-- 2 - roles -->
-    <value>ด้วยลมหายใจสุดท้ายของ {0} เราจะเห็น {1} วิ่งร้องไห้หายไป เขาคงทนไม่ได้ที่เห็นคนที่รักต้องจากไปเราพบเขาอีกทีตอนที่เขายิงตัวตาย…. {2}</value>
-  </string>
-  <string key="AskDoppelganger">
-    <value>คุณต้องการจะเป็นใครถ้าเขาตาย?</value>
-  </string>
-  <string key="AskCupid1">
-    <value>คุณต้องการให้ใครรักกัน? เลือกผู้เล่นคนแรกเลย</value>
-  </string>
-  <string key="AskCupid2">
-    <value>คุณต้องการให้ใครรักกัน? เลือกผู้เล่นคนที่สอง</value>
-  </string>
-  <string key="Hunter">
-    <value>นักล่า 🎯</value>
-  </string>
-  <string key="Cupid">
-    <value>กามเทพ 🏹</value>
-  </string>
-  <string key="SerialKiller">
-    <value>ฆาตกรต่อเนื่อง 🔪</value>
-  </string>
-  <string key="Doppelgänger">
-    <value>the Doppelgänger 🎭</value>
-  </string>
-  <string key="CupidChosen">
-    <!-- 0 - lover's name -->
-    <value>กามเทพได้ยิงศรแห่งความรักเข้าใจคุณอย่างจัง! ตอนนี้คุณรัก {0} แบบหัวปักปัวปำเข้าให้แล้ว!  ถ้าเขาตายคุณก็จะตรอมใจตายไปด้วย  ถ้าพวกคุณสามารถอยู่รอดได้จนจบเกม พวกคุณทั้งคู่จะเป็นฝ่ายชนะ</value>
-  </string>
-  <string key="NewWCRoleModel">
-    <!-- 0 - target's name -->
-    <value>คุณได้เป็นรุ่นน้อง รุ่นพี่ของคุณคือ {0}</value>
-  </string>
-  <string key="LoversWin">
-    <value>ความรักชนะทุกสิ่ง! ชัยชนะครั้งนี้จึงตกเป็นของคู่รัก!</value>
-  </string>
-  <string key="HunterKilledVisiter">
-    <!-- 0 - target's name -->
-    <!-- 1 - role -->
-    <value>ณ ใจกลางจัตุรัสกลางเมือง, ทุกคนได้พบศพของ {0}, ถูกยิงเข้าที่ลำตัวเป็นจำนวนหลายนัดด้วยกัน ดูเหมือนว่าพวกเขาพยายามที่จะย่องหนีจากนักล่า {1}</value>
-  </string>
-  <string key="CultAttempt">
-    <value>เหล่าชาวลัทธิได้พยายามหลอกล่อคุณเข้าเป็นส่วนหนึ่งกับพวกเขา แต่จิตใจของคุณนั้นเข้มแข็งพอที่จะต่อต้าน</value>
-  </string>
-  <string key="AlreadyOnWaitList">
-    <!-- 0 - target's name -->
-    <value>คุณได้ถูกเพิ่มเข้าไปในรายชื่อผู้ที่กำลังรอเล่นเกมมา {0} แล้ว</value>
-  </string>
-  <string key="AddedToWaitList">
-    <!-- 0 - target's name -->
-    <value>คุณได้ถูกเพิ่มเข้าไปในรายชื่อผู้ที่กำลังรอเล่นเกมมา {0} แล้ว  ผมจะส่งข้อความส่วนตัวไปหาเมื่อเกมต่อไปพร้อมที่จะเล่นครับ.\nสนใจดูของในร้านค้าของเราไปพลางๆ ระหว่างที่รอไหมครับ? https://teespring.com/stores/werewolf-for-telegram</value>
-  </string>
-  <string key="NotifyNewGame">
-    <!-- 0 - target's name -->
-    <value>เกมต่อไปกำลังจะเริ่มต้นขึ้นภายใน {0}</value>
-  </string>
-  <string key="SerialKillerWinsOverpower">
-    <!-- 0 - SK's name -->
-    <!-- 1 - target's name -->
-    <value>ยามรุ่งอรุณได้มาถึง, ชาวบ้านในหมู่บ้านที่เหลืออยู่เพียง 2 คน ได้เดินออกมาเผชิญหน้ากันที่ลานกลางเมือง {0} ได้ส่งสายตาอันอำมหิตมองไปยัง {1}, ยิ้มอย่างเลือดเย็น, ดึงมีดออกมา, และจัดการเข้ากับ {1}
+	</string>
+	<string key="DefaultEaten">
+	    <!-- 0 - victim name -->
+		<!-- 1 - victim role -->
+		<value>เมื่อทุกคนตื่นเช้าขึ้นมา พวกเขาได้กลิ่นประหลาดๆ จึงได้เดินตามกลิ่นแปลกๆไปและได้พบกับ ชิ้นส่วนของ {0} เป็นชิ้นเล็กๆ หัวหายไป… ง่ำๆๆ อร่อยจริงฮูว!\n{1}</value>
+	</string>
+	<string key="HunterKilledCultist">
+	    <!-- 0 - victim name -->
+		<value>มีเสียงดังมาจากบ้านของ {0} ดูเหมือนจะมีพวกชาวลัทธิประหลาดๆ โดนล่าโดยนักล่าลัทธินอกรีตซะแล้ว!</value>
+	</string>
+	<string key="NoAttack">
+		<value>ชาวบ้านตื่นมารวมตัวกันในตอนเช้า และดูเหมือนว่าคืนที่แล้ว ไม่มีอะไรเกิดขึ้น เย้!</value>
+	</string>
+	<string key="CursedBitten">
+		<value>คุณถูกฆ่าโดยหมาป่า แต่เนื่องจากคุณเป็นเด็กต้องสาป คุณจึงกลายเป็นหมาป่า!</value>
+	</string>
+	<string key="WolfTeam" deprecated="true">
+	    <!-- 0 - teammate names -->
+		<value>ทีมหมาป่าของคุณคือ: {0}</value>
+	</string>
+	<string key="CursedBittenToWolves">
+	    <!-- 0 - victim name -->
+		<value>คุณขย้ำ {0} ไปแล้ว แต่เนื่องจากเขาเป็นเด็กต้องสาป เขาจึงกลายเป็นหมาป่าไปด้วย!! ดีใจกับเพื่อนร่วมทีมคนใหม่ด้วยนะ !</value>
+	</string>
+	<string key="WolvesEatYou" isgif="true">
+		<value>ไม่นะ! หมาป่ากินคุณ งึมๆๆๆ อร่อย</value>
+	</string>
+	<string key="WolvesEatDrunk">
+	    <!-- 0 - victim name -->
+		<value>ไม่นะ! {0} เป็นคนขี้เมา! ตอนนี้คุณเมาซะแล้ว นั่นหมายความว่าคุณจะไม่สามารถโจมตีคืนพรุ่งนี้ได้...</value>
+	</string>
+	<string key="GuardWolf">
+		<value>คุณพยายามปกป้องชีวิตของหมาป่า! หมาป่ากินคุณซะแล้ว</value>
+	</string>
+	<string key="GuardSaved">
+		<!-- 0 - saved player name -->
+		<value>คุณได้ปกป้องชีวิตของ {0}!</value>
+	</string>
+	<string key="GuardNoAttack">
+	    <!-- 0 - player name -->
+		<value>{0} ไม่ได้ถูกโจมตี คุณเลยไม่ได้ทำอะไรเลยเมื่อคืนนี้</value>
+	</string>
+	<string key="GuardEmptyHouse">
+		    <!-- 0 - player name -->
+		<value>คุณไปปกป้อง {0} แต่ดันไม่อยู่บ้านนี่สิ!</value>
+	</string>
+	<string key="GuardSavedYou">
+		<value>เทวดาผู้พิทักษ์ได้ช่วยปกป้องคนเมื่อคืนนี้และเผชิญหน้ากับเหล่าหมาป่า!</value>
+	</string>
+	<string key="HarlotEaten">
+	    <!-- 0 - player name -->
+		<value>คุณโสฯ วันนี้มาเยี่ยมผิดบ้านนะ {0} ได้ถูกกินโดยหมาป่า!</value>
+	</string>
+	<string key="HarlotNotHome">
+	    <!-- 0 - player name -->
+		<value>แปลก... {0} ไม่ได้อยู่บ้าน! อดกินไปนะ...</value>
+	</string>
+	<string key="HarlotFuckWolf">
+	    <!-- 0 - player name -->
+		<value>คุณย่องไปที่บ้านของ {0} เพื่อหาความสนุกนิดหน่อย แต่ที่คุณเจอดันเป็นหมาป่า... คุณเลยถูกขย้ำ! </value>
+	</string>
+	<string key="HarlotFuckedWolfPublic">
+	    <!-- 0 - player name -->
+		<value>{0} ย่องเข้าผิดบ้านเมื่อคืน!! ร่างหื่นกามของ {0} ได้ถูกพบในสภาพถูกเสียบด้วยแท่งเหล็กที่หน้าประตูโบสถ์ น่าเศร้าเหลือเกิน :(</value>
+	</string>
+	<string key="HarlotFuckedVictimPublic">
+	    <!-- 0 - harlot name -->
+		<!-- 1 - victim name -->
+		<value>{0} ย่องเข้าบ้านของ {1} กำลังจะคลายเครียดด้วย “อะไรสนุกๆ”... แต่ทว่า!! {0} กลับพบหมาป่ากำลังกิน {1}!  หมาป่าหันมาหาและกระโดดใส่ {0} ในทันใด!!... แล้ว {0} ก็ตาย...</value>
+	</string>
+	<string key="HarlotVisitNonWolf">
+	    <!-- 0 - target name -->
+		<value>ดูเหมือนว่า {0} จะไม่ใช่หมาป่านะ เพราะเมื่อคืนนั้นมันช่างหนักหน่วงและซู่วซ่าทั้งคืน!! อู๊ยยยยส์มันส์มาก</value>
+	</string>
+	<string key="HarlotVisitYou">
+		<value>มันค่อนข้างมืดเลยมองไม่ค่อยชัด แต่คุณตื่นมากลางดึก พบว่ากำลังโดนโสเภณีขย่มอยู่ แล้วเขาก็หนีกลับไปหลังจากเสร็จสมอารมณ์หมายแล้ว</value>
+	</string>
+	<string key="DetectiveCaught">
+	    <!-- 0 - detective name -->
+		<value>คุณกำลังถูก {0} สอดรู้สอดเห็นเข้า! ไอนั่นน่าจะเป็นยอดนักสืบแน่นอน!</value>
+	</string>
+	<string key="DetectiveSnoop">
+	    <!-- 0 - target name -->
+		<!-- 1 - target role -->
+		<value>ด้วยความเก่งกาจในการสอดรู้สอดเห็นของคุณได้เปิดเผยว่า {0} คือ {1}</value>
+	</string>
+	<string key="HarlotShot">
+	    <!-- 0 - gunner's name -->
+		<!-- 1 - Harlot's name -->
+		<value>ดูเหมือนว่า {0} จะเผลอยิงคุณโสฯ ไปโดยไม่ตั้งใจ {1} ตายซะแล้ว</value>
+	</string>
+	<string key="DefaultShot">
+	    <!-- 0 - Gunner's name -->
+		<!-- 1 - target name -->
+		<!-- 2 - Target's revealed name ( Target was a role) -->
+		<value>จู่ ๆ ก็มีเสียงปืนดังขึ้น! ชาวบ้านหันไปมองเห็น {0} ถือปืนและกำลังยืนอยู่เหนือศพของ {1} ({2})</value>
+	</string>
+	<string key="WolfWins" isgif="true">
+		<value>หมาป่าเป็นผู้ชนะ!</value>
+	</string>
+	<string key="WolvesWin" isgif="true">
+		<value>ทีมหมาป่าเป็นผู้ชนะ</value>
+	</string>
+	<string key="VillageWins" isgif="true">
+		<value>ชาวบ้านเป็นผู้ชนะ!</value>
+	</string>
+	<string key="TannerWins" isgif="true">
+		<value>โอ้ไม่นะ! คุณศาลเตี้ยใส่ไอ้ศูนย์กลางจักรวาลนั่น! บ้าจริง...</value>
+	</string>
+	<string key="RemainingPlayersEnd">
+		<value>ผู้เล่นที่เหลืออยู่ อาชีพ และทีม:</value>
+	</string>
+	<string key="CultistVotedConvert">
+	    <!-- 0 - Voter's name -->
+		<!-- 1 - target name -->
+		<value>{0} ได้โหวตเพื่อให้ล่อลวง {1}</value>
+	</string>
+	<string key="CultConvertCultHunter">
+	    <!-- 0 - Yougest Cultist (killed)'s name' -->
+		<!-- 1 - CultHunter's name -->
+		<value>{0} ได้ส่งคุณไปทำงานสกปรก และได้พยายามล่อลวง {1}... แต่โชคชะตาเล่นตลก เขาดันเป็นนักล่าลัทธินอกรีต! {0} ตายซะแล้ว!</value>
+	</string>
+	<string key="CultHunterKilledCultVisit">
+	    <!-- 0 - Youngest Cultist's name -->
+		<!-- 1 - Number of cultists left -->
+		<value>{0} มาที่บ้านคุณเมื่อคืนนี้และพร้อมที่จะล่อลวงคุณ แต่คุณเผลอฆ่าเขาโดยไม่ได้ตั้งใจ พวกบ้าลัทธิตายไปอีกหนึ่ง ตอนนี้เหลืออีก {1}!</value>
+	</string>
+	<string key="CultConvertYou">
+		<value>พวกคลั่งลัทธิได้ล่อลวงคุณสำเร็จ! ตอนนี้คุณเป็นพวกคลั่งลัทธิเหมือนกัน ทุก ๆ คืนคุณสามารถล่อลวงคนอื่นมาคลั่งลัทธิได้เหมือนกันนะ</value>
+	</string>
+	<string key="CultTeam">
+	    <!-- 0 - Number of cultists -->
+		<value>ทีมคลั่งลัทธิ: {0}</value>
+	</string>
+	<string key="CultJoin">
+	    <!-- 0 - new cultist's name -->
+		<value>{0} ได้เข้าร่วมลัทธิ!</value>
+	</string>
+	<string key="CultVisitEmpty">
+	    <!-- 0 - Newest cultist's name -->
+		<!-- 1 - target name -->
+		<value>{0} ได้ส่งคุณไปทำงานสกปรก และได้พยายามล่อลวง {1}... แต่ดันไม่มีใครอยู่บ้าน!</value>
+	</string>
+	<string key="CultWins" isgif="true">
+		<value>หมาป่าทุกตัวตายหมดแล้ว และทุกคนที่เหลืออยู่คือลัทธิแห่งความสุข ดูเหมือนชัยชนะจะตกเป็นของลัทธิ!</value>
+	</string>
+	<string key="HunterVisitDead">
+	    <!-- 0 - target name -->
+		<value>คุณพยายามจะล่า {0}, แต่น่าเสียดายดูเหมือนเขาจะตายไปซะแล้ว!</value>
+	</string>
+	<string key="HunterFindCultist">
+	    <!-- 0 - target name -->
+		<value>คุณไปที่บ้านของ {0} และพบว่าพวกเขากำลังสวดมนต์แปลก ๆ ให้กับเทพเจ้าลึกลับ คุณวิ่งเข้าไปพร้อมกับเฉือนเจ้าพวกบ้าคลั่งลัทธิด้วยดาบของคุณ!</value>
+	</string>
+	<string key="HunterFailedToFind">
+	    <!-- 0 - target name -->
+		<value>คุณไปที่บ้านของ {0} แต่ไม่ได้มีเสียงสวดมนต์แปลก ๆ อะไร คุณกลับบ้าน และเข้าใจว่า {0} ไม่ได้เป็นพวกคลั่งลัทธิประหลาด ๆ</value>
+	</string>
+	<string key="WildChildToWolves">
+	    <!-- 0 - Werechild's name -->
+		<value>รุ่นพี่ของ {0} ได้ตายลง! ด้วยความโกรธแค้น ทำให้เขากลายเป็นหมาป่าแทน!</value>
+	</string>
+	<string key="WildChildTransform">
+	    <!-- 0 - role's name -->
+		<!-- 0 - teamate's names -->
+		<value>{0} ได้ตาย! ด้วยความโกรธของคุณ คุณจึงกลายเป็นหมาป่าแทน เพื่อนร่วมทีมของคุณคือ: {1}</value>
+	</string>
+	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+	<!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+	<string key="Villager">
+		<value>ชาวบ้าน 👱</value>
+	</string>
+	<string key="Drunk">
+		<value>ขี้เมา 🍻</value>
+	</string>
+	<string key="Harlot">
+		<value>โสเภณี 💋</value>
+	</string>
+	<string key="Seer">
+		<value>หมอดู 👳</value>
+	</string>
+	<string key="Traitor">
+		<value>คนทรยศ 🖕</value>
+	</string>
+	<string key="GuardianAngel">
+		<value>เทวดาผู้พิทักษ์ 👼</value>
+	</string>
+	<string key="Detective">
+		<value>ยอดนักสืบ 🕵</value>
+	</string>
+	<string key="Wolf">
+		<value>หมาป่า 🐺</value>
+	</string>
+	<string key="Cursed">
+		<value>เด็กต้องสาป 😾</value>
+	</string>
+	<string key="Gunner">
+		<value>มือปืน 🔫</value>
+	</string>
+	<string key="Tanner">
+		<value>ศูนย์กลางของจักรวาล 👺</value>
+	</string>
+	<string key="Fool">
+		<value>คนโง่ 🃏</value>
+	</string>
+	<string key="WildChild">
+		<value>รุ่นน้อง 👶</value>
+	</string>
+	<string key="Beholder">
+		<value>ผู้มองเห็น 👁</value>
+	</string>
+	<string key="ApprenticeSeer">
+		<value>ลูกศิษย์ของหมอดู 🙇</value>
+	</string>
+	<string key="Cultist">
+		<value>พวกคลั่งลัทธิ 👤</value>
+	</string>
+	<string key="CultistHunter">
+		<value>นักล่าลัทธินอกรีต 💂</value>
+	</string>
+	<!-- These are for the player list -->
+	<string key="RanAway">
+		<value>หนีไปแล้ว</value>
+	</string>
+	<string key="Dead">
+		<value>💀 ตาย</value>
+	</string>
+	<string key="Alive">
+		<value>🙂 มีชีวิต</value>
+	</string>
+	<string key="PlayersAlive">
+		<value>ผู้เล่นที่มีชีวิต</value>
+	</string>
+	<!-- New strings 4 MAY 2016-->
+	<string key="Mason">
+		<value>เมสัน 👷</value>
+	</string>
+	<string key="RoleInfoMason">
+		<value>คุณเป็นเมสัน ถ้ามีคนอื่นเป็นเมสัน คุณจะรู้ว่าเขาคือใคร ยังไงก็ตามคุณเป็นชาวบ้านนะ</value>
+	</string>
+	<string key="MasonEaten">
+	    <!-- 0 - dead man's name -->
+		<value>เมื่อตื่นขึ้น มีคนพบร่างของ {0} เป็นชิ้น ๆ เลือดสาดกระเซนไปทั่ว เมสันของคุณคนนึงเสียชีวิต!</value>
+	</string>
+	<string key="MasonTeam">
+		<value>  เมสันมี: {0}</value>
+	</string>
+	 <!-- new strings May 6 2016-->
+	<string key="CultTargetDead">
+	    <!-- 0 - Youngest cultists name -->
+		<value>สมาชิกใหม่ของคุณตรงไปที่บ้านของ {0} เพื่อโน้มน้าว แต่สิ่งแรกที่พบคือเลือดจำนวนมาก และขนของหมาป่า</value>
+	</string>
+	<string key="GuardBlockedWolf">
+	    <!-- 0 - target's name -->
+		<value>ฝูงหมาป่าได้ตรงไปที่บ้านของ {0} เพื่ออาหารอันโอชะ แต่น่าเสียดายเทวดาผู้พิทักษ์ปกป้องเขาอยู่และคุณก็ต้องล่าถอยไป</value>
+	</string>
+	<!-- new strings May 9 2016-->
+	<string key="CultUnableToConvert">
+	    <!-- 0 - newest  -->
+		<!-- 1 - target's name -->
+		<value>คุณส่ง {0} เพื่อโน้มนาว {1} ยังไงก็ตามดูเหมือนความเชื่อของเขาจะสูงเกินไป คุณชักชวนเขาไม่สำเร็จนะ :(</value>
+	</string>
+	  <!-- new string May 12 2016-->
+	<string key="NameExists">
+	    <!-- 0 - target's name -->
+		<!-- 1 - name -->
+		<value>@{1}, ผู้เล่นชื่อ {0} ได้เข้าร่วมแล้ว ดูเหมือนจะมีชื่อซ้ำให้เลือกชื่ออื่นนะ</value>
+	</string>
+	<string key="HarlotDiscoverCult">
+	    <!-- 0 - target's name -->
+		<value>คุณได้เข้าไปที่บ้านของ {0} เพื่อหาความสุขนิดหน่อย… แต่คุณก็ออกไปหลังจากที่เห็นอะไรแปลกๆ อีกมุมห้องนึง พวกเขากำลังบูชาอะไรบางอย่างที่มัน... ไม่ใช่... เรื่องปกติแน่ๆ</value>
+	</string>
+	<!-- new string May 13 2016-->
+	<string key="Was">
+		<value>เคยเป็น</value>
+	</string>
+	<string key="GenericDeathNoReveal">
+	    <!-- 0 - Dead's name -->
+		<value>ทุกคนตื่นขึ้นมาในตอนเช้าและพบว่า {0} ไม่ได้อยู่ในบ้านแล้ว... พวกเขาเข้าไปในบ้านและพบชิ้นส่วนที่เหลืออยู่ของ {0}</value>
+		<value>เมื่อชาวบ้านมารวมตัวในตอนเช้า พวกเขาพบชิ้นส่วนที่เหลืออยู่ของ {0} หลังจากตายไปเมื่อคืนด้วยอะไรซักอย่าง...</value>
+	</string>
+	<string key="MasonConverted">
+	    <!-- 0 - mason's name -->
+		<value>แปลก.... {0} ไม่ได้แสดงตัวในการประชุมเมสันเมื่อเช้านี้... O.o</value>
+	</string>
+	<!-- new string May 16 2016-->
+	<string key="FleeDisabled">
+		<value>การหนีระหว่างเกมถูกปิดไว้โดยผู้ดูแลระบบ!</value>
+	</string>
+	<string key="IsDead">
+	    <!-- used when gunner shoots a player -->
+		<value>ได้ตาย</value>
+	</string>
+	
+	<!-- MORE STRINGS May 16, 2016 -->
+	<string key="AdminAdded" deprecated="true">
+	    <!-- 0 - target's name -->
+		<value>{0} ถูกเพิ่มลงในรายชื่อผู้ดูแลระบบ ใช้ /config เพื่อเปลี่ยนการตั้งค่า</value>
+	</string>
+	<string key="AlreadyInGame">
+	    <!-- 0 - target's name -->
+		<value>คุณกำลังอยู่ในเกม! ({0})</value>
+	</string>
+	<string key="MultipleGames" deprecated="true">
+		<value>กลุ่มของคุณได้เริ่มแบบหลายเกม... ลบเกมที่เกินออกมา</value>
+	</string>
+	<string key="GroupQueue" deprecated="true">
+	    <!-- 0 - target's name -->
+		<!-- 1 - target's name -->
+		<value>กลุ่มของคุณกำลังรอคิวอยู่ คิวที่: {0} / {1}</value>
+	</string>
+	<string key="MaintBreak" deprecated="true">
+	    <!-- 0 - target's name -->
+		<value>ขอโทษด้วย, ตอนนี้ระบบกำลังอยู่ระหว่างการซ่อมบำรุง ยังไม่สามารถเริ่มเกมตอนนี้ได้\nรอประมาณ {0} เกมจบ...\nไปที่ @greywolfdev เพื่อดูข้อมูลเพิ่มเติม</value>
+	</string>
+	<string key="MaxGames" deprecated="true">
+	    <!-- 0 - target's name -->
+		<!-- 1 - target's name -->
+		<value>ขอโทษด้วย, จำนวนผู้เข้าเล่นสูงสุดได้ถึงเป้า ({0}).  \nตอนนี้อยู่ในคิวที่: {1} / {1}</value>
+	</string>
+	<string key="SkipQueue" deprecated="true">
+	    <!-- 0 - target's name -->
+		<value>{0} คือกลุ่มที่แนะนำ, และข้ามการรอคิว!</value>
+	</string>
+	<string key="NoGame">
+		<value>ไม่มีเกมดำเนินอยู่.  เริ่มเกมใหม่ด้วยคำสั่ง /startgame หรือเล่นเกมแห่งความวุ่นวายด้วยคำสั่ง /startchaos</value>
+	</string>
+	<string key="GroupAdminOnly">
+		<value>คำสั่งเฉพาะผู้ดูแลระบบเท่านั้น</value>
+	</string>
+	<string key="ShuttingDown" deprecated="true">
+		<value>หลังจบเกมนี้ ระบบจะปิดตัวเพื่อซ่อมบำรุง</value>
+	</string>
+	<string key="ShuttingDownUpdate" deprecated="true">
+		<value>หลังจบเกมนี้ ระบบจะปิดตัวชั่วครู่เพื่อทำการอัพเดตใหม่ (อัตโนมัติ)</value>
+	</string>
+	<string key="NullIdAdmin" deprecated="true">
+		<value>ชื่อผู้ใช้ (USERID) มีค่าว่างเปล่า คุณแน่ใจจะส่งการร้องขอนี้จริงๆเหรอ?</value>
+	</string>
+	<string key="AlreadyAdmin" deprecated="true">
+	    <!-- 0 - target's name -->
+		<value>{0} เป็นแอดมินอยู่แล้ว!</value>
+	</string>
+	<string key="NotAdmin" deprecated="true">
+	    <!-- 0 - target's name -->
+		<value>{0} ไม่ได้เป็นแอดมิน!</value>
+	</string>
+	<string key="AdminRemoved" deprecated="true">
+	    <!-- 0 - target's name -->
+		<value>{0} ถูกลบออกจากการเป็นแอดมิน</value>
+	</string>
+	<string key="LanguageSet" deprecated="true">
+	    <!-- 0 - language's name -->
+		<value>ภาษาถูกตั้งเป็น {0}</value>
+	</string>
+	<string key="NoSeer">
+		<value>ไม่มีหมอดู!</value>
+	</string>
+	<string key="TimesUp">
+		<value>หมดเวลา!</value>
+	</string>
+	<!-- new strings june 10 2016 -->
+	<string key="RoleInfoCupid">
+		<value>คุณเป็นกามเทพ ถูกส่งมาบนโลกมีเพียงแค่กางเกงใน และธนูกับลูกธนูเพียงสองดอก คุณต้องเลือกผู้เล่นสองคนเพื่อทำให้เขารักกันตลอดกาล ถ้าคนนึงตายไปอีกคนนึงก็จะตายตามไปเพราะความเศร้า</value>
+	</string>
+	<string key="RoleInfoDoppelganger">
+		<value>คุณคือ Doppelgänger ตำนานของคุณเป็นนิรันดร์! คุณสามารถเลือกที่จะเป็นใครก็ได้ ถ้าผู้เล่นคนนั้นตายคุณจะได้รับอาชีพของเขามาแทน!</value>
+	</string>
+	<string key="RoleInfoHunter">
+		<value>คุณเป็นนักล่าของเมือง คุณนอนไม่ค่อยหลับและจะไม่นอนโดยที่ไม่เอาไรเฟิลติดตัวไปด้วย ถ้าคุณตาย คุณสามารถเลือกใครตายตามไปกับคุณได้ ถ้าคุณถูกกิน คุณมีโอกาสที่จะฆ่าหมาป่าไปพร้อมกับคุณ แต่คุณไม่สามารถเลือกฆ่าคนอื่นได้</value>
+	</string>
+	<string key="RoleInfoSerialKiller">
+		<value>คุณเป็นฆาตกรต่อเนื่องที่เพิ่งลี้ภัยมา เป้าหมายของคุณคือให้ทุกคนตาย ในทุก ๆ คืนคุณจะสามารถเก็บศพมาใส่ในคอลเล็คชั่นศพของของคุณได้</value>
+	</string>
+	<string key="CupidChosen">
+		<value>คุณถูกความรักปักหัวเข่า เอ๊ย! หัวใจ!! ความทรงจำกับ {0} จะไม่มีวันเลือนหายไปจากใจคุณ เป้าหมายของคุณคือให้คุณทั้งคู่รอดตาย ถ้าใครคนใดคนหนึ่งตาย อีกคนหนึ่งจะตรอมใจตายตาม ถ้าใครคนใดคนหนึ่งชนะ อีกคนก็จะชนะด้วย</value>
+		<value>คุณถูกความรักปักหัวเข่า เอ๊ย! หัวใจ!! คุณตกหลุมรัก {0} อย่างงอหัวไม่ขึ้น! ถ้าเขาตาย คุณก็จะตรอมใจตายไปด้วย แต่ถ้าใครคนใดคนหนึ่งชนะ คุณก็จะชนะไปด้วย</value>
+	</string>
+	<string key="HunterLynchedChoice">
+		<value>เจ้าพวกชาวบ้านชั้นต่ำพวกนั้นเลือกที่จะแขวนคอคุณ!! นี่คือโอกาสสุดท้าย เลือกที่จะยิงใครซักคนก่อนที่คุณจะตาย!!</value>
+	</string>
+	<string key="HunterNoChoiceLynched">
+		<value>{0} คว้าปืนของเขาในขณะที่เงื่อนกำลังแน่นขึ้น แต่น่าเสียดาย เขาคว้าไม่ทัน และตกลงไปคอหักดังแกร๊บ!! ตายในที่สุด</value>
+	</string>
+	<string key="HunterSkipChoiceLynched">
+		<value>{0} หยิบปืนออกมาและมองไปที่ผู้คน… แต่ก็ตัดสินใจไม่ได้ว่าจะยิงใคร เขาตกลงไปสู่ความตาย ยอมรับในชะตากรรมอันขมขื่น</value>
+	</string>
+	<string key="HunterKilledFinalLynched">
+	    <!-- 0 - hunter's name -->
+		<!-- 1 - target's name -->
+		<!-- 2 - target's role -->
+		<value>เงื่อนกำลังแน่นขึ้นเรื่อยๆ!! {0} รีบหยิบปืนออกมา เล็ง และยิง {1} พอดีกับที่ประตูกลเปิดออก!! {1} ล้มลงและตายคาที่  {2}</value>
+	</string>
+	<string key="HunterShotChoice">
+		<value>คุณถูกฆาตกรรม!! ในวาระสุดท้ายนี้ คุณมีโอกาสเลือกที่จะยิงคนหนึ่งคน!! เร็วเข้า!!</value>
+	</string>
+	<string key="HunterNoChoiceShot">
+	    <!-- 0 - target's name -->
+		<value>{0} ถูกทำร้ายเป็นแผลฉกรรจ์มาก!! มากเสียจนไม่สามารถเอื้อมมือไปหยิบปืนพกได้ และนอนจมกองเลือดในที่สุด...</value>
+	</string>
+	<string key="HunterSkipChoiceShot">
+	    <!-- 0 - hunter's name -->
+		<value>ขณะที่ {0} ล้มลงไปกองกับพื้น หายใจเฮือกสุดท้าย เขาก็ไม่สามารถตัดสินใจได้ว่าจะยิงใครและยอมรับชะตากรรมอันขมขื่นไปในที่สุด</value>
+	</string>
+	<string key="HunterKilledFinalShot">
+	    <!-- 0 - hunter -->
+		<!-- 1 - target's name -->
+		<!-- 2 - target's role -->
+		<value>ขณะที่กระสุนเจาะทะลุร่างของ {0} จนล้มลงไปบนพื้น.... เขาหยิบปืนขึ้นมาและยิงใส่ {1} ได้ทัน!! กระสุนเข้าแสกหน้า!! {2}</value>
+	</string>
+	<string key="HunterShotWolfMulti">
+	    <!-- 0 - target's name -->
+		<value>หมาป่าพยายามโจมตีนักล่าเมื่อคืน แต่นักล่าก็สามารถฆ่าหมาป่าได้ตัวนึงก่อนที่จะเขาจะตาย! {0} ได้ตายลงไป (หมาป่า)</value>
+	</string>
+	<string key="HunterShotWolf">
+	    <!-- 0 - target's name -->
+		<value>หมาป่าพยายามโจมตีนักล่าเมื่อคืน แต่นักล่าก็สามารถฆ่าหมาป่าได้ {0} ด้วยปืนไรเฟิลของเขา!</value>
+	</string>
+	<string key="SerialKillerKilledWolf">
+		<value>หมาป่ากำลังจะหาของว่างกินเมื่อคืน แต่กลับไปเจอกับฆาตกรโรคจิตแทน!! {0} ถูกฆ่าในการต่อสู้ครั้งนั้น!</value>
+	</string>
+	<string key="DefaultKilled">
+	    <!-- 0 - target's name -->
+		<!-- 1 - target's role -->
+		<value>ดูเป็นค่ำคืนที่แสนสงบสำหรับ {0} แต่คิดผิดซะแล้วล่ะ!!  ชาวบ้านพบกันในตอนเช้าแล้วพบกับร่างของ {0} ถูกหั่นไม่เหลือชิ้นดี แต่ตับนั้น...หายไป...  ฆาตกรต่อเนื่องลงมืออีกแล้ว!! {1}</value>
+	</string>
+	<string key="GuardBlockedKiller">
+	    <!-- 0 - target's name -->
+		<value>คุณพยายามจะเก็บร่างของ {0} มาใส่คอลเล็คชั่นสะสมของคุณ แต่เทวดาฟันน้ำนมปกป้องไว้ได้! อดเลย</value>
+	</string>
+	<string key="CultConvertHunter">
+	    <!-- 0 - Youngest Cultist's name -->
+		<!-- 1 - target's name -->
+		<value>กลุ่มลัทธิส่ง {0} เพื่อพยายามชักชวน {1} ให้เข้าพวก แต่เสียงปืนกลับดังขึ้น ร่างของ {0} ปลิวออกมาจากหน้าต่าง! {0} ตาย....</value>
+	</string>
+	<string key="CultConvertSerialKiller">
+	    <!-- 0 - Youngest Cultist's name -->
+		<!-- 1 - target's name -->
+		<value>กลุ่มลัทธิส่ง {0} เพื่อพยายามชักชวน {1} แต่ร่างของ {0} กลับลอยออกมานอกหน้าต่างพร้อมมีดปักอยู่ทุกส่วนของร่างกาย! นี่มันโรคจิตชัดๆ!!!! {0} ตาย....</value>
+		<value>{0} ย่องเข้าบ้านของ {1} แล้วเปิดประตู แต่ทันใดก็พบกับคนบ้าถือมีด!! {1} แทงมีดเข้าใส่อวัยวะของ {0} เรียงตามตัวอักษรของชื่อ พร้อมหัวเราะคิกคักไปตลอดเวลา! {0} ได้ตายลง...</value>
+	</string>
+	<string key="GuardKiller">
+		<value>คุณพยายามที่จะปกป้องฆาตกรต่อเนื่อง แต่พวกเขากลับแทงข้างหลังคุณถึง 89 ครั้ง! และคุณก็ตาย...</value>
+	</string>
+	<string key="HarlotFuckKiller">
+	    <!-- 0 - target's name -->
+		<value>คุณเข้าไปที่บ้านของ {0} เพื่อหาความสนุกนิดหน่อย ทุกอย่างกำลังมันมากเลยล่ะ จนกระทั่ง {0}  หยิบมีดออกมาแล้วเริ่มแทงคุณ และหัวเราะเหมือนคนบ้า! ... รู้ตัวอีกทีคุณก็ตายซะแล้ว....</value>
+	</string>
+	<string key="HarlotFuckKillerPublic">
+		<value>ชาวบ้านได้พบร่างของ {0} นอนตายใจกลางเมืองในสภาพเปลือยกายและมีรอยแทงหลายจุด {0} ได้ตายด้วยความฟินแล้ว</value>
+	</string>
+	<string key="DGToMason">
+	    <!-- 0 - target's name -->
+		<value>ตอนนี้ Doppelganger {0} ได้กลายร่างเป็นเมสัน... เหมือนกับคุณ!</value>
+	</string>
+	<string key="DGTransformToMason">
+	    <!-- 0 - dead mason's name -->
+		<!-- 1 - mason collegues's name -->
+		<value>{0} ได้ตายลงและคุณได้กลายร่างเป็นเมสัน เพื่อนร่วมทีม (ถ้ามี) ของคุณคือ: {1}</value>
+	</string>
+	<string key="DGToCult">
+	    <!-- 0 - new cultist's name -->
+		<value>ตอนนี้ doppelganger {0} ได้กลายเป็นพวกคลั่งลัทธิ… เหมือนกับคุณ!</value>
+	</string>
+	<string key="DGTransformToCult">
+	    <!-- 0 - role's name -->
+		<!-- 1 - teammates's name -->
+		<value>{0} ได้ตายลง และคุณได้กลายร่างเป็นพวกคลั่งลัทธิ เพื่อร่วมทีม (ถ้ามี) ของคุณคือ: {1}</value>
+	</string>
+	<string key="DGToWolf" isgif="true">
+	    <!-- 0 - DG's name -->
+		<value>ตอนนี้ doppelganger {0} ได้กลายเป็นหมาป่า… เหมือนกับคุณ!</value>
+	</string>
+	<string key="DGTransformToWolf">
+	    <!-- 0 - target's name -->
+		<!-- 1 - teammates's name -->
+		<value>{0} ได้ตายลง และคุณได้กลายร่างเป็นหมาป่า เพื่อร่วมทีม (ถ้ามี) ของคุณคือ: {1}</value>
+	</string>
+	<string key="SerialKillerWins"  isgif="true">
+		<value>ถ้าคนสุดท้ายที่ยังอยู่คือ ฆาตกรต่อเนื่อง เขาจะชนะ!</value>
+	</string>
+	<string key="AskKill">
+		<value>ใครที่คุณต้องการฆ่าคืนนี้?</value>
+	</string>
+	<string key="LoverDied">
+	    <!-- 0 - dead's name -->
+		<!-- 1 - lover's name -->
+		<!-- 2 - roles -->
+		<value>ด้วยลมหายใจสุดท้ายของ {0} เราเห็น {1} วิ่งร้องไห้หายไป เขาคงทนไม่ได้ที่เห็นคนที่รักต้องจากไปเราพบเขาอีกทีตอนที่เขายิงตัวตาย…. {2}</value>
+	</string>
+	<string key="AskDoppelganger">
+		<value>คุณต้องการจะเป็นใครถ้าเขาตาย?</value>
+	</string>
+	<string key="AskCupid1">
+		<value>คุณต้องการให้ใครรักกัน? เลือกผู้เล่นคนแรกเลย</value>
+	</string>
+	<string key="AskCupid2">
+		<value>คุณต้องการให้ใครรักกัน? เลือกผู้เล่นคนที่สอง</value>
+	</string>
+	<string key="Hunter">
+		<value>นักล่า 🎯</value>
+	</string>
+	<string key="Cupid">
+		<value>กามเทพ 🏹</value>
+	</string>
+	<string key="SerialKiller">
+		<value>ฆาตกรต่อเนื่อง 🔪</value>
+	</string>
+	<string key="Doppelgänger">
+		<value>the Doppelgänger 🎭</value>
+	</string>
+	<string key="NewWCRoleModel">
+	    <!-- 0 - target's name -->
+		<value>คุณได้เป็นรุ่นน้อง รุ่นพี่ของคุณคือ {0}</value>
+	</string>
+	<string key="LoversWin">
+		<value>ความรักชนะทุกสิ่ง! ชัยชนะครั้งนี้จึงตกเป็นของคู่รัก!</value>
+	</string>
+	<string key="HunterKilledVisiter">
+	    <!-- 0 - target's name -->
+		<!-- 1 - role -->
+		<value>ณ ใจกลางจัตุรัสกลางเมือง, ทุกคนได้พบศพของ {0}, ถูกยิงเข้าที่ลำตัวเป็นจำนวนหลายนัดด้วยกัน ดูเหมือนว่าพวกเขาพยายามที่จะย่องหนีจากนักล่า {1}</value>
+	</string>
+	<string key="CultAttempt">
+		<value>เหล่าชาวลัทธิได้พยายามหลอกล่อคุณเข้าเป็นส่วนหนึ่งกับพวกเขา แต่จิตใจของคุณนั้นเข้มแข็งพอที่จะต่อต้าน</value>
+	</string>
+	<string key="AlreadyOnWaitList">
+	    <!-- 0 - target's name -->
+		<value>คุณได้ถูกเพิ่มเข้าไปในรายชื่อผู้ที่กำลังรอเล่นเกมมา {0} แล้ว</value>
+	</string>
+	<string key="AddedToWaitList">
+	    <!-- 0 - target's name -->
+		<value>คุณได้ถูกเพิ่มเข้าไปในรายชื่อผู้ที่กำลังรอเล่นเกมมา {0} แล้ว  ผมจะส่งข้อความส่วนตัวไปหาเมื่อเกมต่อไปพร้อมที่จะเล่นครับ.\nสนใจดูของในร้านค้าของเราไปพลางๆ ระหว่างที่รอไหมครับ? https://teespring.com/stores/werewolf-for-telegram</value>
+	</string>
+	<string key="NotifyNewGame">
+	    <!-- 0 - target's name -->
+		<value>เกมต่อไปกำลังจะเริ่มต้นขึ้นภายใน {0}</value>
+	</string>
+	<string key="SerialKillerWinsOverpower" isgif="true">
+	    <!-- 0 - SK's name -->
+		<!-- 1 - target's name -->
+		<value>ยามรุ่งอรุณได้มาถึง, ชาวบ้านในหมู่บ้านที่เหลืออยู่เพียง 2 คน ได้เดินออกมาเผชิญหน้ากันที่ลานกลางเมือง {0} ได้ส่งสายตาอันอำมหิตมองไปยัง {1}, ยิ้มอย่างเลือดเย็น, ดึงมีดออกมา, และจัดการเข้ากับ {1}
 </value>
-  </string>
-  <string key="NoWinner" isgif="true">
-    <value>ทุกๆคนในหมู่บ้านได้ตายจนหมดสิ้น… ทั่วทั้งหมู่บ้านมีแต่ร่างกายที่ไร้ซึ่งวิญญาณ… ไม่มีใครเอาชนะใครได้ในรอบนี้ จะมีก็เพียงแต่แร้งกาเท่านั้น</value>
-  </string>
-  <string key="SKHunterEnd">
-    <!-- 0 - SK's name -->
-    <!-- 1 - Hunter's name -->
-    <value>เมื่อมาถึงยามที่อรุณเบิกฟ้า, {0} และ {1} เดินตรงเข้าไปในหมู่บ้าน  {0} ดึงมีดออกมา และกระโดดไปยัง {1}
-      {1} ดึงปืนออกมา พร้อมกับยิงเข้าไปที่หน้าของ {0}
-      พร้อมๆกับที่ {0} กำลังลงสู่พื้นและแทงมีดไปที่ {1}
-      ทั้งคู่ตาย, หมู่บ้านจึงว่างเปล่าไร้ซึ่งผู้คน รอบนี้ไม่มีผู้ชนะ...</value>
-  </string>
-  <string key="RoleModelChosen">
-    <!-- 0 - target's name -->
-    <value>คุณไม่สามารถตัดสินใจเลือกได้, ผู้ดูแลเกมจึงเป็นผู้ที่จะเลือกตัวเลือกให้กับคุณ: {0}</value>
-  </string>
-  <string key="Won">
-    <value>ชนะ</value>
-  </string>
-  <string key="Lost">
-    <value>แพ้</value>
-  </string>
-  <string key="IdleCount">
-    <!-- 0 - player's name -->
-    <!-- 1 - idle count -->
-    <value>ผู้เล่น {0} ถูกฆ่าเนื่องจากไม่ได้ทำการโหวตเป็นจำนวน {1} ในช่วง 24 ชั่วโมงที่ผ่านมา</value>
-  </string>
-  <!--New strings 7th of July-->
-  <string key="AboutVG">
-    <value>หน้าที่ของคุณนั้นง่ายนิดเดียว - เอาชีวิตรอดให้ได้ ในแต่ละวันคุณจะมีสิทธิที่จะโหวตเพื่อเลือกหาคนที่น่าจะเป็นหมาป่ามาแขวนคอ</value>
-  </string>
-  <string key="AboutSeer">
-    <value>คุณเป็นหมอดู หน้าที่ของคุณคือ, ในแต่ละคืนคุณจะสามารถเลือกผู้เล่นที่คุณต้องการจะทราบบทบาทของเขาได้ แต่จงทำหน้าที่นี้ให้ดี: หากคุณถูกเปิดเผยว่าเป็นหมอดูละก็ พวกมนุษย์หมาป่าไม่ไว้ชีวิตคุณอย่างแน่นอน!</value>
-  </string>
-  <string key="AboutWw">
-    <value>ถึงเวลาสนุกแล้วสิ! ในตอนกลางวันคุณจะต้องหักหลังและต้มตุ๋นเพื่อนๆของคุณ และในตอนกลางคืน คุณจะสามารถเลือกฆ่าและหม่ำผู้เล่นหนึ่งท่านได้! แต่ถ้าหากคุณเลือกฆ่า”คนเมา”คุณจะเหมาแอ๋และไม่สามารถจู่โจมใครได้ในคืนถัดไป! ถ้าคุณจู่โจม”เด็กต้องสาป”เขาจะกลายเป็นเพื่อนพ้องหมาป่าพร้อมจะบุกในคืนต่อไปกับคุณ! สู้ๆนะ!</value>
-  </string>
-  <string key="AboutHarlot">
-    <value>คุณคือโสเภณี (ที่ไม่คิดตัง) คุณจะสามารถเยี่ยมบ้านผู้เล่นท่านอื่นได้ 1 คนต่อหนึ่งคืน. หากเขาคนนั้นไม่ใช่หมาป่าคุณจะรอดและฟินในเวลาเดียวกัน. แต่ถ้าคุณไปเยี่ยมบ้านของหมาป่า, คุณจะถูกหม่ำ.และถ้าคุณเข้าไปเยี่ยมผู้เล่นที่ถูกหมาป่าจู่โจม, คุณและผู้เล่นคนนั้นจะตายทั้งคู่. และในทางกลับกันถ้าคุณกำลังเยี่ยมผู้เล่นท่านอื่นในขณะที่หมาป่าจู่โจมคุณ คุณจะรอดชีวิต(เพราะคุณไม่ได้อยู่บ้าน)</value>
-  </string>
-  <string key="AboutDrunk">
-    <value>นายเมาแล้วพวก! แม้ว่าคุณจะเป็นขี้เมา แต่คุณก็ยังคงเป็นชาวบ้านธรรมด๊าธรรมดาคนหนึ่ง. แต่! ถ้าหมาป่าเข้ามาฆ่าคุณ, พวกมันจะไม่สามารถออกล่าได้ในคืนถัดไป, เพราะพวกมันดื่มเลือดคนขี้เมาที่มีระดับแอลกอฮอล์ในเลือดสูงจนเมาไปยังไงล่ะ.</value>
-  </string>
-  <string key="AboutCursed">
-    <value>เมื่อเป็นเด็กต้องสาป, คุณจะเป็นเหมือนกับชาวบ้านทั่วๆไป …..จนกระทั่งเมื่อหมาป่าฆ่าคุณ, you คุณก็จะกลายเป็นพวกเดียวกับพวกมัน! ออกล่าให้เต็มที่ยามค่ำคืนไปเลย....</value>
-  </string>
-  <string key="AboutTraitor">
-    <value>คุณเป็นไอ้พวกหักหลังทรยศ. ถ้าคุณสามารถมีชีวิตอยู่รอดชีวิตได้จนมนุษย์หมาป่าทุกตัวถูกฆ่าตาย, คุณก็จะกลายเป็นหมาป่า, พร้อมที่จะฆ่าเหล่าผองเพื่อนเก่าของคุณได้ในยามค่ำคืน!</value>
-  </string>
-  <string key="AboutGA">
-    <value>ตอนนี้คุณได้เป็นเทวดาฟันน้ำนมแล้ว! ในยามค่ำคืน, คุณจะมีโอกาสที่จะเลือกปกป้องใครก็ได้คนหนึ่ง. แต่คุณระวังตัวไว้หน่อยก็ดีนะ - ถ้าคุณดันเผลอไปปกป้องเจ้าพวกหมาป่าเข้าละก็, คุณมีโอกาสถึง 50% ที่จะโดนพวกมันเอาชีวิต.</value>
-  </string>
-  <string key="AboutDetective">
-    <value>คุณคือยอดนักสืบ. ในแต่ละวัน, คุณมีโอกาสที่จะเลือกสอบสวนใครก็ได้หนึ่งคน. แต่ข้อควรระวังคือ มีโอกาส 40% ที่พวกหมาป่าจะรู้ว่าตัวตนที่แท้จริงของคุณคือใคร!</value>
-  </string>
-  <string key="AboutGunner">
-    <value>เหนี่ยวไกปืนกันหน่อยมั้ย? ในฐานะที่คุณคือมือปืน คุณจะได้รับลูกกระสุน 2 นั้น. ในหนึ่งวัน, คุณจะได้รับโอกาสที่จะยิงผู้เล่น 1 ท่าน. เมื่อคุณยิงผู้เล่นแล้ว ทุกคนจะรู้ทันทีว่าคุณคือมือปืน! กรุณาคิดให้ถี่ถ้วน เพราะคุณมีกระสุนแค่ 2 นัดเท่านั้น !</value>
-  </string>
-  <string key="AboutTanner">
-    <value>กฏของคนขวางโลกน่ะมันง่ายนิดเดียว: พยายามถูกจับแขวนให้ได้. ถ้าคุณโดนแขวนเข้าละก็,คุณจะได้รับชัยชนะในครั้งนี้ทันที.</value>
-  </string>
-  <string key="AboutFool">
-    <value>คุณคือคนโง่ ตั้งแต่เริ่มเกมคุณจะนึกว่าคุณคือหมอดู.... เมื่อคุณเลือกดูบทบาทของผู้เล่นใด, คุณจะได้รับคำตอบแบบสุ่ม. </value>
-  </string>
-  <string key="AboutCult">
-    <value>คุณคือพวกคลั่งลัทธิ, เป้าหมายของคุณคือชักชวนผู้เล่นทุกคน (ยกเว้นเจ้าพวกหมาป่า) ให้มาเข้าลัทธิของคุณให้ได้. ถ้าหากเกมจบลงแล้วผู้เล่นที่เหลืออยู่ทุกคนอยู่ในลัทธิของคุณ, ลัทธิของคุณจะชนะ</value>
-  </string>
-  <string key="AboutCH">
-    <value>หน้าที่ของคุณก็คือการล่าลัทธิ. ถ้าผู้คนในลัทธิโจมตีคุณ, สมาชิกที่เพิ่งเข้ามาใหม่ล่าสุดจะตาย. ในแต่ละคืนคุณจะต้องเลือกฆ่าผู้เล่น - หากเขาเป็นพวกคลั่งลัทธิ, พวกเขาจะตาย.</value>
-  </string>
-  <string key="AboutWC">
-    <value>คุณคือรุ่นน้อง(ตัวยง) ตั้งแต่เริ่มเกม, คุณจะเลือก”เซมไป”ของคุณหนึ่งคน. หาก”เซมไป”ของคุณเสียชีวิต คุณจะบ้าคลั่งและกลายเป็นหมาป่า (Sempai couldn’t notice you anymore)</value>
-  </string>
-  <string key="AboutAppS">
-    <value>คุณคือลูกศิษย์หมอดู ในตอนเริ่มเกมคุณจะเป็นเพียงชาวบ้านธรรมดา.แต่ถ้าหากหมอดูเสียชีวิต คุณจะสืบทอดเจตนารมณ์เป็นหมอดูต่อจากเขาทันที</value>
-  </string>
-  <string key="AboutBH">
-    <value>คุณคือผู้หยั่งรู้ คุณจะสามารถรู้ได้ว่าใครคือหมอดูที่แท้จริง (ตัวจริงแน่นอน ไม่ใช่คนโง่)</value>
-  </string>
-  <string key="AboutMason">
-    <value>งานของเมสันน่ะง่ายนิดเดียว - พวกเขาจะรู้อยู่แล้วว่ามีใครบ้างที่เป็นเมสันเหมือนพวกเขา. แต่นอกเหนือจากนั้น, เขาก็แค่ชาวบ้านธรรมดานั่นแหละ.</value>
-  </string>
-  <string key="AboutDG">
-    <value>
-      บรรพบุรุษของคุณมีความสามารถในการปลอมแปลงรูปร่างของตนเองให้กลายเป็นคนอื่นได้ และถึงแม้ว่าคุณจะไม่ได้มีความสามารถมากดังเช่นบรรพบุรุษ, คุณสามารถเลือกผู้เล่นได้หนึ่งคนตอนต้นเกม. หากเขาตาย, อาชีพของคุณจะเปลี่ยนไปเป็นแบบเดียวกับผู้เล่นคนดังกล่าว.
-      หมายเหตุ: ถ้าหากผู้เล่นคนดังกล่าวได้เข้าลัทธิไป, คุณจะรับเพียงอาชีพเดิมของผู้เล่นคนนั้น. ส่วนกฏข้ออื่นยังคงมีผลดังนี้: ถ้าเขาเคยเป็นรุ่นน้องและเซมไปของพวกเขาถูกฆ่าตาย. คุณจะกลายเป็นมนุษย์หมาป่าไปแทน. มิเช่นนั้น คุณก็จะได้อาชีพแบบเซมไปของพวกเขามาแทน.
-      Doppelgänger ไม่สามารถเข้าร่วมลัทธิได้ (แต่ได้หลังจากที่ doppelganger เปลี่ยนอาชีพ). คำเตือน: Doppelgänger จะไม่สามารถชนะเกมได้หากไม่ได้กลายร่าง.ถ้า Doppelgänger ยังไม่เปลี่ยนอาชีพและยังอยู่จนถึงเกมจบ เขาจะแพ้ทันที (นอกเสียจากว่าคุณจะเป็น”คู่รัก”)
+	</string>
+	<string key="NoWinner">
+		<value>ทุกๆคนในหมู่บ้านได้ตายจนหมดสิ้น… ทั่วทั้งหมู่บ้านมีแต่ร่างกายที่ไร้ซึ่งวิญญาณ… ไม่มีใครเอาชนะใครได้ในรอบนี้ จะมีก็เพียงแต่แร้งกาเท่านั้น</value>
+	</string>
+	<string key="SKHunterEnd">
+	    <!-- 0 - SK's name -->
+		<!-- 1 - Hunter's name -->
+		<value>เมื่อมาถึงยามที่อรุณเบิกฟ้า, {0} และ {1} เดินตรงเข้าไปในหมู่บ้าน  {0} ดึงมีดออกมา และกระโดดไปยัง {1}
+	{1} ดึงปืนออกมา พร้อมกับยิงเข้าไปที่หน้าของ {0}
+	พร้อมๆกับที่ {0} กำลังลงสู่พื้นและแทงมีดไปที่ {1}
+	ทั้งคู่ตาย, หมู่บ้านจึงว่างเปล่าไร้ซึ่งผู้คน รอบนี้ไม่มีผู้ชนะ...</value>
+	</string>
+	<string key="RoleModelChosen">
+	    <!-- 0 - target's name -->
+		<value>คุณไม่สามารถตัดสินใจเลือกได้, ผู้ดูแลเกมจึงเป็นผู้ที่จะเลือกตัวเลือกให้กับคุณ: {0}</value>
+	</string>
+	<string key="Won">
+		<value>ชนะ</value>
+	</string>
+	<string key="Lost">
+		<value>แพ้</value>
+	</string>
+	<string key="IdleCount">
+	    <!-- 0 - player's name -->
+		<!-- 1 - idle count -->
+		<value>ผู้เล่น {0} ถูกฆ่าเนื่องจากไม่ได้ทำการโหวตเป็นจำนวน {1} ในช่วง 24 ชั่วโมงที่ผ่านมา</value>
+	</string>
+	<!--New strings 7th of July-->
+	<!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+	For example in Mafia, AboutMason would be:
+	Caporegime 👷\nYou are a caporegime blah blah
+	-->
+	<string key="AboutVG">
+		<value>หน้าที่ของคุณนั้นง่ายนิดเดียว - เอาชีวิตรอดให้ได้ ในแต่ละวันคุณจะมีสิทธิที่จะโหวตเพื่อเลือกหาคนที่น่าจะเป็นหมาป่ามาแขวนคอ</value>
+	</string>
+	<string key="AboutSeer">
+		<value>คุณเป็นหมอดู หน้าที่ของคุณในแต่ละคืนคือคุณจะสามารถเลือกผู้เล่นที่คุณต้องการจะทราบบทบาทของเขาได้ แต่จงทำหน้าที่นี้ให้ดี: หากคุณถูกเปิดเผยว่าเป็นหมอดูละก็ พวกมนุษย์หมาป่าไม่ไว้ชีวิตคุณอย่างแน่นอน!</value>
+	</string>
+	<string key="AboutWw">
+		<value>ถึงเวลาสนุกแล้วสิ! ในตอนกลางวันคุณจะต้องหักหลังและต้มตุ๋นเพื่อนๆของคุณ และในตอนกลางคืน คุณจะสามารถเลือกฆ่าและหม่ำผู้เล่นหนึ่งท่านได้! แต่ถ้าหากคุณเลือกฆ่า ”คนเมา” คุณจะเหมาแอ๋และไม่สามารถจู่โจมใครได้ในคืนถัดไป! ถ้าคุณจู่โจม ”เด็กต้องสาป” เขาจะกลายเป็นเพื่อนพ้องหมาป่าพร้อมจะบุกในคืนต่อไปกับคุณ! สู้ๆนะ!</value>
+	</string>
+	<string key="AboutHarlot">
+		<value>คุณคือโสเภณี (ที่ไม่คิดตัง) คุณจะสามารถเยี่ยมบ้านผู้เล่นท่านอื่นได้ 1 คนต่อหนึ่งคืน หากเขาคนนั้นไม่ใช่หมาป่าคุณจะรอดและฟินในเวลาเดียวกัน. แต่ถ้าคุณไปเยี่ยมบ้านของหมาป่า, คุณจะถูกหม่ำ และถ้าคุณเข้าไปเยี่ยมผู้เล่นที่ถูกหมาป่าจู่โจม, คุณและผู้เล่นคนนั้นจะตายทั้งคู่ และในทางกลับกันถ้าคุณกำลังเยี่ยมผู้เล่นคนอื่นในขณะที่หมาป่าจู่โจมคุณ คุณจะรอดชีวิต (เพราะคุณไม่ได้อยู่บ้าน)</value>
+	</string>
+	<string key="AboutDrunk">
+		<value>นายเมาแล้วพวก! แม้ว่าคุณจะเป็นขี้เมา แต่คุณก็ยังคงเป็นชาวบ้านธรรมด๊าธรรมดาคนหนึ่ง แต่! ถ้าหมาป่าเข้ามาฆ่าคุณ พวกมันจะไม่สามารถออกล่าได้ในคืนถัดไป เพราะพวกมันดื่มเลือดคนขี้เมาที่มีระดับแอลกอฮอล์ในเลือดสูงจนเมาไปยังไงล่ะ</value>
+	</string>
+	<string key="AboutCursed">
+		<value>เมื่อเป็นเด็กต้องสาป คุณจะเป็นเหมือนกับชาวบ้านทั่วๆไป... จนกระทั่งเมื่อหมาป่าฆ่าคุณ คุณก็จะกลายเป็นพวกเดียวกับพวกมัน! ออกล่าให้เต็มที่ยามค่ำคืนไปเลย... xD</value>
+	</string>
+	<string key="AboutTraitor">
+		<value>คุณเป็นไอ้พวกหักหลังทรยศ ถ้าคุณสามารถมีชีวิตอยู่รอดชีวิตได้จนมนุษย์หมาป่าทุกตัวถูกฆ่าตาย คุณก็จะกลายเป็นหมาป่า พร้อมที่จะฆ่าเหล่าผองเพื่อนเก่าของคุณได้ในยามค่ำคืน!</value>
+	</string>
+	<string key="AboutGA">
+		<value>คุณเป็นเทวดาผู้พิทักษ์! ในยามค่ำคืน คุณจะมีโอกาสที่จะเลือกปกป้องใครก็ได้คนหนึ่ง แต่ระวังตัวไว้หน่อยก็ดี - ถ้าคุณดันเผลอไปปกป้องเจ้าพวกหมาป่าเข้าละก็ คุณมีโอกาสถึง 50% ที่จะโดนพวกมันเอาชีวิต.</value>
+	</string>
+	<string key="AboutDetective">
+		<value>คุณคือยอดนักสืบ ในแต่ละวันคุณมีโอกาสที่จะเลือกสอบสวนใครก็ได้หนึ่งคน แต่ใช้ความสามารถให้ดี ๆ เพราะจะมีโอกาส 40% ที่พวกหมาป่าจะรู้ว่าตัวตนที่แท้จริงของคุณคือใคร!</value>
+	</string>
+	<string key="AboutGunner">
+		<value>เหนี่ยวไกปืนกันหน่อยมั้ย? ในฐานะที่คุณคือมือปืน คุณจะได้รับลูกกระสุน 2 นั้น ในหนึ่งวัน คุณจะได้รับโอกาสที่จะยิงผู้เล่น 1 คน เมื่อคุณยิงผู้เล่นแล้ว ทุกคนจะรู้ทันทีว่าคุณคือมือปืน! กรุณาคิดให้ถี่ถ้วน เพราะคุณมีกระสุนแค่ 2 นัดเท่านั้น!</value>
+	</string>
+	<string key="AboutTanner">
+		<value>กฏของคนขวางโลกน่ะมันง่ายนิดเดียว: พยายามถูกจับแขวนให้ได้ ถ้าคุณโดนแขวนเข้าละก็คุณจะได้รับชัยชนะในครั้งนี้ทันที</value>
+	</string>
+	<string key="AboutFool">
+		<value>คุณคือคนโง่ ตั้งแต่เริ่มเกมคุณจะนึกว่าคุณคือหมอดู... เมื่อคุณเลือกดูบทบาทของผู้เล่นใด คุณจะได้รับคำตอบแบบสุ่ม.</value>
+	</string>
+	<string key="AboutCult">
+		<value>คุณคือพวกคลั่งลัทธิ เป้าหมายของคุณคือชักชวนผู้เล่นทุกคน (ยกเว้นเจ้าพวกหมาป่า) ให้มาเข้าลัทธิของคุณให้ได้ ถ้าหากเกมจบลงแล้วผู้เล่นที่เหลืออยู่ทุกคนอยู่ในลัทธิของคุณ ลัทธิของคุณจะชนะ</value>
+	</string>
+	<string key="AboutCH">
+		<value>หน้าที่ของคุณก็คือการล่าลัทธิ ถ้าผู้คนในลัทธิโจมตีคุณ สมาชิกที่เพิ่งเข้ามาใหม่ล่าสุดจะตาย ในแต่ละคืนคุณจะต้องเลือกฆ่าผู้เล่น - หากเขาเป็นพวกคลั่งลัทธิ พวกเขาจะตาย</value>
+	</string>
+	<string key="AboutWC">
+		<value>คุณคือรุ่นน้อง(ตัวยง) ตั้งแต่เริ่มเกม, คุณจะเลือก ”เซมไป” (รุ่นพี่) ของคุณหนึ่งคน. หาก ”เซมไป” ของคุณเสียชีวิต คุณจะบ้าคลั่งและกลายเป็นหมาป่า (Sempai couldn’t notice you anymore)</value>
+	</string>
+	<string key="AboutAppS">
+		<value>คุณคือลูกศิษย์หมอดู ในตอนเริ่มเกมคุณจะเป็นเพียงชาวบ้านธรรมดา แต่ถ้าหากหมอดูเสียชีวิต คุณจะสืบทอดเจตนารมณ์เป็นหมอดูต่อจากเขาทันที</value>
+	</string>
+	<string key="AboutBH">
+		<value>คุณคือผู้หยั่งรู้ คุณจะสามารถรู้ได้ว่าใครคือหมอดูที่แท้จริง (ตัวจริงแน่นอน ไม่ใช่คนโง่)</value>
+	</string>
+	<string key="AboutMason">
+		<value>งานของเมสันน่ะง่ายนิดเดียว - พวกเขาจะรู้อยู่แล้วว่ามีใครบ้างที่เป็นเมสันเหมือนพวกเขา แต่นอกเหนือจากนั้นเขาก็แค่ชาวบ้านธรรมดานั่นแหละ</value>
+	</string>
+	<string key="AboutDG">
+		<value>
+    บรรพบุรุษของคุณมีความสามารถในการปลอมแปลงรูปร่างของตนเองให้กลายเป็นคนอื่นได้ และถึงแม้ว่าคุณจะไม่ได้มีความสามารถมากดังเช่นบรรพบุรุษ คุณสามารถเลือกผู้เล่นได้หนึ่งคนตอนต้นเกม หากเขาตาย อาชีพของคุณจะเปลี่ยนไปเป็นแบบเดียวกับผู้เล่นคนดังกล่าว
+	หมายเหตุ: ถ้าหากผู้เล่นคนดังกล่าวได้เข้าลัทธิไป คุณจะรับเพียงอาชีพเดิมของผู้เล่นคนนั้น ส่วนกฏข้ออื่นยังคงมีผลดังนี้: ถ้าเขาเคยเป็นรุ่นน้องและเซมไปของพวกเขาถูกฆ่าตาย คุณจะกลายเป็นมนุษย์หมาป่าไปแทน มิเช่นนั้น คุณก็จะได้อาชีพแบบเซมไปของพวกเขามาแทน
+    Doppelgänger ไม่สามารถเข้าร่วมลัทธิได้ (แต่ได้หลังจากที่ doppelganger เปลี่ยนอาชีพ) คำเตือน: Doppelgänger จะไม่สามารถชนะเกมได้หากไม่ได้กลายร่าง ถ้า Doppelgänger ยังไม่เปลี่ยนอาชีพและยังอยู่จนถึงเกมจบ เขาจะแพ้ทันที (นอกเสียจากว่าคุณจะเป็น ”คู่รัก”)</value>
+	</string>
+	<string key="AboutCupid">
+		<value>
+	คุณคือกามเทพ ตั้งแต่เริ่มเกมคุณสามารถเลือกผู้เล่นได้ 2 คน ผู้เล่นทั้งคู่จะกลายเป็น ”คู่รัก”! หากหนึ่งในคู่รักเสียชีวิตลง ผู้เล่นอีกคนจะตรอมใจตายตามไปด้วย :(
+    Note: คู่รักจะรู้ว่าใครคือใคร แต่ไม่สามารถรู้อาชีพของอีกฝ่ายได้ หากคู่รักทั้งคู่มีชีวิตอยู่ถึงจบเกม ทั้งคู่จะเป็นผู้ชนะ ไม่ว่าจะอยู่ฝ่ายใด หากคู่รักอยู่คนละฝ่าย(ชาวบ้าน+หมาป่า) และคนหนึ่งชนะ(หมาป่า) คู่รักอีกท่าน(ชาวบ้าน) ก็จะชนะด้วย ถึงแม้จะอยู่กันคนละฝ่าย #LOVEWINS
     </value>
-  </string>
-  <string key="AboutCupid">
-    <value>
-      คุณคือกามเทพ.ตั้งแต่เริ่มเกมคุณสามารถเลือกผู้เล่นได้ 2 ท่าน. ผู้เล่นทั้งคู่จะกลายเป็น”คู่รัก”! หากหนึ่งในคู่รักเสียชีวิตลง ผู้เล่นอีกท่านจะตรอมใจตายตามไปด้วย :(
-      Note: คู่รักจะรู้ว่าใครคือใคร แต่ไม่สามารถรู้อาชีพของอีกฝ่ายได้. หากคู่รักทั้งคู่มีชีวิตอยู่ถึงจบเกม, ทั้งคู่จะเป็นผู้ชนะ ไม่ว่าจะอยู่ฝ่ายใด. หากคู่รักอยู่คนละฝ่าย(ชาวบ้าน+หมาป่า), และคนหนึ่งชนะ(หมาป่า), คู่รักอีกท่าน (ชาวบ้าน) ก็จะชนะด้วย ถึงแม้จะอยู่กันคนละฝ่าย. #LOVEWINS
+	</string>
+	<string key="AboutHunter">
+		<value>
+	คุณอาฆาตและชอบยิงรัวๆ ในฐานะที่เป็นนักล่า คุณพยายามมีสติอยู่ตลอด แต่ทุกครั้งที่มีคนมาเยี่ยมคุณ พวกเขาอาจได้กลับบ้านเก่าแทน เพราะคุณขวัญผวาและคว้าปืนยิงทันทีโดยไม่คิด ถ้าหมาป่าโจมตีคุณ คุณมีโอกาสที่จะยิงมันตายไปด้วย 1 ตัว หรือไม่เช่นนั้นถ้าคุณตาย คุณจะมีโอกาสยิงคนหนึ่งคนก่อนคุณตายจริงๆ
+	หมายเหตุ: สำหรับการโดนหมาป่าโจมตี มีโอกาส 30% ที่จะยิงหมาป่าได้ (และรอด) และหมาป่าทุกๆตัวที่มีมากกว่า 1 ตัว โอกาสจะเพิ่มขึ้นอีก 20% แต่ว่า ถ้ามีหมาป่าหลายตัว ต่อให้ฆ่าหมาป่าได้ คุณก็จะโดนรุมยำตายอยู่ดี
+	ถ้าเหล่าคนคลั่งลัทธิพยายามจะมาชักจูงคุณ และเขาล้มเหลว (โอกาส 50%) คุณจะมีโอกาสฆ่าพวกนี้ได้ 1 คน (โอกาส 50%)
     </value>
-  </string>
-  <string key="AboutHunter">
-    <value>
-      คุณอาฆาตและชอบยิงรัวๆ ในฐานะที่เป็นนักล่า คุณพยายามมีสติอยู่ตลอด แต่ทุกครั้งที่มีคนมาเยี่ยมคุณ พวกเขาอาจได้กลับบ้านเก่าแทน เพราะคุณขวัญผวาและคว้าปืนยิงทันทีโดยไม่คิด ถ้าหมาป่าโจมตีคุณ คุณมีโอกาสที่จะยิงมันตายไปด้วย 1 ตัว หรือไม่เช่นนั้นถ้าคุณตาย คุณจะมีโอกาสยิงคนหนึ่งคนก่อนคุณตายจริงๆ
-      หมายเหตุ: สำหรับการโดนหมาป่าโจมตี มีโอกาส 30% ที่จะยิงหมาป่าได้ (และรอด) และหมาป่าทุกๆตัวที่มีมากกว่า 1 ตัว โอกาสจะเพิ่มขึ้นอีก 20% แต่ว่า ถ้ามีหมาป่าหลายตัว ต่อให้ฆ่าหมาป่าได้ คุณก็จะโดนรุมยำตายอยู่ดี
-      ถ้าเหล่าคนคลั่งลัทธิพยายามจะมาชักจูงคุณ และเขาล้มเหลว (โอกาส 50%) คุณจะมีโอกาสฆ่าพวกนี้ได้ 1 คน (โอกาส 50%)
-    </value>
-  </string>
-  <string key="AboutSK">
-    <value>ฆาตกรต่อเนื่องเป็นผู้เล่นเดี่ยวที่อยู่ทีมตัวเองคนเดียว จะชนะได้ต้องเหลือรอดเพียงคนเดียวเท่านั้น (ยกเว้น: คู่รัก) ในการที่คุณเป็นฆาตกรต่อเนื่องคุณสามารถฆ่าใครก็ได้ ไว่าจะเป็น หมาป่า นักล่า มือปืน ชาวบ้าน หรืออะไรก็ตาม ยังไงก็ตามถ้าหมาป่าพยายามฆ่าคุณคุณจะสามารถฆ่าพวกหมาป่ากลับได้ (สุม) และมีชีวิตรอด</value>
-  </string>
-  <string key="AboutPara">
-    <value>Para เป็นนักพัฒนาคนนึงที่ชอบเห่าใส่ผู้คน อาจเพราะเขาชอบที่จะยุ่งอยู่กับพวกมนุษย์หมาป่านานไปหน่อย การยุ่งกับพวกมนุษย์หมาป่านี่ไม่ใช่ไอเดียที่ดีเลยแฮะ...</value>
-  </string>
-  <string key="EndTime">
-    <value>ความยาวเกม: {0}</value>
-  </string>
-  <!--New strings, July the 8th -->
-
-  <string key="Day">
-    <!--0 - Day -->
-    <value>วันที่ {0}</value>
-  </string>
-  <string key="NodeShutsDown">
-    <value>เกิดความผิดพลาด และ Node กำลังปิดตัวเอง :/</value>
-  </string>
-  <string key="SentPrivate">
-    <value>ผมส่งข้อความถึงคุณแล้ว</value>
-  </string>
-  <string key="StartPM">
-    <value>ช่วยส่งข้อความหาผม แล้วผมถึงจะสามารถส่งข้อความหาคุณได้ครับ: @werewolfbot</value>
-  </string>
-  <string key="PMTrue">
-    <value>ขอบคุณที่ทักผมครับ! ตอนนี้ผมสามารถส่งข้อความหาคุณได้แล้ว</value>
-  </string>
-  <string key="MustReplySmite">
-    <value>คุณต้องตอบผู้เล่นที่คุณต้องการจะตบ</value>
-  </string>
-  <string key="WhatToDo">
-    <value>อยากทำอะไรล่ะ?</value>
-  </string>
-  <string key="JoinFromGroup">
-    <value>คุณต้องเข้าร่วมเกมในกลุ่มเท่านั้น</value>
-  </string>
-  <string key="StartFromGroup">
-    <value>คุณต้องเริ่มเกมจากการสนทนาแบบกลุ่ม!</value>
-  </string>
-  <string key="PingInfo">
-    <value>เวลาที่ได้รับข้อความ: {0}\nการทำงานของ CPU อยู่ที่: {1}%\nข้อความต่อวินาที: {2}</value>
-  </string>
-  <string key="WhatLang">
-    <value>ภาษาอะไร?\nปัจจุบัน: {0}</value>
-  </string>
-  <string key="WhatVariant">
-    <value>ตัวแปรอะไร?\nปัจจุบัน: {0}</value>
-  </string>
-  <string key="LangSet">
-    <value>ภาษาถูกตั้งเป็น {0}</value>
-  </string>
-  <string key="GetLang">
-    <value>รับไฟล์ภาษาไหนล่ะ?</value>
-  </string>
-  <string key="NoNodes">
-    <value>ไม่มีโหนดไหนทำงานอยู่เลย โปรดรอสักครู่</value>
-  </string>
-  <string key="GroupCommandOnly">
-    <value>คุณค้องใช้คำสั่งนี้ในกลุ่ม</value>
-  </string>
-  <string key="NotGlobalAdmin">
-    <value>คุณไม่ใช่แอดมินสูงสุด...</value>
-  </string>
-  <string key="NotPara">
-    <value>คุณไม่ใช่ Para!</value>
-  </string>
-  <string key="Yes">
-    <value>ใช่</value>
-  </string>
-  <string key="No">
-    <value>ไม่</value>
-  </string>
-  <string key="Allow">
-    <value>ยอม</value>
-  </string>
-  <string key="Disallow">
-    <value>ไม่ยอม</value>
-  </string>
-  <string key="Show">
-    <value>แสดง</value>
-  </string>
-  <string key="Hide">
-    <value>ซ่อน</value>
-  </string>
-  <!-- Game Mode Choices-->
-  <string key="NormalOnly">
-    <value>ปกติเท่านั้น</value>
-  </string>
-  <string key="ChaosOnly">
-    <value>อลวนเท่านั้น</value>
-  </string>
-  <string key="PlayerChoice">
-    <value>ให้ผู้เล่นเลือก</value>
-  </string>
-
-  <!-- Show Roles on End Game -->
-  <string key="ShowNone">
-    <value>ไม่แสดงอะไรเลย</value>
-  </string>
-  <string key="ShowLiving">
-    <value>แสดงเฉพาะคนที่มีชีวิต</value>
-  </string>
-  <string key="ShowAll">
-    <value>แสดงทุกคน</value>
-  </string>
-
-  <string key="Cancel">
-    <value>ยกเลิก</value>
-  </string>
-  <string key="AllowFleeQ">
-    <value>คุณยอมให้มีการหนีหลังจากมีดารเริ่มเกมแล้วหรือไม่?\nโน้ต: ทุกคนสามารถหนีได้ขณะเกมกำลังเริ่ม\nปัจจุบัน: {0} ที่หนี</value>
-  </string>
-  <string key="AllowFleeA">
-    <value>{0} ที่หนี หลังเกมเริ่ม</value>
-  </string>
-  <string key="MaxPlayersQ">
-    <value>จำนวนผู้เล่นสูงสุดที่เข้าร่วมได้ที่ต้องการ?\nปัจจุบัน: {0}</value>
-  </string>
-  <string key="MaxPlayersA">
-    <value>จำนวนผู้เล่นสูงสุดตั้งไว้ที่ {0}</value>
-  </string>
-  <string key="ShowRolesDeathQ">
-    <value>ซ่อนหรือแสดงอาชีพหลังตาย?\nปัจจุบัน: {0}</value>
-  </string>
-  <string key="ShowRolesDeathA">
-    <value>อาชีพจะเป็น {0} เมื่อตาย</value>
-  </string>
-  <string key="GameModeQ">
-    <value>รูปแบบการเล่นแบบไหนที่คุณต้องการ?\nปัจจุบัน: {0}</value>
-  </string>
-  <string key="GameModeA">
-    <value>รูปแบบการเล่นถูกตั้งเป็น {0}</value>
-  </string>
-  <string key="ShowRolesEndQ">
-    <value>แสดงอาชีพหลังจบเกมหรือไม่?\nปัจจุบัน: {0}</value>
-  </string>
-  <string key="ShowRolesEndA">
-    <value>แสดงอาชีพตอนจบเกมถูกตั้งเป็น: {0}</value>
-  </string>
-  <string key="SetDayTimeQ">
-    <value>เลือกเวลาสำหรับกลางวัน (ในหน่วยวินาที) นี่จะถูกแก้ไขตามพื้นฐานของจำนวนผู้เล่น\nเวลาขั้นต่ำโดยอิงจากจำนวนผู้เล่นคือ 60 วินาที  ค่ามาตราฐานคือ: {0}\nปัจจุบัน: {1}</value>
-  </string>
-  <string key="SetDayTimeA">
-    <value>เวลาสำหรับกลางวันถูกเซตไว้ที่ {0} วินาที</value>
-  </string>
-  <string key="SetNightTimeQ">
-    <value>เลือกเวลาสำหรับช่วงกลางคืน (ในหน่วยวินาที) ค่ามาตราฐานคือ: {0}\nปัจจุบัน:{1}</value>
-  </string>
-  <string key="SetNightTimeA">
-    <value>ช่วงเวลากลางคืนถูกตั้งเป็น {0} วินาที</value>
-  </string>
-  <string key="SetLynchTimeQ">
-    <value>เลือกเวลาสำหรับการโหวตแขวนคอ (ในหน่วยวินาที) ค่ามาตราฐานคือ: {0}\nปัจจุบัน:{1}</value>
-  </string>
-  <string key="SetLynchTimeA">
-    <value>เวลาสำหรับโหวตแขวนคอถูกตั้งเป็น {0} วินาที</value>
-  </string>
-  <string key="AllowFoolQ">
-    <value>อนุญาตให้มีคนโง่หรือไม่?\nปัจจุบัน: {0}</value>
-  </string>
-  <string key="AllowFoolA">
-    <value>อาชีพคนโง่ถูกตั้งเป็น: {0}</value>
-  </string>
-  <string key="AllowTannerQ">
-    <value>อนุญาตให้มีอาชีพคนขวางโลกหรือไม่?\nปัจจุบัน: {0}</value>
-  </string>
-  <string key="AllowTannerA">
-    <value>อาชีพคนขวางโลกถูกตั้งเป็น: {0}</value>
-  </string>
-  <string key="AllowCultQ">
-    <value>อนุญาตให้มีอาชีพพวกคลั่งลัทธิหรือไม่?\nปัจจุบัน: {0}</value>
-  </string>
-  <string key="AllowCultA">
-    <value>อาชีพพวกคลั่งลัทธิถูกตั้งเป็น: {0}</value>
-  </string>
-  <string key="ThankYou">
-    <value>ขอบคุณ, ไว้เจอกันอีกนะครับ :)</value>
-  </string>
-  <string key="WhatLangGroup">
-    <value>ภาษาอะไรที่คุณกำลังหาเพื่อเล่น?</value>
-  </string>
-  <string key="HereIsList">
-    <value>นี่คือกลุ่มสำหรับ {0}:</value>
-  </string>
-  <string key="Members">
-    <value>สมาชิก</value>
-  </string>
-  <string key="StartMe">
-    <value>กรุณาเริ่มคุยกับผมแล้วผมจะได้เริ่มเกมได้</value>
-  </string>
-  <string key="PlayerNoPM">
-    <value>{0} เกิดความผิดพลาดในการเริ่มเกม และได้ถูกเอาออกจากเกม!</value>
-  </string>
-  <string key="LatestList">
-    <value>นี่คือรายชื่อล่าสุด</value>
-  </string>
-  <string key="UnableToGetList">
-    <value>ไม่สามารถรับรายชื่อได้</value>
-  </string>
-  <string key="YouJoined">
-    <value>คุณได้เข้าร่วมเกมใน {0} เรียบร้อยแล้ว</value>
-  </string>
-<string key="Ping2">
-  <value>เวลาที่ใช้ในการรับคำสั่ง: {0}</value>
-</string>
-
-<!-- Update 4.0-->
-<string key="RoleInfoMayor">
-  <value>คุณเป็นนายก ถ้าคุณโหวตแขวนคอใครเสียงจะถูกนับเป็นสองเสียงเมื่อคุณเปิดเผยตัวเองแล้ว คุณอยู่ฝั่งชาวบ้าน</value>
-</string>
-<string key="RoleInfoPrince">
-  <value>คุณเป็นเจ้าชายแสนสวยที่แอบมาอยู่ในหมู่บ้าน เพื่อหนีการสืบทอดราชบัลลังก์ ถ้าคุณถูกพวกชาวบ้านชั้นต่ำที่ไม่รู้จักบุญคุณของคุณโหวตแขวนคอคุณพวกเขาจะรู้ว่าพวกเขานั้นตัดสินใจผิด!</value>
-</string>
-<string key="RoleInfoClumsyGuy">
-  <value>คุณเป็นคนซุ่มซาม: เมื่อคุณพยายามโหวตมีโอกาส 50% ที่จะกลายเป็นว่าคุณไปโหวตคนอื่นใครก็ไม่รู้ นี่ภาระสังคม แต่ยังไงก็ตามคุณอยู่ข้างชาวบ้านนะ</value>
-</string>
-<string key="RoleInfoSorcerer">
-  <value>คุณเป็นหมอผี คุณนิยมทำปฎิสัมพันธ์กับพลังแห่งความมืดมากกว่าจะอยู่กับพวกชาวบ้านพวกนั้น ในช่วงกลางคืนคุณสามารถใช้พลังเพื่อดูว่าใครเป็นหมาป่าหรือเซียร์ คุณจะชนะก็ต่อเมื่อทีมหมาป่าชนะเท่านั้น</value>
-</string>
-<string key="RoleInfoBlacksmith">
-  <value>คุณเป็นช่างตีเหล็ก คุณมีผงเงินอยู่จำนวนนึงอยู่ซึ่งคุณสามารถใช้มันปกป้องหมู่บ้านได้ถึงหนึ่งคืน อ่อคุณเป็นแค่ชาวบ้านธรรมดาๆนะหลังจากนั้นน่ะ</value>
-</string>
-<string key="RoleInfoAlphaWolf">
-  <value>คุณเป็นจ่าฝูงหมาป่า ในขณะที่คุณยังมีชีวิตอยู่ เหยื่อที่คุณเลือกมีโอกาส 20% ที่จะได้เข้าร่วมฝูงกับคุณ</value>
-</string>
-<string key="RoleInfoWolfCub">
-  <value>คุณเป็นลูกหมาป่า ที่ถูกเลี้ยงดูโดยฝูงหมาป่า เหมือนหมาป่าตัวอื่นคุณสามารถเลือกฆ่าใครก็ได้ในแต่ล่ะคืน แต่ถ้าคุณถูกฆ่า ฝูงของคุณจะรู้สึกโกรธแค้นและออกจูโจมผู้คนถึงสองคนในคืนต่อไป แต่ยังไงคุณก็ยังตายอยู่ดีนะ</value>
-</string>
-<string key="PrinceLynched">
-  <value>เมื่อคุณพยายามจะโหวตแขวนคอในตอนนั้น {0}, เขาก็พุดขึ้นว่า “เดียว! ฉันเป็นเจ้าชายนะ! นี่คือเพชรประจำราชวงศ์ ทุกๆคืนฉันจะมีข้ารับใช้อยู่รอบๆตัวเสมอ ฉันเป็นคนเลวไม่ได้หรอกนะ!.” ดูเหมือนชาวบ้านจะเศร้าๆและต้องจ่ายภาษีเพิ่มซะแล้ว...</value>
-</string>
-<string key="SorcererOther">
-  <value>คุณพยายามตรวจสอบ {0}, แต่คุณไม่สามารถดูได้ว่าเขาเป็นใคร ดูเหมือนว่าเขาจะไม่ใช่หมาป่าหรือเซียร์หรืออะไรก็เถอะ...</value>
-</string>
-<string key="MayorReveal">
-  <value>{0} ได้เดินมาข้างหน้าที่แสดงตราของสำนักนายกรัฐมตรีที่ออกให้โดยกระทรวงมหาไทย และแสดงตรว่าเป็นนายก. หลังจากนี้การโหวตของ {0} จะถูกนับเป็นสองคะแนน</value>
-</string>
-<string key="AskMayor">
-  <value>คลิก "เปิดเผยตัว" เมื่อคุณพร้อมที่จะเปิดเผยตัวเองว่าเป็นนายก</value>
-</string>
-<string key="Reveal">
-  <value>เปิดเผยตัว</value>
-</string>
-<string key="SpreadDust">
-  <value>คุณต้องการจะสาดเศษผงเงินในวันนี้ เพื่อป้องกันหมาป่าไหม?</value>
-</string>
-<string key="BlacksmithSpreadSilver">
-  <value>วันนี้พวกเขาพบว่า {0} กำลังโปรยผงเงินไปทั่วพื้น เอาล่ะอย่างน้อยคืนนี้พวกเราก็ปลอดภัย (หมาป่าออกล่าในคืนนี้ไม่ได้)</value>
-</string>
-<string key="Mayor">
-  <value>นายกรัฐมนตรีที่มาจากการแต่งตั้ง 🎖</value>
-</string>
-<string key="Prince">
-  <value>เจ้าชาย 👑</value>
-</string>
-<string key="Sorcerer">
-  <value>หมอผี 🔮</value>
-</string>
-<string key="ClumsyGuy">
-  <value>คนซุ่มซาม 🤕</value>
-</string>
-<string key="Blacksmith">
-  <value>ช่างตีเหล็ก ⚒</value>
-</string>
-<string key="AlphaWolf">
-  <value>จ่าฝูงหมาป่า ⚡️</value>
-</string>
-<string key="WolfCub">
-  <value>ลูกหมาป่า 🐶</value>
-</string>
-<string key="PlayerBittenWolves">
-  <value>จากที่ฝูงหมาป่าเข้าจู่โจม {0}, จ่าฝูง {1} ได้หยุดทุกๆคนและได้บอกว่า {0} ควรจะเข้าร่วมฝูงของเราแทนที่จะตาย ดังนั้นทั้งฝูงจึงทิ้งให้ติดเชื้อ เขาจะกลายเป็นหมาป่าในคืนถัดไป</value>
-</string>
-<string key="PlayerBitten">
-  <value>คุณถูกหมาป่ากัด แต่จ่าฝูงได้เลือกคุณ แทนที่คุณจะถูกฆ่าคุณกลับติดเชื้อ! คุณจะกลายเป็นหมาป่าในคืนถัดไป</value>
-</string>
-<string key="BittenTurned">
-  <value>เมื่อพระอาทิตย์ตกดินร่างกายคุณเกิดการเปลี่ยนแปลง.... คุณกลายเป็นมนุษย์หมาป่าไปซะแล้ว!</value>
-</string>
-<string key="AboutMayor">
-  <value>ในการที่คุณเป็นนายก คุณเป็นชาวบ้านปกติจนกว่าคุณจะเป็นเผยตัวเอง หลังจากคุณเปิดเผยตัวเองแล้วคะแนนโหวตของคุณจะได้รับเป็นสองเท่า ซึ่งมีพลังที่จะช่วยทีมชาวบ้าน</value>
-</string>
-<string key="AboutPrince">
-  <value>เจ้าชายเป็นอาชีพสุดป๊อป ถ้าเขาถูกเลือกให้โดยแขวนคอ ความเป็นเจ้าชายที่แท้จริงจะถูกเปิดเผยและเขาจะได้ถูกแขวนคอ จะถูกฆ่าได้ต่อเมืออยู่ในช่วงกลางคืนหรือโดยนักล่าเท่านั้น</value>
-</string>
-<string key="AboutSorcerer">
-  <value>คุณจำเซียร์ผู้แสนดูนั้นได้ไหม? เอาล่ะหลังจากนี้คุณจะเป็นเซียร์ของฝั่งหมาป่าบ้าง คุณสามารถดูได้ว่าใครเป็นหมาป่าหรือเซียร์ คุณอยู่ทีมหมาป่านะ</value>
-</string>
-<string key="AboutClumsy">
-  <value>คุณเป็นคนซุ่มซาม มีโอกาส 50% ที่คุณจะโหวตพลาด...</value>
-</string>
-<string key="AboutBlacksmith">
-  <value>คุณเป็นช่างตีเหล็ก คุณมีผงเงินอยู่จำนวนนึงอยู่ซึ่งคุณสามารถใช้มันปกป้องหมู่บ้านได้ถึงหนึ่งคืน อ่อคุณเป็นแค่ชาวบ้านธรรมดาๆนะหลังจากนั้นน่ะ *ป้องกันไม่ให้หมาป่าจู่โจมได้หนึ่งคืน* 🤔
+	</string>
+	<string key="AboutSK">
+		<value>ฆาตกรต่อเนื่องเป็นผู้เล่นเดี่ยวที่อยู่ทีมตัวเองคนเดียว จะชนะได้ต้องเหลือรอดเพียงคนเดียวเท่านั้น (ยกเว้น: คู่รัก) ในการที่คุณเป็นฆาตกรต่อเนื่องคุณสามารถฆ่าใครก็ได้ ไว่าจะเป็น หมาป่า นักล่า มือปืน ชาวบ้าน หรืออะไรก็ตาม ยังไงก็ตามถ้าหมาป่าพยายามฆ่าคุณคุณจะสามารถฆ่าพวกหมาป่ากลับได้ (สุม) และมีชีวิตรอด</value>
+	</string>
+	<string key="AboutPara">
+		<value>Para เป็นนักพัฒนาคนนึงที่ชอบเห่าใส่ผู้คน อาจเพราะเขาชอบที่จะยุ่งอยู่กับพวกมนุษย์หมาป่านานไปหน่อย การยุ่งกับพวกมนุษย์หมาป่านี่ไม่ใช่ไอเดียที่ดีเลยแฮะ...</value>
+	</string>
+	<string key="EndTime">
+		<value>ความยาวเกม: {0}</value>
+	</string>
+	<!--New strings, July the 8th -->
+	
+	<string key="Day">
+	    <!--0 - Day -->
+		<value>วันที่ {0}</value>
+	</string>
+	<string key="NodeShutsDown">
+		<value>เกิดความผิดพลาด และ Node กำลังปิดตัวเอง :/</value>
+	</string>
+	<string key="SentPrivate">
+		<value>ผมส่งข้อความถึงคุณแล้ว</value>
+	</string>
+	<string key="StartPM" deprecated="true">
+		<value>ช่วยส่งข้อความหาผม แล้วผมถึงจะสามารถส่งข้อความหาคุณได้ครับ: @werewolfbot</value>
+	</string>
+	<string key="PMTrue" deprecated="true">
+		<value>ขอบคุณที่ทักผมครับ! ตอนนี้ผมสามารถส่งข้อความหาคุณได้แล้ว</value>
+	</string>
+	<string key="MustReplySmite" deprecated="true">
+		<value>คุณต้องตอบผู้เล่นที่คุณต้องการจะตบ</value>
+	</string>
+	<string key="WhatToDo">
+		<value>อยากทำอะไรล่ะ?</value>
+	</string>
+	<string key="JoinFromGroup">
+		<value>คุณต้องเข้าร่วมเกมในกลุ่มเท่านั้น</value>
+	</string>
+	<string key="StartFromGroup">
+		<value>คุณต้องเริ่มเกมจากการสนทนาแบบกลุ่ม!</value>
+	</string>
+	<string key="PingInfo">
+		<value>เวลาที่ได้รับข้อความ: {0}\nข้อความต่อวินาที: {1}</value>
+	</string>
+	<string key="WhatLang">
+		<value>ภาษาอะไร?\nปัจจุบัน: {0}</value>
+	</string>
+	<string key="WhatVariant">
+		<value>ตัวแปรอะไร?\nปัจจุบัน: {0}</value>
+	</string>
+	<string key="LangSet">
+		<value>ภาษาถูกตั้งเป็น {0}</value>
+	</string>
+	<string key="GetLang">
+		<value>รับไฟล์ภาษาไหนล่ะ?</value>
+	</string>
+	<string key="NoNodes">
+		<value>ไม่มีโหนดไหนทำงานอยู่เลย โปรดรอสักครู่</value>
+	</string>
+	<string key="GroupCommandOnly">
+		<value>คุณค้องใช้คำสั่งนี้ในกลุ่ม</value>
+	</string>
+	<string key="NotGlobalAdmin">
+		<value>คุณไม่ใช่แอดมินสูงสุด...</value>
+	</string>
+	<string key="NotPara">
+		<value>คุณไม่ใช่ Para!</value>
+	</string>
+	<string key="Yes">
+		<value>ใช่</value>
+	</string>
+	<string key="No">
+		<value>ไม่</value>
+	</string>
+	<string key="Allow">
+		<value>ยอม</value>
+	</string>
+	<string key="Disallow">
+		<value>ไม่ยอม</value>
+	</string>
+	<string key="Show">
+		<value>แสดง</value>
+	</string>
+	<string key="Hide">
+		<value>ซ่อน</value>
+	</string>
+	<!-- Game Mode Choices-->
+	<string key="NormalOnly">
+		<value>ปกติเท่านั้น</value>
+	</string>
+	<string key="ChaosOnly">
+		<value>อลวนเท่านั้น</value>
+	</string>
+	<string key="PlayerChoice">
+		<value>ให้ผู้เล่นเลือก</value>
+	</string>
+	
+	<!-- Show Roles on End Game -->
+	<string key="ShowNone">
+		<value>ไม่แสดงอะไรเลย</value>
+	</string>
+	<string key="ShowLiving">
+		<value>แสดงเฉพาะคนที่มีชีวิต</value>
+	</string>
+	<string key="ShowAll">
+		<value>แสดงทุกคน</value>
+	</string>
+	
+	<string key="Cancel">
+		<value>ยกเลิก</value>
+	</string>
+	<string key="AllowFleeQ">
+		<value>คุณยอมให้มีการหนีหลังจากมีดารเริ่มเกมแล้วหรือไม่?\nโน้ต: ทุกคนสามารถหนีได้ขณะเกมกำลังเริ่ม\nปัจจุบัน: {0} ที่หนี</value>
+	</string>
+	<string key="AllowFleeA">
+		<value>{0} ที่หนี หลังเกมเริ่ม</value>
+	</string>
+	<string key="MaxPlayersQ">
+		<value>จำนวนผู้เล่นสูงสุดที่เข้าร่วมได้ที่ต้องการ?\nปัจจุบัน: {0}</value>
+	</string>
+	<string key="MaxPlayersA">
+		<value>จำนวนผู้เล่นสูงสุดตั้งไว้ที่ {0}</value>
+	</string>
+	<string key="ShowRolesDeathQ">
+		<value>ซ่อนหรือแสดงอาชีพหลังตาย?\nปัจจุบัน: {0}</value>
+	</string>
+	<string key="ShowRolesDeathA">
+		<value>อาชีพจะเป็น {0} เมื่อตาย</value>
+	</string>
+	<string key="GameModeQ">
+		<value>รูปแบบการเล่นแบบไหนที่คุณต้องการ?\nปัจจุบัน: {0}</value>
+	</string>
+	<string key="GameModeA">
+		<value>รูปแบบการเล่นถูกตั้งเป็น {0}</value>
+	</string>
+	<string key="ShowRolesEndQ">
+		<value>แสดงอาชีพหลังจบเกมหรือไม่?\nปัจจุบัน: {0}</value>
+	</string>
+	<string key="ShowRolesEndA">
+		<value>แสดงอาชีพตอนจบเกมถูกตั้งเป็น: {0}</value>
+	</string>
+	<string key="SetDayTimeQ">
+		<value>เลือกเวลาสำหรับกลางวัน (ในหน่วยวินาที) นี่จะถูกแก้ไขตามพื้นฐานของจำนวนผู้เล่น\nเวลาขั้นต่ำโดยอิงจากจำนวนผู้เล่นคือ 60 วินาที  ค่ามาตราฐานคือ: {0}\nปัจจุบัน: {1}</value>
+	</string>
+	<string key="SetDayTimeA">
+		<value>เวลาสำหรับกลางวันถูกเซตไว้ที่ {0} วินาที</value>
+	</string>
+	<string key="SetNightTimeQ">
+		<value>เลือกเวลาสำหรับช่วงกลางคืน (ในหน่วยวินาที) ค่ามาตราฐานคือ: {0}\nปัจจุบัน:{1}</value>
+	</string>
+	<string key="SetNightTimeA">
+		<value>ช่วงเวลากลางคืนถูกตั้งเป็น {0} วินาที</value>
+	</string>
+	<string key="SetLynchTimeQ">
+		<value>เลือกเวลาสำหรับการโหวตแขวนคอ (ในหน่วยวินาที) ค่ามาตราฐานคือ: {0}\nปัจจุบัน:{1}</value>
+	</string>
+	<string key="SetLynchTimeA">
+		<value>เวลาสำหรับโหวตแขวนคอถูกตั้งเป็น {0} วินาที</value>
+	</string>
+	<string key="AllowFoolQ">
+		<value>อนุญาตให้มีคนโง่หรือไม่?\nปัจจุบัน: {0}</value>
+	</string>
+	<string key="AllowFoolA">
+		<value>อาชีพคนโง่ถูกตั้งเป็น: {0}</value>
+	</string>
+	<string key="AllowTannerQ">
+		<value>อนุญาตให้มีอาชีพคนขวางโลกหรือไม่?\nปัจจุบัน: {0}</value>
+	</string>
+	<string key="AllowTannerA">
+		<value>อาชีพคนขวางโลกถูกตั้งเป็น: {0}</value>
+	</string>
+	<string key="AllowCultQ">
+		<value>อนุญาตให้มีอาชีพพวกคลั่งลัทธิหรือไม่?\nปัจจุบัน: {0}</value>
+	</string>
+	<string key="AllowCultA">
+		<value>อาชีพพวกคลั่งลัทธิถูกตั้งเป็น: {0}</value>
+	</string>
+	<string key="EnableSecretLynchQ">
+		<value>เปิด Secret Lynch?\nCurrent: {0}</value>
+	</string>
+	<string key="EnableSecretLynchA">
+		<value>ทำการเปิด secret Lynch ตั้งค่าที่\nCurrent: {0}</value>
+	</string>
+	<string key="ThankYou">
+		<value>ขอบคุณ, ไว้เจอกันอีกนะครับ :)</value>
+	</string>
+	<string key="WhatLangGroup">
+		<value>ภาษาอะไรที่คุณกำลังหาเพื่อเล่น?</value>
+	</string>
+	<string key="HereIsList">
+		<value>นี่คือกลุ่มสำหรับ {0}:</value>
+	</string>
+	<string key="Members">
+		<value>สมาชิก</value>
+	</string>
+	<string key="StartMe">
+		<value>กรุณาเริ่มคุยกับผมแล้วผมจะได้เริ่มเกมได้</value>
+	</string>
+	<string key="PlayerNoPM">
+		<value>{0} เกิดความผิดพลาดในการเริ่มเกม และได้ถูกเอาออกจากเกม!</value>
+	</string>
+	<string key="LatestList">
+		<value>นี่คือรายชื่อล่าสุด</value>
+	</string>
+	<string key="UnableToGetList">
+		<value>ไม่สามารถรับรายชื่อได้</value>
+	</string>
+	<string key="YouJoined">
+	    <!-- 0 - Group Name -->
+		<value>คุณได้เข้าร่วมเกมใน {0} เรียบร้อยแล้ว</value>
+	</string>
+	<string key="Ping2">
+		<value>เวลาที่ใช้ในการรับคำสั่ง: {0}</value>
+	</string>
+	
+	  <!-- Update 4.0-->
+	<string key="RoleInfoMayor">
+		<value>คุณเป็นนายก ถ้าคุณโหวตแขวนคอใครเสียงจะถูกนับเป็นสองเสียงเมื่อคุณเปิดเผยตัวเองแล้ว คุณอยู่ฝั่งชาวบ้าน</value>
+	</string>
+	<string key="RoleInfoPrince">
+		<value>คุณเป็นเจ้าชายแสนสวยที่แอบมาอยู่ในหมู่บ้าน เพื่อหนีการสืบทอดราชบัลลังก์ ถ้าคุณถูกพวกชาวบ้านชั้นต่ำที่ไม่รู้จักบุญคุณของคุณโหวตแขวนคอคุณพวกเขาจะรู้ว่าพวกเขานั้นตัดสินใจผิด!</value>
+	</string>
+	<string key="RoleInfoClumsyGuy">
+		<value>คุณเป็นคนซุ่มซาม: เมื่อคุณพยายามโหวตมีโอกาส 50% ที่จะกลายเป็นว่าคุณไปโหวตคนอื่นใครก็ไม่รู้ นี่ภาระสังคม แต่ยังไงก็ตามคุณอยู่ข้างชาวบ้านนะ</value>
+	</string>
+	<string key="RoleInfoSorcerer">
+		<value>คุณเป็นหมอผี คุณนิยมทำปฎิสัมพันธ์กับพลังแห่งความมืดมากกว่าจะอยู่กับพวกชาวบ้านพวกนั้น ในช่วงกลางคืนคุณสามารถใช้พลังเพื่อดูว่าใครเป็นหมาป่าหรือเซียร์ คุณจะชนะก็ต่อเมื่อทีมหมาป่าชนะเท่านั้น</value>
+	</string>
+	<string key="RoleInfoBlacksmith">
+		<value>คุณเป็นช่างตีเหล็ก คุณมีผงเงินอยู่จำนวนนึงอยู่ซึ่งคุณสามารถใช้มันปกป้องหมู่บ้านได้ถึงหนึ่งคืน อ่อคุณเป็นแค่ชาวบ้านธรรมดาๆนะหลังจากนั้นน่ะ</value>
+	</string>
+	<string key="RoleInfoAlphaWolf">
+		<value>คุณเป็นจ่าฝูงหมาป่า ในขณะที่คุณยังมีชีวิตอยู่ เหยื่อที่คุณเลือกมีโอกาส 20% ที่จะได้เข้าร่วมฝูงกับคุณ</value>
+	</string>
+	<string key="RoleInfoWolfCub">
+		<value>คุณเป็นลูกหมาป่า ที่ถูกเลี้ยงดูโดยฝูงหมาป่า เหมือนหมาป่าตัวอื่นคุณสามารถเลือกฆ่าใครก็ได้ในแต่ล่ะคืน แต่ถ้าคุณถูกฆ่า ฝูงของคุณจะรู้สึกโกรธแค้นและออกจูโจมผู้คนถึงสองคนในคืนต่อไป แต่ยังไงคุณก็ยังตายอยู่ดีนะ</value>
+	</string>
+	<string key="PrinceLynched">
+		<value>เมื่อคุณพยายามจะโหวตแขวนคอในตอนนั้น {0}, เขาก็พุดขึ้นว่า “เดียว! ฉันเป็นเจ้าชายนะ! นี่คือเพชรประจำราชวงศ์ ทุกๆคืนฉันจะมีข้ารับใช้อยู่รอบๆตัวเสมอ ฉันเป็นคนเลวไม่ได้หรอกนะ!.” ดูเหมือนชาวบ้านจะเศร้าๆและต้องจ่ายภาษีเพิ่มซะแล้ว...</value>
+	</string>
+	<string key="SorcererOther">
+		<value>คุณพยายามตรวจสอบ {0}, แต่คุณไม่สามารถดูได้ว่าเขาเป็นใคร ดูเหมือนว่าเขาจะไม่ใช่หมาป่าหรือเซียร์หรืออะไรก็เถอะ...</value>
+	</string>
+	<string key="MayorReveal">
+		<value>{0} ได้เดินมาข้างหน้าที่แสดงตราของสำนักนายกรัฐมตรีที่ออกให้โดยกระทรวงมหาไทย และแสดงตรว่าเป็นนายก. หลังจากนี้การโหวตของ {0} จะถูกนับเป็นสองคะแนน</value>
+	</string>
+	<string key="AskMayor">
+		<value>คลิก "เปิดเผยตัว" เมื่อคุณพร้อมที่จะเปิดเผยตัวเองว่าเป็นนายก</value>
+	</string>
+	<string key="Reveal">
+		<value>เปิดเผยตัว</value>
+	</string>
+	<string key="SpreadDust">
+		<value>คุณต้องการจะสาดเศษผงเงินในวันนี้ เพื่อป้องกันหมาป่าไหม?</value>
+	</string>
+	<string key="BlacksmithSpreadSilver">
+		<value>วันนี้พวกเขาพบว่า {0} กำลังโปรยผงเงินไปทั่วพื้น เอาล่ะอย่างน้อยคืนนี้พวกเราก็ปลอดภัย (หมาป่าออกล่าในคืนนี้ไม่ได้)</value>
+	</string>
+	<string key="Mayor">
+		<value>นายกรัฐมนตรีที่มาจากการแต่งตั้ง 🎖</value>
+	</string>
+	<string key="Prince">
+		<value>เจ้าชาย 👑</value>
+	</string>
+	<string key="Sorcerer">
+		<value>หมอผี 🔮</value>
+	</string>
+	<string key="ClumsyGuy">
+		<value>คนซุ่มซาม 🤕</value>
+	</string>
+	<string key="Blacksmith">
+		<value>ช่างตีเหล็ก ⚒</value>
+	</string>
+	<string key="AlphaWolf">
+		<value>จ่าฝูงหมาป่า ⚡️</value>
+	</string>
+	<string key="WolfCub">
+		<value>ลูกหมาป่า 🐶</value>
+	</string>
+	<string key="PlayerBittenWolves">
+		<value>จากที่ฝูงหมาป่าเข้าจู่โจม {0}, จ่าฝูง {1} ได้หยุดทุกๆคนและได้บอกว่า {0} ควรจะเข้าร่วมฝูงของเราแทนที่จะตาย ดังนั้นทั้งฝูงจึงทิ้งให้ติดเชื้อ เขาจะกลายเป็นหมาป่าในคืนถัดไป</value>
+	</string>
+	<string key="PlayerBitten">
+		<value>คุณถูกหมาป่ากัด แต่จ่าฝูงได้เลือกคุณ แทนที่คุณจะถูกฆ่าคุณกลับติดเชื้อ! คุณจะกลายเป็นหมาป่าในคืนถัดไป</value>
+	</string>
+	<string key="BittenTurned">
+		<value>เมื่อพระอาทิตย์ตกดินร่างกายคุณเกิดการเปลี่ยนแปลง.... คุณกลายเป็นมนุษย์หมาป่าไปซะแล้ว!</value>
+	</string>
+	<string key="AboutMayor">
+		<value>ในการที่คุณเป็นนายก คุณเป็นชาวบ้านปกติจนกว่าคุณจะเป็นเผยตัวเอง หลังจากคุณเปิดเผยตัวเองแล้วคะแนนโหวตของคุณจะได้รับเป็นสองเท่า ซึ่งมีพลังที่จะช่วยทีมชาวบ้าน</value>
+	</string>
+	<string key="AboutPrince">
+		<value>เจ้าชายเป็นอาชีพสุดป๊อป ถ้าเขาถูกเลือกให้โดยแขวนคอ ความเป็นเจ้าชายที่แท้จริงจะถูกเปิดเผยและเขาจะได้ถูกแขวนคอ จะถูกฆ่าได้ต่อเมืออยู่ในช่วงกลางคืนหรือโดยนักล่าเท่านั้น</value>
+	</string>
+	<string key="AboutSorcerer">
+		<value>คุณจำเซียร์ผู้แสนดูนั้นได้ไหม? เอาล่ะหลังจากนี้คุณจะเป็นเซียร์ของฝั่งหมาป่าบ้าง คุณสามารถดูได้ว่าใครเป็นหมาป่าหรือเซียร์ คุณอยู่ทีมหมาป่านะ</value>
+	</string>
+	<string key="AboutClumsy">
+		<value>คุณเป็นคนซุ่มซาม มีโอกาส 50% ที่คุณจะโหวตพลาด...</value>
+	</string>
+	<string key="AboutBlacksmith">
+		<value>คุณเป็นช่างตีเหล็ก คุณมีผงเงินอยู่จำนวนนึงอยู่ซึ่งคุณสามารถใช้มันปกป้องหมู่บ้านได้ถึงหนึ่งคืน อ่อคุณเป็นแค่ชาวบ้านธรรมดาๆนะหลังจากนั้นน่ะ *ป้องกันไม่ให้หมาป่าจู่โจมได้หนึ่งคืน* 🤔
   </value>
-</string>
-<string key="AboutAlphaWolf">
-  <value>คุณเป็นจ่าฝูงหมาป่า จุดเริ่มต้นแห่งคำสาป ในขณะที่คุณยังมีชีวิตอยู่ เหยื่อที่คุณเลือกมีโอกาส 20% ที่จะได้เข้าร่วมฝูงกับคุณ</value>
-</string>
-<string key="AboutWolfCub">
-  <value>หมาาาาาา ลูกหมาาาาาาาาา น่ารักจุงงงงงงง อรั้ยยยย คุณเป็นลูกหมาป่าสุดน่ารัก ถ้าคุณตายทีมหมาป่าจะโกรธแค้นเพราะความน่ารักและไร้เดียงสาของคุณ ในคืนนั้นหมาป่าจะออกล่าสองตัว</value>
-</string>
-<!-- new strings 06 nov-->
-<string key="DGTransformToAlpha">
-  <!-- 0 - target's name -->
-  <!-- 1 - teammates's name -->
-  <value>{0} ได้ตายลงและคุณได้กลายร่างเป็นจ่าฝูงหมาป่า ทีมของคุณ (ถ้ามี) คือ: {1}</value>
-</string>
-<string key="DGTransformToWolfCub">
-  <!-- 0 - target's name -->
-  <!-- 1 - teammates's name -->
-  <value>{0} ได้ตายลง คุณได้กลายร่างเป็นลูกหมาป่า ทีมของคุณ (ถ้ามี) คือ: {1}</value>
+	</string>
+	<string key="AboutAlphaWolf">
+		<value>คุณเป็นจ่าฝูงหมาป่า จุดเริ่มต้นแห่งคำสาป ในขณะที่คุณยังมีชีวิตอยู่ เหยื่อที่คุณเลือกมีโอกาส 20% ที่จะได้เข้าร่วมฝูงกับคุณ</value>
+	</string>
+	<string key="AboutWolfCub">
+		<value>หมาาาาาา ลูกหมาาาาาาาาา น่ารักจุงงงงงงง อรั้ยยยย คุณเป็นลูกหมาป่าสุดน่ารัก ถ้าคุณตายทีมหมาป่าจะโกรธแค้นเพราะความน่ารักและไร้เดียงสาของคุณ ในคืนนั้นหมาป่าจะออกล่าสองตัว</value>
+	</string>
+	
+	 <!-- new strings 06 nov-->
+	<string key="DGTransformToAlpha">
+	    <!-- 0 - target's name -->
+		<!-- 1 - teammates's name -->
+		<value>{0} ได้ตายลงและคุณได้กลายร่างเป็นจ่าฝูงหมาป่า ทีมของคุณ (ถ้ามี) คือ: {1}</value>
+	</string>
+	<string key="DGTransformToWolfCub">
+	    <!-- 0 - target's name -->
+		<!-- 1 - teammates's name -->
+		<value>{0} ได้ตายลง คุณได้กลายร่างเป็นลูกหมาป่า ทีมของคุณ (ถ้ามี) คือ: {1}</value>
+	</string>
+	
+	<string key="VillageTeam" deprecated="true">
+		<value>ฝั่งชาวบ้าน</value>
+	</string>
+	<string key="NeutralTeam" deprecated="true">
+		<value>เป็นกลาง</value>
+	</string>
+	<string key="SerialKillerTeam" deprecated="true">
+		<value>ฆาตกรต่อเนื่อง</value>
+	</string>
+	<string key="CultTeam" deprecated="true">
+		<value>พวกคลั่งลัทธิ</value>
+	</string>
+	<string key="TannerTeam" deprecated="true">
+		<value>ไอ้ศูนย์กลางจักรวาล</value>
+	</string>
+	
+	<string key="VillageTeamEnd">
+		<value>ฝั่งชาวบ้าน</value>
+	</string>
+	<string key="NeutralTeamEnd">
+		<value>เป็นกลาง</value>
+	</string>
+	<string key="WolfTeamEnd">
+		<value>ฝั่งหมาป่า</value>
+	</string>
+	<string key="SerialKillerTeamEnd">
+		<value>ฆาตกรต่อเนื่อง</value>
+	</string>
+	<string key="CultTeamEnd">
+		<value>พวกคลั่งลัทธิ</value>
+	</string>
+	<string key="TannerTeamEnd">
+		<value>ไอ้ศูนย์กลางจักรวาล</value>
+	</string>
+	<string key="CultConvertWolf">
+		<value>พวกคลั่งลัทธิได้ส่ง {0} ไปชักชวน {1} มาเข้าร่วม แต่กลายเป็นว่าหัวของ {0} กลับลอยละลิ่วออกมาทางหน้าต่างแทน... สงสัยจัง ทำไมมันกินไม่ได้นะ... {0} ตายแล้ว</value>
+	</string>
+	
+	<string key="HarlotFuckedKilledPublic">
+	    <!-- used when Harlot visit's SK's victim, and dies -->
+		<!--{0} = Harlot name, {1} = SK's victim name-->
+		<value>{0} ได้แอบเข้าไปยังบ้านของ {1} เพื่อเตรียมพร้อมสำหรับคืนอันเร่าร้อน แต่ดันไปเจอบุคคลปริศนากำลังชำแหละเครื่องในของ {1} อยู่ ฆาตกรต่อเนื่องตัดสินใจที่จะเล่นกับ {0} ด้วย ก่อนที่จะเก็บเอาหัวใจสุดร่านไปเป็นของสะสม</value>
+	</string>
+	
+	
+	  <!--New Death Strings 05 DEC-->
+	<string key="ApprenticeSeerEaten">
+		<value>ชาวบ้านตื่นมาตอนเช้าพบชิ้นเนื้อจำนวนมากที่เหลืออยู่ของ {0} ในกองซากนั้น ชาวบ้านยังได้พบกับไพ่ทาโร่ทำนายดวงชะตาทำมือ หมอดูฝึกหัดตายซะแล้ว</value>
+	</string>
+	<string key="BlacksmithKilled">
+		<value>ดูเหมือนว่าช่างตีเหล็ก {0} จะโชคไม่ดีเอามากๆ มีดอดาแมนเทียมของสุดรักที่ {0} ทำขึ้นมา ถูกฆาตกรต่อเนื่องนำไปใช้ชำแหละร่างกายของของเขาเอง</value>
+	</string>
+	<string key="CultistKilled">
+		<value>ร่างของ {0} ถูกพบพร้อมกับธูปเทียนดอกไม้สำหรับทำพิธีกรรม ฆาตกรต่อเนื่องล่าเหยื่อของเขาอีกครั้ง ไม่ว่าเหยื่อจะนับถืออะไรก็ตาม {0} เป็นพวกคลั่งลัทธิ</value>
+	</string>
+	<string key="CupidKilled">
+		<value>รุ่งเช้าวันนี้ เหล่าชาวบ้านแทบใจสลาย เมื่อพบว่า {0} กามเทพของพวกเขา ถูกแยกส่วนออกเป็นชิ้นๆ กระจายไปทั่วบริเวณ เเต่น่าแปลกที่ชิ้นส่วนเหล่านั้น ไม่พบหัวใจอยู่เลย...</value>
+	</string>
+	<string key="DrunkKilled">
+		<value>ชาวบ้านต่างมารวมตัวกันหน้าบ้าน {0} เพื่อตำหนิเสียงร้องแหกปากเมื่อคืน แต่กลับพบว่าภายในบ้าน {0} มีมีดหักๆเล่มหนั่งเล่มปักตับ!?อยู่ แม้กระทั่งฆาตกรต่อเนื่องก็ไม่สามารถทำอะไรกับตับของชายผู้นี้ได้...</value>
+	</string>
+	<string key="GuardianAngelKilled">
+		<value>ตามปกติ {0} จะต่อกรกับฆาตกรต่อเนื่องได้อย่างง่ายดาย แต่ยังไงซะ เทวดาผู้พิทักษ์ก็มีวันเหนื่อย {0} ขอลาพักกลับสู่สวรรค์</value>
+	</string>
+	<string key="GunnerKilled">
+		<value>ดูเหมือนว่า จะมีบุคคลปริศนามาเยี่ยมบ้านของ {0} ในคืนนี้ เสียงปืนดังก้องไปทั่วทั้งหมู่บ้าน แต่สิ่งที่เหลืออยู่หลังจากเสียงปืนเงียบลง คือร่างของมือปืนที่พรุนไปด้วยกระสุน</value>
+	</string>
+	<string key="MayorKilled">
+		<value>ร่างของท่านนายก {0} ถูกพบบนโต๊ะทำงาน ขณะกำลังทำงานหามรุ่งหามค่ำ เห็นได้ชัดว่าเป็นการแก้แค้นของใครบางคน</value>
+	</string>
+	<string key="PrinceKilled">
+		<value>เสียงระฆังฉุกเฉินดังขึ้นในหมู่บ้าน เหล่าองครักษ์ต่างวิ่งตามหาเจ้าชาย {0} ที่หายไป แต่ไม่ได้ความอะไร คาดว่าคงกลายเป็นคอลเลคชั่นของฆาตกรต่อเนื่องไปซะแล้ว</value>
+		<value>องครักษ์ของ {0} เผลอหลับตอนเข้ากะเมื่อคืนนี้ เศษชื้นส่วนของเจ้าชาย {0} ถูกแขวนกระจายไปตามที่ต่างๆในพระราชวัง เมื่อฆาตกรเลือกเหยื่อแล้ว ไม่ว่าจะเป็นชนชั้นสูงขนาดไหน ก็ไม่สามารถรอดไปจากเงื้อมมือของเขาได้</value>
+	</string>
+	<string key="SeerKilled">
+		<value>ชาวบ้านตื่นขึ้นมาในตอนเช้า พบเศษเนื้อเน่าเปื่อยของ {0} ถูกชำแหละกระจายอยู่ น่าอัศจรรย์ที่ส่วนสมองถูกชำแหละออกมาเป็นอย่างดี เหมือนจะเป็นลางบอกว่าเหล่าชาวบ้านได้สูญเสียมันสมองของพวกเขาไปแล้ว {0} เคยเป็นหมอดู</value>
+	</string>
+	<string key="SorcererEaten">
+		<value>เสียงหอนออกล่าของเหล่าหมาป่าดังขึ้นแล้ว แต่ถูกเหมือนว่า จะมีความผิดพลาดเกิดขึ้น หมาป่าได้ฆ่าหนึ่งในพวกของเขาเอง หมอผี {0} ถูกฆ่า</value>
+		<value>"ข้าเป็นพันธมิตรของเจ้านะ!" เสียงร้องตะโกนดังขึ้นกลางดึก รุ่งเช้าวันถัดมา ชาวบ้านพบชิ้นส่วนศพและเศษลูกแก้วของหมอผี {0} ความหิวไม่เข้าใครออกใคร</value>
+	</string>
+	<string key="WildChildEaten">
+		<value>งั่มงั่มงั่มกรุ๊บกร๊อบ! เสียงบดเคี้ยวเนื้่อและกระดูกดังไปทั่วทั้งคืน เนื้้อนุ่มๆของรุ่นน้อง {0} กำลังถูกเหล่าหมาป่ากินเข้าไป ทิ้งไว้เพียงเศษกระดูกเล็กๆ! ชาวบ้านพากันวิจารณ์ถึงความโหดเหี้ยม ทำได้แม้กระทั่งเด็กที่ไม่มีทางสู้</value>
+	</string>
+	<string key="SerialKillerKilledCH">
+	    <!--used when CH visits SK-->
+		<value>ชาวบ้านตื่นขึ้นมาในตอนเช้า พบเศษชื้นส่วนของ นักล่าพวกนอกรีต {0} กระจายเต็มกลางเมือง (บทเรียนนี้สอนให้รู้ว่า: อย่าไปเยี่ยมบ้านฆาตกรต่อเนื่อง!)</value>
+		<value>ร่างของนักล่าพวกนอกรีต {0} ถูกพบกระจายหลายร้อยชื้นอยู่ที่ใจกลางเมือง ดูเหมือนการเชิญชวนฆาตกรต่อเนื่องมาเข้าลัทธิ จะไม่ใช่ความคิดที่ดีนัก...</value>
+	</string>
+	<string key="CultConvertWolfPublic">
+	    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+		<value>ดูเหมือนแค่มนุษย์จะไม่พอเสียแล้ว {0} อยากจะลองเผยแพร่ลัทธิไปยังเหล่าหมาป่าดูบ้าง แต่ว่าหมาป่ามองเขาเป็นอาหารแสนอร่อยแทน อ่า...อาหารส่งฟรีถึงบ้าน ดีจริงที่คืนนี้ไม่ได้ออกจากบ้านซะก่อน!</value>
+		<value>สมาชิกใหม่ไฟแรง อยากหาสมาชิกเข้ากลุ่มให้มากขึ้น จึงลองเชิญชวนหมาป่าเข้าลัทธิ ซึ่งเจ้าตัวก็อยู่บ้านพอดี กลิ่นหอมของหมูกระทะที่ติดเสื้อ {0} จากอาหารเย็น ทำให้เจ้าบ้านทนหิวไม่ไหว.... ต้องขอขอบคุณสำหรับความทุ่มเทของ {0} ที่สุดท้ายหมาป่าก็ไม่ได้มีความสนใจเข้าร่วมลัทธิใดๆ</value>
+	</string>
+	<string key="CultConvertKillerPublic">
+	    <!--used when Cultists convert the SK-->
+		<value>กลุ่มลัทธิคิดว่า พวกเขากำลังจะได้สมาชิกมาเพิ่ม แต่ผิดแล้วละ! สมาชิก {0} โดนสับละเอียดกองไว้กลางหมู่บ้าน   น่าแปลก ที่มีคัมภีร์โดนมีดปักตกอยู่ด้วย ราวกับจะบอกว่า ความเชื่อไหนเหนือกว่า</value>
+		<value>เมื่อคืน กลุ่มลัทธิพยายามจะโน้มน้าวให้ใครคนหนึ่งที่บ้ากว่าพวกเขาให้มาเข้าร่วม   สมาชิกน้องใหม่พยายามชักชวนฆาตกรต่อเนื่อง แล้วก็กลายเป็นงานศิลปะชิ้นใหม่กลางหมู่บ้าน โดยฆาตกรรังสรรค์จากเครื่องในของ {0} </value>
+	</string>
+	<string key="GAGuardedKiller">
+	    <!-- used when GA guards SK -->
+		<value>คืนนี้ {0} ทำหน้าที่อย่างขยันขันแข็ง ปกป้องชาวบ้านไม่ให้ถูกฆ่า ทว่า {0} กลับโดนฆาตกรต่อเนื่อง เด็ดปีก ถอนขน พร้อมทิ้งกระดาษแผ่นเล็กๆไว้ เขียนว่า "โทษทีนะ แต่ข้าปกป้องตัวเองได้ดีกว่าเจ้าอีก"</value>
+	</string>
+	<string key="GAGuardedWolf">
+	    <!-- used when GA guards a wolf -->
+		<value>{0} พยายามที่จะปกป้องหมาป่าเมื่อคืน ชาวบ้านตื่นขึ้นมาพบเพียงปีกของ {0} ห้อยอยู่บนหลังคาโบสถ์ เมื่อคืนนี้หมาป่ามีไก่แสนอร่อยมาเสิร์ฟฟรีถึงปากเลย เย้~</value>
+	</string>
+	
+	  <!--1vs1 finales-->
+	<string key="HunterKillsWolfEnd">
+	   <!--{0} = hunter's name, {1} = wolf's name-->
+		<value>เมื่อรู้ว่า เหลือแค่ {0} เป็นคนสุดท้าย {1} พยายามที่จะเขมือบ {0} แต่ด้วยทักษะทางกลยุทธ์และความหวาดระแวงเกินมนุษย์มนา สิ่งที่เหลืออยู่ คือ ศพพร้อมรูกระสุน 2 นัดเจาะเข้าที่ลำตัว และผู้เหลือรอดคนสุดท้าย: นักล่าผู้กำชัยมาให้หมู่บ้าน!</value>
+	</string>
+	<string key="WolfKillsHunterEnd">
+	    <!--{0} = hunter's name, {1} = wolf's name-->
+		<value>เมื่อรู้ว่า เหลือแค่ {0} เป็นคนสุดท้าย {1} เลือกที่จะรอเวลาที่ความระแวดระวังของ {0} ลดต่ำสุด การกำจัดชาวบ้านคนสุดท้ายดูจะเป็นงานหวานหมูของ {1} เมื่อสิ่งที่เหลืออยู่ในที่สุด คือ ร่างเละเป็นชิ้นๆ ของนักล่า {1} พร้อมรอยเล็บพาดบนใบหน้า</value>
+	</string>
+	<string key="CHKillsCultistEnd">
+	    <!--{0} = last cultist's name, {1} = CH's name -->
+		<value>{1} และ {0} ก้าวออกมาในรุ่งสาง   เมื่อเห็นกางเขนส่องประกายออกมาจากคอของ {0} แล้ว {1} ผู้ผดุงความยุติธรรมชักดาบออกมาเป็นครั้งสุดท้าย และจบบัญชีกับลัทธิเผยแพร่คำสอนที่ถูกบิดเบือน ที่สร้างรอยด่างพร้อยให้หมู่บ้านมานาน</value>
+	</string>
+	
+	  <!-- Extend time -->
+	<string key="SecondsAdded">
+	    <!-- 0 - Seconds added by /extend command -->
+		<!-- 1 - Total seconds remaining -->
+		<value>เวลาเข้าร่วมเพิ่มขึ้นโดย {0} seconds!\n{1} ออกจากเกม</value>
+	</string>
+	<string key="SecondsRemoved">
+	    <!-- 0 - Seconds removed by /extend command -->
+		<!-- 1 - Total seconds remaining -->
+		<value>เวลาเข้าร่วมลดลงโดย {0} seconds!\n{1} ออกจากเกม</value>
+	</string>
+	<string key="CantExtend">
+		<value>ผู้ดูแลระบบเท่านั้นสามารถขยายเวลาได้!</value>
+	</string>
+	<string key="AllowExtendQ">
+	    <!--{0} = "Allow" / "Disallow" string-->
+		<value>เปิดให้ผู้เล่นขยายเวลาในการเข้าร่วมเกมหรือไม่?\nCurrent: {0} extending\nNote: ผู้ดูแลสามารถขยายเวลาได้</value>
+	</string>
+	<string key="AllowExtendA">
+	    <!--{0} = "Allow" / "Disallow" string-->
+		<value>{0} ผูู้เล่นสามารถขยายเวลาเข้าร่วมเกมได้</value>
+	</string>
+	<string key="MaxExtendQ">
+		<value>เลือกเวลาสูงสุดที่สามารถให้ผู้เล่นได้เข้าร่วมเกมนี้ /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+	</string>
+	<string key="MaxExtendA">
+		<value>เพิ่มเวลาสูงสุดเป็น {0} seconds</value>
+	</string>
+	<string key="WolvesEatDrunkBlockSecondKill">
+		<value>ไม่นะ! {0} เป็นขี้เมา! ตอนนี้คุณเมาจากร่างกายของขี้เมาและจะโจมตีไม่ได้ {1}...</value>
+	</string>
+	<string key="JoinButton">
+		<value>เข้าร่วม</value>
+	</string>
+	<string key="NotMember">
+		<value>คุณไม่สามารถเข้าร่วมเกมนี้ได้เพราะคุณไม่ได้เป็นสมาชิกของ {0}</value>
+	</string>
+	<string key="JoinByButton">
+		<value>กรุณาอย่าใช้คำสั่งกดเข้าเกม กดปุ่มเอาสิโว๊ะ!!!</value>
+	</string>
+	<string key="PlayerVoteCounts">
+		<value>{0} ผู้เล่นได้โหวต, {1} ทั้งหมด.</value>
+	</string>
+	<string key="NoAutoJoin">
+		<value>{0}, อย่าลืมว่าคุณสามารถเข้าร่วมเกมได้ด้วยการกดปุ่มเข้าร่วม</value>
+	</string>
+	<string key="GroupNotFound">
+	    <!--This string might need rewording from some native speaker-->
+		<value>ไม่สามารถหากลุ่มเจอได้ โปรดพิมพ์คำสั่งในกลุ่มที่คุณต้องหยุดรอ หรือเพิ่มลิ้งค์ id หรือ username หลังคำสั่ง</value>
+	</string>
+	<string key="DeletedFromWaitList">
+		<value>คุณถูกลบจากรายชื่อรอเข้าเล่น {0}</value>
+	</string>
+	<string key="HaveJoined">
+	    <!-- {0} = list of people who have joined -->
+		<!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+		<value>{0} เข้าร่วมเกมใน 30 วินาทีนี้</value>
+	</string>
+	<string key="AllowCult">
+		<value>อนุญาตให้มีลัทธิในเกม</value>
+	</string>
+	<string key="AllowTanner">
+		<value>อนุญาตให้มีศูนย์กลางจักรวาลในเกม</value>
+	</string>
+	<string key="AllowFool">
+		<value>อนุญาตให้มีคนโง่ในเกม</value>
+	</string>
+	<string key="EnableSecretLynch">
+		<value>เปิิด Secret Lynch</value>
+	</string>
+	<string key="RandomMode">
+		<value>เปิดการ Random Mode</value>
+	</string>
+	<string key="AllowExtend">
+		<value>อนุญาตให้เพิ่มเวลา</value>
+	</string>
+	<string key="ShowRolesDeath">
+		<value>แสดงบทบาทตอนตาย</value>
+	</string>
+	<string key="AllowFlee">
+		<value>อนุญาตให้หนีได้</value>
+	</string>
+	<string key="ShowIDs">
+		<value>แสดง IDs ตอนเข้าร่วมเกม</value>
+	</string>
+	<string key="ShowIDsQ">
+		<value>แสดง IDs ของผู้เล่นเมื่อพวกเขาเข้าร่วมเกม?\nCurrent: {0}</value>
+	</string>
+	<string key="ShowIDsA">
+		<value>{0} IDs</value>
+	</string>
+	
+	<string key="All">
+		<!-- used when searching for groups in all the variants -->
+		<value>ทั้งหมด</value>
+	</string>
+	<string key="RandomModeQ">
+		<value>เปิดการ Random mode?\nเมื่อ random mode เปิดขึ้น Chaos, Secret Lynch, การแสดงอาชีพตอนตาย และการเปิดปิดอาชีพลัทธิ / คนโง่ / ศูนย์กลางของจักรวาล จะถูกสุ่มทุกครั้งที่เกมเริ่ม\nCurrent:{0}</value>
+	</string>
+	<string key="RandomModeA">
+		<value>เปิดการ random mode ตั้งค่าที่: {0}</value>
+	</string>
+	
+	<string key="AllowNSFW">
+		<value>อนุญาตให้ใช้ NSFW Gif Packs แฮ่กๆ</value>
+	</string>
+	<string key="AllowNSFWQ">
+		<value>อนุญาตให้ใช้ NSFW Gif Packs หรือไม่?\nCurrent: {0}</value>
+	</string>
+	<string key="AllowNSFWA">
+		<value>{0} NSFW Gifs</value>
+	</string>
+	
+	<string key="TannerEnd">
+	    <!-- 0 - Tanner name -->
+		<value>ยามที่ดวงอาทิตย์สาดแสงลงมาที่หมูบ้าน {0} ตื่นขึ้นจากความเงียบงัน รู้สึกตัวว่าไม่มีใครเหลือเหลือแล้ว {0} เดินและเดินต่อไปจนกระทั่งเขายืนอยู่ตามลำพังกลางหมู่บ้าน มองเห็นศพกระจัดกระจายไปรอบๆ {0} ถอนหายใจ ความฝันในชีวิตของเขาที่จะถูกแขวนคอโดยพวกชาวบ้านนั้นตายหายไปพร้อมกับพวกเขาแล้ว เขาเอื้อมมือไปจับเชือกที่คร่ามาหลายชีวิตอย่างอ่อนโยน ก่อนที่จะสวมคอแขวนตัวเอง และจากไปด้วยรอยยิ้มที่เศร้าบนใบหน้า</value>
+		<value>{0} ตื่นขึ้นมายามรุ่งเช้าเพียงลำพัง {0} เห็นถึงความล้มเหลวของตัวเองที่ไม่สามารถทำให้พวกชาวบ้านทำตามความปรารถนาในการถูกแขวนคอตายได้ {0} จึงหยิบเชือกและแขวนคอตัวเอง คิดว่าไม่มีใครที่สามารถทำให้ความฝันของตัวเองเป็นจริงได้ ในเมื่อไม่มีใครเหลืออยู่อีกแล้ว</value>
+	</string>
+	<string key="SorcererEnd">
+	    <!-- 0 - Sorcerer name -->
+		<value>{0} ลืมตาขึ้นมา แต่แทนที่จะได้ยินเสียงครึกครื้นเช่นเคยของหมู่บ้าน กลับพบกับความเงียบงัน เขาจ้องมองลงมาจากบนเพดานที่น่าเบื่อของบ้าน ค่อยๆให้ความจริงซึมซับเข้ามา ..ชาวบ้านทุกคนกลายเป็นศพ อีกทั้งหมาป่าก็ล้มตาย... ด้วยความเจ็บปวดอันหนักอึ้งในหัวใจ {0} ลุกขึ้นและเก็บข้าวของตัวเอง ก่อนที่จะเดินไปถึงปลายทางของหมู่บ้าน น้ำตาไหลคลอในขณะที่ {0} นึกย้อนเรื่องชัยชนะในอีกไม่กี่ก้าวของเขาและพวกหมาป่า เฮ้อ..มันคงถึงเวลาเริ่มต้นชีวิตใหม่ด้วยกันกับฝูงใหม่แล้ว {0} หายเข้าไปในความมืดในป่า ห่างไกลจากหมู่บ้านที่เงียบแห่งนี้</value>
+		<value>หลังจากความพยายามทั้งหมดของ {0} เพื่อนๆหมาป่าของ {0} นอนล้มลง ไร้การเคลื่อนไหว ไร้ซึ่งชีวิต แม้ว่าพวกหมาป่าจะได้รับชัยชนะมา แต่ก็ไม่มีใครที่จะมาร่วมฉลองยินดีเลย ไม่มีแม้แต่ชาวบ้านที่จะให้เยาะเย้ย {0} มองดูเข้าไปในลูกแก้วและหายตัวไปในหมอกอย่างเงียบงัน เพื่อหาฝูงหมาป่าใหม่ พรรคพวกใหม่ และการทรยศที่จะก่อความหายนะต่อมนุษย์อีกครั้ง</value>
+	</string>
+	<string key="WhatVariantVets">
+		<value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: </value>
+	</string>
+	<string key="Skip">
+		<value>ข้าม</value>
+	</string>
+	<!-- New Roles, April 2018 -->
+	<string key="DGTransformToLycan">
+	    <!-- 0 - target's name -->
+		<!-- 1 - teammates's name -->
+		<value>{0} ได้ตายลงและคุณได้กลายร่างเป็นไลแคน เพื่อนร่วมทีม (ถ้ามี) ของคุณคือ: {1}</value>
+	</string>
+	<string key="NegSeerSees">
+	    <!-- 0 - target's name -->
+		<!-- 1 - role that they are not -->
+		<value>คุุณเห็นว่า {0} นั้นไม่ใช่ {1}!</value>
+	</string>
+	<string key="AskSandman">
+		<value>คุุณอยากให้ทุกคนหลับฝันดีในคืนนี้หรือไม่?</value>
+	</string>
+	<string key="SandmanSleepAll">
+		<value>เมื่อทุกคนคุยกันจบ {0} ได้กลับบ้านไปพร้อมฮัมเพลงอย่างนุ่มนวล คืนนี้ทุกคนจะหลับฝันดีในรอบร้อยปี และไม่มีใครทำอะไรกลางคืนในค่ำคืนนี้</value>
+	</string>
+	<string key="SandmanNight">
+		<value>เมื่อทุกคนกลับถึงบ้านหลังจากความเหนื่อยล้าเมื่อตอนกลางวัน พอหัวถึงหมอนก็หลับไปเลยโดยที่ไม่รู้ตัวว่าได้นอนไปแล้ว</value>
+	</string>
+	
+	<string key="AllowThiefQ">
+		<value>อนุญาตให้จอมโจรมีบทบาท option?\nCurrent: {0}</value>
+	</string>
+	<string key="AllowThiefA">
+		<value>ตั้งค่าบทบาทจอมโจร: {0}</value>
+	</string>
+	<string key="ThiefFullQ">
+		<value>สามารถทำให้จอมโจรใช้บทนี้ได้ทุกคืน?\nCurrent: {0}</value>
+	</string>
+	<string key="ThiefFullA">
+		<value>จอมโจรใช้ได้ทุกคืน: {0}</value>
+	</string>
+	<string key="AllowThief">
+		<value>อนุญาตให้มีจอมโจรในเกม</value>
+	</string>
+	<string key="ThiefFull">
+		<value>Thief Full Game</value>
+	</string>
+	
+	<string key="RoleInfoWolfMan">
+		<value>คุณคือคนป่า! เมื่อคุณอยู่ในป่าเป็นเวลาอันเนิ่นนานในที่ ๆ มีหมาป่าอยู่ ทำให้หมอดูสับสนและมองคุณเป็นหมาป่า โอ้ไม่นะ!</value>
+	</string>
+	<string key="WolfMan">
+		<value>คนป่า 👱🌚</value>
+	</string>
+	<string key="AboutWolfMan">
+		<value>คุณเป็นชาวบ้านระดับล่าง แต่คุณอยู่ในป่าเป็นเวลาอันเนิ่นนานในที่ ๆ มีหมาป่าอยู่ ทำให้หมอดูสับสนและมองคุณเป็นหมาป่า โอ้ไม่นะ!</value>
+	</string>
+	
+	<string key="RoleInfoLycan">
+		<value>คุณคือ Lycan คุณเป็นพวกเดียวกับหมาป่า แต่เมื่อหมอดูส่องคุณ เขาจะสับสนและมองคุณเป็นชาวบ้านหน้าโง่ธรรมดา</value>
+	</string>
+	<string key="Lycan">
+		<value>Lycan 🐺🌝 </value>
+	</string>
+	<string key="AboutLycan">
+		<value>Lycan เป็นหมาป่า แต่หมอดูจะเห็นคุณเป็นชาวบ้านธรรมดา</value>
+	</string>
+	
+	<string key="RoleInfoOracle">
+		<value>คุณคือนักพยากรณ์ ในแต่ละคืน คุณสามารถเลือกที่จะ 'ตรวจสอบ' ใครก็ได้ แต่คุณจะเห็นว่าคนที่ตรวจสอบ ไม่ได้เป็นอาชีพอะไรจากที่เหลืออยู่ ณ ตอนนี้</value>
+	</string>
+	<string key="Oracle">
+		<value>นักพยากรณ์ 🌀</value>
+	</string>
+	<string key="AboutOracle">
+		<value>นัักพยากรณ์สามารถบอกได้ว่าใครไม่ใช่อาชีพนั้น ซึ่งอาชีพนั้นจะยังมีอยู่ในผู้เล่นที่มี ณ ขณะนั้น</value>
+	</string>
+	
+	<string key="RoleInfoSandman">
+		<value>คุณคือแซนแมน คุณสามารถใช้เวทมนตร์ทำให้ทุกคนหลับลึกได้หนึ่งครั้งต่อเกม และทุกคนจะไม่สามารถใช้ความสามารถตอนกลางคืนได้</value>
+	</string>
+	<string key="Sandman">
+		<value>แซนแมน 💤</value>
+	</string>
+	<string key="AboutSandman">
+		<value>แซนแมนเสกให้ทุกคนหลับได้หนึ่งครั้งต่อเกม และทุกคนจะไม่สามารถใช้ความสามารถตอนกลางคืนได้</value>
+	</string>
+	
+	<!-- NOT IMPLEMENTED YET -->
+	<string key="RoleInfoPacifist">
+		<value>คุณคือผู้รักสันติ ☮️ คุณสามารถโน้มน้าวใจให้ทุกคนหยุดการแขวนคอคนได้ในวันนี้ สามารถใช้ได้หนึ่งครั้งต่อเกมเท่านั้น</value>
+	</string>
+	<string key="Pacifist">
+		<value>ผู้รักสันติ ☮️</value>
+	</string>
+	<string key="AboutPacifist">
+		<value>ผู้รักสันติสามารถเลือกที่จะโน้มน้าวใจทุกคนไม่ให้แขวนคอได้ สามารถใช้ได้หนึ่งครั้งต่อเกมเท่านั้น</value>
+	</string>
+	
+	<string key="RoleInfoWiseElder">
+		<value>คุณคือจอมขมังเวทย์ 📚 คุณสามารถรอดจากการโจมตีของหมาป่าได้ในครั้งแรก แต่ในครั้งที่สองคุณจะถูกกิน ถ้ามือปืน/นักล่า ฆ่าคุณด้วยอาวุธของเขา พวกเขาจะเสียใจอย่างมาก ไม่จับอาวุธอีก และกลายเป็นชาวบ้านธรรมดา</value>
+	</string>
+	<string key="WiseElder">
+		<value>จอมขมังเวทย์ 📚</value>
+	</string>
+	<string key="AboutWiseElder">
+		<value>คุณคือจอมขมังเวทย์ 📚 คุณสามารถรอดจากการโจมตีของหมาป่าได้ในครั้งแรก แต่ในครั้งที่สองคุณจะถูกกิน ถ้ามือปืน/นักล่า ฆ่าคุณด้วยอาวุธของเขา พวกเขาจะเสียใจอย่างมาก ไม่จับอาวุธอีก และกลายเป็นชาวบ้านธรรมดา</value>
+	</string>
+	
+	<string key="RoleInfoThief">
+		<value>ไอ้จอมโจร 500 😈! คุณสามารถปล้นอาชีพคน ๆ นั้นแล้วสวมบทเป็นคน ๆ นั้นในคืนแรกได้ และทำให้เขาเป็นชาวบ้านชนชั้นล่างไปตลอดกาล!</value>
+	</string>
+	<string key="RoleInfoThiefFull">
+		<value>ไอ้จอมโจร 500 😈! เมื่อเป็นโหมด [โจรครองเมือง] มีโอกาสที่ 50% ที่เปลี่ยนคนที่โดนปล้นอาชีพไปเป็นจอมโจรได้ ถ้าสำเร็จเขาจะเป็นจอมโจรไปปล้นอาชีพคนอื่นต่อไป!</value>
+	</string>
+	<string key="Thief">
+		<value>จอมโจร 😈</value>
+	</string>
+	<string key="AboutThief">
+		<value>โดยปกติ จอมโจร 😈 สามารถปล้นอาชีพผู้เล่นคนอื่นได้ในคืนแรกและเปลี่ยนคน ๆ นั้นเป็นชาวบ้านชนชั้นล่าง\nIf เมื่อเปิดเโหมด [Full Thief] จะมีโอกาส 50% ที่คนที่โดนขโมยอาชีพจะเป็นโจรและสามารถปล้นอาชีพคนอื่นได้ในคืนถัดไปหากสำเร็จ</value>
+	</string>
+	
+	<string key="AskPacifist">
+		<value>กดปุ่มเพื่อกล่าววาจาสิทธิ์และหยุดการแขวนคอในวันนั้น</value>
+	</string>
+	<string key="PacifistNoLynch">
+	<!-- {0} - Pacifist's name -->
+		<value>ผู้รักสันติ ☮️ {0} กล่าววาจาสิทธิ์แห่งมิตรภาพและความเชื่อใจ ชาวบ้านต่างแยกย้ายกันกลับบ้าน ไม่มีการแขวนคอในวันนี้!</value>
+	</string>
+	<string key="PacifistNoLynchNow">
+		<value>ด้วยวาจาสิทธิ์ของผู้รักสันติ ☮️ วันนี้จะไม่มีการแขวนคอใครทั้งนั้น!</value>
+	</string>
+	<string key="WolvesTriedToEatWiseElder">
+	<!-- 0 - Wise Elder's name -->
+		<value>คุณไปเยี่ยมบ้าน {0} แต่เขาคือจอมขมังเวทย์ 📚! {0} ป้องกันการโจมตีได้สำเร็จ ยังโชคดีที่่เขาไม่รู้ว่าคุณเป็นใคร</value>
+	</string>
+	<string key="WolvesAteWiseElderPM">
+		<value>หมาป่าพยายามล่าคุณ แต่คุณไม่ได้กลายเป็นจอมขมังเวทย์ 📚 เพื่อที่จะถูกกินเอาง่ายๆ! คุณป้องกันการโจมตีได้สำเร็จ แต่โชคร้ายที่่คุณไม่รู้ว่าเขาเป็นใคร</value>
+	</string>
+	<string key="HunterKilledWiseElder">
+	<!-- {0} - Hunter's Name -->
+	<!-- {1} - Wise Elder's Name -->
+		<value>นักล่า 🎯 {0} ยิงจอมขมังเวทย์ 📚 {1} {0} โศกเศร้าอย่างมาก คร่ำครวญในความผิดพลาดของเขา สาบานจะไม่หยิบอาวุธตลอดชีวิต และใช้ชีวิตเยี่ยงชาวบ้านทั่วไป 👱</value>
+	</string>
+	<string key="GunnerShotWiseElder">
+	<!-- {0} - Gunner's Name -->
+	<!-- {1} - Wise Elder's Name -->
+		<value>มือปืน 🔫 {0} ยิงจอมขมังเวทย์ 📚 {1} {0} โศกเศร้าอย่างมาก คร่ำครวญในความผิดพลาดของเขา สาบานจะไม่หยิบอาวุธตลอดชีวิต และใช้ชีวิตเยี่ยงชาวบ้านทั่วไป 👱</value>
+	</string>
+	
+	<string key="ThiefStealFailed">
+	<!-- {0} - The name of the thief's target -->
+		<value>คุณพยายามปล้นอาชีพของ {0} แต่ก็ปล้นไม่ได้ น่าเสียดาย...</value>
+	</string>
+	<string key="ThiefStealDead">
+	<!-- {0} - The name of the thief's target -->
+		<value>คุณพยายามปล้นอาชีพของ {0} แต่ {0} ก็ตายเสียแล้ว</value>
+	</string>
+	<string key="ThiefStoleYourRole" deprecated="true">
+	<!-- {0} - The new role -->
+		<value>อาชีพของคุณโดนปล้น ตอนนี้คุณเป็น {0}</value>
+	</string>
+	<string key="ThiefStoleRole">
+	<!-- {0} - The name of the thief's target -->
+		<value>คุณปล้นอาชีพของ {0} สำเร็จ</value>
+	</string>
+	<string key="ThiefToMason">
+	<!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+		<value>{0} ไม่ได้เป็นเพื่อนเมสันของคุณอีกต่อไป และ {1} ได้มาเป็นเมสันเหมือนกับคุณ!</value>
+	</string>
+	<string key="ThiefTransformToMason">
+	<!-- 0 - mason collegues's name -->
+		<value>เพื่อนร่วมทีม (ถ้ามี) ของคุณคือ: {0}</value>
+	</string>
+	<string key="ThiefToCult">
+	<!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+		<value>{0} โดนขโมยใบอนุญาตเข้าลัทธิ และ {1} ได้มาคลั่งลัทธิเหมือนกับคุณ!</value>
+	</string>
+	<string key="ThiefToWolf">
+	<!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+		<value>{0} ไม่ได้เป็นเพื่อนหมาป่าอีกต่อไป และ {1} ได้มาเป็นเพื่อนหมาป่าเหมือนกับคุณ!</value>
+	</string>
+	<string key="ThiefTransformNewTeammates" deprecated="true">
+	<!-- 0 - teammates's name -->
+		<value>เพื่อนร่วมทีม (ถ้ามี) ของคุณคือ: {0}</value>
+	</string>
+	<string key="ThiefEnd">
+	<!-- 0 - Thief's name -->
+		<value>ในขณะที่ {0} เร่ร่อนไปมาในหมู่บ้าน เขาพบว่ามันไม่มีบทบาทอะไรสนุกๆให้ขโมยมาเล่นอีกแล้ว เขาออกไปจากหมู่บ้านที่น่าสงสารต่ำต้อยแห่งนี้อย่างรวดเร็ว และมองหาหมู่บ้านต่อไปเพื่อทำให้เขาเป็นที่เลื่องลืออีกครั้ง</value>
+	</string>
+	<string key="ThiefStealChosen">
+	<!-- 0 - target's name -->
+		<value>คุณได้เล็งเป้าหมายไปที่ {0}</value>
+	</string>
+	<string key="AskThief">
+		<value>ใครที่คุณอยากจะปล้นอาชีพของเขา?</value>
+	</string>
+	
+	<string key="SecretLynchResultEach">
+	<!-- 0 - Number of votes -->
+	<!-- 1 - Player got lynched -->
+	<!-- 2 - A list of players who voted {1} -->
+		<value>มี {0} เสียงเลือกโหวต {1}: {2}</value>
+	</string>
+	<string key="SecretLynchResultFull">
+	<!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+		<value>เสียงโหวตแขวนคอในวันนี้:\n{0}</value>
+	</string>
+	<string key="SecretLynchResultNumber">
+	<!-- 0 - Number of votes -->
+	<!-- 1 - Player got lynched -->
+		<value>มี {0} เสียงเลือกโหวต {1}</value>
+	</string>
+	<string key="SecretLynchShowVotes">
+		<value>Secret: จำนวนโหวต</value>
+	</string>
+	<string key="SecretLynchShowVotesQ">
+		<value>เมื่อเปิดโหมดการแขวนคอแบบลับ จะแสดงผลโหวตเมื่อหมดเวลาลงคะแนนหรือไม่?\nCurrent: {0}</value>
+	</string>
+	<string key="SecretLynchShowVotesA">
+		<value>เมื่อเปิดโหมดการแขวนคอแบบลับ จะแสดงผลโหวตเมื่อหมดเวลาลงคะแนน: {0}</value>
+	</string>
+	<string key="SecretLynchShowVoters">
+		<value>Secret: ผู้โหวต</value>
+	</string>
+	<string key="SecretLynchShowVotersQ">
+		<value>เมื่อเปิดโหมดการแขวนคอแบบลับและแสดงคะแนนแล้ว จะให้แสดงชื่อผู้โหวตด้วยหรือไม่?\nCurrent: {0}</value>
+	</string>
+	<string key="SecretLynchShowVotersA">
+		<value>เมื่อเปิดโหมดการแขวนคอแบบลับและแสดงคะแนนแล้ว จะแสดงชื่อผู้โหวตหลังโหวตเสร็จเสมอ\nCurrent: {0}</value>
+	</string>
+	<string key="CultistBitten">
+	<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+		<value>แปลกแฮะ... คุณไปที่บ้าน {0} เพื่อที่จะเผยแพร่ลัทธิ แต่เขาไม่อยู่บ้าน! เกิดอะไรขึ้นกับเขากันนะ??</value>
+	</string>
+	
+	<string key="Peace">
+	<!-- Used for Pacifist's button -->
+		<value>สันติ!</value>
+	</string>
+	<string key="LynchPeaceTimeout">
+	<!-- Used in PM if the pacifist uses his ability during lynch phase -->
+		<value>วันนี้ไม่มีการแขวนคอเพราะผู้รักสันติได้พูดเกลี้ยกล่อมด้วยใจจริง</value>
+	</string>
+	
+	<string key="ThiefStoleYourRoleThief">
+		<value>อาชีพของคุณถูกปล้นไปแล้ว! ตอนนี้คุณคือจอมโจรคนใหม่และสามารถขโมยอาชีพคนอื่นในคืนถัดไป</value>
+	</string>
+	<string key="ThiefStoleYourRoleVillager">
+		<value>อาชีพของคุณถูกปล้นไปแล้ว! คุณคือชาวบ้านชนชั้นล่าง 👱 คุณหมดกำลังใจจึงได้แค่ไถนาไปวัน ๆ</value>
+	</string>
+	
+	<string key="SerialKillerKilledYou">
+		<value>ก๊อก ๆ ๆ ฆาตกรโรคจิตได้มาเยี่ยมคุณแล้วละ!</value>
+		<value>ฆาตกรโรคจิตได้ลอบทำร้ายคุณ ล็อกคุณไว้และใช้มีดแทงไปที่หัวใจคุณอย่างเลือดเย็น!</value>
+	</string>
+	
+	<string key="ThiefTeamEnd">
+		<value>จอมโจร</value>
+	</string>
+	
+	<string key="StealKiller">
+		<value>คุณพยายามปล้นอาชีพของเขา... แต่เป้าหมายของคุณคือฆาตกรโรคจิต! คุณกลัวมากจึงหาที่ซ่อน เขาเองก็พยายามหาคุณรอบ ๆ บ้านของเขาเหมือนกัน ไม่นานนักเขาก็แทงข้างหลังคุณเสียแล้ว...</value>
+	</string>
+	<string key="ThiefStoleKiller">
+	    <!-- used when Thief steals SK -->
+		<value>จอมโจร {0} พยายามขโมยอาชีพของฆาตกรโรคจิต!แต่ก็ไม่รอดถูกจับได้เสียก่อน {0} ถูกหั่นไม่เหลือชิ้นดี แต่ตับนั้น...หายไป...</value>
+	</string>
+	<string key="BeholderSeerStolen">
+		<value>จอมโจรขโมยอาชีพหมอดู! {0} เป็นหมอดูและ {1} ไม่สามารถทำนายดวงได้อีกต่อไป!</value>
+	</string>
+	
+	<!-- New roles 28.12.2018 -->
+	<string key="Troublemaker">
+		<value>ตัวป่วน 🤯</value>
+	</string>
+	<string key="AboutTroublemaker">
+		<value>ตัวป่วนเป็นเด็กแว๊นซ์ในหมู่บ้าน เมื่อพวกเขาก่อความวุ่นวายทำให้ชาวบ้านเกิดการจลาจล เพื่อให้บ้านเมืองสงบจึงต้องทำการแขวนคอสองรอบในวันนี้</value>
+	</string>
+	<string key="RoleInfoTroublemaker">
+		<value>คุณคือตัวป่วน 🤯 เป็นเด็กแว๊นซ์เห่อหมอยในหมู่บ้าน วันหนึ่งที่คุณรู้สึกอยากจะให้คนสนใจจึงได้เกรี้ยวกราดอาลาวาดไปทั่วจนทุกคนต่างคลั่งจนต้องแขวนคอคนสองรอบ</value>
+	</string>
+	<string key="AskTroublemaker">
+		<value>อยากสร้างความวุ่นวายให้หมู่บ้านในวันนี้มั้ย?</value>
+	</string>
+	<string key="TroublemakerDoubleLynch">
+		<value>{0} ตัวป่วน 🤯 ได้สร้างปัญหาซะแล้ว เขาขับจักรยานยนต์แว๊นซ์ไปทั่วเมืองพร้อมส่งเสียงดังจนชาวบ้านเลือดขึ้นหน้า วันนี้ถ้าไม่ได้แขวนสองคนก็ไม่หายเคืองหรอกนะ!</value>
+	</string>
+	<string key="TroubleDoubleLynchNow">
+		<value>เพราะตัวป่วนตัวเดียว วันนี้เลยแขวนไปถึงสองรอบ หวังว่าพรุ่งนี้มันจะสงบปากสงบคำนะ...</value>
+	</string>
+	<string key="Chemist">
+		<value>นักเคมี 👨‍🔬</value>
+	</string>
+	<string key="AboutChemist">
+		<value>นักเคมี เป็นคนบ้าๆที่ชื่นชอบการผสมยาและเล่นพนัน เขาจะผสมยาขึ้นมา 2 ขวด แล้วบังคับให้อีกฝ่ายเลือกดื่มขวดใดขวดหนึ่ง ส่วนนักเคมีจะดื่มขวดที่เหลือ โดยขวดหนึ่งจะเป็นยาแก้ไอธรรมดา ส่วนอีกขวดจะทำให้คุณตายทันที ถ้าเขาเดินมาท้าพนันกับคุณ ก็ขอให้โชคดี!</value>
+	</string>
+	<string key="RoleInfoChemist">
+		<value>คุณคือนักเคมี 👨‍🔬 ชื่นชอบยาพิษเป็นชีวิตจิตใจ และชอบเอาชีวิตตัวเองไปพนันขันต่อ... (นิดๆหน่อยเอง!) คุณจะผสมยามา 2 อย่าง หนึ่งในนั้นจะเป็นยาพิษ ซึ่งดูลักษณะภายนอกจะเหมือนกันเปี๊ยบ คุณจะเลือกผู้เล่น 1 คน มาบังคับให้เล่นเกมดื่มยากับคุณ ในทุกๆเว้นวันเว้น บางทีเขาอาจโชคดี และรอดชีวิตมาได้ ยังไงก็ตามถ้าฝายตรงข้ามเลือกยาปกติ คุณจะได้ยาพิษมาดื่มแทน และตายลง ขอให้ดวงจงอยู่กับคุณ!</value>
+	</string>
+	<string key="ChemistBrewing">
+		<value>ขณะชาวบ้านคนอื่นหลับกันหมดแล้ว คุณยังอยู่ในห้องแลป ผสมยาสำหรับคืนถัดไป ระวังหมาป่าด้วยล่ะ!</value>
+	</string>
+	<string key="AskChemist">
+		<value>ใครที่จะให้เป็นตัวอย่างที่ดีและพร้อมจะเดิมพันไปกับคุณคืนนี้ ?</value>
+	</string>
+	<string key="ChemistTargetDead">
+		<value>คุณไปที่บ้านของ {0} เพื่อที่จะเล่นเกมดื่มยากับเขา แต่เมื่อคุณไปถึง เขาก็ได้ตายไปเสียแล้ว!</value>
+	</string>
+	<string key="ChemistVisitYouSK">
+		<value>นักเคมี👨‍🔬{0}มาเยือนคุณที่บ้าน เขาหยิบมีดออกมาและขู่บังคับให้คุณดื่มยา แต่คุณก็ควักมีดออกมาด้วยเหมือนกัน และมันเห็นได้ชัดเจนเลยว่ามีดของคุณแข็งแกร่งกว่า🤷‍♂️</value>
+	</string>
+	<string key="ChemistSK">
+		<value>คุณไปเยือน {0} เพื่อให้เขาสุ่มเลือกขวดยา แต่เขาดันเป็นฆาตกรต่อเนื่องและแทงคุณจนตาย!!</value>
+	</string>
+	<string key="ChemistSKPublic">
+		<value>นักเคมี👨‍🔬{0} พยายามบังคับให้ฆาตกรต่อเนื่องมาเล่นเกมในค่ำคืนนี้ ดูเหมือนว่าฆาตกรไม่มีอารมณ์อยากจะเล่นเกมซักเท่าไหร่... {0} ถูกพบในสภาพที่ถูกแทง และมีขวดยา2ขวดในกระเป๋าของเขา</value>
+	</string>
+	<string key="ChemistVisitYouSuccess">
+		<value>นักเคมี👨‍🔬มาเยือนคุณที่บ้าน เขาหยิบมีดออกมาและขู่บังคับให้คุณดื่มยา คุณเลือกดื่มยาที่มีพิษ เป็นการตายจากโลกนี้ที่น่าเศร้าสลดใจจริงๆ..</value>
+	</string>
+	<string key="ChemistSuccess">
+		<value>คุณไปเยือน {0} และให้เขาสุ่มเลือกขวดยา เขาเลือกขวดยาพิษไป คุณรู้สึกคุณกลับบ้านไปพร้อมความพอใจกับสกิลการพนันของตัวเอง นี่ไม่ใช่เกมแห่งโชคหรอกนะ!</value>
+	</string>
+	<string key="ChemistSuccessPublic">
+	<!-- {0} - Chemist's victim -->
+	<!-- {1} - Will be replaced by "(victim) was (role)" -->
+		<value>นักเคมี👨‍🔬มาเยือน {0} ที่บ้าน และเขาเลือกขวดยาที่มีพิษ! ในขณะที่นักเคมีบ้าสติยังมีชีวิตอยู่ {0} เสียชีวิต.. {1}</value>
+	</string>
+	<string key="ChemistVisitYouFail">
+		<value>นักเคมี👨‍🔬 {0}มาเยือนคุณที่บ้าน เขาหยิบมีดออกมาและขู่บังคับให้คุณดื่มยา หลังจากลังเลมาซักพัก คุณเลือกขวดยาที่ปลอดภัย! โชคดีจริงๆเลยนะ!</value>
+	</string>
+	<string key="ChemistFail">
+		<value>คุณไปเยือน {0} และให้เขาเลือกขวดยา เขาเลือกขวดที่ปลอดภัย แต่ผลลัพธ์คือคุณดื่มยาพิษเข้าไปและตาย บางทีคุณน่าจะทำได้ดีกว่านี้นะ...</value>
+	</string>
+	<string key="ChemistFailPublic">
+		<value>นักเคมี👨‍🔬{0} ถูกพบกลายเป็นศพ! เห็นได้ชัดเลยว่า {0} โชคไม่ดีและดื่มยาพิษตอนไปเยือนคนอื่นตอนกลางดึก ขอภาวนาอย่าให้คุณไปซื้อยาจากพวกเขาเลยเถอะ...</value>
+	</string>
+	<string key="ChemistTargetEmpty">
+		<value>{0} ไม่อยู่ที่บ้าน! คุณลากกระเป๋ากลับบ้านไปพร้อมความหงุดหงิดในโชคที่ไม่ดีของคุณเอง</value>
+	</string>
+	<string key="CultistsList">
+		<value>สมาชิกลัทธินอกรีต: {0}</value>
+	</string>
+	<string key="SnowWolf">
+		<value>หมาป่าหิมะ 🐺☃️</value>
+	</string>
+	<string key="RoleInfoSnowWolf">
+		<value>คุณคือหมาป่าหิมะ 🐺☃️ ทุกๆคืน แทนที่จะตามฝูงของคุณไปออกล่า คุณเดินออกมาเพื่อแช่แข็งใครสักคนนอกเหนือจากฝูงของคุณ คนที่ถูกแช่แข็งจะไม่สามารถใช้ความสามารถในตอนกลางคืนได้ ถ้ามีนะ อย่างไรก็ตาม เหยื่อของคุณจะยังมีพลังของคุณหลงเหลืออยู่ในคืนถัดไป และไม่สามารถถูกแช่แข็ง 2 ตาติดกันได้</value>
+	</string>
+	<string key="AboutSnowWolf">
+		<value>หมาป่าหิมะ 🐺☃️ เป็นหมาป่าที่อาศัยอยู่บนยอดเขาหิมะปกคลุมใกล้ๆหมู่บ้าน ด้วยเหตุนี้ พวกเขาจึงสำเร็จวิชาควบคุมหิมะและน้ำแข็ง เนื่องจากอยู่ตัวเดียวมาเป็นเวลานาน หมาป่าหิมะจึงชอบออกล่าตัวเดียว แทนที่จะล่ากับฝูงตอนกลางคืน พวกเขาจะเลือกเหยื่อคนอื่นมาแช่แข็ง ซึ่งจะทำให้เหยื่อไม่สามารถใช้ความสามารถตอนกลางคืนได้ อย่างไรก็ตาม พวกนั้นจะยังมีเวทมนตร์ของหมาป่าหิมะหลงเหลืออยู่ในคืนถัดไป ทำให้ทนต่อการแช่แข็งของหมาป่าหิมะได้ 1 คืน</value>
+	</string>
+	<string key="AskFreeze">
+		<value>คืนนี้อยากจะแช่แข็งใครสักคนไหม?</value>
+	</string>
+	<string key="WolfPackList">
+		<value>ฝูงหมาป่าประกอบด้วย {0}</value>
+	</string>
+	<string key="WolfPackSnowList">
+		<value>ฝูงหมาป่าประกอบด้วย {0} และหมาป่าหิมะ {1} </value>
+	</string>
+	<string key="DGTransformToAlphaWithSnow">
+		<value>{0} ได้ตายลงและคุณได้กลายร่างเป็นจ่าฝูงหมาป่า เพื่อนร่วมทีมของคุณคือ: {1} และหมาป่าหิมะ {2}</value>
+	</string>
+	<string key="DGTransformToWolfCubWithSnow">
+		<value>{0} ได้ตายลงและคุณได้กลายร่างเป็นลูกหมาป่า เพื่อนร่วมทีมของคุณคือ: {1} และหมาป่าหิมะ {2}</value>
+	</string>
+	<string key="DGTransformToWolfWithSnow">
+		<value>{0} ได้ตายลงและคุณได้กลายร่างเป็นหมาป่า เพื่อนร่วมทีมของคุณคือ: {1} และหมาป่าหิมะ {2}</value>
+	</string>
+	<string key="DGTransformToLycanWithSnow">
+		<value>{0} ได้ตายลงและคุณได้กลายร่างเป็น Lycan เพื่อนร่วมทีมของคุณคือ: {1} และหมาป่าหิมะ {2}</value>
+	</string>
+	<string key="DGTransformToSnowWolf">
+		<value>{0} ได้ตายลงและคุณได้กลายร่างเป็นหมาป่าหิมะ เพื่อนร่วมทีม (ถ้ามี) ของคุณคือ: {1}</value>
+	</string>
+	<string key="DGToSnowWolf">
+		<value>ตอนนี้ doppelganger {0} ได้กลายร่างเป็นหมาป่าหิมะ!</value>
+	</string>
+	<string key="WildChildSnowTransform">
+		<value>{0} ได้ตายลง ด้วยความโกรธของคุณ คุณจึงกลายร่างเป็นหมาป่า เพื่อนร่วมทีม (ถ้ามี) ของคุณคือ: {1} และหมาป่าหิมะ {2}</value>
+	</string>
+	<string key="ThiefToSnowWolf">
+		<value>{0} ไม่ได้เป็นเพื่อนหมาป่าอีกต่อไป และ {1} ได้มาเป็นหมาป่าหิมะตัวใหม่!</value>
+	</string>
+	<string key="HarlotFrozen">
+		<value>ขณะที่กำลังจะออกจากบ้าน บังเกิดลมกรรโชกแรงพัดมาหาคุณ แช่แข็งคุณไว้ตรงนั้น 🐺☃️ คุณยืนหนาวอยู่ที่ประตูพร้อมสบถการโดนแช่แข็งพิลึกๆนี่เบาๆ แต่ในที่สุด ก็หายแข็งจนได้ เยี่ยมไปเลย</value>
+	</string>
+	<string key="ChemistFrozen">
+		<value>ขณะที่กำลังงัวเงีย เตรียมไปหยิบขวดยามาเตรียมไว้ บังเกิดลมกรรโชกแรงพัดเข้ามาทางหน้าต่าง หนาวถึงขั้วหัวใจ 🐺☃️ เมื่อเหลือบตามองไปดู ก็พบว่าขวดยาโดนแช่แข็งติดอยู่ตรงนั้น ดูเหมือนว่านักเคมีอย่างเขาก็ไม่รอดไปจากมนต์น้ำแข็งเช่นกัน   คุณถอนหายใจแรงๆ ภาวนาให้พระอาทิตย์รีบๆขึ้น จะได้หายแข็งเป็นรูปปั้นสักที</value>
+	</string>
+	<string key="CultistFrozen">
+		<value>ขณะที่คุณสวมเสื้อคลุมเตรียมออกไปเทศน์ บังเกิดลมกรรโชกแรงพัดผ่านประตู แช่แข็งคุณไว้ 🐺☃️ เพื่อนร่วมลัทธิที่มารับคุณไปร่วมพิธี กลับยืนหัวเราะขบขันให้กับความซวยนี้ แต่ก็สัญญาว่าจะดำเนินงานคืนนี้ไปให้ลุล่วงโดยปล่อยคุณแข็งอยู่ตรงนี้อยู่ดี เมื่อหายแข็งแล้ว คุณจึงเดินตัวหดๆออกจากบ้านอย่างน่าสมเพช</value>
+	</string>
+	<string key="CHFrozen">
+		<value>ขณะเอื้อมมือไปหยิบอาวุธคู่ใจ บังเกิดลมกรรโชกแรงพัดผ่านหน้าต่าง แช่แข็งคุณไว้อยู่ในท่าโก้งโค้ง 🐺☃️ คุณได้แต่ร้องโอดโอยจากความเมื่อยที่โดนแช่แข็งอยู่ในท่านี้ยันเช้า...</value>
+	</string>
+	<string key="SeeingFrozen">
+	<!-- used for seer, fool, oracle and sorcerer -->
+		<value>ขณะที่คุณนั่งลง เตรียมเพ่งกระแสจิต บังเกิดลมกรรโชกแรงพัดผ่านหน้าต่าง แช่แข็งคุณไว้ 🐺☃️ ปัญหาไม่ได้อยู่ที่การโดนพันธนาการไว้หรอก แต่ไอ้มนต์แช่แข็งนี่ทำให้เย็นจี๊ดขึ้นสมองอย่างรุนแรง ก็ไม่ได้แคร์อะไรมากหรอก พรุ่งนี้ก็เช้าแล้ว เดี๋ยวก็หายแข็งเอง</value>
+	</string>
+	<string key="GAFrozen">
+		<value>ขณะที่คุณกำลังร่ายมนต์สยายปีก บังเกิดลมกรรโชกแรงพัดผ่านหน้าต่าง แช่แข็งคุณไว้ 🐺☃️ คุณได้แต่ขดตัวแข็ง นึกภาพตัวเองเป็นของประดับต้นคริสต์มาสแทน แต่ไม่นานก็หาย เมื่อพระอาทิตย์ขึ้น</value>
+	</string>
+	<string key="SKFrozen">
+		<value>ขณะที่คุณกำลังชื่นชมคอลเล็กชั่นตับดองอีกสักครั้งก่อนออกจากบ้าน บังเกิดลมกรรโชกแรงพัดผ่านหน้าต่าง แช่แข็งทั้งคุณและโหลดองเหล่านั้น 🐺☃️   หลังจากน้ำแข็งละลายไปในตอนเช้า คุณขบเขี้ยวเคี้ยวฟัน ไอ้เจ้ามนต์ของหมาป่าหิมะนั่น ฉันจะฆ่าพวกมันอย่างทรมานถึงที่สุดก่อนจะควักตับพวกมันออกมา</value>
+	</string>
+	<string key="ThiefFrozen">
+		<value>ขณะที่คุณย่องตอดไปทั่วหมู่บ้าน จู่ๆก็รู้สึกถึงลมกรรโชกแรง หลังจากนั้นก็ยืนแข็ง - แข็งเป็นรูปปั้นจริงๆนะ - อยู่ตรงทางเดิน 🐺☃️ โชคยังดี มันมืดมาก คนผ่านไปมาเลยไม่รู้ว่าเป็นคุณ ในเช้าตรู่ หลังน้ำแข็งละลายหมดแล้ว คุณรีบจ้ำอ้าวกลับบ้านก่อนที่จะมีใครเห็นคุณ</value>
+	</string>
+	<string key="DefaultFrozen">
+	<!-- used for all roles without (every-)night action -->
+		<value>ขณะกำลังหลับฝันดีอยู่ จู่ๆ อากาศก็เย็นลงกระทันหัน พอจะลุกจากเตียงเท่านั้นแหละ คุณถึงรู้ว่าคุณขยับตัวไม่ได้! ดูเหมือนว่าหมาป่าหิมะ 🐺☃️ จะร่ายมนต์แช่แข็งคุณไว้ ช่างปะไร กลับไปนอนต่อดีกว่า ความหนาวไม่ทำให้เดือดร้อนสักเท่าไร</value>
+	</string>
+	<string key="GuardBlockedSnowWolf">
+		<value>คุณมุ่งหน้าไปบ้านของ {0} เพื่อจะแช่แข็งเขา แต่กลับพบกับร่างสูงใหญ่ดำทะมึนยืนแยกเขี้ยวอยู่ เทวดาผู้พิทักษ์เข้าต่อกรกับคุณ และคุณก็พ่ายแพ้กลับไป</value>
+	</string>
+	<string key="SuccessfulFreeze">
+		<value>คุณไปที่บ้านของ {0} และแช่แข็งเขา โฮโฮ่! คืนนี้เขาจะใช้ความสามารถอะไรไม่ได้เลยแหละ (ถ้ามีนะ)</value>
+	</string>
+	<string key="SnowFrozeKiller">
+		<value>หมาป่าหิมะ {0} พยายามแช่แข็งใครสักคนเมื่อคืน แต่ดันไปปะเข้ากับฆาตกรต่อเนื่อง ซึ่งสังเกตเห็นผู้มาเยือนพอดี และจ้วง {0} เข้าให้!</value>
+	</string>
+	<string key="SnowWolfTurnWolf">
+		<value>ในเมื่อหมาป่าตัวอื่นๆตายหมดแล้ว คุณเหลือรอดเป็นตัวสุดท้าย ถ้าอยากได้เนื้อก็ต้องล่าเอง คุณเลยขอเป็นมนุษย์หมาป่าธรรมดา ออกล่าชาวบ้านแทนที่จะแช่แข็งพวกเขา</value>
+	</string>
+	<string key="SnowFrozeHunter">
+	    <!-- 0 - target's name -->
+		<value>หมาป่าหิมะ {0} พยายามแช่แข็งนักล่าเมื่อคืน แต่นักล่าเร็วกว่า และยัดลูกปืนกลับคืนให้!</value>
+	</string>
+	<string key="Lang">
+		<value>เปลี่ยนภาษา</value>
+	</string>
+	<string key="Mode">
+		<value>เปลี่ยนโหมดเกม</value>
+	</string>
+	<string key="MaxPlayer">
+		<value>เซ็คจำนวนผู้เล่นสูงสุด</value>
+	</string>
+	<string key="EndRoles">
+		<value>แสดงอาชีพหลังจบเกม</value>
+	</string>
+	<string key="MaxExtend">
+		<value>เซ็ตเวลาสูงสุด</value>
+	</string>
+	<string key="DayTimer">
+		<value>เซ็ตเวลาตอนเช้า</value>
+	</string>
+	<string key="NightTimer">
+		<value>เซ็ตเวลากลางคืน</value>
+	</string>
+	<string key="LynchTimer">
+		<value>เซ็ตเวลาแขวนคอ</value>
+	</string>
+	<string key="RoleConfig">
+		<value>กำหนดบทบาท</value>
+	</string>
+	<string key="Mechanics">
+		<value>ระบบของเกม</value>
+	</string>
+	<string key="GroupSettings">
+		<value>เซ็ตกลุ่ม</value>
+	</string>
+	<string key="Timers">
+		<value>เวลาของเกม</value>
+	</string>
+	<string key="Done">
+		<value>เสร็จ</value>
+	</string>
+	<string key="Back">
+		<value>กลับ</value>
+	</string>
+	<string key="ShufflePlayerList">
+		<value>สลับรายชื่อผู้เล่น</value>
+	</string>
+	<string key="ShufflePlayerListQ">
+		<value>สลับรายชื่อผู้เล่นทุกครั้ง? Current: {0}</value>
+	</string>
+	<string key="ShufflePlayerListA">
+		<value>รายชื่อผู้เล่นจะสลับทุกครั้ง: {0}</value>
+	</string>
+	<string key="AboutGraveDigger">
+		<value>คุณคือสัปเหร่อ ☠️ ทุกๆ คืน คุณจะขุดหลุมฝังเหล่าผู้คนที่ตายไปตั้งแต่รอบที่แล้ว (และใช่ แม้แต่พวกมนุษย์หมาป่าก็ต้องการการพักผ่อนอย่างเป็นสุขนิรันดร์) เนื่องจากคุณไม่อยู่ทั้งคืน พวกหมาป่าและพวกคลั่งลัทธิจะหาคุณไม่เจอ ยกเว้นคุณไม่มีอะไรทำ (เช่น ไม่มีใครตายเลย) ซึ่งในกรณีนั้น คุณก็จะอยู่บ้านเฉยๆ ทุกๆคนที่มาหาคุณที่บ้าน มีโอกาสที่จะตกลงไปในหลุมที่คุณเพิ่งขุดใหม่ๆ ขึ้นกับว่าคุณขุดหลุมไปเท่าไร โอกาสที่จะตกลงไปในหลุมจะลดลงครึ่งหนึ่งสำหรับทุกคนที่อยู่ทีมชาวบ้านร่วมกับคุณ แต่เนื่องจากคุณออกไปทำงานตอนกลางคืน หมาป่าหรือฆาตกรมีสิทธิที่จะเจอตัวและฆ่าคุณ ยิ่งต้องขุดหลุมเยอะเท่าไร ก็ยิ่งมีโอกาสที่จะถูกพบมากขึ้นเท่านั้น แล้วก็... ดูเหมือนว่าฆาตกรจะสามารถหาคุณเจอได้ ไม่ว่าจะอยู่บ้านหรือไม่ก็ตาม แต่ฆาตกรก็มีโอกาสที่จะเดินสะดุดหลุมของคุณและขาแพลง ทำให้ไม่สามารถหมายหัวใครก็ตามเพื่อฆ่าได้</value>
+	</string>
+	<string key="RoleInfoGraveDigger">
+		<value>คุณคือสัปเหร่อ ☠ มันเป็นหน้าที่ของคุณที่จะจัดการกับซากศพในหมู่บ้าน คุณขุดหลุมฝังศพทุกคนที่ถูกฆ่าไปเมื่อคืน อย่างไรก็ตาม ปกติคุณมักจะเหนื่อยเกินกว่าที่จะทำหลุมฝังศพเสร็จ มันก็เลยเป็นหลุมลึกๆอยู่อย่างนั้น   ใครที่ผ่านมาอาจจะตกหลุมลงไปตายได้ แต่อย่างน้อย พวกหมาป่าก็กินคุณไม่ได้นะ เพราะคุณไม่อยู่ทั้งคืน</value>
+	</string>
+	<string key="GraveDigger">
+		<value>สัปเหร่อ ☠</value>
+	</string>
+	<string key="DigNoGraves">
+		<value>คนตายถูกฝังเรียบร้อย ส่วนคนเป็นก็ยังต้องสู้ต่อไป ทุกอย่างเป็นไปตามครรลอง และคุณก็กลับไปนอนฝันดีได้สักที </value>
+	</string>
+	<!--{0}: list of people who died since last grave-->
+	<string key="DigGraves">
+		<value>ดึกดื่นมืดมิดแล้ว คุณขุดหลุมให้ {0} ขอดวงวิญญาณจงไปสู่สุขคติ และร่างนั้นได้พักผ่อนเป็นนิรันดร์</value>
+	</string>
+	<string key="GraveDiggerFrozen">
+		<value>ขณะที่คุณกำลังออกจากบ้านไปฝังศพผู้วายชนม์ ลมหนาวได้พัดกรรโชกมาจากความมืด ทำให้คุณเย็นเป็นน้ำแข็ง เนื่องจากไม่สามารถขยับไหว คุณเลยต้องรอพระอาทิตย์ขึ้นเพื่อให้น้ำแข็งละลายก่อน คนตายคงจะต้องอยู่ไม่เป็นสุขไปอีกคืนแน่ๆ</value>
+	</string>
+	  <!--{0}: grave digger-->
+	<string key="GraveDiggerNotHome">
+		<value>ฝูงหมาป่าได้มาที่บ้านของ {0} และพบว่าเขาไม่อยู่บ้าน... สิ่งที่เห็นมีเพียงเทียนที่ส่องแสงเหนือหลุมศพอย่างเหงาๆ</value>
+	</string>
+	<string key="WolfFellWolves">
+	<!--{0}: grave digger, {1}: wolf who fell into the grave-->
+		<value>ฝูงหมาป่าได้มาที่บ้านของ {0} แต่ขณะที่กำลังไปที่นั่น {1} เหยียบกับดักเข้าให้ เขาร่วงลงไปในหลุมศพ และถูกเหล็กแหลมเงินเสียบอย่างน่าสยดสยอง!</value>
+	</string>
+	<!--{0}: the wolf who fell into the grave-->
+	<string key="WolfFell">
+		<value>ขณะที่คุณกลับมากลบหลุมที่คุณขุดไว้ตลอดคืน คุณได้กลิ่นเหม็นเน่าแปลกๆโชยขึ้นมา กลิ่นต่างจากศพธรรมดาสามัญชน เจ้าหมาป่า {0} ตกหลุมตายนั่นเอง!</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="KillerStumbled">
+		<value>คุณเลาะตับออกจากร่างของ {0} แล้ว แต่ขณะกำลังกลับบ้าน ดันไปชะเง้อมองดูหลุมศพที่ยังทำไม่เสร็จมากไปหน่อย เลยสะดุดเข้าให้ ไม่น่าโลภหาตับจากศพเลยน้า... เจ็บขาชะมัด</value>
+	</string>
+	<!--{0}: intended victim, {1}: actual victim-->
+	<string key="KillerRandomKill">
+		<value>ขณะกำลังไปบ้านของ {0} ความเจ็บปวดรวดร้าวที่ขาแล่นแปล๊บขึ้นมา คุณเลยตัดสินใจไปบ้านของ {1} ที่อยู่ใกล้ๆแทน รีบฆ่า รีบกลับบ้านดีกว่า</value>
+	</string>
+	  <!--{0}: victim-->
+	<string key="GuardBlockedRandomKiller">
+		<value>คุณมาถึงบ้านของ {0} แล้ว แต่ดันเผชิญหน้ากับเทวดาผู้พิทักษ์! คุณพยายามต่อกรด้วย แต่สู้ไม่ไหว คืนนี้นี่มันแย่จริงๆ...</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="HunterFell">
+		<value>เป็นอีกคืนที่พิฆาตเจ้าพวกคลั่งลัทธิไม่ได้เลยสักคน! ด้วยความหงุดหงิด คุณเลยย่ำต๊อกอยู่แถวๆสุสาน โดยไม่ได้สังเกตว่ามีกับดักอยู่ด้วย จนกระทั่งมันงับข้อเท้าเข้าให้ คุณกรีดร้องและพยายามดิ้นให้หลุด แต่สายไปเสียแล้ว คุณหงายหลังร่วงลงไปในหลุมศพของ {0} ที่ยังไม่กลบ และเสียงสุดท้ายที่ได้ยินคือเสียงคอของคุณที่หักดังกร๊อบ แล้วทุกอย่างก็มืดลง</value>
+	</string>
+	<!--{0}: cult hunter-->
+	<string key="HunterFellDigger">
+		<value>หลังจากคืนที่เหนื่อยล้าอีกคืนหนึ่ง คุณเดินกลับบ้านในตอนพระอาทิตย์เบิกฟ้าแล้ว แต่ก่อนที่จะถึงบ้าน คุณสังเกตเห็นดาบตกอยู่บนพื้นข้างๆหลุมศพที่คุณยังไม่ได้จัดการกลบ ในหลุมนั้น คุณพบร่างของ {0} นอนอยู่ นักล่าพวกคลั่งลัทธิไม่น่ามาสงสัยคุณเลย...</value>
+	</string>
+	<!--{0}: cultist-->
+	<string key="CultFell">
+		<value>คุณกำลังกลับจากการทำงานที่แสนเหน็ดเหนื่อยอีกคืน ตอนนั้นเอง คุณได้ยินเสียงกรีดร้องดังขึ้นมาจากหลุมศพที่ยังฝังไม่เ่สร็จหลุมหนึ่ง คุณเร่งรุดไปที่นั่น แล้วพบ {0} นอนตายอยู่ในนั้น จะว่าไป ลัทธิบ้าบออะไรกันนะ ถึงพยายามชักชวนสัปเหร่อให้มาเป็นพวก</value>
+	</string>
+	<!--{0}: cultist who fell, {1}: grave digger-->
+	<string key="CultConvertGraveDigger">
+		<value>ในขณะที่กำลังไปบ้านของ {1} {0} คิดว่า มันเป็นความคิดที่ดีที่จะเผาโบสถ์ด้วยซะเลย เขาพาคุณเดินผ่านสุสานเพื่อไปเผา ทันใดนั้น กับดักก็ทำงาน!   สิ่งที่คุณได้ยินต่อมา คือ เสียงกรีดร้องของเขาก่อนที่จะร่วงลงไปในหลุม   คุณรีบโกยอ้าวหนีเอาตัวรอด</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="ChemistFell">
+		<value>ขณะที่คุณกำลังไปบ้านของ {0} คุณพยายามทบทวนว่า ยาขวดไหนเป็นยาพิษ แล้วก็สะดุด ตกลงไปในหลุมฝังศพที่ว่างอยู่ และถูกเหล็กแหลมเงินเสียบทะลุหัวใจ   คุณตายก่อนที่จะได้ส่งเสียงออกมาเสียอีก</value>
+	</string>
+	<!--{0}: chemist-->
+	<string key="ChemistFellDigger">
+		<value>“หิวไวน์จังเลยน้า” คุณคิดในใจ ความรู้สึกแปลกๆนี้ ทำให้คุณหันไปมองหลุมศพข้างๆ ราวกับฟ้าได้ยินคำขอของคุณ มีขวดไวน์อยู่ในนั้นด้วย! แต่แย่จัง ดันมีร่างไร้วิญญาณของ {0} อยู่ตรงนั้นด้วย ความอยากไวน์มลายหายไปกับตา</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="HarlotFell">
+		<value>คุณหยิบลิปสติกขึ้นมาเสริมสวยก่อนที่จะมุ่งหน้าไปบ้านของ {0} เพื่อสนุกกันนิดหน่อย แต่เสียใจด้วย คุณไม่ได้ไปต่อ เพราะดันไปเหยียบกับดักและร่วงลงหลุมไประหว่างทาง นี่มันความเสี่ยงในอาชีพ!</value>
+	</string>
+	<!--{0}: harlot-->
+	<string key="HarlotFellDigger">
+		<value>ดูเหมือนว่าโชคชะตาจะไม่อยากให้คุณเอ็นจอยเท่าไหร่นะ... ไม่เพียงแค่ต้องขุดหลุมศพทั้งคืนแล้ว คุณยังต้องมาเจอ โสเภณี {0} ตายอยู่ในหลุมที่คุณยังฝังไม่เสร็จอีก คืนนี้ไม่ได้ขึ้นสวรรค์แล้วละ</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="HarlotVisitDigger">
+		<value>คุณเดินทางไปยังบ้านของ {0} หลบหลีกหลุมที่ยังไม่ฝังอย่างระแวดระวัง แต่เมื่อไปถึง ดันไม่มีใครอยู่ซะงั้น... ดูเหมือนว่า {0} จะออกไปขุดหลุมทั้งคืนอีกแล้ว!</value>
+	</string>
+	  <!--{0}: grave digger-->
+	<string key="GAFell">
+		<value>คืนนี้ โชคคงไม่ได้อำนวยพรให้คุณแน่ๆ คุณแค่อยากจะคุ้มครอง {0} แต่กลับได้ร่วงลงไปตายในหลุมหลังจากเหยียบกับดักแทน! ทำไมอีสัปเหร่อนั่นต้องวางกับดักไว้ที่หลุมด้วยนะ</value>
+	</string>
+	<!--{0}: guardian angel-->
+	<string key="GAFellDigger">
+		<value>ขณะกลับบ้าน คุณสังเกตเห็นขนนกหล่นเต็มพื้นไปหมด หาที่มาไม่นานก็เจอ {0} เทวดาผู้พิทักษ์ นอนตายอยู่ในหลุมหนึ่งของคุณ บางที “มาตรการความปลอดภัย” ของคุณอาจจะรุนแรงใส่ผิดตัวไปจริงๆ</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="ThiefFell">
+		<value>คุณย่องผ่านสุสานไปเพื่อปล้นบทของ {0} แต่คุณจดจ้องอยู่กับการเคลื่อนไหวอย่างเงียบเชียบมากไป จนลืมดูกับดักที่งับข้อเท้าเข้าให้! ไม่ใช่แค่การลอบเร้นจะเสียไปแล้ว คุณยังตกลงไปในหลุมฝังศพข้างๆ คอหัก เสียชีวิตไปด้วยอีก</value>
+	</string>
+	<!--{0}: thief-->
+	<string key="ThiefFellDigger">
+		<value>เยี่ยมจริงๆ ที่คุณวางมาตรการความปลอดภัยไว้รอบๆหลุมฝังศพคุณ... {0} พยายามมาปล้นบทของคุณเมื่อคืน แต่กลับเหยียบกับดักและร่วงลงไปในหลุมแทน! บางที ตอนนี้พวกชาวบ้านจะได้เชื่อคุณแล้ว ว่ากับดักมันจำเป็นจริงๆ</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="ArsonistFell">
+		<value>คราวหน้า คุณน่าจะระวังฝีก้าวของคุณเวลาไปเตรียมเผาบ้านใครเขานะ คุณเหยียบกับดัก ร่วงลงหลุมฝังศพ และถูกเหล็กแหลมเงินเสียบทะลุหัวใจ! สมน้ำหน้า ไอ้บ้าวางเพลิง</value>
+	</string>
+	<!--{0}: arsonist-->
+	<string key="ArsonistFellDigger">
+		<value>คุณได้กลิ่นน้ำมันก๊าดจากหลุมฝังศพหนึ่งของคุณ ด้วยความตื่นตกใจ คุณรีบไปที่หลุม และเจอร่างของ {0} นักวางเพลิง อยู่ในนั้น อย่างน้อย บ้านคุณก็ไม่เลอะนะ...</value>
+	</string>
+	<!--{0}: person that died, {1}: "(person) was (role)"-->
+	<string key="DefaultFellPublic">
+		<value>คืนนี้ หลุมฝังศพหนึ่งในสุสานมีร่างคนลงไปนอนกองมากไปนะ... เมื่อตะกี้{0} พยายามมาเยี่ยมบ้านสัปเหร่อ แล้วก็ร่วงลงไปในหลุมและตาย! {1}</value>
+	</string>
+	<!--{0}: harlot-->
+	<string key="HarlotFellPublic">
+		<value>ในขณะที่โสเภณี {0} กลับบ้านหลังจากค่ำคืนสุขสันต์ เขาพยายามลัดผ่านสุสานหมู่บ้าน   ท่าทางจะยังเมาหน่อยๆ จนไม่ได้สังเกตเห็นหลุมฝังศพที่ยังไม่ได้กลบจนกระทั่งมารู้ตัวว่าเหยียบอากาศไปแล้ว บางที เขาน่าจะรับงานช่วงกลางวันเมื่อวานนี้มากกว่านะ!</value>
+	</string>
+	<!--{0}: cultist who died-->
+	<string key="CultistFellPublic">
+		<value>พวกคลั่งลัทธิพยายามจะเผาโบสถ์ แต่ขณะที่ {0} นำทางพรรคพวกผ่านสุสาน ดันไปทำกับดักทำงาน! เขากรีดร้องขณะที่ร่วงลงไปในหลุม ส่วนพวกคลั่งลัทธิคนอื่นๆ วิ่งหนีกระจัดกระจาย</value>
+	</string>
+	<!--{0}: thief-->
+	<string key="ThiefFellPublic">
+		<value>บางที จอมโจร {0} อาจจะพยายามขโมยของของคนตาย บางทีอาจเป็นเวรกรรม แต่เท่าที่เรารู้ เขากำลังย่องผ่านสุสานในตอนที่กับดักงับขาเขา ขณะกำลังร่วงลงหลุม เขาสังสัยว่า เขาควรเอาเพื่อนร่วมทีมมาทำงานนี้ด้วยมั้ยนะ {0} จะไม่มีโอกาสได้ขโมยของใครได้อีกแน่นอน!</value>
+	</string>
+	<!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+	<string key="WolfFellPublic">
+		<value>ขณะที่ฝูงหมาป่ากำลังออกล่า {0} ได้กลิ่นเหยื่อตัวเอ้ และไม่ได้สังเกตกับดักบนพื้นที่งับข้อเท้าในที่สุด! ด้วยความตกใจ {0} ร่วงลงไปในหลุมและถูกเหล็กแหลมเงินเสียบทะลุหัว โชคดีนะที่สัปเหร่อวางระบบรักษาความปลอดภัยไว้! {1}</value>
+	</string>
+	<string key="SerialKillerSpottedYou">
+		<value>คุณกำลังทำงานของคุณอยู่ดีๆ ทันใดนั้น ฆาตกรโรคจิตเจอคุณและเสียบเข้าให้!   แย่จัง...</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="SerialKillerSpotted">
+		<value>ขณะที่กำลังเดินผ่านสุสานพร้อมมีดชุ่มเลือด คุณสังเกตเห็นสัปเหร่อ {0} ด้วยสัญชาตญาต คุณตัดสินใจว่า คืนนี้ต้อง 2 ศพ...</value>
+	</string>
+	<string key="WolvesSpottedYou">
+		<value>คุณกำลังทำงานของคุณอยู่ดีๆ ทันใดนั้น หมาป่าพุ่งใส่คุณจากด้านหลังและฆ่าคุณ!</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="WolvesSpotted">
+		<value>ฝูงหมาป่าวิ่งผ่านสุสาน ทันใดนั้น พวกเขาสังเกตเห็นสัปเหร่อ {0} ก่อนที่เขาจะตอบโต้ทัน พวกคุณตัวหนึ่งพุ่งใส่หลังเขา และฆ่าในกัดเดียว</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="WolvesSpottedDiggerPublic">
+		<value>{0} ไม่ได้มาเข้าร่วมประชุม ตื่นสายอีกแล้วหรือเปล่านะ? ขณะที่กำลังตามหาเขา คุณพบเขานอนตายอยู่ในสุสานทั้งที่พลั่วยังอยู่ในมือ ดูเหมือนว่าจะเจอฝูงหมาป่าเซอร์ไพรส์ไปเมื่อคืนนะ...</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="KillerSpottedDiggerPublic">
+		<value>วันนี้ {0} หายตัวไป... อาจจะตื่นสายรึเปล่านะ? คุณออกไปตามหาเขาและเจอเขานอนตายในสุสาน ในมือยังถือพลั่วอยู่ ดูเหมือนว่าจะถูกกระซวกรัวๆจนตาย...</value>
+	</string>
+	<string key="AllowArsonist">
+		<value>อนุญาตให้มีนักวางเพลิงในเกม</value>
+	</string>
+	<!--{0}: Allow/Disallow-->
+	<string key="AllowArsonistQ">
+		<value>อนุญาตให้มีนักวางเพลิงในเกม? ปัจจุบัน: {0}</value>
+	</string>
+	<!--{0}: Allow/Disallow-->
+	<string key="AllowArsonistA">
+		<value>ตั้งค่า นักวางเพลิง เป็น {0}</value>
+	</string>
+	<string key="BurningOverkill">
+		<value>Burning Overkill</value>
+	</string>
+	<!--{0}: Allow/Disallow-->
+	<string key="BurningOverkillQ">
+		<value>อนุญาตให้นักวางเพลิงและฆ่ากรต่อเนื่องอยู่ในเกมเดียวกัน? นี้มัน Hard Mode ของแท้! 😈 Current: {0}</value>
+	</string>
+	<!--{0}: Allow/Disallow-->
+	<string key="BurningOverkillA">
+		<value>ตอนนี้นักวางเพลิงและฆาตกรต่อเนื่องอยู่ในเกมเดียวกันแล้ว {0}.</value>
+	</string>
+	<string key="AboutArsonist">
+		<value>คุณเป็นนักวางเพลิง คล้ายๆ นักฆ่าต่อเนื่องนั่นแหละ คุณต้องทำงานคนเดียวแล้วแหละ ทุกๆ คืน คุณสามารถราดน้ำมันใส่บ้านเป้าหมายได้หนึ่งคน เมื่อบ้านมากกว่าหนึ่งหลังชุ่มน้ำมันแล้วก็ คุณสามารถจุดไฟ เผาบ้านที่ชุ่มน้ำมัน และฆ่าทุกคนที่อยู่ข้างใน รวมถึงคนที่มาเยี่ยมด้วย คุณจะชนะถ้าคุณเป็นผู้อยู่รอดคนสุดท้าย</value>
+	</string>
+	<string key="RoleInfoArsonist">
+		<value>คุณเป็นนักวางเพลิง🔥 ในแต่ละคืนคุณสามารถสาดน้ำมันก๊าดหรือจุดไฟเพื่อเผาบ้านที่สาดน้ำมันก๊าดใว้ก่อนหน้าทั้งหมด คุณสามารถชนะได้ถ้าคุณเป็นผู้รอดชีวิตเพียงคนเดียว</value>
+	</string>
+	<string key="Arsonist">
+		<value>นักวางเพลิง 🔥</value>
+	</string>
+	<string key="AskArsonist">
+		<value>คุณจะสาดน้ำมันก๊าด หรือดูหมู่บ้านนี้ลุกเป็นไฟดีหละ?</value>
+	</string>
+	<!--{0}: arsonist-->
+	<string key="ArsonistVisitKiller">
+		<value>นักวางเพลิง {0} พยายามที่จะสาดน้ำมันก๊าดใส่บ้านของฆาตกรต่อเนื่อง... เขาไม่สามารถรอดชีวิตกลับมาได้</value>
+	</string>
+	<string key="Spark">
+		<value>จุดไฟ</value>
+	</string>
+	<!--{0}: person whose house was doused-->
+	<string key="Doused">
+		<value>คุณทำสำเร็จ บ้าน {0} หลังถูกราดด้วยน้ำมันก๊าด</value>
+	</string>
+	<string key="GuardSavedYouFromFire">
+		<value>ไฟไหม้บ้านของคุณ แต่โชคดีที่เทวดาผู้พิทักษ์อยู่นั้นและดับไฟในทันที พวกเขาสร้างสุดยอดนักผจญเพลง ถ้าเขาไม่มัวแต่ยุ่งกับการปกป้องชาวบ้านอะนะ...</value>
+	</string>
+	<!--{0}: saved person-->
+	<string key="GuardSavedFromFire">
+		<value>คุณไม่ได้คิดว่าจะมีไฟไหม้เมื่อคุณไปที่บ้านของ {0} แต่ คุณได้ช่วยเขาเอาใว้! ไม่มีใครว่าคุณเป็นเทวดาผู้พิทักษ์ไก่กาหลอกนะ</value>
+	</string>
+	<!--{0}: person whose house was cleaned-->
+	<string key="CleanDoused">
+		<value>คืนนี้ คุณไม่ได้ปะทะกับใครหน้าไหนที่บ้านของ {0} ก็เลยมีเวลาตรวจดูรอบบ้านนิดหน่อย แล้วก็พบว่าบ้านโดนสาดน้ำมันก๊าดไว้เต็มไปหมดเลย   เนื่องจากไม่มีอะไรให้ทำ คุณก็เลยทำความสะอาดบ้านให้...</value>
+	</string>
+	<!--{0}: list of people who died in the flames-->
+	<string key="Burning">
+		<value>ชาวบ้านตื่นมาพร้อมกับกลิ่นควันไฟ ไฟไหม้หมู่บ้าน! คุณพยายามที่จะช่วยดับไฟ แต่ มันสายเกินไปที่จะช่วยชีวิตชาวบ้านที่บ้านถูกราดด้วยน้ำมันก๊าดอย่างลึกลับ วันนี้ขอแสดงความเสียใจต่อผู้เสียชีวิตจากโศกนาฏกรรมมหาอัคคีภัยไฟไหม้สลัม ดังรายนามต่ออไปนี้ :\n{0}</value>
+	</string>
+	<string key="ArsonistWins">
+		<value>สิ่งเดียวที่เหลือคือนักวางเพลิงยืนอยู่บนกองขี้เถ้า นักวางเพลิงชนะ...</value>
+	</string>
+	<string key="Burn">
+		<value>คุณเก็บถังดับเพลิงเอาใว้อย่างดีและล็อคอย่างแน่นหนาเพราะกลัวหาย ตอนนี้! ไฟไหม้บ้านของคุณและคุณก็ตายอย่างน่าอนาถอยู่ในนั้น....</value>
+	</string>
+	<string key="Augur">
+		<value>นักทำนายลาง 🦅</value>
+	</string>
+	 <!--{0}: role that is not part of the village-->
+	<string key="AugurSees">
+		<value>เมื่อคุณมองขึ้นไปยังฟากฟ้า คุณเห็นฝูงนกบินเรียงกันเป็นรูปแบบประหลาด ซึ่งหมายความว่า {0} ไม่ได้อยู่ที่หมู่บ้านแห่งนี้</value>
+		<value>ฝูงนกบอกคุณว่า {0} ไม่ได้เป็นส่วนหนึ่งของหมู่บ้านนี้</value>
+	</string>
+	<string key="AboutAugur">
+		<value>คุณคือนักทำนายลาง 🦅 ทุกๆเช้า คุณดูฝูงนกและตีความจากการบินของพวกมันว่า บทบาทใดไม่ได้อยู่ในเกม ณ ตอนนี้  แต่ฝูงนกจะไม่บอกใบ้ซ้ำสอง ดังนั้น ต้องตั้งใจเก็บข้อมูลด้วยนะ!</value>
+	</string>
+	<string key="RoleInfoAugur">
+		<value>คุณคือนักทำนายลาง 🦅 คุณมีตาทิพย์ แต่ต่างไปจากหมอดูหรือนักพยากรณ์สักหน่อย  คุณเท่านั้น ที่จะเห็นบทบาทที่ไม่ได้อยู่ในหมู่บ้าน และเห็นไม่ซ้ำกันเสียด้วย!</value>
+	</string>
+	<string key="AugurSeesNothing">
+		<value>เช้านี้ไม่มีนกเลยสักตัว นั่นอาจหมายความว่า คุณรับรู้ทุกบทบาทที่ไม่ได้อยู่ในหมู่บ้านหมดแล้ว...</value>
+	</string>
+	<!--{0}: chosen victim, {1}: wolf who died in flames-->
+	<string key="WolvesVisitBurn">
+		<value>ฝูงหมาป่าบุกเข้าบ้านของ {0} ซึ่งตอนนั้นเอง คุณสังเกตเห็นควัน คุณรีบหนีออกมา แต่ {1} ช้าไป จึงโดนไฟคลอกตาย</value>
+	</string>
+	<!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+	<string key="DefaultVisitBurn">
+		<value>{0} ควรจะอยู่กับบ้านคืนนี้นะ... เขาไปที่บ้านไฟไหม้ และก็ตายคากองเพลิง! {1}</value>
+	</string>
+	<!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+	<string key="WolfVisitBurn">
+		<value>คืนนี้ พวกหมาป่าพยายามกินใครบางคนอีกแล้ว แต่นักวางเพลิงไวกว่า! {0} หนีออกมาจากบ้านไฟไหม้ไม่ทัน... {1}</value>
+	</string>
+	<string key="ChemistKillWiseElder">
+		<value>ถึงแม้ว่าคุณจะไม่รู้จริงๆ ว่าใครเป็นนักเคมี แต่คุณแน่ใจแน่ๆ ว่าเขาจะไม่ทำผิดพลาดอย่างใหญ่หลวงอีก นักเคมีเลิกวางยามั่วซั่ว หันมาเป็นชาวบ้านธรรมดา</value>
+	</string>
+	<string key="ArsonistWinsOverpower">
+		<value>ตอนนี้ เหลือแค่ {0} กับ {1} แล้ว... แล้ว {0} ก็ยิ้ม กริ่มหยิบไม้ขีดขึ้นมาจุด แล้วโยนใส่ {1} ทำให้เขาลุกเป็นไฟ!</value>
+	</string>
+	<string key="ArsonistTeamEnd">
+		<value>นักวางเพลิง</value>
+	</string>
+	<string key="HarlotVisitNotHome">
+		<value>คุณอยากหาความสนุกนิดหน่อยกับ {0} แต่ในบ้านไม่มีใครเลย!</value>
+	</string>
+	<string key="Validate">
+  <!-- Used for the button in the role selection menu -->
+	<value>‼ ตรวจสอบ ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Used for the button in the role selection menu -->
+	<value>✅ ใช้งานได้ ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>การตั้งค่าบทบาทเหมาะสม! มันจะถูกเปิดและใช้งาน ณ บัดนี้!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>การตั้งค่าบทบาทไม่เหมาะสม! กรุณาเปิดใช้บทบาทเพิ่มเติมเพื่อให้บอทสามารถสร้างเกมที่สมดุลได้!</value>
+  </string>
+  
+  <string key="GroupIdleCount">
+  <!-- {0} - Idle count in the last 24 hours in the current group -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+	<value>{0} จากการถูกฆ่านั้นมาจากกลุ่มนี้</value> 
 </string>
 </strings>
