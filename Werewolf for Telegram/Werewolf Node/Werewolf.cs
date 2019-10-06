@@ -3160,6 +3160,7 @@ namespace Werewolf_Node
                 _sandmanSleep = false;
                 _silverSpread = false; //reset blacksmith
                 WolfCubKilled = false; //reset double kill
+                foreach (var p in Players) p.Drunk = false; //reset drunk
                 SendWithQueue(GetLocaleString("SandmanNight"));
                 return;
             }
