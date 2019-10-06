@@ -1879,7 +1879,7 @@ namespace Werewolf_Node
             CheckWildChild(checkbitten);
             CheckDoppelganger(checkbitten);
 
-            var wolves = Players.GetPlayersForRoles(WolfRoles);
+            var wolves = Players.GetPlayersForRoles(WolfRoles.Concat(new[] { IRole.SnowWolf }).ToArray());
             if (wolves.Count() >= 7)
             {
                 foreach (var w in wolves)
