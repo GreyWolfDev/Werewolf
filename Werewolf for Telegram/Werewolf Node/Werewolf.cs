@@ -2395,6 +2395,12 @@ namespace Werewolf_Node
                                 Send(GetLocaleString("ThiefToCult", roleModel.GetName(), p.GetName()), w.Id);
                             }
                             break;
+                        case IRole.Doppelgänger:
+                            Send(GetLocaleString("NewDGRoleModel", Players.First(x => x.Id == p.RoleModel).GetName()));
+                            break;
+                        case IRole.WildChild:
+                            Send(GetLocaleString("NewWCRoleModel", Players.First(x => x.Id == p.RoleModel).GetName()));
+                            break;
                         default:
                             break;
                     }
