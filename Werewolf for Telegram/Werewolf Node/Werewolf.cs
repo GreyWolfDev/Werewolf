@@ -2209,9 +2209,10 @@ namespace Werewolf_Node
                 #endregion
                 #region Cult
                 case TransformationMethod.ConvertToCult:
+                    var cultists = Players.GetPlayersForRoles(new[] { IRole.Cultist }, exceptPlayer: p);
                     Send(GetLocaleString("CultConvertYou"), p.Id);
-                    Send(GetLocaleString("CultTeam", newTeamMembers.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), p.Id);
-                    foreach (var c in newTeamMembers)
+                    Send(GetLocaleString("CultTeam", cultists.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), p.Id);
+                    foreach (var c in cultists)
                         Send(GetLocaleString("CultJoin", $"{p.GetName()}"), c.Id);
                     break;
                 #endregion
