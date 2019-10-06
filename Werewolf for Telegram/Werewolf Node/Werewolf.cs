@@ -2218,7 +2218,7 @@ namespace Werewolf_Node
                 #endregion
                 #region Wild Child
                 case TransformationMethod.WildChild:
-                    var wolves = Players.GetPlayersForRoles(WolfRoles).Where(x => x.Id != p.Id);
+                    var wolves = Players.GetPlayersForRoles(WolfRoles, exceptPlayer: p);
                     var snowwolf1 = Players.GetPlayerForRole(IRole.SnowWolf);
                     var teammates = string.Join(", ", wolves.Select(x => x.GetName()));
 
@@ -2396,10 +2396,10 @@ namespace Werewolf_Node
                             }
                             break;
                         case IRole.Doppelgänger:
-                            Send(GetLocaleString("NewDGRoleModel", Players.First(x => x.Id == p.RoleModel).GetName()));
+                            Send(GetLocaleString("NewDGRoleModel", Players.First(x => x.Id == p.RoleModel).GetName()), p.Id);
                             break;
                         case IRole.WildChild:
-                            Send(GetLocaleString("NewWCRoleModel", Players.First(x => x.Id == p.RoleModel).GetName()));
+                            Send(GetLocaleString("NewWCRoleModel", Players.First(x => x.Id == p.RoleModel).GetName()), p.Id);
                             break;
                         default:
                             break;
