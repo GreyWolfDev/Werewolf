@@ -2217,7 +2217,7 @@ namespace Werewolf_Node
                 #endregion
                 #region Wild Child
                 case TransformationMethod.WildChild:
-                    var wolves = Players.GetPlayersForRoles(WolfRoles);
+                    var wolves = Players.GetPlayersForRoles(WolfRoles).Where(x => x.Id != p.Id);
                     var snowwolf1 = Players.GetPlayerForRole(IRole.SnowWolf);
                     var teammates = string.Join(", ", wolves.Select(x => x.GetName()));
 
