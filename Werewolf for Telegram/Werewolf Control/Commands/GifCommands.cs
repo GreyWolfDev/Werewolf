@@ -125,7 +125,7 @@ namespace Werewolf_Control
         public static InlineKeyboardMarkup GetGifMenu(CustomGifData d)
         {
             var m = new Menu(2);
-            var images = new[] { "Villager Eaten", "Lone Wolf Wins", "Wolf Pack Win", "Village Wins", "Tanner Wins", "Cult Wins", "Serial Killer Wins", "Lovers Win", "No Winner", "Normal Game Start", "Chaos Game Start", "SK Killed", "Arsonist Wins", "Burn to death" };
+            var images = new[] { "Villager Eaten", "Lone Wolf Wins", "Wolf Pack Win", "Village Wins", "Tanner Wins", "Cult Wins", "Serial Killer Wins", "Lovers Win", "No Winner", "Normal Start", "Chaos Start", "SK Killed", "Arsonist Wins", "Burn to death" };
             foreach (var img in images)
             {
                 var i = img;
