@@ -1759,7 +1759,7 @@ namespace Werewolf_Control.Handler
                             disabledRoles &= ~DisabledRole.Villager; // Make SURE ww and vg are not disabled
                             grp.RoleFlags = (long)disabledRoles;
                             DB.SaveChanges();
-                            Bot.Edit(query, GetLocaleString("WhatToDo", language), GetRoleConfigMenu(groupid));
+                            Bot.Edit(query, GetLocaleString("RoleConfigInfo", language), GetRoleConfigMenu(groupid));
                             break;
                         case "validateroles":
                             disabledRoles = (DisabledRole)(grp.RoleFlags ?? 0);
@@ -1778,7 +1778,7 @@ namespace Werewolf_Control.Handler
                             }
                             grp.RoleFlags = (long)disabledRoles;
                             DB.SaveChanges();
-                            Bot.Edit(query, GetLocaleString("WhatToDo", language), GetRoleConfigMenu(groupid));
+                            Bot.Edit(query, GetLocaleString("RoleConfigInfo", language), GetRoleConfigMenu(groupid));
                             break;
                         default:
                             //check the statement against various flags to see if it a boolean group setting.  If so, build out the response.
