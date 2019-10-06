@@ -3023,8 +3023,8 @@ namespace Werewolf_Node
                     //kill them
                     gunner.Bullet--;
                     gunner.HasUsedAbility = true;
-                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller, IRole.Lycan, IRole.SnowWolf, IRole.Arsonist }.Contains(check.PlayerRole))
-                        gunner.BulletHitVillager = true;
+                    if (new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller, IRole.Lycan, IRole.SnowWolf, IRole.Arsonist }.Contains(check.PlayerRole))
+                        gunner.BulletHitBaddies++;
                     //update database
                     DBAction(gunner, check, "Shoot");
                     switch (check.PlayerRole)
@@ -5917,7 +5917,7 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.DoubleShifter);
                         if (!ach2.HasFlag(AchievementsReworked.BrokenClock) && player.FoolCorrectSeeCount >= 2)
                             newAch2.Set(AchievementsReworked.BrokenClock);
-                        if (!ach2.HasFlag(AchievementsReworked.SmartGunner) && player.PlayerRole == IRole.Gunner & !player.BulletHitVillager && player.Bullet == 0)
+                        if (!ach2.HasFlag(AchievementsReworked.SmartGunner) && player.PlayerRole == IRole.Gunner & player.BulletHitBaddies >= 2)
                             newAch2.Set(AchievementsReworked.SmartGunner);
                         if (!ach2.HasFlag(AchievementsReworked.CultCon) && player.PlayerRole == IRole.Cultist && !player.IsDead && convention)
                             newAch2.Set(AchievementsReworked.CultCon);
