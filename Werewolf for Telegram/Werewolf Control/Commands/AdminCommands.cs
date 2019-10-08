@@ -18,6 +18,8 @@ using System.Threading;
 using System.Collections;
 using System.Threading.Tasks;
 
+#pragma warning disable IDE0060 // Remove unused parameter
+
 namespace Werewolf_Control
 {
     public static partial class Commands

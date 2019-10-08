@@ -17,6 +17,8 @@ using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 using RegHelper = Werewolf_Control.Helpers.RegHelper;
 
+#pragma warning disable IDE0060 // Remove unused parameter
+
 namespace Werewolf_Control
 {
     public static partial class Commands

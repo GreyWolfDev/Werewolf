@@ -19,6 +19,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 using System.Collections;
+using Shared;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control.Handler
@@ -1751,29 +1752,48 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("ThankYou", language));
                             break;
                         case "togglerole":
-                            var role = (DisabledRole)long.Parse(choice);
-                            var disabledRoles = (DisabledRole)(grp.RoleFlags ?? 0);
-                            disabledRoles ^= role; // Toggle the role
-                            disabledRoles &= ~DisabledRole.VALID; // Remove the "VALID" flag
-                            disabledRoles &= ~DisabledRole.Wolf;
-                            disabledRoles &= ~DisabledRole.Villager; // Make SURE ww and vg are not disabled
+                            var disabledRoles = (IRole)(grp.RoleFlags ?? 0);
+                            switch (choice)
+                            {
+                                case "enableall":
+                                    disabledRoles = IRole.VALID; // Enable all roles and turn the "VALID" flag on
+                                    break;
+
+                                case "disableall":
+                                    disabledRoles = IRole.None;
+                                    foreach (var disRole in RoleConfigHelper.GetRoles().Where(x => x.GetRoleAttribute().CanBeDisabled))
+                                    {
+                                        disabledRoles |= disRole; // Disable all roles that can be disabled
+                                    }
+                                    break;
+
+                                default:
+                                    var role = (IRole)long.Parse(choice);
+                                    disabledRoles ^= role; // Toggle the role
+                                    disabledRoles &= ~IRole.VALID; // Remove the "VALID" flag
+                                    break;
+                            }
+                            disabledRoles &= ~IRole.Wolf;
+                            disabledRoles &= ~IRole.Villager;
+                            disabledRoles &= ~IRole.SpecialRole; // Make SURE ww, vg and special are not disabled
                             grp.RoleFlags = (long)disabledRoles;
                             DB.SaveChanges();
                             Bot.Edit(query, GetLocaleString("RoleConfigInfo", language), GetRoleConfigMenu(groupid));
                             break;
                         case "validateroles":
-                            disabledRoles = (DisabledRole)(grp.RoleFlags ?? 0);
-                            disabledRoles &= ~DisabledRole.Wolf;
-                            disabledRoles &= ~DisabledRole.Villager; // Make SURE ww and vg are not disabled
+                            disabledRoles = (IRole)(grp.RoleFlags ?? 0);
+                            disabledRoles &= ~IRole.Wolf;
+                            disabledRoles &= ~IRole.Villager;
+                            disabledRoles &= ~IRole.SpecialRole; // Make SURE ww, vg and special are not disabled
                             bool valid = GameBalancing.TryBalance(disabledRoles);
                             if (valid)
                             {
-                                disabledRoles |= DisabledRole.VALID; // Add the "VALID" flag
+                                disabledRoles |= IRole.VALID; // Add the "VALID" flag
                                 Bot.ReplyToCallback(query, GetLocaleString("RoleConfigValid", language), false, true);
                             }
                             else
                             {
-                                disabledRoles &= ~DisabledRole.VALID; // Remove the "VALID" flag
+                                disabledRoles &= ~IRole.VALID; // Remove the "VALID" flag
                                 Bot.ReplyToCallback(query, GetLocaleString("RoleConfigInvalid", language), false, true);
                             }
                             grp.RoleFlags = (long)disabledRoles;
@@ -2099,16 +2119,16 @@ namespace Werewolf_Control.Handler
             return menu;
         }
 
-        public static InlineKeyboardMarkup GetRoleConfigMenu(long id)
+        public static InlineKeyboardMarkup GetRoleConfigMenu(long id, bool addEnableAll = true, bool addDisableAll = true)
         {
             var buttons = new List<InlineKeyboardButton>();
 
             using (var db = new WWContext())
             {
                 var grp = db.Groups.FirstOrDefault(x => x.GroupId == id);
-                var disabledRoles = (DisabledRole)(grp.RoleFlags ?? 0);
+                var disabledRoles = (IRole)(grp.RoleFlags ?? 0);
 
-                foreach (DisabledRole role in RoleConfigHelper.GetRoles())
+                foreach (IRole role in RoleConfigHelper.GetRoles())
                 {
                     var roleAttr = role.GetRoleAttribute();
                     if (!roleAttr.CanBeDisabled) continue;
@@ -2134,12 +2154,18 @@ namespace Werewolf_Control.Handler
 
                 var l = GetLanguage(id);
 
+                threeMenu.Add(new InlineKeyboardButton[] 
+                {
+                    new InlineKeyboardCallbackButton(GetLocaleString("EnableAllRoles", l), $"togglerole|{id}|enableall"),
+                    new InlineKeyboardCallbackButton(GetLocaleString("DisableAllRoles", l), $"togglerole|{id}|disableall")
+                });
+
                 List<InlineKeyboardButton> lastRow = new List<InlineKeyboardButton>
                 {
-                    disabledRoles.HasFlag(DisabledRole.VALID)
+                    disabledRoles.HasFlag(IRole.VALID)
                         ? new InlineKeyboardCallbackButton(GetLocaleString("Valid", l), $"dummmy")
                         : new InlineKeyboardCallbackButton(GetLocaleString("Validate", l), $"validateroles|{id}"),
-
+                    
                     new InlineKeyboardCallbackButton(GetLocaleString("Back", l), $"{ConfigGroup.RoleConfig.ToString()}|{id}|back")
                 };
 

@@ -250,7 +250,6 @@
     <Compile Include="Helpers\Charting.cs" />
     <Compile Include="Helpers\CLI.cs" />
     <Compile Include="Helpers\Extensions.cs" />
-    <Compile Include="Helpers\GameBalancing.cs" />
     <Compile Include="Helpers\LanguageHelper.cs" />
     <Compile Include="Helpers\PublicGroups.cs" />
     <Compile Include="Helpers\RegHelper.cs" />
@@ -284,6 +283,10 @@
     <ProjectReference Include="..\Database\Database.csproj">
       <Project>{a5e58eab-3171-4859-8fd5-d61e78cbdc93}</Project>
       <Name>Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{86c5bff1-8ffd-4246-82a7-98c8504c15f1}</Project>
+      <Name>Shared</Name>
     </ProjectReference>
     <ProjectReference Include="..\TcpFramework\TcpFramework.csproj">
       <Project>{acb86d9a-837c-4bb6-83fa-99fe4dc7d3e4}</Project>

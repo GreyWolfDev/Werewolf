@@ -15,6 +15,8 @@ using Werewolf_Control.Helpers;
 using System.Threading;
 using Telegram.Bot.Types.InlineKeyboardButtons;
 
+#pragma warning disable IDE0060 // Remove unused parameter
+
 namespace Werewolf_Control
 {
     public static partial class Commands

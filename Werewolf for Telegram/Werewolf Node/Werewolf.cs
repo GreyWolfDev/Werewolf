@@ -13,6 +13,7 @@ using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
+using Shared;
 
 // ReSharper disable PossibleMultipleEnumeration warning
 #pragma warning disable 4014
@@ -1454,7 +1455,7 @@ namespace Werewolf_Node
             return GetLocaleString(en.ToString()).ToBold();
         }
 
-        private List<IRole> GetRoleList(int playerCount, List<DisabledRole> disabledRoles)
+        private List<IRole> GetRoleList(int playerCount, List<IRole> disabledRoles)
         {
             var rolesToAssign = new List<IRole>();
             //need to set the max wolves so game doesn't end immediately - 25% max wolf population
@@ -1476,7 +1477,7 @@ namespace Werewolf_Node
                 rolesToAssign[0] = IRole.Wolf;
 
             //add remaining roles to 'card pile'
-            foreach (var role in Enum.GetValues(typeof(IRole)).Cast<IRole>())
+            foreach (var role in RoleConfigHelper.GetRoles())
             {
                 switch (role)
                 {
@@ -1491,7 +1492,7 @@ namespace Werewolf_Node
                         if (playerCount > 10)
                             rolesToAssign.Add(role);
                         break;
-                    case IRole.Spumpkin:
+                    case IRole.SpecialRole:
                         break;
                     default:
                         rolesToAssign.Add(role);
@@ -1514,7 +1515,7 @@ namespace Werewolf_Node
             //now fill rest of the slots with villagers (for large games)
             for (int i = 0; i < playerCount / 4; i++)
                 rolesToAssign.Add(IRole.Villager);
-            rolesToAssign = rolesToAssign.Where(x => !disabledRoles.Any(y => y.ToString() == x.ToString())).ToList();
+            rolesToAssign = rolesToAssign.Where(x => !disabledRoles.Contains(x)).ToList();
             return rolesToAssign;
         }
 
@@ -1522,90 +1523,8 @@ namespace Werewolf_Node
         {
             try
             {
-                List<IRole> rolesToAssign;
-                var roleflags = (DisabledRole)(DbGroup.RoleFlags ?? 0);
-                List<DisabledRole> disabledRoles = roleflags.HasFlag(DisabledRole.VALID)
-                    ? roleflags.GetUniqueRoles().ToList()
-                    : new List<DisabledRole>();
-
-                var count = Players.Count;
-
-                var balanced = false;
-                var attempts = 0;
-                var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.Lycan, IRole.Thief, IRole.SnowWolf, IRole.Arsonist };
-
-                do
-                {
-                    attempts++;
-                    if (attempts >= 500)
-                    {
-                        throw new IndexOutOfRangeException("Unable to create a balanced game.  Please try again.\nPlayer count: " + count);
-                    }
-
-
-                    //determine which roles should be assigned
-                    rolesToAssign = GetRoleList(count, disabledRoles);
-                    PossibleRoles = rolesToAssign;
-                    rolesToAssign.Shuffle();
-                    rolesToAssign = rolesToAssign.Take(count).ToList();
-
-
-
-                    //let's fix some roles that should or shouldn't be there...
-
-                    //sorcerer or traitor or snowwolf, without wolves, are pointless. change one of them to wolf
-                    if ((rolesToAssign.Contains(IRole.Sorcerer) || rolesToAssign.Contains(IRole.Traitor) || rolesToAssign.Contains(IRole.SnowWolf)) &&
-                        !rolesToAssign.Any(x => WolfRoles.Contains(x)))
-                    {
-                        var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor || x == IRole.SnowWolf); //if there are multiple, the random order of rolesToAssign will choose for us which one to substitute
-                        rolesToAssign[towolf] = WolfRoles[Program.R.Next(WolfRoles.Count())]; //choose randomly from WolfRoles
-                    }
-
-                    //cult without CH -> add CH (unless the group REALLY doesn't want it...)
-                    if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter)
-                        && !disabledRoles.Contains(DisabledRole.CultistHunter))
-                    {
-                        //just pick a vg, and turn them to CH
-                        var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
-                        rolesToAssign[vg] = IRole.CultistHunter;
-                    }
-
-                    //appseer without seer -> seer
-                    if (rolesToAssign.Contains(IRole.ApprenticeSeer) && !rolesToAssign.Contains(IRole.Seer))
-                    {
-                        //substitute with seer
-                        var apps = rolesToAssign.IndexOf(IRole.ApprenticeSeer);
-                        rolesToAssign[apps] = IRole.Seer;
-                    }
-
-                    //make sure that we have at least two teams
-                    if (
-                        rolesToAssign.Any(x => !nonVgRoles.Contains(x)) //make sure we have VGs
-                        && rolesToAssign.Any(x => nonVgRoles.Contains(x) && x != IRole.Sorcerer && x != IRole.Tanner && x != IRole.Thief) //make sure we have at least one enemy
-                    )
-                        balanced = true;
-                    //else, redo role assignment. better to rely on randomness, than trying to fix it
-
-                    //also make sure that baddie count is lower than village count
-                    if (rolesToAssign.Count(x => nonVgRoles.Contains(x)) >= rolesToAssign.Count(x => !nonVgRoles.Contains(x))) balanced = false;
-
-                    if (rolesToAssign.Contains(IRole.SerialKiller) && rolesToAssign.Contains(IRole.Arsonist))
-                        balanced = balanced && BurningOverkill;
-
-                    //the roles to assign are good, now if it's not a chaos game we need to check if they're balanced
-                    if (!Chaos)
-                    {
-                        var villageStrength =
-                            rolesToAssign.Where(x => !nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-                        var enemyStrength =
-                            rolesToAssign.Where(x => nonVgRoles.Contains(x)).Sum(x => x.GetStrength(rolesToAssign));
-
-                        //check balance
-                        var varianceAllowed = (count / 4) + 1;
-                        balanced = balanced && (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
-                    }
-                } while (!balanced);
-
+                var roleflags = (IRole)(DbGroup.RoleFlags ?? 0);
+                var rolesToAssign = GameBalancing.Balance(roleflags, Players.Count, Chaos, BurningOverkill, out PossibleRoles);
 
                 //shuffle things
                 Players.Shuffle();
@@ -1623,7 +1542,7 @@ namespace Werewolf_Node
                 var availableDates = new[] { new DateTime(2018, 10, 31), new DateTime(2018, 11, 1) };
                 if (availableDates.Contains(DateTime.UtcNow.AddHours(14).Date) || availableDates.Contains(DateTime.UtcNow.Date) || availableDates.Contains(DateTime.UtcNow.AddHours(-11).Date))
                     if (rolesToAssign.Any(x => toBeReplaced.Contains(x)))
-                        rolesToAssign[rolesToAssign.IndexOf(rolesToAssign.First(x => toBeReplaced.Contains(x)))] = IRole.Spumpkin;
+                        rolesToAssign[rolesToAssign.IndexOf(rolesToAssign.First(x => toBeReplaced.Contains(x)))] = IRole.SpecialRole;
 
 
 #if DEBUG
@@ -1648,7 +1567,7 @@ namespace Werewolf_Node
                 for (var i = 0; i < Players.Count; i++)
                 {
                     Players[i].PlayerRole = rolesToAssign[i];
-                    if (rolesToAssign[i] == IRole.Spumpkin) AddAchievement(Players[i], AchievementsReworked.TodaysSpecial);
+                    if (rolesToAssign[i] == IRole.SpecialRole) AddAchievement(Players[i], AchievementsReworked.TodaysSpecial);
                 }
 
                 SetRoleAttributes();
@@ -1721,7 +1640,7 @@ namespace Werewolf_Node
                 case IRole.Chemist:
                 case IRole.Detective:
                 case IRole.Gunner:
-                case IRole.Spumpkin:
+                case IRole.SpecialRole:
                 case IRole.Augur:
                 case IRole.GraveDigger:
                     p.Team = ITeam.Village;
@@ -2081,7 +2000,7 @@ namespace Werewolf_Node
                 if (rm != null && rm.IsDead)
                 {
                     Transform(p, rm.PlayerRole, TransformationMethod.Doppelgänger,
-                        newRoleModel: rm.RoleModel, bullet: new[] { IRole.Spumpkin, IRole.Gunner }.Contains(rm.PlayerRole) ? (int?)2 : null, hasUsedAbility: false, roleModel: rm);
+                        newRoleModel: rm.RoleModel, bullet: new[] { IRole.SpecialRole, IRole.Gunner }.Contains(rm.PlayerRole) ? (int?)2 : null, hasUsedAbility: false, roleModel: rm);
                 }
             }
         }
@@ -2159,7 +2078,7 @@ namespace Werewolf_Node
             SetTeam(p);
 
             // check achievements after transformation
-            if (p.PlayerRole == IRole.Spumpkin)
+            if (p.PlayerRole == IRole.SpecialRole)
                 AddAchievement(p, AchievementsReworked.TodaysSpecial);
 
             // role specific after-actions
@@ -3052,7 +2971,7 @@ namespace Werewolf_Node
             }
 
             //check spumpkin
-            var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.Spumpkin & !x.IsDead && x.Choice != 0 && x.Choice != -1);
+            var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.SpecialRole & !x.IsDead && x.Choice != 0 && x.Choice != -1);
             if (spumpkin != null)
             {
                 var check = Players.FirstOrDefault(x => x.Id == spumpkin.Choice);
@@ -3716,7 +3635,7 @@ namespace Werewolf_Node
                         }
                         break;
                     case VisitResult.Fail:
-                        fail:
+                    fail:
                         Send(GetLocaleString("HunterFailedToFind", hunted.GetName()), hunter.Id);
                         break;
                     case VisitResult.AlreadyDead:
@@ -3871,7 +3790,7 @@ namespace Werewolf_Node
                                     break;
                                 case IRole.Doppelgänger:
                                 case IRole.Thief:
-                                case IRole.Spumpkin:
+                                case IRole.SpecialRole:
                                     ConvertToCult(target, voteCult, 0);
                                     break;
                                 case IRole.Oracle:
@@ -4294,7 +4213,7 @@ namespace Werewolf_Node
                             else if (target.PlayerRole == IRole.SerialKiller) Send(GetLocaleString("StealKiller"), thief.Id);
                             break;
                         case VisitResult.Fail:
-                            fail:
+                        fail:
                             Send(GetLocaleString("ThiefStealFailed", target.GetName()), thief.Id);
                             break;
                     }
@@ -5154,7 +5073,7 @@ namespace Werewolf_Node
                 }
             }
 
-            var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.Spumpkin & !x.IsDead);
+            var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.SpecialRole & !x.IsDead);
 
             if (spumpkin != null)
             {
