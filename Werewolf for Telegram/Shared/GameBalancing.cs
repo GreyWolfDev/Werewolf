@@ -169,6 +169,8 @@ namespace Shared
                         if (playerCount > 10)
                             rolesToAssign.Add(role);
                         break;
+                    case IRole.SpecialRole:
+                        break;
                     default:
                         rolesToAssign.Add(role);
                         break;
