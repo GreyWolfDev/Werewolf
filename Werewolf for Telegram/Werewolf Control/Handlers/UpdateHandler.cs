@@ -1061,10 +1061,10 @@ namespace Werewolf_Control.Handler
                         Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroupAttribute.GetConfigGroup(command.Substring(3))));
                         return;
                     }
-                    var confGroup = ConfigGroupAttribute.GetConfigGroups().Where(x => x.ToString() == command);
-                    if (confGroup.Count() > 0)
+                    if (Enum.TryParse(command, out ConfigGroup confGroup))
                     {
-                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, confGroup.First()));
+                        var text = confGroup == ConfigGroup.RoleConfig ? "RoleConfigInfo" : "WhatToDo";
+                        Bot.ReplyToCallback(query, GetLocaleString(text, language), replyMarkup: GetConfigSubmenu(groupid, confGroup));
                         return;
                     }
                     grp?.UpdateFlags();
