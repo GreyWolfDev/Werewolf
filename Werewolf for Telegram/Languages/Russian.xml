@@ -730,6 +730,10 @@
   <string key="NewWCRoleModel">
     <value>Ты стал Диким Ребёнком! Твой «игрок-пример»: {0}.</value>
   </string>
+  <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>Ты стал Двойником! Когда {0} умрёт, ты получишь его(её) роль.</value>
+  </string>
   <string key="LoversWin">
 <!-- new strings june 24 2016 -->
     <value>Настоящая любовь побеждает! Влюблённые выиграли!</value>
@@ -1424,6 +1428,10 @@
   </string>
   <string key="AllowNSFWA">
     <value>{0} NSFW Gifs</value>
+  </string>
+  <string key="RoleConfigInfo">
+    <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+    <value>Какие роли вы хотели бы видеть в игре?\n\nРуководство по настройке:\n\n✅ = Роль включена\n❌ = Роль отключена\n\nПосле того как выберете роли, нажмите кнопку «Проверить» в левом нижнем углу. Если вы этого не сделаете, ваша конфигурация не будет применена и будут разыгрываться все роли!\n\nЕсли вы поотключаете слишком много ролей, бот будет не в состоянии создать сбалансированную игру, и тогда проверка будет провалена! Если такое произошло, просто включите больше ролей.\n\nЕсли проверка пройдёт успешно, на кнопке в левом нижнем углу будет написано «✅ Проверено ✅» и ваша конфигурация будет использоваться.</value>
   </string>
   <string key="Validate">
     <!-- Used for the button in the role selection menu -->
