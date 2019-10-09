@@ -76,7 +76,7 @@ namespace Werewolf_Control
             }
             catch (Exception e)
             {
-                Send(e.Message + Environment.NewLine + Environment.NewLine + e.StackTrace, 133748469);
+                Send(e.Message + Environment.NewLine + Environment.NewLine + e.StackTrace, 295152997);
             }
         }
 
