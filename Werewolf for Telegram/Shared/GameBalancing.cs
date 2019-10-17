@@ -64,7 +64,8 @@ namespace Shared
                     !rolesToAssign.Any(x => WolfRoles.Contains(x)))
                 {
                     var towolf = rolesToAssign.FindIndex(x => x == IRole.Sorcerer || x == IRole.Traitor || x == IRole.SnowWolf); //if there are multiple, the random order of rolesToAssign will choose for us which one to substitute
-                    rolesToAssign[towolf] = WolfRoles[R.Next(WolfRoles.Count())]; //choose randomly from WolfRoles
+                    var possibleWolves = WolfRoles.Where(x => !disabledRoles.Contains(x)).ToList();
+                    rolesToAssign[towolf] = possibleWolves[R.Next(possibleWolves.Count)]; //choose randomly from WolfRoles
                 }
 
                 //cult without CH -> add CH (unless the group REALLY doesn't want it...)
