@@ -53,7 +53,7 @@ namespace Shared
 
                 //determine which roles should be assigned
                 rolesToAssign = GetRoleList(playerCount, disabledRoles);
-                possibleRoles = rolesToAssign;
+                possibleRoles = new List<IRole>(rolesToAssign);
                 Shuffle(rolesToAssign);
                 rolesToAssign = rolesToAssign.Take(playerCount).ToList();
 
