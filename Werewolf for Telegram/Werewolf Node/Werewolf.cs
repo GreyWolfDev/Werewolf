@@ -222,12 +222,8 @@ namespace Werewolf_Node
                     new InlineKeyboardUrlButton(GetLocaleString("JoinButton"),$"https://t.me/{Program.Me.Username}?start=join" + deeplink)
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
-#if DEBUG
                 _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage((Chaos ? StartChaosGame : StartGame))}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
-                //_joinMsgId = Program.Bot.SendDocumentAsync(chatid, new FileToSend("CgADAwADmAIAAnQXsQdKO62ILjJQMQI"), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
-#else
-                _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage((Chaos ? StartChaosGame : StartGame))}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
-#endif
+
 
                 // This can stay turned off now I think. Can enable it again if players don't get it at all
                 // SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
@@ -1475,17 +1471,16 @@ namespace Werewolf_Node
                 // special roles for events
                 // halloween this time
                 var toBeReplaced = new[] { IRole.Mason, IRole.Cupid, IRole.Villager, IRole.Pacifist, IRole.Sandman };
-                var availableDates = new[] { new DateTime(2018, 10, 31), new DateTime(2018, 11, 1) };
-                if (availableDates.Contains(DateTime.UtcNow.AddHours(14).Date) || availableDates.Contains(DateTime.UtcNow.Date) || availableDates.Contains(DateTime.UtcNow.AddHours(-11).Date))
+                if (IsDateAnywhere(31, 10, 2019) || (ChatId == Settings.VeteranChatId && DateTime.UtcNow.Year == 2019 && DateTime.UtcNow.Month == 11 && DateTime.UtcNow.Day < 7))
                     if (rolesToAssign.Any(x => toBeReplaced.Contains(x)))
-                        rolesToAssign[rolesToAssign.IndexOf(rolesToAssign.First(x => toBeReplaced.Contains(x)))] = IRole.SpecialRole;
+                        rolesToAssign[rolesToAssign.IndexOf(rolesToAssign.First(x => toBeReplaced.Contains(x)))] = IRole.Spumpkin;
 
 
 #if DEBUG
                 //force roles for testing
                 IRole[] requiredRoles = new IRole[]
                 {
-                    IRole.Cupid,
+                    IRole.Spumpkin,
                     IRole.Wolf
                 };
                 int requiredCount = requiredRoles.Length;
@@ -1503,7 +1498,7 @@ namespace Werewolf_Node
                 for (var i = 0; i < Players.Count; i++)
                 {
                     Players[i].PlayerRole = rolesToAssign[i];
-                    if (rolesToAssign[i] == IRole.SpecialRole) AddAchievement(Players[i], AchievementsReworked.TodaysSpecial);
+                    //if (rolesToAssign[i] == IRole.Spumpkin) AddAchievement(Players[i], AchievementsReworked.TodaysSpecial);
                 }
 
                 SetRoleAttributes();
@@ -1576,7 +1571,7 @@ namespace Werewolf_Node
                 case IRole.Chemist:
                 case IRole.Detective:
                 case IRole.Gunner:
-                case IRole.SpecialRole:
+                case IRole.Spumpkin:
                 case IRole.Augur:
                 case IRole.GraveDigger:
                     p.Team = ITeam.Village;
@@ -1936,7 +1931,7 @@ namespace Werewolf_Node
                 if (rm != null && rm.IsDead)
                 {
                     Transform(p, rm.PlayerRole, TransformationMethod.Doppelgänger,
-                        newRoleModel: rm.RoleModel, bullet: new[] { IRole.SpecialRole, IRole.Gunner }.Contains(rm.PlayerRole) ? (int?)2 : null, hasUsedAbility: false, roleModel: rm);
+                        newRoleModel: rm.RoleModel, bullet: new[] { IRole.Spumpkin, IRole.Gunner }.Contains(rm.PlayerRole) ? (int?)2 : null, hasUsedAbility: false, roleModel: rm);
                 }
             }
         }
@@ -2014,7 +2009,7 @@ namespace Werewolf_Node
             SetTeam(p);
 
             // check achievements after transformation
-            if (p.PlayerRole == IRole.SpecialRole)
+            if (p.PlayerRole == IRole.Spumpkin)
                 AddAchievement(p, AchievementsReworked.TodaysSpecial);
 
             // role specific after-actions
@@ -2907,7 +2902,7 @@ namespace Werewolf_Node
             }
 
             //check spumpkin
-            var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.SpecialRole & !x.IsDead && x.Choice != 0 && x.Choice != -1);
+            var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.Spumpkin & !x.IsDead && x.Choice != 0 && x.Choice != -1);
             if (spumpkin != null)
             {
                 var check = Players.FirstOrDefault(x => x.Id == spumpkin.Choice);
@@ -3726,7 +3721,7 @@ namespace Werewolf_Node
                                     break;
                                 case IRole.Doppelgänger:
                                 case IRole.Thief:
-                                case IRole.SpecialRole:
+                                case IRole.Spumpkin:
                                     ConvertToCult(target, voteCult, 0);
                                     break;
                                 case IRole.Oracle:
@@ -5009,7 +5004,7 @@ namespace Werewolf_Node
                 }
             }
 
-            var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.SpecialRole & !x.IsDead);
+            var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.Spumpkin & !x.IsDead);
 
             if (spumpkin != null)
             {
@@ -5644,6 +5639,15 @@ namespace Werewolf_Node
                 }
                 _longHaulReached = true;
             }
+        }
+
+        /// <summary>
+        /// True if right now it's the specified date in any timezone on the world.
+        /// </summary>
+        public static bool IsDateAnywhere(int day, int month, int? year = null)
+        {
+            var dates = new[] { DateTime.UtcNow.AddHours(14), DateTime.UtcNow.AddHours(-11) };
+            return dates.Any(x => x.Day == day && x.Month == month && (!year.HasValue || x.Year == year.Value));
         }
 
         public int DBGameId { get; set; }

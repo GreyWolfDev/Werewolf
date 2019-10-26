@@ -1775,7 +1775,7 @@ namespace Werewolf_Control.Handler
                             }
                             disabledRoles &= ~IRole.Wolf;
                             disabledRoles &= ~IRole.Villager;
-                            disabledRoles &= ~IRole.SpecialRole; // Make SURE ww, vg and special are not disabled
+                            disabledRoles &= ~IRole.Spumpkin; // Make SURE ww, vg and special are not disabled
                             grp.RoleFlags = (long)disabledRoles;
                             DB.SaveChanges();
                             Bot.Edit(query, GetLocaleString("RoleConfigInfo", language), GetRoleConfigMenu(groupid));
@@ -1784,7 +1784,7 @@ namespace Werewolf_Control.Handler
                             disabledRoles = (IRole)(grp.RoleFlags ?? 0);
                             disabledRoles &= ~IRole.Wolf;
                             disabledRoles &= ~IRole.Villager;
-                            disabledRoles &= ~IRole.SpecialRole; // Make SURE ww, vg and special are not disabled
+                            disabledRoles &= ~IRole.Spumpkin; // Make SURE ww, vg and special are not disabled
                             bool valid = GameBalancing.TryBalance(disabledRoles);
                             if (valid)
                             {

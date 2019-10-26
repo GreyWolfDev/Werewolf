@@ -140,7 +140,7 @@ namespace Shared
         Arsonist = 4398046511104,
 
         [Role("🎃", false)]
-        SpecialRole = 8796093022208,
+        Spumpkin = 8796093022208,
     }
 
     public class RoleAttribute : Attribute

@@ -170,7 +170,7 @@ namespace Shared
                         if (playerCount > 10)
                             rolesToAssign.Add(role);
                         break;
-                    case IRole.SpecialRole:
+                    case IRole.Spumpkin:
                         break;
                     default:
                         rolesToAssign.Add(role);
@@ -289,7 +289,7 @@ namespace Shared
                     return 8;
                 case IRole.Arsonist:
                     return 8;
-                case IRole.SpecialRole:
+                case IRole.Spumpkin:
                     return 2;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
