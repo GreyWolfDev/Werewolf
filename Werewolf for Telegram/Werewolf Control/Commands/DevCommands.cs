@@ -66,8 +66,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "bangroup", DevOnly = true)]
         public static void BanGroup(Update u, string[] args)
         {
-            long groupid = 0;
-            if (long.TryParse(args[1], out groupid))
+            if (long.TryParse(args[1], out long groupid))
             {
                 using (var db = new WWContext())
                 {

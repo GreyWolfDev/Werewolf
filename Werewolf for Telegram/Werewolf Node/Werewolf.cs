@@ -1179,7 +1179,6 @@ namespace Werewolf_Node
         }
 
 
-
         //TODO move the message queue elsewhere
         class Message
         {
