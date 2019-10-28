@@ -215,7 +215,7 @@ namespace Werewolf_Node
                 });
                 FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
 #if RELEASE
-                _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new FileToSend(GetRandomImage(Chaos ? StartChaosGame : StartGame)), FirstMessage.FormatHTML(), replyMarkup: _joinButton).Result.MessageId;
+                _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new FileToSend(GetRandomImage(Chaos ? StartChaosGame : StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #else
                 _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage((Chaos ? StartChaosGame : StartGame))}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
 #endif
