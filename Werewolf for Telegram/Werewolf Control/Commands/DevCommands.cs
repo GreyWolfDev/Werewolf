@@ -26,6 +26,7 @@ using Werewolf_Control.Attributes;
 using File = System.IO.File;
 using Group = Database.Group;
 using RegHelper = Werewolf_Control.Helpers.RegHelper;
+using System.Collections;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 #pragma warning disable IDE0060 // Remove unused parameter
@@ -108,6 +109,46 @@ namespace Werewolf_Control
             Send($"Select build to trigger", u.Message.Chat.Id,
                 customMenu: menu.CreateMarkupFromMenu());
         }
+        
+        [Attributes.Command(Trigger = "moveachv", DevOnly = true)]
+        public static void MoveAchv(Update update, string[] args)
+        {
+            if (!int.TryParse(args[1], out int userid))
+            {
+                Bot.Send("Command syntax: /moveachv USERID", update.Message.Chat.Id);
+                return;
+            }
+
+            using (var db = new WWContext())
+            {
+                var p = db.Players.FirstOrDefault(x => x.TelegramId == userid);
+                if (p == null)
+                {
+                    Bot.Send("Couldn't find player " + userid + " in database.", update.Message.Chat.Id);
+                    return;
+                }
+                if (!p.Achievements.HasValue)
+                {
+                    Bot.Send("Player " + userid + " doesn't have old achievements records that can be moved.", update.Message.Chat.Id);
+                    return;
+                }
+
+                var ach = ((OldAchievements)p.Achievements.Value).GetUniqueFlags();
+                var newach = p.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
+                foreach (var a in ach)
+                {
+                    if (Enum.TryParse(a.ToString(), out AchievementsReworked newa))
+                    {
+                        newach[(int)newa] = true;
+                    }
+                }
+
+                p.NewAchievements = newach.ToByteArray();
+                db.SaveChanges();
+            }
+            Bot.Send("Successfully moved achievements for player " + userid, update.Message.Chat.Id);
+        }
+
 
         [Attributes.Command(Trigger = "maintenance", DevOnly = true)]
         public static void Maintenenace(Update u, string[] args)
