@@ -5311,10 +5311,11 @@ namespace Werewolf_Node
                         if (killed.PlayerRole == IRole.Wolf || killed.PlayerRole == IRole.AlphaWolf || killed.PlayerRole == IRole.WolfCub || killed.PlayerRole == IRole.SerialKiller || killed.PlayerRole == IRole.Lycan || killed.PlayerRole == IRole.SnowWolf)
                             AddAchievement(hunter, AchievementsReworked.HeyManNiceShot);
 
-                        CheckRoleChanges();
                         if (killed.PlayerRole == IRole.Hunter)
                             AddAchievement(hunter, AchievementsReworked.Domino);
                         KillPlayer(killed, KillMthd.HunterShot, killer: hunter, isNight: false);
+
+                        CheckRoleChanges();
                     }
                 }
             }
