@@ -1905,10 +1905,10 @@ namespace Werewolf_Node
             }
         }
 
-        private void BitePlayer(IPlayer target, IEnumerable<IPlayer> voteWolves, string alpha)
+        private void BitePlayer(IPlayer target, string alpha)
         {
             target.Bitten = true;
-            foreach (var wolf in voteWolves)
+            foreach (var wolf in Players.GetPlayersForRoles(WolfRoles.Concat(new[] { IRole.SnowWolf }).ToArray()))
                 Send(
                     GetLocaleString("PlayerBittenWolves", target.GetName(),
                         alpha), wolf.Id);
@@ -3269,7 +3269,7 @@ namespace Werewolf_Node
                                         if (bitten)
                                         {
                                             AddAchievement(voteWolves.First(x => x.PlayerRole == IRole.AlphaWolf), AchievementsReworked.LuckyDay);
-                                            BitePlayer(target, voteWolves, alpha);
+                                            BitePlayer(target, alpha);
                                         }
                                         else
                                         {
@@ -3331,7 +3331,7 @@ namespace Werewolf_Node
                                     case IRole.SerialKiller:
                                         if (bitten)
                                         {
-                                            BitePlayer(target, voteWolves, alpha);
+                                            BitePlayer(target, alpha);
                                             voteWolves.First(x => x.PlayerRole == IRole.AlphaWolf).StrongestAlpha = true;
                                         }
                                         else
@@ -3341,7 +3341,7 @@ namespace Werewolf_Node
                                         break;
                                     case IRole.WiseElder:
                                         if (bitten)
-                                            BitePlayer(target, voteWolves, alpha);
+                                            BitePlayer(target, alpha);
                                         else
                                         {
                                             // If WiseElder was eaten once already
@@ -3361,7 +3361,7 @@ namespace Werewolf_Node
                                     case IRole.Traitor:
                                         if (bitten)
                                         {
-                                            BitePlayer(target, voteWolves, alpha);
+                                            BitePlayer(target, alpha);
                                         }
                                         else
                                         {
@@ -3374,7 +3374,7 @@ namespace Werewolf_Node
                                     default:
                                         if (bitten)
                                         {
-                                            BitePlayer(target, voteWolves, alpha);
+                                            BitePlayer(target, alpha);
                                         }
                                         else
                                         {
