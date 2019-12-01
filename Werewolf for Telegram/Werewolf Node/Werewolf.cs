@@ -3384,7 +3384,6 @@ namespace Werewolf_Node
                                                 foreach (var w in voteWolves)
                                                     AddAchievement(w, AchievementsReworked.NoSorcery);
                                             }
-                                            DBKill(voteWolves, target, KillMthd.Eat);
                                             SendGif(GetLocaleString("WolvesEatYou"),
                                                 GetRandomImage(VillagerDieImages), target.Id);
                                         }
