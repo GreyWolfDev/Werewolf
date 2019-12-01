@@ -128,4 +128,10 @@ namespace Werewolf_Node.Models
         public string JType { get; set; } = "JoinButtonRequestInfo";
         public long GroupId { get; set; }
     }
+
+    public class ReloadLangInfo
+    {
+        public string JType { get; set; } = "ReloadLangInfo";
+        public string LangName { get; set; }
+    }
 }

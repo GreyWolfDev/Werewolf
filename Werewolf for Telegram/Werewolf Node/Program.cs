@@ -135,11 +135,6 @@ namespace Werewolf_Node
                 foreach (var msg in messages)
                 {
                     if (msg == "ping" || String.IsNullOrWhiteSpace(msg)) return; //ignore
-                    if (msg.StartsWith("reload:"))
-                    {
-                        ReloadLang(msg.Substring("reload:".Length));
-                        return;
-                    }
 
                     string t = null;
                     try
@@ -290,6 +285,13 @@ namespace Werewolf_Node
                                 game?.ShowJoinButton();
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine(jbri.GroupId);
+                                Console.ForegroundColor = ConsoleColor.Gray;
+                                break;
+                            case "ReloadLangInfo":
+                                var rli = JsonConvert.DeserializeObject<ReloadLangInfo>(msg);
+                                ReloadLang(rli.LangName);
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.WriteLine("Reloaded language file: " + rli.LangName);
                                 Console.ForegroundColor = ConsoleColor.Gray;
                                 break;
                             default:
