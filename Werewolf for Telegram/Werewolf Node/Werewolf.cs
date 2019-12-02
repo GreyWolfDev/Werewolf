@@ -5311,11 +5311,12 @@ namespace Werewolf_Node
                         if (killed.PlayerRole == IRole.Wolf || killed.PlayerRole == IRole.AlphaWolf || killed.PlayerRole == IRole.WolfCub || killed.PlayerRole == IRole.SerialKiller || killed.PlayerRole == IRole.Lycan || killed.PlayerRole == IRole.SnowWolf)
                             AddAchievement(hunter, AchievementsReworked.HeyManNiceShot);
 
+                        CheckRoleChanges(); // In case the hunter shot their own doppelgänger, they should die as hunter too
                         if (killed.PlayerRole == IRole.Hunter)
                             AddAchievement(hunter, AchievementsReworked.Domino);
                         KillPlayer(killed, KillMthd.HunterShot, killer: hunter, isNight: false);
 
-                        CheckRoleChanges();
+                        CheckRoleChanges(); // In case the hunter shot someone's role model / the seer / ...
                     }
                 }
             }
