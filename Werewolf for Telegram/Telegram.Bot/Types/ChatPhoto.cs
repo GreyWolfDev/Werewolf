@@ -18,5 +18,17 @@ namespace Telegram.Bot.Types
         /// </summary>
         [JsonProperty(PropertyName = "small_file_id", Required = Required.Default)]
         public string SmallFileId { get; set; }
+
+        /// <summary>
+        /// Unique Persistent ID for the small file that is the same over different bots
+        /// </summary>
+        [JsonProperty("small_file_unique_id", Required = Required.Default)]
+        public string SmallFileUniqueId { get; set; }
+
+        /// <summary>
+        /// Unique Persistent ID for the big file that is the same over different bots
+        /// </summary>
+        [JsonProperty("big_file_unique_id", Required = Required.Default)]
+        public string BigFileUniqueId { get; set; }
     }
 }

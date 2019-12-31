@@ -42,5 +42,11 @@ namespace Telegram.Bot.Types.Enums
         
         [EnumMember(Value = "cashtag")]
         Cashtag,
+
+        [EnumMember(Value = "underline")]
+        Underline,
+
+        [EnumMember(Value = "strikethrough")]
+        Strikethrough,
     }
 }
