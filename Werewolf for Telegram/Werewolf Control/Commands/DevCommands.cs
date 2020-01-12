@@ -709,7 +709,7 @@ namespace Werewolf_Control
                     int amt;
                     if (int.TryParse(amtStr, out amt))
                     {
-                        if (amt < 101)
+                        if (amt > -1001 && amt < 1001)
                         {
                             bool wasLocked = p.DonationLevel < 10;
                             p.DonationLevel += amt;

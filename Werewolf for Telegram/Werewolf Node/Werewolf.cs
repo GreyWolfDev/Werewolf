@@ -79,7 +79,7 @@ namespace Werewolf_Node
 
         public Dictionary<int, string> CustomWinMessages = new Dictionary<int, string>
         {
-            { 711996111, "Kindness is like snow, it beautifies everything it covers ❄️" }, // As a reward for insane donations to keep up our bots :)
+            { 1000914252, "Kindness is like snow, it beautifies everything it covers ❄️" }, // As a reward for insane donations to keep up our bots :)
         };
 
         #region Constructor

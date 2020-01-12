@@ -98,7 +98,6 @@ namespace Werewolf_Control
                     " - Gifs containing illegal content\n" +
                     " - Others, at our discretion\n" +
                     "• I will send you a description of the image, to which you will reply (to the message) with the gif you want to use\n" +
-                    "• At this time, custom gif packs ONLY work in @werewolfbot, NOT @werewolfbetabot\n" +
                     "\n\n" +
                     "PLEASE NOTE: Changing any gifs will automatically remove the approval for your pack, and an admin will need to approve it again\n" +
                     "Let's begin! Select the situation you want to set a gif for",
@@ -234,7 +233,7 @@ namespace Werewolf_Control
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Dismiss", $"dismiss|" + q.From.Id));
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: SFW", "approvesfw|" + q.From.Id));
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: NSFW", "approvensfw|" + q.From.Id));
-                Bot.Send($"User {q.From.Id} - @{q.From.Username} - has submitted a gif pack for approval", Settings.AdminChatId, customMenu: menu.CreateMarkupFromMenu());
+                Bot.Send($"User {q.From.Id} - {(q.From.Username == null ? q.From.FirstName : $"@{q.From.Username}")} - has submitted a gif pack for approval", Settings.AdminChatId, customMenu: menu.CreateMarkupFromMenu());
                 Bot.Send("Your pack has been submitted for approval to the admins.  Please wait while we review.",
                     q.From.Id);
                 return;
