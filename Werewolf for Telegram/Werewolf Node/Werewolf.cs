@@ -2465,17 +2465,19 @@ namespace Werewolf_Node
 
         private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult, int chance = 100)
         {
+            var cultists = Players.GetPlayersForRoles(new[] { IRole.Cultist });
+
             if (Program.R.Next(100) < chance)
             {
                 if (target.PlayerRole == IRole.Harlot)
                     foreach (var c in voteCult)
                         AddAchievement(c, AchievementsReworked.DontStayHome);
 
-                Transform(target, IRole.Cultist, TransformationMethod.ConvertToCult, newTeamMembers: voteCult, oldTeamMates: Players.Where(x => x.PlayerRole == IRole.Mason && x.Id != target.Id && !x.IsDead));
+                Transform(target, IRole.Cultist, TransformationMethod.ConvertToCult, newTeamMembers: cultists, oldTeamMates: Players.Where(x => x.PlayerRole == IRole.Mason && x.Id != target.Id && !x.IsDead));
             }
             else
             {
-                foreach (var c in voteCult)
+                foreach (var c in cultists)
                 {
                     Send(GetLocaleString("CultUnableToConvert", voteCult.OrderByDescending(x => x.DayCult).First().GetName(), target.GetName()), c.Id);
                 }
