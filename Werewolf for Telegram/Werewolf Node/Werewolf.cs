@@ -79,7 +79,11 @@ namespace Werewolf_Node
 
         public Dictionary<int, string> CustomWinMessages = new Dictionary<int, string>
         {
+            // Permanent
             { 1000914252, "Kindness is like snow, it beautifies everything it covers ❄️" }, // As a reward for insane donations to keep up our bots :)
+            
+            // Expires 13.05.2020
+            { 588510620, "Whether you win or lose… You can always come out ahead by learning from the experience\n~ Kinnice" } // Main & Cets Christmas event 2019 prize
         };
 
         #region Constructor
