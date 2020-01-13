@@ -3170,7 +3170,7 @@ namespace Werewolf_Node
                         }
                         else
                         {
-                            KillPlayer(burn, KillMthd.Burn, killer: arsonist, hunterFinalShot: false);
+                            KillPlayer(burn, KillMthd.Burn, killer: arsonist);
                             burn.Doused = false;
                             burn.Burning = true;
                             SendGif(GetLocaleString("Burn"), GetRandomImage(BurnToDeath), burn.Id);
@@ -4121,7 +4121,12 @@ namespace Werewolf_Node
                     var burnDeaths = Players.Where(x => x.DiedLastNight && !x.DiedByVisitingVictim && x.KilledByRole == IRole.Arsonist);
                     SendWithQueue(GetLocaleString("Burning", string.Join("\n", burnDeaths.Select(x => $"{x.GetName()} {GetLocaleString("Was")} {GetDescription(x.PlayerRole)}"))));
                     foreach (var p in burnDeaths.Where(x => x.InLove && !burnDeaths.Any(y => y.Id == x.LoverId) && Players.Any(y => !string.IsNullOrEmpty(y.LoverMsg) && y.Id == x.LoverId)))
-                        SendWithQueue(Players.First(x => x.Id == p.LoverId).LoverMsg);
+                    {
+                        var lover = Players.First(x => x.Id == p.LoverId);
+                        SendWithQueue(lover.LoverMsg);
+                        if (lover.PlayerRole == IRole.Hunter)
+                            hunterFinalShot.Add(lover, KillMthd.LoverDied);
+                    }
                     foreach (var p in burnDeaths.Where(x => x.FinalShotDelay.HasValue))
                         hunterFinalShot.Add(p, p.FinalShotDelay.Value);
                 }
