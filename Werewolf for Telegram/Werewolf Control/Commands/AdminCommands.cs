@@ -1,11 +1,13 @@
+using Database;
+using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Xml.Linq;
-using Database;
-using Newtonsoft.Json;
+using System.Threading;
+using System.Threading.Tasks;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
@@ -14,9 +16,6 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
-using System.Threading;
-using System.Collections;
-using System.Threading.Tasks;
 
 #pragma warning disable IDE0060 // Remove unused parameter
 
@@ -311,7 +310,7 @@ namespace Werewolf_Control
 
             Send($"Link set: <a href=\"{link}\">{update.Message.Chat.Title}</a>", update.Message.Chat.Id);
         }
-                                             
+
         [Attributes.Command(Trigger = "addach", DevOnly = true)]
         public static void AddAchievement(Update u, string[] args)
         {
@@ -615,8 +614,8 @@ namespace Werewolf_Control
                     Bot.Api.SendDocumentAsync(id, pack.NoWinner, "No Winner");
                     Bot.Api.SendDocumentAsync(id, pack.SerialKillerWins, "SK Wins");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, pack.StartChaosGame, "Chaos Start");                 
-                    Bot.Api.SendDocumentAsync(id, pack.StartGame, "Normal Start");      
+                    Bot.Api.SendDocumentAsync(id, pack.StartChaosGame, "Chaos Start");
+                    Bot.Api.SendDocumentAsync(id, pack.StartGame, "Normal Start");
                     Thread.Sleep(250);
                     Bot.Api.SendDocumentAsync(id, pack.TannerWin, "Tanner Win");
                     Bot.Api.SendDocumentAsync(id, pack.VillagerDieImage, "Villager Eaten");
@@ -698,7 +697,7 @@ namespace Werewolf_Control
                 downloadTasks.Add(DownloadGif(pack.WolvesWin, u.Message.Chat));
             return downloadTasks.ToArray();
         }
-        private static async Task DownloadGif(string fileid, Chat chat)
+        private static async Task<bool> DownloadGif(string fileid, Chat chat, bool logErrors = true)
         {
             try
             {
@@ -706,10 +705,13 @@ namespace Werewolf_Control
                 if (!System.IO.File.Exists(path))
                     using (var x = System.IO.File.OpenWrite(path))
                         await Bot.Api.GetFileAsync(fileid, x);
+
+                return true;
             }
             catch (Exception e)
             {
-                LogException(e, "Custom Gif", chat);
+                if (logErrors) LogException(e, "Custom Gif", chat);
+                return false;
             }
         }
 
@@ -750,7 +752,7 @@ namespace Werewolf_Control
 
                     var pack = JsonConvert.DeserializeObject<CustomGifData>(json);
                     // save gifs for external access
-                    new Thread(() => Task.WhenAll(DownloadGifFromJson(pack, u))).Start(); ;
+                    new Thread(() => Task.WhenAll(DownloadGifFromJson(pack, u))).Start();
                     // end
                     var id = u.Message.From.Id;
                     pack.Approved = true;
@@ -819,6 +821,109 @@ namespace Werewolf_Control
                     Bot.Send(msg, u.Message.Chat.Id);
                 }
             }
+#endif
+        }
+
+        [Attributes.Command(Trigger = "fixgifs", GlobalAdminOnly = true)]
+        public static void FixGifs(Update u, string[] args)
+        {
+#if !BETA
+            string Prefix = "https://tgwerewolf.com/gifs/";
+            List<string> FileIds = new List<string>();
+            List<int> UserIds = new List<int>();
+
+            if (u.Message.ReplyToMessage != null)
+            {
+                if (u.Message.ReplyToMessage.Document?.FileId != null)
+                    FileIds.Add(u.Message.ReplyToMessage.Document.FileId);
+
+                foreach (var e in u.Message.ReplyToMessage.Entities?.Where(x => x.Type == MessageEntityType.Url || x.Type == MessageEntityType.TextLink))
+                {
+                    var url = e.Url ?? u.Message.ReplyToMessage.Text?.Substring(e.Offset, e.Length);
+
+                    if (url.StartsWith(Prefix))
+                        FileIds.Add(url.Substring(Prefix.Length));
+                }
+
+                if (u.Message.ReplyToMessage.ForwardFrom != null)
+                {
+                    UserIds.Add(u.Message.ReplyToMessage.ForwardFrom.Id);
+                }
+            }
+
+            foreach (var e in u.Message.Entities?.Where(x => x.Type == MessageEntityType.Url || x.Type == MessageEntityType.TextLink))
+            {
+                var url = e.Url ?? u.Message.Text?.Substring(e.Offset, e.Length);
+
+                if (url.StartsWith(Prefix))
+                    FileIds.Add(url.Substring(Prefix.Length));
+            }
+
+            if (args.Length > 1 && !string.IsNullOrEmpty(args[1]))
+            {
+                if (int.TryParse(args[1], out int id))
+                {
+                    UserIds.Add(id);
+                }
+                else FileIds.Add(args[1]);
+            }
+
+            if (UserIds.Any())
+            {
+                using (var db = new WWContext())
+                {
+                    foreach (int userid in UserIds)
+                    {
+                        var p = db.Players.FirstOrDefault(x => x.TelegramId == userid);
+                        if (p != null && p.CustomGifSet != null)
+                        {
+                            var json = p.CustomGifSet;
+                            var pack = JsonConvert.DeserializeObject<CustomGifData>(json);
+
+                            if (pack.ArsonistWins != null) FileIds.Add(pack.ArsonistWins);
+                            if (pack.BurnToDeath != null) FileIds.Add(pack.BurnToDeath);
+                            if (pack.CultWins != null) FileIds.Add(pack.CultWins);
+                            if (pack.LoversWin != null) FileIds.Add(pack.LoversWin);
+                            if (pack.NoWinner != null) FileIds.Add(pack.NoWinner);
+                            if (pack.SerialKillerWins != null) FileIds.Add(pack.SerialKillerWins);
+                            if (pack.SKKilled != null) FileIds.Add(pack.SKKilled);
+                            if (pack.StartChaosGame != null) FileIds.Add(pack.StartChaosGame);
+                            if (pack.StartGame != null) FileIds.Add(pack.StartGame);
+                            if (pack.TannerWin != null) FileIds.Add(pack.TannerWin);
+                            if (pack.VillagerDieImage != null) FileIds.Add(pack.VillagerDieImage);
+                            if (pack.VillagersWin != null) FileIds.Add(pack.VillagersWin);
+                            if (pack.WolfWin != null) FileIds.Add(pack.WolfWin);
+                            if (pack.WolvesWin != null) FileIds.Add(pack.WolvesWin);
+                        }
+                    }
+                }
+            }
+
+            List<Task<bool>> DownloadTasks = new List<Task<bool>>();
+
+            foreach (var fileId in FileIds)
+            {
+                var path = Path.Combine(Settings.GifStoragePath, $"{fileId}.mp4");
+                if (System.IO.File.Exists(path))
+                {
+                    System.IO.File.Delete(path);
+                    DownloadTasks.Add(DownloadGif(fileId, u.Message.Chat, false));
+                }
+            }
+
+            new Thread(async () =>
+            {
+                string messageText = $"GIF Fix attempt completed!\n\n";
+
+                var results = await Task.WhenAll(DownloadTasks);
+                for (int i = 0; i < FileIds.Count; i++)
+                {
+                    if (results[i]) messageText += $"<a href=\"{Prefix}{FileIds[i]}.mp4\">({i}) Successfully fixed!</a>\n";
+                    else messageText += $"<a href=\"{Prefix}{FileIds[i]}.mp4\">({i}) Failed!</a>\n";
+                }
+
+                await Bot.Send(messageText, u.Message.Chat.Id);
+            }).Start();
 #endif
         }
     }
