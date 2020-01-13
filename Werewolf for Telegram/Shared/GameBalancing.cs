@@ -118,9 +118,9 @@ namespace Shared
             return rolesToAssign;
         }
 
-        public static bool TryBalance(IRole disabledRoles)
+        public static bool TryBalance(IRole disabledRoles, int maxPlayers)
         {
-            for (int playerCount = 5; playerCount <= 35; playerCount++)
+            for (int playerCount = 5; playerCount <= maxPlayers; playerCount++)
             {
                 try
                 {

@@ -1540,7 +1540,10 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setmaxplayer":
+                            int oldMaxPlayers = grp.MaxPlayers ?? 35;
                             grp.MaxPlayers = int.Parse(choice);
+                            if (grp.MaxPlayers > oldMaxPlayers && grp.RoleFlags.HasValue)
+                                grp.RoleFlags = (long)((IRole)grp.RoleFlags & ~IRole.VALID);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("MaxPlayersA", language, choice));
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.GroupSettings));
@@ -1785,7 +1788,7 @@ namespace Werewolf_Control.Handler
                             disabledRoles &= ~IRole.Wolf;
                             disabledRoles &= ~IRole.Villager;
                             disabledRoles &= ~IRole.Spumpkin; // Make SURE ww, vg and special are not disabled
-                            bool valid = GameBalancing.TryBalance(disabledRoles);
+                            bool valid = GameBalancing.TryBalance(disabledRoles, grp.MaxPlayers ?? 35);
                             if (valid)
                             {
                                 disabledRoles |= IRole.VALID; // Add the "VALID" flag
