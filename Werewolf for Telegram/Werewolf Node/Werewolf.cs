@@ -4109,9 +4109,10 @@ namespace Werewolf_Node
                     }
                 }
             }
-#endregion
+            #endregion
 
-#region Night Death Notifications to Group
+            #region Night Death Notifications to Group
+            Dictionary<IPlayer, KillMthd> hunterFinalShot = new Dictionary<IPlayer, KillMthd>();
             var secret = !DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
             if (Players.Any(x => x.DiedLastNight))
             {
@@ -4122,7 +4123,7 @@ namespace Werewolf_Node
                     foreach (var p in burnDeaths.Where(x => x.InLove && !burnDeaths.Any(y => y.Id == x.LoverId) && Players.Any(y => !string.IsNullOrEmpty(y.LoverMsg) && y.Id == x.LoverId)))
                         SendWithQueue(Players.First(x => x.Id == p.LoverId).LoverMsg);
                     foreach (var p in burnDeaths.Where(x => x.FinalShotDelay.HasValue))
-                        HunterFinalShot(p, p.FinalShotDelay.Value);
+                        hunterFinalShot.Add(p, p.FinalShotDelay.Value);
                 }
                 //notify of arsonist victims separately, if mode is not secret
                 foreach (var p in Players.Where(x => x.DiedLastNight && (secret || !(!x.DiedByVisitingVictim && x.KilledByRole == IRole.Arsonist))))
@@ -4326,9 +4327,12 @@ namespace Werewolf_Node
                         SendWithQueue(msg2);
                     var lover = Players.FirstOrDefault(x => x.Id == p.LoverId && !string.IsNullOrEmpty(x.LoverMsg));
                     if (lover != null) SendWithQueue(lover.LoverMsg);
-                    if (p.FinalShotDelay.HasValue) HunterFinalShot(p, p.FinalShotDelay.Value);
-                    if (lover?.FinalShotDelay.HasValue ?? false) HunterFinalShot(lover, lover.FinalShotDelay.Value);
+                    if (p.FinalShotDelay.HasValue) hunterFinalShot.Add(p, p.FinalShotDelay.Value);
+                    if (lover?.FinalShotDelay.HasValue ?? false) hunterFinalShot.Add(lover, lover.FinalShotDelay.Value);
                 }
+
+                foreach (var h in hunterFinalShot)
+                    HunterFinalShot(h.Key, h.Value);
 
                 var bloodyVictims = Players.Where(x => x.TimeDied > nightStart && x.IsDead);
 
