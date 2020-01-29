@@ -90,7 +90,7 @@ namespace Werewolf_Control
 #elif RELEASE
             build += "release";
 #endif
-            
+
             var menu = new Menu(1,
                 new List<InlineKeyboardButton>
                 {
@@ -678,11 +678,11 @@ namespace Werewolf_Control
                             var msg = "";
                             if (wasLocked)
                             {
-                                msg = "GIF Pack unlocked.  Your current donation level is " + p.DonationLevel;
+                                msg = "GIF Pack unlocked. Your current donation level is " + p.DonationLevel + "\n" + "Now you can use /customgif to make your personal pack.";
                             }
                             else
                             {
-                                msg = "Your donation level has been updated.  New level: " + p.DonationLevel;
+                                msg = "Your donation level has been updated. New level: " + p.DonationLevel;
                             }
                             try
                             {
@@ -1501,7 +1501,7 @@ namespace Werewolf_Control
                 Program.BetaUnlocked = true;
                 foreach(var id in new[] { u.Message.Chat.Id, -1001094155678 }.Distinct())
                     Bot.Send($"<b>Beta has been unlocked for all groups by {u.Message.From.FirstName.FormatHTML()}!</b>", id);
-                
+
             }
             else
             {
