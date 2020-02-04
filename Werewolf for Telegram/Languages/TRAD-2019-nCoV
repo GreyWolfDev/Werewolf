@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="2019-nCoV-繁中版" base="正體中文" variant="2019-nCoV" owner="SC" version="2020-02-03" code="zh-Hant-TW"/>
+  <string key="NotInGame">
+    <value>你還沒加入這場逃殺中</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <!-- 0 - Player name -->
+    <value>{0} 開始了一場戰役 加入戰役來保衛家園\n ℹ️使用 /setlang 設定語言（選擇正體中文-2019-nCoV）</value>
+    <value>{0} 開始了一場戰役 加入戰役來傳染民眾\n ℹ️使用 /setlang 設定語言（選擇正體中文-2019-nCoV）</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <!-- 0 - Player name -->
+    <value>{0} 開始了混戰模式 加入戰役來屠殺民眾！\n ℹ️使用 /setlang 設定語言（選擇正體中文-2019-nCoV）</value>
+    <value>{0} 開始了混戰模式 加入戰役來消滅病毒\n ℹ️使用 /setlang 設定語言（選擇正體中文-2019-nCoV）</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>已經封城 使用 /nextgame 來等待下次的戰役</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>你已參與了戰役</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>剩餘一分鐘</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>剩餘 {0} 秒\n 用 /extend 延長時間</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>民眾不想被傳染，再找些人來吧</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>戰役開始, 稍待片刻\n ℹ️使用 /rolelist 獲得角色資訊（請先用 /setlang 設定語言）</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>{0}試圖鑽洞突破封城, 而被抓去監禁\n 不能以／(斜線)作為名字開頭</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, 須更改名字</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>本次戰役人數已達上限，使用 /nextgame 來等待下次的戰役</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} 加入了這場保衛戰 有 {1} 名參加, 最少 {2} 人, 最多 {3} 人</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0}, 請立即點 {1}, 且按下 start 按鈕, 才能開始防衛</value>
+  </string>
+  <string key="DeadFlee">
+    <value>你被隔離了，想逃去哪？回去蹲著吧</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} 封城前離開了！</value>
+    <value>{0} 不想被感染，躲回家裡了！</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} 是 {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>剩餘 {0} 玩家</value>
+  </string>
+  <string key="DidntAsk">
+    <value>還沒動作，別急</value>
+  </string>
+  <string key="NotPlaying">
+    <value>你還沒參與任何戰役</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>沒這個人…</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>不正確的答案</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} 選擇傳染 {1} </value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} 選擇將 {1} 隔離</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} 兩次沒有投票，民眾懷疑他被感染了， {0} 被迅速隔離開\n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>你成為傳播者了！</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>已完成選擇</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\n醫檢師是 {0} </value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>你發現了 {0} 留下的試劑，你成為新的醫檢師了！</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} 你發現了 {1} 留下的試劑，你成為新的醫檢師了！</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>你測出 {0} 是 {1}</value>
+  </string>
+  <string key="AskLynch">
+    <value>你想隔離誰？</value>
+  </string>
+  <string key="AskDetect">
+    <value>你想跟蹤哪位玩家？</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>你想丟誰？ 剩下 {0} 顆病毒彈</value>
+  </string>
+  <string key="AskVisit">
+    <value>你想去哪位玩家家？</value>
+  </string>
+  <string key="AskSee">
+    <value>你想測試哪位玩家？</value>
+  </string>
+  <string key="AskGuard">
+    <value>你想把口罩給誰？</value>
+  </string>
+  <string key="AskEat">
+    <value>你想傳染哪位玩家？</value>
+  </string>
+  <string key="AskHunt">
+    <value>你想對誰吐痰？</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>你想找誰作為朋友？</value>
+  </string>
+  <string key="AskConvert">
+    <value>你想賣誰口罩？</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>&gt;&gt;請和 {0} 協商</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith". again, leave the spaces!-->
+    <value> 和 </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>你是沒抗體的人，你現在還是居民。當傳播者傳染你時，你就會變成傳播者</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>你是記者，白天你能跟蹤一位玩家，但有40%可能被傳播者發現</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>你是台商，你被傳染時，將因為政府強力追查，使下晚傳播者不能動作</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>你是口罩商，每晚可給予一人口罩，防止他被傳染。</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>你是黑警，你有兩顆病毒彈，你丟向一位玩家後，大家將因為害怕而隔離他</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>你是硬要去拜年的親戚，你每晚可選擇一人拜年，看他是不是健康。</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>你是西藏人，當所有傳播者被隔離開，而你以為能安心時，病毒卻剛好找上你…</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>你是傳播者，每晚能選擇一人傳播</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value>你是醫檢師，每晚能測試一位玩家</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>你不過是位居民，想要不被傳染</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value>你是不信邪的老人，若你被投票隔離，則能冷笑著拿到勝利</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>你是邊緣人，想找人做朋友。若朋友被隔離了，會變種產生病毒成為傳播者</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>你是醫檢師助理，你會知道誰是真的醫檢師</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>你是實習醫檢師，若醫檢師被隔離，你會被推上成為醫檢師</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value>你是二手口罩商，每晚能販售一個二手口罩。若所有人都買了，大家就能一起發大財</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value>你是衛生官員，要封鎖二手口罩。每晚能探查一位玩家，若他是二手口罩商，將會被隔離</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>夜晚將至，居民將要選擇隔離誰\n必須在 {0} 秒內決定</value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value>太陽升起 大家有 {0} 秒的時間討論和行動</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value>晚上來臨，大家只能躲著，希望不會被傳染… \n夜間玩家，你們有 {0} 秒時間行動</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>居民投票後，等待著結果… {0} 被隔離\n{1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>大家抉擇不了，只能留下空的病房</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>莫非大家都被傳染了？居然沒人想投票</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value>起床後，電視台卻找不到記者… 最後發現 {0} 被囚困在病房中</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value>起床後，大家發現口罩缺貨了。原來口罩商 {0} 也被隔離了！</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value>居民們發現地上的制服和警棍 原來黑警 {0} 昨晚被帶走了</value>
+  </string>
+ <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value>居民們一覺醒來，發現滿地的試管及藥劑 還有 {0} 滿滿的記號 \n醫檢師被帶走了！</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value>早上醒來，台商 {0} 家中的電話不斷響著，滿地的碎片暗示著主人的不在…</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value>居民們一覺醒來，發現滿地的試管及…水彩？ 原來 {0} 是失敗的考生</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>早上醒來，居民中卻少了一人… 而 {0} 家中也沒人回應…\n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>居民 {0} 的家中一片狼藉，衛生部的封條貼滿整個家中\n{0} 是二手口罩商</value>
+  </string>
+  <string key="NoAttack" >
+    <value>居民們醒來，大家都還在，幸好沒人被帶走</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>病毒蔓延全身，而你卻毫無招架能力。最後，你成為傳播者了</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>你的隊友是 {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value>無抗體的 {0} 被傳染了，而他加入了你們的行列</value>
+  </string>
+  <string key="WolvesEatYou" >
+    <value>一覺醒來，卻發現你已經在醫院裡了！</value>
+    <value>當你下床準備出去，卻發現門打不開，抬頭一看，才發現這裡是病房！</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value>當你正高興地哼著歌時，卻發現政府正在外面緝查。原來 {0} 是台商，看來明晚只能在家了</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>你給了傳播者口罩！ 他不但沒帶，還傳染給你</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value>幸好 {0} 戴上了口罩，不然昨晚他就被傳染了。你做出明智的決定！</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value>{0} 獨自在家，無人來訪。口罩似乎也不是那麼必須…</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>你想要將口罩給 {0} ，而你卻撲了個空</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>口罩商人給了你一個口罩，而你戴上了他，才不至於遭到感染！</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value>硬要去拜年的親戚 {0} 昨晚居然沒出門。不巧，傳播者正好找上了他</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value>你敲了敲 {0} 家的門，但沒有人回應。</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value>你拜訪了 {0} 的家，和他聊得正開心時，你開始感到不適。回家路上，馬上遭到了隔離</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value>昨晚， {0} 去拜訪了別人，卻再也沒回過家</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>{0} 拜訪了 {1} 的家正巧遇見傳播者前來訪問。聊到一半時， {0} 和 {1} 都開始不適…\n{0} 被隔離了</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value>你和 {0} 暢談整夜，兩人還玩了整晚遊戲，多麼令人愉快</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>親戚來了你家拜訪，兩人談笑風生，多麼快樂</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value>你看到 {0} 正跟蹤著人，原來他是記者</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>你跟縱後，發覺 {0} 是 {1}</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value>看來 {0} 和親戚度過愉快的夜晚後，卻還是用病毒彈將 {1} 送進病房</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>槍聲響起，{1} 正在地上哀號， {0} 仍將槍指向 {1} ，隨後救護車趕到\n{2}</value>
+  </string>
+  <string key="WolfWins" >
+    <value>#傳播者勝</value>
+  </string>
+  <string key="WolvesWin" >
+    <value>#傳播成功</value>
+  </string>
+  <string key="VillageWins" >
+    <value>#居民勝利</value>
+  </string>
+  <string key="TannerWins" >
+    <value>究竟病毒是什麼，你以為他會怕嗎？ #老人勝利</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>剩餘的玩家、角色和團隊</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value>{0} 想要賣口罩給 {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0} 想將口罩賣給 {1} ，但他是衛生官員\n{0} 被帶走了</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} 昨晚想來賣二手口罩，而你將他抓起來了\n還有 {1} 個二手口罩商</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>二手口罩商來賣你口罩了，你要和他們一起賣口罩，大家都買了，才能一起發大財</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>二手口罩商有 {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} 已買了口罩</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} 前往 {1} 家賣口罩，但沒人應門</value>
+  </string>
+  <string key="CultWins" >
+    <value>當居民被隔離時，大家都買了二手口罩，最後一起發大財 #二手商勝</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>你想前去抓 {0} ，但卻發現他已被帶走</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>你進入了 {0} 的家，發現大量使用過的口罩，你立刻將他抓走了</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>你走到 {0} 的家，卻沒發現什麼東西，於是你就回家了</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>{0} 的朋友死了！內心的劇痛使他開始突變，他成為傳播者了</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>你的朋友 {0} 死了！ 傷心之於，你突變成傳播者。還有其他傳播者是：{1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>居民</value>
+  </string>
+  <string key="Drunk">
+    <value>台商</value>
+  </string>
+  <string key="Harlot">
+    <value>硬要拜年的親戚</value>
+  </string>
+  <string key="Seer">
+    <value>醫檢師</value>
+  </string>
+  <string key="Traitor">
+    <value>西藏人</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>口罩商</value>
+  </string>
+  <string key="Detective">
+    <value>記者</value>
+  </string>
+  <string key="Wolf">
+    <value>傳播者</value>
+  </string>
+  <string key="Cursed">
+    <value>沒抗體的人</value>
+  </string>
+  <string key="Gunner">
+    <value>黑警</value>
+  </string>
+  <string key="Tanner">
+    <value>不信邪的老人</value>
+  </string>
+  <string key="Fool">
+    <value>失敗的考生</value>
+  </string>
+  <string key="WildChild">
+    <value>邊緣人</value>
+  </string>
+  <string key="Beholder">
+    <value>醫檢師助理</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>實習醫檢師</value>
+  </string>
+  <string key="Cultist">
+    <value>二手口罩商</value>
+  </string>
+  <string key="CultistHunter">
+    <value>衛生官員</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>已逃跑</value>
+  </string>
+  <string key="Dead">
+    <value>隔離</value>
+  </string>
+  <string key="Alive">
+    <value>自由</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>自由人</value>
+  </string>
+ <string key="Validate">
+  <!-- Used for the button in the role selection menu -->
+	<value>應用</value>
+  </string>
+  <string key="Valid">
+  <!-- Used for the button in the role selection menu -->
+	<value>應用</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>角色已設定</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>角色太少或不平衡</value>
+  </string>
+  <string key="GroupIdleCount">
+  <!-- {0} - Idle count in the last 24 hours in the current group -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+	<value>已在此群被自動隔離 {0} 次</value>
+  </string>
+  
+  
+</strings>
