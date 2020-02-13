@@ -1443,11 +1443,12 @@ namespace Werewolf_Node
 
 
                 // special roles for events
-                // halloween this time
-                var toBeReplaced = new[] { IRole.Mason, IRole.Cupid, IRole.Villager, IRole.Pacifist, IRole.Sandman };
-                if (IsDateAnywhere(31, 10, 2019) || (ChatId == Settings.VeteranChatId && DateTime.UtcNow.Year == 2019 && DateTime.UtcNow.Month == 11 && DateTime.UtcNow.Day < 7))
-                    if (rolesToAssign.Any(x => toBeReplaced.Contains(x)))
-                        rolesToAssign[rolesToAssign.IndexOf(rolesToAssign.First(x => toBeReplaced.Contains(x)))] = IRole.Spumpkin;
+                // valentines this time
+                if (IsDateAnywhere(14, 02, 2020) && !rolesToAssign.Any(x => x == IRole.Cupid))
+                {
+                    var toReplace = rolesToAssign.FindIndex(x => x == IRole.Villager || x == IRole.Mason);
+                    if (toReplace != -1) rolesToAssign[toReplace] = IRole.Cupid;
+                }
 
 
 #if DEBUG
@@ -1472,7 +1473,6 @@ namespace Werewolf_Node
                 for (var i = 0; i < Players.Count; i++)
                 {
                     Players[i].PlayerRole = rolesToAssign[i];
-                    if (rolesToAssign[i] == IRole.Spumpkin) AddAchievement(Players[i], AchievementsReworked.TodaysSpecial);
                 }
 
                 SetRoleAttributes();
@@ -1981,10 +1981,6 @@ namespace Werewolf_Node
             p.RoleModel = newRoleModel;
             p.PlayerRole = toRole;
             SetTeam(p);
-
-            // check achievements after transformation
-            if (p.PlayerRole == IRole.Spumpkin)
-                AddAchievement(p, AchievementsReworked.TodaysSpecial);
 
             // role specific after-actions
 #region Method-specific
@@ -4563,6 +4559,8 @@ namespace Werewolf_Node
                     {
                         if (forbidden)
                             AddAchievement(w, AchievementsReworked.ForbiddenLove);
+                        if (IsDateAnywhere(14, 02, 2020))
+                            AddAchievement(w, AchievementsReworked.TodaysSpecial);
                         w.Won = true;
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
