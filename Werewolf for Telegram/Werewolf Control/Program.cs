@@ -44,6 +44,8 @@ namespace Werewolf_Control
         internal const string MasterLanguage = "English.xml";
         static void Main(string[] args)
         {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
 #if !DEBUG
             AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
             {

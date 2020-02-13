@@ -56,6 +56,8 @@ namespace Werewolf_Node
         internal static int MessagesSent = 0;
         static void Main(string[] args)
         {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
             //set up exception logging.  It appears nodes are crashing and I'm not getting any output
             AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
             {
