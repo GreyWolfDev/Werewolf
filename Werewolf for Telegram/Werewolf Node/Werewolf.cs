@@ -5573,7 +5573,7 @@ namespace Werewolf_Node
         /// </summary>
         public static bool IsDateAnywhere(int day, int month, int? year = null)
         {
-            var dates = new[] { DateTime.UtcNow.AddHours(14), DateTime.UtcNow.AddHours(-11) };
+            var dates = new[] { DateTime.UtcNow.AddHours(-11), DateTime.UtcNow,  DateTime.UtcNow.AddHours(14) };
             return dates.Any(x => x.Day == day && x.Month == month && (!year.HasValue || x.Year == year.Value));
         }
 
