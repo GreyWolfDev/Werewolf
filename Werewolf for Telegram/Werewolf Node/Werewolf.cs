@@ -5793,21 +5793,37 @@ namespace Werewolf_Node
                 {
                     var daysspan = (refreshdate - grpranking.LastRefresh).Days; //well really this should be 7
                     daysspan = daysspan == 0 ? 1 : daysspan;
-                    var avgplayerspergame = ((decimal)grpranking.PlayersCount) / grpranking.GamesPlayed; //this is between 0 and 35
-                    var playerfactor = -((decimal)0.05) * (avgplayerspergame * avgplayerspergame) + (decimal)2.5 * avgplayerspergame - (decimal)11.25; //quadratic function, max at 25 (equals 20), zero at 5.
-                    var avgminutesperday = grpranking.MinutesPlayed / daysspan; //average minutes played per day
-                    var timefactor = avgplayerspergame * (decimal)1.6 * avgminutesperday / 1440; //(avg minutes per day played by the avg player) / (15 h in minutes). 15h is approximately the time played per day by the most active groups.
-                    var malus = (playerfactor - timefactor) * (playerfactor - timefactor) / 5; //give some malus if they played for little time with lots of people or vice versa. 
-                    var ranking = Math.Round(playerfactor + timefactor - malus, 10);
-                    /*if (ranking < 0)
-                    {
-                        Send($"#negrank Negative Ranking!!\n\nGamesPlayed = {grpranking.GamesPlayed}\n" +
-                            $"MinutesPlayed = {grpranking.MinutesPlayed}\nPlayersCount = {grpranking.PlayersCount}\n" +
-                            $"LastRefresh = {grpranking.LastRefresh.ToShortDateString()}\n\n" +
-                            $"daysspan = {daysspan}\navgplayerspergame = {avgplayerspergame}\nplayerfactor = {playerfactor}\n" +
-                            $"avgminutesperday = {avgminutesperday}\ntimefactor = {timefactor}\nmalus = {malus}\n\n" +
-                            $"Calculated Ranking: {ranking}\nGroup ID: {ChatId}", Program.ErrorGroup);
-                    }*/
+
+                    var avgPlayersPerGame = (decimal)grpranking.PlayersCount / grpranking.GamesPlayed;
+                    var avgGameLength = grpranking.MinutesPlayed / grpranking.GamesPlayed;
+                    var avgMinutesPerDay = grpranking.MinutesPlayed / daysspan;
+
+                    // PPGFactor: Quadratic. PPGFactor(PPG) = -(2/45)PPG^2 + (16/9)PPG - (70/9)
+                    // This means that PPGFactor(5) = 0, PPGFactor(20) = 10 and PPGFactor(35) = 0
+                    var PPGFactor = -((decimal)2 / 45) * avgPlayersPerGame * avgPlayersPerGame + ((decimal)16 / 9) * avgPlayersPerGame - ((decimal)70 / 9);
+
+                    // GLFactor: Quadratic. GLFactor(GL) = -(1/90)GL^2 + (2/3)GL
+                    // This means that GLFactor(0) = 0, GLFactor(10) = 5.55, GLFactor(30) = 10, GLFactor(50) = 5.55 and GLFactor(60) = 0
+                    var GLFactor = -((decimal)1 / 90) * avgGameLength * avgGameLength + ((decimal)2 / 3) * avgGameLength;
+
+                    // PlayerFactor: Sum of PPGFactor and GLFactor. This is between 0 and 20.
+                    // Best value is if both PPGFactor and GLFactor are 10, meaning there are 20 average players per game
+                    // and the average game length is 30 minutes.
+                    var PlayerFactor = PPGFactor + GLFactor;
+
+                    // TimeFactor: Linear. TimeFactor(MinutesPerDay) = MinutesPerDay / 54
+                    // This means that TimeFactor(0) = 0, TimeFactor(120) = 2.222, TimeFactor(1080) = 20 and TimeFactor(1440) = 26.666
+                    // Games running 24 hours a day is unrealistic, so 1080 minutes = 18 hours get a factor of 20.
+                    // Generally: The more time of the day played, the better.
+                    var TimeFactor = avgMinutesPerDay / 54;
+
+                    // Malus: If they play really few with a lot players, or really much with few players, give a small malus
+                    // The worst malus would be if the difference between PlayerFactor and TimeFactor was 20
+                    // That would mean the malus is 20^2 / 20 = 20
+                    var malus = (PlayerFactor - TimeFactor) * (PlayerFactor - TimeFactor) / 20;
+
+                    var ranking = Math.Round(PlayerFactor + TimeFactor - malus, 10);
+
                     grpranking.Ranking = ranking;
                     grpranking.PlayersCount = 0;
                     grpranking.MinutesPlayed = 0;
