@@ -5822,7 +5822,7 @@ namespace Werewolf_Node
                     // That would mean the malus is 20^2 / 20 = 20
                     var malus = (PlayerFactor - TimeFactor) * (PlayerFactor - TimeFactor) / 20;
 
-                    var ranking = PlayerFactor + TimeFactor - malus;
+                    var ranking = Math.Round(PlayerFactor + TimeFactor - malus, 10);
 
                     grpranking.Ranking = ranking;
                     grpranking.PlayersCount = 0;
