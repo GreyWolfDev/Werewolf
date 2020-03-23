@@ -15,6 +15,8 @@ using Werewolf_Control.Helpers;
 using System.Threading;
 using Telegram.Bot.Types.InlineKeyboardButtons;
 
+#pragma warning disable IDE0060 // Remove unused parameter
+
 namespace Werewolf_Control
 {
     public static partial class Commands
@@ -74,7 +76,7 @@ namespace Werewolf_Control
             }
             catch (Exception e)
             {
-                Send(e.Message + Environment.NewLine + Environment.NewLine + e.StackTrace, 133748469);
+                Send(e.Message + Environment.NewLine + Environment.NewLine + e.StackTrace, 295152997);
             }
         }
 
@@ -88,13 +90,13 @@ namespace Werewolf_Control
             var reply = "";
             reply += "/aboutVG - " + GetLocaleString("Villager", lang) + "\n";
             reply += "/aboutWW - " + GetLocaleString("Wolf", lang) + "\n";
-            reply += "/aboutDrunk " + GetLocaleString("Drunk", lang) + "\n";
-            reply += "/aboutSeer " + GetLocaleString("Seer", lang) + "\n";
-            reply += "/aboutCursed " + GetLocaleString("Cursed", lang) + "\n";
-            reply += "/aboutHarlot " + GetLocaleString("Harlot", lang) + "\n";
-            reply += "/aboutBH " + GetLocaleString("Beholder", lang) + "\n";
-            reply += "/aboutGunner " + GetLocaleString("Gunner", lang) + "\n";
-            reply += "/aboutTraitor " + GetLocaleString("Traitor", lang) + "\n";
+            reply += "/aboutDrunk - " + GetLocaleString("Drunk", lang) + "\n";
+            reply += "/aboutSeer - " + GetLocaleString("Seer", lang) + "\n";
+            reply += "/aboutCursed - " + GetLocaleString("Cursed", lang) + "\n";
+            reply += "/aboutHarlot - " + GetLocaleString("Harlot", lang) + "\n";
+            reply += "/aboutBH - " + GetLocaleString("Beholder", lang) + "\n";
+            reply += "/aboutGunner - " + GetLocaleString("Gunner", lang) + "\n";
+            reply += "/aboutTraitor - " + GetLocaleString("Traitor", lang) + "\n";
             reply += "/aboutGA - " + GetLocaleString("GuardianAngel", lang) + "\n";
             try
             {

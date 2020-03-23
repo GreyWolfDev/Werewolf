@@ -13,6 +13,8 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Helpers;
 
+#pragma warning disable IDE0060 // Remove unused parameter
+
 namespace Werewolf_Control
 {
     public static partial class Commands
@@ -539,15 +541,23 @@ namespace Werewolf_Control
         [Command(Trigger = "myidles")]
         public static void MyIdles(Update update, string[] args)
         {
+            bool isgroup = new[] { ChatType.Group, ChatType.Supergroup }.Contains(update.Message.Chat.Type);
+            
             var idles = 0;
+            var groupidles = 0;
             
             using (var db = new WWContext())
             {
                 idles = db.GetIdleKills24Hours(update.Message.From.Id).FirstOrDefault() ?? 0;
+                if (isgroup)
+                    groupidles = db.GetGroupIdleKills24Hours(update.Message.From.Id, update.Message.Chat.Id).FirstOrDefault() ?? 0;
             }
             
             var str = $"{update.Message.From.Id} ({update.Message.From.FirstName})";
-            var reply = GetLocaleString("IdleCount", GetLanguage(update.Message.Chat.Id), str, idles);
+            var language = GetLanguage(update.Message.Chat.Id);
+            var reply = GetLocaleString("IdleCount", language, str, idles);
+            if (isgroup)
+                reply += " " + GetLocaleString("GroupIdleCount", language, groupidles);
             
             try
             {

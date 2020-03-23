@@ -20,5 +20,11 @@ namespace Telegram.Bot.Types
         /// </summary>
         [JsonProperty(PropertyName = "Height", Required = Required.Always)]
         public int Height { get; set; }
+
+        /// <summary>
+        /// Unique Persistent ID for the file that is the same over different bots
+        /// </summary>
+        [JsonProperty("file_unique_id", Required = Required.Default)]
+        public string FileUniqueId { get; set; }
     }
 }

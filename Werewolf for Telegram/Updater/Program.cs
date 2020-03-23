@@ -24,9 +24,10 @@ namespace Updater
         }
         static void Main(string[] args)
         {
-            //ignore this commit
             try
             {
+                System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
                 var id = "";
                 if (args.Length > 0)
                     id = args[0];

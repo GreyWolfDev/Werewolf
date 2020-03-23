@@ -10,6 +10,8 @@ using Telegram.Bot.Types.Enums;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Helpers;
 
+#pragma warning disable IDE0060 // Remove unused parameter
+
 namespace Werewolf_Control
 {
     public static partial class Commands

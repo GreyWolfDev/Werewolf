@@ -26,8 +26,11 @@ using Werewolf_Control.Attributes;
 using File = System.IO.File;
 using Group = Database.Group;
 using RegHelper = Werewolf_Control.Helpers.RegHelper;
+using System.Collections;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+#pragma warning disable IDE0060 // Remove unused parameter
+
 namespace Werewolf_Control
 {
     public static partial class Commands
@@ -64,8 +67,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "bangroup", DevOnly = true)]
         public static void BanGroup(Update u, string[] args)
         {
-            long groupid = 0;
-            if (long.TryParse(args[1], out groupid))
+            if (long.TryParse(args[1], out long groupid))
             {
                 using (var db = new WWContext())
                 {
@@ -90,7 +92,7 @@ namespace Werewolf_Control
 #elif RELEASE
             build += "release";
 #endif
-            
+
             var menu = new Menu(1,
                 new List<InlineKeyboardButton>
                 {
@@ -107,6 +109,46 @@ namespace Werewolf_Control
             Send($"Select build to trigger", u.Message.Chat.Id,
                 customMenu: menu.CreateMarkupFromMenu());
         }
+        
+        [Attributes.Command(Trigger = "moveachv", DevOnly = true)]
+        public static void MoveAchv(Update update, string[] args)
+        {
+            if (!int.TryParse(args[1], out int userid))
+            {
+                Bot.Send("Command syntax: /moveachv USERID", update.Message.Chat.Id);
+                return;
+            }
+
+            using (var db = new WWContext())
+            {
+                var p = db.Players.FirstOrDefault(x => x.TelegramId == userid);
+                if (p == null)
+                {
+                    Bot.Send("Couldn't find player " + userid + " in database.", update.Message.Chat.Id);
+                    return;
+                }
+                if (!p.Achievements.HasValue)
+                {
+                    Bot.Send("Player " + userid + " doesn't have old achievements records that can be moved.", update.Message.Chat.Id);
+                    return;
+                }
+
+                var ach = ((OldAchievements)p.Achievements.Value).GetUniqueFlags();
+                var newach = p.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
+                foreach (var a in ach)
+                {
+                    if (Enum.TryParse(a.ToString(), out AchievementsReworked newa))
+                    {
+                        newach[(int)newa] = true;
+                    }
+                }
+
+                p.NewAchievements = newach.ToByteArray();
+                db.SaveChanges();
+            }
+            Bot.Send("Successfully moved achievements for player " + userid, update.Message.Chat.Id);
+        }
+
 
         [Attributes.Command(Trigger = "maintenance", DevOnly = true)]
         public static void Maintenenace(Update u, string[] args)
@@ -667,7 +709,7 @@ namespace Werewolf_Control
                     int amt;
                     if (int.TryParse(amtStr, out amt))
                     {
-                        if (amt < 101)
+                        if (amt > -1001 && amt < 1001)
                         {
                             bool wasLocked = p.DonationLevel < 10;
                             p.DonationLevel += amt;
@@ -678,11 +720,11 @@ namespace Werewolf_Control
                             var msg = "";
                             if (wasLocked)
                             {
-                                msg = "GIF Pack unlocked.  Your current donation level is " + p.DonationLevel;
+                                msg = "GIF Pack unlocked. Your current donation level is " + p.DonationLevel + "\n" + "Now you can use /customgif to make your personal pack.";
                             }
                             else
                             {
-                                msg = "Your donation level has been updated.  New level: " + p.DonationLevel;
+                                msg = "Your donation level has been updated. New level: " + p.DonationLevel;
                             }
                             try
                             {
@@ -1501,7 +1543,7 @@ namespace Werewolf_Control
                 Program.BetaUnlocked = true;
                 foreach(var id in new[] { u.Message.Chat.Id, -1001094155678 }.Distinct())
                     Bot.Send($"<b>Beta has been unlocked for all groups by {u.Message.From.FirstName.FormatHTML()}!</b>", id);
-                
+
             }
             else
             {

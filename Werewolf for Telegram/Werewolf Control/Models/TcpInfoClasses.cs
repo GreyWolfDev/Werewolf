@@ -132,4 +132,10 @@ namespace Werewolf_Control.Models
         public long GroupId { get; set; }
     }
 
+    public class ReloadLangInfo
+    {
+        public string JType { get; set; } = "ReloadLangInfo";
+        public string LangName { get; set; }
+    }
+
 }

@@ -28,5 +28,11 @@ namespace Telegram.Bot.Types
         public string FilePath { get; internal set; }
 
         public Stream FileStream { get; internal set; }
+
+        /// <summary>
+        /// Unique Persistent ID for the file that is the same over different bots
+        /// </summary>
+        [JsonProperty("file_unique_id", Required = Required.Default)]
+        public string FileUniqueId { get; set; }
     }
 }

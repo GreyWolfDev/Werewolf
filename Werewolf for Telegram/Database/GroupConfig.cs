@@ -147,8 +147,8 @@ namespace Database
             {
                 //add all the config options with messed up naming here manually
                 case "night":
-                    return ConfigGroup.Timers;
                 case "lynch":
+                case "day":
                     return ConfigGroup.Timers;
                 default:
                     throw new ArgumentException("Did not find a config group for the option: " + configOption);

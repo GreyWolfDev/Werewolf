@@ -68,5 +68,11 @@ namespace Telegram.Bot.Types
         /// </summary>
         [JsonProperty(PropertyName = "invite_link", Required = Required.Default)]
         public string InviteLink { get; set; }
+
+        /// <summary>
+        /// Optional. For supergroups, the minimum allowed delay between consecutive messages sent by each unprivileged user. Returned only in getChat.
+        /// </summary>
+        [JsonProperty(PropertyName = "slow_mode_delay", Required = Required.Default)]
+        public int SlowModeDelay { get; set; }
     }
 }

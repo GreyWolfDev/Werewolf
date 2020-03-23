@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Telegram.Bot.Types;
+using Shared;
 
 namespace Werewolf_Node.Models
 {
@@ -119,7 +120,7 @@ namespace Werewolf_Node.Models
         public HashSet<int> PlayersVisited { get; set; } = new HashSet<int>();
         public int ChangedRolesCount { get; set; } = 0;
         public int FirstToLynchCount { get; set; } = 0;
-        public bool BulletHitVillager { get; set; } = false;
+        public int BulletHitBaddies { get; set; } = 0;
         public int FoundBadRolesRowCount { get; set; } = 0;
         public int FoolCorrectSeeCount { get; set; } = 0;
         public int SerialKilledWolvesCount { get; set; } = 0;
@@ -153,22 +154,6 @@ namespace Werewolf_Node.Models
 
         #endregion
 
-    }
-
-    // If you add a role, make sure to add it into the SetTeam method!
-    public enum IRole
-    {
-        Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter, Mason, Doppelgänger, Cupid, Hunter, SerialKiller,
-        //new roles
-        Sorcerer, AlphaWolf, WolfCub, Blacksmith, ClumsyGuy, Mayor, Prince,
-        //more new roles, from april fools.....
-        Lycan, Pacifist, WiseElder, Oracle, Sandman, WolfMan, Thief,
-        //halloween role
-        Spumpkin,
-        //and once again, new roles! :D
-        Troublemaker, Chemist, SnowWolf,
-        //who would have guessed... more roles!
-        GraveDigger, Augur, Arsonist
     }
 
     public enum ITeam
