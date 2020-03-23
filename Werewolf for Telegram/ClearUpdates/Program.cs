@@ -14,6 +14,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Database;
 using Telegram.Bot.Types.InputFiles;
 using System.Data.SqlTypes;
+using System.Net.Http;
 
 namespace ClearUpdates
 {
@@ -22,6 +23,8 @@ namespace ClearUpdates
         static int total = 0;
         static TelegramBotClient WWAPI;
         static TelegramBotClient Api;
+        static HttpClient _client = new HttpClient();
+        private static string TelegramAPIKey;
         internal static int[] Devs =
         {
             129046388,  //Para
@@ -42,7 +45,7 @@ namespace ClearUpdates
             var key =
                     RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
                         .OpenSubKey("SOFTWARE\\Werewolf");
-            string TelegramAPIKey;
+            
 #if DEBUG
             TelegramAPIKey = key.GetValue("DebugAPI").ToString();
 #elif RELEASE
@@ -173,27 +176,27 @@ namespace ClearUpdates
         private static void ClearQueue()
         {
             Console.WriteLine("Clearing Queue!");
-
-            Commands.Clear();
-            mQueue.Clear();
-            total = 0;
-            WWAPI.StartReceiving();
-            var current = 0;
-            while (true)
-            {
-                //foreach (var p in Process.GetProcessesByName("Werewolf Control"))
-                //    p.Kill();
-                if ((total - current) < 50 && total != 0)
-                {
-                    WWAPI.StopReceiving();
-                    //Api.SendTextMessageAsync(DevGroup, $"Cleared {total} messages from queue. Inspecting for spammers.");
-                    CheckMessages();
-                    break;
-                }
-                current = total;
-                Thread.Sleep(1000);
-            }
-            Thread.Sleep(1000);
+            _client.GetAsync($"https://api.telegram.org/bot{TelegramAPIKey}/getUpdates?offset=99999999999");
+            //Commands.Clear();
+            //mQueue.Clear();
+            //total = 0;
+            //WWAPI.StartReceiving();
+            //var current = 0;
+            //while (true)
+            //{
+            //    //foreach (var p in Process.GetProcessesByName("Werewolf Control"))
+            //    //    p.Kill();
+            //    if ((total - current) < 50 && total != 0)
+            //    {
+            //        WWAPI.StopReceiving();
+            //        //Api.SendTextMessageAsync(DevGroup, $"Cleared {total} messages from queue. Inspecting for spammers.");
+            //        CheckMessages();
+            //        break;
+            //    }
+            //    current = total;
+            //    Thread.Sleep(1000);
+            //}
+            //Thread.Sleep(1000);
         }
 
         private static void WWAPI_OnUpdate(object sender, Telegram.Bot.Args.UpdateEventArgs e)
