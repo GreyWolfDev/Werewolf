@@ -37,7 +37,7 @@ namespace DonationSite.Models.Xsolla
         public PinCodes pin_codes { get; set; }
         public Gift gift { get; set; }
         public Total total { get; set; }
-        public Promotions promotions { get; set; }
+        public List<Promotions> promotions { get; set; }
         public Coupon coupon { get; set; }
     }
 

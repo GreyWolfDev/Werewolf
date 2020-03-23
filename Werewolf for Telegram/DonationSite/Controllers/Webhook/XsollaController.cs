@@ -27,6 +27,7 @@ namespace DonationSite.Controllers.Webhook
         [HttpPost]
         public async Task<HttpResponseMessage> Post()
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             using (var db = new WWContext())
             {
                 try
@@ -66,7 +67,7 @@ namespace DonationSite.Controllers.Webhook
                             return Request.CreateResponse(HttpStatusCode.OK);
                         case "payment":
                             var userid = int.Parse(obj?.user.id);
-                            var amount = (int)obj?.purchase?.total?.amount;
+                            var amount = (int)obj?.purchase?.virtual_currency?.amount;
                             var p = db.Players.FirstOrDefault(x => x.TelegramId == userid);
                             if (p != null)
                             {
