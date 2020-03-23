@@ -123,7 +123,9 @@ namespace Werewolf_Node
         private static void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
             LoadLanguages();
+#if DEBUG
             Send("Node Reload Language Files...", -1001077134233).Wait();
+#endif
         }
 
         private static void LoadLanguages()
