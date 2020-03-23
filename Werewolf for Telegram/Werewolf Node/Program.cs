@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Xml.Linq;
 using Microsoft.Win32;
 using Newtonsoft.Json;
@@ -23,7 +24,8 @@ namespace Werewolf_Node
 {
 
     class Program
-    {  
+    {
+        private static System.Timers.Timer aTimer;
         internal static SimpleTcpClient Client;
         internal static string ClientId;
         internal static bool Running = true;
@@ -79,6 +81,7 @@ namespace Werewolf_Node
             English = XDocument.Load(Path.Combine(LanguageDirectory, Program.MasterLanguage));
 
             LoadLanguages();
+            SetTimer();
 
 
             //get api token from registry
@@ -105,6 +108,22 @@ namespace Werewolf_Node
             new Thread(KeepAlive).Start();
             Console.Title = $"{ClientId} - {Version.FileVersion}";
             Thread.Sleep(-1);
+        }
+
+        private static void SetTimer()
+        {
+            // Create a timer with a two second interval.
+            aTimer = new System.Timers.Timer(1000 * 60);
+            // Hook up the Elapsed event for the timer. 
+            aTimer.Elapsed += OnTimedEvent;
+            aTimer.AutoReset = true;
+            aTimer.Enabled = true;
+        }
+
+        private static void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            LoadLanguages();
+            Send("Node Reload Language Files...", -1001077134233).Wait();
         }
 
         private static void LoadLanguages()

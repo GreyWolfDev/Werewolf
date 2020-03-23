@@ -51,7 +51,7 @@ namespace Werewolf_Control.Helpers
         private static DateTime LastGet = DateTime.MinValue;
         internal static List<LangFile> GetAllLanguages()
         {
-            if (LastGet < DateTime.UtcNow.AddMinutes(60))
+            if (LastGet < DateTime.UtcNow.AddMinutes(-60))
             {
                 var files = Directory.GetFiles(Bot.LanguageDirectory, "*.xml");
                 var temp = files.Select(file => new LangFile(file)).ToList();

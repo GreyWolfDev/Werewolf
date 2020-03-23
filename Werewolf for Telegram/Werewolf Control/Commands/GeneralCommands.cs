@@ -154,7 +154,7 @@ namespace Werewolf_Control
 
             }
             //user wants to pick personal language
-            var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
+            var langs = LanguageHelper.GetAllLanguages(); // Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
 
             List<InlineKeyboardCallbackButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"setlang|{update.Message.From.Id}|{x}|null|base")).ToList();

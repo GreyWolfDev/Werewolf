@@ -5,11 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+using System.Runtime.Caching;
 
 namespace Werewolf_Control.Helpers
 {
+    
     internal static class UpdateHelper
     {
+        public static readonly MemoryCache AdminCache = new MemoryCache("GroupAdmins");
+
         internal static int[] Devs =
         {
             129046388,  //Para
@@ -44,19 +48,39 @@ namespace Werewolf_Control.Helpers
 
         internal static bool IsGroupAdmin(int user, long group)
         {
-            //fire off admin request
-            try
+            string itemIndex = $"{group}";
+            if (!(AdminCache[itemIndex] is List<int> admins))
             {
-                //check all admins
-                if (Bot.Api.GetChatAsync(group).Result.AllMembersAreAdministrators)
-                    return true;
-                var admin = Bot.Api.GetChatMemberAsync(group, user).Result;
-                return admin.Status == ChatMemberStatus.Administrator || admin.Status == ChatMemberStatus.Creator;
+                CacheItemPolicy policy = new CacheItemPolicy() { AbsoluteExpiration = DateTime.Now.AddHours(1) };
+
+                if (AdminCache[itemIndex] is bool allAdmin)
+                {
+                    if (allAdmin)
+                        return true;
+                }
+
+
+                //fire off admin request
+                try
+                {
+                    //check all admins
+                    if (Bot.Api.GetChatAsync(group).Result.AllMembersAreAdministrators)
+                    {
+                        AdminCache[itemIndex] = true;
+                        return true;
+                    }
+                    var t = Bot.Api.GetChatAdministratorsAsync(group).Result;
+                    admins = t.Where(x => !string.IsNullOrEmpty(x.User.FirstName)).Select(x => x.User.Id).ToList(); // if their first name is empty, the account is deleted
+                    AdminCache.Set(itemIndex, admins, policy); // Write admin list into cache
+                }
+                catch
+                {
+                    return false;
+                }
+
             }
-            catch
-            {
-                return false;
-            }
+            return admins.Any(x => x == user);
+            
         }
     }
 }
