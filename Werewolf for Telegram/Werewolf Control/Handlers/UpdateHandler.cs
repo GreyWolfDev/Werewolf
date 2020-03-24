@@ -1100,8 +1100,8 @@ namespace Werewolf_Control.Handler
                                     //now filter
                                     for(var i = ohaiplayers.Count - 1; i >= 0; i--)
                                     {
-                                        var p = ohaiplayers[i];
-                                        var ach = p.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
+                                        var pl = ohaiplayers[i];
+                                        var ach = pl.NewAchievements == null ? new BitArray(200) : new BitArray(pl.NewAchievements);
                                         if (ach.HasFlag(AchievementsReworked.OHAIDER))
                                             ohaiplayers.RemoveAt(i);
                                     }
@@ -1114,8 +1114,8 @@ namespace Werewolf_Control.Handler
                                     var count = 0;
                                     foreach (var player in ohaiplayers)
                                     {
-                                        var p = db.Players.FirstOrDefault(x => x.Id == player.Id);
-                                        if (AddAchievement(p, AchievementsReworked.OHAIDER, db))
+                                        var pl = db.Players.FirstOrDefault(x => x.Id == player.Id);
+                                        if (AddAchievement(pl, AchievementsReworked.OHAIDER, db))
                                             count++;
                                         Thread.Sleep(200);
                                     }
