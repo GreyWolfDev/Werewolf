@@ -1103,7 +1103,7 @@ namespace Werewolf_Control.Handler
                                 var count = 0;
                                 foreach (var player in ohaiplayers)
                                 {
-                                    AddAchievement(player, AchievementsReworked.OHAIDER);
+                                    AddAchievement(player, AchievementsReworked.OHAIDER, DB);
                                     count++;
                                     Thread.Sleep(200);
                                 }
@@ -1876,21 +1876,20 @@ namespace Werewolf_Control.Handler
             }
         }
 
-        private static void AddAchievement(Player p, AchievementsReworked a)
+        private static void AddAchievement(Player p, AchievementsReworked a, WWContext db)
         {
-            using (var db = new WWContext())
-            {
-                if (p != null)
-                {
-                    var ach = p.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
-                    if (ach.HasFlag(a)) return; //no point making another db call if they already have it
-                    ach = ach.Set(a);
-                    p.NewAchievements = ach.ToByteArray();
-                    db.SaveChanges();
 
-                    Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", player.Id);
-                }
+            if (p != null)
+            {
+                var ach = p.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
+                if (ach.HasFlag(a)) return; //no point making another db call if they already have it
+                ach = ach.Set(a);
+                p.NewAchievements = ach.ToByteArray();
+                db.SaveChanges();
+
+                Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.Id);
             }
+
         }
 
         private static Task[] DownloadGifFromJson(CustomGifData pack, Message m)
@@ -2172,7 +2171,7 @@ namespace Werewolf_Control.Handler
 
                 var l = GetLanguage(id);
 
-                threeMenu.Add(new InlineKeyboardButton[] 
+                threeMenu.Add(new InlineKeyboardButton[]
                 {
                     new InlineKeyboardCallbackButton(GetLocaleString("EnableAllRoles", l), $"togglerole|{id}|enableall"),
                     new InlineKeyboardCallbackButton(GetLocaleString("DisableAllRoles", l), $"togglerole|{id}|disableall")
@@ -2183,7 +2182,7 @@ namespace Werewolf_Control.Handler
                     disabledRoles.HasFlag(IRole.VALID)
                         ? new InlineKeyboardCallbackButton(GetLocaleString("Valid", l), $"dummmy")
                         : new InlineKeyboardCallbackButton(GetLocaleString("Validate", l), $"validateroles|{id}"),
-                    
+
                     new InlineKeyboardCallbackButton(GetLocaleString("Back", l), $"{ConfigGroup.RoleConfig.ToString()}|{id}|back")
                 };
 
