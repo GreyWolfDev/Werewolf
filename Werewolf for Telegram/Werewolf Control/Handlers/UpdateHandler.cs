@@ -1085,32 +1085,35 @@ namespace Werewolf_Control.Handler
                             var userid = int.Parse(args[2]);
                             try
                             {
-                                var para = DB.Players.FirstOrDefault(x => x.Id == userid);
-
-                                //get all the players Para has played with
-                                var ohaiplayers = (from g in DB.Games
-                                                   join gp in DB.GamePlayers on g.Id equals gp.GameId
-                                                   join gp2 in DB.GamePlayers on g.Id equals gp2.GameId
-                                                   join pl in DB.Players on gp2.PlayerId equals pl.Id
-                                                   where gp.PlayerId == para.Id
-                                                   select pl).Distinct();
-
-                                //figure out which players don't have the achievement
-
-                                //update the message
-                                var ohaimsg = $"Found {ohaiplayers.Count()} players that have earned OHAIDER.";
-                                Bot.Edit(query, ohaimsg);
-                                var count = 0;
-                                foreach (var player in ohaiplayers)
+                                using (var db = new WWContext())
                                 {
-                                    AddAchievement(player, AchievementsReworked.OHAIDER, DB);
-                                    count++;
-                                    Thread.Sleep(200);
+                                    var para = db.Players.FirstOrDefault(x => x.Id == userid);
+
+                                    //get all the players Para has played with
+                                    var ohaiplayers = (from g in db.Games
+                                                       join gp in db.GamePlayers on g.Id equals gp.GameId
+                                                       join gp2 in db.GamePlayers on g.Id equals gp2.GameId
+                                                       join pl in db.Players on gp2.PlayerId equals pl.Id
+                                                       where gp.PlayerId == para.Id
+                                                       select pl).Distinct();
+
+                                    //figure out which players don't have the achievement
+
+                                    //update the message
+                                    var ohaimsg = $"Found {ohaiplayers.Count()} players that have earned OHAIDER.";
+                                    Bot.Edit(query, ohaimsg);
+                                    var count = 0;
+                                    foreach (var player in ohaiplayers)
+                                    {
+                                        if (AddAchievement(player, AchievementsReworked.OHAIDER, db))
+                                            count++;
+                                        Thread.Sleep(200);
+                                    }
+                                    Console.WriteLine("Saving");
+                                    db.SaveChanges();
+                                    ohaimsg += $"\nAchievement added to {count} players\nFinished";
+                                    Bot.Edit(query, ohaimsg);
                                 }
-                                Console.WriteLine("Saving");
-                                DB.SaveChanges();
-                                ohaimsg += $"\nAchievement added to {count} players\nFinished";
-                                Bot.Edit(query, ohaimsg);
                             }
                             catch (AggregateException e)
                             {
@@ -1876,20 +1879,22 @@ namespace Werewolf_Control.Handler
             }
         }
 
-        private static void AddAchievement(Player p, AchievementsReworked a, WWContext db)
+        private static bool AddAchievement(Player p, AchievementsReworked a, WWContext db)
         {
 
             if (p != null)
             {
+                Console.WriteLine(p.Name);
                 var ach = p.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
-                if (ach.HasFlag(a)) return; //no point making another db call if they already have it
+                if (ach.HasFlag(a)) return false; //no point making another db call if they already have it
                 ach = ach.Set(a);
                 p.NewAchievements = ach.ToByteArray();
                 db.SaveChanges();
 
                 Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.Id);
+                return true;
             }
-
+            return false;
         }
 
         private static Task[] DownloadGifFromJson(CustomGifData pack, Message m)
