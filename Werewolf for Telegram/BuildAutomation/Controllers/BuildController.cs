@@ -29,6 +29,8 @@ namespace BuildAutomation.Controllers
         [HttpPost]
         public HttpResponseMessage Post()
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
             var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
             try

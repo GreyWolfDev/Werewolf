@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Xml.Linq;
 using Microsoft.Win32;
 using Newtonsoft.Json;
@@ -23,7 +24,8 @@ namespace Werewolf_Node
 {
 
     class Program
-    {  
+    {
+        private static System.Timers.Timer aTimer;
         internal static SimpleTcpClient Client;
         internal static string ClientId;
         internal static bool Running = true;
@@ -56,6 +58,8 @@ namespace Werewolf_Node
         internal static int MessagesSent = 0;
         static void Main(string[] args)
         {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
             //set up exception logging.  It appears nodes are crashing and I'm not getting any output
             AppDomain.CurrentDomain.UnhandledException += (sender, eventArgs) =>
             {
@@ -77,6 +81,7 @@ namespace Werewolf_Node
             English = XDocument.Load(Path.Combine(LanguageDirectory, Program.MasterLanguage));
 
             LoadLanguages();
+            SetTimer();
 
 
             //get api token from registry
@@ -103,6 +108,24 @@ namespace Werewolf_Node
             new Thread(KeepAlive).Start();
             Console.Title = $"{ClientId} - {Version.FileVersion}";
             Thread.Sleep(-1);
+        }
+
+        private static void SetTimer()
+        {
+            // Create a timer with a two second interval.
+            aTimer = new System.Timers.Timer(1000 * 60);
+            // Hook up the Elapsed event for the timer. 
+            aTimer.Elapsed += OnTimedEvent;
+            aTimer.AutoReset = true;
+            aTimer.Enabled = true;
+        }
+
+        private static void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            LoadLanguages();
+#if DEBUG
+            Send("Node Reload Language Files...", -1001077134233).Wait();
+#endif
         }
 
         private static void LoadLanguages()
@@ -135,11 +158,6 @@ namespace Werewolf_Node
                 foreach (var msg in messages)
                 {
                     if (msg == "ping" || String.IsNullOrWhiteSpace(msg)) return; //ignore
-                    if (msg.StartsWith("reload:"))
-                    {
-                        ReloadLang(msg.Substring("reload:".Length));
-                        return;
-                    }
 
                     string t = null;
                     try
@@ -292,6 +310,13 @@ namespace Werewolf_Node
                                 Console.WriteLine(jbri.GroupId);
                                 Console.ForegroundColor = ConsoleColor.Gray;
                                 break;
+                            case "ReloadLangInfo":
+                                var rli = JsonConvert.DeserializeObject<ReloadLangInfo>(msg);
+                                ReloadLang(rli.LangName);
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.WriteLine("Reloaded language file: " + rli.LangName);
+                                Console.ForegroundColor = ConsoleColor.Gray;
+                                break;
                             default:
                                 Console.WriteLine(msg);
                                 break;
@@ -343,7 +368,7 @@ namespace Werewolf_Node
             }
         }
 
-        internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null, bool notify = false)
+        internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null, bool notify = false, bool preview = false)
         {
             MessagesSent++;
             //message = message.FormatHTML();
@@ -351,15 +376,15 @@ namespace Werewolf_Node
             if (clearKeyboard)
             {
                 var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
-                return await Bot.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: true, parseMode: ParseMode.Html, disableNotification: notify);
+                return await Bot.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
             }
             else if (customMenu != null)
             {
-                return await Bot.SendTextMessageAsync(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: ParseMode.Html, disableNotification: notify);
+                return await Bot.SendTextMessageAsync(id, message, replyMarkup: customMenu, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
             }
             else
             {
-                return await Bot.SendTextMessageAsync(id, message, disableWebPagePreview: true, parseMode: ParseMode.Html, disableNotification: notify);
+                return await Bot.SendTextMessageAsync(id, message, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
             }
         }
 

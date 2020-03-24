@@ -95,7 +95,7 @@ namespace Werewolf_Control.Helpers
                 var baseFiles = new[]
                 {
                     "Database.dll", "Database.pdb", "TcpFramework.dll", "TcpFramework.pdb", "Telegram.Bot.dll",
-                    "Telegram.Bot.xml"
+                    "Telegram.Bot.xml", "Shared.dll", "Shared.pdb"
                 };
                 //control has different names for each bot
                 //node we will just copy the entire folder

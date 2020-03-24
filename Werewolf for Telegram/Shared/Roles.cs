@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Database
+namespace Shared
 {
+    // If you add a role, make sure to add it into the SetTeam and GetStrength methods!
     [Flags]
-    public enum DisabledRole : long // NOTE: FALSE WILL MEAN ENABLED, TRUE WILL MEAN DISABLED!
+    public enum IRole : long // NOTE: IN ROLE CONFIGURATION, FALSE WILL MEAN ENABLED, TRUE WILL MEAN DISABLED!
     {
         None = 0,
         VALID = 1,
@@ -119,7 +120,7 @@ namespace Database
 
         [Role("😈")]
         Thief = 68719476736,
-        
+
         [Role("🤯")]
         Troublemaker = 137438953472,
 
@@ -137,6 +138,9 @@ namespace Database
 
         [Role("🔥")]
         Arsonist = 4398046511104,
+
+        [Role("🎃", false)]
+        Spumpkin = 8796093022208,
     }
 
     public class RoleAttribute : Attribute
@@ -153,11 +157,11 @@ namespace Database
 
     public static class RoleConfigHelper
     {
-        public static List<DisabledRole> GetRoles()
-            => Enum.GetValues(typeof(DisabledRole)).Cast<DisabledRole>()
-                .Where(x => x != DisabledRole.None && x != DisabledRole.VALID).ToList();
+        public static List<IRole> GetRoles()
+            => Enum.GetValues(typeof(IRole)).Cast<IRole>()
+                .Where(x => x != IRole.None && x != IRole.VALID).ToList();
 
-        public static RoleAttribute GetRoleAttribute(this DisabledRole role)
+        public static RoleAttribute GetRoleAttribute(this IRole role)
         {
             var fieldInfo = role.GetType().GetField(role.ToString());
 
@@ -168,9 +172,9 @@ namespace Database
             return (qA.Length > 0) ? qA[0] : null;
         }
 
-        public static IEnumerable<DisabledRole> GetUniqueRoles(this DisabledRole roles)
+        public static IEnumerable<IRole> GetUniqueRoles(this IRole roles)
         {
-            foreach(var r in GetRoles())
+            foreach (var r in GetRoles())
             {
                 if (roles.HasFlag(r))
                 {

@@ -109,5 +109,11 @@ namespace Telegram.Bot.Types
         /// </summary>
         [JsonProperty(PropertyName = "can_add_web_page_previews", Required = Required.Default)]
         public bool CanAddWebPagePreviews { get; set; }
+
+        /// <summary>
+        /// Optional. Admin only. Custom admin title.
+        /// </summary>
+        [JsonProperty(PropertyName = "custom_title", Required = Required.Default)]
+        public string CustomTitle { get; set; }
     }
 }

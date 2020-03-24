@@ -1,4 +1,5 @@
 ﻿using Database;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,6 +15,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
+using Werewolf_Control.Models;
 using File = System.IO.File;
 
 namespace Werewolf_Control.Helpers
@@ -49,7 +51,7 @@ namespace Werewolf_Control.Helpers
         private static DateTime LastGet = DateTime.MinValue;
         internal static List<LangFile> GetAllLanguages()
         {
-            if (LastGet < DateTime.UtcNow.AddMinutes(60))
+            if (LastGet < DateTime.UtcNow.AddMinutes(-60))
             {
                 var files = Directory.GetFiles(Bot.LanguageDirectory, "*.xml");
                 var temp = files.Select(file => new LangFile(file)).ToList();
@@ -397,13 +399,17 @@ namespace Werewolf_Control.Helpers
                 db.SaveChanges();
             }
 
-            msg += "Broadcasting reload message to nodes...";
-            Bot.Edit(id, msgId, msg, parsemode: ParseMode.Html);
-            foreach (var node in Bot.Nodes) node.Broadcast($"reload:{Path.GetFileNameWithoutExtension(copyToPath)}");
+            var info = new ReloadLangInfo
+            {
+                LangName = Path.GetFileNameWithoutExtension(copyToPath)
+            };
+            var json = JsonConvert.SerializeObject(info);
+
+            foreach (var n in Bot.Nodes)
+                n.Broadcast(json);
 
             msg += "\n<b>Operation complete.</b>";
-
-            Bot.Api.EditMessageTextAsync(id, msgId, msg, parseMode: ParseMode.Html);
+            Bot.Edit(id, msgId, msg, parsemode: ParseMode.Html);
         }
 
         public static void SendAllFiles(long id)

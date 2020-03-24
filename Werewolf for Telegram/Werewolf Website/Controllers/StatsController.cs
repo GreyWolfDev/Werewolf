@@ -439,7 +439,7 @@ namespace Werewolf_Web.Controllers
                     foreach (AchievementsReworked a in Enum.GetValues(typeof(AchievementsReworked)))
                     { 
                         if (!has.Contains(a) && a != AchievementsReworked.None && a != AchievementsReworked.OHAIDER)
-                            reply.Add(a);
+                            reply.Add(new { name = a.GetName(), description = a.GetDescription() });
                     }
                     return Json(reply, JsonRequestBehavior.AllowGet);
                 }

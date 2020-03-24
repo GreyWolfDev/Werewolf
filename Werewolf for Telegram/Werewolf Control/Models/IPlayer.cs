@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Telegram.Bot.Types;
+using Shared;
 
 namespace Werewolf_Control.Models
 {
@@ -65,21 +61,6 @@ namespace Werewolf_Control.Models
         public int DBGamePlayerId { get; set; } = 0;
         public DateTime TimeDied { get; set; } = DateTime.MaxValue;
         public int Id { get; set; }
-    }
-
-
-
-    public enum IRole
-    {
-        Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter, Mason, Doppelgänger, Cupid, Hunter, SerialKiller,
-        //new roles
-        Sorcerer, AlphaWolf, WolfCub, Blacksmith, ClumsyGuy, Mayor, Prince,
-        //more new roles, from april fools.....
-        Lycan, Pacifist, WiseElder, Oracle, Sandman, WolfMan, Thief,
-        //halloween role
-        Spumpkin,
-        //and once again, new roles! :D
-        Troublemaker, Chemist, SnowWolf
     }
 
     public enum ITeam

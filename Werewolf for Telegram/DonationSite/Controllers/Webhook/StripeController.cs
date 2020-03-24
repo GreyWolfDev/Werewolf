@@ -25,6 +25,7 @@ namespace DonationSite.Controllers.Webhook
         [HttpPost]
         public async Task<HttpResponseMessage> Post()
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             using (var db = new WWContext())
             {
                 try
