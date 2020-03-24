@@ -1102,7 +1102,7 @@ namespace Werewolf_Control.Handler
                                 {
                                     var a = AchievementsReworked.OHAIDER;
                                     var ach = player.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
-                                    if (ach.HasFlag(a)) return; //no point making another db call if they already have it
+                                    if (ach.HasFlag(a)) continue; //no point making another db call if they already have it
                                     ach = ach.Set(a);
                                     player.NewAchievements = ach.ToByteArray();
                                     Thread.Sleep(200);
