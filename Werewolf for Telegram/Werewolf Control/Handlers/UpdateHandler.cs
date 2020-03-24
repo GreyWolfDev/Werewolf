@@ -1103,13 +1103,11 @@ namespace Werewolf_Control.Handler
                                 var count = 0;
                                 foreach (var player in ohaiplayers)
                                 {
-                                    var a = AchievementsReworked.OHAIDER;
-                                    var ach = player.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
-                                    if (ach.HasFlag(a)) continue; //no point making another db call if they already have it
-                                    ach = ach.Set(a);
-                                    player.NewAchievements = ach.ToByteArray();
+                                    AddAchievement(player, AchievementsReworked.OHAIDER);
+                                    count++;
                                     Thread.Sleep(200);
                                 }
+                                Console.WriteLine("Saving");
                                 DB.SaveChanges();
                                 ohaimsg += $"\nAchievement added to {count} players\nFinished";
                                 Bot.Edit(query, ohaimsg);
@@ -1874,6 +1872,23 @@ namespace Werewolf_Control.Handler
                 catch (Exception ex)
                 {
                     Bot.ReplyToCallback(query, ex.Message, false, true);
+                }
+            }
+        }
+
+        private static void AddAchievement(Player p, AchievementsReworked a)
+        {
+            using (var db = new WWContext())
+            {
+                if (p != null)
+                {
+                    var ach = p.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
+                    if (ach.HasFlag(a)) return; //no point making another db call if they already have it
+                    ach = ach.Set(a);
+                    p.NewAchievements = ach.ToByteArray();
+                    db.SaveChanges();
+
+                    Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", player.Id);
                 }
             }
         }
