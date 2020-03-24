@@ -229,7 +229,7 @@ namespace Werewolf_Control.Handler
                 }
                 if (update.Message == null || update.Message.From.Id == 777000) return;
                 //ignore previous messages
-                if ((update.Message?.Date ?? DateTime.MinValue) < Bot.StartTime.AddSeconds(-10))
+                if ((update.Message?.Date ?? DateTime.MinValue) < DateTime.Now.AddSeconds(-5))
                     return; //toss it
 
                 var id = update.Message.Chat.Id;
