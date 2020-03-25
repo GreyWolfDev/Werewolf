@@ -176,7 +176,10 @@ namespace ClearUpdates
         private static void ClearQueue()
         {
             Console.WriteLine("Clearing Queue!");
-            _client.GetAsync($"https://api.telegram.org/bot{TelegramAPIKey}/getUpdates?offset=99999999999");
+            
+                _client.GetAsync($"https://api.telegram.org/bot{TelegramAPIKey}/getUpdates?offset=-1");
+              
+            
             //Commands.Clear();
             //mQueue.Clear();
             //total = 0;
