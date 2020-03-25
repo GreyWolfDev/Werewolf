@@ -127,9 +127,10 @@ namespace ClearUpdates
                 switch (m.Text.Replace("@wwcleanbot", ""))
                 {
                     case "/clearqueue":
-                        if (m.Date < DateTime.Now.AddSeconds(-1))
+                        if (m.Date < DateTime.Now.AddSeconds(-10))
                             return;
                         ClearQueue();
+                        Api.SendTextMessageAsync(m.Chat, "Clearing queue!", replyToMessageId: m.MessageId).Wait();
                         break;
                     default:
                         break;
@@ -176,7 +177,18 @@ namespace ClearUpdates
         private static void ClearQueue()
         {
             Console.WriteLine("Clearing Queue!");
-            _client.GetAsync($"https://api.telegram.org/bot{TelegramAPIKey}/getUpdates?offset=99999999999");
+            int i = 0;
+            while (true)
+            {
+                if (++i == 500) break; // Just to be sure we don't completely kill the bot api
+                try
+                {
+                    var updates = WWAPI.GetUpdatesAsync(int.MaxValue).Result;
+                    if (updates.Length < 100) break;
+                }
+                catch { } // ignored, we will still leave the method after at most 500 tries, whether successful or not
+            }
+
             //Commands.Clear();
             //mQueue.Clear();
             //total = 0;
