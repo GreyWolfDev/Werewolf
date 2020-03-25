@@ -113,7 +113,7 @@ namespace Werewolf_Node
         private static void SetTimer()
         {
             // Create a timer with a two second interval.
-            aTimer = new System.Timers.Timer(1000 * 60);
+            aTimer = new System.Timers.Timer(1000 * 60 * 20); // 20 mins
             // Hook up the Elapsed event for the timer. 
             aTimer.Elapsed += OnTimedEvent;
             aTimer.AutoReset = true;
