@@ -1901,7 +1901,7 @@ namespace Werewolf_Control.Handler
                 p.NewAchievements = ach.ToByteArray();
                 db.SaveChanges();
 
-                Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.Id);
+                Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.TelegramId);
                 return true;
             }
             return false;
