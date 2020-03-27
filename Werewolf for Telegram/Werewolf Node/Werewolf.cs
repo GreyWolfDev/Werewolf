@@ -3527,6 +3527,7 @@ namespace Werewolf_Node
                         if (hunted.PlayerRole == IRole.Cultist)
                         {
                             Send(GetLocaleString("HunterFindCultist", hunted.GetName()), hunter.Id);
+                            Send(GetLocaleString("CHHuntedYou"), hunted.Id);
                             KillPlayer(hunted, KillMthd.Hunt, killer: hunter);
                             hunter.CHHuntedCultCount++;
                         }
