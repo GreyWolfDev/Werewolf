@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
    Translated by / Traduzido por:
        Lucas Montuano (@montuano) e Guto Cristino (@guto_xtino)
    
-		Dan (@vergonha), Danilo (@daniloosoo), Eric Romero (@ericromeero), Gabriel Borjoize (@Borjoize), João Avelã (@SilverQuill), jR750Ac (@jr750ac), Mocha (@MochaKH), Nical(@Nical), Pug (@Capitalista), Saah (@ayylimao), @jr750ac e Nicholas Alexandre (@Nical) 
+		Dan (@vergonha), Danilo (@daniloosoo), Eric Romero (@ericromeero), Gabriel Borjoize (@Borjoize), Helamã (@SilverQuill), jR750Ac (@jr750ac), Mocha (@MochaKH), Nical(@Nical), Pug (@Capitalista), Saah (@ayylimao), @jr750ac e Nicholas Alexandre (@Nical) 
 		Team leaders: @ayylimao, @Borjoize
 	   
-	   Currently being translated by / Atualmente sendo traduzido por: João Avelã
-	   última edição: 22/05/2019
+	   Currently being translated by / Atualmente sendo traduzido por: Helamã
+	   última edição: 27/12/2019
 -->
 <strings>
 	<language name="Português (Brasil Clássico)" base="Português" variant="Brasil Clássico" code="pt-BR" isDefault="true"/>
@@ -224,7 +224,7 @@
 		<value>Os aldeões acordam ao amanhecer e encontram pedaços do que um dia foi {0} em cima de uma mesa de búzios e com cartas de tarô espalhadas pelo chão.  A Vidente está morta.</value>
 	</string>
 	<string key="DrunkEaten">
-		<value>Todos acordam com um forte cheiro de álcool e madeira em chamas...  O boteco está pegando fogo!!!!  Após apagar o incêndio, os restos de {0} são encontrados, tostadinhos....</value>
+		<value>Todos acordam com um forte cheiro de álcool e madeira em chamas... O boteco está pegando fogo!!!!  Após apagar o incêndio, os restos de {0} são encontrados, tostadinhos....</value>
 	</string>
 	<string key="FoolEaten">
 		<value>À medida que o sol se levanta sobre a Aldeia, os aldeões encontram {0} deitado(a) em cima de uma mesa de búzios, mas com cartas de.... Super Trunfo das Meninas Super Poderosas??? HAHAHAHAH QUE TROUXA!</value>
@@ -1893,7 +1893,7 @@ Atual: {0}</value>
 		<value>{0} Devia ter ficado em casa na última noite: ele visitou uma casa que pegou fogo e agora faz parte das cinzas! {1}</value>
 	</string><!--{0}: wolf who died, {1}: "(wolf) era (role)" to specify what kind of wolf it is-->
 	<string key="WolfVisitBurn">
-		<value>Os lobos foram atrás de alimento ontem, mas as chamas surgiram enquanto eles estavam lá! {0} não consegui escapar. {1}</value>
+		<value>Os lobos foram atrás de alimento ontem, mas as chamas surgiram enquanto eles estavam lá! {0} não conseguiu escapar. {1}</value>
 	</string>
 	<string key="ChemistKillWiseElder">
 		<value>Vocês encontram vários equipamentos de alquimia e produtos químicos no meio da vila, junto com uma mala. É impossível saber quem é o químico, mas temos certeza de que após seu erro final com o Ancião, ele nunca mais vai voltar a apostar.</value>
@@ -1906,5 +1906,41 @@ Atual: {0}</value>
 	</string>
 	<string key="HarlotVisitNotHome">
 		<value>Você planejou uma noite bem quente com {0}, mas ele não estava em casa... Sem brincadeiras esta noite!</value>
-	</string>
+  </string>
+
+  <string key="Validate">
+  <!-- Used for the button in the role selection menu -->
+	<value>‼ Validar ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Used for the button in the role selection menu -->
+	<value>✅ Válido ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>A configuração de papéis é válida! Ela está ativada e será utilizada agora!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>A configuração de papéis é inválida! Por favor, tente ativar mais papéis para que o bot possa criar jogos equilibrados!</value>
+  </string>
+  
+  <string key="GroupIdleCount">
+  <!-- {0} - Idle count in the last 24 hours in the current group -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+	<value>{0} dessas mortes foram neste grupo.</value>
+  </string>
+  
+  <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>Você se tornou o doppelgänger. Você irá assumir o papel de {0} depois de sua morte.</value>
+  </string>
+  <string key="RoleConfigInfo">
+  <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+	<value>Que papéis você gostaria de usar no jogo?\n\nTutorial de Configuração:\n\n✅ = Papel ativado\n❌ = Papel desativado\n\nDepois de selecionar os papéis, você tem que usar o botão VALIDAR no canto inferior esquerdo para validar e ativar sua seleção! Se você não validar sua seleção, ela será ignorada e todos os papéis serão usados!\n\nSe você desativar muitos papéis, o bot não será capaz de criar um jogo equilibrado e a validação falhará! Nesse caso, apenas ative mais papéis e valide novamente.\n\nSe a validação teve sucesso, o botão inferior direito diz ✅ Válido ✅ e sua configuração de papéis será utilizada!</value>
+  </string>
+  <string key="EnableAllRoles">
+	<value>Ativar Todos</value>
+  </string>
+  <string key="DisableAllRoles">
+	<value>Desativar Todos</value>
+  </string>
 </strings>

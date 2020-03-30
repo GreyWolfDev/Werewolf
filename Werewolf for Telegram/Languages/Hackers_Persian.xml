@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <strings>
-  <language name="Hackers" base="فارسی" variant="[ هکر ها ]" owner="amirmousavi" code="fa" isDefault="true"/>
+  <language name="Hackers" base="فارسی" variant="[ هکر ها ]" owner="amirmousavi" code="fa" isDefault="False"/>
   <string key="NotInGame">
     <value>جناب شما داخل بازی نیستین!</value>
   </string>
@@ -565,7 +565,7 @@
   </string>
   <!-- New strings 4 MAY 2016-->
   <string key="Mason">
-    <value>دانشجو آی‌تی👨🏻‍🎓</value>
+    <value>دانشجو آی‌تی👷‍♂</value>
   </string>
   <string key="RoleInfoMason">
     <value>تو دانشجو هستی ، اگه همکلاسی هات تو بازی باشن از حضورشون با خبر میشی</value>
@@ -1012,7 +1012,7 @@ YOU ARE KID BRO</value>
     <value>بابا هر دکمه ای دم دستتون میاد نزنین خب ریدین تو رباته ری استارت شد</value>
   </string>
   <string key="SentPrivate">
-    <value>حاجی پی ویتو چک کن</value>
+    <value>کاربر عزیز ، پی‌وی خود را چک کنید</value>
   </string>
   <string key="StartPM">
     <value>یه پی ام بهم بده تا بتونم بهت پی ام بدم @werewolfbot</value>
@@ -1732,7 +1732,7 @@ Hacked By Mr.Robot
 
 تو میتونی ی نفرو زیر نظر بگیری و درآخر موفق بشی ک نقششو ازش بدزدی .</value></string>
   <string key="Thief">
-    <value>کلاهبردار🤡</value>
+    <value>کلاهبردار😈</value>
   </string>
   <string key="AboutThief">
     <value>تو دزدی😈. شب که میشه میتونی یکیو انتخاب کنی و نقششو بدزدی. کسی که نقششو دزدیدی تبدیل میشه به دزد و  میتونه شبه بعد نقش یه نفره دیگرو بدزده. اگه در پایان بازی دزد باقی بمونی میبازی.</value>
@@ -2409,7 +2409,7 @@ Hacked By Mr.Robot
 شما هک شدید بدست فایِر هکر🔥</value>
   </string>
   <string key="Augur">
-	<value> شاخ مجازی😎</value>
+	<value> شاخ مجازی🦅</value>
   </string>
   <!--{0}: role that is not part of the village-->
   <string key="AugurSees">
@@ -2460,12 +2460,44 @@ Hacked By Mr.Robot
      <string key="HarlotVisitNotHome">
 	<value>تو رفتی به چت روم{0} چندتا سوپر براش بفرستی ولی چت رومش خالی بود</value>
   </string>
+	   <string key="Validate">
+		<!-- Used for the button in the role selection menu -->
+		  <value>‼ تصدیق کردن ‼</value>
+		</string>
+		<string key="Valid">
+		<!-- Used for the button in the role selection menu -->
+		  <value>✅ معتبر ✅</value>
+		</string>
+		<string key="RoleConfigValid">
+		  <value>تنظیمات پیکر بندی نقش در حالت معتبر! قرار دارد  ودر حال حاضر استفاده میشود</value>
+		</string>
+		<string key="RoleConfigInvalid">
+		  <value>تنظیمات پیکربندی نقش ها در حالت نامعتبر است! لطفا این حالت را روشن کنید.نقش های بیشتر به بات کمک میکند تا بازی را بهتر بالانس کند.</value>
+		</string>
+		<string key="GroupIdleCount">
+		 <!-- {0} - Idle count in the last 24 hours in the current group -->
+		 <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+		   <value>تا الان {0} بار در این گروه کشته شده است.</value>
+		 </string>
+		 <string key="NewDGRoleModel">
+			 <!-- 0 - target's name -->
+			 <value>شما الان یک همزاد هستید بنابراین وقتی که {0} بمیره شما نقش اونو میگیرید.</value>
+		   </string>
+		   <string key="RoleConfigInfo">
+		   <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+			 <value>از کدام نقش ها می خواهید در بازی استفاده کنید؟ 
+			 آموزش پیکربندی:✅ = نقش را فعال است ❌ = نقش غیرفعال است
+			 بعد از انتخاب نقش ها ،  نیاز دارید که دکمه "تصدیق کنید" واقع در گوشه سمت چپ را فشار دهید تا نقش های انتخابی خود را فعال کنید.اگر انتخاب خود را تایید نکنید انتخاب های قبلی نادیده گرفته میشود و همه نقش ها در بازی استفاده میشود.اگر بیش از حد نقشها را غیر فعال کنید ربات قادر به ایجاد یک بازی متعادل نخواهد بود و تایید شکست خواهد خورد.در این حالت نقش های بیشتری رو فعال کنید،اگر اعتبار سنجی معتبر باشد دکمه سمت چپ پایین به شکل ✅ معتبر ✅ در می آید ، در این حالت تنظیمات شما به درستی اعمال شده و مورد استفاده قرار میگیرد.</value>
+		   </string>
+		   <string key="EnableAllRoles">
+			 <value>فعال کردن همه</value>
+		   </string>
+		   <string key="DisableAllRoles">
+			 <value>غیر فعال کردن همه</value>
+		   </string>
+	
+   
  </strings>
-	 
-	 
-	 
-	 
-	 
 	 
 	 
 	 

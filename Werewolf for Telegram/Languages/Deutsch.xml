@@ -1022,7 +1022,7 @@
   <string key="IdleCount">
 	<!-- 0 - player's name -->
 	<!-- 1 - idle count -->
-	<value>Das war das {1}. Mal, dass {0} innerhalb der letzten 24 Stunden wegen Nicht-Abstimmens getötet wurde.</value>
+	<value>Das war das {1}. Mal, dass {0} innerhalb der letzten 24 Stunden wegen Nicht-Abstimmens getötet wurde,</value>
   </string>
   
   <!--New strings 7th of July-->
@@ -2445,4 +2445,46 @@
   <string key="ArsonistTeamEnd">
     <value>Team Lichterloh</value>
   </string>
+
+  <!-- Neu am 13.10.2019 vom Appfel hinzugefügt -->
+
+  <string key="HarlotVisitNotHome">
+	<value>Du hattest einen Anruf von {0} und gehst auch direkt hin, bereit auf eine heiße Nacht! Aber was ist das? Das Haus ist leer! Dir bleibt nur, enttäuscht nach Hause zu gehen.</value>
+  </string>
+  <string key="Validate">
+  <!-- Used for the button in the role selection menu -->
+	<value>‼ Bestätigen ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Used for the button in the role selection menu -->
+	<value>✅ Bestätigt ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>Die Rollen-Konfiguration wurde bestätigt, wurde aktiviert und wird nun verwendet!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>Ich denke, das wird nicht klappen! Die Rollen-Konfiguration ist ungültigt. Bitte wähle mehr Rollen aus, damit der Bot ein ausgeglichenes Spiel generieren kann! Trottel...</value>
+  </string>
+  
+  <string key="GroupIdleCount">
+  <!-- {0} - Idle count in the last 24 hours in the current group -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+	<value>{0} davon in dieser kleinen Gruppe!</value>
+  </string>
+  
+  <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>Oh, cool! Du bist der neue Doppelgänger 🎭 und wirst die Rolle übernehmen, wenn {0} sich zur letzten Ruhe legt!</value>
+  </string>
+  <string key="RoleConfigInfo">
+  <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+	<value>Welche Rollen darf ich verwenden?\n\nAnleitung:\n\n✅ = Rolle aktiv\n❌ = Rolle inaktiv\n\nNachdem du die Rollen gewählt hast, würde ich dich bitten, den Button zum Bestätigen zu nutzen, den du unten links findest. Dadurch wird deine Auswahl übernommen. Wenn du es vergisst, werde ich die Auswahl komplett ignorieren und alle Rollen verwenden!\n\nWenn zu viele Rollen deaktiviert sind, kann der Bot kein ausbalanciertes Spiel erstellen. Dann wird die Bestätigung fehlschlagen! Sollte das passieren, aktiviere mehr Rollen und versuche es nochmal. Erst wenn der Knopf mit ✅ Bestätigt ✅ beschriftet ist, hat es geklappt, die Rollen sind bestätigt und die Rollenwahl wird verwendet!</value>
+  </string>
+  <string key="EnableAllRoles">
+	<value>✅ Aktiviere alle Rollen</value>
+  </string>
+  <string key="DisableAllRoles">
+	<value>❌ Deaktiviere alle Rollen</value>
+  </string>
+
 </strings>

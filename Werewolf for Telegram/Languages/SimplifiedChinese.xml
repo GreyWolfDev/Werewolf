@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <strings>
-	<language name="简体中文(普通)" base="简体中文" variant="简体中文(普通)" code="zh-CN" version="2019.09.12"/>
-	<!--Last Updated 最后更新时间2019-09-12 21:00-->
+	<language name="简体中文(普通)" base="简体中文" variant="简体中文(普通)" code="zh-CN" version="2019.10.19"/>
+	<!--Last Updated 最后更新时间2019-10-19 19:00-->
 	<!--也请在 头部version处 添加最后更新时间-->
 
 	<!-- Update Logs 更新日志-->
@@ -2110,6 +2110,19 @@
   <!-- {0} - Idle count in the last 24 hours in the current group -->
   <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
 	<value>{0}次自动处决发生在这个群里。</value>
+  </string>
+  <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>你已经成为了替身。如果{0}死后，你将代替 {0}的角色。</value>
+  </string>
+  <string key="RoleConfigInfo">
+	<value>点击下列按钮开启或关闭角色（其中Emoji代表该在角色在 /rolelist中的图标）\n\n✅ = 开启\n❌ = 关闭\n\n注意:调整完毕后请点击“!!应用!!”按钮，机器人会验证更改是否合理（以防止游戏不平衡）。\n不合理的更改将不能通过。\n若验证成功，则该按钮会显示“✅ 应用 ✅”,更改也会保存。\n另外，以下图标来自英语原版版，该版本图标可能有差异。</value>
+  </string>
+  <string key="EnableAllRoles">
+	<value>全部开启</value>
+  </string>
+  <string key="DisableAllRoles">
+	<value>全部关闭</value>
   </string>
 
   <!--Old logs -->
