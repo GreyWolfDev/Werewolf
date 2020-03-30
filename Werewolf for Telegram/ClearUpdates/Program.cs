@@ -177,18 +177,25 @@ namespace ClearUpdates
         private static void ClearQueue()
         {
             Console.WriteLine("Clearing Queue!");
-            int i = 0;
-            while (true)
-            {
-                if (++i == 500) break; // Just to be sure we don't completely kill the bot api
-                try
-                {
-                    var updates = WWAPI.GetUpdatesAsync(int.MaxValue).Result;
-                    if (updates.Length < 100) break;
-                }
-                catch { } // ignored, we will still leave the method after at most 500 tries, whether successful or not
-            }
 
+            using (var cl = new HttpClient())
+                cl.GetAsync($"https://api.telegram.org/bot{TelegramAPIKey}/getUpdates?offset=-1").Wait();
+
+            #region Old code
+            //int i = 0;
+            //while (true)
+            //{
+            //    if (++i == 500) break; // Just to be sure we don't completely kill the bot api
+            //    try
+            //    {
+            //        var updates = WWAPI.GetUpdatesAsync(int.MaxValue).Result;
+            //        if (updates.Length < 100) break;
+            //    }
+            //    catch { } // ignored, we will still leave the method after at most 500 tries, whether successful or not
+            //}
+            #endregion
+
+            #region Very old code
             //Commands.Clear();
             //mQueue.Clear();
             //total = 0;
@@ -209,6 +216,7 @@ namespace ClearUpdates
             //    Thread.Sleep(1000);
             //}
             //Thread.Sleep(1000);
+            #endregion
         }
 
         private static void WWAPI_OnUpdate(object sender, Telegram.Bot.Args.UpdateEventArgs e)
