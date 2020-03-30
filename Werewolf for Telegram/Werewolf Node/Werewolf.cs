@@ -223,32 +223,27 @@ namespace Werewolf_Node
                     new InlineKeyboardUrlButton(GetLocaleString("JoinButton"),$"https://t.me/{Program.Me.Username}?start=join" + deeplink)
                 });
 
-
-#if RELEASE
                 switch (GameMode)
                 {
                     case GameMode.Chaos:
                         FirstMessage = GetLocaleString("PlayerStartedChaosGame", u.FirstName);
+#if RELEASE
                         _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new FileToSend(GetRandomImage(StartChaosGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+#else
+                        _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage(StartChaosGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
+#endif
                         break;
+
 
                     default:
                         FirstMessage = GetLocaleString("PlayerStartedGame", u.FirstName);
+#if RELEASE
                         _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new FileToSend(GetRandomImage(StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
-                        break;
-                }
 #else
-                switch (GameMode)
-                {
-                    case GameMode.Chaos:
-                        _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage(StartChaosGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
-                        break;
-
-                    default:
                         _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage(StartGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
+#endif
                         break;
                 }
-#endif
 
                 // This can stay turned off now I think. Can enable it again if players don't get it at all
                 // SendWithQueue(GetLocaleString("NoAutoJoin", u.Username != null ? ("@" + u.Username) : u.FirstName.ToBold()));
@@ -4133,9 +4128,9 @@ namespace Werewolf_Node
                     }
                 }
             }
-            #endregion
+#endregion
 
-            #region Night Death Notifications to Group
+#region Night Death Notifications to Group
             Dictionary<IPlayer, KillMthd> hunterFinalShot = new Dictionary<IPlayer, KillMthd>();
             var secret = !DbGroup.HasFlag(GroupConfig.ShowRolesDeath);
             if (Players.Any(x => x.DiedLastNight))
