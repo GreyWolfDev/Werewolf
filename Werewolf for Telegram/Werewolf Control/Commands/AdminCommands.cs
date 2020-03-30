@@ -901,7 +901,7 @@ namespace Werewolf_Control
 
             List<Task<bool>> DownloadTasks = new List<Task<bool>>();
 
-            foreach (var fileId in FileIds)
+            foreach (var fileId in FileIds.Distinct())
             {
                 var path = Path.Combine(Settings.GifStoragePath, $"{fileId}.mp4");
                 if (System.IO.File.Exists(path))
