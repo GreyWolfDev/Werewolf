@@ -2032,12 +2032,10 @@ namespace Werewolf_Node
                     var cultists = Players.GetPlayersForRoles(new[] { IRole.Cultist }, exceptPlayer: p);
                     Send(GetLocaleString("CultConvertYou"), p.Id);
                     Send(GetLocaleString("CultTeam", cultists.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), p.Id);
+                    var cultMsg = GetLocaleString("CultJoin", $"{p.GetName()}");
+                    cultMsg += "\n" + GetLocaleString("CultistsList", Players?.Where(x => x.PlayerRole == IRole.Cultist && !x.IsDead).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
                     foreach (var c in cultists)
-                    {
-                        var msg = GetLocaleString("CultJoin", $"{p.GetName()}");
-                        msg += "\n" + GetLocaleString("CultistsList", Players?.Where(x => x.PlayerRole == IRole.Cultist && !x.IsDead).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
-                        Send(msg, c.Id);
-                    }
+                        Send(cultMsg, c.Id);
                     break;
 #endregion
 #region Wild Child
