@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Werewolf_Control
         public static void StartGame(Update update, string[] args)
         {
             if (!Program.MaintMode)
-                StartGame(false, update);
+                StartGame(GameMode.Normal, update);
             else
             {
                 Send("Sorry, we are about to start maintenance.  Please check @greywolfdev for more information.",
@@ -32,7 +33,7 @@ namespace Werewolf_Control
         public static void StartChaos(Update update, string[] args)
         {
             if (!Program.MaintMode)
-                StartGame(true, update);
+                StartGame(GameMode.Chaos, update);
             else
             {
                 Send("Sorry, we are about to start maintenance.  Please check @greywolfdev for more information.",

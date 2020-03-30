@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared;
+using System;
 using System.Collections.Generic;
 using Telegram.Bot.Types;
 
@@ -39,7 +40,7 @@ namespace Werewolf_Node.Models
     public class GameStartInfo
     {
         public string JType { get; set; } = "GameStartInfo";
-        public bool Chaos { get; set; }
+        public GameMode GameMode { get; set; }
         public User User { get; set; }
         public Chat Chat { get; set; }
     }

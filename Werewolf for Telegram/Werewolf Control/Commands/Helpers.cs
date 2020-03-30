@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -37,7 +38,7 @@ namespace Werewolf_Control
             return db.Players.FirstOrDefault(x => x.TelegramId == id);
         }
 
-        private static void StartGame(bool chaos, Update update)
+        private static void StartGame(GameMode gameMode, Update update)
         {
             if (update.Message.Chat.Type == ChatType.Private)
             {
@@ -140,7 +141,7 @@ namespace Werewolf_Control
             node = Bot.GetBestAvailableNode();
             if (node != null)
             {
-                node.StartGame(update, chaos);
+                node.StartGame(update, gameMode);
                 //notify waiting players
                 using (var db = new WWContext())
                 {

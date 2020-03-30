@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Shared;
 using Telegram.Bot.Types;
 using Werewolf_Control.Helpers;
 
@@ -26,12 +27,12 @@ namespace Werewolf_Control.Models
         public string Version { get; set; }
         public int MessagesSent { get; set; }
 
-        public void StartGame(Update update, bool chaos = false)
+        public void StartGame(Update update, GameMode gameMode = GameMode.Normal)
         {
             var info = new GameStartInfo
             {
                 Chat = update.Message.Chat,
-                Chaos = chaos,
+                GameMode = gameMode,
                 User = update.Message.From
             };
             this.Broadcast(JsonConvert.SerializeObject(info));

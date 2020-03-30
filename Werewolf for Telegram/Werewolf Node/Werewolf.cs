@@ -31,8 +31,9 @@ namespace Werewolf_Node
             KillTimer,
             IsInitializing,
             MessageQueueing = true,
-            Chaos, WolfCubKilled,
+            WolfCubKilled,
             NoOneCastLynch;
+        public GameMode GameMode;
         public string Guid;
         private readonly InlineKeyboardMarkup _requestPMButton;
         public DateTime LastPlayersOutput = DateTime.Now;
@@ -94,7 +95,7 @@ namespace Werewolf_Node
         /// <param name="u">User that started the game</param>
         /// <param name="chatGroup">Name of the group starting the game</param>
         /// <param name="chaos">Chaos mode yes or no</param>
-        public Werewolf(long chatid, User u, string chatGroup, bool chaos = false)
+        public Werewolf(long chatid, User u, string chatGroup, GameMode gameMode)
         {
             try
             {
@@ -172,9 +173,12 @@ namespace Werewolf_Node
                     ShufflePlayerList = DbGroup.HasFlag(GroupConfig.ShufflePlayerList);
                     RandomMode = DbGroup.HasFlag(GroupConfig.RandomMode);
                     db.SaveChanges();
+
+                    var modes = Enum.GetValues(typeof(GameMode)).Cast<GameMode>();
                     if (RandomMode)
                     {
-                        Chaos = Program.R.Next(100) < 50;
+                        GameMode = modes.ElementAt(Program.R.Next(modes.Count()));
+
                         ThiefFull = Program.R.Next(100) < 50;
                         SecretLynch = Program.R.Next(100) < 50;
                         ShowRolesOnDeath = Program.R.Next(100) < 50;
@@ -194,7 +198,7 @@ namespace Werewolf_Node
                     else
                     {
                         //decide if chaos or not
-                        Chaos = DbGroup.Mode == "Player" ? chaos : DbGroup.Mode == "Chaos";
+                        GameMode = DbGroup.Mode == "Player" ? gameMode : modes.FirstOrDefault(x => x.ToString() == DbGroup.Mode);
                         ShowRolesEnd = DbGroup.ShowRolesEnd;
                         ThiefFull = DbGroup.HasFlag(GroupConfig.ThiefFull);
                         SecretLynch = DbGroup.HasFlag(GroupConfig.EnableSecretLynch);
@@ -218,11 +222,32 @@ namespace Werewolf_Node
                 {
                     new InlineKeyboardUrlButton(GetLocaleString("JoinButton"),$"https://t.me/{Program.Me.Username}?start=join" + deeplink)
                 });
-                FirstMessage = GetLocaleString(Chaos ? "PlayerStartedChaosGame" : "PlayerStartedGame", u.FirstName);
+
+
 #if RELEASE
-                _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new FileToSend(GetRandomImage(Chaos ? StartChaosGame : StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                switch (GameMode)
+                {
+                    case GameMode.Chaos:
+                        FirstMessage = GetLocaleString("PlayerStartedChaosGame", u.FirstName);
+                        _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new FileToSend(GetRandomImage(StartChaosGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                        break;
+
+                    default:
+                        FirstMessage = GetLocaleString("PlayerStartedGame", u.FirstName);
+                        _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new FileToSend(GetRandomImage(StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                        break;
+                }
 #else
-                _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage((Chaos ? StartChaosGame : StartGame))}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
+                switch (GameMode)
+                {
+                    case GameMode.Chaos:
+                        _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage(StartChaosGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
+                        break;
+
+                    default:
+                        _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage(StartGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
+                        break;
+                }
 #endif
 
                 // This can stay turned off now I think. Can enable it again if players don't get it at all
@@ -546,7 +571,7 @@ namespace Werewolf_Node
                         TimeStarted = _timeStarted,
                         GroupId = ChatId,
                         GrpId = int.Parse(DbGroup.Id.ToString()),
-                        Mode = Chaos ? "Chaos" : "Normal",
+                        Mode = GameMode.ToString(),
 #if BETA
                         Beta = true,
 #endif
@@ -1430,7 +1455,7 @@ namespace Werewolf_Node
             try
             {
                 var roleflags = (IRole)(DbGroup.RoleFlags ?? 0);
-                var rolesToAssign = GameBalancing.Balance(roleflags, Players.Count, Chaos, BurningOverkill, out PossibleRoles);
+                var rolesToAssign = GameBalancing.Balance(roleflags, Players.Count, GameMode == Shared.GameMode.Chaos, BurningOverkill, out PossibleRoles);
 
                 //shuffle things
                 Players.Shuffle();
@@ -5670,7 +5695,7 @@ namespace Werewolf_Node
                         //automatically get welcome to hell
                         if (!ach2.HasFlag(AchievementsReworked.WelcomeToHell))
                             newAch2.Set(AchievementsReworked.WelcomeToHell);
-                        if (!ach2.HasFlag(AchievementsReworked.WelcomeToAsylum) && Chaos)
+                        if (!ach2.HasFlag(AchievementsReworked.WelcomeToAsylum) && GameMode == GameMode.Chaos)
                             newAch2.Set(AchievementsReworked.WelcomeToAsylum);
                         if (!ach2.HasFlag(AchievementsReworked.AlzheimerPatient) && Language.Contains("Amnesia"))
                             newAch2.Set(AchievementsReworked.AlzheimerPatient);

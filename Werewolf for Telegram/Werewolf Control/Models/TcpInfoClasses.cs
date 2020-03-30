@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,7 +43,7 @@ namespace Werewolf_Control.Models
     public class GameStartInfo
     {
         public string JType { get; set; } = "GameStartInfo";
-        public bool Chaos { get; set; }
+        public GameMode GameMode { get; set; }
         public User User { get; set; }
         public Chat Chat { get; set; }
     }

@@ -194,7 +194,7 @@ namespace Werewolf_Node
                                     else
                                     {
                                         game = new Werewolf(gsi.Chat.Id, gsi.User, gsi.Chat.Title,
-                                            gsi.Chaos);
+                                            gsi.GameMode);
                                         Games.Add(game);
                                         GamesStarted++;
                                     }
