@@ -2033,7 +2033,11 @@ namespace Werewolf_Node
                     Send(GetLocaleString("CultConvertYou"), p.Id);
                     Send(GetLocaleString("CultTeam", cultists.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), p.Id);
                     foreach (var c in cultists)
-                        Send(GetLocaleString("CultJoin", $"{p.GetName()}"), c.Id);
+                    {
+                        var msg = GetLocaleString("CultJoin", $"{p.GetName()}");
+                        msg += "\n" + GetLocaleString("CultistsList", Players?.Where(x => x.PlayerRole == IRole.Cultist && !x.IsDead).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
+                        Send(msg, c.Id);
+                    }
                     break;
 #endregion
 #region Wild Child
@@ -3523,6 +3527,7 @@ namespace Werewolf_Node
                         if (hunted.PlayerRole == IRole.Cultist)
                         {
                             Send(GetLocaleString("HunterFindCultist", hunted.GetName()), hunter.Id);
+                            Send(GetLocaleString("CHHuntedYou"), hunted.Id);
                             KillPlayer(hunted, KillMthd.Hunt, killer: hunter);
                             hunter.CHHuntedCultCount++;
                         }
