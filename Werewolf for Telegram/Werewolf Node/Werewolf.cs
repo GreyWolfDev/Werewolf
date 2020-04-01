@@ -638,6 +638,11 @@ namespace Werewolf_Node
                 while (IsRunning)
                 {
                     GameDay++;
+                    if (TannerTroll && Players.Count(x => !x.IsDead && !x.Fled) < 2)
+                    {
+                        DoGameEnd(ITeam.NoOne);
+                        break;
+                    }
                     if (!IsRunning) break;
                     CheckRoleChanges();
                     CheckLongHaul();
