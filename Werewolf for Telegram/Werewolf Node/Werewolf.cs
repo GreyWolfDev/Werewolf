@@ -4433,7 +4433,7 @@ namespace Werewolf_Node
                 return true;
             if (!IsRunning) return true;
 
-            if (TannerTroll) return Players.Count < 2;
+            if (TannerTroll) return Players.Count(x => !x.IsDead) < 2;
 
             var alivePlayers = Players.Where(x => !x.IsDead);
 
