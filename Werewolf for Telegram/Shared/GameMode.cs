@@ -11,8 +11,6 @@ namespace Shared
         Normal,
         Chaos,
 
-        TrollNormal,
-        TrollChaos,
         // More to come? :P
     }
 }

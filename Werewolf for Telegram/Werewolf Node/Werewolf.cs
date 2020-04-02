@@ -32,8 +32,7 @@ namespace Werewolf_Node
             IsInitializing,
             MessageQueueing = true,
             WolfCubKilled,
-            NoOneCastLynch,
-            TannerTroll;
+            NoOneCastLynch;
         public GameMode GameMode;
         public string Guid;
         private readonly InlineKeyboardMarkup _requestPMButton;
@@ -121,21 +120,6 @@ namespace Werewolf_Node
                 ArsonistWins = Settings.ArsonistWins.ToList();
                 BurnToDeath = Settings.BurnToDeath.ToList();
 
-                if (gameMode == GameMode.TrollChaos)
-                {
-                    gameMode = GameMode.Chaos;
-                    TannerTroll = true;
-                }
-                else if (gameMode == GameMode.TrollNormal)
-                {
-                    gameMode = GameMode.Normal;
-                    TannerTroll = true;
-                }
-                else
-                {
-                    TannerTroll = false;
-                }
-
                 new Thread(GroupQueue).Start();
                 using (var db = new WWContext())
                 {
@@ -190,7 +174,7 @@ namespace Werewolf_Node
                     RandomMode = DbGroup.HasFlag(GroupConfig.RandomMode);
                     db.SaveChanges();
 
-                    var modes = Enum.GetValues(typeof(GameMode)).Cast<GameMode>().Where(x => !x.ToString().StartsWith("Troll"));
+                    var modes = Enum.GetValues(typeof(GameMode)).Cast<GameMode>();
                     if (RandomMode)
                     {
                         GameMode = modes.ElementAt(Program.R.Next(modes.Count()));
@@ -1479,18 +1463,11 @@ namespace Werewolf_Node
 
 
                 // special roles for events
-                // april fool's this time
-                if (TannerTroll)
+                // valentines this time
+                if (IsDateAnywhere(14, 02, 2020) && !rolesToAssign.Any(x => x == IRole.Cupid))
                 {
-                    for(int i = 0; i < rolesToAssign.Count; i++)
-                    {
-                        rolesToAssign[i] = IRole.Tanner;
-                    }
-                }
-                else if (IsDateAnywhere(01, 04, 2020) && !rolesToAssign.Contains(IRole.Tanner))
-                {
-                    var index = rolesToAssign.FindIndex(x => new[] { IRole.Villager, IRole.Mason, IRole.Fool }.Contains(x));
-                    if (index >= 0) rolesToAssign[index] = IRole.Tanner; // yes, no matter if the group allows tanners or not :D
+                    var toReplace = rolesToAssign.FindIndex(x => x == IRole.Villager || x == IRole.Mason);
+                    if (toReplace != -1) rolesToAssign[toReplace] = IRole.Cupid;
                 }
 
 
@@ -3054,7 +3031,7 @@ namespace Werewolf_Node
                 if (CheckForGameEnd()) return;
                 //check if all votes are cast
 
-                if (nightPlayers.All(x => x.CurrentQuestion == null) && (!TannerTroll || i > Program.R.Next(nightTime / 2, nightTime * 2)))
+                if (nightPlayers.All(x => x.CurrentQuestion == null))
                     break;
             }
 
@@ -4432,9 +4409,6 @@ namespace Werewolf_Node
             if (Players == null)
                 return true;
             if (!IsRunning) return true;
-
-            if (TannerTroll) return false;
-
             var alivePlayers = Players.Where(x => !x.IsDead);
 
             //first of all, check for traitor!
@@ -4608,6 +4582,8 @@ namespace Werewolf_Node
                     {
                         if (forbidden)
                             AddAchievement(w, AchievementsReworked.ForbiddenLove);
+                        if (IsDateAnywhere(14, 02, 2020))
+                            AddAchievement(w, AchievementsReworked.TodaysSpecial);
                         w.Won = true;
                         var p = GetDBGamePlayer(w, db);
                         p.Won = true;
@@ -4819,10 +4795,6 @@ namespace Werewolf_Node
                         msg = GetLocaleString("RemainingPlayersEnd") + Environment.NewLine;
                         msg = Players.Where(x => !x.IsDead).OrderBy(x => x.Team).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}: {GetDescription(p.PlayerRole)} {GetLocaleString(p.Team + "TeamEnd")} {(p.InLove ? "❤️" : "")} {GetLocaleString(p.Won ? "Won" : "Lost")}");
                         break;
-                }
-                if (TannerTroll)
-                {
-                    msg += "\n\n<b>Happy April Fool's everyone! :D</b>\n";
                 }
                 if (game.TimeStarted.HasValue)
                 {
@@ -5794,8 +5766,6 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.PsychopathKiller);
                         if (!ach2.HasFlag(AchievementsReworked.ColdAsIce) && player.FrozeHarlot)
                             newAch2.Set(AchievementsReworked.ColdAsIce);
-                        if (!ach2.HasFlag(AchievementsReworked.TodaysSpecial) && TannerTroll)
-                            newAch2.Set(AchievementsReworked.TodaysSpecial);
 
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();

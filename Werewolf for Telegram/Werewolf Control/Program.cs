@@ -42,9 +42,6 @@ namespace Werewolf_Control
         internal static int? xsollaProjId = 0;
         internal static readonly HttpClient xsollaClient = new HttpClient();
         internal const string MasterLanguage = "English.xml";
-
-        internal static List<long> TrolledGroups = new List<long>();
-
         static void Main(string[] args)
         {
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;

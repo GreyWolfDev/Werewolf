@@ -41,20 +41,6 @@ namespace Werewolf_Control
             }
         }
 
-#if DEBUG
-        [Command(Trigger = "startfools", Blockable = true, InGroupOnly = true)]
-        public static void StartFools(Update update, string[] args)
-        {
-            if (!Program.MaintMode)
-                StartGame(GameMode.TrollNormal, update);
-            else
-            {
-                Send("Sorry, we are about to start maintenance.  Please check @greywolfdev for more information.",
-                    update.Message.Chat.Id);
-            }
-        }
-#endif
-
         [Command(Trigger = "join", Blockable = true, InGroupOnly = true)]
         public static void Join(Update update, string[] args)
         {

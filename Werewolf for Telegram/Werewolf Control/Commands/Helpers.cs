@@ -38,8 +38,6 @@ namespace Werewolf_Control
             return db.Players.FirstOrDefault(x => x.TelegramId == id);
         }
 
-        static Random R = new Random();
-
         private static void StartGame(GameMode gameMode, Update update)
         {
             if (update.Message.Chat.Type == ChatType.Private)
@@ -143,27 +141,6 @@ namespace Werewolf_Control
             node = Bot.GetBestAvailableNode();
             if (node != null)
             {
-                if (new[] { DateTime.UtcNow.AddHours(-8).Date, DateTime.UtcNow.Date }
-                    .Contains(new DateTime(2020, 04, 01).Date))
-                {
-                    bool troll = false;
-                    if (!Program.TrolledGroups.Contains(update.Message.Chat.Id))
-                    {
-                        troll = true;
-                        Program.TrolledGroups.Add(update.Message.Chat.Id);
-                    }
-                    else if (R.Next(100) < 5)
-                    {
-                        troll = true;
-                    }
-
-                    if (troll)
-                    {
-                        if (gameMode == GameMode.Normal) gameMode = GameMode.TrollNormal;
-                        else gameMode = GameMode.TrollChaos;
-                    }
-                }
-
                 node.StartGame(update, gameMode);
                 //notify waiting players
                 using (var db = new WWContext())
