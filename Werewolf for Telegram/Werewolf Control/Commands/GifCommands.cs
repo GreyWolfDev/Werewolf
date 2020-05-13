@@ -234,8 +234,7 @@ namespace Werewolf_Control
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: SFW", "approvesfw|" + q.From.Id));
                 menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: NSFW", "approvensfw|" + q.From.Id));
                 Bot.Send($"User {q.From.Id} - {(q.From.Username == null ? q.From.FirstName : $"@{q.From.Username}")} - has submitted a gif pack for approval", Settings.AdminChatId, customMenu: menu.CreateMarkupFromMenu());
-                Bot.Send("Your pack has been submitted for approval to the admins.  Please wait while we review.",
-                    q.From.Id);
+                Bot.Send("Your GIF pack has been submitted to the admins for approval!\n\nPlease keep in mind that admins have a huge number of GIF packs to review, hence this process may take up to 2-5 working days.\n\nOur admins will keep track of the submitted GIF packs, you don’t have to PM them directly. Thank you for your patience!", q.From.Id);
                 return;
             }
             if (choice == "togglebadge")
