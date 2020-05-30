@@ -84,7 +84,7 @@ namespace Database
         FirstStone = 34,
         [Display(Name = "Smart Gunner"), Description("As the Gunner, both of your bullets hit a wolf, serial killer, or cultist")]
         SmartGunner = 35,
-        [Display(Name = "Streetwise"), Description("Find a different wolf, serial killer, or cultist 4 nights in a row as the detective")]
+        [Display(Name = "Streetwise"), Description("Find a different wolf, serial killer, arsonist, or cultist 4 nights in a row as the detective")]
         Streetwise = 36,
         [Display(Name = "Speed Dating"), Description("Have the bot select you as a lover (cupid failed to choose)")]
         OnlineDating = 37,
