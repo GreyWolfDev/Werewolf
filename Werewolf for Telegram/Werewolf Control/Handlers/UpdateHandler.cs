@@ -1418,6 +1418,12 @@ namespace Werewolf_Control.Handler
                         #endregion
                         #region Config Commands
                         case "lang":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             //load up each file and get the names
                             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
@@ -1443,6 +1449,12 @@ namespace Werewolf_Control.Handler
                             Bot.ReplyToCallback(query, GetLocaleString("WhatLang", language, curLang.Base), replyMarkup: menu);
                             break;
                         case "setlang":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             if (args[3] == "Random" && args[4] == "v")
                             {
                                 if (grp == null) return;
@@ -1537,6 +1549,12 @@ namespace Werewolf_Control.Handler
                         //    DB.SaveChanges();
                         //    break;
                         case "maxplayer":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             buttons.Add(new InlineKeyboardCallbackButton("5", $"setmaxplayer|{groupid}|5"));
                             buttons.Add(new InlineKeyboardCallbackButton("10", $"setmaxplayer|{groupid}|10"));
                             buttons.Add(new InlineKeyboardCallbackButton("15", $"setmaxplayer|{groupid}|15"));
@@ -1551,6 +1569,12 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setmaxplayer":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             int oldMaxPlayers = grp.MaxPlayers ?? 35;
                             grp.MaxPlayers = int.Parse(choice);
                             if (grp.MaxPlayers > oldMaxPlayers && grp.RoleFlags.HasValue)
@@ -1579,6 +1603,12 @@ namespace Werewolf_Control.Handler
                         //    DB.SaveChanges();
                         //    break;
                         case "mode":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString("NormalOnly", language), $"setmode|{groupid}|Normal"));
                             buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString("ChaosOnly", language), $"setmode|{groupid}|Chaos"));
                             buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString("PlayerChoice", language), $"setmode|{groupid}|Player"));
@@ -1588,6 +1618,11 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("GameModeQ", language, grp.Mode), replyMarkup: menu);
                             break;
                         case "setmode":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
 
                             grp.Mode = choice;
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("GameModeA", language, choice));
@@ -1596,6 +1631,12 @@ namespace Werewolf_Control.Handler
                             DB.SaveChanges();
                             break;
                         case "endroles":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString("ShowNone", language), $"setendroles|{groupid}|None"));
                             buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString("ShowLiving", language), $"setendroles|{groupid}|Living"));
                             buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString("ShowAll", language), $"setendroles|{groupid}|All"));
@@ -1606,6 +1647,12 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setendroles":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             grp.ShowRolesEnd = choice;
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("ShowRolesEndA", language, choice));
                             Bot.ReplyToCallback(query,
@@ -1613,6 +1660,12 @@ namespace Werewolf_Control.Handler
                             DB.SaveChanges();
                             break;
                         case "daytimer":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             buttons.Add(new InlineKeyboardCallbackButton("90", $"setday|{groupid}|30"));
                             buttons.Add(new InlineKeyboardCallbackButton("120", $"setday|{groupid}|60"));
                             buttons.Add(new InlineKeyboardCallbackButton("150", $"setday|{groupid}|90"));
@@ -1624,6 +1677,12 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setday":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             grp.DayTime = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("SetDayTimeA", language, int.Parse(choice) + 60));
                             Bot.ReplyToCallback(query,
@@ -1631,6 +1690,12 @@ namespace Werewolf_Control.Handler
                             DB.SaveChanges();
                             break;
                         case "nighttimer":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             buttons.Add(new InlineKeyboardCallbackButton("30", $"setnight|{groupid}|30"));
                             buttons.Add(new InlineKeyboardCallbackButton("60", $"setnight|{groupid}|60"));
                             buttons.Add(new InlineKeyboardCallbackButton("90", $"setnight|{groupid}|90"));
@@ -1642,6 +1707,11 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setnight":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
 
                             grp.NightTime = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("SetNightTimeA", language, choice));
@@ -1650,6 +1720,12 @@ namespace Werewolf_Control.Handler
                             DB.SaveChanges();
                             break;
                         case "lynchtimer":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             buttons.Add(new InlineKeyboardCallbackButton("30", $"setlynch|{groupid}|30"));
                             buttons.Add(new InlineKeyboardCallbackButton("60", $"setlynch|{groupid}|60"));
                             buttons.Add(new InlineKeyboardCallbackButton("90", $"setlynch|{groupid}|90"));
@@ -1661,6 +1737,12 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setlynch":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             grp.LynchTime = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("SetLynchTimeA", language, choice));
                             Bot.ReplyToCallback(query,
@@ -1744,6 +1826,12 @@ namespace Werewolf_Control.Handler
                         //    DB.SaveChanges();
                         //    break;
                         case "maxextend":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             buttons.Add(new InlineKeyboardCallbackButton("60", $"setmaxextend|{groupid}|60"));
                             buttons.Add(new InlineKeyboardCallbackButton("120", $"setmaxextend|{groupid}|120"));
                             buttons.Add(new InlineKeyboardCallbackButton("180", $"setmaxextend|{groupid}|180"));
@@ -1755,6 +1843,12 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("MaxExtendQ", language, Settings.MaxExtend, grp.MaxExtend ?? Settings.MaxExtend), replyMarkup: menu);
                             break;
                         case "setmaxextend":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             grp.MaxExtend = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("MaxExtendA", language, choice));
                             Bot.ReplyToCallback(query,
@@ -1766,6 +1860,12 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("ThankYou", language));
                             break;
                         case "togglerole":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             var disabledRoles = (IRole)(grp.RoleFlags ?? 0);
                             switch (choice)
                             {
@@ -1795,6 +1895,12 @@ namespace Werewolf_Control.Handler
                             Bot.Edit(query, GetLocaleString("RoleConfigInfo", language), GetRoleConfigMenu(groupid));
                             break;
                         case "validateroles":
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
+
                             disabledRoles = (IRole)(grp.RoleFlags ?? 0);
                             disabledRoles &= ~IRole.Wolf;
                             disabledRoles &= ~IRole.Villager;
@@ -1823,6 +1929,12 @@ namespace Werewolf_Control.Handler
                                     x => x.GetInfo().ShortName == command || "set" + x.GetInfo().ShortName == command);
                             if (chosen == GroupConfig.None) break; //always false? on a FirstOrDefault?....  I'll check later. //reny's answer: yep, enum's default is zero, ie GroupConfig.None
                             //TODO we need to call the database method to update the group flags based on current settings (also under TODO)
+
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
+                            {
+                                Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
+                                return;
+                            }
 
                             string pos = "", neg = "";
                             switch (chosen.GetInfo().Question)
