@@ -400,17 +400,17 @@ namespace Werewolf_Control.Handler
                                             return;
                                         }
                                     }
+                                    if (command.InGroupOnly & update.Message.Chat.Type == ChatType.Private)
+                                    {
+                                        Send(GetLocaleString("GroupCommandOnly", GetLanguage(id)), id);
+                                        return;
+                                    }
                                     if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) &
                                         !UpdateHelper.Devs.Contains(update.Message.From.Id) &
                                         !UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
                                     {
                                         Send(GetLocaleString("GroupAdminOnly", GetLanguage(update.Message.Chat.Id)),
                                             id);
-                                        return;
-                                    }
-                                    if (command.InGroupOnly & update.Message.Chat.Type == ChatType.Private)
-                                    {
-                                        Send(GetLocaleString("GroupCommandOnly", GetLanguage(id)), id);
                                         return;
                                     }
                                     Bot.CommandsReceived++;
