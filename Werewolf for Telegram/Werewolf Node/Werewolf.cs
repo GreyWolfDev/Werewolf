@@ -5718,7 +5718,7 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.Wobble);
                         if (!ach2.HasFlag(AchievementsReworked.Survivalist) && p.GamePlayers.Count(x => x.Survived) >= 100)
                             newAch2.Set(AchievementsReworked.Survivalist);
-                        if (!ach2.HasFlag(AchievementsReworked.MasonBrother) && player.PlayerRole == IRole.Mason && Players.Count(x => x.PlayerRole == IRole.Mason & !x.IsDead) >= 2)
+                        if (!ach2.HasFlag(AchievementsReworked.MasonBrother) && player.PlayerRole == IRole.Mason && !player.IsDead && Players.Count(x => x.PlayerRole == IRole.Mason && !x.IsDead) >= 2)
                             newAch2.Set(AchievementsReworked.MasonBrother);
                         if (!ach2.HasFlag(AchievementsReworked.ChangingSides) && player.ChangedRolesCount > 0 && player.Won)
                             newAch2.Set(AchievementsReworked.ChangingSides);
