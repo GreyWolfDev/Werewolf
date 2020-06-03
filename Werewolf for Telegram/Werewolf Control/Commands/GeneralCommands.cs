@@ -236,7 +236,7 @@ namespace Werewolf_Control
                         return;
                     }
 
-                    if (args[1].StartsWith("join") && args[1].Length == 48) // 22 node id + 22 game id + 4 "join"
+                    if (args[1].StartsWith("join") && args[1].Length == 48) // 4 "join" + 22 node id + 22 game id
                     {
                         //okay, they are joining a game.
                         string nodeid = "";
@@ -309,7 +309,17 @@ namespace Werewolf_Control
 
                             //ok we got the game, now join 
                             //make sure they are member
-                            chatmember = Bot.Api.GetChatMemberAsync(game.GroupId, u.Message.From.Id).Result;
+                            try
+                            {
+                                chatmember = Bot.Api.GetChatMemberAsync(game.GroupId, u.Message.From.Id).Result;
+                            }
+                            catch
+                            {
+                                return;
+                            }
+                            if (chatmember == null) // if we fail to determine their chatmember status, just let them try again
+                                return;
+
                             if (chatmember.Status == ChatMemberStatus.Left || chatmember.Status == ChatMemberStatus.Kicked || (chatmember.Status == ChatMemberStatus.Restricted && !chatmember.CanSendMessages))
                             {
                                 Bot.Send(
