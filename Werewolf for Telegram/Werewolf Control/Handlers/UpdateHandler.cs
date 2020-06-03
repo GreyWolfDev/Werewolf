@@ -1053,7 +1053,7 @@ namespace Werewolf_Control.Handler
                     //config helpers
                     if (choice == "back")
                     {
-                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid));
+                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigMenu(groupid, language));
                         return;
                     }
                     if (choice == "cancel")
@@ -1487,7 +1487,7 @@ namespace Werewolf_Control.Handler
                                     var ig = GetGroupNodeAndGame(groupid);
 
                                     ig?.LoadLanguage(slang.FileName);
-                                    menu = GetConfigMenu(groupid);
+                                    menu = GetConfigMenu(groupid, language);
                                     Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("LangSet", language, slang.Base + (String.IsNullOrWhiteSpace(slang.Variant) ? "" : ": " + slang.Variant)));
                                     Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: menu);
                                 }
@@ -2067,12 +2067,11 @@ namespace Werewolf_Control.Handler
         //    };
         //}
 
-        internal static InlineKeyboardMarkup GetConfigMenu(long id)
+        internal static InlineKeyboardMarkup GetConfigMenu(long id, string lang)
         {
             List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
             //base menu
             var configGroups = ConfigGroupAttribute.GetConfigGroups();
-            var lang = GetLanguage(id);
 
             foreach (var cg in configGroups)
             {

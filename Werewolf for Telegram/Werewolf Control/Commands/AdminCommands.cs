@@ -85,8 +85,10 @@ namespace Werewolf_Control
                 db.SaveChanges();
             }
 
-            var menu = UpdateHandler.GetConfigMenu(update.Message.Chat.Id);
-            Bot.Api.SendTextMessageAsync(update.Message.From.Id, GetLocaleString("WhatToDo", GetLanguage(update.Message.From.Id)),
+            var language = GetLanguage(update.Message.From.Id);
+
+            var menu = UpdateHandler.GetConfigMenu(update.Message.Chat.Id, language);
+            Bot.Api.SendTextMessageAsync(update.Message.From.Id, GetLocaleString("WhatToDo", language),
                 replyMarkup: menu);
         }
 
