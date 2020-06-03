@@ -27,6 +27,7 @@ using File = System.IO.File;
 using Group = Database.Group;
 using RegHelper = Werewolf_Control.Helpers.RegHelper;
 using System.Collections;
+using System.Drawing;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 #pragma warning disable IDE0060 // Remove unused parameter
@@ -109,7 +110,7 @@ namespace Werewolf_Control
             Send($"Select build to trigger", u.Message.Chat.Id,
                 customMenu: menu.CreateMarkupFromMenu());
         }
-        
+
         [Attributes.Command(Trigger = "moveachv", DevOnly = true)]
         public static void MoveAchv(Update update, string[] args)
         {
@@ -498,6 +499,59 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "test", DevOnly = true)]
         public static void Test(Update update, string[] args)
         {
+            Bot.Send("Please hold, creating chart...", update.Message.Chat.Id);
+            
+            using (var chart = new Chart())
+            {
+                //var gameSeries = chart.Series.Add("Games");
+                var playerSeries = chart.Series.Add("Players");
+                var title = chart.Titles.Add("Usage per month over time");
+                var chartArea = chart.ChartAreas.Add("Area");
+                var legend = chart.Legends.Add("Legend");
+
+                chart.Width = 5000;
+                chart.Height = 2000;
+
+                //gameSeries.ChartType = SeriesChartType.Spline;
+                //gameSeries.BorderWidth = 30;
+                //gameSeries.IsVisibleInLegend = true;
+
+                playerSeries.ChartType = SeriesChartType.Spline;
+                playerSeries.BorderWidth = 30;
+                playerSeries.IsVisibleInLegend = true;
+
+                title.Font = new Font(FontFamily.GenericSansSerif, 100);
+
+                chartArea.AxisX.LabelStyle.Font = new Font(FontFamily.GenericSansSerif, 80);
+                chartArea.AxisY.LabelStyle.Font = new Font(FontFamily.GenericSansSerif, 80);
+
+                legend.Font = new Font(FontFamily.GenericSansSerif, 80);
+                legend.Enabled = true;
+
+                using (var db = new WWContext())
+                {
+                    for (DateTime month = new DateTime(2016, 04, 01); month < DateTime.UtcNow.Date; month = month.AddMonths(1))
+                    {
+                        var next = month.AddMonths(1);
+
+                        var monthName = month.ToString("M/y");
+                        var games = db.Games.Where(x => x.TimeStarted >= month && x.TimeStarted < next);
+
+                        //gameSeries.Points.AddXY(monthName, games.Count());
+                        playerSeries.Points.AddXY(monthName, games.Sum(x => x.GamePlayers.Count));
+                    }
+                }
+
+                using (var fs = new FileStream("Test.jpg", FileMode.Create))
+                {
+                    chart.SaveImage(fs, ChartImageFormat.Jpeg);
+                }
+
+                using (var fs = new FileStream("Test.jpg", FileMode.Open))
+                {
+                    Bot.Api.SendPhotoAsync(update.Message.Chat.Id, new FileToSend("Chart.jpg", fs)).Wait();
+                }
+            }
         }
 
         /// <summary>
