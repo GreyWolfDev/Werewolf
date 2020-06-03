@@ -3183,7 +3183,7 @@ namespace Werewolf_Node
                         }
                         else
                         {
-                            KillPlayer(burn, KillMthd.Burn, killer: arsonist);
+                            KillPlayer(burn, KillMthd.Burn, killer: arsonist, hunterFinalShot: false);
                             burn.Doused = false;
                             burn.Burning = true;
                             SendGif(GetLocaleString("Burn"), GetRandomImage(BurnToDeath), burn.Id);
