@@ -29,5 +29,6 @@ namespace Werewolf_Control.Models
         public string BurnToDeath { get; set; }
         public bool ShowBadge { get; set; } = true;
         public bool Submitted { get; set; }
+        public DateTime LastSubmit { get; set; } = DateTime.MinValue;
     }
 }

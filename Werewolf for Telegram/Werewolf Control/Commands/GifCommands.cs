@@ -223,7 +223,13 @@ namespace Werewolf_Control
                             Bot.Send($"Please set at least one GIF before you submit your pack!", q.From.Id, customMenu: GetGifMenu(data));
                             return;
                         }
+                        if (data.LastSubmit.AddMinutes(60) >= DateTime.UtcNow)
+                        {
+                            Bot.Send($"You have already submitted your GIF pack in the last hour! If you submit your GIFs and then change something before it gets approved, you don't have to submit it again! Please wait patiently while your GIFs are being reviewed.", q.From.Id, customMenu: GetGifMenu(data));
+                            return;
+                        }
                         data.Submitted = true;
+                        data.LastSubmit = DateTime.UtcNow;
                         p.CustomGifSet = JsonConvert.SerializeObject(data);
                         db.SaveChanges();
                     }
