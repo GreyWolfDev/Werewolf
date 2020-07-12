@@ -45,7 +45,7 @@ namespace Werewolf_Control
         {
             if (args[1] == null) //only send the message if there is no extra args (otherwise it's more likely for other bots)
             {
-                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, "[Website](http://www.tgwerewolf.com/?referrer=help)\n/rolelist (don't forget to /setlang first!)\n[Telegram Werewolf Support Group](http://telegram.me/greywolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/greywolfdev)",
+                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, "[Website](https://www.tgwerewolf.com/?referrer=help)\n/rolelist (don't forget to /setlang first!)\n[Telegram Werewolf Support Group](http://telegram.me/greywolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/greywolfdev)",
                                                             parseMode: ParseMode.Markdown, disableWebPagePreview: true);
             }
         }
@@ -60,7 +60,7 @@ namespace Werewolf_Control
         [Command(Trigger = "changelog")]
         public static void ChangeLog(Update update, string[] args)
         {
-            Send("Changelog moved to <a href=\"www.tgwerewolf.com/#changes?referrer=changelog\">here</a>\nAlso check out the dev channel @greywolfdev", update.Message.Chat.Id);
+            Send("Changelog moved to <a href=\"https://www.tgwerewolf.com/#changes?referrer=changelog\">here</a>\nAlso check out the dev channel @greywolfdev", update.Message.Chat.Id);
         }
 
         [Command(Trigger = "runinfo")]
@@ -511,7 +511,7 @@ namespace Werewolf_Control
                     new[]
                     {
                     new InlineKeyboardUrlButton($"{name} Stats",
-                        "http://www.tgwerewolf.com/Stats/Player/" + id + "?referrer=stats")
+                        "https://www.tgwerewolf.com/Stats/Player/" + id + "?referrer=stats")
                 }
 
                 };
@@ -528,7 +528,7 @@ namespace Werewolf_Control
                     new[]
                     {
                         new InlineKeyboardUrlButton("Global Stats",
-                           "http://www.tgwerewolf.com/Stats?referrer=stats")
+                           "https://www.tgwerewolf.com/Stats?referrer=stats")
 
                     }
                 };
@@ -536,11 +536,11 @@ namespace Werewolf_Control
                     buttons.Add(new[]
                     {
                         new InlineKeyboardUrlButton( $"{u.Message.Chat.Title} Stats",
-                        "http://www.tgwerewolf.com/Stats/Group/" + u.Message.Chat.Id + "?referrer=stats")
+                        "https://www.tgwerewolf.com/Stats/Group/" + u.Message.Chat.Id + "?referrer=stats")
                     });
                 buttons.Add(new[]
                 {
-                    new InlineKeyboardUrlButton($"{u.Message.From.FirstName} Stats","http://www.tgwerewolf.com/Stats/Player/" + u.Message.From.Id + "?referrer=stats")
+                    new InlineKeyboardUrlButton($"{u.Message.From.FirstName} Stats","https://www.tgwerewolf.com/Stats/Player/" + u.Message.From.Id + "?referrer=stats")
 
                 });
                 var menu = new InlineKeyboardMarkup(buttons.ToArray());
