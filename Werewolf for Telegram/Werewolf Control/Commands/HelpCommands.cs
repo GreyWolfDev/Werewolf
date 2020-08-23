@@ -24,11 +24,11 @@ namespace Werewolf_Control
         [Command(Trigger = "grouplist")]
         public static void GroupList(Update update, string[] args)
         {
-#if RELEASE
+//#if RELEASE
             Send("Grouplist is temporarily disabled... Sorry for any inconvenience caused...", update.Message.Chat.Id);
-#else
-            GroupList(update.Message.Chat.Id, update.Message.From.Id);
-#endif
+//#else
+//            GroupList(update.Message.Chat.Id, update.Message.From.Id);
+//#endif
         }
 
         public static void GroupList(long chatId, int fromId, int messageId = 0)
@@ -80,7 +80,7 @@ namespace Werewolf_Control
             }
             catch (Exception e)
             {
-                Send(e.Message + Environment.NewLine + Environment.NewLine + e.StackTrace, 295152997);
+                Send("Error in grouplist: " + e.Message + Environment.NewLine + Environment.NewLine + e.StackTrace, Settings.ErrorGroup);
             }
         }
 
