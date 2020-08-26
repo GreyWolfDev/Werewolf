@@ -280,7 +280,8 @@ namespace Shared
                 case IRole.Lycan:
                     return 10;
                 case IRole.Thief:
-                    return 4;
+                    return 0; // Testing 0 instead of 4 since thief
+                              // doesn't really seem to "harm" the village team a lot
                 case IRole.Troublemaker:
                     return 5;
                 case IRole.Chemist:
