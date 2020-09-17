@@ -64,7 +64,7 @@ namespace Werewolf_Control.Helpers
         private static Dictionary<string, DateTime> _lastGetVariant = new Dictionary<string, DateTime>();
         internal static List<v_GroupRanking> GetAll()
         {
-            if (_lastGetAll < DateTime.UtcNow.AddMinutes(-20))
+            if (_lastGetAll < DateTime.UtcNow.AddMinutes(-20) || _list == null)
             {
                 //only refresh the list cache once every 20 minutes
                 using (var db = new WWContext())
@@ -72,8 +72,8 @@ namespace Werewolf_Control.Helpers
                     var lastUpdate = db.v_GroupRanking.Max(x => x.LastRefresh);
                     try
                     {
-                        _list = db.v_GroupRanking.GroupBy(x => new { x.TelegramId, x.Name, x.Language, x.Ranking, x.LastRefresh })
-                            .SelectMany(x => x).ToList();
+                        _list = db.v_GroupRanking/*.GroupBy(x => new { x.TelegramId, x.Name, x.Language, x.Ranking, x.LastRefresh })
+                            .SelectMany(x => x)*/.ToList();
                     }
                     catch (Exception e)
                     {
@@ -87,7 +87,7 @@ namespace Werewolf_Control.Helpers
 
         internal static List<string> GetBaseLanguages()
         {
-            if (_lastGetBase < DateTime.UtcNow.AddMinutes(-20)) //only refresh the list cache once every 20 minutes
+            if (_lastGetBase < DateTime.UtcNow.AddMinutes(-20) || _langs == null) //only refresh the list cache once every 20 minutes
             {
                 var langs = new List<string>();
                 foreach (var lang in LanguageHelper.GetAllLanguages())

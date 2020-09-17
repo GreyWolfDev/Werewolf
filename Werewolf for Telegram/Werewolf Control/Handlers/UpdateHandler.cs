@@ -228,9 +228,12 @@ namespace Werewolf_Control.Handler
                     return;
                 }
                 if (update.Message == null || update.Message.From.Id == 777000) return;
+
+#if !DEBUG
                 //ignore previous messages
                 if ((update.Message?.Date ?? DateTime.MinValue) < DateTime.Now.AddSeconds(-10))
                     return; //toss it
+#endif
 
                 var id = update.Message.Chat.Id;
 
@@ -347,7 +350,7 @@ namespace Werewolf_Control.Handler
 
                                 //check for the command
 
-                                #region More optimized code
+#region More optimized code
 
                                 var command = Bot.Commands.FirstOrDefault(
                                     x =>
@@ -418,7 +421,7 @@ namespace Werewolf_Control.Handler
                                 }
 
 
-                                #endregion
+#endregion
                             }
                             else if (update.Message.Chat.Type == ChatType.Private &&
                                      update.Message?.ReplyToMessage?.Text ==
@@ -1072,7 +1075,7 @@ namespace Werewolf_Control.Handler
 
                     switch (command)
                     {
-                        #region Dev Commands
+#region Dev Commands
                         case "update":
                             Updater.DoUpdate(query);
                             return;
@@ -1207,8 +1210,8 @@ namespace Werewolf_Control.Handler
                             }
                             Bot.Edit(query, query.Message.Text + "\n\n" + msg);
                             return;
-                        #endregion
-                        #region Global Admin Commands
+#endregion
+#region Global Admin Commands
                         case "status":
                             if (args[3] == "null")
                             {
@@ -1311,8 +1314,8 @@ namespace Werewolf_Control.Handler
                             }
                             Helpers.LanguageHelper.UseNewLanguageFile(choice, query.Message.Chat.Id, query.Message.MessageId);
                             return;
-                        #endregion
-                        #region Other Commands
+#endregion
+#region Other Commands
                         case "groups":
                             if (choice == "null")
                             {
@@ -1415,8 +1418,8 @@ namespace Werewolf_Control.Handler
                                 db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {groupid} AND UserId = {query.From.Id}");
                             Bot.ReplyToCallback(query, GetLocaleString("DeletedFromWaitList", grp.Language, grp.Name));
                             break;
-                        #endregion
-                        #region Config Commands
+#endregion
+#region Config Commands
                         case "lang":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
                             {
@@ -1991,7 +1994,7 @@ namespace Werewolf_Control.Handler
                             }
 
                             break;
-                            #endregion
+#endregion
                     }
                 }
                 catch (Exception ex)

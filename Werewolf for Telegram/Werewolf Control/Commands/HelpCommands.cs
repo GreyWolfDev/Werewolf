@@ -25,9 +25,9 @@ namespace Werewolf_Control
         public static void GroupList(Update update, string[] args)
         {
 //#if RELEASE
-            Send("Grouplist is temporarily disabled... Sorry for any inconvenience caused...", update.Message.Chat.Id);
+//            Send("Grouplist is temporarily disabled... Sorry for any inconvenience caused...", update.Message.Chat.Id);
 //#else
-//            GroupList(update.Message.Chat.Id, update.Message.From.Id);
+            GroupList(update.Message.Chat.Id, update.Message.From.Id);
 //#endif
         }
 
