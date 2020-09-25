@@ -9,7 +9,6 @@ using System.Runtime.Caching;
 
 namespace Werewolf_Control.Helpers
 {
-    
     internal static class UpdateHelper
     {
         public static readonly MemoryCache AdminCache = new MemoryCache("GroupAdmins");
@@ -26,6 +25,7 @@ namespace Werewolf_Control.Helpers
         internal static int[] LangAdmins =
         {
             267376056,  //Florian
+            654995039,  //Cordarion
         };
 
         internal static bool IsGroupAdmin(Update update)
@@ -80,7 +80,7 @@ namespace Werewolf_Control.Helpers
 
             }
             return admins.Any(x => x == user);
-            
+
         }
     }
 }
