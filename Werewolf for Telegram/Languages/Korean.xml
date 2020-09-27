@@ -1,0 +1,1454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <language name="한국어" base="한글" variant="SFW" owner="Para949" />
+  <string deprecated="true" key="NotInGame">
+    <value>당신은 지금 어느 게임에도 참가하지 않으셨습니다...</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <!-- 0 - Player name -->
+    <value>{0}님이 게임을 시작했어요! 참가하세요... 죽으셔도 전 모릅니다... :P</value>
+    <value>새로운 게임을 {0}님께서 시작했어요! 참가하고, 늑대한테 잡아먹혀라!</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <!-- 0 - Player name -->
+    <value>{0}님이 카오스 게임을 시작했어요! 참가하세요... 죽으셔도 전 모릅니다... :P
+</value>
+    <value> 새로운 카오스 게임을 {0}님께서 시작했어요! 참가해서 늑대한테 잡아먹혀라!</value>
+  </string>
+  <string deprecated="true" key="NoJoinGameRunning">
+    <value>지금 참가할 수 없어요! 게임은 이미 시작했어요.</value>
+  </string>
+  <string deprecated="true" key="AlreadyJoined">
+    <value>이미 참가하셨어요!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>/join 1분 남았어요</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0}초 남았어요 </value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>플레이어 수가 충분하지않아요, 게임을 취소합니다!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>게임을 시작합니다, 데이터 베이스 업데이트중, 역할을 나누는동안, 잠시만 기다려주세요.</value>
+  </string>
+  <string deprecated="true" key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>{0} is banned for attempting an exploit (no names starting with /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}님, 참가하시려면 닉네임을 바꿔주세요 </value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>죄송합니다, 게임이 꽉 찼어요!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0}님이 참가하셨어요. {1} 플레이어, {2} 최소, {3} 최대</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0}님, 스타트 버튼을 눌러 주시거나 {1} 저를 시작해주세요, 그래야 제가 역할을 전할수있어요. 이것을 하지않은 이상 게임에 참가를 못해요.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>도망칠 수 없어요! 님은 죽었다고요! 참나...무덤에 다시 돌아가시죠!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0}님은 도망쳤어요!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0}님은 {1}(이)였다</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0}명 남았어요</value>
+  </string>
+  <string deprecated="true" key="DidntAsk">
+    <value>저기요! 아직 님한테 물어본거 없거든요!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>님...게임을 안 하시는거 같네요...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>그 이름의 플레이어를 못 찾겠네요!</value>
+  </string>
+  <string deprecated="true" key="AnswerNonValid">
+    <value>답이 유효하지 않아요!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0}님이 {1}님을 먹자고 투표했습니다</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0}님이 {1}님을 투표하셨습니다</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0}님이 2일동안 투표를 안하셨어요. 신들은 이것을 죄로 판단하였고, {0}님이 갑자기 쓰러집니다. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>이 배신자!!! 당신은 이제 늑대에요!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>알겠습니다</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\n{0}님이 예언자에요.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0}님이 예언자(👳)였어요. 그의 제자로서, 당신이 새로운 예언자(👳)가 됩니다.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0}님이 제자(🙇)였고, 지금은 {1}님을 대신해 새로운 예언자(👳)가 되었습니다.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0}님이 {1}(이)네요!</value>
+  </string>
+  <string key="AskLynch">
+    <value>누구를 투표하고 싶습니까?</value>
+  </string>
+  <string key="AskDetect">
+    <value>누구를 조사하고 싶습니까?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>누구를 쏘고 싶습니까? 총알 {0}개 남았습니다</value>
+  </string>
+  <string key="AskVisit">
+    <value>누구를 방문하고 싶습니까?</value>
+  </string>
+  <string key="AskSee">
+    <value>어떤 분의 역할을 보고싶나요?</value>
+  </string>
+  <string key="AskGuard">
+    <value>누구를 보호하고 싶습니까?</value>
+  </string>
+  <string key="AskEat">
+    <value>누구를 먹고 싶습니까?</value>
+  </string>
+  <string key="AskHunt">
+    <value>누구를 사냥하고 싶습니까?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>롤 모델을 선택하세요</value>
+  </string>
+  <string key="AskConvert">
+    <value>누구를 마녀교도로 데려가고 싶습니까?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>{0}랑 작전을 짜보세요.</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value>(이)랑</value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>당신은 저주 받았어요 😾. 아직은 시민이지만 만약에 늑대들이 당신을 먹으려고 하면, 당신은 늑대로 변합니다!</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>당신은 탐정입니다 🕵. 낮에 한 플레이어를 조사하여, 그의 역할을 알 수 있습니다! 하지만 늑대한테 들킬 수 있어요! (40% 확률)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>축하해요! 당신은 술만 계속 마시는 아저씨에요! 🍻 </value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>당신은 수호천사입니다 👼. 매 밤마다, 플레이어를 선택하면 그(녀)를 보호합니다. 하지만, 만약에 늑대를 선택하면, 50% 죽을 확률이 있습니다.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>당신은 병사입니다 🔫.총과 총알 2개 갖고있고요. 낮에 다른 사람을 쏠 수 있습니다. 모든 사람들은, 당신이 늑대가 아니고, 병사라는걸 알게 됩니다.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>당신은 창녀입니다 💋. 밤에, 다른 플레이어를 방문할 수 있습니다. 그 플레이어가 늑대가 아니면 살아남을 것이고 만약에 늑대를 방문하거나, 늑대가 먹으려고 했던 플레이어를 방문하면 죽습니다. 당연히 집밖에 계시기 때문에 늑대는 당신을 직접 먹을순 없습니다.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>배신자 🖕! 아직은 시민이지만 늑대가 다 죽으면, 당신은 늑대로 변합니다. 예언자가 당신의 역할을 보면, 늑대로 보일지도 모릅니다.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>늑대군요 🐺! ㅋㅋ 매 밤마다 어느 사람을 죽일지 생각하세요!</value>
+  </string>
+  <string key="RoleInfoSeer">
+    <value>당신은 예언자입니다 👳. 매 밤마다, 플레이어를 선택하면 그의 역할을 알 수 있습니다.</value>
+  </string>
+  <string key="RoleInfoVillager">
+    <value>당신은 시민입니다 👱. 죽을 때까지 밭이나 잘 보고 계세요.</value>
+  </string>
+  <string key="RoleInfoTanner">
+    <value>당신은 상인입니다 👺. 만약에 플레이어들이 님을 투표한다면, 당신이 이깁니다!</value>
+  </string>
+  <string key="RoleInfoWildChild">
+    <value>당신은 야생 아이입니다 👶. 당신이 플레이어 한명 선택하신 후, 그 분이 죽으시면, 님은 늑대로 변합니다</value>
+  </string>
+  <string key="RoleInfoBeholder">
+    <value>당신은 성직자입니다 👁.당신은 누가 진짜 “예언자”인지 알고있습니다. </value>
+  </string>
+  <string key="RoleInfoApprenticeSeer">
+    <value>당신은 예언자 제자입니다 🙇. 만약에 에언자가 죽으면, 당신이 그의 자리를 채우게 됩니다.</value>
+  </string>
+  <string key="RoleInfoCultist">
+    <value>당신은 마녀교도입니다 👤. 매 밤마다, 마녀교에 데리고 올 사람을 정하세요. 만약에 남은 플레이어들이 다 마녀교도라면, 그들이 이깁니다.</value>
+  </string>
+  <string key="RoleInfoCultistHunter">
+    <value>당신 마녀교도 헌터 입니다 💂, 마녀교를 멈추세요! 매 밤마다, 플레이어를 선택하세요. 만약 그(녀)가 마녀교도였다면, 그는 죽습니다. 만약에 그들이 당신을 데려가려고 하면, 마녀교에 제일 늦게 들어간 멤버가 죽습니다</value>
+  </string>
+  <string key="LynchTime">
+    <!-- 0 - number of seconds -->
+    <value>
+    해가 어스름 해지네요, 마을 사람들은 모여서 누굴 투표할지 고민합니다... 
+    모두들 {0}초동안 누굴 투표할지 선택하세요!</value>
+  </string>
+  <string key="DayTime">
+    <!-- 0 - number of seconds -->
+    <value>지금은 낮입니다. 모두들 {0}초 동안 다른 사람을 저격하거나, 보호하거나 아니면 그냥 서로 대화만 하셔도 됩니다.</value>
+  </string>
+  <string key="NightTime">
+    <!-- 0 - number of seconds -->
+    <value>저녁이네요. 모두들 힘겨운 날을 보내고 집으로 돌아갑니다. 저녁 플레이어: {0}초 동안 당신이 나설 차례입니다!</value>
+  </string>
+  <string key="LynchKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>마을 사람들은 의심하면서 투표를 하였습니다. {0}님이 죽습니다. {1}</value>
+  </string>
+  <string key="LynchTie">
+    <value>투표가 반반이라서 아무도 안 죽고, 마을 사람들은 좌절하면서 집으로 돌아갑니다...</value>
+  </string>
+  <string key="NoLynchVotes">
+    <value>이상하네요! 아무도 투표를 안 했습니다!</value>
+  </string>
+  <string key="DetectiveEaten">
+    <!-- 0 - victim name -->
+    <value>마을 사람들은 아침에 모이지만 {0}이 안 보인다. 그들은 그(녀)의 집으로 들어가서 발견한것은 {0}의 오래된 베지가 그(녀)의 목에 박혀있는 시체뿐. </value>
+  </string>
+  <string key="GuardianEaten">
+    <!-- 0 - victim name -->
+    <value>아침이 다기오고, 모두가 당황하면서 보는 이것은 {0}(이)가 교회 십자가에 박혀 있는 장면. 그는 수호천사였다.</value>
+  </string>
+  <string key="GunnerEaten">
+    <!-- 0 - victim name -->
+    <value>모두의 눈에 띄는 부서진 샷건...다리... 그리고 손가락... 그리고 마을 분수대에 떠다니는 {0}의 시체. 당신들의 병사를 잃었습니다.</value>
+  </string>
+  <string key="SeerEaten">
+    <!-- 0 - victim name -->
+    <value>사람들이 일어나서 발견한 것은 위자 보드랑 타로 카드위에 {0}의 내장... 예언자가 죽었습니다.</value>
+  </string>
+  <string key="DrunkEaten">
+    <!-- 0 - victim name -->
+    <value>알코올 타는 냄새에 마을 사람들은 일어난다... 술집이 불타고 있다! 불을 끄고 보니, {0}의 시체가 있었다.</value>
+  </string>
+  <string key="FoolEaten">
+    <!-- 0 - victim name -->
+    <value>해가 뜨면서, 마을 사람들은 {0}의 시체를 발견한다. 그는 위자 보드 위에 죽었지만…아니?! 타로 카드가 아니라 가짜 카드였다… 저런 광대가 따로 없나!</value>
+  </string>
+  <string key="DefaultEaten">
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>아침에 일어나자, 지독한 냄새가 어디서부터 풍겨온다 . 냄새를 따라가보니 {0}의 머리는 없고, 그의 몸은 먹혀 있었다. 냠냠냠냠냠\n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>고약한 냄새가 {0}집에서 난다... 사람들은 그의 시체를 어둠의 제단 옆에서 발견하였다. 헌터(💂)가 마녀교도 멤버를 죽였다!</value>
+  </string>
+  <string key="NoAttack">
+    <value>마을 사람들은 광장에 모입니다. 다행이도 어젯밤에는 공격이 없었습니다.</value>
+  </string>
+  <string key="CursedBitten">
+    <value>당신은 늑대한테 물렸습니다. 저주받은 자여…당신은 이제 늑대인간(🐺)입니다!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>늑대(들): {0}</value>
+  </string>
+  <string key="CursedBittenToWolves">
+    <!-- 0 - victim name -->
+    <value>{0}은/는 물렸지만... 그는 저주받은 자, 고로 늑대인간이 되었다! 새로운 동료는…언제나 환영이야!</value>
+  </string>
+  <string key="WolvesEatYou">
+    <value>이런! 늑대들이 당신을 먹었어요. 냠냠냠쩝쩝</value>
+  </string>
+  <string key="WolvesEatDrunk">
+    <!-- 0 - victim name -->
+    <value>이런! {0}님은 술에 취해 있었어요! 당신은 취해서, 내일 밤은 공격 못 합니다...</value>
+  </string>
+  <string key="GuardWolf">
+    <value>늑대(🐺)를 보호하셨군요! 늑대는 당신을 먹었습니다</value>
+  </string>
+  <string key="GuardSaved">
+    <!-- 0 - saved player name -->
+    <value>{0}님을 보호하셨네요!</value>
+  </string>
+  <string key="GuardNoAttack">
+    <!-- 0 - player name -->
+    <value>{0}님은 공격을 안 당했습니다, 그래서 당신은 아무것도 하지 않았죠.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>{0}님을 보호하러 갔는데, 그(녀)는 집에 없었습니다!</value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>수호 천사(👼)가 당신을 보호하여 살아남았습니다!</value>
+  </string>
+  <string key="HarlotEaten">
+    <!-- 0 - player name -->
+    <value>창녀가 집을 잘못 찾아갔네요. {0}님은 늑대(🐺)한테 먹혔습니다!</value>
+  </string>
+  <string key="HarlotNotHome">
+    <!-- 0 - player name -->
+    <value>이런... {0}님은 집에 없었습니다! 저녁밥 못 먹겠네요...</value>
+  </string>
+  <string key="HarlotFuckWolf">
+    <!-- 0 - player name -->
+    <value>당신은 {0}의 집에 들어가지만, 그는 늑대였습니다🐺. 죽으셨네요.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic">
+    <!-- 0 - player name -->
+    <value>{0}님은 틀린 집을 찾아가셨네요! {0}님의 섹시한 시체는 교회문에 쇠막대로 박혀 있었습니다... 이런 슬픈일이… :c</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic">
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>{0}님은 {1}님의 집으로 들어가 즐거운 저녁을 보내려고하지만...그(녀)가 {0} 찾은것은 늑대가 {1}님을 먹고있었던것! 늑대인간(🐺)은 {0}님을 덮친 다음 먹습니다... {0}님은 죽었습니다.</value>
+  </string>
+  <string key="HarlotVisitNonWolf">
+    <!-- 0 - target name -->
+    <value>당신은 아주 즐거운 밤을 보냈음으로 {0}(이)가 늑대가 아니라는걸 알았다! </value>
+  </string>
+  <string key="HarlotVisitYou">
+    <value>어두워서 잘 못 봤지만, 창녀(💋)가 당신을 타고 있었다. 끝난 다음 그(녀)는 조용히 다시 집에 돌아갔다...</value>
+  </string>
+  <string key="DetectiveCaught">
+    <!-- 0 - detective name -->
+    <value>{0}님이 엿보고 있었다는 걸 알아챘다! 그(녀)는 탐정(🕵)일 것이다!</value>
+  </string>
+  <string key="DetectiveSnoop">
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>당신은 조사로 인해 {0}님이 {1}(이)라는걸 알아챘다.</value>
+  </string>
+  <string key="HarlotShot">
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value>이런! {0}님이 어젯밤에 창녀랑 즐기다가 병에 걸렸네요! 병사는 분노를 참지 못해 {1}님을 총으로 쏩니다</value>
+  </string>
+  <string key="DefaultShot">
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>갑자기 총소리가 들린다🔫. 사람들은 {0}님이 {1}의 머리에 총을 아직도 겨누고있다. {2}</value>
+  </string>
+  <string key="WolfWins">
+    <value>늑대인간의 승리!</value>
+  </string>
+  <string key="WolvesWin">
+    <value>늑대인간들의 승리!</value>
+  </string>
+  <string key="VillageWins">
+    <value>마을 사람들의 승리!</value>
+  </string>
+  <string key="TannerWins">
+    <value>이런! 상인을 투표하셨네요👺! 상인의 단독 승리입니다.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>남은 생존자, 역할, 팀:</value>
+  </string>
+  <string key="CultistVotedConvert">
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value>{0}님이 {1}님을 데려오자고 투표했습니다</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0}님을 보내서 {1}님을 데려오려고 했지만... 그(녀)는 마녀교도 헌터였다💂! {0}님은 죽었습니다!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0}님이 당신을 마녀교로 데려가려고 찾아왔지만.... 그(녀)를 칼로 죽였다. {1}명이 남았네요!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>마녀교가 당신을 선택해서, 마녀교랑 합류하게 됐다. 매일 밤에, 다른 플레이어를 선택하여 그(녀)를 데려올 수 있다,</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <value>마녀교도 멤버: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0}님이 합류했네요!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0}님을 보내서 {1}님을 데려오려고 했지만... 집에 아무도 없었다!</value>
+  </string>
+  <string key="CultWins">
+    <value>늑대들은 모두 사망하였고, 생존자들은 다 마녀교 멤버입니다…마녀교 승리!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>{0}님을 사냥하러 갔지만, 이미 그(녀)는 사망하였다!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>{0}님 집에 그(녀)가 마녀한테 기도하고 있는걸 발견했다. 당신은 재빠르게 그(녀)를 찔러 죽인다.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>{0}님 집으로 찾아가지만 다행이 이상한 물건들은 없었다. {0}님이 마녀교도가 아니라는걸 알아챘다.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>{0}님의 롤 모델이 죽었다! 그는 분노에 휩싸여 늑대인간이 되었다!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+    <value>{0}님이 사망하셨다. 분노에 휩싸여, 당신은 늑대인간이 되었다. 당신의 새로운 동료들은: {1}</value>
+  </string>
+  <string key="Villager">
+    <value>마을 시민👱</value>
+  </string>
+  <string key="Drunk">
+    <value>술 가게 아저씨🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>창녀 💋</value>
+  </string>
+  <string key="Seer">
+    <value>예언자 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>배신자 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>수호 천사 👼</value>
+  </string>
+  <string key="Detective">
+    <value>명탐정 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>늑대인간 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>저주받은 자 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>병사 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>상인 👺</value>
+  </string>
+  <string key="Fool">
+    <value>광대 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>야생 아이 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>성직자 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>예언자의 제자 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>마녀교도 👤</value>
+  </string>
+  <string key="CultistHunter">
+  <!-- These are for the player list -->
+    <value>마녀교 헌터 💂</value>
+  </string>
+  <string key="RanAway">
+    <value>도망침</value>
+  </string>
+  <string key="Dead">
+    <value>💀 사망</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 생존</value>
+  </string>
+  <string key="PlayersAlive">
+  <!-- New strings 4 MAY 2016-->
+    <value>생존자</value>
+  </string>
+  <string key="Mason">
+    <value>일꾼 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>당신은 일꾼입니다 👷. 만약에 다른 일꾼들이 있으면 그들의 정체를 알 수 있습니다. 그거 말고는 당신은 그저 마을 사람입니다.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>모두가 일어나서, {0}님의 시체를 돌 아래에 발견한다. 일꾼이 죽었습니다!</value>
+  </string>
+  <string key="MasonTeam">
+  <!-- new strings May 6 2016-->
+    <value>일꾼들 👷: {0}</value>
+  </string>
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>{0}님을 데리러 마녀교도를 보내지만, 집은 엉망이었고, 벽에는 피가 묻어있었다…</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+  <!-- new strings May 9 2016-->
+    <value>{0}님을 먹으러 가지만, 거대한 수호 천사(👼)가 그(녀)를 지키고있다. 늑대들은 결국 아무것도 못먹고 도망쳤다.</value>
+  </string>
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+  <!-- new string May 12 2016-->
+    <value>{0}님한테 {1}님을 데려오라고 명령하지만, 그(녀)의 교의가 너무나 강해서 마녀교에 못 데려왔다. :(</value>
+  </string>
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, {0}이라는 이름은 이미 사용중 입니다. 게임에 참가하고 싶으시면 이름을 바꿔주십시오.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+  <!-- new string May 13 2016-->
+    <value>{0}님 집에 즐거운 밤을 보내려고 들어가지만... 나갈때 구석에서 이상한 불빛이 눈에 띈다. 당신은 궁금해서 살짝 엿보는데…이상한 제단을 발견하였다…</value>
+  </string>
+  <string key="Was">
+    <value>은/는</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>모두 일어나고, {0}님이 없다는걸 알아챘다…{0}님 집에 들어가자 그(녀)의 시체만 있었다...</value>
+    <value>해가 뜨자 마을 사람들이 광장에 모이는데, {0}님의 시체를 발견했다.</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+  <!-- new string May 16 2016-->
+    <value>어라…{0}님이 일꾼 회의에 안 오셨네요…O.o</value>
+  </string>
+  <string key="FleeDisabled">
+    <value>그룹 매니저가 게임 할때는 도망치는걸 금지시켰어요!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+  <!-- MORE STRINGS May 16, 2016 -->
+    <value>님은 죽었습니다</value>
+  </string>
+  <string deprecated="true" key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>이미 게임 참가하셨어요! ({0})</value>
+  </string>
+  <string deprecated="true" key="MultipleGames">
+    <value>그룹이 멀티 게임을 허락했어요...더 많은 시체가 있겠네요...</value>
+  </string>
+  <string deprecated="true" key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>당신 그룹은 순서에 있어요.  순서: {0} / {1}</value>
+  </string>
+  <string deprecated="true" key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>죄송합니다. 현재 게임은 점검 받고있으므로 플레이를 못합니다.\n {0}의 게임이 끝나길 기다리는중...\n 더 많은 정보를 원하신다면 @greywolfdev </value>
+  </string>
+  <string deprecated="true" key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value> 죄송합니다, 최대치 게임수를 도달했습니다 ({0}). \n 순서: {1} / {1}</value>
+  </string>
+  <string deprecated="true" key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>{0}이 더 좋아하시는 그룹이라서 순서를 바꿨어요!</value>
+  </string>
+  <string key="NoGame">
+    <value>게임이 실행 안되있습니다. 게임을 시작하시려면 /startgame 카오스 게임을 시작하시려면 /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>그룹 매니저만 그 명령을 내리실 수 있습니다</value>
+  </string>
+  <string deprecated="true" key="ShuttingDown">
+    <value>이번 판 다음에, 점검을 시작하겠습니다 </value>
+  </string>
+  <string deprecated="true" key="ShuttingDownUpdate">
+    <value>이번 판 다음에, 업데이트를 위해 점검을 시작하겠습니다 </value>
+  </string>
+  <string deprecated="true" key="NullIdAdmin">
+    <value>유저 id는 없습니다.  이것을 답장으로 보내셨는지 다시 한번 확인해주세요</value>
+  </string>
+  <string deprecated="true" key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>{0}님은 이미 매니저입니다!</value>
+  </string>
+  <string deprecated="true" key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>{0}님은 매니저가 아닙니다!</value>
+  </string>
+  <string deprecated="true" key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>{0} removed from admin list.</value>
+  </string>
+  <string deprecated="true" key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>예언자가 없네요!</value>
+  </string>
+  <string key="TimesUp">
+  <!-- new strings june 10 2016 -->
+    <value>동작 그만!</value>
+  </string>
+  <string key="RoleInfoCupid">
+    <value>당신은 큐피드입니다 🏹. 기저귀랑, 활이랑 화살 두개 갖고 지구에 도착했고, 플레이어 두명을 선턱하면, 그들은 영원히 사랑에 빠질겁니다. 만약에 둘중에 한명이 죽으면, 다른 플레이어도 고통에 시달려 죽을겁니다</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>당신은 도플갱어 입니다 🎭. 전설에 따르면 당신의 선조들은 그들이 원하는걸로 변신을 할수 있었습니다. 당신은 그들의 능력을 받았어요. 플레이어를 선택하고, 그 플레이어가 죽으면, 당신이 그(녀)의 역할을 갖게 됩니다.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>당신은 사냥꾼 입니다 🎯. 잠을 잘 못 자고, 총 없이는 절대 못 자는 타입이죠. 만약에 당신이 죽으면, 다른 사람을 선택하여, 그(녀)를 죽일 수 있습니다. 만약에 먹히면, 늑대를 죽일 수도 있어요, 하지만 다른 플레이어는 선택 못 합니다.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>당신은 연쇄 살인마 입니다 🔪. 얼마 안돼 감옥에서 나와서, 당신에 목표는 다른 사람들을 죽이는거 입니다. 매일 밤, 플레이어 시체를 컬렉션에 추가합니다.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>당신은 사랑에 빠졌어요 💘. {0}님을 절대 잊을수 없을만큼 그(녀)를 사랑합니다. 당신의 목표는 그(녀)와 같이 살아남는것. 둘중에 한명이 죽으면, 다른 플레이어도 죽을겁니다.</value>
+    <value>큐피드의 화살이 당신을 맞췄어요! {0}님을 미친듯이 사랑합니다! 그(녀)가 죽는다면, 당신도 죽는겁니다. 둘중 한명이라도 이기면, 양쪽 다 이깁니다.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>마을 사람들이 당신을 투표했어요! 죽기전에 누군가를 총으로 쏘세요!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0}님은 총을 집으려고 손을 뻗지만, 결국 줄이 목을 조아, 그(녀)는 숨을 거두었습니다</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0}님은 총을 빼지만 누구한테 쏴야할지 모른다. 결국 그(녀)는 죽음을 맞이한다...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>죽기전에 {0}님은 총을 겨누고 {1}님을 쐈다! {1}님은 쓰러져 죽는다. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>당신은 살해당했습니다! 죽기전에 플레이어를 쏠 기회가 있으니, 빨리 결정하세요!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>{0}님은 과혈로 인해, 총 뺄 기회도 없이, 쓰러지고, 죽음을 맞이합니다.</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>{0}님이 숨을 거칠게 쉬면서, 사람들을 바라보는데…그(녀)는 누굴 쏠지 결정 못한채 저세상으로 떠난다</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>천천히 죽어가면서, {0}님은 쓰러진다.... 하지만 그(녀)는 총(🎯)을 집은 다음 {1}님한테 겨누고 총을 쏜다. 총알이 {1}님 눈알을 뚫고 그(녀)를 죽인다. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>늑대는 사냥꾼(🎯)을 먹으려고 했지만, 그(녀)는 죽기전에 늑대 한 마리를 죽였다! {0}님이 죽었습니다 (🐺)
+</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>늑대는 사냥꾼(🎯)을 먹으려고 했으나, 죽기전에 늑대인 {0}님을 죽이고 갔습니다!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>늑대들은 맛있는 야식을 기대했지만, 미친 살인마( 🔪 )가 있었다! {0}님은 싸움 도중에 죽었습니다!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>{0}님은 편안한 밤을 보낼줄 알았지만, 아니었다.마을 사람들은 아침에 모여, {0}님이 머리부터 발 끝까지 반으로 갈라진 시체를 봤고…살인마가 한 짓이라는 걸 알아챘다! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>{0}님을 죽여 시체를 수집하고 싶었지만, 수호 천사(👼)가 그(녀)를 지키고있었다! 결국엔 아무도 못 죽였다...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>마녀교도가 {0}님한테 {1}님을 데려오라고 명령하지만, 갑자기 총(🎯) 소리가 들리면서 {0}님의 시체가 창문 밖으로 날라갔다! {0}님은 죽었습니다...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>마녀교도가 {0}님한테 {1}님을 데려오라고 명령하지만, {0}님의 시체가 창문 밖으로 날아간다…몸 전체에 칼로 찔렀다는 자국이 남아있다! 미친 싸이코🔪! {0}님은 죽었습니다...</value>
+    <value>{0}님이 {1}님 집에 다가가서 문을 여는데, 식칼을 들고있는 미친 살인마가 그(녀)를 반겼다!!! {1}님이 {0}님을 칼로 찌르면서 놀고있다! {0}님은 죽었습니다 D:</value>
+  </string>
+  <string key="GuardKiller">
+    <value>당신은 연쇄 살인마를 지키려고 했지만, 그(녀)는 당신을 89번 찌르고 도망칩니다! 당신은 죽으셨습니다...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>당신은 {0}님 집에 가서 즐거운 밤을 보내려고 한다. 완벽한 밤이라고 생각했지만, {0}님이 싸이코처럼 웃으면서 당신을 식칼로 죽입니다🔪! 죽으셨습니다...</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>{0}님은 즐거운 밤을 보내려고 하셨지만... 살인마(🔪)를 찾아가 죽었습니다! {0}님은 죽었습니다...</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>{0} 도플갱어가 당신처럼 일꾼(👷)이 되었어요!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0}님이 죽어 당신은 일꾼(👷)이 되었습니다. 당신의 동료는: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>{0} 도플갱어가 당신처럼 마녀교도(👤)가 되었습니다!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0}님이 죽어 당신은 마녀교도(👤)가 되었습니다. 당신의 동료는: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>{0} 도플갱어가 당신처럼 늑대(🐺)가 되었어요!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0}님이 죽어 당신은 늑대(🐺)가 되었습니다. 당신의 동료는: {1}</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>끝까지 살아남은 자는 연쇄 살인마네요🔪! 그(녀)의 승리!</value>
+  </string>
+  <string key="AskKill">
+    <value>오늘은 누구를 죽이고 싶습니까?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>{0}님이 죽기 시작하니, {1}님은 울면서 그(녀)에게 달려듭니다. 그들은 서로 너무 사랑하는 마저, 한명이 죽으면 삶이 가치가 없다고 생각해서, {1}님은 자살은 합니다. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>누구로 변하고 싶습니까?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>누구를 사랑에 빠트리고 싶습니까? 첫번째 플레이어를 선택하십시오</value>
+  </string>
+  <string key="AskCupid2">
+    <value>누구를 사랑에 빠트리고 싶습니까? 두번째 플레이어를 선택하십시오 </value>
+  </string>
+  <string key="Hunter">
+    <value>사냥꾼 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>큐피드 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>연쇄 살인마 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>도플갱어 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>당신은 야생 아이가 되었습니다. 당신의 롤 모델은: {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>진정한 사랑은 절대 지지 않은다! 커플의 승리!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>광장에 모두가 {0}님의 시체를 발견한다. 그(녀)의 시체에는 많은 총알(🎯)들이 박혀있다. 그(녀)는 사냥꾼을 찾으러 갔었나 보네요! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>어두운 모습이 당신을 마녀교로 데려가려고 했지만, 당신의 믿음은 너무나 강력했습니다</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>당신은 이미 {0} 목록에 들어가 있습니다</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>당신은 {0} 목록에 들어갔습니다. 게임이 시작하면 개인 메시지 보내드릴께요.</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>{0}에서 새로운 게임을 시작했습니다.</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>아침이 되자, 남은 두 생존자들은 광장에서 만난다. {0}님은 {1}님을 바라보면서 기분 나쁜 미소를 지은 다음, 식칼을 빼고, {1}님을 죽인다.</value>
+  </string>
+  <string key="NoWinner">
+    <value>모든 사람들이 죽어서 시체만 남았다. 이번 판에는 그 누구도 이기지 못했다.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>해가 올라오면서, {0}님과 {1}님이 만난다. {0}님은 식칼을 들고 {1}님한테 돌격한다. {1}님은 {0}님한테 총을 쏘지만, {0}님의 식칼은 이미 {1}님 심장에 박혀있었다. 둘다 죽고, 마을 비어있고, 승자는 결국 없었다...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>님이 선택을 안하셔서, 봇이 대신 선택했습니다: {0}</value>
+  </string>
+  <string key="Won">
+    <value>승리</value>
+  </string>
+  <string key="Lost">
+    <value>패배</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.-->
+    <value>플레이어 {0}님은 24시간동안 {1}번 투표를 하지 않아서 죽으셨답니다</value>
+  </string>
+  <string key="AboutVG">
+    <value>이 역할은 쉽습니다...님은 그저 살아남는 것과 밤에 투표를 하는 것만 잘하시면 돼요!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>예언자입니다. 이 역할은 매 밤마다, 플레이어를 선택하면, 그(녀)의 역할을 알 수 있을 겁니다. 당신의 역할을 다른 사람한테 바로 말해주지 마세요…늑대들이 당신을 바로 죽일 수도 있으니깐요! </value>
+  </string>
+  <string key="AboutWw">
+    <value>재밌겠네요! 매 밤마다, 다른 플레이어들을 속여서, 한명씩 한명씩 먹는 겁니다! 참고로 만약에 술에 취한 아재을 잡아 먹으면, 당신도 술에 취해서, 그 다음 밤에 공격을 못할 거에요! 만약에 저주 받은 자를 물면, 그(녀)는 늑대로 변할 겁니다! 헤헤…동료닷! (술 가게 아저씨를 잡아 먹으면 그 다음 밤에 공격이 불가능하지만, 만약에 늑대들의 새끼가 죽는다면 두번째 플레이어를 못 죽이고 그 다음 밤에는 다시 공격이 가능해져요.) </value>
+  </string>
+  <string key="AboutHarlot">
+    <value>(창녀라서) 매 밤마다 다른 사람집에 들어갈 수 있습니다. 만약에 그들이 늑대가 아니면, 살아남을 것이고, 만약에 늑대면 죽을 겁니다. 만약에 늑대가 먹고있는 플레이어 집에 들어가면, 당신도 죽을 거에요. 하지만! 만약에 다른 사람 집에 있으면, 늑대가 당신을 선택했다면, 님은 살아남을 거에요 (집에 없으니까)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>이런…술에 취했군요! 당신은 그냥 마을 사람이지만, 만약에 늑대가 당신을 먹으면, 그들은 술에 취해 다음 밤에는 공격을 못할 겁니다!</value>
+  </string>
+  <string key="AboutCursed">
+    <value>그냥 마을 사람이지만, 저주를 갖고 있습니다... 그래서 늑대가 당신은 물면, 늑대인간으로 변신!</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>이런 배신자...모든 늑대가 죽을 때까지 살아남으면, 당신은 늑대인간으로 변해서, 동료들을 죽일거에요!</value>
+  </string>
+  <string key="AboutGA">
+    <value>수호 천사다! 매 밤마다, 누굴 지킬지 결정합니다. 하지만 조심하세요, 만약에 님이 늑대를 선택한다면 50%에 죽는 확률이 있어요.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>당신은 명탐정. 매일 다른 사람을 조사할 수 있다. 하지만 조심해라, 늑대가 40%에 확률로 당신을 발견할 수 있다!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>게임 시작하자 마자, 총알 2개가 지원됩니다. 매일 다른 플레이어를 선택하여, 그들을 쏠 수 있습니다. 만약에 그런다면, 모든 플레이어가 당신이 병사라는 걸 알게 됩니다! 허나 총알이 2개만 있다는 걸 잊지 마세요!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>상인들의 목표는 단순합니다: 투표 받는것. 만약에 상인이 투표 받으면, 그(녀)는 이기고, 다른 사람들의 패배입니다.</value>
+  </string>
+  <string key="AboutFool">
+    <value>그(녀)는 예언자라고 불리지만 원래는 그저 광대랍니다... 그(녀)가 플레이어를 선택하면, 랜덤으로 역할이 보일 거에요.</value>
+  </string>
+  <string key="AboutCult">
+    <value>마녀교도는 다른 플레이어들을 마녀교에 데려오는 것이 목적입니다. 만약에 남은 생존자들이 마녀교도면, 그들이 이깁니다.</value>
+  </string>
+  <string key="AboutCH">
+    <value>헌터는 마녀교도를 사냥하는 것이 그의. 만약에 마녀교가 당신을 공격하면, 제일 늦게 들어온 멤버가 죽습니다. 매 밤마다 플레이어를 선택해서, 만약에 그(녀)가 마녀교 멤버면, 그(녀)는 죽습니다.</value>
+  </string>
+  <string key="AboutWC">
+    <value>게임이 시작할 때 당신의 롤 모델이 될 플레이어를 선택한 다음, 선택 받은 자가 죽으면, 당신은 늑대인간으로 변합니다 </value>
+  </string>
+  <string key="AboutAppS">
+    <value>마을 사람이랑 다를거 없어요. 하지만, 만약에 예언자가 죽으면, 당신이 그(녀)의 자리를 맡게 됩니다.</value>
+  </string>
+  <string key="AboutBH">
+    <value>당신에겐 누가 예언자인지 알려드립니다 (광대가 아닌 예언자)</value>
+  </string>
+  <string key="AboutMason">
+    <value>일꾼의 역할은 쉬워요 – 다른 일꾼들의 이름을 알고 있습니다. 그래서 그냥 마을 사람이라고 보시면 됩니다.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+   당신의 선조들은 그들이 원하는 것으로 변할수 있었지만, 당신은 그들의 능력을 완벽하게 못 익혔습니다. 플레이어를 선택하여, 선택 받은자가 죽으면, 그(녀)의 역할을 얻게 됩니다 참고: 마녀교도는 도플갱어를 못 데려갑니다 (역할이 바뀌면 할 수 있지만요). 만약에 도플갱어가 변신을 안 했다면, 게임 끝날 때 그(녀)는 못 이깁니다. (커플 제외)</value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+  큐피드는 플레이어 두명을 선택한다. 그들은 미친듯이 서로 사랑에 빠지게 된다. 둘중에 한명이 죽으면, 다른 한명도 자살을 할 것이다. 참고: 사랑에 빠진 자들은 서로 이름은 알지만, 역할은 모른다. 마지막까지 둘다 살아남으면, 그들이 이긴다. (늑대 + 마을 사람, 마녀교도 + 늑대…)</value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+    다른 플레이어가 사냥꾼을 방문하면, 그(녀)는 방문한자를 편집병에 인해 죽일 수 있다. 만약에 늑대가 사냥꾼을 공격할시, 늑대가 죽을 수 있다. 사냥꾼이 죽으면, 다른 플레이어를 선택할 기회가 주여지며, 선택한 자와 함께 저세상으로 떠난다. 참고: 마녀교도 사냥꾼을 50%에 확률로 데려갈 수 있지만, 만약에 그들이 실패하면, 사냥꾼은 50%의 확률로 한명을 죽일 수 있다</value>
+  </string>
+  <string key="AboutSK">
+    <value>연쇄 살인마는 솔로 플레이어입니다. 그들은 마지막까지 혼자서 살아남아야 이깁니다(커플 제외). 살인마는 아무나 죽일 수 있습니다 – 늑대, 사냥꾼, 거너, 수호 천사 등등... 만약에 늑대들이 살인마를 공격하면, 늑대들중에 한마리는 죽고, 살인마는 살아남습니다</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+  <!--New strings, July the 8th -->
+    <value>게임 기간: {0}</value>
+  </string>
+  <string key="Day">
+    <!--0 - Day -->
+    <value>{0}번째 날</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>게임에 오류가 떠서, 게임이 멈췄습니다. </value>
+  </string>
+  <string key="SentPrivate">
+    <value>개인 메시지를 보냈습니다</value>
+  </string>
+  <string deprecated="true" key="StartPM">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string deprecated="true" key="PMTrue">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string deprecated="true" key="MustReplySmite">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>게임에 참가하시려면, 채팅방에서 참가해야합니다!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>게임을 시작하시려면, 채팅방에서 시작해야합니다!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nMessages per second: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>몆초후에 다시 시도해주세요</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>채팅방에서 명령을 내려주세요</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>당신은 글로벌 관리자가 아닙니다...</value>
+  </string>
+  <string key="NotPara">
+    <value>당신은 Para님이 아니세요!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+  <!-- Game Mode Choices-->
+    <value>Hide</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Normal only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos only</value>
+  </string>
+  <string key="PlayerChoice">
+  <!-- Show Roles on End Game -->
+    <value>Player Choice</value>
+  </string>
+  <string key="ShowNone">
+    <value>Don't show any</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time. This will still be modified based on number of players.\nDefault setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow fool as a role option? \nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Fool as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow tanner as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Tanner as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow cult as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Cult as role set to: {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable secret lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>어느 언어의 채팅방으로 들어가고 싶나요?</value>
+  </string>
+  <string key="HereIsList">
+    <value>{0}의 그룹들입니다:</value>
+  </string>
+  <string key="Members">
+    <value>멤버들</value>
+  </string>
+  <string key="StartMe">
+    <value>스타트를 해주셔야 님에게 메시지를 보낼 수 있습니다</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0}님은 게임을 시작하는데 실패했고, 그(녀)는 게임에서 강퇴 당했습니다.</value>
+  </string>
+  <string key="LatestList">
+    <value>최신 목록입니다</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>최신 목록을 찾을 수 없습니다</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>{0} 채팅방 게임에 참가하셨습니다</value>
+  </string>
+  <string key="Ping2">
+  <!-- Update 4.0-->
+    <value>Time to send ping message: {0}</value>
+  </string>
+  <string key="RoleInfoMayor">
+    <value>당신은 시장입니다 🎖. 당신이 시장이라고 말한 다음부터, 당신의 투표의 가치는 일반인 2명이랑 같습니다. 당신은 마을 사람 팀입니다</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>당신은 재미없고, 지루한 인생에서 도망친 왕자입니다 👑. 만약에 당신을 투표하면, 그들의 잘못을 깨닫고, 당신은 살아남을 겁니다.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>당신은 꼴사나운 사나이입니다 🤕: 투표할때 50%의 확률로 당신이 원치 않았던 사람을 투표하게 됩니다. 마을 사람 팀입니다.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>당신은 마법사 🔮, 그(녀)의 동료는 늑대! 밤에 당신의 능력으로 플레이어를 선택하여 누가 예언자 혹은 늑대인지 알 수 있습니다. 늑대들이 이겨야, 당신도 이깁니다.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>당신은 대장장이입니다 ⚒. 당신은 조금만한 양이지만, 한 밤 동안 늑대를 못 오게 하는 실버 가루를 갖고 있습니다. 낮에 가루를 뿌릴 수 있습니다만, 그거 말고는, 당신은 그냥 마을 사람입니다.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>당신은 알파 늑대입니다 ⚡️. 당신이 인간들을 물면서 그들에게 저주를 내립니다. 매 밤마다, 당신이 살아남아 있는 동안, 늑대들이 먹는 플레이어들은 20%의 확률로 저주를 내려, 그들을 늑대로 변화시킵니다.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>당신은 늑대들의 새끼입니다 🐶. 다른 늑대처럼 매 밤마다, 플레이어를 선택하여, 그(녀)를 잡아 먹습니다. 만약에 당신이 죽으면, 늑대들은 분노에 인해, 다음 밤에 두명을 잡아먹습니다.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>{0}님을 투표해 마을 사람들은 그(녀)를 죽이려고 하는데, 그(녀)가 갑자기 “기다려! 난 왕자다!👑”라고 말하면서, 마을 사람들에게 왕족 가문의 도장을 보여준다. 마을 사람들은 그(녀)를 알아보며, 사과를 드리고, 벌벌 떨면서 집으로 돌아간다.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>{0}님이 무슨 역할을 갖고 있는지 마법으로 보려고 했지만, 정확하게 보이지 않았다. 허나 그(녀)는 늑대 혹은 예언자가 아니라는 걸 알아챘다.</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0}님은 주머니에서 문서를 꺼내고, 사람들에게 보여준다. 그(녀)는 시장이다 🎖! 지금부터 {0}님의 투표의 가치는 2배입니다</value>
+  </string>
+  <string key="AskMayor">
+    <value>당신이 시장이라는 걸 보여주고 싶으시면, "Reveal"을 클릭하세요 🎖. </value>
+  </string>
+  <string key="Reveal">
+    <value>Reveal</value>
+  </string>
+  <string key="SpreadDust">
+    <value>실버 가루를 오늘 뿌려서, 늑대를 못 오게 하시겠습니까?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>마을 사람들이 혼란에 빠져 서로 의심하는 동안, {0}님(⚒)은 땅에다가 실버 가루를 뿌리면서 돌아다닌다. 오늘은 늑대들이 공격을 못 할 것이다.</value>
+  </string>
+  <string key="Mayor">
+    <value>시장 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>왕자 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>마법사 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>꼴사나운 사나이 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>대장장이 ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>알파 늑대 ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>늑대들의 새끼 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>늑대(🐺)들이 {0}님을 공격하려고 했지만, 알파 늑대(⚡️)인 {1}님이 그들을 멈친다. {1}님이 {0}님을 죽이지 않고, 그(녀)한테 저주를 건다. 그(녀)는 다음 밤에 늑대가 될 것이다.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>당신은 늑대한테 공격 당했지만, 알파 늑대가 당신을 선택하였다. 죽지않고 감염됐다… 다음 밤에 늑대가 될 것이다!🐺</value>
+  </string>
+  <string key="BittenTurned">
+    <value>해가 지기 시작하자, 이상한 느낌이 오면서, 몸에 변화가 온다...당신은 이제 늑대인간이 되었다!🐺</value>
+  </string>
+  <string key="AboutMayor">
+    <value>시장은, 도장을 보여주기 전까지는 그냥 마을 사람이다. 보여준 후에는, 당신의 투표의 가치가 마을 사람보다 2배입니다 (당신의 투표는 2배나 더 강합니다). 그 권리로 마을 사람들을 승리로 이끄세요!</value>
+  </string>
+  <string key="AboutPrince">
+    <value>왕자는 투표 받으면, 그의 역할을 보여주고 살아남는다. 하지만, 이것은 한번 뿐이다: 만약에 마을 사람들이 그를 또 투표하면, 그때는 사망할 것이다.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>예언자를 기억하시나요? 그럼, 이제 늑대도 그들의 “예언자”가 있네요. 마법사는 늑대들의 예언자입니다. 그들은 누가 늑대인지 아니면 예언자인지 알 수 있답니다. 늑대가 이기면 마법사 함께 이겨요.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>꼴사나운 사나이는 아침부터 술을 너무 많이 마셔, 자기가 원하는 사람을 쉽게 투표 할 수 없습니다. (50%의 확률로 원하는 사람을 투표)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>대장장이는 수십년동안 무기를 만들며 살아왔지만, 그가 제일 좋아하는 것은 요정들이 부탁한 은으로 만든 칼이었다.\n그는 조금만한 양의 실버 가루를 가지고 있다. 누가 알고 있나? *늑대들이 그걸 제일 싫어한다는 걸…* 🤔</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>알파 늑대가 저주를 내린다는 걸 알고있었나? 그가 살아있는 동안, 20%의 확률로 먹이를 늑대로 변하게 하는 능력을 가지고있다. </value>
+  </string>
+  <string key="AboutWolfCub">
+  <!-- new strings 06 nov-->
+    <value>이런 귀여운 늑대! _간질 간질_ - 흐음…- 당신은 늑대 새끼입니다 그리고 당신은… _마이크를 놔둔다_ -아…못 참겠어. 만약에 당신이 죽는다면, 늑대한테 2명 먹으라고 해야겠네요...당신은 죽기엔 너무 귀여워요...하핳</value>
+  </string>
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0}님이 죽고, 당신은 알파 늑대(⚡)가 되었습니다. 당신의 동료는: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0}님이 죽고, 당신은 늑대 새끼(🐶)가 되었습니다. 당신의 동료는: {1}
+\</value>
+  </string>
+  <string deprecated="true" key="VillageTeam">
+    <value>마을 사람 팀</value>
+  </string>
+  <string deprecated="true" key="NeutralTeam">
+    <value>중립 팀</value>
+  </string>
+  <string deprecated="true" key="SerialKillerTeam">
+    <value>연쇄 살인마 팀</value>
+  </string>
+  <string deprecated="true" key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of cultists -->
+    <value>마녀교도 팀: {0}</value>
+  </string>
+  <string deprecated="true" key="TannerTeam">
+    <value>상인 팀</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>마을 사람 팀</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>중립 팀</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>늑대인간 팀</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>연쇄 살인마 팀</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>마녀교도 팀</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>상인 팀</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>마녀교도는 {0}님한테 {1}님을 데려오라고 명령하지만, {0}님의 머리가 창문에서 날라오네요... 왜 머리는 안 먹었을까? {0}님은 죽었습니다.</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+  <!--New Death Strings 05 DEC-->
+    <value>{0}님이 즐거운 밤을 보내려고 {1}님 집으로 찾아가지만, 모르고 낮선 사람이 {1}님의 내장을 자르고 있는 걸 봤다! 살인마는 {0}님을 죽이기전에 그(녀)와 함께 "즐거운" 밤을 보낸다!</value>
+  </string>
+  <string key="ApprenticeSeerEaten">
+    <value>마을 사람들이 일어나면서 {0}님의 시체를 발견했다. 그(녀)는 위자 보드랑 카드를 통해 예언을 연습하고 있었던거 같다. 예언자의 제자가 죽었습니다.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>대장장이 {0}님은 불길했었다. {0}님이 만든 5개에 식칼이 그(녀)의 손, 발 과 머리에 꼽혀, 작업 테이블에 박혀있다. 살인마가 내장 컬렉션에 무기 컬렉션까지 추가할려고 했던건가요?</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0}님은 제단 옆에 있던 촛대로 살인을 당했다. 살인마가 다시 나타서, 인종, 종교, 언어에 상관 없이, 사람을 죽이기 시작했다! {0}님은 마녀교도였다</value>
+  </string>
+  <string key="CupidKilled">
+    <value>아침에 마을 사람들은 큐피드인 {0}님의 시체가 있어, 굉장히 슬퍼하였다.. 이상하게도 심장이 없었다...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>마을 사람들은 {0}님을 만나서, 그(녀)의 Martell(술 이름)을 또 받으러 가지만, {0}님 집에 간이랑 부러진 식칼을 발견한다. 수십년동안 술을 마신 탓인지, 살인마도 그(녀)의 간을 컬렉션에 추가하고 싶지 않았다...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0}님은 원래 살인마한테 죽지 않았을텐데, 이상하게도 그(녀)의 성스러운 마나가 다 떨어졌다. {0}님은 죽었습니다.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>{0}님이 어젯밤에 깊이 잠들었나봐요! 분명히 어제 총소리가 들렸지만, 마을 사람들이 발견한 것은, 머리의 총알이 박혀있고, 몸통에는 식칼이 꼽혀 있었다. 살인마가 확실하게 이겼네요.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>살인! 시장인 {0}님의 시체가 그(녀)의 사무실에서 발견되었다! 시장이 살인마를 몇년동안 감옥에 가두어서, 그(녀)는 복수를 다짐하고, 바로 오늘! 시장을 죽였다...</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>해가 뜨기 전에 종소리가 온 마을에 퍼지고, 엄청난 수의 병사들이 {0}왕자를 찾고 다닌다. 아무 단서도 못 찾았지만, 살인마의 짓이라는 걸 짐작했다...</value>
+    <value>{0}님의 호위자는 어젯밤에 잠이 들었었다. {0}님의 토막난 시체는 그의 궁전에 발견됐다...</value>
+  </string>
+  <string key="SeerKilled">
+    <value>마을 사람들은 {0}님의 머리부터 발까지 갈라져있고 썩고있는 시체를 발견하였다. 이상하게도 뇌만 가져갔다, 마치 마을 사람들의 top 머리를 가져간 것처럼. {0}님은 에언자였다...</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>온 마을에 늑대들이 슬프게 짖는 소리가 들렸다. 늑대들이 착각했다. 그들은 마법사 {0}님을 죽였다...</value>
+    <value>"나는 너희들의 동료야!"라고 어젯밤에 누군가가 울부짖었다. 다음날 마을 사람들은 시체와 마법사 {0}님의 유리 구슬이 부서져있는 걸 발견했다. 배고픔이 동료심보다 우선인가..</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>냠냠냠냠! 늑대들은 야생 아이 {0}을 뼈만 남기고 모든걸 먹어치웠다! 늑대들이 불쌍한 아이를 먹으면서 죄를 느꼈을까...라고 마을 사람들은 서로 이야기했다...</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <value>마을 사람들이 일어나, 마녀교도 헌터{0}님의 몇개의 시체 조각들을 발견한다. 오늘의 교훈: 연쇄 살인마를 찾으러 가지 말자!</value>
+    <value>마녀교도 헌터{0}님의 시체가 정확히 백개로 나눠져 있는채로 발견되었다. 살인마가 마녀교도인지 아닌지 확인하는 것은 좋은 생각은 아니네요...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <value>늑대는 가만히 있었지만 마녀교도인 {0}님이 그들을 데려올려고 했다. 늑대들한텐 {0}님의 머리는 아주 맛있는 야식이 되었다!</value>
+    <value>마녀교도는 갑작스러운 잘못을 저질렀다. 그들의 신멤버가 불길하게도 늑대의 집을 찾아갔다. 늑대는 {0}님을 맛있게 먹어치웠다. {0}님, 늑대들은 마녀한테 관심이 없습니다.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <value>마녀교도는 드디어 새로운 멤버가 들어올줄 알았지만, 그들은 모르고 있었다! 마녀교도 {0}님이 토막난채로 마을 광장에 있었다! 이상하게도 그(녀)의 성스러운 책에 칼 자국이 남아있었다, 마치 그들의 종교가 별거 아니라는 걸 보여주기 위해서.</value>
+    <value>어젯밤에 마녀교도는 그들보다 더 미친 사람을 데려올려고 했다. 그들의 신멤버가 살인마를 데려올려고 해서, 살인마는 그의 예술적인 면을 보여주면서 {0}님의 기관으로 작품을 만들었다...</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <value>{0}님이 살인마로부터 마을을 지켰어야 했지만,{0}님의 마나가 다 떨어지고, 그(녀)의 날개는 뜯어져있었다! 메모 한장이 땅바닥에 있었다, "내가 너보다는 내 자신을 훨씬 더 잘 지킨다"...</value>
+  </string>
+  <string key="GAGuardedWolf">
+  <!--1vs1 finales-->
+    <value>{0}님이 늑대를 지키려고 했습니다. 마을 사람들은 {0}님의 날개만 교회 십자가에서 발견했다. 확실히 늑대들은 추가 저녁밥을 공짜로 배달 받은것이다.</value>
+  </string>
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{0}님만 남았으니, {1}님은 {0}님을 먹을려고 시도하지만, 군대 훈련을 받고 편집병에 걸린 {0}님을 늑대가 상대하기에는 너무 힘들다! 결국 남는 것은 그저 늑대 가슴에 샷건으로 뚫린 두개의 구멍이랑 마지막 생존자이다: 마을 사람들을 승리로 이끈 사냥꾼!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{0}님만 남았다는걸 알고, {1}님은 {0}님이 방심한 틈을 타서 공격을 하였다. {1}님에게는 별거 아닌 마지막 생존자를 죽이고 결국 남는 것은 사냥꾼인 {0}님의 흉터랑 상처 투성이인 시체뿐.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+  <!-- Extend time -->
+    <value>{1}님이랑 {0}님이 집에서 천천히 마주 보면서 나온다. {0}님 목에 반짝 빛나는 십자가를 보자마자, 정의로운 {1}님은 마지막으로 칼을 뽑아, 마을을 세뇌시킨 마녀교에게 드디어 끝을 내린다.</value>
+  </string>
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>참가 시간을 {0}초 늘렸습니다! \n{1}초 남음</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>참가 시간을 {0}초 줄였습니다! \n{1}초 남음</value>
+  </string>
+  <string key="CantExtend">
+    <value>그룹 괸리자들만 한번 이상으로 시간을 늘릴 수 있습니다!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>이런! {0}님은 술에 취해있었어요! 이제 님이 취해서, {1}님을 공격할 수 없어요...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>{0} 그룹에 속해있지 않아서 게임에 참가가 불가능하네요.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>참가 명령을 쓰지 마시고 이 버튼을 누르세요.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0}명의 플레이어가 투표를 했다, 전체 플레이어 수 {1} .</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}님, 게임을 플레이 하실려면 님도 버튼을 통해 참가하셔야 됩니다.</value>
+  </string>
+  <string key="GroupNotFound">
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>{0}의 순서에서 님은 지워지셨네요.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0}님은 최근 30초에 참가를 하셨습니다</value>
+  </string>
+  <string key="AllowCult">
+    <value>Allow Cult</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Allow Tanner</value>
+  </string>
+  <string key="AllowFool">
+    <value>Allow Fool</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Lynch</value>
+  </string>
+  <string key="RandomMode">
+    <value>Enable Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Allow Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Show Roles on Death</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Allow Fleeing</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>All</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Cult / Fool / Tanner will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+</strings>

@@ -1,0 +1,2088 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Currently updated by @BarbaraTozzoli. Ask me for anything, thanks -->
+<!-- Last updated on 1 July 2020 -->
+<!-- Linguaggio aggiornato esclusivamente da @BarbaraTozzoli. Per qualsiasi errore, contattatemi. Grazie -->
+<!-- Ultimo aggiornamento il 1 Luglio 2020 -->
+<!--Se stai usando questo file come base per una nuova variante ricorda che le stringhe con <value> multiple vanno tradotte una sola volta quindi quelle extra puoi tranquillamente eliminarle-->
+<!--Per la stessa ragione puoi aggiungere più <value> a stringhe che ne hanno di meno, e il bot sceglierà casualmente ogni volta-->
+<!--Inoltre, le stringhe con "deprecated="true"> non sono più utilizzate, quindi puoi saltarle completamente. Consiglio Notepad++ o Wuffpad-->
+<strings>
+<!-- Importante: Cambiare il "language name" e la "variant" per nuovi linguaggi. "owner" è opzionale, serve per lasciare un contatto per eventuali modifiche-->
+  <language name="Italiano - Disney" base="Italiano" variant="Disney" owner="LupusInPrisma" code="it" isDefault="false"/>
+  <string key="NotInGame" deprecated="true">
+    <value>Sembra che tu non sia invitato nel Villaggio Disney per ora, forse non sei una principessa!</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <value>{0} è entrato nella carrozza, presto presto che la mezzanotte si avvicina! Clicca join se non vuoi che si trasformi in zucca!</value>
+    <value>Un nuovo ballo in maschera è stato organizzato da {0}! Clicca join se stai cercando il tuo principe azzurro!</value>
+	<value>{0} ha appena comprato le scarpette di cristallo! Clicca join se non vuoi farti vedere dal principe in Crocs!</value>
+    <value>{0} ha fatto quattro torte di mele, clicca join se non vuoi mangiare proprio quella avvelenata!</value>
+	<value>Specchio specchio delle mie brame dice: {0}. Chi è il joinatore più bello del reame?</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <value>{0} ha iniziato un ballo senza champagne, che caos! Clicca join e dimostra tutto il tuo disappunto!</value>
+    <value>Che caos! {0} ha mischiato tutte le scarpette di cristallo! Clicca Join per ritrovare il tuo paio!</value>
+	<value>Che caos! Lo specchio delle brame di {0} è tutto sporco! Clicca join per essere il più bello ma un po' sfocato!</value>
+	<value>{0} vuole cercare la giusta principessa! Ma sono tutte sbronze, che caos! Clicca join se non vuoi svegliarti con un mal di testa terribile</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>Non puoi entrare alla festa, non vedi che sei sciatta?</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Ma sei già alla festa, bevuto troppo, eh?</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Ancora 1 minuto per trucco e parrucco che poi si balla!</value>
+    <value>Solo 60 secondi rimanenti per essere la più bella del reame, forza!</value>
+    <value>Hai solo un minuto, la tua carrozza è già pronta! Clicca join!</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>Ancora {0} secondi per scegliere le giuste scarpe!</value>
+    <value>La festa inizierà fra {0} secondi! Il tuo principe azzurro potrebbe aver già cliccato join!</value>
+    <value>Solo {0} secondi per incipriarti il naso!</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Ah, non siamo abbastanza. Cancello la festa!</value>
+    <value>Non abbiamo raggiunto abbastanza invitati! La festa è stata annullata.</value>
+    <value>Purtroppo non abbiamo raggiunto il numero di invitati. La festa è stata cancellata.</value>
+    <value>Siamo troppo pochi dal principe! Riprova, dopotutto tentar non nuoce!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>La festa nel villaggio incantato sta iniziando, aspettate qualche secondo mentre raccolgo i soprabiti!</value>
+    <value>La festa è iniziata! Vi sto mandando i drink in privato!</value>
+    <value>Sto iniziando la festa! Controllate la chat privata per vedere se il trucco è ok!</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <value>{0} è bannato per avere fatto exploit (i nomi che iniziano per / non sono ammessi)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, per favore, cambia il tuo nome per partecipare!</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Mi dispiace, abbiamo già raggiunto il massimo numero di giocatori!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} si è unito. {1}/{3} giocatori, {2} minimo.</value>
+  </string>
+  <string key="PMTheBot">
+    <value>\n{0} Benvenuto a Werewolf! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinché io possa scriverti, devi prima avviarmi.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Pazzo, non puoi scappare! SEI MORTO! Torna a marcire nella fossa!</value>
+  </string>
+  <string key="Flee">
+    <value>{0} ha scordato le scarpe</value>
+    <value>{0} si è macchiato il vestito</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>\n{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>Rimangono {0} giocatori.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Hey, non ti ho ancora chiesto nulla!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Non mi pare tu abbia un abbigliamento adeguato alla festa!</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Non posso trovare un giocatore tramite questo nome!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>Questa non è una risposta valida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} vota per mangiare {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} vota per linciare {1}</value>
+  </string>
+  <string key="IdleKill">
+  <value>{0} non ha votato per due notti consecutive.  Le forze del bene hanno visto ciò come un peccato imperdonabile. {0} viene eseguito pubblicamente, umiliato dalla folla.\n{1}</value>
+  <value>{0} si è scordato di votare per due giorni consecutivi. Gli abitanti del villaggio incantato, non contenti di questa assenza di partecipazione ai sacri linciaggi, decidono di impiccare {0} pubblicamente.\n{1}</value>
+  <value>Siccome {0} si è rifiutato di votare per due giorni consecutivi, gli abitanti del villaggio incantato decidono di bruciarlo nella piazza centrale.\n{1}</value>
+  </string>
+<string key="TraitorTurnWolf">
+    <value>Hans🖕, traditore!!! Sei una iena ora.</value>
+    <value>Senti un formicolio attraversarti tutto il corpo! Tutte le iene sono morte. Ti sei ora trasformato in una iena.</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Scelta accettata</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nMerlino👳  è {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>Hai trovato i tarocchi abbandonati di {0}. Sei appena diventato il nuovo Merlino👳!</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>{0} ha trovato i tarocchi abbandonati di {1} ed è ora il nuovo Merlino👳!</value>
+  </string>
+  <string key="SeerSees">
+    <value>Hai visto che\n{0} era {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Chi vuoi linciare?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Di chi vuoi carpire il ruolo?</value>
+    <value>Su chi vuoi usare la tua lente?</value>
+  </string>
+  <string key="AskShoot">
+    <value>A chi vuoi lanciare il tuo shuriken? {0} shuriken rimanenti</value>
+    <value>Prendi bene la mira. Chi colpire? Ti rimangono solo {0} shuriken.</value>
+  </string>
+  <string key="AskVisit">
+    <value>A chi vuoi fare visita?</value>
+    <value>In quale casa ti vuoi intrufolare?</value>	
+  </string>
+<!-- Usato sia per Veggente, Folle che lo Stregone. -->  
+  <string key="AskSee">
+    <value>Chi vuoi scrutare?</value>
+    <value>Con chi vuoi metterti in contatto stanotte?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Chi vuoi proteggere?</value>
+  </string>
+  <string key="AskEat">
+    <value>Chi vuoi mangiare?</value>
+  </string>
+  <string key="AskHunt">
+    <value>A chi vuoi dare la caccia?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Chi è la tua fonte di ispirazione?</value>
+  </string>
+  <string key="AskConvert">
+    <value>A chi vuoi tagliare gambe e braccia e convertire al tuo culto?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  Sii sicuro di discutere con {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Sei Elsa 😾. Arcistufa di passare la vita reclusa in un castello in cui la tua unica compagnia è una sorella scema e costretta a celare al mondo la tua vera natura, non aspetti altro che un pretesto per scatenare i tuoi poteri magici. Per questo, se le Iene ti faranno visita, deciderai di unirti a loro nella caccia a quelle perfettine delle altre Principesse.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Sei Belle🕵️. Stanca delle stupida vita provinciale e delle parole  velenose delle altre donne del villaggio incantato, hai deciso di scovare i loro scheletri nell’armadio. Durante il giorno, puoi sfogliare tutti i tomi dell’anagrafe, scegliere un giocatore, e conoscerne il ruolo.  Ma la tua identità non è al sicuro - il tuo ruolo potrebbe essere rivelato alle iene! (40% di probabilità)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Sei Spugna 🍻! Dopo la dipartita di Capitan Uncino, hai trasformato la Jolly Roger in un'enoteca specializzata in rum scadente, il preferito dai bucanieri. L'unico che riesce a reggere l'alcool quanto te è  Dumbo, grande esperto di vino rosé. Avendo nel corpo più grappa che sangue, se le iene ti uccideranno subiranno gli effetti del post sbornia e non saranno in grado di colpire la notte successiva.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Sei il Genio della Lampada 👼 Le tue notti d'oriente sono passate da un pezzo. Per un periodo hai provato ad essere uno stand-up comedian ma nessuno capiva le tue battute. Ora, per campare, sei costretto a fare il bodyguard part-time. Ogni notte, puoi scegliere un giocatore da proteggere e salvare. Occhio a non scegliere una iena, altrimenti hai una possibilità su due di rimanerci secco.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Sei Mulan 🔫. Non vuoi ammetterlo neanche a te stessa, ma in fondo combattere gli Unni ti divertiva. Per questo, hai deciso di prenderti una vacanza dai tuoi doveri istituzionali e hai raggiunto le altre principesse al villaggio incantato. Qui, visto un problema di attacchi notturni di iene, sei stata incaricata della sicurezza pubblica. Purtroppo la tua spada nulla può contro le iene, ma hai due shuriken a partita da poter lanciare a chiunque credi, durante il giorno.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Sei Megara 💋. Stanca della vita oziosa e noiosa dell'Olimpo, hai lasciato Hercules (a cui tanto basta la compagnia dei suoi muscoli) per tornare sulla terra. Qui hai deciso, in quanto donna forte e indipendente, che non ti farai sottomettere mai più da nessuno, per cui ogni notte visiterai la casa di un membro del villaggio incantato per concedervi notte di passione.</value>
+  </string>
+ <string key="RoleInfoTraitor">
+    <value>Sei Hans 🖕! Per ora sei una banale principessa (sì, nessuno giudicherà il tuo cambio di sesso), ma nel momento in cui non rimarranno più iene, diverrai una iena a tua volta. Nel caso in cui il Merlino👳 ti scrutasse, potresti essere identificato sia come Principessa che come Iena.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Sei una Iena 🐺. Né tu né i tuoi compari sapete esattamente perché, dopo il fallimento dell'ultima volta, seguite ancora gli ordini di Scar, ma sappiamo tutti che l'intelligenza non è il tuo forte. Ogni notte ti intrufoli in una delle case del villaggio incantato per squartare, smembrare e sbranare gli abitanti. Buon divertimento!</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value>Honolulu arrivo! E invece no... Sei Merlino👳 e il villaggio incantato ha bisogno di te! Ogni notte potrai usare l'higitus figitus abra kazè e farti rivelare il ruolo da un giocatore. Se non vuoi fare la fine del pesce piccolo nel fossato, tieni nascosta la tua presenza agli altri abitanti!</value>
+	</string>
+  <string key="RoleInfoVillager" >
+    <value>Sei una povera principessa 👱, costretta a passare le tue giornate a pulire per terra, pungerti con fusi, parlare con uccelli, e cantare a squarciagola per nessuna ragione apparente. Sei pure intrappolata in una torre. It sucks to be you.</value>
+	</string>
+  <string key="RoleInfoTanner" >
+    <value>Sei Quasimodo 👺. Dopo la cocente delusione amorosa, hai deciso di cambiare radicalmente vita. Ripensando al passato, ti sei reso conto che l’esperienza alla Festa dei Folli in fondo era stata piacevole, e hai deciso di darti al sadomaso. Vinci la partita se gli abitanti del villaggio incantato decidono di linciarti.</value>	
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>Sei Simba 👶!  Le Tre Parche ti hanno fatto sapere che tuo padre morirà, ucciso da tuo zio, e che tu passerai le tue giornate al seguito di un suricato e un facocero di dubbia igiene a cantare Hakuna Matata fino a che le tue orecchie non sanguineranno. Di fronte a tale avverso destino, decidi che no, non ci stai, e tutto sommato le iene un po’ di ragione ce l’hanno nel fare quel che fanno. La prima notte scegli chi sarà tuo padre tra i membri del villaggio incantato. Se questi muore, diventi una iena.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>Sei Nonna Salice 👁, l’albero più vecchio e saggio di tutto il creato. Per questo a te, e soltanto te, ti verrà detto chi è Merlino👳. Wrong fandom, dici? Forse sì, ma prova a proteggere la sua identità e farlo sopravvivere fino a fine partita!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>Acquarius acquaticus acqualitus, sei Anacleto 🙇! Merlino👳 è un pirla, si mette sempre dei casini, non ti lascia in pace, e soprattutto non ti dà mai ascolto! Eppure tu sei un gufo altamente istruito, perciò sai che, se solo lui fosse fuori dai giochi, potresti fare il suo lavoro mille volte meglio. Avrai occasione di dimostrarlo quando (e se) Merlino👳 morirà, visto che erediterai il suo ruolo.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value>Sei un Nano 👤 Da quando Biancaneve💂 ha iniziato a darvi la caccia, tu e gli altri Nani 👤  siete stati costretti a trovare un modo per aumentare di numero e non estinguervi... ma la cosa vi è un po' sfuggita di mano: ogni notte entrate di soppiatto nella casa di un povero villico per accorciargli gambe e braccia, in questo modo lui non ha altra scelta se non quella di unirsi alla vostra setta. Se a fine partita i giocatori in vita sono stati convertiti tutti in Nani 👤 , avete vinto.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value>Sei Biancaneve💂! Ne hai abbastanza di vivere giorno e notte con sette Nani 👤  sporchi, disordinati e psicopatici, che passano tutto il giorno fuori casa a tentare di nascondere arti mozzati, e si aspettano la tavola pronta quando tornano a casa (zozzi) la sera. La vita ti aveva promesso molto di più, e tu hai deciso di andartelo a prendere! Ogni notte, puoi scegliere un giocatore. Se è un Nano👤  lo ucciderai. Se un Nano👤  prova a convertirti, l'ultimo membro arruolato dalla setta dei Nani 👤  muore e scoprirai quanti ne sono rimasti.</value>
+  </string>
+  <string key="LynchTime" >
+    <value>Il crepuscolo si avvicina inesorabile. Con la risata delle iene che incombe minacciosa, le principesse si accingono a decretare chi sarà linciato questa sera...\nOgnuno ha {0} secondi per votare!</value>
+    <value>Il crepuscolo si avvicina inesorabile. Con la risata delle iene che incombe minacciosa, le principesse iniziano a decidere chi linciare questa sera...\nOgnuno ha {0} secondi per scegliere il povero sfortunato!</value>
+	</string>
+  <string key="DayTime" >
+    <value>Il sole è sorto. Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
+    <value>La notte è finita, e il sole è sorto. Avete esattamente {0} secondi per discutere su chi linciare.</value>
+    <value>Con il sorgere del Sole, termina la notte. Ora tutti gli abitanti hanno {0} secondi per discutere sul da farsi.</value>
+  </string>
+  <string key="NightTime" >
+    <value>Il buio è calato. Ognuno si dirige verso il proprio letto, stremato, al termine di un'altra giornata di duro lavoro. Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
+    <value>Il sole è tramontato e la Luna è alta in cielo. Ognuno torna nella propria casa, esausto. Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
+	</string>
+  <string key="LynchKill" >
+    <value>Gli abitanti del villaggio incantato hanno gettato i loro voti, tra dubbi e sospetti. {0} è morto.\n{1}</value>
+    <value>Dopo attente riflessioni, gli abitanti del villaggio incantato hanno deciso che {0} sarà linciato oggi.\n{1}</value>
+    <value>Il villaggio incantato ha deciso, tra incertezze e paure. {0} sarà linciato di oggi.\n{1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>Incapaci di trovare un accordo su chi linciare, le principesse tornano frustrate alle proprie abitazioni, in attesa di un'altra notte d'ansia e sconforto...</value>
+    <value>La folla, con idee opposte su chi linciare, torna delusa alle proprie abitazioni, in attesa di un'altra notte di angoscia e preoccupazioni...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>Nessuno ha votato! Qualcosa mi puzza, nessuno verrà impiccato stanotte...</value>
+    <value>Il villaggio incantato si fa silenzioso, nessuno ha il coraggio di accusare...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value>IHIHIHIHI... Gli abitanti del villaggio incantato si riuniscono la mattina, ma {0} manca all'appello. Vagano fino alla sua casa, per trovare {0} sventrata malamente, con un vecchio libro ficcato in gola. Belle🕵️‍♀️ è morta.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value>IHIHIHIHI...Si leva il sole, e per la disperazione di tutti, impalato sulla croce della chiesa c'è {0}, il Genio👼.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value>Uscendo dalle case, lo sconvolgente ritrovamento di una spada fatta a pezzi e shuriken ovunque...poi le gambe... le dita...  ed infine, galleggiante nella fontana della piazza, il corpo di {0}, sbranato dalle iene. Avete perso Mulan🔫.</value>
+  </string>
+  <string key="SeerEaten" >
+    <value>È l'alba ormai, gli abitanti del villaggio incantato si svegliano e trovano i resti maciullati di {0}, circondato da camicie hawaiane. Merlino👳 è morto.</value>
+    <value>Svegliandosi, gli abitanti sentono una aria cupa e pesante. Vedono i resti di {0}, circondato da camicie hawaiane. Merlino👳 è morto.</value>
+   </string>
+  <string key="DrunkEaten" >
+    <value>IHIHIHIHI...L'odore di alcool e legno che vanno a fuoco ha svegliato le principesse dal loro sonno di bellezza... La taverna va a fuoco!!!! Dopo aver domato le fiamme, i resti di {0} vengono ritrovati, uno qua, uno là... Spugna🍻 è morto</value>
+    <value>IHIHIHIHI...Il forte odore di bruciato misto all'alcool invade il villaggio incantato. Dentro la taverna di {0} vengono ritrovati i suoi resti ormai carbonizzati.\nSpugna🍻 è morto</value>
+  </string>
+  <string key="FoolEaten" >
+    <value>IHIHIHIHI...Non appena il sole si leva sul villaggio incantato, viene rinvenuto il corpo di {0} seduto sopra una tavola ouija, e con un mazzo di... carte da gioco??? Che pazzerello Kronk🃏, ti credevi veggente?</value>
+    <value>IHIHIHIHI...Appena si fa giorno, viene ritrovato il corpo di {0} sopra a delle carte e con una tavola ouija... giocattolo??? Che pazzerello Kronk🃏, ti credevi veggente?</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>Il mattino è giunto, e con lui un fetore che sa di tragedia. Seguendo l'odore, le principesse trovano {0} fatto a pezzi nel fienile, senza testa. IHIHIHIHIHIH\n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>Un odore rancido proviene dalla casa di {0}... durante l'ispezione viene ritrovato un corpo senza vita, chinato inerme davanti ad una montagna di arti tagliati... un Nano 👤  è stato ucciso da Biancaneve💂!</value>
+  </string>
+  <string key="NoAttack" >
+    <value>Il giorno successivo gli abitanti si riuniscono al centro del villaggio incantato, sollevati - sembra che non ci sia stato nessun attacco fatale la scorsa notte.</value>
+    <value>Appena si fa giorno, tutti gli abitanti si riuniscono nel centro del villaggio incantato. Pare che ci siano tutti, e che nessuno sia morto durante la notte!</value>	
+  </string>
+  <string key="CursedBitten" >
+    <value>Sei stata morsa dalle iene. Cara Elsa😾, sei diventata una iena!</value>	
+  </string>
+  <string key="WolfTeam">
+    <value>Le altre Iene 🐺 sono: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value>{0} è stato morso....  ma era Elsa😾 ed è diventata una iena! Date il benvenuto al nuovo arrivato!</value>
+  </string>
+  <string key="WolvesEatYou" >
+    <value>Oh no! Le iene hanno banchettato coi tuoi ossicini. IHIHIHIHI</value>
+    <value>Stavi dormendo tranquillo nel tuo letto, quando una iena ha fatto irruzione e ti ha mangiato!IHIHIHIHI</value>
+    <value>Sei stato mangiato dalle iene! Ora ciò che rimane di te sono solo ossicini... IHIHIHIHI</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value>Oh no! {0} era Spugna🍻!  Ora sei ubriaco a tua volta, non potrai attaccare la prossima notte...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>Hai provato a proteggere una iena🐺 ! Che poi ti ha sbranato senza pietà...</value>
+    <value>Il tuo bersaglio non è stato attaccato dalle iene, siccome era un iena🐺 . Inoltre, ti ha anche mangiato...</value>
+  </string>
+  <string key="GuardSaved" >
+    <value>Hai salvato la vita di {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value>{0} non è stato attaccato, quindi non hai avuto molto da fare questa notte.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>Hai deciso di proteggere {0}, ma non era a casa!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>Sei stato protetto dal Genio👼 , che ha scacciato le iene🐺  e/o la Regina di Cuori🔪 !</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value>Megara💋  ha deciso di prendersi una pausa durante la notte sbagliata, e di rimanere a casa.  Le iene hanno banchettato con {0}!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value>Strano... {0} non era a casa! Niente cena sta sera...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value>Hai fatto visita a {0} per divertirti un po', ma ti sei trovata davanti una bella sorpresa. Era una maledetta iena, sei morta.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value>{0} ha fatto visita alla casa sbagliata questa notte! I suoi resti sono stati ritrovati appesi alla porta della chiesa, affissi con dei chiodi... che tristezza :(</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value>{0} ha fatto visita a {1}, pronta a concedersi un po' di divertimento ed a distendere lo stress. Ma ha trovato una iena intenta a sbranare {1}! Fulmineo, la iena si gira verso {0} con intenti non del tutto benevoli... {0} è morta.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value>Ora sai che {0} non è una iena, visto che te lo sei sbattuto per bene la scorsa notte!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>Era abbastanza scuro e non hai potuto vedere bene, ma nel bel mezzo della notte sei stato svegliato da Megara💋  che abusava di te. Pensava forse tu fossi un figaccione come Hercules? Non hai opposto resistenza, è pur sempre una gran bella gnocca! </value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value>Hai beccato {0} mentre investigava, con la lente in mano! Direi che si tratta di Belle🕵️‍♀️ !</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value>Le tue indagini hanno rivelato che {0} era {1}!</value>
+  </string>
+  <string key="HarlotShot" >
+    <value>Sembra che una notte con Megara💋 abbia giovato a {0}! Mulan ha avuto la sua vendetta. {1} è morto</value>
+  </string>
+  <string key="DefaultShot" >
+    <value>Improvvisamente si sente un tonfo. Gli abitanti del villaggio incantato escono dalle proprie case per cogliere {0} in piedi accanto al corpo di {1}, con uno shuriken conficcato nel cuore.\n{2}</value>
+  </string>
+  <string key="WolfWins" >
+    <value>La Iena🐺 ha vinto!</value>
+  </string>
+  <string key="WolvesWin" >
+    <value>Le Iene🐺 hanno vinto!</value>
+  </string>
+  <string key="VillageWins" >
+  <value>Le principesse hanno vinto! Se ne tornano tranquille alle loro case e alla vita di prima, ad aspettare il principe azzurro, pungersi con i fusi e organizzare balli nella piazza del villaggio incantato...</value>
+  </string>
+  <string key="TannerWins" >
+    <value>Oh no! Avete linciato Quasimodo👺! Direi che abbiamo un vincitore, complimenti al Re dei Folli!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Giocatori rimasti vivi, ruolo e fazione:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value>{0} vota per tagliare gli arti a{1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{0} è stato inviato a fare il suo sporco lavoro, per tagliare tutti gli arti a {1}... ma era Biancaneve💂! {0} è morto!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>{0} ti ha fatto visita la scorsa notte, pronto a tagliare i tuoi lunghi arti per renderli piccini picciò...  Ma l'hai ucciso con un rapido fendente della tua spada. Un Nano 👤  è morto... {1} rimanenti!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>I Nani 👤  ti hanno tagliato tutti gli arti! Ora sei uno di loro. Ogni notte, avrai la possibilità di fare a pezzettini mani e piedi di un altro giocatore.</value>
+  </string>
+  <string key="CultTeam">
+    <value>I Nani 👤 sono: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>{0} è diventato un Nano 👤 !</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{0} è stato inviato a fare il suo sporco lavoro, per far visita a {1}... ma nessuno era in casa!</value>
+  </string>
+  <string key="CultWins" >
+    <value>Tutte le iene sono morte, ma a tutti i sopravvissuti sono stati tagliati gli arti... I Nani 👤  hanno vinto!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>Hai dato la caccia a {0}, ma era già morto!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>Fai visita alla casa di {0}, lo cogli a cantare Ehi-Ho! Ehi-Ho! Ehi-Ho! e a cercare di infilarsi delle protesi per sembrare di un'altezza adeguata... Ma non ci sei cascata! Sfoderi così la spada per fendere il malvagio Nano 👤 .</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Hai fatto visita alla casa di {0}, ma non hai notato nessun canto di Ehi-Ho! Ehi-Ho! Ehi-Ho! Ehi-Ho! e nessuna protesi per sembrare più alto! Non era decisamente un Nano 👤  perciò te ne ritorni a casa.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>Il modello di {0} è morto! Adesso è una iena 🐺 !</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0} è morto! Sei diventato una iena 🐺 ! I tuoi nuovi alleati (se presenti) sono: {1}</value>
+  </string>
+  <string key="Villager">
+    <value>una Principessa 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Spugna 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Megara 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Merlino 👳 </value>
+  </string>
+  <string key="Traitor">
+    <value>Hans 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Genio 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Belle 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>una Iena 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Elsa 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Mulan 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Quasimodo 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Kronk 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Simba 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Nonna Salice 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Anacleto 🙇 </value>
+  </string>
+  <string key="Cultist">
+    <value>Nano 👤  </value>
+  </string>
+  <string key="CultistHunter">
+    <value>Biancaneve 💂</value>
+  </string>  
+ <string key="RanAway">
+    <value>👻 Fuggito</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Morto</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 In vita</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Giocatori in vita</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>un Bambino sperduto👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Sei un Bambino Sperduto 👷, l'organizzazione di pre-adolescenti che segretamente governa una stupida Isola che Non C’è. Se ci sono altri Bambini Sperduti, saprai la loro identità. Tuttavia, spesso non ci sono altri Bambini Sperduti, quindi sarei un inutilissimo Bimbo Sperdutissimo solitario. Non hai alcun potere. Non hai alcuna ragione di vivere. Tutti ti odiano. Ma una dolcissima fata col nome di una pasta ripiena tipica emiliana potrebbe dirti i nomi dei fautori della tua sventura! Prova a invocarla in chat! </value>
+  </string>
+  <string key="MasonEaten">
+    <value>Al risveglio di tutte le principesse, viene ritrovato il corpo di {0} con il suo sguardo strafottente da teenager ancora in faccia, il sangue che fuoriusciva dalle feritoie per gli occhi e le gambe staccate a suon di morsi! Uno dei Bambini sperduti 👷 è morto! Non è una grande perdita!</value>
+    <value>Appena sorge il sole, si ritrovano i giovani resti di {0}, sbranato dalle iene senza pietà. A quanto pare i suoi sogni di dominare l'Isola che Non C'è finiscono qui. Uno dei Bambini Sperduti 👷 è morto! Fiùùùù per fortuna non era un personaggio utile!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>\nGli altri Bambini Sperduti sono: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>Il vostro Nano 👤  più basso si reca a casa di {0} per tagliargli gli arti, ma trova invece una casa malmessa, sangue ovunque, e ciuffi di peli di iena sparsi per il corridoio...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>Ti introduci nella casa di {0} per mangiarlo, ma improvvisamente incontri un'alta oscura figura, che esce da una lampada ed ha dei bracciali dorati ai polsi. È il Genio 👼 . Combattete a lungo ma sei costretto a tornare a casa sconfitto.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>Spedite il piccolissimo {0} per tagliare gli arti a {1}, ma il suo letto era troppo alto, non siete riusciti ad arrampicarvi :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, un giocatore con il nome di {0} è già entrato. Per favore cambia il tuo nome per partecipare. </value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>Ti rechi a casa di {0} per divertirti un po'... Ma quando stai per uscire, ti accorgi dell'esistenza di protesi per gambe e braccia di legno. Sono nascoste malamente, all'angolo della stanza, ed una strano canto Ehi-Ho Ehi-Ho Ehi-Ho provenire da esso...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>Tutti si svegliano la mattina, e si accorgono che {0} non si trova in giro... Controllano la sua casa per poi trovare i resti di {0}.</value>
+    <value>Le principesse si svegliano al sorgere del sole, per poi trovare i resti di {0}, morto in qualche modo la scorsa notte...</value>
+  </string>
+  <string key="MasonConverted">
+    <value>Cavoli... {0} non si è presentato alla riunione dei Bambini Sperduti questa mattina... O.o</value>
+  </string>
+  <string key="FleeDisabled">
+    <value>Fuggire mentre il gioco è in corso è stato disabilitato dall'admin del gruppo!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>È morto</value>
+  </string>
+  <string key="AdminAdded" deprecated="true">
+    <value>{0} è stato aggiunto alla lista degli admin. usa /config per cambiare le impostazioni del gruppo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Sei già nella partita! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Il tuo gruppo è stato settato per far cominciare più partite... Uccisioni extra.</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <value>Il gruppo è attualmente in lista d'attesa. Posizione:{0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @greywolfdev per altre informazioni.</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <value>{0} è un gruppo ufficiale, ed ha saltato la lista d'attesa!</value>
+  </string>
+  <string key="NoGame">
+    <value>Non ci sono partite in corso. Cominciane una con /startgame o comincia una partita Chaos con /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Solo gli admin del gruppo possono usare questo comando. Chiedi al creatore o ad altri admin.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Dopo questa partita, mi spegnerò per una manutenzione.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Dopo questa partita, mi spegnerò momentaneamente per un aggiornamento (automatizzato).</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>UserId nullo.  Sei sicuro di aver mandato questo comando come risposta?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <value>{0} è già un admin!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <value>{0} Non è un admin!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <value>{0} è stato rimosso dalla lista degli admin.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <value>Lingua settata su {0}</value>
+  </string>
+    <string key="NoSeer">
+	<value>Non c'è il veggente!</value>
+  </string>
+  <string key="TimesUp">
+	<value>È scaduto il tempo!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Urca urca trillullero, sei Robin Hood 🏹! Un mago delle frecce, le scocchi a destra e a manca per diffondere l’amore. Se facendolo riesci a racimolare anche du’ soldi per i poveri, ancora meglio. All’inizio del gioco scegli due giocatori da legare per sempre, nella vita o nella morte. Se uno di loro dovesse morire, l'altro si suiciderà per il dispiacere. Se almeno uno di loro vince, entrambi vincono. Se sono gli ultimi due rimasti in vita, solo loro vincono e tutti gli altri perdono.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Sei Dory 🎭. Non ricordi nulla. Non sai chi sei, e per questo all'inizio di ogni partita sceglierai un altro giocatore da seguire come un faro nell'oscurità. Alla morte di quel giocatore, lo conoscerai così bene che assumerai il suo ruolo.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Sei Merida 🎯! Hai speso tutta la tua fortuna in sedute psichiatriche dopo che hai visto tua madre venire trasformata in orso e cercare di farti fuori. Senza un soldo, per campare sei stata costretta a vendere la tua faretra al miglior offerente. Le principesse del villaggio incantato ti hanno così ingaggiata per tenerle al sicuro da iene, Nani 👤 , e marmaglia simile. Se muori, ti vendicherai scegliendo chi portare nella tomba con te. Se vieni uccisa dalle iene, c'è la probabilità che tu riesca ad ucciderne una, ma nel caso ce ne fossero altre, verresti accerchiata ed uccisa comunque. La vita con te non è molto clemente.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Sei la Regina di Cuori 🔪.Ogni notte potrai tagliare la testa a qualcuno e poi usarla per giocare a cricket. Se qualcuno ti visita, lo ucciderai (la iena ha comunque il 20% di ucciderti se ti attacca). Vinci solo se sei l'ultimo rimasto in vita.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Hai avuto un colpo di fulmine. Che sia il principe azzurro? La memoria di {0} non svanirà mai dal tuo cuore. Il tuo obiettivo è rimanere entrambi vivi. Se uno di voi due muore, l'altro morirà di dispiacere.</value>
+    <value>La freccia di Robin Hood🏹 ti ha colpito! Ti sei innamorato perdutamente di {0}! Se muore, condividerai il suo destino. Se riuscite a sopravvivere fino alla fine, sarete entrambi vincitori.</value>
+ </string>
+  <string key="HunterLynchedChoice">
+    <value>Gli abitanti del villaggio incantato ha deciso di impiccarti! Che stolti! Questa è la tua ultima possibilità, scegli qualcuno da uccidere come ultimo desiderio!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} fruga nell'abito per cercare una delle sue frecce mentre il cappio si stringe sempre più, ma non riesce a scagliarla in tempo, e la sua morte sopraggiunge con la rumorosa rottura del collo...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} estrae una freccia, guarda la folla... ma non riesce a decidere a chi scagliarla.  Si lascia così morire, accettando il suo destino...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>Mentre il cappio di stringe intorno al collo di {0}, lui tira fuori una freccia, prende la mira e la scaglia, uccidendo {1} giusto prima che il pavimento si ritiri! {1} cade a terra, senza vita. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Stai per morire! Nei tuoi ultimi istanti di vita, Hai l'occasione di scagliare una freccia a qualcuno... Sbrigati!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>{0} è morto prima di rendersene conto e poter tirare fuori una freccia, immerso in un bagno di sangue...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>Mentre {0} è steso per terra, ansimante nei suoi ultimi attimi di vita, non riesce a decidere a chi scagliare una delle sue freccie... e accetta il suo triste destino.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>In fin di vita, {0} cade... Ma non senza afferrare il suo arco e scagliare una freccia a {1}, che se la becca precisamente tra gli occhi. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} si intrufola nella casa di {1}, apre la porta e viene immediatamente accolto da una pazza con un coltello!!! {1} immerge profondamente il coltello negli organi di {0} in ordine alfabetico, sghignazzando tutto il tempo, e alla fine gli taglia la testa! {0} è morto D:</value>
+    <value>I Nani 👤  mandano {0} per tagliare gli arti a {1}, ma invece il corpo di {0} esce volando dalla finestra con coltelli conficcati in ogni parte del corpo, e la testa lo segue a ruota! CHE PSICOPATICO! {0} è morto...</value>
+ </string>
+  <string key="HunterShotWolfMulti">
+    <value>Le iene hanno provato ad attaccare Merida 🎯  la scorsa notte, ma con i suoi lunghissimi e fluenti capelli rossi è riuscita a portarne uno con sé nella tomba! {0} è morta (Iena 🐺) </value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>Le Iene hanno provato ad attaccare Merida 🎯  l'ultima notte, ma Merida è riuscita a uccidere la iena🐺 {0} con il suo arco!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Le iene hanno provato ad avere uno snack notturno, ma sono stati invece sorpresi da una pazza omicida! A {0} è stata tagliata la testa nello scontro!</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>Sembrava una notte tranquilla per {0}, ma non lo è stata. Le principesse si riuniscono nel mattino per trovare {0} tagliato a pezzettini, privo della testa e stranamente senza gli organi vitali...  La Regina di Cuori 🔪  ha colpito ancora! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>Hai provato a tagliare la testa a {0} per aggiungerla alla tua collezione, ma invece ti sei scontrato con il Genio angelo 👼. Niente da fare stasera, nottataccia...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>I Nani 👤  mandano {0} per tagliare gli arti a {1}, ma invece un colpo suona rumoroso e il cortissimo corpo di {0} esce dalla finestra volando! {0} è morto...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Hai provato a proteggere la Regina di Cuori 🔪 , che stolto! Ma invece lei è uscita, ti ha tagliato la testa e ti ha pugnalato 89 volte! Sei morto...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>Sei sgattaiolata nella casa di {0} e iniziate ad avere un po' di divertimento. Tutto sembra andare alla grande finché {0} tira fuori un coltello e inizia a pugnalarti urlando, poi ti taglia la testa! Che infame questa Regina di Cuori 🔪 ! Sei morta....</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Sembra che {0} si sia divertita abbastanza ieri, sgattaiolando in case altrui. Peccato che la bella nottata non abbia fatto passare gli istinti omicidi alla Regina di Cuori 🔪 . {0} è morta ed è ora senza testa.</value>
+    <value>Al risveglio, le principesse trovano il corpo di {0} disteso per terra, senza vita. Le innumerevoli pugnalate al petto e il fatto che sia senza testa fanno intendere che abbia visitato la Regina di Cuori 🔪 . {0} è morta.</value>
+  </string>
+  <string key="DGToMason">
+    <value>Dory🐠{0} è ora diventato un Bambino Sperduto, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{0} è morto, e tu ti trasformi in un Bambino Sperduto👷. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>Dory🐠 {0} è ora diventata un Nano 👤 , esattamente come te!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} è morto, e tu ti trasformi in un Nano 👤 . I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToWolf">
+<value>Dory 🐠{0} è ora diventata una Iena, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} è morto, e tu ti trasformi in un iena. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>L'ultima persona in vita è la Regina di Cuori 🔪 ! Ha vinto</value>
+  </string>
+  <string key="AskKill">
+    <value>A chi vuoi tagliare la testa stanotte?</value>
+  </string>
+  <string key="LoverDied">
+    <value>Con l'ultimo respiro di {0}, {1} accorre per vedere il suo cadavere e piange. Non riesce a sopportare la morte dell'amato, e si spara con la pistola più vicina che trova. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Di chi vuoi ereditare il ruolo alla sua morte?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Chi vuoi che siano gli innamorati? Scegli il primo giocatore a cui lanciare la tua freccia</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Chi vuoi che siano gli innamorati? Scegli il secondo giocatore a cui lanciare la tua freccia</value>
+  </string>
+  <string key="Hunter">
+    <value>Merida 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Robin Hood 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Regina di Cuori 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Dory🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>Sei diventato Simba👶. Il tuo modello è {0}</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>Al centro della piazza centrale, viene ritrovato il corpo di {0}, sparato varie volte in tutto il suo piccolo corpo. Sembra che lui abbia provato a visitare Biancaneve💂! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Una piccola ma inquietante figura ha provato a tagliarti gambe e braccia ma il tuo letto era troppo alto e non è riuscita a salire.</value>
+  </string>
+  <string key="LoversWin">
+  <value>Il vero amore trionfa! Gli innamorati hanno vinto!</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>Sorge il sole e gli ultimi due sopravvissuti si vedono nella piazza centrale. {0} vede {1}, gli molla un bel pugno nel viso, esce il coltello e taglia la testa a {1}. La Regina di Cuori ha vinto!</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Tutti nel villaggio incantato sono morti....  non c'è niente ad eccezione dei corpi rimasti a terra. Nessuno ha vinto in questa partita.. A parte gli avvoltoi.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>Il sole sorge, {0} e {1} si incontrano al centro del villaggio incantato. {0} tira fuori il coltello e salta su {1}. {1} sfodera l'arco e scaglia una freccia contro {0}. Come {0} cade a terra, affonda il coltello sul corpo di {1}. Entrambi sono morti, il villaggio incantato rimane desolato...</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Sei già in lista d'attesa per la festa di {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Sei stato aggiunto alla lista d'attesa per la festa di{0}. Ti contatterò appena una festa sta per cominciare. </value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>Una nuova festa sta per cominciare nel magico castello {0}</value>
+  </string>
+    <string key="RoleModelChosen">
+    <value>Non hai fatto una scelta, quindi il bot ti ha scelto {0}</value>
+  </string>
+    <string key="Won">
+    <value>Vinto</value>
+  </string>
+  <string key="Lost">
+    <value>Perso</value>
+  </string>
+    <string key="IdleCount">
+    <value>Il giocatore {0} è stato ucciso per non aver votato {1} volte nelle ultime 24 ore,</value>
+  </string>
+  <string key="AboutVG">
+    <value>Il tuo ruolo è semplice: sopravvivere. Ogni giorno, avrai l'occasione di linciare le iene! Ma non uccidere le tue sorelle principesse! Vota con attenzione!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Honolulu arrivo! E invece no... Sei Merlino👳 e il villaggio incantato ha bisogno di te 👳 Ogni notte potrai usare l'higitus figitus abra kazè e farti rivelare il ruolo da un giocatore. Se non vuoi fare la fine del pesce piccolo nel fossato, tieni nascosta la tua presenza agli altri abitanti. Potresti non essere Merlini vero ma Kron, che vede ruoli casuali (anche veri) ma in partita. Se ti scrive Nonna Salice 👁 saprai di essere l'unico e inimitabile Merlino👳 vero!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Ogni notte, potrai decidere di mangiare qualcuno e di giorno dovrai confondere gli altri e non farti linciare! Se almeno la metà dei giocatori in partita sono iene, la partita finisce e vincete. \n Nota: Se attacchi Spugna🍻, dovrai rimanere fermo un turno per riprenderti dalla sbronza! Se attacchi Elsa😾, diventerà una Iena come te!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Come Megara, avrai la possibilità di "visitare" altri giocatori ogni notte. Se non sono iene 🐺  (o è la Regina di Cuori 🔪) te lo dirà (perché sopravviverai!). Nel caso sfortunato in cui tu visitassi una iena (o la Regina di Cuori), verrai ucciso. Se visiti il giocatore che le iene stanno sbranando, verrete uccisi insieme. Però, se scegli un giocatore, e le iene scelgono di venire a casa tua, sopravviverai! Non eri a casa, dopotutto...</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Sei Spugna 🍻! Dopo la dipartita di Capitan Uncino, hai trasformato la Jolly Roger in un'enoteca specializzata in rum scadente, il preferito dai bucanieri. L'unico che riesce a reggere l'alcool quanto te è  Dumbo, grande esperto di vino rosé. Avendo nel corpo più grappa che sangue, se le iene ti uccideranno subiranno gli effetti del post sbornia e non saranno in grado di colpire la notte successiva.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Sei Elsa 😾. Arcistufa di passare la vita reclusa in un castello in cui la tua unica compagnia è una sorella scema e costretta a celare al mondo la tua vera natura, non aspetti altro che un pretesto per scatenare i tuoi poteri magici. Per questo, se le Iene ti faranno visita, deciderai di unirti a loro nella caccia a quelle perfettine delle altre Principesse. Nota: Finché le iene non ti mangiano, la tua fazione è con le principesse, e vincerai con loro nel caso tutte le iene morissero.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Sei Hans, un bastardo traditore. Se riesci a sopravvivere a lungo e riuscire a uccidere tutte le iene, ti trasformerai in una iena, pronto a uccidere le vecchie alleate principesse di notte! Nota: Finché non ti trasformi, il tuo team è con gli abitanti del villaggio incantato. Ti conviene quindi cercare di uccidere le iene. Se Merlino👳 ti scrutasse, Potrebbe identificarti sia come Iena🐺, sia come Principessa👱.(50% e 50%)</value>
+  </string>
+  <string key="AboutGA">
+    <value>Sei il Genio della lampada 👼. Le tue notti d'oriente sono passate da un pezzo. Per un periodo hai provato ad essere uno stand-up comedian ma nessuno capiva le tue battute. Ora, per campare, sei costretto a fare il bodyguard part-time. Ogni notte, puoi scegliere un giocatore da proteggere e salvare. Occhio a non scegliere una iena, altrimenti hai una possibilità su due di rimanerci secco. La Regina di Cuori, invece, ti decapiterà sempre! </value>
+  </string>
+  <string key="AboutDetective">
+    <value> In qualità di Belle🕵️ puoi scegliere un giocatore da controllare durante il giorno! Ma fai attenzione, il tuo ruolo potrebbe essere rivelato alle iene! (40% di probabilità)</value>
+  </string>
+  <string key="AboutGunner">
+    <value> Come Mulan 🔫 , avrai due shuriken (gli unici che ti sono rimasti dopo la guerra con gli Unni) dall'inizio del gioco. Di giorno, avrai l'occasione di lanciarne uno ad un altro giocatore. Dopo il lancio, tutti sapranno il tuo ruolo! Stai attento però, hai solo 2 shuriken e le iene vorranno sicuramente mangiarti, se ti sveli!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Quasimodo👺! Il tuo obiettivo è semplice: farti Linciare. Se Quasimodo👺 riesce a farsi linciare VINCE. Tutti gli altri perdono. Nota: Se non riesce a farsi linciare: perde. Non vince con le principesse.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Kronk un pazzerello che si crede di essere Merlino👳.... Quando sceglie di vedere il ruolo a qualcuno, gli verrà detto un ruolo casuale in partita. Nota: È più utile di quello che sembra, può sapere con esattezza i ruoli che ci sono in partita. Se vedete un ruolo, sarà in partita.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Come Nano 👤 , il tuo obiettivo è tagliare gli arti di tutti gli altri giocatori (tranne le iene) per farli diventare piccoli come te, e a quel punto non avranno altra scelta che unirsi alla setta di Nani 👤 .. Se a fine partita, tutti i giocatori sono Nani 👤 , vincono. Probabilità di convertire i seguenti ruoli: Dory: 0% finché rimane Dory, è impossibile da convertire \n Merlino👳 40% Merlino👳 è il più difficile da convertire \n Genio 60% Nota: Se protegge qualcuno, non lo troverai in casa \n Elsa😾 60% \n Belle 70% \n Megara 70% Come il Genio, se non è casa, non potrete convertirla \n Merida 50% Avrai il 50% di convertire Merida. Se fallite, C'è il 50% che vi spari.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Il tuo lavoro è uccidere tutti i Nani 👤  e mettere fine alla loro piaga sociale. Se ti visitano, ucciderai il loro ultimo membro e saprai quanti Nani 👤  sono rimasti. Ogni notte potrai visitare un giocatore: se sono Nani 👤 , li ucciderai. Sennò, tornerai a casa, come se nulla fosse successo.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Come Simba👶, alla prima notte, sceglierai il tuo genitore. Se morisse, ti trasformerai in una iena. Nota: Finché non ti trasformi, vincerai con le Principesse nel caso tutte le iene morissero.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Per ora, sei una normale Principessa. Nel caso Merlino👳 morisse, ti trasformerai nel suo sostituto. Nota: Se sei in partita, implica che Merlino👳 c'è e non è Kronk.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Ti verrà detto chi è Merlino👳 (quello vero, Kronk). Se morisse e Dory 🐠  oppure Anacleto👁 prendessero il suo posto, ti verrà detto. Una buona tattica è fingersi Merlino👳 e rivelare i ruoli al posto suo.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Il ruolo dei Bambini Sperduti è semplice: sanno chi sono gli altri Bambini Sperduti che partecipano a delle riunioni segrete del villaggio incantato. Se sono da soli, sono delle semplici Principesse.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Puoi scegliere un giocatore a inizio partita, erediti il suo ruolo \n Nota: Se il giocatore viene trasformato in un Nano 👤  prenderai il suo ruolo originale. Tutte le altre regole normali si applicano: se erano Simba👶 e il loro modello è morto, diventerai una Iena. Sennò, erediterai il loro modello.\n I Nani 👤  non possono trasformare Dory (ma possono dopo che Dory cambia ruolo) E - Dory NON può vincere a meno che si sia trasformata. Se a fine partita, Dory non si è trasformata, perde (eccezione: amante).</value>
+  </string>
+  <string key="AboutCupid">
+    <value>A Inizio partita, sceglie due giocatori. Dopo diventa a tutti gli effetti una normale Principessa. Questi due diventeranno follemente innamorati e se uno dei due muore, l'altro morirà. Nota: gli amanti sanno chi è l'altro, ma non sanno il loro ruolo. Se gli amanti sono gli ultimi due vivi, loro vincono, indipendentemente dal loro ruolo. Se gli amanti sono di due team diversi(esempio: iena + principessa), e un team vince (esempio: iene), anche l'amante (esempio: principessa) vince. \n TL;DR Se tutti e due gli amanti sono vivi a fine partita, e almeno uno dei due è nel team vincitore, vincono insieme</value>
+  </string>
+  <string key="AboutHunter">
+    <value>Un tipo vendicativo, con la freccia pronta. Quando gli altri ti visitano, potrebbero trovarsi morti, visto che la paranoia ti possiede e tu gli scocchi una freccia. \nSe le iene ti attaccano, hai una chance di ucciderne una di loro. Sennò, avrai la chance di scoccare una freccia a qualcuno alla tua morte.\nNota: Per gli attacchi delle iene, la probabilità inizia al 30%. Se c'è una iena, Merida ha il 30% di probabilità di ucciderlo (e sopravvivere). Per ogni iena in più, la probabilità aumenta del 20% (2 Lupi= 50%, 3= 70%). Ciononostante - se ci sono molte iene, mentre potresti ucciderne una, verrai lo stesso accerchiato e ucciso.	\nSe I i Nani 👤  provano a trasformarti, hanno il 50% di probabilità di fallire. Se falliscono, hai il 50% di probabilità di ucciderne uno!</value>
+  </string>
+  <string key="AboutSK">
+    <value>La Regina di Cuori 🔪  è un giocatore solitario, nel suo proprio team. Può vincere solo se è l'ultimo giocatore vivo (eccezione: amanti). Come Regina di Cuori puoi uccidere CHIUNQUE: iene, Merida 🎯 , Mulan 🔫 , Genio 👼 , qualunque cosa. Se le iene provano ad attaccarti, ne ucciderai una di loro (random) e sopravviverai.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para è uno sciocco programmatore a cui piace abbaiare alle persone.  Forse è stato a contatto con i lupi troppo a lungo...</value>
+  </string>
+  <string key="EndTime">
+    <value>Durata della partita: {0}</value>
+	</string>
+  <string key="Day">
+<!-- Day -->
+    <value>Giorno {0}</value>
+  </string>
+<string key="NodeShutsDown">
+    <value>Si è verificato un errore imprevisto, e questo nodo è stato spento :/\n Per dettagli, vai su @werewolfsupport</value>
+  </string>
+<string key="SentPrivate">
+    <value>Ti ho scritto in privato</value>
+  </string>
+  <string key="StartPM">
+    <value>Scrivimi un messaggio in privato così posso risponderti: @werewolfbot</value>
+  </string> 
+  <string key="PMTrue">
+    <value>Grazie per avermi startato! Posso scriverti in privato ora.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Devi rispondere all'utente che vuoi cacciare!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Cosa vorresti fare?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Puoi entrare in partita solo dentro un gruppo!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Puoi cominciare una partita solo dentro un gruppo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo di Risposta: {0}\nMessaggi per secondo: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Che lingua?\nAttuale: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Che variante?\nAttuale: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Lingua impostata a {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Quale file di linguaggio vuoi avere?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Non ci sono nodi online al momento, per favore riprova più tardi</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Devi usare questo comando in un gruppo!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Non sei un admin globale...</value>
+  </string>
+  <string key="NotPara">
+    <value>Tu non sei Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sì</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Ammesso</value>
+  </string>
+  <string key="Disallow">
+    <value>Non Ammesso</value>
+  </string>
+  <string key="Show">
+    <value>Mostra</value>
+  </string>
+  <string key="Hide">
+    <value>Nascondi</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Solo Normale</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>A scelta del Giocatore</value>
+  </string>
+  <string key="ShowNone">
+    <value>Non mostrare nessuno</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostra solo i giocatori in vita</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostra tutti i giocatori</value>
+  </string>
+  <string key="Cancel">
+    <value>Annulla</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>{0}fuggire dopo l'inizio della partita</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Giocatori massimi impostati a {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostrare i ruoli alla morte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>I ruoli verranno {0} alla morte.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Che modalità di gioco vuoi che giochi questo gruppo?\nAttualmente: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modalità di gioco impostata a {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Quali ruoli vuoi che siano mostrati alla fine della partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Ruoli mostrati alla fine impostati a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Scegli il tempo base (in secondi) per il giorno. Questo verrà modificato in base al numero di giocatori.\nTempo minimo aggiunto in base ai giocatori è 60 secondi.  Impostazione base: {0}\nAttuale: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Tempo base del giorno impostato a {0} secondi</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Scegli quanto dovranno durare le notti in secondi. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Le notti dureranno {0} secondi</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Imposta il tempo (in secondi) per il linciaggio di giorno. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>I linciaggi dureranno {0} secondi</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Ammettere Kronk in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Kronk come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Ammettere Quasimodo in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Quasimodo come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Ammettere i Nani 👤  in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Nani 👤  come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Grazie mille, Abbi una bella giornata :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Di che lingua si vuole cercare un gruppo in cui giocare?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Questi sono i gruppi per {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membri</value>
+  </string>
+  <string key="StartMe">
+    <value>Per favore startami così potrò scriverti in privato</value>
+  </string>
+    <string key="PlayerNoPM">
+    <value>{0} non ha startato il bot, ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+    <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+  <string key="RoleInfoMayor">
+    <value>Sei Mufasa🎖! Una volta eri il Re della Savana, rispettato e venerato da tutti. Poi hai voluto per forza mettere al mondo della prole, e tuo fratello l’ha presa benissimo. Sei così finito a fare l’impiegato comunale di un remoto villaggio incantato di principesse. Preso dalla malinconia, ogni tanto decidi di rispolverare la tua vecchia corona, nella vaga illusione di poter tornare a contare qualcosa. Quando la tiri fuori (😉), gli abitanti del villaggio incantato ti assecondano, impietositi, e il tuo voto durante il linciaggio vale doppio.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Sei Semola 👑.Nessuno ti considera, a parte uno strano mago che sta palesemente attentando alla tua vita continuando a trasformarti in animali a random. Ma tu sai che sei l’unico a poter estrarre la spada nella roccia! Se gli abitanti del villaggio incantato proveranno a linciarti, tu la tirerai fuori (😉) e resterai vivo. Nota però che potrai farlo una volta sola...</value>
+  </string>
+ <string key="RoleInfoClumsyGuy">
+    <value>Sei Flounder 🤕: Sei talmente distratto che potresti sbagliare al 50% a votare. Vinci comunque con le principesse.</value>
+    <value>Sei un Ragazzo Goffo🤕. Sei distratto e non ti importa davvero del villaggio incantato, quindi potrai sbagliare al 50% il voto per il linciaggi.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Sei Malefica🔮! Quel maleducato del Re non ti ha invitato alla festa per la nascita dell’ennesima principessa che canta con gli uccelli, e tu a queste cose ci tieni. È una questione di rispetto, in fondo. Decidi quindi di vendicarti e ti allei con le iene. Di notte potrai mandare il tuo corvo in avanscoperta per trovare le tue amiche iene oppure Merlino👳. Vinci solo se vincono le iene.</value>
+  </string>
+ <string key="ClumsyGuy">
+    <value>Flounder 🤕</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Bidibi bodibi bu, sei la Fata Madrina ⚒. Da qualche anno hai abbandonato la magia per fare la party planner. La tua vecchia bacchetta è arrugginita ma ti è rimasta una piccola quantità di polvere magica per impedire  alle iene di attaccare per una notte. Di giorno, potrai scegliere di rivelarti e spargerla per tutto il villaggio incantato.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Sei Scar⚡️,il capo della più sgangherata banda di Iene mai esistita. Siccome il piano di diventare Re della Savana è andato una meraviglia, hai deciso di cercare di conquistare il mondo.... un villaggio incantato alla volta. Ogni notte, insieme alle Iene, sceglierai un membro del villaggio incantato da attaccare e, finché sarai vivo, avrai un 20% di probabilità di infettare la vittima e convertirla in Iena (nonsense? Forse, ma questi sono i tuoi poteri) la notte successiva.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Sei il Cucciolo di Dalmata🐶, venerato e protetto dal tuo branco… Di iene! D’altronde sfuggire a Crudelia DeMon e alla sua macchina da cucire non è facile. E’ un attimo diventare un nuovo soprabito di Gucci. Come le tue amiche iene, sceglierai ogni notte un abitante del villaggio incantato da attaccare e uccidere. Se vieni ucciso o ridotto a pelliccia, i tuoi compagni si infurieranno a tal punto da attaccare due volte la notte seguente.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Appena il villaggio incantato ha deciso che {0} sarà linciato stasera, lui urla «Aspettate! Sono Semola. Questo anello reale, con il sigillo del Re, lo dimostra. Ogni notte, sono circondato dai servi. Quindi non posso essere malvagio.» Sentendosi sciocche, le Principesse si ritirano docilmente nelle proprie case.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Hai provato a scrutare {0}, ma non riesci a capire cos'è... Sei però sicuro che non sia né Merlino👳 né una Iena</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} fa un passo avanti e mostra a tutti: la folta criniera e lo stemma ufficiale da Re della Savana, dichiarandosi come tale. Da ora in poi, i voti di Mufasa{0} per il linciaggio conteranno doppio.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clicca "Rivelati" appena ti senti pronto di rivelarti pubblicamente come Mufasa</value>
+  </string>
+  <string key="Reveal">
+    <value>Rivelati</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Vorresti spargere per la città la tua polvere magica, rendendo le iene incapaci di attaccare stanotte?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre il villaggio incantato si scanna per decidere chi linciare, si accorgono che {0} vaga per la città spargendo polvere di fata per terra. Per ora,o almeno,per stanotte, il villaggio incantato sarà al sicuro dagli attacchi delle iene.</value>
+  </string>
+  <string key="Mayor">
+    <value>Mufasa 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Semola 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Malefica 🔮</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Fata Madrina ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Scar ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Cucciolo di Dalmata 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Appena le iene attaccano {0}, Scar⚡️ {1} prega tutti di fermarsi. {1} confessa che {0} dovrebbe unirsi alle iene invece di morire, così il branco se ne va, lasciando la vittima infetta. Diverrà una iena domani notte! Ihihihihihi</value>
+  </string>
+ <string key="PlayerBitten">
+    <value>Sei stato attaccato dalle iene, ma Scar⚡️ ti ha scelto. Invece di essere ucciso, sei stato infettato... e diverrai una iena, la prossima notte!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Appena cala la notte, senti uno strano formicolio, e senti dolori su tutto il corpo appena inizi a trasformarti... Ora sei una iena!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Mufasa il Re della Savana in incognito. Se decide di mostrare pubblicamente il proprio ruolo, il suo voto varrà doppio. Se venisse trasformato in un Nano 👤 perderebbe il doppio voto.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Semola è un ruolo chiave nella strategia del team dei Villici. La prima volta che viene linciato, il suo ruolo viene rivelato a tutti e non muore. Muore normalmente se viene ucciso di notte o sparato. Può essere linciato normalmente al secondo tentativo. </value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Quel maleducato del Re non ti ha invitato alla festa per la nascita dell’ennesima principessa che canta con gli uccelli, e tu a queste cose ci tieni. È una questione di rispetto, in fondo. Decidi quindi di vendicarti e ti allei con le iene. Di notte potrai mandare il tuo corvo in avanscoperta per trovare le tue amiche iene oppure Merlino👳. Vinci solo se vincono le iene.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Sei Flounder🤕, talmente distratto che c'è un 50% di probabilità che il bot cambi il tuo voto di linciaggio a uno casuale.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>La Fata Madrina⚒ è un abitante del villaggio incantato che ha passato gli anni a lanciare magie con la sua polvere di fata.  Una volta durante la partita, può decidere di spargere la polvere di fata durante il giorno (verrà annunciato pubblicamente dal bot, e il suo ruolo verrà rivelato) e bloccare le iene notte seguente.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Scar ⚡️  è l'origine della maledizione, la rovina delle rovine. Finché è vivo, ha il 20% di possibilità di infettare le sue vittime (Se la vittima è stata votata anche da lui). Se infettate, verranno informate in privato e si trasformeranno in iene la notte successiva.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Il cucciolo di dalmata🐶 è una normale iena, e verrà visto come iena da Merlino👳. Ma se venisse ucciso, la notte seguente le altre iene uccideranno due persone, in preda alla rabbia.</value>
+  </string>
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, e tu ti trasformi in un Scar ⚡️. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, e tu ti trasformi in un Cucciolo di Dalmata🐶. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Team Principesse</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Team Regina di Cuori</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Team Quasimodo</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Team Principesse</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Team Iene</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Team Regina di Cuori</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Team Nani</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Team Quasimodo</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>I Nani 👤  hanno mandato {0} per provare a convertire {1}, ma all'improvviso si vede la piccola testa di {0} volare fuori dalla finestra... Indovinate perché pensavano fosse inconvertibile! {0} è morto...</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} ha fatto visita a {1}, pronta a concedersi una notte di passione, solo per trovare un misterioso sconosciuto tagliare la testa di {1}! La Regina di Cuori🔪 decide di soddisfare {0} prima di aggiungerla alla sua collezione privata!</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Le Principesse si svegliano e trovano il corpo di {0} disteso sopra una montagna di penne e piume, una piccola cartolina da Honolulu per ricordare i tempi andati e un tenero gufetto senza testa. Anacleto 🙇 è morto.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Sembra che {0}, la Fata Madrina ⚒, sia stata estremamente sfortunata. Il corpo di {0} è stato trovato tagliuzzato da forbici da potatura e senza testa. Sembra che la Regina di Cuori 🔪  non abbia apprezzato l'organizzazione dell'ultima festa affidata alla party planner del villaggio incantato.  </value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} è stato trovato con la testa tagliata. La Regina di Cuori 🔪 ha colpito ancora, indipendentemente da colore, tipo di mazzo e altezza{0} era un Nano 👤 .</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Il mattino seguente, le Principesse furono affrante a trovare {0}, cioè Robin Hood 🏹, tagliato a pezzettini. Stranamente la sua testa non era presente...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value> Le Principesse speravano di incontrare il campione di bevute {0}, ma {0} Spugna🍻 venne trovato morto nella propria casa, preso alla sprovvista mentre si ubriacava a notte fonda... Sembra che alla Regina di Cuori 🔪 non piacciano gli ubriaconi come Spugna🍻 che non fanno nulla tutto il giorno!</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} può normalmente difendersi contro la Regina di Cuori 🔪, ma ironicamente la lampada del Genio non è riuscito a proteggerlo {0} è morto.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Sembra che {0} sia stato preso alla sprovvista nel suo pisolino la scorsa notte! A notte fonda si è sentito un botto, e nel suo letto, il giorno seguente, si è trovato il cadavere di Mulan 🔫 , con uno shuriken conficcato nel petto e senza più la testa. La Regina di Cuori 🔪 ha vinto, senza ombra di dubbio.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Assassinato! {0} Mufasa 📚  è stato trovato squartato riverso sul tavolo mentre lavorava di notte nella sua coloratissima savana! Chiaramente la vendetta della Regina di Cuori 🔪 per gli anni trascorsi nel manicomio con il Cappellaio Matto!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>le guardie di {0} furono sorprese a dormire la notte scorsa. I resti regali di {0} o meglio, Semola 👑 furono trovati, un pezzo per volta, nelle varie stanze del palazzo. La Regina di Cuori 🔪ama il sangue regale!</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Il mattino è giunto e sulla piazza si intravede il corpo in putrefazione del povero {0}, con pugnalate lungo tutto il petto. La testa è stata scrupolosamente rimossa e sarà oramai appesa nel salotto della Regina di Cuori🔪, orgogliosa di aver fatto fuori il mago preferito dal villaggio incantato. {0} era Merlino👳.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Il suono di risate tristi si sente per il villaggio incantato. È stato compiuto un errore. Le iene hanno mangiato uno dei loro alleati. Malefica 🔮 {0} è morta.</value>
+    <value>Grida di "Sono vostro alleato!" furono sentite in tutto il villaggio incantato l'ultima notte. Tutto quello che trovarono le principesse il mattino seguente furono le ossa e una sfera di cristallo distrutta, appartenente a {0}, Malefica 🔮. Sembra che Malefica sia stato scambiata per Merlino👳...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>IHIHIHIHIHIHI! Le iene si sono sentite per tutto il villaggio incantato attaccare il povero Simba👶{0} indifeso, lasciando di lui solo uno scheletro di dimensioni ridotte. L'intero villaggio si stupisce della crudeltà delle iene...</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Le Principesse si svegliano la mattina, solo per trovare il corpo di {0}, Biancaneve💂, decapitato e tagliato a pezzi in un carro appena fuori il centro del villaggio incantato.. Lezione imparata: non visitare la Regina di Cuori 🔪.</value>
+    <value>Il corpo di {0}, Biancaneve💂 è stato trovato nel centro del villaggio incantato, tagliato precisamente in cento pezzi. Controllare se l' altissima Regina di Cuori 🔪  fosse un Nano 👤  non sembra più una buona idea..</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Sembrava una notte tranquilla, visto che le iene avevano deciso di rimanere a casa, ma l'unico sfortunato è stato {0}, un Nano 👤  che ha provato a tagliare le zampe una iena. La testa di {0} è stata trasformata in una buona cena a domicilio!</value>
+    <value>I Nani 👤  hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a tagliare gambe, è stato divorato dalla iena che ha visitato. Sfortunatamente per {0}, le iene non hanno interesse a far parte della loro setta di piccoletti.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>L'ultima notte, i Nani 👤  hanno provato a convertire una persona più pazza di loro. Il loro membro più recente ha provato a infilarsi sotto la gonna e tagliare le gambe della Regina di Cuori 🔪 , e la Regina di Cuori ha creato una nuova scultura di arte moderna, nella piazza della città, con la testa di {0}.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Doveva essere una notte tranquilla dove {0} faceva il suo lavoro da protettore della città, ma la lampada di {0} è misteriosamente sparita. La testa è stata brutalmente tagliata via dalla Regina di Cuori! Vicino al corpo, una nota "Le tue battute non facevano ridere". Qualcuno ha provato a proteggere la Regina di Cuori 🔪 , questa notte.</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>{0} ha provato a proteggere una iena questa notte. Si trova il codino di {0} inchiodato sulla croce della chiesa. Chiaramente le iene hanno avuto un pasto extra da Mille e una notte.</value>
+  </string>
+  
+  
+  <!--Finali 1v1-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che solo {0} era rimasto in vita, {1} prova a sbranare {0}, ma l'addestramento di {0} si rivela efficace contro la malcapitata iena! Tutto quello che rimane ormai è la carcassa della iena con due colpi nel cranio e Merida 🎯 .</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che solo {0} è rimasto in vita, {1} prova a sbranare {0} quando {0} meno se l'aspetta, riuscendo a coglierlo impreparato. Mangiare l'ultima Principessa sembra una passeggiata per {1}, che banchetta sul corpo ancora fresco di {0}, l'oramai compianta Merida 🎯 .</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} e {0} escono appena spuntano i primi raggi di luce. Vedendo il cappello che {0} indossa e i suoi piccoli arti deformi, la virtuosa e diafana {1} tira fuori la propria spada, terminando una volta per tutte questa setta che ha contaminato il villaggio incantato.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per cliccare Join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per cliccare Join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Solo gli admin del gruppo possono prolungare il timer più di una volta!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+    <value>Permettere ai giocatori di prolungare il timer?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+    <value>{0} prolungare il timer per i giocatori</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Scegli il tempo limite che può essere aggiunto ai giocatori con un singolo comando /extend.\nDefault: {0}\nAttualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo limite per /extend impostato a {0} secondi</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} era Spugna🍻! Ora sei ubriaco fradicio, e non potrai attaccare {1}...</value>
+  </string>
+    <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Non puoi unirti alla partita perché non sembri essere un membro di {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Per favore non usare i comandi per joinare. Usa questo bottone invece.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>Hanno votato in {0} su {1}.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Abilitare il Voto Segreto?\nAttuale: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Voto segreto impostato su: {0}</value>
+	</string>
+	
+  <string key="NoAutoJoin">
+    <value>{0}, per favore ricordati di joinare cliccando sul bottone.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Non trovo il gruppo. Prova ad usare il comando nel gruppo in cui vuoi togliere l'avviso di nuova partita, oppure aggiungi il link, l'ID o l'username dopo il comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Sei stato rimosso dalla lista d'attesa per {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} sono entrati in partita negli ultimi 30 secondi.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Abilita i Nani</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Abilita Quasimodo</value>
+  </string>
+  <string key="AllowFool">
+    <value>Abilita Kronk</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Abilita Linciaggio Segreto</value>
+  </string>
+  <string key="RandomMode">
+    <value>Abilita modalità random</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Abilita estensione del timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostra ruoli alla morte</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Abilita di fuggire</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Mostra ID all'ingresso in partita</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Mostrare ID dei giocatori dopo l'ingresso in partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} ID</value>
+  </string>
+  
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Tutte</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Abilitare la modalità casuale?\nQuando la modalità casuale è attiva, Chaos, Linciaggi segreti, Mostrare Ruoli alla Morte, e Ammetti Satanisti / Folle / Conciatore verranno impostati automaticamente ogni volta che qualcuno inizierà una partita.\nAttualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modalità casuale impostata a: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Gif Pack NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Consentire gif packs NSFW ai giocatori?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>GIF NSFW: {0}</value>
+  </string>
+  
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Appena il sole iniziò a splendere sul villaggio incantato, {0} si svegliò nel silenzio più assoluto. Dopo aver realizzato che nessuno era rimasto, {0} camminò e camminò, fino ad arrivare alla piazza centrale del villaggio incantato. Alla vista dei cadaveri sparsi dappertutto, {0} sospirò. Il sogno della sua intera vita di esser linciato da tutti era morto come lo erano gli altri abitanti del villaggio incantato. Raggiunse quindi e toccò la corda, che aveva portato via così tante vite, prima di attorcigliarla attorno al proprio collo e lasciarsi andare impiccato, con un sorriso triste stampato in faccia.</value>
+    <value>{0} si svegliò all'alba, da solo. {0} vide quant'era un completo fallimento, non essendo stato in grado a indurre il villaggio incantato a soddisfare il suo masochistico desiderio di venir linciato a morte. {0} prese una corda e si impiccò da solo, rendendosi conto che nessuno può realizzare il suo sogno, visto che nessuno era rimasto.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} aprì gli occhi, ma invece di sentire il solito trambusto del villaggio incantato, c'era un silenzio tombale. {0} osservò a lungo il triste soffitto, realizzando lentamente cos'era successo. Tutti erano morti. Le iene erano morte. Con una fitta al cuore, {0} si alzò, e iniziò a radunare la sua roba, prima di camminare fino al limitare del villaggio incantato. Una lacrima scese dai suoi occhi, dopo che {0} pensò quanto vicino lei e le sue compagne iene erano alla vittoria. Ahimè, era tempo di iniziare una nuova vita, con un nuovo branco. {0} si gettò nell'oscurità della foresta, lontano dal silenzioso villaggio incantato.</value>
+    <value>Nonostante tutti gli sforzi di {0}, le iene amiche di {0} giacevano per terra, immobili e senza vita. Anche se alle iene fu portata vittoria, non era rimasto nessuno con cui gustare il sapore del trionfo, né stupide principesse da deridere. {0} sbirciò nella sua palla di cristallo, e sparì silenziosamente, in una nuvola di fumo, in cerca di nuove iene, nuovi alleati, e nuovi tradimenti per commettere nuovi crimini contro l'umanità, ma soprattutto contro i Re che le vietano di partecipare ai loro balli.</value>
+  </string>
+    <string key="WhatVariantVets">
+    <value>Che variante?\nAttuale: {0}\nSiccome hai giocato più di 500 partite puoi entrare su: </value>
+  </string>
+  <string key="Skip">
+    <value>Salta</value>
+  </string>
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, e tu ti trasformi in Yzma 🐺🌝. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Hai visto che\n{0} NON era {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Vorresti pungere tutti con un fuso e addormentare tutti stanotte?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Mentre il villaggio incantato discute su chi sia la Principessa più bella, {0} ritorna nella sua casa e inizia a giocare con un oggetto appuntito che ha in mano. Oh no, era un fuso! Aurora cade in un profondissimo sonno e tutto il villaggio incantato - inspiegabilmente - con lei. Questa notte, tutti dormiranno un sonno così profondo che non potranno svolgere le loro azioni notturne!</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Mentre tutti tornano  a casa, a malapena riescono ad arrivare nel letto dalla stanchezza. Si addormentano tutti così profondamente che non si ricordano nemmeno di essere andati a dormire...</value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>Ammettere il Ladro in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Ladro come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Il ladro potrà essere usato ogni notte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Il ladro potrà agire ogni notte: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Ammetti il ladro</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Configurazione ladro</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>Sei la Bestia 👱🌑. Non sei un uomo, non sei un lupo, sai solo quello che non sei... ah no, scusa, cartone sbagliato. In ogni caso, la tua duplice natura inganna il povero Merlino👳, che, se deciderà di scrutarti, ti vedrà come Iena... quando in realtà sei solo un povero villico! In bocca al lup...ehm, alla Iena a convincerlo del contrario!</value>
+  </string>
+  <string key="WolfMan">
+    <value>Bestia 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Sei una semplice Principessa, ma visto che sei proprio pelosone, Merlino👳 che ha una certa età e vede poco e male si confonderà e ti vedrà come Iena.. Ops</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>Sei Yzma 🐺🌝! Sei la regina del doppio gioco: di giorno sei dalla parte delle principesse e di notte scorrazzi per il villaggio incantato ammazzandone gli abitanti insieme alle Iene. Il tuo piano per diventare Imperatrice non l'hai di certo abbandonato, ma vista la piega che hanno preso gli eventi, hai deciso di sottostare agli ordini di Scar (tanto, visto il successo del suo regno precedente sai che non sarà per molto) ma al momento opportuno lo schiaccerai con un martello!! È una splendida, splendida, splendida idea! Geniale direi! Se Merlino👳 decide di scrutarti, ti vedrà come una tenera, dolce e indifesa Principessa.</value>
+  </string>
+  <string key="Lycan">
+    <value>Yzma 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Yzma🐺🌝 è una Iena, ma verrà vista Principessa da Merlino👳. Inoltre, Malefica🔮  non la vedrà come iena.</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>Sei una Parca 🌀. Ogni notte potrai scrutare qualcuno, e sapere quale ruolo NON è. Nota che i ruoli vengono presi da quelli presenti in partita, e quindi vedere un ruolo significa che ce n'è almeno uno vivo in partita.</value>
+  </string>
+  <string key="Oracle">
+    <value>la Parca 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>la Parca🌀 scruterà i giocatori per sapere quali ruoli NON sono, dai giocatori presenti in partita.</value>
+  </string>
+  <string key="RoleInfoSandman">
+    <value>Sei Aurora 💤. Prima che il sole tramonti sul tuo sedicesimo compleanno, ti pungerai con il fuso di un arcolaio. Non morrai ma farai cadere tutti gli abitanti del villaggio incantato in un sonno profondo, impedendo loro di svolgere le azioni notturne.</value>
+  </string>
+  <string key="Sandman">
+    <value>Aurora 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Una volta per partita, Aurora💤 potrà addormentare tutti i giocatori in partita, impedendogli di svolgere qualsiasi ruolo notturno.</value>
+  </string>
+  <string key="RoleInfoPacifist">
+    <value>Sei Ariel ☮️. Dopo aver perso la voce, ti sei resa conto del potere delle parole, per cui hai tentato (e fallito) la carriera da motivational coach (sembrava che ai tuoi discorsi cadessero sempre tutti in una sorta di trance....). Hai deciso quindi di tornare al tuo villaggio e diventare un'asceta. Una volta a partita puoi usare la tua voce melodiosa (e le tue skill da motivational coach) per convincere il villaggio incantato a non linciare nessuno per una notte.</value>
+  </string>
+  <string key="Pacifist">
+    <value>Ariel ☮️</value>
+  </string>
+<string key="AboutPacifist">
+    <value>Ariel☮️ può convincere tutti a non linciare nessuno. Potrà farlo solo una volta.</value>
+  </string>
+  <string key="RoleInfoWiseElder">
+    <value>Sei Zeus 📚. In quanto padre degli Dei disponi di tutta la saggezza ed esperienza del mondo (anche se le scorribande trasformato in toro ce le ricordiamo tutti eh). Questo ti permette di sopravvivere ad un attacco delle Iene. Se Mulan, Merida o il Brucaliffo ti uccideranno, perderanno qualsiasi privilegio nel villaggio incantato e qualsiasi abilità, e si trasformeranno in una banale Principessa.</value>
+  </string>
+  <string key="WiseElder">
+    <value>Zeus 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>Zeus sopravvive a un attacco notturno delle Iene. Se viene ucciso da Mulan, Merida o il Brucaliffo, essi si trasformeranno in Principesse.</value>
+  </string>
+  <string key="RoleInfoThief">
+    <value>Sei il Aladdin 😈! Puoi rubare il ruolo a un giocatore e trasformarlo in una principessa! NB: Se provi a rubare alla Regina di Cuori, ti taglierà la testa!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Sei il Aladdin 😈! Siccome Aladdin è impostato per tutta la partita, avrai il 50% di probabilità di rubare un ruolo a un giocatore ogni notte. Se riuscirai, quel giocatore diventerà il nuovo ladro e continuerà a rubare ruoli. NB: Non puoi rubare a una iena, e se provi a rubare alla Regina di Cuori ti verrà tagliata la testa.</value>
+  </string>
+  <string key="Thief">
+    <value>Aladdin 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Aladdin 😈 ruba il ruolo e lo trasforma in una semplice principessa.\nSe c'è impostato Aladdin per tutta la partita, quel giocatore si trasformerà nel nuovo Aladdin e continuerà a rubare ruoli per tutta la partita.</value>
+  </string>  
+  <string key="AskPacifist">
+    <value>Clicca questo bottone quando vuoi tirare fuori l'arricciaspiccia e far il tuo commovente discorso con la tua voce melodiosa e fermare prossimo linciaggio del popolo!</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Nome del pacifista -->
+    <value>Ariel ☮️, {0}, è la migliore delle motivational coach e ha tirato fuori l'arricciaspiccia e sta facendo un profondo discorso riguardo l'amicizia e la fiducia di fronte al villaggio incantato. Commossi dalle sue parole e caduti in trance grazie alla sua voce melodiosa, nessuno verrà linciato oggi!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Dato il profondo e melodioso discorso riguardante l'amicizia e la fiducia reciproca di Ariel ☮️, non ci sarà nessun linciaggio oggi!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Nome del vecchio saggio -->
+    <value>Hai provato ad entrare a casa di {0} ma sfortunatamente era Zeus 📚! {0} ha facilmente respinto l'attacco, fortunatamente senza riconoscere gli aggressori.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Le Iene hanno provato a mangiarti, ma le tua saggezza da capo di tutti gli dèi 📚 ti hanno reso più furbo di loro! Hai respinto con successo l'attacco, ma sfortunatamente non sei riuscito a riconoscere gli aggressori.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Nome del cacciatore urbano -->
+  <!-- {1} - Nome del vecchio saggio -->
+    <value>Merida 🎯, {0} realizzò di aver ucciso niente di meno che Zeus 📚, {1}. {0} pianse amaramente, nei suoi ultimi istanti di vita, pentendosi dell'errore e giurando di non voler mai più impugnare un'arma. Morì così come una semplice Principessa 👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Mulan 🔫, {0} realizzò di aver lanciato il suo shuriken a Zeus 📚, {1}. {0} pianse amaramente, pentendosi dell'errore, decidendo di rottamare le armi e non impugnarle mai più, diventando per il futuro una semplice Principessa 👱 con un castello da gestire.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Hai provato a rubare il ruolo a {0}, ma sfortunatamente hai fallito...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Hai provato a rubare il ruolo a {0}, ma {0} è già morto...</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+  <!-- {0} - The new role -->
+    <value>Il tuo ruolo è stato rubato! Ora sei {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Hai rubato con successo il ruolo di {0}!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} non è più un tuo compagno e {1} è ora divenuto un Bambino sperduto, esattamente come te!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>I tuoi compagni (se presenti) sono: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} non è più un tuo compagno e {1} è ora divenuto un piccolissimo Nano 👤 , esattamente come te!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} non è più un tuo compagno e {1} è ora divenuto un lupo, esattamente come te!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates" deprecated="true">
+    <!-- 0 - teammates's name -->
+    <value>I tuoi compagni (se presenti) sono: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>Come {0} vagò intorno per il villaggio incantato, si rese conto che non c'erano più ruoli divertenti da rubare. Lasciò subito il povero villaggio incantato in cerca di altri villaggi in cui ricominciare la sua illustre carriera.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Il tuo bersaglio del furto è ora {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Da quale giocatore vorresti rubare il ruolo?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} Voti sono stati assegnati a {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Oggi verrà linciato:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} Voti assegnati a {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Linciaggio segreto: Numero di voti</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Quando il linciaggio segreto è attivo, mostrare il numero di voti alla fine del linciaggio?\nAttualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Quando il linciaggio segreto è attivo, il numero di voti alla fine del linciaggio sarà: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Linciaggio segreto: Votanti</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, Far vedere il nome dei votanti di ogni giocatore votato?\nAttualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Strano... Vi siete riuniti per discutere su che arti tagliare oggi, ma {0} non è presente! Che fine avrà fatto?</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Pace!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Il linciaggio di oggi è stato annullato per merito di Ariel!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>Il tuo ruolo è stato rubato! Ora sei Aladdin 😈 e potrai scegliere un nuovo bersaglio la prossima notte!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Il tuo ruolo è stato rubato! Ora sei una noiosa Principessa👱, costretta ad aspettare un principe che venga a salvarti tutto il giorno.</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>TAGLIATEGLI LA TEEEEESTA, sei stato visitato dalla terribile Regina di Cuori 🔪 !</value>
+	<value>La Regina di Cuori ti ha teso una trappola, ti ha legato e poi pugnalato dritto al cuore e infine ti ha tagliato la testa!</value>
+  </string>
+ <string key="ThiefTeamEnd">
+	<value>Team Aladdin</value>
+  </string>
+ <string key="StealKiller">
+    <value>Hai provato a rubare un ruolo, ma il tuo bersaglio era nientedimeno che la Regina di Cuori 🔪 ! Ti ha visto introfolarti di soppiatto a casa sua e poco dopo la tua testa ha iniziato a rotolare sul pavimento, separata dal resto del corpo!</value>
+  </string>
+ <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>Aladdin😈, {0}, aveva ambizioni troppo alte e ha provato a rubare il ruolo alla Regina di Cuori 🔪 ! Ciò è andato molto bene: {0} è stato ritrovato senza testa...</value>
+  </string>
+  <string key="BeholderSeerStolen">
+	<value>Aladdin😈 ha rubato la sfera di cristallo a Merlino👳! {0} è ora Merlino👳 e {1} non ha più il dono della preveggenza!</value>
+  </string>
+  <string key="Troublemaker">
+	<value>Abu la scimmietta 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>Abu la scimmietta🤯 sta combinando guai nel villaggio incantato! Tutti iniziano a urlare l'uno contro l'altro, finché tutto il villaggio incantato va fuori controllo. A causa di ciò, il le principesse, furiose linceranno addirittura due volte oggi!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>Sei Abu la scimmietta 🤯. Da quando Aladdin è tornato a rubare, hai deciso di ribellarti e di fare quello che ti pare. Un giorno, quando sarai particolarmente seccato, potrai creare confusione nel villaggio incantato, provocando due linciaggi quel giorno.</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>Vuoi sbizzarrirti e causare guai oggi?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>Abu la scimmietta 🤯 {0} sta combinando guai nel villaggio incantato! Ha fatto arricciare i capelli di tutte le principesse! E loro, infuriate, oggi linceranno due volte!</value>
+	<value>Abu la scimmietta 🤯 {0} sta combinando guai nel villaggio incantato! Ha messo in disordine tutte le scarpette di cristallo! Le principesse, infuriate, linceranno due volte in preda alla rabbia!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>A causa di Abu la scimmietta🤯, lincerete due volte oggi! Le principesse si calmeranno domani.</value>
+  </string>
+  <string key="Chemist">
+	<value>Brucaliffo 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>Il Brucaliffo👨‍🔬 è una persona pazza a cui piace fabbricare pozioni e fare confusione con esse. Fabbricherà due pozioni, di cui una letale. Quando visiterà qualcuno, costringerà esso a scegliere una pozione, mentre il chimico berrà l'altra pozione. Ciò causerà la morte sicura di uno dei due giocatori!</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>Sei il Brucaliffo 👨‍🔬! Oltre a fumarti tutta l'erba anche quella del vicino che si sa è sempre più verde, come è noto ti diletti con la preparazione di pozioni. La tua passione, oltre a quelle per ingrandire o rimpicciolire le persone, sono quelle velenose. Ogni notte, sul tuo fungo, ti dedichi alla preparazione di una pozione velenosa e di una innocua e la notte successiva costringerai un membro del villaggio a sceglierne una e a berla, mentre l'altra la berrai tu. Chi sopravvivrà? Ma in fondo, siamo davvero vivi, o questa è tutta una tua grande allucinazione?</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>Mentre le altre principesse vanno a dormire, tu sei nel tuo laboratorio a sballarti fortissimo e mischiare cose a caso per realizzare le tue pozioni. Stai attento a non farti vedere dalla iena!</value>
+  </string>
+  <string key="AskChemist">
+	<value>Con chi scommettere la vita col tuo drink?</value>
+  </string>
+  <string key="ChemistTargetDead">
+	<value>Sei andato a casa di {0} per farvi una bella bevuta e magari qualche cannetta, ma appena arrivi a casa sua, scopri che è morto!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>Sei stato visitato dal Brucaliffo👨‍🔬 {0}! Ti ha costretto con una lama puntata sulla gola a bere, ma seccato dalla situazione e approfittando di una sua distrazione gli sfili il coltello dalle mani, lo pugnali innumerevoli volte e gli tagli la testa! Sarà morto? 🤷‍♂️</value>
+  </string>
+  <string key="ChemistSK">
+	<value>Sei andato a casa di {0} per fargli bere una pozione, sfortunatamente però era la Regina di Cuori e ti ha tagliato la testa!🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<value>Il Brucaliffo 👨‍🔬 {0} voleva costringere la Regina di Cuori 🔪  a fare un gioco questa notte! Sembra che la regina non avesse voglia di giocare... {0} è stato ritrovato con la testa tagliata e con le pozioni ancora dentro lo zaino!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>Sei stato visitato dal Brucaliffo👨‍🔬, che ti ha costretto a scegliere una pozione che aveva un sapore terribile e tu ovviamente hai scelto quella velenosa! Peccato con l'altra ti saresti fatto un trip assurdo! Che brutta fine...</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>Hai visitato {0} e gli hai fatto scegliere una pozione! Ovviamente ha scelto quella velenosa facendo una brutta fine, mentre tu ritorni a casa soddisfatto delle tue doti di giocatore d'azzardo!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Vittima del Brucaliffo-->
+  <!-- {1} - Viene sostituito da "(nome vittima) era (ruolo)" -->
+	<value>Il Brucaliffo👨‍🔬 ha visitato {0} e gli ha fatto scegliere una pozione! La fortuna è stata dalla parte del Brucaliffo👨‍🔬 mentre {0} è morto. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>Sei stato visitato dal Brucaliffo👨‍🔬 {0}, che ti ha costretto a scegliere una pozione. Dopo un momento di esitazione, scegli quella innocua! Che fortuna!</value>
+  </string>
+  <string key="ChemistFail">
+	<value>Hai visitato {0} e gli hai fatto scegliere una pozione! Sfortunatamente, però, ha scelto quella innocua mentre tu ti sei bevuto quella Velenosa! Che brutta fine per il povero Brucaliffo👨‍🔬!</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>Il Brucaliffo👨‍🔬 {0} è stato trovato morto! A quanto pare, {0} si è bevuto il suo intruglio velenoso e si è scordato di portare l'antidoto! Giocare d'azzardo da strafatti non porta sempre buoni risultati..</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>{0} Non era a casa! Torni a casa deluso, che sfortuna.</value>
+  </string>
+  <string key="CultistsList">
+	<value>I Nani 👤  sono attualmente: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>Olaf🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Sei Olaf 🐺☃️. Ogni notte, invece di attaccare le vittime, vai solitario per case, congelando le persone e impedendo loro di usare le loro azioni notturne! Nota però che una persona trasformata non può essere visitata due notti di fila.</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>Olaf 🐺☃️ Dopo che Elsa e Anna si sono rappacificate, ha deciso di mandare al diavolo il tuo sogno di vivere l'estate e di tornare ad abitare sulle montagne. Vivere da solo lo ha cambiato, e ha fatto amicizia con le iene. Essendo un pupazzo di neve, può controllare il freddo, ma invece che attaccare insieme alle altre iene preferisce scegliere da solo una vittima da trasformare per una notte in un pupazzo di neve come lui, per fargli compagnia. La persona trasformata non potrà usare i suoi poteri notturni per una notte. Tuttavia non può scegliere ogni notte la stessa persona che potrà essere però trasformata una notte si e una note no. Se tutte le altre iene muoiono diventerà un lupo normale.</value>
+  </string>
+  <string key="AskFreeze">
+	<value>Chi vuoi trasformare in pupazzo di neve questa notte?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>Le Iene sono {0}</value>
+  </string>
+<string key="WolfPackSnowList">
+    <value>Le Iene sono {0} e Olaf🐺☃️  {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} è morto, e tu ti trasformi in Scar ⚡️. I tuoi compagni sono: {1} mentre Olaf 🐺☃️{2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} è morto, e tu ti trasformi in nel Cucciolo di dalmata 🐶. I tuoi compagni sono: {1} e Olaf🐺☃️ {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} è morto, e tu ti trasformi in una iena 🐺. I tuoi compagni sono: {1} e Olaf 🐺☃️{2}</value>
+  </string>
+<string key="DGTransformToLycanWithSnow">
+    <value>{0} è morto, e tu ti trasformi in Yzma🐺🌝. I tuoi compagni sono: {1} e Olaf🐺☃️ {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} è morto, e tu ti trasformi in Olaf🐺☃️. I tuoi compagni (se ci sono ancora) sono: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Il sosia {0} è diventato Olaf🐺☃️!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} è morto! per la rabbia sei diventato una iena 🐺 ! I tuoi compagni sono: {1} e Olaf🐺☃️ {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} non è più Olaf🐺☃️, adesso {1} lo è! </value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Appena apri la porta per uscire di casa una raffica di vento ti colpisce trasformandoti in un pupazzo di neve 🐺☃️. Sei costretto a far compagnia ad Olaf tutta la notte (e a sentirlo cantare...) finché finalmente la mattina l'incantesimo finisce e torni normale. </value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Dopo esserti svegliato pronto a preparare una delle tue soluzioni velenose una raffica di vento entra dalla finestra trasformandoti in un pupazzo di neve 🐺☃️. Sei costretto a far compagnia ad Olaf tutta la notte (e a sentirlo cantare...) finché finalmente la mattina l'incantesimo finisce e torni normale. </value>
+  </string>
+  <string key="CultistFrozen">
+    <value>Dopo esserti preparato per andare a tagliare qualche arto a qualcuno esci dalla porta per essere colpito da una raffica di vento che ti trasforma in un pupazzo di neve 🐺☃️. Sei costretto a far compagnia ad Olaf tutta la notte (e a sentirlo cantare...) finché finalmente la mattina l'incantesimo finisce e torni normale. I tuoi compagni nani ti deridono, ma ti assicurano che ci penseranno loro a tagliuzzare arti anche per te.</value>
+  </string>
+  <string key="CHFrozen">
+    <value>Appena prendi la tua spada pronto per andare a cacciare qualche nano una raffica di vento ti colpisce trasformandoti in un pupazzo di neve 🐺☃️. Sei costretto a far compagnia ad Olaf tutta la notte (e a sentirlo cantare...) finché finalmente la mattina l'incantesimo finisce e torni normale. </value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Ti siedi al tavolo pronto ad usare i tuoi poteri quando all'improvviso una raffica di vento entra dalla finestra trasformandoti in un pupazzo di neve 🐺☃️. Anche la tua sfera di cristallo sembra essersi congelata. Sei costretto a far compagnia ad Olaf tutta la notte (e a sentirlo cantare...) finché finalmente la mattina l'incantesimo finisce e torni normale. </value>
+  </string>
+  <string key="GAFrozen">
+    <value>Non appena esci di casa pronto per spiegare le ali una raffica di vento ti colpisce trasformandoti in un pupazzo di neve 🐺☃️. Sei costretto a far compagnia ad Olaf tutta la notte (e a sentirlo cantare...) finché finalmente la mattina l'incantesimo finisce e torni normale. </value>
+  </string>
+  <string key="SKFrozen">
+    <value>Mentre ammiri la tua collezione di teste dalla finestra entra una raffica di vento freddissimo che congela le teste e ti trasforma in un pupazzo di neve 🐺☃️. Sei costretto a far compagnia ad Olaf tutta la notte (e a sentirlo cantare...) finché finalmente la mattina l'incantesimo finisce e torni normale. Al mattino un TAGLIATEGLI LA TESTA!! riecheggia per tutto il villaggio incantato. </value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Mentre ti aggiri silenziosamente per il villaggio incantato senti una forte raffica di vento che ti colpisce trasformandoti in un pupazzo di neve 🐺☃️. Sei costretto a far compagnia ad Olaf tutta la notte (e a sentirlo cantare...) finché finalmente la mattina l'incantesimo finisce e torni normale. </value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>Mentre la scorsa notte dormivi hai iniziato a sentire molto freddo. Quando ti sei svegliato hai notato Olaf ai piedi del tuo letto, intento a trasformarti in un pupazzo di neve 🐺☃️. Sei stato costretto a far compagnia ad Olaf tutta la notte (e a sentirlo cantare...) finché finalmente la mattina l'incantesimo non è finito e sei tornato normale.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>Sei andato a casa di {0} per trasformarlo in pupazzo di neve ma appena sei arrivato hai incontrato un'oscura figura armata fino ai denti. Inizi uno scontro epico contro il Genio che alla fine lo vede vincitore costringendoti ad andare via.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Sei andato a casa di {0} e l'hai trasformato in un pupazzo di neve! Sta notte sarà costretto a farti compagnia, così non dovrai passare un altra notte al freddo e da solo.</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>Olaf {0} ha cercato di congelare qualcuno la scorsa notte ma sfortunatamente era la Regina di Cuori 🔪 ! La regina ha notato il visitatore {0} e dopo avergli tagliato la testa, ha deciso di appenderla come trofeo sopra al camino!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>Tutte le tue amiche iene sono morte, sei l'ultimo rimasto! Date le circostanze preferisci iniziare a mangiare anche tu le persone piuttosto che trasformarle!</value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>Olaf 🐺☃️{0} ha provato a trasformare in pupazzo di neve Merida 🎯  la scorsa notte ma quest'ultima se n'è accorta in tempo e gli ha piantato una freccia in gola!</value>
+  </string>
+     <string key="Lang">
+    <value>Cambia linguaggio</value>
+  </string>
+  <string key="Mode">
+    <value>Cambia modalità di gioco</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Imposta limite giocatori</value>
+  </string>
+  <string key="EndRoles">
+    <value>Mostra ruoli a fine partita</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Imposta il tempo massimo di estensione</value>
+  </string>
+  <string key="DayTimer">
+    <value>Imposta durata del giorno</value>
+  </string>
+  <string key="NightTimer">
+    <value>Imposta durata della notte</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Imposta durata del linciaggio</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Configurazione ruoli</value>
+  </string>
+  <string key="Mechanics">
+	<value>Meccaniche del gioco</value>
+  </string>
+  <string key="GroupSettings">
+	<value>Impostazioni del gruppo</value>
+  </string>
+  <string key="Timers">
+	<value>Durata fasi del gioco</value>
+  </string>
+  <string key="Done">
+	<value>Fatto!</value>
+  </string>
+  <string key="Back">
+	<value>Indietro</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Mischia lista dei giocatori</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Mischiare lista di giocatori ogni volta? Attualmente: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>La lista giocatori verrà mischiata ogni volta: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+	<value>Sei Ratcliff ☠️. Ogni notte, costringi i tuoi sottoposti a scavare in cerca di oro. Visto che sei fuori tutta la notte, le Iene e i Nani non possono trovarti a casa, a meno che tu non abbia nulla da fare, in quel caso resterai a casa.. Tutti quelli che ti visitano hanno una probabilità di cadere nelle buche che scavi, in base a quante ne hai scavate. Inoltre, la probabilità è dimezzata per chiunque sia del team villaggio come te. Però le Iene e la Regina di Cuori potrebbero vederti mentre scavi le buche, in base a quante ne hai scavate, e ucciderti. Inoltre la Regina di Cuori potrà trovarti comunque a casa, indipendentemente se scavi o meno, però potrebbe inciampare sulla buca e perdere il controllo della sua prossima vittima!</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>Sei Ratcliff ☠️. Dovrebbe essere tua responsabilità sbarazzarti dei cadaveri del popolo, ma invece le buche che fai a terra servono solo per mettere a tacere la tua insaziabile fame di oro. Scavi una buca ogni notte, e se non trovi dell'oro ci butti dentro il cadavere di quelli uccisi l'ultima notte. Sei però pigro a ricoprire le buche, quindi lascerai buche per il tuo giardino, e i visitatori potrebbero caderci e morire... Almeno, le Iene non possono ucciderti se non sei a casa!</value>
+  </string>
+  <string key="GraveDigger">
+	<value>Ratcliff ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>I morti sono sepolti, e i vivi no. Questa sera non hai scuse per cercare oro, e ti metti imbestialito sotto le lenzuola a dormire.</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+	<value>Scavi fino a tarda notte per {0}. Possano le loro anime e i loro corpi riposare in pace fino alla fine dei tempi... e le tue tasche riempirsi di oro..</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>Appena uscito dalla tua casa per sotterrare coloro che sono passati a miglior vita, una folata di vento soffiò dall'ombra, trasformandoti in pupazzo di neve. Sei costretto a far compagnia ad Olaf🐺☃️ tutta la notte. I morti dovranno aspettare un'altra notte per ricevere una degna sepoltura...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+	<value>Il branco decide di dirigersi a casa di {0}, solo per trovare casa vuota. Tutto quello che si vede è la luce soffusa di una candela sopra una buca...</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+	<value>Il branco si dirige a casa di {0}, ma nel giardino, {1} improvvisamente fa scattare una trappola per orsi, e cade su una buca aperta dove viene trafitto da una lancia fatta d'argento! ☠️ </value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+	<value>Appena ti appresti a richiudere le buche che hai fatto scavare tutta notte, noti un tanfo nauseante, diverso dal solito odore di cadaveri... La iena {0} è caduto in una buca ed è morto!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+	<value>Hai tagliato la testa a {0}, ma mentre uscivi dalla sua casa ti sei avvicinato troppo a una buca non finita e ci sei caduto dentro.. Ora la tua gamba fa davvero male...☠️ </value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+	<value>Mentre ti dirigevi a casa di {0}, senti un dolore atroce attraversarti la gamba. Decidi di deviare verso la casa più vicina di {1}, tagliargli rapido la testa e tornare subito a casa.</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+	<value>Arrivi a casa di {0}, solo per trovare la figura del Genio👼 a proteggerla! Dato il dolore atroce alla gamba non perdi nemmeno tempo a lottare ma torni direttamente a casa.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+	<value>Un'altra notte inutile senza riuscire a uccidere uno di questi maledetti Nani 👤 ! Frustrato, corri freneticamente attraverso il cimitero,  senza accorgerti della trappola per orsi. Urli e ti dimeni, ma è troppo tardi. Cadi all'indietro su una buca che {0} non ha richiuso e il suono del tuo collo rompersi è l'ultima cosa che senti prima che tutto diventi nero.</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+	<value>Dopo un'altra lunga e faticosa notte, ritorni alla tua casa mentre il sole sta già sorgendo. Prima di arrivare a casa, noti una spada poggiata sopra una tomba non finita. Dentro la tomba noti il cadavere di {0}. Bianca Neve non avrebbe dovuto sospettare di te...</value>
+  </string>
+  <!--{0}: cultist-->
+  <string key="CultFell">
+	<value>Ritorni a casa dopo una faticosa nottata, quando senti un urlo dalle buche non finite! Ti rechi subito sul posto, solo per trovare {0} morto dentro una buca. Da quando i Nani 👤provano a convertire i cercatori d'oro?</value>
+  </string>
+  <!--{0}: cultist who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+	<value>Mentre vai a casa di {1}, {0} suggerisce che sarebbe una buona idea bruciare la chiesa. Ti guidano tramite il cimitero quando improvvisamente una trappola per orsi gli cattura l'anca! Tutto quello che senti è il suo urlo mentre casca nella buca e voi scappate via.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+	<value>Mentre vai a casa di {0}, provi a ricordarti a mente quale delle due bevande è quella velenosa e inciampi, cadendo in una buca non finita dove una lancia d'argento ti infilza il cuore. Prima che possa dire una parola, sei già morto...</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+	<value>"Potrei bere un po' di vino rosso", pensi tra te e te. Hai un presentimento strano che ti fa guardare la buca accanto a te, e come se il destino ti sentisse, noti una bottiglia di vino rosso. Peccato che c'è il cadavere di {0}, che ti fa andar via tutta la voglia che avevi.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+	<value>Ti metti il tuo rossetto preferito e vai a casa di {0} per cercare un po' di divertimento. Purtroppo, non arrivi lontano, dato che sali in una trappola per orsi e cadi dentro una buca, restandoci secca... Rischi del mestiere?</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+	<value>A quanto pare il fato non vuole farti divertire. Non solo hai scavato buche tutta la notte, ma trovi {0}, Megara, morta in una delle tue buche. Niente divertimento per stasera!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+	<value>Vai a casa di {0}, stando attenta a tutte le buche scavate, ma appena arrivi, la casa è vuota.. A quanto pare {0} è fuori a scavare in cerca di oro di nuovo!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+	<value>La fortuna non è dalla tua parte stanotte.. Volevi solo proteggere {0}, ma mentre stavi perlustrando la casa cadi in una delle buche e muori poco dopo. C'era davvero bisogno di mettere trappole in un cimitero?</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+	<value>Mentre torni a casa, noti una lampada per terra. Lì accanto vedi {0}, il Genio, caduto in una delle tue buche! Forse hai esagerato con le tue trappole.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+	<value>Ti infiltri tramite il cimitero per rubare il ruolo a {0}, ma concentrato a non far rumore non noti la trappola per orsi finché non ti cattura la gamba! Non solo hai fatto rumore, ma inciampi e cadi in una tomba, rompendoti l'osso del collo!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+	<value>Buona cosa che hai messo delle trappole nel cimitero. {0} ha provato a rubarti il ruolo l'altra notte, ma è stato catturato dalle trappole ed è caduto in una tomba, morendo sul colpo. Magari ora il popolo capirà che le tue trappole non sono esagerate.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+	<value>Dovresti controllare meglio dove vai mentre cospargi le case degli altri. Sei andato su una trappola per orsi, e mentre ti liberavi sei caduto in una tomba dove una lancia d'argento ti ha trafitto il cuore. Questo è quello che si riceve quando si è Ade</value>
+  </string>
+  <!--{0}: Arsonist-->
+  <string key="ArsonistFellDigger">
+	<value>Da una delle tue tombe senti odore di kerosene. Allarmato, ti appresti a controllarla e noti {0} Ade, morto all'interno. Almeno la tua casa è rimasta pulita!</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+	<value>Una delle tombe nel cimitero aveva troppe persone stanotte! A quanto pare {0} ha provato a visitare il becchino, è cascato in una tomba ed è morto! {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+	<value>Mentre la prostituta {0} tornava a casa dopo una notte di divertimento ha preso la scorciatoia per il cimitero. Data la tarda ora non stava prestando molta attenzione, e cadde in una tomba aperta! Forse doveva accettare quel lavoro di giorno il giorno prima...</value>
+  </string>
+  <!--{0}: cultist who died-->
+  <string key="CultistFellPublic">
+	<value>I satanisti hanno provato a bruciare la setta, ma come {0} guidava il gruppo tramite il cimitero, è stato colto di sorpresa da una trappola per orsi! Mentre urlava dal dolore e provava a levarsi la trappola, è caduto in una tomba aperta. Gli altri satanisti sono fuggiti in preda al panico!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+	<value>Forse Aladdin {0} stava provando a rubare ai morti. Magari era il Karma. Tutto ciò che sappiamo è che stava camminando nel cimitero quando è caduto dentro una tomba profonda. {0} pentendosi di non aver portato complici, di sicuro non riuscirà più a rubare nulla!</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+	<value>Come il branco esce in cerca di prede, {0} seguendo le tracce non si accorge della trappola per orsi che lo intrappola! Colto di sorpresa, {0} cade nelle tombe, dove una lancia d'argento trapassa il suo cranio! Per fortuna il Becchino tiene misure di sicurezza nel suo cimitero. {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>Stai solo facendo il tuo lavoro, mentre improvvisamente un pazzo killer ti nota e ti accoltella! Chi scaverà la tua tomba, adesso?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+	<value>Come cammini attraverso il cimitero con in mano il tuo coltello insanguinato, noti il becchino {0}. Seguendo il tuo istinto, decidi che farai almeno due vittime oggi!</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>Stai semplicemente facendo il tuo lavoro, quando improvvisamente una iena ti assale da dietro e ti uccide!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+	<value>Il branco corre nel cimitero, quando notano la presenza di Ratcliff {0}. Prima che possa reagire, uno di voi gli salta addosso e lo mangia in un sol boccone.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+	<value>{0} non si è presentato alla riunione degli abitanti del villaggio incantato. Starà ancora dormendo? Mentre andate a visitarlo, lo trovate morto nel cimitero, con la pala ancora in mano. Sembra che le iene l'abbiamo attaccato di sorpresa...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+	<value>{0} è sparito dalla circolazione... Sarà rimasto a dormire fino a tardi? Andate a cercarlo e trovate un cadavere senza testa nel cimitero, vicino a una pala. Sembra che la Regina di Cuori l'abbia sorpreso di notte...</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Ade</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="AllowArsonistQ">
+	<value>Ammettere Ade? Attualmente: {0}</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="AllowArsonistA">
+	<value>Ade è ora {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Piromane e Killer</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="BurningOverkillQ">
+	<value>Ammettere il Piromane e Serial killer nella stessa partita? Potrebbe essere mortale! 😈 Attualmente: {0}</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="BurningOverkillA">
+	<value>Piromane e Serial Killer nella stessa partita: {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>Sei Ade🔥. Come la Regina di Cuori 🔪 , sei da solo in squadra. Ogni notte, puoi riempire casa di qualcuno con il kerosene. Dopo che almeno una casa è cosparsa, puoi decidere di far scattare la Scintilla, bruciando tutte le case cosparse e uccidendo chiunque sia dentro, compresi potenziali visitatori. Vinci se rimani l'ultimo in vita.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>Sei Ade 🔥. Ami gli incontri accesi ma odi le favole a lieto fine e i megafusti. Ogni notte puoi mandare i tuoi scagnozzi, Pena e Panico, a cospargere una casa di kerosene o bruciare tutte le case cosparse, mandando nell'Oltretomba chiunque sia al suo interno. Vinci se sei l'ultimo sopravvissuto.</value>
+  </string>
+  <string key="Arsonist">
+	<value>Ade 🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>Vuoi mandare Pena e Panico a cospargere una casa o vuoi vedere tutte le case bruciare?</value>
+  </string>
+  <!--{0}: Piromane-->
+  <string key ="ArsonistVisitKiller">
+	<value>Ade{0} ha provato a cospargere la casa della Regina di Cuori 🔪  con il kerosene. No, non è sopravvissuto a ciò. Ovviamente. </value>
+  </string>
+  <string key="Spark">
+	<value>Brucia 🔥</value>
+  </string>
+  <!--{0}: persona la cui casa è stata cosparsa di kerosene-->
+  <string key="Doused">
+	<value>Hai cosparso con successo la casa di {0}!</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>Un fuoco è stato appiccato nella tua casa, ma per fortuna Genio 👼  era lì e lo ha spento prima che divampasse! Sarebbe un buon pompiere, se non fosse così impegnato a proteggere gli altri...</value>
+  </string>
+  <!--{0}: persona salvata-->
+  <string key="GuardSavedFromFire">
+	<value>Non ti aspettavi che la casa di {0} potesse prender fuoco, ma sei comunque riuscito a salvarlo senza grandi problemi! Nessuno potrà dirti che sei un cattivo Genio-Protettore 👼 !</value>
+  </string>
+  <!--{0}: persona di cui la casa è stata pulita dal kerosene di Ade-->
+  <string key="CleanDoused">
+	<value>Non hai lottato contro nessuno a casa di {0}, quindi hai avuto tempo di perlustrarla e hai notato che la casa era piena di kerosene! Visto che non avevi niente da fare, hai ripulito la casa dal kerosene...</value>
+  </string>
+  <!--{0}: lista di persone morte bruciate-->
+  <string key="Burning">
+	<value>Il villaggio incantato si sveglia con odore di fumo... Alcune case sono avvolte dalle fiamme! Provate a estinguere il fuoco, ma è troppo tardi per provare a salvare coloro che stavano dentro.\nPiangete per il lutto delle seguenti persone:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>L'unico rimasto in vita è Ade🔥, sopra a un mucchio di cenere. Ade🔥 ha vinto, tombola! Pena e Panico ballano soddisfatti al suo fianco!</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>Dovevi tenerti un estintore a casa! Ora tutto ciò che rimane della tua casa e di te stesso sono solo cenere...</value>
+	<value>A quanto pare non è stata una buona idea costruire una casa interamente in legno...\nLa scorsa notte ha preso fuoco e di te e della casa è rimasta solo cenere.</value>
+  </string>
+  <string key="Augur">
+	<value>Pocahontas  🦅</value>
+  </string>
+  <!--{0}: ruolo non in partita-->
+  <string key="AugurSees">
+	<value>Come guardi nel cielo, vedi gli uccelli che formano una forma molto strana. Ciò può solo significare che {0} non è nel villaggio incantato.</value>
+	<value>Gli uccelli ti dicono che {0} non fa parte del villaggio incantato in questo momento.</value>
+  </string>
+  <string key="AboutAugur">
+	<value>Sei Pocahontas 🦅. 
+Ami cantare con le montagne, dipingere con i colori del vento e senti le iene ridacchiare verso la luna blu. La tua grande passione però è una sola: gli uccelli. Tutti pensano tu sia una selvaggia ma sei l'unica a poter vedere i ruoli non in partita.</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>Sei Pocahontas 🦅. 
+Ami cantare con le montagne, dipingere con i colori del vento e senti le iene ridacchiare verso la luna blu. La tua grande passione però è una sola: gli uccelli. Tutti pensano tu sia una selvaggia ma sei l'unica a poter vedere i ruoli non in partita.</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>Non ci sono uccelli nel cielo oggi. Questo può solo significare i ruoli non in gioco sono finiti.</value>
+  </string>
+  <!--{0}: vittima scelta dalle iene, {1}: iena morta dalle fiamme-->
+  <string key="WolvesVisitBurn">
+	<value>Il branco di iene entra a casa di {0}, ma all'improvviso l'abitazione viene avvolta dalle fiamme. È troppo tardi per salvare {1}, che muore bruciato vivo.</value>	  
+  </string>
+  <!--{0}: persona morta perché ha visitato una casa che bruciava, {1}: "(persona) era (ruolo)"-->
+  <string key="DefaultVisitBurn">
+	<value>{0} doveva rimanere a casa stanotte. Invece, è andato in una casa che ha preso immediatamente fuoco! {1}</value>
+  </string>
+  <!--{0}: Lupo morto, {1}: "(Lupo) era (ruolo)" per specificare che tipo di lupo era-->
+  <string key="WolfVisitBurn">
+	<value>Le iene hanno provato a uccidere qualcuno stanotte, ma Ade🔥 è stato più veloce di loro! {0} non è riuscito a fuggire dalle fiamme in tempo... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+	<value>Nonostante tu non conosca l'identità del Brucaliffo 👨‍🔬 , sei sicuro che non commetterà mai più un errore del genere. Il Brucaliffo ha abbandonato il suo rischioso lavoro ed è diventato una normale principessa!</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value>Solo {0} e {1} sono rimasti... Improvvisamente {0} ride, tira fuori un fiammifero, lo accende e lo tira ai piedi di {1}, che viene avvolto dalle fiamme!</value>
+	<value>Mentre riposa tranquillo nella propria abitazione, c'è {0} che si avvicina furtivamente al perimetro della casa, la cosparge di kerosene e ci butta uno zippo! Tutto ciò che rimane di {1} è cenere.</value>
+  </string>
+    <string key="ArsonistTeamEnd">
+    <value>Team Ade</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+	<value>Sei andato a divertirti con {0}, ma la casa era vuota!</value>
+  </string>
+  <string key="Validate">
+  <!-- Usato per il bottone sul menu della selezione ruoli -->
+	<value>‼ CONVALIDA ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Usato per il bottone sul menu della selezione ruoli -->
+	<value>✅ Valido ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>La configurazione dei ruoli è valida! È stata abilitata e verrà usata da ora in poi!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>La configurazione dei ruoli NON è valida! Per favore abilita più ruoli per permettere al bot di creare partite bilanciate!</value>
+  </string>
+  <string key="GroupIdleCount">
+  <!-- {0} - Morti per AFK delle ultime 24 ore nel gruppo attuale -->
+  <!-- Questa stringa è attaccata alla stringa "IdleCount", quindi cercare di fare in modo che la frase risultante abbia senso -->
+	<value> di cui {0} volte in questo gruppo</value>
+  </string>  
+ <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>Sei diventato Dory. Prenderai il ruolo di {0} alla sua morte.</value>
+  </string>
+  <string key="RoleConfigInfo">
+  <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+	<value>Quali ruoli vorresti usare in partita?\n\nGuida alla Configurazione:\n\n✅ = Ruolo abilitato\n❌ = Ruolo disabilitato\n\nDopo la selezione dei ruoli, devi usare il bottone CONVALIDA nell'angolo in basso a sinistra per confermare e salvare la configurazione! Se non convalidi, non verrà salvato e i ruoli rimarranno tutti attivi!\n\nSe disabiliti troppi ruoli, il bot non sarà in grado di creare una partita bilanciata e la convalida fallirà! In quel caso basterà abilitare più ruoli e convalidare di nuovo.\n\nSe la convalida andrà a buon fine, nell'angolo in basso a sinistra ci sarà scritto ✅ Valido ✅ e la configurazione sarà utilizzata nelle partite!</value>
+  </string>
+  <string key="EnableAllRoles">
+	<value>Abilita Tutti</value>
+  </string>
+  <string key="DisableAllRoles">
+	<value>Disabilita Tutti</value>
+  </string>
+  <string key="CHHuntedYou">
+    <value>Biancaneve 💂‍♀️ ti ha visitato mentre eri a pregare nel tuo altare e lucidavi le tue protesi di legno che usavi nel villaggio incantato per fingerti alto. Sei stato accolto dalla sua spada, ora sei morto.</value>
+  </string>  
+  <!-- Per qualsiasi problema inerente alle traduzioni, potete contattarmi su @BarbaraTozzoli -->
+</strings>

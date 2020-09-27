@@ -1,0 +1,2184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--Ideato e tradotto da @MagaskaweeSoul. Si prega di non modificare questo file senza permesso.-->
+  <!--File aggiornato al 15/06/2020-->
+  <language name="Italiano - Fantasy" base="Italiano" variant="Fantasy" owner="MagaskaweeSoul" code="it" />
+  <string deprecated="false" key="NotInGame">
+    <value>Non sei in nessuna partita in questo momento...</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <!-- 0 - Player name -->
+    <value>{0} ha tovato la Foresta Incantata! Clicca Join per unirti all'esplorazione!</value>
+    <value>Un portale magico è apparso... {0} lo attraversa e si ritrova in un mondo popolato da magiche e bizzarre creature! Clicca Join e inizia anche tu l'avventura!</value>
+    <value>{0} sta danzando assieme alle fate! Clicca Join e unisciti alle loro magiche danze!</value>
+    <value>La Foresta Incantata ti da il benvenuto! Tra Fate, Gnomi, Elfi, Spiriti Elementali e forze del male... riuscirai a sopravvivere? Inoltrati anche tu con {0} per scoprire gli altri abitanti di questo luogo magico! Clicca Join! </value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <!-- 0 - Player name -->
+    <value>{0} sta combattendo contro un gruppo di orchi famelici! Da che parte stai? Clicca Join!</value>
+    <value>{0} sta scatenando il caos nella Foresta Incantata! Entra anche tu per contribuire ad eliminare o salvare le magiche creature!</value>
+    <value>Le perfide creature stanno invadendo la Foresta Incantata! Aiuta {0} a proteggere i suoi abitanti, prima che sia troppo tardi!</value>
+    <value>Qualcuno sta seminando il caos nella Foresta Incantata! Joina anche tu con {0} per scoprire cosa sta succedendo!</value>
+  </string>
+  <string deprecated="true" key="NoJoinGameRunning">
+    <value>Non puoi unirti ora! La partita è già iniziata.</value>
+  </string>
+  <string deprecated="true" key="AlreadyJoined">
+    <value>Ti sei già unito!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Ancora 1 minuto per cliccare Join!</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} secondi rimasti per cliccare Join!</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Non ci sono abbastanza giocatori... partita annullata!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Sta iniziando la partita! Un folletto sta arrivando in privato per affidarti un ruolo!</value>
+    <value>La partita sta iniziando! Una fata ti sta mandando in privato il ruolo. Buona fortuna!</value>
+  </string>
+  <string deprecated="true" key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, per favore cambia il tuo nome per partecipare!</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Mi dispiace, abbiamo raggiunto il livello massimo di giocatori!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} si è unito alla partita. {1} giocatori, {2} minimo, {3} massimo</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} benvenuto nella Foresta Incantata! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinchè io possa scriverti, devi prima avviarmi.&lt;/value&gt;</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Non puoi fuggire... SEI MORTO! Ritorna nell'Aldilà!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} ha riattraversato il portale ed è fuggito dalla paura!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} giocatori rimasti.</value>
+  </string>
+  <string deprecated="true" key="DidntAsk">
+    <value>Ehi! Non ti ho ancora chiesto nulla!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Non mi pare tu stia giocando...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Non posso trovare un giocatore tramite questo nome!</value>
+  </string>
+  <string deprecated="true" key="AnswerNonValid">
+    <value>Questa non è una risposta valida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} ha votato per uccidere {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} ha votato per linciare {1}.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} non ha votato per due notti consecutive. Le forze del bene hanno visto ciò come un peccato imperdonabile. {0} viene ucciso pubblicamente, umiliato dalle altre creature.\n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Tu, traditore! Tutti i malvagi sono morti... cosa farai adesso? Diventi un Orco, naturalmente!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Scelta accettata.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nIl Vecchio Mago 🧙🏼‍♂️ (👳) è {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} era il Vecchio Mago. Come suo apprendista, prendi ufficialmente il suo posto, assorbi la sua magia e diventi il Vecchio Mago 🧙🏼‍♂️ (👳) della Foresta Incantata!</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} era un Apprendista Mago... Ha preso il posto di {1} diventando il nuovo Mago 🧙🏼‍♂️ (👳)!</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Sei riuscito a vedere che {0} è {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Chi vuoi linciare?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Da chi vuoi andare per scoprirne il ruolo?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Chi vuoi colpire con la tua freccia? {0} tiri rimasti.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Chi vuoi attirare con il tuo irresistibile canto?</value>
+  </string>
+  <string key="AskSee">
+    <value>Chi vuoi scrutare?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Chi vuoi proteggere?</value>
+  </string>
+  <string key="AskEat">
+    <value>Chi vuoi uccidere?</value>
+  </string>
+  <string key="AskHunt">
+    <value>A chi vuoi dare la caccia?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Chi è la tua fonte d'ispirazione?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Chi vuoi trasformare in vampiro?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>Sii sicuro di discuterne con {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Sei un Alieno 👽 (😾)! La tua astronave si è rotta tanto tempo fa e gli abitanti della Foresta Incantata ti hanno accolto con gioia come se fossi uno di loro. Se i malvagi dovessero trovarti, ti convinceranno a seguirli e ad abbracciare il lato oscuro... fai molta attenzione!</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Sei uno Spirito dell'Aria 🌬 (🕵️)! Durante il giorno svolazzi allegramente nella Foresta Incantata. Il tuo elemento è l'aria, perciò sei onnipresente e grazie a ciò puoi scegliere un giocatore e scoprirne il ruolo. Fai attenzione, perché la tua presenza potrebbe essere rivelata alle forze del male. (Hai il 40% di probabilità di essere scoperto!)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Sei un Fauno 🐐 (🍻), una strana creatura con le corna e le zampe di capra. Quelli della vostra razza sono famosi per due cose: le feste e il buon vino! Per un Fauno non c'è cosa più buona del vino! Se gli Orchi dovessero mangiarti, la notte successiva non potranno attaccare... un Fauno ubriaco deve proprio avere un saporaccio!</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Sei un Angelo 👼 (👼)! Sei famoso e molto amato per il tuo cuore grande e per la meravigliosa luce che emani! Ti fai sempre in quattro per proteggere le creature più deboli: ogni notte, infatti, puoi scegliere un giocatore da proteggere. Fai molta attenzione! Se sceglierai di proteggere una creatura oscura (ad esempio un Orco), hai il 50% di probabilità di morire!</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Sei un Centauro! 🏹 (🔫). La tua razza è una delle più fiere e coraggiose. Hai a disposizione due delle tue frecce e le userai contro due giocatori a tua scelta. Nota bene: quando scoccherai la tua prima freccia, tutti ti noteranno e sapranno che fai parte dei buoni!</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Sei una Sirena 🧜🏼‍♀️ (💋)! Il tuo canto è leggenda, così come la tua seducente bellezza. Ogni notte potrai scegliere un giocatore da chiamare a te con il tuo irresistibile canto... buon divertimento! Presta attenzione soltanto a una cosa: se il giocatore che hai scelto fa parte dei cattivi, o se il tuo giocatore scelto è la vittima, morirai anche tu. C'è un vantaggio, però! Se i malvagi vengono a cercarti nella Foresta, non ti troveranno (dopotutto te la stai spassando nell'acqua, ricordi?). </value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Sei un Elfo guerriero 🧝🏼‍♂️🗡 (🖕)! Abile con le armi e amante dei duelli, vivi nella Foresta Incantata da sempre. C'è solo un problema: se non ci sono cattivi, non puoi combattere. Perciò, quando tutti i cattivi in partita moriranno, diventerai uno di loro e combatterai contro i buoni! Se il Vecchio Mago ti osserva, c'è il 50% di probabilità che ti veda come un nemico.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Sei un Orco 👹 (🐺)! Sei famoso per tante cose: la tua malvagità, la tua allergia al sapone e la tua insaziabile fame. Ogni notte potrai scegliere qualcuno da uccidere (e perché no, magari mangiare!) e durante il giorno depistare gli altri e fingerti di essere un'innocua creatura della foresta. Buon divertimento!</value>
+  </string>
+  <string key="RoleInfoSeer">
+    <value>Sei un Vecchio Mago 🧙🏻‍♂️ (👳). Da sempre cooperi con le creature del bene e le aiuti a combattere le forze del male. Sei troppo anziano per combattere, però vanti un'enorme potere: hai la capacità di scoprire il ruolo dei giocatori. Ogni notte puoi scegliere un giocatore da scrutare, ma stai in guardia: ai malvagi non piacerà che qualcuno rovini i loro piani... rivela la verità con molta prudenza!</value>
+  </string>
+  <string key="RoleInfoVillager">
+    <value>La Foresta Incantata brulica di creature strane, magiche e talvolta pericolose... e poi ci sei tu, un semplice Essere Umano 👱 (👱)! Non hai alcun potere, sei soltanto un visitatore di passaggio molto apprezzato (e soprattutto mangiato!) dagli Orchi! Vedi di non cacciarti nei guai! </value>
+  </string>
+  <string key="RoleInfoTanner">
+    <value>Sei una Fenice 🦅🔥 (👺)! Hai un potere che tutti invidiano e che soltanto tu possiedi: risorere dalle tue stesse ceneri! Linciare una Fenice è una maledizione mortale per tutte le creature. Se riuscirai a farti linciare, tutti i giocatori moriranno e tu vincerai! Buona fortuna! </value>
+  </string>
+  <string key="RoleInfoWildChild">
+    <value>Sei una giovane Ninfa 🧝🏻‍♀️ (👶)! Amante degli animali e della natura, sei una graziosa e pacifica creatura dei boschi... quando lo vuoi! Passi le giornate a pettinarti i capelli e a tenere compagnia a chiunque si fermi a parlare con te. La tua curiosità ti porta a scegliere un giocatore e a prenderlo come modello di vita. Se il tuo modello muore, la tua rabbia sarà così forte da farti diventare una creatura al servizio delle tenebre!</value>
+  </string>
+  <string key="RoleInfoBeholder">
+    <value>Sei un Gufo Parlante 🦉 (👁)! Vigile e intelligente, sei la spalla destra del Vecchio Mago (e saprai sempre chi è!). Il tuo lavoro è semplice ma rischioso: proteggere l'identità del Vecchio Mago e fare in modo che nessuno sappia chi è veramente. Con una buona tattica, potreste vincere entrambi!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer">
+    <value>Sei l'Apprendista Mago 🙇 (🙇)! Pasticcione ma desideroso di imparare, prenderai il posto del Vecchio Mago (quello vero) nel caso in cui dovesse morire. Sei il Gufo Parlante è in partita, diventerà il tuo alleato più prezioso.</value>
+  </string>
+  <string key="RoleInfoCultist">
+    <value>Sei un Vampiro 🧛🏻 (👤)! Hai una forte ambizione: rendere tua la Foresta Incantata e colonizzarla con il tuo gruppo di vampiri! Di giorno eviti la luce del sole e ti rintani in casa... di notte, agisci! Ogni notte puoi scegliere un giocatore da mordere e trasformare in Vampiro. Se tutti i giocatori rimastri vivi sono Vampiri... avete vinto!</value>
+  </string>
+  <string key="RoleInfoCultistHunter">
+    <value>Sei un Cacciatore di Vampiri 💂🧄! Sei un essere umano cresciuto con le creature magiche... e odi i Vampiri con tutto te stesso! Non ti darai pace finché non riuscirai a trovarli e ucciderli tutti! Ogni notte, armato e con una ghirlanda d'aglio portata al collo, sceglierai un giocatore a cui far visita. Se è un Vampiro, lo ucciderai. Se i Vampiri provano a morderti e trasformarti, l'ultimo Vampiro che si è aggiunto al gruppo morirà.</value>
+  </string>
+  <string key="LynchTime">
+    <!-- 0 - number of seconds -->
+    <value>Il sole sta tramontando e il buio lentamente avvolge la Foresta Incantata. Lo scintillio delle fate illumina le figure di tutte le creature radunate sotto la Grande Quercia. Le forze oscure si stanno avvicinando e bisogna assolutamente decidere chi linciare!
+Ognuno ha {0} secondi per votare!
+    </value>
+  </string>
+  <string key="DayTime">
+    <!-- 0 - number of seconds -->
+    <value>È nuovamente giorno nella Foresta Incantata. Ognuno ha {0} secondi per discutere, difendersi o far valere le proprie accuse.</value>
+  </string>
+  <string key="NightTime">
+    <!-- 0 - number of seconds -->
+    <value>Scende la notte e la Foresta Incantata si tinge dei colori fluorescenti dei funghi, delle lucciole e delle scintillanti scie luminose delle ultime fate che si apprestano a rincasare. Nella radura cala il silenzio, tutti sono nei loro rifugi e dormono. Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
+  </string>
+  <string key="LynchKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Le creature della Foresta Incantata si sono consultate a lungo. Tra accuse, dubbi e sospetti, alla fine hanno deciso. {0} è morto. {1}</value>
+    <value>Tra tanti dubbi e poche conferme, le creature magiche hanno preso una decisione. {0} è morto ai piedi della Grande Quercia. {1}</value>
+  </string>
+  <string key="LynchTie">
+    <value>Incapaci di prendere una decisione, le creature magiche sono arrabbiate, deluse e anche timorose per la notte che sta per arrivare. Si rinchiudono nei loro rifugi sperando di rivedere tutti vivi il mattino successivo...</value>
+  </string>
+  <string key="NoLynchVotes">
+    <value>C'è qualcosa che non va, nessuno ha votato! Che strano...</value>
+  </string>
+  <string key="GuardianEaten">
+    <!-- 0 - victim name -->
+    <value>I primi raggi del sole illuminano i prati della Foresta Incantata. Sparse tra gli alberi e sul terreno, qua e là, ci sono delle candide piume luminose. Lì vicino vengono ritrovati i resti di {0}, l'Angelo 👼 protettore della Foresta. </value>
+  </string>
+  <string key="GunnerEaten">
+    <!-- 0 - victim name -->
+    <value>Le creature magiche escono dai loro rifugi con cautela. Trovano a terra alcune frecce e dei ferri di cavallo. Non è un buon segno... Poco più in là, infatti, trovano i pochi resti rimasti di {0}, il coraggioso Centauro 🏹 (🔫).</value>
+  </string>
+  <string key="SeerEaten">
+    <!-- 0 - victim name -->
+    <value>C'è uno strano silenzio vicino alla casa del Vecchio Mago. Alcune creature magiche entrano a controllare e trovano un cappello, una bacchetta e una sfera di cristallo. Il cadavere di {0} si trova lì vicino. Il Vecchio Mago 🧙🏻‍♂️ (👳) è morto! </value>
+  </string>
+  <string key="DrunkEaten">
+    <!-- 0 - victim name -->
+    <value>La festa dei Fauni è finita presto, a quanto pare. Il corpo di {0} è stato ritrovato nei pressi della Grande Quercia con un calice di vino lì accanto... se non altro il povero Fauno 🐐 (🍻) si è goduto l'ultimo bicchiere!</value>
+  </string>
+  <string key="FoolEaten">
+    <!-- 0 - victim name -->
+    <value>Sotto i raggi del sole nascente la Foresta Incantata ritorna colorata e piena di vita. Non per tutti, a quanto pare. Vicino alla casa del Vecchio Mago c'era il corpo seza vita di {0}. Lo Sciamano della Foresta deve aver esagerato con le erbe e i funghi allucinogeni... tanto da credere di essere il Vecchio Mago! Le creature oscure devono proprio essersi divertite ad ucciderlo questa notte!</value>
+  </string>
+  <string key="DefaultEaten">
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Un'altra notte è passata e la Foresta Incantata si rempie di luci, colori e profumi. Purtroppo, però, le creature magiche fanno una terribile scoperta: {0} è stato trovato morto poco lontano dal suo rifugio! Le creature magiche si attristano per la sua prematura scomparsa. \n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <!-- 0 - victim name -->
+    <value>Vicino ad un rifugio c'è uno strano odore di... aglio? Le creature magiche trovano {0} a terra con un paletto di legno conficcato nel petto e una collana di aglio attorno al collo... Il Cacciatore di Vampiri ha trovato una delle sue prede!</value>
+  </string>
+  <string key="NoAttack">
+    <value>Le creature della Foresta Incantata si risvegliano con un senso di pace e serenità nel petto. Tutto è tranquillo, fin troppo. Non ci sono state vittime questa notte, che fortuna! Ad ogni modo meglio restare in guardia, il pericolo è sempre dietro l'angolo!</value>
+  </string>
+  <string key="CursedBitten">
+    <value>Una banda di Orchi e altre creature malvagie ti circondano. Stanno per ucciderti... ma sei un Alieno e quelle creature ti incuriosiscono e ti convincono a passare dalla loro parte... complimenti, ora fai parte dei cattivi!</value>
+  </string>
+  <string deprecated="true" key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>I tuoi malvagi compagni di Team sono: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves">
+    <!-- 0 - victim name -->
+    <value>{0} era un Alieno e quindi, anziché ucciderlo, l'avete convinto a passare dalla vostra parte. Un benvenuto al nuovo arrivato!</value>
+  </string>
+  <string key="WolvesEatYou">
+    <value>Oh no! Le creature oscure ti hanno trovato! Sei stato ucciso (e probabilmente mangiato!).</value>
+  </string>
+  <string key="WolvesEatDrunk">
+    <!-- 0 - victim name -->
+    <value>Oh, no! {0} era un Fauno 🐐 (🍻)!  Purtroppo aveva un saporaccio terribile a causa del vino... mannaggia a lui, la prossima notte non potrai attaccare!</value>
+  </string>
+  <string key="GuardWolf">
+    <value>La creatura magica che hai scelto di proteggere era oscura e malvagia! Ti ha ucciso senza pietà!</value>
+  </string>
+  <string key="GuardSaved">
+    <!-- 0 - saved player name -->
+    <value>Hai salvato la vita di {0}!</value>
+  </string>
+  <string key="GuardNoAttack">
+    <!-- 0 - player name -->
+    <value>{0} non era in pericolo, perciò non hai avuto molto da fare questa notte...</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>Sei andato a proteggere {0}, ma il suo rifugio era vuoto!</value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>Un meraviglioso Angelo ti ha protetto dall'attacco degli Orchi la scorsa notte. Sei salvo!</value>
+  </string>
+  <string key="HarlotEaten">
+    <!-- 0 - player name -->
+    <value>{0} non avrebbe dovuto restare troppo a lungo su quella roccia a fissare la luna piena...  È stata vista dalle creature oscure e uccisa!</value>
+  </string>
+  <string key="HarlotNotHome">
+    <!-- 0 - player name -->
+    <value>Dannazione, dov'è {0}? Non c'è da nessuna parte...</value>
+  </string>
+  <string key="HarlotFuckWolf">
+    <!-- 0 - player name -->
+    <value>Decidi di usare la tua bella voce per incantare e divertirti con {0}. Eccolo lì, si avvicina nell'ombra... Si avvicina ancora di più... inizi a notare qualcosa di strano... Troppo tardi! Ti ha uccisa!</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic">
+    <!-- 0 - player name -->
+    <value>{0} ha richiamato con la sua irresistibile voce la creatura sbagliata! Di {0} sono rimaste soltanto le scaglie e qualche ciocca di capelli. Povera Sirena!</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic">
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>{0} ha richiamato a sé {1} con la sua bellissima voce. Proprio mentre {0} stava per iniziare a divertirsi, una creatura oscura arriva e uccide {1}! Dopodiché, senza lasciare il tempo a {0} per fuggire, si avventa su di lei mettendo fine anche alla sua vita. {0} è morta!</value>
+  </string>
+  <string key="HarlotVisitNonWolf">
+    <!-- 0 - target name -->
+    <value>Hai cantato e ti sei divertita tra le onde del Lago Luccichio {0} per tutta la notte. Decisamente non era un Orco!</value>
+  </string>
+  <string key="HarlotVisitYou">
+    <value>Era notte fonda e stavi per addormentarti... all'improvviso senti una voce meravigliosa che ti chiama. È più forte di te, ti avventuri nella Foresta Incantata seguendo quella dolce melodia. Ti ritrovi di fronte al Lago Luccichio e, davanti a te, noti una bellissima Sirena. Ti lasci incantare dalla sua bellezza e sotto i raggi della luna piena ti lasci trasportare nell'acqua per divertirti assieme a lei...</value>
+  </string>
+  <string key="DetectiveCaught">
+    <!-- 0 - detective name -->
+    <value>Hai trovato {0} che volteggiava intorno a te... Deve trattarsi sicuramente di uno Spirito dell'Aria!</value>
+  </string>
+  <string key="DetectiveSnoop">
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>Le tua ricerca ti ha portato a scoprire che {0} è {1}.</value>
+  </string>
+  <string key="HarlotShot">
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value>Sembra che {0}, dopo una nottata di divertimenti, si sia risvegliato dall'incanto della Sirena. Non ha gradito la sorpresa, a quanto pare... {1} è morta!</value>
+  </string>
+  <string key="DefaultShot">
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>Nel bel mezzo della calma, le creature magiche avvertono dei rumori strani. Inoltrandosi nella Foresta, vedono {0} scoccare una delle sue frecce e colpire in pieno {1}, mettendo fine alla sua vita. {2}</value>
+  </string>
+  <string key="WolfWins">
+    <value>La malvagia creatura ha vinto! La Foresta Incantata è nelle sue grinfie!</value>
+  </string>
+  <string key="WolvesWin">
+    <value>Le forze del male hanno vinto! La Foresta Incantata è ora avvolta dalle tenebre...</value>
+  </string>
+  <string key="VillageWins">
+    <value>Le forze del bene hanno vinto! La Foresta Incantata è salva! Le magiche creature si radunano per festeggiare! Hurrà!</value>
+  </string>
+  <string key="TannerWins">
+    <value>Oh no, sacrilegio! La sacra Fenice è stata linciata e ora una potente maledizione incombe su tutte le creature della Foresta Incantata! C'è chi cade a terra privo di vita, altri si immobilizzano fino a diventare roccia... nessuno è sfuggito dalla maledizione! Rimane solo lei, una piccola Fenice che è appena rinata dal suo mucchietto di cenere... non ci sono dubbi: la Fenice ha vinto!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Giocatori rimasti vivi, ruolo e team:</value>
+  </string>
+  <string key="CultistVotedConvert">
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value>{0} ha scelto di trasformare {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0} è stato mandato per trasformare {1}... peccato che si trattava del Cacciatore di Vampiri! {0} è morto!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} è arrivato per trasformarti in Vampiro la scorsa notte... non poteva sapere che gli stavi dando la caccia! Sei riuscito ad ucciderlo senza problemi! {1} Vampiri rimasti!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Un Vampiro ti ha fatto visita, ti ha morso e sei stato trasformato in una notturna creatura succhiasangue che odia l'aglio. D'ora in poi, ogni notte, avrai la possibilità di convertire in Vampiro un giocatore a tua scelta. Attenzione, c'è un Cacciatore di Vampiri che vi sta cercando...</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Vampiri: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} è diventato un Vampiro!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} è stato inviato per trasformare {1}... ma non c'era nessuno!</value>
+  </string>
+  <string key="CultWins">
+    <value>Gli Orchi e le altre creature malvagie sono state sconfitte, le poche creature magiche rimaste sono state trasformate... avete vinto, Vampiri! La Foresta Incantata è vostra!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Ti sei recato da {0} per ucciderlo, ma era già morto!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>Girovagando nella Foresta Incantata, trovi {0} mentre affonda i canini nel collo di un'innocente creatura. Senza esitare, ti lanci all'attacco e riesci ad uccidere l'ostile Vampiro!</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>Ti rechi nel rifugio di {0}, ma non trovi nessuna attività sospetta, né bare, nè segni di "vita immortale". Te ne torni a casa consapevole del fatto che {0} non è un Vampiro.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>Il modello di {0} è morto! La sua rabbia è talmente forte da trasformare il suo corpo e diventare un orribile Orco malvagio!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 1 - teamate's names -->
+    <value>{0} è morto! La tua rabbia è così forte che il tu bellissimo viso si trasforma in una creatura puzzolente e malvagia... infine anche il tuo corpo si trasforma... ora fai ufficialmente parte delle creature oscure: sei un Orco! I tuoi malvagi compagni sono: {1}</value>
+  </string>
+  <string key="Villager">
+    <value>un Essere Umano 👱 (👱)</value>
+  </string>
+  <string key="Drunk">
+    <value>un Fauno 🐐 (🍻)</value>
+  </string>
+  <string key="Harlot">
+    <value>una Sirena 🧜🏼‍♀️ (💋)</value>
+  </string>
+  <string key="Seer">
+    <value>il Vecchio Mago 🧙🏼‍♂️ (👳)</value>
+  </string>
+  <string key="Traitor">
+    <value>un Elfo Guerriero 🧝🏼‍♂️🗡 (🖕)</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>un Angelo 👼 (👼)</value>
+  </string>
+  <string key="Detective">
+    <value>lo Spirito dell'Aria 🌬 (🕵️)</value>
+  </string>
+  <string key="Wolf">
+    <value>un Orco 👹 (🐺)</value>
+  </string>
+  <string key="Cursed">
+    <value>un Alieno 👽 (😾)</value>
+  </string>
+  <string key="Gunner">
+    <value>un Centauro 🏹 (🔫)</value>
+  </string>
+  <string key="Tanner">
+    <value>la Fenice 🦅🔥 (👺) </value>
+  </string>
+  <string key="Fool">
+    <value>lo Sciamano 🌿 (🃏)</value>
+  </string>
+  <string key="WildChild">
+    <value>una Giovane Ninfa 🧝🏻‍♀️ (👶)</value>
+  </string>
+  <string key="Beholder">
+    <value>il Gufo Parlante 🦉 (👁) </value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>l'Apprendista Mago 🙇 (🙇)</value>
+  </string>
+  <string key="Cultist">
+    <value>un Vampiro 🧛🏻 (👤) </value>
+  </string>
+  <string key="CultistHunter">
+    <!-- These are for the player list -->
+    <value>il Cacciatore di Vampiri 💂🧄 (💂)</value>
+  </string>
+  <string key="RanAway">
+    <value>Fuggito</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Morto</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 In vita</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Giocatori in vita</value>
+  </string>
+  <string key="Mason">
+    <value>uno Gnomo 🤶🏼 (👷)</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Sei un Gnomo 🤶🏼 (👷)! Piccolo di statura ma gran lavoratore, fabbrichi vestiti e piccole armi per gli abitanti della Foresta. Non sei un combattente, nè hai particolari abilità. Tuttavia potrai sapere se in partita ci sono altri Gnomi come te e fare squadra insieme. Sfrutta bene questa opportunità!</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Quando le creature magiche si risvegliano uscendo dai loro rifugi, trovano a terra un piccolo cappello rosso a punta che apparteneva a {0}. Soltanto qualche traccia di sangue ha chiarito la situazione: qualche Orco si è mangiato uno Gnomo questa notte!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  Gli altri Gnomi sono: {0}</value>
+  </string>
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Uno dei nuovi Vampiri si reca nel rifugio di {0} per convertirlo, tuttavia una sorpresa lo accoglie: tracce di sangue ovunque, mobili distrutti, impronte di creature diverse e un fetore terribile di chi non si lava da mesi...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>Ti rechi da {0} per ucciderlo e mangiarlo, ma una sorpresa ti attende: una maestosa figura alata e splendente, armata con spade e sfere di luce, inizia a combattere con te. Si tratta di un Angelo, il sacro protettore della tua vittima. Meglio andarsene, prima che ti dia il colpo di grazia...</value>
+  </string>
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Hai mandato {0} per trasformare {1}, tuttavia il suo potere magico era troppo forte e ha resistito al morso vampiresco!</value>
+  </string>
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, un giocatore con il nome di {0} è già entrato. Per favore cambia il tuo nome per partecipare. </value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Hai richiamato con la tua voce {0} e vi siete divertiti nell'acqua insieme... tuttavia alcuni particolari della notte appena trascorsa ti ritornano alla mente: la sua pelle bianca come il gesso, la sua sete di sangue, i suoi canini stranamente affilati... brr! Con chi cavolo ti sei diveritta?</value>
+  </string>
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Il sole sta rinascendo e la Foresta Incantata inzia a riprendere vita. Le creature magiche si risvegliano ed escono dai loro rifugi per assicurarsi che tutti siano vivi: purtroppo, però, si accorgono che {0} manca all'appello. Subito si affrettano a ragiungere il suo rifugio e lo trovano completamente distrutto. Tristemente le creature magiche compiangono la morte di {0}.</value>
+    <value>Appena il sole fa capolino tra le fronde della Foresta Incantata, le piccole e grandi creature magiche escono dai propri rifugi e trovano il corpo di {0} mezzo mangiato e in un bagno di sangue. Gli Orchi e le altre creature oscure hanno colpito ancora, la scorsa notte!</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Per tutti i funghi magici! {0} non si è presentato al raduno degli Gnomi, questa mattina...</value>
+  </string>
+  <string key="FleeDisabled">
+    <value>Una barriera invisibile circonda i confini della Foresta Incantata... Finché la partita non finisce non potrai fuggire!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <!-- used when gunner shoots a player -->
+    <value>è morto</value>
+  </string>
+  <string deprecated="true" key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} E' stato aggiunto alla lista degli admin. Usa /config per cambiare le impostazioni del gruppo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>Sei già nella partita! ({0})</value>
+  </string>
+  <string deprecated="true" key="MultipleGames">
+    <value>Il tuo gruppo è stato settato per far cominciare più partite... Uccisioni extra!</value>
+  </string>
+  <string deprecated="true" key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Il gruppo è attualmente in lista d'attesa. Posizione:{0} / {1}</value>
+  </string>
+  <string deprecated="true" key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>Mi dispiace, sono in pausa per manutenzione. Non puoi avviare il gioco adesso. In attesa di {0} partite per finire... Controlla @greywolfdev per altre informazioni.</value>
+  </string>
+  <string deprecated="true" key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
+  </string>
+  <string deprecated="true" key="SkipQueue">
+    <!-- 0 - target's name -->
+    <!-- 0 - target's name -->
+    <value>{0} è un gruppo ufficiale e ha saltato la lista d'attesa!</value>
+  </string>
+  <string key="NoGame">
+    <value>Non ci sono partite in corso. Cominciane una con /startgame o comincia una partita Chaos con /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Solo gli admin del gruppo possono usare questo comando. Chiedi al creatore o ad altri admin.</value>
+  </string>
+  <string deprecated="true" key="ShuttingDown">
+    <value>Dopo questa partita, mi spegnerò per una manutenzione.</value>
+  </string>
+  <string deprecated="true" key="ShuttingDownUpdate">
+    <value>Dopo questa partita, mi spegnerò momentaneamente per un aggiornamento (automatizzato).</value>
+  </string>
+  <string deprecated="true" key="NullIdAdmin">
+    <value>UserId nullo.  Sei sicuro di aver mandato questo comando come risposta?</value>
+  </string>
+  <string deprecated="true" key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} è già un amministratore!</value>
+  </string>
+  <string deprecated="true" key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} non è un admin!</value>
+  </string>
+  <string deprecated="true" key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>{0} rimosso dalla lista admin. </value>
+  </string>
+  <string deprecated="true" key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Lingua impostata su {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>Il Vecchio Mago non è presente, dev'essere in viaggio verso terre lontane...</value>
+  </string>
+  <string key="TimesUp">
+    <!-- new strings june 10 2016 -->
+    <value>E' scaduto il tempo!</value>
+  </string>
+  <string key="RoleInfoCupid">
+    <value>Sei un Unicorno 🦄 (🏹), il portatore di pace e magia! Il tuo potere è legato all'amore: solo per una volta puoi scegliere due giocatori da unire sentimentalmente e farli innamorare. Il loro amore è talmente forte che, se uno dei due dovesse morire, l'altro si ucciderà per il dispiacere. Se almeno uno dei due vince, entrambi vincono. Se sono gli ultimi due rimasti in vita, solo loro vincono e tutti gli altri perdono.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Sei lo Spirito dell'Acqua 💧 (🎭) e come tale hai la capacità di assumere qualsiasi forma... e qualsiasi ruolo. La tua capacità ti porta a scegliere un giocatore e, quando esso morirà, cambierai forma e assumerai il suo ruolo.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Sei un Drago 🐲 (🎯)! Te ne stai per conto tuo nella tua tana, non sei una creatura socievole ed è meglio non farti arrabbiare, sei in grado di scatenare fuochi e fiamme... letteralmente! Tuttavia le creature magiche confidano in te e nel tuo coraggio. Se vieni linciato, hai la possibilità di uccidere un giocatore nel tuo ultimo istante di vita. Se le creature oscure dovessero ucciderti, hai la possibilità di ucciderne una ma, nel caso ce ne fossero altre, verresti accerchiato ed ucciso comunque.
+Ad ogni modo con te è meglio fare attenzione: sei pur sempre un Drago!</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Sei il Basilisco 🐍 (🔪)! Creature come te sono assai rare e molto, molto pericolose! Il tuo sguardo non ha rivali: se qualcuno ti guarda negli occhi... muore! Va' e divertiti: ogni notte avrai l'opportunità di uccidere qualcuno. Se vieni linciato, però, non avrai scampo. Fa' attenzione!</value>
+  </string>
+  <string key="CupidChosen">
+    <value>La magia dell'Unicorno ti avvolge e ti lega sentimentalmente a {0}! Ora siete innamorati e totalmente fatti l'uno per l'altra! L'amore tra voi è così forte che, se il tuo amante dovesse morire, morirai anche tu. Se uno dei due vince, vincete entrambi. Amatevi e proteggetevi... che la magia dell'Unicorno vi benedica!</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Oh no! Le creature magiche hanno scelto di linciarti! Questa è la tua ultima possibilità: scegli velocemente un giocatore da uccidere!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} prende un profondo respiro e si prepara a lanciare una vampata di fuoco... purtroppo le spade trafiggono il suo cuore così in fretta che l'unica cosa che esce dal suo muso squamoso è un profondo ruggito di rabbia e indignazione...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} prende un profondo respiro e si prepara a sputare una potente fiammata... tuttavia si guarda intorno, non sa chi scegliere... muore subito dopo trafitto da alcune spade!</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Poco prima di morire, {0} spalanca le sue fauci e sputa un'enorme sfera di fuoco su {1}. Soddisfatto, emette un flebile ruggito e muore. Anche {1} è morto, è stato carbonizzato e ridotto in cenere... {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Stai per morire! Ti rimangono pochissimi istanti per decidere chi colpire con il tuo getto infuocato... Sbrigati!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>La morte di {0} è stata così rapida da non lasciargli nemmeno il tempo di uccidere una creatura magica con il suo potente soffio infuocato!</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>Mentre {0} è disteso a terra, trafitto nel cuore da alcune spade elfiche, non riesce a decidere chi colpire... con un flebile ruggito si lascia andare ai piedi della Grande Quercia...</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>In fin di vita, {0} crolla a terra con un gran tonfo... ma non si arrende: prende un profondo respiro e spalancando le fauci colpisce in pieno {1} con un potente getto infuocato! {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>Le creature oscure hanno attaccato un Drago, la scorsa notte. Tuttavia la possente creatura, poco prima d morire, è riuscita a incendiare {0}, trasformandola in un mucchietto di cenere e ossa carbonizzate.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>Le creature oscure hanno attaccato un Drago, la scorsa notte... hanno avuto l'opportunità di conoscere la sua potente fiammata! {0} è stato travolto dalle fiamme e carbonizzato!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Le creature oscure hanno avuto uno spiacevole incontro con il Basilisco... durante l'attacco, per sbaglio {0} ha guardato la creatura negli occhi... Morte istantanea!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Sembrava una nottata come tante per {0}, ma si sbagliava! {0} avverte dietro di sé un'enorme presenza avanzare strisciando... La morte arriva fulminea non appena incontra lo sguardo del Basilisco! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Hai provato ad intrufolarti nel rifugio di {0}, però hai incontrato un luminoso Angelo che ti ha impedito di uccidere la tua vittima! Sconfitto e con qualche cicatrice, te ne torni strisciando da dove sei venuto...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Uno dei Vampiri invia {0} per trasformare {1}... Nessuno pensava di trovarsi davanti un Drago irascibile! Nemmeno un Vampiro immortale come {0} riuscirebbe a sopravvivere a quel getto infuocato! Di {0}, ormai, non resta che cenere...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Uno dei Vampiri invia {0} per mordere e trasformare {1}, ma... Sorpresa! Appena gli occhi di {0} si posano su quelli del Basilisco... la sua vita, seppur immortale, termina in un istante! {0} è morto. Non era così immortale, dopotutto...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Hai provato a proteggere la creatura sbagliata! Non appena hai guardato il Basilisco negli occhi... sei morto!</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Che idea balorda! Hai richiamato a te {0} con il tuo canto. Volevi solo divertirti un po'... Quando però guardi {0} negli occhi... muori! Una Sirena e un Basilisco? Non avebbe comunque funzionato!</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Le creature magiche trovano il corpo di {0} completamente fuori dall'acqua, con il corpo mezzo mangiato e metà pinna caudale mancante, alcune scaglie iridescenti sono sparse sul terreno. La Sirena {0} è morta!</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>Lo Spirito dell'Acqua {0} è ora diventato uno Gnomo... proprio come te!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} è morto e tu ti trasformi in uno Gnomo. Gli altri Gnomi (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <!-- 0 - new cultist's name -->
+    <value>Lo Spirito dell'Acqua {0} è diventato un Vampiro proprio come te!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto e tu prendi il suo posto diventando un Vampiro. Gli altri Vampiri (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Lo Spirito dell'Acqua {0} è diventato un Orco! Benvenuto, fratello! </value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto e tu diventi un Orco. I tuoi nuovi compagni (se presenti) sono:{1}</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>La Foresta Incantata è stranamente silenziosa. Tutte le creature magice sono morte... rimane soltanto una figura strisciante dall'aspetto minaccioso e lo sguardo mortale: il Basilisco ha vinto!</value>
+  </string>
+  <string key="AskKill">
+    <value>Chi vuoi uccidere con il tuo sguardo questa notte?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Mentre {0} si accascia al suolo morente, {1} si china sul suo corpo e urla piangendo dal dolore. Incapace di vivere senza l'amore della sua vita, decide di togliersi la vita e raggiungere il suo amante... ovunque esso sia. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Di chi vuoi ereditare il ruolo quando morirà?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Quali creature magiche vuoi far innamorare e amare per sempre? Scegli il primo giocatore</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Quali creature magiche vuoi far innamorare e amare per sempre? Scegli il secondo giocatore</value>
+  </string>
+  <string key="Hunter">
+    <value>un Drago 🐲 (🎯)</value>
+  </string>
+  <string key="Cupid">
+    <value>un Unicorno 🦄 (🏹)</value>
+  </string>
+  <string key="SerialKiller">
+    <value>il Basilisco 🐍 (🔪)</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>lo Spirito del'Acqua 💧 (🎭)</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Ora sei una Giovane Ninfa! Il tuo modello di vita è {0}.</value>
+  </string>
+  <string key="LoversWin">
+    <value>La benedizione dell'Unicorno ha funzionato! La Magia dell'Amore regna nella Foresta Incantata... i due amanti hanno vinto!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>Nei pressi di una grotta, viene trovato carbonizzato il corpo di {0}. Sembra che si sia avventurato nella Tana del Drago nonostante gli avvertimenti posti all'ingresso della grotta. Mai sottovalutare un Drago! {1}.</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Una creatura pallida e con lunghi canini ha provato a morderti e trasformarti in un Vampiro... niente da fare! La magia e i poteri che ti scorrono nelle vene hanno impedito che il veleno facesse effetto! Sei salvo!</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Sei già in lista d'attesa per {0}.</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Sei stato aggiunto alla lista d'attesa per {0}. Ti contatterò appena una partita sta per cominciare. </value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>Una nuova partita sta per cominciare su {0}. </value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Il sole è sorto e nella Foresta Incantata sono sopravvissuti soltanto {0} e {1}. Il Basilisco sa di avere la vittoria in pugno. Non appena l'altra creatura si avvicina per ucciderlo, il Basilisco incrocia il suo sguardo e uccide {1} in una frazione di secondo. Il Basilisco ha vinto ed è diventato il re indiscusso della Foresta Incantata! Congratulazioni!</value>
+  </string>
+  <string key="NoWinner">
+    <value>La Foresta Incantata non è mai stata così silenziosa: la Valle degli Elfi, il Lago Luccichio, i piccoli rifugi degli Gnomi e delle Fate... tutte le creature magiche sono morte! Peccato, nessuno ha vinto!</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Appena il sole sorge, {0} esce dal suo nascondiglio e si accorge che soltanto {1} è rimasto in vita. {0} si avvicina a {1} per ucciderlo. La creatura avversaria è preparata e riesce ad evitare per un pelo il suo sguardo. Il Drago {1} si alza in volo, spalanca le sue fauci ed emette un potente ruggito seguito da una lunga fiammata incandescente, andando a colpire in pieno {0}. La pelle di {0} gli ha permesso di resistere quel tanto che bastava per puntare il suo sguardo assassino sul Drago {1}. Entrambe le creature si accasciano al suolo con un tonfo, lasciando la Foresta Incantata completamente inabitata e senza vincitori!</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Non hai scelto il tuo modello, perciò un folletto assistente del Bot ha scelto per te. Il tuo modello è: {0}.</value>
+  </string>
+  <string key="Won">
+    <value>Vinto</value>
+  </string>
+  <string key="Lost">
+    <value>Perso</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Il giocatore {0} è stato ucciso per non aver votato {1} volte nelle ultime 24 ore.</value>
+  </string>
+  <string key="AboutVG">
+    <value>Essendo soltanto un Essere Umano, non hai molto da fare... pensa a sopravvivere!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Il Vecchio Mago è un tipo un po' strampalato ma dalle ampie vedute: grazie al suo potere può scoprire e rivelare il ruolo degli altri giocatori. Sii cauto: se riveli il tuo ruolo, le creature oscure potrebbero prenderti di mira e... ucciderti!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Brutto, odia il sapone e mangia i bambini (e non solo!)... Sì, è proprio un Orco! Di giorno cerca di sembrare innocente e di confondere le idee, mentre di notte... sceglie un giocatore da uccidere! \nNB: Se attacca l'Alieno, diventerà anch'esso un Orco! \nSe attacca il Fauno, la notte successiva non potrà attaccare! \nBuon divertimento!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>La Sirena è una mistica creatura dei laghi e dei mari che ha la capacità di attirare a sé un personaggio durante la notte per... divertirsi! Se il giocatore non è un Orco o un'altra creatura oscura, lo saprà (perché sopravvivrà!); in caso contrario morirà. Se il giocatore scelto è anche la vittima dei cattivi, sia la Sirena che la vittima moriranno. Ad ogni modo, se gli Orchi fanno visita alla Sirena e lei è impegnata con un giocatore, ella sopravvivrà... (divertirsi sott'acqua ha i suoi vantaggi, dopotutto!)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Il Fauno è una creatura dalle corna e zampe di capra che ama le feste e il buon vino! Se i cattivi dovessero mangiarlo, non potranno attaccare la notte successiva (un Fauno ubriaco non ha un buon sapore!)</value>
+  </string>
+  <string key="AboutCursed">
+    <value>L'Alieno è atterrato nella Foresta Incantata con la sua navicella diversi anni fa. Prende parte alle attività e sta con i buoni ma, se i cattivi dovessero fargli visita, non ci penserebbe due volte a unirsi con loro! Quando lo troveranno, infatti, diventerà al 100% un Orco! </value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Gli Elfi, si sa, amano le armi... e l'Elfo guerriero non è da meno! Per lui avere qualcosa da combattere è fondamentale. Perciò, se tutti i cattivi in partita muoiono, l'Elfo guerriero diventa un Orco per continuare a combattere! \NB: se il Vecchio Mago ti scruta, potrebbe vedere sia un Elfo guerriero che un Orco (50% di probabilità)!</value>
+  </string>
+  <string key="AboutGA">
+    <value>L'Angelo è una creatura maestosa e luminosa, in parte soprannaturale. La sua natura è talmente buona e generosa che, ogni notte, può scegliere un giocatore da proteggere in caso di attacco. Dovrà scegliere il giocatore con attenzione: se sceglie un malvagio, ha il 50% di possibilità di morire!</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Lo Spirito dell'Aria è una creatura soprannaturale dall'aspetto simile a quello umano. Come l'aria, l'elemento che gli appartiene e che comanda, ogni giorno ha la possibilità di intrufolarsi ovunque e di scoprire le identità dei giocatori! Dovrà comunque fare attenzione: ha il 40% di possibilità di essere visto dalle creature oscure!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Il Centauro, una creatura fiera e coraggiosa, ha l'aspetto di metà uomo e metà cavallo. Porta sempre con sé un arco e due frecce. Ogni giorno, avrà la possibilità di scegliere un giocatore da colpire. Quando la prima freccia verrà scoccata, però, tutti sapranno la sua identità! Il Centauro dovrà fare molta attenzione e scegliere i giocatori giusti: avrà soltanto DUE frecce da usare!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>La Fenice è un uccello sacro e leggendario, famoso per essere in grado di incendiarsi, morire, e rinascere dalle proprie ceneri. Per vincere dovrà fare soltanto una cosa: farsi linciare! Se riuscirà nell'impresa, una maledizione mortale cadrà su tutti i giocatori rimasti e soltanto la Fenice potrà rinascere e vincere!</value>
+  </string>
+  <string key="AboutFool">
+    <value>Lo Sciamano è una figura mistica, fuori dal comune e abbastanza folle. Nei suoi rituali fa spesso uso di funghi speciali e erbe incantate che gli provocano allucinazioni... e gli faranno credere di essere il Vecchio Mago! Ogni notte, infatti, potrà scegliere un giocatore da scrutare. Attenzione! Il ruolo che gli verrà rivelato sarà casuale e non veritiero!</value>
+  </string>
+  <string key="AboutCult">
+    <value>Il Vampiro è una creatura della notte, immortale e dai canini affilati. Odia l'aglio e si nutre di sangue, il suo obiettivo è quello di invadere e fare sua la Foresta Incantata! Per farlo, avrà bisogno di un esercito. Ogni notte potrà scegliere un giocatore da mordere e trasformare in Vampiro. Se a fine partita tutti i giocatori sopravvissuti sono Vampiri... vincono!</value>
+  </string>
+  <string key="AboutCH">
+    <value>Il Cacciatore di Vampiri è un essere umano nato e cresciuto nella Foresta Incantata. Munito di ghirlanda d'aglio e paletto, ogni notte avrà l'opportunità di scovare i Vampiri e ucciderne uno. Se i Vampiri lo attaccano, l'ultimo di essi che è stato trasformato, morirà! </value>
+  </string>
+  <string key="AboutWC">
+    <value>Una Ninfa è una bellissima creatura dei boschi che vive in armonia con la natura. La Giovane Ninfa, in particolare, è molto curiosa ma anche molto irascibile. A inizio partita avrà l'occasione di scegliere un giocatore come modello di vita. Se il giocatore scelto dovesse morire, la giovane Ninfa si arrabbierà così tanto da diventare un Orco e passare dalla parte dei cattivi!</value>
+  </string>
+  <string key="AboutAppS">
+    <value>L'Apprendista Mago è un giovanotto che sta imparando tutti i segreti sulla magia. A inizio partita non avrà alcun potere ma, se il Vecchio Mago dovesse morire, l'Apprendista Mago prenderà il suo posto.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Il Gufo Parlante è la spalla destra del Vecchio Mago, saprà sempre la sua vera identità e lo aiuterà a proteggere il suo ruolo e sopravvivere fino ala fine!</value>
+  </string>
+  <string key="AboutMason">
+    <value>Gli Gnomi sono creature piccole e dalla lunga barba bianca. Nonostante la stazza, sono grandi lavoratori e il loro popolo è molto unito. Non hanno abilità particolari o poteri magici, però assieme possono formare un team. Uno Gnomo, infatti, saprà sempre se in partita ci sono altri Gnomi come lui... L'unione fa la forza!</value>
+  </string>
+  <string key="AboutDG">
+    <value>Lo Spirito dell'Acqua è una creatura soprannaturale dall'aspetto simile a quello umano. Come l'acqua, l'elemento che comanda e che gli appartiene, ha la capacità di assumere qualsiasi forma. A inizio partita dovrà scegliere un giocatore e ne assumerà il ruolo quando il giocatore scelto morirà.
+      /nNB: Se il giocatore scelto è stato trasformato in Vampiro, prenderà il ruolo iniziale. Tutte le altre regole normali si applicano: se eredita il ruolo di giovane Ninfa e il suo modello è morto, lo Spirito dell'Acqua diventa un Orco; altrimenti, eredita il suo modello.\nI Vampiri non possono convertire lo Spirito dell'Acqua (ma possono farlo quando eredita un ruolo) e - lo Spirito dell'Acqua NON può vincere a meno che non si trasforma. Se a fine partita non si è ancora trasformato, perde (eccezione: amanti).</value>
+  </string>
+  <string key="AboutCupid">
+    <value> L'amore è nell'aria... e l'Unicorno ha il compito di spargerlo in giro! Con il suo corno magico a inizio partita può scegliere due giocatori da far innamorare e amare per sempre. Il loro amore sarà talmente forte che, se uno dei due amanti muore, lo farà anche l'altro.
+      NB: Gli amanti si conoscono a vicenda ma non possono rivelare il loro ruolo. Se uno dei due vince, anche l'altro lo farà (anche se uno è buono e l'altro cattivo!). Se i due amanti sono gli unici sopravvissuti... hanno vinto!
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>Il Drago è una creatura antica, forte, solitaria e irascibile... I suoi getti di fuoco sono molto pericolosi! Se qualcuno visita il Drago, potrebbe morire! Se le creature oscure lo attaccano, c'è una probabilità che una di esse venga uccisa.
+      Nota: per gli attacchi da parte di Orchi &amp; co, ha la probabilità di ucciderne uno. Se c'è solo un cattivo, il Drago ha il 30% di probabilità di ucciderlo (e sopravvivere). Per ogni cattivo in più, la probabilità aumenta del 20% (2 Orchi= 50%, 3= 70%). Ciononostante - se ci sono molte creature oscure, anche se il Drago potrebbe ucciderne una, verrà lo stesso accerchiato e ucciso.	\nSe i Vampiri provano a convertire il Drago, hanno il 50% di probabilità di fallire. Se falliscono, il Drago ha il 50% di probabilità di ucciderne uno!</value>
+  </string>
+  <string key="AboutSK">
+    <value>Il Basilisco è una rara creatura solitaria, un serpente enorme portatore di morte. Ciò che lo rende veramente pericoloso è il suo sguardo: chiunque guardi negli occhi un Basilisco, morirà. Il Basilisco vincerà quando sarà l'unico rimasto in vita (eccezione: amanti). Il suo sguardo non ha eccezioni: può uccidere CHIUNQUE! Se un gruppo di perfide creature lo attacca, una di esse verrà uccisa.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para è uno sciocco programmatore a cui piace abbaiare alle persone. Forse è stato a contatto con i lupi troppo a lungo...</value>
+  </string>
+  <string key="EndTime">
+    <value>Durata della partita: {0}</value>
+  </string>
+  <string key="Day">
+    <!-- Day -->
+    <value>Giorno {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Si è verificato un errore imprevisto, e questo nodo è stato spento. /n Per dettagli, vai su @werewolfsupport</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Un folletto postino ti ha recapitato un messaggio in privato!</value>
+  </string>
+  <string deprecated="true" key="StartPM">
+    <value>Scrivimi un messaggio in privato così posso risponderti: @werewolfbot</value>
+  </string>
+  <string deprecated="true" key="PMTrue">
+    <value>Grazie per avermi startato! Posso scriverti in privato ora.</value>
+  </string>
+  <string deprecated="true" key="MustReplySmite">
+    <value>Devi rispondere all'utente che vuoi cacciare!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Al tuo servizio! Cosa desideri fare?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Puoi entrare in partita all'interno di un gruppo!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Puoi cominciare una partita solo dentro un gruppo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo di risposta: {0}\nMessaggi per secondo: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Quale lingua?\nAttuale: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Quale variante?\nAttuale: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Lingua impostata su: {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Quale file di linguaggio vuoi avere?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Non ci sono nodi online al momento, per favore riprova più tardi.</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Devi usare questo comando in un gruppo!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Non sei un Admin globale...</value>
+  </string>
+  <string key="NotPara">
+    <value>Non sei Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sì</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Ammesso</value>
+  </string>
+  <string key="Disallow">
+    <value>Non ammesso</value>
+  </string>
+  <string key="Show">
+    <value>Mostra</value>
+  </string>
+  <string key="Hide">
+    <!-- Game Mode Choices-->
+    <value>Nascondi</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Solo Normale</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo Caos</value>
+  </string>
+  <string key="PlayerChoice">
+    <!-- Show Roles on End Game -->
+    <value>A scelta del giocatore</value>
+  </string>
+  <string key="ShowNone">
+    <value>Non mostrare nessuno</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostra solo giocatori in vita</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostra tutti i giocatori</value>
+  </string>
+  <string key="Cancel">
+    <value>Annulla</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Vuoi che sia ammesso fuggire dal gioco durante la partita?\nNota: i giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>È {0} fuggire dopo l'inizio della partita</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Giocatori massimi impostati a {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostrare o nascondere i ruoli alla morte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>I ruoli saranno {0} alla morte.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Che modalità di gioco vuoi in questo gruppo?\nAttualmente: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modalità di gioco impostata su: {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Vuoi che i ruoli vengano mostrati alla fine della partita? \nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Ruoli mostrati alla fine impostati su: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Scegli il tempo base (in secondi) per il giorno. Questo verrà modificato in base al numero di giocatori.\nTempo minimo aggiunto in base ai giocatori è 60 secondi. Impostazione base: {0}\nAttuale: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Tempo base del giorno impostato a {0} secondi</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Scegli quanto dovranno durare le notti in secondi. Impostazione base: {0}\nAttuale: {1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Le notti dureranno {0} secondi</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Imposta il tempo (in secondi) per il linciaggio di giorno. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>I linciaggi dureranno {0} secondi</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Ammettere il ruolo dello Sciamano in partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Ruolo dello Sciamano impostato su: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Ammettere la Fenice in partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Ruolo della Fenice impostato su: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Ammettere i Vampiri in partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Ruoli dei Vampiri impostato su: {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Ammettere linciaggio segreto?\nAttualmente: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Linciaggio segreto impostato su: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Grazie, ti auguro una magica giornata! :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>In quale lingua vuoi cercare il gruppo in cui giocare?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Questi sono i gruppi per {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membri</value>
+  </string>
+  <string key="StartMe">
+    <value>Per favore startami, così posso scriverti in privato!</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} non ha startato il bot ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+  <string key="RoleInfoMayor">
+    <value>Sei il Re Tritone 🧜🏽‍♂️ (🎖)! Metà uomo e metà pesce e munito di tridente, governi e vegli su tutte le creature acquatiche, in particolare le Sirene. Quando lo riterrai necessario, potrai decidere di rivelare il tuo ruolo. Dal momento in cui ti rivelerai, i tuoi voti per il linciaggio verranno raddoppiati! Fai parte dei buoni... rivelati a tuo rischio e pericolo!</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Sei la Regina delle Fate 🧚🏼‍♀️ (👑)!  Piccola, luminosa e molto amata, vegli con attenzione sul popolo fatato. La prima volta che verrai linciata, rivelerai la tua identità e ciò basterà a salvarti la vita! Fa' attenzione: sarai salva soltanto una volta! Se verrai linciata nuovamente... morirai! Ora va', vola di fiore in fiore e spargi la tua magia!</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Sei l'Elfa Centenaria 🧝🏽👵🏻 (🤕)! Le creature della Foresta Incantata ormai hanno perso il conto degli anni anni che hai. Ciò che è certo è che sei molto vecchia... e un po' smemorata! Ogni tanto dimentichi la strada che porta alla Valle degli Elfi... e sbagli a votare! Quando dovrai linciare, infatti, hai la probabilità (del 50%) di sbagliare il voto... potresti linciare il giocatore sbagliato! Tranquilla, comunque: gli altri Elfi ti vorranno bene lo stesso! Quali Elfi...? Che smemorata!</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Sei lo Stregone 🔮 (🔮) e per un certo periodo sei stato amico e alleato del Vecchio Mago. Hai tradito la fiducia delle creature magiche e ti sei alleato con le forze oscure. Similmente al Vecchio Mago, anche tu di notte hai la capacità di scrutare i ruoli dei giocatori ma in modo diverso: puoi trovare soltanto i tuoi alleati (Orchi &amp; co) oppure il Vecchio Mago. Vinci solo se vincono i cattivi. Divertiti a gettare il caos nella Foresta Incantata!</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Sei lo Spirito della Terra 🌱 (⚒) e hai il completo potere sul tuo elemento: i funghi, gli alberi, le piante... e userai questi poteri per proteggere le creature buone. Soltanto per una volta, quando lo riterrai necessario, potrai decidere di proteggere la Foresta Incantata con rovi e piante velenose affinché le creature oscure non attacchino durante la notte (una sola!). Attenzione, però: in questo modo tutti conosceranno la tua identità!</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Sei una Strega 🧙🏻‍♀️ (⚡️) e... come sei perfida! Rapisci i bambini, distruggi ogni cosa e comandi la tua banda di creature malvagie. Ogni notte sceglierai insieme ai tuoi compagni, se presenti, un giocatore da attaccare e uccidere. Può capitare (20% di probabilità) che tu scelga di utilizzare la tua magia sulla vittima e di trasformarla in Orco la notte successiva.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Sei un Goblin 👺 (🐶)... che dire di te? Basso, brutto e maligno... ovviamente stai dalla parte degli Orchi! Proprio come loro anche tu, ogni notte, dovrai scegliere un giocatore da attaccare e uccidere. Se tu dovessi morire, i tuoi compagni di team, per vendicarsi, la notte successiva attaccheranno due volte! All'attacco!</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Non appena le creature magiche si recano alla Grande Quercia per linciare {0}, essa si libera e grida con tutto il fiato che ha in corpo: “Un momento! Sono io, la Regina delle Fate! Governo sul Piccolo Popolo e mi assicuro che tutti, nella Foresta Incantata, vivano in pace e armonia! Le altre Fate possono confermarlo!”
+Dopo essersi accertate della veridicità del suo racconto, le creature magiche la lasciano libera e si scusano con lei per l'errore commesso. Nessuno verrà linciato! Per ora...</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Ti concentri sulla tua sfera di cristallo e scruti {0}, tuttavia la visione non è nitida, non riesci a capire chi è.  Non è il Vecchio Mago o un tuo alleato, di questo sei sicuro!</value>
+  </string>
+  <string key="MayorReveal">
+    <value>Che cos'è questa melodia? Le Sirene stanno cantando e annunciano l'arrivo del Re Tritone! Tutte le creature magiche accorrono al Lago Luccichio e vedono la possente figura di {0} emergere parzialmente dall'acqua. Il suo tridente luccica e la sua coda è talmente bella e colorata che tutti si inchinano e lo ringraziano per essersi rivelato. Grazie alla maestosità del re dei mari e delle Sirene le creature magiche decidono che, d'ora in poi, i voti di linciaggio per il Re Tritone varranno doppio!</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clicca su "Rivelati!" quando sei pronto per uscire allo scoperto e dire a tutti che sei il Re Tritone!</value>
+  </string>
+  <string key="Reveal">
+    <value>Rivelati!</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Vuoi usare i tuoi poteri e circondare i rifugi e i confini della Foresta Incantata con rovi e piante velenose? Le creature del male non potranno attaccare per una notte!</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre le creature si radunano e discutono su chi linciare, lo Spirito della Terra {0} entra in azione: fitti rovi e diverse piante velense e urticanti circondano i rifugi e i confini della Foresta Incantata. Grazie a questa brriera naturale, le creature oscure questa notte non potranno attaccare! Evviva!</value>
+  </string>
+  <string key="Mayor">
+    <value>il Re Tritone 🧜🏽‍♂️ (🎖) </value>
+  </string>
+  <string key="Prince">
+    <value>la Regina delle Fate 🧚🏼‍♀️ (👑)</value>
+  </string>
+  <string key="Sorcerer">
+    <value>lo Stregone 🔮 (🔮)</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>l'Elfa Centenaria 🧝🏽👵🏻 (🤕) </value>
+  </string>
+  <string key="Blacksmith">
+    <value>lo Spirito della Terra 🌱 (⚒) </value>
+  </string>
+  <string key="AlphaWolf">
+    <value>una Strega 🧙🏻‍♀️ (⚡️)</value>
+  </string>
+  <string key="WolfCub">
+    <value>un Goblin 👺 (🐶) </value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>All'attacco! Le oscure creature stanno per avventarsi su {0}, ma la perfida Strega {1} li ferma proprio sul più bello. {1} vede un briciolo di malvagità nel cuore di {0} e decide di approfittarne! Prima di andarsene lancia un incantesimo sulla vittima: la notte successiva diventerà un Orco!</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Oh no! Le creature oscure ti hanno accerchiato e stanno per ucciderti... la perfida Strega, però, ti lascia vivere e ti lancia un incantesimo prima di andarsene. La notte successiva diventerai un Orco!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Appena cala la notte, senti uno strano formicolio e un'ondata di pura malvagità che parte dal cuore e si irradia in tutto il tuo corpo. Ti stai trasformando... non si torna più indietro... Ora sei un Orco! </value>
+  </string>
+  <string key="AboutMayor">
+    <value>Il Re Tritone è una creatura metà umana e metà pesce. Provvisto di tridente, ha il comando su tutte le creature acquatiche. Finché non si rivela, rimarrà nell'anonimato. Quando tutti sapranno chi è, ogni suo voto di linciaggio varrà doppio (significa che il voto è due volte più forte rispetto a quello degli altri). Dovrà giocarsi bene questa opportunità e contribuire a far vincere il team dei buoni!</value>
+  </string>
+  <string key="AboutPrince">
+    <value>La Regina delle Fate comanda sul Piccolo Popolo fatato. Questa importante carica tornerà utile al momento del linciaggio: la prima volta che verrà linciata, rivelerà il suo ruolo e si salverà! Attenzione: funziona solo la prima volta! Se viene linciata nuovamente, morirà.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Ricordate il buon Vecchio Mago? Sì? Bene! Lo Stregone è la sua controparte e sta dalla parte dei cattivi! Ogni notte può scrutare i giocatori per scoprirne il ruolo... tuttavia potrà scoprire SOLO i suoi perfidi compagni di Team e il Vecchio Mago!</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>L'Elfa Centenaria è anziana, moolto anziana. Si dimentica la strada di casa o le cose più importanti. Ad esempio, quando dovrà linciare qualcuno, ci sarà il 50% di probabilità che sbagli giocatore (in questo caso il voto sarà random). Porta pazienza... è anziana!</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Lo Spirito della Terra è una creatura soprannaturale dall'aspetto simile a quello umano. Ha il pieno controllo sull'elemento Terra: soltanto per volta, può circondare i confini della Foresta Incantata con rovi e piante velenose, impedendo agli Orchi di attaccare durante la notte.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>La Strega è il capo dei cattivi ed è perfida fino al midollo! Ogni notte, durante un attacco, ha il 20% di possibilità di lanciare un incantesimo sulla vittima e di trasformarlo in Orco la notte successiva.
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Il Goblin è una creatura maligna, piccola e brutta. Come per gli Orchi, la notte attacca e uccide il giocatore scelto. Se il Goblin muore, i suoi compagni di squadra si arrabbieranno così tanto da decidere di attaccare due volte la notte successiva!</value>
+  </string>
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto e tu ti trasformi nella perfida Strega! I tuoi malvagi compagni di team (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto e tu assumi il ruolo e la forma di un Goblin! I tuoi nuovi compagni malvagi (se presenti) sono: {1}</value>
+  </string>
+  <string deprecated="true" key="VillageTeam">
+    <value>Team Creature Buone</value>
+  </string>
+  <string deprecated="true" key="NeutralTeam">
+    <value>Team Neutrale</value>
+  </string>
+  <string deprecated="true" key="SerialKillerTeam">
+    <value>Team Basilisco</value>
+  </string>
+  <string deprecated="true" key="TannerTeam">
+    <value>Team Fenice</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Team Foresta Incantata</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Team Creature Oscure</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Team Basilisco</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Team Vampiri</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Team Fenice</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>I Vampiri inviano {0} per trasformare {1}, ma improvvisamente vedono {0} smembrato in tanti pezzi diversi... nemmeno alle creature oscure interessano i Vampiri! {0} è morto!</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} usa la sua meravigliosa voce per richiamare a sé {1}, pronta per una nottata di divertimenti tra le onde. Purtroppo si accorge di aver richiamato il Basilisco quando {1}, che stava passando da quelle parti per schiarirsi le idee sotto la luna piena, muore dopo averlo guardato negli occhi. Purtroppo nemmeno la Sirena riesce a sfuggirgli: una fugace occhiata e anche {0} muore immediatamente sul colpo, lasciando il Basilisco soddisfatto del proprio operato!</value>
+  </string>
+  <string key="ApprenticeSeerEaten">
+    <value>Le creature magiche trovano {0} disteso a terra in una pozza di sangue. Accanto a lui trovano anche una piccola sfera di seconda mano e un vecchio manuale di "Incantesimi - ABC della Magia". L'Apprendista Mago è morto!</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Sembra che {0}, lo Spirito della Terra, abbia avuto un terribile incontro, la scorsa notte. Le creature magiche l'hanno trovato morto nei pressi della Grande Quercia. Il suo corpo non aveva segni di lotta, però sul suo volto era segnata un'espressione di puro terrore. Consapevoli che il Basilisco ha eliminato un'altra innocente vittima, le creature magiche si radunano per compiangere e commemorare la vita perduta di {0}.</value>
+  </string>
+  <string key="CultistKilled">
+    <value>Che strano! I Vampiri non erano immortali? Non proprio, a quanto pare... {0} è stato trovato pietrificato nei pressi del suo rifugio. Accanto al suo corpo vengono ritrovate tracce di pelle di serpente. Con il Basilisco non si scherza! {0} era un Vampiro.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Le creature magiche sono sotto shock. Nel cuore della Foresta Incantata trovano il corpo candido e puro di {0} privo di vita. Chi mai potrebbe uccidere un Unicorno? Il Basilisco, naturalmente!</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>{0} non c'era alla festa dei Fauni, ieri sera... Preoccupato, un gruppo di Fauni va alla ricerca del compagno scomparso. Con dispiacere e dolore trovano il corpo di {0} privo di vita fuori dal suo rifugio. A quano pare stava trasportando una botte di vino... fino a quando non ha incontrato gli occhi spietati del Basilisco!</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} ha provato a combattere valorosamente contro il Basilisco. Purtroppo, mentre stava per avere la meglio su di lui, non è riuscito ad evitare il suo sguardo. La bellissima luce dell'Angelo {0} si è spenta... È morto!</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Alcune frecce sono state trovate vicino al rifugio di {0}. Le creature magiche l'hanno trovato riverso a terra senza segni di lotta. Non ci sono molto indizi, ma sono quasi sicure che il Basilisco lo abbia guardato negli occhi...</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Oh, no! Il Basilisco c'è riuscito! {0} è stato trovato morto fuori dall'acqua senza tridente e con la coda in parte squamata.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Le creature magiche si svegliano con un brutto presentimento. Uscendo dai loro rifugi, notano polvere di fata sparsa ovunque: sugli alberi, sulle casette, sulle pietre... Piccola e luminosa, una coroncina giace a terra. Lì vicino, trovano il corpicino senza vita della Regina delle Fate {0}. A quanto pare ha provato a sfuggire dal Basilisco... ma con tragici risultati! Il popolo fatato piange per la dolorosa perdita della loro regina.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>La mattina giunge ma non tutti, purtroppo, sono ancora in vita. Le creature magiche trovano il corpo senza vita di {0} in una posizione innaturale, con gli occhi spalancati e la bacchetta magica ancora in mano. La magia del Vecchio Mago {0} non è servita a proteggerlo dal Basilisco!</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Tutte le creature magiche, durante la notte, hanno udito riecheggiare nella Foresta Incantata le parole "Maledetti! Ero dalla vostra parte!". Quando sorge il sole, trovano il corpo di {0} mezzo mangiato. A quanto pare gli Orchi e le altre creature oscure hanno commesso un errore... hanno ucciso lo Stregone, un loro alleato! </value>
+  </string>
+  <string key="WildChildEaten">
+    <value>Le urla della Giovane Ninfa {0} non sono servite a richiamare l'attenzione e l'aiuto da parte di qualcuno. Il suo corpo (o meglio, quello che rimane!) viene ritrovato tra gli arbusti della Foresta Incantata. Addio, Giovane Ninfa!</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+    <value>Le creature magiche fanno una triste scoperta. Trovano il corpo di {0}, il Cacciatore di Vampiri, pietrificato e con un'espressione di pure stupore sul volto. Ha avuto proprio un brutto incontro: si aspettava di incontrare gli occhi immortali di un Vampiro... e invece ha incontrato quelli del Basilisco!</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Sembra che le creature oscure abbiano deciso di non attaccare, la scorsa notte. Ciò non ha impedito loro di uccidere il Vampiro {0}, mandato per cercare di convertire uno di loro. Che sia da lezione, con gli Orchi non si scherza!</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Cultists convert the SK-->
+    <value>I Vampiri credevano di allargare il loro gruppo, questa notte... quanto si sbagliavano! Il Vampiro {0} ha incontrato gli occhi letali del Basilisco, dando definitivamente fine alla sua vampiresca esistenza. L'immortalità dei Vampiri, per un Basilisco, è davvero una sciocchezza!</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- used when GA guards SK -->
+    <value>Le creature magiche credevano che l'Angelo {0} fosse abbastanza forte da vincere contro lo sguardo di un Basilisco, ma si sbagliavano. La bellissima figura dell'Angelo {0} giace priva di vita ai margini della Foresta Incantata. Tutti compiangono la perdita del prezioso Angelo.</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <!-- used when GA guards a wolf -->
+    <!--1vs1 finales-->
+    <value>{0} ha protetto una creatura oscura, la scorsa notte. Le creature dela Foresta Incantata si risvegliano e trovano soltanto un paio di bellissime ali luminose che appartenevano all'Angelo {0}. Gli Orchi devono aver fatto proprio un buon pasto!</value>
+  </string>
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che {0} era l'unico sopravvissuto, {1} si reca da {0} per ucciderlo, ma... Sorpresa! {0} è un Drago molto suscettibile e poco amichevole... Nel giro di pochi secondi le sue fiammate raggiungono la creatura oscura e mettono fine alla sua miserevole esistenza. Il Drago ha vinto!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che {0} era l'unico sopravvissuto, {1} si reca da {0} per ucciderlo e scopre di avere a che fare con un possente Drago. Usando l'astuzia e attendendo il momento migliore per agire, {1} attacca il Drago bloccandogli ali e muso e impedendogli così di reagire. {0} viene incredibilmente sconfitto in un lago di sangue, mentre la creatura oscura grida e festeggia per la vittoria aggiudicata!</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <!-- Extend time -->
+    <value>{1} e {0}, sapendo di essere gli unici rimasti in vita, si incontrano sotto le fronde della Grande Quercia. Scoprendo che {0} è un Vampiro, {1} non ci pensa due volte ad usare il suo paletto e conficcarglielo dritto nel cuore. Felice di aver vinto e di aver finalmente eliminato tutti quegli orribili succhiasangue dalla Foresta Incantata, il Cacciatore di Vampiri si toglie la sua collana d'aglio e l'appende alle fronde della Grande Quercia come ricordo del suo ammirevole operato. Vittoria!</value>
+  </string>
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per unirti alla partita. Clicca Join!</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per cliccare Join e unirti alla partita!</value>
+  </string>
+  <string key="CantExtend">
+    <value>Solo gli admin del gruppo possono prolungare il timer più di una volta!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Permettere ai giocatori di prolungare il timer?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} prolungare il tempo ai giocatori</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Scegli il tempo limite che può essere aggiunto ai giocatori con un singolo comando /extend.\nDefault: {0}\nAttualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo limite massimo impostato a {0} secondi</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Urgh! Il Fauno {0} deve aver festeggiato molto... ma quanto vino ha bevuto? La sua carne aveva un saporaccio... Per colpa sua non potrai attaccare {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Non puoi unirti alla partita perché non sembri essere un membro di {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Per favore non usare i comandi per joinare. Usa questo bottone invece.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>Hanno votato in {0} su {1}.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, per favore ricordati di joinare cliccando sul bottone.</value>
+  </string>
+  <string key="GroupNotFound">
+    <value>Non trovo il gruppo. Prova ad usare il comando nel gruppo in cui vuoi togliere l'avviso di nuova partita, oppure aggiungi il link, l'ID o l'username dopo il comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Sei stato rimosso dalla lista d'attesa per {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0} sono entrati nella Foresta Incantata negli ultimi 30 secondi.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Abilita i Vampiri</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Abilita la Fenice</value>
+  </string>
+  <string key="AllowFool">
+    <value>Abilita lo Sciamano</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Abilita il Linciaggio Segreto</value>
+  </string>
+  <string key="RandomMode">
+    <value>Abilita modalità random</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Abilita estensione del timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostra i ruoli alla morte</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Abilita la fuga</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Mostra ID all'ingresso in partita</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Mostrare ID dei giocatori dopo l'ingresso in partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} ID</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Tutte</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Abilitare la Modalità Random?\nQuando la Modalità Random è attiva: "Caos", "Linciaggi segreti", "Mostrare Ruoli alla Morte", e Ammetti Vampiri/Sciamano/Fenice verranno impostati automaticamente ogni volta che qualcuno inizierà una partita.\nAttualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modalità Random impostata a: {0}</value>
+  </string>
+  <string key="AllowNSFW">
+    <value>Ammetti Gif Pack NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Ammettere gif packs NSFW ai giocatori?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} Gif NSFW</value>
+  </string>
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Non appena il sole fece capolino tra le fronde della Foresta Incantata, la Fenice {0} si svegliò in un silenzio innaturale. {0} volò e volò, scrutando attentamente in cerca di segni di vita... nulla. Come avrebbe fatto ora la Fenice a rinascere? /n{0}, sola e sconfitta, se ne andò per sempre dalla Foresta Incantata, volando alla ricerca di nuove terre magiche dove riuscire a farsi linciare e rinascere nuovamente!</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>Nonostante tutti gli sforzi di {0}, i suoi alleati erano tutti morti. Vagando solitario nella Foresta Incantata, {0} vide i corpi morti delle creature magiche e anche dei suoi vecchi alleati: Orchi, Goblin, Streghe, Lupi Mannari e Troll giacevano a terra privi di vita. Sconfitto, abbandonato e carico di vendetta, lo Stregone {0} raccolse le sue cose e sparì in una nuvola di fumo, alla ricerca di nuove creature brutte e malvagie con cui poter vincere!</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Quale variante?\nAttuale: {0}\nSiccome hai giocato più di 500 partite puoi entrare su: </value>
+  </string>
+  <string key="Skip">
+    <!-- New Roles, April 2018 -->
+    <value>Salta</value>
+  </string>
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto e tu i trasformi in un Licantropo! I tuoi perfidi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Hai visto che {0} NON è {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Vuoi usare la tua polvere fatata e addormentare tutti, questa notte?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Che cos'è quella creaturina luminosa che sta volando per tutta la Foresta Incantata? Una Fata della Notte, naturalmente! Mentre le creature magiche erano radunate a discutere, {0} ha iniziato a volteggiare spargendo dalle ali la sua polvere soporifera! Grazie alla Fata, questa notte, tutte le creature magiche cadranno in un sonno profondo e non potranno svolgere nessuna azione notturna! </value>
+  </string>
+  <string key="SandmanNight">
+    <value>La polvere magica della Fata della Notte inizia a fare effetto... Tutte le creature magiche cadono in un sonno profondo e senza sogni. Per questa volta, tutti potranno godersi il proprio riposo senza aver paura di morire!</value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>Ammettere il ruolo del Folletto in partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Ruolo del Folletto impostato su: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Il Folletto potrà essere usato ogni notte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Il Folletto potrà agire ogni notte: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Ammetti il Folletto</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Folletto ammesso per tutta la partita</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>Sei un Gigante 👣 (👱🌚)! Nonostante appaia poco rassicurante data la sua enorme altezza, il Gigante fa parte dei buoni. Tuttavia, essendo brutto quasi quanto un Orco, verrà visto come uno di loro se verrà scrutato dal Vecchio Mago... Fa' attenzione!</value>
+  </string>
+  <string key="WolfMan">
+    <value>un Gigante 👣 (👱🌚) </value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Il Gigante è una figura dall'aspetto umanoide e grande quanto una casa. Sta dalla parte dei buoni ma, per il suo aspetto poco rassicurante e simile a quello di un Orco, verrà visto dal Vecchio Mago proprio come uno di loro!</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>Sei un Licantropo 🐺🌝 (🐺🌝)! Sembri un Essere Umano qualsiasi ma... l'apparenza inganna! Di notte e con l'aiuto della luna piena, ti trasformi in una temibile creatura divoratrice! A causa della tua doppia natura, sia il Vecchio Mago che lo Stregone ti vedranno come un semplice Essere Umano! Usa bene questa opportunità e... divertiti ad uccidere assieme agli Orchi!</value>
+  </string>
+  <string key="Lycan">
+    <value>un Licantropo 🐺🌝 (🐺🌝)</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Il Licantropo è un essere umano mutaforma. Di notte, specialmente sotto l'influsso della luna piena, si trasforma in un temibile lupo mannaro e assieme agli Orchi si divertirà a creare il caos e ad uccidere le sue vittime! NB: Sia il Vecchio Mago che lo Stregone ti vedranno come Essere Umano.</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>Sei lo Spirito Guida ✨ (🌀) e come tale hai il compito di aiutare le creature riportando loro informazioni preziose. Sai molte cose ma ti è permesso rivelarne solo alcune. Ogni notte, infatti, hai la possibilità di scrutare un giocatore e sapere quale ruolo NON gli appartiene. Nota bene: il ruolo che ti verrà rivelato è presente in partita e appartiene ad un altro giocatore ancora in vita!</value>
+  </string>
+  <string key="Oracle">
+    <value>lo Spirito Guida ✨ (🌀)  </value>
+  </string>
+  <string key="AboutOracle">
+    <value>Lo Spirito Guida è una creatura soprannaturale dall'aspetto simile a quello umano. Ha l'abilità di scrutare ogni notte un giocatore e scoprire quale ruolo NON gli appartiene. NB: il ruolo rivelato è presente in partita e appartiene a qualcuno ancora in vita.</value>
+  </string>
+  <string key="RoleInfoSandman">
+    <value>Sei la Fata della Notte 🧚🏻 (💤)! Piccola, bella e... magica! Quando voli, le tue ali possono emettere una particolare polvere magica che farà addormentare tutte le creature della Foresta Incantata, impedendo così che compiano azioni notturne. Puoi scegliere di addormentare tutti SOLTANTO una volta sola! Quando lo farai, il tuo ruolo verrà rivelato, perciò fa' attenzione!</value>
+  </string>
+  <string key="Sandman">
+    <value>la Fata della Notte 🧚🏻 (💤)</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Le Fate sono piccole creature dalle bellissime ali luminose. Appartengono al Piccolo Popolo fatato e fanno parte dei buoni. La Fata della Notte ha un compito speciale: soltanto per una volta, può decidere di far addormentare tutti con la sua polvere magica, in questo modo nessuno potrà compiere azioni notturne!</value>
+  </string>
+  <string key="RoleInfoPacifist">
+    <value>Sei un Leprecauno 🍀 (☮️)! Sei il Folletto più amato dagli irlandesi, famoso per il tuo completo verde, la barba rossa ma soprattutto per le tue pentole piene di monete d'oro che si trovano alla fine degli arcobaleni! Sei molto, molto astuto e sai come raggirare gli esseri umani e le altre creature magiche! Puoi usare questa tua abilità per ingannar... ops, convincere tutti a non linciare! Bada bene, però, potrai farlo soltanto una volta e, quando lo farai, il tuo ruolo verrà rivelato a tutti... perciò scegli con attenzione che cosa fare!</value>
+  </string>
+  <string key="Pacifist">
+    <value>un Leprecauno 🍀 (☮️) </value>
+  </string>
+  <string key="AboutPacifist">
+    <value>I Leprecauni sono i folletti irlandesi, molto famosi per le barbe rosse, i vestiti verdi e le monete d'oro! Astuti e avari, sanno ingannare e convincere gli altri con facilità. Come Leprecauno, soltanto per una volta, puoi convincere tutti a non linciare a fine giornata!</value>
+  </string>
+  <string key="RoleInfoWiseElder">
+    <value>Sei il Vecchio Gnomo 🎅🏽 (📚), anche se nella Foresta Incantata tutti ti conoscono come "il Vecchio Brontolone". Sei burbero, lamentoso e non vuoi avere a che fare con i tuoi compagni Gnomi, perciò te ne stai da solo in una casetta ben nascosta nel cuore della Foresta Incantata. Grazie alla tua indipendenza e saggezza, sai come sfuggire ad un attacco. Se i cattivi ti attaccheranno, infatti, riuscirai a sopravvivere. Attenzione! Se ti attaccano la seconda volta, morirai! /nNonostante il tuo caratteraccio, le altre creature ti rispettano e ti vogliono bene. Un'ultima cosa: uccidere un Vecchio Gnomo per alcuni è inaccettabile: se il Druido, il Centauro o il Drago dovessero ucciderti, perderanno le loro abilità e si trasformeranno in Esseri Umani! </value>
+  </string>
+  <string key="WiseElder">
+    <value>il Vecchio Gnomo 🎅🏽 (📚) </value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>Il Vecchio Gnomo 🎅🏽 (📚) è uno Gnomo solitario che non vuole avere a che fare con gli altri Gnomi. Può sopravvivere ad un attacco da parte delle creature oscure (ma solo la PRIMA volta!). Se il Drago, il Centauro o il Druido lo uccidono, perderanno i loro poteri e diventeranno Esseri Umani! </value>
+  </string>
+  <string key="RoleInfoThief">
+    <value>Sei un Folletto 😈 (😈)! Di piccola statura, sei molto astuto e ti diverti a rubare qualsiasi cosa! In particolare, ami rubare i ruoli ai giocatori... Durante la prima notte, dovrai scegliere il giocatore a cui rubare il ruolo. La vittima del furto diventerà un Essere Umano, mentre tu otterrai il suo ruolo! </value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Sei un Folletto 😈 (😈)! Di piccola statura, sei molto astuto e ti diverti a rubare qualsiasi cosa! In particolare, ami rubare i ruoli ai giocatori... /nIn questa partita, il Folletto è abilitato per tutto il gioco: ciò significa che avrai il 50% di probabilità di riuscire a rubare il ruolo al giocatore scelto. Se ci riuscirai, tu otterrai il nuovo ruolo, mentre l'altro giocatore diventerà un Folletto e continuerà a rubare! /nNB: non puoi rubare a un Orco o simili e se proverai a rubare al Basilisco... morirai!</value>
+  </string>
+  <string key="Thief">
+    <value>un Folletto 😈 (😈)</value>
+  </string>
+  <string key="AboutThief">
+    <value>Il Folletto è una creatura minuta, agile e multo furba. Adora rubare qualsiasi cosa a chiunque, in particolare ama rubare i ruoli degli altri giocatori! Durante la prima notte ruba il ruolo ad un giocatore che diventerà Essere Umano.\nSe il Folletto è attivo per tutta la partita, il giocatore a cui è stato rubato il ruolo si trasformerà nel nuovo Folletto e continuerà a rubare ruoli per tutta la partita.</value>
+  </string>
+  <string key="AskPacifist">
+    <value>Clicca questo bottone quando sei pronto a rivelare il tuo ruolo e convincere tutti a non linciare!</value>
+  </string>
+  <string key="PacifistNoLynch">
+    <!-- {0} - Pacifist's name -->
+    <value>Le creature magiche sono elettrizzate: il Leprecauno {0} è apparso davanti a tutti e ha deciso di rivelare dove ha nascosto la sua pentola piena di monete d'oro! /n"Peccato, però, che siete tutti impegnati a decidere chi linciare...", afferma in modo convincente, "è proprio un bel bottino. Non c'è proprio nessuno che vuole dare un'occhiata?" /nCome un fulmine, tutte le creature magiche si fiondano nella direzione suggerita dal Leprecauno. Quello che non sanno, però, è che le informazioni date sono completamente false! L'unica certezza è che, grazie alle frenetiche ricerche, nessuno oggi verrà linciato!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Grazie alle (false) informazioni date dal Leprecauno 🍀 (☮️), tutte le creature sono impegnate nella ricerca del tesoro. La Grande Quercia è deserta... Oggi nessuno verrà linciato!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+    <!-- 0 - Wise Elder's name -->
+    <value>Trovi il rifugio di {0} ma scopri che si tratta del Vecchio Gnomo 🎅🏽 (📚)! Grazie alla sua furbizia ed esperienza, {0} riesce ad evitare l'attacco e a mettersi in salvo. Per tua fortuna, quel vecchio e pazzo brontolone non è riuscito a riconoscerti!</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Le creature oscure ti hanno trovato, ma tu sei il Vecchio Gnomo e sai come evitarli. Mannaggia a loro, non sei riuscito a riconoscre gli aggressori! Dovrai stare molto attento: la prossima volta non riuscirai a cavartela...</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+    <!-- {0} - Hunter's Name -->
+    <!-- {1} - Wise Elder's Name -->
+    <value>Il Drago {0} ha ucciso {1}, il Vecchio Gnomo... Non doveva farlo, dannazione! {0} ha soltanto il tempo di emettere l'ultimo ruggito, prima di trasformarsi in un inutile Essere Umano 👱!</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+    <!-- {0} - Gunner's Name -->
+    <!-- {1} - Wise Elder's Name -->
+    <value>Uno dei Centauri 🏹 (🔫), {0}, ha colpito con una frecca il Vecchio Gnomo 🎅🏽 (📚) {1} in pieno petto. {0} è fortemente dispiaciuto e accetta il suo destino: addio galoppate e ferri di cavallo! Il Centauro è appena diventato un Essere Umano 👱...</value>
+  </string>
+  <string key="ThiefStealFailed">
+    <!-- {0} - The name of the thief's target -->
+    <value>Hai provato a rubare il ruolo a {0}, ma sfortunatamente hai fallito!</value>
+  </string>
+  <string key="ThiefStealDead">
+    <!-- {0} - The name of the thief's target -->
+    <value>Hai provato a rubare il ruolo a {0}, ma sfortunatamente {0} è appena morto...</value>
+  </string>
+  <string deprecated="true" key="ThiefStoleYourRole">
+    <!-- {0} - The new role -->
+    <value>Oh oh! Un Folletto te l'ha fatta! Ti ha rubato il ruolo e sei diventato {0}!</value>
+  </string>
+  <string key="ThiefStoleRole">
+    <!-- {0} - The name of the thief's target -->
+    <value>Sì! Ce l'hai fatta! Hai rubato il ruolo e ora sei {0}! </value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} non fa più parte del vostro gruppo, mentre {1} è ora uno Gnomo come te!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>I tuoi compagni di team (se presenti) sono: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} non fa più parte del gruppo, mentre {1} è ora un Vampiro come te!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} non fa più parte del gruppo, mentre {1} è ora una malvagia creatura proprio come te!</value>
+  </string>
+  <string deprecated="true" key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>I tuoi compagni di team (se presenti) sono: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+    <!-- 0 - Thief's name -->
+    <value>Appena il Folletto {0} si sveglia, si rende conto di essere rimasto da solo. Come può divertirsi a rubare i ruoli se sono tutti morti? Frustrato e demoralizzato raccoglie le sue cose e lascia per sempre la Foresta Incantata, incamminandosi alla ricerca di altre creature da derubare.</value>
+  </string>
+  <string key="ThiefStealChosen">
+    <!-- 0 - target's name -->
+    <value>Il tuo bersaglio del furto è ora {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>A chi vuoi rubare il ruolo?</value>
+  </string>
+  <string key="SecretLynchResultEach">
+    <!-- 0 - Number of votes -->
+    <!-- 1 - Player got lynched -->
+    <!-- 2 - A list of players who voted {1} -->
+    <value>{0} voti sono stati assegnati a {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+    <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Il linciato di oggi:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+    <!-- 0 - Number of votes -->
+    <!-- 1 - Player got lynched -->
+    <value>{0} voti assegnati a {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Linciaggio segreto: numero di voti</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Quando il linciaggio segreto è attivo, mostrare il numero di voti alla fine del linciaggio?\nAttualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Quando il linciaggio segreto è attivo, il numero di voti alla fine del linciaggio sarà: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Linciaggio segreto: votanti</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Quando il linciaggio segreto è attivo e il numero di voti è visibile, vuoi mostrare il nome dei votanti di ogni giocatore votato?\nAttualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
+  </string>
+  <string key="CultistBitten">
+    <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <value>Strano... Vi siete riuniti per discutere su chi trasformare in Vampiro oggi, ma {0} non è presente! Che fine avrà fatto?</value>
+  </string>
+  <string key="Peace">
+    <!-- Used for Pacifist's button -->
+    <value>Ingann... CONVINCILI!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+    <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+    <value>Il linciaggio di oggi è stato annullato per la ricerca del tesoro del Leprecauno!</value>
+  </string>
+  <string key="ThiefStoleYourRoleThief">
+    <value>Il tuo ruolo è stato rubato! Ora sei tu un Folletto 😈... divertiti a scegliere un giocatore da derubare!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Il tuo ruolo è stato rubato! Ora sei un inutile Essere Umano 👱... tutto ciò che puoi fare è esplorare la Foresta Incantata e sperare di non morire!</value>
+  </string>
+  <string key="SerialKillerKilledYou">
+    <value>Avverti una presenza sibilante dietro di te... non puoi fare a meno di voltarti per vedere di chi si tratta... la prima cosa che vedi sono due grandi e minacciosi occhi gialli. Poi... più nulla. Sei morto!</value>
+  </string>
+  <string key="ThiefTeamEnd">
+    <value>Team Folletto</value>
+  </string>
+  <string key="StealKiller">
+    <value>Non lo sapevi che non si può derubare il Basilisco? Ora lo sai... o meglio, lo sapevi, dato che l'hai guardato negli occhi e sei morto sul colpo! </value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>Tutti sanno che non bisogna derubare un Basilisco! Forse il Folletto {0} l'aveva scordato o ha voluto provarci lo stesso. Non ha più importanza: è bastato uno sguardo per farlo morire all'istante! Chi la fa l'aspetti...</value>
+  </string>
+  <string key="BeholderSeerStolen">
+    <value>Il Folletto è riuscito ad accaparrarsi il ruolo del Vecchio Mago! {0} è ora il Vecchio Mago e {1} perde ogni potere e ritorna un Essere Umano!</value>
+  </string>
+  <string key="Troublemaker">
+    <value>un Pixie 🥳 (🤯) </value>
+  </string>
+  <string key="AboutTroublemaker">
+    <value>Il Pixie è un piccolo folletto dall'animo un po' maligno e molto dispettoso. Sta dalla parte dei buoni ma adora fare scherzi e scatenare il caos! Soltanto una volta durante una partita, potrà decidere di seminare il caos nella Foresta Incantata. Tutti saranno talmente infuriati che linceranno due volte nello stesso giorno!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+    <value>Sei un Pixie 🥳 (🤯)! Anche se fai parte dei buoni, hai un animo un po' maligno e molto dispettoso. Ti diverti tra burla, schiamazzi, spaventi e scherzi... ogni occasione per te è buona per scatenare il caos! Un giorno, quando sarai particolarmente annoiato, potrai decidere di scatenare il caos nella Foresta Incantata. Le creature magiche saranno talmente indispettite e arrabbiate da decidere di linciare due volte quello stesso giorno! Fai attenzione: potrai scatenare il caos soltanto una volta e, quando lo farai, il tuo ruolo verrà rivelato. Divertiti e mostra la tua espressione migliore... sei pur sempre un Folletto!                                </value>
+  </string>
+  <string key="AskTroublemaker">
+    <value>Vuoi scatenare il caos nella Foresta Incantata, oggi?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+    <value>Oh no! Qualcuno prenda quel folletto! {0}, un Pixie 🥳 (🤯), si sta divertendo un mondo! Ha annodato le code degli Unicorni e dei Centauri, ha legato fra loro le barbe degli Gnomi, ha strappato i petali dei fiori delle Fate, decorato le chiome degli alberi con i vestiti degli Elfi e colorato di arancione l'acqua del Lago Luccichio... tutte le creature magiche sono furiose! Mentre il Pixie corre di qua e di là ridendo e urlando dalla gioia, tutte le altre creature decidono che oggi si lincerà due volte!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+    <value>A causa del trambusto e degli scherzi causati dal Pixie, oggi si lincia due volte! La calma, per fortuna, ritornerà domani...</value>
+  </string>
+  <string key="Chemist">
+    <value>un Druido 🐐🧪 (👨‍🔬) </value>
+  </string>
+  <string key="AboutChemist">
+    <value>Il Druido è un Fauno che ha scelto la via delle pozioni magiche e degli intrugli misteriosi. Studioso e affascinato dai veleni, fabbricherà due pozioni, di cui una letale. Quando visiterà qualcuno, costringerà esso a scegliere una pozione, mentre il Druido berrà l'altra. Ciò causerà la morte sicura di uno dei due giocatori!</value>
+  </string>
+  <string key="RoleInfoChemist">
+    <value>Sei un Druido 🐐🧪 (👨‍🔬)! Invece di riunirti a festeggiare e bere vino con gli altri Fauni, preferisci startene per conto tuo a sperimentare e creare strane pozioni e intrugli velenosi. Di notte fabbricherai due pozioni, di cui una velenosa e una innocua, completamente identiche sia per colore che per gusto. La notte dopo averle prodotte, potrai scegliere un giocatore e obbligarlo a bere insieme una delle tue pozioni, mentre tu bevi la pozione rimasta. Uno dei due, ovviamente, morirà! Buona fortuna!</value>
+  </string>
+  <string key="ChemistBrewing">
+    <value>Mentre tutte le creature magiche terminano le loro attività e si ritirano nei loro rifugi, tu sei concentrato nel mischiare strani intrugli per realizzare le tue pozioni. Stai attento a non farti vedere dagli Orchi!</value>
+  </string>
+  <string key="AskChemist">
+    <value>Con chi proverai le pozioni stanotte??</value>
+  </string>
+  <string key="ChemistTargetDead">
+    <value>Ti sei recato da {0} con le tue pozioni... il tuo bersaglio, però, era già morto!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+    <value>Il Druido {0} è venuto a trovarti! Teneva tra le mani due strani intrugli colorati... Ops, ti ha guardato negli occhi ed è morto sul colpo! Che peccato...</value>
+  </string>
+  <string key="ChemistSK">
+    <value>Ti rechi da {0} con le tue pozioni appena preparate ma, sfortunatamente, ti ritrovi morto nel giro di pochi secondi! Il Basilisco aveva sete, sì... ma di uccisioni!</value>
+  </string>
+  <string key="ChemistSKPublic">
+    <value>Il Druido 🐐🧪 (👨‍🔬) {0} ha fatto visita al Basilisco, questa notte! Nelle mani teneva due intrugli magici dallo strano colore... Che aveva in mente di fare? {0} è stato trovato privo di vita con le due pozioni ancora strette nelle sue mani!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+    <value>Uno strano Druido ti ha fatto visita questa notte. Portava con sé due pozioni e sei stato costretto a sceglierne una. Oltre ad essere disgustosa, era pure avvelenata! Ti accasci al suolo e ti lasci morire lentamente.</value>
+  </string>
+  <string key="ChemistSuccess">
+    <value>Hai fatto visita a {0} e l'hai costretto a scegliere e bere una pozione! Per fortuna ha scelto quella avvelenata! La tua aveva un sapore orribile, forse dovrai modificarla un po'... Ma cosa te ne importa, sei vivo!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+    <!-- {0} - Chemist's victim -->
+    <!-- {1} - Will be replaced by "(victim) was (role)" -->
+    <value>Un Druido 🐐🧪 (👨‍🔬) questa notte è andato da {0} e l'ha obbligato a bere una delle sue pozioni! Non è difficile capire cos'è successo: {0} ha scelto la pozione sbagliata ed è morto! {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+    <value>Il Druido {0} è venuto a farti visita con due pozioni: una delle due era avvelenata... per fortuna hai scelto quella buona e, anche se aveva un gusto terribile, festeggi per la tua vittoria e per la morte del Druido svitato. Hurrà!</value>
+  </string>
+  <string key="ChemistFail">
+    <value>Hai fatto visita a {0} e l'hai costretto a scegliere una delle due pozioni. Forse avresti dovuto assicurarti quale fosse quella avvelenata... perché l'hai bevuta tu! Il tuo bersaglio, purtroppo è sopravvissuto!</value>
+  </string>
+  <string key="ChemistFailPublic">
+    <value>Il Druido 🐐🧪 (👨‍🔬) {0} è stato trovato morto! A quanto pare, {0} aveva preparato due strani intrugli, uno avveleneato e uno normale, da bere insieme a qualcuno! Sfortunatamente, deve aver scelto proprio la pozione avvelenata! Come Druido forse era un po' troppo folle...</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+    <value>Non sei riuscito a trovare {0}... Amareggiato, torni sui tuoi passi e ritorni verso casa.</value>
+  </string>
+  <string key="CultistsList">
+    <value>I Vampiri attualmente sono: {0}</value>
+  </string>
+  <string key="SnowWolf">
+    <value>un Troll 👾 (🐺☃️) </value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Sei un Troll 👾 (🐺☃️)! Brutto e minaccioso, vivi per conto tuo tra i monti che circondano la Foresta Incantata. Fai parte del Team delle creature oscure, tuttavia ti piace agire da solo. Ogni notte, puoi scegliere un giocatore e bloccare il suo rifugio con un masso o una piccola frana in modo da impedirgli di uscire e compiere azioni notturne. Non puoi attaccare lo stesso giocatore per due notti consecutive. Diventerai un Orco se i tuoi compagni di Team muoiono.</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>Il Troll è una creatura oscura, alta, brutta e che vive da solo o in piccoli gruppi tra le montagne. Con la sua clava è in grado di scatenare piccole frane. Ogni notte, infatti, può scegliere un giocatore da bloccare e impedirgli così di compiere azioni notturne (se ne ha). L'effetto svanirà al mattino e non sarà possibile scegliere lo stesso giocatore per due notti consecutive! Se i suoi compagni di team muoiono, diventa un Orco.</value>
+  </string>
+  <string key="AskFreeze">
+    <value>Chi vuoi bloccare questa notte?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>Le creature oscure sono {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>Le creature oscure sono {0} e il Troll è {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} è morto e tu prendi il ruolo e le sembianze di una Strega. Le altre creature oscure sono: {1} e il Troll è {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} è morto e tu ti trasformi in un Goblin. Le altre creature oscure sono: {1} e il Troll è {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} è morto e tu prendi il suo ruolo di Orco. Le altre creature oscure sono: {1} e il Troll è {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} è morto e tu prendi il suo posto di Licantropo. Le altre creature oscure sono: {1} e il Troll è {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} è morto e tu diventi un Troll. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Lo Spirito dell'Acqua {0} è ora diventato un Troll!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} è morto! Per la rabbia e il dolore, diventi un Orco! Le altre creature oscure sono: {1} e il Troll è {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} non fa più parte del vostro team, mentre {1} è ora diventato il nuovo Troll!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Non appena emergi dall'acqua per cantare e richiamare a te qualcuno, avverti dei passi pesanti, un grugnito e poi un forte rombo. Tutta la sponda del Lago Luccichio è ora circondata da alti massi franati (o lanciati) da chissà dove... Nessuno potrà vederti o sentirti così! Arrabbiata, te ne ritorni sott'acqua attendendo che le creature magiche si risveglino e ti diano una mano nel sistemare questo disastro!</value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Mentre stavi preparando intrugli e pozioni alquanto dubbie, avverti un forte rumore provenire dalla porta. Non appena provi ad uscire, ti accorgi che non ci riesci. Qualcuno ti ha segregato in casa piazzando un pesante masso proprio davanti alla porta! Dannazione, dovevi uscire a prendere un ingrediente, ora cosa farai? Nulla, a quanto pare... i Fauni e i Druidi domani ti aiuteranno ad uscire di casa! Stupido Troll!</value>
+  </string>
+  <string key="CultistFrozen">
+    <value>Sei furioso! Un dannato Troll ha bloccato l'uscita del tuo rifugio, impedendoti di unirti ai tuoi compagni per convertire qualcuno. Gli altri Vampiri ti assicurano che andranno comunque a svolgere il loro dovere e poi ritorneranno per sbloccarti l'ingresso.</value>
+  </string>
+  <string key="CHFrozen">
+    <value>Ti eri appena preparato per uscire... e invece trovi il tuo ingresso completamente bloccato da tronchi e pesanti massi! Se becchi quel Troll che ha causato tutto questo... per colpa sua i Vampiri questa notte saranno liberi di agire! Accidenti, ci vorranno ore prima di poterti liberare!</value>
+  </string>
+  <string key="SeeingFrozen">
+    <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Mentre eri in casa ad armeggiare con la bacchetta e la tua sfera di cristallo, un forte boato ti disturba. Esci di casa e una clava ti colpisce forte in testa. Per colpa del Troll sei rimasto svenuto per tutta la notte... con un bel bernoccolo come souvenir!</value>
+  </string>
+  <string key="GAFrozen">
+    <value>Non appena ti prepari ad uscire dal tuo rifugio, pronto per spiegare le ali, ti accorgi che un enorme masso copre completamente l'uscita. La tua forza non è sufficente per riuscire a spostarlo, così sei costretto ad attendere il giorno e l'aiuto da parte delle altre creature. Ah, quel Troll!</value>
+  </string>
+  <string key="SKFrozen">
+    <value>Stavi per strisciare fuori dal tuo nascondiglio, ma... l'ingresso era bloccato da massi, rami e tronchi! Irato, sei costretto a passare la nottata liberando l'ostruzione all'ingresso. Quando finalmente ti liberi, ti accorgi che si è fatto giorno e che non è più il momento di attaccare. Ah, se ti capita a tiro quel Troll... Vendetta! </value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Stavi per uscire a rubare, ma... chi ti ha bloccato in casa? Accidenti, dev'essere opera di un Troll! Ci metterai ore ed ore per eliminare tutti quei massi...</value>
+  </string>
+  <string key="DefaultFrozen">
+    <!-- used for all roles without (every-)night action -->
+    <value>Mentre dormivi, la scorsa notte, un Troll è arrivato e ti ha bloccato l'uscita con grosse pietre e alberi sdradicati! Per fortuna, al tuo risveglio, le creature magiche ti hanno aiutato ad uscire e rimettere tutto a posto!</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>Sei andato da {0} per bloccarlo, ma vieni interrotto dalla luminosa figura dell'Angelo che riesce a cacciarti e impedirti di... fare il Troll! Sconfitto te ne ritorni tra le montagne...</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Sei andato da {0} e sei riuscito a bloccarlo! Questa notte non potrà utilizzare nessuna azione notturna (se presente)!</value>
+  </string>
+  <string key="SnowFrozeKiller">
+    <value>Il Troll {0} è sceso dai monti fino alla Foresta Incantata per bloccare qualcuno con i suoi massi... Per sua sfortuna ha incontrato il Basilisco! {0} è morto immediatamente!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+    <value>Tutte le altre creature oscure sono morte... sei l'ultimo cattivo rimasto! Date le circostanze preferisci iniziare a mangiare le persone piuttosto che limitarti a bloccarle! Ora sei un Orco!</value>
+  </string>
+  <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>Il Troll {0} ha provato a bloccare l'ingresso della Tana del Drago, tuttavia quest'ultimo ha agito in tempo ed è riuscito ad uccidere il Troll con una potente fiammata!</value>
+  </string>
+  <string key="Lang">
+    <value>Seleziona lingua</value>
+  </string>
+  <string key="Mode">
+    <value>Cambia modalità di gioco </value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Imposta giocatori massimi</value>
+  </string>
+  <string key="EndRoles">
+    <value>Mostra i ruoli a fine partita</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Imposta tempo massimo</value>
+  </string>
+  <string key="DayTimer">
+    <value>Imposta durata del giorno</value>
+  </string>
+  <string key="NightTimer">
+    <value>Imposta durata della notte</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Imposta durata linciaggio</value>
+  </string>
+  <string key="RoleConfig">
+    <value>Configurazione ruoli</value>
+  </string>
+  <string key="Mechanics">
+    <value>Meccaniche di gioco</value>
+  </string>
+  <string key="GroupSettings">
+    <value>Impostazioni del gruppo</value>
+  </string>
+  <string key="Timers">
+    <value>Durata fasi del gioco</value>
+  </string>
+  <string key="Done">
+    <value>Fatto!</value>
+  </string>
+  <string key="Back">
+    <value>Indietro</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Mischia lista dei giocatori</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Mischiare lista di giocatori ogni volta? Attualmente: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>La lista giocatori verrà mischiata ogni volta: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+    <value>L'Angelo della Morte è serio e dall'aspetto più tenebroso rispetto agli altri Angeli, tuttavia fa parte dei buoni. È sua responsabilità recuperare le anime dei giocatori morti in partita e accompagnarle nell'Aldilà. Per questa sua caratteristica, i fantasmi vagano spesso vicino alla sua casa: più giocatori muoiono, più i fantasmi aumentano. Qualcuno potrebbe vederli e... morire di paura! Se non altro, quando l'Angelo della Morte è impegnato, gli Orchi non potranno trovarlo e ucciderlo!</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+    <value>Sei l'Angelo della Morte 👼🏼☠️ (☠️)! Nonostante il nome e l'aspetto un po' oscuro, stai con i buoni. Il tuo compito è quello di prelevare i corpi delle creature magiche morte in partita e accompagnare le loro anime nel mondo degli Spiriti. Visto che sei fuori tutta la notte, le creature malvagie e i Vampiri non ti troveranno, a meno che tu non abbia nulla da fare (in quel caso resterai a casa). C'è solo un piccolo problema: i fantasmi spesso bazzicano vicino alla tua casa. Più giocatori prelevi, più i fantasmi aumentano; tutti quelli che ti visitano hanno una probabilità di incontrare i fantasmi ed avere delle reazioni... esagerate e morire! La probabilità di incontrarli è dimezzata per chiunque sia dei buoni come te. Le creature oscure e il Basilisco potrebbero vederti mentre accompagni le anime dei defunti nell'aldilà e, in base a quanti fantasmi ci sono, ucciderti. Inoltre il Basilisco potrà trovarti comunque a casa, indipendemente se sei impegnato o meno, però potrebbe incappare nei fantasmi e perdere il controllo della sua prossima vittima!</value>
+  </string>
+  <string key="GraveDigger">
+    <value>l'Angelo della Morte 👼🏼☠️ (☠️)</value>
+  </string>
+  <string key="DigNoGraves">
+    <!--{0}: list of people who died since last grave-->
+    <value>Le anime dei morti sono sistemate, quelle dei vivi si godono la serata. Tutto è come dovrebbe essere e ti ritiri nel tuo rifugio per riposare.</value>
+  </string>
+  <string key="DigGraves">
+    <value>Accompagni nell'Aldilà l'anima di {0}. Possa essa vagare libera o riposare in pace fino alla fine dei tempi.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+    <!--{0}: grave digger-->
+    <value>Stai per andare a svolgere il tuo compito ma... chi ti ha bloccato in casa? Non puoi più uscire! Dovrai aspettare la notte successiva prima di poterti liberare e accompagnare le anime nell'Aldilà...</value>
+  </string>
+  <string key="GraveDiggerNotHome">
+    <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+    <value>Le creature oscure entrano a casa di {0}, ma non trovano nessuno. Prima di andarsene, notano sul pavimento una lunga piuma nera scintillare sotto il lume di una candela lì vicino...</value>
+  </string>
+  <string key="WolfFellWolves">
+    <!--{0}: the wolf who fell into the grave-->
+    <value>Le creature oscure si dirigono verso la casa di {0} ma, improvvisamente, alcuni fantasmi fanno la loro comparsa spaventando a morte {1} che crolla a terra privo di vita!</value>
+  </string>
+  <string key="WolfFell">
+    <!--{0}: grave digger-->
+    <value>Appena ti avvicini a casa tua, dopo una lunga giornata di lavoro, noti a terra il corpo privo di vita del malvagio {0}. Non deve aver gradito la presenza dei fantasmi...</value>
+  </string>
+  <string key="KillerStumbled">
+    <!--{0}: intended victim, {1}: actual victim-->
+    <value>Hai guardato e ucciso {0} ma, mentre tornavi a casa, ti sei imbattuto in un gruppo di fantasmi. Li guardi negli occhi ma... sorpresa, non puoi uccidere chi è già morto! Ti senti comunque strano, stordito e la testa ti fa male. Mezzo stordito ti avvii lentamente verso il tuo rifugio, zigzagando un po' qua e un po' là...</value>
+  </string>
+  <string key="KillerRandomKill">
+    <!--{0}: victim-->
+    <value>Ti stavi lentamente avvicinando a {0} per ucciderlo... ma la testa ti faceva davvero male e, stordito, strisci verso la casa accanto, quella di {1}. Uno sguardo e la vittima muore. Avendo comunque ucciso qualcuno, te ne ritorni al tuo nascondiglio.</value>
+  </string>
+  <string key="GuardBlockedRandomKiller">
+    <!--{0}: grave digger-->
+    <value>Arrivi alla casa di {0} per ucciderlo... non ti aspettavi di trovare un valoroso Angelo protettore! Dato il dolore atroce alla testa non perdi nemmeno tempo a lottare ma torni direttamente a casa. Che nottataccia!</value>
+  </string>
+  <string key="HunterFell">
+    <!--{0}: cult hunter-->
+    <value>Un'altra notte inutile senza aver trovato nemmeno un Vampiro! Frustrato, corri freneticamente tra i sentieri della Foresta Incantata, senza renderti conto di essere entrato nella zona dell'Angelo della Morte {0}. Si sa, lì corre voce che ci siano i fantasmi... non ci credevi finché non li hai visti dirigersi verso di te! Spaventato, provi a fuggire... purtroppo inciampi e batti la testa su una roccia affilata lì vicino. La ferita è troppo profonda, purtoppo non sopravvivi...</value>
+  </string>
+  <string key="HunterFellDigger">
+    <!--{0}: cultist-->
+    <value>Dopo un'altra lunga notte, ritorni alla tua casa mentre il sole sta già sorgendo. Prima di arrivare, trovi il corpo di {0} immerso in una pozza di sangue. Se il Cacciatore di Vampiri non avesse avuto tanta fretta, probabilmente non sarebbe caduto sopra a quel masso appuntito...</value>
+  </string>
+  <string key="CultFell">
+    <!--{0}: cultist who fell, {1}: grave digger-->
+    <value>Ti avvii verso casa dopo una faticosa nottata, quando senti un urlo riecheggiare fra gli alberi. Ti rechi subito sul posto, solo per trovare le ceneri di {0}. A quanto pare un Vampiro voleva convertirti ma... chissà cosa sarà successo, non è riuscito ad evitare i raggi del sole!</value>
+  </string>
+  <string key="CultConvertGraveDigger">
+    <!--{0}: grave digger-->
+    <value>Mentre vai a casa di {1}, {0} ti suggerisce di fare in fretta perché il sole sta sorgendo... Sei talmente impegnato ad osservare quei fantasmi che ti dimentichi del tuo compito e non ti accorgi che i tuoi compagni se ne sono già andati. Ormai è tardi per chiedere aiuto: non appena il sole fa capolino, il tuo corpo inizia a prendere fuoco e tu ti trasformi in un mucchietto di cenere!</value>
+  </string>
+  <string key="ChemistFell">
+    <!--{0}: chemist-->
+    <value>Mentre stai per avvicinarti alla casa di {0}, con in mano le tue pozioni, hai la sensazione di essere osservato. Ti volti e... que-quelli sono fa-fan-fantasmi? Sarà perché non sei più tanto giovane, o perché hai già messo a dura prova il tuo corpo con le tue pozioni, ma... il tuo cuore non regge lo spavento e cadi a terra privo di vita con le tue pozioni!</value>
+  </string>
+  <string key="ChemistFellDigger">
+    <!--{0}: grave digger-->
+    <value>Che strano, i fantasmi sono in fermento. Ti fai guidare da loro verso casa tua, solo per trovare il corpo morto di {0}... sarà pure stato un Druido abile con le pozioni, ma senz'ombra di dubbio non era il più coraggioso tra le creature!</value>
+  </string>
+  <string key="HarlotFell">
+    <!--{0}: harlot-->
+    <value>Ti sei pettinata per bene i capelli e inizi a cantare per attirare a te {0}... e invece vieni attirata tu da creature strane e trasparenti... fantasmi? Provi a seguirli, uscendo dall'acqua e trascinandoti di peso fra gli alberi. Purtroppo rimani incastrata con la tua coda fra due alberi, non riesci più a muoverti... muori lentamente per disitratazione e asfissia.</value>
+  </string>
+  <string key="HarlotFellDigger">
+    <!--{0}: grave digger-->
+    <value>Mentre prendi una scorciatoia per tornare a casa, noti una strana creatura morta e incastrata tra due alberi. Era la Sirena {0}... che diavolo ci faceva fuori dall'acqua?</value>
+  </string>
+  <string key="HarlotVisitDigger">
+    <!--{0}: grave digger-->
+    <value>Hai passato tutta la notte a cantare per attirare {0}... niente da fare, non è arrivato! Delusa, te ne ritorni sott'acqua... Non pensavi che accompagnare le anime nell'Aldilà tenesse così impegnato {0}... Che peccato!</value>
+  </string>
+  <string key="GAFell">
+    <!--{0}: guardian angel-->
+    <value>La fortuna non è dalla tua parte stanotte.. Volevi solo proteggere {0} ma, mentre perlustravi la sua casa, vieni sorpreso dai fantasmi! Sono innocui, ma ti spaventi lo stesso. Peccato che sobbalzando le tua ali colpiscono inavvertitamente una candela e iniziano a prendere fuoco. Purtroppo non riesci a spegnere l'incendio che hai addosso, fai solo in tempo ad uscire di casa e... morire!</value>
+  </string>
+  <string key="GAFellDigger">
+    <!--{0}: grave digger-->
+    <value>Mentre torni a casa, senti odore di bruciato... cos'è successo? Trovi l'Angelo {0} disteso sul prato, completamente carbonizzato. I fantasmi ti raccontano che ha colpito per sbaglio una candela con le sue ali e non è riuscito a fermare l'incendio... per sicurezza, spegni tutte le candele prima che possa succedere la stessa cosa anche a te!</value>
+  </string>
+  <string key="ThiefFellDigger">
+    <!--{0}: grave digger-->
+    <value>Chi la fa... l'aspetti! Il Folletto {0} ha provato a rubarti il ruolo, questa notte... ma non si aspettava di trovare i fantasmi nel tuo giardino! Preso dalla paura, il suo piccolo cuore ha ceduto e ha smesso di battere per sempre! Riposa in pace, piccolo Folletto ladruncolo!</value>
+  </string>
+  <string key="ArsonistFell">
+    <!--{0}: Arsonist-->
+    <value>Non avresti dovuto addentrarti nella zona dell'Angelo della Morte... cercando di evitare i fantasmi, sei caduto in un pozzo profondo pieno d'acqua! Non sei riuscito ad uscire e hai lasciato che l'acqua ti spegnesse per sempre...</value>
+  </string>
+  <string key="ArsonistFellDigger">
+    <!--{0}: person that died, {1}: "(person) was (role)"-->
+    <value>Prima di tornare a casa, ti rechi presso il tuo pozzo per raccogliere dell'acqua, ma... sorpresa! In fondo al pozzo trovi lo Spirito del Fuoco {0}, caduto per sbaglio e morto grazie all'acqua. Forse avresti dovuto coprire il pozzo, prima di andartene...</value>
+  </string>
+  <string key="DefaultFellPublic">
+    <!--{0}: harlot-->
+    <value>Girano strane voci sull'Angelo della Morte e sui suoi presunti fantasmi... a quanto pare sono vere, dato che {0} è morto per la paura! {1}</value>
+  </string>
+  <string key="HarlotFellPublic">
+    <!--{0}: cultist who died-->
+    <value>La Sirena {0} voleva attirare a sé l'Angelo della Morte, la scorsa notte... peccato che abbia visto dei fantasmi e ne era talmente attratta tanto da uscire dall'acqua e seguirli trascinandosi nei sentieri della Foresta Incantata. Purtroppo, è rimasta incastrata tra due alberi... è morta per disidratazione e asfissia! </value>
+  </string>
+  <string key="CultistFellPublic">
+    <!--{0}: thief-->
+    <value>I Vampiri volevano convertire l'Angelo della Morte, tuttavia un gruppo di fantasmi li ha fatti desistere. Mentre il sole stava per sorgere e il gruppo se ne andava, il Vampiro {0} resta indietro per osservare affascinato i fantasmi... Per lui, purtroppo, non c'è più tempo: il sole sorge e uccide il Vampiro trasformandolo in cenere!</value>
+  </string>
+  <string key="ThiefFellPublic">
+    <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+    <value>A quanto pare il Folletto {0} voleva diventare il nuovo Angelo della Morte. Sfortunatamente, però, si è imbattuto in un gruppo di scherzosi fantasmi ed è morto per la paura!</value>
+  </string>
+  <string key="WolfFellPublic">
+    <value>Mentre le creature oscure si avvicinavano alla casa dell'Angelo della Morte, il perfido {0} s'imbatte in un gruppo di fantasmi. {0} è talmente in preda al terrore che muore di crepacuore! {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou">
+    <!--{0}: grave digger-->
+    <value>Stavi per accompagnare un'anima nell'Aldilà, quando improvissamente senti un frusciare di foglie dietro di te. Ti giri e... gli occhi del Basilisco ti uccidono all'istante!</value>
+  </string>
+  <string key="SerialKillerSpotted">
+    <value>Mentre strisci via dal luogo del delitto, noti in lontananza la figura dell'Angelo della Morte {0}. Affidandoti all'istinto ti avvicini, decidendo che oggi ucciderai due volte!</value>
+  </string>
+  <string key="WolvesSpottedYou">
+    <!--{0}: grave digger-->
+    <value>Stavi per accompagnare un'anima nell'Aldilà, quando improvisamente una creatura oscura ti assale e ti uccide!</value>
+  </string>
+  <string key="WolvesSpotted">
+    <!--{0}: grave digger-->
+    <value>Tu e i tuoi compagni avete appena visto da lontano l'Angelo della Morte {0}. Prima che si accorga della vostra presenza, uno di voi parte all'attacco e lo uccide!</value>
+  </string>
+  <string key="WolvesSpottedDiggerPublic">
+    <!--{0}: grave digger-->
+    <value>L'Angelo della Morte {0} non si è fatto vedere oggi... Possibile che sia così impegnato? Sospettose, le creature magiche si recano a casa sua e lo trovano a terra privo di vita! Mannaggia, ora chi farà il suo lavoro?</value>
+  </string>
+  <string key="KillerSpottedDiggerPublic">
+    <value>L'Angelo della Morte {0} manca all'appello... che sia ancora impegnato con il suo lavoro? Per sicurezza, un gruppetto di creature magiche lo va a cercare... Lo trovano nei pressi di casa sua, paralizzato e con gli occhi spalancati! Mmmh, qui c'è lo "zampino" del Basilisco! </value>
+  </string>
+  <string key="AllowArsonist">
+    <!--{0}: Allow/Disallow-->
+    <value>Ammetti lo Spirito del Fuoco</value>
+  </string>
+  <string key="AllowArsonistQ">
+    <!--{0}: Allow/Disallow-->
+    <value>Vuoi ammettere lo Spirito del Fuoco? Attualmente: {0}</value>
+  </string>
+  <string key="AllowArsonistA">
+    <value>Lo Spirito del Fuoco è ora impostato su {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+    <!--{0}: Allow/Disallow-->
+    <value>Burning Overkill</value>
+  </string>
+  <string key="BurningOverkillQ">
+    <!--{0}: Allow/Disallow-->
+    <value>Ammettere lo Spirito del Fuoco e il Basilisco nella stessa partita? Potrebbe essere decisamente mortale! 😈 Attualmente: {0}</value>
+  </string>
+  <string key="BurningOverkillA">
+    <value>Lo Spirito del Fuoco e il Basilisco nella stessa partita sono ora  {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+    <value>Lo Spirito del Fuoco è una creatura soprannaturale dall'aspetto simile a quello umano. Come il fuoco, l'elemento che gli appartiene e che comanda, ogni giorno ha la possibilità di intrufolarsi nel rifugio di un giocatore e nasconderci all'interno una piccola parte di sé chiamata "Spiritello di Fuoco". Quando almeno uno o più rifugi contengono uno Spiritello, lo Spirito del Fuoco può attivarli tutti e bruciare tutti i rifugi scelti! Chiunque sarà all'interno, compresi potenziali visitatori, morirà! Per vincere deve rimanere l'ultimo in vita. Agisce da solo, perciò non fa parte di nessun Team.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+    <value>Sei lo Spirito del Fuoco 🔥 e come tale sei imprevedibile e... distruttivo! Non fai parte di nessun team, perciò agisci da solo. Ogni notte, puoi scegliere il rifugio di un giocatore e nascondere al suo interno uno "Spiritello di Fuoco". Quando almeno uno o più rifugi conterranno uno Spiritello, potrai decidere di attivarli e bruciare tutti i rifugi scelti! Chiunque sarà all'interno, compresi potenziali visitatori, morirà! Vinci se sei l'unico rimasto in vita! Buona fiammeggiante fortuna!</value>
+  </string>
+  <string key="Arsonist">
+    <value>lo Spirito del Fuoco 🔥 (🔥)</value>
+  </string>
+  <string key="AskArsonist">
+    <!--{0}: Piromane-->
+    <value>Vuoi lasciare in un rifugio lo Spiritello di Fuoco o vuoi vedere tutti i rifugi bruciare?</value>
+  </string>
+  <string key="ArsonistVisitKiller">
+    <value>Lo Spirito del Fuoco {0} voleva lasciare uno Spiritello di Fuoco nel rifugio del Basilisco... È morto ancora prima di entrare!</value>
+  </string>
+  <string key="Spark">
+    <!--{0}: persona la cui casa è stata cosparsa di kerosene-->
+    <value>INCENDIA!</value>
+  </string>
+  <string key="Doused">
+    <value>Hai lasciato uno Spiritello di Fuoco nel rifugio di {0}!</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+    <!--{0}: persona salvata-->
+    <value>Oh, no! C'è un incendio nel tuo rifugio! Da dove sarà partito? Per fortuna, con te c'era un Angelo che ti ha protetto e ha impedito alle fiamme di bruciare. Grazie, Angelo protettore!</value>
+  </string>
+  <string key="GuardSavedFromFire">
+    <!--{0}: persona di cui la casa è stata pulita dal kerosene del piromane-->
+    <value>Quando hai scelto {0} non ti aspettavi di doverlo proteggere da un incendio! Hai fatto due buone azioni, oggi: salvare il tuo protetto e il suo rifugio! In fondo, sei o non sei un vero Angelo? 👼</value>
+  </string>
+  <string key="CleanDoused">
+    <!--{0}: lista di persone morte bruciate-->
+    <value>Hai protetto il rifugio di {0}, questa notte. Fortunatamente non c'è stato nessun attacco, tuttavia perlustrando il rifugio, noti una piccola fiamma, una specie di Spiritello di Fuoco... Chi potrebbe averlo lasciato qui? Per precauzione, lo spegni subito con un po' d'acqua! Meglio essere previdenti...</value>
+  </string>
+  <string key="Burning">
+    <value>Le creature magiche si svegliano con l'odore di fumo che aleggia nella Foresta Incantata... Purtroppo un misterioso incendio ha bruciato alcuni rifugi e alcune creature che stavano all'interno!  Anche se le creature si sono date da fare, putroppo non sono state in grado di salvare le vittime delle fiamme. Tutti si riuniscono per compiangere la precoce perdita di: \n{0}.</value>
+  </string>
+  <string key="ArsonistWins">
+    <value>La Foresta Incantata è deserta... tranne per lo Spirito del Fuoco, l'unico vincitore! Che le sue fiamme possano ardere per molto, molto tempo!</value>
+  </string>
+  <string key="Burn">
+    <value>Avresti dovuto fare attenzione alle creature nel tuo rifugio: a quanto pare non hai notato quello Spiritello del Fuoco ben nascosto... che ha causato un enorme incendio e ti ha ucciso nelle fiamme!</value>
+  </string>
+  <string key="Augur">
+    <!--{0}: ruolo non in partita-->
+    <value>un Ippogrifo 🦅 (🦅)</value>
+  </string>
+  <string key="AugurSees">
+    <value>Hai volato e conversato con i tuoi compagni Ippogrifi. Tra una svolazzata e l'altra, vieni a sapere dal gruppo che {0} al momento non è presente nella Foresta Incantata.</value>
+  </string>
+  <string key="AboutAugur">
+    <value>L'Ippogrifo è una creatura dalle sembianze di un grifone e un cavallo fusi assieme. Ogni mattina, l'Ippogrifo volerà assieme ai suoi simili e saprà quale ruolo NON è presente in partita. NB: un ruolo non verrà mai rivelato due volte!</value>
+  </string>
+  <string key="RoleInfoAugur">
+    <value>Sei un Ippogrifo 🦅 (🦅)! Adori volare e scambiare quattro chiacchiere con gli altri Ippogrifi. Tutte le mattine volerai con il tuo gruppo e ti verrà rivelato quale ruolo NON è presente in questa partita! Usa bene queste informazioni e ricorda: gli altri Ippogrifi non amano ripetersi, quindi non diranno mai lo stesso ruolo per due volte! E ora... vola!</value>
+  </string>
+  <string key="AugurSeesNothing">
+    <!--{0}: vittima scelta dai lupi, {1}: lupo morto dalle fiamme-->
+    <value>Oggi stai volando nel cielo da solo... i tuoi compagni non ci sono! Ciò vuol dire che tutti i ruoli che non erano in partita sono già stati rivelati! </value>
+  </string>
+  <string key="WolvesVisitBurn">
+    <!--{0}: persona morta perchè ha visitato una casa che bruciava, {1}: "(persona) era (ruolo)"-->
+    <value>Le creature oscure decidono di attaccare {0} nel suo rifugio. Si accorgono troppo tardi del fumo e delle fiamme che appaiono improvvisamente e iniziano a bruciare ogni cosa! Tutti provano a scappare ma non tutti ci riescono: {1} muore nell'incendio!</value>
+  </string>
+  <string key="DefaultVisitBurn">
+    <!--{0}: Lupo morto, {1}: "(Lupo) era (ruolo)" per specificare che tipo di lupo era-->
+    <value>Forse {0} doveva rimanere nel suo rifugio, questa notte... Si è ritrovato nel bel mezzo di un incendio ed è morto divorato dalle fiamme! {1}</value>
+  </string>
+  <string key="WolfVisitBurn">
+    <value>Le creature malvagie hanno provato ad uccidere qualcuno, questa notte, ma lo Spirito del Fuoco è stato più scaltro! {0} non è riuscito a salvarsi dall'incendio... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+    <value>Per un Druido non c'è cosa peggiore che uccidere uno Gnomo, ancor di più se si tratta di lui, quel Vecchio Gnomo brontolone! La maledizione agisce subito sull'ex Druido, diventato ora un banale Essere Umano. Addio pozioni!</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+    <value>Sono rimasti soltanto {0} e {1}... {0} ride, si trasforma in un'enorme massa infuocata e si butta a capofitto su {1}, uccidendolo con le sue fiamme! </value>
+  </string>
+  <string key="ArsonistTeamEnd">
+    <value>Team Spirito del Fuoco</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+    <value>Hai usato la tua voce per richiamare {0}, ma non è arrivato nessuno! Forse era lontano o aveva altro da fare... peccato!</value>
+  </string>
+  <string key="Validate">
+    <!-- Usato per il bottone sul menu della selezione ruoli -->
+    <value>‼ Convalida ‼</value>
+  </string>
+  <string key="Valid">
+    <!-- Usato per il bottone sul menu della selezione ruoli -->
+    <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+    <value>✅ Valido ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+    <value>La configurazione dei ruoli è valida! È stata abilitata e verrà usata d'ora in poi!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+    <value>La configurazione dei ruoli NON è valida! Per favore abilita più ruoli per permettere al bot di creare partite bilanciate!</value>
+  </string>
+  <string key="GroupIdleCount">
+    <!-- {0} - Morti per AFK delle ultime 24 ore nel gruppo attuale -->
+    <value> di cui {0} volte in questo gruppo </value>
+  </string>
+  <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>Sei diventato lo Spirito dell'Acqua! Prenderai il ruolo di {0} dopo la sua morte.</value>
+  </string>
+  <string key="RoleConfigInfo">
+    <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+    <value>Quale ruolo vuoi abilitare in partita?\n\nTutorial di configurazione:\n\n✅ = Ruolo abilitato\n❌ = Ruolo disabilitato\n\nDopo aver selezionato il ruolo, è necessario premere CONVALIDA per salvare i nuovi cambiamenti! Se non viene convalidato, i nuovi cambiamenti verranno ignorati\n\nSe disabiliti troppi ruoli, il bot non sarà in grado di creare una partita bilanciata e non sarà possibile convalidare la scelta fatta! In tal caso, abilita più ruoli e convalida la tua scelta.\n\nSe la convalida è avvenuta con successo, il bottone a sinistra indicherà ✅ Valido ✅ e i ruoli scelti verranno utilizzati! </value>
+  </string>
+  <string key="EnableAllRoles">
+    <value>Abilita tutti</value>
+  </string>
+  <string key="DisableAllRoles">
+    <value>Disabilita tutti</value>
+  </string>
+  <string key="CHHuntedYou">
+    <!-- Per qualsiasi problema inerente alle traduzioni, potete contattare @MagaskaweeSoul-->
+    <value>Il Cacciatore di Vampiri ti ha trovato! Sei impigliato ad un albero, non te la caverai facilmente! E quello cos'è...? Aglio? Ew! Sei appena stato ucciso!</value>
+  </string>
+  <string key="DetectiveEaten">
+    <!-- 0 - victim name -->
+    <value>Le creature magiche non hanno visto {0}, questa mattina. Dopo varie ricerche, trovano lo Spirito dell'Aria {0} a terra privo di vita e... di qualche arto! A quanto pare si era ficcato in grossi guai... o ha incontrato qualche creatura indesiderata!</value>
+  </string>
+  <!--Per problemi o domande, contattare @MagaskaweeSoul.-->
+</strings>

@@ -1,0 +1,2113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Currently updated by @MagaskaweeSoul. Ask me for anything, thanks -->
+<!-- Last updated on 12.04.2020 -->
+<!-- Linguaggio aggiornato esclusivamente da @MagaskaweeSoul. Per qualsiasi errore, contattatemi. Grazie -->
+<!-- Ultimo aggiornamento 12.04.2020 -->
+<strings>
+  <language name="Italiano - Naruto" base="Italiano" variant="Naruto" owner="MagaskaweeSoul" code="it" isDefault="false" />
+  <string key="NotInGame" deprecated="true">
+    <value>Sembra che tu non stia partecipando a nessuna missione in questo momento...</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <value>{0} ha appena usato la sua abilità innata per aprire un portale nel mondo dei Ninja! Avrai il coraggio di seguirlo?</value>
+    <value>La Dea Kaguya chiama all'appello i ninja più valorosi! {0} risponde al suo richiamo e si prepara a lottare! Clicca Join e partecipa anche tu!</value>
+    <value>L'Hokage {0} ha una missione importante da affidarti! Riuscirai a portarla a termine? </value>
+    <value>{0} è appena stato promosso all'accademia Ninja! Unisciti anche tu e prendi parte all'avventura! Clicca Join!</value>
+    <value>Un'epica battaglia è stata iniziata da {0}. Vuoi partecipare? Clicca Join!</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <value>{0} ha iniziato a distruggere Konoha! Clicca Join per entrare... E probabilmente morire! </value>
+    <value>L'Akatsuki, insieme a {0}, sta cercando nuove reclute! Clicca Join per aggregarti!</value>
+    <value>Kurama sta seminando il caos! Aiuta {0} a fermarla... oppure contribuisci alla distruzione!</value>
+    <value>{0} vuole usare la sua Arte Oculare per conquistare il mondo! Clicca Join per partecipare!</value>
+    <value>{0} ha appena dato il via alla Grande Guerra Ninja! Unisciti anche tu ai combattimenti cliccando Join!</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>Non puoi unirti ora! La missione è già iniziata.</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Ti sei già unito!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Ancora 1 minuto per cliccare Join!</value>
+    <value>Solo 60 secondi rimanenti per unirti! Clicca Join prima che sia troppo tardi!</value>
+    <value>Hai ancora un minuto per unirti! Clicca Join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>Ancora {0} secondi per cliccare Join!</value>
+    <value>La missione inizierà fra {0} secondi! Clicca Join per unirti! </value>
+    <value>Solo {0} secondi rimanenti per cliccare Join!</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Ah, non siamo abbastanza. Cancello la missione!</value>
+    <value>Non abbiamo raggiunto abbastanza Shinobi! La partita è stata annullata.</value>
+    <value>Purtroppo non abbiamo raggiunto il numero minimo di Shinobi. La missione è stata cancellata.</value>
+    <value>Siamo troppo pochi! Riprova, dopotutto un vero Ninja non si arrende mai!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>La missione sta iniziando, aspettate qualche secondo mentre vi vengono assegnati i ruoli e distribuite le armi. Ricordatevi che un vero Ninja non rivela mai la propria identità... buona fortuna!</value>
+    <value>La missione è iniziata! L'Hokage vi sta assegnando i ruoli in privato. L'Hokage vi raccpmanda: non rivelate la vostra identità segreta! Buona fortuna a tutti!</value>
+    <value>Sta iniziando la vostra missione! Controllate la chat privata per ricevere i vostri ruoli. Ricordatevi che siete dei Ninja, perciò... acqua in bocca!</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, per favore, cambia il tuo nome per partecipare!</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Mi dispiace, abbiamo già raggiunto il massimo numero di Shinobi!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} si è unito. {1}/{3} Ninja, {2} minimo.</value>
+  </string>
+  <string key="PMTheBot">
+    <value>\n{0} Benvenuto nel mondo di Naruto! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinchè io possa scriverti, devi prima avviarmi.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Pazzo, non puoi scappare! SEI MORTO! Torna a marcire nella fossa!</value>
+  </string>
+  <string key="Flee">
+    <value>{0} ha ceduto al terrore!</value>
+    <value>{0} è fuggito!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>\n{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>Rimangono {0} Shinobi.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Hey, non ti ho ancora chiesto nulla!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Non mi pare tu sia in missione.</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Non posso trovare uno Shinobi tramite questo nome!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>Questa non è una risposta valida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} vota per uccidere {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} vota per linciare {1}</value>
+  </string>
+  <string key="IdleKill">
+    <value>{0} non ha votato per due notti consecutive. Gli anziani del Consiglio di Konoha hanno visto ciò come un peccato imperdonabile. {0} viene eseguito pubblicamente, umiliato dagli abitanti del villaggio.\n{1}</value>
+    <value>{0} si è scordato di votare per due giorni consecutivi. Il Consiglio di Konoha, indignato, decide di impiccare {0} pubblicamente.\n{1}</value>
+    <value>Siccome {0} si è rifiutato di votare per due giorni consecutivi, il Consiglio di Konoha ha deciso di porre fine alla sua vita nella piazza del villaggio.\n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Tu, traditore!!! Sei un Nukenin ora.</value>
+    <value>Avverti un calore in tutto il tuo corpo: il sigillo del Segno Maledetto si è spezzato! Ti stai trasformando e non hai intenzione di rinunciare a questo incredibile potere. Tutti gli altri Nukenin sono morti. 
+Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare la tua vendetta sugli altri Shinobi!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Scelta accettata</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nShikamaru 👳 è {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>Durante la missione arrivi in una radura. Appoggiato ad una quercia, trovi il coprifronte abbandonato di {0}. Decidi di indossarlo: da oggi seguirai le orme di Shikamaru 👳!</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>{0} ha trovato la foresta segreta dei Nara. Il coprifronte di {1} luccica sotto il sole e, poco più in là, trova un rotolo criptato da parte di Shikamaru: "chiunque trovi questo rotolo avrà il compito di seguire le mie orme e aiutare Konoha a scoprire l'identità dei Nukenin. Ti passo la mia Volontà del Fuoco, d'ora in avanti sarai tu Shikamaru 👳!" </value>
+  </string>
+  <string key="SeerSees">
+    <value>Hai visto che\n{0} era {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Chi vuoi linciare?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Di chi vuoi scoprire l'identità segreta?</value>
+  </string>
+  <string key="AskShoot">
+    <value>Su chi vuoi usare il Raikiri? Ti restano {0} colpi rimanenti.</value>
+    <value>Chiudi gli occhi, attorno a te tutto diventa silenzioso... Concentri il Chakra nel tuo braccio e senti l'elettricità fuoriuscire potente dalla tua mano. Ti prepari ad attaccare con il Raikiri: chi scegli di colpire? Ti rimangono solo {0} colpi.</value>
+  </string>
+  <string key="AskVisit">
+    <value>A chi vuoi fare visita?</value>
+  </string>
+  <string key="AskSee">
+    <value>Chi vuoi scrutare?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Chi vuoi proteggere?</value>
+  </string>
+  <string key="AskEat">
+    <value>Chi vuoi uccidere?</value>
+  </string>
+  <string key="AskHunt">
+    <value>A chi vuoi dare la caccia?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Chi è la tua fonte di ispirazione?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Chi vuoi convertire al jashinismo?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <value>  Sii sicuro di discutere con {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Sei Anko! 😾 Sei una Jonin Speciale e insegni all'Accademia Ninja... almeno fino a quando i Nukenin non ti faranno visita e ti corromperanno con alcuni dango! A quel punto il tuo Segno Maledetto si riattiverà e diventerai una Nukenin a tua volta...</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Sei Jiraiya! 🕵️ Vivi all'esterno del Villaggio della Foglia e adori spassartela nei locali tra donne e sakè. Tuttavia, hai un compito importante: stai indagando in incognito per conto dell'Hokage. Durante il giorno, infatti, puoi scegliere un Ninja da spiare per scoprire la sua vera identità. Attenzione: con questo importante compito stai mettendo a rischio la tua vita! Hai il 40% di possibilità di essere scoperto dai Nukenin!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Sei Rock Lee! 🍻 Tenace, caparbio, dai forti valori di lealtà e rispetto per il proprio maestro. Sei un ottimo Shinobi che ha saputo dimostrare che è possibile inseguire un sogno con la sola forza di volontà! Hai solo un difetto: confondi spesso le bottiglie dell'acqua con quelle di sakè, perciò sei sempre ubriaco. Se i Nukenin ti trovano, ti farai l'ultima bevuta assieme a loro prima di morire.</value>
+    <value>Ti svegli confuso senza ricordare cos'è successo. Alcuni nemici sono KO, le tue mani sono ferite e hai un forte mal di testa... Sei stato tu? Accidenti, non ricordi nulla. Trovi accanto a te una bottiglia di sakè: oh no, hai nuovamente scambiato l'alcol per l'acqua! Chi sei? Ah già... Rock Lee 🍻!</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Facilmente irascibile, molto caparbia e con la mania delle scommesse... Sei Tsunade! 👼 Nonostante il tuo caratteraccio, hai a cuore il futuro del villaggio e le persone che ami. Saresti disposta a tutto pur di salvarle! Proprio per questo motivo ogni notte puoi scegliere uno Shinobi da proteggere e salvare a costo della tua stessa vita. Se starai dalla parte sbagliata, proteggendo un Nukenin, avrai un'alta percentuale di morire... scegli bene!</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Sei Kakashi! 🔫 Il tuo senso di giustizia è molto elevato, non tradiresti mai Konoha e le persone a cui tieni. Proprio per questo ti è stata affidata una missione delicata e importante: dovrai eliminare i Nukenin nel Villaggio. Avrai soltanto due possibilità, perciò attento a non scegliere i tuoi compagni! Durante il giorno puoi decidere se colpire uno Shinobi con il tuo Raikiri. Tuttavia, la tua tecnica verrà vista e udita da tutti e la tua identità non sarà più un segreto.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Sei Mei! 💋 Sei sempre nella costante ricerca di un marito, perciò passi le nottate in cerca dell'anima gemella. Ogni notte puoi scegliere di andare a casa di un altro Shinobi e sperare che sia quello giusto. Attenta, potresti incappare in un Nukenin! Se finirai nella sua casa, o con la vittima che i Nukenin hanno scelto, morirai. D'altro canto, dato che la notte non ti trovi in casa, i Nukenin non potranno farti visita per ucciderti.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Sei Sasuke! 🖕 Il tuo cuore trabocca di odio e vendetta e, quando verrà il momento, non perderai l'occasione per rinnegare il tuo villaggio. Dal momento in cui non ci saranno più Nukenin in vita, il tuo Segno Maledetto si attiverà e tradirai Konoha diventando un Nukenin a tua volta. Se Shikamaru sospetta di te, scrutandoti, potresti essere identificato sia come Genin della Foglia che come Nukenin.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Sei il malvagio Madara 🐺! Ogni notte avrai la possibilità di uccidere chiunque si trovi davanti al tuo cammino! Essendo un Nukenin, ti conviene guardarti bene le spalle e scoprire chi ti vuole linciare!</value>
+    <value>Sei Madara 🐺! Durante il giorno ti confondi tra i Ninja dei vari paesi, ma di notte attui il tuo piano… Tsukuyomi infinito! Sterminali tutti!
+</value>
+    <value>Sei Madara 🐺! Di notte giri per il villaggio chiedendo ai vari Ninja se vogliono ballare, durante il giorno non farti scoprire… attiva i cloni col Susanoo alle brutte!
+</value>
+  </string>
+  <string key="RoleInfoSeer">
+    <value>Sei Shikamaru! 👳. La tua brillante intelligenza ti porterà lontano. Preferisci agire da dietro le quinte, piuttosto che buttarti a capofitto nelle battaglie. Come la tua tecnica, agisci nell'ombra. Ogni notte, puoi decidere se soffermarti a scrutare uno Shinobi e scoprire così la sua identità segreta. Occhio a non svelarti durante il giorno: gli intelligentoni non piacciono a nessuno!</value>
+    <value>Armato di un'intelligenza fuori dal comune, le tue doti ti portano ad avere intuizioni e risposte che altri possono solo sognare... Chi sei? Shikamaru! 👳 Preferisci passare le giornate ad osservare il cielo, piuttosto che svolgere missioni pericolose e noiose. Nella notte, però, entri in azione. Ogni volta, al calar del sole, potrai scrutare un Ninja a tua scelta e scoprire la sua vera identità. Occhio a non rivelarti direttamente durante il giorno! Potresti fare una brutta fine...</value>
+  </string>
+  <string key="RoleInfoVillager">
+    <value>Sei un Genin della Foglia 👱, fresco fresco di Accademia. Sei ancora inesperto per le missioni di alto rango, perciò te ne starai buono assieme ai tuoi compagni. Non cacciarti nei guai: i Genin sono le vittime favorite dei Nukenin!</value>
+    <value>Sei soltanto un Genin della Foglia 👱, costretto a portare a termine misere missioni di livello D. Mantieni un profilo basso e non fare l'eroe: quelli come te sono i preferiti dai Nukenin.</value>
+    <value>Konoha è ricca di Shinobi di alti livelli e dalle capacità straordinarie... tu sei solo un semplice Genin della Foglia 👱. Sei ancora troppo debole e inesperto per poter andare in missione con gli altri, perciò meglio per te se rimani al sicuro nel villaggio. Attento a non farti ammazzare!</value>
+    <value>Purtroppo sei solo un semplice Genin della Foglia 👱, senza esperienza né abilità particolari... I Nukenin amano prendere di mira i pivelli come te, perciò attento a quello che dici e a quello che fai! Meglio aiutare quella povera vecchina a portare la spesa...</value>
+    <value>Sei appena uscito dall'Accademia Ninja con il massimo dei voti: finalmente anche tu sei diventato un Genin della Foglia 👱! Sei pronto per piccole missioni, come aiutare a recuperare gatti, aiutare quell'anziana signora a portare la spesa o estirpare le erbacce dal quel giardino abbandonato... È pur sempre un buon inizio, no? Guardati molto bene le spalle: i Nukenin sono sempre in agguato per quelli deboli e incapaci come te...</value>
+  </string>
+  <string key="RoleInfoTanner">
+    <value>Sei Itachi 👺! Shinobi odiato e ricercato da tutti i villaggi, il tuo scopo è di passare per il colpevole e farti uccidere dai Ninja, solo così vincerai e la tua identità di eroe nell’ombra verrà rivelata! 
+</value>
+    <value>Sei Itachi 👺! Vaghi nell’ombra del villaggio per garantire la protezione al tuo fratellino. Vinci solamente se i Ninja ti scoprono e ti uccidono, così farai scoprire la verità! Resta nell’ombra!</value>
+  </string>
+  <string key="RoleInfoWildChild">
+    <value>Sei Konohamaru! 👶 Stai ancora cercando di capire chi sei, però sai quello che vuoi: diventare qualcuno di importante! Puoi scegliere un Ninja da seguire come modello, però fai attenzione: se la tua fonte d'ispirazione morirà, verrai scoperto dai Nukenin e diventerai uno di loro. Chi sceglierai di imitare? Fai attenzione!</value>
+    <value>Sei Konohamaru 👶! Tra una scorribanda e l'altra, hai visto in un Ninja un modello perfetto da imitare, perciò sceglierai di seguire le sue orme. Se il tuo modello dovesse morire, i Nukenin verranno a prenderti e diventerai uno di loro! Ora devi solo scegliere: chi è il Ninja che hai scelto di imitare?</value>
+  </string>
+  <string key="RoleInfoBeholder">
+    <value>Sei Temari! 👁 Con la tua astuzia riesci immediatamente a capire chi è Shikamaru e dove si trova. Una volta scoperto, potrai aiutarlo a proteggere la sua identità distraendo i Nukenin ed evitando che venga ucciso. Occhio a non essere scambiata per Shikamaru stesso, altrimenti rischi che i Nukenin ammazzino te!</value>
+    <value>Sei Temari 👁, la spalla destra di Shikamaru! Tu, e soltanto tu, sai chi è davvero il tuo compagno: la fiducia che avete entrambi è reciproca. Prova a proteggere la sua identità e farlo sopravvivere per tutta la missione! Se lavorerete in coppia, senza dare nell'occhio, potreste uscirne entrambi vivi.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer">
+    <value>Sei Shikadai! 🙇  Hai tutte le carte in regola per poter seguire, un giorno, la strada di tuo padre. Se Shikamaru dovesse morire in missione o per mano dei Nukenin, prenderai immediatamente il suo posto. Non deluderlo!</value>
+    <value>Sei Shikadai! 🙇 Ciò significa che, da qualche parte, tuo padre Shikamaru è in missione. Nel caso morisse o venisse convertito, prenderai il suo posto e seguirai la sua strada.</value>
+  </string>
+  <string key="RoleInfoCultist">
+    <value>Sei Hidan!👤 Devoto a Jashin, il Dio della morte, odi tutti quelli che non hanno il tuo stesso credo. Non sei propriamente un Nukenin, tuttavia vaghi di villaggio in villaggio per reclutare più adepti possibili per il sommo Jashin. Ogni notte, puoi fare visita ad uno Shinobi per convertirlo al jashinismo. Se tutti gli Shinobi rimasti vivi fanno parte della tua setta, voi, seguaci di Jashin, avete vinto! Fai attenzione: c'è qualcuno che sta cercando quelli come te...</value>
+  </string>
+  <string key="RoleInfoCultistHunter">
+    <value>Sei Asuma! 💂 Calmo e inflessibile, il tuo compito è quello di stanare e uccidere i jashinisti prima che compiano i loro rituali e convertano altri Shinobi. Perciò ogni notte, silenzioso e cauto, sceglierai la casa di un Ninja a cui far visita. Se è un jashinista lo ucciderai. Se non lo è, tornerai semplicemente a casa. Se un jashinista prova a convertirti, l'ultimo membro arruolato dalla setta muore e scoprirai quanti ne sono rimasti.</value>
+  </string>
+  <string key="LynchTime">
+    <value>Il sole sta calando e tutti i Ninja si apprestano a radunarsi assieme agli anziani del Consiglio di Konoha per decidere il da farsi. Con la presenza minacciosa dei Nukenin in circolazione, il Villaggio della Foglia non è al sicuro. Gli Shinobi radunati si confrontano e si apprestano a decidere chi verrà linciato... \nOgnuno ha {0} secondi per votare!</value>
+    <value>Un bellissimo tramonto colora di arancio il Villaggio della Foglia. Non c'è tempo da perdere, però! Konoha va protetta e tutti gli Shinobi si radunano per decidere la prossima mossa. I Ninja iniziano a decidere chi linciare questa sera...\nOgnuno ha {0} secondi per scegliere il Ninja sospetto!</value>
+  </string>
+  <string key="DayTime">
+    <value>Il sole è sorto. Avete {0} secondi per muovere le vostre accuse / difendervi / discutere.</value>
+    <value>La notte è finita e il sole splende su Konoha. Avete esattamente {0} secondi per discutere su chi linciare.</value>
+    <value>Con il sorgere del sole, termina la notte. Ora tutti gli Shinobi hanno esattamente {0} secondi per discutere sul da farsi.</value>
+  </string>
+  <string key="NightTime">
+    <value>Scende la notte. Alcuni Shinobi si apprestano a rientrare nelle loro case, riponendo le loro armi e fiondandosi nel letto mentre ripensano alla pesante giornata appena conclusa; altri invece, ancora fuori in missione, cercano un rifugio sicuro dove poter passare la notte. Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
+    <value>Il sole è tramontato e la luna è alta in cielo. Esausti, gli Shinobi rientrano nelle proprie abitazioni. Quelli in missione, lontani dal villaggio, si addormentano stanchi sotto un tetto trapunto di stelle. Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
+  </string>
+  <string key="LynchKill">
+    <value>La riunione è conclusa. Gli Shinobi, assieme al Consiglio di Konoha, decretano il loro verdetto. Tra dubbi e sospetti, {0} è stato ucciso per proteggere il villaggio. \n{1}</value>
+    <value>Dopo accese discussioni, i Ninja e gli abitanti del villaggio hanno deciso che {0} verrà linciato oggi.\n{1}</value>
+    <value>Gli Shinobi hanno deciso. Dispiaciuto, tra incertezze e paure, l'Hokage annuncia che {0} sarà il linciato di oggi.\n{1}</value>
+  </string>
+  <string key="LynchTie">
+    <value>Incapaci di trovare un accordo su chi linciare, gli Shinobi tornano sconfitti e amareggiati nelle proprie abitazioni, consapevoli che il Villaggio della Foglia potrebbe perdere qualcuno, questa notte...</value>
+    <value>Gli Shinobi, con idee opposte a quelle del Consiglio di Konoha, si ritira e rinuncia al voto. Tutto il Villaggio è ora costretto ad attendere impotente che i Nukenin questa notte facciano la loro mossa...</value>
+  </string>
+  <string key="NoLynchVotes">
+    <value>Nessuno ha votato! Qualcosa non torna, nessuno verrà linciato stanotte...</value>
+  </string>
+  <string key="DetectiveEaten">
+    <value>Gli Shinobi si riuniscono in mattinata nell'ufficio dell'Hokage, pronti a ricevere istruzioni per una nuova missione. Vengono interrotti da un messaggio urgente: {0} non ha inviato all'Hokage il rotolo contenente informazioni segrete. Un Team di ricerca esce per indagare. Trovano {0} accasciato al suolo, inerme, con un rivolo di sangue che cola dalla bocca. Poco più in là, vedono il suo coprifronte rosso luccicare sotto i raggi del sole. Il Team ritorna a Konoha, riportando la brutta notizia e il corpo del malcapitato: Jiraiya è morto.</value>
+  </string>
+  <string key="GuardianEaten">
+    <value>Si leva il sole. L'infermeria dell'ospedale di Konoha è ancora chiusa. Pezzi di parete sono crollati, lasciando intravedere i lettini rovesciati e gli apparecchi medici mezzi distrutti. Gli Shinobi accorrono numerosi nella scena del disastro. Tra il caos generale, gettata a terra tra le siringhe e con pezzi di corpo sbrindellati qua e là, giace {0}, a tutti conosciuta come Principessa Tsunade, valorosa Kunoichi che ha sacrificato sé stessa per salvare il Villaggio della Foglia. Konoha compiangerà per sempre questa dolorosa perdita…</value>
+    <value>Si è fatto giorno. Gli Shinobi feriti, appena tornati dalle missioni notturne, si avviano verso l'ospedale del villaggio. Una scena raccapricciante li accoglie all'entrata: un corpo smembrato giace davanti ai loro piedi. Dopo attente analisi, i Ninja scoprono che {0} era Tsunade. Proteggere la vita delle persone che si amano si paga a caro prezzo. Questa è la vita di uno Shinobi...</value>
+  </string>
+  <string key="GunnerEaten">
+    <value>Un boato sveglia tutto il villaggio. Uscendo dalle abitazioni, gli Shinobi non possono fare a meno di notare lo sconvolgente ritrovamento di un coprifronte semidistrutto... poi le gambe... le dita... i segni di scariche elettriche sul campo di battaglia... Infine, in parte nascosto da un arbusto, il corpo di {0}, o almeno quello che vi rimane. Il Villaggio della Foglia ha perso uno dei suoi migliori guerrieri. Addio, Kakashi!</value>
+  </string>
+  <string key="SeerEaten">
+    <value>È l'alba ormai. Alcuni Ninja vengono richiamati per una missione urgente: Shikamaru è scomparso. Al limite del villaggio, nei pressi di una foresta, viene ritrovato il corpo senza vita di {0} assieme ad un rotolo criptato. È ufficiale: Shikamaru è morto.</value>
+    <value>Svegliandosi, gli Shinobi hanno un brutto presentimento. Nei pressi di un boschetto notano {0}, pallido e privo di vita, disteso a terra in una posizione innaturale. Consapevole di aver perso un'arma preziosa, tutto il Villaggio della Foglia si prepara a dirgli addio. Shikamaru 👳 è morto.</value>
+  </string>
+  <string key="DrunkEaten">
+    <value>L'Hokage ha ordinato una missione importante nel Paese del Ferro... manca però uno Shinobi all'appello. Immediatamente tutti si recano presso la sua dimora, dove trovano una bottiglia vuota di sakè. L'abitazione è a soqquadro, ci sono scie di sangue che portano nel giardino. Seguendo le tracce, i resti di {0} vengono ritrovati, uno qua, uno là... assieme ad altre bottiglie vuote. Rock Lee 🍻 è morto.</value>
+    <value>Il team arriva nel luogo indicato nel rotolo. Non c'è dubbio, quello era un messaggio di soccorso da parte di {0}. Lasciata a terra, mezza piena, c'è una bottiglia di... sakè? Oh, no! Ha nuovamente confuso l'acqua con l'alcol! Dietro ad un albero, con gli occhi spalancati e la schiena spezzata, il cadavere di \nRock Lee 🍻 viene ritrovato.</value>
+  </string>
+  <string key="FoolEaten">
+    <value>Non appena il sole si leva su Konoha, viene rinvenuto il cadavere di {0} sulla strada principale. Il corpo non presentava contusioni o segni di lotta, che sia collassato durante una delle sue folli sfide? Oppure la sua morte nasconde dell'altro? Troppo tardi per saperlo... l'unica certezza è che la Bestia Verde di Konoha, Maito Gai, è morto!</value>
+    <value>Alcuni Ninja gli avevano parlato ieri... Kakashi l'aveva pure battuto a carta-sasso-forbice. Eppure ne sono totalmente convinti: quello è proprio il cadavere maciullato di {0}. Con ogni probabilità deve aver confuso l'identità di qualcuno... forse un Nukenin? La forza della Giovinezza riposerà per sempre con te. Addio, Maito Gai!</value>
+  </string>
+  <string key="DefaultEaten">
+    <value>Il mattino è giunto e con lui una notizia terribile appena arrivata nell'ufficio dell'Hokage. Durante una missione, {0} viene colto di sorpresa e trucidato senza pietà. Il Villaggio della Foglia compiange l'eroe caduto in battaglia. \n{1}</value>
+    <value>La notte è appena trascorsa. Gli Shinobi si svegliano con una brutta sensazione nel petto. Uscendo dalle loro case trovano diverse scie di sangue che portano tutte in un un'unica direzione: le porte del villaggio. Con tristezza ed orrore, trovano il cadavere di {0} brutalmente ucciso mentre proteggeva Konoha.\n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>Delle impronte insanguinate costeggiano le mura del villaggio. Durante l'ispezione viene trovato il ciondolo di {0} accanto ad un cumulo di terra ricoperto di pietre. A quanto pare era un jashinista, fatto a pezzi e successivamente sotterrato vivo. Il misterioso Shinobi cacciatore di jashinisti ha colpito ancora...</value>
+  </string>
+  <string key="NoAttack">
+    <value>Il giorno successivo gli Shinobi si riuniscono nell'ufficio dell'Hokage, pronti a ricevere una nuova missione. Sollevati, scoprono che nessuno manca all'appello e anche i Ninja che erano in missione fuori dal villaggio sono tornati tutti sani e salvi. Konoha è stata protetta - o forse i Nukenin avevano altro da fare, questa notte - ma il pericolo si cela sempre dietro l'angolo... meglio guardarsi le spalle!</value>
+  </string>
+  <string key="CursedBitten">
+    <value>I Nukenin ti hanno fatto visita! Il tuo Segno Maledetto si è riattivato... sei diventata una di loro!</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Gli altri Nukenin sono: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves">
+    <value>{0} si è lasciata sopraffare e ha risvegliato il Segno Maledetto! Ora Anko fa parte della vostra congrega... date il benvenuto alla nuova arrivata!</value>
+  </string>
+  <string key="WolvesEatYou">
+    <value>Oh no! Hai incontrato un Nukenin! Purtroppo non sei riuscito a tenergli testa... Sei morto.</value>
+    <value>I tuoi compagni di Team si sono appena addormentati, il fuoco scoppietta vicino al tuo sacco a pelo. Improvvisamente avverti una presenza oscura che si sta avvicinando. Ti prepari ad attaccare, tuttavia ti ritrovi fatto a pezzi ancora prima di aver mosso un dito. Sei stato ucciso da uno o più Nukenin!</value>
+    <value>Durante la missione ti ritrovi per sbaglio in uno dei rifugi dei Nukenin! Come se non bastasse, i Nukenin erano al suo interno e ti hanno ammazzato senza pietà!</value>
+  </string>
+  <string key="WolvesEatDrunk">
+    <value>Hai fatto visita per uccidere {0} e hai visto che era Rock Lee! Deve aver confuso il sakè per l'acqua, è talmente ubriaco da non riconoscere nemmeno il tuo volto minaccioso! Decidi di farti qualche bicchierino assieme a lui, prima di ucciderlo brutalmente. Ora, però, sei ubriaco pure tu... la prossima notte non potrai attaccare per via della sbornia! </value>
+  </string>
+  <string key="GuardWolf">
+    <value>Hai scelto di proteggere il Ninja sbagliato... Era un Nukenin! Per ringraziarti ha deciso di ucciderti!</value>
+    <value>Hai scommesso male... il Ninja che hai scelto di proteggere non è altro che un Nukenin! Ormai è troppo tardi per tornare indietro... ti ha già ucciso!</value>
+  </string>
+  <string key="GuardSaved">
+    <value>Hai salvato la vita di {0}!</value>
+  </string>
+  <string key="GuardNoAttack">
+    <value>{0} non era in pericolo, quindi non hai avuto molto da fare questa notte...</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>Hai deciso di proteggere {0}, ma non era nel villaggio!</value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>Sei stato protetto da Tsunade, che ha combattuto contro i Nukenin obbligandoli alla ritirata!</value>
+  </string>
+  <string key="HarlotEaten">
+    <value>Mei ha deciso di riposarsi un attimo, prima di riprendere a cercare il marito perfetto. Scelta sbagliata... i Nukenin hanno fatto irruzione nella sua casa e hanno fatto a pezzi {0}!</value>
+  </string>
+  <string key="HarlotNotHome">
+    <value>Strano... {0} non era a casa. Dannazione! E ora chi uccido?</value>
+  </string>
+  <string key="HarlotFuckWolf">
+    <value>Hai fatto visita a {0} per chiedergli la mano, ma ti sei trovata davanti una bella sorpresa... un Nukenin assetato di sangue si è divertito mentre venivi fatta a pezzi!</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic">
+    <value>{0} ha fatto visita al Ninja sbagliato questa notte! I suoi resti sono stati ritrovati sparpagliati qua e là sul pavimento. Il Villaggio delle Foglia commemora la morte di Mei con petali di rosa e una marcia nuziale...</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic">
+    <value>{0} ha fatto visita a {1} per chiedergli di sposarla, ma ha trovato un Nukenin mentre uccideva {1}! Fulmineo, il Nukenin si volta verso {0} con uno sguardo che brilla di malizia e morte... {0} è morta. Addio, Mei!</value>
+  </string>
+  <string key="HarlotVisitNonWolf">
+    <value>Ora sai che {0} non è un Nukenin, visto che sei entrata in casa sua chiedendogli di diventare sua moglie. Inutile dirlo, hai ricevuto l'ennesimo due di picche... Di questo passo non ti sposerai mai!</value>
+  </string>
+  <string key="HarlotVisitYou">
+    <value>Sei appena arrivato a casa stremato dalla missione appena conclusa... tuttavia non sei da solo! A quanto pare Mei si è intrufolata in casa attendendo il tuo arrivo. Sta cercando un marito che possa porre fine alla sua lunga vita da zitella... e ti fa una pietosa proposta di matrimonio. Dopo averla rifiutata e cacciata di casa, ti fiondi nel letto e ti abbandoni ad un lungo sonno ristoratore.</value>
+  </string>
+  <string key="DetectiveCaught">
+    <value>Hai beccato {0}, mezzo nascosto in un cespuglio, mentre “indagava” nei pressi di una sauna femminile! Direi che si tratta proprio di Jiraiya!       </value>
+  </string>
+  <string key="DetectiveSnoop">
+    <value>Le tue indagini hanno rivelato che {0} era {1}!</value>
+  </string>
+  <string key="HarlotShot">
+    <value>Sembra che la visita di Mei abbia dato una nuova motivazione a {0}! Kakashi rifiuta la proposta di matrimonio della donna e trova il coraggio di attaccare e uccidere {1} con il suo Raikiri!</value>
+  </string>
+  <string key="DefaultShot">
+    <value>Poco lontano dall'ufficio dell'Hokage si sente un forte suono, simile a quello di uno stormo di falchi. Gli Shinobi rimasti nel villaggio accorrono subito sul luogo. Vedono {0} in piedi accanto al corpo di {1}, con il braccio ancora nel petto della vittima. Kakashi è entrato in azione con il suo Raikiri! \n{2}</value>
+  </string>
+  <string key="WolfWins">
+    <value>Il Nukenin ha vinto!</value>
+  </string>
+  <string key="WolvesWin">
+    <value>I Nukenin hanno vinto!</value>
+  </string>
+  <string key="VillageWins">
+    <value>Gli Shinobi hanno vinto! Complimenti, avete protetto e salvato Konoha da una fine certa! Grazie a voi la pace regnerà ancora a lungo... L'Hokage renderà per sempre onore ai vostri servigi!</value>
+  </string>
+  <string key="TannerWins">
+    <value>Pensavano fossi il cattivo della situazione e ti hanno eliminato. Ti sei sacrificato per proteggere il Villaggio della Foglia, nessuno ha però compreso il tuo gesto. Ora nessuno potrà mai conoscere la verità che portavi dentro… Ad ogni modo, hai vinto!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Shinobi rimasti vivi, ruolo e Team:</value>
+  </string>
+  <string key="CultistVotedConvert">
+    <value>{0} vota per convertire {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{0} voleva rendere onore a Jashin ed è andato da {1} per convertirlo al suo credo... ma era Asuma, il cacciatore di jashinisti! {0} è morto!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>{0} ti ha incontrato durante una missione e ha provato a convertirti...  ma sei riuscito ad ucciderlo evitando per un soffio la morte! Un jashinista è morto... Ne rimangono altri {1}!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Hidan è riuscito a trovarti e convertirti al jashinismo! Ora sei uno di loro. Ogni notte, avrai la missione speciale di trovare un degno Shinobi da convertire alla volontà del sommo Jashin!</value>
+  </string>
+  <string key="CultTeam">
+    <value>Jashinisti: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>Ora {0} fa parte dei jashinisti. Ode a Jashin!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{0} era in missione per convertire {1} al jashinismo... ma nessuno era in casa!</value>
+  </string>
+  <string key="CultWins">
+    <value>Tutti i Nukenin sono morti, tuttavia i sopravvissuti sono stati convertiti al jashinismo! I jashinisti hanno vinto! Lode a te, Jashin-Sama! Muahahahaha!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>Hai dato la caccia a {0}, ma era già morto!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>Durante la missione ti ritrovi in una radura. Noti che {0} è sdraiato sopra ad uno strano simbolo creato con il sangue, al centro del petto è conficcato un paletto e il suo sguardo è di pura estasi. Sicuro del fatto che sia un jashinista, ti prepari ad attaccare.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Hai fatto visita alla casa di {0} ma non hai notato nessun simbolo jashinista, né qualsiasi altra cosa che possa ricondurre a Jashin. Non è la casa di un jashinista, perciò chiudi la porta e ritorni sui tuoi passi.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>Il modello di {0} è morto! Konohamaru è stato costretto a diventare un Nukenin!</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0} è morto! Sei stato costretto a diventare un Nukenin! I tuoi nuovi alleati sono: {1}</value>
+  </string>
+  <string key="Villager">
+    <value>un Genin della Foglia 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Rock Lee 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Mei 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Shikamaru 👳 </value>
+  </string>
+  <string key="Traitor">
+    <value>Sasuke 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Tsunade 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Jiraiya 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>Madara 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Anko 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Kakashi 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Itachi 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Maito Gai 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Konohamaru 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Temari 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Shikadai 🙇 </value>
+  </string>
+  <string key="Cultist">
+    <value>Hidan 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Asuma 💂</value>
+  </string>
+  <string key="RanAway">
+    <value>👻 Fuggito</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Morto</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 In vita</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Shinobi in vita</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>un Anbu 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Sei un membro della squadra Anbu 👷! Ti vengono assegnate missioni talmente segrete che soltanto tu e i tuoi compagni di squadra ne siete al corrente. Proprio per questo, sei l'unico che può conoscere l'identità dei tuoi compagni di squadra.Per questa missione è molto importante tenere un profilo basso evitando di attaccare altri Shinobi. Non farti scoprire… o peggio, uccidere!
+</value>
+    <value>Fai parte degli Anbu 👷! La squadra protegge il Villaggio nelle situazioni eccezionali, portando a termine missioni ad alto rischio in paesi nemici ed affrontando Ninja di livello S. Solo chi fa parte della squadra Anbu può conoscere l'identità dei propri compagni di team! Tuttavia per questa missione dovrete tutti mantenere un profilo molto basso, evitando di attaccare qualcuno e, soprattutto, di farvi scoprire!</value>
+  </string>
+  <string key="MasonEaten">
+    <value>Quando il Villaggio poco a poco si risveglia e i primi Shinobi escono dalle loro abitazioni, viene ritrovato il corpo di {0} con il suo volto ancora coperto dalla maschera, il sangue che ancora sgorgava lungo il collo e le gambe completamente spezzate e piegate in una strana angolatura. Uno dei membri della squadra Anbu 👷 è morto!</value>
+    <value>Appena sorge il sole, nei pressi delle porte del Villaggio della Foglia, viene rinvenuto il cadavere di {0}. I suoi organi vitali erano segnati da numerose ferite profonde. Lì accanto, invece, giace spezzata una maschera bianca dalla forma simile a quella di una volpe. Un membro della squadra Anbu 👷 è morto!</value>
+    <value>Durante una missione, viene rinvenuto il corpo trucidato di {0}, con tanto di maschera ancora sul volto, immerso in lago di sangue. Uno degli Anbu della Foglia 👷 è morto!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>\nGli altri Anbu sono: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>Il vostro membro più nuovo si reca a casa di {0} per convertirlo al jashinismo, ma trova invece tutto a soqquadro, sangue ovunque e segni di lotta violenta lungo tutte le pareti... Credo che nessuno si unirà con Jashin-Sama, questa notte...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>Ti introduci nella casa di {0} per ucciderlo ma, improvvisamente, incontri una Kunoichi agguerrita e pronta a proteggere la tua vittima. Un raggio di luna trapela nella finestra e illumina il volto della donna: è Tsunade! Combattete a lungo ma sei costretto a ritirarti per salvaguardare la tua vita e i piani del tuo team!</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>{0} incontra {1} e prova a convertirlo al jashinismo. La sua fede era troppo elevata, non sei riuscito a convertirlo... Il sommo Jashin te la farà pagare, stronzo!</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, un Ninja con il nome di {0} e' gia' entrato. Per favore cambia il tuo nome per partecipare alla missione! </value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>Ti rechi a casa di {0} per scoprire se potrebbe essere la tua anima gemella... Sfortunatamente la casa è vuota. Mentre stai uscendo, noti in un angolo un altare dedicato al Dio della morte, un certo... Jashin? Non ne sei sicura, poiché il nome e i vari simboli a lui dedicati sono parzialmente ricoperti di sangue. Meglio darsela a gambe, prima che qualcuno ti veda...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>Tutti i Ninja si risvegliano e, avviandosi verso l'ufficio dell'Hokage, si accorgono che {0} non è con loro. Controllano ovunque, persino nella foresta... ed è lì che trovano il corpo senza vita (e con qualche parte mancante!) di {0}!</value>
+    <value>Alcuni Shinobi escono di casa al sorgere del sole per i loro allenamenti mattutini. Nel campo di allenamento trovano il corpo di {0}, morto in circostanze misteriose durante la notte...</value>
+  </string>
+  <string key="MasonConverted">
+    <value>Che strano... {0} non era con noi questa mattina... Non ha nemmeno indossato la sua maschera... dov'è finito?</value>
+  </string>
+  <string key="FleeDisabled">
+    <value>Fuggire mentre è in corso una missione è da veri codardi! Per fortuna quest'opzione è stata disabilitata dall'admin del gruppo!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>è morto</value>
+  </string>
+  <string key="AdminAdded" deprecated="true">
+    <value>{0} è stato aggiunto alla lista degli admin. Usa /config per cambiare le impostazioni del gruppo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Sei gia' nella missione! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Il tuo gruppo e' stato settato per far cominciare piu' partite... Missioni extra!</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <value>Il gruppo e' attualmente in lista d'attesa. Posizione:{0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Scusa, sto per prendermi una pausa per manutenzione. Non posso assegnarti delle missioni adesso... Anche un Hokage ha bisogno di riposo! In attesa di {0} partite per finire... Controlla @greywolfdev per altre informazioni.</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <value>Mi dispiace, il numero massimo di missioni simultanee è stato raggiunto. ({0}). Posizione nella lista d'attesa: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <value>{0} è un gruppo ufficiale, ed ha saltato la lista d'attesa!</value>
+  </string>
+  <string key="NoGame">
+    <value>Non ci sono missioni in corso. Cominciane una con /startgame o comincia l'avventura in modalità Chaos con /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Solo gli admin del gruppo possono usare questo comando. Chiedi al creatore o ad altri admin.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Dopo questa missione, mi ritirerò per una pausa. Anche un Hokage ha bisogno di un po' di relax!</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Dopo questa missione, mi ritirerò momentaneamente per un aggiornamento (automatizzato) con gli altri Kage.</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>UserId nullo. Sei sicuro di aver mandato questo comando come risposta?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <value>{0} è già un admin!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <value>{0} non è un admin!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <value>{0} è stato rimosso dalla lista degli admin.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <value>Lingua settata su {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>Shikamaru a quanto pare non c'è, è in missione e non tornerà per un po'!</value>
+  </string>
+  <string key="TimesUp">
+    <value>È scaduto il tempo!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Sei Kushina 🏹! Dolce ma allo stesso tempo temeraria e dall'animo forte, con il tuo particolare Chakra puoi scegliere di incatenare sentimentalmente tra loro due Shinobi. Da quel momento in poi i due si ameranno per l'eternità. Se uno dei due muore, l'altro si suiciderà per il dolore. Se sono gli ultimi due rimasti in vita, solo loro vincono e tutti gli altri perdono.</value>
+    <value>Sei Kushina 🏹! Quando non ti trasformi nel "Peperoncino Rosso Piccante", sai essere molto dolce e dedita all'amore. Hai l'abilità di legare fra loro, con il tuo Chakra, due Shinobi a tua scelta. Scegli quindi due Shinobi da incatenare per sempre, nella vita o nella morte. Se uno di loro dovesse morire, l'altro si suiciderà per la straziante perdita. Se almeno uno di loro vince, entrambi vincono. Se sono gli ultimi due rimasti in vita, solo loro vincono e tutti gli altri perdono.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Sei Zetsu 🎭! Passi il tempo ad osservare di nascosto la vita nel Villaggio della Foglia. Grazie alle tue capacità uniche nel suo genere, puoi scegliere uno Shinobi e trasformarti in lui quando esso morirà. Scegli quindi chi copiare e, quando il Ninja scelto morirà, prenderai il suo ruolo. Ricordati che se muori e non ti sei ancora trasformato o la missione finisce prima della tua trasformazione, perderai.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Sei Tobirama 🎯! Orgoglioso, forte, arguto e fermo nei tuoi ideali... con te non si scherza! Se muori, puoi portare qualcun altro nella tomba. Se vieni ucciso dai Nukenin, c'è la probabilità che tu riesca ad ucciderne uno, ma nel caso ce ne fossero altri, verresti accerchiato ed ucciso comunque.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Sei Zabuza 🔪! Ex spadaccino della Nebbia, vieni considerato un Nukenin, anche se lavori in solitario e non hai nulla a che fare con i loro loschi piani. Il tuo compito, nonché passatempo, è quello di ammazzare più Shinobi che puoi. Ogni notte, puoi aggiungere il corpo di uno sfortunato Ninja alla tua collezione. Se qualcuno ti visita, lo ucciderai. Se uno o più Nukenin dovessero attaccarti, hai comunque il 20% di possibilità di morire per mano loro!</value>
+    <value>Sei Zabuza 🔪! Non fai parte dei Nukenin, eppure non c'è da sottovalutarti! Il tuo compito? Uccidere, uccidere, uccidere! Ogni notte potrai ammazzare uno Shinobi a tua scelta con il tuo fidato spadone. Ucciderai ogni Ninja che incontrerai o che ti farà visita. Tuttavia, se uno o più Nukenin ti sceglieranno come vittima, avrai il 20% di probabilità di morire! Vinci solo se sei l'ultimo rimasto in vita. Muoviti silenzioso nella nebbia e non farti scoprire!</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Una catena di Chakra ti avvolge e ti lega per sempre al cuore di {0}! La missione che avevi perde d'importanza, ora il tuo nuovo compito è quello di è rimanere entrambi vivi. Se uno di voi due muore, l'altro morirà di crepacuore. Se entrambi sarete gli unici sopravvissuti, allora avrete vinto!</value>
+    <value>Il Chakra di Kushina ti ha colpito! Sei stato legato a {0}, ora nessuno dei due potrà fare a meno dell'altro! Se l'altro muore, condividerai il suo destino. Se riuscirete a sopravvivere fino alla fine, sarete entrambi vincitori!</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Il villaggio sospetta di te e ha deciso di linciarti! Questa è la tua ultima possibilità, scegli qualcuno da uccidere come ultimo desiderio!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} impasta velocemente il Chakra con le mani per usare una delle sue tecniche e potersi salvare... troppo tardi! Il suo cuore viene trafitto da numerose spade impregante di veleno.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} impasta il Chakra, fa partire la sua tecnica... ma non riesce a decidere chi colpire. Si lascia così morire, accettando il suo destino...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>Mentre viene giustiziato, negli ultimi istanti di vita, {0} riesce ad afferrare un'arma dal Ninja più vicino e colpire {1}, per poi emettere l'ultimo respiro e morire. {1} cade a terra, senza vita. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Stai per morire! Nei tuoi ultimi istanti di vita, hai l'occasione di colpire e uccidere qualcuno... Sbrigati!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>{0} è morto prima di rendersene conto, immerso com'era in un bagno di sangue. Non ha nemmeno avuto il tempo di pensare ad una strategia per poter uccidere qualcuno a sorpresa...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>Mentre {0} è steso per terra, ansimante nei suoi ultimi attimi di vita, non riesce a decidere chi colpire... e accetta il suo triste destino.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>In fin di vita, {0} cade... Ma non senza riuscire ad afferrare la spada e colpire {1}, che si becca la lama completamente al centro del suo cuore. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} sta vagando alla ricerca di {1} per poterlo convertire a Jashin-Sama. Improvvisamente viene avvolto da una fitta coltre di nebbia... e solo in una frazione di secondo riesce a vedere {1} che con il suo spadone colpisce e fa a pezzi {0}, ridendo in modo diabolico! {0} è morto! </value>
+    <value>I jashinisti mandano {0} per convertire {1}, ma invece il corpo di {0} esce volando a brandelli dalla finestra! Zabuza sarebbe stato un ottimo jashinista... peccato! {0} è morto...</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>I Nukenin hanno scelto di attaccare Tobirama la scorsa notte, tuttavia hanno leggermente sottovalutato la sua forza. Prima di morire, Tobirama riesce a vendicarsi! {0} è morto ed era un Nukenin! 🐺</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>I Nukenin hanno teso un'imboscata a Tobirama, ma l'abile Senju è riuscito a uccidere il Nukenin 🐺 {0} con la sua astuzia e strabiliante potenza!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>I Nukenin hanno provato a mietere qualche vittima questa notte... ma sono stati invece sorpresi da Zabuza che li ha preceduti nel loro intento! {0} è stato ucciso nello scontro!</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>Sembrava una notte tranquilla per {0}, ma non lo è stata. I Ninja compagni si risvegliano al mattino e trovano {0} ancora nel suo sacco a pelo, però tagliato a pezzettini dalla testa ai piedi... In parte sconvolti riportano il corpo dell'amico (o quello che è rimasto!) al Villaggio e avvertono immediatamente l'Hokage: il Demone della Nebbia ha colpito ancora! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>Hai provato ad aggiungere il corpo di {0} alla tua collezione, ma invece ti sei scontrato con l'agguerrita Tsunade! Niente da fare, meglio darsela a gambe e riprovare la notte seguente con una vittima diversa...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>I jashinisti hanno mandato {0} per convertire {1} al loro culto. Tutto sembrava procedere per il meglio, finché non videro volare dalla finestra la testa mozzata di {0} assieme a qualche parte del suo corpo! {0} è morto...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Hai protetto la persona sbagliata! Era Zabuza, il famigerato Demone della Nebbia! Lui e il suo spadone si sono davvero divertiti nel farti a pezzi...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>Eri nei pressi di un ruscello a raccogliere dei fiori da portare al tuo futuro marito (nel caso in cui l'avessi trovato!), quando incontri {0}: alto, muscoloso e con un'aura affascinante ma terribile allo stesso tempo... interessante! O almeno lo era finché {0} non usa la Prigione Acquatica su di te per poi trucidarti lentamente! A quanto pare sei morta per mano di Zabuza...</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Pare che il corpo di {0} sia stato trovato nei pressi di un ruscello. Mei deve aver chiesto la mano all'uomo sbagliato... forse a Zabuza? Non ha più importanza, purtroppo... perché {0} è morta.</value>
+    <value>Al risveglio degli Shinobi, l'Hokage annuncia una triste notizia: {0} è morta. Il corpo smembrato e il tipo di ferite fanno intendere che Mei è morta per mano di Zabuza. Tutto il Villaggio della Foglia è in lutto per la triste fine di {0}.</value>
+  </string>
+  <string key="DGToMason">
+    <value>Zetsu, ovvero {0}, è ora diventato un membro della squadra Anbu, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{0} è morto e tu ti trasformi in un membro della squadra Anbu. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>Zetsu, ovvero {0}, è ora diventato un jashinista esattamente come te! Jashin ne sarà felice!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} è morto e tu ti trasformi in un sadico jashinista. I tuoi compagni jashinisti (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>Zetsu, ovvero {0}, è ora diventato un Nukenin, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} è morto e tu ti trasformi in un Nukenin. Gli altri Nukenin (se presenti) sono: {1}</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>L'ultima persona in vita è Zabuza! Il Demone della Nebbia ha vinto!</value>
+  </string>
+  <string key="AskKill">
+    <value>Chi vuoi uccidere stanotte?</value>
+  </string>
+  <string key="LoverDied">
+    <value>Con l'ultimo respiro di {0}, {1} accorre per vedere il suo cadavere e piange. Non riesce a sopportare questo straziante dolore, perciò afferra l'arma più vicina che trova e si toglie la vita. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Chi vuoi impersonare e prenderne il ruolo quando morirà?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Chi vuoi legare e far innamorare per sempre?? Scegli il primo Shinobi:</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Chi vuoi legare e far innamorare per sempre?? Scegli il secondo Shinobi:</value>
+  </string>
+  <string key="Hunter">
+    <value>Tobirama 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Kushina 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Zabuza 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Zetsu 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>Sei diventato Konohamaru! Il tuo modello da seguire è {0}.</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>In un sentiero che porta a Konoha viene trovato il corpo di {0}. Indagando sull'accaduto, gli Shinobi scoprono che lungo il cammino la povera vittima ha incontrato Tobirama: forse lo aveva sfidato, inconsapevole della sua forza... oppure era entrato nel suo mirino dei sospettati, chissà... La cosa certa è che ora il Villaggio della Foglia dovrà preparare l'ennesimo funerale. {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Un folle jashinista ha provato a portarti con sé nel suo culto, ma la tua fede era troppo elevata! </value>
+  </string>
+  <string key="LoversWin">
+    <value>Il vero amore trionfa! Gli Shinobi innamorati hanno vinto!</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>Sorge il sole e gli ultimi due sopravvissuti si vedono nella piazza di Konoha. {0} vede {1}, lo circonda con la sua fitta nebbia e lo decapita velocemente. Breve ma intenso, non è vero {1}? Zabuza ha vinto!</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Il Villaggio della Foglia è completamente deserto. Tutti sono morti: donne, bambini, civili, Shinobi, Nukenin... rimangono soltanto i loro corpi sparsi ovunque... e un gruppo di corvi venuto a banchettare.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>Il sole è alto e soltanto due sopravvissuti possono godersi i suoi raggi. {0} e {1} si incontrano nella valle dell'Epilogo per la battaglia finale. {0} prende in mano il suo spadone e attiva la tecnica del Velo di Nebbia su {1}. {1}, tuttavia, è molto veloce e usa una delle sue tecniche più potenti contro {0}, colpendolo in pieno. Con le ultime forze rimaste, prima di morire, {0} raccoglie le sue ultime forze e decapita {1}, per poi cadere a terra esalando l'ultimo respiro. Entrambi sono morti, il Villaggio della Foglia rimane desolato...</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Sei giá in lista d'attesa per {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Sei stato aggiunto alla lista d'attesa per {0}. Ti contatterò appena una nuova missione sta per cominciare. </value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>Una nuova missione sta per cominciare su {0}!</value>
+  </string>
+  <string key="RoleModelChosen">
+    <value>Non hai fatto una scelta, quindi l'Hokage ti ha scelto {0}!</value>
+  </string>
+  <string key="Won">
+    <value>Vinto</value>
+  </string>
+  <string key="Lost">
+    <value>Perso</value>
+  </string>
+  <string key="IdleCount">
+    <value>Il Ninja {0} è stato ucciso per non aver votato {1} volte nelle ultime 24 ore,</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Il tuo ruolo è semplice: sopravvivere. Ogni giorno, avrai l'occasione di linciare i Nukenin! Vota con attenzione!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Sei Shikamaru. Ogni notte, potrai scegliere uno Shinobi e conoscere la sua verà identità. Cerca di non farti scoprire: se dici di essere Shikamaru, o riveli di conoscere le identità di qualche Ninja, i Nukenin potrebbero ucciderti! Nota: potresti non essere Shikamaru ma Maito Gai, che confonde le persone (anche sé stesso) e i ruoli casuali (anche veri) ma presenti in missione. Se ti scrive Temari, saprai di essere veramente Shikamaru.\nSasuke 🖕: lo si può scrutare come Nukenin 🐺 o come Genin della Foglia 👱 (50% e 50%).</value>
+  </string>
+  <string key="AboutWw">
+    <value>Ogni notte, potrai decidere di uccidere qualcuno mentre di giorno dovrai confonderti fra gli altri e non farti linciare! Se almeno la metà dei giocatori in partita sono Nukenin come te, la partita finisce e voi vincete. \n Nota: se attacchi Rock Lee, dovrai rimanere fermo un turno per riprenderti dalla sbronza! Se attacchi Anko, diventerà una Nukenin come te!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Sei Mei. Con la tua voglia di sposarti, avrai la possibilità di chiedere la mano ad altri Shinobi andandoli a trovare durante la notte. Se non sono Nukenin (o Zabuza) lo scoprirai (perchè sopravviverai!). Nel caso sfortunato in cui tu ti trovassi faccia a faccia con i Nukenin (o Zabuza), verrai uccisa. Se i Nukenin stanno uccidendo uno Shinobi che hai deciso di andare a trovare, verrete uccisi insieme. Tuttavia, se vai a casa di uno Shinobi e i Nukenin scelgono di venire a casa tua, sopravviverai! Non eri a casa, dopotutto...</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Sei Rock Lee! Sei uno Shinobi qualsiasi, con la differenza che sei quasi sempre ubriaco perché confondi le bottiglie d'acqua con quelle di saké. Nel caso in cui venissi ucciso la notte dai Nukenin, offrirai loro da bere prima di morire, costringendoli a saltare il turno la notte successiva per la sbronza...</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Sei Anko e stai dalla parte dei buoni... almeno finchè i Nukenin non verranno a cercarti! Se dovessero trovarti, il tuo Segno Maledetto si riattiverebbe e diventeresti pure tu un Nukenin! Nota: finchè i Nukenin non ti trovano, la tua lealtà è verso il Villaggio della Foglia e vincerai con gli altri Shinobi nel caso in cui i Nukenin dovessero morire.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Sei Sasuke, un bastardo traditore. Se riesci a sopravvivere a lungo e riuscire a uccidere tutti i Nukenin, diventerai tu stesso un Nukenin e tradirai il villaggio uccidendo i tuoi vecchi compagni di squadra durante la notte! Nota: finchè non ti trasformi, la tua lealtà appartiene a Konoha. Ti conviene quindi cercare di uccidere i Nukenin. Se Shikamaru dovesse scrutarti, potrebbe identificarti sia come Nukenin 🐺, sia come Genin della Foglia 👱(50% e 50%).</value>
+  </string>
+  <string key="AboutGA">
+    <value>Sei Tsunade! Ogni notte, potrai proteggere un Ninja a tua scelta. Stai attento a chi proteggi, però! Se scegli un Nukenin, avrai il 50% di probabilità di morire. Se scegli Zabuza, verrai uccisa senza rendertene conto (100% probabilità).</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Tu, eremita porcello! Nei panni di Jiraiya, avrai l'occasione di investigare sugli altri Shinobi. Fai molta attenzione a non farti scoprire: hai il 40% di probabilità che i Nukenin ti scoprino a investigare!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Nelle vesti di Kakashi, ti verranno dati due colpi di Raikiri da usare per uccidere 2 Shinobi. Di giorno, avrai l'occasione di uccidere uno Shinobi a tua scelta. Dopo il colpo, però, tutti sapranno la tua identità! Stai quindi molto attento: hai solo 2 colpi e i Nukenin vorranno sicuramente ucciderti, se ti sveli!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Itachi! Il suo obiettivo è semplice: farsi linciare. Se Itachi riesce a farsi linciare... VINCE, mentre tutti gli altri perdono! Nota: se Itachi non riesce a farsi linciare: perde. Non vince con gli Shinobi.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Maito Gai... un tizio bizzarro e fuori dal comune che confonde le persone (incluso sé stesso!) al punto da credere di essere Shikamaru! Quando sceglie di vedere l'identità di qualcuno, gli verrà detto un'identità casuale presente in partita. Nota: è più utile di quello che sembra, può sapere con esattezza i ruoli che ci sono in partita. Se vedete un ruolo, sarà in partita.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Come Hidan, il jashinista, il tuo obiettivo è convertire tutti gli altri Shinobi (tranne i Nukenin) al culto del Dio Jashin. Se a fine missione tutti i Ninja sono jashinisti, vincono. \n Probabilità di convertire i seguenti personaggi: \n Zetsu 0%: finché non non si trasforma in qualcun altro, è impossibile da convertire \n Shikamaru 40%: Shikamaru è il più difficile da convertire \n Tsunade 60%: se protegge qualcuno, non la troverai in casa \n Anko 60% \n Jiraiya 70% \n Mei 70%: come per Tsunade, se non è casa, non può essere convertita \n Tobirama: 50% di probabilità. Se fallite, c'è il 50% che vi uccida.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Nel ruolo di Asuma, il tuo compito è estirpare i jashinisti. Se ti visitano, ucciderai il loro ultimo adepto e saprai quanti jashinisti sono rimasti. Ogni notte potrai far visita a uno Shinobi: se trovi jashinisti, li ucciderai; in caso contrario tornerai a casa, come se nulla fosse successo.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Sei Konohamaru. Durante la prima notte, sceglierai il tuo mentore/modello da seguire. Se morisse, ti trasformerai in un Nukenin. Nota: finché non ti trasformi vincerai con gli Shinobi, nel caso in cui tutti i Nukenin morissero.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Sei Shikadai, il figlio di Shikamaru. Al momento sei un normale Genin della Foglia ma, nel caso in cui Shikamaru morisse, ti trasformerai nel suo sostituto. Nota: se sei in missione, implica che Shikamaru è presente.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Sei Temari e proprio per questo ti verrà detto chi è Shikamaru (quello vero, non Maito Gai che crede di esserlo!). Se Shikamaru dovesse morire e Zetsu oppure Shikadai prendessero il suo posto, ti verrà detto. Una buona tattica è fingersi Shikamaru e rivelare le identità degli Shinobi al posto suo.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Il ruolo degli Anbu è semplice: sanno chi sono gli altri Anbu, dato che partecipano con te alle missioni segrete e speciali del villaggio. Se c'è solo un Anbu, allora è uno Shinobi qualunque.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Sei Zetsu e puoi scegliere uno Shinobi a inizio missione per ereditare il suo ruolo. \n Nota: se il Ninja scelto è stato convertito al jashinismo, prenderai il suo ruolo originale. Tutte le altre regole normali si applicano: se era Konohamaru e il suo modello è morto, diventerai un Nukenin, altrimenti erediterai il suo modello.\nI jashinisti non possono convertire Zetsu, possono farlo soltanto quando Zetsu si è trasformato. Zetsu non può vincere se rimane così com'è. Se a fine partita Zetsu non si è trasformato, perde (l'unica eccezione è se viene legato a qualcuno, in tal caso vincono insieme).</value>
+  </string>
+  <string key="AboutCupid">
+    <value>A inizio missione, Kushina sceglie due Shinobi, dopodiché diventa a tutti gli effetti una normale Ninja. I due Shinobi scelti diventeranno follemente innamorati e se uno dei due muore, l'altro morirà. Nota: gli amanti sanno chi è l'altro, ma non sanno la loro vera identità. Se gli amanti sono gli ultimi due vivi, loro vincono, indipendemente dal loro ruolo. Se gli amanti sono di due team diversi(esempio: Madara e Temari ) e un team vince (esempio: Nukenin), anche l'amante (esempio: Temari) vince. \n TL;DR Se tutti e due gli amanti sono vivi a fine partita, e almeno uno dei due è nel team vincitore, vincono insieme!</value>
+  </string>
+  <string key="AboutHunter">
+    <value>Un tipo sospettoso, dall'attacco facile. Quando gli altri ti visitano, potrebbero trovarsi morti, visto che potresti scambiarli per Nukenin. \nSe i Nukenin ti attaccano, hai la possibilità di uccidere uno di loro. Potresti avere anche la possibilità di uccidere qualcuno nel momento della tua morte.\nNota: Per gli attacchi da parte dei Nukenin, la probabilità inizia al 30%. Se c'è un solo Nukenin, Tobirama ha il 30% di probabilità di ucciderlo (e sopravvivere!). Per ogni Nukenin in più, la probabilità aumenta del 20% (2 Nukenin= 50%, 3= 70%). Ciononostante, se ci sono molti Nukenin, mentre potresti ucciderne uno, verrai lo stesso accerchiato e ucciso. \nSe i jashinisti provano a convertirti, hanno il 50% di probabilità di fallire. Se falliscono, hai il 50% di probabilità di ucciderne uno!</value>
+  </string>
+  <string key="AboutSK">
+    <value>Zabuza è uno Shinobi solitario, anche se viene impropriamente definito Nukenin. Può vincere solo se è l'ultimo rimasto in vita (eccezione: amanti). Conosciuto anche come Demone della Nebbia, puoi uccidere CHIUNQUE, specialmente i Ninja più forti: Nukenin, Tobirama, Kakashi, Tsunade, qualsiasi Shinobi. Se i Nukenin provano ad attaccarti, ne ucciderai uno di loro (random) e sopravviverai.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para è uno sciocco programmatore a cui piace abbaiare alle persone.  Forse è stato a contatto con i lupi troppo a lungo...</value>
+  </string>
+  <string key="EndTime">
+    <value>Durata della missione: {0}</value>
+  </string>
+  <string key="Day">
+    <!-- Day -->
+    <value>Giorno {0}</value>:)
+  </string>
+  <string key="NodeShutsDown">
+    <value>Si è verificato un errore imprevisto, e questo nodo è stato spento :/\n Per dettagli, vai su @werewolfsupport</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Ti ho mandato un rotolo criptato in privato</value>
+  </string>
+  <string key="StartPM">
+    <value>Scrivimi un rotolo in privato così posso risponderti: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Grazie per avermi richiamato! Ora posso scriverti in privato.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Devi rispondere all'utente che vuoi cacciare!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Cosa vorresti fare?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Puoi entrare in missione solo dentro un gruppo!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Puoi cominciare una missione solo dentro un gruppo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo di Risposta: {0}\nMessaggi per secondo: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Che lingua?\nAttuale: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Che variante?\nAttuale: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Lingua impostata in {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Quale file di linguaggio vuoi impostare?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Non ci sono nodi online al momento, per favore riprova più tardi.</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Devi usare questo comando in un gruppo!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Non sei un admin globale...</value>
+  </string>
+  <string key="NotPara">
+    <value>Tu non sei Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sì</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Ammesso</value>
+  </string>
+  <string key="Disallow">
+    <value>Non Ammesso</value>
+  </string>
+  <string key="Show">
+    <value>Mostra</value>
+  </string>
+  <string key="Hide">
+    <value>Nascondi</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Solo Normale</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo Caos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>A scelta del Giocatore</value>
+  </string>
+  <string key="ShowNone">
+    <value>Non mostrare nessuno</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostra solo gli Shinobi in vita</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostra tutti gli Shinobi</value>
+  </string>
+  <string key="Cancel">
+    <value>Annulla</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Vuoi che sia ammesso fuggire dal gioco durante la missione?\nNota: gli Shinobi potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>È {0} fuggito dopo l'inizio della partita... che codardo!</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Quanti Shinobi vuoi impostare come massimo?\nAttualmente: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Shinobi massimi impostati a {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostrare le identità/ruoli alla morte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>I ruoli/identità verranno {0} alla morte.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Che modalità di gioco vuoi che giochi questo gruppo?\nAttualmente: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modalità di gioco impostata a {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Quali ruoli/identità vuoi che siano mostrati alla fine della partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Identità/ruoli mostrati alla fine impostati a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Scegli il tempo base (in secondi) per il giorno. Questo verrà modificato in base al numero di Shinobi.\nTempo minimo aggiunto in base ai Ninja è di 60 secondi. Impostazione base: {0}\nAttuale: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Tempo base del giorno impostato a {0} secondi</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Scegli quanto dovranno durare le notti in secondi. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Le notti dureranno {0} secondi</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Imposta il tempo (in secondi) per il linciaggio di giorno. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>I linciaggi dureranno {0} secondi</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Ammettere Maito Gai in partita, come ruolo/identità?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Maito Gai come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Ammettere Itachi in partita, come ruolo/identità?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Itachi come ruolo/identità impostato a {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Ammettere Hidan e i jashinisti in partita, come ruolo/identità?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Hidan/jashinisti come ruolo/identità impostato a {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Grazie mille, ti auguro una felice giornata! :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Di che lingua si vuole cercare il gruppo in cui giocare?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Questi sono i gruppi per {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membri</value>
+  </string>
+  <string key="StartMe">
+    <value>Per favore startami così potrò scriverti in privato</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} non ha richiamato l'Hokage (bot), ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Sei Hashirama 🎖! Primo Hokage nonché fondatore del Villaggio della Foglia, sei stato a lungo amato e rispettato. Proprio per la tua importanza, quando sceglierai di rivelare la tua identità, il tuo voto per il linciaggio varrà il doppio!</value>
+    <value>Sei Hashirama 🎖, il Primo Hokage e fondatore di Konoha in incognito. Se vorrai rivelarti a tutti, il tuo voto per il linciaggio varrà il doppio. Gioca bene il rischio: se ti riveli, sarai facile preda per i Nukenin ma, se non lo fai, potresti essere sospettato e linciato... valuta bene le tue mosse!</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Nessuno sa che sei Minato 👑, in missione segreta per trovare i Nukenin. Non potrai rivelare chi sei se non in caso di estrema necessità. Se dovessero sospettare di te e votare per linciarti, potrai rivelare a tutti la tua identità e salvarti così da una brutta morte! Attenzione, però: questa tecnica funziona solo una volta! Nukenin a parte, se dovessero linciarti nuovamente, non sarai così fortunato...</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Sei Choji 🤕! Sei un Ninja fidato e spesso sottovalutato... Se ti chiamano ciccione sono guai! Hai un difetto enorme: il cibo. Mangi talmente tanto e sei talmente concentrato quando lo fai che hai il 50% di possibilità di sbagliare a votare qualcuno per il linciaggio! Comunque non ha importanza, per te: finché sei in vita e la tua scorta di patatine non si esaurisce, è tutto sotto controllo!</value>
+    <value>Sei Choji 🤕... e no, non sei ciccione ma soltanto "robusto"! Sia a riposo che in missione, non fai altro che mangiare. Lo fai con talmente tanto trasporto da non accorgerti di aver votato il Ninja sbagliato per il linciaggio. Al momento della votazione, infatti, hai il 50% di possibilità di sbagliare e votare uno Shinobi a caso. Ma... ehi! Che colpa ne hai se quelle patatine sono così buone?</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Sei Danzo 🔮! Sei un personaggio influente, carismatico e che punta al potere. Proprio per questo, preferisci allearti con i Nukenin invece che con quegli incapaci di Shinobi, che tempo addietro rifiutarono di assegnarti il titolo di Hokage e ti bandirono dal villaggio. Di notte potrai usare i tuoi poteri per trovare i Nukenin o Shikamaru. Vinci solo se vincono i Nukenin. Divertiti a gettare caos nel villaggio!</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Sei Ten Ten ⚒! Adori le armi e gestisci l'armeria di Konoha. Se i Ninja vincono le loro battaglie è in parte grazie anche alle tue armi! Non partecipi molto alle missioni, però puoi decidere di dare una mano: durante il giorno (uno soltanto), puoi decidere di rivelarti e di spargere delle trappole attorno alle mura del Villaggio della Foglia, impedendo così che la notte successiva i Nukenin attacchino. Per il resto del tempo, te ne rimani tranquilla nel tuo negozio. Non vendere armi ai Nukenin, mi raccomando!</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Sei Orochimaru ⚡️, un pericoloso Nukenin. La tua missione è quella di distruggere Konoha! Per farlo, avrai bisogno di tutto l'aiuto possibile... proprio per questo, ogni notte, sceglierai insieme ai tuoi compagni uno Shinobi da uccidere. Prima, però, morderai la vittima lasciandole il Segno Maledetto. Finché sarai vivo, c'è un 20% di probabilità che la vittima morsa sopravviva al Segno Maledetto e si unisca con gli altri Nukenin!</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Sei Obito 🐶! Sei stato salvato dai Nukenin dopo aver rischiato di morire. Ogni notte potrai uccidere tutti coloro che ti hanno causato dolore. Se vieni ucciso, però, il giorno seguente i tuoi alleati attaccheranno due volte per vendicarti!</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Appena gli Shinobi e il Consiglio di Konoha hanno deciso che {0} verrà linciato stasera, lui si toglie il cappuccio e rivela il suo volto: «Aspettate! Sono io, Minato!. Ho dovuto nascondere la mia identità per una missione molto importante. Il Villaggio della Foglia è la mia casa, lo proteggo dai Nukenin agendo in incognito, sono stato il Quarto Hokage... sono dalla vostra parte!». Sentendosi in colpa, tutti si ritirano docilmente nelle proprie case. Che figuraccia!</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Hai provato a scrutare {0}, ma non riesci a capire cos'è... Sei però sicuro che non sia nè Shikamaru nè un Nukenin!</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} fa un passo avanti e decide di rivelare la sua identità: è Hashirama, il Primo Hokage nonché fondatore di Konoha! Ammirati e riconoscenti verso l'uomo, gli Shinobi decidono che per {0}, grazie alla sua importanza, i voti per il linciaggio conteranno doppio!</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clicca "Rivelati" appena ti senti pronto per rivelare la tua identità!</value>
+  </string>
+  <string key="Reveal">
+    <value>Rivelati</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Vuoi circondare i confini del Villaggio della Foglia con armi e trappole, rendendo i Nukenin incapaci di attaccare stanotte?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre gli Shinobi e il Consiglio di Konoha battibeccano per decidere chi linciare, alcuni Ninja si accorgono che {0} sta piazzando armi e trappole attorno ai confini del Villaggio. Per ora, o almeno, per stanotte, Konoha sarà al sicuro dagli attacchi da parte dei Nukenin. Grazie Ten Ten!</value>
+  </string>
+  <string key="Mayor">
+    <value>Hashirama 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Minato 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Danzo 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Choji 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Ten Ten ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Orochimaru ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Obito 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Appena i Nukenin accerchiano {0}, Orochimaru, ovvero {1}, ordina a tutti di fermarsi. {1} afferma di vedere il potenziale che {0} ha in sé e decide di morderlo, lasciando un vistoso segno nero sul collo. Infine tutti se ne vanno, lasciando la vittima in preda al dolore causato dal Segno Maledetto. Se sopravvive, la notte seguente farà parte del vostro team!</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>I Nukenin sono venuti per ucciderti ma uno di loro, Orochimaru, ha visto in te del potenziale e ti ha scelto... mordendoti il collo e donandoti il Segno Maledetto! Se sopravvivrai, la notte successiva diverrai anche tu un Nukenin! Consapevoli che vi sareste rivisti molto presto, i Nukenin se ne vanno, lasciandoti in preda al dolore. </value>
+  </string>
+  <string key="BittenTurned">
+    <value>Appena cala la notte senti un dolore lancinante al collo e un intenso bruciore avvolgerti dalla testa ai piedi. Che cos'è tutto questo potere che avverti? Sei davvero tu? Fantastico! Sei diventato un Nukenin!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Primo Hokage e fondatore di Konoha, in incognito. Se Hashirama decide di rivelare pubblicamente la propria identità, il suo voto per il linciaggio varrà doppio. Se viene convertito ai jashinisti, perde il doppio voto.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Minato è stato uno dei Ninja più importanti nella storia degli Hokage di Konoha. La prima volta che viene linciato, la sua identità viene rivelata a tutti e non muore. Muore normalmente se viene aggredito e ucciso di notte. Può essere linciato normalmente al secondo tentativo. </value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Sei Danzo ed hai il potere di vedere le identità di certi Shinobi. Tuttavia non metterai a disposizione i tuoi poteri per il bene del Villaggio ma anzi, starai dalla parte dei Nukenin! \nOgni notte anche lui potrà scrutare, ma può vedere SOLO Shikamaru e i Nukenin. Vince con i Nukenin.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Sei Choji e sei talmente distratto dal cibo che c'è un 50% di probabilità che il tuo voto per il linciaggio cambi in uno casuale.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Ten Ten è una Kunoichi che è diventata esperta di armi. Soltanto per una volta, durante il giorno, può decidere di spargere armi e trappole attorno al villaggio (la sua identità verrà rivelata) e impedire ai Nukenin di attaccare la notte seguente.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Orochimaru è un Nukenin pericoloso ed ha la capacità di mordere le vittime e trasformarle in Nukenin. Finché vivo, ha il 20% di possibilità di lasciare il Segno Maledetto alle vittime e di trasformarle. Se sopravvivono, la notte successiva le vittime si trasformeranno in Nukenin!</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Obito è un Nukenin come tutti gli altri e come tale verrà visto da Shikamaru. Tuttavia, se venisse ucciso, la notte seguente gli altri Nukenin per vendicarsi uccideranno due Shinobi!</value>
+  </string>
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto... ti trasformi e diventi Orochimaru! Gli altri Nukenin (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto e tu ti trasformi in Obito. Gli altri Nukenin (se presenti) sono: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Team Alleanza degli Shinobi</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Team Nukenin</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Team Zabuza</value>
+  </string>
+  <string key="CultTeam">
+    <value>Team jashinisti</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Team Itachi</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Team Konoha</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Team Nukenin</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Team Zabuza</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Team jashinisti</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Team Itachi</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>I jashinisti hanno mandato {0} per provare a convertire {1}, ma all'improvviso si vede la testa e un braccio di {0} volare fuori dalla finestra... Chissà come mai... Nukenin? {0} è morto!</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} ha deciso di incontrare {1} vicino ad un ruscello, ma una sorpresa l'attendeva: un pericoloso criminale era intento a fare a pezzi il povero corpo di {1}! Mei non sapeva se fuggire o combattere... Troppo tardi! Una fitta nebbia silenziosa avvolse completamente il corpo della donna. Quando scomparve, Zabuza osservava soddisfatto il corpo smembrato di {0}!</value>
+  </string>
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Una squadra di recupero riporta al Villaggio della Foglia il corpo ormai privo di vita di {0}. Gli Shinobi ci misero un po' a riconoscerlo, tant'era deturpato il volto. Somigliava molto a Shikamaru e invece era... Shikadai? 🙇 Sì, proprio lui!</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Sembra che {0}, per gli amici Ten Ten, sia stata estremamente sfortunata. Il corpo di {0} è stato trovato trafitto da spade, kunai e shuriken. Analizzando le armi conficcate nelle sue mani, nei piedi e nella testa, gli Anbu scoprirono che quelle armi provenivano dal suo stesso negozio. Sembra che qualcuno si sia divertito ad uccidere in modo diverso, una volta tanto!</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} è stato trovato trafitto e sbudellato sopra al simbolo di Jashin. A quanto pare il rituale non ha funzionato... Zabuza ha colpito ancora, alla faccia dell'immortalità! {0} era un jashinista 👤.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Il mattino seguente, gli Shinobi furono profondamente affranti nel trovare {0} tagliata dalla testa ai piedi. Chi mai potrebbe uccidere Kushina?</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Le scorte personali di Tsunade erano esaurite: vuoi vedere che {0} ha nuovamente confuso il sakè per l'acqua? Dopo una minuziosa ricerca, {0} fu trovato a pezzi nella propria casa, probabilmente preso alla sprovvista mentre era alticcio... Sembra che Zabuza non abbia gradito lo Stile dell'Ubriaco di Rock Lee!</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} ha tenuto testa e combattuto valorosamente contro Zabuza. Purtroppo, Tsunade non è riuscita a curarsi in tempo. {0} è morta!</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Sembra che {0} sia stato preso alla sprovvista mentre era immerso nella lettura di Icha-Icha Paradise! A notte fonda gli Shinobi avvertono dei colpi in lontananza però, disgraziatamente, tornano a dormire. Il giorno seguente trovano il cadavere di Kakashi, con lo Sharingan mancante e la testa decapitata. Zabuza ha fatto un ottimo lavoro, non c'è dubbio!</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Hashirama assassinato! {0} è stato trovato squartato nella foresta mentre utilizzava l'Arte del Legno! Dal modo in cui è stato ucciso, è chiaro che l'artefice non può che essere Zabuza...</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Konoha è leggermente in subbuglio dopo la notizia giunta all'Hokage. Squadre di Anbu sono state mandate in ogni angolo del villaggio per investigare sulla morte di {0}. Nessuna prova eclatante fu scoperta, ma si crede che Minato sia stato ucciso per mano di Zabuza...</value>
+    <value>Purtroppo Konoha non è stata protetta adeguatamente la scorsa notte. {0} è stato trovato in una pozza di sangue con la bocca spalancata. Gli arti di {0} furono trovati, un pezzo per volta, tra una casa e l'altra. Zabuza si sarà sicuramente divertito nell'uccidere Minato!</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Il mattino è giunto e davanti alla casa di {0} c'è un gran viavai di Shinobi. A quanto pare Zabuza ieri sera è entrato in casa e ha decapitato la vittima mentre era concentrata in una partita di Shogi. {0} era Shikamaru.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Anche i Nukenin possono sbagliare, a volte... a quanto pare hanno scelto di attaccare il Ninja sbagliato. Peccato, {0} era davvero un ottimo alleato!. Danzo 🔮 è morto.</value>
+    <value>Le grida: "Sono vostro alleato!" riecheggiavano nella foresta durante la notte appena trascorsa. Tutto quello che gli Shinobi trovarono il mattino seguente fu il cadavere di {0}. Sembra che Danzo 🔮 sia stato scambiato per Shikamaru e fatto fuori...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>Oh no! Una tragedia si è consumata nel Villaggio della Foglia! Poco distante dall'Accademia è stato trovato il corpo indifeso di {0}. Gli Shinobi rabbrividiscono per la crudeltà dei Nukenin... Konohamaru era solo un ragazzino! Addio, Nobile Nipote!</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+    <value>L'Hokage invia gli Shinobi più valorosi per una missione di estrema importanza. Durante il tragitto, si imbattono nel cadavere di {0}, brutalmente decapitato e affettato in più punti. Asuma a quanto pare stava cercando dei jashinisti... e invece si è imbattuto in Zabuza!</value>
+    <value>Il corpo di {0} è stato trovato ai margini della foresta, tagliato con precisione da un'arma molto grande e affilata. Asuma, secondo alcune fonti, aveva deciso di controllare se Zabuza fosse un fedele servitore di Jashin... Pessima idea!</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Sembrava una notte tranquilla, dato che i Nukenin avevano deciso di non attaccare e preparare insieme una strategia ottimale per invadere Konoha, tuttavia l'unico sfortunato è stato {0}, un jashinista che ha provato a convertire uno dei Nukenin. La testa di {0} è stata usata come fermacarte, mentre il corpo è stato smembrato e sotterrato in più punti. Addio, servo di Jashin!</value>
+    <value>I jashinisti hanno incontrato un problema non previsto, questa notte. Il loro membro più recente, mandato a fare proseliti, ha voluto provare a convertire un Nukenin e ha fatto una brutta fine! Sfortunatamente per {0}, i Nukenin non hanno interesse nel loro stupido culto...</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Cultists convert the SK-->
+    <value>I jashinisti pensavano di convertire e far entrare nella setta un nuovo Shinobi, ma si sbagliavano! {0}, uno dei discepoli di Jashin-Sama, è stato trovato tritato nella foresta! Vicino ad esso, il suo ciondolo giaceva spezzato sotto il taglio di una potente spada... a Zabuza i religiosi non sono mai piaciuti!</value>
+    <value>L'ultima notte, i jashinisti hanno provato a convertire il Ninja sbagliato. Il loro membro più recente ha provato a convertire nientemeno che Zabuza che, con sommo piacere, ha trasformato il corpo di {0} in cibo per corvi.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- used when GA guards SK -->
+    <value>Doveva essere una notte tranquilla, all'Ospedale di Konoha. {0} ha scelto lo Shinobi da proteggere, scommettendo che sarebbe riuscita a farlo sopravvivere fino ala fine. Il mattino seguente il corpo di {0} è stato ritrovato in orribili condizioni, tagliato e decapitato. Vicino al corpo, una nota: "Posso proteggermi meglio di te". Tsunade ha commesso un grosso sbaglio, scegliendo di proteggere Zabuza...</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <!-- used when GA guards a wolf -->
+    <value>{0} senza saperlo ha provato a proteggere un Nukenin, questa notte. Il corpo di {0} è stato trovato senza vita e malamente riposto dentro l'infermeria dell'Ospedale di Konoha. Le scommesse di Lady Tsunade non sono quasi mai andate a buon fine...</value>
+  </string>
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che solo {0} era rimasto in vita, {1} prova a uccidere {0}, ma l'addestramento di {0} si rivela efficace contro il Nukenin! Tutto ciò che rimane ora è il corpo morto del Nukenin e la vittoria di Tobirama in tasca!</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che solo {0} era rimasto in vita, {1} prova a uccidere {0} quando {0} meno se l'aspettava, riuscendo a colpirlo in pieno. Dare il colpo di grazia ora era molto più semplice per {1} che, soddisfatto, pose fine alla sofferenza di {0}, l'ex Secondo Hokage Tobirama.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} e {0} escono appena spuntarono i primi raggi di luce. Vedendo il ciondolo che {0} indossava sul collo, il virtuoso {1} utilizza le lame di Chakra sul jashinista, ponendo finalmente la fine al culto di Jashin. Soddisfatto per il lavoro compiuto, Asuma sorrise guardando i volti di pietra degli Hokage e contemplò l'alba in compagnia di una sigaretta.</value>
+  </string>
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per cliccare Join e unirti all'avventura!</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per cliccare Join e unirti alla missione!</value>
+  </string>
+  <string key="CantExtend">
+    <value>Solo gli admin del gruppo possono prolungare il timer più di una volta!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Permettere ai Ninja partecipanti di prolungare il timer?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} prolungare il tempo ai Ninja partecipanti</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Scegli il tempo limite che può essere aggiunto ai Ninja partecipanti con un singolo comando /extend.\nDefault: {0}\nAttualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo limite per /extend impostato a {0} secondi</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} ha fatto l'errore di concedersi qualche bicchierino di sakè con Rock Lee! È talmente ubriaco da non riuscire nemmeno ad attaccare {1}. Barcollando e borbottando da solo, se ne torna al rifugio per smaltire la sbronza.</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Non puoi unirti alla missione perché non sembri essere un membro di {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Per favore non usare i comandi per joinare. Usa questo bottone invece.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>Hanno votato in {0} su {1}.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Abilitare il Voto Segreto?\nAttuale: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Voto segreto impostato su: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, per favore ricordati di joinare cliccando sul bottone.</value>
+  </string>
+  <string key="GroupNotFound">
+    <!--This string might need rewording from some native speaker-->
+    <value>Non trovo il gruppo. Prova ad usare il comando nel gruppo in cui vuoi togliere l'avviso di nuova partita, oppure aggiungi il link, l'ID o l'username dopo il comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Sei stato rimosso dalla lista d'attesa per {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} sono entrati nell'ufficio dell'Hokage negli ultimi 30 secondi.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Abilita Hidan e i jashinisti</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Abilita Itachi</value>
+  </string>
+  <string key="AllowFool">
+    <value>Abilita Maito Gai</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Abilita Linciaggio Segreto</value>
+  </string>
+  <string key="RandomMode">
+    <value>Abilita modalità random</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Abilita estensione del timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostra ruoli alla morte</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Abilita la fuga</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Mostra ID all'ingresso in partita</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Mostrare ID dei giocatori dopo l'ingresso in partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} ID</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Tutte</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Abilitare la modalità casuale?\nQuando la modalità casuale è attiva, le seguenti opzioni verranno impostate automaticamente ogni volta che qualcuno inizierà una partita: modalità Caos, linciaggi segreti, mostrare i ruoli alla morte, ammetti jashinisti/Hidan, Maito Gai e Itachi. \nAttualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modalità casuale impostata a: {0}</value>
+  </string>
+  <string key="AllowNSFW">
+    <value>Ammetti Gif Pack NSFW?</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Ammettere gif packs NSFW ai giocatori?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>GIF NSFW {0}</value>
+  </string>
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>{0} si svegliò nel silenzio più assoluto. Alzandosi a fatica, {0} camminò e camminò, fino a realizzare di essere l’unico rimasto in vita nell'intero villaggio. Alla vista dei cadaveri sparsi ovunque, {0} sospirò. Era rimasto soltanto lui e la sua malattia che lo stava divorando da dentro. Itachi iniziò a tossire forte: cercare qualcuno di vivo nel villaggio l'aveva stancato più del solito. Emise il suo ultimo soffio vitale nel pomeriggio, appoggiato ad un tronco, con un rivolo di sangue che gli scendeva dalla bocca e la fotografia della sua famiglia stretta nella mano.
+</value>
+    <value>{0} si svegliò all'alba, da solo. {0} notò che tutto il villaggio giaceva abbandonato, in preda ad un silenzio tombale. {0} vide il corpo di suo fratello Sasuke privo di vita... la missione di Itachi era fallita. Non aveva più nessuno da proteggere, né Konoha da salvare. Con le ultime forze rimaste seppellì il corpo del fratello, dopodiché si sdraiò e attese che la morte venisse a prendere anche lui.
+</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} aprì gli occhi, la foresta attorno a lui era cupa e silenziosa. {0} si alzò e dalla cima di un albero scrutò in lontananza Konoha, realizzando lentamente cos'era successo. Tutti erano morti. I Nukenin erano morti. Con un pizzico di amarezza nel petto, {0} scese dall'albero e iniziò a radunare la sua roba. Poco prima di incamminarsi verso nuovi orizzonti, {0} si voltò ad osservare per l'ultima volta il Villaggio della Foglia ormai abbandonato. Ripensò a quanto vicino lui e i suoi compagni Nukenin furono alla vittoria. Ahimè, era tempo di intraprendere un nuovo cammino, magari assieme ad un nuovo team. {0} si gettò nell'oscurità della foresta, dicendo addio a Konoha per sempre.</value>
+    <value>Nonostante tutti gli sforzi di {0}, i Nukenin alleati di {0} giacevano per terra, immobili e senza vita. Anche se ai Nukenin fu portata vittoria, non era rimasto nessuno con cui gustare il sapore del trionfo né Shinobi da comandare, proteggere o con cui costruire insieme una Konoha diversa. {0} sospirò, diede per l'ultima volta un'occhiata alle porte del Villaggio della Foglia e sparì silenziosamente, in una nuvola di fumo, alla ricerca di nuovi Nukenin, nuovi alleati e nuovi villaggi da conquistare.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Che variante?\nAttuale: {0}\nSiccome hai giocato più di 500 partite puoi entrare su: </value>
+  </string>
+  <string key="Skip">
+    <value>Salta</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, e tu ti trasformi in Pain. I tuoi compagni Nukenin (se presenti) sono: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Hai visto che\n{0} NON era {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Vorresti addormentare tutti con il tuo ramen questa notte?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Mentre i Ninja e il Consiglio di Konoha battibeccano su chi linciare, {0} apre il suo ristorante e annuncia che questa sera offrirà gratuitamente del ramen a tutti! Gli Shinobi accorrono affamati e ingurgitano tutto il ramen che riescono a contenere i loro stomaci. Sulla via di casa, si sentono talmente pieni e insonnoliti che rinunciano a votare e si ritirano stanchi ma sazi nei loro caldi letti. Il ramen di Teuchi è davvero il migliore di tutta Konoha!</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Dopo essersi abbuffati da Teuchi, gli Shinobi si sentono talmente pieni e insonnoliti che rinunciano a votare e si ritirano stanchi ma sazi nei loro caldi letti. </value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>Ammettere Suigetsu in missione, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Suigetsu come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Suigetsu potrà essere usato ogni notte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Suigetsu potrà agire ogni notte: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Ammetti Suigetsu</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Suigetsu ammesso per tutta la missione</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>Sei Gaara 👱🌚! Non sei famoso per essere socievole e preferisci startene per conto tuo. Nonostante la tua fedeltà al Villaggio, potresti destare sospetti tra gli Shinobi per via del Demone Tasso che ti porti dentro. Shikamaru, infatti, se deciderà di scrutarti, si confonderà e crederà che tu agisca per conto dei Nukenin. Ops... fa' attenzione!</value>
+  </string>
+  <string key="WolfMan">
+    <value>Gaara 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Nonostante la tua fedeltà al Villaggio, potresti destare sospetti tra gli Shinobi per via del Demone Tasso che ti porti dentro. Shikamaru, infatti, se deciderà di scrutarti, si confonderà e crederà che tu agisca per conto dei Nukenin!</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>Sei Pain 🐺🌝! Sei un Nukenin e come tale il tuo compito è di distruggere Konoha e creare un mondo a tuo piacimento. Sei talmente bravo a nascondere la tua vera identità che agli occhi degli Shinobi appari come un semplice Genin della Foglia... anche Shikamaru ti vedrà come tale. Nota, però, che nemmeno Danzo riuscirà ad identificarti! Quel che è certo... è che il mondo conoscerà il dolore!</value>
+  </string>
+  <string key="Lycan">
+    <value>Pain 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Pain è un pericoloso Nukenin, ma verrà visto da Shikamaru come Genin della Foglia. Nemmeno Danzo riuscirà ad identificarlo come Nukenin.</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>Sei Hinata 🌀! Ogni notte, con il tuo Byakugan, potrai scrutare un Ninja a tua scelta e sapere quale identità NON gli appartiene. Fai attenzione: le identità che vedi appartengono agli Shinobi presenti in questa missione e ciò vuol dire che sono vivi. Pondera bene le tue scelte quando voterai. Non farti scambiare per Shikamaru e... non farti scoprire!</value>
+  </string>
+  <string key="Oracle">
+    <value>Hinata 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Hinata utilizzerà il suo Byakugan per scrutare gli Shinobi e scoprire quale identità NON gli appartiene. Le identità che vedrà appartengono ad altri Ninja presenti in missione (ancora in vita).</value>
+  </string>
+  <string key="RoleInfoSandman">
+    <value>Sei Teuchi 💤! Non sei uno Shinobi, però sai cucinare dell'ottimo ramen. Soltanto per una volta, potrai scegliere di offrire ramen gratis a tutti gli Shinobi. Mangeranno talmente tanto che diventeranno assonnati e rinunceranno ai voti e alle attività notturne. Un ramen cucinato a dovere richiede un buon sonno ristoratore per affrontare le missioni più impegnative!</value>
+  </string>
+  <string key="Sandman">
+    <value>Teuchi 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Un ramen cucinato a dovere richiede un buon sonno ristoratore per affrontare le missioni più impegnative! Soltanto per una volta, Teuchi offrirà a tutti ramen a volontà, impedendo agli Shinobi di poter svolgere qualsiasi attività notturna per la grande abbuffata.</value>
+  </string>
+  <string key="RoleInfoPacifist">
+    <value>Sei Naruto ☮️! Imprevedibile, determinato e con un sogno da realizzare... grazie al tuo grande senso di lealtà e giustizia, le persone tendono a fidarsi. Con le tue parole riesci a toccare nel profondo il cuore di ogni Shinobi. Grazie a questa tua capacità, puoi convincere ogni Ninja del villaggio a non linciare nessuno. Il tuo discorso può essere fatto soltanto una volta!</value>
+  </string>
+  <string key="Pacifist">
+    <value>Naruto ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>Naruto, con la sua forza di volontà e la capacità di non arrendersi mai, può convincere tutti a non linciare nessuno. Può tenere il suo discorso soltanto una volta!</value>
+  </string>
+  <string key="RoleInfoWiseElder">
+    <value>Sei Hiruzen Sarutobi 📚! Grazie alla tua saggezza ed esperienza, riesci a tenere testa e a sopravvivere ad un attacco da parte dei Nukenin. Tuttavia, potrai farlo soltanto una volta, quindi occhio a non farti attaccare nuovamente! Se Kakashi, Tobirama o Sakura dovesse ucciderti, il suo rango calerà e tornerà ad essere semplicemente un Genin della Foglia.</value>
+  </string>
+  <string key="WiseElder">
+    <value>Hiruzen Sarutobi 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>Hiruzen Sarutobi sopravvive a un attacco notturno da parte dei Nukenin. Se viene ucciso da Kakashi, Tobirama o Sakura, essi ritorneranno ad essere Genin della Foglia.</value>
+  </string>
+  <string key="RoleInfoThief">
+    <value>Sei Suigetsu 😈! Il tuo passatempo preferito? Rubare! Con il tuo caratterino non puoi che puntare in alto. Come l'acqua, ti adatti a qualsiasi cosa. Proprio per questo hai la possibilità di scegliere uno Shinobi a cui rubare l'identità e continuare al posto suo la missione. Se ci riuscirai, la povera vittima ritornerà ad essere un povero Genin della Foglia! Fai attenzione a chi sceglierai: rubare la Tagliateste di Zabuza è una mossa intelligente... se vuoi morire!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Sei Suigetsu 😈! Il tuo passatempo preferito? Rubare! Con il tuo caratterino non puoi che puntare in alto. Come l'acqua, ti adatti a qualsiasi cosa. Questo ruolo è attivo durante tutta la missione, perciò avrai il 50% di probabilità di rubare l'identità a un Ninja ogni notte. Se ci riuscirai, quel Shinobi diventerà il nuovo Suigetsu e continuerà a rubare identità. NB: Non puoi rubare a un Nukenin e, se provi a rubare a Zabuza, verrai ucciso.</value>
+  </string>
+  <string key="Thief">
+    <value>Suigetsu 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Suigetsu 😈 si diverte a rubare il ruolo a uno Shinobi che, sfortunatamente, sarà costretto a ritornare un misero Genin della Foglia.\nSe c'è impostato Suigetsu per tutta la missione, il Ninja scelto si trasformerà nel nuovo Suigetsu e continuerà a rubare ruoli per tutta la missione.</value>
+  </string>
+  <string key="AskPacifist">
+    <value>Clicca questo bottone quando vuoi fare il tuo commovente discorso e convincere tutti a non linciare!</value>
+  </string>
+  <string key="PacifistNoLynch">
+    <!-- {0} - Pacifist's name -->
+    <value>Gli Shinobi stanno nuovamente discutendo su chi dovrà essere linciato. Un pugno si alza nel cielo e una voce squillante sovrasta le altre: «Mi chiamo Naruto Uzumaki ☮️, DATTEBAYO!» {0} sale sul tavolo, facendo cadere alcune cianfrusaglie. Prende un profondo respiro e ricomincia a parlare: «Ascoltate! Io sarò il futuro Hokage, perciò vi dico che nessuno di voi può pensare di linciare qualcuno, è chiaro?! Konoha è la nostra casa e dobbiamo proteggerla senza uccidere nessuno! Siamo Shinobi, DATTEBAYO! Dobbiamo restare uniti e combattere con tutte le nostre forze! Perciò ora finitela di discutere e prepariamoci a difendere il Villaggio! Io dico le cose così come stanno e non cambio idea! Anche questo fa parte del mio credo Ninja!» Tutti gli Shinobi, attorno a lui, erano ammutoliti. Colpiti nel profondo dalle sue parole, decidono che per oggi nessuno verrà linciato.
+</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Dato che il profondo discorso fatto da Naruto ☮️ ha toccato i cuori di molti, è stato deciso che non ci sarà nessun linciaggio oggi!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+    <!-- 0 - Wise Elder's name -->
+    <value>Hai provato ad attaccare {0}... sfortunatamente era Hiruzen Sarutobi 📚! {0} è riuscito a non farsi sorprendere e ha risposto ad ogni colpo. Per fortuna non è riuscito a riconoscere nessuno! </value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>I Nukenin hanno provato ad ucciderti, ma non per nulla tu sei Hiruzen Sarutobi 📚 ed eri preparato ad un possibile assalto! Hai respinto con successo l'attacco, ma sfortunatamente non sei riuscito a distinguerne i volti...</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+    <!-- {0} - Hunter's Name -->
+    <!-- {1} - Wise Elder's Name -->
+    <value>Non appena Tobirama 🎯 vide ciò che aveva appena fatto, rimase sconvolto. {0} realizzò di aver ucciso niente di meno che Hiruzen Sarutobi 📚. Non aveva parole per poter descrivere la triste fine che aveva fatto {1}. {0} pianse amaramente, nei suoi ultimi istanti di vita, pentendosi dell'errore fatto e chiedendo all'Hokage di rimuoverlo dall'incarico assegnato. Per il rimorso profondo, è ritornato ad essere un semplice Genin della Foglia👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+    <!-- {0} - Gunner's Name -->
+    <!-- {1} - Wise Elder's Name -->
+    <value>Kakashi 🔫, {0}, realizzò di aver colpito Hiruzen Sarutobi 📚, {1}. {0} pianse amaramente e, pentendosi dell'errore, decise di dimettersi dalla sua carriera di Jōnin e tornare ad essere un Genin della Foglia 👱, con missioni facili e non pericolose da portare a termine.</value>
+  </string>
+  <string key="ThiefStealFailed">
+    <!-- {0} - The name of the thief's target -->
+    <value>Hai provato a rubare l'identità a {0}, ma sfortunatamente hai fallito...</value>
+  </string>
+  <string key="ThiefStealDead">
+    <!-- {0} - The name of the thief's target -->
+    <value>Hai provato a rubare l'identità a {0}, ma {0} è già morto...</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+    <!-- {0} - The new role -->
+    <value>La tua identità è stata rubata! Ora sei {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+    <!-- {0} - The name of the thief's target -->
+    <value>Hai rubato con successo l'identità di {0}!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} non è più un tuo compagno e {1} è ora parte della squadra Anbu, esattamente come te!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>I tuoi compagni (se presenti) sono: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} non è più un tuo compagno e {1} è ora divenuto un jashinista, esattamente come te. Jashin sia lodato!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} non è più un tuo compagno e {1} è ora divenuto un Nukenin, esattamente come te!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates" deprecated="true">
+    <!-- 0 - teammates's name -->
+    <value>I tuoi compagni (se presenti) sono: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+    <!-- 0 - Thief's name -->
+    <value>Come {0} vagò a lungo tra le vie di Konoha, rendendosi conto che non c'erano più Shinobi a cui rubare l'identità... E ora come si sarebbe divertito? Si lasciò alle spalle il Villaggio della Foglia, in cerca di altri villaggi in cui ricominciare il divertimento!</value>
+  </string>
+  <string key="ThiefStealChosen">
+    <!-- 0 - target's name -->
+    <value>Il tuo bersaglio del furto è ora {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Da quale Shinobi vorresti rubare l'identità?</value>
+  </string>
+  <string key="SecretLynchResultEach">
+    <!-- 0 - Number of votes -->
+    <!-- 1 - Player got lynched -->
+    <!-- 2 - A list of players who voted {1} -->
+    <value>{0} Voti sono stati assegnati a {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+    <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Il linciato di oggi:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+    <!-- 0 - Number of votes -->
+    <!-- 1 - Player got lynched -->
+    <value>{0} Voti assegnati a {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Linciaggio segreto: numero di voti</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Quando il linciaggio segreto è attivo, vuoi mostrare il numero di voti alla fine del linciaggio?\nAttualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Quando il linciaggio segreto è attivo, il numero di voti alla fine del linciaggio sarà: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Linciaggio segreto: Votanti</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, vuoi far vedere il nome dei votanti di ogni Ninja votato?\nAttualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
+  </string>
+  <string key="CultistBitten">
+    <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <value>Strano... Vi siete riuniti per discutere chi avreste convertito oggi, ma {0} non è presente! Che fine avrà fatto?</value>
+  </string>
+  <string key="Peace">
+    <!-- Used for Pacifist's button -->
+    <value>DATTEBAYO!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+    <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+    <value>Il linciaggio di oggi è stato annullato per merito di Naruto!</value>
+  </string>
+  <string key="ThiefStoleYourRoleThief">
+    <value>Il tuo ruolo è stato rubato! Ora sei Suigetsu 😈 e potrai scegliere un nuovo bersaglio la prossima notte!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Il tuo ruolo è stato rubato! Ora sei tornato ad essere un Genin della Foglia 👱, costretto a portare a termine noiose e inutili missioni di serie D...</value>
+  </string>
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Una fitta nebbia ti avvolge all'improvviso. Non vedi più nulla… non senti nulla... In meno di un secondo vieni fatto a pezzi da Zabuza!</value>
+    <value>Zabuza ti ha teso una trappola! Dopo aver usato su di te la Tecnica del Velo di Nebbia, si avvicina a te silenzioso e con un solo colpo del suo spadone pone fine alla tua miserevole vita!</value>
+  </string>
+  <string key="ThiefTeamEnd">
+    <value>Team Suigetsu</value>
+  </string>
+  <string key="StealKiller">
+    <value>Noti in lontananza Zabuza e, accanto a lui, l'ambita spada Tagliateste. È più forte di te, devi rubarla... o rubare l'identità di Zabuza! Sfortunatamente sei stato visto e... che dire? Sei morto!</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>Suigetsu, ovvero {0}, aveva ambizioni troppo alte e ha provato a rubare sia il ruolo che la spada di Zabuza! Ciò è andato molto bene: {0} è stato ritrovato decapitato e con qualche arto mancante!</value>
+  </string>
+  <string key="BeholderSeerStolen">
+    <value>Suigetsu ha rubato il ruolo a Shikamaru! {0} è ora il nuovo Shikamaru e {1} non ha più la capacità di scovare le identità degli Shinobi!</value>
+  </string>
+  <!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+    <value>Kiba 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+    <value>Kiba e Akamaru stanno combinando guai a Konoha! Può capitare che un giorno tu ed Akamaru esagerate con gli allenamenti o i giochi... e finite col mettere in subbuglio l'intero villaggio! Gli Shinobi saranno talmente infuriati quel giorno da decidere di linciare due Shinobi anziché uno solo!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+    <value>Sei Kiba 🤯! Il tuo carattere frenetico e un po' da spaccone rischia di metterti nei guai! Può capitare che un giorno tu ed Akamaru esagerate con gli allenamenti o i giochi... e finite col mettere in subbuglio l'intero villaggio! Quel giorno, quando deciderai che la situazione potrebbe sfuggirti di mano, potrai creare confusione nel villaggio, provocando due linciaggi quel giorno.</value>
+  </string>
+  <string key="AskTroublemaker">
+    <value>Tu ed Akamaru volete seminare il caos oggi?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+    <value>Kiba 🤯 e Akamaru stanno combinando guai a Konoha! Akamaru ha visto un gatto e l'ha rincorso ovunque, seguito da {0} che ha lasciato dietro di sé una scia di aiuole distrutte, piatti rovesciati e vetri infranti. Tutti iniziano a imprecare e ben presto si ritrovano a battibeccare tra di loro, seminando Konoha nel caos! L'Hokage è riuscito a ripristinare la calma, anche se non completamente. Gli Shinobi, infatti, sono talmente infuriati che hanno deciso di linciare due Shinobi anziché uno solo!
+</value>
+    <value>Kiba 🤯 e Akamaru hanno inavvertitamente iniziato a creare il caos a Konoha! {0} mentre si allenava con foga insieme ad Akamaru, non si è accorto di essere finito nell'ufficio dell'Hokage... Ora è tutto a soqquadro, ci vorranno giorni per rimettere in ordine quelle carte! Indignati, gli anziani del Consiglio di Konoha e gli Shinobi questa sera linceranno due volte in preda alla rabbia!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+    <value>A causa di Kiba e Akamaru, lincerete due volte oggi! Tutto il Villaggio della Foglia ritornerà alla solita calma domani!</value>
+  </string>
+  <string key="Chemist">
+    <value>Sakura 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+    <value>Sakura è una Kunoichi esperta di arti mediche: è in grado di creare formidabili pozioni guaritrici o, al contrario, potenti veleni da uccidere all'istante.  Fabbricherà due pozioni, di cui una letale. Quando visiterà qualcuno, costringerà esso a scegliere una pozione, mentre lei berrà l'altra. Ciò causerà la morte sicura di uno dei due giocatori!</value>
+  </string>
+  <string key="RoleInfoChemist">
+    <value>Sei Sakura 👨‍🔬! Ti sei impegnata duramente per poter diventare un Ninja Medico... ed eccoti qui! Sei diventata esperta nel preparare formidabili pozioni guaritrici o, per i nemici, mortali intrugli! Durante la notte fabbricherai due pozioni, di cui una velenosa e una innocua, identiche all'occhio umano. La notte dopo averle prodotte, potrai scegliere un Ninja e obbligarlo a bere una delle tue pozioni, mentre tu bevi la pozione rimasta. Purtroppo non ti ricordi qual era quella mortale... chi dei due morirà? Buona Fortuna!</value>
+  </string>
+  <string key="ChemistBrewing">
+    <value>Mentre quasi tutti i Ninja vanno a dormire, tu sei nel tuo laboratorio a preparare medicinali e veleni mortali. Stai attenta a non farti vedere dai Nukenin!</value>
+  </string>
+  <string key="AskChemist">
+    <value>Con chi berrai la pozione?</value>
+  </string>
+  <string key="ChemistTargetDead">
+    <value>Sei andata a casa di {0} per fargli testare la tua ultima creazione, ma appena arrivi a casa sua, scopri che era già morto!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+    <value>Sei stato visitato da Sakura 👨‍🔬! {0} sospettava di te, perciò ti ha puntato un kunai alla gola per costringerti a bere il veleno... con chi crede di avere a che fare questa ragazzina? Afferri la tua arma velocemente e ti appresti ad affettare più e più volte la sfortunata vittima! Sarà morta? 🤷‍♂️</value>
+  </string>
+  <string key="ChemistSK">
+    <value>Sei andata da {0} per ucciderlo con il veleno... Sfortunamente, però, era Zabuza che ti ha affettata per bene! 🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+    <value>Sakura 👨‍🔬 {0} voleva costringere Zabuza a farsi una bevuta avvelenata questa notte! Zabuza non era dello stesso parere, ovviamente... {0} è stata ritrovata a pezzi, con i veleni ancora dentro lo zaino!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+    <value>Sei stato visitato da Sakura 👨‍🔬, che ti ha costretto a scegliere una pozione e tu ovviamente hai scelto quella mortale! Che brutta fine...</value>
+  </string>
+  <string key="ChemistSuccess">
+    <value>Hai visitato {0} e l'hai costretto a bere uno strano intruglio! Per la tua felicità ha scelto un potente veleno, facendo una brutta fine davanti ai tuoi occhi. Soddisfatta delle tue doti mediche, te ne torni a casa.</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+    <!-- {0} - Chemist's victim -->
+    <!-- {1} - Will be replaced by "(victim) was (role)" -->
+    <value>Sakura 👨‍🔬 ha visitato {0} l'ha costretto a scegliere e bere uno strano intruglio! La fortuna è stata dalla parte di Sakura... {0} è morto! {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+    <value>Hai ricevuto visite da parte di Sakura 👨‍🔬 {0}, che ti ha costretto a scegliere una pozione. Dopo un momento di esitazione, scegli quella innocua! Che fortuna!</value>
+  </string>
+  <string key="ChemistFail">
+    <value>Hai visitato {0} e gli hai fatto scegliere una pozione! Sfortunatamente, però, ha scelto quella innocua mentre tu sei morta agonizzante dopo aver bevuto quella avvelenata! </value>
+  </string>
+  <string key="ChemistFailPublic">
+    <value>Sakura 👨‍🔬 deve aver sbagliato qualcosa, questa notte... il corpo di {0} è stato trovato morto! A quanto pare, {0} ha bevuto il suo intruglio velenoso e si è scordato di portare l'antidoto! Voler darsi da fare per aiutare il villaggio senza prima aver studiato bene un piano... non porta sempre ad una bella fine!</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+    <value>Non hai trovato {0}! Torni a casa delusa, che sfortuna!</value>
+  </string>
+  <string key="CultistsList">
+    <value>I jashinisti sono attualmente: {0}</value>
+  </string>
+  <string key="SnowWolf">
+    <value>Haku 🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Sei Haku 🐺☃️! Sei nato in un piccolo villaggio circondato dalla neve. Sei un Nukenin, tuttavia in te si nasconde un cuore puro. Preferisci agire da solo, piuttosto che in gruppo. Possiedi un'abilità innata che ti permette di usare l'Arte del Ghiaccio. Ogni notte puoi scegliere uno Shinobi da congelare o bloccare grazie alla tua tecnica, così che la vittima non potrà compiere azioni notturne. Attenzione: non puoi congelare lo stesso Shinobi per due notti consecutive. Se tutti gli altri Nukenin muoiono, diventerai un normale Nukenin.
+</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>Nel ruolo di Haku 🐺☃️, ogni notte, invece di attaccare le vittime, vai solitario per case congelando gli Shinobi e impedendo loro di usare le loro azioni notturne! Nota però che il Ninja scelto non può essere congelato per due notti consecutive. Se tutti i Nukenin muoiono, Haku diventerà come loro.</value>
+  </string>
+  <string key="AskFreeze">
+    <value>Chi vuoi congelare questa notte?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>I Nukenin sono {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>I Nukenin sono {0} e Haku è {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} è morto e tu ti trasformi in Orochimaru! I tuoi Nukenin alleati sono: {1} mentre Haku è {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} è morto e tu ti trasformi in Obito! Gli altri Nukenin sono: {1} e Haku è {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} è morto e tu ti trasformi in Madara! Gli altri Nukenin sono: {1} e Haku è {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} è morto e tu ti trasformi in Pain! I tuoi compagni Nukenin sono: {1} e Haku è {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} è morto e tu ti trasformi in Haku! I tuoi compagni (se ci sono ancora) sono: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Zetsu {0} è diventato Haku!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} è morto! Ora sei costretto a diventare un Nukenin! I tuoi nuovi compagni sono: {1} e Haku è {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} non è più Haku, adesso {1} lo è!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Appena apri la porta per uscire di casa vieni colpita dall'Arte del Ghiaccio e ti congeli nel giro di pochi secondi 🐺☃️! Resti immobile sull'uscio della porta finchè in mattinata, finalmente ti scongeli. </value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Dopo esserti svegliata, pronta per preparare rimedi e intrugli velenosi, una raffica di vento entra dalla finestra e vieni circondata da specchi di ghiaccio che ti impediscono di fuggire🐺☃️! Soltanto la mattina la tecnica svanisce ma tu ora sei troppo stanca per metterti a lavorare...</value>
+  </string>
+  <string key="CultistFrozen">
+    <value>Dopo esserti preparato per convertire qualcuno al sommo Jashin, esci dalla porta per essere subito colpito da tormenta di neve che ti costringe a restare chiuso in casa 🐺☃️. Quegli ingrati dei tuoi compagni jashinisti, vedendoti, ti deridono... ma ti assicurano che ci penseranno loro a convertire qualcuno!</value>
+  </string>
+  <string key="CHFrozen">
+    <value>Appena esci di casa, pronto per andare alla ricerca di jashinisti, una raffica di vento ti colpisce congelandoti in una posizione scomodissima 🐺☃️. Dopo tutta la notte finalmente ti scongeli del tutto e riesci a metterti in una posizione comoda.</value>
+  </string>
+  <string key="SeeingFrozen">
+    <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Ti siedi al tavolo, sbuffi seccato e inizi a pensare sull'identità dello Shinobi che hai scelto. All'improvviso una raffica di vento ti congela 🐺☃️! Essere bloccato non dovrebbe essere un problema, per te... ma ti si è pure congelato il cervello! Fortunatamente col sorgere del sole tutto torna come prima. Che seccatura!</value>
+  </string>
+  <string key="GAFrozen">
+    <value>Non appena esci di casa per andare a sorvegliare il Ninja scelto, vieni attaccata da Haku che ti imprigiona con una delle sue tecniche di ghiaccio 🐺☃️! Nemmeno la tua forza mostruosa riesce a rompere tutti quegli specchi, perciò sei costretta ad attendere l'arrivo dell'alba per poter ritornare alla tua vita di sempre.</value>
+  </string>
+  <string key="SKFrozen">
+    <value>Mentre osservi Konoha da lontano, pregustando già la morte della tua prossima vittima, vieni improvvisamente congelato da una strana tecnica 🐺☃️! La mattina, una volta scongelato, digrigni i denti dalla rabbia giurando che Haku la pagherà cara per questo affronto! La tua Tagliateste non vede l'ora di mietere vittime!</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Mentre ti aggiri silenziosamente tra le vie di Konoha, una potente tecnica ti imprigiona tra tanti specchi di ghiaccio 🐺☃️! Per fortuna nessuno ti ha visto e non hanno potuto riconoscerti! Non appena si fa l'alba, la tecnica finisce e te la dai a gambe verso il tuo rifugio, facendo attenzione che nessuno ti veda. </value>
+  </string>
+  <string key="DefaultFrozen">
+    <!-- used for all roles without (every-)night action -->
+    <value>Mentre la scorsa notte dormivi hai iniziato a sentire molto freddo. Appena ti sei svegliato per controllare, realizzi che non puoi muoverti! Sembra che Haku 🐺☃️ abbia usato i suoi poteri su di te. Tutto quello che puoi fare ora è rimetterti a dormire... e battere i denti. Se ti verrà il raffreddore sarà tutta colpa sua!</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>Sei andato a casa di {0} per congelarlo, tuttavia hai un incontro inaspettato con Tsunade, la protettrice della vittima! Inizi uno scontro con la Sannin ma, data la sua forza ed esperienza, sei costretto ad andartene lasciandole la vittoria!</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Sei andato a casa di {0} e l'hai congelato! Questa notte non potrà agire.</value>
+  </string>
+  <string key="SnowFrozeKiller">
+    <value>{0} ha cercato di congelare qualcuno la scorsa notte ma sfortunatamente era Zabuza! L'assassino ha notato {0} e gli ha proposto di fare squadra con lui. Tuttavia, ripensandoci, è stato più divertente vederlo a pezzi! Haku è morto!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+    <value>Tutti gli altri Nukenin sono morti... sei l'ultimo rimasto! Date le circostanze preferisci iniziare ad uccidere le persone piuttosto che limitarti a congelarle! Ora sei un Nukenin a tutti gli effetti!</value>
+  </string>
+  <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>{0} ha provato a congelare Tobirama, la scorsa notte... peccato però che quest'ultimo se ne sia accorto in tempo e l'ha colpito prima che potesse fare danni. Haku è morto!</value>
+  </string>
+  <string key="Lang">
+    <value>Cambia Linguaggio</value>
+  </string>
+  <string key="Mode">
+    <value>Cambia Modalità di Gioco</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Imposta Limite Shinobi</value>
+  </string>
+  <string key="EndRoles">
+    <value>Mostra Ruoli a fine partita</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Imposta il tempo massimo di estensione</value>
+  </string>
+  <string key="DayTimer">
+    <value>Imposta durata del giorno</value>
+  </string>
+  <string key="NightTimer">
+    <value>Imposta durata della notte</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Imposta durata del linciaggio</value>
+  </string>
+  <string key="RoleConfig">
+    <value>Configurazione Ruoli</value>
+  </string>
+  <string key="Mechanics">
+    <value>Meccaniche del Gioco</value>
+  </string>
+  <string key="GroupSettings">
+    <value>Impostazioni del Gruppo</value>
+  </string>
+  <string key="Timers">
+    <value>Durata Fasi del gioco</value>
+  </string>
+  <string key="Done">
+    <value>Fatto!</value>
+  </string>
+  <string key="Back">
+    <value>Indietro</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Mischia Lista dei Giocatori</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Mischiare lista di giocatori ogni volta? Attualmente: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>La Lista giocatori verrà mischiata ogni volta: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+    <value>Sei Kabuto ☠️! Il tuo compito, ogni notte, è quello di recuperare il corpo dell'ultimo Shinobi morto in missione per poterlo, un giorno, riutilizzarlo con la tecnica dell'Edo Tensei. Visto che sei fuori tutta la notte, i Nukenin e i jashinisti non possono trovarti a casa, a meno che non sia morto nessuno quel giorno. In tal caso, ti troveranno. Siccome sei un tipo previdente, per ogni cadavere che recuperi, piazzerai una trappola intorno al tuo rifugio. Tutti quelli che ti visitano hanno una probabilità di cadere nelle trappole che piazzi, a seconda di quante ne hai piazzate. Inoltre, la probabilità è dimezzata per chiunque sia del Villaggio della Foglia. Più piazzi trappole, più hai la possibilità di essere sorpreso da Zabuza o dai Nukenin, perciò fai attenzione!. Zabuza, inoltre, potrà trovarti comunque, indipendemente se stai piazzando trappole o meno, però potrebbe cadere in uno dei tuoi tranelli e perdere il controllo della sua prossima vittima!</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+    <value>Sei Kabuto ☠️! Di notte recuperi i cadaveri degli Shinobi uccisi durante la notte o in missione... cosa te ne fai? Bhe, li conservi per l'Edo Tensei, naturalmente! Inoltre, per sicurezza, piazzi una trappola per chiunque è stato ucciso dall'ultima notte. Eventuali visitatori potrebbero imbattersi in uno dei tuoi tranelli e morire... Buone notizie: i Nukenin non potranno ucciderti, se non sei a casa!</value>
+  </string>
+  <string key="GraveDigger">
+    <value>Kabuto ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>Hai recuperato tutto quello che c'era da recuperare... Tutto è come dovrebbe essere. Torni nel tuo rifugio e vai a dormire.</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+    <value>Hai recuperato con successo il cadavere di {0}. Avendo ancora del tempo a disposizione, piazzi una trappola poco distante dal tuo nascondiglio.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+    <value>Appena uscito dal tuo nascondiglio per recuperare i corpi di coloro che sono passati a miglior vita, una tormenta di neve ti colpisce all'improvviso, congelandoti all'istante. Impossibilitato a muoverti, aspetti il sorgere del sole per scongelarti e finalmente tornare al lavoro. Tuttavia, dato che agisci nell'ombra, i cadaveri dovranno aspettare un'altra notte per essere recuperati di nascosto.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+    <value>I Nukenin si dirigono a gran velocità nella casa di {0}, solo per trovare silenzio, polvere e la cena ancora da terminare. A quanto pare Kabuto si trova da un'altra parte... un nascondiglio segreto?</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+    <value>I Nukenin trovano il nascondiglio di {0} ma, ancora prima di raggiungere la porta, {1} improvvisamente fa scattare una trappola e cade in una buca riempita con del potente acido corrosivo!</value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+    <value>Appena ti appresti a controllare le trappole che hai piazzato, noti che il Nukenin {0} ci ha lasciato le penne grazie a uno dei tuoi tranelli!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+    <value>Hai squartato e fatto a pezzi {0} ma, mentre te ne stavi andando, sei caduto in una delle sue trappole! Sei riuscito a cavartela per un pelo. Ora la tua gamba fa davvero male...</value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+    <value>Mentre ti dirigevi verso il rifugio di {0}, senti un dolore atroce attraversarti la gamba... Una delle sue trappole ti ha colpito! Decidi di deviare verso la casa più vicina, quella di {1}, assassinarlo e tornare subito a casa.</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+    <value>Arrivi a casa di {0} e trovi Tsunade pronta a difendere la tua vittima! Dato il dolore atroce alla gamba non perdi nemmeno tempo a lottare ma torni immediatamente nei tuoi passi...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+    <value>Hai sprecato un'altra notte a girovagare in cerca di jashinisti... nulla! Dove si sono cacciati? Frustrato, ti incammini verso il Villaggio della Foglia imboccando un sentiero sconosciuto. Mentre passi accanto a quello che sembra un rifugio segreto, incappi in una trappola. Urli e ti dimeni, ma è troppo tardi. Cadi all'indietro e finisci in una fossa profonda, un'altra delle trappole di {0}. Il suono del tuo collo rompersi è l'ultima cosa che senti prima che tutto, intorno a te, diventi nero.</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+    <value>Dopo un'altra lunga e laboriosa notte, riassesti il tuo rifugio segreto prima di incamminarti verso casa. Appena uscito, noti che alcune delle tue trappole hanno funzionato. In una fossa profonda trovi il corpo di {0}. Asuma non avrebbe dovuto ficcare il naso da queste parti...</value>
+  </string>
+  <!--{0}: cultist-->
+  <string key="CultFell">
+    <value>Stai tornando a casa dopo una faticosa nottata, quando senti un urlo provenire poco lontano dal tuo rifugio! Ti rechi subito sul posto, solo per trovare {0} morto grazie a una delle tue trappole. Che ci faceva un jashinista da queste parti?</value>
+  </string>
+  <!--{0}: cultist who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+    <value>Mentre stai cercando {1} per convertirlo, {0} suggerisce che sarebbe una buona idea evitare il villaggio e prendere quel sentiero nella foresta. Appena scorgete un piccolo edificio illuminato, una trappola coglie tutti di sorpresa! Mentre stai per essere disciolto nell'acido, vedi i tuoi compagni jashinisti darsela a gambe! Quei bastardi traditori avranno la punizione che si meritano da parte di Sashin-Sama!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+    <value>Mentre eri alla ricerca di erbe curative, scopri il rifugio segreto di {0}! Che cosa sta combinando Kabuto, lì dentro? Mentre ti avvicini di soppiatto, attivi per sbaglio una trappola mortale. Prima che tu possa aprire bocca, il tuo cuore è già trafitto da una decina di lame!</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+    <value>Avevi appena portato nel rifugio il cadavere e stavi iniziando a rimettere insieme i pezzi quando, all'improvviso, senti una della tue trappole attivarsi. Uscendo, trovi il corpo di {0} trafitto dalle lame. Ora anche il corpo di Sakura farà parte della tua collezione!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+    <value>Indossi il tuo vestito migliore e vai a trovare {0} per provarci con lui... che sia la volta buona? Kabuto potrebbe diventare il tuo futuro marito? Non lo saprai mai, dato che sei finita in una delle sue trappole e sei morta agonizzante!</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+    <value>A quanto pare avevi visite, questa notte. Che cosa voleva {0} da te nel cuore della notte? Non lo saprai mai, dato che Mei è morta a causa delle tue trappole! Pazienza!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+    <value>Vai a casa di {0}, stando attenta a non farti vedere da nessuno ma, appena arrivi, la casa è vuota.. A quanto pare {0} è fuori a combinare qualcosa di losco!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+    <value>La fortuna non è dalla tua parte stanotte... Volevi solo proteggere {0} ma, mentre perlustravi i dintorni del rifugio segreto, incappi in una trappola e muori sul colpo. Che bisogno c'era di mettere delle trappole in un rifugio lontano dal villaggio? Cosa nasconde Kabuto?</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+    <value>Mentre vai al rifugio segreto, trovi il corpo di {0} fatto a pezzi da una delle tue trappole! Tsunade voleva solo proteggerti! Forse questa volta hai esagerato con le tue trappole...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+    <value>Riesci a trovare il rifugio segreto di Kabuto e provi ad infiltrarti. Scorgi la figura di {0} chinata su quello che sembra un... cadavere? Ti avvicini per vedere meglio ma, concentrato com'eri a non far rumore, non noti la trappola finchè non ci finisci dentro! Non solo hai fatto rumore, ma inciampi e cadi in una buca nascosta, rompendoti l'osso del collo!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+    <value>È stato utile e previdente mettere delle trappole intorno al tuo nascondiglio! {0} ha provato a rubarti il ruolo l'altra notte, ma è stato catturato dalle trappole ed è caduto in una fossa che avevi preparato, morendo sul colpo. Quando capiranno gli Shinobi che devono farsi gli affari loro?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+    <value>Dovresti controllare meglio dove vai mentre metti l'argilla esplosiva nelle case altrui... Sei finito in una trappola e, mentre ti liberavi, sei caduto in una fossa dove una lancia d'argento ti ha trafitto il cuore. Non era questa la morte che ti aspettavi... Se non altro, la tua morte è stata breve ma intensa, come il magnifico splendore di un'esplosione!</value>
+  </string>
+  <!--{0}: Arsonist-->
+  <string key="ArsonistFellDigger">
+    <value>Vicino a una delle tue trappole trovi delle tracce di argilla. Sospettoso ti avvicini a controllare e noti {0} morto all'interno. Deidara non è riuscito a far esplodere nulla... che fortuna!</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+    <value>Le trappole di Kabuto non falliscono mai! {0} ha curiosato troppo e ha trovato il rifugio segreto di Kabuto. È cascato in un tranello mortale e ci ha rimesso la vita! {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+    <value>Mentre {0} tornava a casa dopo l'ennesimo due di picche, ha scelto di prendere un sentiero alternativo nella foresta. La strada era parzialmente illuminata dai raggi lunari, tuttavia non ha impedito a Mei di finire in una delle trappole di Kabuto e morire! Forse avrebbe dovuto rinunciare a cercare a tutti i costi un marito...</value>
+  </string>
+  <!--{0}: cultist who died-->
+  <string key="CultistFellPublic">
+    <value>I jashinisti si sono davvero divertiti durante l'ultimo sacrificio dedicato a Jashin! Mentre guidava il gruppo attraverso la foresta, {0} è stato colto di sorpresa da una trappola! Mentre imprecava e gridava come un folle, è caduto in una fossa piena di acido corrosivo! Gli altri jashinisti, invece di aiutarlo, sono fuggiti a gambe levate!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+    <value>Forse Suigetsu stava provando a rubare allo Shinobi sbagliato. Magari era il Karma. Tutto ciò che sappiamo è che {0} era al posto sbagliato nel momento sbagliato... è caduto in una trappola mortale! {0} morì pentendosi di non aver portato complici... di sicuro non riuscirà più a rubare nulla!</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+    <value>Mentre i Nukenin erano alla ricerca di una vittima da uccidere, {0}, uno del gruppo, incappa in una trappola! Colto di sorpresa, {0} cade i una fossa dove una lancia d'argento trapassa il suo cranio! Per fortuna le trappole di Kabuto non falliscono mai! {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+    <value>L'Edo Tensei non funziona con i cadaveri fatti a pezzi... stavi ricucendo bene l'ultima vittima recuperata, quando improvvisamente Zabuza ti nota e ti ammazza! Chi continuerà il tuo lavoro, adesso?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+    <value>Mentre vaghi solitario nella foresta, nei pressi di Konoha, noti {0}. Seguendo il tuo istinto, decidi che farai almeno due vittime oggi!</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+    <value>Sei appena uscito da Konoha, dopo aver recuperato di nascosto l'ennesimo cadavere, quando improvissamente un Nukenin ti assale da dietro e ti uccide!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+    <value>I Nukenin si stanno muovendo furtivi nella foresta... l'obbiettivo? Konoha! Quando però notano la presenza di {0}, prima che possa reagire, uno di voi gli salta addosso e uccide con un colpo solo! Ops, era Kabuto!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+    <value>{0} non si è presentato alla riunione del Consiglio di Konoha. Girava voce che Kabuto stesse tramando qualcosa... sarà vero? La sua casa è deserta, però gli Shinobi trovano degli indizi che li portano dritti al suo rifugio segreto. Trovano Kabuto a terra, con un cadavere che aveva portato via dal villaggio. Sembra che i Nukenin l'abbiamo attaccato di sorpresa...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+    <value>{0} è sparito dalla circolazione... Kabuto era così sospetto... Su ordine dell'Hokage gli Shinobi vanno a cercarlo. Lo trovano nei pressi di un rifugio dall'aspetto abbandonato, decapitato e senza un braccio. A quanto pare Zabuza l'ha trovato prima di loro!</value>
+  </string>
+  <string key="AllowArsonist">
+    <value>Deidara</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistQ">
+    <value>Ammettere Deidara? Attualmente: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistA">
+    <value>Deidara è ora {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+    <value>Burning Overkill</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillQ">
+    <value>Ammettere Deidara e Zabuza nella stessa partita? Potrebbe essere divertente... ed estremamente mortale! 😈 Attualmente: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillA">
+    <value>Deidara e Zabuza nella stessa partita sono ora {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+    <value>Sei Deidara. Lavori da solo, dato che nessun altro capisce la tua Arte. Ogni notte, puoi riempire la casa di qualcuno con la tua argilla esplosiva. Dopo che almeno una casa è riempita, puoi decidere di mostrare a tutti che "L'ARTE È ESPLOSIONE!" facendo esplodere tutte le case che hai scelto e uccidendo chiunque sia dentro, compresi potenziali visitatori. Vinci se rimani l'ultimo in vita.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+    <value>Sei Deidara 🔥! L'ARTE È ESPLOSIONE! Purtroppo sei un artista incompreso... ma non per molto! Ogni notte, infatti, puoi entrare in una casa a tua scelta e riempirla di argilla, oppure far esplodere tutte le case che hai riempito, uccidendo chiunque sia al suo interno. L'Arte è un istante di effimero splendore... Vinci se rimani l'ultimo sopravvissuto. </value>
+  </string>
+  <string key="Arsonist">
+    <value>Deidara 🔥</value>
+  </string>
+  <string key="AskArsonist">
+    <value>Vuoi riempire una casa di argilla esplosiva o vuoi creare un attimo di effimero splendore facendo esplodere tutte le case?</value>
+  </string>
+  <!--{0}: Piromane-->
+  <string key="ArsonistVisitKiller">
+    <value>{0} ha provato a riempire di argilla esplosiva il nascondiglio di Zabuza. No, non è sopravvissuto a ciò.</value>
+  </string>
+  <string key="Spark">
+    <value>KATSU! 🔥</value>
+  </string>
+  <!--{0}: persona la cui casa è stata cosparsa di kerosene-->
+  <string key="Doused">
+    <value>Hai riempito di argilla esplosiva la casa di {0}!</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+    <value>Un'esplosione proviene dalla tua casa, ma per fortuna Tsunade era lì e ha lanciato dalle finestre l'argilla esplosiva di Deidara prima che facesse troppi danni! Tsunade ha salvato una casa... e una vita!</value>
+  </string>
+  <!--{0}: persona salvata-->
+  <string key="GuardSavedFromFire">
+    <value>Non ti aspettavi che la casa di {0} fosse piena zeppa di argilla esplosiva, per fortuna l'hai notata in tempo! Nessuno potrà più dirti che non sai scommettere sulla vita delle persone! Sia lo Shinobi protetto che la casa sono salvi!</value>
+  </string>
+  <!--{0}: persona di cui la casa è stata pulita dal kerosene del piromane-->
+  <string key="CleanDoused">
+    <value>Non hai lottato contro nessuno a casa di {0}, quindi hai avuto tempo di perlustrare l'edificio e hai notato che la casa era piena di argilla esplosiva! Visto che non avevi niente da fare, hai rimosso l'argilla e te ne sei andato. Chi è così pazzo da riempire una casa con dell'argilla? Mah...</value>
+  </string>
+  <!--{0}: lista di persone morte bruciate-->
+  <string key="Burning">
+    <value>Gli abitanti di Konoha si risvegliano spaventati dall'enorme esplosione! Alcune case sono esplose completamente, altre sono sopravvissute ai botti ma stanno bruciando! Tutti gli Shinobi accorrono e si danno da fare per spegnere gli incendi e spostare le macerie ma è troppo tardi per provare a salvare coloro che stavano dentro.\nIl Villaggio della Foglia compiange gli Shinobi che non ce l'hanno fatta:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+    <value>L'unico rimasto in vita è Deidara. Estatico, guarda il capolavoro appena compiuto. Uhm, l'Arte è proprio un istante di effimero splendore... L'ARTE È ESPLOSIONE! Deidara ha vinto!</value>
+  </string>
+  <string key="Burn" isgif="true">
+    <value>Se avessi riordinato meglio la tua casa, avresti sicuramente trovato quegli strani animaletti di argilla disseminati ovunque. Ora tutto ciò che rimane della tua casa e di te stesso sono solo cenere e detriti...</value>
+  </string>
+  <string key="Augur">
+    <value>Juugo 🦅</value>
+  </string>
+  <!--{0}: ruolo non in partita-->
+  <string key="AugurSees">
+    <value>Come guardi nel cielo, vedi gli uccelli che formano una forma molto strana. Ciò può solo significare che {0} non è in questo villaggio.</value>
+    <value>Gli uccelli ti dicono che {0} non fa parte del villaggio in questo momento.</value>
+  </string>
+  <string key="AboutAugur">
+    <value>Sei Juugo 🦅! Comprendi alla perfezione il linguaggio degli uccelli e te ne servi per carpire informazioni preziose. Ogni mattina, guardi gli uccelli e dal modo in cui volano ne deduci che quel ruolo non è presente nella partita/missione. Non ti diranno mai un ruolo due volte, quindi fai buon uso dell'informazione!</value>
+  </string>
+  <string key="RoleInfoAugur">
+    <value>Sei Juugo 🦅! Quando sei calmo e rilassato, ti piace osservare e parlare con gli uccelli. Hai infatti sviluppato la capacità di parlare con loro e capirli. Osservandoli puoi ricavare informazioni preziose. Grazie a loro, sei l'unico che può vedere i ruoli che NON sono presenti nella missione... e mai due volte!</value>
+  </string>
+  <string key="AugurSeesNothing">
+    <value>Non ci sono uccelli nel cielo oggi. Questo può solo significare che i ruoli non presenti in missione sono finiti.</value>
+  </string>
+  <!--{0}: vittima scelta dai lupi, {1}: lupo morto dalle fiamme-->
+  <string key="WolvesVisitBurn">
+    <value>I Nukenin entrano a casa di {0} ma, all'improvviso l'abitazione viene scossa da un enorme boato ed esplode. I Nukenin fanno in tempo a fuggire, tranne {1}, che muore nell'esplosione.</value>
+  </string>
+  <!--{0}: persona morta perchè ha visitato una casa che bruciava, {1}: "(persona) era (ruolo)"-->
+  <string key="DefaultVisitBurn">
+    <value>{0} poteva rimanere a casa questa notte. Invece è andato in una casa che è esplosa con un boato terrificante! {1}</value>
+  </string>
+  <!--{0}: Lupo morto, {1}: "(Lupo) era (ruolo)" per specificare che tipo di lupo era-->
+  <string key="WolfVisitBurn">
+    <value>I Nukenin hanno provato a uccidere qualcuno stanotte... Deidara, però, è stato più veloce di loro! {0} non è riuscito a fuggire in tempo dall'esplosione. {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+    <value>Nonostante tu non conosca la vera identità di Sakura, sei sicuro che non commetterà mai più un errore del genere. Sakura ha ucciso per sbaglio Hiruzen Sarutobi e per la vergogna ha deciso di abbandonare il suo rischioso lavoro e di tornare ad essere una Genin della Foglia!</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+    <value>Solo {0} e {1} sono rimasti... Improvvisamente {0} ride, preleva un po' di argilla dalla sua tasca e la modella fino a farla diventare un grazioso uccellino. Infine, urlando «L'ARTE È ESPLOSIONE! KATSU!» la lancia su {1} che esplode senza lasciare più tracce di sé.</value>
+    <value>Mentre riposa tranquillo nella propria abitazione, c'è {0} che si avvicina furtivamente al perimetro della casa, la circonda di argilla, urla «KATSU!» e fa esplodere tutto! Tutto ciò che rimane di {1} sono cenere e detriti.</value>
+  </string>
+  <string key="ArsonistTeamEnd">
+    <value>Team Deidara</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+    <value>Sei andata a trovare {0}, ma non c'era nessuno!</value>
+  </string>
+  <string key="Validate">
+    <!-- Usato per il bottone sul menu della selezione ruoli -->
+    <value>‼ Convalida ‼</value>
+  </string>
+  <string key="Valid">
+    <!-- Usato per il bottone sul menu della selezione ruoli -->
+    <value>✅ Valido ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+    <value>La configurazione degli Shinobi è valida! È stata abilitata e verrà usata da ora in poi!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+    <value>La configurazione degli Shinobi NON è valida! Per favore abilita più Shinobi per permettere all'Hokage di assegnare missioni più bilanciate!</value>
+  </string>
+  <string key="GroupIdleCount">
+    <!-- {0} - Morti per AFK delle ultime 24 ore nel gruppo attuale -->
+    <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+    <value> di cui {0} volte in questo gruppo</value>
+  </string>
+  <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>Sei diventato Zetsu. Prenderai il ruolo di {0} dopo la sua morte.</value>
+  </string>
+  <string key="RoleConfigInfo">
+    <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+    <value>Quale ruolo vuoi abilitare in partita?\n\nTutorial di configurazione:\n\n✅ = Ruolo abilitato\n❌ = Ruolo disabilitato\n\nDopo aver selezionato il ruolo, è necessario premere CONVALIDA per salvare i nuovi cambiamenti! Se non viene convalidato, i nuovi cambiamenti verranno ignorati\n\nSe disabiliti troppi ruoli, il bot non sarà in grado di creare una partita bilanciata e non sarà possibile convalidare la scelta fatta! In tal caso, abilità più ruoli e convalida la tua scelta.\n\nSe la convalida è avvanuta con successo, il bottone a sinistra indicherà ✅ Valido ✅ e i ruoli scelti verranno utilizzati!</value>
+  </string>
+  <string key="EnableAllRoles">
+    <value>Abilita tutti</value>
+  </string>
+  <string key="DisableAllRoles">
+    <value>Disabilita tutti</value>
+  </string>
+  <string key="CHHuntedYou">
+    <value>Asuma 💂‍♀️ è riuscito a trovarti! Questa volta non te la caverai molto facilmente... sei appena stato ucciso!</value>
+  </string>
+  <!-- Per qualsiasi problema inerente alle traduzioni, potete contattarmi su @MagaskaweeSoul-->
+</strings>

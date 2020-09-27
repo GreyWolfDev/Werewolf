@@ -1,0 +1,1535 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Currently updated by @MatteoIlGrande. Ask me for anything, thanks -->
+<!-- Last updated on 12 September 2017 -->
+<strings>
+  <language name="Italiano - One Piece" base="Italiano" variant="OnePiece" owner="MirkoDKenobi" code="it" isDefault="false"/>
+  <string key="NotInGame" deprecated="true">
+    <value>Sembra che tu non stia partecipando a nessuna partita in questo momento...</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <value>{0} ha iniziato il gioco! Clicca Join alla per unirti alla ricerca del One Piece... e probabilmente morire :P</value>
+    <value>Una nuova partita è stata iniziata da {0}! Clicca Join se hai intenzione di farti del male!</value>
+	<value>{0} ha appena iniziato una nuova partita! Sarai abbastanza coraggioso da cliccare Join?</value>
+    <value>{0} vuole iniziare un nuovo massacro! Riuscirai a uscirne vivo? Usa Join!</value>
+	<value>Una carneficina è stata iniziata da {0}. Vuoi partecipare? Clicca Join!</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <value>{0} ha iniziato una partita caos! Clicca Join alla per unirti alla ricerca del One Piece... E probabilmente morire :P</value>
+    <value>Una nuova partita caos è stata iniziata da {0}! Clicca Join per farti mangiare!</value>
+	<value>È stata iniziata una partita caos da {0}! Clicca Join per unirti alla mischia!</value>
+	<value>{0} vuole iniziare un massacro, stile caos! Clicca Join partecipare!</value>
+	<value>{0} ha appena iniziato una carneficina! Clicca Join se sei abbastanza coraggioso!</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>Non puoi unirti ora! La partita è già iniziata.</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Ti sei già unito!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Ancora 1 minuto per cliccare Join!</value>
+    <value>Solo 60 secondi rimanenti per unirti! Clicca Join prima che sia troppo tardi!</value>
+    <value>Hai ancora un minuto per unirti! Clicca Join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>Ancora {0} secondi per cliccare Join!</value>
+    <value>La partita inizierà fra {0} secondi! Clicca Join per unirti! </value>
+    <value>Solo {0} secondi rimanenti per cliccare Join!</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Ah, non siamo abbastanza. Cancello la partita!</value>
+    <value>Non abbiamo raggiunto abbastanza giocatori! La partita è stata annullata.</value>
+    <value>Purtroppo non abbiamo raggiunto i giocatori minimi. La partita è stata cancellata.</value>
+    <value>Siamo troppo pochi! Riprova, dopotutto tentar non nuoce!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Il gioco sta iniziando, aspettate qualche secondo mentre assegno i ruoli ed aggiorno il database.</value>
+    <value>La partita è iniziata! Vi sto assegnando i ruoli in privato. Buona fortuna a tutti!</value>
+    <value>Sto iniziando la partita! Controllate la chat privata per ricevere i vostri ruoli!</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, per favore, cambia il tuo nome per partecipare!</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Mi dispiace, abbiamo già raggiunto il massimo numero di giocatori!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} si è unito. {1}/{3} giocatori, {2} minimo.</value>
+  </string>
+  <string key="PMTheBot">
+    <value>\n{0} Benvenuto in Werewolf! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinchè io possa scriverti, devi prima avviarmi.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Pazzo, non puoi scappare! SEI MORTO! Torna a marcire nei fondali dell'oceano!</value>
+  </string>
+  <string key="Flee">
+    <value>{0} ha ceduto al terrore!</value>
+    <value>{0} è fuggito!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>\n{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>Rimangono {0} giocatori.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Hey, non ti ho ancora chiesto nulla!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Non mi pare tu stia giocando.</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Non posso trovare un giocatore tramite questo nome!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>Questa non è una risposta valida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} vota per catturare {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} vota per buttare in fondo all'oceano {1}</value>
+  </string>
+  <string key="IdleKill">
+  <value>{0} non ha votato per due notti consecutive. I pirati hanno visto ciò come un peccato imperdonabile. {0} finisce immediatamente sul fondo dell'oceano.\n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Tu, traditore!!! Sei un marine adesso.</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Scelta accettata</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nLa tua amata Robin è {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>Dopo la dipartita di Robin, Sanji è riuscito ad ottenere il frutto Fior-Fior e te lo ha donato. Ora puoi spiare anche tu gli altri come faceva {0}. Ah! Chiaramente sei il nuovo interesse amoroso di Sanji!</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>Trovi nel cesto della frutta in cucina il frutto del diavolo di {0} e decidi di regalarlo a {1}.</value>
+  </string>
+  <string key="SeerSees">
+    <value>Hai visto che\n{0} era {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Chi vuoi buttare nel fondo dell'oceano?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Su chi vuoi usare i tuoi Suuuuuuuper occhiali-spia?</value>
+  </string>
+  <string key="AskShoot">
+    <value>Chi vuoi colpire con la tua Firebird star (Hino Tori boshi)? {0} proiettili rimanenti</value>
+  </string>
+  <string key="AskVisit">
+    <value>Chi vuoi derubare stanotte?</value>
+  </string>
+  <string key="AskSee">
+    <value>Chi vuoi spiare?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Chi vuoi proteggere?</value>
+  </string>
+  <string key="AskEat">
+    <value>Chi vuoi catturare?</value>
+  </string>
+  <string key="AskHunt">
+    <value>La tua splendente katana “Wado Ichimonji” ha sete di sangue. Chi vuoi colpire con il potente ‘Ichidai Sanzen Daisen Sekai’?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Quale pirata pensi ti abbia rapito?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Chi vuoi arruolare nelle forze di Kaido?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  Sii sicuro di discutere con {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Sei Jango. Per adesso sei un normale pirata, fino quando i marines non decideranno di catturati. A quel punto li pregherai di ammetterti nella Marina(ovviamente iptotizzandoli accetteranno).</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Sei il miglior cyborg al mondo, Fraaaanky🚀.. Durante il giorno, puoi scegliere un giocatore su cui usare i tuoi Suuuuuuuper occhiali-spia e scoprirne il ruolo. Ad ogni modo, facendo così, il tuo ruolo sarà rivelato ai marines! (40% di probabilità)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Sei Brook 💀, tu offri letteralmente il tuo cuore e la tua anima alla comunità dei pirati! (sul serio, lo sanno già tutti...)</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Sei l'unico dottore della ciurma, Chopper 🦌. Ogni notte, puoi scegliere un giocatore da proteggere e salvare. Attenzione a non scegliere un marine, altrimenti potresti venire catturato.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Sei il re dei cecchini Sogeking, noto anche come God Usopp 🔫. Hai due proiettili kabuto. Durante il giorno puoi decidere se sparare ad un giocatore. Tuttavia, lo scoppio verrà udito da tutti, e tutti sapranno che sei il leggendario Usopp.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Nami 💋, la gatta ladra! Durante la notte, puoi scegliere di derubare qualche ignaro pirata. Tuttavia, se sceglierai di derubare un marine, o con il pirata che i marines quella notte arresteranno, anche tu verrai catturata. La nota positiva: se i marines sceglieranno di catturare te durante la notte, riuscirai a scamparla perchè fuori casa a compiere il furto.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Sei Bagy e fai parte della flotta dei sette! Per ora sei un pirata, ma nel momento in cui non rimarranno più marines, diverrai un marine a tua volta. Nel caso in cui il Robin ti scrutasse, potresti essere identificato sia come pirata che come marine.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>SEI UN MARINE 👮!! Odi i pirati. Il tuo scopo è la giustizia assoluta (絶対的正義). Ogni notte potrai scegliere di catturare un pirata (buon divertimento)!</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Sei Nico Robin 👁, utilizzatrice del frutto Fior-Fior. Ogni notte, hai la possibilità di far crescere i tuoi occhi su un giocatore e scoprirne la reale identità.</value>
+	</string>
+  <string key="RoleInfoVillager" >
+    <value >Sei un anonimo pirata 👱, condannato a passare le tue giornate a pulire i ponti della nave e fare tutto quello che richiede il tuo capitano.</value>
+	</string>
+  <string key="RoleInfoTanner" >
+    <value >Sei Shirahoshi 🐳, l'arma ancestrale POSEIDON. Se verrai scelta per essere buttata sul fondo dell'oceano vinci automaticamente. Nessuno può buttare Poseidon sul fondo dell'oceano!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Povero Coby 👦! Sei stato rapito da un pirata!! Finchè il pirata ti avrà con se non potrai fare nulla, ma una volta che verrà catturato o ucciso diventarai finalmente un marine.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Sei Sanji 🍱, il cuoco, e il tuo interesse è quello di proteggere i tuoi interessi amorosi, in questo caso si tratta di Robin. Ti verrà detto sin dall'inizio quale giocatore è la vera Nico Robin. Proteggila da pirati e marines.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Sei Bibi 🐥, un rimpiazzo per Robin. Quando (e se) la vera Robin muore, potrai mangiare il frutto Fior-Fior e utilizzare le sue abilità.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Sei un sottoposto di Kaido 🐉. Ogni notte, puoi scegliere un giocatore da far unire all'armata di uno dei quattro imperatori. Se tutti i giocatori rimasti vivi fanno parte della tua flotta, voi membri avete vinto.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+	<value >Sei il futuro re dei pirati! Monkey D. Luffy 🐵.Ogni notte, puoi scegliere un giocatore. Se è un membro della flotta di Kaido muore. Se invece un headliners di Kaido prova a convertirti, l'ultimo membro arruolato nella sua flotta muore e scoprirai quanti ne sono rimasti.</value>
+  </string>
+  <string key="LynchTime" >
+    <value>Il crepuscolo si avvicina inesorabile. I pirati decideranno chi buttare sul fondo dell'oceano questa notte...\nOgnuno ha {0} secondi per votare!</value>
+	</string>
+  <string key="DayTime" >
+	<value>Con il sorgere del Sole, termina la notte. Ora tutti i pirati hanno {0} secondi per discutere sul da farsi.</value>
+  </string>
+  <string key="NightTime" >
+    <value>Il sole è tramontato e la Luna è alta in cielo. Ognuno torna nella propria nave, esausto. Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
+	</string>
+  <string key="LynchKill" >
+    <value>I pirati hanno votato, tra dubbi e sospetti. {0} è morto.\n{1}</value>
+    <value>Dopo attente riflessioni, i pirati hanno deciso che {0} sarà buttato sul fondo dell'oceano.\n{1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>Incapaci di trovare un accordo su chi buttare in mare, i pirati tornano alle loro navi, in attesa di un'altra notte d'ansia e sconforto...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>Nessuno ha votato! Qualcosa mi puzza, nessuno verrà ucciso.....</value>
+  </string>
+  <string key="DetectiveEaten" >
+
+    <value>Suuuuuuuper~ Franky spara un raggio laser contro i marines.. ma i marines sono troppo numerosi e {0} non riesce a combatterli tutti. Il pirata da 94,000,000 di berry è stato catturato.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value>I marines hanno trovato il nostro caro Chopper. Avranno pietà di {0} dal momento che la sua taglia è di soli 100 berry? NO! Ai marines non interessa la taglia. Anche lui verrà giustiziato.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value>Tutti vengono svegliati da dei forti colpi provenienti dal porto. Si affrettano per vedere cosa sta succedendo, il re dei cecchini Sogeking è scomparso e in lontananza riescono a intravedere Usopp catturato su una nave della marina, probabilmente diretto in qualche prigione top-secret, un posto anche peggiore di Impel Down. Ci lascia il nostro amato cecchino {0} con una taglia di 200,000,000 berry.</value>
+  </string>
+  <string key="SeerEaten" >
+    <value >E' l'alba ormai, i pirati si svegliano e trovano il corpo congelato di {0}. Realizzano brevemente che ciò è dovuto al frutto del diavolo di Aokiji. Robin, la piratessa da 200,000,000 berry non è più tra noi.</value>
+	</string>
+  <string key="DrunkEaten" >
+    <value >Il pirata rockstar da 83,000,000 berry, SoulKing, è stato catturato dai marines. Durante la cattura {0} usa la tecnica Nenia Franc, che mette fuori gioco i marines non permettendo catture nella prossima notte.</value>
+  </string>
+  <string key="FoolEaten" >
+    <value >Non appena il sole si leva sulle navi, viene rinvenuto il corpo di {0}, il pirata folle, bruciato.</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>Il mattino è giunto, e con lui brutte notizie.{0} è stato catturato dalla marina. Il famoso pirata non è stato in grado di sfuggire ai marines. {1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>Una nave nelle vicinanze è circondata dalle fiamme. Uno degli headliners di Kaido, {0}... è stato completamente distrutto dal futuro re dei pirati, Monkey D. Luffy!</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Il giorno successivo sembra che tutti i pirati siano ancora nelle loro navi. Questa notte la marina avrà avuto altre faccende da sbrigare.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Mentre stai navigando appare una nave della marina. Provi a fuggire ma non appena vedi il contrammiraglio della marina Hina ne rimani folgorato e decidi di unirti ai marines.</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Gli altri marines sono: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value >{0} è stato catturato dal contrammiraglio Hina, ma sembra sia sia voluto unire ai marines, ed Hina ha acconsentito.</value>
+  </string>
+  <string key="WolvesEatYou" >
+    <value >Oh no! La marina ti ha trovato, catturato e spedito in qualche oscura prigione come Impel Down. Sayonara!!</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value >Oh no! {0} durante la cattura ti ha colpito con la sua tecnica soporifera, durante la prossima notte non sarai in grado di catturare pirati.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >Hai provato a rianimare un ingrato marine, che subito dopo ti ha catturato senza pietà!</value>
+  </string>
+  <string key="GuardSaved" >
+    <value >Hai salvato la vita di {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value >{0} non sembra riporti nessuna ferita, quindi non hai avuto molto da fare questa notte.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>Hai deciso di proteggere {0}, ma non era nella nave!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Chopper ha passato la notte intera per curarti dalle ferite subite in seguito allo scontro coi marines. Ringrazialo!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value >Oh no. Nami ha scelto la nave sbagliata in cui rubare. {0} è stata catturata dai marines!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value >Strano... {0} non c'è nessuno sulla nave! Ad ogni modo non sembrano esserci molte ricchezze...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value >Hai fatto visita alla nave di {0} per sottrarre qualche ricchezza, ma ti sei trovata davanti una bella sorpresa. Sei nella nave di un marines, e sei stata catturata.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value >{0} ha fatto visita alla nave sbagliata questa notte! Ora Nami, la gatta ladra, risulta scomparsa, forse catturata dalla marina :(</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value >{0} si è intrufolata nella nave di {1}, pronta a riempirsi le tasche. Ma ha trovato un marine intenti ad arrestare {1}! Fulmineo, il marine si gira verso {0} e la cattura... Nami finirà ad Impel Down.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value >Ora sai che {0} non è un marine, visto che la notte scorsa ti sei intrufolata nella sua nave saccheggiando qualche migliaio di berrye molti gioielli!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >Ti svegli durante la notte sentendo rumori provenire dalla stiva della nave. Noti Nami intenta a saccheggiare la tua riserva d'oro. Non appena provi ad intervenire vieni stordito da in velocissimo colpo di Clima Tact. Ritorni nel mondo dei sogni.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value >Hai beccato {0} che guardava in giro con degli occhiali strani addosso, l'hai riconosciuto subito! Quello è Franky!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value >I tuoi super occhiali hanno rivelato che {0} era {1}!</value>
+  </string>
+  <string key="HarlotShot" >
+    <value >Sembra che una notte con la prostituta abbia giovato a {0}! L'artigliere ha avuto la sua vendetta. {1} è morto</value>
+	<value >{1} chiede un nuovo Clima Tact a {0}. Appena Usopp passa a Nami il Clima Tact, succede qualcosa di strano. Forse un malfunzionamento ma un getto improvviso d'aria spazza via Nami che non verrà più trovata :(</value> 
+  </string>
+  <string key="DefaultShot" >
+    <value >HI NO TORI BOSHI!. Un'enorme fenice attraversa il cielo. {0} ha colpito {1}. Senza dubbio, Usopp, non manca mai un colpo. {2}</value>
+  </string>
+  <string key="WolfWins" >
+    <value >Il marine ha vinto!</value>
+  </string>
+  <string key="WolvesWin" >
+    <value>I marines hanno vinto!</value>
+  </string>
+  <string key="VillageWins" >
+  <value>I pirati hanno vinto!</value>
+  </string>
+  <string key="TannerWins" >
+    <value >Oh no! Avete gettato nell'oceano Poseidon. Direi che abbiamo un vincitore, Shirahoshi!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Giocatori rimasti vivi, ruolo e fazione:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value >{0} vota per reclutare {1} nell'esercito di Kaido</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{0} è stato inviato a fare il suo sporco lavoro, per reclutare {1} nell'esercito di Kaido... ma non poteva sapere di imbattersi nel futuro re dei pirati! {0} non darà più fastidio..</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>{0} ti ha fatto visita la scorsa notte, voleva reclutarti e farti lavorare per Kaido...  Naturalmente l'hai colpito con il tuo Elephant Gun... il resto è storia. {1} rimanenti!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Sei stato reclutato dagli uomini di Kaido! Ora sei uno di loro. Ogni notte, avrai la possibilità di reclutare un altro giocatore.</value>
+  </string>
+  <string key="CultTeam">
+    <value>Sottoposti di Kaido: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>{0} si è unito a Kaido!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{0} è stato inviato per reclutare {1}... ma non era nella nave!</value>
+  </string>
+  <string key="CultWins" >
+    <value >Tutti i marines sono morti, ma tutti i sopravvissuti appartengono alle forza di Kaido... Kaido ha vinto!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>Sei andato a combattere {0}, ma era già morto!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>Fai visita alla nave di {0}, e lo cogli parlare al lumacofono dei suoi piani con Kaido. Non ci pensi due volte e lo colpisci con il tuo Gomu-gomu no Kong Gun!!</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Hai fatto visita alla nave di {0}, sembrano pirati amichevoli e ti invitano alla festa che stanno facendo, fai amicizia con tutti. A pancia piena torni alla tua nave.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>{0} adesso è libero! Adesso può diventare un marine!</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0} è morto/catturato! Finalmente diventi un marine! I tuoi nuovi alleati sono: {1}</value>
+  </string>
+  <string key="Villager">
+    <value>un Pirata 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Brook, The Soul King 💀</value>
+  </string>
+  <string key="Harlot">
+    <value>Nami, la gatta ladra 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Nico Robin 👁, l'infiltrata</value>
+  </string>
+  <string key="Traitor">
+    <value>Bagy della flotta dei Sette</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Chopper, il medico 🦌</value>
+  </string>
+  <string key="Detective">
+    <value>Fraaaanky🚀, la super spia</value>
+  </string>
+  <string key="Wolf">
+    <value>un marine 👮</value>
+  </string>
+  <string key="Cursed">
+    <value>Jango</value>
+  </string>
+  <string key="Gunner">
+    <value>Usopp, il re dei cecchini 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Shirahoishi, l'arma ancestrale Poseidon 🐳</value>
+  </string>
+  <string key="Fool">
+    <value>Il pirata folle 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Coby, l'aspirante marine 👦</value>
+  </string>
+  <string key="Beholder">
+    <value>Sanji, il cuoco eroe 🍱</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Bibi 🐥</value>
+  </string>
+  <string key="Cultist">
+    <value>il sottoposto di Kaido 🐉</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Monkey D. Luffy 🐵</value>
+  </string>  
+ <string key="RanAway">
+    <value>😎 Fuggito</value>
+  </string>
+  <string key="Dead">
+    <value>😵 Fuori gioco</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 In vita</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Giocatori in vita</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Baroque Works 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Sei un membro sotto copertura della Baroque works 👷 (un'organizzazione pirata). Se ci sono altrti membri dell'organizzazione lo saprai, ad ogni modo sei un pirata comune.</value>
+  </string>
+  <string key="MasonEaten">
+    <value>Al risveglio dei prati, viene ritrovato il corpo di {0} che galleggia nel mare in una pozza di sangue! Un agente dei Baroque Works 👷 è morto!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  Gli altri agenti Baroque Works sono: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>Il vostro membro piu' nuovo si reca a casa di {0} per reclutarlo, ma trova invece una casa malmessa, segni di combattimento, sembra la Marina abbia fatto una visita...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>Ti introduci nella casa di {0} per catturarlo, ma improvvisamente incontri un'alta oscura figura, non sembra neanche umano. È Chopper. Combattete a lungo ma sei costretto a tornare a casa sconfitto.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>Spedite {0} per reclutare {1}, ma crede troppo nei suoi ideali, non siete riusciti a fargli cambiare idea :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, un giocatore con il nome di {0} e' gia' entrato. Per favore cambia il tuo nome per partecipare. </value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>Ti rechi sulla nave di {0} per saccheggiarla un po'... Ma quando stai per uscire, ti accorgi di una lettera.. sembra contenere delle istruzioni da svolgere per l'imperatore Kaido...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>I pirati si svegliano al sorgere del sole, per poi trovare i resti di {0}, morto in qualche modo la scorsa notte...</value>
+  </string>
+  <string key="MasonConverted">
+    <value>Cavoli... {0} non si e' presentato alla riunione della Baroque Works questa mattina... O.o</value>
+  </string>
+  <string key="FleeDisabled">
+    <value>Fuggire mentre il gioco e' in corso è stato disabilitato dall'admin del gruppo!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>e' morto</value>
+  </string>
+  <string key="AdminAdded" deprecated="true">
+    <value>{0} E' stato aggiunto alla lista degli admin. usa /config per cambiare le impostazioni del gruppo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Sei gia' nella partita! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Il tuo gruppo e' stato settato per far cominciare piu' partite... Uccisioni extra.</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <value>Il gruppo e' attualmente in lista d'attesa. Posizione:{0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @greywolfdev per altre informazioni.</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <value>{0} e' un gruppo ufficiale, ed ha saltato la lista d'attesa!</value>
+  </string>
+  <string key="NoGame">
+    <value>Non ci sono partite in corso. Cominciane una con /startgame o comincia una partita Chaos con /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Solo gli admin del gruppo possono usare questo comando. Chiedi al creatore o ad altri admin.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Dopo questa partita, mi spegnero' per una manutenzione.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Dopo questa partita, mi spegnero' momentaneamente per un aggiornamento (automatizzato).</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>UserId nullo.  Sei sicuro di aver mandato questo comando come risposta?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <value>{0} E' gia' un admin!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <value>{0} Non e' un admin!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <value>{0} E' stato rimosso dalla lista degli admin.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <value>Lingua settata su {0}</value>
+  </string>
+    <string key="NoSeer">
+	<value>Non c'è Robin o qualcuno che ti interessi...</value>
+  </string>
+  <string key="TimesUp">
+	<value>È scaduto il tempo!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+	<value>Sei uno della peggiore Generazione di Pirati, Trafalgar D. Water Law 💞. Usando il frutto Ope Ope no Mi, sei capace di usare la chirugia del trapianto di personalità (solo una volta) e scambiare i cuori di due giocatori. Se uno dei due muore, anche l'altro muore.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Sei Bentham, alias Mr. 2 Bon Kurei 🎭. Grazie al tuo frutto sei capace di assumere le sembianze di chiunque tu voglia, comunque puoi farlo soplo una volta durante la partita. Scegli un giocatore, e quando lui morirà, prenderai il suo ruolo.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Sei il cacciatore di pirati, lo spadaccino Roronoa Zoro 🗡. Non riesci a dormire bene e non riusciresti mai a separarti dalla tua spada. Se muori, puoi portare qualcun'altro nella tomba. Se ti catturano i marines, hai la possibilità di ucciderne uno, ma nel caso ce ne fossero altri, verresti accerchiato ed catturato comunque.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Sei Barbanera 🌑, Marshall D. Teach. Il tuo obbiettivo è diventare il pirata più forte e temuto di tutti e collezionare tutti i frutti del diavolo. Ogni notte, puoi aggiungere il corpo di un giocatore alla tua collezione, sperando possegga un frutto.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Law ha scambiato il tuo cuore con quello di {0}! Se muore, condividerai il suo destino. Se riuscite a sopravvivere fino alla fine, sarete entrambi vincitori.</value>
+ </string>
+  <string key="HunterLynchedChoice">
+    <value>Gli altri pirati hanno deciso di giustiziarti! Questa è la tua ultima possibilità, scegli qualcuno da uccidere come ultimo desiderio!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} fruga per la sua katana mentre i pirati stanno per buttarlo sul fondo del mare, ma non riesce a usarla in tempo, finisce nelle acqua del mare trascinato sul fondo dalla zavorra...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} estrae la sua katana, guarda i pirati... ma non riesce a decidere chi colpire.  Si lascia così morire, accettando il suo destino...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>Mentre {0} ha quasi raggiunto il bordo della passerella, tira fuori le spade, utilizza la sua tecnica a tre spade contro {1} giusto prima di cadere in acqua! {1} cade a terra, senza vita. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Stai per morire! Nei tuoi ultimi istanti di vita, Hai l'occasione di uccidere qualcuno... Sbrigati!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>{0} è morto prima di rendersene conto, immerso in un bagno di sangue...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>Mentre {0} è steso per terra, ansimante nei suoi ultimi attimi di vita, non riesce a decidere chi colpire... e accetta il suo triste destino.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>In fin di vita, {0} cade... Ma non senza afferrare la spada e colpire {1}, che cade a terra sanguinante. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} si intrufola nella casa di {1} allo scopo di reclutarlo nelle forze di Kaido, apre la porta e viene immediatamente accolto da un Barbanera!!! {1} avvolge nell'oscurità {0} sghignazzando tutto il tempo! {0} è morto D:</value>
+ </string>
+  <string key="HunterShotWolfMulti">
+    <value>I marines hanno provato a catturare il cacciatore di pirati la scorsa notte, ma lo spadaccino è riuscito a portarne uno con sé nella tomba! {0} è morto</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>I marines hanno provato ad attaccare il cacciatore di pirati l'ultima notte, ma lo spadaccino è riuscito a uccidere il marine {0} con la sua spada!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>I marines hanno provato ad eseguire un arresto notturno, ma sono stati invece sorpresi da Barbanera! {0} è stato ucciso nello scontro!</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>Sembrava una notte tranquilla per {0}, ma non lo è stata. I pirati si riuniscono nel mattino per trovare il cadavere di {0} immerso nell'oscurità. Barbanera ha colpito ancora! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>Hai provato ad aggiungere il corpo di {0} alla tua collezione, ma invece ti sei scontrato con Chopper! Niente da fare stasera, nottataccia...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>Gli uomini di Kaido mandano {0} per reclutare {1}, ma invece il corpo di {0} esce dalla finestra volando ricoperto di colpi di spada e sangue! {0} è morto...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Hai provato a proteggere la persona sbagliata, Barbanera ti attacca per impossessarsi del tuo frutto! Sei morto...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>Sei sgattaiolato nella casa di {0}, inizi a rubare gioielli qua e là. Tutto sembra andare alla grande finchè {0} da una stanza sbuca Barbanera e inizia a pugnalarti, ridendo come un maniaco!  Sei morta....</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Sembra che {0} si arricchita abbastanza ieri, sgattaiolando in case altrui. Peccato che la bella nottata non abbia fatto passare gli istinti omicidi di Barbanera. {0} è morta.</value>
+  </string>
+  <string key="DGToMason">
+    <value>Bon Kurei, il sosia {0} si è unito alla Baroque Works (di nuovo!), esattamente come te!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{0} è morto, e tu ti unisci alla Baroque Works. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>Bon Kurei {0} è ora un sottoposto di Kaido, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} è morto, e tu diventi un sottoposto di Kaido. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>Bon Kurei {0} è ora diventato un marines, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} è morto, e tu diventi un marine. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>L'ultima persona in vita è Barbanera! Ha vinto</value>
+  </string>
+  <string key="AskKill">
+    <value>Chi vuoi uccidere stanotte?</value>
+  </string>
+  <string key="LoverDied">
+    <value>Con l'ultimo respiro di {0}, {1} incomincia a perdere i sensi, si accascia a terra e muore. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Di chi vuoi ereditare il ruolo alla sua morte?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>A chi vuoi scambiare i cuori? Scegli il primo giocatore</value>
+  </string>
+  <string key="AskCupid2">
+    <value>A chi vuoi scambiare i cuori? Scegli il secondo giocatore</value>
+  </string>
+  <string key="Hunter">
+    <value>Roronoa Zoro, il cacciatore di Pirati 🗡</value>
+  </string>
+  <string key="Cupid">
+    <value>Trafalgar D. Water Law 💞</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Marshall D. Teach, Barbanera 🌑</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Bon Kurei, Mr. 2 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>Sei Coby adesso, l'aspirante marine. Pensi ti abbia rapito {0}</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>Al centro della piazza centrale, viene ritrovato il corpo di {0}. Sembra che si sia scontrato con il cacciatore di Pirati! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Una figura incappucciata ha provato a reclutarti nell'armata di Kaido, ma i tuoi ideali sono troppo forti.</value>
+  </string>
+  <string key="LoversWin">
+  <value>Avete vinto! Finalmente riuscite a scambiarvi i cuori.</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>Sorge il sole e gli ultimi due sopravvissuti si vedono nella piazza centrale. {0} vede {1}, gli molla un bel pugno nel viso avvolge nell'oscurità {1}. Barbanera ha vinto!</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Tutti i pirati sono morti....  non c'è niente ad eccezione dei corpi rimasti a terra. Nessuno ha vinto in questa partita.. A parte gli avvoltoi.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>Il sole sorge, {0} e {1} si incontrano le villaggio. {0} comincia a avvolgersi nell'oscurità e salta su {1}. {1} sfodera la katana e colpisce {0}. {0} cadendo a terra, riesce ad affondare una lama di oscurità nel corpo di {1}. Entrambi sono morti, il villaggio rimane desolato...</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Sei giá in lista d'attesa per {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Sei stato aggiunto alla lista d'attesa per {0}. Ti contatterò appena una partita sta per cominciare. </value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>Una nuova partita sta per cominciare su {0}</value>
+  </string>
+    <string key="RoleModelChosen">
+    <value>Non hai fatto una scelta, quindi il bot ti ha scelto {0}</value>
+  </string>
+    <string key="Won">
+    <value>Vinto</value>
+  </string>
+  <string key="Lost">
+    <value>Perso</value>
+  </string>
+    <string key="IdleCount">
+    <value>Il giocatore {0} è stato ucciso per non aver votato {1} volte nelle ultime 24 ore.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Il tuo ruolo è semplice: sopravvivere. Ogni giorno, avrai l'occasione di buttare in mare un presunto marine! Vota con attenzione!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Sei Nico Robin. Ogni notte, potrai scegliere un giocatore e conoscere il loro ruolo. Svelati saggiamente: Se dici di essere Nico Robin, i marines proveranno a catturarti! Nota: Potresti non essere Robin ma il pirata folle, che vede ruoli casuali (anche veri) ma in partita. Se ti scrive Sanji, saprai di essere la vera Robin.\nTraditore🖕: Lo si può scrutare come Marine o come Pirata (50% e 50%)</value>
+  </string>
+  <string key="AboutWw">
+    <value>Ogni notte, potrai decidere di catturare qualcuno e di giorno dovrai confondere gli altri e non farti scoprire! Se almeno la metà dei giocatori in partita sono marines, la partita finisce e vincete. \n Nota: Se attacchi Brook, dovrai rimanere fermo un turno a causa della sua tecnica! Se provi a catturare Jango, diventerà un Marine come te!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>In quanto Nami, avrai la possibilità di "visitare" altri giocari ogni notte. Se non sono marines te lo saprai mentre li stai saccheggiando. Nel caso sfortunato in cui tu visitassi un marine (o peggio Barbanera), farai una brutta fine. Se visiti il giocatore che i marines stanno catturando, verrete catturati insieme. Però, se scegli un giocatore, e i marines scelgono di venire a casa tua, non ti cattureranno! Non eri a casa, dopotutto...</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Sei Brook! Un "normale" pirata che allieta altri pirati con la sua musica. Ma se venissi catturato la notte dai marines, una volta catturato, prima di essere spedito chissà dove, suonerai ai marines la tua nenia e dovranno stare fermi una notte.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>In quanto Jango, sei come un normale pirata... finchè i marines non cercano di catturarti. Se venissero a casa tua, li ipnotizzerai e diventerai un marine come loro! Nota: Finchè i marines non ti catturano, la tua fazione è con i pirati, e vincerai con loro nel caso tutti i marines morissero.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Sei Bagy della Flotta dei Sette. Se non rimarranno più marines e tu sarai ancora in vita, diventerai tu stesso un marine, pronto a uccidere i tuoi vecchi alleati pirati di notte! Nota: Fino ad allora, il tuo team è con i pirati. Ti conviene quindi cercare di uccidere i marine. Se Robin ti scrutasse, Potrebbe identificarti sia come Marine, sia come Pirata.(50% e 50%)</value>
+  </string>
+  <string key="AboutGA">
+    <value>Sei Chopper! Ogni notte, potrai prenderti cura di un giocatore. Stai attento alle tue scelte però, se scegliessi un marine, avrai il 50% di probabilità di essere catturato. Se scegliessi Barbanera, verrai ucciso (100% probabilità)</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Tu vecchio volpone.. Di giorno, avrai l'occasione di investigare gli altri giocatori. Usa questo saggiamente però, visto che c'è il 40% di probabilità che i marines ti vedano investigare</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Come Cecchino, avrai due proiettili kabuto all'inizio del gioco. Di giorno, avrai l'occasione di sparare ad un'altro giocatore. Dopo lo sparo, tutti sapranno chi sei! Stai attento però, hai solo 2 proiettili e i marines vorranno sicuramente catturarti, se ti sveli!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Shirahoshi! Il suo obiettivo è semplice: Farsi buttare in mare. Se Shiraoshi riesce a farsi buttare in mare VINCE. Tutti gli altri perdono. Nota: Se non riesce a farsi buttare in mare: perde. Non vince con i pirati</value>
+  </string>
+  <string key="AboutFool">
+    <value>un povero Folle che crede di essere Robin.... Quando sceglie di vedere il ruolo a qualcuno, gli verrà detto un ruolo casuale in partita. Nota: È più utile di quello che sembra, può sapere con esattezza i ruoli che ci sono in partita. Se vedete un ruolo, sarà in partita.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Come sottoposto di Kaido, il tuo obiettivo è convertire tutti gli altri giocatori (tranne i marines) alla tua causa. Se a fine partita, tutti i giocatori sono sottoposti di Kaido, Vincono. \n Probabilità di convertire i seguenti ruoli: \n Mr.2: 0% Finchè rimane Bon Kurei, è impossibile da convertire \n Nico Robin 40% La piratessa è la più difficile da convertire \n Chopper 60% Nota: Se protegge qualcuno, non lo troverai in casa \n Jango 60% \n Franky 70% \n Nami 70% Come Chopper, se non è casa, non potrete convertirla \n Zoro 50% Avrai il 50% di convertire il cacciatore di pirati. Se fallite, C'è il 50% che vi uccida.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Il tuo lavoro è estirpare Kaido. Se ti visitano i suoi sottoposti, ucciderai il loro ultimo membro e saprai quanti di loro sono rimasti. Ogni notte potrai visitare un giocatore: Se sono sottoposti di Kaido, li ucciderai. Sennò, tornerai a casa, come se nulla fosse successo.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Come Coby, Alla prima notte, sceglierai il tuo rapitore. Qualora morisse diventerai finalmente un marine. Nota: Finchè lo diventi , vincerai con i pirati, nel caso tutti i marines morissero.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Per ora, sei un normale pirata. Nel caso Nico Robin morisse, ti trasformerai nel suo sostituto. Nota: Se sei in partita, implica che c'è anche Robin in partita.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Ti verrà detto chi è Nico Robin. Se morisse e qualcuno prendesse il suo posto, ti verrà detto. Una buona tattica è fingersi Robin e rivelare i ruoli al posto suo.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Il ruolo della Baroque Works è semplice: sanno chi sono gli altri membri dato che partecipano a delle riunioni segrete. Se sono da soli, sono semplici pirati.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Puoi scegliere un giocatore a inizio partita, erediti il suo ruolo \n Nota: Se il giocatore si unisse a Kaido, prenderai il suo ruolo originale. Tutte le altre regole normali si applicano: se era Coby e il suo rapitore è morto, diventerai un marine. Sennò, erediterai il loro modello.\nI sottoposti di Kaido non possono convertire il Mr.2 (ma possono dopo che cambia ruolo) E - Il Mr.2 NON può vincere a meno che si sono trasformati. Se a fine partita, il Mr.2 non si è trasformato, perde (eccezione: scambio dei cuori).</value>
+  </string>
+  <string key="AboutCupid">
+    <value>A Inizio partita, sceglie due giocatori. Dopo diventa a tutti gli effetti un normale pirata. Questi due diventeranno legati con lo scambio del cuore e se uno dei due muore, l'altro morirà. Nota: le vittime sanno chi è l'altro, ma non sanno il loro ruolo. Se sono gli ultimi due vivi, loro vincono, indipendemente dal loro ruolo. Se i due sono di due team diversi(esempio: marine + pirata), e un team vince (esempio: marines), anche l'altro  (esempio:pirata) vince. \n TL;DR Se tutti e due sono vivi a fine partita, e almeno uno dei due è nel team vincitore, vincono insieme</value>
+  </string>
+  <string key="AboutHunter">
+    <value>Un tipo vendicativo. Quando gli altri ti visitano, potrebbero trovarsi morti, visto che la paranoia ti possiede e tu li affetti. \nSe I marine ti attaccano, hai una chance di uccidere uno di loro. Sennò, avrai la chance uccidere qualcuno alla tua morte.\nNota: Per gli attacchi dei marines, la probabilità inizia al 30%. Se c'è un marine, il cacciatore ha il 30% di probabilità di ucciderlo (e sopravvivere. Per ogni lupo in più, la probabilità aumenta del 20% (2 Lupi= 50%, 3= 70%). Cionostante - se ci sono molti marines, mentre potresti ucciderne uno, verrai lo stesso accerchiato e catturato.	\nSe I sottoposti di Kaido provano a convertirti, hanno il 50% di probabilità di fallire. Se falliscono, hai il 50% di probabilità di ucciderne uno!</value>
+  </string>
+  <string key="AboutSK">
+    <value>Barbanera è un giocatore solitario, nel suo proprio team. Può vincere solo se è l'ultimo giocatore vivo (eccezione: scambio dei cuori). Puoi uccidere CHIUNQUE: marines, pirati, qualunque cosa. </value>
+  </string>
+<string key="AboutPara">
+    <value>Il pirata strano...</value>
+  </string>
+  <string key="EndTime">
+    <value>Durata della partita: {0}</value>
+	</string>
+  <string key="Day">
+<!-- Day -->
+    <value>Giorno {0}</value>:)
+  </string>
+<string key="NodeShutsDown">
+    <value>Si è verificato un errore imprevisto, e questo nodo è stato spento :/\n Per dettagli, vai su @werewolfsupport</value>
+  </string>
+<string key="SentPrivate">
+    <value>Ti ho scritto in privato</value>
+  </string>
+  <string key="StartPM">
+    <value>Scrivimi un messaggio in privato così posso risponderti: @werewolfbot</value>
+  </string> 
+  <string key="PMTrue">
+    <value>Grazie per avermi startato! Posso scriverti in privato ora.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Devi rispondere all'utente che vuoi cacciare!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Cosa vorresti fare?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Puoi entrare in partita solo dentro un gruppo!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Puoi cominciare una partita solo dentro un gruppo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo di Risposta: {0}\nMessaggi per secondo: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Che lingua?\nAttuale: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Che variante?\nAttuale: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Lingua impostata a {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Quale file di linguaggio vuoi avere?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Non ci sono nodi online al momento, per favore riprova più tardi</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Devi usare questo comando in un gruppo!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Non sei un admin globale...</value>
+  </string>
+  <string key="NotPara">
+    <value>Tu non sei il pirata strano!</value>
+  </string>
+  <string key="Yes">
+    <value>Sì</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Ammesso</value>
+  </string>
+  <string key="Disallow">
+    <value>Non Ammesso</value>
+  </string>
+  <string key="Show">
+    <value>Mostra</value>
+  </string>
+  <string key="Hide">
+    <value>Nascondi</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Solo Normale</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>A scelta del Giocatore</value>
+  </string>
+  <string key="ShowNone">
+    <value>Non mostrare nessuno</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostra solo i giocatori in vita</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostra tutti i giocatori</value>
+  </string>
+  <string key="Cancel">
+    <value>Annulla</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>È {0} fuggire dopo l'inizio della partita</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Giocatori massimi impostati a {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostrare i ruoli alla morte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>I ruoli verranno {0} alla morte.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Che modalità di gioco vuoi che giochi questo gruppo?\nAttualmente: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modalità di gioco impostata a {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Quali ruoli vuoi che siano mostrati alla fine della partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Ruoli mostrati alla fine impostati a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Scegli il tempo base (in secondi) per il giorno. Questo verrà modificato in base al numero di giocatori.\nTempo minimo aggiunto in base ai giocatori è 60 secondi.  Impostazione base: {0}\nAttuale: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Tempo base del giorno impostato a {0} secondi</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Scegli quanto dovranno durare le notti in secondi. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Le notti dureranno {0} secondi</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Imposta il tempo (in secondi) per il linciaggio di giorno. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Le votazioni dureranno {0} secondi</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Ammettere il pirata folle in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Il pirata folle come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Ammettere Shirahoshi in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Shirahoshi come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Ammettere i sottoposti di Kaido in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Sottoposto di Kaido come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Grazie mille, Abbi una bella giornata :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Di che lingua si vuole cercare un gruppo in cui giocare?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Questi sono i gruppi per {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membri</value>
+  </string>
+  <string key="StartMe">
+    <value>Per favore startami così potrò scriverti in privato</value>
+  </string>
+    <string key="PlayerNoPM">
+    <value>{0} non ha startato il bot, ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+    <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+   <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Sei Shanks. Tutti i pirati ti temono e rispettano allo stesso tempo. Il tuo voto varrà doppio, dopo che ti sarai rivelato.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Sei Bartolomeo. Se altri pirati proveranno a buttarti in mare, riuscirai a rinchiuderti nella tua barriera, sopravvivendo. Nota che potrai farlo solo una volta.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Sei Bellamy: Fai spesso scelte sbagliate e potresti sbagliare al 50% anche a votare. Vinci comunque con i pirati.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Sei Rob Lucci, e visto la tua posizione, preferisci allearti con la Marina invece che con i vili pirati. Di notte potrai usare Hattori per trovare i Marines o Nico Robin. Vinci solo se vince la Marina. Divertiti a gettare caos nel villaggio.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Sei Crocodile, possessore del frutto Sand-Sand. Di giorno potrai scegliere di rivelarti e scatenare una tempesta di sabbia per la notte, in modo da impedire ai marines di uscire dalle proprie abitazioni. Per il resto, sei come un normale pirata.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Sei Vegapunk, e lavori con la Marina. Ogni notte, sceglierai insieme ai tuoi compagni chi catturare, il tuo compito (che svolgi per la marina) è prendere il controllo della volontà dei pirati più forti, e c'è un 20% di probabilità che il pirata catturato sia idoneo all'operazione, entrando nelle forze della Marina dalla prossima notte.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Sei Tashigi, protetta di Smoker. Come gli altri marine, sceglierai ogni notte un giocatore da catturare. Se vieni ucciso, Smoker si infurierà a tal punto da far compiere due catture alla Marina la notte successiva.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Appena il villaggio ha deciso che {0} sarà giustiziato stasera, lui si chiude dentro la sua barriera rivendicando la sue identità di pirata. I pirati se ne convincono e lo lasciano stare.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Hai provato a scrutare {0}, ma non riesci a capire cos'è... Sei però sicuro che non sia nè Nico Robin nè un Marine!</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} fa un passo avanti e rivela a tutti la sua identità, si tratta di Shanks, è chiaro il perchè non ha paura. Da ora in poi, i voti di {0} conteranno doppio.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clicca "Rivelati" appena ti senti pronto di rivelarti pubblicamente</value>
+  </string>
+  <string key="Reveal">
+    <value>Rivelati</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Vuoi scatenare una tempesta di sabbia, rendendo i marine incapaci di effettuare catture stanotte?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre si discute su chi buttare in mare, {0} scatena una tempesta di sabbia all'esterno. Per ora, o almeno, per stanotte, i pirati non dovranno preoccuparsi della Marina.</value>
+  </string>
+  <string key="Mayor">
+    <value>Shanks</value>
+  </string>
+  <string key="Prince">
+    <value>Bartolomeo</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Rob Lucci</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Bellamy</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Crocodile</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Vegapunk ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Tashigi</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>I marine catturano {0}, ma Vegapunk {1} prega tutti di fermarsi. {1} rivela che {0} sarebbe un soggetto perfetto per essere trasformato in un arma della marina. {0} diverrà un marine da domani notte!</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Sei stato catturato dai Marines, ma Vegapunk ti ha scelto. Verrai sottoposto a un esperimento particolare... e da domani sarai un marine!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Appena cala la notte, senti uno strano ronzio in testa, non riconosci quasi più i tuoi pensieri... Ora sei un marine!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Shanks. Se decide di mostrare pubblicamente il proprio ruolo, il suo voto varrà doppio. Se divenisse sottoposto di Kaido, perde il doppio voto.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Bartolomeo è un ruolo chiave nella strategia dei pirati.La prima volta che subisce il tentativo di esecuzione, il suo ruolo viene rivelato a tutti e non muore. Può comunque venire catturato o sparato. Può essere giustiziato normalmente al secondo tentativo. </value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Sei Rob Lucci, e visto la tua posizione, preferisci allearti con la Marina invece che con i vili pirati. Di notte potrai usare Hattori per trovare i Marines o Nico Robin. Vinci solo se vince la Marina.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Sei Bellamy: Fai spesso scelte sbagliate e potresti sbagliare al 50% anche a votare. Vinci comunque con i pirati.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Crocodile, possessore del frutto Sand-Sand. Di giorno può scegliere di rivelarsi e scatenare una tempesta di sabbia per la notte, in modo da impedire ai marines di effettuare catture. Per il resto è come un normale pirata.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Vegapunk lavora con la Marina. Il tuo compito (svolto per la marina) è prendere il controllo della volontà dei pirati più forti, e c'è un 20% di probabilità che il pirata catturato sia idoneo all'operazione, entrando nelle forze della Marina dalla notte successiva alla cattura.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Tashigi, protetta di Smoker, è un marine. Se viene uccisa, Smoker si infurierà a tal punto da far compiere due catture alla Marina la notte successiva.</value>
+  </string>
+  <string key="DGTransformToAlpha">
+    <value>{0} è morto, e tu ti trasformi in Vegapunk.  I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <value>{0} è morto, e tu ti trasformi in Tashigi.  I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Team Pirati</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Team Marina</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Team Barbanera</value>
+  </string>
+  <string key="CultTeam">
+    <value>Team Kaido</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Team Shirahoshi</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Team Pirati</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Team Marina</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Team Barbanera</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Team Kaido</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Team Shirahoshi</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>Un headliner di Kaido ha mandato {0} per provare a reclutare {1}, ma da quella nave non è più uscito! {0} è stato catturato dalla marina...</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <value>{0} ha fatto visita a {1}, pronta derubarlo, solo per trovare una figura scura impegnata ad assorbire {1}! Barbanera uccide anche {0}!</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>I pirati si svegliano e trovano Karl disperato alla ricerca di {0}. La principessa Bibi 🙇 è stata catturata dalla Marina.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Sembra che {0}, ovvero Crocodile, sia stato estremamente sfortunato. Il corpo di {0} è stato trovato senza vita. Sembra che Barbanera abbia ampliato la sua collezione di frutti insieme a quella di organi...</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} è stato trovato pugnalato a morte. Barbanera ha colpito ancora! {0} era un sottoposto di Kaido.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Il mattino seguente, i pirati furono affranti a trovano {0}, cioè Law, morto per terra. Stranamente il cuore sembra mancare...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>{0} è morto, questa volta davvero... Sembra che Barbanera sia stato in grado di uccidere Brook facilmente!</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>Chopper non è stato in grado di contrastare Barbanera. {0} è morto.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Sembra che {0} sia stato preso alla sprovvista nel suo pisolino la scorsa notte! A notte fonda si sentì un colpo di pistola, e nel suo letto, il giorno seguente, si trovò il cadavere del re dei cecchini, con un buco in testa e una pugnalata nel petto. Barbanera ha vinto, senza ombra di dubbio.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Assassinio! {0} è stato trovato immobilizzato sul ponte della sua nave! Barbanera ha ottenuto la sua personale rivincita su Shanks!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Bartolomeo è scomparso. {0} potrebbe essere stato vittima di Barbanera...</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Il mattino è giunto e sulla piazza si intravede il corpo senza vita di Robin, con pugnalate lungo tutto il petto. Curiosamente, il cervello fu attentamente rimosso. {0} è vittima di Barbanera.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>La marina ha catturato uno dei loro alleati. Rob Lucci {0} è diretto a Impel Down.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>La marina ha catturato {0}. Stavolta Bellamy non avrà altre possibilità.</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <value>Il corpo di {0}, Monkey D. Luffy, è stato trovato nel centro della città, senza vita. Cercare sottoposti di Kaido e trovare Barbanera non era nei piani...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <value>Sembrava una notte tranquilla, visto che i marines hanno deciso di rimanere a casa, ma l'unico sfortunato è stato {0}, un sottoposto di Kaido che ha provato a reclutare un marine. {0} passerà molto tempo dietro le sbarre.. sempre che non venga giustiziato!</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <value>I sottoposti di Kaido pensavano di reclutare un nuovo membro tra di loro, ma si sbagliavano! {0}, un sottoposto di Kaido è stato trovato tritato nella piazza centrale! Tutto fa pensare a Barbanera.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <value>Doveva essere una notte tranquilla dove {0} facesse il suo lavoro da medico, ma {0} si è misteriosamente spento! Vicino al corpo, una nota "Non ho bisogno delle tue cure". Qualcuno ha provato a proteggere Barbanera, questa notte.</value>
+  </string>
+  <string key="GAGuardedWolf"> 
+    <value>{0} ha provato a proteggere un marine questa notte. {0} è stato catturato.</value>
+  </string>
+  
+  <string key="HunterKillsWolfEnd">
+    <value>Sapendo che solo {0} era rimasto in vita, {1} prova a catturare {0}, ma l'addestramento di {0} si rivela efficace contro il malcapitato marine! Tutto quello che rimane ormai è il corpo del marine a fette sottili e il cacciatore di pirati, Roronoa Zoro.</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <value>Sapendo che solo {0} era rimasto in vita, {1} prova a catturare {0} quando {0} meno se l'aspettava, riuscendolo a cogliere impreparato. Catturare l'ultimo pirata sembrò una passeggiata per {1}, che catturò il famoso cacciatore di pirati {0}, Roronoa Zoro.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <value>{1} e {0} escono appena spuntarono i primi raggi di luce. Riconoscendo in {0} un sottoposto di Kaido, {1} carica il proprio colpo migliore, eliminando l'ultimo tra i seguaci di Kaido.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per cliccare Join</value>
+  </string>
+  <string key="SecondsRemoved">
+     <value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per cliccare Join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Solo gli admin del gruppo possono prolungare il timer più di una volta!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <value>Permettere ai giocatori di prolungare il timer?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
+  </string>
+  <string key="AllowExtendA">
+    <value>{0} prolungare il times ai giocatori</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Scegli il tempo limite che può essere aggiunto ai giocatori con un singolo comando /extend.\nDefault: {0}\nAttualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo limite per /extend impostato a {0} secondi</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} suona la sua nenia! Ti addormenti, e non potrai attaccare {1}...</value>
+  </string>
+    <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Non puoi unirti alla partita perché non sembri essere un membro di {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Per favore non usare i comandi per joinare. Usa questo bottone invece.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>Hanno votato in {0} su {1}.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Abilitare il Voto Segreto?\nAttuale: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Voto segreto impostato su: {0}</value>
+	</string>
+	
+  <string key="NoAutoJoin">
+    <value>{0}, per favore ricordati di joinare cliccando sul bottone.</value>
+  </string>
+  <string key="GroupNotFound">
+    <value>Non trovo il gruppo. Prova ad usare il comando nel gruppo in cui vuoi togliere l'avviso di nuova partita, oppure aggiungi il link, l'ID o l'username dopo il comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Sei stato rimosso dalla lista d'attesa per {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <value>{0} sono entrati in partita negli ultimi 30 secondi.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Ammetti Kaido</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Ammetti Shirahoshi</value>
+  </string>
+  <string key="AllowFool">
+    <value>Ammetti Pirata Folle</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Voto Segreto</value>
+  </string>
+  <string key="RandomMode">
+    <value>Modalita Casuale</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Estendi Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostra ruoli alla morte</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Fuga Dal gioco</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Mostra ID al Join</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Mostra ID dei giocatori quando si uniscono al gioco?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  
+  <string key="All">
+    <value>Tutte</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Abilitare la modalità casuale?\nQuando la modalità casuale è attiva, Chaos, Voto segreto, Mostrare Ruoli alla Morte, e Ammetti Kaido / Folle / Shiraoshi verranno impostati automaticamente ogni volta che qualcuno inizierà una partita.\nAttualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modalità casuale impostata a: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Ammetti Gif Pack NSFW?</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Ammettere gif packs NSFW ai giocatori?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>GIF NSFW {0}</value>
+  </string>
+  
+  <string key="TannerEnd">
+    <value>{0} si svegliò all'alba, da solo. {0} vide quant'era un completo fallimento, non essendo stata in grado a indurre i pirati a buttarla in mare, {0} si butta da sola.</value>
+  </string>
+  <string key="SorcererEnd">
+    <value>Nonostante tutti gli sforzi di {0}, i marines giacevano per terra, immobili e senza vita. Anche se la Marina ha conquistato la vittoria, non era rimasto nessuno con cui gustare il sapore del trionfo, nè pirati da deridere.</value>
+  </string>
+    <string key="WhatVariantVets">
+    <value>Che variante?\nAttuale: {0}\nSiccome hai giocato più di 500 partite puoi entrare su: </value>
+  </string>
+  <string key="Skip">
+    <value>Salta</value>
+  </string>
+  
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <value>{0} è morto, e tu ti trasformi in Kuzan. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <value>Hai visto che\n{0} NON era {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Vorresti pietrificare tutti stanotte?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Mentre il villaggio discute, {0} ritorna nella sua casa e inizia a fischiettare una dolce melodia. Questa notte i giocatori non potranno svolgere le loro azioni notturne!</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Mentre tutti tornano a casa, rimangono pietrificati.</value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>Ammettere il Ladro in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Ladro come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Il ladro potrà essere usato ogni notte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Il ladro potrà agire ogni notte: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Ammetti il ladro</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Ladro ammesso per tutta la partita</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>Sei un semplice pirata, ma visto che collezioni souvenire delle navi della marina saccheggiate, se qualcuno prova a spiarti potrebbe scambiarti per un marine.</value>
+  </string>
+  <string key="WolfMan">
+    <value>Il pirata collezionista di pezzi della Marina</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Sei un semplice pirata, ma visto che collezioni souvenire delle navi della marina saccheggiate, se qualcuno prova a spiarti potrebbe scambiarti per un marine.</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>Sei Kuzan, ex ammiraglio Aokiji! Sei un marine, ma tutti ti credono un pirata ormai, e sia Nico Robin che Rob Lucci ti identificheranno come tale!</value>
+  </string>
+  <string key="Lycan">
+    <value>Kuzan</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Kuzan, ex ammiraglio Aokiji, è un marine, ma tutti lo credono un pirata ormai, e sia Nico Robin che Rob Lucci lo identificheranno come tale.</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>Sei Basil Hawkins. Ogni notte potrai scrutare qualcuno, e sapere quale ruolo NON è. Nota che i ruoli vengono presi da quelli presenti in partita, e quindi vedere un ruolo significa che ce n'è almeno uno vivo in partita.</value>
+  </string>
+  <string key="Oracle">
+    <value>Basil Hawkins 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Basil Hawkins scruterà i giocatori per sapere quali ruoli NON sono, dai giocatori presenti in partita.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Sei Boa Hancock 🐍. Una volta per partita, potrai usare la tua abilità che pietrificherà tutti, pirati e marines indistintamente, solo per una notte, impedendendo qualsiasi azione.</value>
+  </string>
+  <string key="Sandman">
+    <value>Boa Hancock 🐍</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Una volta per partita, Boa Hancock pietrificherà tutti i giocatori in partita per una notte, impedendogli qualsiasi azione.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoPacifist">
+    <value>Sei Jinbe ☮️. Puoi scegliere di convincere i tuoi compagni a non buttare nessuno in fondo al mare. Puoi farlo solo una volta.</value>
+  </string>
+  <string key="Pacifist">
+    <value>Jinbe ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>Jinbe può scegliere di convincere i suoi compagni a non buttare nessuno in fondo al mare. Può farlo solo una volta.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>Sei Silvers Rayleigh. Riesci a resistere alla cattura da parte della Marina la prima volta, la seconda potrebbero riuscirci. Se Usopp o Zoro dovessero provare ad attaccarti, perderebbero le loro capacità diventando normali pirati.</value>
+  </string>
+  <string key="WiseElder">
+    <value>Silvers Rayleigh</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>Silvers Rayleigh può resistere alla cattura da parte della Marina la prima volta, la seconda potrebbero riuscirci. Se Usopp o Zoro dovessero provare ad attaccarlo, perderebbero le loro capacità diventando normali pirati..</value>
+  </string>
+  <string key="RoleInfoThief">
+  <!-- DISATTIVATO PER ORA -->
+    <value>You are the Thief 😈! You can steal a player's role on the first night and turn that player into a villager!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+  <!-- DISATTIVATO PER ORA -->
+    <value>You are the Thief 😈! Since the [Full Thief] mode is turned on, you get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  <string key="Thief">
+  <!-- DISATTIVATO PER ORA -->
+    <value>the Thief 😈</value>
+  </string>
+  <string key="AboutThief">
+  <!-- DISATTIVATO PER ORA -->
+    <value>By default, the Thief 😈 can steal a player's role on the first night and turn that player into a villager.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  
+  <string key="AskPacifist">
+    <value>Premi qua quando vuoi fare il tuo discorso per convincere gli altri pirati a non giustiziare nessuno!</value>
+  </string>
+  <string key="PacifistNoLynch">
+    <value>Jinbe ☮️, {0}, sta facendo un discorso spezzacuori su amicizia e fedeltà davanti a tutti i pirati. Commossi dalle sue parole decidono di non buttare nessuno in fondo al mare questa volta!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Grazie al discorso spezzacuori di Jinbe quest'oggi nessuno è finito in fondo al mare!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+    <value>Hai provato a entrare nella nave di {0} ma sfortunatamente hai di fronte Silvers Rayleigh! {0} sfugge facilmente alla cattura mettendoti ko con il suo Haki. Non si preoccupa neanche di guardare chi sei.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>I marines hanno provato a catturarti, ma non sei certo tipo da farti catturare così! Stendi i marines prima che possano entrare in casa con il tuo Haki, poi ti metti a dormire senza preoccuparti di controllare chi ti ha attaccato.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+    <value>Zoro, {0} attacca Rayleigh, {1}. {0} non fa in tempo ad accorgersi del grande errore che perde tutte le sue spade. Adesso è un normale pirata.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+    <value>Usopp, {0} spara a Rayleigh, {1}. {0} non fa in tempo ad accorgersi del grande errore che perde tutti i proiettili rimasti. Adesso è un normale pirata.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- DISATTIVATO PER ORA -->
+    <value>You tried to steal the role from {0}, but unfortunately you failed...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- DISATTIVATO PER ORA -->
+    <value>You tried to steal the role from {0}, but {0} is already dead...</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+  <!-- DISATTIVATO PER ORA -->
+    <value>Your role got stolen! You are now {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- DISATTIVATO PER ORA -->
+    <value>You successfully stole {0}'s role!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- DISATTIVATO PER ORA -->
+    <value>{0} is no longer your teammate and {1} has now become a mason, just like you!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- DISATTIVATO PER ORA -->
+    <value>Your teammates (if any) are: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- DISATTIVATO PER ORA -->
+    <value>{0} is no longer your teammate and {1} has now become a cultist, just like you!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- DISATTIVATO PER ORA -->
+    <value>{0} is no longer your teammate and {1} has now become a wolf, just like you!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- DISATTIVATO PER ORA -->
+    <value>Your teammates (if any) are: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- DISATTIVATO PER ORA -->
+    <value>As {0} wanders around the village, they found out that there are no more fun roles available for them to steal. They quickly left this poor village and search for another village to restart their illustrious career.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- DISATTIVATO PER ORA -->
+    <value>Your theft target is now {0}.</value>
+  </string>
+  <string key="AskThief">
+  <!-- DISATTIVATO PER ORA -->
+    <value>Whose role do you want to steal from?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+    <value>{0} ha votato {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+    <value>Il risultato della votazione segreta di oggi:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+    <value>{0} ha votato {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Conteggio votazione segreta</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Quando la votazione segreta è attiva, mostra il conteggio dei voti al termine?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Quando la votazione segreta è attiva, il conteggio dei voti al termine sarà: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Votanti</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Quando la votazione segreta è attiva e viene mostrato il conteggio dei voti, mostrare il nome del votante per ogni giocatore votato?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Quando la votazione segreta è attiva e viene mostrato il conteggio dei voti, il nome del votante per ogni giocatore votato: {0}</value>
+  </string>
+  <string key="CultistBitten">
+	<value>Strano... Stai cominciando a discutere su chi arruolare stanotte e ti accorgi che {0} non c'è! Che sarà successo??</value>
+  </string>
+  
+  <string key="Peace">
+	<value>Pace!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+	<value>Quest'oggi non ci sono state esecuzioni in mare grazie al discorso strappalacrime di Jinbe!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+  <!-- DISATTIVATO PER ORA -->
+    <value>Your role got stolen! You are now the new thief 😈 and can steal a role the next night!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+  <!-- DISATTIVATO PER ORA -->
+    <value>Your role got stolen! You are now a villager 👱, plowing your fields all day.</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Toc Toc, ti ha fatto visita Barbanera!</value>
+	<value>Barbanera si è intrufolato sulla tua nave, sei morto!</value>
+  </string>
+  
+  <string key="ThiefTeamEnd">
+  <!-- DISATTIVATO PER ORA -->
+	<value>Thief Team</value>
+  </string>
+  
+  <string key="StealKiller">
+  <!-- DISATTIVATO PER ORA -->
+    <value>You tried to steal a role... but your target was the serial killer! They saw you around their house, and not a minute later, you were stabbed...</value>
+  </string>
+  <string key="ThiefStoleKiller">
+  <!-- DISATTIVATO PER ORA -->
+    <value>The Thief, {0}, tried to steal the role from the serial killer! This didn't work out so well: {0} got stabbed multiple times and now his liver is missing...</value>
+  </string>
+  <string key="BeholderSeerStolen">
+  <!-- DISATTIVATO PER ORA -->
+	<value>The thief has stolen the seer's role! {0} is now the seer, and {1} does no longer have seeing abilities!</value>
+  </string>
+</strings>

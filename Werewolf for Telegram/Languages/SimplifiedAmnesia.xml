@@ -1,0 +1,974 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Expert mode by Saah (@ayylimao)! Best played with role reveal on death otherwise it's waaay too hard, but who am I to tell you what to do? -->
+<strings>
+  <language name="简体中文（失忆模式）" base="简体中文" variant="失忆模式"/>
+  <string key="NotInGame">
+    <value>你现在似乎并不在任何游戏中……</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <value>【{0}】已开启游戏！输入或点按 /join 加入这场屠杀盛宴吧！</value>
+    <value>【{0}】已开启游戏！输入或点按 /join 加入游戏来互相伤害吧！</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <value>【{0}】已开启混乱模式！输入或点按 /join 即可成为暴徒……</value>
+    <value>在【{0}】的号召下，混乱模式全面启动！输入或点按 /join 来互相伤害吧！</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>你不能加入已经开始的游戏。\n输入或点按 /nextgame 可接收下一场游戏的开局提醒。</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>你已加入游戏！</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>还有 1 分钟 /join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>还剩 {0} 秒 /join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>人数不足，游戏取消。</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>游戏启动中，正在分配角色及更新数据库，请稍等片刻。\n哎呀，出了点问题，没人记得自己是谁了……（玩家连自己的角色都不知道了）</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>已拉黑【{0}】，因其想利用漏洞（玩家名称不能以 / 开头）。</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>【{0}】，请改名后再加入游戏。</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>抱歉，本场游戏人数已达上限。</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>【{0}】加入了这场屠杀派对。\n已有 {1} 人参加（最少 {2} 人，最多 {3} 人）。</value>
+    <value>【{0}】加入了这场游戏。\n已有 {1} 人参加（最少 {2} 人，最多 {3} 人）。</value>
+  </string>
+  <string key="PMTheBot">
+    <value>【{0}】， 请立即点 {1}，按 start。如果你不这样做，就没法加入游戏了~</value>
+  </string>
+  <string key="DeadFlee">
+    <value>你无法逃走，因为你已经死了！ 回墓地好好躺着吧……</value>
+  </string>
+  <string key="Flee">
+    <value>【{0}】受不了压力逃跑了！</value>
+    <value>【{0}】无法抵御良心的煎熬，逃离了这场暴民的盛会。</value>
+    <value>【{0}】决定遁入空门，从此不再过问世事。</value>
+    <value>一道晴天霹雳，正想逃走的【{0}】被雷劈死了~</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>【{0}】是 {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>还剩 {0} 名玩家。</value>
+  </string>
+  <string key="DidntAsk">
+    <value>啧，我还没问你话呢🙄</value>
+  </string>
+  <string key="NotPlaying">
+    <value>你似乎不在任何游戏中……</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>查无此人！</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>答案无效！</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>【{0}】选择去找【{1}】</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>【{0}】已投票将【{1}】处死</value>
+  </string>
+  <string key="IdleKill">
+    <value>【{0}】已连续两晚没有投票，正义的使者无法饶恕这种行为。忽然，【{0}】的身躯倒下并断了气。\n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>你好像变了，但你原来是谁？你现在又是谁？</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>选择已接受</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\n你记得【{0}】这名字，却不知道你自己是谁。</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>【{0}】死了！你的身份也变了，但你原来是谁？你现在又是谁？</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>你好像想起了什么…… {1} ？不对，现在你记得的仅仅是【{0}】这名字而已。</value>
+  </string>
+  <string key="SeerSees">
+    <value>你突然想起【{0}】是 {1} ，尽管你还是没想起来自己是谁。</value>
+  </string>
+  <string key="AskLynch">
+    <value>你想处死谁？</value>
+  </string>
+  <string key="AskDetect">
+    <value>你觉得你该去找其他人，但你该找谁呢？</value>
+  </string>
+  <string key="AskShoot">
+    <value>你觉得你应该去找其他人，但你该找谁呢？（不过你还记得要找 {0} 个人）。</value>
+  </string>
+  <string key="AskVisit">
+    <value>你觉得你应该去找其他人，但你该找谁呢？</value>
+  </string>
+  <string key="AskSee">
+    <value>你觉得你应该去找其他人，但你该找谁呢？</value>
+  </string>
+  <string key="AskGuard">
+    <value>你觉得你应该去找其他人，但你该找谁呢？</value>
+  </string>
+  <string key="AskEat">
+    <value>你觉得你应该去找其他人，但你该找谁呢？</value>
+  </string>
+  <string key="AskHunt">
+    <value>你觉得你应该去找其他人，但你该找谁呢？</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>你觉得你应该去找其他人，但你该找谁呢？</value>
+  </string>
+  <string key="AskConvert">
+    <value>你觉得你应该去找其他人，但你该找谁呢？</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  请确定你已经与【{0}】商量。</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> 和 </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>奇怪……你突然不记得自己是谁了。</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>奇怪……你突然不记得自己是谁了，不过你还是记得你白天有事情要做。</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>奇怪……你突然不记得自己是谁了。</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>奇怪……你突然不记得自己是谁了，不过你还记得你晚上有事情要做。</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>奇怪……你突然不记得自己是谁了，不过你还记得你白天有事情要做。</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>奇怪……你突然不记得自己是谁了，不过你还记得你晚上有事情要做。</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>奇怪……你突然不记得自己是谁了。</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>奇怪……你突然不记得自己是谁了，不过你还记得你晚上有事情要做。</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value>奇怪……你突然不记得自己是谁了，不过你还记得你晚上有事情要做。</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>奇怪……你突然不记得自己是谁了。</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value>奇怪……你突然不记得自己是谁了。</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>奇怪……你突然不记得自己是谁了，不过你还记得你晚上有事情要做。。</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>奇怪……你突然不记得自己是谁了。</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>奇怪……你突然不记得自己是谁了。</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value>奇怪……你突然不记得自己是谁了，不过你还记得你晚上有事情要做。</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value>奇怪……你突然不记得自己是谁了，不过你还记得你晚上有事情要做。</value>
+  </string>
+  <string key="LynchTime" >
+    <value>黄昏将至，村民们该投票了。\n请在 {0} 秒内投票！</value>
+  </string>
+  <string key="DayTime" >
+    <value>日上三竿，大家有 {0} 秒的时间讨论和行动。</value>
+  </string>
+  <string key="NightTime" >
+    <value>夜幕降临，大家都惴惴不安，辗转难眠，怕自己明天会死于非命。\n夜间玩家们，你们有 {0} 秒的时间行动！</value>
+  </string>
+  <string key="LynchKill" >
+    <value>村民投过票后，继续怀疑真凶的身份。\n【{0}】已被处决。\n{1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>公投未能得出结论，刽子手只能失望而回。</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>奇怪，竟然没人投票？今晚没有人被行刑。</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value>一大早，村民们聚首一堂，发现不见【{0}】的踪影。大家在【{0}】的屋子四周搜寻，然后在他家门前见到一具尸体：肚破肠流，还有个狼牙印赫然覆盖在尸体的喉咙处。</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value>日出之后，教堂里出现一阵骚动 —— 十字架上的，不是耶稣，而是守护天使：【{0}】。</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value>村民们走出家门，发现满地的枪械零件，还有残肢、手指……广场上散布着血肉模糊的尸骸 —— 枪手【{0}】已经死于狼爪之下！</value>
+  </string>
+  <string key="SeerEaten" >
+    <value>村民们一觉醒来，看到广场中间被打碎的水晶球与被撕破的塔罗牌，而旁边是【{0}】的尸体 —— 他是先知！</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value>大家一觉睡醒，扑鼻而来的是浓烈的酒精味，渗杂着烧焦的木屑味道 —— 此刻酒吧烧成一片火海！村民将火扑灭后，发现一具残缺的焦尸 ——【{0}】。</value>
+  </string>
+  <string key="FoolEaten" >
+    <value>村民们一觉醒来，看到广场中间被打碎的水晶球与被撕破的……UNO牌？！【{0}】这货居然是个傻瓜！</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>旭日初升，恶臭四溢。村民们寻着气味而走，赫然发现【{0}】身首异处，躯体被撕成了碎片。这回糟了！\n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>一阵恶臭从【{0}】的家里飘出。村民打开门，发现一具尸体静静地躺在祭坛上。想必是被邪教捕手杀的吧！\n【{0}】是邪教徒。</value>
+  </string>
+  <string key="NoAttack" >
+    <value>村民们聚集在镇中心 —— 大家都如释重负，因为昨晚似乎无人受袭。</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>你好像变了，但你原来是谁？你现在又是谁？</value>
+  </string>
+  <string key="WolfTeam">
+    <value>你记得【{0}】这名字，却不知道自己是谁。</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value>你又想到了【{0}】这名字，但还是不知道自己是谁。</value>
+  </string>
+  <string key="WolvesEatYou" >
+    <value>糟糕！你已被狼人吃掉。</value>
+    <value>糟糕！你已经在狼人肚子里了，而你的灵魂还在墓园里飘荡！</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value>你记起来【{0}】是酒鬼，虽然晚了些……</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>你走进了狼人的家，然后被狼人吃掉了，你才想起来你是守护天使！</value>
+  </string>
+  <string key="GuardSaved" >
+    <value>你觉得自己曾经去过【{0}】家，但是想不起来做过什么了……</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value>你觉得自己曾经去过【{0}】家，但是想不起来做过什么了……</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>你觉得自己曾经去过【{0}】家，但是他家里好像没人……</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>昨晚发生了什么？想不起来惹……</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value>妓女【{0}】呆在家里没有出去，然后……被狼人吃掉了。</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value>你觉得你曾经去过【{0}】家，但是他家里好像没人……</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value>你走进狼人【{0}】的家，然后被吃掉了，你才想起来你是妓女！</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value>昨晚，【{0}】走进别人的家后就失踪了，随后，有人发现她放荡的遗体被钉在了教堂门的铁棍上，脸上还停留着一丝高潮未褪的红晕……</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value>【{0}】走进了【{1}】的家，正想嘿嘿嘿的时候，一只狼人闯进来把【{1}】吃掉了！狼人一转头，也把【{0}】吃掉了。【{0}】已死。</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value>你觉得你曾经去过【{0}】家，但是想不起来你做过什么了……</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>昨晚发生了什么？想不起来惹……</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value>你看到【{0}】在看着你，不过他是谁呢？</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value>你想起来【{0}】是 {1} ，然而还是不知道自己是谁。</value>
+  </string>
+  <string key="HarlotShot" >
+    <value>看来【{0}】和妓女度过了精彩的一夜。不过枪手还是把【{1}】射死了。</value>
+  </string>
+  <string key="DefaultShot" >
+    <value>一声枪响之后，村民很快看见【{0}】正踏着【{1}】的尸体，枪头还指着【{1}】的太阳穴。\n{2}</value>
+    <value>一声枪响，震慑全村。只见【{0}】的枪头所指方向躺着一具尸体，那人不就是【{1}】吗？\n{2}</value>
+  </string>
+  <string key="WolfWins" >
+    <value>#狼人胜！</value>
+  </string>
+  <string key="WolvesWin" >
+    <value>#狼人胜！</value>
+  </string>
+  <string key="VillageWins" >
+    <value>#村民胜！</value>
+  </string>
+  <string key="TannerWins" >
+    <value>糟糕！你们把皮匠处决掉了！他轻轻松松就赢了！ #皮匠胜</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>剩余玩家、角色及所属团队：</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value>【{0}】希望去找【{1}】</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>【{0}】今天晚上去找了【{1}】，然后音讯全无……</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>【{0}】死了！，一个新的数字【{1}】浮现在你的脑海中。</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>你的身份变了，但你原来是谁？你现在又是谁？</value>
+  </string>
+  <string key="CultTeam">
+    <value>你记得【{0}】这名字，却不知道你自己是谁。</value>
+  </string>
+  <string key="CultJoin">
+    <value>你又想到了【{0}】这名字，但还是不知道自己是谁。</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>【{0}】去了【{1}】家，但是他家里好像没人……</value>
+  </string>
+  <string key="CultWins" >
+    <value>所有狼人都死光之余，其他人也受洗成为邪教徒 —— #邪教徒胜！</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>【{0}】死了 ！</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>你觉得你曾经去过【{0}】家，但是想不起来你做过什么了……</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>你觉得你曾经去过【{0}】家，但是想不起来你做过什么了……</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>你又想到了【{0}】这名字，但还是不知道自己是谁。</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>【{0}】死了 ，你的身份也变了。\n你又想起【{1}】这名字，但你原来是谁？你现在又是谁？</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>村民👱</value>
+  </string>
+  <string key="Drunk">
+    <value>酒鬼🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>妓女💋</value>
+  </string>
+  <string key="Seer">
+    <value>先知👳</value>
+  </string>
+  <string key="Traitor">
+    <value>叛徒🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>守护天使👼</value>
+  </string>
+  <string key="Detective">
+    <value>侦探🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>狼人🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>被诅咒的人😾</value>
+  </string>
+  <string key="Gunner">
+    <value>枪手🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>皮匠👺</value>
+  </string>
+  <string key="Fool">
+    <value>傻瓜🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>孤儿👶</value>
+  </string>
+  <string key="Beholder">
+    <value>旁观者👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>先知学徒🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>邪教徒👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>邪教捕手💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>已逃跑</value>
+  </string>
+  <string key="Dead">
+    <value>💀死亡</value>
+  </string>
+  <string key="Alive">
+    <value>🙂幸存</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>幸存者们</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>砖瓦工👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>奇怪……你突然想不起来自己是谁了。</value>
+  </string>
+  <string key="MasonEaten">
+    <value>一大早，村民们在一堆石头中发现一具残破不堪满身血迹的尸体。村里的一名砖瓦工死了！ -- 【{0}】</value>
+  </string>
+  <string key="MasonTeam">
+    <value>>你记得【{0}】这名字，却不知道你自己是谁。</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>【{0}】死了！</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>你觉得自己曾经去过【{0}】家，但是想不起来做过什么了……</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>【{0}】去过【{1}】家，但是他想不起来做过什么了……</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}，已经有一位【{0}】加入了。请改名后再重新加入！（禁止重名）</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>你觉得自己曾经去过【{0}】家，但是想不起来做过什么了，只是依稀记得自己看到过一个没有藏好的祭坛，样子很奇怪，还散发着诡异的光芒……</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>是</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>村民们早上醒来，发现【{0}】不见了……去他家后才发现【{0}】的尸体。</value>
+    <value>早上村民们聚在一起时，发现了已经断气的【{0}】的尸体，显然是昨晚死的。</value>
+  </string>
+  <string key="MasonConverted">
+    <value>你好像想起了什么……【{0}】？这是什么鬼？</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>抱歉，村庄大门已关闭，守门人不让你离开村庄。</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>已经死了💀</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>{0} 已成为游戏管理员。使用 /config 可更改游戏设定</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>你已在其他游戏中！({0}) </value>
+  </string>
+  <string key="MultipleGames">
+    <value>群组重复启动游戏……正在删除重复的游戏……</value>
+  </string>
+  <string key="GroupQueue">
+    <value>游戏正在排队 目前排序：{0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>抱歉，正在更新，游戏暂时无法启动\n正在等待 {0} 场游戏结束\n了解更多信息请前往 @greywolfdev</value>
+  </string>
+  <string key="MaxGames">
+    <value>抱歉，游戏群组已达上限 ({0})。\n目前排序：{1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>{0} 是官方群组，正在使用 VIP 通道启动游戏。</value>
+  </string>
+  <string key="NoGame">
+    <value>目前没有进行中的游戏\n/startgame 开启普通模式\n/startchaos 开启混乱模式（角色完全随机）</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>抱歉，你不是游戏管理员。移除 bot 后再将其加回，即可获得管理员权限。</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>本局游戏结束后，我将暂时进入维修模式。</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>本局游戏结束后将自动更新，请稍候。</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>找不到使用者的 ID， 你确定你是用回复 (reply) 来下指令？</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} 已经是游戏管理员了！</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0} 不是游戏管理员！</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} 已从游戏管理员名单中移除。</value>
+  </string>
+  <string key="LanguageSet">
+    <value>语言设定为【{0}】</value>
+  </string>
+  <string key="NoSeer">
+	<value> </value>
+  </string>
+  <string key="TimesUp">
+	<value>时间到！</value>
+        <value>不等你了，下次要把握时间啊！（時间到！）</value>
+        <value>你睡着了？（時间到！）</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>奇怪……你突然想不起来自己是谁了，不过你还记得你晚上有事情要做。</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>奇怪……你突然想不起来自己是谁了，不过你还是记你晚上有事情要做。</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>奇怪……你突然想不起来自己是谁了。</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>奇怪……你突然想不起来自己是谁了，不过你还记得你晚上有事情要做。</value>
+  </string>
+  <string key="CupidChosen">
+    <value>你记得【{0}】这名字，却不知道自己是谁。</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>村民们决定要处死你！濒临死亡的恐惧让你想起来你是个猎人。快！选择一名玩家和你陪葬吧！</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>当绳索快套紧【{0}】的脖子时，他摸索着手枪想杀个人来陪葬，但却慢了一步，因为颈部清脆的断裂声已经响起……</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>【{0}】看着围观的一群愚民，拔出手枪，想找人陪葬。最终他没有扣下扳机，而是选择接受上天的安排，坦然面对死亡……</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>绳索套上【{0}】的脖子时，不甘被处死的他想找人陪葬，他迅速掏出一把枪，瞄准某处，扣动扳机，只见【{1}】满脸讶然之色，缓缓倒在地上。【{1}】当场死亡。 {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>枪手居然对你开枪了！这个逗比 —— 要倒下的你还不忘骂他。濒临死亡的恐惧让你想起来你是个猎人。在你弥留之际，你还有机会选择射杀一个人。快做决定，时间不多了！</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>枪手对【{0}】开的那一枪太快太致命了，以至于他来不及拔枪就倒在了血泊中，脸上分明写着「不甘」二字……</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>【{0}】躺在地上，还剩下最后一口气，原本还有机会射杀一人来陪葬，他却放弃了……他决定听天由命……</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>子弹穿过【{0}】的身体，在倒地前，【{0}】还是抽出枪射向【{1}】——正中眉心。{2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>【{0}】偷偷潜入【{1}】的家中，没想到等着他的是手持匕首的变态杀人魔【{1}】！！！杀人魔用匕首干脆利落地划开把【{0}】的脖子，鲜血喷涌而出。他再用匕首顺着身体各个器官的位置依次刺入，边刺边狂笑……\n【{0}】因失血过多而死。</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>昨晚一群狼人来到猎人的家，想把他当晚餐。猎人只身难敌众狼，他被咬死的同时，也杀死了其中一个狼人。狼人【{0}】已死。</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>昨晚狼人【{0}】试图袭击猎人，幸好猎人有来福枪防身，一枪就把狼人杀死了！</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>昨晚狼人闯入一个屋子想饱餐一顿，没想到进的是变态杀人魔的家！狼人【{0}】在战斗中被杀死了！</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>对于其他人来说，昨晚一直很平静，但对于【{0}】来说并不是。今早村民们发现【{0}】的尸体被从头到脚撕裂开来，古怪的是肝脏不翼而飞……变态杀人魔又杀了一人！{1}</value>
+    <value>对于其他人来说，昨晚一直很平静，但对于【{0}】来说并不是。今早村民们发现【{0}】的尸体被从头到脚撕裂开来，古怪的是心脏不翼而飞……变态杀人魔又杀了一人！{1}</value>
+    <value>对于其他人来说，昨晚一直很平静，但对于【{0}】来说并不是。今早村民们发现【{0}】的尸体被从头到脚撕裂开来，古怪的是肾脏不翼而飞……变态杀人魔又杀了一人！{1}</value>
+    <value>对于其他人来说，昨晚一直很平静，但对于【{0}】来说并不是。今早村民们发现【{0}】的尸体被从头到脚撕裂开来，古怪的是肺不翼而飞……变态杀人魔又杀了一人！{1}</value>
+    <value>对于其他人来说，昨晚一直很平静，但对于【{0}】来说并不是。今早村民们发现【{0}】的尸体被从头到脚撕裂开来，古怪的是脾不翼而飞……变态杀人魔又杀了一人！{1}</value>
+    <value>对于其他人来说，昨晚一直很平静，但对于【{0}】来说并不是。今早村民们发现【{0}】的尸体被从头到脚撕裂开来，古怪的是胃不翼而飞……变态杀人魔又杀了一人！{1}</value>
+    <value>对于其他人来说，昨晚一直很平静，但对于【{0}】来说并不是。今早村民们发现【{0}】的尸体被从头到脚撕裂开来，古怪的是肠子不翼而飞……变态杀人魔又杀了一人！{1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>你觉得你曾经去过【{0}】家，但是想不起来你做过什么了……</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>【{0}】今天晚上去找【{1}】了，然后音讯全无……</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>【{0}】今天晚上去找【{1}】了，然后音讯全无……</value>
+  </string>
+  <string key="GuardKiller">
+    <value>你走进了变态杀人魔的家，然后被他杀掉了，你才想起来你是守护天使！</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>你走进了变态杀人魔【{0}】的家，然后被他杀掉了，你才想起来你是妓女！</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>don't worry about this string for now!</value>
+  </string>
+  <string key="DGToMason">
+    <value>你记得【{0}】这名字，却不知道你自己是谁。</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>【{0}】死了 ，你的身份也变了。\n你又回想起来【{1}】这名字，但你原来是谁？你现在又是谁？</value>
+  </string>
+  <string key="DGToCult">
+    <value>你记得【{0}】这名字，却不知道你自己是谁。</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>【{0}】死了 ，你的身份也变了。\n你又回想起来【{1}】这名字，但你原来是谁？你现在又是谁？</value>
+  </string>
+  <string key="DGToWolf">
+    <value>你记得【{0}】这名字，却不知道你自己是谁。</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>【{0}】死了 ，你的身份也变了。\n你又回想起来【{1}】这名字，但你原来是谁？你现在又是谁？</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>唯一活着的竟然是死变态杀人魔！！ #杀人魔胜</value>
+  </string>
+  <string key="AskKill">
+    <value>你觉得你该去找其他人，但你该找谁呢？</value>
+  </string>
+  <string key="LoverDied">
+    <value>当看到【{0}】倒在血泊中时，【{1}】不敢相信眼前发生的一切，撕吼着急急冲到他身边，可他已经断气……【{1}】顿时崩溃了，趴在另一半身上恸哭不止。最后他实在无法承受失去另一半的痛苦，找到一把枪自杀了。{2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>你觉得你应该去找其他人，但你该找谁呢？</value>
+  </string>
+  <string key="AskCupid1">
+    <value>你觉得你应该去找其他人，但你该找谁呢？</value>
+  </string>
+  <string key="AskCupid2">
+    <value>你觉得你应该去找其他人，但你该找谁呢？</value>
+  </string>
+  <string key="Hunter">
+    <value>猎人🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>丘比特💘</value>
+  </string>
+  <string key="SerialKiller">
+    <value>杀人魔🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>替身🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <value>你记得【{0}】这名字，却不知道你自己是谁。</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>你好像变了。\n你又回想起来【{0}】这名字，但你原来是谁？你现在又是谁？</value>
+  </string>
+  <string key="LoversWin">
+    <value>真爱永存！ #情侣胜！</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>村民们在广场中央发现一具血迹斑斑周身布满枪孔的尸体，正是【{0}】！看来是他偷袭猎人失败被反杀了。{1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>昨晚发生了什么？想不起来惹……</value>
+  </string>
+    <string key="AlreadyOnWaitList">
+    <value>你已经在 {0} 排队了。</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>你已经在 {0} 排队了。当游戏开始时，我会通知你。</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>新游戏即将在 {0} 开始，请把握时间加入！</value>
+  </string>
+  <string key="SerialKillerWinsOverpower" isgif="true">
+    <value>这天早上，剩下的两个村民走到广场中央，【{0}】看了一眼【{1}】，脸上露出邪恶的笑容，「唰！」的一声抽出一把匕首，手起刀落，只见【{1}】已倒下。小镇只剩下【{0}】是活着的…… #杀人魔胜</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>所有人都死了，小镇上尸横遍野……秃譍在半空盘旋，兴奋长鸣…… #无人胜</value>
+    <value>所有人都死了……小镇成了传说中的鬼城，再也无人敢靠近。 #无人胜</value>
+  </string>
+  <string key="SKHunterEnd" isgif="true">
+    <value>曙光乍现，【{0}】和【{1}】走进小镇，忽然【{0}】拔出了匕首，跳到【{1}】身上，把匕首狠狠刺入【{1}】胸部的同时，【{1}】也反应迅敏地拔出枪，对着【{0}】的脸就是一枪，把【{0}】的头打爆了。\n【{1}】也好不到哪儿去，匕首已经刺穿了他的心脏……最后两人都死了……</value>
+  </string>
+     <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>你因为没作出选择而随机选择了 【{0}】</value>
+  </string>
+  <string key="Won">
+    <value>胜利</value>
+  </string>
+  <string key="Lost">
+    <value>失败</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>【{0}】在最近24小时的游戏中因为没有投票已经被处决了{1}次。</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>你不过是一介村民，靠耕田自给自足度日的普通人。每天有一次机会通过投票处决一个人（有可能是狼人）。</value>
+  </string>
+  <string key="AboutSeer">
+    <value>你是先知。每当夜深人静时，你就可以预知其中一个玩家的身份。除非你希望被狼人杀掉，不要暴露你的身份！</value>
+  </string>
+  <string key="AboutWw">
+    <value>你是狼人！每晚你都可以大开杀戒！不过如果你咬到了酒鬼，你会因为醉酒而在下回合无法行动。如果你咬到了被诅咒的人，他也会变成狼人，准备好欢迎你的新队友吧！</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>你是妓女。你可以在晚上去其他人的家里谋取生计，顺便看看他们是不是狼人。不过，如果你刚好去的是狼人家，或者与狼人共处一室（去了狼人想吃掉的人的家里），你就会被狼人吃掉。如果你刚好外出而狼人要杀掉你的话，你可以逃过一劫。（因为你不在家）还有，偶尔你会隐隐约约看到邪教徒的祭坛。</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>你是个酒鬼，除此之外你和村民没什么区别。不过如果狼人杀了你，明晚他就杀不了别人，因为他也醉了。</value>
+  </string>
+  <string key="AboutCursed">
+    <value>你是被诅咒的人。现在你还是村民，但当狼人咬你之后，你就会变成狼人。准备好加入杀戮了么？</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>你是叛徒。此刻你还是村民，如果所有狼人都死了，你就会成为狼人。转而向你曾经的队友展开屠杀！不过作为叛徒，先知也有可能会把你当成真的狼人。</value>
+  </string>
+  <string key="AboutGA">
+    <value>你是守护天使。每当夜幕降临，你可以保护一名玩家免受生命威胁。但是，如果你保护了狼人，你有一半的几率会死。</value>
+  </string>
+  <string key="AboutDetective">
+    <value>你是一名侦探。你可以在白天调查一名玩家的身份，不过要小心的选择调查的目标！调查时，狼人们有40%的机率会发现你是侦探。</value>
+  </string>
+  <string key="AboutGunner">
+    <value>你是枪手，拥有两颗子弹。你可以在白天射杀一名玩家。不过在你射出第一枪以后，所有人都会看到你开枪杀人。</value>
+  </string>
+  <string key="AboutTanner">
+    <value>你是皮匠。你的赢法非常简单：只要你被村民处决，你就是本场游戏的赢家。</value>
+  </string>
+  <string key="AboutFool">
+    <value>你认为你是先知，但可惜你不是。当你去看他人的身份时，bot会随便告知你，比如你想看狼人的身份，bot却说他是守护天使。</value>
+  </string>
+  <string key="AboutCult">
+    <value>你是邪教徒。你可以在晚上施洗一名玩家（除了狼人），让他们成为你的一员。如果所有玩家都失掉了原来的身份受洗成邪教徒，邪教徒就赢了。</value>
+  </string>
+  <string key="AboutCH">
+    <value>作为邪教捕手，你的任务是每晚捕捉一名玩家，如果刚好是邪教徒，他就会死。如果有人想施洗你，最新加入的那位邪教徒就会死于非命。</value>
+  </string>
+  <string key="AboutWC">
+    <value>你是孤儿。可以选择一名玩家当你的偶像。但如果你的偶像死亡，你会变成狼人。</value>
+  </string>
+  <string key="AboutAppS">
+    <value>你是先知学徒，一旦真正的先知死亡，你就会继承他们的使命，不过在这之前你还是个学徒（普通人）。</value>
+  </string>
+  <string key="AboutBH">
+    <value>你是旁观者，你知道谁是真正的先知（不是傻瓜，真的）。除此之外，你就是个普通人。</value>
+  </string>
+  <string key="AboutMason">
+    <value>你是砖瓦工。如有其他砖瓦工同伴，你也会知道他们是谁。除此之外你就跟普通村民一样。不过如果同伴没来参加聚会，你就会知道他的身份变了，极有可能被洗成了邪教徒。
+</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      你是替身。据传你的祖先是变形女，可以任意变形，而你继承了一部分的能力。选择一名玩家，当该玩家死后，你将接替他们的角色。
+      如果你选择的角色在受洗成邪教徒后死亡，你会接替他原有的角色。如果选的是是孤儿，他和偶像死了，你会变成狼人。如果孤儿死了，但他的偶像没死，你会继承孤儿的身份和他的偶像；你在变身前不会被洗成邪教徒，但变身后可以被洗。如果到最后都没有变形，那你就输了（除了你和另外一人是情侣）。
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      你是丘比特。只穿着胖次，带着一弓两箭就被送到了地球。你可以用箭射中两个玩家让他们成为情侣。他们会知道对方却不知对方的身份。如果一方死去，另一方伤心之下，会自杀殉情。 如果情侣活到最后，情侣就会赢。（无论双方处于的阵营）
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      你是小镇的猎人。来福枪不在手上你就睡不踏实。如果你死了，你可以选择一名玩家和你陪葬。如果你被狼人咬了，那你有机会把这个狼人杀死，但却不能再选择杀死其他人。
+      如果其他人去你家，他们有可能因为你发疯而被你杀死；如果狼人来杀你，你有机会杀死他；你死前可以杀死一人跟你陪葬。
+      狼人去你家的时候你杀他们的几率按游戏里的狼人数目而定：一只狼=30%，两只狼=50%，三只狼=70%，如此类推。（但是如果你遇上不止一只狼，你有机会杀死其中一只，却会因为不敌群狼而死。如果邪教徒来传教，他们有50%失败。一旦他们失败，你就有50%机会杀死他们中的一个。
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>
+      你是变态杀人魔。最近刚从精神病院逃出来，想要杀死全镇的人。你可以杀任何人，就算狼人来杀你，你也会活着杀死其中一个。唯一的胜出方法是成为最后一个存活的玩家。（和某人成为情侣并取胜以外）</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para 也许最近和狼人共处的时间太长了于是开始喜欢对人嚎叫了……果然和狼人待的太久不是个好主意。😂</value>
+  </string>
+  <string key="EndTime">
+    <value>游戏进行了：{0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>第{0}天</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>发生了错误，然后此节点已经关闭 :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>已通过私聊发送了详细信息</value>
+  </string>
+  <string key="StartPM">
+    <value>为了能收到机器人的消息请先私聊 @werewolfbot 发送一个 /start 。</value>
+  </string>
+  <string key="PMTrue">
+    <value>很好！我已经可以私聊你了😃</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>你需要回复你想赶走的玩家这个命令。</value>
+  </string>
+  <string key="WhatToDo">
+    <value>你想做什么?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>只能从群聊中加入游戏🙄</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>只能从群聊中开始游戏🙄</value>
+  </string>
+  <string key="PingInfo">
+    <value>从 Telegram 收到消息的时间: {0}\n当前负载: {1}%\n每秒传送的消息数量: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>选择一种语言。\n当前是 “{0}”</value>
+  </string>
+  <string key="WhatVariant">
+    <value>选择一种语言变体。\n当前是 “{0}”</value>
+  </string>
+  <string key="LangSet">
+    <value>“{0} 是现在使用的语言。”</value>
+  </string>
+  <string key="GetLang">
+    <value>要下载哪个语言的文件?</value>
+  </string>
+  <string key="NoNodes">
+    <value>现在没有可用的节点，等会儿再来吧🌚</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>只能从群聊中运行这个指令🙄</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>你不是全局管理员...</value>
+  </string>
+  <string key="NotPara">
+    <value>你不是 Para!</value>
+  </string>
+  <string key="Yes">
+    <value>是</value>
+  </string>
+  <string key="No">
+    <value>否</value>
+  </string>
+  <string key="Allow">
+    <value>允许</value>
+  </string>
+  <string key="Disallow">
+    <value>不允许</value>
+  </string>
+  <string key="Show">
+    <value>显示</value>
+  </string>
+  <string key="Hide">
+    <value>隐藏</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>普通模式</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>混乱模式</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>由玩家选择</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>不显示</value>
+  </string>
+  <string key="ShowLiving">
+    <value>只显示幸存玩家</value>
+  </string>
+  <string key="ShowAll">
+    <value>显示所有玩家</value>
+  </string>
+
+  <string key="Cancel">
+    <value>取消</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>是否允许游戏中逃跑?\n提示：玩家总是可以在游戏开始前逃跑。\n游戏中允许逃跑的状态为： {0}（不是 not 即表示允许）</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>游戏中允许逃跑的状态为： {0}。</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>最大玩家数量?\n当前是: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>现在最大玩家上限为{0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>是否在玩家死亡时显示角色?\n当前是: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>现在玩家死亡后{0}角色.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>游戏模式?\n当前是: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>现在的游戏模式是{0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>是否在游戏结束时显示角色?\n当前是: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>现在游戏结束后{0}角色</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>设置白天的基准时间（按秒计，会根据玩家的数量增加适量的基数，最少为60秒）。\n默认为 {0} 秒，当前为 {1} 秒。</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>把白天的基准时间设置成了 {0} 秒</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>设置夜晚的时间（按秒计）。\n默认为 {0} 秒，当前为 {1} 秒。</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>把夜晚的时间设置成了 {0} 秒</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>设置投票阶段的时间（按秒计）。\n默认为 {0} 秒，当前为 {1} 秒。</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>把投票阶段的时间设置成了 {0} 秒</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>允许游戏中出现傻瓜?\n当前是：{0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>现在游戏中{0}出现傻瓜</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>允许游戏中出现皮匠?\n当前是：{0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>现在游戏中{0}出现皮匠</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>允许游戏中出现邪教徒?\n当前是：{0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>现在游戏中{0}出现邪教徒</value>
+  </string>
+  <string key="ThankYou">
+    <value>设置已完成，祝玩的开心 :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>你希望以哪个语言玩游戏?</value>
+  </string>
+  <string key="HereIsList">
+    <value>语言为{0}的群组有:</value>
+  </string>
+  <string key="Members">
+    <value>人</value>
+  </string>
+  <string key="StartMe">
+    <value>为了能收到机器人的消息请先私聊 bot 发送一个 /start 。</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>一道晴天霹雳，正想逃走的【{0}】被雷劈死了~\n 玩家【{0}】因为没能启动机器人而离开了游戏。 </value>
+  </string>
+  <string key="LatestList">
+    <value>目前的玩家列表</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>没能获得玩家列表 _(:з」∠)_</value>
+  </string>
+</strings>

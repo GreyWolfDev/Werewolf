@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    ==UPDATE LOG==
+    LAST UPDATE 30/01/2017 by @ssittt
+    30/01 editing various strings, adding spaces between names
+    30/07 deleted /join commands, deprecated strings, added new strings
+-->
+<strings>
+  <language name="廣東話(簡單版)" base="廣東話" variant="簡單版" owner="ssittt"/>
+  <string key="NotInGame">
+    <value>未入場</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <value>{0} 開左場 正常版</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <value>{0} 開左場 混亂版</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1分</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>{0}秒</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>唔夠人\n/grouplist 搵谷</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>夠鐘 開場</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0} 改名先 再入場</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>滿</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} 入左場 而家{1}個 最少{2} 最多{3}</value>
+  </string>
+  <string key="PMTheBot">
+    <value>{0} 請PM {1}\n講 /start</value>
+  </string>
+  <string key="DeadFlee">
+    <value>已死 走都無用</value>
+  </string>
+  <string key="Flee">
+    <value>{0} 走左</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>{0} 係 {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>得返{0}個</value>
+  </string>
+  <string key="NotPlaying">
+    <value>你無入場</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>無呢個人</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>無呢個答案</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} 想食 {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} 投 {1}</value>
+  </string>
+  <string key="IdleKill">
+    <value>{0} 兩晚無投票 死左\n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>你變左狼</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>收到</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\n{0} 係先知👳</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>先知{0}死左 而家你代替佢</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>先知 {1} 死左 而家學徒 {0} 代替佢</value>
+  </string>
+  <string key="SeerSees">
+    <value>{0} 係 {1}</value>
+  </string>
+  <string key="AskLynch">
+    <value>投邊個</value>
+  </string>
+  <string key="AskDetect">
+    <value>查邊個</value>
+  </string>
+  <string key="AskShoot">
+    <value>射邊個 仲有{0}次</value>
+  </string>
+  <string key="AskVisit">
+    <value>去邊度</value>
+  </string>
+  <string key="AskSee">
+    <value>睇邊個</value>
+  </string>
+  <string key="AskGuard">
+    <value>保邊個</value>
+  </string>
+  <string key="AskEat">
+    <value>食邊個</value>
+  </string>
+  <string key="AskHunt">
+    <value>覺得邊個係邪</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>你想邊個做 替死鬼</value>
+  </string>
+  <string key="AskConvert">
+    <value>拉邊個</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>\n請PM {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> 同埋 </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>你係被詛咒😾 /aboutCursed</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>你係偵探🕵 /aboutDetective</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>你係醉酒佬🍻 /aboutDrrunk</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>你係守天👼 /aboutGA</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>你係槍手🔫 /aboutGunner</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>你係妓女💋 /aboutHarlot</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>你係叛徒🖕 /aboutTraitor</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>你係狼🐺 /aboutWW</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value>你係先知👳 /aboutSeer /aboutFool</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>你係廢村👱 /aboutVG</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value>你係皮匠👺 /aboutTanner</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>你係野仔👶 /aboutWC</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>你係旁觀👁 /aboutBH</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>你係學徒先知🙇 /aboutAppS</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value>你係邪教👤 /aboutCult</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value>你係邪殺💂 /aboutCH</value>
+  </string>
+  <string key="LynchTime" >
+    <value>投票 {0}秒
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value>討論 {0}秒</value>
+  </string>
+  <string key="NightTime" >
+    <value>夜晚 {0}秒</value>
+  </string>
+  <string key="LynchKill" >
+    <value>班村決定殺 {0}\n{1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>平票 無人死</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>無人投票</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value>狼食左 {0}\n{0} 係 偵探🕵</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value>狼食左 {0}\n{0} 係 守天👼</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value>狼食左 {0}\n{0} 係 槍手🔫</value>
+  </string>
+  <string key="SeerEaten" >
+    <value>狼食左 {0}\n{0} 係 先知👳</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value>狼食左 {0}\n{0} 係 醉酒佬🍻</value>
+  </string>
+  <string key="FoolEaten" >
+    <value>狼食左{0}\n{0} 係 白痴🃏</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>狼食左 {0}\n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>邪殺殺左 {0}\n{0} 係 邪教👤</value>
+  </string>
+  <string key="NoAttack" >
+    <value>無人死</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>狼殺左你 你變左狼</value>
+  </string>
+  <string key="WolfTeam">
+    <value>\n狼友\n{0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value>{0} 係被詛咒😾 而家變左狼</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true">
+    <value>你俾狼食左</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value>{0} 係醉酒佬🍻 你今晚無得食</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>你守左狼 佢殺左你</value>
+  </string>
+  <string key="GuardSaved" >
+    <value>你救左 {0}</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value>{0} 無俾人殺</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>{0} 唔係屋企</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>守天救左你</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value>狼食左 {0}\n{0} 係 妓女💋</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value>{0} 唔係屋企</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value>{0} 係狼 你死左</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value>狼食左 {0}\n{0} 係 妓女💋 (妓女搵狼)</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value>狼食左 {0}\n{0} 係 妓女💋 (妓女搵 {1})</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value>{0} 唔係狼 你無事</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>有人強姦你</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value>{0} 係 偵探🕵</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value>{0} 係 {1}</value>
+  </string>
+  <string key="HarlotShot" >
+    <value>槍手 {0} 殺左 {1}\n{1} 係 妓女💋</value>
+  </string>
+  <string key="DefaultShot" >
+    <value>槍手 {0} 殺左 {1}\n{2}</value>
+  </string>
+  <string key="WolfWins" isgif="true">
+    <value>狼贏🐺\n/startgame 正常版\n/startchaos 混亂版</value>
+  </string>
+  <string key="WolvesWin" isgif="true">
+    <value>狼贏🐺\n/startgame 正常版\n/startchaos 混亂版</value>
+  </string>
+  <string key="VillageWins" isgif="true">
+    <value>村贏👱\n/startgame 正常版\n/startchaos 混亂版</value>
+  </string>
+  <string key="TannerWins" isgif="true">
+    <value>皮贏👺\n/startgame 正常版\n/startchaos 混亂版</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>生還者</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value>{0} 想拉 {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{1} 係邪殺 {0} 死左</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>邪教 {0} 去左拉你 俾你殺左\n仲有{1}個</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>你入左教</value>
+  </string>
+  <string key="CultTeam">
+    <value>邪教\n{0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>{0} 入左教</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{1} 唔係屋企\n{0} 白費心機</value>
+  </string>
+  <string key="CultWins" >
+    <value>邪贏👤\n/startgame 正常版\n/startchaos 混亂版</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>{0} 一早死左</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>{0} 係邪教 俾你殺左</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>{0} 唔係邪教</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>{0} 隻替死鬼死左 而家變左狼</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0} 死左 所以你變左狼\n狼友\n{1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>廢村👱</value>
+  </string>
+  <string key="Drunk">
+    <value>醉酒佬🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>妓女💋</value>
+  </string>
+  <string key="Seer">
+    <value>先知👳</value>
+  </string>
+  <string key="Traitor">
+    <value>叛徒🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>守天👼</value>
+  </string>
+  <string key="Detective">
+    <value>偵探🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>狼🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>被詛咒😾</value>
+  </string>
+  <string key="Gunner">
+    <value>槍手🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>皮匠👺</value>
+  </string>
+  <string key="Fool">
+    <value>白痴仔🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>野仔👶</value>
+  </string>
+  <string key="Beholder">
+    <value>旁觀👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>學徒先知🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>邪教👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>邪殺💂</value>
+  </string>
+  <!-- These are for the player list-->
+  <string key="RanAway">
+    <value>走左</value>
+  </string>
+  <string key="Dead">
+    <value>💀死亡</value>
+  </string>
+  <string key="Alive">
+    <value>🙂生存</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>生還者</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>廢共👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>你係廢共👷 /aboutMason</value>
+  </string>
+  <string key="MasonEaten">
+    <value>狼食左 {0}\n{0} 係 廢共👷</value>
+  </string>
+  <string key="MasonTeam">
+    <value>廢共\n{0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>{0} 俾狼食左 無得拉</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>守天守左 {0}</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>{0} 拉 {1} 入教 但係失敗</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}\n已經有人叫 {0} 請改名再入場</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>{0} 係 邪教👤</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>係</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>{0} 死左</value>
+  </string>
+  <string key="MasonConverted">
+    <value>{0} 俾人拉左入教</value>
+  </string>
+   <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>無得走</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>死左</value>
+  </string>
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AlreadyInGame">
+    <value>你有場入左\n{0}</value>
+  </string>
+  <string key="NoGame">
+    <value>無人開場\n/startgame 正常版\n/startchaos 混亂版</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>你唔係admin</value>
+  </string>
+  <string key="NoSeer">
+  <value>\n無先知👳</value>
+  </string>
+  <string key="TimesUp">
+  <value>夠鐘</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>你係丘比特🏹 /aboutCupid</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>你係分身🎭 /aboutDG</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>你係獵人🎯 /aboutHunter</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>你係連殺🔪 /aboutSK</value>
+  </string>
+  <string key="CupidChosen">
+    <value>你同 {0} 係情侶</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>村民投你 你殺邊個</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>獵人 {0} 射唔設</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>獵人 {0} 決定唔射</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>獵人 {0} 殺左 {1}\n{2} (反殺)</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>槍手殺你 你殺邊個</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>獵人 {0} 射唔設</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>獵人 {0} 決定唔射</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>獵人 {0} 殺左 {1}\n{2} (反殺)</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{1} 係連殺 {0} 死左</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>獵人殺左 {0}\n(狼搵獵人)</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>獵人殺左 {0}\n{0} (狼搵獵人)</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>連殺殺左 {0}\n{0} (狼搵連殺)</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>連殺殺左 {0}\n{1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>守天守左 {0}</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>{1} 係 獵人🎯 {0} 死左</value>
+  </string>
+  <string key="GuardKiller">
+    <value>你守左連殺 佢殺左你</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>{0} 係 連殺🔪</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>連殺殺左 {0}\n{0} 係 妓女💋 (妓女搵連殺)</value>
+  </string>
+  <string key="DGToMason">
+    <value>分身 {0} 變左做廢共</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{0} 死左 你變左廢共\n廢共\n{1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>分身 {0} 變左做邪教</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} 死左 你變左邪教\n邪教\n{1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>分身 {0} 變左做狼</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} 死左 你變左狼\n狼友\n{1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>連殺贏🔪\n/startgame 正常版\n/startchaos 混亂版</value>
+  </string>
+  <string key="AskKill">
+    <value>殺邊個</value>
+  </string>
+  <string key="LoverDied">
+    <value>{0} 同 {1} 係情侶 所以 {1} 死埋\n{2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>分邊個</value>
+  </string>
+  <string key="AskCupid1">
+    <value>邊個做情侶</value>
+  </string>
+  <string key="AskCupid2">
+    <value>邊個做情侶</value>
+  </string>
+  <string key="Hunter">
+    <value>獵人🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>丘比特🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>連環殺手🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>分身🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>你係野仔👶\n你隻替死鬼係 {0}</value>
+  </string>
+  <string key="LoversWin" isgif="true">
+    <value>情侶贏❤️\n/startgame 正常版\n/startchaos 混亂版</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>獵人殺左 {0}\n{1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>邪教拉唔到你</value>
+  <!-- New strings 15 June 2016-->
+  </string>
+    <string key="AlreadyOnWaitList">
+    <value>你已在 {0} 排隊</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>你已在 {0} 排隊\n開場PM你</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>{0} 開左場</value>
+  </string>
+  <!-- New strings 16 June 2016-->
+  <string key="SerialKillerWinsOverpower">
+    <value>連殺 {0} 殺左 {1}</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>無人贏❌</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>連殺殺左 {1}\n{1} 係 獵人🎯\n獵人殺左 {0}\n{0} 係 連殺🔪 (反殺)</value>
+  </string>
+  <string key="RoleModelChosen">
+    <value>夠鐘 你既替死鬼係 {0}</value>
+  </string>
+  <string key="Won">
+    <value>勝利</value>
+  </string>
+  <string key="Lost">
+    <value>失敗</value>
+  </string>
+  <!--Below Strings updated by @jeffffchoy on 10/8/2016-->
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>{0} 24小時無投票{1}次</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>【廢村】\n等死</value>
+  </string>
+  <string key="AboutSeer">
+    <value>【先知】\n每晚查一個人身份</value>
+  </string>
+  <string key="AboutWw">
+    <value>【狼人】\n每晚揀一個人食\n生還者入面有一半係狼就贏\n食連殺 20%殺倒佢 80%連殺會反殺</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>【妓女】\n每晚見一位恩客\n揀左平民無事\n揀狼或者連殺會死\n揀中狼人想食果個 狼食埋你\n去左搵恩客 狼同邪教都搵你唔到 不過連殺點都會殺到你</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>【醉酒佬】\n狼食左你 第二晚佢會醉埋殺唔到人\n如果狼果晚因為小狼死左而可以食兩個 你會令到佢食唔到第二個</value>
+  </string>
+  <string key="AboutCursed">
+    <value>【被詛咒嘅人】\n狼人咬你 你變狼</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>【叛徒】\n狼死晒 你變狼</value>
+  </string>
+  <string key="AboutGA">
+    <value>【守天】\n每晚守一個人 令到狼同連殺都殺唔到佢\n守狼 50%會死\n守連殺 100%會死</value>
+  </string>
+  <string key="AboutDetective">
+    <value>【偵探】\n每朝早查一個人身份\n40% 會俾狼發現</value>
+  </string>
+  <string key="AboutGunner">
+    <value>【槍手】\n每朝殺一個人\n有兩粒子彈用</value>
+  </string>
+  <string key="AboutTanner">
+    <value>【皮匠】\n你俾人投死就贏</value>
+  </string>
+  <string key="AboutFool">
+    <value>【白痴仔】\n系統會同你講你係先知\n你每晚都同先知一樣可以「查」一個人嘅身份 不過系統多數都係呃你</value>
+  </string>
+  <string key="AboutCult">
+    <value>【邪教會員】\n每晚拉一個人（除左狼同分身）\n啲人如果唔喺屋企就唔會俾你拉入教\n入左教既人會失去原來既身份\n邪教殺手／連環殺手會殺左你\n入教機率\n40% 先知\n50% 獵人 拉唔倒獵人 佢有 50% 殺左你\n60% 被詛咒 守天\n70% 偵探 妓女 100% 廢共 醉酒佬 旁觀者 槍手 叛徒 學徒先知 野仔 白痴仔 邱比特 皮匠\n最後無晒狼同連殺而且全村人都入晒教就贏</value>
+  </string>
+  <string key="AboutCH">
+    <value>【邪殺】每晚去人地屋企做家訪 發現邪教會員就會殺\n邪教拉你 你會殺左佢地最後入會既會員。</value>
+  </string>
+  <string key="AboutWC">
+    <value>【野仔】第一晚揀一個人做替死鬼 替死鬼死咗 你變狼</value>
+  </string>
+  <string key="AboutAppS">
+    <value>【學徒先知】先知死左或者入左教之後 你變先知</value>
+  </string>
+  <string key="AboutBH">
+    <value>【旁觀者】你會知邊個係真先知</value>
+  </string>
+  <string key="AboutMason">
+    <value>【廢共】你會知邊個都係廢共</value>
+  </string>
+  <string key="AboutDG">
+    <value>【分身】第一晚揀一個目標 佢死咗 你變佢個身份\n分身唔會俾人拉入邪教 要變左身先得\n分身喺遊戲結束時仲未變到身 就會輸</value>
+  </string>
+  <string key="AboutCupid">
+    <value>【邱比特】第一晚揀兩個人做情侶 其中一個死咗 另一個都會死\n佢地會互相知道邊個佢嘅愛人 但唔會知道對方嘅身份\n最後得番戀人既話 佢地獨贏\n其中一個贏左 另一個都會贏</value>
+  </string>
+  <string key="AboutHunter">
+    <value>【獵人】臨死之前拉一個人陪葬\n狼食你 你有機會反殺其中一個 一隻狼30% 兩隻狼 50% 三隻狼 70% 如此類推 如果狼多過一個 就算你反殺到 你都有機會死\n邪教拉你 50%拉唔倒你入會 再有 50%殺佢地其中一個\n當你同連殺兩個最後生存 就會一齊死</value>
+  </string>
+  <string key="AboutSK">
+    <value>【連環殺手】每晚都可以去殺一個 殺晒所有人先會贏\n無論你想殺嘅人喺唔喺屋企都會殺到佢\n狼想殺你 20%俾佢地食左 另外 80%反殺佢地共中一隻</value>
+  </string>
+  <string key="AboutPara">
+    <value>【Para】係遊戲作者</value>
+  </string>
+  <string key="EndTime">
+    <value>遊戲長度\n{0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>第{0}日</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>發生錯誤 此節點(Node)已關閉\n（應該不影響遊戲）</value>
+  </string>
+  <string key="SentPrivate">
+    <value>已PM</value>
+  </string>
+  <string key="WhatToDo">
+    <value>做咩</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>你唔喺群組入面</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>你唔喺群組入面</value>
+  </string>
+  <string key="PingInfo">
+    <value>回應處理時間 {0}\n每秒接收訊息 {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>轉咩語言\n而家用緊{0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>玩邊個版本\n而家玩緊{0}</value>
+  </string>
+  <string key="LangSet">
+    <value>轉左 {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>你想下載邊個語言檔？</value>
+  </string>
+  <string key="NoNodes">
+    <value>所有節點(Node)都暫時停止服務 等陣再試</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>你唔喺群組入面</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>你唔係狼人遊戲嘅管理員</value>
+  </string>
+  <string key="NotPara">
+    <value>你唔係Para</value>
+  </string>
+  <string key="Yes">
+    <value>是</value>
+  </string>
+  <string key="No">
+    <value>否</value>
+  </string>
+  <string key="Allow">
+    <value>准許</value>
+  </string>
+  <string key="Disallow">
+    <value>停用</value>
+  </string>
+  <string key="Show">
+    <value>顯示</value>
+  </string>
+  <string key="Hide">
+    <value>隱藏</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>只玩正常版</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>只玩混亂版</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>玩家自選</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>全部唔顯示</value>
+  </string>
+  <string key="ShowLiving">
+    <value>只顯示生還者</value>
+  </string>
+  <string key="ShowAll">
+    <value>顯示全部玩家</value>
+  </string>
+
+  <string key="Cancel">
+    <value>取消</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>俾唔俾人中離\n當前設定 {0}可以中途離場</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>玩家將{0}中離</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>最多幾多個人玩\n當前設定 {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>設定左每場最多{0}個玩家。</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>死果陣公開身份？\n當前設定 {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>死亡時會{0}身份</value>
+  </string>
+  <string key="GameModeQ">
+    <value>限定遊戲模式？\n當前設定 {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>遊戲模式變更為 {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>完場公開身份？\n當前設定 {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>完場將會{0}身份</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>設定日頭嘅基本時間\n實際時間會再調整\n預設時間 {0}秒\n當前設定 {1}秒</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>基本日頭時間設定為 {0}秒</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>設定夜晚嘅基本時間\n有分身、邱比特或野仔嘅第一晚會特別長\n預設時間 {0}秒\n當前設定 {1}秒</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>基本夜晚時間設定為 {0}秒</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>設定投票嘅時間\n預設時間 {0}秒\n當前設定 {1}秒</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>投票時間設定為 {0}秒</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>准許玩家抽中白痴仔？\n當前設定 {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>已{0}玩家抽中白痴仔</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>准許玩家抽中皮匠？\n當前設定 {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>已{0}玩家抽中皮匠</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>准許玩家抽中邪教？\n當前設定 {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>已{0}玩家抽中邪教會員</value>
+  </string>
+  <string key="ThankYou">
+    <value>搞掂 唔該曬</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>你想睇吓邊種語言嘅公開群組</value>
+  </string>
+  <string key="HereIsList">
+    <value>{0} 嘅公開群組</value>
+  </string>
+  <string key="Members">
+    <value>位成員</value>
+  </string>
+  <string key="StartMe">
+    <value>請 PM我 講 /start</value>
+  </string>
+  <!--Above Strings updated by @jeffffchoy on 10/8/2016-->
+  <string key="PlayerNoPM">
+    <value>{0} 未PM我 講 /start 今場無得玩</value>
+  </string>
+  <string key="LatestList">
+    <value>玩家名單</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>未有玩家名單</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>入左場({0})</value>
+  </string>
+  <string key="Ping2">
+    <value>傳送Ping訊息所需時間 {0}</value>
+  </string>
+
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>你係村長🎖 /aboutMayor</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>你係王子👑 /aboutPrince</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>你係乞衣🤕 /aboutClumsy</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>你係巫師🔮 /aboutSorceror</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>你係鐵匠⚒ /aboutBlackSmith</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>你係狼王⚡️ /aboutAlphaWolf</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>你係幼狼🐶 /aboutWolfCub</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>{0} 係 王子👑 唔駛死(住)</value>
+  </string>
+  <string key="SorcererOther">
+    <value>{0} 唔係 狼 唔係 先知</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} 係 村長🎖 有兩票</value>
+  </string>
+  <string key="AskMayor">
+    <value>表露身分？</value>
+  </string>
+  <string key="Reveal">
+    <value>表露</value>
+  </string>
+  <string key="SpreadDust">
+    <value>灑銀粉？</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>{0} 係 鐵匠⚒ 灑左銀粉 聽晚唔會俾狼食</value>
+  </string>
+  <string key="Mayor">
+    <value>村長🎖</value>
+  </string>
+  <string key="Prince">
+    <value>王子👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>巫師🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>乞衣🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>鐵匠⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>狼王⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>幼狼🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>狼王 {1} 變左 {0} 做狼</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>狼王變左你做狼 你聽晚做狼</value>
+  </string>
+  <string key="BittenTurned">
+    <value>你變左狼</value>
+  </string>
+  <string key="AboutMayor">
+    <value>【村長】投票果時你可以選擇表露你既村長身份 表露之後 你投兩票</value>
+  </string>
+  <string key="AboutPrince">
+    <value>【王子】被投死時 會表明王子身份 唔駛死(一次)</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>【巫師】狼人陣營 每晚查一個人 你只會知狼同先知</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>【乞衣】有一半機會會投錯一個隨機嘅人</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>【鐵匠】日間你可以選擇出嚟灑銀粉 之後一晚狼人唔能夠行動 只能用一次</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>【狼王】你所揀嘅受害者有 20%唔會死 仲會係下一晚變狼</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>【幼狼】你係狼 不過如果你死左 狼下一晚殺兩個</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} 死左 你變狼王\n狼友(如有)\n{1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} 死左 你變幼狼\n狼友(如有)\n{1}</value>
+  </string>
+
+<!-- Keep this for now until bots update-->
+ 
+  <string key="VillageTeamEnd">
+    <value>村民陣營</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>中間陣營</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>狼人陣營</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>連殺陣營</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>邪教陣營</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>皮匠陣營</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>{1}係狼 {0}死左</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <value>連殺殺左 {0}\n{0} 係 妓女💋 (妓女搵{1})</value>
+  </string>
+
+  <!--New Death Strings 05 Nov-->
+  <string key="ApprenticeSeerEaten">
+    <value>狼食左 {0}\n{0} 係 學徒先知🙇</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>連殺殺左 {0}\n{0} 係 鐵匠⚒</value>
+  </string>
+  <string key="CultistKilled">
+    <value>連殺殺左 {0}\n{0} 係 邪教👤</value>
+  </string>
+  <string key="CupidKilled">
+    <value>連殺殺左 {0}\n{0} 係 丘比特🏹</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>連殺殺左 {0}\n{0} 係 醉酒佬🍻</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>連殺殺左 {0}\n{0} 係 守天👼</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>連殺殺左 {0}\n{0} 係 槍手🔫</value>
+  </string>
+  <string key="MayorKilled">
+    <value>連殺殺左 {0}\n{0} 係 村長🎖</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>連殺殺左 {0}\n{0} 係 王子👑</value>
+  </string>
+  <string key="SeerKilled">
+    <value>連殺殺左 {0}\n{0} 係 先知👳</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>狼食左 {0}\n{0} 係 巫師🔮</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>狼食左 {0}\n{0} 係 野仔👶</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>連殺殺左 {0}\n{0} 係 邪殺💂 (邪殺搵連殺)</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>狼食左 {0}\n{0} 係 邪教👤 (邪教拉狼)</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>連殺殺左 {0}\n{0} 係 邪教👤 (邪教拉連殺)</value>
+    </string>
+  <string key="GAGuardedKiller">
+    <value>連殺殺左 {0}\n{0} 係 守天👼 (守天守連殺)</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <value>狼食左 {0}\n{0} 係 守天👼 (守天守狼)</value>
+  </string>
+      <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>獵人 {0} 殺左 {1}\n{1} 係 狼🐺</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>狼 {1} 食左 {0}\n{0} 係 獵人🎯</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>邪殺 {1} 殺左 {0}\n{0} 係 邪教👤</value>
+  </string>
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>加時{0}秒\n仲有{1}</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>減時{0}秒\n仲有{1}</value>
+  </string>
+  <string key="CantExtend">
+    <value>你唔係admin</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>允許所有玩家更改加入時間?\n當前設定 {0}</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0}所有玩家更改加入時間</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>你想每次用/extend秒數係幾多?\n預設設定 {0}秒\n當前設定 {1}秒</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>每次用/extend更改加入時間既秒數係已經設定為【{0}】秒</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>{0}係醉酒佬 你食唔到{1}</value>
+  </string>
+    <string key="JoinButton">
+    <value>入場</value>
+  </string>
+  <string key="NotMember">
+    <value>你唔係 {0} 既成員</value>
+  </string>
+  <string key="JoinByButton">
+    <value>請禁掣入場</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} / {1} 已投票</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0} 記得禁掣入場</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>搵唔到呢個群組</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>已取消 {0} 既報名</value>
+  </string>
+  <string key="HaveJoined">
+    <value>{0}入左場</value>
+  </string>
+    <string key="EnableSecretLynch">
+    <value>秘密投票</value>
+  </string>
+    <string key="EnableSecretLynchQ">
+    <value>秘密投票? 依家: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>秘密投票 {0}</value>
+  </string>
+  <string key="RandomMode">
+    <value>隨機</value>
+  </string>
+    <string key="RandomModeQ">
+    <value>隨機? 依家: {0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>隨機 {0}</value>
+  </string>
+    <string key="AllowCult">
+    <value>有邪</value>
+  </string>
+  <string key="AllowTanner">
+    <value>有皮</value>
+  </string>
+  <string key="AllowFool">
+    <value>有白痴</value>
+  </string>
+    <string key="AllowExtend">
+    <value>俾加時</value>
+  </string>
+    <string key="ShowRolesDeath">
+    <value>邊個死左</value>
+  </string>
+    <string key="AllowFlee">
+    <value>俾走</value>
+  </string>
+  <string key="ShowIDs">
+    <value>開ID</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>開ID? 依家: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} ID</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>全部</value>
+  </string>
+</strings>

@@ -1,0 +1,2285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Done by Firewood (@Firewood_Loki) -->
+<!--
+	==UPDATE LOG==
+	LAST UPDATE 11/07/2019 by @EtnecivKroy
+		埋屍仔 ☠️——村民陣營\n…
+	11/07/19	- 3rd batch of up-to-date
+	21/05/19	- 2nd batch of up-to-date
+	20/05/19	- Added many Strings
+	19/04/18	- Added String: TannerEnd, SorcererEnd
+	20/07/17	- Fixed String: "ChoiceAccpeted"
+	19/07/17  	- Added Value: "JoinButton"
+	10/07/17  	- Added Value: "LynchTie"
+	10/07/17  	- Added String: "RandomModeQ", "RandomModeA"; 啓->啟
+	10/07/17  	- Fixed String: "MinuteLeftToJoin", "SecondsLeftToJoin"
+	10/07/17	- Fixed String: "PlayerVoteCounts"
+	10/07/17	- Added String: "ShowIDs", "ShowIDsQ", "ShowIDsA"
+	25/05/17	- Added Section: Config
+	18/05/17	- Added Section: Extend Join, Secret Vote
+	18/05/17	- Deleted Duplicate String: "CultConvertSerialKiller", "CupidChosen"
+	18/04/17	- Updated to WWv4.3
+	24/01/17	- Fixed String: "SKHunterEnd
+	13/01/17	- Added String: 11 new strings 
+	29/11/16 	- Added String: "HarlotFuckedKilledPublic"
+	21/11/16 	- Added String: "CultConvertWolf"
+	15/11/16 	- Fixed String: "TeamEnd"
+	09/11/16 	- Added String: 6 team strings
+	07/11/16 	- Added String: "DGTransformToAlpha", "DGTransformToWolfCub"
+	04/11/16 	- Updated to WWv4.0 (Credits to 中大狼人群組 and @WWFSbot)
+	15/10/16	- Fixed String: "aboutww", "aboutapps", "ABOUTSK", "ApprenticeNowSeer"
+	04/10/16	- Added String: "Ping2"
+	29/09/16	- Added String: "abouthunter(No one wins, only with SK but not wolves)"
+	
+	</string>
+-->
+<strings>
+	<language name="廣東話（淫賤版）" base="廣東話" variant="淫賤版" owner="Firewood_LoKi" code="zh-yue-hk"/>
+	<string key="NotInGame">
+		<value>傻西，你冇玩緊啊！</value>
+	</string>
+	<string key="PlayerStartedGame" isgif="true">
+		<value>大佬【{0}】叫你哋班契弟嚟陪佢玩啊『正常版（淫賤版）』啊！\n仲唔嗱嗱聲加入，係咪要大佬等你啊！</value>
+		<value>賭王【{0}】開咗個『正常版（淫賤版）』局，諗住打低晒你哋！\n快啲加入啦，你唔係驚輸吓話！</value>
+		<value>淫蕩嘅【{0}】話等咗你哋陪佢玩『正常版（淫賤版）』好耐！\n快啲撳制加入，一齊屌爆佢！</value>
+		<value>啱啱打完飛機嘅【{0}】話想抖下，於是上嚟搵人玩『正常版（淫賤版）』！\n即刻撳制入嚟，同虧佬玩遊戲！</value>
+	</string>
+	<string key="PlayerStartedChaosGame" isgif="true">
+		<value>主席【{0}】叫你哋班契弟嚟陪佢玩啊『混亂版（淫賤版）』啊！\n仲唔嗱嗱聲加入，係咪要大佬等你啊！</value>
+		<value>廢青【{0}】開咗個『混亂版（淫賤版）』局，諗住打低晒你哋！\n快啲加入啦，你唔係驚輸吓話！</value>
+		<value>淫蕩嘅【{0}】話等咗你哋陪佢玩『混亂版（淫賤版）』好耐！\n快啲撳制加入，一齊屌爆佢！</value>
+		<value>啱啱打完飛機嘅【{0}】話想抖下，於是上嚟搵人玩『混亂版（淫賤版）』！\n即刻撳制入嚟，同虧佬玩遊戲！</value>
+		<value>男神【{0}】話同囡囡打完車輪悶悶地，於是上嚟搵人玩『混亂版（淫賤版）』！\n即刻撳制入嚟，同條賤人玩遊戲！</value>
+		<value>女神【{0}】話同囝囝打完車輪悶悶地，於是上嚟搵人玩『混亂版（淫賤版）』！\n即刻撳制入嚟，同條賤人玩遊戲！</value>
+	</string>
+	<string key="NoJoinGameRunning">
+		<value>仆你個街，你可唔可以搵次早啲到啊，成撚日遲嚟點同你玩啊，自己 /nextgame 搞掂自己啦！</value>
+		<value>剩係識得搵藉口遲到，你姓賴㗎？打定 /nextgame 等下世啦！</value>
+		<value>我哋收到你份申請㗎啦，請你 /nextgame 等通知。</value>
+		<value>知唔撚知咩叫做準時？可唔可以搵次做比我睇？ /nextgame 下場再係咁你不如死咗佢算啦！</value>
+		<value>又係你條仆街遲到！等撚到佛誕你都未入到嚟，/nextgame 啦！</value>
+		<value>開始咗好撚耐啦，而家先嚟加入？你唔撚等埋出年聖誕？/nextgame 睇下有冇可能啦！</value>
+		<value>執書行頭慘過敗家，咁撚大個人少少嘢都做唔撚到！執定包袱等 /nextgame 啦！</value>
+		<value>乜早啲嚟真係咁撚難咩？唔駛多，搵次早返少少入嚟就得啦！打定 /nextgame 啦柒頭！</value>
+	</string>
+	<string key="AlreadyJoined">
+		<value>你咪喺個遊戲入面囉柒頭！咪撚再亂撳啦！</value>
+		<value>你入撚咗㗎啦，仲入做乜撚野啊！再入我搵人打你一鑊甘！</value>
+		<value>入完又入，好撚好玩啊依家？祝你冚家都係廢村！</value>
+		<value>入入入入入，嘈撚住晒，我一陣就俾個廢村你嘆！</value>
+		<value>撳撳撳撳撳，因住撳撚爆個芒啊戇鳩仔！</value>
+		<value>入完又想再入，你哋啲臭男人真係好撚賤格！</value>
+		<value>識唔撚識睇中文啊？你「已加入遊戲」啦！唔識字就讀多啲書啦，唔好撚學人玩狼人啦。</value>
+	</string>
+	<string key="MinuteLeftToJoin">
+		<value>仲有【 1 分鐘】開始，快啲加入啦！\n如果想多啲人玩，不妨試下 /extend 延長招募時間！</value>
+	</string>
+	<string key="SecondsLeftToJoin">
+		<value>仲有【 {0} 秒】開始，搶閘入嚟啦！\n如果想多啲人玩，不妨試下 /extend 延長招募時間！</value>
+	</string>
+	<string key="NotEnoughPlayers">
+		<value>人都唔撚夠，學咩人玩狼人！\n如果唔夠人可以用 /grouplist 睇吓邊度有得玩😏</value>
+		<value>唔撚夠人點開片啊！散水！\n如果唔夠人可以用 /grouplist 睇吓邊度有得玩😏</value>
+		<value>五個契弟都搵唔撚到，點玩啊？食自己啦你！解散！\n如果唔夠人可以用 /grouplist 睇吓邊度有得玩～😏</value>
+		<value>冇人想同你個戇鳩仔玩啊！你都係返番牆角種磨菇啦！遊戲取消！\n如果唔夠人可以用 /grouplist 睇吓邊度有得玩～😏</value>
+		<value>屌，唔齊人就咪撚搵我啦，嘥鳩晒我啲時間！係咁先，拜拜！\n如果唔夠人可以用 /grouplist 睇吓邊度有得玩～😏</value>
+	</string>
+	<string key="StartingGameWait">
+		<value>開波，等我分角色（廢村）俾你哋班柒頭啦！</value>
+	</string>
+	<string key="BannedForExploit">
+		<value>【{0}】企圖利用漏洞進行遊戲，已被系統封鎖（你個名唔可以有『/』）</value>
+	</string>
+	<string key="ChangeNameToJoin">
+		<value>【{0}】，唔該你改下你個名先至好入嚟。</value>
+	</string>
+	<string key="PlayerLimitReached">
+		<value>條村爆撚咗啦，下鋪請早！</value>
+	</string>
+	<string key="PlayerJoined">
+		<value>【{0}】 已加入遊戲。依家有 {1} 個玩家，起碼要 {2} 個人先玩得，最多可以有 {3} 個人一齊玩。</value>
+	</string>
+	<string key="PMTheBot">
+		<value>【{0}】請你私訊呢條友 {1}，然後對住佢打 /start。如果唔係，你玩唔到架！</value>
+	</string>
+	<string key="DeadFlee">
+		<value>作為一條死屍，你覺得你走到咩？瞓返落地下啦柒頭。</value>
+		<value>死咗喺度，做鬼都唔駛旨意走！</value>
+		<value>哈！哈！哈！今次你插翼都難飛啦！</value>
+		<value>死撚咗仲想走？冇咁易！</value>
+	</string>
+	<string key="Flee">
+		<value>【{0}】正淫西，跟佬走。</value>
+		<value>地球很危險，【{0}】已經返撚咗火星。</value>
+		<value>淆西【{0}】，已經返咗鄉下耕田。</value>
+		<value>【{0}】突然話比我聽佢急屎，跟住走撚埋，希望佢無瀨啦。</value>
+		<value>廢鳩係冇辦法係度生存嘅，深明此道嘅【{0}】已經着撚咗草。</value>
+		<value>為咗節省大家打飛機既時間【{0}】已經收咗自己皮喇</value>
+		<value>屌！又掛撚住溝女，【{0}】唔聲唔聲閃撚咗！</value>
+	</string>
+	<string key="PlayerRoleWas">
+		<value>【{0}】原來係【{1}】</value>
+	</string>
+	<string key="CountPlayersRemain">
+		<value>仲有【{0}】個人玩緊。</value>
+	</string>
+	<string key="DidntAsk">
+		<value>瞓撚醒未啊，我冇問你嘢啊！</value>
+	</string>
+	<string key="NotPlaying">
+		<value>你好似冇玩緊喎……</value>
+	</string>
+	<string key="NoPlayerName">
+		<value>俊？邊撚到俊啊？無人識你啊。</value>
+	</string>
+	<string key="AnswerNonValid">
+		<value>你揀嘅嗰個答案已經唔存在啦……</value>
+	</string>
+	<string key="WolfVotedKill">
+		<value>【{0}】話想食撚咗【{1}】！</value>
+	</string>
+	<string key="PlayerVotedLynch">
+		<value>【{0}】想投撚死【{1}】呢條仆街！</value>
+		<value>【{0}】想投撚死【{1}】呢條仆街！</value>
+		<value>【{0}】想投撚死【{1}】呢條仆街！</value>
+		<value>【{0}】話想【{1}】死好撚耐！</value>
+		<value>【{0}】問點解【{1}】未撚死！</value>
+		<value>【{0}】決定推鳩【{1}】去死！</value>
+		<value>【{0}】想送戇鳩仔【{1}】上西天！</value>
+	</string>
+	<string key="IdleKill">
+		<value>【{0}】有票又唔撚投，連續兩日都係咁，唔得閒就咪撚玩啦！受死啦【{0}】！\n【{1}】</value>
+		<value>大膽刁民，【{0}】竟敢連續兩日唔投票？人嚟，拖【{0}】出去斬！\n【{1}】</value>
+	</string>
+	<string key="TraitorTurnWolf">
+		<value>二五仔，你變咗做狼啦？</value>
+	</string>
+	<string key="ChoiceAccepted">
+		<value>清楚！明白！</value>
+		<value>一男子已經收到你嘅柯打啦！</value>
+		<value>收到！依家即刻做！</value>
+		<value>明晒！如果冇咩事咁我出返去先啦！</value>
+		<value>命令執行中……</value>
+		<value>係！得！聽晒你話！</value>
+		<value>就用你啦！</value>
+		<value>咁做好咩？不過揀咗都冇得改㗎啦！</value>
+		<value>已經幫你買重咗佢！</value>
+		<value>我一定會做好呢份工㗎！</value>
+		<value>唔駛驚，我一定會幫你拆撚掂佢！</value>
+		<value>最後答案？你肯定？你嘅選擇係……</value>
+	</string>
+	<string key="BeholderSeer">
+		<value>\n【{0}】係先知。</value>
+	</string>
+	<string key="ApprenticeNowSeer">
+		<value>你係街邊執撚咗【{0}】跌咗嗰副塔羅牌，恭喜你升職攞咗佢個位。</value>
+	</string>
+	<string key="BeholderNewSeer">
+		<value>【{0}】係街邊執撚咗【{1}】跌咗嗰副塔羅牌，所以頂咗佢間鋪嚟做先知喇！</value>
+	</string>
+	<string key="SeerSees">
+		<value>你發現【{0}】原來係【{1}】！</value>
+	</string>
+	<string key="AskLynch">
+		<value>你睇邊個唔撚順眼，想投死佢？</value>
+	</string>
+	<string key="AskDetect">
+		<value>你想查邊個？</value>
+	</string>
+	<string key="AskShoot">
+		<value>你想爆邊個頭？仲可以爆多 {0} 個！</value>
+	</string>
+	<string key="AskVisit">
+		<value>你想同邊個大戰三百六十個回合😏？</value>
+		<value>你想同邊個大戰三百回合😏？</value>
+		<value>你想試下邊個副偈😏？</value>
+		<value>你覺得今晚應該同邊個過😏？</value>
+	</string>
+	<string key="AskSee">
+		<value>你想偷窺邊個？</value>
+		<value>你想摷邊個個命盤睇下？</value>
+	</string>
+	<string key="AskGuard">
+		<value>你想保護邊個？</value>
+	</string>
+	<string key="AskEat">
+		<value>邊個啱你胃口？</value>
+	</string>
+	<string key="AskHunt">
+		<value>你覺得邊個似邪教魔徒？</value>
+	</string>
+	<string key="AskRoleModel">
+		<value>你覺得邊個最短命？</value>
+		<value>你覺得邊個最撚短命？</value>
+	</string>
+	<string key="AskConvert">
+		<value>你想拉邊個入教？</value>
+	</string>
+	<string key="DiscussWith"><!--Leave the leading spaces here please-->
+		<value>唔該你同【{0}】傾掂佢。</value>
+	</string>
+	<string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+		<value>仲有</value>
+	</string>
+	<string key="RoleInfoCursed">
+		<value>你係被詛咒嘅細路 😾。\n雖然你依家仲係一個廢村，但係被狼咬完你就會變狼人。</value>
+	</string>
+	<string key="RoleInfoDetective">
+		<value>你係偵探 🕵。\n日頭你可以調查人哋身份，同時你有 40% 俾狼人發現你嘅身份。</value>
+	</string>
+	<string key="RoleInfoDrunk">
+		<value>你係酒鬼 🍻。\n你嘅血肉都充滿住酒精，狼人食咗你嘅話，下一晚就會醉到殺唔到人。</value>
+	</string>
+	<string key="RoleInfoGuardianAngel">
+		<value>你係守護天使 👼。\n每晚你都可保護一個人。如果你去咗保護狼嘅話，你有 50% 機會被佢食；如果你去咗保護連環殺手嘅話，你死撚梗。</value>
+	</string>
+	<string key="RoleInfoGunner">
+		<value>你係槍手 🔫。\n你有兩粒子彈，日頭你可以隨便開槍射人，咁全世界都會知你唔係狼。</value>
+	</string>
+	<string key="RoleInfoHarlot">
+		<value>你係雞係公廁 💋。\n你每晚都可以搵人共渡春宵。</value>
+	</string>
+	<string key="RoleInfoTraitor">
+		<value>你係二五仔 🖕。\n所有狼死晒之後你會變做狼。</value>
+	</string>
+	<string key="RoleInfoWolf">
+		<value>你係狼人 🐺。\n晚晚你都可以食人。小心呀如果你哋想去殺連環殺手既話，得 20% 機會殺死佢，另外佢有 80% 機會連殺會反殺其中一隻狼。</value>
+	</string>
+	<string key="RoleInfoSeer">
+		<value>你係先知 👳\n你每晚都可以睇一個人嘅命盤。</value>
+	</string>
+	<string key="RoleInfoVillager">
+		<value>你係廢村 👱。\n哈哈哈哈哈。除咗等死，我都唔知你有咩好做。</value>
+	</string>
+	<string key="RoleInfoTanner">
+		<value>你係皮匠 👺。\n寫好啲份劇本交比導演，俾人投死你就獨贏。</value>
+	</string>
+	<string key="RoleInfoWildChild">
+		<value>你係野仔 👶。\n揀一個短命種，佢死咗你就變狼人。</value>
+	</string>
+	<string key="RoleInfoBeholder">
+		<value>你係旁觀者 👁。\n你會知道邊個真先知，除此之外，你同一個廢村冇分別。</value>
+	</string>
+	<string key="RoleInfoApprenticeSeer">
+		<value>你係學徒先知 🙇。\n先知死咗或者入咗邪教你就會頂佢個位嚟做。</value>
+	</string>
+	<string key="RoleInfoCultist">
+		<value>你係邪教魔徒 👤。\n每晚你都可以拉一個人入教，到最後所有人都係教友就贏！</value>
+	</string>
+	<string key="RoleInfoCultistHunter">
+		<value>你係驅魔人 💂。\n每晚你都可以去一個人屋企，如果佢係邪教魔徒，你會殺咗佢。如果佢哋嚟傳你教，最遲入教嗰個教友就會死。</value>
+	</string>
+	<string key="LynchTime">
+		<value>夕陽無限好，天色已黃昏，係時候決定投死邊條仆街啦。\n你哋有【 {0} 秒】可以投票！</value>
+		<value>斜陽無限，無奈祗一息間燦爛，係時候決定投死邊條仆街啦。\n你哋有【 {0} 秒】可以投票！</value>
+		<value>六點半鐘新聞報道，係時候決定投死邊條仆街啦。\n你哋有【 {0} 秒】可以投票！</value>
+		<value>快樂嘅時間過得特別快，又係時候決定投死邊條仆街啦。\n你哋有【 {0} 秒】可以投票！</value>
+	</string>
+	<string key="DayTime">
+		<value>依家係日頭。你哋有【 {0} 秒】可以發表吓自己嘅偉論。</value>
+		<value>依家係日頭。你哋班愚民有【 {0} 秒】可以講吓自己嘅愚見。</value>
+		<value>依家係日頭。你哋有【 {0} 秒】可以分析下村內嘅形勢。</value>
+		<value>依家係日頭。有【 {0} 秒】可以比你哋進行小組討論。</value>
+		<value>依家係日頭。廢青們，你哋有【 {0} 秒】可以鳩噏。</value>
+		<value>依家係日頭。你哋有【 {0} 秒】可以隨便放屁。</value>
+	</string>
+	<string key="NightTime">
+		<value>入夜啦，各位廢村係時候撻落床等俾人食。\n夜鬼注意︰你有【 {0} 秒】可以行動！</value>
+	</string>
+	<string key="LynchKill">
+		<value>村民明明乜撚都唔知，都仲係要投死【{0}】。\n【{1}】</value>
+		<value>到底【{0}】係咩呢？用你條命嚟證明啦！\n【{1}】</value>
+		<value>冇辦法，犯眾憎嘅【{0}】係註定要死。\n【{1}】</value>
+		<value>既然大家都咁講啦，受死啦【{0}！\n【{1}】</value>
+		<value>去死啦，【{0}】冇人想見到你啊柒頭！\n【{1}】</value>
+		<value>愚民一致決定要投你，永別了戇鳩仔【{0}】。\n【{1}】</value>
+		<value>再見啦【{0}】，要怪就怪投死你嗰班戇鳩啦！\n【{1}】</value>
+	</string>
+	<string key="LynchTie">
+		<value>投票投到亂晒，我宣布今日冇人死，開心啦？</value>
+		<value>睇嚟大家對呢個議題仲未有共識，我宣布今日冇人死！</value>
+		<value>唔～今晚真係勢均力敵，又想你死，又想佢死。不如咁啦，大家都唔駛死，打和啦！Super！</value>
+	</string>
+	<string key="NoLynchVotes">
+		<value>冇人投票，嘥撚咗我成晚！</value>
+	</string>
+	<string key="DetectiveEaten">
+		<value>村民起身飲早茶，發覺一向準時嘅【{0}】竟然冇嚟，於是佢哋就去佢屋企睇下啦，點知【{0}】已經剖腹身亡，喉嚨仲俾一個綠毛族徽章插穿咗！😨</value>
+	</string>
+	<string key="GuardianEaten">
+		<value>今日烏雲密佈，村民發現【{0}】蒼白嘅屍體，掛咗喺大教堂個十字架上面，守護天使已經唔可以再守護大家啦。😢</value>
+	</string>
+	<string key="GunnerEaten">
+		<value>大家一出門口，見到周圍都係子彈、手指同腳指……跟住你哋仲發現【{0}】條屍浮咗喺村中心個噴泉度，原來你哋個槍手已經被狼人殺咗。😱</value>
+	</string>
+	<string key="SeerEaten">
+		<value>村民一覺醒來，發現【{0}】死咗喺佢張神枱同副塔羅牌隔離。\n【先知 👳】皮已收。</value>
+	</string>
+	<string key="DrunkEaten">
+		<value>大家一起身就聞到一陣燶味……原來酒吧着咗火！你哋好辛苦救熄咗場火之後，見到疑似係【{0}】呢條豬閪嘅手手腳腳……</value>
+	</string>
+	<string key="FoolEaten">
+		<value>日出之後，村民發現【{0}】死咗喺佢張神枱同副 UNO 隔離，佢唔係以為 UNO 可以占卜下話？正一【白痴仔 🃏】！</value>
+	</string>
+	<string key="DefaultEaten">
+		<value>村民一起身就聞到陣屍臭味，佢哋跟住陣味嚟行，結果發現成個豬欄都係【{0}】嘅內臟，身首異處。\n【{1}】</value>
+	</string>
+	<string key="HunterKilledCultist">
+		<value>一陣強烈嘅臭味喺【{0}】間屋度傳出嚟。望入去，你哋見到一條屍瞓咗喺個黑闇祭壇嘅前面……驅魔人又殺咗一個魔徒！</value>
+	</string>
+	<string key="NoAttack">
+		<value>村民起身飲早茶，發覺一個人都冇少到。好失望囉，前一晚竟然冇人死。</value>
+		<value>村民起身飲早茶，發覺今日都好齊人。大家都鬆一口氣，前一晚竟然冇人死。</value>
+		<value>村民起身晨運，發覺今日都好齊人。大家都鬆一口氣。只見有人喺社交網站 Villter 到寫上：「狼又冇殺人？一係多隻狼，一係屋企無人，一係殺唔撚到。uthinku」……</value>
+	</string>
+	<string key="CursedBitten">
+		<value>你被狼咬咗啦，你依家變咗做狼？</value>
+	</string>
+	<string key="WolfTeam">
+		<value>呢班就係你嘅狼友︰【{0}】</value>
+	</string>
+	<string key="CursedBittenToWolves">
+		<value>【{0}】原來係受詛咒嘅人，你咬唔死佢不特止，佢仲做埋你嘅新狼友。</value>
+	</string>
+	<string key="WolvesEatYou" isgif="true">
+		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，好味！</value>
+		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，噁，好撚難食！</value>
+		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，噁，早知唔撚食你啦！</value>
+		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，正，有啲想食多兩三次！</value>
+		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，超好食，食過返尋味！</value>
+		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，嘩，難食到仆街，咩撚嘢胃口都冇晒啦！</value>
+		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，好撚難食，枉我仲咁辛苦嚟咬你！</value>
+		<value>陰功，你俾狼食咗啦！嚼嚼嚼嚼嚼，頂，十萬個難食，作為一個人竟然咁撚柒難食，我覺得你要反省下囉！</value>
+	</string>
+	<string key="WolvesEatDrunk">
+		<value>大鑊，原來【{0}】係酒鬼！你依家醉咗啦，聽晚休息下啦……</value>
+	</string>
+	<string key="GuardWolf">
+		<value>做咩戇鳩鳩去保護隻狼啊？你俾人食咗啦！</value>
+	</string>
+	<string key="GuardSaved">
+		<value>你成功保護咗【{0}】嘅身家性命財產。</value>
+	</string>
+	<string key="GuardNoAttack">
+		<value>尋晚冇人襲擊【{0}】，枉你仲守護咗佢成晚……</value>
+	</string>
+	<string key="GuardEmptyHouse">
+		<value>你諗住去保護【{0}】，但原來佢唔喺屋企！</value>
+	</string>
+	<string key="GuardSavedYou">
+		<value>守護天使尋晚保護咗你啊，快啲同人講多謝啦！</value>
+	</string>
+	<string key="HarlotEaten">
+		<value>【{0}】有啲攰諗住休息一晚，喺屋企抖抖啦，點知比狼食咗！\n【妓女 💋】皮已收。</value>
+	</string>
+	<string key="HarlotNotHome">
+		<value>【{0}】唔喺屋企！不過你見到佢屋企有好多化妝品……</value>
+	</string>
+	<string key="HarlotFuckWolf">
+		<value>做咩戇鳩鳩去【{0}】間狼屋啊？你俾人食咗啦！</value>
+	</string>
+	<string key="HarlotFuckedWolfPublic">
+		<value>唉呀～好人好者做咩走去玩人獸呀？！【{0}】尋晚入錯屋姦錯人！比隻狼開墾到西隧咁闊之餘，副內臟仲比人求其釘咗喺教堂門口……真係冇陰功 😢</value>
+	</string>
+	<string key="HarlotFuckedVictimPublic">
+		<value>【{0}】入咗【{1}】間屋諗住爽下啦，點知隻狼食緊【{1}】！班狼梗係唔放過呢個機會撲去【{0}】果度！【{0}】死埋。</value>
+	</string>
+	<string key="HarlotVisitNonWolf">
+		<value>你去到【{0}】屋企，見到佢瞓得好冧，於是你拎出一塊黑布，矇住佢對眼，再綁住佢啲手手腳腳，慢慢慢慢咁解開佢套睡衣，用你純熟嘅技巧挑逗佢。冇幾耐佢就醒咗，仲用一陣陣嘅激情同呼喊嚟回應你嘅渴望。你好想今晚可以過得慢啲，但可惜天始終要光……</value>
+		<value>你偷偷潛入【{0}】嘅屋企，望住佢結實嘅誘人嘅身軀，對佢日思夜想嘅你，今晚終於可以知道佢嘅床上功夫係咪同平時嘅佢一樣咁正。正當你解開佢嘅睡衣，佢突然反客為主咁將你壓喺下方，彷彿在告訴你他才是真正的主人，你嘅慾望佔滿咗你嘅內心，你差啲就喪失晒理智……好彩你仲記得要返屋企。</value>
+	</string>
+	<string key="HarlotVisitYou">
+		<value>雖然黑到咩都睇唔到，但係半夜三更有人入嚟俾個西你屌，你好自然咁屌咗成晚。佢話唔開燈刺激啲，所以到完咗你都睇唔到佢究竟靚唔靚……</value>
+		<value>夜半三更，突然有人爬上你張床，好純熟咁隨意喺你身上亂纏，為你帶嚟一陣又一陣嘅爽快。為咗回應佢嘅渴望，你反客為主咁將佢壓喺你嘅身下，話俾佢知邊個先係呢張床嘅主人，一聲又一聲嬌喘傳來耳邊，好快你哋就攀上了頂點……當你意識這一切並唔喺一個春夢嘅時候，耳邊嘅嬌喘聲早就消失不見了……</value>
+	</string>
+	<string key="DetectiveCaught">
+		<value>你發現【{0}】周圍問人嘢！佢一定係偵探！</value>
+	</string>
+	<string key="DetectiveSnoop">
+		<value>經你一番盤問後，你知道【{0}】係【{1}】。</value>
+	</string>
+	<string key="HarlotShot">
+		<value>【{0}】尋晚同隻公廁雞玩咗好耐，咩花款都玩過晒，但玩到最後竟然唔肯比錢，仲殺埋隻雞，\n【{1}】皮已收。</value>
+		<value>隻雞尋晚諗住同【{0}】共渡春宵啦，點知搞極都冇反應，仲要一啲啲起色都見唔到！佢怕件事傳出去會被人笑，竟然仲劏雞滅口！\n【{1}】皮已收。</value>
+	</string>
+	<string key="DefaultShot">
+		<value>突然傳來一響槍聲。村民發現【{0}】企咗喺【{1}】條屍隔離，槍口仲篤住佢個頭。\n【{2}】</value>
+	</string>
+	<string key="WolfWins" isgif="true">
+		<value>【狼人】贏咗！</value>
+	</string>
+	<string key="WolvesWin" isgif="true">
+		<value>【狼群】贏咗！</value>
+	</string>
+	<string key="VillageWins" isgif="true">
+		<value>【村民】贏咗，所有壞蛋死晒（狼、連環殺手、邪教魔徒），世界又再一次和平。</value>
+	</string>
+	<string key="TannerWins" isgif="true">
+		<value>大鑊，你哋投死咗【皮匠】！柒投皮！你班柒菇碌今次真係柒出國際，呢個奧斯卡級皮皮好快會有導演開戲比佢啦，哈哈哈哈哈！！！！！</value>
+	</string>
+	<string key="RemainingPlayersEnd">
+		<value>生還玩家名單、身份同隊伍︰</value>
+	</string>
+	<string key="CultistVotedConvert">
+		<value>【{0}】話想感召【{1}】！</value>
+	</string>
+	<string key="CultConvertCultHunter">
+		<value>【{0}】走撚咗去傳教，但原來【{1}】係驅魔人，傳教失敗仲斷送埋性命！</value>
+	</string>
+	<string key="CultHunterKilledCultVisit">
+		<value>【{0}】諗住嚟傳你教，點知被你一刀捅死咗！仲有 {1} 個邪教魔徒。</value>
+	</string>
+	<string key="CultConvertYou">
+		<value>恭喜你成為邪教魔徒，依家每晚你都可以拉一個人入教，到最後所有人都係教友就贏！</value>
+	</string>
+	<string key="CultTeam">
+		<value>呢班係你嘅教友︰【{0}】</value>
+	</string>
+	<string key="CultJoin">
+		<value>【{0}】入咗教！</value>
+	</string>
+	<string key="CultVisitEmpty">
+		<value>【{0}】走撚咗去傳教，但係【{1}】唔喺屋企！</value>
+	</string>
+	<string key="CultWins" isgif="true">
+		<value>全部狼死晒，所有活人信晒邪教。\n【邪教魔徒 👤】贏咗！</value>
+	</string>
+	<string key="HunterVisitDead">
+		<value>【{0}】早就死咗！</value>
+	</string>
+	<string key="HunterFindCultist">
+		<value>你尋晚入咗【{0}】屋企，見佢係度進行緊啲不知名儀式？你拎起你長劍，一嘢劈落去，了結咗佢嘅性命。</value>
+	</string>
+	<string key="HunterFailedToFind">
+		<value>你尋晚入咗【{0}】屋企，搵唔到有黑闇祭壇，你知道佢唔係邪教魔徒，於是你返咗屋企。</value>
+	</string>
+	<string key="WildChildToWolves">
+		<value>野仔【{0}】變咗做狼人！</value>
+	</string>
+	<string key="WildChildTransform">
+		<value>短命種【{0}】死咗，你變咗做狼人。你班狼友︰【{1}】</value>
+	</string>
+	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+	<string key="Villager">
+		<value>村民 👱</value>
+	</string>
+	<string key="Drunk">
+		<value>酒鬼 🍻</value>
+	</string>
+	<string key="Harlot">
+		<value>妓女 💋</value>
+	</string>
+	<string key="Seer">
+		<value>先知 👳</value>
+	</string>
+	<string key="Traitor">
+		<value>二五仔 🖕</value>
+	</string>
+	<string key="GuardianAngel">
+		<value>守護天使 👼</value>
+	</string>
+	<string key="Detective">
+		<value>偵探 🕵</value>
+	</string>
+	<string key="Wolf">
+		<value>狼人 🐺</value>
+	</string>
+	<string key="Cursed">
+		<value>受詛咒嘅人 😾</value>
+	</string>
+	<string key="Gunner">
+		<value>槍手 🔫</value>
+	</string>
+	<string key="Tanner">
+		<value>皮匠 👺</value>
+	</string>
+	<string key="Fool">
+		<value>白痴仔 🃏</value>
+	</string>
+	<string key="WildChild">
+		<value>野仔 👶</value>
+	</string>
+	<string key="Beholder">
+		<value>旁觀者 👁</value>
+	</string>
+	<string key="ApprenticeSeer">
+		<value>學徒先知 🙇</value>
+	</string>
+	<string key="Cultist">
+		<value>邪教魔徒 👤</value>
+	</string>
+	<string key="CultistHunter">
+		<value>驅魔人 💂</value>
+	</string>
+	<!-- These are for the player list -->
+	<string key="RanAway">
+		<value>🚀 移咗民</value>
+	</string>
+	<string key="Dead">
+		<value>💀 死撚咗</value>
+	</string>
+	<string key="Alive">
+		<value>🙂 生勾勾</value>
+	</string>
+	<string key="PlayersAlive">
+		<value>生還者 </value>
+	</string>
+	<!-- New strings 4 MAY 2016-->
+	<string key="Mason">
+		<value>共濟會員 👷</value>
+	</string>
+	<string key="RoleInfoMason">
+		<value>你係共濟會員 👷。\n你可以知道邊個係共濟會員，除此之外，你同廢村冇分別。</value>
+	</string>
+	<string key="MasonEaten">
+		<value>村民一瞓醒，發現【{0}】條屍俾人塞撚咗喺堆石頭度，一地鮮血。\n【共濟會員 👷】皮已收。</value>
+		<value>村民一瞓醒，發現【{0}】條屍俾人塞撚咗喺堆雞蛋、鴨蛋、咸蛋度，一地鮮血同蛋漿。\n【共濟會員 👷】皮已收。</value>
+	</string>
+	<string key="MasonTeam">
+		<value>你嘅共濟之友︰【{0}】</value>
+	</string>
+	<!-- new strings May 6 2016-->
+	<string key="CultTargetDead">
+		<value>【{0}】已經死咗！</value>
+	</string>
+	<string key="GuardBlockedWolf">
+		<value>你哋諗住去食咗【{0}】，點知守護天使唔俾你哋入去，仲趕返你哋返屋企。</value>
+	</string>
+	<!-- new strings May 9 2016-->
+	<string key="CultUnableToConvert">
+		<value>【{0}】走撚咗去傳教，但【{1}】竟然唔肯入教。</value>
+	</string>
+	<!-- new string May 12 2016-->
+	<string key="NameExists">
+		<value>@{1}，你個名同 {0} 撞咗。請你改咗名先入村。</value>
+	</string>
+	<string key="HarlotDiscoverCult">
+		<value>你見到【{0}】屋企有個黑闇祭壇，原來佢係【邪教魔徒 👤】！</value>
+	</string>
+	<!-- new string May 13 2016-->
+	<string key="Was">
+		<value>】原來係【</value>
+	</string>
+	<string key="GenericDeathNoReveal">
+		<value>村民起身飲早茶，發覺一向準時嘅【{0}】竟然冇嚟，於是佢哋就去佢屋企睇下啦，原來【{0}】已經死撚咗。</value>
+		<value>村民一起身，就見到【{0}】條屍攤撚咗喺村中心個廣場度。</value>
+	</string>
+	<string key="MasonConverted">
+		<value>【{0}】今日冇嚟到共濟大會……唔通去咗滾？</value>
+	</string>
+	<!-- new string May 16 2016-->
+	<string key="FleeDisabled">
+		<value>管理員話︰冇人可以出村！</value>
+	</string>
+	<string key="IsDead"> <!-- used when gunner shoots a player -->
+		<value>皮已收 💀</value>
+	</string>
+
+	<!-- MORE STRINGS May 16, 2016 -->
+	<string key="AdminAdded">
+		<value>【{0}】已成為 Admin。使用 /config 嚟更改遊戲設定。</value>
+	</string>
+	<string key="AlreadyInGame">
+		<value>你已經喺 {0} 度曳曳緊啦，唔好成日勾三搭四啦。</value>
+	</string>
+	<string key="MultipleGames">
+		<value>你哋開得太多遊戲啦，咁准咁貪心。現刪除多餘的遊戲。</value>
+	</string>
+	<string key="GroupQueue">
+		<value>群組已在列隊中。目前順位︰{0} / {1}</value>
+	</string>
+	<string key="MaintBreak">
+		<value>抱歉，我現正要下線更新，從現在開始不能展開遊戲。\n正在等徒 {0} 場遊戲結束……\n更多資訊請至 @greywolfdev。</value>
+	</string>
+	<string key="MaxGames">
+		<value>抱歉，已達至最大遊戲群組數量（{0}）。目前順位︰{1} / {1}</value>
+	</string>
+	<string key="SkipQueue">
+		<value>{0} 是官方群組，已跳過隊列。</value>
+	</string>
+	<string key="NoGame">
+		<value>依家冇人玩緊喎。不如你 /startgame 開個『正常版（淫賤版）』，或者 /startchaos 開個『混亂版（淫賤版）』。</value>
+	</string>
+	<string key="GroupAdminOnly">
+		<value>只有管理員可使用此指令。</value>
+	</string>
+	<string key="ShuttingDown">
+		<value>呢場遊戲一完，我就會下線維修。</value>
+	</string>
+	<string key="ShuttingDownUpdate">
+		<value>呢場遊戲一完，我就會下線更新（自動），請等幾分鐘。</value>
+	</string>
+	<string key="NullIdAdmin">
+		<value>搵唔到指令對象。你確定你用回覆（reply）落指令？</value>
+	</string>
+	<string key="AlreadyAdmin">
+		<value>【{0}】已經係管理員！</value>
+	</string>
+	<string key="NotAdmin">
+		<value>【{0}】唔係管理員！</value>
+	</string>
+	<string key="AdminRemoved">
+		<value>【{0}】唔再係管理員！</value>
+	</string>
+	<string key="LanguageSet">
+		<value>語言設定為 {0}。</value>
+	</string>
+	<string key="NoSeer">
+		<value>今場冇先知！</value>
+	</string>
+	<string key="TimesUp">
+		<value>掛撚夠機未啊，信唔信我下鋪派啲唔撚駛撳制嘅角色俾你吖嗱！（夠鐘！）</value>
+		<value>夠鐘，收工，唔鳩理你！（夠鐘！）</value>
+		<value>最心痛是，按得太遲～（夠鐘！）</value>
+		<value>淫賤！掛住同囝囝吹水唔撚撳制！（夠鐘！）</value>
+		<value>厹！掛住搵囡囡傾計唔撚撳制！（夠鐘！）</value>
+		<value>鐘聲響起歸家的訊號～（夠鐘！）</value>
+		<value>你係咪瞓撚着咗？（夠鐘！）</value>
+		<value>你知道我最撚柒憎人遲到嗎？（夠鐘！）</value>
+		<value>請放低筆！（夠鐘！）</value>
+		<value>佛誕都嚟啦，諗撚完未啊？（夠鐘！）</value>
+		<value>咁撚小事都決定唔到，點做大事啊！（夠鐘！）</value>
+	</string>
+	<!-- new strings june 10 2016 -->
+	<string key="RoleInfoCupid">
+		<value>你係邱比特 🏹。\n你着住條底褲由天堂嚟到凡間，拎住一把弓同兩支箭。揀兩個人等佢哋墮入愛河，其中一個死咗，另一個都會自盡。</value>
+	</string>
+	<string key="RoleInfoDoppelganger">
+		<value>你係分身 🎭。\n傳說話你嘅祖先係百變星君，想變乜就變乜。不過去到你呢代，你剩係可以揀一個人嚟變，仲要等佢死咗先變到……</value>
+	</string>
+	<string key="RoleInfoHunter">
+		<value>你係獵人 🎯。\n你晚晚都失眠，唔攬住支槍你都未必瞓得着。如果你要死，你可以臨死之前拉多一個人陪葬。如果狼人嚟食你，你有機會反殺佢哋，不過就冇辦法揀一個人陪葬。</value>
+	</string>
+	<string key="RoleInfoSerialKiller">
+		<value>你係連環殺手 🔪。\n你啱啱越獄嚟到呢條村，你生存嘅意義就係將全村嘅腎攞返晒屋企擺。每晚，你都可以去人哋屋企偷兩粒腎。如果狼人嚟殺你嘅話，你有 20% 機會俾佢哋食咗，另外 80% 機會反殺返佢哋其中一隻。</value>
+	</string>
+	<string key="CupidChosen">
+		<value>邱比特見你單身咗咁耐，揀咗【{0}】做你嘅戀人。佢死咗你都冇辦法生存落去，如果你哋一齊捱到最後就會贏。</value>
+		<value>從今日開始，【{0}】就係你愛人，無論係順境或是逆境，富有或貧窮，健康或疾病，你都會同佢一齊同甘共苦。</value>
+	</string>
+	<string key="HunterLynchedChoice">
+		<value>班愚民決定投死你啊！你決定利用最後嘅機會，拉多一個人陪葬！</value>
+	</string>
+	<string key="HunterNoChoiceLynched">
+		<value>【{0}】係隨身背包拎出一把槍，但係未嚟得切開槍就已經死咗啦……</value>
+	</string>
+	<string key="HunterSkipChoiceLynched">
+		<value>【{0}】拎出佢把槍，望向人群……但係㨂邊個好呢？平時連兔仔都唔敢殺嘅佢，根本落唔到手。最後佢選擇咗放棄，接受自己俾愚民投死嘅命運。</value>
+	</string>
+	<string key="HunterKilledFinalLynched">
+		<value>【{0}】拎出佢把槍，一套純熟嘅動作︰拉保險栓、瞄準、扣下扳機，砰一聲射向【{1}】！\n【{1}】皮已收。\n【{2}】</value>
+	</string>
+	<string key="HunterShotChoice">
+		<value>你俾人殺咗！你決定利用最後嘅機會，拉多一個人陪葬！</value>
+	</string>
+	<string key="HunterNoChoiceShot">
+		<value>手起刀落，獵人【{0}】都未撚反應得切，就死撚咗……</value>
+	</string>
+	<string key="HunterSkipChoiceShot">
+		<value>【{0}】躺在地上，呼出最後一口氣，決定放棄殺人嘅機會，坦然咁接受自己嘅命運。</value>
+	</string>
+	<string key="HunterKilledFinalShot">
+		<value>子彈貫穿了【{0}】嘅身體，但倒地嘅獵人仍然唔放棄，拎出佢把槍，射向【{1}】，直接喺佢雙眼之間開咗個窿！\n【{2}】</value>
+	</string>
+	<string key="CultConvertSerialKiller">
+		<value>【{0}】走撚咗去傳教，點知俾【{1}】斬撚死咗！</value>
+	</string>
+	<string key="HunterShotWolfMulti">
+		<value>狼群尋晚諗住襲擊獵人，但係英勇嘅獵人喺死前都殺咗【{0}】！\n【狼人 🐺】皮已收。</value>
+	</string>
+	<string key="HunterShotWolf">
+		<value>【{0}】尋晚諗住襲擊獵人，但反而被英勇嘅獵人殺返轉頭！【狼人 🐺】皮已收。</value>
+	</string>
+	<string key="SerialKillerKilledWolf">
+		<value>【{0}】狼群尋晚去錯地方搵食，被癲佬斬返轉頭！！\n【狼人 🐺】皮已收。</value>
+	</string>
+	<string key="DefaultKilled">
+		<value>對於其他人嚟講，琴晚係一個平靜嘅夜晚，但係對於【{0}】嚟講，琴晚係一個驚嚇嘅晚上！今朝班村民起身，見到【{0}】嘅屍體由頭到腳被人劏開……連環殺手又攞咗兩粒腎返屋企😍！\n【{1}】</value>
+	</string>
+	<string key="GuardBlockedKiller">
+		<value>尋晚，你諗住去偷【{0}】嗰兩粒腎，點知守護天使喺度阻撚住晒，你唯有返屋企抖下啦。</value>
+	</string>
+	<string key="CultConvertHunter">
+		<value>【{0}】走撚咗去傳教，點知俾【{1}】一槍打撚死咗！</value>
+	</string>
+	<string key="GuardKiller">
+		<value>做乜戇鳩鳩走去保護連環殺手啊？你死撚咗啦！連腎都冇埋！</value>
+	</string>
+	<string key="HarlotFuckKiller">
+		<value>好搞唔搞，走去搞【{0}】，你死咗啦！同腎腎講聲拜拜啦！</value>
+	</string>
+	<string key="HarlotFuckKillerPublic">
+		<value>一大朝就係村口見到【{0}】條屍, 原來佢尋晚去咗搵連環殺手啪啪啪, 結果俾佢殺死咗啦!</value>
+	</string>
+	<string key="DGToMason">
+		<value>【{0}】加入咗共濟會，同佢講聲恭喜啦。</value>
+	</string>
+	<string key="DGTransformToMason">
+		<value>【{0}】死咗，你成為了共濟會員，你嘅共濟之友︰【{1}】</value>
+	</string>
+	<string key="DGToCult">
+		<value>【{0}】加入咗偉大嘅邪教！</value>
+	</string>
+	<string key="DGTransformToCult">
+		<value>【{0}】死咗，你成為了邪教魔徒，你嘅教友︰【{1}】</value>
+	</string>
+	<string key="DGToWolf">
+		<value>分身【{0}】變咗做狼人！</value>
+	</string>
+	<string key="DGTransformToWolf">
+		<value>【{0}】死咗，你變咗做狼人，你班狼友︰【{1}】</value>
+	</string>
+	<string key="SerialKillerWins" isgif="true">
+		<value>世上只係得返一個癲佬！\n【連環殺手】贏咗！</value>
+	</string>
+	<string key="AskKill">
+		<value>你想偷邊個粒腎腎？</value>
+	</string>
+	<string key="LoverDied">
+		<value>明知愛這種男孩子，也許只能如此，隨着 【{0}】吞下最後一啖氣， 【{1}】 趴咗喺佢另一半身上面喊，佢無法承受如此巨大嘅哀傷，於是佢唔知喺邊度搵咗把槍返嚟..對住自己太陽穴，毫不猶豫咁扣下了板機…\n【{2}】</value>
+	</string>
+	<string key="AskDoppelganger">
+		<value>你想變身做邊個？（喺佢死咗之後）</value>
+	</string>
+	<string key="AskCupid1">
+		<value>你想邊個墮入愛河？</value>
+	</string>
+	<string key="AskCupid2">
+		<value>佢嘅另一半係？</value>
+	</string>
+	<string key="Hunter">
+		<value>獵人 🎯</value>
+	</string>
+	<string key="Cupid">
+		<value>邱比特 🏹</value>
+	</string>
+	<string key="SerialKiller">
+		<value>連環殺手 🔪</value>
+	</string>
+	<string key="Doppelgänger">
+		<value>分身 🎭</value>
+	</string>
+	<string key="NewWCRoleModel">
+		<value>你變咗做野仔，你嘅短命種係【{0}】。</value>
+	</string>
+	<string key="LoversWin">
+		<value>愛是最大權利！【戀人】自私贏！</value>
+		<value>完了吧，如無意外，從今開始該好好戀愛！【戀人】自私贏！</value>
+	</string>
+	<string key="HunterKilledVisiter">
+		<value>喺村中央嘅廣場，【{0}】條屍攤撚咗喺度，仲成身都係子彈窿添。睇嚟佢尋晚偷襲獵人失敗！\n【{1}】</value>
+	</string>
+	<string key="CultAttempt">
+		<value>尋晚邪教魔徒嚟上門推銷，但係你拒絕咗佢哋！</value>
+	</string>
+	<string key="AlreadyOnWaitList">
+		<value>你已經喺【{0}】群組排咗隊。</value>
+	</string>
+	<string key="AddedToWaitList">
+		<value>你已經喺【{0}】群組排咗隊，遊戲開始果陣我會話你聽！</value>
+	</string>
+	<string key="NotifyNewGame">
+		<value>新遊戲即將喺 {0} 開始，快啲搶閘入村啦！</value>
+	</string>
+	<string key="SerialKillerWinsOverpower">
+		<value>天一光，剩餘嘅兩個村民喺市中心嘅廣場散步。【{0}】望一望【{1}】，臉上露出一個邪惡無比嘅笑容。佢拎出一把匕首，手起刀落，捅爆咗【{1}】個心臟。</value>
+	</string>
+	<string key="NoWinner" isgif="true">
+		<value>呢條村嘅人已經死晒……除咗屍體之外，咩都冇。呢一場遊戲冇人贏，除咗嗰班鍾意食人肉嘅禿鷹。</value>
+		<value>呢條村嘅人已經死晒……世界和平👏🏻👏🏻 :D</value>
+	</string>
+	<string key="SKHunterEnd">
+		<value>天一光，【{0}】同【{1}】喺村入面迎頭相撞。【{0}】拎出佢把刀，撲向【{1}】。【{1}】都唔執輸，即刻摷支槍出嚟，射向【{0}】嘅頭殼。喺子彈穿過【{0}】嘅瞬間，【{0}】把刀都貫穿咗【{1}】嘅心臟。最後兩個人都死咗，喺呢條空蕩蕩嘅村莊，冇人贏……</value>
+	</string>
+	<string key="RoleModelChosen">
+		<value>比你撳制又唔撚撳，我已經幫你揀咗︰{0}</value>
+		<value>時間不等人，我決定咗你嘅命運︰{0}</value>
+		<value>冇得揀你又嫌冇得揀，有得揀你又唔鬼揀，祝你以後都冇撚得揀！我揀咗︰{0}</value>
+		<value>已經幫你撳咗制啦，等運到啦你︰{0}</value>
+		<value>你唔揀吖嘛？好，點指兵兵點着誰人做大兵，就用你啦︰{0}</value>
+	</string>
+	<string key="Won">
+		<value>贏</value>
+	</string>
+	<string key="Lost">
+		<value>輸</value>
+	</string>
+	<string key="IdleCount">
+		<value>【{0}】喺過去廿四小時，因為連續兩晚都唔撚投票，被我隊冧咗 {1} 次。</value>
+	</string>
+	<!--New strings 7th of July-->
+	<string key="AboutVG">
+		<value>廢村，只有黃昏投票嘅時候可以撳制鳩投。</value>
+	</string>
+	<string key="AboutSeer">
+		<value>先知每晚都可以查一個人嘅身份。</value>
+	</string>
+	<string key="AboutWw">
+		<value>狼人每晚都可以食一個人，食到最後，生還者入面有一半係狼就贏。不過如果你哋揀中咗去食連環殺手，你哋就得 20% 機會殺倒佢，另外有 80% 機會連殺會反殺其中一隻狼會死。</value>
+	</string>
+	<string key="AboutHarlot">
+		<value>作為一隻稱職嘅雞，每晚都可以搵條友扑天光。啪平民，無事發生；啪狼人／連環殺手，即死；啪着狼人想食果條友，狼人會食咗你同果條友；去咗啪人，狼人／邪教都搵你唔到；去咗啪人，連環殺手照殺你。</value>
+	</string>
+	<string key="AboutDrunk">
+		<value>酒鬼，飲酒飲到全身血肉都充滿酒精。如果狼人殺咗你，聽晚佢殺唔到人，因為佢醉咗。</value>
+	</string>
+	<string key="AboutCursed">
+		<value>受詛咒的人，如果被狼人咬，會變成狼人！</value>
+	</string>
+	<string key="AboutTraitor">
+		<value>如果所有狼人死晒，叛徒都未死，會變成狼人！</value>
+	</string>
+	<string key="AboutGA">
+		<value>守護天使每晚都可以保護一個人，狼同連殺都唔會殺到受保護嘅人。但係如果你守錯狼人，你就有 50% 機率會死；守護連環殺手死梗。</value>
+	</string>
+	<string key="AboutDetective">
+		<value>每朝偵探都可以調查一個人嘅身份，但同時你有 40% 被狼發現你嘅身份。</value>
+	</string>
+	<string key="AboutGunner">
+		<value>槍手喺日頭嗰陣可以隨便揀個人嚟射，一共有兩發子彈可以用。</value>
+	</string>
+	<string key="AboutTanner">
+		<value>皮匠要贏好簡單，俾人投死就得。</value>
+	</string>
+	<string key="AboutFool">
+		<value>白痴仔，你以為自己係先知，同樣你每晚都可以查一個人嘅身份，不過多數都係錯。</value>
+	</string>
+	<string key="AboutCult">
+		<value>邪教魔徒每晚都可以拉人入教（除咗狼人），但係啲人唔係屋企就入唔到教。被入會既人會失去原來既身份。分身唔會入教；邪教殺手／連環殺手，會殺你。共濟、酒鬼、旁觀、槍手、叛徒、學徒先知、野仔、白痴仔、邱比特、皮匠必入教。其他人入教機率︰先知 40%，獵人 50%，被詛 60%，守天 60%，偵探 70%，妓女 70%。如果獵人拒絕咗你，佢有 50% 會殺你。如果最後無晒狼同連殺，而且全村人都信晒教，咁就贏。</value>
+	</string>
+	<string key="AboutCH">
+		<value>驅魔人每晚都可以去人哋屋企做家訪，發現邪教魔徒就會殺。如果邪教教徒招驅魔人入教，驅魔人會殺佢哋其中一個。</value>
+	</string>
+	<string key="AboutWC">
+		<value>野仔喺第一晚可以揀一個短命種。如果短命種死咗，野仔就變狼。短命種未死，就跟村民贏。</value>
+	</string>
+	<string key="AboutAppS">
+		<value>學徒先知，先知死咗或者入咗邪教之後就會頂咗佢個位。</value>
+	</string>
+	<string key="AboutBH">
+		<value>旁觀者同廢村一樣，不過會知道邊個係真正嘅先知。</value>
+	</string>
+	<string key="AboutMason">
+		<value>共濟會員同廢村一樣，不過會知道所有共濟會員。</value>
+	</string>
+	<string key="AboutDG">
+		<value>
+			分身喺第一晚可以揀一個目標，若然佢死咗，你就會變身做佢。如果目標係入咗教嘅共濟，你會變做廢共而唔係邪教魔徒。分身入唔到邪教，要變咗身先得。如果分身喺遊戲結束時仲未變到身，就會輸（除非佢嘅戀人贏咗）。
+		</value>
+	</string>
+	<string key="AboutCupid">
+		<value>
+			邱比特喺第一晚可以揀兩個人等佢哋墮入愛河，其中一個死咗，另一個都會自盡。戀人會知道對方係重要嘅人，但唔會知道對方嘅身份。如果戀人係唯二生存者，佢哋就贏，不論佢哋係咩身份。另外，如果佢哋其中一個贏咗，另一個都會贏。（假設一個狼一個係廢村，無論最後村民贏定狼贏，戀人都會贏。）邱比特自己跟村民贏。
+		</value>
+	</string>
+	<string key="AboutHunter">
+		<value>
+			獵人喺臨死之前可以拉多一個人陪葬。如果係被狼嚟搵你，你有機會反殺佢哋，不過就冇得揀對住邊個開槍。得一隻狼嘅話，有 30% 反殺隻狼（並存活）。每多一隻狼多 20% （兩狼 50%；三狼 70%）。如果有複數嘅狼，就算你反殺到你都有機會死。如果邪教魔徒過嚟傳福音，佢哋有 50% 機率傳教失敗。若然傳教失敗，獵人有 50% 機率去殺佢哋。當和連殺作為唯二生存者時，冇人會贏。
+		</value>
+	</string>
+	<string key="AboutSK">
+		<value>連環殺手每晚都可以偷兩粒腎，殺晒所有人先會贏（除非戀人）。無論你想殺嘅人喺唔喺屋企，你都會有方法搵倒佢哋再殺咗佢。如果狼人嚟咗你屋企想殺你，你有20%機會俾佢哋食咗，另外有80%機會反殺佢哋共中一隻。</value>
+	</string>
+	<string key="AboutPara">
+		<value>【Para】係一個鍾意周圍吠嘅弱智程式員，可能佢實在搞狼人搞得太辛苦……</value>
+	</string>
+	<string key="EndTime">
+		<value>遊戲長度︰{0}\n/startgame 開個『正常版（淫賤版）』\n/startchaos 開個『混亂版（淫賤版）』</value>
+	</string>
+	<!--New strings, July the 8th -->
+
+	<string key="Day">
+		<!--0 - Day -->
+		<value>第 {0} 日</value>
+	</string>
+	<string key="NodeShutsDown">
+		<value>發生錯誤，此節點（Node）已關閉。\n（應該不影響遊戲）/</value>
+	</string>
+	<string key="SentPrivate">
+		<value>我已經私底下話咗比你知（PM）。</value>
+	</string>
+	<string key="StartPM">
+		<value>請你先啟動我 @werewolfbot ，我至可以同你講嘢。</value>
+	</string>
+	<string key="PMTrue">
+		<value>多謝你啟動我，我依家可以瘋狂同你傾計啦。</value>
+	</string>
+	<string key="MustReplySmite">
+		<value>請透過回覆 /smite 玩家。</value>
+	</string>
+	<string key="WhatToDo">
+		<value>你想做啲咩？</value>
+	</string>
+	<string key="JoinFromGroup">
+		<value>你只能喺群組加入遊戲。</value>
+	</string>
+	<string key="StartFromGroup">
+		<value>你只能喺群組開始遊戲。</value>
+	</string>
+	<string key="PingInfo">
+		<value>回應處理時間︰{0}\n每秒接收訊息︰{1}</value>
+	</string>
+	<string key="WhatLang">
+		<value>想轉去咩語言？\n當前語言︰{0}</value>
+	</string>
+	<string key="WhatVariant">
+		<value>邊個版本？\n當前版本︰{0}</value>
+	</string>
+	<string key="LangSet">
+		<value>語言變更為 {0}</value>
+	</string>
+	<string key="GetLang">
+		<value>想要邊個語言檔？</value>
+	</string>
+	<string key="NoNodes">
+		<value>所有節點（Node）都放緊假，請你等一陣。</value>
+	</string>
+	<string key="GroupCommandOnly">
+		<value>你只能喺群組入面用呢個指令。</value>
+	</string>
+	<string key="NotGlobalAdmin">
+		<value>你唔係狼人遊戲管理員。</value>
+	</string>
+	<string key="NotPara">
+		<value>你唔係 Para！</value>
+	</string>
+	<string key="Yes">
+		<value>是</value>
+	</string>
+	<string key="No">
+		<value>否</value>
+	</string>
+	<string key="Allow">
+		<value>允許</value>
+	</string>
+	<string key="Disallow">
+		<value>禁止</value>
+	</string>
+	<string key="Show">
+		<value>披露</value>
+	</string>
+	<string key="Hide">
+		<value>隱藏</value>
+	</string>
+	<!-- Game Mode Choices-->
+	<string key="NormalOnly">
+		<value>正常版限定</value>
+	</string>
+	<string key="ChaosOnly">
+		<value>混亂版限定</value>
+	</string>
+	<string key="PlayerChoice">
+		<value>玩家自由選擇</value>
+	</string>
+
+	<!-- Show Roles on End Game -->
+	<string key="ShowNone">
+		<value>不顯示</value>
+	</string>
+	<string key="ShowLiving">
+		<value>顯示生還玩家</value>
+	</string>
+	<string key="ShowAll">
+		<value>顯示所有玩家</value>
+	</string>
+
+	<string key="Cancel">
+		<value>取消</value>
+	</string>
+	<string key="AllowFleeQ">
+		<!-- note, there is NO space after {0}.  This is on purpose -->
+		<value>你允許玩家在遊戲開始後逃走嗎？\n（在遊戲開始前仍然可以逃走）\n當前設定︰{0}可以逃走</value>
+	</string>
+	<string key="AllowFleeA">
+		<!-- note, there is NO space after {0}.  This is on purpose -->
+		<value>遊戲開始後，玩家將{0}可以逃走。</value>
+	</string>
+	<string key="MaxPlayersQ">
+		<value>最多可以有幾多個人玩？\n當前設定︰{0}</value>
+	</string>
+	<string key="MaxPlayersA">
+		<value>玩家上限變更為 {0}</value>
+	</string>
+	<string key="ShowRolesDeathQ">
+		<value>死亡時披露玩家角身份？\n當前設定︰{0}</value>
+	</string>
+	<string key="ShowRolesDeathA">
+		<value>死亡時，將會{0}玩家身份。</value>
+	</string>
+	<string key="GameModeQ">
+		<value>限定遊戲模式？\n當前設定︰{0}</value>
+	</string>
+	<string key="GameModeA">
+		<value>遊戲模式變更為 {0}</value>
+	</string>
+	<string key="ShowRolesEndQ">
+		<value>遊戲結束時披露玩家角身份？\n當前設定︰{0}</value>
+	</string>
+	<string key="ShowRolesEndA">
+		<value>遊戲結束時，將會{0}玩家身份</value>
+	</string>
+	<string key="SetDayTimeQ">
+		<value>請設定日頭嘅基本時間（秒）。實際時間會根據玩家數量調整，每次調整至少增加六十秒。預設時間︰{0}\n當前設定︰{1}</value>
+	</string>
+	<string key="SetDayTimeA">
+		<value>基本日頭時間設定為【 {0} 秒】。</value>
+	</string>
+	<string key="SetNightTimeQ">
+		<value>請設定夜晚嘅基本時間（秒）。有分身、邱比特或野仔時，第一晚會特別長。預設時間︰{0}\n當前設定︰{1}</value>
+	</string>
+	<string key="SetNightTimeA">
+		<value>基本夜晚時間設定為【 {0} 秒】。</value>
+	</string>
+	<string key="SetLynchTimeQ">
+		<value>請設定投票嘅時間（秒）。預設時間︰{0}\n當前設定︰{1}</value>
+	</string>
+	<string key="SetLynchTimeA">
+		<value>投票時間設定為【 {0} 秒】</value>
+	</string>
+	<string key="AllowFoolQ">
+		<value>允許玩家抽中白痴仔？\n當前設定︰{0}</value>
+	</string>
+	<string key="AllowFoolA">
+		<value>已{0}玩家抽中白痴仔</value>
+	</string>
+	<string key="AllowTannerQ">
+		<value>允許玩家抽中皮匠 👺？\n當前設定︰{0}</value>
+	</string>
+	<string key="AllowTannerA">
+		<value>已{0}玩家抽中皮匠</value>
+	</string>
+	<string key="AllowCultQ">
+		<value>允許玩家抽中邪教魔徒 👤？\n當前設定︰{0}</value>
+	</string>
+	<string key="AllowCultA">
+		<value>已{0}玩家抽中邪教魔徒</value>
+	</string>
+	<string key="ThankYou">
+		<value>多謝使用，希望你唔會被人仇殺啦（作為群組管理員）。</value>
+	</string>
+	<string key="WhatLangGroup">
+		<value>你想睇吓邊種語言嘅群組？</value>
+	</string>
+	<string key="HereIsList">
+		<value>下列係使用 {0} 嘅群組︰</value>
+	</string>
+	<string key="Members">
+		<value>位成員</value>
+	</string>
+	<string key="StartMe">
+		<value>你唔搞起我，我好難同你曳曳架喎。</value>
+	</string>
+	<string key="PlayerNoPM">
+		<value>因為【{0}】冇撻着我，所佢冇得同我哋一齊曳曳啦 😥</value>
+	</string>
+	<string key="LatestList">
+		<value>呢個就係最新嘅玩家名單。</value>
+	</string>
+	<string key="UnableToGetList">
+		<value>唔知點解搵唔到最新嗰張玩家名單。</value>
+	</string>
+	<string key="YouJoined">
+		<!-- 0 - Group Name -->
+		<value>你已經成功喺【{0}】報名玩狼啦～😏</value>
+	</string>
+	<string key="Ping2">
+		<value>傳送Ping訊息所需時間︰{0}</value>
+	</string>
+
+	<!-- Update 4.0-->
+	<string key="RoleInfoMayor">
+		<value>你係人大委員 🎖。\n雖然冇乜人認得你個樣。日頭嗰陣，你可以撻返你個朵出嚟大鳩其他人，之後你每次投票都享有特權，一票當兩票用，地位超然。好好利用呢點，你就可以剷除所有異見人士啦，不過你要記住你係跟村民贏㗎。</value>
+	</string>
+	<string key="RoleInfoPrince">
+		<value>你係尊貴嘅王子 👑。\n不過班村民剩係認得你手上面隻戒指。當你俾人投死，臨上死刑台嗰刻，你可以拎你隻皇上御賜尚方戒指出嚟，班愚民認到你隻戒指，知道你唔係狼就焗住放你一馬。不過希望佢哋唔會再投你啦，如果佢哋知你係王子都仲投你，咁你抵撚死啦。</value>
+	</string>
+	<string key="RoleInfoClumsyGuy">
+		<value>你係一個弱智 🤕。\n弱智到連八達通都唔識用，想買廁紙都唔識去超巿，結果要用手指！雖然低智商唔係你嘅錯，係你老母嘅錯，與其鳩投我寧願你唔好投（你有一半機會會投錯一個隨機嘅人）。不過呢～連續兩晚唔撚投票係會俾人拖出去斬架，咪話我唔提你喇。</value>
+	</string>
+	<string key="RoleInfoSorcerer">
+		<value>你係巫師 🔮。\n可以話係狼人陣營嘅先知。你每晚可以測一個人嘅命盤，睇下嗰個人係咪狼或者先知，除此之外你咩都測唔到。</value>
+	</string>
+	<string key="RoleInfoBlacksmith">
+		<value>你係鐵匠 ⚒。\n成村嘅金屬器具都係你負責。你係屋企收埋咗一包銀粉，灑喺條村度足以制禦一次狼人夜襲。你可以喺日頭灑到成村都係，咁嗰晚你冚村都唔會被狼人咬。</value>
+	</string>
+	<string key="RoleInfoAlphaWolf">
+		<value>你係狼太宗 ⚡️。\n所有嘅狼人詛咒都係因你而起。喺你有生之年，被狼群所咬啲村民有 20% 機會變成狼人。</value>
+	</string>
+	<string key="RoleInfoWolfCub">
+		<value>你係小櫻嘅朋友，小狼 🐶。\n你係一隻可愛嘅吉祥物，受到狼群嘅疼愛同保護。一旦你死咗，憤怒嘅狼群係下一晚將會咬兩條友嚟祭旗。雖則你未夠秤，但係同其他狼一樣，你每晚都可以揀一個人嚟殺。</value>
+	</string>
+	<string key="PrinceLynched">
+		<value>正當冚村都想投死【{0} 👑】既時候，佢突然舉高佢隻右手，亮出佢超級無敵實在非常閃嘅黃金戒指，原來佢係皇帝親生嘅太子爺。雖然佢平時好撚乞人憎，你哋好想照推佢上死刑台，但係你哋又搵唔到其他理由判佢死刑。迫於無奈之下，你哋決定放佢一條生路。</value>
+		<value>正當冚村都想送【{0} 👑】上斷頭台嗰陣，佢突然大叫「我爸是洋蔥圈！」，同時舉高佢隻右手，亮出佢超級無敵實在非常閃嘅黃金戒指，原來佢係皇帝親生嘅太子爺。雖然佢平時好撚乞人憎，你哋好想照推佢上死刑台，但係你哋又搵唔到其他理由判佢死刑。迫於無奈之下，你哋決定放佢一條生路。</value>
+	</string>
+	<string key="SorcererOther">
+		<value>【{0}】並唔係狼，又唔係先知，我都唔知你測佢個命盤嚟做乜，咁就白白浪費咗一晚。</value>
+	</string>
+	<string key="MayorReveal">
+		<value>【{0} 🎖】突然大嗌︰「我已經手揸七百七十七票！以後就靠你哋幫我買廁紙！」，轉個頭拎咗委任證出黎，由今晚起林太就母儀天下，每一票都當兩票計。</value>
+	</string>
+	<string key="AskMayor">
+		<value>當你唔撚想再繼續扮普通村民果時，就撳一下【叫我林太！】啦。</value>
+	</string>
+	<string key="Reveal">
+		<value>叫我林太！</value>
+	</string>
+	<string key="SpreadDust">
+		<value>你今日想唔想灑銀粉喺條村度，阻狼搵食？</value>
+	</string>
+	<string key="BlacksmithSpreadSilver">
+		<value>正當班戇鳩鳩嘅村民仲戇鳩鳩咁係度諗應該投死邊條戇鳩嘅時候，佢哋發現鐵匠【{0} ⚒】喺條村度灑銀粉。你班愚民仲唔同人講多謝？你哋今晚唔駛驚俾狼食喇！</value>
+	</string>
+	<string key="Mayor">
+		<value>人大委員 🎖</value>
+	</string>
+	<string key="Prince">
+		<value>王子 👑</value>
+	</string>
+	<string key="Sorcerer">
+		<value>巫師 🔮</value>
+	</string>
+	<string key="ClumsyGuy">
+		<value>弱智 🤕</value>
+	</string>
+	<string key="Blacksmith">
+		<value>鐵匠 ⚒</value>
+	</string>
+	<string key="AlphaWolf">
+		<value>狼太宗 ⚡️</value>
+	</string>
+	<string key="WolfCub">
+		<value>小狼 🐶</value>
+	</string>
+	<string key="PlayerBittenWolves">
+		<value>正當班狼諗住撲去【{0}】身上開餐嘅時候，狼太宗【{1} ⚡️】喝住佢哋，話【{0}】骨骼精奇，係百年難得一見嘅奇才，提議大家忍一時肚餓，換多個同伴。於是【{0}】成為咗狼人，聽晚就會同大家一齊覓食。</value>
+	</string>
+	<string key="PlayerBitten">
+		<value>夜媽媽又黑媽媽最適合就係食宵夜，狼大佬見你食撚咗十幾串串燒，三四碗碗仔翅，仲諗住繼撚續食嗰陣，就衝出黎同你講：「喂，你咁撚樣食法都仲見到你有八舊腹肌，不如跟我哋屌打班廢村好過啦！」於是佢哋俾你食埋今餐宵夜，聽晚就要出去跟佢哋搵食。</value>
+	</string>
+	<string key="BittenTurned">
+		<value>太陽落咗山，周圍黑漆漆而你又冇開燈，但係你嘅視野竟然同日頭冇乜分別，你痾咗篤尿照一照鏡，原來你已經變咗做狼人。</value>
+	</string>
+	<string key="AboutMayor">
+		<value>人大委員可以喺日頭表露身份，行使特權，自此一票當兩票用。好好利用呢個能力幫助村民陣營啦！</value>
+	</string>
+	<string key="AboutPrince">
+		<value>王子係皇帝個仔，老母係皇后。第一次被人投死嗰陣，可以出示免死戒指，避過一劫。</value>
+	</string>
+	<string key="AboutSorcerer">
+		<value>巫師，可謂狼人陣營嘅先知，每晚可以測一個人嘅命盤，睇下佢係咪狼或者先知，除此之外咩都測唔到。</value>
+	</string>
+	<string key="AboutClumsy">
+		<value>弱智，顧名思義蠢到你唔信，連投票都唔識投，投十次有五次會投錯另一個。</value>
+	</string>
+	<string key="AboutBlacksmith">
+		<value>鐵匠，屋企有包防狼銀粉，日頭可以灑喺條村度，制止當晚嘅狼襲。</value>
+	</string>
+	<string key="AboutAlphaWolf">
+		<value>狼太宗，狼人嘅始祖，詛咒嘅源頭。只要仲在生，被狼咬嘅人就有 20% 唔死，兼變成狼人，喺下一晚加入狼群覓食。</value>
+	</string>
+	<string key="AboutWolfCub">
+		<value>小狼，狼見狼愛嘅吉祥物。一旦死咗，會激發狼群嘅憤怒，下一晚會咬兩個人祭旗。</value>
+	</string>
+
+	<!-- new strings 06 nov-->
+
+	<string key="DGTransformToAlpha">
+		<!-- 0 - target's name -->
+		<!-- 1 - teammates's name -->
+		<value>【{0}】死咗，你變咗做狼太宗，你班狼友︰【{1}】</value>
+	</string>
+	<string key="DGTransformToWolfCub">
+		<!-- 0 - target's name -->
+		<!-- 1 - teammates's name -->
+		<value>【{0}】死咗，你變咗做小狼，你班狼友︰【{1}】</value>
+	</string>
+
+	<!-- Keep this for now until bots update-->
+
+	<string key="VillageTeam">
+		<value>平民陣營</value>
+	</string>
+	<string key="NeutralTeam">
+		<value>中間陣營</value>
+	</string>
+	<string key="WolfTeam">
+		<value>狼人陣營</value>
+	</string>
+	<string key="SerialKillerTeam">
+		<value>連殺陣營</value>
+	</string>
+	<string key="CultTeam">
+		<value>邪教陣營</value>
+	</string>
+	<string key="TannerTeam">
+		<value>皮匠陣營</value>
+	</string>    
+	<string key="VillageTeamEnd">
+		<value>平民陣營</value>
+	</string>
+	<string key="NeutralTeamEnd">
+		<value>中間陣營</value>
+	</string>
+	<string key="WolfTeamEnd">
+		<value>狼人陣營</value>
+	</string>
+	<string key="SerialKillerTeamEnd">
+		<value>連殺陣營</value>
+	</string>
+	<string key="CultTeamEnd">
+		<value>邪教陣營</value>
+	</string>
+	<string key="TannerTeamEnd">
+		<value>皮匠陣營</value>
+	</string>
+	<string key="CultConvertWolf">
+		<value>【{0}】走撚咗去傳教，但原來【{1}】係狼人，傳教失敗仲俾人咬甩咗個頭！</value>
+	</string>
+	<string key="HarlotFuckedKilledPublic">
+		<value>【{0}】入咗【{1}】間屋想同佢大戰三百六十回合。點知佢見到個痴線佬劏撚開咗【{1}】個身玩緊佢啲內臟！連環殺手當然唔撚放過【{0}】嗰兩粒腎啦，【{0}】嗰對腎腎從此冰鮮喺連環殺手嘅雪櫃入面。</value>
+	</string>
+
+	<!--New Death Strings 05 DEC-->
+	<string key="ApprenticeSeerEaten">
+		<value>村民起身，發現到【{0}】條屍伏喺塊二手顯靈板上面。未滿師就死乸咗，連頭都甩撚埋。\n【學徒先知 🙇】皮已收。</value>
+	</string>
+	<string key="BlacksmithKilled">
+		<value>睇嚟【{0}】尋晚都幾唔好彩。被人釘撚咗喺張工作台上面，佢嘅頭、雙手同雙腳，俾五把新鑄嘅刀，釘到實一實。鐵匠間屋成個武器庫咁，好可能除咗兩粒腎之外，連環殺手仲拎咗啲新玩具返去慢慢玩……\n【鐵匠 ⚒】皮已收。</value>
+	</string>
+	<string key="CultistKilled">
+		<value>【{0}】死撚咗喺個黑闇祭壇度，身上佈滿幾百個窿，心臟位置仲插住一支蠟蠋臺，應該係俾人用蠟蠋臺無限穿插至死。又一個被連環殺手殺嘅受害人，無分語言、膚色同宗教，全部都係連環殺手嘅獵物。\n【邪教魔徒 👤】皮已收。</value>
+	</string>
+	<string key="CupidKilled">
+		<value>第二朝，村民見到愛神嘅象徵－－【{0}】嘅屍體散落喺村中央，決定全村默哀三秒鐘，葬返佢條臭屍。不過佢哋搵咗好耐都搵唔撚到佢對腎……\n【邱比特 🏹】皮已收。</value>
+	</string>
+	<string key="DrunkKilled">
+		<value>成班村民諗住去試下【{0}】屋企，試下佢支陳年五糧液。點知去到佢屋企，見到佢條屍被人劏開咗，成地都係內臟。隔離有把刀插實咗喺塊石頭上面，睇清楚啲，原來嗰舊唔係石頭，係佢飲酒飲出嚟嘅硬化肝……\n【酒鬼 🍻】皮已收。</value>
+	</string>
+	<string key="GuardianAngelKilled">
+		<value>正路嚟講，【{0}】咁撚勁，就冇理由會輸俾連環殺手條仆街嘅。可惜佢尋晚講咗句粗口，搞到咩特異功能都冇晒，連環殺手輕輕鬆鬆就殺人兼偷撚埋對腎，快快樂樂返歸。\n【守護天使 👼】皮已收。</value>
+	</string>
+	<string key="GunnerKilled">
+		<value>尋晚【{0}】站崗嗰陣，趁無人見到，偷懶瞓着咗。勢估唔到，一瞓就醒唔返。今朝一早，村民見到佢條屍攤咗喺村口，俾人爆咗頭兼偷埋腎。呢個故事教訓我哋，返工千祈咪偷懶，唔係會死得好撚慘㗎。\n【槍手 🔫】皮已收。</value>
+	</string>
+	<string key="MayorKilled">
+		<value>突發！【{0}】尋晚係寓所俾人行刺，從背口插咗三刀。睇嚟連環殺手都頂唔順條仆街成日搞屎棍，搞到民不聊生，於是忍唔住隊冧咗佢。\n【人大委員 🎖】皮已收。</value>
+	</string>
+	<string key="PrinceKilled">
+		<value>尋晚班御前守衛去咗蒲通宵，今朝返到嚟見到【{0}】個頭插撚住係屋企道門度。現場無任何線索留低，睇嚟兇手係個熟練嘅殺人犯……\n【王子 👑】皮已收。</value>
+	</string>
+	<string key="SeerKilled">
+		<value>村民起身見到成條村都係【{0}】嘅五臟六腑。雖然話呢條村日撚日都死人，村民都睇淡晒。但係有一件事令村民都十分疑惑，就係散落係村中央嘅腦，竟然閃閃發光。\n【先知 👳】皮已收。</value>
+	</string>
+	<string key="SorcererEaten">
+		<value>「豬隊友啊～豬隊友啊～」尋晚半夜有把好撚恐怖嘅聲係咁重複呢句嘢，不過班戇鳩村民都係閑事懶理，一覺瞓天光。起身飲早茶嘅時候發現【{0}】冇嚟到，原來佢尋晚已經被狼食撚咗。\n【巫師 🔮】皮已收。</value>
+	</string>
+	<string key="WildChildEaten">
+		<value>嚼嚼嚼嚼嚼！尋晚班狼開餐開到成條村都聽到。可能好似乳鴿咁，未成年嘅人類都好食啲、嫩滑啲。唔知佢哋食嘅同時會唔覺得內疚呢，【{0}】咁撚得意都捨得食……\n【野仔 👶】皮已收。</value>
+	</string>
+	<string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+		<value>天一光，村民就發現咗【{0}】條屍散修修咁，浸咗喺村個水池入面。睇真啲，乜原來條頸掛住辟邪用嘅十字架同大蒜，隔離仲有把用嚟斬妖除魔嘅黑刀。真係陰鳩公囉，邪教魔徒又殺唔撚到，仲要輸埋兩粒腎。\n【驅魔人 💂】皮已收。</value>
+	</string>
+	<string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+		<value>唔知係咪拜神拜到腦裝屎，尋晚【{0}】拎住嗰邪神像鳩鳩下咁衝咗入間狼屋度，仲指住其中一隻狼講「比利卡比利那那，撲撲利那比比路多」。本來班狼都未夠鐘嗌肚餓嘅，見有筍野送上門，轉個頭就將呢條戇鳩仔咬到血肉模糊。\n【邪教魔徒 👤】皮已收。</value>
+	</string>
+	<string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+		<value>尋晚【{0}】仲諗住捉人返總部，舉行神聖嘅性交洗禮，點撚知捉着個癲佬，傳唔撚到教之餘連閪都屌唔到，最慘係連條命都冇撚埋，剩返條無咗兩粒腎嘅鹹魚趴咗喺座黑暗祭壇前面。\n【邪教魔徒 👤】皮已收。</value>
+	</string>
+	<string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+		<value>天一光，村民發現教堂門口一地羽毛，本來拍晒心口話要拯救世界嘅【{0}】連自己對腎都保唔撚住，留低嘅就只有一條穿咗兩個大窿既乾屍。\n【守護天使 👼】皮已收。</value>
+	</string>
+	<string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+		<value>唉呀呀，尋晚【{0}】懵撚閉閉咁走咗去保護隻狼。村民朝早一起身，見到佢對翼鳩下鳩下咁吊咗喺教堂個十字架上面，睇黎班狼尋晚又食咗餐飽飯。\n【守護天使 👼】皮已收。</value>
+	</string>
+
+	<!--1vs1 finales-->
+	<string key="HunterKillsWolfEnd">
+		<!--{0} = hunter's name, {1} = wolf's name-->
+		<value>同平時一樣，【{0}】一到半晚就會忍唔住攞佢嗰支槍出黎玩，呢個時候【{1}】正諗住黎食撚咗個死剩種之際，好彩平時睇得電視多，即刻轉身射個三分波，砰！到死嗰刻佢仲諗緊：「條撚樣幾時上彈架？」\n【狼人 🐺】皮已收。
+		</value>
+		<value>死剩最後一個村民【{0}】，【{1}】心諗今次仲唔啅硬你，佢張開血盤大口，一野撲上去。砰！倒地嘅竟然係【{1}】，「對唔住，我係獵人。」，【{0}】好撚型咁吹一吹佢支槍，槍管飄出一縷白煙。\n【狼人 🐺】皮已收。</value>
+	</string>
+	<string key="WolfKillsHunterEnd">
+		<!--{0} = hunter's name, {1} = wolf's name-->
+		<value>正當全村死撚晒，得返失眠既【{0}】喺度戇戇鳩鳩咁玩佢碌炮，【{1}】靜雞雞咁潛入咗佢屋企，睇準佢自 High 到完全失去戒心之際，一啖咬撚咗佢個頭落黎，真係陰鳩公囉，明明有得射都射唔撚出。\n【獵人 🎯】皮已收</value>
+	</string>
+	<string key="CHKillsCultistEnd">
+		<!--{0} = last cultist's name, {1} = CH's name -->
+		<value>清晨時分總係帶住少少嘅神秘，有兩個身影忽然喺教堂出面閃過，【{0}】正想拎個綠毛邪神令出黎開壇作法，【{1}】即刻喺底褲抽咗當年明太祖賜落黎既尚方寶劍出嚟，大喝一句：「仲唔比我捉到你個死臭閪，仆街啦你！」劍光一閃，剩低嘅就得返一地綠色血泊同條咸魚。\n【邪教魔徒 👤】皮已收。
+		</value>
+		<value>最後，全村死剩兩個人：一個信邪教信到上撚晒腦嘅邪教徒；同一個打死都唔會信教嘅驅魔人。【{0}】好希望將世上唯一嘅真神介紹比【{1}】，一講就講咗三粒鐘。原本【{1}】見佢係自己以外嘅最後一個村民，都諗住放佢一馬。殊不知【{0}】實在係太撚煩，竟然無啦啦開口唱「Only You」，仲諗住唱到佢信為止，不勝其煩嘅【{1}】於是拎起佢把劍，一野插落佢把口到。「舒服晒。」\n【邪教魔徒 👤】皮已收。</value>
+	</string>
+
+	<!-- Extend time -->
+	<string key="SecondsAdded">
+		<!-- 0 - Seconds added by /extend command -->
+		<!-- 1 - Total seconds remaining -->
+		<value>依家加咗【 {0} 秒】比你哋班垃圾！要加入嘅就快啲撳制啦！\n倒數最後【{1}】。</value>
+		<value>奉天承運，皇帝詔曰，今日朕高興，格外開恩俾多【 {0} 秒】你哋！未加入嘅仆街唔該快手啦！手快有手慢冇㗎啦！\n倒數最後【{1}】。</value>
+		<value>依家加咗【 {0} 秒】比你哋班垃圾！要加入嘅就快啲撳制啦！\n距離佛誕仲有【{1}】。</value>
+		<value>奉天承運，皇帝詔曰，今日朕高興，格外開恩俾多【 {0} 秒】你哋！未加入嘅仆街唔該快手啦！手快有手慢冇㗎啦！\n距離佛誕仲有【{1}】。</value>
+	</string>
+	<string key="SecondsRemoved">
+		<!-- 0 - Seconds removed by /extend command -->
+		<!-- 1 - Total seconds remaining -->
+		<value>依家減返【 {0} 秒】！欲免向隅，撳制從速。\n倒數最後【{1}】。</value>
+		<value>為咗懲罰手慢嘅人，本王決定減少大家【 {0} 秒】嘅參加時間！要玩就快！\n倒數最後【{1}】。</value>
+		<value>今日時間就唔係好夠，唯有減少【 {0} 秒】嘅參加時間，快啲開始，玩多幾鋪！埋黎睇埋黎玩啦！\n倒數最後【{1}】。</value>
+		<value>依家減返【 {0} 秒】！欲免向隅，撳制從速。\n距離佛誕仲有【{1}】。</value>
+		<value>為咗懲罰手慢嘅人，本王決定減少大家【 {0} 秒】嘅參加時間！要玩就快！\n距離佛誕仲有【{1}】。</value>
+		<value>今日時間就唔係好夠，唯有減少【 {0} 秒】嘅參加時間，快啲開始，玩多幾鋪！埋黎睇埋黎玩啦！\n距離佛誕仲有【{1}】。</value>
+	</string>
+	<string key="CantExtend">
+		<value>傻閪！得老總理可以改多過一次時間咋！</value>
+		<value>你以為你係邊個啊！時間你改㗎咩？臭雞！臭雞！臭雞！</value>
+		<value>Come on James, 腦囟都未生埋學人改時間？學下人點上位做管理員先啦！</value>
+	</string>
+	<string key="AllowExtendQ">
+		<!--{0} = "Allow" / "Disallow" string-->
+		<value>想唔想比非管理員嘅玩家更改加入時間？\n當前設定：【{0}】\n注意：管理員不受此限！</value>
+	</string>
+	<string key="AllowExtendA">
+		<!--{0} = "Allow" / "Disallow" string-->
+		<value>【{0}】所有玩家更改加入時間</value>
+	</string>
+	<string key="MaxExtendQ">
+		<value>你想用 /extend 嚟加幾多秒？\n預設為【 {0} 秒】\n依家係【{1} 秒】</value>
+	</string>
+	<string key="MaxExtendA">
+		<value>你以後每次用 /extend 就會延長【 {0} 秒】！</value>
+	</string>
+	<string key="WolvesEatDrunkBlockSecondKill">
+		<value>屌！戇鳩柒菇碌，做乜撚走去食【{0}】？佢係個死醉閪黎，依家連你都醉撚埋，無得再食【{1}】啦！</value>
+		<value>做乜鳩啱先要走去食【{0}】呢？叫撚咗你咪㗎，依家出事啦！醉撚咗食唔到【{1}】啦！</value>
+	</string>
+
+	<!-- Join -->
+	<string key="JoinButton">
+		<value>加入</value>
+		<value>開波</value>
+		<value>我不入地獄誰入地獄</value>
+		<value>點擊此處展開激情遊戲</value>
+		<value>地方的狼人需要村民</value>
+		<value>千祈唔好撳呢個制</value>
+		<value>真係唔好撳</value>
+		<value>撳啦好嗎</value>
+		<value>插入，狼人EXE，資料傳輸</value>
+		<value>Go~~~ Shoot!</value>
+		<value>爆狼， Shoot! 爆開！</value>
+		<value>又係時候開鋪新，撳我啦</value>
+		<value>盡情撳我啦</value>
+		<value>你睇我唔到</value>
+		<value>叫你撳就撳啦</value>
+		<value>撳啦撚樣，叫你啊</value>
+		<value>仲唔撳想等到幾時啊</value>
+		<value>盡情愚弄我吧</value>
+		<value>別理我，我犯賤</value>
+		<value>你知道我在等你嗎</value>
+	</string>
+	<string key="NotMember">
+		<value>冇人識你啊！群都未加入就想玩遊戲！問下管理員點解你仲未係【{0}】嘅群組成員啦！</value>
+	</string>
+	<string key="JoinByButton">
+		<value>試下唔好打指令，撳制參加遊戲。</value>
+		<value>今次我哋唔好打指令，試下撳制參加遊戲。</value>
+	</string>
+
+	<!-- Secret Vote -->
+	<string key="PlayerVoteCounts">
+		<!-- {0} = New Votes; {1} = Total Votes -->
+		<!-- Wrong
+			<value>收到 {0} 張新票，依家票箱有 {1} 票。</value>
+			<value>又有 {0} 個人落咗口供啦，依家票箱有 {1} 票。</value>
+			<value>有 {0} 個人話已經估到邊個係狼人，依家票箱有 {1} 票。</value>
+			<value>又收到邪惡嘅 {0} 票，依家票箱有 {1} 票。</value>
+			<value>又收到神聖嘅 {0} 票，依家票箱有 {1} 票。</value>
+			<value>又多 {0} 個人落柯打，依家票箱有 {1} 票。</value>
+			<value>連呢 {0} 個白痴都投埋票，依家票箱有 {1} 票。</value>
+			<value>原來呢 {0} 條弱智都識投票，依家票箱有 {1} 票。</value>
+			<value>{0} 個廢老搭旅遊巴行嚟票站投票，依家票箱有 {1} 票。</value>
+			<value>調查顯示，有 {0} 個學生哥人投咗又靚又大波嘅二號，依家票箱有 {1} 票。</value>
+			<value>調查顯示，有 {0} 個港女揀咗高大威猛嘅一號做佢目標，依家票箱有 {1} 票。</value>
+			<value>調查顯示，有 {0} 個高收入人士覺得揀三號先係正確嘅選擇，依家票箱有 {1} 票。</value>
+		-->
+		<value>喺你哋 {1} 個人入面，依家有 {0} 個人投咗票。</value>
+		<value>你哋有 {1} 個人，我收得 {0} 張票，剩低嗰啲死撚咗去邊？</value>
+		<value>{1} 個村民 {1} 張票，但我收得 {0} 張，邊撚個唔投票？</value>
+		<value>{1} 個人 {0} 張票，剩低嗰啲係咪蠢得滯唔識投票？駛唔駛手把手教你啊？</value>
+		<value>好恐怖，明明有 {1} 個人玩緊，但我得 {0} 張票，係咪有鬼食咗幾個人……？</value>
+		<value>一…二…兩…三…，你哋有 {1} 個人，但票箱得 {0} 票，剩低嗰幾張去咗邊？ 😨😨</value>
+		<value>投票率︰{0}/{1}，低到咁，有票你又唔要，學咩人講一人一票啊？</value>
+		<value>{1} 個人 {0} 張票，未投嘅好快撚啲投啦，唔好阻住我收工啊，阻人收工燒春袋㗎。</value>
+	</string>
+	<string key="EnableSecretLynchQ">
+		<value>啟用暗票？\n當前設定：{0}</value>
+	</string>
+	<string key="EnableSecretLynchA">
+		<value>已將暗票設定為：{0}</value>
+	</string>
+	<string key="NoAutoJoin">
+		<value>【{0}】，記住你唔撳制係冇得玩㗎。</value>
+	</string>
+	<string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+		<value>搵唔到個群組喎，睇下你有冇打錯咗個 Group Link, Group id 或者 Group Username，又或者係你想停嗰個群組度打呢個指令。</value>
+	</string>
+	<string key="DeletedFromWaitList">
+		<value>你唔會再收到嚟自【{0}】嘅開場訊息。</value>
+	</string>
+	<string key="HaveJoined">
+		<!-- {0} = list of people who have joined -->
+		<value>喺過去嘅三十秒，呢幾條蛋散加入咗遊戲：\n{0}</value>
+	</string>
+
+	<!-- Config added 2017 MAY 25 -->
+	<string key="AllowCult">
+		<value>角色／邪教魔徒 👤</value>
+	</string>
+	<string key="AllowTanner">
+		<value>角色／皮匠 👺</value>
+	</string>
+	<string key="AllowFool">
+		<value>角色／白痴仔 🃏</value>
+	</string>
+	<string key="EnableSecretLynch">
+		<value>機制／暗票</value>
+	</string>
+	<string key="RandomMode">
+		<value>機制／隨機模式</value>
+	</string>
+	<string key="AllowExtend">
+		<value>群內／延長加入時間許可</value>
+	</string>
+	<string key="ShowRolesDeath">
+		<value>機制／死亡時亮職</value>
+	</string>
+	<string key="AllowFlee">
+		<value>群內／中離遊戲許可</value>
+	</string>
+	<string key="ShowIDs">
+		<value>機制／披露玩家 ID</value>
+	</string>
+	<string key="ShowIDsQ">
+		<value>在玩家加入遊戲時披露 ID？\n當前設定：{0}</value>
+	</string>
+	<string key="ShowIDsA">
+		<value>{0}玩家 ID</value>
+	</string>
+	<string key="All">
+		<!-- used when searching for groups in all the variants -->
+		<value>所有變種</value>
+	</string>
+	<string key="RandomModeQ">
+		<value>要開啟隨機模式嗎？\n開咗就每一局開始前都會隨機決定佢係︰混亂／正常、死後是否表露身份、暗票／明票、有冇皮匠／邪教／白痴仔。\n當前設定：{0}</value>
+	</string>
+	<string key="RandomModeA">
+		<value>開啟隨機模式設定為︰{0}</value>
+	</string>
+	<string key="AllowNSFW">
+		<value>群內／淫賤 GIF 圖包許可</value>
+	</string>
+	<string key="AllowNSFWQ">
+		<value>允許使用玩家自訂的淫賤 GIF 圖包？\n當前設定：{0}</value>
+	</string>
+	<string key="AllowNSFWA">
+		<value>{0}淫賤 GIF 圖包</value>
+	</string>
+	<string key="TannerEnd">
+		<!-- 0 - Tanner name -->
+		<value>天一光，【{0}】起身，發覺呢條村莊變得好靜，鴉雀無聲，原來呢條村已經死剩佢一個。但身為皮匠，佢想要嘅唔係寧靜，而係快感。佢一生中最大嘅願望，就係俾村民用自己親手整嘅皮帶吊死。【{0}】在處刑台隔離嘆氣，條村已經冇晒村民，已經冇人可以吊死佢刺激佢，佢呢一世都唔會得到佢想要嘅快感。於是【{0}】將皮套笠係自已條頸到，踢開腳邊嘅凳仔，愁眉苦臉咁享受生命最後五分鐘嘅快感。冇人贏……</value>
+	</string>
+	<string key="SorcererEnd">
+		<!-- 0 - Sorcerer name -->
+		<value>【{0}】尋晚發咗好夢，夢入面狼群食晒所有村民，好開心咁計劃緊下次應該去邊條村玩。但今朝佢瞓醒教，發覺村入面得返佢一個。「好可惜，明明差少少就可以食晒班撚屌，點解……」夢太甜美，現實太沉重。【{0}】忍住眼淚收拾心情，一邊收拾行裝。望住地圖，佢決定好要搵一條新嘅村落，扶育新嘅狼群，開始新嘅生活！冇人贏……</value>
+	</string>
+	<string key="WhatVariantVets">
+		<value>邊個版本？\n當前版本︰{0}\n由於你已經玩咗超過 500 場狼人，你可以參加【英文狼人老手群】</value>
+	</string>
+	<string key="Skip">
+		<value>🚫無意見🚫</value>
+		<value>🚫個個都好好🚫</value>
+		<value>🚫唔撳啦🚫</value>
+		<value>🚫對敵人仁慈🚫</value>
+		<value>🚫對自己殘忍🚫</value>
+		<value>🚫唔投🚫</value>
+		<value>🚫🚫</value>
+		<value>🚫</value>
+	</string>
+	<!-- New Roles, April 2018 -->
+	<string key="DGTransformToLycan">
+		<!-- 0 - target's name -->
+		<!-- 1 - teammates's name -->
+		<value>【{0}】死咗，你成為了隱狼，呢班就係你嘅狼友︰{1}</value>
+	</string>
+	<string key="NegSeerSees">
+		<!-- 0 - target's name -->
+		<!-- 1 - role that they are not -->
+		<value>你知道【{0}】原來唔係【{1}】！</value>
+	</string>
+	<string key="AskSandman">
+		<value>你要唔要令全世界都陷入沉睡？</value>
+	</string>
+	<string key="SandmanSleepAll">
+		<value>夜幕低垂，【{0}】突然奏起令人昏昏欲睡嘅綠袖子，搞到全村人都好撚眼瞓，睇嚟今晚大家都會訓得好冧。</value>
+	</string>
+	<string key="SandmanNight">
+		<value>果然大家都瞓得好冧，眨個眼就天光了，連自己尋晚幾點撻落床都唔記得……</value>
+	</string>
+
+	<string key="AllowThiefQ">
+		<value>允許玩家抽中偷渡客 😈？\n當前設定︰{0}</value>
+	</string>
+	<string key="AllowThiefA">
+		<value>已{0}玩家抽中偷渡客</value>
+	</string>
+	<string key="ThiefFullQ">
+		<value>允許偷渡客晚晚出動？\n當前設定︰{0}</value>
+	</string>
+	<string key="ThiefFullA">
+		<value>已{0}玩家抽中偷渡客</value>
+	</string>
+	<string key="AllowThief">
+		<value>角色／偷渡客 😈</value>
+	</string>
+	<string key="ThiefFull">
+		<value>機制／偷渡客 😈 模式</value>
+	</string>
+
+	<string key="RoleInfoWolfMan">
+		<value>你係偽娘個朋友，偽狼 👱🌚。\n雖然個名有個狼字，但其實你只係一個普通嘅廢村。而更慘嘅係，你個命盤都似係狼。叫咗你唔好食咁多羊肉㗎啦，出事㗎嘛！不過，你或者可以做狼人陣營嘅臥底……</value>
+	</string>
+	<string key="WolfMan">
+		<value>偽狼 👱🌚</value>
+	</string>
+	<string key="AboutWolfMan">
+		<value>偽狼，雖然個名有個狼字，其實只係一個普通嘅廢村，不過先知／巫師會以為佢係狼。</value>
+	</string>
+
+	<string key="RoleInfoLycan">
+		<value>你係隱狼 🐺🌝。\n你係狼，但你最叻就係化妝。你晚晚都喬裝成人類先出去開餐，就連你個命盤都似係一個普通村民。</value>
+	</string>
+	<string key="Lycan">
+		<value>隱狼 🐺🌝</value>
+	</string>
+	<string key="AboutLycan">
+		<value>隱狼，明明係狼，但先知／巫師會以為你係一個普通嘅村民。</value>
+	</string>
+
+	<string key="RoleInfoOracle">
+		<value>你係神婆 🌀。\n每晚你都可以好似先知咁查一個人嘅命盤，但由於你冇正式跟過師傅，你只可以睇得出，嗰個人「唔係」啲咩，但你所睇到嘅身份，都會係遊戲入面存在嘅身份。聽落好似冇乜用，起碼你可以知道有啲咩角色仲未死。</value>
+	</string>
+	<string key="Oracle">
+		<value>神婆 🌀</value>
+	</string>
+	<string key="AboutOracle">
+		<value>神婆，每晚都可以查一個人嘅命盤，從而知道嗰個人「唔係」啲咩，但所睇到嘅身份，都會係遊戲入面存在嘅身份。聽落好似冇乜用，起碼你可以知道有啲咩角色仲未死。</value>
+	</string>
+
+	<string key="RoleInfoSandman">
+		<value>你係周公 💤。\n你可以迫全世界陪你一齊發一晚夢，搞到人哋成晚咩都做唔成。</value>
+	</string>
+	<string key="Sandman">
+		<value>周公 💤</value>
+	</string>
+	<string key="AboutSandman">
+		<value>周公，可以迫全世界陪佢捉一晚夢棋，取消所有夜間活動。</value>
+	</string>
+
+	<!-- NOT IMPLEMENTED YET -->
+	<string key="RoleInfoPacifist">
+		<value>你係和事佬 ☮️。\n和平理性非暴力非粗口係你做人嘅宗旨，最憎投票殺人制度，試問呢個世界有咩事唔能夠和平解決呢？你可以向大家發表你嘅精彩演說，說服大家唔好投票殺人一次。</value>
+	</string>
+	<string key="Pacifist">
+		<value>和事佬 ☮️</value>
+	</string>
+	<string key="AboutPacifist">
+		<value>和事佬，又名架両，反對邪惡嘅殺人投票。你可以向大家發表你嘅精彩演說，說服大家唔好投票殺人一次。</value>
+	</string>
+
+	<string key="RoleInfoWiseElder">
+		<value>你係全村最有智慧嘅長老 📚。\n因為你實在太聰明，喺屋企預先佈置咗陷阱，所以可以擋到班狼嘅一次攻擊，第二次比狼攻擊先會死。如果你比槍手或獵人誤殺，佢地會因為過度傷心而喪失技能，淪為一個普通嘅村民。</value>
+	</string>
+	<string key="WiseElder">
+		<value>長老 📚</value>
+	</string>
+	<string key="AboutWiseElder">
+		<value>全村最有智慧嘅長老 📚。識得喺屋企預先佈置咗陷阱，預防班狼嘅一次攻擊，第二次比狼攻擊先會死。如果你比槍手或獵人誤殺，佢地會因為過度傷心而喪失技能，淪為一個普通嘅村民。</value>
+	</string>
+
+	<string key="RoleInfoThief">
+		<value>你係偷渡客 😈。\n你連身份證都未有。為咗生存，你只好趁夜晚將人地嘅身份偷過嚟。偷完之後，你就會獲得嗰個人嘅身份同能力。而嗰個人就會因為失去身份，成為廢村！</value>
+	</string>
+	<string key="RoleInfoThiefFull">
+		<value>你係偷渡客，連身份證都未有。為咗生存，你每晚有 50% 機率將人地嘅身份偷過嚟。偷完之後，你就會獲得嗰個人嘅身份同能力。而嗰個人就會因為失去身份，成為偷渡客。到最後，邊個係偷渡客就邊個輸！</value>
+	</string>
+	<string key="Thief">
+		<value>偷渡客 😈</value>
+	</string>
+	<string key="AboutThief">
+		<value>偷渡客 😈，為咗生存，只好趁夜晚將人地嘅身份偷過嚟。偷完之後，就會獲得嗰個人嘅身份同能力。而嗰個人就會因為失去身份，成為偷渡客。到最後，邊個係偷渡客就邊個輸！</value>
+	</string>
+	<string key="AskPacifist">
+		<value>你想唔想今晚搞個和理非非集會，等村民暫時忘記萬惡嘅投死人制度，把握時間好好討論一吓，到底點樣先可以解決村民離奇死亡嘅問題？</value>
+	</string>
+	<string key="PacifistNoLynch">
+		<!-- {0} - Pacifist's name -->
+		<value>和事佬【{0}】企咗喺個台到喊撚晒咁講，話唔希望大家喺未有充足嘅討論之前亂閪咁投票，傷害無辜，想取消今晚嘅投票大會。</value>
+	</string>
+	<string key="PacifistNoLynchNow">
+		<value>大家聽過和事佬嘅一番鳩噏後，覺得好有道理，所以取消咗今日嘅投票大會。</value>
+	</string>
+	<string key="WolvesTriedToEatWiseElder">
+		<!-- 0 - Wise Elder's name -->
+		<value>你哋諗住去食咗【{0}】，點知佢原來一早喺屋企裝好晒彈弓，搞到你地偷雞唔到蝕渣米，好彩佢又唔認得你地邊個打邊個。</value>
+	</string>
+	<string key="WolvesAteWiseElderPM">
+		<value>尋晚班狼諗住吞咗你，好彩你醒目仔一早擺定啲陷阱看門口，嚇走咗佢哋。可惜你認唔到佢哋邊個打邊個啦……</value>
+	</string>
+	<string key="HunterKilledWiseElder">
+		<!-- {0} - Hunter's Name -->
+		<!-- {1} - Wise Elder's Name -->
+		<value>臨死嘅獵人【{0}】一槍轟落【{1}】度，以為佢係狼，點知錯手殺咗長老！無盡嘅後悔，佔據佢人生最後幾秒嘅腦海，傷心到連自己係邊個都唔記得，好似一個廢村咁死去。\n【👱 村民】已死 💀。</value>
+	</string>
+	<string key="GunnerShotWiseElder">
+		<!-- {0} - Gunner's Name -->
+		<!-- {1} - Wise Elder's Name -->
+		<value>愚蠢嘅槍手【{0}】懶係醒咁對住【{1}】開咗一槍，殊不知死嘅原來係長老。【{0}】悔疚自己竟然用引以為傲嘅槍法，致良民於死地。為咗懲罰自己，槍手決定封起自己嘅槍，回復成一個普通嘅【村民 👱】。</value>
+	</string>
+
+	<string key="ThiefStealFailed">
+		<!-- {0} - The name of the thief's target -->
+		<value>你嘗試偷【{0}】嘅身份，不過好可惜你黃咗……</value>
+	</string>
+	<string key="ThiefStealDead">
+		<!-- {0} - The name of the thief's target -->
+		<value>你諗住偷【{0}】嘅身份，點知原來佢已經釘咗……</value>
+	</string>
+	<string key="ThiefStoleYourRole">
+		<!-- {0} - The new role -->
+		<value>你嘅身份俾人盜用，你淪落為沒有身份嘅【{0}】。</value>
+	</string>
+	<string key="ThiefStoleRole">
+		<!-- {0} - The name of the thief's target -->
+		<value>你成功搶咗【{0}】嘅身份！</value>
+	</string>
+	<string key="ThiefToMason">
+		<!-- 0 - old mason's name -->
+		<!-- 1 - new mason's name -->
+		<value>【{0}】唔再係你嘅同伴，而【{1}】就係你新嘅共濟之友。</value>
+	</string>
+	<string key="ThiefTransformToMason">
+		<!-- 0 - mason collegues's name -->
+		<value>你成為了共濟會員，你嘅共濟之友︰【{0}】</value>
+	</string>
+	<string key="ThiefToCult">
+		<!-- 0 - old cultist's name -->
+		<!-- 1 - new cultist's name -->
+		<value>【{0}】唔再係你嘅同伴，而【{1}】就係你新嘅教友。</value>
+	</string>
+	<string key="ThiefToWolf">
+		<!-- 0 - old wolf's name -->
+		<!-- 1 - new wolf's name -->
+		<value>【{0}】唔再係你嘅同伴，而【{1}】就係你新嘅狼友。</value>
+	</string>
+	<string key="ThiefTransformNewTeammates">
+		<!-- 0 - teammates's name -->
+		<value>你嘅朋友︰【{0}】</value>
+	</string>
+	<string key="ThiefEnd">
+		<!-- 0 - Thief's name -->
+		<value>【{0}】如常喺村莊入面遊走，但發現呢條村已經再冇啲咩身份可以偷。感到無聊嘅佢，決定踏上新嘅旅程，去另一條村過新嘅盜掠生活。</value>
+	</string>
+	<string key="ThiefStealChosen">
+		<!-- 0 - target's name -->
+		<value>你嘅盜竊目標係︰{0}</value>
+	</string>
+	<string key="AskThief">
+		<value>你諗住偷邊個嘅身份呢？</value>
+	</string>
+
+	<string key="SecretLynchResultEach">
+		<value>有 {0} 票投咗俾 {1}︰\n　{2}</value>
+	</string>
+	<string key="SecretLynchResultFull">
+		<value>今日嘅投票結果係︰\n{0}</value>
+	</string>
+	<string key="SecretLynchResultNumber">
+		<value>有 {0} 票投咗俾 {1}</value>
+	</string>
+	<string key="SecretLynchShowVotes">
+		<value>暗票／票數</value>
+	</string>
+	<string key="SecretLynchShowVotesQ">
+		<value>在暗票模式下，會否顯示各人所得嘅票數？\n當前設定︰{0}</value>
+	</string>
+	<string key="SecretLynchShowVotesA">
+		<value>在暗票模式下，各人所得嘅票數將會被{0}</value>
+	</string>
+	<string key="SecretLynchShowVoters">
+		<value>暗票／記名</value>
+	</string>
+	<string key="SecretLynchShowVotersQ">
+		<value>在暗票模式下，會否顯示選民嘅名字？\n當前設定︰{0}</value>
+	</string>
+	<string key="SecretLynchShowVotersA">
+		<value>在暗票模式下，選民嘅名字將會被{0}</value>
+	</string>
+	
+	<!--  ADDED 2018JUL18 -->
+	<string key="CultistBitten">
+		<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+		<value>當你地傾緊今晚同邊個傳教嗰陣，先醒起原來【{0}】成晚都唔喺到！到底佢去咗邊？？😱😱😱</value>
+	</string>
+
+	<string key="Peace">
+		<!-- Used for Pacifist's button -->
+		<value>護衛人類，挽救地球，看守這宇宙～</value>
+		<value>大家嘅笑容由我來守護！</value>
+		<value>降臨吧！和平嘅晚上！</value>
+		<value>為咗防止世界被破壞！</value>
+		<value>為咗守護世界嘅和平！ </value>
+		<value>去啦，比卡超！</value>
+		<value>人人為我，我為人人！</value>
+		<value>犧牲小我我，完成大我！</value>
+		<value>依家唔做，等幾時？</value>
+		<value>蘇州過後冇艇搭！</value>
+	</string>
+	<string key="LynchPeaceTimeout">
+		<!-- Used in PM if the pacifist uses his ability during lynch phase -->
+		<value>我宣佈︰今晚驚心動魄緊張刺激嘅投票環節，已經唔存在啦！</value>
+	</string>
+
+	<string key="ThiefStoleYourRoleThief">
+		<value>你嘅身份俾人盜用，你成為新嘅【偷渡客 😈】。</value>
+	</string>
+	<string key="ThiefStoleYourRoleVillager">
+		<value>你嘅身份慘遭盜用，你淪落為沒有身份嘅【村民 👱】。</value>
+	</string>
+
+	<string key="SerialKillerKilledYou" isgif="true">
+		<value>殺手向你來， 磨刀霍霍向汝腸。</value>
+		<value>恭喜！你已經俾連環殺手捅死咗，佢仲讚你個大脾好食添！</value>
+		<value>恭喜閣下獲得天堂嘅入場券！</value>
+		<value>恭喜閣下獲得地獄嘅入場券！</value>
+		<value>恭喜！你已經俾連環殺手捅死咗，佢仲讚你個腎好靚仔添！</value>
+		<value>多謝參加，歡迎下次投胎。😉</value>
+	</string>
+
+	<!--  ADDED 2019FEB24 -->
+	<string key="ThiefTeamEnd">
+		<value>偷渡客陣營</value>
+	</string>
+	
+	<string key="StealKiller">
+		<value>👏🏻 恭喜你啊！原來呢間屋嘅屋主就係連環殺手，不請自來嘅你，一刀就俾佢捅死咗！</value>
+	</string>
+	<string key="ThiefStoleKiller">
+		<!-- used when Thief steals SK -->
+		<value>尋晚【{0}】潛入人地屋企諗住偷身份，點知好死唔死入咗連環殺手屋企！連環殺手加一分！\n【偷渡客 😈】皮已收。</value>
+	</string>
+	<string key="BeholderSeerStolen">
+		<value>先知嘅身份俾偷渡客搶咗！依家【{0}】係先知，而【{1}】已經冇撚用㗎啦！</value>
+		}
+	</string>
+	
+	<!-- New roles 28.12.2018 -->
+	<string key="Troublemaker">
+		<value>花生友 🤯</value>
+	</string>
+	<string key="AboutTroublemaker">
+		<value>最鍾意食花生，成日喺側邊煽風點火，唯恐天下不亂，「不如試吓一次投死兩條友吖！」</value>
+	</string>
+	<string key="RoleInfoTroublemaker">
+		<value>你係花生友 🤯。\n正所謂「唔怕死兩件，至怕冇人獻」﹐雖然呢條村幾乎晚晚都有人死，但習慣咗始終都會嫌悶。「不如試吓一次投死兩條友吖！」，你忽發奇想。你可以煽風點火一次，鼓勵大家一日投死兩件。</value>
+	</string>
+	<string key="AskTroublemaker">
+		<value>要唔要鼓勵大家投死多個人？</value>
+		<value>要唔要鼓勵大家投死多件？</value>
+	</string>
+	<string key="TroublemakerDoubleLynch">
+		<value>花生友【{0}】話︰「每次剩係可以投一個人，幾時先捉得晒啲狼啊？不如試吓一次投死兩條友啦！」大家聽完覺得不無道理，於是決定試一次一日投死兩個人。</value>
+	</string>
+	<string key="TroubleDoubleLynchNow">
+		<value>由於花生友嘅建議，你地今日要投兩次票！</value>
+	</string>
+	<string key="Chemist">
+		<value>玩命大師 👨‍🔬</value>
+	</string>
+	<string key="AboutChemist">
+		<value>超級賭徒，覺得賭錢已經滿足唔到自己，於是整咗樽毒藥出嚟同人賭命！手上有兩枝一模一樣嘅液體，一樽係無害兼補身嘅「川貝枇杷膏」，另一樽係即死毒藥「含笑半步釘」！會迫人陪佢賭命，一人飲一枝，享受賭命嘅超級快感！</value>
+	</string>
+	<string key="RoleInfoChemist">
+		<value>你係玩命大師 👨‍🔬‍！\n賭錢係你嘅興趣，賭命係你嘅夢想，最近你終於諗到最適合你嘅賭命方法。你決定整兩樽一模一樣嘅液體，一樽係無害兼補身嘅「川貝枇杷膏」，另一樽係即死毒藥「含笑半步釘」，再搵個村民同你賭一鋪，享受賭命嘅超能刺激！</value>
+		<value>你係玩命大師 👨‍🔬！\n同縱火狂徒一樣係（分析）化學出身嘅你，同村民分析下賭命嘅好處後，佢地拍晒手咁歡迎你喎。你就喺你間實驗室到整咗兩枝一模一樣嘅液體，一枝係「一氧化二氫」，另一枝係「二氧化二氫」，再搵個村民「你我老友一人一枝」，係咪和味過和味濃呀？哈哈哈哈……</value>
+		<value>你係玩命大師 👨‍🔬！\n同縱火狂徒一樣係（分析）化學出身嘅你，同村民分析下賭命嘅好處後，佢地好歡迎你喺村落起 Lab 。你就喺你間實驗室到整咗兩枝一模一樣嘅液體，一枝係「H2O」，另一枝係「H2O too」，再搵個村民「你我老友一人一枝」，係咪和味過和味濃呀？哈哈哈哈……</value>
+	</string>
+	<string key="ChemistBrewing">
+		<value>當全世界去晒瞓覺嘅事時候，你專心咁喺實驗室煉製緊嗰兩樽藥水。記住唔好俾狼群見到你仲未返屋企啊！</value>
+	</string>
+	<string key="AskChemist">
+		<value>想同邊個賭命？</value>
+	</string>
+	<string key="ChemistTargetDead">
+		<value>你諗住去【{0}】間屋度同佢賭命開心吓，點知佢已經一早釘咗，想玩都冇得你玩！</value>
+	</string>
+	<string key="ChemistVisitYouSK">
+		<value>你好不幸咁俾玩命大師【{0}】睇中咗，佢迫你喺兩樽藥水之中揀一枝嚟飲，一樽係飲完即死嘅「含笑半步釘」，另一樽喺補身嘅「川貝枇杷膏」。你睬佢都戇鳩，手起刀落一嘢就劈開佢個頭。其實想殺人駛乜用藥水，有幾把刀就夠做啦。</value>
+	</string>
+	<string key="ChemistSK">
+		<value>你去咗【{0}】屋企諗住同佢賭命，點知你遊戲玩法都未講完，佢已經一刀劈咗落你個頭到……🔪</value>
+	</string>
+	<string key="ChemistSKPublic">
+		<value>【{0}】諗住同連環殺手玩遊戲，可惜連環殺手並唔鍾意玩遊戲，一刀就劈死咗佢…\n【玩命大師 👨‍】皮已收。</value>
+	</string>
+	<string key="ChemistVisitYouSuccess">
+		<value>飲完樽藥水，你突然企唔穩，腳步浮浮郁咗半步。突然眼前一黑，只聽到玩命大師詭異嘅高音笑聲，原來你揀中咗「含笑半步釘」。</value>
+	</string>
+	<string key="ChemistSuccess">
+		<value>你去咗【{0}】屋企同佢賭命，一如所料佢揀中咗「含笑半步釘」，而你亦都平平安安咁返咗自己屋企。「會唔會太簡單？」你心諗。</value>
+	</string>
+	<string key="ChemistSuccessPublic">
+		<!-- {0} - Chemist's victim -->
+		<!-- {1} - Will be replaced by "(victim) was (role)" -->
+		<value>俾玩命大師嘅賭運屈機，【{0}】揀咗樽毒藥嚟飲。\n{1}。</value>
+	</string>
+	<string key="ChemistVisitYouFail">
+		<value>飲完樽藥水，咩事都冇發生。玩命大師【{0}】突然高音喪笑，然後「啪」一聲攤咗喺你屋企地板。</value>
+	</string>
+	<string key="ChemistFail">
+		<value>你去咗【{0}】屋企同佢賭命，而佢竟然揀唔中枝毒藥！雖然輸咗，但身為賭徒，死喺賭局之中都算係一種榮譽！</value>
+	</string>
+	<string key="ChemistFailPublic">
+		<value>【{0}】條屍攤咗喺街！睇嚟係佢同人賭命賭輸咗，死喺自家製嘅毒藥手上，好心冇賭運就唔好學人賭命啦，係咪戇鳩㗎…\n【玩命大師 👨‍】皮已收。</value>
+	</string>
+	<string key="ChemistTargetEmpty">
+		<value>【{0}】屋企冇人！睇嚟你真係冇乜運。</value>
+	</string>
+	<string key="CultistsList">
+		<value>呢班就係你嘅教友︰【{0}</value>
+	</string>
+	<string key="SnowWolf">
+		<value>雪狼 🐺☃️</value>
+	</string>
+	<string key="RoleInfoSnowWolf">
+		<value>你係雪狼 🐺☃。前世你係Elsa，今世投錯胎而成為狼。比起殺人，你更加鍾意雪人，唔係砌嗰啲，而係將啲人好似冰鮮雞咁冰住！每晚你都會獨自出去玩雪人，俾你雪住嘅人，成晚都唔郁得，完全出唔到街做任何嘢。不過，雪過一晚嘅人，第二晚會長開暖爐保暖，最慘你又怕熱，所以你冇得連續兩晚都雪同一條友。</value>
+	</string>
+	<string key="AboutSnowWolf">
+		<value>唔鍾意食人，剩係鍾意雪人。每晚都可以揀一個人嚟雪，好似冰鮮雞咁雪。俾雪嘅人完全唔郁得，想做咩都做唔到。不過被人雪過嘅人，第二晚會長開暖爐保暖，所以怕熱嘅雪狼唔可以連續兩晚都雪同一條友。</value>
+	</string>
+	<string key="AskFreeze">
+		<value>今晚想雪邊個呢？</value>
+	</string>
+	<string key="WolfPackList">
+		<value>呢班就係你嘅狼友︰ {0}</value>
+	</string>
+	<string key="WolfPackSnowList">
+		<value>呢班就係你嘅狼友︰{0}，同埋雪狼 {1}</value>
+	</string>
+	<string key="DGTransformToAlphaWithSnow">
+		<value>【{0}】死咗，你成為了狼太宗，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}</value>
+	</string>
+	<string key="DGTransformToWolfCubWithSnow">
+		<value>【{0}】死咗，你成為了小狼，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}</value>
+	</string>
+	<string key="DGTransformToWolfWithSnow">
+		<value>【{0}】死咗，你成為了狼人，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}</value>
+	</string>
+	<string key="DGTransformToLycanWithSnow">
+		<value>【{0}】死咗，你成為了隱狼，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}</value>
+	</string>
+	<string key="DGTransformToSnowWolf">
+		<value>【{0}】死咗，你成為了雪狼，呢班就係你嘅狼友︰{1}</value>
+	</string>
+	<string key="DGToSnowWolf">
+		<value>分身【{0}】成為咗新嘅雪狼！</value>
+	</string>
+	<string key="WildChildSnowTransform">
+		<value>【{0}】死咗，你成為了狼人，呢班就係你嘅狼友︰{1}，同埋雪狼 {2}</value>
+	</string>
+	<string key="ThiefToSnowWolf">
+		<value>【{0}】已經唔再係你嘅同伴，而【{1}】成為了雪狼</value>
+	</string>
+	<string key="HarlotFrozen">
+		<value>當你換上你套性感嘅比堅尼，然後出門口去搵今晚嘅恩客嘅時候，一陣凜冽嘅寒風兜頭吹住你，吹到你喺門口結撚咗冰 🐺☃️！雖然你本身都係M底，但你都根本唔撚明白呢種束縛究竟係做緊乜鳩。你等到日頭嚟到，終於解到凍，唔使俾人睇勻全身蝕底啦。 </value>
+	</string>
+	<string key="ChemistFrozen">
+		<value>你喺床上輾轉反側，內心期盼住研製藥水嘅成果。突然一陣寒風吹過，令你喺床上凍結，動彈不得 🐺☃️！你眼角瞥一瞥你樽藥水…「屌那星，變撚埋冰」，然後只能望住你全間屋困喺冰天雪地之中，直至日出先慢慢解凍…</value>
+	</string>
+	<string key="CultistFrozen">
+		<value>你披上你件斗蓬準備出門會合其他教徒出去傳教，點知一陣寒風猛吹，吹到你結冰 🐺☃️。你班教友見你咁撚夜都未蒲頭就過嚟睇吓你咩事，然後不停恥笑你嘅不幸遭遇：「你哋睇吓個戇鳩仔！」佢哋應承你會替你完成傳教嘅任務後就離你而去。直至天光之後你先慢慢解凍，然後自己一個戇戇鳩鳩咁行去村廣場… </value>
+	</string>
+	<string key="CHFrozen">
+		<value>你聽到出面有陣怪聲，於是本能地拎起支劍，但一陣冰凍之風突然令你全身僵硬，你維持住個持劍姿勢動彈不得… 🐺☃️ 你心諗究竟乜撚嘢事要咁戇鳩鳩拎住把劍，諗諗吓就諗到天光，你全身肌肉都酸痛… </value>
+	</string>
+	<string key="SeeingFrozen">
+		<!-- used for seer, fool, oracle and sorcerer -->
+		<value>你全神貫注凝視你張神枱準備睇人命盤，一陣寒風突然由窗邊吹來，令你全個人結咗冰 🐺☃️。唔只你個人結咗冰，連你個腦都結撚埋冰，乜柒身份都查唔撚到。好彩你本身聰明絕頂，冰撚咗個腦都記得太陽遲早識升起，然後你就佛系咁等日出解凍。 </value>
+	</string>
+	<string key="GAFrozen">
+		<value>你膊頭上美麗嘅翅膀又再出現，突然一股寒風令你全身連埋對翼結咗冰 🐺☃️。你開始胡思亂想，以為自己係聖誕樹上嘅裝飾。\n喂，醒啦！天光啦！你個腦雪到懵撚咗呀？！ </value>
+	</string>
+	<string key="SKFrozen">
+		<value>你沉醉咁欣賞你收集番嚟嘅腎腎，準備今晚出門儲齊一打收藏。忽然一陣寒風由屋外吹嚟，將啲腎腎同埋你一齊冰封 🐺☃️。你痛恨雪狼令你今晚無辦法集齊全套腎腎，心入面發誓要將隻仆街雪狼煎皮拆骨反轉再反轉再拎走佢對腎… </value>
+	</string>
+	<string key="ThiefFrozen">
+		<value>當你喺小路仲猶豫緊去偷邊個張身份證嗰陣，強烈嘅陣風吹過，凍到你喺路中心結咗冰 🐺☃️。好彩天色太黑，無人留意到條路無啦啦有件冰雕。經過漫長嘅黑夜，你喺黎明時分就一仆一碌咁躝返屋企。好彩無人見到你個偷渡客！ </value>
+	</string>
+	<string key="DefaultFrozen">
+		<!-- used for all roles without (every-)night action -->
+		<value>你尋晚瞓瞓吓覺忽然覺得間房好凍，於是你醒一醒，發現雪狼 🐺☃️一邊唱「Let it go~ Let it go~」一邊將你屋企變成愛斯基摩冰屋，你仲要全身凍到郁唔到！不過你本身夜晚都係柒瞓瞓天光，心諗屋企結冰關我撚事咩…仲要有免費冷氣嘆，然後又一覺瞓天光。</value>
+	</string>
+	<string key="GuardBlockedSnowWolf">
+		<value>你出發去【{0}】屋企要冰封佢，點知去到佢屋企門口俾個巨人擋住去路。守護天使一聲「婆你阿摩彈彈波」，你嚟唔切回返句「波你阿磨彈彈婆」就收咗皮，唯有鳩吓鳩吓躝返屋企。</value>
+	</string>
+	<string key="SuccessfulFreeze">
+		<value>你去到【{0}】屋企並成功雪藏佢！今晚【{0}】就咩都唔做得，只能戇戇鳩鳩等天光啦。</value>
+	</string>
+	<string key="SnowFrozeKiller">
+		<value>雪狼【{0}】尋晚想搵人玩雪戰，點知搵到連環殺手！連環殺手偷咗【{0}】對腎之餘仲剝走層白雪雪嘅狼皮！【{0}】從此就俾人收咗層皮，收埋皮。</value>
+	</string>
+	<string key="SnowWolfTurnWolf">
+		<value>其他狼人全部死清光，你作為碩果僅存嘅死剩種，為咗要果腹，唯有化身成普通嘅狼人🐺，每晚出去揀一個村民嚟食。</value>
+	</string>
+	<string key="SnowFrozeHunter">
+		<!-- 0 - target's name -->
+		<value>雪狼【{0}】尋晚碰上獵人，英勇嘅獵人用佢嘅神槍法槍殺雪狼，得到佢珍貴嘅雪狼皮！雪狼【{0}】皮已收。</value>
+	</string>
+	<!-- change starts here… new version comes! -->
+	<string key="Lang">
+	<!-- admin panel -->
+		<value>群內／改變語言</value>
+	</string>
+	<string key="Mode">
+	<!-- admin panel -->
+		<value>群內／改變遊戲模式</value>
+	</string>
+	<string key="MaxPlayer">
+	<!-- admin panel -->
+		<value>群內／設定玩家上限</value>
+	</string>
+	<string key="EndRoles">
+	<!-- admin panel -->
+		<value>機制／完場時亮職</value>
+	</string>
+	<string key="MaxExtend">
+	<!-- admin panel -->
+		<value>時計／設定最長延時</value>
+	</string>
+	<string key="DayTimer">
+	<!-- admin panel -->
+		<value>時計／設定日間時間</value>
+	</string>
+	<string key="NightTimer">
+	<!-- admin panel -->
+		<value>時計／設定夜晚時間</value>
+	</string>
+	<string key="LynchTimer">
+	<!-- admin panel -->
+		<value>時計／設定投票時間</value>
+	</string>
+	<string key="RoleConfig">
+	<!-- admin panel -->
+		<value>角色設定</value>
+	</string>
+	<string key="Mechanics">
+	<!-- admin panel -->
+		<value>遊戲機制</value>
+	</string>
+	<string key="GroupSettings">
+	<!-- admin panel -->
+		<value>群內設定</value>
+	</string>
+	<string key="Timers">
+	<!-- admin panel -->
+		<value>遊戲時計</value>
+	</string>
+	<string key="Done">
+	<!-- admin panel -->
+		<value>完！✅</value>
+	</string>
+	<string key="Back">
+	<!-- admin panel -->
+		<value>返回 🔙</value>
+	</string>
+	<string key="ShufflePlayerList">
+	<!-- admin panel -->
+		<value>群內／打亂玩家名單</value>
+	</string>
+	<string key="ShufflePlayerListQ">
+	<!-- admin panel -->
+		<value>Shuffle player list every time? Current: {0}</value>
+	</string>
+	<string key="ShufflePlayerListA">
+	<!-- admin panel -->
+		<value>Player list will be shuffled every time: {0}</value>
+	</string>
+	<string key="AboutGraveDigger">
+		<value>埋屍仔 ☠️——平民陣營\n每晚喺各永遠墳場內掘墳墓埋好死去嘅烈士。\n1. 若過去一日死咗人，你會喺墳場做到冇停手，若狼、邪教搵你總會撲空。\n2. 雖則你 On Call 36 小時，但你會趁冇人死嗰陣返屋企補眠。\n3. 搵你嘅人都可能會仆街死（睇你埋咗幾多屍，村民陣營機率減半）。\n4. 狼人、連殺可能順手牽命（睇你當晚要掘幾多墳）。\n5. 連殺使命必達，你總會俾佢搵到，但至少你可能會令佢拗柴，下一晚殺錯另一個。</value>
+	</string>
+	<string key="RoleInfoGraveDigger">
+		<value>你係埋屍仔 ☠️。\n村裡面咩和合石，咩浩園都拜你所賜。每晚你都會為班烈士辦好身後事。但你孤掌難鳴又攰過隻狗，挖完個窿放好條屍就冇下文了。搵你嘅人多數會摸門釘，甚或可能會仆街死……</value>
+		<value>你係埋屍仔 ☠️。\n託你鴻福，村裡冇試過屍變，亦都冇瘟疫。每晚你都會為班烈士辦好身後事。但你孤掌難鳴又攰過隻狗，挖完個窿放好條屍就冇下文了。搵你嘅人多數會摸門釘，甚或可能會仆街死……不過連殺就一定隊到你，雖則你會令佢拗柴，下一晚殺錯另一個。</value>
+		<value>你係埋屍仔 ☠️。\n你每晚喺各永遠墳場內掘墳墓埋好死去嘅烈士。\n1. 若過去一日死咗人，你會喺墳場做到冇停手，若狼、邪教搵你總會撲空。\n2. 雖則你 On Call 36 小時，但你會趁冇人死嗰陣返屋企補眠。\n3. 搵你嘅人都可能會仆街死（睇你埋咗幾多屍，村民陣營機率減半）。\n4. 狼人、連殺可能順手牽命（睇你當晚要掘幾多墳）。\n5. 連殺使命必達，你總會俾佢搵到，但至少你可能會令佢拗柴，下一晚殺錯另一個。</value>
+	</string>
+	<string key="GraveDigger">
+		<value>埋屍仔 ☠️</value>
+	</string>
+	<string key="DigNoGraves">
+		<value>難得今日冇屍要搞，辛勞完一日嘅你表示終於可以收工，返屋企後倒頭大睡了。</value>
+		<value>難得今日唔洗 OT ，你準時 6 點鐘「收工，走人！」。但係，你聽日都係要準時 9 點返工……慘豬豬～</value>
+	</string>
+	<!--{0}: list of people who died since last grave-->
+	<string key="DigGraves">
+		<value>喺夜闌人靜時，你幫死於非命嘅【{0}】搞好墳墓，希望佢哋下一場唔好死得咁慘……</value>
+		<value>丑時，你埋好【{0}】呢班烈士。不過，你覺得周圍嗰 8 隻烏鴉好撚煩膠……</value>
+		<value>你埋好【{0}】條屍後，喺紀念花園開通佢哋嘅無盡思念網站。你慨嘆呢行好難撈，除咗有氣有力、唔怕攰，仲要識寫網頁先可以勝任……</value>
+	</string>
+	<string key="GraveDiggerFrozen">
+		<value>當你離家前往墓園，準備安葬今晚慘死嘅人，唔知邊度吹來一陣冷風，令你全身結冰 🐺☃️。雖然你喺日出之後就可以解凍回復正常，可憐啱啱橫死嘅人要做多晚孤魂野鬼…</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="GraveDiggerNotHome">
+		<value>【{0}】唔喺屋企！不過你見到佢間屋有幾支蠟燭……</value>
+		<value>【{0}】唔喺屋企！不過你見到佢間屋有幾把鏟……</value>
+	</string>
+	<!--{0}: grave digger, {1}: wolf who fell into the grave-->
+	<string key="WolfFellWolves">
+		<value>飢餓嘅狼群尋晚去【{0}】屋企，點知喺路上，【{1}】踩到個捕獸器，仲仆街仆咗落個墳墓度，然後俾一把大鐵鏟插死咗！</value>
+	</string>
+	<!--{0}: the wolf who fell into the grave-->
+	<string key="WolfFell">
+		<value>你終於掘好晒所有墳墓，準備為呢晚嘅死者安葬，突然聞到一陣同平時屍臭唔同嘅腥臭味。你一望，原來狼人【{0}】跌咗落墳墓仆街死！</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="KillerStumbled">
+		<value>你一如既往咁以嫻熟嘅手法咁拎走【{0}】嘅一對腎腎，但月黑風高係殺蟲夜，唔係盜墓夜啊！你一個唔小心咁仆咗落佢整嘅其中一個墳墓到。你呢刻真係啞佬食咗黃蓮咁，又唔可以大嗌，唯有強忍劇痛咁拐下拐下返屋企。</value>
+		<value>你一刀捅穿【{0}】個心臟，但你出手太快， chok 親右膊頭，好死唔死你整傷你隻慣用手，你決定包紮佢返家休養一下。\n奇怪，點解你包紮嘅係左膊頭呢？唔撚係掛！？</value>
+	</string>
+	<!--{0}: intended victim, {1}: actual victim-->
+	<string key="KillerRandomKill">
+		<value>當你去緊【{0}】間屋嗰陣，你覺得腳痛難忍，唯有返屋企開電動輪椅，以 9 秒 9 嘅速度是但去間喺對面街口嘅屋企，一刀搞掂咗【{1}】。</value>
+	</string>
+	<!--{0}: victim-->
+	<string key="GuardBlockedRandomKiller">
+		<value>你去到【{0}】間屋，發現佢道門光殘殘，仲閃過一對對情人，原來佢請咗守護天使做客。只見佢超～暴力咁拆咗你左膊頭上嘅繃帶，發現你嘅傷口其實喺右膊頭。「屌你老味！好心你好似我咁去參加急救與健康急救班啦，包錯手之餘仲要學人包個唔撚係掛，過主啦！」你除咗心裡罵着無數個粗口悻悻然返歸外，你乜都做唔撚到……</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="HunterFell">
+		<value>「又殺唔到班邪教魔徒！」\n你一邊鬧一邊行，唔覺唔覺行到去墳場。你顧住鬧班邪教，留意唔到個陷阱，轉眼就墮入【{0}】挖出嚟個墓穴。喺你未嚟得切屌柒邪教，你條頸骨已經率先折斷，一命嗚呼…</value>
+	</string>
+	<!--{0}: cult hunter-->
+	<string key="HunterFellDigger">
+		<value>又一個辛勞嘅夜晚，天都光晒你先收得工返屋企。然後你經過墓園，發現墓穴多咗條屍，旁邊仲有一把劍。個戇鳩驅魔人【{0}】竟然以為你係邪教魔徒，你心諗佢咁樣仆街真係抵撚死啦…</value>
+	</string>
+	<!--{0}: cultist-->
+	<string key="CultFell">
+		<value>你挖完墓準備返屋企，墳場無啦啦有人失控咁尖叫！你即刻趕過去，發現【{0}】反晒白眼咁瞓喺個墓穴入面。你慨嘆一聲：「屌…啲邪教都鳩吓鳩吓咁，又要我幫佢哋執屍…」</value>
+	</string>
+	<!--{0}: cultist who fell, {1}: grave digger-->
+	<string key="CultConvertGraveDigger">
+		<value>你哋去緊【{1}】屋企傳教嘅時候，【{0}】忽發奇想話：「不如我哋去燒咗座教堂？」\n你哋認為呢個提議戇鳩得嚟又幾刺激，於是就掉頭。【{0}】一個箭步衝去教堂，點知俾個捕獸器夾住然後跌咗落個墓穴！佢驚惶呼叫請人救佢，但你哋內心都恥笑緊佢係豬隊友，然後決定見死不救，各自逃命！</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="ChemistFell">
+		<value>你行緊去【{0}】屋企，仲回憶緊邊支係「含笑半步釘」，邊支係「川貝枇杷膏」時，一個唔留神就跌咗落個墓穴，一把大鐵鏟一嘢插穿你個心臟！你仲未嚟得切慘叫就已經死…咗…</value>
+	</string>
+	<!--{0}: chemist-->
+	<string key="ChemistFellDigger">
+		<value>你喺墓園見到支酒，心諗頸渴咗成晚終於有嘢飲。但你嘅理智話你知，空穴來風必有因，呢支酒嘅出現一定有古怪。你仔細一望，【{0}】同佢支酒一齊瞓咗喺墓穴入面！你即刻丟低咗支酒，完全冇晒胃口…</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="HarlotFell">
+		<value>你搽上鮮紅嘅唇膏準備去勾引【{0}】，但你門口都未入就踩到個陷阱，跌咗落個墳墓入面，你用你嬌喘嘅聲線求救，但到你斷氣嗰陣都冇人嚟救你…</value>
+	</string>
+	<!--{0}: harlot-->
+	<string key="HarlotFellDigger">
+		<value>今生你注定一人，你唔單只要做挖墳呢啲工作，連唯一睇中你嘅妓女【{0}】都喺你親手挖嘅墓穴跌死咗。你見到【{0}】嘅死相都咁誘人，本能反應咁想屌條屍，但你嘅職業道德令你決定好好安葬咗佢，然後返屋企打飛機。</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="HarlotVisitDigger">
+		<value>你千辛萬苦跨過所有墓穴，終於嚟到【{0}】屋企，但入面空無一人…【{0}】真係唔識趣，有雞送上門都去咗返工挖墳，你失望又忿恨，喺地下留低個唇印之後就返屋企！</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="GAFell">
+		<value>你今晚想守護【{0}】，點知跌咗落佢挖好嘅墳墓入面…你一片好心竟然就咁冤枉死咗，真係陰功豬…</value>
+	</string>
+	<!--{0}: guardian angel-->
+	<string key="GAFellDigger">
+		<value>你喺路上面發現幾條羽毛喺地下，心諗守護天使肯定出咗事。原來守護天使【{0}】死咗喺你自己挖嘅墓入面！你只能自責點解成日要害死好人咁戇鳩？</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="ThiefFell">
+		<value>你決定要偷【{0}】嘅身份，於是鬼鬼祟祟咁行去佢屋企，但你冇睇清楚路，結果仆咗落【{0}】一早挖好嘅墓穴，瞬間斃命。希望你下世唔好咁慘要做個無身份嘅人啦。</value>
+	</string>
+	<!--{0}: thief-->
+	<string key="ThiefFellDigger">
+		<value>好彩你喺墳墓附近裝咗彈弓咋，啱啱【{0}】想偷你嘅身份，結果仆街死咗，你先至唔使失業咋！</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="ArsonistFell">
+		<value>睇路啦痴線佬，一日到黑淨係想淋人火水，結果High得滯跌咗入個墳墓度，一把大鐵鏟插穿你個心臟！\n哈哈哈哈哈，天收你啦！</value>
+	</string>
+	<!--{0}: arsonist-->
+	<string key="ArsonistFellDigger">
+		<value>你喺墳場聞到一陣濃烈嘅火水味。不出所料，你喺其中一個墳墓發現縱火狂徒【{0}】條屍。你即刻仆返屋企，好彩無俾個暴徒淋火水…</value>
+	</string>
+	<!--{0}: person that died, {1}: "(person) was (role)"-->
+	<string key="DefaultFellPublic">
+		<value>狼人村土地供應不足，死咗嘅人多到無地方安葬啦…【{0}】尋晚好去唔去，走去搵埋屍仔，結果喺墳場跌咗落墳墓入面仆街死咗！ {1}</value>
+	</string>
+	<!--{0}: harlot-->
+	<string key="HarlotFellPublic">
+		<value>妓女【{0}】尋晚喺路上仆街跌死咗喺個墳墓度，佢死得好慘…紅唇烈焰，極待撫慰，希望佢下世搵到份好啲嘅工作啦。</value>
+	</string>
+	<!--{0}: cultist who died-->
+	<string key="CultistFellPublic">
+		<value>尋晚邪教魔徒打算一把火燒咗個教堂，然後【{0}】興奮得滯，仆咗落個墓穴死撚咗！其他教徒即刻逃命，消失得無影無蹤…</value>
+	</string>
+	<!--{0}: thief-->
+	<string key="ThiefFellPublic">
+		<value>偷渡客【{0}】真係慘，生前無人無物無名無份，只有死咗喺墓穴大家先知佢係偷渡客，希望佢下世投好胎啦。</value>
+	</string>
+	<!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+	<string key="WolfFellPublic">
+		<value>狼群尋晚去到充滿血腥味嘅墳場覓食，【{0}】以為索到有獵物，點知自己踩落陷阱，墓穴個鐵鏟插爆佢個頭，死得好恐怖啊！ {1}</value>
+	</string>
+	<string key="SerialKillerSpottedYou" isgif="true">
+		<value>你只係想搵食，一如以往咁掘下墳墓為兩餐飯，突然有個痴線佬衝出嚟，你未嚟得切反應就俾佢用刀插死咗…</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="SerialKillerSpotted">
+		<value>今晚你行咗去墳場附近偷腎腎，然後發現埋屍仔【{0}】喺度掘墳。嗯…今晚有多兩粒腎腎玩了…</value>
+	</string>
+	<string key="WolvesSpottedYou" isgif="true">
+		<value>你只係想搵食，一如以往咁掘下墳墓為兩餐飯，但你身後有隻狼撲咗出嚟！人嘅弱點就係佢背脊，你俾佢抓死咗喇！</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="WolvesSpotted">
+		<value>你哋嚟到充滿血腥味嘅墳場，見到埋屍仔【{0}】拎住把染血嘅大鐵鏟挖墳。你哋其中一隻狼二話不說撲上去，一啖咬死咗【{0}】！</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="WolvesSpottedDiggerPublic">
+		<value>村民起身飲早茶，發覺一向準時嘅【{0}】竟然冇嚟，於是佢哋就去佢屋企睇下啦，行到半路，見到原來【{0}】喺佢個墳場度死撚咗，隻手仲拎住佢個鐵鏟。鬼叫佢成身血腥味引晒啲狼嚟咩…</value>
+	</string>
+	<!--{0}: grave digger-->
+	<string key="KillerSpottedDiggerPublic">
+		<value>村民起身飲早茶，發覺一向準時嘅【{0}】竟然冇嚟，於是佢哋就去佢屋企睇下啦，行到半路，見到原來【{0}】喺佢個墳場度死撚咗，隻手仲拎住佢個鐵鏟，身上仲成身刀傷，而且唔見咗兩粒腎…</value>
+	</string>
+	<string key="AllowArsonist">
+		<value>角色／縱火狂徒 🔥</value>
+	</string>
+	<!--{0}: Allow/Disallow-->
+	<string key="AllowArsonistQ">
+		<value>允許玩家抽中縱火狂徒 🔥？\n當前設定︰{0}</value>
+	</string>
+	<!--{0}: Allow/Disallow-->
+	<string key="AllowArsonistA">
+		<value>Arsonist is now set to {0}.</value>
+	</string>
+	<string key="BurningOverkill">
+		<value>🔥➕🔪❓</value>
+	</string>
+	<!--{0}: Allow/Disallow-->
+	<string key="BurningOverkillQ">
+		<value>Allow Arsonist and Serial Killer to be in same game? Might be deadly! 😈 Current: {0}</value>
+	</string>
+	<!--{0}: Allow/Disallow-->
+	<string key="BurningOverkillA">
+		<value>Arsonist and Serial Killer in same game are now {0}.</value>
+	</string>
+	<string key="AboutArsonist">
+		<value>你係縱火狂徒 🔥。每晚，你一係喺一間屋到淋火水，一喺點火燒有火水嘅佢地一鑊熟。燒到得返你一個嗰陣就贏了。喺你點火前都唔會有人因為你而死。</value>
+	</string>
+	<string key="RoleInfoArsonist">
+		<value>你係縱火狂徒 🔥。\n每晚，你一係喺一間屋到淋火水，一喺點火燒有火水嘅佢地一鑊熟。燒到得返你一個嗰陣就贏了。\n喺你點火前都唔會有人因為你而死，所以你可以殺人於無形，係咪好簡單、好好玩呢？</value>
+		<value>你係縱火狂徒 🔥。\n你同玩命大師一樣都係讀（有機）化學出身。不過，條村嘅人鍾意賭，唔鍾意火。所以，佢地同你就好似同連環殺手咁有不共戴天之仇。\n你每晚一係喺一間屋到淋火水，一喺點火燒有火水嘅佢地一鑊熟。燒到得返你一個嗰陣就贏了。</value>
+	</string>
+	<string key="Arsonist">
+		<value>縱火狂徒 🔥</value>
+	</string>
+	<string key="AskArsonist">
+		<value>你想淋病一間屋定係燒佢全家，打佢媽媽？</value>
+		<value>你想淋多一間屋定係一口氣燒佢地一鑊熟？</value>
+	</string>
+	<!--{0}: arsonist-->
+	<string key ="ArsonistVisitKiller">
+		<value>【{0}】打算請啲屋飲下火水解下渴，點知佢走咗上癲佬屋企！\n【{0}】淋完火水諗住轉個頭就走，「咪走！」癲佬一跳就跳咗喺佢面前。佢冷冷咁講咗一句：「吾夢中好殺人。」【{0}】冷汗飆晒出嚟，火水桶應聲掉下。\n說時遲那時快，癲佬一刀劃過咗【{0}】嘅胸膛。\n【縱火狂徒 🔥】皮已收。 </value>
+	</string>
+	<string key="Spark">
+		<value>喝！💥</value>
+		<value>藝術就是爆炸！💥</value>
+		<value>藝術就是派大星！💥</value>
+		<value>消失吧！🤞💥</value>
+	</string>
+	<!--{0}: person whose house was doused-->
+	<string key="Doused">
+		<value>你成功喺【{0}】間屋淋咗無色無味嘅火水！</value>
+		<value>你成功喺【{0}】間屋淋咗火水，願烈焰與你同在！</value>
+		<value>你成功喺【{0}】間屋淋咗火水， may the flame be with you ！</value>
+	</string>
+	<string key="GuardSavedYouFromFire">
+		<value>你屋企突然無名火起三千丈，正當你絕望地等死時，守護天使唔知喺邊搵到啲聖水返嚟灑，成功救返你同你間屋！</value>
+	</string>
+	<!--{0}: saved person-->
+	<string key="GuardSavedFromFire">
+		<value>你喺【{0}】間屋同佢一齊食下花生、煲下劇乜乜乜，忽然間屋地板起火！但你驀然回首～雙手兩條乾冰柱，輕易滅火仲有餘。你成功咁保全咗你地嘅身家性命財產。\n你決定同【{0}】一齊食下刨冰賀一賀佢。</value>
+	</string>
+	<!--{0}: person whose house was cleaned-->
+	<string key="CleanDoused">
+		<value>你喺【{0}】屋企行行企企，突然發現佢成地濕晒。你為人為到底，決定幫佢抹乾淨間屋先離開。最後你一聞：「仆你個街，火水嚟嘅喂…」</value>
+	</string>
+	<!--{0}: list of people who died in the flames-->
+	<string key="Burning">
+		<value>本狼人村由於三面環山、屏風屋一排排，加上九成嘅屋都係用木造嘅，勁易扯火，仲要一發不可收拾嗰隻。昨晚環迴山路啲屋着晒火！住喺嗰條路嘅人無一倖免。鄰村「藝人村」有消防員趕至救火，但期間有兩名消防員不幸殉職。眾「藝人村」村民紛紛在社交網站 Villter 上載其自拍照，手持白紙寫上「 #向前線消防員致敬 」及亮著手提電話亮燈或亮起小電筒，在描述上也打上了相同hashtag。惟「狼人村」村民大都對此壓倒性負評。\n以下係今次火災死難者名單：\n{0}</value>
+	</string>
+	<string key="ArsonistWins">
+		<value>呢條村得返一條縱火狂徒！\n【縱火狂徒 🔥】贏咗！</value>
+		<value>呢條村得返一條縱火狂徒，佢傲然地企喺一堆灰燼上，「大地在我腳下！」，佢要變身成鳳凰了嗎？\n【縱火狂徒 🔥】贏咗！</value>
+	</string>
+	<string key="Burn" isgif="true">
+		<value>叫咗你警醒做好預備㗎啦！家中又冇滅火筒，結果你俾縱火狂徒一把火滅咗你……</value>
+	</string>
+	<string key="Augur">
+		<value>明燈 🦅</value>
+	</string>
+	<!--{0}: role that is not part of the village-->
+	<string key="AugurSees">
+		<value>你吹完雞望天打掛，發現啲烏鴉、蝙蝠、夜鶯飛返黎組成一個好怪嘅圖案，你翻開你手上本圖鑑一睇，知道【{0}】呢刻唔喺你條村。</value>
+		<value>你聽到啲鸚鵡同你講：「你呢條村冇【{0}】！」</value>
+	</string>
+	<string key="AboutAugur">
+		<value>你係明燈 🦅。每朝早烏鴉都會飛過嚟，話你知呢條村入面冇嘅角色，而且同一個角色唔會睇到兩次。</value>
+	</string>
+	<string key="RoleInfoAugur">
+		<value>你係明燈 🦅。\n作為蕭生轉世嘅你，你睇到嘅係村裡面冇嘅角色，而且同一個角色唔會睇到兩次。</value>
+	</string>
+	<string key="AugurSeesNothing">
+		<value>是晚星空萬里，而且任憑你點吹雞都好，都冇雀仔返過嚟，咁即係你對村裡冇嘅角色睇通睇透了……</value>
+	</string>
+	<!--{0}: chosen victim, {1}: wolf who died in flames-->
+	<string key="WolvesVisitBurn">
+		<value>狼群狗衝去【{0}】間屋，只聽到一聲「此火可助我軍大獲全勝！」。\n眾狼一聽到個「火」字，嚇到青都臉晒，一個二個走夾唔抖，但隊尾嘅【{1}】就走唔切，燒到狼皮都冇得剩……</value>	  
+	</string>
+	<!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+	<string key="DefaultVisitBurn">
+		<value>大家一如以往咁瞓得好冧，但係對於【{0}】就另當別論。【{0}】好揀唔揀去咗間屋，去到嗰度只見到一個黑影淡然咁數「25, 26, 27…」。【{0}】仲質疑佢自言自語啲乜撚嘢，只見佢數到「29, 30!」就拍下屁股爬窗走人！\n而【{0}】就只見到退路被封，全屋火臭熏天……\n【{1}】</value>
+	</string>
+	<!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+	<string key="WolfVisitBurn">
+		<value>「呯！」眾人喺睡夢中驚醒，只見一間屋火光沖天……\n原來尋晚班狼肚子空空，鼓聲咚咚，震耳欲聾，決定出街食一個人醫下肚。但估唔到間屋早已空盪盪，班狼本能地心諗大檸樂，三十六計走為上計，但係都係有隻狼【{0}】走唔切。\n遠處有人撳佢手上嘅手錶，引爆咗屋內堆炸藥……鑑證專家聞訊嚟到，只見到一堆狼毛同埋灰。\n【{1}】</value>
+	</string>
+	<string key="ChemistKillWiseElder">
+		<value>雖然玩命大師殺咗長老之後仍然好似林太咁鳩縮，唔肯自首，但佢都總算有自知之明，決定問責辭職，從此做番個普通廢村。</value>
+	</string>
+	<string key="ArsonistWinsOverpower">
+		<value>條村剩返【{0}】同埋【{1}】兩個…突然【{0}】露出邪惡嘅笑容，將成桶火水淋落【{1}】身上然後點火！【{1}】就咁燒死咗！</value>
+	</string>
+  <!--Add missing 2019 July 11-->
+  <string key="ArsonistTeamEnd">
+    <value>縱火狂徒</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+    <!--{0}:person harlot chose to visit-->
+    <value>你去咗【{0}】屋企想同佢翻雲覆雨，點知個衰佬唔喺屋企！你唯有拎碌假鳩出嚟撩兩嘢然後返歸啦。</value>
+  </string>
+</strings>
