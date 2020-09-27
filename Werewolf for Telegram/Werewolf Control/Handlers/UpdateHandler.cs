@@ -463,7 +463,7 @@ namespace Werewolf_Control.Handler
                             }
                             break;
                         case MessageType.DocumentMessage:
-                            if (update.Message.Document.MimeType.ToLower().Equals("image/gif"))
+                            if (update.Message.Document?.MimeType?.ToLower().Equals("image/gif") ?? false)
                             {
                                 if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
                                 {

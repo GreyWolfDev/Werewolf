@@ -456,13 +456,16 @@ namespace Werewolf_Control.Helpers
             {
                 var zipname = new Regex("[^a-zA-Z0-9]").Replace(choice, "_"); //get rid of non-alphanumeric characters which can cause trouble
                 var path = Path.Combine(Bot.LanguageDirectory, $"BaseZips\\{zipname}.zip"); //where the zipfile will be stored
+                var dir = Path.Combine(Bot.LanguageDirectory, "BaseZips\\");
+                if (!Directory.Exists(dir))
+                    Directory.CreateDirectory(dir);
                 if (File.Exists(path))
                     File.Delete(path);
 
                 //create our zip file
                 using (var zip = ZipFile.Open(path, ZipArchiveMode.Create))
                 {
-                    var langs = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).Where(x => x.Base == choice); //get the base
+                    var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml", SearchOption.TopDirectoryOnly).Select(x => new LangFile(x)).Where(x => x.Base == choice); //get the base
                     foreach (var lang in langs)
                         zip.CreateEntryFromFile(Path.Combine(Bot.LanguageDirectory, $"{lang.FileName}.xml"), $"{lang.FileName}.xml", CompressionLevel.Optimal); //add the langs to the zipfile
                 }
