@@ -1061,13 +1061,13 @@ namespace Werewolf_Control.Handler
                     }
                     if (choice == "cancel")
                     {
-                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroupAttribute.GetConfigGroup(command.Substring(3))));
+                        Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroupAttribute.GetConfigGroup(command.Substring(3))));
                         return;
                     }
                     if (Enum.TryParse(command, out ConfigGroup confGroup))
                     {
                         var text = confGroup == ConfigGroup.RoleConfig ? "RoleConfigInfo" : "WhatToDo";
-                        Bot.ReplyToCallback(query, GetLocaleString(text, language), replyMarkup: GetConfigSubmenu(groupid, confGroup));
+                        Bot.ReplyToCallback(query, GetLocaleString(text, language), replyMarkup: GetConfigSubmenu(groupid, language, confGroup));
                         return;
                     }
                     grp?.UpdateFlags();
@@ -1461,7 +1461,7 @@ namespace Werewolf_Control.Handler
                             if (args[3] == "Random" && args[4] == "v")
                             {
                                 if (grp == null) return;
-                                menu = GetConfigSubmenu(grp.GroupId, ConfigGroup.GroupSettings);
+                                menu = GetConfigSubmenu(grp.GroupId, language, ConfigGroup.GroupSettings);
 
                                 var langbase = args[2];
                                 var basefiles = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).Where(x => x.Base == langbase);
@@ -1584,7 +1584,7 @@ namespace Werewolf_Control.Handler
                                 grp.RoleFlags = (long)((IRole)grp.RoleFlags & ~IRole.VALID);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("MaxPlayersA", language, choice));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.GroupSettings));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.GroupSettings));
                             DB.SaveChanges();
                             break;
                         //case "roles":
@@ -1630,7 +1630,7 @@ namespace Werewolf_Control.Handler
                             grp.Mode = choice;
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("GameModeA", language, choice));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.GroupSettings));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.GroupSettings));
                             DB.SaveChanges();
                             break;
                         case "endroles":
@@ -1659,7 +1659,7 @@ namespace Werewolf_Control.Handler
                             grp.ShowRolesEnd = choice;
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("ShowRolesEndA", language, choice));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.Mechanics));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.Mechanics));
                             DB.SaveChanges();
                             break;
                         case "daytimer":
@@ -1689,7 +1689,7 @@ namespace Werewolf_Control.Handler
                             grp.DayTime = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("SetDayTimeA", language, int.Parse(choice) + 60));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.Timers));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.Timers));
                             DB.SaveChanges();
                             break;
                         case "nighttimer":
@@ -1719,7 +1719,7 @@ namespace Werewolf_Control.Handler
                             grp.NightTime = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("SetNightTimeA", language, choice));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.Timers));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.Timers));
                             DB.SaveChanges();
                             break;
                         case "lynchtimer":
@@ -1749,7 +1749,7 @@ namespace Werewolf_Control.Handler
                             grp.LynchTime = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("SetLynchTimeA", language, choice));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.Timers));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.Timers));
                             DB.SaveChanges();
                             break;
                         //case "fool":
@@ -1855,7 +1855,7 @@ namespace Werewolf_Control.Handler
                             grp.MaxExtend = int.Parse(choice);
                             Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("MaxExtendA", language, choice));
                             Bot.ReplyToCallback(query,
-                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroup.Timers));
+                                GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.Timers));
                             DB.SaveChanges();
                             break;
                         case "done":
@@ -1895,7 +1895,7 @@ namespace Werewolf_Control.Handler
                             disabledRoles &= ~IRole.Spumpkin; // Make SURE ww, vg and special are not disabled
                             grp.RoleFlags = (long)disabledRoles;
                             DB.SaveChanges();
-                            Bot.Edit(query, GetLocaleString("RoleConfigInfo", language), GetRoleConfigMenu(groupid));
+                            Bot.Edit(query, GetLocaleString("RoleConfigInfo", language), GetRoleConfigMenu(groupid, language));
                             break;
                         case "validateroles":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId))
@@ -1921,7 +1921,7 @@ namespace Werewolf_Control.Handler
                             }
                             grp.RoleFlags = (long)disabledRoles;
                             DB.SaveChanges();
-                            Bot.Edit(query, GetLocaleString("RoleConfigInfo", language), GetRoleConfigMenu(groupid));
+                            Bot.Edit(query, GetLocaleString("RoleConfigInfo", language), GetRoleConfigMenu(groupid, language));
                             break;
                         default:
                             //check the statement against various flags to see if it a boolean group setting.  If so, build out the response.
@@ -1971,7 +1971,7 @@ namespace Werewolf_Control.Handler
                                 grp.Flags = (long)flags;
                                 command = command.Substring(3);
                                 Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString($"{chosen.ToString()}A", language, current ? GetLocaleString(pos, language) : GetLocaleString(neg, language)));
-                                Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, ConfigGroupAttribute.GetConfigGroup(command)));
+                                Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroupAttribute.GetConfigGroup(command)));
                                 DB.SaveChanges();
                             }
                             else
@@ -2210,9 +2210,9 @@ namespace Werewolf_Control.Handler
             return menu;
         }
 
-        internal static InlineKeyboardMarkup GetConfigSubmenu(long id, ConfigGroup configGroup)
+        internal static InlineKeyboardMarkup GetConfigSubmenu(long id, string language, ConfigGroup configGroup)
         {
-            if (configGroup == ConfigGroup.RoleConfig) return GetRoleConfigMenu(id);
+            if (configGroup == ConfigGroup.RoleConfig) return GetRoleConfigMenu(id, language);
 
             List<InlineKeyboardButton> buttons = new List<InlineKeyboardButton>();
 
@@ -2220,7 +2220,7 @@ namespace Werewolf_Control.Handler
             {
                 foreach (var opt in ConfigGroupAttribute.hardcodedConfigOptions[configGroup])
                 {
-                    buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(opt, GetLanguage(id)), $"{opt.ToLower()}|{id}"));
+                    buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(opt, language), $"{opt.ToLower()}|{id}"));
                 }
             }
 
@@ -2244,10 +2244,10 @@ namespace Werewolf_Control.Handler
             {
                 if (!flag.IsEditable() || ConfigGroupAttribute.GetConfigGroup(flag.GetInfo().ShortName) != configGroup) continue;
                 //get the flag, determine the shortname and make a button out of it.
-                buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(flag.ToString(), GetLanguage(id)), $"{flag.GetInfo().ShortName}|{id}"));
+                buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString(flag.ToString(), language), $"{flag.GetInfo().ShortName}|{id}"));
             }
 
-            buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString("Back", GetLanguage(id)), $"{configGroup}|{id}|back"));
+            buttons.Add(new InlineKeyboardCallbackButton(GetLocaleString("Back", language), $"{configGroup}|{id}|back"));
 
             var twoMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)
@@ -2265,7 +2265,7 @@ namespace Werewolf_Control.Handler
             return menu;
         }
 
-        public static InlineKeyboardMarkup GetRoleConfigMenu(long id, bool addEnableAll = true, bool addDisableAll = true)
+        public static InlineKeyboardMarkup GetRoleConfigMenu(long id, string language, bool addEnableAll = true, bool addDisableAll = true)
         {
             var buttons = new List<InlineKeyboardButton>();
 
@@ -2298,21 +2298,19 @@ namespace Werewolf_Control.Handler
                         threeMenu.Add(new[] { buttons[i], buttons[i + 1], buttons[i + 2] });
                 }
 
-                var l = GetLanguage(id);
-
                 threeMenu.Add(new InlineKeyboardButton[]
                 {
-                    new InlineKeyboardCallbackButton(GetLocaleString("EnableAllRoles", l), $"togglerole|{id}|enableall"),
-                    new InlineKeyboardCallbackButton(GetLocaleString("DisableAllRoles", l), $"togglerole|{id}|disableall")
+                    new InlineKeyboardCallbackButton(GetLocaleString("EnableAllRoles", language), $"togglerole|{id}|enableall"),
+                    new InlineKeyboardCallbackButton(GetLocaleString("DisableAllRoles", language), $"togglerole|{id}|disableall")
                 });
 
                 List<InlineKeyboardButton> lastRow = new List<InlineKeyboardButton>
                 {
                     disabledRoles.HasFlag(IRole.VALID)
-                        ? new InlineKeyboardCallbackButton(GetLocaleString("Valid", l), $"dummmy")
-                        : new InlineKeyboardCallbackButton(GetLocaleString("Validate", l), $"validateroles|{id}"),
+                        ? new InlineKeyboardCallbackButton(GetLocaleString("Valid", language), $"dummmy")
+                        : new InlineKeyboardCallbackButton(GetLocaleString("Validate", language), $"validateroles|{id}"),
 
-                    new InlineKeyboardCallbackButton(GetLocaleString("Back", l), $"{ConfigGroup.RoleConfig.ToString()}|{id}|back")
+                    new InlineKeyboardCallbackButton(GetLocaleString("Back", language), $"{ConfigGroup.RoleConfig.ToString()}|{id}|back")
                 };
 
                 threeMenu.Add(lastRow.ToArray());
