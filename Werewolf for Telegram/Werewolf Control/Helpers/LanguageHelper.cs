@@ -427,7 +427,7 @@ namespace Werewolf_Control.Helpers
             {
                 var langs = Directory.GetFiles(Bot.LanguageDirectory);
                 foreach (var lang in langs)
-                    zip.CreateEntryFromFile(lang, lang, CompressionLevel.Optimal); //add the langs to the zipfile
+                    zip.CreateEntryFromFile(lang, Path.GetFileName(lang), CompressionLevel.Optimal); //add the langs to the zipfile
             }
 
             //now send the file
