@@ -557,6 +557,9 @@ namespace Werewolf_Control.Helpers
                 result += $"\n_Variant:_ {newFile.Variant ?? ""}";
             }
 
+            if (newFile.IsDefault)
+                result += "\n\n*isDefault: true*";
+
             return result;
         }
 
