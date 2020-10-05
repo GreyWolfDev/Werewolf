@@ -227,7 +227,7 @@ namespace Werewolf_Control.Handler
                     HandlePayment(update.PreCheckoutQuery);
                     return;
                 }
-                if (update.Message == null || update.Message.From.Id == 777000) return;
+                if (update.Message == null || update.Message.From.Id == 777000 /*Channel Post*/) return;
 
 #if !DEBUG
                 //ignore previous messages
@@ -366,6 +366,11 @@ namespace Werewolf_Control.Handler
                                         Bot.Api.LeaveChat(update.Message.Chat.Id);
                                     }
 #endif
+                                    if (update.Message.From.Id == 1087968824) // Anonymous admin, through @GroupAnonymousBot
+                                    {
+                                        Send(GetLocaleString("ExitAnonymousMode", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
+                                        return;
+                                    }
                                     if (AddCount(update.Message.From.Id, update.Message)) return;
                                     //check that we should run the command
                                     if (block && command.Blockable)
