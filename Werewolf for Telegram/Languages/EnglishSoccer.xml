@@ -1,0 +1,1550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <language name="English Football" base="English" variant="Football" owner="Jummey" />
+  <string deprecated="true" key="NotInGame">
+    <value>You don't appear to be in any games right now...</value>
+  </string>
+  <string key="PlayerStartedGame">
+<!-- 0 - Player name -->
+    <value>{0} has started a football season! Join to play some football... or foul everyone until you win!</value>
+    <value>A new football tournament has been started by {0}! Join to play football!</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+<!-- 0 - Player name -->
+    <value>{0} has started a football tournament! But it seems, this one will be more chaotic. Join to play some football... or foul everyone until you win!</value>
+    <value>A chaotic football tournament has been started by {0}! Join to play football!</value>
+  </string>
+  <string deprecated="true" key="NoJoinGameRunning">
+    <value>You can't join now! The game is already running.</value>
+  </string>
+  <string deprecated="true" key="AlreadyJoined">
+    <value>You've already joined!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minute left to Join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+<!-- 0 - remaining seconds (number) -->
+    <value>{0} seconds left to Join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Odd... football players earn millions but not enough players available. Tournament canceled.</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Football tournament is starting, please wait while the trainers decide on which position you will play!</value>
+  </string>
+  <string deprecated="true" key="BannedForExploit">
+<!-- 0 - Player name -->
+    <value>{0} is banned for attempting an exploit (no names starting with /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+<!-- 0 - Player name -->
+    <value>{0}, please change your name to join</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sorry, max football player limit has been reached!</value>
+  </string>
+  <string key="PlayerJoined">
+<!-- 0 - Player name -->
+<!-- 1 - current players -->
+<!-- 2 - Minimum players -->
+<!-- 3 - Maximum players -->
+    <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
+  </string>
+  <string key="PMTheBot">
+<!-- 0 - Player name -->
+<!-- 1 - bot username -->
+    <value>{0} Please click the start button below or {1} and start me, so I can PM you your role.  You may not join the game until you do.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>You can't run away! YOU'RE DEAD!  Get back in the ground... jeez!</value>
+  </string>
+  <string key="Flee">
+<!-- 0 - Player name -->
+    <value>{0} decided he needs to go train more and has left this football season..</value>
+  </string>
+  <string key="PlayerRoleWas">
+<!-- 0 - Player name -->
+<!-- 1 - Player role -->
+    <value>{0} was {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+<!-- 0 - Number of players -->
+    <value>{0} players remain.</value>
+  </string>
+  <string deprecated="true" key="DidntAsk">
+    <value>Hey I didn't ask you anything yet!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>You don't seem to be playing...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>I can't find a player by that name!</value>
+  </string>
+  <string deprecated="true" key="AnswerNonValid">
+    <value>This answer is not valid!</value>
+  </string>
+  <string key="WolfVotedKill">
+<!-- 0 - wolf teammate name -->
+<!-- 1 - Victim name -->
+    <value>{0} has voted to foul {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+<!-- 0 - Voter name -->
+<!-- 1 - Target name -->
+    <value>{0} has voted to give a red card to {1}.</value>
+  </string>
+  <string key="IdleKill">
+<!-- 0 - player name -->
+<!-- 1 - player role -->
+    <value>{0} did not try to find any offenders for 2 games in a row. The fifa commitée cannot accept that and has decided to kick him out of the tournament. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>You were the looser. Now that every offender is dead, you decided to take revenge for all the bad publicity yourself and become an offender!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Choice accepted.</value>
+  </string>
+  <string key="BeholderSeer">
+<!-- 0 - seer name -->
+    <value>\nThe reporter is {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+<!-- 0 - seer name -->
+    <value>{0} was the reporter. As his assistant, you step up and become the reporter yourself.</value>
+  </string>
+  <string key="BeholderNewSeer">
+<!-- 0 - apprentice name -->
+<!-- 1 - seer name -->
+    <value>{0} was the assistant. Now that the reporter had to leave this tournament {0} fills {1}'s place as the new Reporter.</value>
+  </string>
+  <string key="SeerSees">
+<!-- 0 - player name -->
+<!-- 1 - player role -->
+    <value>You focus your news report on {0} and find out he is {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Who do you want to give a red card to?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Who do you want to interview?</value>
+  </string>
+  <string key="AskShoot">
+<!-- 0 - bullet count -->
+    <value>Who do you want to kick out of the team? {0} choice(s) remain.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Which person to you want to support this game?</value>
+  </string>
+  <string key="AskSee">
+    <value>Who do you want to focus your news report on?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Who do you want to keep save from any fouls?</value>
+  </string>
+  <string key="AskEat">
+    <value>Who do you want to foul?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Who do you want to investigate?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Who is your best buddy?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Who do you want to convert to a hooligan?</value>
+  </string>
+  <string key="DiscussWith">
+<!--Leave the leading spaces here please-->
+<!-- 0 - teammate names -->
+    <value>  Make sure you discuss with {0}</value>
+  </string>
+  <string key="And">
+<!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> and </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>You are the Bench Player (😾). Most matches the trainer doesn't let you play. If the offenders try to foul you, they will realize you are frustrated enough to join them and you will become an offender yourself.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>You are the interviewer (🕵️). Between matches you can interview one of the football player. But watch out because the offenders may find out. (40% chance)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>You are the line referee (🍺). You don't pay attention to the matches just like your boss but if one of the offenders fouls you, you will make sure to give them a yellow card.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>You are the goalkeeper (👼). Because your reflexes are super high, you cannot only guard your goal but also one specific player each match. However, if you want to guard an offender, there is a chance he will kick you in the knees. (50%)</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>You are the captain (🔫). As the team leader, the trainer gives you the choice to kick someone out of the team between matches two times.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>You are the middle fielder (💋). Your position during matches is very flexible but you are a bit lazy. So you decide to support one person for each match and that person only. But if you try to support an offender, he will make sure to foul you.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>You are the looser (🖕)! No one really likes you, you regularly get bad publicity and you want revenge. But as long as offenders are in the competition, you see no reason to step up yourself. Only when they all are out, you will become an offender yourself.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>You are an offender (🐺). The easiest way to win the tournament is fouling everyone out. Every match you can foul someone and they will be out for the rest of the tournament.</value>
+  </string>
+  <string key="RoleInfoSeer">
+    <value>You are the reporter (👳). Your main goal is to uncover undergoing networks of bullies and offenders, who are trying to win the tournament by cheating.</value>
+  </string>
+  <string key="RoleInfoVillager">
+    <value>You are a football player (👱), trying to do your job and play football.</value>
+  </string>
+  <string key="RoleInfoTanner">
+    <value>You are the injured player (👺). If someone tries to give you a red card, the crowd will be angered with the display and boycott the tournament. But you will get lots of gift cards and money, so you will win.</value>
+  </string>
+  <string key="RoleInfoWildChild">
+    <value>You are the best buddy (👶). You and your best buddy have been playing football together since you are little and lucky, you got into the same team. But if your buddy dies, you see no reason to play fair anymore and join to offenders.</value>
+  </string>
+  <string key="RoleInfoBeholder">
+    <value>You are the camera man (👁), faithful assistant of the reporter. Of course, you know the real reporter!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer">
+    <value>You are the reporter's assistant (🙇). If the reporter cannot do his job anymore, you will step up and become the reporter yourself.</value>
+  </string>
+  <string key="RoleInfoCultist">
+    <value>You are a hooligan (👤). You like violence and pyrotechnics. You can convince other people to do so too until only hooligans are left standing and the tournament is ruined.</value>
+  </string>
+  <string key="RoleInfoCultistHunter">
+    <value>You are the policeman (💂), trying to take care of every match and arresting the hooligans. Every match, you can investigate one person and find out if they are hooligans or not.</value>
+  </string>
+  <string key="LynchTime">
+<!-- 0 - number of seconds -->
+    <value>The next football match is coming closer. The football-community has to decide which person they want to give a red card to for the rest of the tournament! You have {0} seconds to discuss.</value>
+  </string>
+  <string key="DayTime">
+<!-- 0 - number of seconds -->
+    <value>It is now after the match. Before the next match starts, the football community has to decide which one of them should receive a red card. You have {0} seconds.</value>
+  </string>
+  <string key="NightTime">
+<!-- 0 - number of seconds -->
+    <value>A new football match has started. Everyone heads to the stadium to see a brilliant and hopefully fair game... Football players have {0} seconds for interactions.</value>
+  </string>
+  <string key="LynchKill">
+<!-- 0 - player name -->
+<!-- 1 - player role -->
+    <value>The football community has decided who must be the offender. {0} has gotten a red card and leaves the tournament. {1}</value>
+  </string>
+  <string key="LynchTie">
+    <value>Democracy didn't help the football community this time. Their vote is balanced, they cannot decide who the offender is. No red cards for anyone....</value>
+  </string>
+  <string key="NoLynchVotes">
+    <value>Something is fishy, for no one voted!...</value>
+  </string>
+  <string key="DetectiveEaten">
+<!-- 0 - victim name -->
+    <value>The football players come from the field exhausted, only to find {0} lying unconsciously on the brick, papers of his trusty notebook scattered everywhere. Seems like the offenders didn't like being interviewed.</value>
+  </string>
+  <string key="GuardianEaten">
+<!-- 0 - victim name -->
+    <value>In the changing room someone notices {0} is missing. They go back onto the field, only to find him lying next to the goal with a bruise on his head.</value>
+  </string>
+  <string key="GunnerEaten">
+<!-- 0 - victim name -->
+    <value>As the players enter the shower they find {0} lying in them, the captain's apron stuffed in his mouth. The offenders didn't even stop with their own captain!</value>
+  </string>
+  <string key="SeerEaten">
+<!-- 0 - victim name -->
+    <value>The football players go from the field, expecting to be interviewed by {0} immediately, only to find him beaten up in front of the camera. Sadly, the offenders made sure to disable it before hurting the reporter.</value>
+  </string>
+  <string key="DrunkEaten">
+<!-- 0 - victim name -->
+    <value>While playing the next football game, one of the players notices someone standing in an offside position. He tries to complain to the line referee, only to find him beaten up at the side. But what's this? {0} has a yellow card in the hand... No fouling for the offenders next game!</value>
+  </string>
+  <string key="FoolEaten">
+<!-- 0 - victim name -->
+    <value>As the football players leave the field, they see {0} on the ranks, his trusty Canon broken besides him. Seems like the offenders mistook the hobby filmer for the actual reporter.</value>
+  </string>
+  <string key="DefaultEaten">
+<!-- 0 - victim name -->
+<!-- 1 - victim role -->
+    <value>As everyone heads out of the stadium, they see {0} lying in the bushes, covered in his own blood. {1}.</value>
+  </string>
+  <string key="HunterKilledCultist">
+<!-- 0 - victim name -->
+    <value>Loud sirens can be heard, even shots, as the police arrests {0}. He will get a stadium ban forever. One of the hooligan has been found out.</value>
+  </string>
+  <string key="NoAttack">
+    <value>The players leave the stadium, happy to see that no one was fouled last game.</value>
+  </string>
+  <string key="CursedBitten">
+    <value>The offenders wanted to foul you but they noticed your frustration and asked you to join them. You gladly accept, joining the offenders.</value>
+  </string>
+  <string key="WolfTeam">
+<!-- 0 - teammate names -->
+    <value>Your offender teammate(s): {0}</value>
+  </string>
+  <string key="CursedBittenToWolves">
+<!-- 0 - victim name -->
+    <value>{0} was the Bench Player. Due to his frustration, he joined you! Congrats on your new teammate!</value>
+  </string>
+  <string key="WolvesEatYou">
+    <value>While playing, you suddenly feel great pain in your knee! You've got fouled by the offenders.</value>
+  </string>
+  <string key="WolvesEatDrunk">
+<!-- 0 - victim name -->
+    <value>As you foul {0}, he falls to the ground, only to take out a yellow card moments before he becomes unconscious. Oh no! {0} was the line referee!</value>
+  </string>
+  <string key="GuardWolf">
+    <value>You tried to protect a player, only to be hit on the head from behind.</value>
+  </string>
+  <string key="GuardSaved">
+<!-- 0 - saved player name -->
+    <value>While watching your goal, you see a shadow running towards {0}. You jump over the whole field to get there in time! The offender is so impressed from the display, he walks away before fouling {0}.</value>
+  </string>
+  <string key="GuardNoAttack">
+<!-- 0 - player name -->
+    <value>You watch {0} but there was no one trying to foul him.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+<!-- 0 - player name -->
+    <value>You try to watch over {0} but you cannot find him on the football field!</value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>You play the game of your life, as suddenly the goalkeeper leaves his position and jumps right in front of you! The ball goes into said goal but you were saved from the offenders!</value>
+  </string>
+  <string key="HarlotEaten">
+<!-- 0 - player name -->
+    <value>Seems like the middle fielder decided to support no one last game...! Bad decision. The offenders found {0} on his position and beat him up badly.</value>
+  </string>
+  <string key="HarlotNotHome">
+<!-- 0 - player name -->
+    <value>You try to foul {0} but you cannot find his position..!</value>
+  </string>
+  <string key="HarlotFuckWolf">
+<!-- 0 - player name -->
+    <value>You want to support {0} but as you both watch out for the ball, he kicks you in the back. You got fouled.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic">
+<!-- 0 - player name -->
+    <value>The middle fielder tried to support the wrong player last game. {0} got fouled last game!</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic">
+<!-- 0 - harlot name -->
+<!-- 1 - victim name -->
+    <value>{0} wanted to support {1} last game. The offenders decided to foul {1}. As they see {0} standing next to him, they decided to foul him too.</value>
+  </string>
+  <string key="HarlotVisitNonWolf">
+<!-- 0 - target name -->
+    <value>You have a good game, supporting {0} on his position and getting every ball towards the enemies goal.</value>
+  </string>
+  <string key="HarlotVisitYou">
+    <value>Last game, one of the middle fielders decided to support you on your position, making your game so much easier.</value>
+  </string>
+  <string key="DetectiveCaught">
+<!-- 0 - detective name -->
+    <value>While on a press conference, you see {0} interviewing some of the players, asking intriguing questions.</value>
+  </string>
+  <string key="DetectiveSnoop">
+<!-- 0 - target name -->
+<!-- 1 - target role -->
+    <value>You interview {0} and find out he is {1}.</value>
+  </string>
+  <string key="HarlotShot">
+<!-- 0 - gunner's name -->
+<!-- 1 - Harlot's name -->
+    <value>The captain didn't like the middle fielders decisions on who to support. {0} kicks {1} out of the team.</value>
+  </string>
+  <string key="DefaultShot">
+<!-- 0 - Gunner's name -->
+<!-- 1 - target name -->
+<!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>The captain {0} goes to the trainer, telling him he wants {1} out of the team. {1} has to leave. {2}</value>
+  </string>
+  <string key="WolfWins">
+    <value>The offenders have taken over the tournament!</value>
+  </string>
+  <string key="WolvesWin">
+    <value>The offenders have taken over the tournament!</value>
+  </string>
+  <string key="VillageWins">
+    <value>Fairness always wins! The tournament is back on track, with all offenders gone!</value>
+  </string>
+  <string key="TannerWins">
+    <value>As the injured player doesn't come back for the next match, the crowds abandon the tournament but the injured wins!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Remaining living football players, roles, and team:</value>
+  </string>
+  <string key="CultistVotedConvert">
+<!-- 0 - Voter's name -->
+<!-- 1 - target name -->
+    <value>{0} has voted to make {1} into a hooligan.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+<!-- 0 - Yougest Cultist (killed)'s name' -->
+<!-- 1 - CultHunter's name -->
+    <value>{0} was sent to persuade {1} to become a hooligan only to be confronted with a weapon and hand cuffs. He is arrested and cannot go into stadiums ever again.</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+<!-- 0 - Youngest Cultist's name -->
+<!-- 1 - Number of cultists left -->
+    <value>{0} wanted you to become a hooligan but you take your weapon out and arrest him instead! {1} hooligans remain!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>The hooligans convinced you that football is a waste of time and beating people up is the better sport. So you have become one of them. Every game, you can convince another person to become a hooligan too.</value>
+  </string>
+  <string key="CultTeam">
+<!-- 0 - Number of cultists -->
+<!-- 0 - Number of cultists -->
+    <value>Hooligans: {0}</value>
+    <value>{0} has decided violence is good, football is bad and joined the hooligans!</value>
+  </string>
+  <string key="CultJoin">
+<!-- 0 - new cultist's name -->
+    <value>{0} has joined the hooligans!</value>
+  </string>
+  <string key="CultVisitEmpty">
+<!-- 0 - Newest cultist's name -->
+<!-- 1 - target name -->
+    <value>You wanted {1} to become a hooligan so you sent {0} to convince him. However, {0} couldn't find him on his usual position.</value>
+  </string>
+  <string key="CultWins">
+    <value>Every football player, offender or not, has been banned from the stadium. Only people inside the stadium left are the hooligans! They destroyed the tournament and won!</value>
+  </string>
+  <string key="HunterVisitDead">
+<!-- 0 - target name -->
+    <value>You wanted {0} to become a hooligan but he got fouled and you deem him too weak now.</value>
+  </string>
+  <string key="HunterFindCultist">
+<!-- 0 - target name -->
+    <value>You take a look at {0} and see a Molotov cocktail in his hand. Before he can harm anyone, you make sure to arrest him.</value>
+  </string>
+  <string key="HunterFailedToFind">
+<!-- 0 - target name -->
+    <value>You take a look at {0} but he is no hooligan and you have an awesome talk about how great football is.</value>
+  </string>
+  <string key="WildChildToWolves">
+<!-- 0 - Werechild's name -->
+    <value>{0}'s best buddy just had to leave the tournament. Furious, {0} has decided to join the offenders!</value>
+  </string>
+  <string key="WildChildTransform">
+<!-- 0 - role's name -->
+<!-- 0 - teamate's names -->
+<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+<!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+    <value>{0}just had to leave the competition. Furious and without purpose, you join the offenders! Your new teammates are: {1}</value>
+  </string>
+  <string key="Villager">
+    <value>a Field Player 👱 (👱)</value>
+  </string>
+  <string key="Drunk">
+    <value>the Line Referee 🗣 (🍺)</value>
+  </string>
+  <string key="Harlot">
+    <value>the Middle Fielder 👷‍♀️ (💋)</value>
+  </string>
+  <string key="Seer">
+    <value>the Reporter 👨‍⚖️ (👳)</value>
+  </string>
+  <string key="Traitor">
+    <value>the Loser 😤 (🖕)</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>the Goalkeeper 🥅 (👼)</value>
+  </string>
+  <string key="Detective">
+    <value>the Interviewer 🎤 (🕵️)</value>
+  </string>
+  <string key="Wolf">
+    <value>an Offender 💪 (🐺)</value>
+  </string>
+  <string key="Cursed">
+    <value>the Bench Player 😡 (😾)</value>
+  </string>
+  <string key="Gunner">
+    <value>the Captain 🎽 (🔫)</value>
+  </string>
+  <string key="Tanner">
+    <value>the Injured 🤕 (👺)</value>
+  </string>
+  <string key="Fool">
+    <value>the Hobby Filmer 📷 (🃏)</value>
+  </string>
+  <string key="WildChild">
+    <value>the Best Buddy 👨‍❤️‍👨 (👶)</value>
+  </string>
+  <string key="Beholder">
+    <value>the Camera Man 🎥 (👁)</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>the Assistant 👜 (🙇)</value>
+  </string>
+  <string key="Cultist">
+    <value>a Hooligan 🎆 (👤)</value>
+  </string>
+  <string key="CultistHunter">
+<!-- These are for the player list -->
+    <value>the Police man 👮 (💂)</value>
+  </string>
+  <string key="RanAway">
+    <value>Went back to training</value>
+  </string>
+  <string key="Dead">
+    <value>❌ Kicked out</value>
+  </string>
+  <string key="Alive">
+    <value>🏃 Playing</value>
+  </string>
+  <string key="PlayersAlive">
+<!-- New strings 4 MAY 2016-->
+    <value>Players in the tournament</value>
+  </string>
+  <string key="Mason">
+    <value>a Defender ✋️ (👷)</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>You are a defender (👷). Since defenders stay close to each other, you will know the other defenders, if there are any.</value>
+  </string>
+  <string key="MasonEaten">
+<!-- 0 - dead man's name -->
+    <value>As the game ends, a fast football hits {0} in the face, making him pass out immediately. Seems like {0} could defend the goal but not himself!</value>
+  </string>
+  <string key="MasonTeam">
+<!-- new strings May 6 2016-->
+    <value>  The defenders are: {0}</value>
+  </string>
+  <string key="CultTargetDead">
+<!-- 0 - Youngest cultists name -->
+    <value>Your newest member heads over to {0} to make him a hooligan but {0} decides he likes his way of violence more and punches your newest member in the face.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+<!-- 0 - target's name -->
+<!-- new strings May 9 2016-->
+    <value>You try to aim a ball at {0}'s face, but the goalkeeper gets it in time! Unlucky for him, the goal is free and someone shoots the ball in there!</value>
+  </string>
+  <string key="CultUnableToConvert">
+<!-- 0 - newest  -->
+<!-- 1 - target's name -->
+<!-- new string May 12 2016-->
+    <value>You wanted {0} to become a hooligan, so you send {1} his way. However, {0} just likes football too much!</value>
+  </string>
+  <string key="NameExists">
+<!-- 0 - target's name -->
+<!-- 1 - name -->
+    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+<!-- 0 - target's name -->
+<!-- new string May 13 2016-->
+    <value>You tried to support {0} last game but you find him on the ranks and not on the play field...?</value>
+  </string>
+  <string key="Was">
+    <value>was</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+<!-- 0 - Dead's name -->
+    <value>The game ends. As everyone leaves the stadium the players see {0} lying unconscious in the grass outside.</value>
+    <value>The game ends. As everyone leaves the stadium the players see {0} lying unconscious in the grass outside.</value>
+  </string>
+  <string key="MasonConverted">
+<!-- 0 - mason's name -->
+<!-- new string May 16 2016-->
+    <value>Odd.... Instead of staying in line, {0} leaves his position and never comes back...</value>
+  </string>
+  <string key="FleeDisabled">
+    <value>Fleeing while the game is running has been disabled by the group admin!</value>
+  </string>
+  <string key="IsDead">
+<!-- used when gunner shoots a player -->
+<!-- MORE STRINGS May 16, 2016 -->
+    <value>is getting kicked out.</value>
+  </string>
+  <string deprecated="true" key="AdminAdded">
+<!-- 0 - target's name -->
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+<!-- 0 - target's name -->
+    <value>You are already in a tournament! ({0})</value>
+  </string>
+  <string deprecated="true" key="MultipleGames">
+    <value>Your group has managed to start multiple games...  Killing extras.</value>
+  </string>
+  <string deprecated="true" key="GroupQueue">
+<!-- 0 - target's name -->
+<!-- 1 - target's name -->
+    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+  </string>
+  <string deprecated="true" key="MaintBreak">
+<!-- 0 - target's name -->
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
+  </string>
+  <string deprecated="true" key="MaxGames">
+<!-- 0 - target's name -->
+<!-- 1 - target's name -->
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string deprecated="true" key="SkipQueue">
+<!-- 0 - target's name -->
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>There is no tournament running.  Start a new one with /startgame or start a chaos tournament with /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Only a group admin can run this command.</value>
+  </string>
+  <string deprecated="true" key="ShuttingDown">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string deprecated="true" key="ShuttingDownUpdate">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string deprecated="true" key="NullIdAdmin">
+    <value>UserId was null.  Are you sure you sent this as a reply?</value>
+  </string>
+  <string deprecated="true" key="AlreadyAdmin">
+<!-- 0 - target's name -->
+    <value>{0} is already an admin!</value>
+  </string>
+  <string deprecated="true" key="NotAdmin">
+<!-- 0 - target's name -->
+    <value>{0} is not an admin!</value>
+  </string>
+  <string deprecated="true" key="AdminRemoved">
+<!-- 0 - target's name -->
+    <value>{0} removed from admin list.</value>
+  </string>
+  <string deprecated="true" key="LanguageSet">
+<!-- 0 - language's name -->
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>No reporter! You are pretty useless now... :(</value>
+  </string>
+  <string key="TimesUp">
+<!-- new strings june 10 2016 -->
+    <value>Time's up!</value>
+  </string>
+  <string key="RoleInfoCupid">
+    <value>You are the dreamer (🏹). You like to come up with your own theories on who is paired with who, only that this tournament, your theory comes true!</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>You are the naked (🎭). You forgot your shirt this tournament but lucky for you, you can choose someone whose shirt you will pick up once he leaves the tournament.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>You are the Striker (🎯). Your fast reflexes and speed help you while playing football.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>You are the salty Holland (🔪). Your team didn't qualify for this tournament. Out of anger, you decided to ruin the tournament... For EVERYONE!!!!!!</value>
+  </string>
+  <string key="CupidChosen">
+    <value>The dreamer decided, you and {0} make the perfect couple. What's even worse, he is right! You can win together, but if {0} leaves the competition, so will you.</value>
+    <value>The dreamer decided, you and {0} should be together and ever. Fate has it this tournament, he is right. You can win together, but if {0} leaves the competition, so will you.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>The football community has decided you should leave the tournament. As the striker, you can strike someone in the face before you leave...!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0}'s abilities fail him as he cannot strike anyone in time....</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} decided he would leave the tournament with his head high and won't strike anyone.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+<!-- 0 - hunter's name -->
+<!-- 1 - target's name -->
+<!-- 2 - target's role -->
+    <value>The community is shocked as {0} runs up to {1} and kicks him in the face. {1} cannot play anymore... {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>You've been fouled by someone! Before you go down in pain, you can strike someone... make it quick!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+<!-- 0 - target's name -->
+    <value>The pain was too much for {0} as he couldn't strike back.</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+<!-- 0 - hunter's name -->
+    <value>As {0} lays there, gasping for their final breaths, they can't decide who to shoot... and accept their fate.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+<!-- 0 - hunter -->
+<!-- 1 - target's name -->
+<!-- 2 - target's role -->
+    <value>Gasping in pain {0} gets back up and kicks {1} in the face hoping for some revenge! {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+<!-- 0 - target's name -->
+    <value>The offenders decided the striker would be an easy target but they were wrong. The striker managed to kick {0} back before going down in pain!</value>
+  </string>
+  <string key="HunterShotWolf">
+<!-- 0 - target's name -->
+    <value>The offenders decided the striker would be an easy target but they were wrong. The striker managed to kick {0} back!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>The offenders tried to foul someone who is even more salty than them. {0} got knocked out instead!</value>
+  </string>
+  <string key="DefaultKilled">
+<!-- 0 - target's name -->
+<!-- 1 - target's role -->
+    <value>One of the Hollands managed to sneak into the tournament and attack {0} last game. The salty Holland kicks someone out (literally) again! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+<!-- 0 - target's name -->
+    <value>You tried to let your anger on {0} out, only to find you couldn't hit him because the goalkeeper was in the way...</value>
+  </string>
+  <string key="CultConvertHunter">
+<!-- 0 - Youngest Cultist's name -->
+<!-- 1 - target's name -->
+    <value>You wanted to make {1} a hooligan but you decided on the wrong person! {0} is the striker and kicks you for even daring to try...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+<!-- 0 - Youngest Cultist's name -->
+<!-- 1 - target's name -->
+    <value>You send {0} to convince {1} violence is awesome, but {1} has his own sense of destruction. You loose one member as the salty Holland fouls him...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>As you eye your chosen player carefully, he notices this and comes closer to you. You think it's to thank you, but instead he slaps you down.</value>
+  </string>
+  <string key="HarlotFuckKiller">
+<!-- 0 - target's name -->
+    <value>You decide to support {0} only to get salt sprayed in the eyes. Your recovery will take long...</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>The football player see {0} lying in the middle of the field with red, puffy eyes. Hopefully, he can make a full recovery someday...</value>
+  </string>
+  <string key="DGToMason">
+<!-- 0 - target's name -->
+    <value>The naked {0} has picked up one of the other defenders shirts!</value>
+  </string>
+  <string key="DGTransformToMason">
+<!-- 0 - dead mason's name -->
+<!-- 1 - mason collegues's name -->
+    <value>{0} has left the tournament. You pick up his shirt and become a defender! Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGToCult">
+<!-- 0 - new cultist's name -->
+    <value>The naked {0} picked up one of the hooligans shirts! He is now one of you!</value>
+  </string>
+  <string key="DGTransformToCult">
+<!-- 0 - role's name -->
+<!-- 1 - teammates's name -->
+    <value>{0} has left the competition. You pick up his shirt and become a hooligan just like {0} was. Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGToWolf">
+<!-- 0 - DG's name -->
+    <value>The naked {0} has picked up one of the offenders shirts and is now one of you!</value>
+  </string>
+  <string key="DGTransformToWolf">
+<!-- 0 - target's name -->
+<!-- 1 - teammates's name -->
+    <value>{0} has left the competition. You pick up his shirt and become an offender just like {0} was. Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>The salty Holland got his revenge as the competition is ruined for everyone!!!</value>
+  </string>
+  <string key="AskKill">
+    <value>Who do you want to foul this game?</value>
+  </string>
+  <string key="LoverDied">
+<!-- 0 - dead's name -->
+<!-- 1 - lover's name -->
+<!-- 2 - roles -->
+    <value>With {0} leaving the tournament, {1} decides not to play anymore and rushes to his lovers. They both leave the stadium in harmony, side by side side to play somewhere else. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Whose shirt do you want to pick up after he leaves?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Which player do you want to be the perfect couple? Choose the first player</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Who do you want to be the perfect couple? Choose the second player</value>
+  </string>
+  <string key="Hunter">
+    <value>the Striker ⚽️ (🎯)</value>
+  </string>
+  <string key="Cupid">
+    <value>Dreamer 🛌 (🏹)</value>
+  </string>
+  <string key="SerialKiller">
+    <value>the Salty Holland 🇳🇱 (🔪)</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>the Naked 😳 (🎭)</value>
+  </string>
+  <string key="NewWCRoleModel">
+<!-- 0 - target's name -->
+    <value>You have become the best buddy . Your best friend is {0}.</value>
+  </string>
+  <string key="LoversWin">
+    <value>The dreamers love-fantasy becomes reality as the only people standing are his couple!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+<!-- 0 - target's name -->
+<!-- 1 - role -->
+    <value>After everyone left the stadium, {0} is left lying on the ranks, the imprint of a ball in his face. Seems like the hooligans tried to make the Striker join last game... Well, {1}.</value>
+  </string>
+  <string key="CultAttempt">
+    <value>One of the hooligans tried to convince you last game, but your love to football is too strong.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+<!-- 0 - target's name -->
+    <value>You are already on the wait list for {0}.</value>
+  </string>
+  <string key="AddedToWaitList">
+<!-- 0 - target's name -->
+    <value>You have been added to the wait list for {0}. I will PM you when the next game is starting.\nWhile waiting, why not browse the store? https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+<!-- 0 - target's name -->
+    <value>A new game is starting in {0}.</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+<!-- 0 - SK's name -->
+<!-- 1 - target's name -->
+    <value>As the game ends, {1} tries to get away from {0} but cannot. {0} pulls a sack of salt out and tosses it into {0}'s mouth. What a display... o_o</value>
+  </string>
+  <string key="NoWinner">
+    <value>Everyone in the tournament has died... No one wins this time, maybe next one...</value>
+  </string>
+  <string key="SKHunterEnd">
+<!-- 0 - SK's name -->
+<!-- 1 - Hunter's name -->
+    <value>As the game ends, {0} takes out his salt and assaults {1}. However, he didn't expect him to fight back in the last minute. Both players are left injured, there is no winner... :(</value>
+  </string>
+  <string key="RoleModelChosen">
+<!-- 0 - target's name -->
+    <value>You failed to make a choice, so the moderator has chosen for you: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Won</value>
+  </string>
+  <string key="Lost">
+    <value>Lost</value>
+  </string>
+  <string key="IdleCount">
+<!-- 0 - player's name -->
+<!-- 1 - idle count -->
+<!--New strings 7th of July-->
+<!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.-->
+    <value>Player {0} has been killed for not voting {1} times in the past 24 hours.</value>
+  </string>
+  <string key="AboutVG">
+    <value>You are a football player (👱), trying to do your job and play football.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>You are the reporter (👳). Your main goal is to uncover undergoing networks of bullies and offenders, who are trying to win the tournament by cheating.</value>
+  </string>
+  <string key="AboutWw">
+    <value>You are an offender (🐺). The easiest way to win the tournament is fouling everyone out. Every match you can foul someone and they will be out for the rest of the tournament.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>You are the middle fielder (💋). Your position during matches is very flexible but you are a bit lazy. So you decide to support one person for each match and that person only. But if you try to support an offender, he will make sure to foul you.</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>You are the line referee (🍺). You don't pay attention to the matches just like your boss but if one of the offenders fouls you, you will make sure to give them a yellow card.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>You are the Bench Player (😾). Most matches the trainer doesn't let you play. If the offenders try to foul you, they will realize you are frustrated enough to join them and you will become an offender yourself.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>You are the looser (🖕)! No one really likes you, you regularly get bad publicity and you want revenge. But as long as offenders are in the competition, you see no reason to step up yourself. Only when they all are out, you will become an offender yourself.</value>
+  </string>
+  <string key="AboutGA">
+    <value>You are the goalkeeper (👼). Because your reflexes are super high, you cannot only guard your goal but also one specific player each match. However, if you want to guard an offender, there is a chance he will kick you in the knees. (50%)</value>
+  </string>
+  <string key="AboutDetective">
+    <value>You are the interviewer (🕵️). Between matches you can interview one of the football player. But watch out because the offenders may find out. (40% chance)</value>
+  </string>
+  <string key="AboutGunner">
+    <value>You are the captain (🔫). As the team leader, the trainer gives you the choice to kick someone out of the team between matches two times.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>You are the injured player (👺). If someone tries to give you a red card, the crowd will be angered with the display and boycott the tournament. But you will get lots of gift cards and money, so you will win.</value>
+  </string>
+  <string key="AboutFool">
+    <value>The hobby Filmer (🃏) thinks he is a legit reporter... Only problem is, he is not... :(</value>
+  </string>
+  <string key="AboutCult">
+    <value>You are a hooligan (👤). You like violence and pyrotechnics. You can convince other people to do so too until only hooligans are left standing and the tournament is ruined.</value>
+  </string>
+  <string key="AboutCH">
+    <value>You are the policeman (💂), trying to take care of every match and arresting the hooligans. Every match, you can investigate one person and find out if they are hooligans or not.</value>
+  </string>
+  <string key="AboutWC">
+    <value>You are the best buddy (👶). You and your best buddy have been playing football together since you are little and lucky, you got into the same team. But if your buddy dies, you see no reason to play fair anymore and join to offenders.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>You are the reporter's assistant (🙇). If the reporter cannot do his job anymore, you will step up and become the reporter yourself.</value>
+  </string>
+  <string key="AboutBH">
+    <value>You are the camera man (👁), faithful assistant of the reporter. Of course, you know the real reporter!</value>
+  </string>
+  <string key="AboutMason">
+    <value>You are a defender (👷). Since defenders stay close to each other, you will know the other defenders, if there are any.</value>
+  </string>
+  <string key="AboutDG">
+    <value>You are the naked (🎭). You forgot your shirt this tournament but lucky for you, you can choose someone whose shirt you will pick up once he leaves the tournament.</value>
+  </string>
+  <string key="AboutCupid">
+    <value>>You are the dreamer (🏹). You like to come up with your own theories on who is paired with who, only that this tournament, your theory comes true!</value>
+  </string>
+  <string key="AboutHunter">
+    <value>You are the Striker (🎯). Your fast reflexes and speed help you while playing football.</value>
+  </string>
+  <string key="AboutSK">
+    <value>You are the salty Holland (🔪). Your team didn't qualify for this tournament. Out of anger, you decided to ruin the tournament... For EVERYONE!!!!!!</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para used to be an adventurer like us, but then he took an arrow in the knee.</value>
+  </string>
+  <string key="EndTime">
+<!--New strings, July the 8th -->
+    <value>Game Length: {0}</value>
+  </string>
+  <string key="Day">
+<!--0 - Day -->
+    <value>After match {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occured, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>I have sent you a PM</value>
+  </string>
+  <string deprecated="true" key="StartPM">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string deprecated="true" key="PMTrue">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string deprecated="true" key="MustReplySmite">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nMessages per second: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>You must run this command in a group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+<!-- Game Mode Choices-->
+    <value>Hide</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+<!-- Show Roles on End Game -->
+    <value>Player Choice</value>
+  </string>
+  <string key="ShowNone">
+    <value>Don't show any</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on leaving the tournament?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on leaving tournament.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for between games. This will still be modified based on number of players.\nDefault setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for game. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for red card voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Red card voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow hobby Filmer as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Hobby Filmer as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow injured player as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Injured player as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow hooligans as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Hooligans as a role set to: {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Voting?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Voting set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you, have a good day :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please start me so I can PM you</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} failed to start the bot, and has been removed from the game!</value>
+  </string>
+  <string key="LatestList">
+    <value>Here is the latest list</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get latest list</value>
+  </string>
+  <string key="YouJoined">
+<!-- 0 - Group Name -->
+    <value>You have successfully joined the tournament in {0}</value>
+  </string>
+  <string key="Ping2">
+<!-- Update 4.0-->
+    <value>Time to send ping message: {0}</value>
+  </string>
+  <string key="RoleInfoMayor">
+    <value>You are the Fifa Manager (🎖). Once you have revealed your imperial role to the other players, your vote will count twice. Of course, since fair play is on your mind, you are on the football-players side.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>You are the spoiled brat (👑). Only reason, you are in a football team in the first place is your rich father. If they try to give you a red card, you will tell them "My father will hear about this" and they think about it twice.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>You are the amateur player (🤕). This is your first tournament, so you don't really know what's happening. Because you're so nervous, you might get your vote right or not. (50%)</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>You are the paparazzi (🔮). You love some bad publicity, so you are on the offenders side. Every game, you can report on someone and find out if they are offenders, the "good" reporter or normal players.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>You are the weather man (⚒). You can cancel a game due to bad weather. Though it's a lie only the offenders will fall for, so every other person can do their actions.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>You are the bully (⚡️), always having a person you hate at the moment. You are part of the offender-team but with your special ability you have the chance (20%) to convert other players into offenders as well, instead of fouling them.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>You are the Youngster (🐶). You are talented but quick-tempered. The other offenders love you for your spirit and technic. If you get red a red card, they will be enraged and foul two people next game.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>As the football community tries to vote {0}, he says loud and clear "MY FATHER WILL HEAR FROM IT!!". Everyone realized their error and no one wants to be on {0}'s fathers bad side, so they over think their decision.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>You try to report on {0}, but he is really boring... He isn't the other reporter or an offender. :(</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} shows everyone his business card. Everyone sees he's the FIFA manager, so they bow before their mighty money giver. From now on, {0}'s votes for lynching will count twice.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Click "Reveal" whenever you are ready to reveal yourself as the FIFA manager.</value>
+  </string>
+  <string key="Reveal">
+    <value>Reveal</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Would you like to lie about the weather now?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>As the football community talks, the weather man {0} speaks up, saying next game there will be a thunder storm. Everyone knows it's a lie except for the offenders who will be disabled.</value>
+  </string>
+  <string key="Mayor">
+    <value>the Fifa Manager 👔 (🎖)</value>
+  </string>
+  <string key="Prince">
+    <value>the Spoiled Brat 👶 (👑)</value>
+  </string>
+  <string key="Sorcerer">
+    <value>the Paparazzi 📸 (🔮)</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>the Amateur Player 😰 (🤕)</value>
+  </string>
+  <string key="Blacksmith">
+    <value>the Weather Man ⛈ (⚒)</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>the Bully 👊 (⚡️)</value>
+  </string>
+  <string key="WolfCub">
+    <value>the Youngster 👦 (🐶)</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>As the offenders want to foul {0}, {1} has a better idea and convinces him to join the offenders too! Beginning with next game, {0} will be an offender.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>The offenders wanted to foul you, but the bully decided they need another team mate, so you joined them instead.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>As the next football match starts, the bully's work is done and you become an offender!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>You are the Fifa Manager (🎖). Once you have revealed your imperial role to the other players, your vote will count twice. Of course, since fair play is on your mind, you are on the football-players side.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>You are the spoiled brat (👑). Only reason, you are in a football team in the first place is your rich father. If they try to give you a red card, you will tell them "My father will hear about this" and they think about it twice.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>You are the paparazzi (🔮). You love some bad publicity, so you are on the offenders side. Every game, you can report on someone and find out if they are offenders, the "good" reporter or normal players.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>You are the amateur player (🤕). This is your first tournament, so you don't really know what's happening. Because you're so nervous, you might get your vote right or not. (50%)</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>You are the paparazzi (🔮). You love some bad publicity, so you are on the offenders side. Every game, you can report on someone and find out if they are offenders, the "good" reporter or normal players.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>You are the weather man (⚒). You can cancel a game due to bad weather. Though it's a lie only the offenders will fall for, so every other person can do their actions.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>You are the bully (⚡️), always having a person you hate at the moment. You are part of the offender-team but with your special ability you have the chance (20%) to convert other players into offenders as well, instead of fouling them. </value>
+  </string>
+  <string key="AboutWolfCub">
+<!-- new strings 06 nov-->
+    <value>You are the Youngster (🐶). You are talented but quick-tempered. The other offenders love you for your spirit and technic. If you get red a red card, they will be enraged and foul two people next game.</value>
+  </string>
+  <string key="DGTransformToAlpha">
+<!-- 0 - target's name -->
+<!-- 1 - teammates's name -->
+    <value>{0} has left the tournament and left his shirt behind. You pick it up and become the bully! Your offender-teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+<!-- 0 - target's name -->
+<!-- 1 - teammates's name -->
+    <value>{0} has left the competition. You took his clothes and the Youngster. Wow, what a transformation! Your offender-teammates (if any) are: {1}</value>
+  </string>
+  <string deprecated="true" key="VillageTeam">
+    <value>Football Players Team</value>
+  </string>
+  <string deprecated="true" key="NeutralTeam">
+    <value>Neutral Team</value>
+  </string>
+  <string deprecated="true" key="SerialKillerTeam">
+    <value>Hollands Team</value>
+  </string>
+  <string deprecated="true" key="TannerTeam">
+    <value>Tanner Team</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Football Players Team</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Neutral Team</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Offenders Team</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Hollands Team</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Hooligans Team</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Injured Team</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>You wanted to convert {0} to your team but instead your newest mate {1} gets fouled by him!!</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+<!-- used when Harlot visit's SK's victim, and dies -->
+<!--{0} = Harlot name, {1} = SK's victim name-->
+<!--New Death Strings 05 DEC-->
+    <value>{0} wanted to support {1} on the field. Instead of supporting, the Salty Holland has two people to foul! Both cannot play anymore... :(</value>
+  </string>
+  <string key="ApprenticeSeerEaten">
+    <value>The assistant {0} was sneaking around the play field when the offenders found him and hit him on his head...</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>A red sun rises. Blood has been spilled last game. The weather man {0} got fouled by the Salty Holland!</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} wanted to convince the Salty Holland to become a hooligan, but he regrets this now as he is on his way to the hospital!</value>
+  </string>
+  <string key="CupidKilled">
+    <value>The dreamer tried to sleep through a game but the Salty Holland used his chance to foul {0}...</value>
+  </string>
+  <string key="DrunkKilled">
+	<value>The line referee was attacked by the Salty Holland. As he showed him the yellow card, the Holland took it out of {0}'s hand and tore it apart. He doesn't acknowledge the authority of this tournament anyway!</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} was protecting everyone but himself from the fast ball that flew right in his face! Your goalkeeper managed to catch the ball but the costs were high!</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>The salty Holland decided that especially the trainers should pay for his team not making it into the competition. {0} will someday hopefully be okay again...</value>
+  </string>
+  <string key="MayorKilled">
+    <value>The Salty Holland was so angry his team didn't make it that he targeted the Fifa Manager! {0} gets beaten up trying to talk himself out of the situation. When someone finally finds him, he is still talking to himself!</value>
+  </string>
+  <string key="PrinceKilled">
+	<value>No one is really unhappy that the Salty Holland went after the spoiled brat. He wasn't a great asset after all... {0} is on his way to a hospital.</value>
+	<value>Someone gets a distressed call from the owner of the stadium saying someone stole his son's phone and used it to call him. They find the spoiled brat lying in the showers, the destroyed phone next to him. {0} is severely injured.</value>
+  </string>
+  <string key="SeerKilled">
+	<value>The football players find the reporter unconscious on one of the ranks. The Salty Holland smiles to himself. Now, no one can report bad things about his team anymore, he thinks to himself. {0} cannot play this tournament anymore.</value>
+  </string>
+  <string key="SorcererEaten">
+	<value>While chasing a good story, the Paparazzi didn't expect his secret team mates to turn on him. Oh well, {0}'s injuries will make a good story as well.</value>
+	<value>{0} tried to reason with the offenders, but it's useless. They attack him, making him unable to shoot more scandalous photos.</value>
+  </string>
+  <string key="WildChildEaten">
+	<value>{0} only wanted to play with his buddy. He didn't expect himself to end up in an ambulance on the way to the hospital. :(</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+<!--used when CH visits SK-->
+	<value>The saltiness of the Holland doesn't even make a stop from the police! As {0} tries to check on a particular player, he gets injured severely.</value>
+	<value>The police man tried to check the wrong person out. {0} is found in a locker, but his gun cannot be found anywhere... :S Hopefully, the Salty Holland didn't keep it.</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+<!--used when Cultists convert the wolves, only if wolves stayed home-->
+	<value>The Hooligans tried to convert one of the offenders, but {0} got injured in the process...</value>
+	<value>As {0} tries to convince an offender, the offender decides to do the police's job and made sure {0} would not be able to participate in the tournament again.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+<!--used when Cultists convert the SK-->
+	<value>The hooligans wanted to add another violent member to their team. Too late they realized that their choice was even more violent than them. {0} was fouled and had to be send to the hospital cause of that mistake!</value>
+	<value>{0} tried to pursue the Holland into joining the hooligans. He didn't realize his error fast enough and got injured badly by the Holland.</value>
+  </string>
+  <string key="GAGuardedKiller">
+<!-- used when GA guards SK -->
+    <value>{0} tried to protect one of the players from any harm, only he didn't realize that player would harm him. The next moment, the others find their goal keeper rubbing his salted eyes, tears in them.</value>
+  </string>
+  <string key="GAGuardedWolf">
+<!-- used when GA guards a wolf -->
+<!--1vs1 finales-->
+    <value>{0} tried to protect one of the offenders. They made sure he got his revenge and cannot go on in the competition anymore. :(</value>
+  </string>
+  <string key="HunterKillsWolfEnd">
+<!--{0} = hunter's name, {1} = wolf's name-->
+    <value>
+      As only the striker was left, {1} tries to foul this last person {0} but he didn't see the ball lying close to the striker. The ball hits him in the face and he cannot finish his mission anymore..</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+<!--{0} = hunter's name, {1} = wolf's name-->
+    <value>As only the striker was left, {1} made sure to keep all balls out of reach as he fouls {0} one last time before the tournament is over.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+<!--{0} = last cultist's name, {1} = CH's name -->
+<!-- Extend time -->
+    <value>{1} and {0} enter the final game of the tournament. Only they are left. {0} tries to throw a Molotov cocktail at the policeman, but fails. He gets hand cuffed and send to prison for a long time... {1} smiles fondly as he realizes all hooligans are gone.</value>
+  </string>
+  <string key="SecondsAdded">
+<!-- 0 - Seconds added by /extend command -->
+<!-- 1 - Total seconds remaining -->
+    <value>Join time extended by {0} seconds!\n{1} left to Join</value>
+  </string>
+  <string key="SecondsRemoved">
+<!-- 0 - Seconds removed by /extend command -->
+<!-- 1 - Total seconds remaining -->
+    <value>Join time decreased by {0} seconds!\n{1} left to Join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only group admins can extend the time more than once!</value>
+  </string>
+  <string key="AllowExtendQ">
+<!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+<!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>As you attack your first victim, you get a yellow card from {0}! Oh no! You cannot attack {1} now...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>You can't join this game because you don't seem to be a member of {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Please don't use the commands to join. Use this button instead.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} players have voted, {1} total.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, please remember that you will have to join with the button as well.</value>
+  </string>
+  <string key="GroupNotFound">
+<!--This string might need rewording from some native speaker-->
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>You have been deleted from the wait list for {0}.</value>
+  </string>
+  <string key="HaveJoined">
+<!-- {0} = list of people who have joined -->
+<!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0}joined the tournament in the last 30 seconds.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Allow Hooligans</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Allow Injured</value>
+  </string>
+  <string key="AllowFool">
+    <value>Allow Hobby Filmer</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Vote</value>
+  </string>
+  <string key="RandomMode">
+    <value>Enable Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Allow Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Show Roles on Death</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Allow Fleeing</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  <string key="All">
+<!-- used when searching for groups in all the variants -->
+    <value>All</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Vote, Show Roles on Death, and Allow Hooligans / Hobby Filmer / injured will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+  <string key="AllowNSFW">
+    <value>Allow NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+  <string key="TannerEnd">
+<!-- 0 - Tanner name -->
+    <value>As only the injured is left, he cannot play himself. {0} tries to play for the crowds, but he falls down. From everywhere he hears whispers. Embarrassed, he takes the ball and leaves the field.</value>
+	<value>After everyone has left the competition, only {0} is standing alone in the stadium, wondering where everything went wrong. No one is there to support him, as he limps out of the stadium.</value>
+  </string>
+  <string key="SorcererEnd">
+<!-- 0 - Sorcerer name -->
+	<value>{0} wants to go to the next game but as he enters the stadium, he is alone... All players have been injured or kicked out. Sadly, {0} takes his camera, before he leaves the stadium quietly.</value>
+	<value>{0} wants to go to the next game but as he enters the stadium, everything is quiet. He takes a look around, he is alone. Silently, he sits down on one of the benches and looks sadly at the photos he has taken.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: </value>
+  </string>
+  <string key="Skip">
+<!-- New Roles, April 2018 -->
+    <value>Skip</value>
+  </string>
+  <string key="DGTransformToLycan">
+<!-- 0 - target's name -->
+<!-- 1 - teammates's name -->
+    <value>{0} has been kicked out. You pick up the clothes of the backwards player. Now you're the cheeky one! Your offender-teammates (if any) are: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+<!-- 0 - target's name -->
+<!-- 1 - role that they are not -->
+    <value>You report {0} is NOT {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Would you like to make a run for it now?</value>
+  </string>
+  <string key="SandmanSleepAll">
+	<value>As the community discusses who to give a red card to, the streaker takes off all clothes and runs through the stadium. The security has a hard time catching {0} while everyone covers their eyes. No one can play after this traumatic experience, too shocked from the display. 😱</value>
+  </string>
+  <string key="SandmanNight">
+    <value>As everyone is still shocked from the naked display, they cannot play the next game...</value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>Allow thief as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Thief can be used every night?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Thief will play every night: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Allow Thief</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>You are a normal football player, but you are hated by everyone. (👱‍🌚) If the reporter focusses on you, he will find you as an offender - even though your only intention is a fair competition....</value>
+  </string>
+  <string key="WolfMan">
+    <value>the Hated Player 😓 (👱‍🌚)</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>You are a normal football player, but you are hated by everyone. (👱‍🌚) If the reporter focusses on you, he will find you as an offender - even though your only intention is a fair competition....</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>You are the Backwards shooter (🐺🌝). You like to shoot your own goal. Due to your cheek, you can stay hidden under the normal players from the reporter.</value>
+  </string>
+  <string key="Lycan">
+    <value>the Backwards shooter 😋 (🐺🌝)</value>
+  </string>
+  <string key="AboutLycan">
+    <value>The backwards shooter (🐺🌝) is a cheeky offender who like to shoot into his own goal. But due to his cheek, the reporter cannot make him out as an offender but will see him as a normaler player.</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>You are the school reporter (🌀). You are at the tournament to report for your school's newspaper. Not yet fully trained, you cannot tell what somebody is like the real Reporter yet, but you can tell what someone NOT is.</value>
+  </string>
+  <string key="Oracle">
+    <value>the School reporter 🤓 (🌀)</value>
+  </string>
+  <string key="AboutOracle">
+    <value>The student reporter (🌀) is not yet fully trained. he cannot report as good as the real reporter, but at least he can tell what someone NOT is.</value>
+  </string>
+  <string key="RoleInfoSandman">
+    <value>You are the streaker(💤). Once per tournament, you can run naked through the stadium and shock everyone with your amazing display. They won't be able to play the next game.</value>
+  </string>
+  <string key="Sandman">
+    <value>the Streaker 👙 (💤)</value>
+  </string>
+  <string key="AboutSandman">
+<!-- NOT IMPLEMENTED YET -->
+    <value> Once per tournament, the streaker can run naked through the stadium. Everyone will be so shocked, no one can play the next game.</value>
+  </string>
+  <string key="RoleInfoPacifist">
+    <value></value>
+  </string>
+  <string key="Pacifist">
+    <value>the Pacifist ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value></value>
+  </string>
+  <string key="RoleInfoWiseElder">
+    <value></value>
+  </string>
+  <string key="WiseElder">
+    <value>the Wise Elder 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value></value>
+  </string>
+  <string key="RoleInfoThief">
+    <value></value>
+  </string>
+  <string key="Thief">
+    <value>the Thief 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value></value>
+  </string>
+</strings>

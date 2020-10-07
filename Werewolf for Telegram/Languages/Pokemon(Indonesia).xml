@@ -1,0 +1,1263 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Ini adalah versi Bahasa Indonesia oleh Tim Translator Naik Gaji, contact: @noirhime! -->
+<!-- 28/11 Fixed Idle, NextGame, RoleinfoAlphaWolf -->
+<strings>
+  <language name="Indonesia (Pokémon)" base="Indonesia" variant="Pokémon" owner="Ficopang"/>
+  <string key="NotInGame">
+    <value>Kamu belum bergabung di Liga Pokémon ini...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>[Normal]{0} telah membangunkan Professor Oak! Gunakan /join untuk mendapatkan Pokémonmu!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+	<value>[Chaos]Doctor Fuji telah dibangunkan oleh {0}! Gunakan /join untuk menerima salah satu Pokémon dari alam liar!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Kamu tidak dapat bergabung sekarang! Pokémon sudah ditetapkan!</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Kamu sudah bergabung untuk ikut Liga Pokémon!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 menit tersisa untuk /join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} detik tersisa untuk /join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Jumlah trainers tidak cukup, Liga Pokémon dibatalkan!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Liga Pokémon telah dimulai, kamu akan mendapatkan Pokémonmu.</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>{0} akun kamu dibanned (jangan memakai / di namamu)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, tolong ganti namamu untuk bergabung</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Maaf, max trainer sudah tercapai!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current trainers -->
+    <!-- 2 - Minimum trainers -->
+    <!-- 3 - Maximum trainers -->
+    <value>{0} bergabung. {1} trainer, minimum {2} untuk memulai Liga Pokémon, maksimum {3}. /join sekarang!</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0}, mohon tekan tombol Start Me di bawah ini atau PM {1} dan klik start, agar bot dapat kasih Pokémon dan petunjuk.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Kamu tidak dapat melepaskan Pokémonmu, Pokémonmu sudah pingsan duluan! </value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} telah melepaskan Pokémonnya kembali ke alam liar!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} adalah pemilik {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of trainers -->
+    <value>{0} trainer tersisa.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Hey saya tidak bertanya apapun ke kamu!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Sepertinya kamu belum bergabung...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Saya tidak dapat mencari orang dengan nama itu!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>Jawaban kamu tidak valid!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} memilih untuk memulai battle Pokémon dengan {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} memilih untuk mengirim Pokémonnya {1} kembali ke alam liar.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} tidak memilih selama 2 hari berturut-turut. Pokémonnya berpikir trainernya telah membuangnya! {1}.</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Team Rocket 🐺 telah kehilangan semua anggotanya, ini waktunya kamu menjadi Team Rocket!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Pilihan diterima.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nPemilik Alakazam 👳 adalah {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>Alakazam {0} telah pingsan! Kadabramu berevolusi menjadi Alakazam! </value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>Alakazam {1} pingsan, Kadabra {0} telah berevolusi menjadi Alakazam 👳!</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Kamu melihat trainer {0} adalah pemilik {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Siapa yang kamu mau Pokémonnya dilepaskan ke alam liar?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Siapa yang mau kamu kirim Raticate untuk memata-matai?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Pokémon siapa yang akan Snorlax gunakan Hyper Beam?? Kamu mempunyai {0} PP tersisa.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Siapa trainer yang ingin kamu ajak berteman Pokémonnnya?</value>
+  </string>
+  <string key="AskSee">
+    <value>Siapa trainer yang akan Alakazam Terawang?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Siapa trainer yang akan Mr. Mime lindungi?</value>
+  </string>
+  <string key="AskEat">
+    <value>Waktunya Team Rocket memilih trainer untuk battle! Siapa trainer yang ingin kamu ajak battle?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Siapa trainer yang menurut kamu memiliki Mewtwo untuk Mew basmi?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Siapa trainer yang menjadi senpaimu?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Siapa trainer yang ingin kamu ajak menjadi MewTwo?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Pastikan kamu berdiskusi dengan {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> ,dan </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Kamu adalah pemilik Pidgeot 😾! Tapi kamu selalu ingin masuk Team Rocket (Burung legendaris mereka lebih kuat daripada punyamu xD), tapi jika mereka datang menemuimu, kamu akan melepaskan Pidgeotmu dan gabung Team Rocket.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Kamu adalah pemilik Raticate 🕵, Kamu bisa mengirim Raticate untuk mengawasi Pokémon trainer lain dengan kesempatan mencari Team Rocket.</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Kamu adalah pemilik Butterfree 🍻, Butterfree akan membuat tidur Team Rocket 1 hari apabila mereka menyerangmu.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Kamu adalah pemilik Mr. Mime 👼. Kamu bisa memilih trainer untuk dilindungi. Akan tetapi, jika kamu melindungi Team Rocket, ada kemungkinan 50% kamu akan kalah battle Pokémon.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Kamu adalah pemilik Snorlax 🔫. Snorlax mempunyai 2 PP Hyper Beam. Kamu bisa memilih trainer untuk di Hyper Beam Pokémonnya. Semua orang akan melihat cahayanya dan mengetahui kalau kamu adalah pemilik Snorlax. (setidaknya bukan Team Rocket).</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Kamu adalah pemilik Jigglypuff 💋! Jigglypuff suka berkenalan setiap malam, kamu bisa memilih trainer untuk Jigglypuff ajak berkenalan. Akan tetapi, jika kamu mengunjungi Team Rocket atau trainer yang sedang battle dengan Team Rocket, Jigglypuff akan pingsan.Jika kamu mengirim Jigglypuff keluar, Team Rocket tidak bisa battle denganmu.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Kamu adalah pemilik Weezing 🖕! Untuk sekarang, kamu adalah trainer baik, tapi apabila semua anggota Team Rocket mati, kamu akan mengambil alih Team Rocket! Jika Alakazam menerawangmu, kemungkinan kamu akan terlihat sebagai anggota Team Rocket.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>KAMU ADALAH TEAM ROCKET 🐺!!! kamu bisa memilih trainer untuk diajak battle setiap hari.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Kamu adalah pemilik Alakazam 👳! Setiap hari, kamu bisa menyuruh Alakazam menerawang dan mengecek Pokémon yang dimiliki trainer lain.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >Kamu adalah pemilik Magikarp 👱. =( Kamu tidak bisa memenangkan battle Pokémon.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >Kamu adalah pemilik Tauros 👺. Kamu bisa menang jika semua trainer memilihmu untuk melepaskan Pokémonmu ke alam liar dan menghancurkan dunia Pokémon!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Kamu adalah pemilik Meowth 👶. Pilih senpaimu. Jika trainer yang kamu pilih kalah battle Pokémon, kamu akan kehilangan semua semangat dan kamu akan gabung Team Rocket.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >kamu adalah pemilik Abra 👁. Abra hanya bisa melihat trainer yang memiliki Alakazam - hanya itu kemampuan Abra.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Kamu adalah pemilik Kadabra 🙇. jika Alakazam pingsan, Kadabramu akan berevolusi!</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Kamu adalah Mewtwo 👤. setiap hari, kamu bisa memilih trainer dan mencoba untuk mengajaknya untuk menjadi Mewtwo. Jika semua Pokémon adalah Mewtwo. Mewtwo menang.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >Kamu adalah Mew 💂! Mew membutuhkanmu untuk membasmi Mewtwo.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>Ini waktunya! Waktunya mengirim Pokémon kembali ke alam liar karena trainernya terlalu lemah untuk mengurusnya!
+	Semua trainer mempunyai {0} detik untuk memilih!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value >Hmm hmm~ semua trainer mempunyai {0} detik untuk melihat siapa trainer yang tidak bersatu dengan Pokémonnya.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value >Waktunya battle! Pilih Pokémon untuk battle! Kamu mempunyai {0} detik!!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value >Trainer sudah memilih, dan berpikir {0} tidak pantas memiliki Pokémon. {1}.</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Gagal untuk mengambil keputusan bulat dalam membebaskan Pokémon, semua trainer kembali melatih Pokémonnnya masing-masing.</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Semua trainer terlalu baik dengan Pokémon lain. Tidak ada yang memilih sama sekali!</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Zapdos! Zapdos menggunakan Zap Cannon. Raticate {0} pingsan.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno! Articuno menggunakan Blizzard. Raticate {0} pingsan.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Moltres! Moltres menggunakan Heat Wave. Raticate {0} pingsan.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno, Zapdos dan Moltres!!! Burung legendaris menggunakan Ancient Power. Raticate {0} pingsan.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Zapdos! Zapdos menggunakan Zap Cannon. Mr. Mime {0} 👼 pingsan.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno! Articuno menggunakan Blizzard. Mr. Mime {0} 👼 pingsan.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Moltres! Moltres menggunakan Heat Wave. Mr. Mime {0} 👼 pingsan.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno, Zapdos dan Moltres!!! Burung legendaris menggunakan Ancient Power. Mr. Mime {0} 👼 pingsan.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Zapdos! Zapdos menggunakan Zap Cannon. Snorlax {0} pingsan.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno! Articuno menggunakan Blizzard. Snorlax {0} pingsan.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Moltres! Moltres menggunakan Heat Wave. Snorlax {0} pingsan.</value>
+    <value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno, Zapdos dan Moltres!!! Burung legendaris menggunakan Ancient Power. Snorlax {0} pingsan.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Zapdos! Zapdos menggunakan Zap Cannon. Alakazam {0} 👳 pingsan.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno! Articuno menggunakan Blizzard. Alakazam {0} 👳 pingsan.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Moltres! Moltres menggunakan Heat Wave. Alakazam {0} 👳 pingsan.</value>
+    <value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno, Zapdos dan Moltres!!! Burung legendaris menggunakan Ancient Power. Alakazam {0} 👳 pingsan.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Zapdos! Zapdos menggunakan Zap Cannon. Butterfree {0} 🍻 pingsan.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno! Articuno menggunakan Blizzard. Butterfree {0} 🍻 pingsan.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Moltres! Moltres menggunakan Heat Wave. Butterfree {0} 🍻 pingsan.</value>
+    <value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno, Zapdos dan Moltres!!! Burung legendaris menggunakan Ancient Power. Butterfree {0} 🍻 pingsan.</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno! Articuno menggunakan Mind Reader. Alakazam {0} telah terungkap sebagai Psyduck yang menyamar! {0} sesat!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Zapdos! Zapdos menggunakan Zap Cannon. Pokémon {0} pingsan. {1}.</value>
+	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno! Articuno menggunakan Blizzard. Pokémon {0} pingsan. {1}.</value>
+    <value>Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Moltres! Moltres menggunakan Heat Wave. Pokémon {0} pingsan. {1}.</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>Mew telah menemukan Mewtwo! Mew melepaskan Mewtwo dari {0}.</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Tidak ada battle Pokémon semalam.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Kamu telah didatangi Team Rocket, kamu berpikir untuk melepaskan Pidgeotmu dan gabung dengan mereka!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Team Rocketmu: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >{0} telah bergabung Team Rocket!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >Team Rocket telah menemukanmu dan memulai battle Pokémon. Sayang sekali, kamu kalah. =(</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value >Butterfree {0} telah membuatmu tertidur dan kamu tertidur sampai waktu battle selanjutnya.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >Mr. Mime mencoba melindungi Team Rocket tetapi Zapdos mereka menggunakan Cannon dan Mr. Mimemu pingsan.</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >Mr Mime melindungi Pokémon {0} dan berhasil melindunginya dari battle Pokémon!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >Pokémon {0} tidak diserang, jadi kamu tidak banyak membantu.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>Mr. Mime datang membantu Pokémon {0}, tetapi tidak menemukannya!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Mr. Mime berhasil melindungi Pokémonmu dari battle Pokémon!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value >Jigglypuff salah memilih Pokémon untuk diajak berkenalan. Jigglypuff {0} telah diserang oleh Team Rocket!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value >Odd... Pokémon {0} tidak ada di sekitar! Kamu tidak bisa mengajaknya berkenalan.</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value >Jigglypuff pergi untuk berkenalan dengan Pokémon {0} tetapi malah diserang oleh Team Rocket! Jigglypuff pingsan.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value >Jigglypuff {0} salah mengajak Pokémon untuk diajak berkenalan! Jigglypuff pingsan setelah battle Pokémon dengan burung legendaris.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value >Jigglypuff {0} mencoba berkenalan dengan Pokémon {1}. Tiba tiba, Jigglypuff menemukan Team Rocket sedang battle dengan Pokémon {1}! Moltres menggunakan Heat Wave. Jigglypuff {0} pingsan.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value >Jigglypuff telah berkenalan dengan Pokémon {0} dan dia bukanlah Team Rocket. Jigglypuff kembali dengan senang.</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >Jigglypuff datang untuk berkenalan dengan Pokémonmu dan kamu melihat mereka senang bermain bersama.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value >Kamu meneyadari bahwa Raticate {0} telah memata-mataimu! Ini waktunya untuk mengalahkannya!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value >Raticatemu memberi tahu {0} memiliki {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value >Tiba tiba, cahaya Hyper Beam menyinari kota. {0} telah mengirim Snorlax 🔫 untuk menggunakan Hyper Beam ke Jigglypuff {1}. Jigglypuff pingsan.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value >Tiba tiba, cahaya Hyper Beam menyinari kota. {0} telah mengirim Snorlax 🔫 untuk menggunakan Hyper Beam ke {1} dan {2}.</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value >Team Rocket telah menang!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value >Team Rocket telah menang!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value >Trainer telah menang!</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value >Oh tidak! Kalian melepaskan Tauros 👺 kembali ke alam liar dan dia menghancurkan kota.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Sisa trainer, Pokémon, dan team yang masih hidup:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} memilih mengajak {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>Mewtwo {0} dikirim untuk mengajak {1} ke dalam tim... Akan tetapi, dia adalah pemilik Mew! {0} kehilangan Mewtwonya!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} datang menemuimu untuk mengajak Pokémonmu menjadi Mewtwo. Mew melepaskan Mewtwo dari {0}!! {1} anggota mewtwo tersisa!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Anggota Mewtwo telah datang menemuimu dan mengajak Pokémonmu menjadi Mewtwo. Kamu melepaskan Pokémonmu dan memilih Mewtwo. Ini pekerjaan barumu untuk mengajak trainer ke dalam tim.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Anggota Mewtwo: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} telah bergabung ke dalam tim!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} dan Mewtwo telah mencoba mengajak {1}... tapi tidak ada orang di rumah!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >Team Rocket telah mati tapi semua trainer sudah menjadi Mewtwo! Mewtwo menang!!!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Mew pergi untuk menemui Pokémonnya {0}, tetapi Pokémonnya sudah pingsan!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>Mew pergi untuk menemui Pokémonnya {0} dan menemukan kalau dia adalah pemilik Mewtwo! Mew melepaskan Mewtwo dari {0}!</value>
+  </string>
+  <!-- 0 - target name -->
+  <string key="HunterFailedToFind">
+    <value>Mew pergi untuk menemui Pokémonnya {0} dan mengetahui kalau dia adalah pemilik Pokémon normal! Mew kembali dengan damai.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>Senpainya {0} telah kalah dalam battle Pokémon! {0} kehilangan semua semangat dan bergabung ke Team Rocket!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} telah kalah dalam battle Pokémon! Kehilangan semua semangat, kamu memilih untuk bergabung ke Team Rocket! Anggota Team Rocket: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>Magikarp 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Butterfree 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Jigglypuff 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Alakazam 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Weezing 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Mr. Mime 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Raticate 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>Team Rocket 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Pidgeot 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Snorlax 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Tauros 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Psyduck 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Meowth 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Abra 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Kadabra 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>Mewtwo 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Mew 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Kabur</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Pingsan</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Masih hidup</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Trainers yang masih hidup</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Pikachu 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Kamu adalah pemilik Pikachu 👷 dan kamu mengetahui trainer yang ada di klub Pikachu.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno! Articuno menggunakan Blizzard. Pikachu {0} pingsan</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  Anggota klub Pikachu: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Anggota barumu pergi menemui {0} dan mencoba mengajak dia masuk ke tim dengan Mewtwo. Tetapi kamu menemukan Pokémonnnya dalam keadaan pingsan dan kamu kehilangan semua motivasi untuk mempunya Pokémon lain.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>Anggota barumu pergi menemui {0} dan menantang untuk battle Pokémon. Mr. Mime keluar entah dari mana dan melindunginya, Kamu tidak dapat melawan mereka dan kembali ke rumah..</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Kamu mengirim {0} dan Mewtwonya untuk mengajak {1}, akan tetapi Pokémon mereka terlalu kuat, dan dia tidak mau masuk ke timmu. :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value> @{1}, Pemain dengan nama {0} sudah ada yang ikut main. Ganti nama kamu ya.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Jigglypuff pergi untuk menemui {0} dan mencoba berkenalan dengan Pokémonnya dan mengetahui dia adalah Mewtwo! Jigglypuff bergegas pulang dengan syok.</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>adalah pemilik</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Pokémonnya {0} pingsan. Tidak ada yang tahu mengapa~</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Odd.... {0} tidak membawa Pikachunya untuk meeting klub Pikachu pagi ini... O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Keluar saat permainan berlangsung tidak diperbolehkan oleh admin!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>pingsan</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+	<!-- 0 - target's name -->
+    <value>{0} ditambahkan di daftar admin. Gunakan /config untuk mengubah pengaturan grup.</value>
+  </string>
+  <string key="AlreadyInGame">
+	<!-- 0 - target's name -->
+    <value>Kamu telah bergabung di permainan ini! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Grup ini mempunyai lebih dari 1 permainan, kami akan menganulir salah satunya.</value>
+  </string>
+  <string key="GroupQueue">
+	<!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Grup kamu sedang dalam proses antrian. Posisi: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+	<!-- 0 - target's name -->
+    <value>Kami akan memulai maintenance, Anda tidak dapat memulai permainan untuk sementara. \nWaiting {0} games to end.\nGo Silakan ke @greywolfdev untuk informasi lainnya.</value>
+  </string>
+  <string key="MaxGames">
+	<!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Maaf, maximum permainan telah tercapai ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+	<!-- 0 - target's name -->
+    <value>{0} adalah preferred group dan langsung mulai bermain!</value>
+  </string>
+  <string key="NoGame">
+    <value>Tidak ada permainan berlangsung.  Mulai permainan dengan /startgame atau mulai permainan chaos dengan /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Hanya Admin Grup yang dapat melakukan command. Hapus bot, lalu mengembalikannya kembali akan menjadikan kamu sebagai Admin.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Kami akan melakukan maintenance setelah permainan ini.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Kami akan mematikan bot sementara untuk "Update" setelah permainan ini.</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId tidak tersedia. Sudahkan anda menggunakan sebagai reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+	<!-- 0 - target's name -->
+    <value>{0} telah menjadi Admin!</value>
+  </string>
+  <string key="NotAdmin">
+	<!-- 0 - target's name -->
+    <value>{0} bukan seorang Admin!</value>
+  </string>
+  <string key="AdminRemoved">
+	<!-- 0 - target's name -->
+    <value>{0} telah dihapus sebagai Admin.</value>
+  </string>
+  <string key="LanguageSet">
+	<!-- 0 - language's name -->
+    <value>Bahasa diubah menjadi {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>Tidak ada Alakazam 👳!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Waktu habis!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Kamu adalah pemilik Haunter 🏹. Kamu bisa memilih 2 trainer dan menakdirkan Pokémon mereka bersama. Ketika salah satu Pokémon pingsan, yang lainnya mengikuti.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Kamu adalah pemilik Ditto 🎭. Pilih salah satu trainer. Ketika Pokémonnya pingsan, Ditto akan berubah menjadi Pokémon yang kamu pilih trainernya dan bergabung ke tim mereka jika mereka punya.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Kamu adalah pemilik Gengar 🎯. Kamu adalah trainer yang jago. Kamu bisa memenangkan battle melawan Team Rocket dan bisa menyuruh sesuatu sebelum Gengar kabur atau kalah battle.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Kamu adalah Pokémon Master yang memiliki Dragonite 🔪. Tujuanmu adalah untuk memenangkan semua battle Pokémon dan menjadi yang terbaik yang pernah ada.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Takdir telah memilih Pokémonmu! Jika Pokémon {0} kalah dalam battle Pokémon dan pingsan, Pokémonmu akan pingsan juga!</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>1 kota telah memilih kamu untuk melepaskan Gengarmu! Berikan perintah terakhir ke Gengar untuk battle Pokémon sebelum dilepas!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} memerintahkan Gengar untuk menggunakan Shadow Punch tetapi terlambat, Gengar telah dilepaskan ke alam liar dan pingsan.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} memilih untuk tidak memberikan perintahnya ke Gengar. Gengar telah dilepaskan ke alam liar dan pingsan.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Sebelum Gengar dilepaskan ke alam liar, {0} memerintahkan Gengar untuk menggunakan Shadow Punch! Gengar menggunakan Shadow Punch! {2} pingsan dan {1} keluar.</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Gengar akan dilepaskan kembali ke alam liar! Berikan perintah terakhirmu untuk battle Pokémon dengan trainer lain!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>Gengar {0} telah pingsan sebelum dia memberikan perintah untuk Pokémonnnya.</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>{0} menunda untuk memberikan perintah. Mengetahui dia akan kalah dalam battle, tidak ada perintah yang diberikan ke Gengar</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>{0} memerintahkan Gengar untuk menggunakan Curse! Ketika Gengar pingsan, {1} sedih karena Pokémonnya pingsan. {2}.</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} mengirim Mewtwo untuk menyerang {1}! Akan tetapi, tidak mengetahui trainer lain lebih kuat. Dragonite muncul! Dragonite menggunakan Outrage! Mewtwo pingsan.</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>Team Rocket mencoba untuk battle Pokémon dengan Gengar! Akan tetapi, Team Rocket {0} tidak terlalu kuat dan kalah dalam battle.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>Team Rocket mencoba untuk battle Pokémon dengan Gengar! Akan tetapi, Team Rocket {0} tidak terlalu kuat dan kalah dalam battle.</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Team Rocket mencoba untuk battle Pokémon dengan Dragonite! Akan tetapi, Dragonite sangat kuat dan {0} kalah dalam battle walaupun Team Rocket memiliki 3 burung legendaris. Sangat memalukan!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Pokémon master berlari untuk memulai battlenya dengan Dragonitenya! Tiba tiba, dia menemui {0}! {0} sedih karena {1}.</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Kamu dan Dragonite pergi menemui {0} dan menantang dia untuk battle Pokémon. Mr. Mime keluar entah darimana dan melindunginya, mereka hilang.. Kamu tidak mendapatkan battlemu.</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Team Rocket mengirim {0} untuk mengajak {1} ke dalam tim, tetapi {1} marah dan menyuruh Gengar untuk memulai battle Pokémon! {0} kalah bersama dengan Mewtwonya yang sudah pingsan.</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Team Rocket mengirim {0} untuk mengajak {1} ke dalam tim, tetapi {1} marah dan menyuruh Dragonite untuk memulai battle Pokémon! {0} kalah bersama dengan Mewtwonya yang sudah pingsan.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Mr. Mime mencoba untuk melindungi Dragonite tetapi Dragonite menggunakan Outrage ke Mr. Mime sebelumnya! Mr. Mime pingsan.</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Jigglypuff pergi menemui {0} dan ingin berkenalan dengan Pokémonnya. Jigglypuff mengetahui {0} kelaparan battle. Jigglypuff kalah battle dan pingsan.</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Jigglypuff pergi menemui {0} dan ingin berkenalan dengan Pokémonnya. Jigglypuff mengetahui {0} kelaparan battle. Jigglypuff kalah battle dan pingsan.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>Ditto {0} baru saja berubah menjadi Pikachu dan bergabung ke klub!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>Pikachu {0} telah pingsan, dan Ditto berubah menjadi Pikachu.  Anggota klub Pikachu: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>Ditto {0} baru saja berubah menjadi Mewtwo dan bergabung ke dalam tim!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>Metwonya {0} telah pingsan, dan Ditto berubah menjadi Mewtwo.  Anggota Mewtwo: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Ditto {0} baru saja berubah menjadi salah satu dari burung legendaris dan bergabung ke dalam tim!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>Pokémon {0} telah pingsan, dan Ditto berubah menjadi salah satu burung legendaris.  Anggota Team Rocket: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>Kamu telah memenangkan semua battle Pokémon, Kamu benar-benar Pokémon MASTER!!!</value>
+  </string>
+  <string key="AskKill">
+    <value>Siapa yang ingin kamu ajak battle malam ini?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Dengan Pokémonnya {0} pingsan, {1} syok karena Pokémonnya juga pingsan, Pokémon mereka ternyata sudah ditakdirkan. {2}.</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Siapa trainer Pokémon yang ingin Ditto berubah saat Pokémonnya trainer yang kamu pilih pingsan?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Pokémon siapa yang ingin Haunter takdirkan? Pilih trainer pertama.</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Pokémon siapa yang ingin Haunter takdirkan? Pilih trainer kedua.</value>
+  </string>
+  <string key="Hunter">
+    <value>Gengar 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Haunter 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Dragonite 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Ditto 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <!-- 0 - lover's name -->
+    <value>Pokémonmu ditakdirkan dengan Pokémon {0} oleh Haunter. Jika Pokémonnya pingsan, punyamu juga!</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Dittomu berubah menjadi Meowth 👶.  Senpaimu adalah {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>Erm, saya tidak berpikir tentang ini sama sekali.!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>Gengar menemukan Pokémon dan Gengar menggunakan Shadow Punch! {1} pingsan. Trainernya adalah {0}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Kamu telah diajak masuk tim Mewtwo, tetapi Pokémonmu lebih kuat.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Kamu sudah memesan panggilan untuk {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Kamu memesan panggilan grup untuk {0}.  Saya akan PM kamu jika permainan baru akan dimulai.\nSaat menunggu, kenapa tidak melihat toko? https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>Permainan baru, barusaja akan dimulai di {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>{0} dengan Dragonitenya, memulai final Pokémon battle. Akan tetapi, Pokémon {1} tidak dapat memenangkan kekuatan luar biasanya Dragonite. {0} memenangkan battle final. </value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Tidak ada trainer yang tersisa..</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Final Pokémon Battle antara {0} dengan {1}. {0} mengeluarkan Dragonite dan {1} mengeluarkan Gengar. Gengar menakdirkan dirinya dengan Dragonite! Ketika Dragonite menggunakan tiupan terakhir~, kedua Pokémon pingsan. =_= </value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Kamu gagal memilih senpaimu, jadi moderator memilihkan untukmu: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Menang</value>
+  </string>
+  <string key="Lost">
+    <value>Kalah</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Pokémon {0} telah dilepaskan ke alam liar karena tidak memilih {1} kali secara berturut-turut.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Magikarp 👱 tidak bisa memenangkan battle Pokémon.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Alakazam 👳 Alakazam bisa menerawang dan mengecek Pokémon yang dimiliki trainer lain.</value>
+  </string>
+  <string key="AboutWw">
+    <value>TEAM ROCKET 🐺 Bisa memilih trainer untuk diajak battle setiap hari.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Jigglypuff 💋 Jigglypuff suka berkenalan setiap malam, Jigglypuff bisa memilih trainer untuk diajak berkenalan. Akan tetapi, jika Jigglypuff mengunjungi Team Rocket atau trainer yang sedang battle dengan Team Rocket, Jigglypuff akan pingsan.Jika Jigglypuff dikirim keluar, Team Rocket tidak bisa battle dengan Jigglypuff.</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Butterfree 🍻 Butterfree akan membuat tidur Team Rocket 1 hari apabila mereka menyerang Butterfree.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Pidgeot 😾 Trainer baik, jika Team Rocket datang menemui trainer yang memiliki Pidgeot, trainer itu akan melepaskan Pidgeotnya dan gabung Team Rocket.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Weezing 🖕 Trainer baik, tapi apabila semua anggota Team Rocket mati, trainer yang memiliki Weezing akan mengambil alih Team Rocket! Jika Alakazam menerawang trainer yang memiliki Weezing, kemungkinan akan terlihat sebagai anggota Team Rocket.</value>
+  </string>
+  <string key="AboutGA">
+    <value>Mr. Mime 👼 Bisa memilih trainer untuk dilindungi. Akan tetapi, jika Mr. Mime melindungi Team Rocket, ada kemungkinan 50% akan kalah battle Pokémon.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Raticate 🕵 Bisa mengirim Raticate untuk mengawasi Pokémon trainer lain dengan kesempatan mencari Team Rocket.</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Snorlax 🔫 Snorlax mempunyai 2 PP Hyper Beam. Bisa memilih trainer untuk di Hyper Beam Pokémonnya.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Tauros 👺 Tauros bisa menang jika semua trainer memilih untuk melepaskan Tauros ke alam liar!</value>
+  </string>
+  <string key="AboutFool">
+    <value>Psyduck 🃏 Alakazam palsu yang sesat. Setiap malam Psyduck bisa memilih trainer untuk diterawang Pokémonnya, tetapi mereka akan diberi tahu Pokémon acak.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Mewtwo 👤 Bisa memilih trainer dan mencoba untuk mengajaknya untuk menjadi Mewtwo. Jika semua Pokémon adalah Mewtwo. Mewtwo menang.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Mew 💂! Bisa membasmi Mewtwo.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Meowth 👶 Pilih senpai. Jika trainer yang dipilih kalah battle Pokémon, trainer itu akan bergabung ke Team Rocket.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Kadabra 🙇 jika Alakazam pingsan, Kadabra akan berevolusi menjadi Alakazam!</value>
+  </string>
+  <string key="AboutBH">
+    <value>Abra 👁 Abra hanya bisa melihat trainer yang memiliki Alakazam - hanya itu kemampuan Abra.</value>
+  </string>
+  <string key="AboutMason">
+    <value>A mason's job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Ditto 🎭 Pilih salah satu trainer. Ketika Pokémonnya pingsan, Ditto akan berubah menjadi Pokémon yang dipilih trainernya dan bergabung ke tim mereka jika mereka punya.</value>
+  </string>
+  <string key="AboutCupid">
+    <value>Haunter 🏹 Bisa memilih 2 trainer dan menakdirkan Pokémon mereka bersama. Ketika salah satu Pokémon pingsan, yang lainnya mengikuti.</value>
+  </string>
+  <string key="AboutHunter">
+    <value>Gengar 🎯. Bisa memenangkan battle melawan Team Rocket dan bisa menyuruh sesuatu sebelum Gengar kabur atau kalah battle.</value>
+  </string>
+  <string key="AboutSK">
+    <value>Dragonite 🔪. Tujuannya adalah untuk memenangkan semua battle Pokémon dan menjadi yang terbaik yang pernah ada.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para adalah penyebab kegilaan werewolf game ini. Dia yang menciptakan bot ini dan membuat kalian bergabung! Hidup Para!</value>
+  </string>
+  <string key="EndTime">
+    <value>Waktu permainan: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Hari ke {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Kesalahan sistem telah terjadi, node ini telah dimatikan </value>
+  </string>
+  <string key="SentPrivate">
+    <value>Ada PM untukmu. Ayo dibaca. </value>
+  </string>
+  <string key="StartPM">
+    <value>Tolong PM segera, agar kami bisa beri petunjuk lebih lanjut: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Terima Kasih! Sekarang Moderator bisa kasih kamu petunjuk.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Kamu harus reply pemain jika ingin melakukan smite. </value>
+  </string>
+  <string key="WhatToDo">
+    <value>Apa yang ingin kamu lakukan?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Kamu harus bergabung permainan dalam grup!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Kamu harus memulai permainan dalam grup!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Waktu Respon Server: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Bahasa apa yang akan kamu pilih?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Jenis bahasa apa yang akan kamu pilih?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Penggunaan Bahasa yang dipilih adalah {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Kamu ingin mengambil file bahasa apa?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Tidak ada node yg aktif (online), silahkan coba beberapa saat lagi</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Perintah ini hanya dapat dilakukan di grup. </value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Kamu bukan Admin Global. Dah</value>
+  </string>
+  <string key="NotPara">
+    <value>KAMU BUKAN PARA!</value>
+  </string>
+  <string key="Yes">
+    <value>Ya</value>
+  </string>
+  <string key="No">
+    <value>Tidak</value>
+  </string>
+  <string key="Allow">
+    <value>Ya</value>
+  </string>
+  <string key="Disallow">
+    <value>Tidak</value>
+  </string>
+  <string key="Show">
+    <value>Tampilkan </value>
+  </string>
+  <string key="Hide">
+    <value>Sembunyikan </value>
+  </string>
+  
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Pilihan trainer</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>tidak tampilkan semua peran pemain </value>
+  </string>
+  <string key="ShowLiving">
+    <value>tampilkan peran pemain hidup</value>
+  </string>
+  <string key="ShowAll">
+    <value>Tampilkan semua peran pemain</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Apakah kamu ingin mengijinkan flee setelah game dimulai?\nNote: Trainer tetap dapat flee selama permainan belum dimulai. phase\nPengaturan saat ini: Trainer {0}flee</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Pemain {0}dapat flee setelah permainan dimulai</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Berapa jumlah maksimum trainer yang kamu inginkan?\nPengaturan saat ini: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Maksimum Trainer {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Tampilkan atau sembunyikan peran setelah mati?\nPengaturan saat ini: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Peran akan di {0} setelah pemain mati.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Mode apa yang akan digunakan?\nPengaturan saat ini: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode yang digunakan adalah {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Bagaimana kamu ingin menampilkan peran pemain di akhir permainan?\nPengaturan saat ini: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Tampilan peran pemain: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Pilih jangka waktu (dalam detik) untuk siang hari. Pengaturan tetap tergantung jumlah pemain.\nMinimal jangka waktu untuk pemain adalah 60 detik.  Pengaturan awal: {0}\nPengaturan saat ini: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Pengaturan jangka waktu siang hari {0} detik</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Pilih jangka waktu (dalam detik) untuk malam hari. Pengaturan awal: {0}\nPengaturan saat ini:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Pengaturan jangka waktu malam hari {0} detik</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Pilih jangka waktu (dalam detik) untuk waktu eksekusi(voting). Pengaturan awal: {0}\nPengaturan saat ini:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Pengaturan waktu eksekusi (voting) {0} detik</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Apakah kamu ingin Psyduck dalam pilihan peran?\nPengaturan saat ini: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Pilihan Psyduck dalam Peran: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Apakah kamu ingin Tauros dalam pilihan peran?\nPengaturan saat ini: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Pilihan Tauros dalam Peran: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Apakah kamu ingin Mewtwo dalam pilihan peran?\nPengaturan saat ini: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Pilihan Mewtwo dalam Peran: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Terima kasih, Selamat bermain :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Bahasa apa yang ingin kamu gunakan untuk bermain dalam grup?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Berikut daftar pemain{0}:</value>
+  </string>
+  <string key="Members">
+    <value>anggota</value>
+  </string>
+  <string key="StartMe">
+    <value>Tolong klik startme, jadi bot dapat mengirimkan petunjuk di PM.</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} telah gagal untuk start bot, maka dia dikeluarkan dari permainan!</value>
+  </string>
+  <string key="LatestList">
+    <value>Berikut daftar pemain terbaru</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Daftar pemain belum dapat ditampilkan</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Kamu berhasil bergabung ke Liga Pokémon di {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
+  </string>
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Kamu adalah Walikota kota Pokémon! dengan Bulbasaur 🎖. Setelah kamu mengungkapkan dirimu, nilai pilihanmu akan dihitung ganda.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Kamu adalah pemilik royal Ninetails 👑. Trainer tidak dapat melepaskan Pokémonmu ke alam liar, jika mereka melakukannya, kamu akan mengungkapkan Ninetailsmu dan mengabaikan pelepasan.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Kamu adalah pemilik Slowpoke 🤕. Karena kemampuan Slowpoke, sebagai trainer, kamu juga terpengaruh! Oh tidak! Saat memilih, kamu akan memilih orang yang salah!!! </value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Kamu adalah pemilik Jynx 🔮. Jynx mempunyai kemampuan untuk mengendus Alakazam dan Team Rocket. kamu selalu membenci trainer yang lebih kuat darimu, kamu berteman dengan Team Rocket.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Kamu adalah pemilik Vileplume ⚒! Vileplume mempunyai PP Stun Spore untuk memberhentikan Team Rocket dari battle saat malam!</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Kamu adalah Giovanni, bos Team Rocket dan kamu adalah pemilik Rhydon ⚡️. Menggunakan kekuatan karismatik yang kuat, kamu dapat mengajak trainer lain untuk bergabung ke Team Rocket dengan kesempatan 20%.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Kamu adalah staf Rocket Game Corner dan kamu memiliki Porygon 🐶!(Bernilai 9999C) Jika Pokémonmu kalah atau dilepas, Team Rocket akan sangat marah dan menyerang 2 trainer malam selanjutnya!</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>1 kota mulai untuk melepaskan {0}, mereka berkata “Tunggu! Saya memiliki royal Ninetails yang melindungi kota Pokémon!” Trainer menyesal dengan keputusannya dan meninggalkan Ninetails dengan trainernya.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Kamu mencoba untuk melihat {0}, tetapi kamu tidak dapat mengetahui Pokémon apa yang dia miliki.  Yang jelas dia bukan Team Rocket atau Alakazam...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} berjalan dan memperlihatkan Bulbasaur yang kecil dan kawaii, menyatakan dirinya walikota kota Pokémon.  Mulai sekarang, setiap {0} memilih akan terhitung 2.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Klik "Ungkap" saat kamu siap untuk mengungkapkan dirimu sebagai walikota</value>
+  </string>
+  <string key="Reveal">
+    <value>Ungkap</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Apakah kamu akan menyebarkan Stun Spore hari ini, untuk memberhentikan battle Team Rocket malam ini?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Disaat 1 kota berdebat Pokémon siapa yang harus dilepaskan, tiba tiba {0} memerintahkan Vileplumenya untuk menyebarkan Stun Spore di semua tempat. Ini akan memberhentikan Team Rocket dari membuat masalah malam ini.</value>
+  </string>
+  <string key="Mayor">
+    <value>Bulbasaur 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Ninetails 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Jynx 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Slowpoke 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Vileplume ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Rhydon ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Porygon 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Team Rocket menyerang {0}, {1},Giovanni memberhentikan semuanya.  {1} meyakinkan {0} untuk bergabung ke Team Rocket dan dia akan mempunyai burung legendaris sendiri.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Kamu telah diserang oleh Team Rocket, tetapi Giovanni berpikir kamu adalah trainer yang berharga. Dibawah pengaruhnya, kamu telah diajak untuk bergabung ke Team Rocket.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Saat sampai di markas Team Rocket, kamu diberikan kesempatan untuk memilih salah satu burung legendaris. Kamu adalah bagian dari Team Rocket sekarang!!!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Walikota kota Pokémon! dengan Bulbasaur 🎖. Setelah Walikota mengungkapkan dirinya, nilai pilihannya akan dihitung ganda.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>royal Ninetails 👑. Trainer tidak dapat melepaskan Pokémonnya ke alam liar, jika mereka melakukannya, Trainer pemilik Ninetails akan mengungkapkan Ninetailsnya dan mengabaikan pelepasan.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Jynx 🔮. Jynx mempunyai kemampuan untuk mengendus Alakazam dan Team Rocket. kamu selalu membenci trainer yang lebih kuat darimu, kamu berteman dengan Team Rocket.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Slowpoke 🤕. Karena kemampuan Slowpoke, trainernya juga terpengaruh! Oh tidak! Saat memilih, trainer akan memilih orang yang salah!!!</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Vileplume ⚒! Vileplume mempunyai PP Stun Spore untuk memberhentikan Team Rocket dari battle saat malam!</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Giovanni, bos Team Rocket pemilik Rhydon ⚡️. Menggunakan kekuatan karismatik yang kuat, Giovanni dapat memujuk trainer untuk bergabung ke Team Rocket dengan kesempatan 20%.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>staf Rocket Game Corner pemilik Porygon 🐶!(Bernilai 9999C) Jika Pokémonnya kalah atau dilepas, Team Rocket akan sangat marah dan menyerang 2 trainer malam selanjutnya!</value>
+  </string>
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>Rhydon {0} telah pingsan, dan Ditto berubah menjadi Rhydon.  Anggota Team Rocket: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>Porygon {0} telah pingsan, dan Ditto berubah menjadi Porygon.  Anggota Team Rocket: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>(Village Team)</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>(Neutral Team)</value>
+  </string>
+  <string key="WolfTeam">
+    <value>(Team Rocket)</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>(Pokémon Master Team)</value>
+  </string>
+  <string key="CultTeam">
+    <value>(Mewtwo Team)</value>
+  </string>
+  <string key="TannerTeam">
+    <value>(Tauros Team)</value>
+  </string>
+  <!-- new strings 15 nov-->
+  <string key="VillageTeamEnd">
+    <value>(Village Team)</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>(Neutral Team)</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>(Team Rocket)</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>(Pokémon Master Team)</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>(Mewtwo Team)</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>(Tauros Team)</value>
+  </string>
+</strings>

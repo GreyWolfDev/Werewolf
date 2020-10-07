@@ -1,0 +1,1267 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Pinoy SFW version by @michelleized, @inhinyerongkuryente, @genevasands -->
+<!-- Changelog August 12, 2016
+	First Launch-->
+<!-- Changelog August 14, 2016
+	1. Corrected '*PlayerName* WAS *role*' to '*PlayerName* ay *role*'.
+	2. Changed some role names (Villager, Seer, Guardian Angel, Cultist, Wild Child, Doppelganger, Tanner)-->
+<!-- Changelog August 15, 2016 by @pierredplatypus
+	1. Corrected several grammar and lexical errors such as 'mukang' to 'mukhang', 'jan' to 'dyan', 'PATAYA' to 'PATAY', 'ilynch' to 'bitayin', 'sakanila' to 'sa kanila', 'pimili' to 'pumili'.
+	2. Changed some role names (Harlot, AppSeer, Gunner)
+	3. Adjusted 'Bibe' to be more related to Cult, adjusted mentions of GA to be more related to Baranggay Tanod. -->
+<!-- Changelog August 17, 2016 by @inhinyerongkuryente
+	1. Updated to new bot lines for /playerlist-->
+<!-- Changelog August 19, 2016 by @inhinyerongkuryente
+	1. Added YouJoined string -->
+<!-- Changelog October 13, 2016 by @inhinyerongkuryente
+	1. Updated ApprenticeNowSeer and BeholderNewSeer strings
+	2. Added Ping2 string
+	3. Updated VillageWins string
+	-->
+<!-- Changelog November 4, 2016 by @inhinyerongkuryente
+	1. Added translation for new roles
+	-->
+<strings>
+  <language name="Filipino" base="Filipino" variant="SFW"/>
+  <string key="NotInGame">
+    <value>Mukhang di ka pa kasali sa anumang laro ngayon...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>Si {0} ay nag-umpisa ng laro! Gamitin ang /join para makasali sa saya... at pwede ka ring mamatay :p</value>
+    <value>Isang bagong laro ang sinimulan ni {0}! Gamitin ang /join para makain!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>Si {0} ay nag-umpisa ng gulo! Gamitin ang /join para maksali sa saya... at pweede ka ring mamatay :P</value>
+    <value>Isang bagong gulo ang sinimulan ni {0}! Gamitin ang /join para makain!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Hindi ka na makakasali! Nagsimula na ang laro. Maaari mong gamitin ang /nextgame at ip-pm kita kapag may bagong laro na.</value>
+        <value>Huli ka na! Nag-umpisa na sila. Next game ka nalang. Gamitin ang /nextgame upang malaman kapag may bagong laro na.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Kalma lang! Kasali ka na!</value>
+        <value>Chill ka lang dyan! Kasali ka na!</value>
+        <value>Matuto po tayong maghintay lalo kung kasali na tayo.</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minuto nalang para sumali. Gamitin ang /join para makasali.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>{0} segundo nalang para sumali. Gamitin ang /join para makasali.</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Kulang ang players. Mamaya nalang tigil ko muna to.</value>
+        <value>Kulang ang players. Itigil na natin to! Mamaya nalang.</value>
+        <value>Itigil na natin to. Matuto po tayong maghintay ng tamang pagkakataon. Kesa pilitin, umasa at masaktan lang. Kulang pa tayo ngayon.</value>
+  </string>
+  <string key="StartingGameWait">
+        <value>Magsisimula na ang laro, brb muna bibigyan ko lang kayo ng roles at iuupdate ko ang database</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>Si {0} ay naban dahil sa pagsubok mandaya. (Bawal ang pangalan na nag-uumpisa sa /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, palitan mo ang iyong pangalan upang makasali.</value>
+  </string>
+  <string key="PlayerLimitReached">
+        <value>Pasensya ka na, nalate ka puno na ang bus sa susunod ka nalang.</value>
+        <value>Pasensya ka na, puno na ang players.</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+        <value>Si {0} ay sumali sa laro. {1} na ang kasali. Gamitin ang /join upang makasali. {2} hanggang {3} lang ang maaaring kasali.</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+        <value>{0} Pindutin ang 'Start' button sa baba o {1} at i-'Start" ako, para ma-PM ko sayo ang role mo. Hindi ka maaaring sumali hangga't di mo ito ginagawa.</value>
+  </string>
+  <string key="DeadFlee">
+        <value>Hindi ka na makakatakas! PATAY KA NA! Balik sa lupa... tsss</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+        <value>Si {0} at tumakas sa sobrang takot!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>Si {0} ay ang {1}</value>
+    <value>Si {0} sana ang {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} nalang ang buhay.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Uy wala pa ko tinatanong sayo wag kang excited!</value>
+        <value>Kalma lang uy! Wala pa ko tinatanong sayo.</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Hindi ka naman ata kasali?</value>
+        <value>Hindi ka naman ata naglalaro?</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Wala naman akong makitang player na ganyan ang pangalan. Sure ka ba dyan?</value>
+  </string>
+  <string key="AnswerNonValid">
+        <value>Hindi valid ang sagot mo!</value>
+        <value>Hindi tama ang sagot mo! Sure ka ba dyan?</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>Si {0} ay gustong kainin si {1}</value>
+        <value>Gusto ni {0} kainin si {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+        <value>Gusto ni {0} bitayin si {1}</value>
+        <value>Si {0} ay binoto si {1} para bitayin</value>
+        <value>Si {0} ay gustong bitayin si {1}</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+        <value>Si {0} ay dalawang gabi nang hindi bumoboto. Nakita ito ng mga concerned citizen, mukhang busy siya kaya't pinatay nalang nila siya. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+        <value>Deds na lahat ng wuff so ayun Isa ka ng wolf ngayon :D</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Salamat sa pagpili</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nAng Madam Auring ay is {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>Pumunta ka sa bahay ni {0} at nakita ang mga nakakalat na tarot cards! Pinulot mo ito. Ikaw na ang bagong Madam Auring.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>Napulot ni {0} ang mga nakakalat na tarot cards ni {1}. Siya na ang bagong Madam Auring.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Nasilip mo na si {0} ay ang {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Sino ang gusto mong bitayin?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Sino ang gusto mo idetect?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Sino ang gusto mo barilin? May {0} ba ka na lang.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Sino ang gusto mo bisitahin?</value>
+  </string>
+  <string key="AskSee">
+    <value>Sino ang gusto mo silipin?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Sino ang gusto mo bantayan?</value>
+  </string>
+  <string key="AskEat">
+    <value>Sino ang gusto mo kainin?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Sino ang gusto mo i-hunt?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Sino ang gusto mong maging idol?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Sino ang gusto mo irecruit sa kulto?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value> Pag usapan niyo ni {0} ang desisyon.</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> at </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Ikaw ang isinumpa! (Cursed). Isa ka lang Tambay sa ngayon, pero pag sinubukan kang kainin ng wolf, magiging wolf ka. Nice diba?</value>
+  </string>
+  <string key="RoleInfoDetective">
+        <value>Ikaw ang ang Detective. Sa araw, pwede ka pumili ng player para malaman ang role nila. PERO, may 40% chance na malaman ng wolves na ikaw ang detective.</value>
+  </string>
+  <string key="RoleInfoDrunk">
+        <value>Pre! Ikaw ang lasengero ng barangay! (Drunk)(At sa totoo lang, alam na ng lahat eh...)</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+        <value>Ikaw ang Baranggay Tanod. Tuwing gabi, pwede ka pumili ng isang player na babantayan. PERO, kung ang napili mo ay wolf, may 50% chance na mapatay ka niya.</value>
+  </string>
+  <string key="RoleInfoGunner">
+        <value>Ikaw si FPJ. May dalawa kang bala. Sa araw, pwede ka pumili ng player na babarilin. Maririnig ng lahat ang putok ng baril mo at malalaman na ikaw ang Gunner (at hindi wolf)</value>
+  </string>
+  <string key="RoleInfoHarlot">
+        <value>Salahula ka! Isa kang Haliparot. Tuwing gabi, pwede ka pumili ng bibisitahing player para malaman kung hindi sila wolf. PERO, kung ang binisita mo ay wolf, o kaya binisita mo ang kakainin ng wolf, patay ka din. Kung may binisita ka at sinubukan kang kainin ng wolf o irecruit sa kulto sa bahay mo, mabubuhay ka o di marerecruit. (Gala mo eh)</value>
+  </string>
+  <string key="RoleInfoTraitor">
+        <value>Traydor ka! Sa ngayon Tambay ka palang, pero pag namatay na lahat ng werewolf, magiging wolf ka. Pag sinilip ka ni Madam Auring, pwedeng masilip ka niya na wolf pwede ring hindi (Nice diba?)</value>
+  </string>
+  <string key="RoleInfoWolf">
+        <value>XD WOLF KA!! (Naks dream come true na to). Tuwing gabi pwede ka pumili ng gusto mo kainin.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Ikaw si Madam Auring. Tuwing gabi, pwede ka pumili ng player na sisilipin para malaman ang role nila.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+        <value>Isa kang Tambay. Chill ka lang dyan kakainin ka rin ng wolves wait ka lang.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+        <value>Ikaw ay parang ang EX MO (Manloloko). Pag na-lynch ka, panalo ka agad! (parang yung ex mo, nanalo siya nung naloko ka niya)</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+        <value>Isa kang Batang Hamog! (Wild Child) Pumili ka ng idol mo. Kapag namatay sila madedepress ka ng todo kaya magiging werewolf ka.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+        <value>Ikaw ang Beholder, malalaman mo kung sino ang tunay na Madam Auring. Yun lang.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+        <value>Ikaw ang OJT ni Madam Auring. Kapag namatay si Madam Auring, mappromote ka bilang bagong Madam Auring. (Galing no?)</value>
+  </string>
+  <string key="RoleInfoCultist" >
+        <value>Ikaw ang Bibe. Tuwing gabi, pwede ka pumili ng player na irerecruit sa kulto mo. Kapag lahat ng natitirang player sa dulo ay Bibe na lahat panalo sila.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+        <value>May Leader na Bibe sa baranggay na nangrerecruit! Tuwing gabi, pwede ka pumili ng player. Pag bibe na sila, mamamatay sila. Pag sinubukan kang irecruit sa kulto nila, mamamatay ang pinakabago nilang recruit.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+          Palubog na ang araw at nagpunta na ang mga tambay sa barangay para pag-usapan kung sino ang bibitayin ngayong gabi...
+          Lahat ay may {0} segundo para bumoto!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+        <value>Umaga na. Lahat ay mayroong {0} segundo para mag-usap-usap / chismisan  basta ganun.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+        <value>Lumubog na ang araw, gabi na. Natulog na ang lahat pagod dahil sa traffic sa EDSA. Mga callcenter agents (Night players), may {0} segundo kayo para gamitin ang actions niyo!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+        <value>Nabilang na ang mga boto, naalis na ang mga boto ng flying voters. Si {0} ay patay na. {1}</value>
+  </string>
+  <string key="LynchTie" >
+        <value>Dahil hindi sila magkasundo kung sino ang bibitayin at gabi na. Umuwi nalang sila sa bahay nila para matulog kahit badtrip...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>Umuulan sa labas, lampas tao ang baha. Walang pumunta sa barangay para bumoto kung sino ang bibitayin.</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+        <value>Nagkita-kita ang mga tambay ng umaga para magchismisan pero nagtaka sila at wala si {0} siya pa naman ang supplier ng mga chika. Pumunta sila sa bahay niya at nakita nila si {0} na gutay-gutay ang katawan, nakasaksak ang badge sa lalamunan.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+        <value>Umaga na. Nagulat ang lahat nung makita nila ang krus sa tuktok ng simbahan nakatusok kay {0}, ang Baranggay Tanod.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+        <value>Umaga na, maraming tambay ang nakapansin ng nagkalat ang mga bala ng baril, mga piraso ng paa, at ilang daliri... Nagulat ang lahat nang sa Fountain sa tapat ng barangay hall, nakita nila ang katawan ni {0}, kinain ng werewolf. Wala na kayong gunner.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value>Umaga na nang makita ng mga tambay ang gutay-gutay na katawan ni {0} sa harap ng isang mesa na may Ouija Board at Tarot Cards. Patay na si Madam Auring.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+        <value>Nagising ang lahat sa amoy ng nasusunog na alak at kahoy... Nasusunog ang kaisa-isang bar sa barangay!!! Matapos mapatay ang apoy, nakita nila ang katawan ni {0} sunog na sunog at may mga kagat.</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+        <value>Umaga na nang makita ng mga tambay and gutay-gutay na katawan ni {0} sa harap ng isang mesa na may Snakes and Ladders at may hawak na... Pokemon Cards? Isa siyang FOOL!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+        <value>Nagising ang mga tambay dahil sa masangsang na amoy. Sinundan nila ang amoy, para makita si {0} Nakatali sa kahoy, mukhang shawarma na katawan niya. NOMNOMNOMNOM {1}</value>
+  </string>
+<string key="HunterKilledCultist">
+        <!-- 0 - victim name -->
+        <value>Nagising ang mga tambay dahil sa masangsang na amoy na galing sa bahay ni {0}... Pumasok sila sa bahay at nakita nila ang katawan niya sa harap ng gawa-gawang altar... Isang kulto ang napatay ng hunter!</value>
+  </string>
+  <string key="NoAttack" >
+    <value>Nagkita-kita ang mga tambay ng umaga para magchismisan. Complete attendance and barkada. Mukang walang inatake kagabi.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>Nakagat ka ng wolves. Pero dahil isinumpa ka (Cursed), wolf ka na ngayon!</value>
+  </string>
+  <string key="WolfTeam">
+        <!-- 0 - teammate names -->
+    <value>Ang mga kasama mong wolf ay: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+        <!-- 0 - victim name -->
+    <value> Si ay {0} nakagat ng wolf... pero dahil isinumpa siya, siya ay naging wolf! Congrats sa bagong teammate!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value>Naku! Kinain ka na ng wolves. NOMNOMNOMNOM</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+        <!-- 0 - victim name -->
+    <value>Naku! Lasenggero yun si {0}! Nalasing ka din tuloy ngayon, di ka makakatake bukas ng gabi kasi may hangover ka pa...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>Sinubukan mong bantayan ang wolf! Kinain ka ng wolf.</value>
+  </string>
+  <string key="GuardSaved" >
+        <!-- 0 - saved player name -->
+    <value>Niligtas mo ang buhay ni {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+        <!-- 0 - player name -->
+    <value>Walang umatake kay {0}, kaya ayun wala kang nagawa ngayong gabing to.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+        <!-- 0 - player name -->
+    <value>Pumunta ka sa bahay ni {0} para bantayan siya. Kaso walang tao sa bahay niya pagdating mo</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>Binabantayan ka ng Baranggay Tanod kagabi, itinaboy niya yung mga wolves!</value>
+  </string>
+  <string key="HarlotEaten" >
+        <!-- 0 - player name -->
+    <value>Nag-day-off ang Haliparot, kaso mukang malas siya ngayong gabi. Nakain ng mga wolves si {0}! </value>
+  </string>
+  <string key="HarlotNotHome" >
+        <!-- 0 - player name -->
+    <value>Malas mo. Walang tao sa bahay ni {0}. Wala kang kain ngayon.</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+        <!-- 0 - player name -->
+    <value>Pumunta ka sa bahay ni {0} para sa saglit na kaligayahan. Kaso pagpasok wolf ang nakita mo. Patay ka na.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+        <!-- 0 - player name -->
+    <value>Nagkamali ng bahay na binisita si {0} kagabi! Nakita ang hubad niyang katawan sa harap ng pinto ng simbahan... so sad :(</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+        <!-- 0 - harlot name -->
+        <!-- 1 - victim name -->
+    <value>Pumunta si {0} sa bahay ni {1} para sa saglit na kaligayahan. Pagpasok niya, nakita niyang kinakain ng werewolf si {1}! Nakita siya ng werewolf at siya naman ang kinain... Patay na si {0}</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+        <!-- 0 - target name -->
+    <value>Nalaman mo na si {0} ay hindi wolf dahil kayo ay nag-enjoy pareho sa saglit na kaligayahan.</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>Ang himbing ng tulog mo nang maalimpungatan ka. Naramdaman mong yumuyugyog ang kama at nasa ibabaw mo ang Haliparot. Lumakas ang yugyog ng kama at maya-maya ay tumigil din ito at nakaramdam ka ng mamasa-masang parte sa kama. At nakatulog ka ulit</value>
+  </string>
+  <string key="DetectiveCaught" >
+        <!-- 0 - detective name -->
+    <value>Nahuli mo si {0} na nag-iimbestiga. Siya ang Detective</value>
+  </string>
+  <string key="DetectiveSnoop" >
+        <!-- 0 - target name -->
+        <!-- 1 - target role -->
+    <value>Nalaman mo sa pag-iimbestiga na si {0} ay ang {1}</value>
+  </string>
+  <string key="HarlotShot" >
+        <!-- 0 - gunner's name -->
+        <!-- 1 - Harlot's name -->
+    <value>Mukang may nakitang kaduda-duda si {0} matapos ang isang gabi kasama ang Haliparot! Nakaganti si FPJ. Patay na si {1}.</value>
+  </string>
+  <string key="DefaultShot" >
+        <!-- 0 - Gunner's name -->
+        <!-- 1 - target name -->
+        <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>Isang malakas na putok na baril ang narinig ng lahat. Pinuntahan ng mga villager ang pinanggalingan ng putok at nakita nila si {0} nakatutok pa ang baril sa ulo ng bangkay ni {1}. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+      <value>Nanalo ang wolf!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value>Nanalo ang mga wolf!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value>Panalo na ang mga TAMBAY! (Party Party!)</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value>Hala! Bakit niyo ni-lynch yung EX NIYA?! Panalo na tuloy siya!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Mga Natirang buhay na players, roles at team:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >Gusto ni {0} irecruit si {1} sa kulto.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>Inutusan niyo si {0} para irecruit si {1} bilang initiation. Kaso, Cult Hunter pala siya! Patay na si {0}!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>Pumunta si {0} sa bahay mo para irecruit ka sana… Pero sinasaksak mo siya ng espada mo. Namatay na ang isang bibe... {1} nalang ang natitira!</value>
+    <value>Pumunta si {0} sa bahay mo para irecruit ka sana… Ngunit ginilitan mo siya ng leeg. May roasted duck ka nang uulamin tonight, oh yeah!... {1} nalang ang natitira!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Naging marupok ka at naanib sa Kulto ng Mahiwagang Bibe. Isa ka na ring bibe ngayon. Tuwing makalawang gabi, may pagkakataon ka na magrecruit ng iba pang player.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value>Mga kasapi ng Kulto ng Mahiwagang Bibe: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>Narecruit na sa kulto ng bibe si {0}!</value>
+	<value>Isa na ring bibe si {0}!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>Inutusan niyo si {0} pumunta sa bahay ni {1} para irecruit siya... Kaso walang tao sa bahay!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value>Namatay na ang lahat ng wolves, lahat ng natitirang buhay ay umanib na sa Kulto ng Mahiwagang Bibe. Nanalo ang mga Bibe!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Pumunta ka sa bahay ni {0} para ihunt siya, pero patay na pala siya!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>Pumunta ka sa bahay ni {0} at nakita mo siyang nagdadasal sa harap ng altar ng Rubber Ducky. Sinaksak mo agad siya ng espada mo para mapatay ang masamang kulto.</value>
+  </string>
+  <string key="HunterFailedToFind">
+  <!-- 0 - target name -->
+    <value>Pumunta ka sa bahay ni {0} pero wala ka namang narinig na umaawit ng "Tatlong Bibe". Hindi pa sila umaanib sa kulto, kaya umuwi ka nalang.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>Namatay na ang idol ni {0}! Sa sobrang galit at pagkadepress niya, naging werewolf na din siya!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>Namatay na si {0}! Dahil sa galit at pagkadepress mo naging werewolf ka na rin! Ang mga bago mong kakampi ay si/sina: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>Tambay Lang 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Ang Lasenggero 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Ang Haliparot 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Si Madam Auring 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Ang Traydor 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Ang Baranggay Tanod 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Ang Detective 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>isang Werewolf 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>ang Isinumpa 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>si FPJ 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Ang Ex Mo 👺</value>
+  </string>
+  <string key="Fool">
+    <value>ang Fool 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Ang Batang Hamog 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>ang Beholder 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>ang OJT ni Madam Auring 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>Ang Bibe 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Ang Cultist Hunter 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Tumakas</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Deds</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Buhay</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Buhay pang players</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>isang Mason 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Isa kang Mason kung may iba pang Mason malalaman mo kung sino sila. Yun lang.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Pag gising ng lahat, nakita nila ang katawan ni {0} sa ibabaw ng batuhan. Isa sa mga Mason ang namatay!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>Ang mga mason ay si/sina: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Inutusan niyo ang pinakabagong miyembro para pumunta sa bahay ni {0} upang isanib siya sa Kulto ng Mahiwagang Bibe kaso, pagdating niya ang gulo ng lugar, puro dugo, at may ilang balahibo ng wolf na naiwan sa sahig...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>Pumunta ang tropa ng mga wolf sa bahay ni {0} para kainin siya. Pero may humarang sa kanila na isang nilalang na may vest at pamalo at sipol. Nilabanan silang lahat ng Baranggay Tanod at naitaboy niya ang mga wolf pauwi sa lungga nila.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Inutusan niyo si {0} para pumunta sa bahay ni {1} upang isanib siya sa Kulto ng Mahiwagang Bibe. Kaso, hindi siya open minded kaya hindi mo siya narecruit. :(</value>
+    <value>Inutusan niyo si {0} para pumunta sa bahay ni {1} upang isanib siya sa Kulto ng Mahiwagang Bibe. Kaso, hindi natitinag ang kanyang pananampalataya sa Kapatiran ng mga Jejemon. :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, may player nang may pangalan na {0} ang kasali. Palitan mo ang pangalan mo para makasali.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Pumunta ka sa bahay ni {0} para sa sandaling kaligayahan… Habang paalis ka may napansin kang kakaibang altar na hindi masyadong naitago sa may gilid ng kwarto. Para saan kaya yun?</value>
+    <value>Pumunta ka sa bahay ni {0} para sa sandaling kaligayahan… Habang paalis ka may napansin kang rubber ducky at itlog na maalat na pinalibutan ng kandila. Para saan kaya yun?</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>ay</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Nagkita-kita ang mga Tambay ng umaga para magchismisan pero nagtaka sila at wala si {0} siya pa naman ang supplier ng mga chika. Pumunta sila sa bahay niya at nakita nila si {0} na gutay-gutay ang katawan.</value>
+    <value>Paggising ng mga Tambay, nagulat sila nang makita ang katawan ni {0} sa kalsada. Walang makitang bakas ng wolf or serial killer sakanya. Paano kaya siya namatay?</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Mukang absent si {0} sa meeting ng mga mason ngayong umaga ah… Bakit kaya?</value>
+    </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Bawal tumakas sa larong to kapag nagsimula na sabi ng group admin! We’re all in this together wooh!</value>
+    <value>Walang aalis na sa game na to kapag nagsimula na, damay-damay na ituuu!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>ay namatay na.</value>
+  </string>
+
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value> Si {0} ay naidagdag na sa admin list. Gamitin ang /config para baguhin ang group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>Kasali ka na sa laro! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Mukang nakapagstart kayo ng maraming games… Aalisin ko lang ang mga sobra...</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Nakapila na ang inyong laro. Kayo ay pang {0} / {1} </value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>Pasensya na. Hindi muna maaaring mag-umpisa ng laro ngayon. Mag-uumpisa na ang aking Maintenance Break.\Tinatapos nalang ang {0}...\nPumunta sa @greywolfdev para sa ibang detalye.</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - Max Game -->
+    <!-- 1 - target's name -->
+    <value>Pasensya na, nareach na ang max na dami ng sabay-sabay na laro ({0}).\nKayo ay pang: {1}/{1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - Group’s name -->
+    <value>Ang {0} ay isang priority group at hindi na kaylangang pumila!</value>
+  </string>
+  <string key="NoGame">
+    <value>Wala pang larong nag-uumpisa. Magsimula ng laro gamit ang /startgame o gulo gamit ang /startchaos.</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Admin lang ang pwede gumamit ng command na ito.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Pagtapos ng larong ito, ako ay magsshutdown ako para sa maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Pagtapos ng larong ito, ako ay magsshutdown pansamantala para sa update.</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>Maling userID ang naibigay mo. Sure ka bang ito ang issend mong reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - Users name -->
+    <value>Si {0} ay admin na!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - Users name -->
+    <value>Hindi admin si {0}</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - Users name -->
+    <value>Naalis na si {0} sa admin list.</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>Walang Madam Auring!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Ubos na oras mo!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Ikaw si Kupido (Cupid). Pinadala sa mundo ng naka-diaper lang na may hawak na pana. Pumili ng dalawang player na papanain at sila’y magmamahalan habang buhay (kasi walang forever). Kapag namatay ang isa sakanila, madedepress ng todo yung isa kaya magssuicide nalang siya (baka daw kasi may forever sa kabilang buhay)</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Isa kang Transformer. Sabi sa kwento ay Ditto (sa pokemon) daw ang tatay mo, at iguana naman ang nanay mo kaya pwede ka mag transform sa kahit ano. Namana mo ang pinagsamang kapangyarihan ng dalawa. Pumili ka ng isang player. Kapag namatay siya, makukuha mo ang role niya.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Ikaw ang Town Hunter. May insomnia ka kaya di ka nakakatulog sa gabi at sobrang obsessed ka sa baril mo kaya di mo ito iniiwan kahit saan ka magpunta (kahit sa cr yuck!). Pag namatay ka may pagkakataon kang magsama ng isang player sa hukay. Kapag nakain ka ng wolf, may pagkakataon ka na magsama ng isang wolf sa hukay pero hindi mo mapipili kung sinong player ang gusto mo isama sa hukay.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Isa kang adik na serial killer. Kakatakas mo lang galing sa Rehab. Kaylangan mapatay mo sila lahat. Tuwing gabi pwede kang pumili ng player na idadagdag mo sa koleksyon mo.</value>
+  </string>
+  <string key="CupidChosen">
+<!-- 0 - Lovers name -->
+    <value>Pinana ka ni Kupido. Naniniwala kang may forver kayo ni {0}'. Kailangang magsurvive kayong dalawa. Kapag namatay ang isa madedepress ka ng todo kaya magssuicide ka nalang (baka kasi may forever sa kabilang buhay diba?)</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Napagdesisyunan ng mga Tambay na ibigti ka! Huling pagkakataon mo na to! Sino ang gusto mo isama sa hukay?</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+<!-- 0 - Hunter name -->
+    <value>Masyado nang mahina si {0} para kunin ang baril niya. Nabitawan niya ito bago pa niya magamit...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>Kinuha ni {0} ang baril niya at itinutok sa mga tao. Ngunit hindi siya nakapili kung sino ang isasama sa hukay. Namatay na siya bago niya pa naiputok ang baril...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Habang nakabitin si {0} sa tali ay kinuha niya ang kanyang baril mula sa bewang niya, tinutok ito kay {1} at binaril siya. Patay na si {1}. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Pinatay ka! Sa mga huling sandali mo, may pagkakataon kang magsama ng isang player sa hukay! Sino ang gusto mo isama? Bilis!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>Masyadong masama ang tama kay {0}. Sobrang sama na dead on the spot sya. Hindi na niya nagawang magsama sa  hukay...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>Habang naghihingalo si {0} ay hawak niya ang baril niya ngunit hindi siya makapli kung sino ang isasama. Hanggang sa hind na siya nakapili...</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Nang maramdaman ni {0} ang tama ng bala sakanya, natumba siya sa lupa ngunit hindi siya pumayag na hindi makaganti at binaril si {1} sa ulo. Patay agad. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>Pumunta si {0} sa bahay ni {1} para irecruit siya. Pero pagbukas niya ng pinto ay isang adik (serial killer) ang kanyang nakita. Sa pag-aakalang isa siyang pulis, tinadtad agad ng saksak si {0} ng adik (serial killer). Patay na si {0}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>Sinubukan ng wolves na kainin ang hunter kagabi. Napatay nila ang hunter pero isa sa kanila ang napatay din ng hunter! Patay na si {0} (wolf)</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>Sinubukan ng wolf na kainin ang hunter kagabi. Kaso bago pa ni {0} makain ang hunter ay napatay na siya nito. </value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Sinubukan ng wolves na mag midnight snack pero isang adik (serial killer) ang kanilang nakita. Si {0} ay namatay sa gitna ng laban!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Akala ni {0} ay payapa ang kanyang gabi. Ngunit nagkamali siya. Umaga na ng makita ng mga tambay ang katawan ni {0} may hiwa ang tyan at nawawala ang atay. Umatake nanaman ang adik! (Serial Killer). {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Sinubukan mong patayin si {0} para maidagdag siya sa koleksyon mo pero hinarang ka ng baranggay tanod. Wala kang dagdag sa koleksyon ngayon...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Pinadala ng kulto si {0} para ianib sa pananampalataya ng Mahiwagang Bibe si {1}, pero mukang di siya open minded kaya nakita nalang nilang tumalsik ang katawan ni {0} mula sa bintana kasunod ng isang putok ng baril! Patay na si {0}....</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>Pinadala ng kulto si {0} para irecruit si {1}, pero bigla nalang tumalsik ang katawang puno ng saksak sa iba’t ibang ni {0} sa bintana. Adik talaga yung Serial Killer! Si {0} ay patay na...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Sinubukan mong bantayan ang Serial Killer. Sinaksak ka niya ng 1 million times. Patay ka na...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Pumunta ka sa bahay ni {0} para sa panandaliang kaligayahan, nag-uumpisa ng yumugyog ang kama nang bigla siyang kumuha ng kustilyo at pinagsasaksak ka habang tawa ng tawa. Tuwang-tuwang pa ang adik. Namatay ka...</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>*kroo* *kroo* *kroo*</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>Ang Transformer na si {0} ay isa na ring mason ngayon!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason colleague's name -->
+    <value>Namatay na si {0}, isa ka ang mason ngayon! Ang mga teammate mo (kung meron man) ay: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>Ang Transformer na si {0} ay isa ng bibe, tulad mo!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>Namatay na si {0}, kaya nagtransform ka para maging Bibe. Ang teammates mo (kung meron man) ay: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Ang Transformer na si {0} ay isa ng wolf, tulad mo!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>Si {0} ay namatay na, kaya nagtransform ka para maging wolf. Ang teammates mo (kung meron man) ay: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>Serial Killer nalang ang natitirang buhay! Siya ang nanalo!</value>
+  </string>
+  <string key="AskKill">
+    <value>Sino ang gusto mong patayin ngayong gabi?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Nang malaman ni {1} na namatay na ang ka-forever niyang si {0}. Siya ay nadepress hanggang sa nag-suicide na siya. Umaasang may forever sa kabilang buhay. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Sino ang gusto mo maging kapag namatay siya?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Sino ang gusto mo magkaron ng kasparks? Piliin ang unang player?</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Sino ang gusto mo magkaron ng kasparks? Piliin ang pangalawang player?</value>
+  </string>
+  <string key="Hunter">
+    <value>Ang Hunter 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Cupid 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>ang Serial Killer 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Ang Transformer 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <!-- 0 - lover's name -->
+    <value>Pinana ka ni Kupido! Nakahanap ka ng sparks kay {0}! Kapag namatay siya madedepress ka ng todo at magsusuicide. Kung kayo nalang ang natira, pareho kayong panalo.</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Isa ka ng Batang Hamog. Ang idol mo ay si {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>May forever! Nanalo ang lovers!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>Sa tapat ng baranggay, nagulat ang lahat nang makita ang katawan ni {0}, tadtad ng bala ang katawan. Mukang sinubukan nilang pasukin ang bahay ng Hunter! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>May dumating na nakaformal na damit at tinatanong ka kung open minded ka daw ba, hindi ka open minded kaya hindi ka narecruit ng kulto.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Nasa waiting list ka na ng {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Nasa waiting list ka na ng {0}. I-p-pm kita pag may bago ng game na nagstart.</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>May nagsisimula ng laro sa {0}!</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Umaga na at lumabas ang dalawang natitirang tambay sa bahay nila para magkita sa baranggay. Nilapitan ni {0} si {1} ng may kakaibang ngiti, naglabas ng itak at pinagtataga si {1}.</value>
+    <value>Umaga na at lumabas ang dalawang natitirang tambay sa bahay nila para magkita sa baranggay. Nilapitan ni {0} si {1} ng may kakaibang ngiti, naglabas ng punyal at pinagsasaksak si {1}.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Lahat ng tao sa baranggay ay namatay na. Walang nanalo ngayong round bukod sa mga lumilipad-lipad na mga buwitre...</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Pagsikat ng araw, Lumabas si {0} at {1} para pumunta sa baranggay. Naglabas ng itak si {0} at sinugod si {1}. Si {1} naman ay binunot ang baril niya at binaril si {0} matapos siyang mataga ng ilang beses. Namatay sila pareho. Wala ng natirang buhay sa baranggay. Walang nanalo... (How sad)</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Hindi ka nakapili kaya ang moderator nalang ang pumili para sayo: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Panalo</value>
+  </string>
+  <string key="Lost">
+    <value>Talo</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Si {0} ay namatay dahil sa hindi pagboto ng {1} beses sa loob ng 24 oras.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Simple lang ang role mo. Ang huminga at mabuhay. Kada araw may pagkakataon ka bumoto sino bibitayin. Yun lang.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Ikaw si Madam Auring. Tuwing gabi, pwede ka pumili ng player na sisilipin para malaman ang role nila. Wag ipagsabi ang role me. Pag nalaman ng wolves na ikaw si Madam Auring pwede ka nilang kainin!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Enjoy ka lang. Araw-araw mo pwede paniwalain mga kasama mo na di ka werewolf. Pero pag gabi iba na ang usapan, pwede ka pumili ng isang player na kakainin! PERO: Pag ang lasenggero (drunk) ang nakain mo, malalasing ka din at magkaka-hang over kaya di ka makakakain sa sunod na gabi. Pag sinubukan mong kainin ang isinumpa (cursed), magiging wolf din siya gaya mo. Pag sinubukan mong kainin ang adik (Serial Killer) mayroon lamang 20% chance na mapatay siya. Pero party party parin wooh!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Salahula ka! Isa kang Haliparot. Tuwing gabi, pwede ka pumili ng bibisitahing player para malaman kung hindi sila wolf. PERO, kung ang binisita mo ay wolf, o kaya binisita mo ang kakainin ng wolf, patay ka din. Kung may binisita ka at sinubukan kang kainin ng wolf o irecruit sa kulto sa bahay mo, mabubuhay ka o di marerecruit. (Gala mo eh)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Pre! Ikaw ang lasengero ng barangay! (Drunk) Bilang lasenggero, akala mo may special? Wala lasenggero ka lang. PERO! Pag kinain ka ng wolves, malalasing sila at di makakakain sa sunod na gabi dahil sa hang over na dala mo.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Ikaw ang isinumpa! (Cursed). Isa ka lang Tambay sa ngayon, pero pag sinubukan kang kainin ng wolf, magiging wolf ka. Nice diba?</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Traydor ka! Sa ngayon Tambay ka palang, pero pag namatay na lahat ng werewolf, magiging wolf ka. Pag sinilip ka ni Madam Auring, pwedeng masilip ka niya na wolf pwede ring hindi (Nice diba?)</value>
+  </string>
+  <string key="AboutGA">
+    <value>Ikaw ang Baranggay Tanod. Tuwing gabi, pwede ka pumili ng isang player na babantayan. PERO, kung ang napili mo ay wolf, may 50% chance na mapatay ka niya.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Ikaw ang ang Detective. Sa araw, pwede ka pumili ng player para malaman ang role nila. PERO, may 40% chance na malaman ng wolves na ikaw ang detective.</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Isang bala ka lang! Bang! Bang! Bang! Ikaw si FPJ. May dalawa kang bala. Sa araw, pwede ka pumili ng player na babarilin. Maririnig ng lahat ang putok ng baril mo at malalaman na ikaw ang Gunner (at hindi wolf)</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Ikaw ay parang ang EX MO (Manloloko). Pag na-lynch ka, panalo ka agad! (parang yung ex mo, nanalo siya nung naloko ka niya)</value>
+    <value>Ang goal ng EX MO ay simple: ma-lynch. Kapag ang EX MO ang na-lynch, panalo na siya. Period.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Isa kang Fool! Akala mo ikaw si Madam Auring. PERO kapag pumili ka ng player na sisilipin sa gabi, random na role lang ang makukuha mo. So sad :(</value>
+    <value>Ang fool ay sinasabihan na siya si Madam Auring… kapag pumili siya ng player na makita sa gabi, bibigyan siya ng random na role. Sad!</value>
+  </string>
+  <string key="AboutCult">
+   <value>Dahil Leader na Bibe ka, ang goal mo ay maisanib lahat ng players (maliban sa wolves) sa iyong Kulto ng Mahiwagang Bibe. Kapag ang natira sa dulo ng laro ay mga bibe, mananalo ang kulto.</value>
+  </string>
+  <string key="AboutCH">
+    <value>May Kulto sa baranggay na nangrerecruit! Tuwing gabi, pwede ka pumili ng player. Pag bibe na sila, mamamatay sila. Pag sinubukan kang irecruit sa kulto nila, mamamatay ang pinakabago nilang recruit.</value>
+    <value>Kapag ikaw ay inatake ng kulto, ang bagong recruit nila ay mamamatay. Tuwing gabi, makakapili ka ng player na i-'hunt'- kapag kulto siya, mamamatay siya.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Sa simula ng laro, makakapili ka kung sino ang idol mo. Kapag namatay siya, ikaw ang magiging werewolf. Vote wisely.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Sa ngayon, isa kang tambay. Pero kapag namatay si Madam Auring, ikaw ang papalit sa kanya. Uy, gusto niya yan!</value>
+  </string>
+  <string key="AboutBH">
+    <value>Ikaw ang Beholder, malalaman mo kung sino ang tunay na Madam Auring. Yun lang.</value>
+    <value>Malalaman mo kung sino ang tunay na Madam Auring (yung totoo, hindi yung fool)</value>
+  </string>
+  <string key="AboutMason">
+    <value>Madali lang ang trabaho ng isang mason - malalaman nila agad kung sino ang mga kasamahan nila. Kung wala, siya ay isang simpleng tambay. (Aww, loner!) </value>
+  </string>
+  <string key="AboutDG">
+    <value>
+     Isa kang Transformer. Sabi sa kwento ay Ditto (sa pokemon) daw ang tatay mo, at iguana naman ang nanay mo kaya pwede ka mag transform sa kahit ano. Namana mo ang pinagsamang kapangyarihan ng dalawa. Pumili ka ng isang player. Kapag namatay siya, makukuha mo ang role niya.
+      Note:\n1. Kung ang  napili mong player ay narecruit sa kulto, ang makukuha mo ay ang original nilang role. Kung Batang Hamog siya at naging Werewolf na, magiging wolf ka. Kung hindi, ang makukuha mo ay ang role ng idol niya.\n2. Hindi maaaring irecruit ng kulto ang Transformer (pero pwede kung nakapagpalit na ng role)\n3. Ang Transformer ay HINDI mananalo bukod kung nakapagtransform na. Kung pagtapos ng laro ay Transformer parin siya. Talo parin siya (bukod kapag lover).
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Ikaw si Kupido (Cupid). Pinadala sa mundo ng naka-diaper lang na may hawak na pana. Pumili ng dalawang player na papanain at sila’y magmamahalan habang buhay (kasi walang forever). Kapag namatay ang isa sakanila, madedepress ng todo yung isa kaya magssuicide nalang siya (baka daw kasi may forever sa kabilang buhay).
+      Note:
+1. Malalaman ng lovers kung sino ang isa’t-isa pero hindi ang role nila.
+2. Kung ang Lovers nalang matira sa end ng game. Panalo sila kahit ano pa ang role nila.
+3. Kung ang lovers ay nasa magkaibang team. At nanalo ang isang team, pati ang lover ay mananalo.
+4. Kung ang lovers ay buhay sa pagtatapos ng laro, at isa sakanila ang winning team. Panalo sila pareho.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      Ikaw ang Town Hunter. May insomnia ka kaya di ka nakakatulog sa gabi at sobrang obsessed ka sa baril mo kaya di mo ito iniiwan kahit saan ka magpunta (kahit sa cr yuck!). Pag namatay ka may pagkakataon kang magsama ng isang player sa hukay. Kapag nakain ka ng wolf, may pagkakataon ka na magsama ng isang wolf sa hukay pero hindi mo mapipili kung sinong player ang gusto mo isama sa hukay.
+      Note:
+      Kung isa lang ang wolf may 30% chance na mapatay mo ang wolf (at mabuhay). Kada isang wolf na madadagdag, ay madadagdagan ng 20% ang chance. (2 wolves = 50% etc.) Pero kung may maraming wolf, kahit may chance na mapatay mo ang isa sakanila, mas marami parin sila sayo kaya mamamatay ka parin)
+      Kapag sinubukan kang irecruit ng kulto, may 50% chance silang magfail. Pagnag-fail sila may 50% chance ka na patayin ang isa sakanila!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Di ka naman gumagaling sa Rehab. Kalokohan. Nakatakas ka na at malaya ngayon kaya balik sa dating gawi, ang pumatay!. Ang Serial Killer ay solong player, sa sarili niyang team. Mananalo ka lang kapag ikaw nalang ang natitirang player na buhay (exception: lovers). Bilang Serial Killer, KAHIT SINO pwede mo patayin - wolves, hunters, gunners, guardian angel, kahit sino. Kapag sinubukan kang kainin ng wolves, mayroon lang silang 20% na chance para mapatay ka.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>Tagal ng Laro: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Nagkaroon ng error, at nagshutdown ang node na ito :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Pinadalhan kita ng PM</value>
+  </string>
+  <string key="StartPM">
+    <value>Paki-PM ako para ma-PM kita ng role mo: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Salamat sa pag-'start' sa akin. Pwede na kita i-PM ngayon.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Kailangan mo magreply sa user na gusto i-smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Anong gusto mong gawin?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Kailangan mong sumali sa game mula sa groupchat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Kailangan mong magsimula ng game sa mula groupchat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Oras na inabot ng Telegram para magmessage sa akin: {0}\nPakialam ko: {1}%\nMessages per second: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Anong Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Anong Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Nabago na ang Language sa: {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Anong gusto mong gamitin na language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Walang nodes na online sa ngayon, i-try mo ulit maya maya.</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Kailangan mo i-run ang command na ito sa group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Hindi ka global admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>Hindi ka si Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Oo</value>
+  </string>
+  <string key="No">
+    <value>Hindi</value>
+  </string>
+  <string key="Allow">
+    <value>Pumayag</value>
+  </string>
+  <string key="Disallow">
+    <value>Huwag pumayag</value>
+  </string>
+  <string key="Show">
+    <value>Ipakita</value>
+  </string>
+  <string key="Hide">
+    <value>Itago</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Wag ipakita</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Ipakita ang mga buhay ng players lamang</value>
+  </string>
+  <string key="ShowAll">
+    <value>Ipakita ang lahat ng players</value>
+  </string>
+
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Gusto mo ba payagan ang pag-flee kahit nagsimula na ang laro?\nNote: Ang mga players ay pwede magflee habang hindi pa nagsisimula ang laro. \nCurrent: Ang mga players ay {0}pwede mag-flee</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Ang mga kasali ay {0}papayagan mag-flee kahit nagsimula na ang laro.</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Ilan ang maximum players na gusto mo?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Ang maximum number ng players ay {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Ipapakita ba o itatago ang roles pag namatay?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Ang mga roles ay {0} kapag namatay</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Ano ang magiging game mode ng grupo?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Ang game mode ar nakaset sa {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value> Gusto mo bang ipakita ang mga roles sa dulo?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Ang mga roles na ipapakita sa dulo ay: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Pumili ng oras (in seconds) para sa araw. Mababago parin it depende sa dami ng players.\nAng minimum time na idadagdag base sa players ay 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Ang araw ay tatagal ng {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Pumili ng oras (in seconds) para sa gabi. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Ang gabi ay tatagal ng {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Pumili ng oras (in seconds) para sa pag-lynch. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Ang oras sa pag-lynch ay {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Payagan ang Fool na gawing option sa laro?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Ang role na Fool ay ibinigay kay: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Payagan ang Tanner na gawing option sa laro?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Ang role na Tanner ay ibinigay kay: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Payagan ang Cult na gawing option sa laro? \nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Ang role na Cult ay ibinigay kay: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Salamat, mabuhay ka! :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Sa anong wika mo gusto maghanap ng grupo na sasalihan?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Ito ang mga grupo para sa {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>I-'Start' mo ako para ma-PM kita </value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>Hindi nasimulan ni {0} ang bot, at siya ay natanggal sa laro!</value>
+  </string>
+  <string key="LatestList">
+    <value>Ito parin yung list.</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Hintayin mo muna magstart ang laro bago kumuha ng listahan ng players.</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Kasali ka na sa nag-umpisang laro sa {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Oras para magpadala ng Ping: {0}</value>
+  </string>
+  
+  <!-- UPDATE 4.0 (November Update)-->
+  
+  <string key="RoleInfoMayor">
+	<value>Ikaw ang Mayor. Dalawang boto ang katumbas ng boto kapag inamin mo ang role mo. Sa #TeamVG ka kasali</value>
+  </string>
+  <string key="RoleInfoPrince">
+	<value>Ikaw ang Prinsipe, nainip ka sa bonggang bonggang castle niyo kaya naisipan mong tumakas at tumamay with the villagers. Pag sinubukan kang ilynch malalaman nilang mali sila at walang mallynch.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Ikaw ang Clumsy Guy. Susubukan mong bumoto ng illynch. Pero, may 50% chance na iba ang maboboto mo kesa sa pinili mo. #TeamVG ka parin don't worry.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+	<value>Ikaw ang Salamangkera. Technically, you're a traitor witch. Sa gabi, magagamit mo ang kapangyarihan mo malaman kung sino ang mga Wuff o Madam Auring. Mananalo ka lang kung ang mga Wuff ang mananalo. Enjoy helping snuff out those miserable villagers.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Ikaw ang Panday, ang panday-bakal ng village. Meron kang kakaunting pilak na sapat lang para hindi ka makain ng wuff ng isang gabi. Sa araw, pwede mo pulbusin ang kakaunting pilak na meron ka at ikalat ito sa buong village. Bukod dun, isa kang simpleng villager.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+	<value>Ikaw ang Fafa Wuff, ang ugat ng sumpa sa mga wuff. Kagat mo ang dahilan ng sumpang nagttransform sa mga villages para maging werewolf. Kada gabi ay makakapili ka ng villager na pwedeng kainin. Pero hanggat buhay ka, ang mapipili mo ay may 20% chance na maging wolf rin.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+	<value>Isa kang Baby Wuff, spoiled ng Wuff Fam. Tulad ng ibang wolves, makakapili ka din ng isang villager para kainin tuwing gabi. Pag namatay ka, mabbeastmode lahat ng wuff at kakain sila ng dalawang random na tao sa sunod na gabi. Pero patay ka na talaga</value>
+  </string>
+  <string key="PrinceLynched">
+	<value>Naghahanda na ang baranggay para bitayin si {0} nang biglang sumigaw ito at sinabing, "TEKA! Ako ang Prinsipe! Ito ang singsing na may Seal of the King bilang patunay. May nakapaligid saking mga alila 24/7, imposible akong maging masama!". Nang malaman ng mga villagers ito, umuwi nalang sila at natulog.</value>
+  </string>
+  <string key="SorcererOther">
+	<value>Sinubukan mong tignan si {0}, pero di mo sure kung ano siya. Hindi siya Wolf o Madam Auring yun ang sure ka...</value>
+  </string>
+  <string key="MayorReveal">
+	<value>Biglang nag eskandalo si {0} habang pinagmamayabang ang Official Seal ng Mayor na nasakanya. Mula ngayon, dalawa ang bilang ng boto ni {0} sa mga lynch.</value>
+  </string>
+  <string key="AskMayor">
+	<value>Pindutin ang "Ipamalita" kapag handa ka ng ipagyabang ang pagiging Mayor mo</value>
+  </string>
+  <string key="Reveal">
+    <value>Ipamalita</value>
+  </string>
+  <string key="SpreadDust">
+	<value>Gusto mo bang ipakalat ang pilak mo ngayon para hindi makakain ang wuff ngayong gabi?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+	<value>Habang nagcchichismisang ang magkakapitbahay, bigla nilang napansin ang silver powder na kumakalat mula sa bahay ni {0}. Sa ngayon, at least, ligtas ang village sa safe mula sa wuff attacks. (Hindi makakakain ang wuff ngayong gabi)</value>
+  </string>
+  <string key="Mayor">
+    <value>Ang Mayor 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Ang Prinsipe 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Ang Salamangkera 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Ang Clumsy Guy 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Ang Panday ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Ang Fafa Wuff ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Ang Baby Wuff 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+	<value>Habang pasugod ang mga wuff kay {0}, pinatigil silang lahat ni {1} ang Alpha Wolf. Sinabi ni {1} sa mga wuff na imbis na kainin nila si {0} ay dapat nalang siyang hayaan mabuhay. Dahil sa mga kagat ng wuff, magiging wuff si {0} bukas ng gabi.</value>
+  </string>
+  <string key="PlayerBitten">
+	<value>Napili kang kainin ng mga wolves, pero pinili ka ng Alpha Wolf. Imbis na mamatay, nainfect ka... at magiging wolf ka na bukas ng gabi!</value>
+  </string>
+  <string key="BittenTurned">
+	<value>Habang gumagabi, may kakaiba kang nararamdaman, at dahan-dahan kang nagtransform... Isa ka ng wolf!</value>
+  </string>
+  <string key="AboutMayor">
+	<value>Bilang Mayor, isa kang lowly villager, hanggang sa aminin mo ang role mo. Kung saan magiging dalawa ang bilang ng boto mo kada lynch. Use that power wisely to help the Village Team.</value>
+  </string>
+  <string key="AboutPrince">
+	<value>Ang Prinsipe ay isang mahalagang role sa #TeamVG. Kapag nalynch siya, saka lang malalaman ng lahat na siya ang Prince, mabubuhay siya at maaari lamang siyang patayin tuwing gabi o ng hunter.</value>
+  </string>
+  <string key="AboutSorcerer">
+	<value>Naalala mo ba yung sikat na si Madam Auring? Ayun sa ngayon meron na siyang counterpart. Ang Salamangkera ay ang Madam Auring ng mga wuff. (mej mej mej lang) Ang maaari lang nilang makita ay ang Seer o ang Wolf, at mananalo lang sila kung nanalo ang mga wolves.</value>
+  </string>
+  <string key="AboutClumsy">
+	<value>Ikaw ang Clumsy Guy. Mukang nalasing ka ng todo kagabi, kaya ayun hanggang ngayon may hangover ka (gabi-gabi kang umiinom kaya araw-araw kang may hangover alak pa more!) Hilong-hilo ka, ni hindi ka nga makaboto ng illynch. (May 50% chance na maiba ang boto mo kesa sa pinili mo)</value>
+  </string>
+  <string key="AboutBlacksmith">
+	<value>Ikaw ang Panday. Sa loob ng maraming taon, walang espada o itak na naging sobrang proud ka na nagawa bukod sa silver na espada na pinagawa sayo ng mga dwende.\nMay kakaunti pang natirang silver mula sa pinagawa nila sayo. Anong malay natin? Baka pwedeng pigilan nito ang pagkain ng wuff  🤔 </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Ikaw ang Fafa Wuff, the ugat ng mga sumpa sa mga wuff. Habang buhay ka, and kakainin ng mga wuff ay may 20% chance na maging wuff kung siya, kung siya ang napili mo.</value>
+  </string>
+  <string key="AboutWolfCub">
+     <value>Ang _cute cute cute_ -ehem ehem- Gaya nga ng sinasabi ko, ikaw ang Baby Wuff at hindi ko matiis ang cuteness mo. Tingin ko pag pinatay ka, bibigyan ko ng dalawang biktima ang mga wuff. Masyado kang cute para mamatay. Hindi na kita makikiliti pag namatay ka-</value>
+  </string>
+</strings>

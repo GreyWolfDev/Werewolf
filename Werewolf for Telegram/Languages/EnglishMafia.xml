@@ -1,0 +1,1127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- It's Mafia vs Cops ver 1.4.1 by @HBramantyo, @noirhime, and @dhansck! Mafia's the goodies, by the way. -->
+<strings>
+  <language name="English (Mafia)" base="English" variant="Mafia"/>
+  <string key="NotInGame">
+    <value>You don't appear to be in any games right now...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <value>{0} has started a game! use /join to enter Fairview, and look at those Tommy guns.</value>
+    <value>A new game has been started by {0}! Use /join to join the action, Mafia-style!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <value>{0} has started a chaos game! use /join to enter Fairview, and look at those Tommy guns.</value>
+    <value>A new chaos game has been started by {0}! Use /join to join the action, Mafia-style!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>You can't join now! The game is already running. Use /nextgame to join be notified of the next game.</value>
+	<value>Nobody likes a latecomer, buster! The game's going, and you'll have to wait for the /nextgame!</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>You've already joined!</value>
+	<value>You've already got a flat in Fairview, stay calm and wait for the hunt.</value>
+	<value>Why the rush, soldier? You've been accepted as Fairview citizen! Just relax... </value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>One minute left before the action begins. You can get your complimentary Fedora if you /join now.</value>
+	</string>
+  <string key="SecondsLeftToJoin">
+    <value>{0} seconds left before the hunt begins. You can get your complimentary Fedora if you /join now.</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>You think we can conduct deals with so few people? Fairview is closed for now!</value>
+    <value>Why do we only have so few people? Closing Fairview's Mafia Business...</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Game is starting, please wait while I assign roles and update the database.</value>
+    <value>Fairview is a city controlled by Mafia, and we'd like to keep it that way. Famiglia, you have a duty to protect the Godfather! Check for my messages in the mailbox for further instructions.</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>{0} is banned for attempting an exploit (no names starting with /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, don't annoy the Godfather and please change your name if you want to join.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sorry, max player limit has been reached!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} has joined the game. {1} players, {2} minimum, {3} max</value>
+  </string>
+  <string key="PMTheBot">
+    <value>{0} click this: {1}, then click start.  Until you do, you won't be able to play.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>You can't run away! You're already out of town!  Where do you want to go anyway?</value>
+    <value>Congratulation: you are not in Fairview anymore! Now stay calm, and nobody else is going to get hurt.</value>
+  </string>
+  <string key="Flee">
+    <value>{0} has fled in terror! Seems like they can't handle the exciting life of a part of the Family.</value>
+	<value>{0} has fled in terror! The Famiglia doesn't need any scaredy-cat, anyway.</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>{0} was {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>{0} players remain.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Take a breath! I didn't ask you anything yet!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>You don't seem to be playing...</value>
+    <value>You don't seem to live in Fairview...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>I can't find a player by that name!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>This answer is not valid!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} has voted to do something to {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} has voted to exile {1}</value>
+  </string>
+  <string key="IdleKill">
+    <value>{0} has not voted 2 nights in a row.  The Fed's storm {0}'s house, finding them vanished myteriously. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Your friends in the force has already been dead or missing. Now's your turn to carry the torch and save this city from Mafias!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Choice accepted</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nYour "personal advisor" is {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>{0} is arrested! You decided to take up their mantle. After all, you've watched them extracting information over and over again. You know you can do it.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>{0} the Tech Assistant takes intiative to serve you in {1}'s disappearance. You're happy, and promote them into your new "personal advisor"!</value>
+  </string>
+  <string key="SeerSees">
+    <value>After a long session, you've learnt that {0} is {1}! Well, they won't miss a relative or two, right?</value>
+  </string>
+  <string key="AskLynch">
+    <value>Who do you want to exile from the town?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Whose information do you want to know? Discreetly, of course.</value>
+  </string>
+  <string key="AskShoot">
+    <value>Who do you think will make a scoop so big they'll leave the city? Your newspaper has {0} more opening.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Who do you want to deliver the contraband to?</value>
+  </string>
+  <string key="AskSee">
+    <value>Whose relative do you want to "extract information" from?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Who do you want to make safer tonight?</value>
+  </string>
+  <string key="AskEat">
+    <value>Who do you want to arrest?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Who do you think are involved in the Church of Happyology?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Who is your parent?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Who do you want to convert to the Church of Happyology?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  Make sure you discuss with {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> and </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>You are a Repentant Mafia (Cursed) 😾. You've been afraid with your criminal life's consequences, and ready to leave them for good whenever the cops come for you.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>You are the Stalker (Detective) 🕵. During the day, you may stalk a player to reveal their true allegiance. But there is a 40% chance the cops will find you stalking around them!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>You are a Corrupt Politician (Drunk) 🍻! However corrupt you are, the town will honor you a night of mourning for your or your family's death.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>You are the Bouncer (Guardian Angel) 👼. Every night, you can guard a citizen's house. Between your imposing build and a truck full of knives, pistols, machine guns, and every other weapon conceivable (yes, that include a knife-shooting machine gun... long story), the police won't risk a firefight and will abandon the raid if you happened to be guarding their target. But if you choose to guard a cop's house, there's a 50% chance you'll be arrested.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>You are the Paparazzi (Gunner) 🔫! You can't resist a big scoop. However, your headliner newspiece can force anybody to leave the city in shame.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>You are the Middleman (Harlot) 💋! Your only job is to deliver these contrabands. Be careful for the cops, if they spotted you in front of their houses or the house they raid on, you'll be arrested too. They won't find you in your house though. </value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>You are the Double Agent (Traitor) 🖕. You lay low to hide your true allegiance, but if your cop friends are dead or missing, you'll be sure finish the job!</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>You are a Police Officer (Werewolf) 🐺. You vow to get rid of mafia in your beloved neighborhood, one scum at a time. Each night you can choose to arrest someone.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >You are the Torture Technician (Seer) 👳. Your job is to "extract information" about a citizen's true allegiance, without them knowing, of course.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >You are a Mafia Soldier (Villager) 👱! Do your best protecting the Godfather from the cops!</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >You are the Suicide Bomber (Tanner) 👺. When the city gives up on you, you'll also give up on the city, and detonate the bomb you planted everywhere.</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >You are the Idealist (Wild Child) 👶. You never lose hope on human nature, even if your parent dies. In fact, if that happens, you'll join the police force and eradicate evil!</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >You are the Consigliere (Beholder) 👁, Godfather's right hand man. You employ a "personal advisor" to "extract information". That's the Torture Technician!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >You are the Tech Assistant (Apprentice Seer) 🙇. You never "extract information" by yourself, but if the Technician is nowhere to be found, you will be hired to do their job as well!</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value >Welcome to the Church of Happyology (Cultist) 👤! You only wants everyone, mafia or not, chill and worship your deity. Now go convert those poor sad people out there!</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value >You are the IRS Officer (Cult Hunter) 💂. You're informed that the Church of Happyology are embezzling tax from the City. Go arrest those creepy religious member!</value>
+  </string>
+  <string key="LynchTime" >
+    <value >
+      It's starting to get dark. As the citizen gathers, they pick one person to exile from the city... \nEveryone now has {0} seconds to vote!
+    </value>
+	<value >
+      Come one, come all! We will participate in the public trial in Fairview's town hall to decide who's to be executed to death... by exile! \nEveryone now has {0} seconds to vote!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value >It is now day time. The city is given {0} seconds to discuss between themselves.</value>
+	<value >Morning has come.  All of you have {0} seconds to make your accusations / defenses / talk.</value>
+  </string>
+  <string key="NightTime" >
+    <value >Night has fallen.  Everyone head to bed, weary after another stressful day.  Night players: you have {0} seconds use your actions!</value>
+	<value >It's already dark.  Ignoring the usual cat screams and clanging in the alley, everybody goes to their homes.  Night players: you have {0} seconds use your actions!</value>
+  </string>
+  <string key="LynchKill" >
+    <value >The citizens have cast their votes, amid doubts and suspicions. {0} is exiled. {1}</value>
+	<value >The town has chosen! {0} is sentenced to death... by exile! {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >"Why can't we unite?", murmurs one guy. The city's split on who's to be exiled, and as the result, no one is exiled.</value>
+	</string>
+  <string key="NoLynchVotes" >
+    <value >Something is fishy, for no one voted!  No exile tonight.....</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value >The Newspaper just come in! {0} is caught arrested by the police. Their Stalker 🕵 days are over.</value>
+	<value >The Newspaper just come in! {0} confessed to be a Stalker 🕵, brought immediately to the Police Station!</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value >The Newspaper just come in! It seems that {0} the Bouncer-for-Hire 👼 is arrested on jaywalking charges. They're behind bars now.</value>
+	<value >The Newspaper just come in! {0} was caught for parking their truck in the disabled space! The police confiscates the arsenal of Bouncer 👼 in the truck!</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value >The Newspaper just come in! Their staff, {0} 🔫, is arrested for peeping on the cops locker room. What are they looking for there?</value>
+	<value >The Newspaper just come in! A Public Apology, saying that whatever {0} is caught for, they don't have anything to do with the Paparazzi 🔫!</value>
+  </string>
+  <string key="SeerEaten" >
+    <value >The Newspaper just come in! {0} is arrested for assault and kidnapping charge. They can't "extract information" anymore. The Torture Technician 👳 is arrested.</value>
+	<value >The Newspaper just come in! Police found several torture paraphernalia and, curiously, a blackboard saying "2 + 2 = 5" in {0}'s house! The Torture Technician 👳 is arrested.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value >The Newspaper just come in! The spouse of {0} the Corrupt Politician 🍻 was found dead in their house. Tonight, every member of the cops will guard at their funeral. </value>
+  </string>
+  <string key="FoolEaten" >
+    <value >The Newspaper just come in! It seems that {0} was caught for libel, slander, and generally every lie ever made. They can't Gossip about someone's true allegiance anymore.</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>The Newspaper just come in! They reported that {0} was arrested by the police for being in Mafia business! {1}</value>
+    <value>The Newspaper just come in! Police Raid at {0}'s house, owner was arrested! {1}</value>
+	<value>The Newspaper just come in! {0} was arrested last night on allegations of arson, murder, vandalism, and jaywalking! {1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>The Newspaper just come in! A member of the Church of Happyology 👤, {0}, was arrested by federal officers. It seems they are embezzling money from the City.</value>
+	<value>The Newspaper just come in! {0} was arrested by the FBI! They say an informant from IRS notified them of "too much happiness in one room". Was it a code?</value>
+  </string>
+  <string key="NoAttack" >
+    <value >All was calm the previous night, no sound of police raid or anything whatsoever.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >The cops came and tried to arrest you, but you offer them your cooperation for taking down the mafia! You are their comrades now.</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Your comrades are now: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value >It seems that the Repentant Mafia joins you as a comrade: {0}!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="false" >
+    <value >BANG! BANG! BANG! OPEN UP! THIS IS A POLICE RAID!</value>
+	<value >You were just about to lie down to sleep when cops force their way into your home, shouting: "FREEZE, FAIRVIEW PD! YOU ARE NOW UNDER ARREST!"</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value >Uh oh, a cop shot {0}'s spouse in the raid! There will be a funeral tomorrow night, you won't be able to do raids.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >What are you doing, hanging about a cop's house? You are arrested!</value>
+  </string>
+  <string key="GuardSaved" >
+    <value >You have saved {0} from the cops. Guess that truck full of guns help, huh?</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value >After a long, eventless night standing guard in front of {0}'s house from your arsenal truck, you head home and try to catch a quick nap.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>{0} wasn't home!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >The Bouncer decided to drop by your home last night, and scared the cops from raiding your house.</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value >The Newspaper just come in! Headline: {0} stays home with truckload of illegal guns and counterfeit money! They are the Middleman 💋.</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value >{0} wasn't home!</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value >{0} was a cop! What were you thinking, going to a police's house with illegal firearms and fake money?</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value >The Newspaper just come in! {0} visited a police officer's house with counterfeit money, arrested immediately! They said they're only a Middleman 💋!</value>
+	<value >The Newspaper just come in! {0} visited a police officer's house with illegal firearms, arrested immediately! They confess to be a Middleman 💋 for the Godfather!</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value >The Newspaper just come in! {0} visited {1}'s house to complete a transaction. However, the cops were raiding their house. {0} the Middleman 💋 is arrested for illegal firearms possession. </value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value >The transaction with {0} was a success! You went back with a lighter truck and a heavier wallet.</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >The Middleman comes with your goods. You pay them a hefty sum and quickly sends them on their way.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value >You caught {0} snooping about! They are the Stalker (Detective).</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value >Like a true Stalker, you now know that {0} is {1}!</value>
+  </string>
+  <string key="HarlotShot" >
+    <value >It seems that {0} the Paparazzi got the short end of a deal. He wrote an expose on {1} and got revenge. {1} the Middleman 💋 was swiftly arrested.</value>
+  </string>
+  <string key="DefaultShot" >
+    <value >The Newspaper just come in! HEADLINE: COMPROMISING PHOTOS OF {1}! Writer: {0}. They seem to be very embarassed and take the first bus out of Fairview! {2}</value>
+	<value >The Newspaper just come in! HEADLINE: IS {1} REALLY THE KINGPIN OF CRIME? Writer: {0}. Even if it's not true, their reputation is done for. They take leave Fairview hastily! {2}</value>
+  </string>
+  <string key="WolfWins" isgif="false" >
+    <value >The police has won! Fairview is free from corrupt mafias!</value>
+	<value >The Mafias are all caught, and with them, the Godfather! Fairview can boast a mafia-free neighborhood now!</value>
+  </string>
+  <string key="WolvesWin" isgif="false" >
+    <value >The polices have won! Fairview is free from corrupt mafias!</value>
+	<value >The Mafias are all caught, and with them, the Godfather! Fairview can boast a mafia-free neighborhood now!</value>
+  </string>
+  <string key="VillageWins" isgif="false" >
+    <value >The mafias have won! With no pesky do-gooder cop, it's mafia stronghold here.</value>
+	<value >The Fairview's Finest is now the Fairview's Crook, the Godfather control all Fairview!</value>
+  </string>
+  <string key="TannerWins" isgif="false" >
+    <value >Oh no! You choose to exile the Suicide Bomber! "It's not about me, it's about sending a message." They detonate themself and several bombs in the city!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Remaining living players, roles, and team:</value>
+  </string> 
+  <string key="CultistVotedConvert" >
+    <value >{0} has voted to convert {1} to the Church of Happyology.</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{0} was sent to {1}'s house to convert and offer them "tax evasion" plan. However, they were IRS Agent! {0} was arrested for tax embezzlement.</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>{0} was arrested for trying to offer you a "tax evasion" plan. Your informant says that {1} church member remain.</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Welcome to the Church of Happyology! Forget about the Mafia, this church will help you. Every night, you have the opportunity to offer the same fellowship to other players.</value>
+  </string>
+  <string key="CultTeam">
+    <value>Fellow member of the Church: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>You welcome {0} to the Church!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{0} went to {1}'s house, but they weren't home!</value>
+  </string>
+  <string key="CultWins" isgif="false">
+    <value >All the cops are gone, and Fairview is now a haven for the Church of Happyology!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>You try to arrest {0}, but they are already jailed!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>You go to {0} in the middle of the night, just to find their Church of Happyology membership card. You arrest them immediately. </value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>You go to {0} in the middle of the night, and after several rough questions, you believe that they aren't involved with the Church of Happyology. You leave immediately.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>{0}'s parents just disappeares! For their bravery, they are employed by the police temporarily.</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0} has disappeared. Determined to get revenge, you persuade the police chief into employing you. Your new teammates are: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <string key="Villager">
+    <value>a Mafia Soldier 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>the Politician 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>the Middleman 💋</value>
+  </string>
+  <string key="Seer">
+    <value>the Torture Technician 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>the Double Agent 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>the Bouncer 👼</value>
+  </string>
+  <string key="Detective">
+    <value>the Stalker 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>a Police Officer 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>the Repentant Mafia 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>the Paparazzi 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>the Suicide Bomber 👺</value>
+  </string>
+  <string key="Fool">
+    <value>the Gossip 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>the Idealist 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>the Consigliere 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>the Tech Assistant 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>a Happyology Member 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>the IRS Agent 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Ran Away</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Out of Town</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 In Town</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Fairview. Population: </value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>a Caporegime 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>You are a Caporegime (Mason) 👷, a Mafia Captain! You are the only ones at mafia meeting, so you know other Capo as well.</value>
+  </string>
+  <string key="MasonEaten">
+    <value>The Newspaper just come in! One of the Capo 👷, {0}, was arrested for accomplice to mafia activities.</value>
+	<value>The Newspaper just come in! {0} was caught on their way to the meeting with the Godfather! They were a Mafia Captain 👷!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  The other Caporegimes at your meeting with the Godfather are {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>{0} is trying to convert a new prospective member, but they find a police raid was happening on their house... </value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>The polices are trying to raid {0}'s house, but find that the Bouncer and their arsenal are blocking the way. Didn't want to risk a full-blown firefight, the cops retreated.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>{0} try to convert {1} to the Church, but they were dismissed as "child's play"!</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, a player with the name {0} has already joined.  Please change your name to join.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>You deliver some documents to {0}'s house! Your curiosity wins out, and you peek into the envelope. There was a letter from the Head of the Church of Happyology!</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>was</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>The Newspaper just come in! It seems that {0} is seen leaving the town hastily last night. You wonder what happened.</value>
+    <value>The Newspaper just come in! It seems that the city is mounting a search mission for {0}, who has not been seen since last night.</value>
+  </string>
+  <string key="MasonConverted">
+    <value>That's strange, {0} misses their meeting with the Godfather last night.</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Fleeing while the game is running has been disabled by the group admin!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>left town.</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>You are already in a game! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Your group has managed to start multiple games...  Killing extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
+  </string>
+  <string key="MaxGames">
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>There is no game running.  Start a new game with /startgame or start a chaos game with /startchaos</value>
+    <value>Craving for some Mafia action? Start a new game with /startgame or start a chaos game with /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Only a group admin can run this command.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId was null.  Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} is already an admin!</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0} is not an admin!</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} removed from admin list.</value>
+  </string>
+  <string key="LanguageSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+	<value> </value>
+  </string>
+  <string key="TimesUp">
+	<value>Time's up!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>You are a Pastor (Cupid) 🏹, the witness of an (un)holy matrimony and true love. As wedded spouse, the two before you will not leave one's side, in shame or in jail.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>You are an ID Thief (Doppelgänger) 🎭. Starting as a simple pickpocket, you realize that you can easily fool the city into tricking that you are the person in any identity card you have. Of course, you can only use the identity when the original is not in town.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>You are the Construction Worker (Hunter) 🎯. You look like nothing special, but you know every weakness in every building in the city. The policeman will be incapacitated if they try to raid your trap-laden house. If you're forced to leave the city, someone's house will pay. </value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>You are the Kidnapper (Serial Killer) 🔪. Kidnapping people without demanding any ransom, you do this every night just for giggles. Throw a people in your dungeon every night, and perhaps you can open your own museum later!</value>
+  </string>
+  <string key="CupidChosen">
+    <value>You wed {0} in the city's Church. You will not leave each other's side, in jail or in shame.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>The city elect to exile you! Whose house will you demolish out of retaliation?</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} was exiled. In their way out of city, you saw them pushing a button, but nothing happens.</value>
+	</string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} was exiled. In their way out of city, you saw them trying to push a button, but it seems that they don't have enough courage to do that.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>{0} was exiled. In their way out of city, you saw them pushing a button, and then you heard an explosion! It seems that {1}'s house was reduced to rubble. {1} left the city. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>The Paparazzi has written an exposé on your frauds! Before you leave the city in shame, you have the power to reduce someone's house to ruins. Choose, quick!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>The exposé on {0} was too much, they left the city without any retaliation.</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>{0} left the city in shame. In their way out of city, you saw them trying to push a button, but it seems that they don't have enough courage to do that.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>{0} left the city in shame. In their way out of city, you saw them pushing a button, and then you heard an explosion! It seems that {1}'s house was reduced to rubble. {1} left the city. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} went to try to convert {1}, but they haven't been heard since! It's like they are kidnapped and disappear from the face of the earth!</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>The policemen try to raid the Construction Worker's house, but before he can be arrested, an officer fell into a trap door and has to be hospitalized! {0} is incapacitated.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>The policemen try to raid the Construction Worker's house, but an officer fell into a trap door and has to be hospitalized! {0} is incapacitated.</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>The police raided a house last night, but now {0} hasn't been seen since! It's like they are kidnapped and disappear from the face of the earth! </value> 
+  </string>
+  <string key="DefaultKilled">
+    <value>The Newspaper just come in! On page 8:  Mysterious Disappearance of {0}. The Kidnapper takes another one for his collection, {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>You try to induct {0} to your collection, but on the way you see the Bouncer and his Mobile Arsenal. You hastily retreated for the night.</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>The Church of Happyology sent {0} to {1}'s house! Unfortunately, when the bell is rung, a trap door swallowed {0}! {0} is missing...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>The Church of Happyology sent {0} to {1}'s house! {1} seemed nice enough until they shoved and locked {0} to the freezer room! {0} is missing...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>You stand guard in front of the kidnapper's house, but after a sweet smell and a whack, you lose consciousness. You have been kidnapped!</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>You went to deliver some chemical to {0}'s house, just for him to force a handkerchief soaked in it to your nose! You delivered the goods to the Kidnapper, and now you're deemed missing!</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>don't worry about this string for now! {0}</value>
+  </string>
+  <string key="DGToMason">
+    <value>The ID theft shows up to the meeting with the Godfather! {0} is now a Caporegime!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{0} is not in the city anymore! You begin to modify the ID to be received as a Capo. Your fellow Capos (if any) are: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>The ID theft shows up to the Church of Happyology meeting! {0} is now a member of the Church!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} is not in the city anymore! You begin to modify the ID to be received as a Church Member. Your fellow members (if any) are: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>You saw {0} in the morning briefing, acting like a veteran police. It seems that {0} is a new police member!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} is not in the city anymore! You begin to modify the ID to be received as a Police Officer. Your fellow police officers (if any) are: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="false">
+    <value>The Newspapers just come in! Fairview open a museum of wax statue of recent citizens! The Kidnapper have won!</value>
+  </string>
+  <string key="AskKill">
+    <value>Who do you want to add to your collection tonight?</value>
+  </string>
+  <string key="LoverDied">
+    <value>With {0}'s disappearance, it seems that {1} their spouse follows suit. They go together, just like a good couple should be. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Whose identity do you want to pickpocket?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Who did swear eternal love in the Church of Fairview? Choose the first player!</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Who did swear eternal love in the Church of Fairview? Choose the last player!</value>
+  </string>
+  <string key="Hunter">
+    <value>the Construction Worker 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Pastor 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>the Kidnapper 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>the ID Thief 🎭</value>
+  </string>
+  <string key="CupidChosen">
+    <value>💞💞 You swore your eternal love to {0}, for better, for worse, in health and in sickness. If they have to leave the city, you will also follow. 💞💞</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>You take the identity of an Idealist 👶. Your parent is {0}.</value>
+  </string>
+  <string key="LoversWin">
+    <value>True love endures! The lovers have won!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>The Newspaper just come in! {0} is lost, their last message said that they were going to the Construction Worker's house! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>A member of the Church of Happyology tried to fold you to their midst, but you dismiss them as a silly group.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>You are already on the wait list for {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>You have been added to the wait list for {0}.  I will PM you when the next game is starting.</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>A new game is starting in {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>Morning comes, and the remaining two citizen walk out to the town square.  {0} takes a look at {1}, apparently mumbling about how The Thinker's pose will be perfect for them. {0} then drags {1} into the dungeon.</value>
+	<value>"Hello, {1}. What would you like to be? David? Mona Lisa? Or maybe the Statue of Liberty?" said {0} cheerily. Then it dawns to them: {0} is the Kidnapper, and {1} is the last victim!</value>
+  </string>
+  <string key="NoWinner" isgif="false">
+    <value>The city lost all of its citizen, now even more eerie than the scariest ghost town...</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>As the sun rises, {0} and {1} walk out into the town square.  {0} drags {1} to their dungeon, but {1} managed to demolish it from within. The crumbling sounds is the last sound of the city, nobody wins...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <value>You failed to make a choice, so the moderator has chosen for you: {0}</value>
+  </string>
+    <string key="Won">
+    <value>Won</value>
+  </string>
+  <string key="Lost">
+    <value>Lost</value>
+  </string>
+<string key="IdleCount">
+    <value>Player {0} has been killed for not voting {1} times in the past 24 hours.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Villager? What do you think we are, some rural hicks? *sips whiskey*\n \nI think you mean Mafia Soldier (Villager) 👱! A simple footsoldier for the Fairview Famiglia, they only take orders from the higher-ups without knowing who they are. Today, they have one mission: doing their best protecting the Godfather from the cops!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Psst! Not so loud! I won't risk my family for you! *inhales cigars*\n \nThe Torture Technician (Seer) 👳 is one of the most important guy in the Famiglia. Their job is to "extract information" about a citizen's true allegiance, without them knowing, of course. For that reason, they make the most valuable target for the police!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Werewolves? Are you right in your head? *polishes Tommy gun*\n \nThe Police Officer (Werewolf) 🐺 from F.P.D. is just as feral, though. They vow to get rid of mafia in their "beloved" neighborhood, one scum at a time. Every day, they have to blend in with other mafia and try not to be exiled. Each night, they can choose to arrest someone.\nThe rumor is, a Repentant Mafia will surrender and join their ranks if the Police raid their house at night.\nThey still need to watch their steps in front of the Politician. If anything happens to the Politician's spouse, they will guard their funeral the next night and there won't be any chance for a raid.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>I wish there's someone that sexy in this city... *whistles*\n \nI've got the Middleman (Harlot) 💋 for my other fixes! They've got the good stuff and will sell them for a price. Every night, they deliver the contrabands to a citizen. \nI really wish that they don't happen to be visiting a raid target. The police is sure to grab them to the jail with all the illegal stuffs they have. \nLuckily, since the Middleman is always on the road, the Police won't meet them in their house if they're out selling something to someone.</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>I need a drink too... *orders 3 shots of whiskey* \n \nThe Politician (Drunk) 🍻 knows his his booze. A politician on mafia's payroll, they keep a high status in Fairview. However corrupt they are, the town will honor them a night of mourning for their or their family's death. Let's hope nothing happens if the police decided to raid them...</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Of course nobody is cursed here... *fidgets with a bullet*\n \nBut I've heard someone is a Repentant Mafia (Cursed) 😾. They have been afraid with their criminal life's consequences, and ready to leave it for good whenever the cops come for you. If the police decided to raid their house, they say they will surrender and join their ranks, able to join the raid every night!</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Now don't tell anybody I tell you this... *looks around nervously*\n \nI heard we have a Double Agent (Traitor) 🖕 in our Famiglia. They lay low to hide their true allegiance, but if their cop friends are dead or missing, they will come out and continue the police's work!</value>
+  </string>
+  <string key="AboutGA">
+    <value>I met an angel once, in that hotel 'round the corner. *sports reminiscing looks*\n \nBut I think you might've heard of the Bouncer (Guardian Angel) 👼 already. Every night, they guard a citizen's house. Between their imposing build and a truck full of knives, pistols, machine guns, and every other weapon conceivable (yes, that include a knife-shooting machine gun... long story), the police won't risk a firefight and will abandon the raid if the Bouncer happened to be guarding their target. However, if they choose to guard a cop's house, there's a 50% chance the cop will notice their truck and arrest them!</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Detective? You mean the snooping and tiptoeing around kind? *flips a coin*\n \nThe Stalker (Detective) 🕵 is our next best thing, kiddo. This creep may be a creep, but they are a creep on our payroll. During the day, they may stalk a player to reveal their true allegiance. But there is a 40% chance the cops will find them stalking around them! Their stalking is one of the most hated activities by cops here, you can be sure this creep has a target on their back.</value>
+  </string>
+  <string key="AboutGunner">
+    <value>We all have our guns, don't we? *juggles a few bullets*\n \nThe Paparazzi (Gunner) 🔫 is just as mean without a gun, though. Although on the Godfather's payroll, they can't resist a big scoop. They are an expert on exposing dirts on everyone who lives here. The shame they can bring to any citizen... it can be unbearable and will always force the exposed citizen to leave city. The Newspaper only have 2 (two) spots for him though.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Yes, isn't this leather pistol holder neat? *shows their pistol around*\n \nBy the way, watch out for the Suicide Bomber (Tanner) 👺. When the city gives up on them, they will also give up on the city, and detonate the bomb they planted everywhere. They try their best to make people vote to exile them to reach the greatest reward: a big kaboom!</value>
+  </string>
+  <string key="AboutFool">
+    <value>You know who's the real fool? *glares menacingly*\n \nNot you, but that gossiper! They think they are a great source of info, and goes around town gossiping about anybody. They even acts like our Technician. However, their sources can't really be trusted and they just accuse anybody randomly!</value>
+  </string>
+  <string key="AboutCult">
+    <value>Ah, I know what you are thinking about... *smiles mischievously*\n \nAs for me, I'm thinking of those Church of Happyology (Cultist) 👤! They say they only want everyone, mafia or not, chill and worship their deity. I say they are embezzling our city's treasury and our Family's wealth.\n \nI actually see one of them visiting someone every other night, recruiting everybody they meet to their little club. The city will be surely gone if everybody follow their lead.</value>
+  </string>
+  <string key="AboutCH">
+    <value>That bloke huh? They are on our payroll, too... *squints unexpectedly*\n \nThe local IRS Officer (Cult Hunter) 💂 is tasked to battle tax embezzlement by the Feds. The godfather informed them that the Church of Happyology are embezzling tax from the City, so the Agent is in good standing with us... for now.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Aren't you THE wild one, asking all this questions? *hums a sweet tune*\n \nYou remind me of the Idealist (Wild Child) 👶. Always a do-gooder, that kid, never to lose hope on humanity. Even with a scum like me, he tried to make me "mend my ways." Got it from their parents, I suppose. I just hope nothing bad happens to their parent. It's the only thing preventing him to become a police officer, you see.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Ah, the apprentice? Yeah, we got a creepy kid for that. *shudders*\n \nYou know them, the Tech Assistant (Apprentice Seer) 🙇. They never "extract information" by yourself, but if the Technician is nowhere to be found, they will be hired to do the "extracting" as well!</value>
+  </string>
+  <string key="AboutBH">
+    <value>We don't say their name out loud here... *continues in whispers*\n \nYou see, the Consigliere (Beholder) 👁 is Godfather's right hand man. They employ a "personal advisor" to "extract information". That's the Torture Technician!\n \nThat Gossip poser? They are beneath the Consigliere notice. Likewise for the Assistant, unless the Torture Technician is indisposable and they need another "information extraction" specialist.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Of course I know them. They are good guys. Great even. *grins*\n \nThey are the Caporegime (Mason) 👷, a Mafia Captain! They say they are the only ones at mafia meeting, so they know other Caporegime as well. They don't have their own assistants, though.</value>
+  </string>
+  <string key="AboutDG">
+    <value>That little thief. That's my third wallet this week. *growls angrily*\n \nI'm talking about the ID Thief (Doppelgänger) 🎭. Starting as a simple pickpocket, they realize that they can easily fool the city into tricking that they are the person in any identity card you have. Of course, they can only use the identity when the original is not in town.\nNote: If the original ID owner was converted to the Church of Happyology, they will take on their original role. All other normal rules apply: If they were the Idealist and their parents disappeared, the Thief will become a police. Otherwise, they will inherit their parents.\nThe Church of Happyology cannot convert the ID Thief (but can after the Thief switches roles). Also - the ID Thief can NOT win unless they have take over a role. If at the end of the game, the ID Thief is still the same, they lose (exception: lover).
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>Another do-gooder huh? At least they're on our side. *glances to the direction of the church*\n \nThe Pastor (Cupid) 🏹 is the witness of an (un)holy matrimony and true love. As wedded spouse, the two before them will not leave one's side, in shame or in jail.\n \nNote: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (Mafia + Police), and one team wins (Police), the lover (Mafia) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>Oh yeah, my house is built by them. The best contractor in town. *talks normally*\n \nThey? They are the Construction Worker (Hunter) 🎯. They may look like nothing special, but they know every weakness in every building in the city. The policeman will be incapacitated if they try to raid the Worker's trap-laden house. If they're forced to leave the city, someone's house will pay.\n \nNote: For police attacks, the chance starts at 30%. If there is one police, the Construction Worker has a 30% chance to incapacitate the police officer (and survive). For each additional officers, add 20% (2 polices = 50%, 3 = 70%, etc). However - if there are multiple police officers, while the Worker may kill one of them, they will still be outnumbered and arrested. \nIf the Church of Happyology tries to convert the Construction Worker, they have a 50% chance to fail. If they fail, the Worker have a 50% chance to trap one of them!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>I thought they are only an urban legend... *hunchs instinctively*\n \nThe Kidnapper (Serial Killer) 🔪 is the nightmare of the city. Kidnapping people without demanding any ransom, they do this every night just for giggles. They throw a people in your dungeon every night, and they say perhaps they want to open their own museum later! \n \nThey can win only if they are the last player alive (exception: lovers). As the Kidnapper, they can kidnap ANYONE - Mafia, Police, Bouncer, Pastor, whatever. If the police raid your home, they will kidnap one of them instead (random), and live.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is The Godfather, even above the Fairview's Godfather. It is rumored he collects thousands of fedoras and have worn every single one of them.</value>
+  </string>
+  <string key="EndTime">
+    <value>Game Length: {0}</value>
+  </string>
+    <string key="Day">
+    <!--0 - Day -->
+    <value>Day {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>There's a problem in the city's node, we're forced to close it.</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Check the mailbox, it seems you have a private and anonymous letter.</value>
+  </string>
+  <string key="StartPM">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Fairview is a city, not a lone player. Go join a city group.</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Fairview is a city, not a lone player. Go start in a city group.</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time for Telegram to send message to me: {0}\nCurrent CPU Usage: {1}%\nMessages per second: {2}\nDon't push it, citizen, if you know what's good for you.</value>
+  </string>
+  <string key="WhatLang">
+    <value>What Language?\nCurrent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>What Variant?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Get which language file?</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>You must run this command in a group</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>You aren't a global godfather...</value>
+  </string>
+  <string key="NotPara">
+    <value>You aren't The Highest Godfather!</value>
+  </string>
+  <string key="Yes">
+    <value>Yes</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Normal Only</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chaos Only</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Player Choice</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: Players can {0}flee</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Players will {0}be allowed to flee after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time.   This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow Gossip as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Gossip as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow Suicide Bomber as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Suicide Bomber as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow Church of Happyology as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Church of Happyology as a role set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Thank you. Now protect the Godfather and our Family.</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Members</value>
+  </string>
+  <string key="StartMe">
+    <value>Please start me so I can PM you</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} failed to start the bot, and has been removed from the game!</value>
+  </string>
+  <string key="LatestList">
+    <value>Here is the latest result for Fairview population census.</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Unable to get the latest result for Fairview population census.</value>
+  </string>
+  
+    <!-- Update 4.0-->
+	
+    <string key="RoleInfoMayor">
+	<value>The Consigliere deliver a message himself to you tonight. "Here's an offer from the Godfather you should not refuse: come join the Inner Circle as the Underboss (Mayor) 🎖. Should you accept, pledge your fealty publicly, and I will assure your safety and wealth personally." The Consigliere also tells you how people of Fairview will defer to your voice if you accept the offer, regarding your vote twice as better and powerful than others.</value>
+  </string>
+  <string key="RoleInfoPrince">
+	<value>You are the Mafia Heir (Prince) 👑. Working as the coordinators of the criminal fronts of Fairview, the Godfather showers you with all you need. That includes a... "generous donation" to Fairview City, should anything happens to you publicly. However, due to Federal Agents watching the City closely, the Godfather will only be able to bail you once. He can not risk a trace to his Swiss Bank account anyway, not even for the eldest child of the Famiglia.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+	<value>You are the Absent-Minded Professor (Clumsy Guy) 🤕! The Mafia might like your inventions on new ways to kill the police, and you might need the funds to buy the plutonium needed for your car, but you can't help forgetting that the city hall is on the left side from the university. No, not that side, your left side. THE OTHER LEFT!/n /nOh well, at least the chance of you getting your vote right is 50-50.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+	<value>You are the Informant (Sorcerer) 🔮. Using your wily charm, nobody can escape your silver tongue and nightly talent. You know everything you need to extract information from a woman, and everyone here have a female relatives in the city. This city is practically perfect to practice your talents and, in the same time, getting some money. The information on the whereabouts of the Torture Techinician (Seer) is highly prized, and you can ask for protection if you find a Police Officer (Werewolf). The others are not worthy of your attention.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+	<value>You are the Whistler (Blacksmith) ⚒. Keeping a watchful eye and a network of street urchins, you get a quite amount of sum for notifying the Famiglia of the Police's every move. You have devised an emergency call: should you feel necessary to use it at one night, the Famiglia will be notified that the Police is on the move, and they will hide. The Cops won't be able to reach any Mafiosi that night. But be careful: your abilities depends on your network of street urchins, that will be a target instead for the police that night.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+	<value>Salutations to the Police Commisioner ️️, the PC, the Commish. Your order are just and fair. The Mayor of Fairview and the representatives of her citizens gives you an order: Capture these mafia at all cost! You have been given the authority to comission a strike team, and you may draft anybody to your team. Using your negotiations skill, there is 20% chance of anyone raided by the Police to take the deal and join the FPD as a Police Officer."</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+	<value>You are the Rookie 🐶 of the Force. As a fresh graduate from the academy, you are both bold and reckless, fierce and loyal at the same time, you'll follow the force to every raid and even to the ends of time. Being the pride of the force, if by chance you are exiled or kidnapped, the police force will be scour the city and conduct two police raid the next night.</value>
+  </string>
+  <string key="PrinceLynched">
+	<value>The votes indicate that {0} is to be exiled when someone interjects. This mysterious man approaches the Prosecutor with a curious yellow envelope, a thick one at that. After that, the Prosecutor announces: "Due to unforeseen circumstances, the today's ballot is anulled. No one will be exiled!" "{0} must be the Mafia Heir 👑! Who else can buy the Mayor?" murmurs someone behind you.</value>
+  </string>
+  <string key="SorcererOther">
+	<value>You try to find out who {0} they are, but you only know that they are neither a Police nor the Torture Technician.</value>
+  </string>
+  <string key="MayorReveal">
+	<value>{0} steps forward into the center of the masses, reaching into the inside his suit pocket taking out an Underboss signet and wear it on his little finger. "The Underboss 🎖!" From now on, {0}'s vote for exiling count as two votes.</value>
+  </string>
+  <string key="AskMayor">
+	<value>Click "Show Off" whenever you want to pledge your fealty as the Underboss.</value>
+  </string>
+  <string key="Reveal">
+	<value>Show Off</value>
+  </string>
+  <string key="SpreadDust">
+	<value>Would you like to prepare signaling the emergency whistle to hinder the Police raid tonight?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+	<value>"Remember to cover the whole eastern area!" {0} is heard giving orders to some street urchins. It seems that the Whistler is at work. The police won't meet anyone but street urchins tonight.</value>
+	<value>"Remember to cover the Chinatown!" {0} is heard giving orders to some street urchins. It seems that the Whistler is at work. The police won't meet anyone but street urchins tonight.</value>
+	<value>"Remember to cover the Speakeasy!" {0} is heard giving orders to some street urchins. It seems that the Whistler is at work. The police won't meet anyone but street urchins tonight.</value>
+	<value>"Remember to cover the Precinct!" {0} is heard giving orders to some street urchins. It seems that the Whistler is at work. The police won't meet anyone but street urchins tonight.</value>
+  </string>
+  <string key="Mayor">
+	<value>the Underboss 🎖</value>
+  </string>
+  <string key="Prince">
+	<value>the Mafia Heir 👑</value>
+  </string>
+  <string key="Sorcerer">
+	<value>the Informant 🔮</value> 
+  </string>
+  <string key="ClumsyGuy">
+	<value>the Absent-Minded Professor 🤕</value>
+  </string>
+  <string key="Blacksmith">
+	<value>the Whistler ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+	<value>Police Commisioner ️️</value>
+  </string>
+  <string key="WolfCub">
+	<value>Police Rookie 🐶</value> 
+  </string>
+  <string key="PlayerBittenWolves">
+	<value>As the police began raiding {0}, {1} the Police Commisioner calls the unit to bring him the suspect. After a lenghty conversation, intimidation, and coercion, {1} tells the force, that {0} will assist the Police starting tomorrow night.</value>
+  </string>
+  <string key="PlayerBitten">
+	<value>Your house was raided last night but the Police Commisioner himself managed to convince you to join the Police Force as a part of the plea deal. You ask for a day to prepare yourself and promise to help them starting tomorrow night.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>You have prepared everything and ready to join the Police Force's Anti-Mafia Strike Team. You are now a Police Officer.</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Well, you cannot tell the Underboss from the soldier, unless they decided to wear the shiny ring with the Family's insignia. Then they will carry out the Godfather voice too when vote to exile people (meaning that their vote is twice as powerful as everyone else's)</value>
+  </string>
+  <string key="AboutPrince">
+    <value>As the Eldest Child of the Famiglia, once people decided to exiled them, their cover is revealed and the Mafia will try their best to appease them and the Godfather. They still can stay in the City later unless someone decided to sneak out at night or destroyed their home.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Ah, the Informant is the one guy that always try to find way to quit the Family by providing information of the Torture Technician to the Police. However their files only contain profiles of the Police and Torture Technician.</value>
+	</string>
+  <string key="AboutClumsy">
+	<value>... That Absent-Minded Professor keep voting the wrong guy. It's like 50% of his vote is not what he wanted.</value>
+	</string>
+  <string key="AboutBlacksmith">
+	<value>You are the Street Whistler, the notification squad. For one time only during the day, you can set up a watchpoint in the town. When the Police conducts a raid in the night, you will sound the alarm to stop the police raid. After that you are just another lowly soldier going about their day.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+	<value>Salutations to the Police Commisioner, the PC, the Commish, the Jim G. Your order are just and fair. Your charm, will turn even the lowliest soldier of mafia to the police force. As long as you are in the town, every time you raid a person, they have a 20% chance to follow you as a Police officer.</value>
+	<value>salutations to the Police Commisioner, may your order be just and fair. For as long as you are in the town, your order arE absolute and can turn even the lowliest soldier of mafia to the police force. Every night, you can choose a person to raid, and they have a 20% chance to follow your lead as a Police officer.</value>
+	</string>
+  <string key="AboutWolfCub">
+	<value>The Rookie of the force. As a fresh graduate from the academy, you are both bold and reckless, fierce and loyal at the same time, you'll follow the force to every raid and even to the ends of time. Being the pride of the force, if by chance you are exiled or kidnapped, the police force will be scour the city and conduct two police raid the next night.</value>
+	</string>
+	  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} is not in the city anymore! You begin to modify your ID: this will be the work of your life! A Police Commisioner! Imagine the pay! Your fellow police officers (if any) are: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} is not in the city anymore! You begin to modify your ID to be accepted as a new Rookie Cop. Your fellow police officers (if any) are: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>The Mafia Famiglia</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Neutral Team</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Fairview Police Department</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Kidnapper Team</value>
+  </string>
+  <string key="CultTeam">
+    <value>Church of Happyology</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Suicide Bomber Team</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>The Mafia Famiglia</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Neutral Team</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Fairview Police Department</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Kidnapper Team</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Church of Happyology</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Suicide Bomber Team</value>
+  </string>
+</strings>
