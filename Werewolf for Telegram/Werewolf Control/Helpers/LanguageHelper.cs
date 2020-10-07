@@ -326,15 +326,17 @@ namespace Werewolf_Control.Helpers
             //            Bot.Api.EditMessageTextAsync(id, msgId, msg);
             //#endif
 #if !DEBUG
-            var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", Path.GetFileName(copyToPath));
-            File.Copy(newFilePath, gitPath, true);
-            System.IO.File.Delete(newFilePath);
-            msg += $"File copied to git directory\n";
-            if (Path.GetFileName(newFilePath) == Program.MasterLanguage)
+            try
             {
-                var p = new Process
+                var gitPath = Path.Combine(@"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages", Path.GetFileName(copyToPath));
+                File.Copy(newFilePath, gitPath, true);
+                System.IO.File.Delete(newFilePath);
+                msg += $"File copied to git directory\n";
+                if (Path.GetFileName(newFilePath) == Program.MasterLanguage)
                 {
-                    StartInfo =
+                    var p = new Process
+                    {
+                        StartInfo =
                     {
                         FileName = @"C:\Werewolf Source\Werewolf\Werewolf for Telegram\Languages\commit.bat",
                         Arguments = $"\"Syncing langfiles from Telegram (English.xml update)\"",
@@ -344,43 +346,58 @@ namespace Werewolf_Control.Helpers
                         RedirectStandardError = true,
                         CreateNoWindow = true
                     }
-                };
+                    };
 
-                p.Start();
-                msg += "Started the committing process. Reading output from git...";
-                Bot.Edit(id, msgId, msg).Wait();
+                    p.Start();
+                    msg += "Started the committing process. Reading output from git...";
+                    Bot.Edit(id, msgId, msg).Wait();
 
-                var output = "";
-                while (!p.StandardOutput.EndOfStream)
-                    output += p.StandardOutput.ReadLine() + Environment.NewLine;
-                while (!p.StandardError.EndOfStream)
-                    output += p.StandardError.ReadLine() + Environment.NewLine;
+                    var output = "";
+                    while (!p.StandardOutput.EndOfStream)
+                        output += p.StandardOutput.ReadLine() + Environment.NewLine;
+                    while (!p.StandardError.EndOfStream)
+                        output += p.StandardError.ReadLine() + Environment.NewLine;
 
-                msg += "\nValidating the output...";
-                Bot.Edit(id, msgId, msg).Wait();
+                    msg += "\nValidating the output...";
+                    Bot.Edit(id, msgId, msg).Wait();
 
-                //validate the output
-                if (output.Contains("failed"))
-                {
-                    msg += "\n<b>Failed</b> to commit files. See control output for information";
-                    Console.WriteLine(output);
-                }
-                else if (output.Contains("nothing to commit"))
-                {
-                    msg += "\nNothing to commit.";
-                }
-                else
-                {
-                    //try to grab the commit
-                    var regex = new Regex("(\\[master .*])");
-                    var match = regex.Match(output);
-                    var commit = "";
-                    if (match.Success)
+                    //validate the output
+                    if (output.Contains("failed"))
                     {
-                        commit = match.Value.Replace("[master ", "").Replace("]", "");
+                        msg += "\n<b>Failed</b> to commit files. See control output for information";
+                        Console.WriteLine(output);
                     }
-                    msg += $"\n<b>Files committed successfully.</b> {(String.IsNullOrEmpty(commit) ? "" : $"<a href=\"https://github.com/GreyWolfDev/Werewolf/commit/" + commit + $"\">{commit}</a>")}";
+                    else if (output.Contains("nothing to commit"))
+                    {
+                        msg += "\nNothing to commit.";
+                    }
+                    else
+                    {
+                        //try to grab the commit
+                        var regex = new Regex("(\\[master .*])");
+                        var match = regex.Match(output);
+                        var commit = "";
+                        if (match.Success)
+                        {
+                            commit = match.Value.Replace("[master ", "").Replace("]", "");
+                        }
+                        msg += $"\n<b>Files committed successfully.</b> {(String.IsNullOrEmpty(commit) ? "" : $"<a href=\"https://github.com/GreyWolfDev/Werewolf/commit/" + commit + $"\">{commit}</a>")}";
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                var trace = e.StackTrace;
+                var error = e.Message;
+                do
+                {
+                    e = e.InnerException;
+                    if (e == null) break;
+                    error += "\n" + e.Message;
+                }
+                while (true);
+
+                Bot.Send("Error while trying to commit to git:\n" + error + "\n\n" + trace, id);
             }
 #endif
             using (var db = new WWContext())
@@ -548,6 +565,8 @@ namespace Werewolf_Control.Helpers
                 result += $"OLD FILE (Last updated: {curFile.LatestUpdate.ToString("MMM dd")})\n*{curFile.FileName}.xml - ({curFile.Name})*\n";
                 result +=
                     $"Errors: {curFileErrors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {curFileErrors.Count(x => x.Level == ErrorLevel.MissingString)}";
+                if (newFile.IsDefault != curFile.IsDefault)
+                    result += $"\n\n*isDefault changed from {curFile.IsDefault} to {newFile.IsDefault}*";
             }
             else
             {
@@ -558,10 +577,11 @@ namespace Werewolf_Control.Helpers
                 if (!Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).Any(x => x.Base == newFile.Base))
                     result += " *(NEW)*";
                 result += $"\n_Variant:_ {newFile.Variant ?? ""}";
+                if (newFile.IsDefault)
+                    result += "\n*isDefault: true*";
             }
 
-            if (newFile.IsDefault)
-                result += "\n\n*isDefault: true*";
+            
 
             return result;
         }
