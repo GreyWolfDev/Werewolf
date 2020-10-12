@@ -2403,9 +2403,11 @@ namespace Werewolf_Node
                     }
                     return VisitResult.VisitorDied;
                 }
-                else return VisitResult.Fail;
+                //If an Arsonist successfully survived all the traps - he doesn't care if GD is home.
+                else if (visitor.PlayerRole != IRole.Arsonist)
+                    return VisitResult.Fail;
             }
-            // An arsonist also usually doesn't care whether harlot or GA are home
+            // An arsonist also usually doesn't care whether harlot or GA or GD are home
             if (visitor.PlayerRole == IRole.Arsonist) return VisitResult.Success;
             // Checks for harlot or GA not home visited
             if ((visited.PlayerRole == IRole.Harlot || (visited.PlayerRole == IRole.GuardianAngel && !WolfRoles.Contains(visitor.PlayerRole))) && visited.Choice != 0 && visited.Choice != -1 && !visited.Frozen)
