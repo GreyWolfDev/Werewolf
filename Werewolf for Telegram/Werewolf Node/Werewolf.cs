@@ -5322,6 +5322,7 @@ namespace Werewolf_Node
             if (hunter.Choice == 0)
             {
                 SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterNoChoiceLynched" : "HunterNoChoiceShot", hunter.GetName()));
+                Program.Bot.EditMessageTextAsync(hunter.Id, hunter.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
             }
             else
             {
