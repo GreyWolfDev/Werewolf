@@ -3940,7 +3940,7 @@ namespace Werewolf_Node
                 var target = Players.FirstOrDefault(x => x.Id == fool.Choice);
                 if (target != null)
                 {
-                    var possibleRoles = Players.Where(x => !x.IsDead && x.Id != fool.Id && x.PlayerRole != IRole.Seer).Select(x => x.PlayerRole).ToList();
+                    var possibleRoles = Players.Where(x => !x.IsDead && x.Id != fool.Id && x.PlayerRole != IRole.Seer && x.PlayerRole != IRole.WolfMan).Select(x => x.PlayerRole).ToList();
                     possibleRoles.Shuffle();
                     possibleRoles.Shuffle();
                     if (possibleRoles.Any())
