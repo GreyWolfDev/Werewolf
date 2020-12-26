@@ -228,7 +228,7 @@ namespace Werewolf_Control
                 }
                 catch (AggregateException e)
                 {
-                    Bot.Send("Couldn't send to " + g + ".\n"+ e.InnerExceptions[0].Message, UpdateHelper.Devs[1]);
+                    Bot.Send("Couldn't send to " + g + ".\n" + e.InnerExceptions[0].Message, UpdateHelper.Devs[1]);
                 }
             }
 #endif
@@ -500,7 +500,7 @@ namespace Werewolf_Control
         public static void Test(Update update, string[] args)
         {
             Bot.Send("Please hold, creating chart...", update.Message.Chat.Id);
-            
+
             using (var chart = new Chart())
             {
                 //var gameSeries = chart.Series.Add("Games");
@@ -848,7 +848,11 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "permban", GlobalAdminOnly = true)]
         public static void PermBan(Update u, string[] args)
         {
-#if !BETA
+#if BETA
+            // Make beta able to permban but only if explicitly tagged
+            if (!u.Message.Text.ToLower().Contains(Bot.Me.Username.ToLower())) return;
+#endif
+
             foreach (var e in u.Message.Entities)
             {
                 switch (e.Type)
@@ -859,7 +863,11 @@ namespace Werewolf_Control
                         using (var db = new WWContext())
                         {
                             var player = db.Players.FirstOrDefault(x => x.UserName == username);
-                            if (player != null)
+                            if (player == null)
+                            {
+                                Send("Unknown user: @" + username, u.Message.Chat.Id);
+                            }
+                            else
                             {
                                 var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
                                 game?.SmitePlayer(player.TelegramId);
@@ -884,25 +892,33 @@ namespace Werewolf_Control
                         using (var db = new WWContext())
                         {
                             var player = db.Players.FirstOrDefault(x => x.TelegramId == e.User.Id);
-                            if (player != null)
+                            if (player == null)
                             {
-                                var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
-                                game?.SmitePlayer(player.TelegramId);
-                                //add the ban
-                                var ban = new GlobalBan
+                                player = new Player()
                                 {
-                                    Expires = (DateTime)SqlDateTime.MaxValue,
-                                    Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
-                                    TelegramId = player.TelegramId,
-                                    BanDate = DateTime.UtcNow,
-                                    BannedBy = u.Message.From.FirstName,
-                                    Name = player.Name
+                                    Name = e.User.FirstName + (e.User.LastName != null ? $" {e.User.LastName}" : ""),
+                                    TelegramId = e.User.Id,
+                                    UserName = e.User.Username,
                                 };
-                                db.GlobalBans.Add(ban);
-                                UpdateHandler.BanList.Add(ban);
-                                db.SaveChanges();
-                                Send("User has been banned", u.Message.Chat.Id);
+                                db.Players.Add(player);
                             }
+
+                            var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
+                            game?.SmitePlayer(player.TelegramId);
+                            //add the ban
+                            var ban = new GlobalBan
+                            {
+                                Expires = (DateTime)SqlDateTime.MaxValue,
+                                Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
+                                TelegramId = player.TelegramId,
+                                BanDate = DateTime.UtcNow,
+                                BannedBy = u.Message.From.FirstName,
+                                Name = player.Name
+                            };
+                            db.GlobalBans.Add(ban);
+                            UpdateHandler.BanList.Add(ban);
+                            db.SaveChanges();
+                            Send("User has been banned", u.Message.Chat.Id);
                         }
                         break;
                 }
@@ -932,29 +948,35 @@ namespace Werewolf_Control
                     using (var db = new WWContext())
                     {
                         var player = db.Players.FirstOrDefault(x => x.TelegramId == uid);
-                        if (player != null)
+                        if (player == null)
                         {
-                            var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
-                            game?.SmitePlayer(player.TelegramId);
-                            //add the ban
-                            var ban = new GlobalBan
+                            player = new Player()
                             {
-                                Expires = (DateTime)SqlDateTime.MaxValue,
-                                Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
-                                TelegramId = player.TelegramId,
-                                BanDate = DateTime.UtcNow,
-                                BannedBy = u.Message.From.FirstName,
-                                Name = player.Name
+                                Name = "Unknown User",
+                                TelegramId = uid,
                             };
-                            db.GlobalBans.Add(ban);
-                            UpdateHandler.BanList.Add(ban);
-                            db.SaveChanges();
-                            Send($"User {player.Name} (@{player.UserName}) has been banned", u.Message.Chat.Id);
+                            db.Players.Add(player);
                         }
+
+                        var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
+                        game?.SmitePlayer(player.TelegramId);
+                        //add the ban
+                        var ban = new GlobalBan
+                        {
+                            Expires = (DateTime)SqlDateTime.MaxValue,
+                            Reason = args[1].Split(' ').Skip(1).Aggregate((a, b) => a + " " + b), //skip the players name
+                            TelegramId = player.TelegramId,
+                            BanDate = DateTime.UtcNow,
+                            BannedBy = u.Message.From.FirstName,
+                            Name = player.Name
+                        };
+                        db.GlobalBans.Add(ban);
+                        UpdateHandler.BanList.Add(ban);
+                        db.SaveChanges();
+                        Send($"User {player.Name} (@{player.UserName}) has been banned", u.Message.Chat.Id);
                     }
                 }
             }
-#endif
         }
 
         [Attributes.Command(Trigger = "remban", GlobalAdminOnly = true)]
@@ -1595,7 +1617,7 @@ namespace Werewolf_Control
             if (!Program.BetaUnlocked)
             {
                 Program.BetaUnlocked = true;
-                foreach(var id in new[] { u.Message.Chat.Id, -1001094155678 }.Distinct())
+                foreach (var id in new[] { u.Message.Chat.Id, -1001094155678 }.Distinct())
                     Bot.Send($"<b>Beta has been unlocked for all groups by {u.Message.From.FirstName.FormatHTML()}!</b>", id);
 
             }
