@@ -82,6 +82,12 @@ namespace Werewolf_Node
         {
             // Permanent
             { 786889199, "Kindness is like snow, it beautifies everything it covers ❄️" }, // As a reward for insane donations to keep up our bots :)
+
+            // Expires 04 May 2021, Christmas Event Prize
+            { 927424174, "در تو، من نیست \nو در من سراسر توست\nدر انتها؛ \nآنچه رفته ست میان من و تو\nتو خالی شده ای و من سراسر پُر\nآری!\\n\nیه بازی دیگه، یه بار دیگه اثبات پرو بودن ℳεɦ∂ɨ❤️{ ωσℓƒ }❤️ رو مشاهده میکنید...😎\nبار دیگر شاهد برد بی نظیر مهدی و مهارت اون توی بازی بودید\nبرید برا بچه محلاتون تعریف کنید🤞" }
+
+            // Expires 04 May 2021, Christmas Event Prize
+            { 588510620, "Whether you win or lose… You can always come out ahead by learning from the experience\n~ Kinnice" }
         };
 
         #region Constructor
