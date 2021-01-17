@@ -4522,8 +4522,7 @@ namespace Werewolf_Node
                     }
                     break;
                 case 3:
-                case 4:
-                    if (alivePlayers.Select(x => x.PlayerRole).All(x => new IRole[] { IRole.Sorcerer, IRole.Tanner, IRole.Thief, IRole.Doppelgänger }.Contains(x)))
+                    if (alivePlayers.Select(x => x.PlayerRole).All(x => new IRole[] { IRole.Sorcerer, IRole.Thief, IRole.Doppelgänger }.Contains(x)))
                         return DoGameEnd(ITeam.NoOne);
                     break;
                 default:
@@ -4631,69 +4630,21 @@ namespace Werewolf_Node
                         var deathmessage = "";
                         switch (alives.Count())
                         {
-                            case 4:
-                                // Tanner and sorcerer and thief and doppelganger, tanner will die.
-                                if (alives.Any(x => x.PlayerRole == IRole.Tanner) && alives.Any(x => x.PlayerRole == IRole.Sorcerer) && alives.Any(x => x.PlayerRole == IRole.Thief) && alives.Any(x => x.PlayerRole == IRole.Doppelgänger))
+                            case 3:
+                                // Thief, Doppelganger, Sorcerer
+                                if (new[] { IRole.Sorcerer, IRole.Thief, IRole.Doppelgänger }.All(x => alives.Any(y => y.PlayerRole == x)))
                                 {
                                     var doppelganger = alives.FirstOrDefault(x => x.PlayerRole == IRole.Doppelgänger);
                                     var thief = alives.FirstOrDefault(x => x.PlayerRole == IRole.Thief);
                                     var sorc = alives.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer);
-                                    var tann = alives.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
                                     
-                                    if (doppelganger != null && sorc != null && tann != null)
+                                    if (doppelganger != null && thief != null && sorc != null)
                                     {
-                                        KillPlayer(tann, KillMthd.Suicide, killer: tann, isNight: false);
-                                        
-                                        //check if the tanner is role model of doppelganger or not. If yes, also kill the doppelganger after his transform
-                                        CheckDoppelganger();
-                                        if (doppelganger.PlayerRole == IRole.Tanner)
-                                        {
-                                            KillPlayer(doppelganger, KillMthd.Suicide, killer: doppelganger, isNight: false);
-                                        }
                                         AddAchievement(sorc, AchievementsReworked.TimeToRetire);
-                                        
                                         deathmessage = GetLocaleString("SorcererEnd", sorc.GetName()) + Environment.NewLine;
-                                        deathmessage += Environment.NewLine + GetLocaleString("ThiefEnd", thief.GetName()) + Environment.NewLine;
-                                        deathmessage += Environment.NewLine + GetLocaleString("TannerEnd", tann.GetName()) + Environment.NewLine;
-                                        deathmessage += Environment.NewLine + GetLocaleString($"{doppelganger.PlayerRole}End", doppelganger.GetName());
+                                        deathmessage += Environment.NewLine + GetLocaleString("DoppelgangerEnd", doppelganger.GetName()) + Environment.NewLine;
+                                        deathmessage += Environment.NewLine + GetLocaleString("ThiefEnd", thief.GetName());
                                     }
-                                }
-                                break;
-                            case 3:
-                                // Includes three of these roles: Tanner, Thief, Doppelganger, Sorcerer
-                                var doppelganger = alives.FirstOrDefault(x => x.PlayerRole == IRole.Doppelgänger);
-                                var thief = alives.FirstOrDefault(x => x.PlayerRole == IRole.Thief);
-                                var sorc = alives.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer);
-                                var tann = alives.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
-                                
-                                if (sorc != null)
-                                {
-                                    AddAchievement(sorc, AchievementsReworked.TimeToRetire);
-                                    deathmessage = GetLocaleString("SorcererEnd", sorc.GetName()) + Environment.NewLine;
-                                }
-                                
-                                if (tann != null)
-                                {
-                                    KillPlayer(tann, KillMthd.Suicide, killer: tann, isNight: false);
-                                    deathmessage += Environment.NewLine + GetLocaleString("TannerEnd", tann.GetName());
-                                }
-                                
-                                if (doppelganger != null)
-                                {
-                                    if (tann != null)
-                                    {
-                                        CheckDoppelganger();
-                                        if (doppelganger.PlayerRole == IRole.Tanner)
-                                        {
-                                            KillPlayer(doppelganger, KillMthd.Suicide, killer: doppelganger, isNight: false);
-                                        }
-                                    }
-                                    deathmessage += Environment.NewLine + GetLocaleString($"{doppelganger.PlayerRole}End", doppelganger.GetName());
-                                }
-                                
-                                if (thief != null)
-                                {
-                                    deathmessage += Environment.NewLine + GetLocaleString("ThiefEnd", thief.GetName());
                                 }
                                 break;
                             case 2:
@@ -4728,26 +4679,26 @@ namespace Werewolf_Node
                                 // thief/doppelganger and sorcerer
                                 else if (alives.Any(x => x.PlayerRole == IRole.Sorcerer) && (alives.First(x => x.PlayerRole != IRole.Sorcerer).PlayerRole == IRole.Thief || alives.First(x => x.PlayerRole != IRole.Sorcerer).PlayerRole == IRole.Doppelgänger))
                                 {
-                                    var sorc = alives.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer);
+                                    var sorcerer = alives.FirstOrDefault(x => x.PlayerRole == IRole.Sorcerer);
                                     var thiefOrDG = alives.FirstOrDefault(x => x.PlayerRole == IRole.Thief || x.PlayerRole == IRole.Doppelgänger);
 
-                                    if (sorc != null && thiefOrDG != null)
+                                    if (sorcerer != null && thiefOrDG != null)
                                     {
-                                        deathmessage = GetLocaleString("SorcererEnd", sorc.GetName()) + Environment.NewLine;
-                                        AddAchievement(sorc, AchievementsReworked.TimeToRetire);
+                                        deathmessage = GetLocaleString("SorcererEnd", sorcerer.GetName()) + Environment.NewLine;
+                                        AddAchievement(sorcerer, AchievementsReworked.TimeToRetire);
                                         deathmessage += Environment.NewLine + GetLocaleString($"{thiefOrDG.PlayerRole}End", thiefOrDG.GetName());
                                     }
                                 }
                                 //thief and doppelganger
                                 else if (alives.Any(x => x.PlayerRole == IRole.Thief) && alives.First(x => x.PlayerRole != IRole.Thief).PlayerRole == IRole.Doppelgänger)
                                 {
-                                    var thief = alives.FirstOrDefault(x => x.PlayerRole == IRole.Thief);
-                                    var doppelganger = alives.FirstOrDefault(x => x.PlayerRole == IRole.Doppelgänger);
+                                    var theThief = alives.FirstOrDefault(x => x.PlayerRole == IRole.Thief);
+                                    var DG = alives.FirstOrDefault(x => x.PlayerRole == IRole.Doppelgänger);
                                     
-                                    if (thief != null && doppelganger != null)
+                                    if (theThief != null && DG != null)
                                     {
-                                        deathmessage = GetLocaleString("ThiefEnd", sorc.GetName()) + Environment.NewLine;
-                                        deathmessage += Environment.NewLine + GetLocaleString("DoppelgängerEnd", thiefOrDG.GetName());
+                                        deathmessage = GetLocaleString("ThiefEnd", theThief.GetName()) + Environment.NewLine;
+                                        deathmessage += Environment.NewLine + GetLocaleString("DoppelgangerEnd", DG.GetName());
                                     }
                                 }
                                 break;
