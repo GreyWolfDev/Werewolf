@@ -514,10 +514,10 @@ namespace Werewolf_Node
                 _playerListChanged = true;
 
 
-                if (Players.Count(x => x.GifPack?.Approved ?? false) > 0)
+                if (Players.Count((x => x.GifPack?.Approved ?? false) && x.DonationLevel >= 10) > 0)
                 {
                     var cMsg = "Players with custom gif packs:\n";
-                    var customs = Players.Where(x => x.GifPack?.Approved ?? false);
+                    var customs = Players.Where((x => x.GifPack?.Approved ?? false) && x.DonationLevel >= 10);
                     if (!AllowNSFW)
                         customs = customs.Where(x => !x.GifPack.NSFW);
                     if (customs.Any(x => x.GifPack.CultWins != null))
