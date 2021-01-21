@@ -1418,7 +1418,7 @@ namespace Werewolf_Control.Handler
                         #endregion
                         #region Config Commands
                         case "lang":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1449,7 +1449,7 @@ namespace Werewolf_Control.Handler
                             Bot.ReplyToCallback(query, GetLocaleString("WhatLang", language, curLang.Base), replyMarkup: menu);
                             break;
                         case "setlang":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1549,7 +1549,7 @@ namespace Werewolf_Control.Handler
                         //    DB.SaveChanges();
                         //    break;
                         case "maxplayer":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1569,7 +1569,7 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setmaxplayer":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1603,7 +1603,7 @@ namespace Werewolf_Control.Handler
                         //    DB.SaveChanges();
                         //    break;
                         case "mode":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1618,7 +1618,7 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("GameModeQ", language, grp.Mode), replyMarkup: menu);
                             break;
                         case "setmode":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1631,7 +1631,7 @@ namespace Werewolf_Control.Handler
                             DB.SaveChanges();
                             break;
                         case "endroles":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1647,7 +1647,7 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setendroles":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1660,7 +1660,7 @@ namespace Werewolf_Control.Handler
                             DB.SaveChanges();
                             break;
                         case "daytimer":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1677,7 +1677,7 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setday":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1690,7 +1690,7 @@ namespace Werewolf_Control.Handler
                             DB.SaveChanges();
                             break;
                         case "nighttimer":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1707,7 +1707,7 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setnight":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1720,7 +1720,7 @@ namespace Werewolf_Control.Handler
                             DB.SaveChanges();
                             break;
                         case "lynchtimer":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1737,7 +1737,7 @@ namespace Werewolf_Control.Handler
                                 replyMarkup: menu);
                             break;
                         case "setlynch":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1826,7 +1826,7 @@ namespace Werewolf_Control.Handler
                         //    DB.SaveChanges();
                         //    break;
                         case "maxextend":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1843,7 +1843,7 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("MaxExtendQ", language, Settings.MaxExtend, grp.MaxExtend ?? Settings.MaxExtend), replyMarkup: menu);
                             break;
                         case "setmaxextend":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1860,7 +1860,7 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("ThankYou", language));
                             break;
                         case "togglerole":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
@@ -1895,7 +1895,7 @@ namespace Werewolf_Control.Handler
                             Bot.Edit(query, GetLocaleString("RoleConfigInfo", language), GetRoleConfigMenu(groupid));
                             break;
                         case "validateroles":
-                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) & !UpdateHandler.IsGlobalAdmin(query.From.Id))
+                            if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHandler.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkup(query.Message.Chat.Id, query.Message.MessageId);
                                 return;
