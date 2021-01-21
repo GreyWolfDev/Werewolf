@@ -3484,7 +3484,7 @@ namespace Werewolf_Node
                             VisitPlayer(sk, skilled);
                             Send(GetLocaleString("KillerRandomKill", oldSkilled.GetName(), skilled.GetName()), sk.Id);
                         }
-                        if (ga?.Choice == skilled.Id)
+                        if (ga?.Choice == skilled.Id && skilled.PlayerRole != IRole.Harlot) //GA doesn't find Harlot at home, therefore can't protect them
                         {
                             if (oldSkilled == null)
                                 Send(GetLocaleString("GuardBlockedKiller", skilled.GetName()), sk.Id);
