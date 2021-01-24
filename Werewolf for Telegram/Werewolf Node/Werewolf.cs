@@ -5164,7 +5164,7 @@ namespace Werewolf_Node
                         }
                         else
                         {
-                            msg = GetLocaleString("AskArsonistNoDoused")
+                            msg = GetLocaleString("AskArsonistNoDoused");
                         }
                         qtype = QuestionType.Douse;
                         break;
