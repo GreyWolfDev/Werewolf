@@ -4657,6 +4657,7 @@ namespace Werewolf_Node
                                     if (sorcOrThiefOrDG != null && tann != null)
                                     {
                                         KillPlayer(tann, KillMthd.Suicide, killer: tann, isNight: false);
+                                        deathmessage = GetLocaleString("TannerEnd", tann.GetName()) + Environment.NewLine;
                                         
                                         //check if the tanner is role model of doppelganger or not. If yes, also kill the doppelganger after his transform
                                         if (sorcOrThiefOrDG.PlayerRole == IRole.Doppelgänger)
@@ -4665,15 +4666,22 @@ namespace Werewolf_Node
                                             if (sorcOrThiefOrDG.PlayerRole == IRole.Tanner)
                                             {
                                                 KillPlayer(sorcOrThiefOrDG, KillMthd.Suicide, killer: sorcOrThiefOrDG, isNight: false);
+                                                deathmessage += Environment.NewLine + GetLocaleString("TannerEnd", sorcOrThiefOrDG.GetName());
+                                            }
+                                            else
+                                            {
+                                                deathmessage += Environment.NewLine + GetLocaleString("DoppelgangerEnd", sorcOrThiefOrDG.GetName());
                                             }
                                         }
+                                        else
+                                        {
+                                            deathmessage += Environment.NewLine + GetLocaleString($"{sorcOrThiefOrDG.PlayerRole}End", sorcOrThiefOrDG.GetName());
+                                        }
                                         
-                                        deathmessage = GetLocaleString($"{sorcOrThiefOrDG.PlayerRole}End", sorcOrThiefOrDG.GetName()) + Environment.NewLine;
                                         if (sorcOrThiefOrDG.PlayerRole == IRole.Sorcerer)
                                         {
                                             AddAchievement(sorcOrThiefOrDG, AchievementsReworked.TimeToRetire);
                                         }
-                                        deathmessage += Environment.NewLine + GetLocaleString("TannerEnd", tann.GetName());
                                     }
                                 }
                                 // thief/doppelganger and sorcerer
@@ -4686,7 +4694,14 @@ namespace Werewolf_Node
                                     {
                                         deathmessage = GetLocaleString("SorcererEnd", sorcerer.GetName()) + Environment.NewLine;
                                         AddAchievement(sorcerer, AchievementsReworked.TimeToRetire);
-                                        deathmessage += Environment.NewLine + GetLocaleString($"{thiefOrDG.PlayerRole}End", thiefOrDG.GetName());
+                                        if (thiefOrDG.PlayerRole == IRole.Doppelgänger)
+                                        {
+                                            deathmessage += Environment.NewLine + GetLocaleString("DoppelgangerEnd", thiefOrDG.GetName());
+                                        }
+                                        else
+                                        {
+                                            deathmessage += Environment.NewLine + GetLocaleString("ThiefEnd", thiefOrDG.GetName());
+                                        }
                                     }
                                 }
                                 //thief and doppelganger
@@ -4708,14 +4723,14 @@ namespace Werewolf_Node
                                 if (lastone != null)
                                 {
                                     if (lastone.PlayerRole == IRole.Tanner)
-                                    {
                                         KillPlayer(lastone, KillMthd.Suicide, killer: lastone, isNight: false);
-                                    }
                                     else if (lastone.PlayerRole == IRole.Sorcerer)
-                                    {
                                         AddAchievement(lastone, AchievementsReworked.TimeToRetire);
-                                    }
-                                    deathmessage = GetLocaleString($"{lastone.PlayerRole}End", lastone.GetName());
+                                    
+                                    if (lastone.PlayerRole == IRole.Doppelgänger)
+                                        deathmessage = GetLocaleString("DoppelgangerEnd", lastone.GetName());
+                                    else
+                                        deathmessage = GetLocaleString($"{lastone.PlayerRole}End", lastone.GetName());
                                 }
                                 break;
 
