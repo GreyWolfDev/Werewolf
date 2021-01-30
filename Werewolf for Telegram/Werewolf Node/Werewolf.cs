@@ -520,10 +520,10 @@ namespace Werewolf_Node
                 _playerListChanged = true;
 
 
-                if (Players.Count(x => x.GifPack?.Approved ?? false) > 0)
+                if (Players.Count((x => x.GifPack?.Approved ?? false) && x.DonationLevel >= 10) > 0)
                 {
                     var cMsg = "Players with custom gif packs:\n";
-                    var customs = Players.Where(x => x.GifPack?.Approved ?? false);
+                    var customs = Players.Where((x => x.GifPack?.Approved ?? false) && x.DonationLevel >= 10);
                     if (!AllowNSFW)
                         customs = customs.Where(x => !x.GifPack.NSFW);
                     if (customs.Any(x => x.GifPack.CultWins != null))
@@ -3492,7 +3492,7 @@ namespace Werewolf_Node
                             VisitPlayer(sk, skilled);
                             Send(GetLocaleString("KillerRandomKill", oldSkilled.GetName(), skilled.GetName()), sk.Id);
                         }
-                        if (ga?.Choice == skilled.Id)
+                        if (ga?.Choice == skilled.Id && skilled.PlayerRole != IRole.Harlot) //GA doesn't find Harlot at home, therefore can't protect them
                         {
                             if (oldSkilled == null)
                                 Send(GetLocaleString("GuardBlockedKiller", skilled.GetName()), sk.Id);
@@ -5163,7 +5163,15 @@ namespace Werewolf_Node
                         break;
                     case IRole.Arsonist:
                         targets = targetBase.Where(x => !x.Doused).ToList();
-                        msg = GetLocaleString("AskArsonist");
+                        var alreadyDoused = targetBase.Where(x => !x.IsDead && x.Doused).ToList();
+                        if (alreadyDoused.Any())
+                        {
+                            var andStr = GetLocaleString("And");
+                            msg = GetLocaleString("AskArsonist") + "\n";
+                            msg += GetLocaleString("AlreadyDousedList", alreadyDoused.Select(x => x.GetName()).Aggregate((current, a) => current + andStr + a));
+                        }
+                        else
+                            msg = GetLocaleString("AskArsonistNoDoused");
                         qtype = QuestionType.Douse;
                         break;
                     case IRole.GraveDigger:
