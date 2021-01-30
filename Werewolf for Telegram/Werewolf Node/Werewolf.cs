@@ -5155,17 +5155,15 @@ namespace Werewolf_Node
                         break;
                     case IRole.Arsonist:
                         targets = targetBase.Where(x => !x.Doused).ToList();
-                        var AlreadyDoused = targetBase.Where(x => !x.Dead && x.Doused).ToList();
-                        if (AlreadyDoused.Any())
+                        var alreadyDoused = targetBase.Where(x => !x.IsDead && x.Doused).ToList();
+                        if (alreadyDoused.Any())
                         {
                             var andStr = GetLocaleString("And");
-                            msg = GetLocaleString("AskArsonist");
-                            msg += GetLocaleString("AlreadyDousedList", AlreadyDoused.Select(x => x.GetName()).Aggregate((current, a) => current + andStr + a));
+                            msg = GetLocaleString("AskArsonist") + "\n";
+                            msg += GetLocaleString("AlreadyDousedList", alreadyDoused.Select(x => x.GetName()).Aggregate((current, a) => current + andStr + a));
                         }
                         else
-                        {
                             msg = GetLocaleString("AskArsonistNoDoused");
-                        }
                         qtype = QuestionType.Douse;
                         break;
                     case IRole.GraveDigger:
