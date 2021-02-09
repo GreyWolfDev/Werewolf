@@ -4039,6 +4039,7 @@ namespace Werewolf_Node
                             Send(GetLocaleString("CleanDoused", save.GetName()), ga.Id);
                             save.Doused = false;
                             cleanedDoused = true;
+                            ga.GACleanedHomeCount++;
                         }
                         if (!save.WasSavedLastNight && !save.DiedLastNight && !cleanedDoused) //only send if save wasn't attacked
                             Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
@@ -5806,6 +5807,8 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.WuffieCult);
                         if (!ach2.HasFlag(AchievementsReworked.DidYouGuardYourself) && player.PlayerRole == IRole.GuardianAngel && player.GAGuardWolfCount >= 3)
                             newAch2.Set(AchievementsReworked.DidYouGuardYourself);
+                        if (!ach2.HasFlag(AchievementsReworked.TheFireFighter) && player.PlayerRole == IRole.GuardianAngel && player.GACleanedHomeCount >= 2)
+                            newAch2.Set(AchievementsReworked.TheFireFighter);
                         if (!ach2.HasFlag(AchievementsReworked.ThreeLittleWolves) && player.PlayerRole == IRole.Sorcerer && !player.IsDead && Players.GetPlayersForRoles(WolfRoles, true).Count() >= 3)
                             newAch2.Set(AchievementsReworked.ThreeLittleWolves);
                         if (!ach2.HasFlag(AchievementsReworked.President) && player.PlayerRole == IRole.Mayor && player.MayorLynchAfterRevealCount >= 3)
