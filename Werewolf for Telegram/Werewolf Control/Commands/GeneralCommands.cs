@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -184,7 +184,55 @@ namespace Werewolf_Control
         [Command(Trigger = "start")]
         public static void Start(Update u, string[] args)
         {
-            if (u.Message.Chat.Type == ChatType.Private && u.Message.From != null)
+            if (u.Message.Chat.Type == ChatType.Group && u.Message.From != null)
+            {
+                using (var db = new WWContext())
+                {
+                    var p = GetDBPlayer(u.Message.From.Id, db);
+                    if (p == null)
+                    {
+                        var usr = u.Message.From;
+                        p = new Player
+                        {
+                            UserName = usr.Username,
+                            Name = (usr.FirstName + " " + usr.LastName).Trim(),
+                            TelegramId = usr.Id,
+                            Language = "English"
+                        };
+                        db.Players.Add(p);
+                        db.SaveChanges();
+                        p = GetDBPlayer(u.Message.From.Id, db);
+                    }
+#if RELEASE
+                        p.HasPM = true;
+#elif RELEASE2
+                        p.HasPM2 = true;
+#elif BETA
+                        p.HasDebugPM = true;
+#endif
+                    db.SaveChanges();
+
+                    if (String.IsNullOrEmpty(args[1]))
+                    {
+                        var msg = $"Hi there! I'm @{Bot.Me.Username}, and I moderate games of Werewolf." +
+                                  $"\nJoin the main group @werewolfgame, or to find a group to play in, you can use /grouplist." +
+                                  $"\nFor role information, use /rolelist." +
+                                  $"\nIf you want to set your default language, use /setlang." +
+                                  $"\nBe sure to stop by <a href=\"https://telegram.me/greywolfsupport\">Werewolf Support</a> for any questions, and subscribe to @greywolfdev for updates from the developer." +
+                                  $"\nMore infomation can be found <a href=\"https://www.tgwerewolf.com/?referrer=start\">here</a>!";
+                        try
+                        {
+                            Bot.Send(msg, u.Message.From.Id);
+                        }
+                        catch
+                        {
+                            RequestPM(u.Message.Chat.Id);
+                        }
+                        return;
+                    }
+                }
+            }
+            else if (u.Message.Chat.Type == ChatType.Private && u.Message.From != null)
             {
                 using (var db = new WWContext())
                 {
