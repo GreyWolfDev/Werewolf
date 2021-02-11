@@ -1541,6 +1541,7 @@ namespace Werewolf_Node
             switch (p.PlayerRole)
             {
                 case IRole.Villager:
+                case IRole.ScapeGoat:
                 case IRole.Cursed:
                 case IRole.Drunk:
                 case IRole.Beholder:
@@ -1642,6 +1643,8 @@ namespace Werewolf_Node
                 {
                     case IRole.Fool:
                         return GetLocaleString("RoleInfoSeer");
+                    case IRole.ScapeGoat:
+                        return GetLocaleString("RoleInfoScapeGoat");
                     case IRole.Beholder:
                         msg = GetLocaleString("RoleInfoBeholder");
                         var seer = Players?.FirstOrDefault(x => x.PlayerRole == IRole.Seer && !x.IsDead);
@@ -2740,6 +2743,12 @@ namespace Werewolf_Node
                         if (lynched.PlayerRole == IRole.Prince & !lynched.HasUsedAbility) //can only do this once
                         {
                             SendWithQueue(GetLocaleString("PrinceLynched", lynched.GetName()));
+                            var ScapeGoat = Players.FirstOrDefault(x => x.PlayerRole == IRole.ScapeGoat && !x.IsDead);
+                            if (ScapeGoat != null)
+                            {
+                                SendWithQueue(GetLocaleString("ScapeGoatLynched", lynched.GetName()));
+                                KillPlayer(lynched, KillMthd.Lynch, killers: Players.Where(x => x.Choice == lynched.Id), isNight: false);
+                            }
                             lynched.HasUsedAbility = true;
                         }
                         else
@@ -2781,10 +2790,22 @@ namespace Werewolf_Node
                         var t = choices.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
                         if (t != null && t.Votes > 0)
                             AddAchievement(t, AchievementsReworked.SoClose);
+                        var ScapeGoat = Players.FirstOrDefault(x => x.PlayerRole == IRole.ScapeGoat && !x.IsDead);
+                        if (ScapeGoat != null)
+                        {
+                            SendWithQueue(GetLocaleString("ScapeGoatLynched", lynched.GetName()));
+                            KillPlayer(lynched, KillMthd.Lynch, killers: Players.Where(x => x.Choice == lynched.Id), isNight: false);
+                        }
                     }
                     else // if (lynched.Votes == -2) // No lynch votes at all
                     {
                         SendWithQueue(GetLocaleString("NoLynchVotes"));
+                        var ScapeGoat = Players.FirstOrDefault(x => x.PlayerRole == IRole.ScapeGoat && !x.IsDead);
+                        if (ScapeGoat != null)
+                        {
+                            SendWithQueue(GetLocaleString("ScapeGoatLynched", lynched.GetName()));
+                            KillPlayer(lynched, KillMthd.Lynch, killers: Players.Where(x => x.Choice == lynched.Id), isNight: false);
+                        }
                     }
 
                     if (CheckForGameEnd(true)) return;
@@ -3723,6 +3744,8 @@ namespace Werewolf_Node
                                 case IRole.Augur:
                                     ConvertToCult(target, voteCult, Settings.AugurConversionChance);
                                     break;
+                                case IRole.ScapeGoat:
+                                    ConvertToCult(target, voteCult, Settings.ScapeGoatConversionChance)
                                 default:
                                     ConvertToCult(target, voteCult);
                                     break;
