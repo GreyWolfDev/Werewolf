@@ -186,9 +186,6 @@ namespace Shared
             //for smaller games, all roles will be available and chosen randomly.  For large games, it will be about the
             //same as it was before....
 
-            //add Whipping boy
-            rolesToAssign.Add(IRole.ScapeGoat);
-
 
             if (rolesToAssign.Any(x => x == IRole.CultistHunter))
             {

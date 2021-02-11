@@ -142,7 +142,7 @@ namespace Shared
         [Role("🎃", false)]
         Spumpkin = 8796093022208,
 
-        [Role("🤡", false)]
+        [Role("🐐🌚")]
         ScapeGoat = 17592186044416
     }
 
