@@ -1371,13 +1371,15 @@ namespace Werewolf_Node
                             LastPlayersOutput = DateTime.Now;
                             msg =
                                 $"{GetLocaleString("PlayersAlive")}: {players.Count(x => !x.IsDead)}/{players.Count}\n";
+                            var loveEmojiList = new List<string> { "❤️", "🧡", "💛", "💚", "💙", "💜", "🤎" };
+                            var loveEmoji = IsDateAnywhere(14, 2, 2021) ? loveEmojiList[Program.R.Next(0, loveEmojiList.Count)] : "❤️";
                             if (ShufflePlayerList)
                             {
                                 msg += players.Where(x => x.IsDead).OrderBy(x => x.TimeDied)
                                     .Aggregate("",
                                         (current, p) =>
                                             current +
-                                            p.GetName(dead: true) + ": " + (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "") + "\n");
+                                            p.GetName(dead: true) + ": " + (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? loveEmoji : "") : "") + "\n");
 
                                 msg += players.Where(x => !x.IsDead).OrderBy(x => Program.R.Next())
                                     .Aggregate("",
@@ -1467,7 +1469,7 @@ namespace Werewolf_Node
 
                 // special roles for events
                 // valentines this time
-                if (IsDateAnywhere(14, 02, 2020) && !rolesToAssign.Any(x => x == IRole.Cupid))
+                if (IsDateAnywhere(14, 02, 2021) && !rolesToAssign.Any(x => x == IRole.Cupid))
                 {
                     var toReplace = rolesToAssign.FindIndex(x => x == IRole.Villager || x == IRole.Mason);
                     if (toReplace != -1) rolesToAssign[toReplace] = IRole.Cupid;
@@ -4806,6 +4808,8 @@ namespace Werewolf_Node
                     case ITeam.Lovers:
                         msg += GetLocaleString("LoversWin");
                         game.Winner = "Lovers";
+                        if (IsDateAnywhere(14, 2, 2021))
+                            LoversWin = new List<string> { "CgACAgQAAxkBY4AFS2Am26QAAVRzfm3kG7wxS9Mq7PFpsAACnQIAAkAwtVI_dFDRMF2c_h4E" };
                         SendWithQueue(msg, GetRandomImage(LoversWin));
                         break;
                     case ITeam.SKHunter:
