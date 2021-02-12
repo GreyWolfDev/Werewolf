@@ -1,0 +1,2161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+  <!-- Creato da @Sergio_4. Liberamente tratto dalla versione inglese di @skollwolf-->
+ <strings>
+<language name="Italiano Natale" base="Italiano" variant="Natale" owner="Sergio_4" code="it" />
+  <string key="NotInGame" deprecated="true">
+    <value>Una deliziosa cioccolata calda è pronta per essere gustata, ma non hai ancora cliccato Join. Fallo prima che finisca il tempo!</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} ha preparato la slitta! Premi Join per ricevere regali da Babbo Natale, e stai attento a non morire!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} ha preparato una slitta caotica! Premi Join per ricevere regali da Babbo Natale, e stai attento a non morire!</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>La tua cioccolata non è ancora pronta! C'è già una partita in corso, non interromperla!</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Qualcuno sembra essere impaziente... Sei già in partita! Bevi la tua cioccolata e aspetta.</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Hai ancora 1 minuto per joinare e festeggiare il Natale tutti insieme! Non farti sfuggire questa occasione.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>Mancano {0} secondi all'inizio della partita! Sbrigati, la slitta sta per decollare.</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Oh no! Il Natale è stato cancellato perché non hai aiutato a consegnare i regali!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>manca pochissimo a Natale! Aspetta un attimo mentre i ruoli vengono assegnati.</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <!-- 0 - Player name -->
+    <value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, per favore cambia il tuo nome per joinare questa partita.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Mi dispiace, non c'è più posto su questa slitta! Abbiamo già raggiunto il massimo numero di giocatori!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} si è unito. {1}/{3} giocatori, {2} minimo.</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+  <value>\n{0} Benvenuto a Werewolf! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinché io possa scriverti, devi prima avviarmi.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Non puoi scappare! Sei stato congelato a morte! Mentre aspetti la prossima partita, goditi una buona e calda cioccolata.</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} ha ceduto alla paura dei pupazzi di neve!</value>
+    <value>{0} è fuggito!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} giocatori rimanenti.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Ehi, non ti ho ancora chiesto nulla!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Non sembra che tu stia giocando...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Non riesco a trovare un giocatore con questo nome!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>Questa risposta non è valida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} ha votato per congelare {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} ha votato per bruciare {1}.</value>
+    <value>{0} pensa che {1} non dovrebbe essere qui!</value>
+    <value>{0} pensa che {1} possa essere ottimo per fare la brace.</value>
+    <value>{0} vuole vendicarsi di {1}!</value>
+    <value>{0} pensa che {1} non meriti di ricevere dei regali!</value>
+    <value>{0} fissa {1} e accende un fiammifero.</value>
+    <value>{0} sarebbe contento di vedere {1} bruciare.</value>
+    <value>{0} rovescia un secchio di benzina sulla testa di {1}.</value>
+    <value>{0} punta il suo lanciafiamme contro {1}.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} non ha votato per 2 giorni di fila e all'improvviso ha preso fuoco! Dovete continuare senza {1}.</value>
+  </string>
+<string key="TraitorTurnWolf">
+    <value>Eri la Signorina Candy Cane 🍭 (🖕) ma ora ti sei trasformata in un Pupazzo di Neve ☃️ (🐺)...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Scelta accettata.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>Babbo Natale 🎅🏻 (👳) è {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} era Babbo Natale 🎅🏻 (👳). In qualità di Aiutante di Babbo Natale 👲 (🙇), ti fai avanti per diventare il nuovo Babbo Natale 🎅🏻 (👳).</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} era l'Aiutante di Babbo Natale 👲 (🙇), e si è fatto avanti per sostituire {1} come Babbo Natale 🎅🏻 (👳).</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Ti cali nel camino di casa di {0} e vedi che è {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Chi vuoi bruciare vivo?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Chi vuoi investigare?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>A chi vuoi sparare? Proiettili rimanenti: {0}.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Chi vuoi visitare?</value>
+  </string>
+  <string key="AskSee">
+    <value>Nel camino di chi ti vuoi intrufolare?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Chi vuoi proteggere?</value>
+  </string>
+  <string key="AskEat">
+    <value>Chi vuoi congelare?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Che spirito vuoi rinsavire?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Chi vuoi scegliere come modello?</value>
+  </string>
+  <string key="AskConvert">
+    <value>A chi vuoi rovinare le feste trasformandolo in un Non-Credente?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Assicurati di parlarne con {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Sei Fulmine 🦌💧 (😾)! Sei una delle renne di babbo Natale, ma se i Pupazzi dovessero cercare di congelarti il tuo sangue nordico ti permetterà di trasformarti in Pupazzo come loro piuttosto che morire!</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Sei Jesper ✉️ (🕵️), il postino fidato di Babbo Natale. Il tuo compito è raccogliere le lettere dei bambini, ma ogni tanto decidi di ficcanasare nella corrispondenza degli abitanti del Polo per capirne la vera identità! Stai attento, i Pupazzi di Neve hanno una possibilità del 40% di vederti quando apri la posta!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Sei il Cioccolatiere 🍫 (🍻), magnifico creatore della cioccolata calda! Se i Pupazzi di Neve proveranno a mangiarti, rovescerai loro addosso la cioccolata appena preparata e, ustionati, la prossima notte non potranno attaccare.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Sei l'Angioletto 👼. Ogni notte scegli un giocatore da proteggere dai pupazzi di neve e e da Krampus. Se scegli di proteggere un pupazzo di neve o Krampus, al 50% ti congeleranno a morte!.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Sei John McClane 👮‍♂️ (🔫), il poliziotto newyorkese. Non sai come sei finito al Polo Nord, ma visto che ci sei decidi di dare una mano per salvare il Natale. Durante le festività potrai sparare a due abitanti del Polo Nord, ma stai attento, ti restano solo due proiettili!.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Sei la Befana 👵 (💋). Ogni notte ti recherai a casa di un giocatore e, al contrario di quanto racconta la tradizione popolare, non gli darai solo caramelle... Se scegli di darla al giocatore giusto, trascorrerete una serata calda davanti al camino, ma se sceglierai un Pupazzo di neve o Krampus, morirai congelata! Se i Pupazzi di neve decidono di congelarti ma sei fuori a divertirti però, ti salverai!</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Sei la Signorina Candy Cane 🍭 (🖕), l'amante di Babbo Natale! Sei dalla sua parte... per ora. Ultimamente ti senti trascurata da Babbo Natale, che pensa solo alle festa imminente, per questo se tutti i Pupazzi di Neve dovessero morire e lui non si fosse ancora fatto vivo, deciderai di cambiare schieramento e trasformarti in Pupazzo per rovinargli la festa!</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Sei un malvagio Pupazzo di Neve ☃️ (🐺)! Ogni notte sceglierai un giocatore e cercherai di congelarlo a morte. Se proverai a congelare il Cioccolatiere 🍫 (🍻) i tuoi poteri smetteranno di funzione per un turno. Se invece proverai a congelare Fulmine 🦌💧 (😾), questo si trasformerà in un Pupazzo come te!</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value>Sei Babbo Natale 🎅🏻 (👳)! Il tuo compito è assicurarti che il Natale si svolga senza problemi. Ogni notte potrai intrufolarti in casa di un giocatore e scoprire la loro identità!</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>In un mondo magico e pieno di meraviglie, tu sei un semplice Elfo 🧝.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value>Sei Ebenezer Scrooge 👴😡 (👺). Detesti il Natale con tutto te stesso, e se venissi bruciato, vincerai in automatico!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>Sei Donato 🦌💥 (👶), la renna biricchina! All'inizio del gioco sceglierai un giocatore, e se dovesse morire impazzirai e ti trasformerai in un Pupazzo di Neve!.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>Sei Mamma Natale 🤶🏻 (👁). Conosci l'identità di tuo marito, Babbo Natale, e il tuo compito è aiutarlo!.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>Sei l'Aiutante di Babbo Natale 👲 (🙇), e se dovesse morire, prenderai il suo posto!</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value>Sei un Non-Credente 👻 (👤). Il tuo obiettivo è rovinare il Natala a tutti trasformandoli in Non-Credenti come te (tranne i pupazzi e Krampus!). Se a fine partita tutti i giocatori sono Non-Credenti, vincete!</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value>Sei lo Spirito del Natale 🎄 (💂) e il tuo lavoro e trovare i Non-Credenti 👻 (👤). Se cercano di rovinarti il Natale convertendoti, il loro membro più recente morirà. Ogni notte sceglierai un giocatore da controllare, e se sono Non-Credenti, li ucciderai!</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+      Il tramonto si avvicina, e tutti i cittadini del Polo Nord si riuniscono per decidere chi bruciare.
+Avete {0} secondi per votare!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value>Un'altra gelida notte si è conclusa... Ti alzi per scaldarti vicino al camino e fare colazione con una bella cioccolata. Hai {0} secondi prima di uscire di casa.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value>Un'altra notte sta per cominciare al Polo Nord! Mentre gli elfi si riposano, i ruoli notturni hanno {0} secondi per decidere cosa fare.</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>I cittadini del Polo Nord hanno votato. {0} sarà bruciato vivo. RIP {1}.</value>
+    <value>I cittadini del Polo Nord sono d'accordo. {0} sarà bruciato vivo. RIP {1}.</value>
+  </string>
+  <string key="LynchTie" >
+    <value>Gli abitanti del Polo Nord non riescono a metatarsi d'accordo, così ognuno torna nella propria dimora, e nessuno verrà bruciato...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>C'è qualcosa che non quadra... nessuno ha votato!</value>
+  </string>
+ <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value>Al mattino i cittadini del Polo Nord si radunano, ma non vedono {0} nei paraggi. Si recano a casa sua e trovano {0} congelato, con una calza conficcata in gola. Jesper ✉️ (🕵️) è morto.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value>Il sole è morto al Polo Nord, e gli abitanti sono costernati! {0}, l'Angioletto 👼 è stato trovato congelato a morte.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value>Quando tutti lasciano la propria baita la mattina, trovano sparsi per le strade i pezzi del corpo di {0}. John McClane 👮‍♂️ (🔫) è stato congelato a morte e spezzettato dai Pupazzi!</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value>Quando i cittadini del Polo Nord si svegliano, un'olezzo aleggia per le strade. È il cadavere congelato, ma pur sempre in putrefazione, di Babbo Natale 🎅🏻 (👳)! {0} è morto.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value>Tutti si risvegliano e... c'è uno strano silenzio per le strade. {0}, il Cioccolatiere 🍫 (🍻) è morto! Per fortuna la sua cioccolata calda ha scottato i Pupazzi, che la prossima notte staranno fermi per riprendersi.</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value>I cittadini del Polo Nord si risvegliano e trovano un corpo congelato in mezzo alla strada, attorno a lui, pile e pile di pacchi regalo. Ma attenzione, non è davvero Babbo Natale, ma Jack Skellington, che si fingeva tale. R.I.P. {0}.</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Il sole sorge e tutti tornano a lavoro, per assicurarsi che i preparativi per il Natale proseguano secondo i piani. Tutti tranne {0}, che è stato congelato a morte la scorsa notte. Sarà un natale senza \n{1}.</value>
+  </string> 
+  <string key="HunterKilledCultist">
+    <!-- 0 - victim name -->
+    <value>Una strana luce viene da casa di {0}... Gli abitanti del Polo vanno ad investigare e trovano il suo corpo elettrificato dalle luminarie, e addobbi sparsi per tutta casa. Un Non-Credente 👻 (👤) è stato ucciso dallo Spirito del Natale 🎄 (💂)!</value>
+  </string>
+ <string key="NoAttack" >
+    <value>Gli Elfi si svegliano e tirano un sospiro di sollievo. Sembra che stanotte non sia morto nessuno.</value>
+  	<value>Chi è morto stanotte? La risposta è nessuno. Tutti restano sconvolti e delusi nell'apprendere la notizia.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>I Pupazzi di Neve ☃️ (🐺) hanno cercato di congelarti, ma visto che eri Fulmine 🦌💧 (😾), ti unisci a loro, trasformandoti anche tu in Pupazzo!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>I Pupazzi di Neve sono: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value>Avete cercato di congelare {0}... ma era Fulmine 🦌💧 (😾), così lo avete trasformato in Pupazzo!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value>Oh no! I malvagi Pupazzi di Neve ☃️ (🐺) ti hanno congelato.</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value>Oh no! {0} era il Cioccolatiere 🍫 (🍻)! Questo significa che la prossima notte dovrai rimanere a casa e non potrai congelare nessuno.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>Hai cercato di proteggere un Pupazzo di Neve ☃️ (🐺) e sei stato congelato a morte!</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value>Hai salvato la vita di {0}! Bravo angioletto!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value>{0} non è stato attaccato, ma lo hai protetto dai brutti sogni mentre dormiva.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>Hai cercato di proteggere {0}, ma non era a casa!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>L'angioletto 👼 è venuto da te la scorsa notte, e ti ha protetto da un attacco dei Pupazzi di Neve!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+ <value>La Befana 🧹 (💋) ha scelto la notte sbagliata per restare a casa. {0} è stata congelata a morte dei Pupazzi!!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value>Che strano... {0} non era a casa! Non hai congelato nessuno stanotte...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value>Ti intrufoli a casa di {0} per lasciargli delle caramelle e forse qualcosina di più, ma ti ritrovi davanti un malvagio Pupazzo di Neve. R.I.P.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value>La befana vien di notte, con le calze a rete rotte. La ritrova la mattina, sul suo corpo c'è la brina. {0} voleva dare la sua caramella alla persona sbagliata. Spiace :(</value>
+  </string>
+   <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>{0} si intrufola in casa di {1}, pronta a fargli assaggiare le sue caramelle, ma si ritrova davanti i temibili Pupazzi di Neve, che la congelano prima che possa raggiungere la sua scopa, e la congelano.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value>Sai che {0} non è un Pupazzo di Neve, visto che si è fatto una scorpacciata con le tue caramelle la scorsa notte.</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>La scorsa notte la Befana è venuta a trovarti! Che carino da parte sua farti assaggiare la sua caramella.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value>Hai beccato {0} che ficcanasava per le vie del Polo Nord, deve essere Jesper ✉️ (🕵️)!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>Il tuo ficcanasare nella posta ha rivelato che {0} è {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value>Sembra che a {0} non piacesse la caramella della Befana! {1} è morta.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>All'improvviso si sente uno sparo. Gli Elfi si girano e vedono {0} in piedi davanti al corpo di {1}, pistola ancora puntata contro il suo corpo. {2}.</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value>Il Pupazzo di Neve è riuscito a fermare il Natale e ha vinto!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value>I Pupazzi di Neve sono riusciti a fermare il Natale e hanno vinto!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value>I cittadini del Polo Nord hanno salvato il Natale e hanno vinto!</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value>Oh no! Avete bruciato Ebenezer Scrooge 👴😡 (👺)! Ha vinto lui, stupidi!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Giocatori in vita, ruoli e squadre:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value>{0} ha votato per rovinare il Natale a {1} e trasformarlo in un Non-Credente</value>
+  </string>
+   <string key="CultConvertCultHunter">
+    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 1 - CultHunter's name -->
+    <value>{0} è stato mandato a fare il lavoro sporco, e cerca di rovinare il Natale a {1}... ma, {1} è lo Spirito del Natale 🎄 (💂)! {0} è morto!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - Number of cultists left -->
+    <value>{0} è venuto a casa tua la scorsa notte per rovinarti il Natale e trasformarti in un Non-Credente....  Lo infondi così tanto con la magia del Natale, che finisce per morire! Un Non-Credente è morto, ne restano {1}!</value>
+  </string>
+ <string key="CultConvertYou">
+    <value>I Non-Credenti 👻 (👤) ti hanno convertito nel loro triste culto :( Ora anche tu sei un Non-Credente 👻 (👤). Ogni notte avrete una possibilità di convertire qualcuno al vostro patetico stile di viranti-natalizio.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of cultists -->
+    <value> Non-Credenti: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new cultist's name -->
+    <value>{0} si è unito ai Non-Credenti 👻 (👤)!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest cultist's name -->
+    <!-- 1 - target name -->
+    <value>{0} era il mandante di questa notte, ma non ha trovato {1} a casa!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value>Tutti i Pupazzi di Neve e Krampus sono morti, e i cittadini rimasti sono stati convertiti in Non-Credenti... I Non-Credenti 👻 (👤) hanno distrutto lo spirito del Natale e vinto!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Sei andato a trovare {0} per controllare la sua fede nel Natale, ma lo hai trovato morte!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <!-- 0 - target name -->
+    <value>Ti addentri in casa di {0} e lo trovi mentre con un martello spacca le palline dell'albero! È un Non-Credente! Afferri il tuo fedele albero-giavellotto e lo infilzi.</value>
+    <value>Ti addentri in casa di {0} e lo trovi mentre appende a testa in giù le figure del presepe! È un Non-Credente! Afferri il tuo fedele albero-giavellotto e lo infilzi.</value>
+    <value>Ti addentri in casa di {0} e lo trovi intento a sabotare le lucine natalizie! È un Non-Credente! Afferri il tuo fedele albero-giavellotto e lo infilzi.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>Ti rechi a casa di {0} e trovi il salone addobbato con tante lucine e un alto albero. Ora sai che {0} crede nel Natale.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>Il modello di {0} è morto! In preda alla rabbia si trasforma in un malvagio Pupazzo di Neve!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} è morto! In preda alla rabbia ti trasformi in un malvagio Pupazzo di Neve! I tuoi compagni sono: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>un Elfo 🧝</value>
+  </string>
+  <string key="Drunk">
+    <value>il Cioccolatiere 🍫 (🍻)</value>
+  </string>
+  <string key="Harlot">
+    <value>la Befana 👵 (💋)</value>
+  </string>
+  <string key="Seer">
+    <value>Babbo Natale 🎅🏻 (👳)</value>
+  </string>
+  <string key="Traitor">
+    <value>la Signorina Candy Cane 🍭 (🖕)</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>l'Angioletto 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Jesper ✉️ (🕵️)</value>
+  </string>
+  <string key="Wolf">
+    <value>Pupazzo di Neve ☃️ (🐺)</value>
+  </string>
+  <string key="Cursed">
+    <value>Fulmine 🦌💧 (😾)</value>
+  </string>
+  <string key="Gunner">
+    <value>John McClane 👮‍♂️ (🔫)</value>
+  </string>
+  <string key="Tanner">
+    <value>Ebenezer Scrooge 👴😡 (👺)</value>
+  </string>
+  <string key="Fool">
+    <value>Jack Skellington 💀 (🃏)</value>
+  </string>
+  <string key="WildChild">
+    <value>Donato 🦌💥 (👶)</value>
+  </string>
+  <string key="Beholder">
+    <value>Mamma Natale 🤶🏻 (👁)</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>l'Aiutante di Babbo Natale 🙇</value>
+  </string>
+  <string key="Cultist">
+    <value>un Non-Credente 👻 (👤)</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Lo Spirito del Natale 🎄 (💂)</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>👻 Fuggito </value>
+  </string>
+  <string key="Dead">
+    <value>💀 Morto</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 In vita</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Giocatori in vita</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>un Omino di Marzapane 🍪 (👷)</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Sei un Omino di Marzapane 🍪 (👷). Cucinati nello stesso forno, conosci gli altri Omini di Marzapane.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+   <value>Gli abitanti del Polo Nord si svegliano, e trovano il corpo congelato di {0} circondato di briciole. Un Omino di Marzapane 🍪 (👷) è morto!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>Gli Omini di Marzapane 🍪 (👷) sono: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest cultists name -->
+    <value>Il vostro membro più recente si dirige a casa di {0} per trasformarlo in un Non-Credente, ma si trova davanti un corpo congelato e ghiaccio dappertutto.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>I Pupazzi di Neve si dirigono a casa di {0} per congelarlo a morte, ma si trovano davanti un'aurea lucente. È il potere dell'Angioletto 👼! I Pupazzi se ne tornano a casa sconfitti.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Inviate {0} a casa di {1} per convertirlo, ma la sua fede nel Natale è troppo forte! Non siete riusciti a convertirlo.</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, un giocatore con il nome "{0}" è già in gioco. Per favore cambia il tuo nome e premi di nuovo Join per unirti alla celebrazione del Natale!</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Ti intrufoli a casa di {0} per lasciargli delle caramelle e forse qualcosina di più... ma mentre te ne vai, noti nel camino i resti carbonizzati di alcuni festoni... Sei stata a casa di un Non-Credente!</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Gli abitanti del Polo Nord di svegliano e notano che {0} non si vede in giro... Si recano a casa sua e ne trovano i resti congelati! R.I.P. {0}</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Che strano... {0} non si è presentato alla colazione degli Omini di Marzapane stamattina...</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Fuggire mentre il gioco è in corso è stato disabilitato dall'admin del gruppo!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>è morto</value>
+  </string>
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} È stato aggiunto alla lista degli admin. usa /config per cambiare le impostazioni del gruppo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>Sei già nella partita! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Il tuo gruppo è stato settato per far cominciare più partite... Uccisioni extra.</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Il gruppo è attualmente in lista d'attesa. Posizione:{0} / {1}</value>
+  </string>
+  <string key="MaintBreak" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @greywolfdev per altre informazioni.</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} È un gruppo ufficiale, ed ha saltato la lista d'attesa!</value>
+  </string>
+  <string key="NoGame">
+    <value>Non ci sono partite in corso. Cominciane una!</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Solo gli admin del gruppo possono usare questo comando. Chiedi al creatore o ad altri admin.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Dopo questa partita, mi spegnerò per una manutenzione.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Dopo questa partita, mi spegnerò momentaneamente per un aggiornamento (automatizzato).</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>UserId nullo.  Sei sicuro di aver mandato questo comando come risposta?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <value>{0} È gia' un admin!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <value>{0} Non è un admin!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <value>{0} È stato rimosso dalla lista degli admin.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <value>Lingua settata su {0}</value>
+  </string>
+    <string key="NoSeer">
+	<value>Non c'è Babbo Natale!</value>
+  </string>
+  <string key="TimesUp">
+	<value>È scaduto il tempo!</value>
+  </string>
+ <!-- new strings june 10 2016 -->
+   <string key="RoleInfoCupid">
+    <value>Sei Vischiolina 🧝‍♀️🌿 (🏹). Scegli due giocatori all'inizio del gioco, e li fai baciare. Questi si innamoreranno! Se uno di loro muore, l'altro si suiciderà per la disperazione. Se sono gli ultimi due rimasti in vita, solo loro vincono e tutti gli altri perdono.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Sei Donnola 🦌🎭 (🎭)! Hai un pizzico di magia in te, che ti farà trasformare in un altro giocatore. Scegli un giocatore all'inizio della partita, se questo muore prenderai il suo posto!</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Sei lo Schiaccianoci 💂 (🎯)! Normalmente passeresti il tuo tempo alle prove del balletto, ma i tempi che corrono al Polo Nord non te lo permettono. Se i Pupazzi di Neve cercano di congelarti, avrai la possibilità di sparare ad uno di loro. Se muori in un altro modo, avrai la possibilità di scegliere a chi sparare.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Sei Krampus 👹 (🔪), pronto a punire gli elfi che si comportano male. Ogni notte sceglierai qualcuno da uccidere. Se i Pupazzi di Neve cercheranno di congelarti, scioglierai uno di loro e vivrai.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Ti ritrovi sotto il vischio in compagnia di {0}, vi baciate e tra di voi nasce l'amore. Se uno di voi muore, l'altro si suiciderà per il dolore. Se uno di voi vince, anche l'altro vincerà.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>I cittadini del Polo Nord hanno scelto di bruciarti! È la tua ultima possibilità, scegli a chi sparare!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} cerca il fucile mentre le fiamme si fanno alte, ma non fa in tempo e muore in mezzo al fuoco.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} tira fuori il fucile e si guarda intorno... ma non sa decidersi e dunque non spara... Muore senza prendere una decisione.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Mentre le fiamme si alzano, {0} tira fuori il fucile, mira e spara a {1}! {1} cade a terra, morto. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Sei stato accuse! Nei tuoi ultimi attimi di vita puoi scegliere qualcuno a cui sparare... Scegli in fretta!</value>
+  </string>
+<string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>Il caldo era troppo per {0}, tanto che non ha neanche raggiunto il suo fucile...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>Mentre le fiamme si alzano, {0} tira fuori il fucile, si guarda in torno, ma decide di non sparare a nessuno e accettare il proprio destino.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Mentre le fiamme si alzano, {0} tira fuori il fucile, mira e spara a {1}! {1} cade a terra, morto. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>I Pupazzi di Neve hanno cercato di congelare lo Schiaccianoci 💂 (🎯) la scorsa notte, ma lo Schiaccianoci è riuscito a sparare ad uno di loro! {0}, il Pupazzo di Neve, è morto.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>Il Pupazzo di Neve ha cercato di congelare lo Schiaccianoci 💂 (🎯) la scorsa notte, ma lo Schiaccianoci è riuscito a sparargli! {0} è morto.</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>I Pupazzi di Neve hanno cercato di congelare qualcuno, ma sono stati sorpresi da Krampus 👹 (🔪)! {0} è morto nella lotta!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Sembrava una notte tranquilla per {0}, ma si sbagliava. I Cittadini del Polo Nord si riuniscono al mattino e trovano il corpo di {0} ridotto a pezzettini e privo del fegato... Krampus 👹 (🔪) ha colpito di nuovo! {1}</value>
+  </string> 
+ <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Hai cercato di rubare il fegato di {0} per la tua collezione, ma sei stato respinto dall'Angioletto 👼! Niente fegato per te stanotte...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+    <value>I Non-Credenti 👻 (👤) mandano {0} a convertire {1}, ma all'improvviso si sente uno colpo e il corpo di {0} vola fuori dalla finestra, impalato da un albero di Natale! {0} è morto...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Cultist's name -->
+    <!-- 1 - target's name -->
+     <value>I Non-Credenti 👻 (👤) mandano {0} a convertire {1}, ma all'improvviso si sentono dei rumori e schizzi di sangue e pezzettini del corpo di {0} volano dalla finestra! {0} è morto.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Hai provato a proteggere Krampus 👹 (🔪) e lui ti ha ridotto a pezzettini... Sei morto.</value>
+  </string>
+<string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Ti intrufoli a casa di {0} per lasciargli delle caramelle e forse qualcosina di più... Sembra andare tutto una favola finché {0} non tira fuori un coltello e inizia a pugnalarti. Sei morta.</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>I cittadini del Polo Nord trovano il corpo di {0}, fatto a pezzettini. {0} è morta.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>Donnola 🦌🎭 (🎭), {0}, si è trasformato in un Omino di Marzapane 🍪 (👷), proprio come te!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} è morto, e ti sei trasformato in un Omino di Marzapane 🍪 (👷). I tuoi compagni Omini (se ci sono) sono: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new cultist's name -->
+    <value>Donnola 🦌🎭 (🎭), {0}, è diventato un Non-Credente 👻 (👤), proprio come te!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, e ti sei trasformato in un Non-Credente 👻 (👤). I tuoi compagni (se ci sono) sono: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Donnola 🦌🎭 (🎭), {0}, si è trasformato in un malvagio Pupazzo di Neve ☃️ (🐺), proprio come te!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, e ti sei trasformato in un malvagio Pupazzo di Neve ☃️ (🐺). I tuoi amici Pupazzi (se ci sono) sono: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>L'ultima persona rimasta in vita è Krampus 👹 (🔪)! Ha vinto!</value>
+  </string>
+  <string key="AskKill">
+    <value>Chi vuoi uccidere stanotte?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Con l'ultimo respiro di {0}, {1} accorre per vedere il suo cadavere e piange. Non riesce a sopportare la morte dell'amato, prende la punta dall'albero vicino e la usa per suicidarsi. {2}</value>
+</string>
+  <string key="AskDoppelganger">
+    <value>Di chi vuoi prendere il posto alla sua morte?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Chi vuoi far baciare sotto il vischio? Scegli il primo abitante.</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Chi vuoi far baciare sotto il vischio? Scegli il secondo abitante.</value>
+  </string>
+  <string key="Hunter">
+    <value>lo Schiaccianoci 💂 (🎯)</value>
+  </string>
+  <string key="Cupid">
+    <value>Vischiolina 🧝‍♀️🌿 (🏹)</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Krampus 👹 (🔪)</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Donnola 🦌🎭 (🎭)</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Sei Donato 🦌💥 (👶). Il tuo modello è {0}.</value>
+  </string>
+  <string key="LoversWin">
+    <value>L'amore Natalizio trionfa! Gli Innamorati hanno vinto!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+      <value>Nel bel mezzo del Polo Nord, i cittadini ritrovano {0}, morto stecchito. Sembra che abbia fatto visita allo Schiaccianoci 💂 (🎯)! Ben fatto, {1}.</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Un Non-Credente 👻 (👤) ha cercato di farti rinnegare il Natale, ma la tua fede in Babbo Natale era troppo forte.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Sei già in lista d'attesa per {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Sei stato aggiunto alla lista d'attesa per {0}. Ti contatterò appena una partita sta per cominciare. </value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>Una nuova partita sta per cominciare su {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>È la mattina del 25 dicembre. Le ultime due persone rimaste in vita si incontrano al centro del Polo Nord. {0} guarda {1}, ride sadicamente e tira fuori un pugnale. {1} è morto.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Tutti nel villaggio sono morti....  non c'è niente ad eccezione dei corpi rimasti a terra. Nessuno ha vinto in questa partita.. A parte gli avvoltoi.</value>
+  </string>
+ <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Come il sole sorge sulle colline innevate, {0} e {1} si ritrovano al centro del Polo Nord. {0} tira fuori il puntale e si lancia contro {1}. {1} tira fuori il fucile e spara un colpo dritto in faccia a {0}, proprio mentre {0} conficca il suo pugnale al centro del cuore di  {1}. Sono morti entrambi. Al Polo Nord tutto tace. Nessuno vince, che brutto finale...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Non hai fatto una scelta, quindi il bot ha scelto {0} per te.</value>
+  </string>
+  <string key="Won">
+    <value>Vinto</value>
+  </string>
+  <string key="Lost">
+    <value>Perso</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Il giocatore {0} è stato ucciso per non aver votato {1} volte nelle ultime 24 ore. A Natale non si dorme!</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Sei un Elfo 🧝! Tutto ciò che vuoi per natale è impacchettare i regali e rendere felici i bambini. Ogni giorno avrai la possibilità di bruciare un Pupazzo di Neve.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Sei Babbo Natale 🎅🏻 (👳)! Ho Ho Ho! Il tuo compito è assicurarti che tutto fili liscio il giorno di Natale. Ogni notte avrai potrai scoprire se un giocatore è stato cattivo o meno, e il suo ruolo.</value>
+  </string>
+  <string key="AboutWw">
+    <value>Sei un malvagio Pupazzo di Neve ☃️ (🐺)! Hai una vita molto breve durante l'inverno, ma sei determinato a distruggere il natale prima di scioglierti. Ogni notte sceglierai un giocatore da congelare a morte. Ma attento, se cerchi di congelare il Cioccolatiere ti scotterai e rimarrai fermo per una notte. Se cerchi di congelare Fulmine, si unirà alla tua squadra!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Sei la Befana 👵 (💋). Ogni notte ti infilerai nella casa di un abitante con le calze a rete rotte, e gli farai assaggiare la tua caramella. Se visiti un giocatore che è stato scelto anche dai Pupazzi di Neve, morirai anche tu congelata a morte. Ma se sei fuori casa e i Pupazzi vengono a cercarti, non ti troveranno.</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Sei il Cioccolatiere 🍫 (🍻). Sei come un elfo, ma con una speciale passione per la cioccolata. Se i Pupazzi di neve sceglieranno di congelarti, morirai, ma solo dopo averli scottati con la tua cioccolata, e fermandoli dall'agire per una notte.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Sei Fulmine 🦌💧 (😾)! Sei una delle renne di babbo Natale, ma se i Pupazzi dovessero cercare di congelarti il tuo sangue nordico ti permetterà di trasformarti in Pupazzo come loro piuttosto che morire!</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Sei la Signorina Candy Cane 🍭 (🖕), l'amante di Babbo Natale! Sei dalla sua parte... per ora. Ultimamente ti senti trascurata da Babbo Natale, che pensa solo alle festa imminente, per questo se tutti i Pupazzi di Neve dovessero morire e lui non si fosse ancora fatto vivo, deciderai di cambiare schieramento e trasformarti in Pupazzo per rovinargli la festa!</value>
+  </string>
+  <string key="AboutGA">
+    <value>Sei l'Angioletto 👼. Ogni notte scegli un giocatore da proteggere dai pupazzi di neve e e da Krampus. Se scegli di proteggere un pupazzo di neve o Krampus, al 50% ti congeleranno a morte!.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Sei Jesper ✉️ (🕵️), il postino fidato di Babbo Natale. Il tuo compito è raccogliere le lettere dei bambini, ma ogni tanto decidi di ficcanasare nella corrispondenza degli abitanti del Polo per capirne la vera identità! Stai attento, i Pupazzi di Neve hanno una possibilità del 40% di vederti quando apri la posta!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Sei John McClane 👮‍♂️ (🔫), il poliziotto newyorkese. Non sai come sei finito al Polo Nord, ma visto che ci sei decidi di dare una mano per salvare il Natale. Durante le festività potrai sparare a due abitanti del Polo Nord, ma stai attento, ti restano solo due proiettili!.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Sei Ebenezer Scrooge 👴😡 (👺). Detesti il Natale con tutto te stesso, e se venissi bruciato, vincerai in automatico!</value>
+  </string>
+  <string key="AboutFool">
+    <value>Sei Jack Skellington 💀 (🃏), talmente emozionato dal Natale da credere di essere Babbo Natale. Ogni notte sceglierai un giocatore e ti verrà rivelato un ruolo casuale! Non saprai di essere Jack!</value>
+  </string>
+  <string key="AboutCult">
+    <value>Sei un Non-Credente 👻 (👤), pertanto non credi alla magia del Natale e Babbo Natale! Il tuo obiettivo è convertire tutti gli altri giocatori in Non-Credenti, tranne i Pupazzi di Neve. Se alla fine della partita tutti i giocatori sono Non-Credenti, vincete.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Sei lo Spirito del Natale 🎄 (💂) e il tuo lavoro e trovare i Non-Credenti 👻 (👤). Se cercano di rovinarti il Natale convertendoti, il loro membro più recente morirà. Ogni notte sceglierai un giocatore da controllare, e se sono Non-Credenti, li ucciderai!</value>
+  </string>
+  <string key="AboutWC">
+    <value>Sei Donato 🦌💥 (👶), la renna biricchina! All'inizio del gioco sceglierai un giocatore, e se dovesse morire impazzirai e ti trasformerai in un Pupazzo di Neve!.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Sei l'Aiutante di Babbo Natale 🙇. Lavori a stretto contatto con lui e, se dovesse morire, prenderai il suo posto.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Sei Mamma Natale 🤶🏻 (👁). Conosci l'identità di tuo marito, Babbo Natale, e il tuo compito è aiutarlo!.</value>
+  </string>
+  <string key="AboutMason">
+    <value>sei un Omino di Marzapane 🍪 (👷). Cucinati nello stesso forno, conosci gli altri Omini di Marzapane.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Sei Donnola 🦌🎭 (🎭)! Hai un pizzico di magia in te, che ti farà trasformare in un altro giocatore. Scegli un giocatore all'inizio della partita, se questo muore prenderai il suo posto!</value>
+  </string>
+  <string key="AboutCupid">
+    <value>Sei Vischiolina 🧝‍♀️🌿 (🏹). Scegli due giocatori all'inizio del gioco, e li fai baciare. Questi si innamoreranno! Se uno di loro muore, l'altro si suiciderà per la disperazione. Se sono gli ultimi due rimasti in vita, solo loro vincono e tutti gli altri perdono.</value>
+  </string>
+  <string key="AboutHunter">
+    <value>Sei lo Schiaccianoci 💂 (🎯)! Normalmente passeresti il tuo tempo alle prove del balletto, ma i tempi che corrono al Polo Nord non te lo permettono. Se i Pupazzi di Neve cercano di congelarti, avrai la possibilità di sparare ad uno di loro. Se muori in un altro modo, avrai la possibilità di scegliere a chi sparare.</value>
+  </string>
+  <string key="AboutSK">
+    <value>Sei Krampus 👹 (🔪), pronto a punire gli elfi che si comportano male. Ogni notte sceglierai qualcuno da uccidere. Se i Pupazzi di Neve cercheranno di congelarti, scioglierai uno di loro e vivrai.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para è uno sciocco programmatore a cui piace abbaiare alle persone.  Forse è stato a contatto con i lupi troppo a lungo...</value>
+  </string>
+ <string key="EndTime">
+    <value>Durata della partita: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+  <string key="Day">
+    <!--0 - Day -->
+    <value>{0} Dicembre</value>
+  </string>
+<string key="NodeShutsDown">
+    <value>Si è verificato un errore imprevisto, e questo nodo è stato spento :/\n Per dettagli, vai su @werewolfsupport</value>
+  </string>
+<string key="SentPrivate">
+    <value>Ti ho scritto in privato</value>
+  </string>
+  <string key="StartPM">
+    <value>Scrivimi un messaggio in privato così posso risponderti: @werewolfbot</value>
+  </string> 
+  <string key="PMTrue">
+    <value>Grazie per avermi startato! Posso scriverti in privato ora.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Devi rispondere all'utente che vuoi cacciare!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Cosa vorresti fare?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Puoi entrare in partita solo dentro un gruppo!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Puoi cominciare una partita solo dentro un gruppo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo di Risposta: {0}\nMessaggi per secondo: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Che lingua?\nAttuale: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Che variante?\nAttuale: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Lingua impostata a {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Quale file di linguaggio vuoi avere?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Non ci sono nodi online al momento, per favore riprova più tardi</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Devi usare questo comando in un gruppo!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Non sei un admin globale...</value>
+  </string>
+  <string key="NotPara">
+    <value>Tu non sei Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sì</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Ammesso</value>
+  </string>
+  <string key="Disallow">
+    <value>Non Ammesso</value>
+  </string>
+  <string key="Show">
+    <value>Mostra</value>
+  </string>
+  <string key="Hide">
+    <value>Nascondi</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Solo Normale</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>A scelta del Giocatore</value>
+  </string>
+  <string key="ShowNone">
+    <value>Non mostrare nessuno</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostra solo i giocatori in vita</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostra tutti i giocatori</value>
+  </string>
+  <string key="Cancel">
+    <value>Annulla</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>{0}fuggire dopo l'inizio della partita</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Giocatori massimi impostati a {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostrare i ruoli alla morte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>I ruoli verranno {0} alla morte.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Che modalità di gioco vuoi che giochi questo gruppo?\nAttualmente: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modalità di gioco impostata a {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Quali ruoli vuoi che siano mostrati alla fine della partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Ruoli mostrati alla fine impostati a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Scegli il tempo base (in secondi) per il giorno. Questo verrà modificato in base al numero di giocatori.\nTempo minimo aggiunto in base ai giocatori è 60 secondi.  Impostazione base: {0}\nAttuale: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Tempo base del giorno impostato a {0} secondi</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Scegli quanto dovranno durare le notti in secondi. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Le notti dureranno {0} secondi</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Imposta il tempo (in secondi) per il linciaggio di giorno. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>I linciaggi dureranno {0} secondi</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Ammettere Jack Skellington in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Jack Skellington come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Ammettere Ebenezer Scrooge in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Ebenezer Scrooge come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Ammettere i Non-Credenti in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Non-Credente come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Grazie mille, Abbi una bella giornata :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Di che lingua si vuole cercare un gruppo in cui giocare?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Questi sono i gruppi per {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membri</value>
+  </string>
+  <string key="StartMe">
+    <value>Per favore startami così potrò scriverti in privato</value>
+  </string>
+    <string key="PlayerNoPM">
+    <value>{0} non ha startato il bot, ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <value>Hai aderito con successo al Natale nel gruppo {0}</value>
+  </string>
+    <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+  <!-- Update 4.0-->
+ <string key="RoleInfoMayor">
+    <value>Sei Rudolph 🦌🔴 (🎖), il capitano delle renne! Dopo esserti scoperto il naso i tuoi voti varranno doppio! Usa questa abilità saggiamente per aiutare Babbo Natale!</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Sei Arthur Natale 🥛 (👑), il figlio di Babbo e Mamma Natale. Se gli abitanti del Polo Nord dovessero decidere di darti fuoco, realizzerebbero il loro errore in tempo e ti salveresti! Se dovesse succedere di nuovo però non potrai salvarti!</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Sei l'Elfo Buddy 🧝‍♂️🍀 (🤕)! ADORI il Natale, tanto da non essere lucido! Quando voti hai il 50% di possibilità di sbagliare! Oops.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Sei il Vecchio Uomo d'Inverno 🌬 (🔮). Sei nella Squadra dei Pupazzi di neve. Il tuo potere è vedere ogni notte se un abitante è un Pupazzo o Babbo Natale. Non saprai vedere altri ruoli.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Sei il Meteorologo 👨‍💼 (⚒)! Una volta in tutta la partita puoi annunciare un'ondata di calore, che farà rimanere i Pupazzi di Neve a casa.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Sei Jack Frost 🌨 (⚡️), il Re dell'Inverno. Tutto ciò che tocchi diventa gelido. Come I tuoi sudditi Pupazzi di Neve, ogni notte puoi scegliere un giocatore da congelare a morte, ma avrai anche una possibilità del 20% di trasformare quel giocatore in un membro della tua armata!</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Awwww sei Frosty il Pupazzo di Neve ❄️ (🐶)! Sei il Pupazzo più carino e freddolino! Se muori gli altri Pupazzi si vendicheranno uccidendo due abitanti la notte seguente.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Gli abitanti del Polo Nord mettono sù la legna per il rogo di {0}, ma si rendono conto che si tratta di Arthur Natale 🥛 (👑) e decidono di spegnere il fuoco... per questa volta.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Cerchi di guardare {0} nella tua palla di neve, ma non riesci a capire molto... Sai però che non si tratta né di un Pupazzo di Neve né di Babbo Natale…</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} si pulisce il naso con lo zoccolo e rivela la sua identità. È Rudolph 🦌🔴 (🎖)! Gli abitanti del Polo Nord ne sono molto felici, e decidono che i voti di {0} per i falò varranno doppio!</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clicca &quot;Rivelati&quot; quando decidi di scoprirti il naso e rivelare di essere Rudolph.</value>
+  </string>
+  <string key="Reveal">
+    <value>Rivelati 🔴</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Ti piacerebbe annunciare un meteo caldo per prevenire che i Pupazzi attacchino la prossima notte?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>BREAKING NEWS! In diretta dalla stazione meteorologica {0} annuncia che stanotte farà un gran caldo! Godetevi il bel tempo, i Pupazzi rimarranno a casa per evitare di sciogliersi.</value>
+  </string>
+    <string key="Mayor">
+    <value>Rudolph 🦌🔴 (🎖)</value>
+  </string>
+  <string key="Prince">
+    <value>Arthur Natale 🥛 (👑)</value>
+  </string>
+  <string key="Sorcerer">
+    <value>il Vecchio Uomo d'Inverno 🌬 (🔮)</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>l'Elfo Buddy 🧝‍♂️🍀 (🤕)</value>
+  </string>
+  <string key="Blacksmith">
+    <value>il Meteorologo 👨‍💼 (⚒)</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Jack Frost 🌨 (⚡️)</value>
+  </string>
+  <string key="WolfCub">
+    <value>Frosty il Pupazzo di Neve ❄️ (🐶)</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>I Pupazzi di Neve iniziano a congelare {0}, ma fermi! {1}, Jack Frost 🌨 (⚡️), ha deciso di congelare solo il cuore di {0} rendendolo un Pupazzo di Neve come tutti gli altri, a partire da domani notte.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>I Pupazzi di Neve ti stavano per congelare, ma sono stati bloccati da Jack Frost 🌨 (⚡️)! Jack ha deciso di congelarti il cuore e trasformarti in un Pupazzo di Neve ☃️ (🐺)! La trasformazione si completerà la prossima notte.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Quando arriva la notte, ti senti sempre più freddo. Ti guardi allo specchio, e realizzi di aver assunto le sembianze di un Pupazzo di Neve ☃️ (🐺)!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Sei Rudolph 🦌🔴 (🎖), il capitano delle renne! Dopo esserti scoperto il naso i tuoi voti varranno doppio! Usa questa abilità saggiamente per aiutare Babbo Natale!</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Sei Arthur Natale 🥛 (👑), il figlio di Babbo e Mamma Natale. Se gli abitanti del Polo Nord dovessero decidere di darti fuoco, realizzerebbero il loro errore in tempo e ti salveresti! Se dovesse succedere di nuovo però non potrai salvarti!</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Sei il Vecchio Uomo d'Inverno 🌬 (🔮). Sei nella Squadra dei Pupazzi di neve. Il tuo potere è vedere ogni notte se un abitante è un Pupazzo o Babbo Natale. Non saprai vedere altri ruoli.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Sei l'Elfo Buddy 🧝‍♂️🍀 (🤕)! ADORI il Natale, tanto da non essere lucido! Quando voti hai il 50% di possibilità di sbagliare! Oops.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Sei il Meteorologo 👨‍💼 (⚒)! Una volta in tutta la partita puoi annunciare un'ondata di calore, che farà rimanere i Pupazzi di Neve a casa.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Sei Jack Frost 🌨 (⚡️), il Re dell'Inverno. Tutto ciò che tocchi diventa gelido. Come i tuoi sudditi Pupazzi di Neve, ogni notte puoi scegliere un giocatore da congelare a morte, ma avrai anche una possibilità del 20% di trasformare quel giocatore in un membro della tua armata!</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Awwww sei Frosty il Pupazzo di Neve ❄️ (🐶)! Sei il Pupazzo più carino e freddolino! Se muori gli altri Pupazzi si vendicheranno uccidendo due abitanti la notte seguente.</value>
+  </string>
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, per questo tu ti trasformi Jack Frost 🌨 (⚡️). I tuoi compagni di squadra, se ci sono, sono: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, per questo tu ti trasformi in Frosty il Pupazzo di Neve ❄️ (🐶). I tuoi compagni di squadra, se ci sono, sono: {1}</value>
+  </string>
+   <string key="VillageTeam" deprecated="true">
+    <value>Team Babbo Natale</value>
+  </string>
+  <string key="NeutralTeam" deprecated="true">
+    <value>Team Neutro</value>
+  </string>
+  <string key="SerialKillerTeam" deprecated="true">
+    <value>Team Krampus</value>
+  </string>
+  <string key="CultTeam" deprecated="true">
+    <value>Team Non-Credente</value>
+  </string>
+  <string key="TannerTeam" deprecated="true">
+    <value>Team Scrooge</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Team Babbo Natale</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Team Neutro</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Team Pupazzi</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Team Krampus</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Team Non-Credenti</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Team Scrooge</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>I Non-Credenti 👻 (👤) mandano {0} per cercare di rovinare il Natale di {1} e trasformarlo in uno di loro, ma {0} si imbatte in un Pupazzo e muore congelato...</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} si intrufola nella casa di {1}, pronta a fargli assaggiare la sua caramella, ma si ritrova davanti Krampus, intento a staccare la testa di {1}! Krampus decide di aggiungere {0} alla sua collezione di bimbi monelli!</value>
+  </string>
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Gli abitanti del Polo Nord si svegliano e trovano il piccolo corpo di {0} congelato. frozen in. L'Aiutante di Babbo Natale 👲 (🙇) è morto.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Sembra che {0}, il Meteorologo 👨‍💼 (⚒), non l'abbia previsto. I suoi organi sono stati rivenuti in mezzo alla neve. Forse a Krampus non sono piaciute le sue ultime previsioni.</value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} è stat o trovato a faccia in giù nella neve. Krampus ha colpito ancora! Sembra non gli importi che si creda a Babbo Natale o meno. {0} era un Non-Credente 👻 (👤).</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Il giorno seguente gli abitanti del Polo Nord si rattristano nell'apprendere che {0}, the Vischiolina 🧝‍♀️🌿 (🏹), è morta. Forse Krampus odia l'amore...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>I cittadini del Polo Nord si recano alla cioccolateria con l'intento di farsi una scorpacciata, ma si trovano davanti il corpo di {0} tagliato a pezzettini. Krampus si è fatto la scorpacciata prima di loro.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>In condizioni normali {0} avrebbe scacciato Krampus, ma questa volta non ce l'ha fatta. {0} è morto.</value>
+  </string>
+
+  <string key="GunnerKilled">
+    <value>Sembra che {0} stesse dormendo sul posto di lavoro la scorsa notte. Si è sentito un colpo di pistola, ma al loro arrivo gli Elfi trovano solo il corpo senza vita di John McClane 👮‍♂️ (🔫), privo di qualche organo. Krampus ha ha fatto un'altra vittima.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>È un giorno molto triste per il Polo Nord! {0}, Rudolph 🦌🔴 (🎖), è stato trovato morto nella sua stalla! Krampus ha aggiunto un naso rosso alla sua collezione.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Arthur Natale 🥛 (👑), {0}, è stato trovato morto e senza fegato! Chiaramente a Krampus non interessa fare vittime, anche se si tratta di bambini...</value>
+  </string>
+  <string key="SeerKilled">
+    <value>I cittadini del Polo Nord si svegliano e trovano un costume rosse e bianco pieno di sangue! Krampus ha colpito di nuovo. {0} era Babbo Natale 🎅🏻 (👳).</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Una tempesta di neve si scaglia sul Polo Nord, e i suoi abitanti si accorgono che è stato commesso un errore! I Pupazzi di Neve hanno congelato a morte uno dei loro. Il Vecchio Uomo d'Inverno 🌬 (🔮) {0} è morto.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>Oh no! Donato 🦌💥 (👶) si stava aggirando tra i boschi del Polo Nord e si è imbattuto in un Pupazzo di Neve. {0} è morto.</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+    <value>I cittadini del Polo Nord si svegliano e ritrovano le interiora di {0}, Lo Spirito del Natale 🎄 (💂), sparse per la città. Ha imparato una lezione: mai visitare la casa di Krampus!</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Sembra che i Pupazzi siano rimasti a casa stanotte, ma i Non-Credenti non hanno certo fatto lo stesso, e hanno mandato {0} a fare il lavoro sporco. Peccato che si sia imbattuto in un Pupazzo di Neve! {0} ha cercato di scappare, ma il Pupazzo è stato più veloce. {0} è morto.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Cultists convert the SK-->
+    <value>La scorsa notte i Non-Credenti pensavano di convertire un cittadino al loro triste culto, peccato che abbiano bussato alla porta sbagliata. Il loro membro più recente si è trovato davanti il temibile Krampus! {0} è morto.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- used when GA guards SK -->
+    <value>{0} ha usato i suoi poteri sulla persona sbagliata! Ha deciso di proteggere Krampus, e ne ha pagato il prezzo con la vita! {0} è morto.</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <!-- used when GA guards a wolf -->
+    <value>{0} aveva buone intenzioni, ma si è recato a proteggere la persona sbagliata: un malvagio Pupazzo di Neve che ha ricambiato la cortesia congelandolo a morte.</value>
+  </string>
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{1} ha cercato di congelare {0}, ma non ha avuto possibilità contro il suo fucile. L'ultimo Pupazzo di Neve è stato abbattuto e il Natale è stato salvato!</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Mentre {0}, l'ultimo cittadino del Polo Nord, cercava di salvare il Natale, {1}, il Pupazzo di Neve, lo ha colto di sorpresa e lo ha congelato a morte! I Pupazzi hanno vinto!</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} e {0} escono allo scoperto. {1} vede {0} fare un ultimo tentativo per distruggere il Natale, tira fuori il suo albero-giavellotto e lo uccide! Il Natale è salvo!</value>
+  </string>
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Per prepararsi meglio al Natale, l'host ha deciso di ritardare l'inizio di {0} secondi! \n{1} rimasti per premere Join.</value>
+    <value>L'Omino di Marzapane ha bisogno di {0} secondi in più per cuocersi! \n{1} rimasti per premere Join.</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tutti gli ospiti sono arrivati e sono impazienti! La festa comincerà {0} secondi prima! \n{1} rimasti per premere Join.</value>
+    <value>Babbo Natale 🎅🏻 ha deciso di iniziare a distribuire i regali {0} secondi prima! \n{1} rimasti per premere Join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Solo gli admin del gruppo possono prolungare il timer più di una volta!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+    <value>Permettere ai giocatori di prolungare il timer?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+    <value>{0} prolungare il timer per i giocatori</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Scegli il tempo limite che può essere aggiunto ai giocatori con un singolo comando /extend.\nDefault: {0}\nAttualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo limite per /extend impostato a {0} secondi</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} era il Cioccolatiere 🍫 (🍻)! Sei rimasto scottato dalla sua cioccolata, perciò non potrai congelare {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Vola al Polo Nord ✈️</value>
+    <value>~Let It Snow~ ❄️</value>
+    <value>Decora 🎄</value>
+    <value>Scambia i regali 🎁</value>
+    <value>Fai un Pupazzo di Neve ⛄️</value>
+    <value>Gioca con Rudolph 🦌</value>
+  </string>
+  <string key="NotMember">
+    <value>Non puoi unirti alla partita perché non sembri essere un membro di {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Per favore non usare i comandi per joinare. Usa questo bottone invece.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} su {1} hanno deciso a chi dare fuoco.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Abilitare il Voto Segreto?\nAttuale: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Voto segreto impostato su: {0}</value>
+	</string>
+  <string key="NoAutoJoin">
+    <value>{0}, per favore ricordati di joinare cliccando sul bottone.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Non trovo il gruppo. Prova ad usare il comando nel gruppo in cui vuoi togliere l'avviso di nuova partita, oppure aggiungi il link, l'ID o l'username dopo il comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Sei stato rimosso dalla lista d'attesa per {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} hanno deciso di festeggiare il Natale negli ultimi 30 secondi.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Abilita Non-Credenti</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Abilita Ebenezer Scrooge</value>
+  </string>
+  <string key="AllowFool">
+    <value>Abilita Jack Skellington</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Abilita Linciaggio Segreto</value>
+  </string>
+  <string key="RandomMode">
+    <value>Abilita Modalità Random</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Abilita Estensione Tempo</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostra ruoli alla morte</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Abilita di fuggire</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Mostra ID all'ingresso in partita</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Mostrare ID dei giocatori dopo l'ingresso in partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} ID</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Tutte</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Abilitare la modalità casuale?\nQuando la modalità casuale è attiva, Chaos, Linciaggi segreti, Mostrare Ruoli alla Morte, e Ammetti Satanisti / Folle / Conciatore verranno impostati automaticamente ogni volta che qualcuno inizierà una partita.\nAttualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modalità casuale impostata a: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Gif Pack NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Consentire gif packs NSFW ai giocatori?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>GIF NSFW: {0}</value>
+  </string>
+ <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Come il sole sorge al Polo Nord, {0} si risveglia in un silenzio tombale. Realizzando di essere l'ultimo rimasto in vita, {0} cammina e cammina, fino a raggiungere il centro del Polo. Attorno a lui I cadaveri di tutti i cittadini bruciati. {0} sdraia in terra, cosparge il suo corpo di benzina e si dà fuoco, con un sorriso triste sul viso.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} apre gli occhi, ma invece di sentire il solito rumore degli abitanti laboriosi, sente solo il silenzio. Fissa il soffitto, realizzando pian piano la realtà dei fatti. Sono morti tutti. {0} si alza, e cammina fino al confine del Polo Nord. Una lacrima gli graffia il viso, mentre si incammina verso una nuova vita.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Che variante?\nAttuale: {0}\nSiccome hai giocato più di 500 partite puoi entrare su: </value>
+  </string>
+  <string key="Skip">
+    <value>Salta</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, e tu ti trasformi in uno Gnomo. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Vedi che {0} NON è {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Ti piacerebbe cantare "All I Want For Christmas Is You" stanotte?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>{0} comincia a cantare "All I Want For Christmas Is You" e all'improvviso tutti sono energizzati! Tutti rimarranno a cantare e danzare stanotte, e nessuno compierà la propria azione notturna.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Stanotte tutti gli abitanti del Polo Nord sono impegnati a cantare e danzare. Nessuno fa nient'altro.</value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>Ammetti il Grinch come ruolo?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Grinch come ruolo è impostato su: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Grinch può essere usato ogni notte?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Grinch sarà attivo ogni notte: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Ammetti il Grinch</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Configurazione Grinch </value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>Sei lo Scultore ❄️ (👱🌚). Passi giorno e notte tra la neve, per cui attento, Babbo Natale potrebbe scambiarti per un Pupazzo di Neve! Oh no...</value>
+  </string>
+  <string key="WolfMan">
+    <value>Scultore ❄️ (👱🌚)</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Sei lo Scultore ❄️(👱🌚). Passi giorno e notte tra la neve, per cui attento, Babbo Natale potrebbe scambiarti per un Pupazzo di Neve! Oh no...</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>Sei lo Gnomo 📿 (🐺🌝)! Lavori coi Pupazzi di Neve perché anche tu odi il Natale ma, essendoti travestito da Elfo, Babbo Natale ti scambierà per uno di loro.</value>
+  </string>
+  <string key="Lycan">
+    <value>lo Gnomo 📿 (🐺🌝)</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Sei lo Gnomo 📿 (🐺🌝)! Lavori coi Pupazzi di Neve perché anche tu odi il Natale ma, essendoti travestito da Elfo, Babbo Natale ti scambierà per uno di loro.</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>Sei Aurora Boreale 🧝‍♀️🌌 (🌀)! Ogni notte, pensando ad un abitante, guarderai le luci nel cielo del Polo Nord e queste ti diranno quale ruolo questo giocatore NON è. Ma attenzione, se le luci ti mostrano un ruolo, significa che questo si aggira per il Polo Nord!</value>
+  </string>
+  <string key="Oracle">
+    <value>Aurora Boreale 🧝‍♀️🌌 (🌀)</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Sei Aurora Boreale 🧝‍♀️🌌 (🌀)! Ogni notte, pensando ad un abitante, guarderai le luci nel cielo del Polo Nord e queste ti diranno quale ruolo questo giocatore NON è. Ma attenzione, se le luci ti mostrano un ruolo, significa che questo si aggira per il Polo Nord!</value>
+  </string>
+  <string key="RoleInfoSandman">
+    <value>Sei Mariah Carey 🎶 (💤). Una volta nel corso della partita puoi rivelarti e cantare il tuo famoso pezzo "All I Want For Christmas Is You"! Questo farà sì che tutti gli abitanti del Polo Nord danzino e cantino per tutta la notte, evitando di compiere le loro azioni notturne!</value>
+  </string>
+  <string key="Sandman">
+    <value>Mariah Carey 🎶 (💤)</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Sei Mariah Carey 🎶 (💤). Una volta nel corso della partita puoi rivelarti e cantare il tuo famoso pezzo "All I Want For Christmas Is You"! Questo farà sì che tutti gli abitanti del Polo Nord danzino e cantino per tutta la notte, evitando di compiere le loro azioni notturne!</value>
+  </string>
+  <string key="RoleInfoPacifist">
+    <value>Sei il Decoratore di alberi 🤹 (☮️). Una volta nel corso delle festività puoi convincere gli abitanti del Polo Nord a non dare fuoco a nessuno.</value>
+  </string>
+  <string key="Pacifist">
+    <value>il Decoratore di alberi 🤹 (☮️)</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>Sei il Decoratore di alberi 🤹 (☮️). Una volta nel corso delle festività puoi convincere gli abitanti del Polo Nord a non dare fuoco a nessuno.</value>
+  </string>
+ <string key="RoleInfoWiseElder">
+    <value>Sei il Bambinello 🧒 (📚)! Vuoi solo vendere i tuoi fiammiferi, ma se un Pupazzo di Neve ti attacca li userai per difenderti e cacciarlo. Potrai farlo solo una volta! Se John McClane 👮‍♂️ (🔫) o il Schiaccianoci 💂 (🎯) ti dovessero uccidere, si dispererebbero e diventerebbero dei normali Elfi.</value>
+  </string>
+  <string key="WiseElder">
+    <value>il Bambinello 🧒 (📚)</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>Sei il Bambinello 🧒 (📚)! Vuoi solo vendere i tuoi fiammiferi, ma se un Pupazzo di Neve ti attacca li userai per difenderti e cacciarlo. Potrai farlo solo una volta! Se John McClane 👮‍♂️ (🔫) o il Schiaccianoci 💂 (🎯) ti dovessero uccidere, si dispererebbero e diventerebbero dei normali Elfi.</value>
+  </string>
+  <string key="RoleInfoThief">
+    <value>Sei il Grinch 🤢 (😈)! Di notte puoi rubare il ruolo di un altro giocatore, e trasformarlo in un Elfo!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Sei il Grinch 🤢 (😈)! Siccome il Grinch è impostato per tutta la partita, hai il 50% di possibilità di rubare il ruolo di un giocatore ogni notte. Se hai successo quel giocatore diventerà il nuovo Grinch e continuerà a rubare!</value>
+  </string>
+  <string key="Thief">
+    <value>il Grinch 🤢 (😈)</value>
+  </string>
+  <string key="AboutThief">
+    <value>Sei il Grinch 🤢 (😈)! Di notte puoi rubare il ruolo di un altro giocatore, e trasformarlo in un Elfo! Se il Grinch è impostato per tutta la partita, hai il 50% di possibilità di rubare il ruolo di un giocatore ogni notte. Se hai successo quel giocatore diventerà il nuovo Grinch e continuerà a rubare!</value>
+  </string>
+  <string key="AskPacifist">
+    <value>Premi questo bottone se vuoi decorare il Polo Nord e interrompere il rogo.</value>
+  </string>
+  <string key="PacifistNoLynch">
+    <value>Il Decoratore di alberi 🤹 (☮️), {0}, indica l'albero di Natale al centro del Polo Nord, e nel momento in cui tutti vedono la sua magnificenza decidono che per oggi nessuno sarà arso vivo.</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Dato il meraviglio lavoro del Decoratore di alberi 🤹 (☮️), non ci sarà nessun linciaggio oggi!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Hai cercato di congelare {0}. Sfortunatamente, ti ha bruciato in i suoi fiammiferi. Ora sai il Bambinello 🧒 (📚) ha finito la sua scorta. La prossima volta riuscirai a congelarlo!</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>I Pupazzi di Neve hanno cercato di congelarti, ma li hai respinto con i tuoi fiammiferi. Purtroppo li hai finiti, la prossima volta sarai indifeso :(</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>{0} ha deciso di portare {1} con se nella tomba, ma dopo aver fatto la sua scelta si rende conto che {1} è solo un povero Bambinello 🧒 (📚)! Pentendosi immediatamente, decide di lasciar cadere il fucile e morire come un semplice Elfo 🧝‍♂️.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>All'improvviso si sente un colpo di pistola! Gli Elfi si voltano e vedono John McClane 👮‍♂️ (🔫) in piedi accanto al corpo di {1}. Solo in quell'istante {0} si rende conto di aver ucciso il povero Bambinello 🧒 (📚). Pentito, {0} decide di rinunciare alla vita da poliziotto e continuare la sua permanenza al Polo Nord come Elfo 🧝‍♂️.</value>
+  </string>
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Hai cercato di rubare il ruolo di {0}, ma sfortunatamente hai fallito...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Hai cercato di rubare il ruolo di {0}, ma sfortunatamente è già morto...</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - The new role -->
+    <value>Il tuo ruolo è stato rubato! Ora sei {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Hai rubato il ruolo di {0}! Complimenti!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} non è più nella tua squadra, mentre {1} è diventato un Omino di Marzapane!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>I tuoi compagni di squadra, se ci sono, sono: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} non è più nella tua squadra, mentre {1} è diventato un Non-Credente!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} non è più nella tua squadra, mentre {1} è diventato un Pupazzo di Neve!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>I tuoi compagni di squadra, se ci sono, sono: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>Come {0} vagò intorno per il Polo Nord, si rese conto che non ci sono più ruoli divertenti da rubare. Lasciò subito il Polo Nordin cerca di altri villaggi in cui ricominciare la sua illustre carriera.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Il tuo bersaglio del furto è ora {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>A chi vuoi rubare il ruolo?</value>
+  </string>
+  
+   <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} Voti sono stati assegnati a {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Il linciato di oggi:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} Voti assegnati a {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Linciaggio segreto: Numero di voti</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Quando il linciaggio segreto è attivo, mostrare il numero di voti alla fine del linciaggio?\nAttualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Quando il linciaggio segreto è attivo, il numero di voti alla fine del linciaggio sarà: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Linciaggio segreto: Votanti</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, Far vedere il nome dei votanti di ogni giocatore votato?\nAttualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Strano... Appena cominciate a discutere su chi convertire stanotte, vi rendete conto che {0} non c'è! Chissà come mai...</value>
+  </string>
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Decora! 🌲➡️🎄</value>
+  	<value>Accendi l'albero! ⚡️🎄</value>
+  	<value>Metti dei 🎁 sotto l'🎄</value>
+  	<value>Metti  la 🌟 in cima all'🎄</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  	<value>'Non è bello bruciare le persone, piuttosto balliamo attorno all'albero di Natale!' Dice il Decoratore di alberi 🤹 (☮️) e all'improvviso tutti decidono di lasciar perdere il rogo.</value>
+  </string>
+  <string key="ThiefStoleYourRoleThief">
+    <value>Il tuo ruolo è stato rubato! Ora sei il nuovo Grinch 🤢 (😈) e potrai rubare il ruolo a qualcuno la prossima notte!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Il tuo ruolo è stato rubato! Ora sei un semplice Elfo 🧝.</value>
+  </string>
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Forse sei stato monello quest'anno? Krampus ti ha ucciso!</value>
+  </string>
+  <string key="ThiefTeamEnd">
+  <value>Team Grinch</value>
+  </string>
+  <string key="StealKiller">
+    <value>Hai cercato di rubare il ruolo a Krampus! Ti ha visto aggirarti attorno a casa sua, e ha deciso di farti una trappola e ucciderti.</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>Il Grinch 🤢 (😈), {0}, ha cercato di rubare il ruolo a Krampus! Ora non ha più gli organi!</value>
+  </string>
+   <string key="BeholderSeerStolen">
+	<value>Il Grinch 🤢 (😈) ha rubato il ruolo a Babbo Natale! {0} adesso è Babbo Natale, mentre {1} non lo è più.</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+  <value>Sei Cometa 🦌💫 (🤯), la renna più giovane e più energica del Polo Nord. Il Natale si sta avvicinando e ti senti tremendamente emozionata, per questo combini un gran macello e fai sì che gli abitanti del Polo votino due volte!</value>
+  </string>
+  <string key="AskTroublemaker">
+  <value>Vuoi affrettare i preparativi del Natale?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+  <value>{0}, Cometa 🦌💫 (🤯) sta creando una gran confusione, per questo gli abitanti del Polo Nord voteranno due volte oggi!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+  <value>A causa di Cometa 🦌💫 (🤯), oggi gli abitanti del Polo voteranno due volte!</value>
+  </string>
+  <string key="ChemistBrewing">
+  <value>Mentre gli altri elfi si preparano per la notte, tu sei ancora indaffarata in cucina a preparare i tuoi fenomenali biscotti natalizi per la prossima notte. Assicurati di non attirare i Pupazzi di Neve con il loro profumino!</value>
+  </string>
+  <string key="AskChemist">
+  <value>Con chi vuoi condividere i tuoi strepitosi biscotti stanotte?</value>
+  </string>
+  <string key="ChemistTargetDead">
+  <value>Sei andata a casa di {0} per mangiare dei biscotti insieme, ma quando sei arrivato erano già morti!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+  <value>Sei stato visitato da Sugarplum Mary 🧝‍♀️🍪 (👨‍🔬), {0}! Ha insistito un bel po' affinché assaggiassi i suoi biscotti natalizi, tanto che alla fine hai deciso di tirare fuori il tuo coltello e ammazzarla!</value>
+  </string>
+  <string key="ChemistSK">
+  <value>Sei andata a casa di {0} per mangiare dei biscotti insieme, ma si trattava di Krampus 👹 e ti ha accoltellato a morte!🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+  <value>Sugarplum Mary 🧝‍♀️🍪 (👨‍🔬) {0} ha cercato di far assaggiare i suoi prismatici biscotti natalizi a Krampus 👹, ma sembra che non avesse fame! {0} è stata ritrovata morta, accanto ai biscotti ancora caldi...</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+  <value>Sei stato visitato da Mary Sugarplum 🧝‍♀️🍪 (👨‍🔬), che ti ha offerto dei biscotti deliziosi e un po' di latte. Dopo esserti fatto una scorpacciata di biscotti inizi a sentire un dolore alla pancia... Forse Mary ha utilizzato delle spezie scadute qualche migliaio di Natali fa... Sei morto!</value>
+  </string>
+  <string key="ChemistSuccess">
+  <value>Sei andata a casa di {0} per mangiare dei biscotti insieme. {0} ha accettato, ma le spezie che hai utilizzato erano scadute da un pezzo, e {0} è morto!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <value>Mary Sugarplum 🧝‍♀️🍪 (👨‍🔬) ha visitato {0} per offrirgli dei prismatici biscotti natalizi, {0} ha accettato con piacere, ma le spezie che Mary ha usato purtroppo erano scadute da qualche migliaio di Natali... {0} è morto. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+  <value>Sei stato visitato da Mary Sugarplum 🧝‍♀️🍪 (👨‍🔬), {0}, che ti ha offerto dei biscotti deliziosi e un po' di latte. Da buon elfo ti eri già lavato i denti e hai rifiutato l'offerta. Mary è tornata a casa e si è fatta una scorpacciata di biscotti, ma forse aveva utilizzato delle spezie scadute qualche migliaio di Natali fa... {0} è morta!</value>
+  </string>
+  <string key="ChemistFail">
+  <value>Sei andata a casa di {0} per mangiare dei biscotti insieme. {0} si era già lavato i denti e ha rifiutato, così hai deciso di farti una scorpacciata da sola... Purtroppo le spezie che hai utilizzato erano scadute da un pezzo, sei morta!</value>
+  </string>
+  <string key="ChemistFailPublic">
+  <value>Mary Sugarplum 🧝‍♀️🍪 (👨‍🔬), {0}, ha mangiato dei biscotti cucinati con delle spezie scadute qualche migliaio di Natali fa... {0} è morta!</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+  <value>{0} non era a casa! Peccato, ti eri impegnata tanto in cucina...</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+  <value>Sei Tormentilla ❄️👸 (🐺☃️). Sei una regina cattiva che si diverte a creare tempeste di neve. In questo modo impedisci agli abitanti del Polo Nord di lasciare la propria casa di notte. Ogni notte sceglierai un abitante su cui scatenare la tua tempesta.</value>
+  </string>
+  <string key="AboutSnowWolf">
+  <value>Sei Tormentilla ❄️👸 (🐺☃️). Sei una regina cattiva che si diverte a creare tempeste di neve. In questo modo impedisci agli abitanti del Polo Nord di lasciare la propria casa di notte. Ogni notte sceglierai un abitante su cui scatenare la tua tempesta.</value>
+  </string>
+    <string key="Lang">
+    <value>Cambia linguaggio</value>
+  </string>
+  <string key="Mode">
+    <value>Cambia modalità di gioco</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Imposta limite giocatori</value>
+  </string>
+  <string key="EndRoles">
+    <value>Mostra ruoli a fine partita</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Imposta il tempo massimo di estensione</value>
+  </string>
+  <string key="DayTimer">
+    <value>Imposta durata del giorno</value>
+  </string>
+  <string key="NightTimer">
+    <value>Imposta durata della notte</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Imposta durata del linciaggio</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Configurazione ruoli</value>
+  </string>
+  <string key="Mechanics">
+	<value>Meccaniche del gioco</value>
+  </string>
+  <string key="GroupSettings">
+	<value>Impostazioni del gruppo</value>
+  </string>
+  <string key="Timers">
+	<value>Durata fasi del gioco</value>
+  </string>
+  <string key="Done">
+	<value>Fatto!</value>
+  </string>
+  <string key="Back">
+	<value>Indietro</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Mischia lista dei giocatori</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Mischiare lista di giocatori ogni volta? Attualmente: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>La lista giocatori verrà mischiata ogni volta: {0}</value>
+  </string>
+
+  <string key="AllowArsonist">
+	<value>Bimbo Monello</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="AllowArsonistQ">
+	<value>Ammettere il Bimbo Monello? Attualmente: {0}</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="AllowArsonistA">
+	<value>il Bimbo Monello 🦹 (🔥) è ora {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Bimbo Monello e Krampus</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="BurningOverkillQ">
+	<value>Ammettere il Bimbo Monello e Krampus nella stessa partita? Potrebbe essere mortale! 😈 Attualmente: {0}</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="BurningOverkillA">
+	<value>Bimbo Monello e Krampus nella stessa partita: {0}.</value>
+  </string>
+
+  <string key="AskFreeze">
+  <value>Sulla casa di chi vuoi scatenare la tua tempesta?</value>
+  </string>
+  <string key="HarlotFrozen">
+  <value>Apri la porta per uscire di casa, ma una folata di vento gelido ti colpisce dritta in faccia. Noti che si è creata una furiosa tempesta di neve attorno a casa tua. Deve esserci lo zampino di Tormentilla ❄️👸 (🐺☃️). Non importa quanto possiate darvi da fare, nessuno potrà mai scaldarti dal freddo che prenderesti attraversando la tempesta, per cui decidi di restare a casa.</value>
+  </string>
+  <string key="ChemistFrozen">
+  <value>Sforni i biscotti e li confezioni in maniera deliziosa, ma quando ti avvicini alla porta noti che una tempesta si è formata attorno a casa tua. Deve esserci lo zampino di Tormentilla ❄️👸 (🐺☃️)! Per questa notte decidi di rimanere a casa!</value>
+  </string>
+  <string key="CultistFrozen">
+  <value>Sei pronto per uscire di casa per convertire qualcuno al tuo triste culto dei Non-Credenti, ma dalla finestra noti che una tempesta di neve si è formata attorno a casa tua. Deve esserci lo zampino di Tormentilla ❄️👸 (🐺☃️)! I tuoi compagni dovranno agire senza di te!</value>
+  </string>
+  <string key="CHFrozen">
+  <value>Ti stai preparando per uscire a caccia di Non-Credenti, ma dalla finestra noti che una tempesta di neve si è formata attorno a casa tua. Deve esserci lo zampino di Tormentilla ❄️👸 (🐺☃️)! Per questa notte dovrai stare a casa, ma ehi, puoi contemplare con serenità la bellezza del Natale!</value>
+  </string>
+  <string key="SeeingFrozen">
+<!-- used for seer, fool, oracle and sorcerer -->
+  <value>Ti stai preparando per uscire di casa e scoprire l'identity di un abitante, ma dalla finestra noti che una tempesta di neve si è formata attorno a casa tua. Deve esserci lo zampino di Tormentilla ❄️👸 (🐺☃️)! Questa notte non potrai capire il ruolo di nessuno!</value>
+  </string>
+  <string key="GAFrozen">
+  <value>Ti stai preparando per uscire di casa e proteggere qualcuno, ma dalla finestra noti che una tempesta di neve si è formata attorno a casa tua. Deve esserci lo zampino di Tormentilla ❄️👸 (🐺☃️)! Per questa notte gli abitanti del Polo Nord non saranno protetti!</value>
+  </string>
+  <string key="SKFrozen">
+  <value>Ti stai preparando per uscire di casa e ampliare la tua collezione di fegati, ma dalla finestra noti che una tempesta di neve si è formata attorno a casa tua. Deve esserci lo zampino di Tormentilla ❄️👸 (🐺☃️)! Per questa notte non potrai fare vittime.</value>
+  </string>
+  <string key="ThiefFrozen">
+  <value>Ti stai preparando per uscire di casa e rubare il ruolo di qualcuno, ma dalla finestra noti che una tempesta di neve si è formata attorno a casa tua. Deve esserci lo zampino di Tormentilla ❄️👸 (🐺☃️)! Purtroppo con questo meteo neanche il Grinch può sopravvivere, pertanto te ne rimani a casa...</value>
+  </string>
+  <string key="DefaultFrozen">
+  <value>Stavi dormendo beatamente quando comincia sentire un freddo incredibile... Ti affacci, e dalla finestra noti che una tempesta di neve si è formata attorno a casa tua. Deve esserci lo zampino di Tormentilla ❄️👸 (🐺☃️)! Metti altra legna suo fuoco e torni a dormire. Per fortuna non dovevi andare da nessuna parte stanotte...</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+  <value>Ti dirigi a casa di {0} per scatenare una tempesta di neve, ma ti ritrovi davanti un degno avversario! L'Angioletto 👼 sta vegliando su {0} e ti respinge. Torni a casa, sconfitta.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+  <value>Ti dirigi a casa di {0} e vi scagli contro una tempesta di neve! Stanotte non potrà uscire di casa e compiere il suo ruolo notturno (se lo ha).</value>
+  </string>
+  <string key="SnowFrozeKiller">
+  <value>Tormentilla ❄️👸 (🐺☃️), {0}, ha cercato di scagliare una tempesta di neve contro la casa sbagliata. Krampus le ha fatto un agguato e ha aggiunto il suo fegato alla collezione! R.I.P. {0}!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+  <value>Poiché tutti i Pupazzi di Neve sono morti, decidi di incanalare tutti i tuoi poteri congelanti e trasformarti in un Pupazzo per continuare a congelare gli abitanti del Polo Nord! Non sarai più in grado di creare tempeste.</value>
+  </string>
+  <string key="SnowFrozeHunter">
+  <value>Tormentilla ❄️👸 (🐺☃️), {0}, ha cercato di scagliare una tempesta di neve contro la casa dello Schiaccianoci 💂 (🎯), ma lo Schiaccianoci è riuscito a coglierla di sorpresa e farla fuori!</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+  <value>Sei il Giocattolaio 🧸 (☠️). Il tuo lavoro inventare nuovi giocattoli e aggiustare i giocattoli rotti, così che Babbo Natale li possa consegnare ai bimbi di tutto il mondo. Sei un ottimista, per questo ripari i giocattoli di ogni abitante che viene bruciato ogni giorno, ma purtroppo sei anche distratto, e la notte lasci i giocattoli incompleti in giro per la bottega... Per tanto visitatori potrebbero inciamparvi e farsi male. Per fortuna i Pupazzi non potranno congelarti poiché tutte le notti sarai in bottega e non a casa!</value>
+  </string>
+  <string key="AboutGraveDigger">
+ <value>Sei il Giocattolaio 🧸 (☠️). Il tuo lavoro inventare nuovi giocattoli e aggiustare i giocattoli rotti, così che Babbo Natale li possa consegnare ai bimbi di tutto il mondo. Sei un ottimista, per questo ripari i giocattoli di ogni abitante che viene bruciato ogni giorno, ma purtroppo sei anche distratto, e la notte lasci i giocattoli incompleti in giro per la bottega... Per tanto visitatori potrebbero inciamparvi e farsi male. Per fortuna i Pupazzi non potranno congelarti poiché tutte le notti sarai in bottega e non a casa!</value>
+  </string>
+  <string key="DigNoGraves">
+  <value>Non ci sono giocattoli da riparare stanotte, per questo rimarrai a casa. Per una volta potrai riposarti!</value>
+  </string>
+  <string key="DigGraves">
+  <value>Hai passato la notte a riparare un giocattolo in memoria di {0}. Speriamo che questo possa portare gioia ad un altro bambino.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+  <value>Ti stai preparando per uscire di casa e riparare qualche giocattolo, ma dalla finestra noti che una tempesta di neve si è formata attorno a casa tua. Deve esserci lo zampino di Tormentilla ❄️👸 (🐺☃️)! Per questa notte non potrai lavorare a nessun giocattolo!</value>
+  </string>
+  <string key="GraveDiggerNotHome">
+  <value>I Pupazzi si recano a casa di {0}, ma non lo trovano. Ci sono solo pile di vecchi giocattoli da aggiustare...</value>
+  </string>
+  <string key="WolfFellWolves">
+  <value>I Pupazzi si recano a casa di {0}, ma sulla strada, {1} all'improvviso inciampa sui pezzi di un giocattolo rotto, e cade proprio in un caminetto là vicino!</value>
+  </string>
+  <string key="WolfFell">
+  <value>Mentre raccogli i giocattoli che hai aggiustato questa notte, noti una pozza d'acqua vicino al camino... {0} deve essere inciampato ed essersi sciolto!</value>
+  </string>
+  <string key="HarlotFellDigger">
+  <value>La tua sbadataggine ha fatto un'altra vittima! {0}, la Befana 👵 (💋), è inciampata in uno dei giocattoli che hai lasciato in terra.</value>
+  </string>
+  <string key="HarlotVisitDigger">
+  <value>Curiosa riguardo ai nuovi giocattoli per questo Natale, vai a trovare {0}, ma sfortunatamente non lo trovi a casa!</value>
+  </string>
+  <string key="GAFell">
+  <value>Volevi proteggere {0}, l'ingegnosa persona a capo della realizzazione dei giocattoli, ma al contrario inciampi in uno dei tanti pupazzi lasciati in terra e ti spezzi l'osso del collo. Il paradiso ha un nuovo angelo...</value>
+  </string>
+  <string key="GAFellDigger">
+  <value>Entri in bottega e sei straziato nel trovare un amante del Natale, l'Angioletto 👼 {0}, senza vita. Per sbaglio è inciampato in uno dei pupazzi che hai lasciato in giro...</value>
+  </string>
+  <string key="ThiefFell">
+  <value>Ti intrufoli in bottega per rubare il ruolo di {0}, ma inciampi in un giocattolo e ti fai male, per tanto decidi di tornare a casa senza aver concluso niente...</value>
+  </string>
+  <string key="ThiefFellDigger">
+  <value>Chissà che cosa ha detto {0}, il Grinch 🤢 (😈), quando è inciampato sul giocattolo che avevi lasciato a terra...</value>
+  </string>
+  <string key="ArsonistFell">
+  <value>Il karma ti ha colpito come una frana di carbone. Hai cercato di tirare il carbone contro la casa del Giocattolaio, ma sei inciampato in un pupazzo lasciato in terra e ti sei rotto l'osso del collo.</value>
+  </string>
+  <string key="ArsonistFellDigger">
+  <value>La fortuna è dalla tua parte! Quando entri in bottega trovi il corpo senza vita di {0}, il Bimbo Monello 🦹 (🔥). Probabilmente pianificava di dare fuoco a casa tua, ma per una volta il tuo vizio di lasciare i giocattoli in giro ti è tornato utile.</value>
+  </string>
+  <string key="AskArsonist">
+  <value>Vuoi tirare il carbone contro la casa di un abitante o dare fuoco alle case contro cui lo hai già tirato?</value>
+  </string>
+  <string key="ArsonistVisitKiller">
+  <value>Il Bimbo Monello 🦹 (🔥), {0}, ha cercato di tirare il carbone contro casa di Krampus... Non è sopravvissuto...</value>
+  </string>
+  <string key="Spark">
+  <value>🔥 Brucia</value>
+  </string>
+  <string key="Doused">
+  <value>Hai tirato con successo il carbone contro casa di {0}!</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+  <value>È scoppiato un incendio in casa tua! Per fortuna l'Angioletto 👼 era là per estinguere il fuoco! Sarebbe un ottimo pompiere se non fosse così impegnato a proteggere il Natale...</value>
+  </string>
+  <string key="GuardSavedFromFire">
+  <value>Quando hai deciso di recarti a casa di {0} non ti aspettavi che sarebbe scoppiato un incendio! Per fortuna eri là per estinguere il fuoco...</value>
+  </string>
+  <string key="CleanDoused">
+  <value>Non hai dovuto combattere nessuno la scorsa notte a casa di {0}, perciò hai potuto dare un'occhiata in giro e hai notato un po' di carbone in casa. Non avevi niente da fare, perciò lo hai ripulito...</value>
+  </string>
+  <string key="Burning">
+  <value>Il Polo Nord si sveglia tra le fiamme! Gli elfi cercano di estinguere il fuoco, ma è troppo tardi per salvare gli abitanti nelle case che hanno misteriosamente preso fuoco. Oggi piangete le seguenti morti:\\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+  <value>L'ultimo rimasto è il Bimbo Monello 🦹 (🔥), rimasto in piedi su una montagna di cenere. Il Bimbo Monello 🦹 (🔥) ha vinto!</value>
+  </string>
+  <string key="Burn" isgif="true">
+  <value>Avresti dovuto comprare un estintore! Ora la tua casa è bruciata con tutti i tuoi giochi e te dentro. Sei morto!</value>
+  </string>
+  <string key="AugurSees">
+  <value>Controlli la lista dei bravi bambini, e vedi che {0} non c'è.</value>
+  </string>
+  <string key="RoleInfoAugur">
+  <value>Sei Alabaster Snowball🧝‍♂️📜 (🦅) . Sei l'elfo che ha il compito di controllare i bambini durante l'anno e decidere se siano buoni o monelli. Poiché la tua lista è molto importante, la controlli ogni giorno per controllare chi NON ci sia.</value>
+  </string>
+  <string key="AboutAugur">
+  <value>Sei Alabaster Snowball🧝‍♂️📜 (🦅) . Sei l'elfo che ha il compito di controllare i bambini durante l'anno e decidere se siano buoni o monelli. Poiché la tua lista è molto importante, la controlli ogni giorno per controllare chi NON ci sia.</value>
+  </string>
+  <string key="AugurSeesNothing">
+  <value>Oggi non hai niente da dire a Babbo Natale. Sembra che tu abbia controllato tutte le persone che non erano nella lista...</value>
+  </string>
+  <string key="WolvesVisitBurn">
+  <value>Voi Pupazzi di Neve vi dirigete a casa di {0}, e all'improvviso notate del fumo. Cercate di scappare, ma è troppo tardi e {1} si scioglie tra le fiamme!</value>
+  </string>
+  <string key="DefaultVisitBurn">
+  <value>{0} sarebbe dovuto rimanere a casa stanotte... Ha visitato un casa che è andata a fuoco ed è morto tra le fiamme! {1}</value>
+  </string>
+  <string key="WolfVisitBurn">
+  <value>I Pupazzi di Neve hanno cercato di congelare a morte qualcuno stanotte, ma il Bimbo Monello 🦹 (🔥) è stato più veloce! {0} non è riuscito a fuggire in tempoe... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+  <value>Sei stato visitato da Mary Sugarplum 🧝‍♀️🍪 (👨‍🔬), che ti ha offerto dei biscotti deliziosi e un po' di latte. Dopo esserti fatto una scorpacciata di biscotti inizi a sentire un dolore alla pancia... Forse Mary ha utilizzato delle spezie scadute qualche migliaio di Natali fa... Sei morto! Ma devastata dalla sua porte, Mary Sugarplum 🧝‍♀️🍪 (👨‍🔬) decide di rinunciare alla cucina e continuare la sua esistenza come un semplice Elfo!</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+  <value>Rimangono solo {0} e {1}... All'improvviso {0} sorride e tira fuori l'accendino del babbo, lo accende e lo lancia ai piedi di {1}, che prende fuoco!</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+  <value>Sei stata a casa di {0} ma l'hai trovata vuota! Peccato, volevo proprio fargli assaggiare la tua caramella...</value>
+  </string>
+  <string key="NewDGRoleModel">
+  <value>Sei diventato Donnola 🦌🎭 (🎭). Erediterai il ruolo di {0} dopo la sua morte.</value>
+  </string>
+  <string key="KillerStumbled">
+  <value>Hai aggiunto il fegato di {0} alla tua collezione, ma emozionato dalla nuova aggiunta non noti il giocattolo che si trova disordinatamente in terra e inciampi! Ora la gamba ti fa davvero male...</value>
+  </string>
+  <string key="KillerRandomKill">
+  <value>Mentre ti dirigevi a casa di {0}, senti un dolore atroce attraversarti la gamba. Decidi di deviare verso la casa più vicina di {1}, rubargli il fegato e tornare di corsa a casa.</value>
+  </string>
+  <string key="GuardBlockedRandomKiller">
+  <value>Arrivi a casa di {0}, solo per trovare Angioletto 👼 a proteggerla! Dato il dolore atroce alla gamba non perdi nemmeno tempo a lottare ma torni direttamente a casa.</value>
+  </string>
+  <string key="HunterFell">
+  <value>Un'altra notte è passata senza che tu abbia ucciso un Non-Credente... E come se non bastasse mentre stati rientrando a casa sei inciampato in uno dei giocattoli lasciati a terra da {0} e sei caduto nel caminetto vicino. Che brutta fine...</value>
+  </string>
+  <string key="HunterFellDigger">
+  <value>Dopo un'altra notte passata ad aggiustare giocattoli, non vedi l'ora di toccare il letto, ma quando arrivi a casa noti l'albero-giavellotto dello Spirito del Natale, abbandonato in terra come uno dei tuoi giocattoli, accanto al corpo carbonizzato di {0}.</value>
+  </string>
+  <string key="CultFell">
+  <value>Dopo un'altra notte passata ad aggiustare giocattoli, non vedi l'ora di toccare il letto, ma quando arrivi a casa senti le urla provenire da uno dei caminetti nelle vicinanze! Accorri e rinvieni il corpo ormai senza vita di {0}, accanto ad un giocattolo abbandonato. Che razza di Non-Credenti proverebbe a convertire il Giocattolaio?</value>
+  </string>
+  <string key="CultConvertGraveDigger">
+  <value>Mentre vi recavate a casa di {1}, {0} ha pensato fosse una buona idea dare fuoco alla fabbrica di giocattoli del Polo Nord. Peccato che, appena entrato nella fabbrica, {0} sia inciampato in un giocattolo lasciato in terra e abbia dato fuoco solo a se stesso... Il resto di voi, in panico, scappa verso casa.</value>
+  </string>
+  <string key="ChemistFell">
+  <value>Mentre ti dirigevi verso casa di {0}, cerchi di ricordarti quale spezie hai usato per dare sapore ai biscotti e, soprappensiero, inciampi in un pupazzo abbandonato a terra. Perdi l'equilibrio e cadi in un caminetto casualmente là vicino... Sei morta!</value>
+  </string>
+  <string key="ChemistFellDigger">
+  <value>Dopo un'altra notte passata ad aggiustare giocattoli, non vedi l'ora di toccare il letto, ma quando arrivi nelle vicinanze di casa senti uno strano odore di dolci bruciati... Ti guardi intorno e noti il corpo di {0} bruciato dentro il caminetto convenientemente situato lì vicino! Che peccato per i biscotti che sono andati sprecati!</value>
+  </string>
+  <string key="HarlotFell">
+  <value>Indossi le tue calze a rete preferite e ti dirigi verso casa di {0}, pronta a condividere la tua caramella. Purtroppo non vai lontano, in quanto sulla strada inciampi su un pupazzo lasciato disordinatamente in giro e cadi trafiggendoti il cuore con la tua stessa scopa.</value>
+  </string>
+  <string key="DefaultFellPublic">
+  <value>A quanto pare il Giocattolaio ha lasciato troppi lavori in compiuti nelle vicinanze del caminetto fuori da casa sua... E sembra proprio che {0} abbia cercato di fargli visita, ma sia finito per inciampare e finire arso vivo nel caminetto! {1}</value>
+  </string>
+  <string key="HarlotFellPublic">
+  <value>{0}, la Befana 👵 (💋), pensava di passare una serata tranquilla condividendo la sua caramella con qualche elfo, ma nella strada verso casa sua è inciampata in un pupazzo e si è trafitta il cuore con la sua stessa scopa. Dannato Giocattolaio!!</value>
+  </string>
+  <string key="CultistFellPublic">
+  <value>I Non-Credenti 👻 (👤) hanno cercato di dare fuoco alla bottega dei giocattoli, ma {0}, che stava guidando il gruppo, è inciampato su un giocattolo lasciato in terra ed è finito per dare fuoco solo a se stesso! Gli altri Non-Credenti 👻 (👤) sono scappati a gambe levate per la paura!</value>
+  </string>
+  <string key="ThiefFellPublic">
+  <value>Forse {0}, il Grinch 🤢 (😈), stava cercando di rubare il ruolo del Giocattolaio, o forse voleva solo dei giochi per sé... Quel che è sicuro è che vagando per la botteghe è inciampato in un pupazzo ed è finito per precipitare nel caminetto lì vicino... Che peccato, {0} non ruberà più niente!</value>
+  </string>
+  <string key="WolfFellPublic">
+  <value>I Pupazzi di Neve si stavano dirigendo a congelare qualcuno quando {0} ha notato una potenziale vittima nelle vicinanze. Peccato che non abbia visto tutti i giocattoli lasciati in terra nelle vicinanze di un caminetto. È inciampato e finito dritto dritto nel fuoco, sciogliendosi! {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+  <value>Stavi lavorando duramente per poter consegnare i giocattoli a Babbo Natale in tempo per la vigilia, quando il temibile Krampus ti ha colto di sorpresa e ha deciso di sostituire il tuo fegato con un pupazzo. Non hai avuto scampo...</value>
+  </string>
+  <string key="SerialKillerSpotted">
+  <value>Cammini accanto alla bottega dei giocattoli con il coltello insanguinato ed innevato, quando noti {0}, il Giocattolaio 🧸 (☠️)! Segui il tuo istinto, e decidi che ci saranno due vittime stanotte...</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+  <value>Stavi solo cercando di fare il tuo lavoro, quando all'improvviso un Pupazzo di Neve ti attacca alle spalle e ti congela a morte! Non hai avuto neanche il tempo per reagire...</value>
+  </string>
+  <string key="WolvesSpotted">
+  <value>I Pupazzi di Neve corrono per la bottega dei giocattoli, quando all'improvviso notano {0}, il Giocattolaio 🧸 (☠️). Prima che possa reagire, uno di voi lo attacca congelandolo a morte!</value>
+  </string>
+  <string key="WolvesSpottedDiggerPublic">
+  <value>{0} non si vede in giro... Forse sta ancora dormendo? Andate a controllare e lo trovate congelato sul tavolo da lavoro, con il cacciavite ancora in mano...</value>
+  </string>
+  <string key="KillerSpottedDiggerPublic">
+  <value>{0} non si vede in giro... Forse sta ancora dormendo? Andate a controllare e lo trovate morto sul tavolo da lavoro, con un pupazzo al posto del fegato...</value>
+  </string>
+  <string key="RoleInfoArsonist">
+  <value>Sei il Bimbo Monello 🦹 (🔥). Ogni notte puoi lanciare il carbone contro la casa di un altro abitante o decidere di accendere il fuoco e incendiare tutte le case a cui hai tirato il carbone, uccidendone il proprietario e gli eventuali visitatori. Vinci se sei l'unico sopravvissuto.</value>
+  </string>
+  <string key="AboutArsonist">
+  <value>Sei il Bimbo Monello 🦹 (🔥). Ogni notte puoi lanciare il carbone contro la casa di un altro abitante o decidere di accendere il fuoco e incendiare tutte le case a cui hai tirato il carbone, uccidendone il proprietario e gli eventuali visitatori. Vinci se sei l'unico sopravvissuto.</value>
+  </string>
+  <string key="RoleInfoChemist">
+  <value>Sei Sugarplum Mary🧝‍♀️🍪 (👨‍🔬), la più stretta Elfa collaboratrice di Mamma Natale, nonché cuoca ufficiale del Polo Nord. Ogni notte cucinerai dei biscotti sperimentando con delle antiche spezie, e potrai offrirli ad un abitante. Saranno buoni da morire o semplicemente da morire?</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>Cometa 🦌💫 sta combinando guai al Polo Nord! Tutti iniziano a sospettare l'uno dell'altro! A causa di ciò, il villaggio furioso darà fuoco addirittura a due persone oggi!</value>
+  </string>
+  <string key="AboutChemist">
+  <value>Sei Sugarplum Mary🧝‍♀️🍪 (👨‍🔬), la più stretta Elfa collaboratrice di Mamma Natale, nonché cuoca ufficiale del Polo Nord. Ogni notte cucinerai dei biscotti sperimentando con delle antiche spezie, e potrai offrirli ad un abitante. Saranno buoni da morire o semplicemente da morire?</value>
+  </string>
+
+  <string key="Troublemaker">
+  <value>Cometa 🦌💫 (🤯)</value>
+  </string>
+  <string key="Arsonist">
+  <value>il Bimbo Monello 🦹 (🔥)</value>
+  </string>
+  <string key="GraveDigger">
+  <value>il Giocattolaio 🧸 (☠️)</value>
+  </string>
+  <string key="Chemist">
+  <value>Sugarplum Mary 🧝‍♀️🍪 (👨‍🔬)</value>
+  </string>
+  <string key="Augur">
+  <value>Alabaster Snowball 🧝‍♂️📜 (🦅)</value>
+  </string>
+  <string key="SnowWolf">
+  <value>Tormentilla ❄️👸 (🐺☃️)</value>
+  </string>
+  <string key="WolfPackList">
+    <value>Gli altri Pupazzi di Neve sono: {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>I Pupazzi di Neve sono {0} e Tormentilla ❄️👸 (🐺☃️) è {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} è morto, e tu ti sei trasformato in Jack Frost 🌨 (⚡️). I tuoi compagni di squadra sono {1} e Tormentilla ❄️👸 (🐺☃️) è {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} è morto, e tu ti trasformi in Frosty il Pupazzo di Neve ❄️(🐶). I tuoi compagni di squadra sono {1} e Tormentilla ❄️👸 (🐺☃️) è {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} è morto, e tu ti trasformi in un Pupazzo di Neve ☃️ (🐺). I tuoi compagni di squadra sono {1} e Tormentilla ❄️👸 (🐺☃️) è {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} è morto, e tu ti trasformi nello Gnomo 📿 (🐺 🌝). I tuoi compagni di squadra sono {1} e Tormentilla ❄️👸 (🐺☃️) è {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} è morto, e tu ti trasformi in Tormentilla ❄️👸 (🐺☃️). I tuoi compagni di squadra, se ci sono, sono: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Donnola 🦌🎭 (🎭), {0}, è diventata la nuova Tormentilla ❄️👸 (🐺☃️)</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} è morto! Per la rabbia ti sei trasformato in un Pupazzo di Neve ☃ (🐺)! I tuoi compagni di squadra sono {1} e Tormentilla ❄️👸 (🐺☃️) è {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} non è più nella tua squadra, mentre {1} è diventata la nuova Tormentilla ❄️👸 (🐺☃️)</value>
+  </string>
+  <string key="CultistsList">
+    <value>I Non-Credenti 👻 (👤) sono: {0}</value>
+  </string>
+  <string key="ArsonistTeamEnd">
+    <value>Team Bimbo Monello</value>
+  </string>
+
+  <string key="Validate">
+  <!-- Usato per il bottone sul menu della selezione ruoli -->
+	<value>‼ CONVALIDA ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Usato per il bottone sul menu della selezione ruoli -->
+	<value>✅ Valido ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>La configurazione dei ruoli è valida! È stata abilitata e verrà usata da ora in poi!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>La configurazione dei ruoli NON è valida! Per favore abilita più ruoli per permettere al bot di creare partite bilanciate!</value>
+  </string>
+  <string key="GroupIdleCount">
+  <!-- {0} - Morti per AFK delle ultime 24 ore nel gruppo attuale -->
+  <!-- Questa stringa è attaccata alla stringa "IdleCount", quindi cercare di fare in modo che la frase risultante abbia senso -->
+	<value> di cui {0} volte in questo gruppo</value>
+  </string>  
+  <string key="RoleConfigInfo">
+  <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+	<value>Quali ruoli vorresti usare in partita?\n\nGuida alla Configurazione:\n\n✅ = Ruolo abilitato\n❌ = Ruolo disabilitato\n\nDopo la selezione dei ruoli, devi usare il bottone CONVALIDA nell'angolo in basso a sinistra per confermare e salvare la configurazione! Se non convalidi, non verrà salvato e i ruoli rimarranno tutti attivi!\n\nSe disabiliti troppi ruoli, il bot non sarà in grado di creare una partita bilanciata e la convalida fallirà! In quel caso basterà abilitare più ruoli e convalidare di nuovo.\n\nSe la convalida andrà a buon fine, nell'angolo in basso a sinistra ci sarà scritto ✅ Valido ✅ e la configurazione sarà utilizzata nelle partite!</value>
+  </string>
+  <string key="EnableAllRoles">
+	<value>Abilita Tutti</value>
+  </string>
+  <string key="DisableAllRoles">
+	<value>Disabilita Tutti</value>
+  </string>
+  <string key="CHHuntedYou">
+    <value>Lo Spirito del Natale 🎄 (💂) ti ha visitato mentre stavi distruggendo delle decorazioni natalizie. Sei stato attraversato dal suo albero-giavellotto, ora sei morto.</value>
+  </string>  
+
+  <string key="ExitAnonymousMode">
+    <value>Non puoi usare questo bot come admin anonimo! Per favore, fai coming out, esci dalla modalità anonima (o chiedi all'admin che ti ha promosso di farlo) e riprova!</value>
+  </string>
+
+</strings>
