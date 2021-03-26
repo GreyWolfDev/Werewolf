@@ -1,463 +1,482 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<!-- Currently updated by @Miomiya and @MatteoIlGrande. Ask me for anything, thanks -->
-<!-- Last updated on 18 August 2016 -->
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Currently updated by @BarbaraTozzoli. Ask me for anything, thanks -->
+<!-- Last updated on 1 July 2020 -->
+<!-- Linguaggio aggiornato esclusivamente da @BarbaraTozzoli. Per qualsiasi errore, contattatemi. Grazie -->
+<!-- Ultimo aggiornamento il 1 Luglio 2020 -->
+<!--Se stai usando questo file come base per una nuova variante ricorda che le stringhe con <value> multiple vanno tradotte una sola volta quindi quelle extra puoi tranquillamente eliminarle-->
+<!--Per la stessa ragione puoi aggiungere più <value> a stringhe che ne hanno di meno, e il bot sceglierà casualmente ogni volta-->
+<!--Inoltre, le stringhe con "deprecated="true"> non sono più utilizzate, quindi puoi saltarle completamente. Consiglio Notepad++ o Wuffpad-->
+<!-- Importante: Cambiare il "language name" e la "variant" per nuovi linguaggi. "owner" è opzionale, serve per lasciare un contatto per eventuali modifiche-->
 <strings>
-  <language name="Italiano 40enni" base="Italiano" variant="Quarantenni"/>
-  <string key="NotInGame">
-    <value>FALZOH!!1!!! Non sei dentro ad una partita!!1!</value>
+ <language name="Italiano 40enni" base="Italiano" variant="Quarantenni" owner="LupusInPrisma" code="it" isDefault="false"/>
+  <string key="NotInGame" deprecated="true">
+    <value>FALZOH!!1!1! Non sei dentro ad una partita1!1!</value>
   </string>
   <string key="PlayerStartedGame">
-  <value>{0} ha augurato BUONGIORNOSSIMOH a tutti i suoi amici! Clikka Join per ricambiare con un like e un kaffeh!</value>
-  <value>BUONGIORNISSIMOH DA {0}! Clikka Join per dimostrare di non essere una perzona falzah!</value>
+    <value>{0} ha augurato BUONGIORNISSIMOH a tutti i suoi amici! Usa Join per ricambiare con un like e un kaffeh!</value>
+    <value>BUONGIORNISSIMOH DA {0}! Usa Join per dimostrare di non essere una perzonah falzah!</value>
   </string>
   <string key="PlayerStartedChaosGame">
-    <value>{0} ha detto BUONGIORNISSIMOH alle 10 di sera! CAOS! Clikka Join per indicare l'ora.. E probabilmente passare per perzona falzah :P</value>
-    <value>Una nuova partita caos è stata iniziata da {0}! Clikka Join e riporta l'ordine con del kaffeh!</value>
+    <value>{0} ha detto BUONGIORNISSIMOH alle 10 di sera! Che caos! Usa Join per indicare l'ora... E probabilmente passare per perzonah falzah!</value>
+    <value>Una nuova partita caos è stata iniziata da {0}! Usa Join e riporta l'ordine con del kaffeh!</value>
   </string>
-  <string key="NoJoinGameRunning">
-    <value>SVELIA!1! La partita è già iniziata.</value>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>SVEGLIA!1! La partita è già iniziata.</value>
   </string>
-  <string key="AlreadyJoined">
+  <string key="AlreadyJoined" deprecated="true">
     <value>Ti sei già unito!</value>
   </string>
   <string key="MinuteLeftToJoin">
-    <value>Ancora 1 minuto per cliccare Join ...</value>
+    <value>Ancora 1 minuto per usare Join</value>
   </string>
   <string key="SecondsLeftToJoin">
-    <value>Ancora {0} secondi per cliccare Join ...</value>
+    <value>Ancora {0} secondi per joinare!</value>
   </string>
   <string key="NotEnoughPlayers">
-    <value>FALZIH!1! Non abbiamo ottenuto abbastanza like! Cancello la partita! </value>
+    <value>FALZIH!1! Non abbiamo ottenuto abbastanza like! Cancello la partita!</value>
   </string>
   <string key="StartingGameWait">
-
-    <value>Il gioco sta iniziando, aspettate qualche secondo mentre preparo il kaffeh!</value>
+    <value>Il gioco sta iniziando, aspettate qualche secondo mentre preparo il kaffeh e vi scrivo i ruoli!</value>
   </string>
-  <string key="BannedForExploit">
-
-    <value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi) e per essere FALZOH!</value>
+  <string key="BannedForExploit" deprecated="true">
+    <value>{0} è bannato per avere fatto exploit (i nomi che iniziano per / non sono ammessi)</value>
   </string>
   <string key="ChangeNameToJoin">
-
-    <value>{0}, per favore, cambia il tuo nome per partecipare! A Mugsy non piace!</value>
+    <value>{0}, per favore, cambia il tuo nome per partecipare!</value>
   </string>
   <string key="PlayerLimitReached">
-
     <value>Mi dispiace, abbiamo già raggiunto il massimo numero di giocatori! Il kaffeh non basta per tutti!</value>
   </string>
   <string key="PlayerJoined">
-    <value>{0} si è unito. Augura BUONGIORNISSIMOH e attendi!\n{1} giocatori, {2} minimo, {3} massimo</value>
+    <value>{0} si è unito. Augura BUONGIORNISSIMOH e attendi!\{1}/{3} giocatori, {2} minimo.</value>
   </string>
   <string key="PMTheBot">
     <value>\n{0} BUONGIORNISSIMOH! Benvenuto a Werewolf! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinchè io possa scriverti, devi prima avviarmi, e dimostrarmi di non essere FALZOH!</value>
   </string>
   <string key="DeadFlee">
-
-    <value>Falzoh, non puoi scappare! SEI MORTO!  Torna a marcire nella fossa....</value>
+    <value>Falzoh, non puoi scappare! SEI MORTO! Torna a marcire nella fossa...</value>
   </string>
   <string key="Flee">
     <value>{0} non è un quarantenne!</value>
+    <value>{0} ha scelto di bere tè!</value>
   </string>
   <string key="PlayerRoleWas">
     <value>\n{0} era {1}</value>
   </string>
   <string key="CountPlayersRemain">
-    <value>Rimangono {0} giocatori.</value>
+    <value>Rimangono {0} quarantenni.</value>
   </string>
-  <string key="DidntAsk">
-    <value>Hey, non ti ho ancora chiesto il buongiorno!</value>
+  <string key="DidntAsk" deprecated="true">
+    <value>Hey, non ti ho ancora chiesto nulla!</value>
   </string>
   <string key="NotPlaying">
-    <value>Non mi pare tu stia giocando...</value>
+    <value>Non mi pare tu sia un quarantenne!</value>
   </string>
   <string key="NoPlayerName">
-
-    <value>Non posso trovare un giocatore tramite questo nome!</value>
+    <value>Non posso trovare un quarantenne tramite questo nome!</value>
   </string>
-  <string key="AnswerNonValid">
+  <string key="AnswerNonValid" deprecated="true">
     <value>Questa non è una risposta valida!</value>
   </string>
   <string key="WolfVotedKill">
-    <value>{0} vota per pulire dai kontatti {1}</value>
+    <value>{0} vota per soffocare di tenerezza {1}</value>
   </string>
   <string key="PlayerVotedLynch">
-    <value>{0} vota per linciare {1}</value>
+    <value>{0} vota per clikkare {1}</value>
+    <value>{0} vota per bannare {1}</value>
   </string>
   <string key="IdleKill">
-
-    <value>{0} non ha votato per due notti consecutive.  Il Comitato Quarantenni giudica tale atto Alto Tradimento. {0} viene eseguito pubblicamente, giudicato FALZOH dalla folla.\n{1}</value>
+    <value>{0} non ha votato per due notti consecutive. Il Comitato Quarantenni giudica tale atto Alto Tradimento. {0} viene eseguito pubblicamente, giudicato FALZOH dalla folla.\n{1}</value>
   </string>
-  <string key="TraitorTurnWolf">
-    <value>QUARANTENNE FALZOH!!!! Sei un Mugsy Mannaro...</value>
+<string key="TraitorTurnWolf">
+    <value>QUARANTENNE FALZOH!!!! Tutti i Mugsy Mannari sono morti. Sei un Mugsy Mannaro ora!</value>
   </string>
   <string key="ChoiceAccepted">
     <value>Scelta accettata</value>
   </string>
   <string key="BeholderSeer">
-    <value>\nIl kaffe👳 (non il dekaffeh!)  è {0}</value>
+    <value>\Il Kaffeh👳 (non il Dekaffeh!) è {0}</value>
   </string>
   <string key="ApprenticeNowSeer">
-    <value>{0} era il Kaffeh. In qualità di chicco di kaffeh, sei stato ora tostato, e sei il Kaffeh👳!</value>
+    <value>{0} era il Kaffeh. In qualità di chicco di kaffeh, sei stato ora macinato, e sei diventato il Kaffeh👳!</value>
   </string>
   <string key="BeholderNewSeer">
-  <value>{0} era un chicco di kaffeh, ed ha appena fatto il grande passo entrando nella moka, prendendo il posto di {1} come nuovo Kaffeh.</value>
+  <value>{0} era un chicco di kaffeh, ed ha appena fatto il grande passo entrando nella moka, prendendo il posto di {1} come nuovo Kaffeh👳!</value>
   </string>
   <string key="SeerSees">
     <value>Hai visto che\n{0} era {1}!</value>
   </string>
   <string key="AskLynch">
-    <value>Chi vuoi linciare?</value>
+    <value>Chi vuoi bannare?</value>
+    <value>Chi vuoi clikkare?</value>
   </string>
   <string key="AskDetect">
     <value>Chi vuoi stalkerare, e scoprirne il ruolo?</value>
   </string>
   <string key="AskShoot">
-
-    <value>Quale terrorista vuoi mandare a Dio? {0} proiettili rimanenti</value>
+    <value>A quale persona vuoi avvelenare il tea.... Ehm... Sparare per il bene del villaggio di quarantenni? {0} proiettili rimanenti</value>
   </string>
   <string key="AskVisit">
     <value>A chi vuoi fare visita?</value>
   </string>
+<!-- Usato sia per Veggente, Folle che lo Stregone. -->  
   <string key="AskSee">
-    <value>Chi vuoi scrutare?</value>
+    <value>Quale perzonah falzah vuoi scrutare?</value>
   </string>
   <string key="AskGuard">
-    <value>Chi vuoi  proteggere nel tuo vascello?</value>
+    <value>Chi vuoi proteggere?</value>
   </string>
   <string key="AskEat">
-    <value>Chi vuoi mangiare?</value>
+    <value>Chi vuoi inondare di cuoricini e tenerezza?</value>
   </string>
   <string key="AskHunt">
-    <value>Chi vuoi controllare se abbia messo i laic?</value>
+    <value>Chi vuoi controllare se ha messo i LAIC?</value>
   </string>
   <string key="AskRoleModel">
-    <value>Chi è colui che mette laic alle tue foto e ti salverà?</value>
+    <value>Chi è il quarantenne che mette LAIC alle tue foto e ti salverà?</value>
   </string>
   <string key="AskConvert">
-
-    <value>Chi vuoi convertire al tuo culto senza laic?</value>
+    <value>Chi vuoi convertire al tuo culto senza LAIC e AMEN?</value>
   </string>
   <string key="DiscussWith"><!--Leave the leading spaces here please-->
-    <value>  Sii sicuro di discutere (ardentemente) con {0}</value>
+    <value>  Sii sicuro di discutere con {0}</value>
   </string>
   <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
     <value> e </value>
   </string>
-  <string key="RoleInfoCursed">
-
-    <value>Sei un 39enne. Vinci con i quarantenni, fino quando i Mugsy Mannari non ti faranno visita. A quel punto rimarrai incastrato nello spazio-tempo, incapace di compiere gli anni (e divenire 40enne), e diverrai un Mugsy Mannaro.</value>
+  
+<string key="RoleInfoCursed">
+   <value>Sei un 39enne 😾! Vinci con i quarantenni fino quando i Mugsy Mannari non ti faranno visita. A quel punto rimarrai incastrato nello spazio-tempo e, incapace di compiere gli anni e diventare finalmente quarantenne, verrai rinnegato dal villaggio e sarai costretto a diventare un Mugsy Mannaro.</value>
   </string>
-  <string key="RoleInfoDetective">
-
-    <value>Sei la Moglie Gelosa Stalker!. Durante il giorno, puoi scegliere un giocatore di cui conoscere il ruolo. così da sapere se tuo marito può frequentarlo! Ma la tua identità non è al sicuro - il tuo ruolo potrebbe essere rivelato ai Mugsy Mannari! (40% di probabilità)</value>
+  
+<string key="RoleInfoDetective">
+    <value>Sei la Moglie Gelosa Stalker 🕵️! Durante il giorno, puoi scegliere un giocatore di cui conoscere il ruolo. Così potrai controllare chi frequenta tuo marito e se è una compagnia sana e morigerata! Ma la tua identità non è al sicuro - il tuo ruolo potrebbe essere rivelato ai Mugsy Mannari Mannari che ti vedranno cercare consigli su alfemminile.com (40% di probabilità).</value>
   </string>
-  <string key="RoleInfoDrunk">
-
-    <value>Congratulazioni! Sei Mentana! Se i Mugsy Mannari oseranno mangiarti, li cazzierai con un mega blastone, e non potranno mangiare per una notte! </value>
+ 
+ <string key="RoleInfoDrunk">
+    <value>Sei Mentana 🍻! Se i Mugsy Mannari oseranno mangiarti, li tramortizzerai con un mega blastone tale che non si terranno in piedi e - di conseguenza - non potranno mangiare per la notte successiva! Poveri webeti! </value>
   </string>
-  <string key="RoleInfoGuardianAngel">
-
-    <value>Sei Corto Maltese. Ispiraci con le tue frasi filosofiche. Ogni notte, puoi scegliere un giocatore da proteggere nel tuo vascello.\nOcchio a non scegliere un Mugsy Mannaro, altrimenti hai una possibilità su due di rimanerci secco.</value>
+ 
+ <string key="RoleInfoGuardianAngel">
+    <value>Sei il GDPR (General Data Protection Regulation) 👼! Meno male che ci sei tu a proteggere la praivasi dei poveri quarantenni! Ogni notte potrai scegliere un giocatore, che grazie a te sarà salvato da 5G, profilazione, tracciamento da parte dei poteri forti, Bill Gates che ti mette mercurio nel sangue, e accidentalmente anche dall’attacco dei Mugsy Mannari.</value>
   </string>
-  <string key="RoleInfoGunner">
-
-    <value>Sei Pootin ke manda i terroristi a deeo.  Hai due proiettili d'argento Made in Russia.  Cura le tue scelte! Durante il giorno puoi decidere se sparare ad un giocatore. Tuttavia, lo scoppio verrà udito da tutti, e la tua identità non sarà più un segreto, e verrai venerato da tutti.</value>
+  
+<string key="RoleInfoGunner">
+    <value>Sei Putin 🔫! Famoso per la tua democrazia e diplomazia ma - soprattutto - il tuo sangue freddo, i quarantenni del villaggio ti hanno affidato due proiettili d'argento 100% Made in Russia. Durante il giorno puoi farti prendere dalla tua follia omicida e sparare a un giocatore. Tuttavia, lo scoppio verrà udito da tutti, e la tua identità non sarà più un segreto. Una volta svelato chi sei probabilmente tutti i quarantenni controlleranno cosa hai messo nel loro té. Come dar loro torto!</value>
   </string>
-  <string key="RoleInfoHarlot">
-
-    <value>Il ruolo più amato! Tu sei Vegan Pammy! Durante la notte, puoi scegliere di "far visita" ad un altro giocatore, facendo un po' di Amaroli assieme (mhhh, piscio...) e verificare se è un Mugsy Mannaro o meno. Tuttavia, se sceglierai di spassartela con un Mugsy Mannaro, o con la vittima dei Mugsy Mannari, ti faranno mangiare cibo che non è Cruelty Free, uccidendoti. La nota positiva: se i Mugsy Mannari ti scelgono come vittima durante la notte, non verrai uccisa: tu non eri a casa in quel momento.</value>
+  
+<string key="RoleInfoHarlot">
+    <value>Sei la Mamma Pancina 💋! Ogni notte vai da un vicino diverso e gli fai assaggiare i dolcetti fatti con il tuo latte materno che dai ancora da bere al tuo cucciolo di 247 mesi. Se la vicina di casa parla un italiano troppo corretto stai attenta: potrebbe essere una perfettina invidiosa laureata al classico che non mette laic. Niente kritike ma solo complimenti per te!</value>
   </string>
-  <string key="RoleInfoTraitor">
 
-    <value>FALZO! Per ora sei un quarantenne, ma nel momento in cui non rimarranno più Mugsy Mannari, diverrai un Mugsy a tua volta. Nel caso in cui il Kaffeh ti scrutasse, potresti essere identificato sia come quarantenne che come Mugsy.</value>
+ <string key="RoleInfoTraitor">
+    <value>Sei Falzoh🖕! Sai che novità! Per ora sei un normale quarantenne senza poteri ma, nel momento in cui non rimarranno più Mugsy Mannari, diverrai un Mugsy Mannaro a tua volta tradendo tutto il villaggio. Nel caso in cui il Kaffeh 👳 ti scrutasse, potresti essere visto sia come quarantenne che come Mugsy Mannaro (50% di possibilità).</value>
   </string>
+
   <string key="RoleInfoWolf">
-    <value>SEI UN MUGSY MANNARO!! BUONGIORNISSIMOH! Ogni notte potrai scegliere di uccidere qualcuno (buon divertimento)!</value>
+    <value>Sei un Mugsy Mannaro🐺! Ogni notte potrai scegliere un personaggio da inondare di cuoricini e tenerezza per ucciderlo. Attento al Kaffeh👳! </value>
   </string>
+
   <string key="RoleInfoSeer" >
-
-    <value >Sei il Kaffeh!!1!.  Ogni notte, hai la possibilità di scegliere un giocatore di cui farti rivelare l'identità. Occhio a non svelarti durante il giorno: si sà, iMugsy Mannari vanno ghiotti di Kaffeh.</value>
+    <value >Sei il Kaffeh👳! Ogni notte hai la possibilità di scegliere un giocatore di cui farti rivelare l'identità. Occhio a non svelare la tua identità durante il giorno: si sa, i Mugsy Mannari vanno ghiotti di Kaffeh.</value>
   </string>
+
   <string key="RoleInfoVillager" >
-
-    <value >Sei un quarantenne, condannato a passare le giornate a condividere brutti post su Facebook (e ad essere mangiato).</value>
+    <value >Sei un Quarantenne 👱! Condannato a passare le giornate in balia delle fake news, a lottare contro i poteri forti e a condividere brutti post su Facebook. Non fai molto: attendi solo che il tuo contatto venga cancellato o che i Mugsy Mannari si ribellino a te e decidano di ucciderti.</value>
   </string>
+
   <string key="RoleInfoTanner" >
-
-    <value >Sei il troll piddino. Ruolo odiato da molti, ma amato da altrettanti. Il tuo scopo è quello di farti linciare in qualsiasi modo possibile. Se ci riesci, tu vinci e tutti gli altri perdono!(Ma quanto ti paga il PD?!)</value>
+    <value >Sei il Troll Piddino 👺! Ruolo odiato da molti, ma amato da altrettanti. Il tuo scopo è quello di farti linciare in qualsiasi modo possibile. Se ci riesci, tu vinci e tutti gli altri perdono! Ma quanto ti paga il PD?!</value>
   </string>
+
   <string key="RoleInfoWildChild" >
-
-    <value >Sei il beembo malato mtt 100 laic! Scegli un giocatore che ti terrà in vita, mettendo laic alle tue foto - se morirà, diverrai un Mugsy Mannaro (non raggiongerai mai 100 laic xke la gente nn ha 1 quore).</value>
+    <value >Sei un Bimbo Malato 👶! In qualità di Bimbo Malato sceglierai un giocatore che ti terrà in vita, mettendo sempre i laic e scrivendo gli amen alle tue foto. Questo ti manterrà in vita ed in salute. Se quel giocatore morirà ti trasformerai in un Mugsy Mannaro! D’altronde non potresti più raggiungere i cento laic: la gente non ha un cuore.</value>
   </string>
+
   <string key="RoleInfoBeholder" >
-
-    <value >Sei il Barista, esperto di Kaffeh, ti verrà detto chi è il (vero) Kaffeh. Tutto qui.</value>
+    <value >Sei il Barista 👁! Sei l’unico e solo esperto di Kaffeh di tutto il villaggio! Per cui a te, e te soltanto, verrà detto chi è il vero Kaffeh! Se il Kaffeh dovesse morire ti verrà comunicato se il Chicco di Kaffeh è stato macinato e si è trasformato in Kaffeh.</value>
   </string>
+
   <string key="RoleInfoApprenticeSeer" >
-
-    <value >Sei il Chicco di Kaffeh.  Quando (e se) il (vero) Kaffeh muore, andrai dentro una moka, ereditando il ruolo di Kaffeh.</value>
+    <value >Sei il Chicco di Kaffeh 🙇!  Quando il vero Kaffeh muore verrai macinato e andrai dentro una moka, ereditando il ruolo di Kaffeh.</value>
   </string>
+
   <string key="RoleInfoCultist" >
-
-    <value >Sei cuelo ke nn mtt laic e amen. Vergognati. Ogni notte, puoi scegliere un giocatore da convertire al tuo culto. Se tutti i giocatori rimasti vivi fanno parte della tua setta, voi membri avete vinto, e nessuno metterà più laic e amen. Che brutto mondo.</value>
+    <value >Sei Quello che non mette i laic e gli amen 👤, vergognati! Ogni notte, puoi scegliere un giocatore e potrai cercare di convincerlo a non mettere più laic e amen. Se si convincerà riuscirai a convertirlo al tuo terribile culto. Se tutti i giocatori rimasti vivi fanno parte della tua setta voi membri avrete vinto. Chiuderete Facebook e brucerete ciò che rimane del Kaffeh e dei Mugsy Mannari e nessuno - finalmente - metterà più LAIC e AMEN. Muahahahah.</value>
   </string>
+
   <string key="RoleInfoCultistHunter" >
-
-    <value >Sei qll ke denunzia ki nn mtt laic e amen! Nobile lavoro! Ogni notte, puoi scegliere un giocatore.  Se nn mtt laic, allora muore. Ah, se uno ke nn mtt laic prova a convertirti, l'ultimo membro arruolato della setta verrà segnalato a Facebook, morendo.</value>
+    <value >Sei Quello che denuncia chi non mette i laic e gli amen 💂! Il lavoro più utile e nobile di tutto il villaggio! Ogni notte puoi scegliere un giocatore e controllare il suo profilo su Facebook. Se noti che non mette LAIC, allora lo trafiggerai con la spada che Mark Zuckerberg ha forgiato appositamente per te. Ah, se uno che non mette LAIC e AMEN dovesse provare a convertirti, l’ultimo membro arruolato della setta verrà segnalato a Facebook e morirà trafitto dalla tua spada. </value>
   </string>
+
   <string key="LynchTime" >
-    <value >
-
-
-      BUONASERISSIMAAAAH!!11!. Con l'ombra dei Mugsy Mannari che incombe minacciosa, i quarantenni sfogliano con minuziosa cura i loro sticker, decretando chi sarà il linciato questa sera...
-      Ognuno ha {0} secondi per votare!
-    </value>
+    <value >BUONASERISSIMAAAAH!1!11! Con l'ombra dei Mugsy Mannari che incombe minacciosa, i quarantenni sfogliano con minuziosa cura i loro sticker, decretando chi sarà il linciato questa sera...\nOgnuno ha {0} secondi per votare!</value>
   </string>
+
   <string key="DayTime" >
-
-    <value >BUONGIORNISSIMOOOOH!!11!. Avete {0} secondi per postare contenuti orribili sulla vostra bacheca, quella dei vostri amici, il vostro gruppo famiglia... E soprattutto, muovere le vostre accuse / difendervi / discutere.</value>
+    <value > >BUONGIORNISSIMOOOOH!!11! Avete {0} secondi per postare contenuti orribili sulla vostra bacheca, quella dei vostri amici, il vostro gruppo famiglia... E soprattutto, muovere le vostre accuse: chi tra voi sarà la perzonah falzah?</value>
   </string>
+
   <string key="NightTime" >
-
-    <value >BUONANOTTISSIMAAH!!1!!. Ognuno fa Logout da Facebook, stremato, al termine di un'altra giornata di duro lavoro.  Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
+    <value >BUONANOTTISSIMAAH!!1!!. Ognuno fa Logout da Facebook, stremato, al termine di un'altra giornata di duro lavoro. Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
   </string>
+
   <string key="LynchKill" >
-
-    <value >LA GENTE HA DECISO! Tra fiorellini e glitter. {0} è morto.\n{1}</value>
+    <value >IL POPOLO DI INTERNET HA DECISO! Tra fiorellini e glitter. {0} è morto.\n{1}</value>
   </string>
+
   <string key="LynchTie" >
-
-    <value >CHE CONFUSIONEEEEEEEE, NN SI LINCIA NESSUNOOOO! La folla torna frustrata alle proprie abitazioni, in attesa di un'altra notte d'ansia e sconforto...</value>
+    <value >CHE CONFUSIONEEEEEEEE, NN SI LINCIA NESSUNOOOO!11! La folla torna frustrata alle proprie abitazioni, in attesa di un'altra notte di click d'ansia e sconforto...</value>
   </string>
+
   <string key="NoLynchVotes" >
-
-    <value >Nessuno ha votato! Qualcosa mi puzza, nessuno verrà impiccato stanotte.....I poteri forti.......</value>
+    <value>Nessuno ha votato! Qualcosa mi puzza, nessuno verrà bannato oggi, è di sicuro colpa dei POTERI FORTI!!1!1</value>
+    <value>Il villaggio di quarantenni si fa silenzioso, nessuno ha il coraggio di accusare...</value>
   </string>
+
   <string key="DetectiveEaten" >
-
-    <value >Gli abitanti del villaggio si riuniscono la mattina, ma {0} manca all'appello.  Vagano fino alla sua casa, per trovare {0} sventrato malamente, con un tabulato di tutte le chiamate inviate e ricevute da suo morito. La Moglie Gelosa Stalker è morta.</value>
+    <value >Gli abitanti del villaggio si riuniscono la mattina, ma {0} manca all'appello. Vagano fino alla sua casa, per trovare {0} sventrato malamente, con un tabulato di tutte le chiamate inviate e ricevute da suo marito. La Moglie Gelosa Stalker 🕵️‍♀️ è morta.</value>
   </string>
+
   <string key="GuardianEaten" >
-
-    <value >Si leva il sole, e per la disperazione di tutti, c'è un veliero in fiamme.Il veliero di {0}, Corto Maltese è salpato per altri mondi.</value>
+    <value >Si leva il sole, e per la disperazione di tutti, la praivasi di tutti i cittadini è stata lesa, nessuno li proteggerà più... I Quarantenni emettono un grido di dolore: GDPR 👼 {0} è morto!</value>
   </string>
+
   <string key="GunnerEaten" >
-
-    <value >Uscendo dalle case, lo sconvolgente ritrovamento di pezzi di matrioske e santini ortodossi sparsi ovunque...poi le gambe..le dita... ed infine, galleggiante nella fontana del Cremlino, il corpo di {0}, sbranato dai Mugsy. Avete perso il vostro Pootin.</value>
+    <value >Uscendo dalle case, lo sconvolgente ritrovamento di pezzi di matrioske e santini ortodossi sparsi ovunque... Poi le gambe... Le dita... Ed infine, galleggiante nella fontana del Cremlino, il corpo di {0}, sbranato dai Mugsy Mannari. Avete perso il vostro Putin 🔫.</value>
   </string>
+
   <string key="SeerEaten" >
+    <value >E' l'alba ormai, i quarantenni si svegliano e trovano i resti maciullati di {0}, assieme ad un piattino fatto in mille pezzi e una tazzina distrutta da cui esce un profumo inconfondibile. Il Kaffeh 👳 è morto! </value>
+   </string>
 
-    <value >E' l'alba ormai, i villici si svegliano e trovano i resti maciullati di {0}, assieme ad una tazzina dall'odore inconfondibile. Il Kaffeh è morto.</value>
-  </string>
   <string key="DrunkEaten" >
-
-    <value >L'odore di silicio e rame ha svegliato i quarantenni...  Lo studio di La7 va a fuoco!!!! Dopo aver domato le fiamme, i resti di {0} vengono ritrovati, uno qua, uno là.... Un grido s'ode distante... "WEBETI!! CI SIETE CASCATI!!" Mentana è morto</value>
+    <value >L'odore di silicio e rame ha svegliato i quarantenni... Lo studio di La7 va a fuoco! Dopo aver domato le fiamme, i resti di {0} vengono ritrovati, uno qua, uno là.... Un grido s'ode distante... "WEBETI!! CI SIETE CASCATI!!" Mentana 🍻 è morto</value>
   </string>
+
   <string key="FoolEaten" >
-
-    <value >E' l'alba ormai, i villici si svegliano e trovano i resti maciullati di {0}, assieme ad una tazzina dall'odore inconfon.... Ma cosa!? Che Schifo!! ERA UN DEKAFFEH!!</value>
+    <value >E' l'alba ormai, i quarantenni si svegliano e trovano i resti maciullati di {0}, assieme ad una tazzina dall'odore inconfon... Ma cosa!? Che Schifo!! Per fortuna era solo il Dekaffeh 🃏!!</value>
   </string>
+
   <string key="DefaultEaten" >
-
-    <value>Il mattino è giunto, e con lui un fetore che sa di tragedia.  Seguendo l'odore, i quarantenni trovano {0} fatto a pezzi nel fienile, senza accesso a Facebook.  NOMNOMNOMNOM\n{1}</value>
+    <value>Il mattino è giunto, e con lui un fetore che sa di tragedia. Seguendo l'odore, i quarantenni trovano {0} fatto a pezzi nel fienile, senza accesso a Facebook. SMACKSMACKSMACK\n{1}</value>
   </string>
+
   <string key="HunterKilledCultist">
-
-    <value>Si sentono delle sirene provenire dalla casa di {0}...  I poliziotti lo stanno scortando fuori, in manette.. uno ke nn mtt laic è stato denunziato e giustiziato!</value>
+    <value>Si sentono delle sirene provenire dalla casa di {0}...  Ha avuto quello che si meritava! Non metteva i laic e non scriveva mai amen, e la spada forgiata da Mark Zuckerberg in persona l'ha trafitto! Colui che Denuncia ha fatto il suo nobilissimo lavoro e ora la setta ha un membro in meno! Meno male! </value>
   </string>
+
   <string key="NoAttack" >
-
-    <value >EVVIVAAAAAA, NON CI SONO MORTIIIIIIIIIII!1!1!11 La domanda è: come mai?</value>
+    <value >EVVIVAAAAAA, NON CI SONO MORTIIIIIIIIIII!1!1!11 La domanda è: come mai???... NON SARANNO MIKA STATI I POTERI FORTIH?!!?1?!1</value>
   </string>
+
   <string key="CursedBitten" >
-
-    <value >I Mugsy Mannari ti hanno incastrato nello spazio tempo! In qualità di 39enne, non potrai divenire 40enne, sei diventato un Mugsy!</value>
+    <value >Oh no! Mugsy Mannari ti hanno incastrato nello spazio tempo! Ora non sei più in grado di compiere gli anni! In qualità di 39enne perenne puoi scegliere: o venire bannato dal villaggio per sempre o unirti ai Mugsy Mannari 🐺. Ovviamente - da perzonah falzah kuale sei - scegli la seconda opzione!</value>
   </string>
+
   <string key="WolfTeam">
-    <value>Gli altri Mugsy sono: {0}</value>
+    <value>Gli altri Mugsy Mannari 🐺 sono: {0}</value>
   </string>
+
   <string key="CursedBittenToWolves" >
-
-    <value >{0} è stato morso....  ma era un 39enne, ed è diventato un Mugsy! Date il benvenuto al nuovo arrivato! BENVENUTOOOOH!1!1!</value>
+    <value >{0} è stato morso....  ma era un 39enne 😾! Ora non potrà mai più compiere gli anni e ha deciso di unirsi alle file dei Mugsy Mannari 🐺! Date il benvenuto al nuovo arrivato! BENVENUTISSMOOOOH!1!1 CAMOMILLAAAAH????</value>
   </string>
+
   <string key="WolvesEatYou" >
-    <value >Oh no! I Mugsy hanno banchettato coi tuoi post di Facebook. NOMNOMNOMNOM</value>
+    <value >Oh no! I Mugsy Mannari 🐺 ti hanno inondato di cuoricini e tenerezza e hanno banchettato coi tuoi post di Facebook! SMACKSMACKSMACK</value>
   </string>
+
   <string key="WolvesEatDrunk" >
-
-    <value >Oh no! {0} era Mentana! Webete che non sei altro! T'ha blastato tantissimo, che vergogna, non potrai attaccare la prossima notte...</value>
+    <value >Oh no! {0} era Mentana 🍻! Webete che non sei altro! Ti ha blastato tantissimo, che vergogna, non potrai attaccare la prossima notte...</value>
   </string>
+
   <string key="GuardWolf" >
-
-    <value >Hai provato a proteggere un Mugsy Mannaro! TRADIMENTOH! Sei morto, ciao ciao ciao.</value>
+    <value >Hai provato a proteggere i dati di un Mugsy Mannaro 🐺! TRADIMENTOH! Sei morto, ciao ciao ciao.</value>
   </string>
+
   <string key="GuardSaved" >
-
-    <value >Hai salvato la vita di {0}!! EROE!!!!!11</value>
+    <value>Hai salvato la vita di {0}!!! EROE TI MERITI 100000 LAIC!!!!!11</value>
   </string>
+
   <string key="GuardNoAttack" >
-
-    <value >{0} non è stato attaccato dai Mugsy Mannari, quindi questa notte hai potuto scrivere frasi filosofiche.</value>
+    <value >{0} non è stato attaccato dai Mugsy Mannari 🐺, quindi questa notte la sua praivasi è rimasta intatta!</value>
   </string>
+
   <string key="GuardEmptyHouse">
-
-    <value>Hai deciso di proteggere {0}, ma non era a casa! Che sia a coltivare tofu?</value>
+    <value>Hai deciso di proteggere {0}, ma non era a casa! Che sia per caso una perzonah falzah?</value>
   </string>
+
   <string key="GuardSavedYou" >
-
-    <value >Sei stato protetto dall'angelo custode, che ha scacciato i Mugsy e/o il Pulitore!</value>
+    <value >La praivasi del tuo profilo è stata protetta dal GDPR 👼 che ha scacciato i Mugsy Mannari 🐺 e/o il Pulitore di Contatti 🔪!</value>
   </string>
+
   <string key="HarlotEaten" >
-
-    <value >Vegan Pammy ha deciso di prendersi una pausa durante la notte sbagliata, e di rimanere a casa a bere piscio. I Mugsy hanno fatto una cena Cruelty Full... ossia hanno banchettato con {0}!</value>
+    <value > La Mamma Pancina 💋 ha deciso di prendersi una pausa durante la notte sbagliata, e di rimanere a casa a fare l'ennesima torta con il latte materno. I Mugsy Mannari 🐺 hanno fatto una cenetta deliziosa! Mille complimenti e nessuna kritika! {0}!</value>
   </string>
+
   <string key="HarlotNotHome" >
-    <value >Strano... {0} non era a casa!  Niente cena sta sera...Go Veg!</value>
+    <value>Strano... {0} non era a casa! Niente cena sta sera... </value>
   </string>
+
   <string key="HarlotFuckWolf" >
-
-    <value >Hai fatto visita a {0} per fare un po' di Amaroli col suo piscio, ma ti sei trovata davanti una bella sorpresa. Era piscio di Mugsy! Sei morta. Meglio essere onnivori.</value>
+    <value >Hai fatto visita a {0} per fargli assaggiare i tuoi dolcetti fatti col latte materno, ma ti sei trovata davanti una bella sorpresa: ad aspettarti c'erano i Mugsy Mannari 🐺! Sei morta coperta di cuoricini e tenerezza. Era meglio restare a casa a dar da mangiare al tuo bambino!</value>
   </string>
+
   <string key="HarlotFuckedWolfPublic" >
-
-    <value >{0} ha fatto visita alla casa sbagliata questa notte! I suoi resti sono stati ritrovati appesi alla porta della chiesa, affissi con dei chiodi da macello...  che tristezza :(</value>
+    <value>{0} ha fatto visita alla casa sbagliata questa notte! I suoi resti sono stati ritrovati appesi alla porta della chiesa, coperti di SMACKSMACKSMACK pucciosi! Che tristezza :(</value>
   </string>
+
   <string key="HarlotFuckedVictimPublic" >
-
-    <value >{0} ha fatto visita a {1}, pronta a concedersi un po' di Amaroli ed a divulgare il Go Veg. Ma ha trovato un Mugsy intento a sbranare {1}! Fulmineo, il Mugsy le fa "BUONGIORNISSIMOH!" si gira verso {0} con intenti non del tutto benevoli....  {0} è morta.</value>
+    <value >{0} ha fatto visita a {1}, pronta a condividere dolcetti fatti col latte materno e utilissimi consigli sulla maternità, ma ha trovato un Mugsy Mannaro intento a inondare di cuoricini e tenerezza {1}! Fulmineo, al grido di "BUONGIORNISSIMOH!", il Mugsy Mannaro si gira verso {0} con i suoi occhietti pucciosi a forma di cuoricino... {0} è morta.</value>
   </string>
+
   <string key="HarlotVisitNonWolf" >
-    <value>Ora sai che {0} non è un Mugsy, visto che il suo piscio era davvero di ottima fattura!</value>
+    <value>Ora sai che {0} non è un Mugsy Mannaro, visto che vi siete divertiti molto assieme ieri notte ad assaggiare i tuoi dolcetti fatti con il latte materno e a scambiarvi consigli sulla maternità!</value>
   </string>
+
   <string key="HarlotVisitYou" >
-    <value>Era abbastanza scuro e non hai potuto vedere bene, ma nel bel mezzo della notte sei stato svegliato da un bisbiglio: "Facciamo dell'Amaroli assieme!" . Hai opposto resistenza, ovviamente, ma quelle braccia vegane erano VERAMENTE forti! Risultato: lei se n'è andata in silenzio, e tu ora hai la vescica svuotata...</value>
+    <value>Era abbastanza scuro e non hai potuto vedere bene, ma nel bel mezzo della notte sei stato svegliato da un bisbiglio: "Assaggia i miei dolcetti, ma niente kritike, solo complimenti!". Hai cercato di opporre resistenza, dicendo che il latte materno anche no, non lo volevi bere, ma non c'è stato niente da fare...</value>
   </string>
+
   <string key="DetectiveCaught" >
-    <value >Hai beccato {0} mentre investigava, con lo smartphone aperto su alfemminile.it! Moglie Gelosa Stalker avvistata! Povero marito...</value>
-	</string>
+    <value >Hai beccato {0} mentre investigava, con lo smartphone aperto su alfemminile.it! Moglie Gelosa Stalker avvistata 🕵️‍♀️! Povero marito...</value>
+  </string>
+
   <string key="DetectiveSnoop" >
-
-    <value >Le tue indagini hanno rivelato che {0} era {1}! Guarda con chi si frequenta quel lurido di tuo marito...</value>
+    <value >Le tue indagini hanno rivelato che {0} era {1}! Guarda con chi si frequenta quel lurido di tuo marito!!</value>
   </string>
+
   <string key="HarlotShot" >
-
-    <value >Sembra che il "Cruelty Free" con Vegan Pammy non piaccia a Pooten. A Pooten piace la violenza! Dopo un rumoroso sparo, i quarantenni ammirano {0} con l'arma ancora in mano.. Madre Russia ha colpito ancora! {1} è morta, e con lei lo slogan "No Veg"</value>
+    <value >Sembra che il latte materno non piaccia a Putin 🔫. A Putin piace la violenza! Dopo un rumoroso sparo, i quarantenni ammirano {0} con l'arma ancora in mano.. Madre Russia ha colpito ancora! {1} è morta, coperta di kritike e senza complimenti.</value>
   </string>
-  <string key="DefaultShot" >
 
+  <string key="DefaultShot" >
     <value >Improvvisamente si sente uno sparo. I quarantenni escono dalle proprie case per cogliere {0} in piedi accanto al corpo di {1}, con l'arma ancora puntata alla sua testa. Il grido della Russia si sente fino in Cina.\n{2}</value>
   </string>
+
   <string key="WolfWins" >
-    <value >Mugsy ha vinto!</value>
+    <value>Il Mugsy Mannaro 🐺 ha vinto!</value>
   </string>
   <string key="WolvesWin" >
-    <value>I Mugsy hanno vinto!</value>
+    <value>I Mugsy Mannari 🐺 hanno vinto!</value>
   </string>
+
   <string key="VillageWins" >
-  <value>I quarantenni hanno vinto! Non c'è più traccia di Mugsy Mannari, Pulitori o qll k nn mttn laic e amen. l'odore di KAFFÈÈÈÈ e BUONGIORNISSIMI invade il mondo intero</value>
+  <value>I quarantenni hanno vinto! Non c'è più traccia di Mugsy Mannari, Pulitori o di Quelli che non mettono laic e amen! L'odore di KAFFÈÈÈÈHH invade il mondo intero!</value>
   </string>
+
   <string key="TannerWins" >
-
-    <value >Oh no! Avete linciato il troll piddino! Gli avete dato troppa corda! Il PD è fiero di te, contratulazioni!</value>
+    <value >Oh no! Avete linciato il Troll Piddino 👺! Gli avete dato troppa corda! Il PD è fiero di te, congratulazioni!</value>
   </string>
+
   <string key="RemainingPlayersEnd">
-
-    <value>Giocatori rimasti vivi, ruolo, e fazione:</value>
+    <value>Giocatori rimasti vivi, ruolo e fazione:</value>
   </string>
+
   <string key="CultistVotedConvert" >
-    <value >{0} vota per convertire {1}</value>
+    <value>{0} vota per convincere {1} a non mettere i laic!</value>
   </string>
+
   <string key="CultConvertCultHunter">
-
-    <value>{0} è stato inviato a fare il suo sporco lavoro, per convertire {1}... ma è stato catturato e denunziato! {0} è morto!</value>
+    <value>{0} è stato inviato a convincere {1} a non mettere i laic e gli amen, ma è stato scoperto e denunciato! {0} è morto!</value>
   </string>
+
   <string key="CultHunterKilledCultVisit">
-
-    <value>{0} ti ha fatto visita la scorsa notte, pronto a convertirti....  ma l'hai denunziato, con una rapida chiamata a tuo cugino della postale.  Uno ke nn mtt i laic è morto... {1} rimanenti!</value>
+    <value>{0} ti ha fatto visita la scorsa notte, pronto a convincerti a non mettere i laic, ma tu hai subito chiamato tuo cugino della Postale e l'hai denunciato! Uno che non mette i laic 👤 è morto! {1} rimanenti!</value>
   </string>
+
   <string key="CultConvertYou">
+    <value>La setta 👤 ti ha convinto a non mettere laic e amen! Ora sei uno di loro. Ogni notte, avrai la possibilità di convincere un altro giocatore a diventare una brutta persona.</value>
+  </string>
 
-    <value>La setta ti ha convinto a nn mttr laic! Ora sei uno di loro.  Ogni notte, avrai la possibilità di convertire un altro giocatore.</value>
-  </string>
   <string key="CultTeam">
-    <value>Qll ke nn mttn laic: {0}</value>
+    <value>Quelli che non mettono i laic 👤 sono: {0}</value>
   </string>
+
   <string key="CultJoin">
-    <value>{0} ha aderito alla setta!</value>
+    <value>{0} ha deciso di non mettere più laic o amen 👤!</value>
   </string>
+
   <string key="CultVisitEmpty">
-    <value>{0} è stato inviato a fare il suo sporco lavoro, per far visita a {1}... Stupidi Vegani...</value>
+    <value>{0} è stato inviato a fare il suo sporco lavoro: cercare di convincere {1} a non mettere i laic... ma nessuno era connesso a Facebook!</value>
   </string>
+
   <string key="CultWins" >
-    <value >Tutti i Mugsy sono morti, ma tutti i sopravvissuti sono stati convinti a nn mttr laic... La setta ha vinto!</value>
+    <value >Tutti i Mugsy Mannari sono morti, ma tutti i sopravvissuti sono stati convinti a non mettere più laic né amen! La setta 👤 ha vinto!</value>
   </string>
+
   <string key="HunterVisitDead">
-    <value>Hai dato la caccia a {0}, ma era già morto!</value>
+    <value>Hai cercato di scoprire se {0} metteva i laic, ma era già morto!</value>
   </string>
+
   <string key="HunterFindCultist">
-    <value>Di nascosto, spii dalla finestra di {0}, e lo cogli a scorrere i post senza mettere i laic! Sconvolto, Tiri fuori il tuo smartphone e chiami il tuo cugino della postale!</value>
+    <value>Di nascosto, spii dalla finestra di {0}, e lo cogli a scorrere i post senza mettere i laic! Sconvolto, tiri fuori il tuo smartphone e chiami il tuo cugino della Postale!</value>
   </string>
+
   <string key="HunterFailedToFind">
     <value>Prima di partire, ricevi un laic da {0} sulle tue foto.. Che personcina per bene! Ti metti così a dormire, tranquillo.</value>
   </string>
+
   <string key="WildChildToWolves">
-    <value>Il benefattore di {0} è morto! Niente laic!! Adesso è un Mugsy!</value>
+    <value>Il benefattore di {0} è morto! Il Bimbo Malato 👶 non ha raggiunto i 100 laic!! Adesso è un Mugsy Mannaro 🐺!</value>
   </string>
+
   <string key="WildChildTransform">
-    <value>{0} è morto! Sei diventato un Mugsy Mannaro! I tuoi nuovi alleati sono: {1}</value>
+    <value>{0} è morto! Non sei riuscito a raggiungere i 100 laic, per cui non ti rimane altra scelta che diventare un Mugsy Mannaro 🐺! I tuoi nuovi alleati sono: {1}</value>
   </string>
-  <string key="Villager">
-    <value>un Quarantenne👴 (👱)</value>
+
+<string key="Villager">
+    <value>Un Quarantenne 👱</value>
   </string>
   <string key="Drunk">
-    <value>Mentana📺 (🍻)</value>
+    <value>Mentana 🍻</value>
   </string>
   <string key="Harlot">
-    <value>Vegan Pammy🌿 (💋)</value>
+    <value>Mamma Pancina 💋</value>
   </string>
   <string key="Seer">
-    <value>Kaffeh☕️ (👳)</value>
+    <value>Kaffeh 👳</value>
   </string>
   <string key="Traitor">
-    <value>FALZOH😡! (🖕)</value>
+    <value>Falzoh 🖕</value>
   </string>
   <string key="GuardianAngel">
-    <value>Corto Maltese⚓️ (👼)</value>
+    <value>GDPR 👼</value>
   </string>
   <string key="Detective">
-    <value>Moglie Gelosa Stalker🙅 (🕵)</value>
+    <value>Moglie Gelosa Stalker 🕵</value>
   </string>
   <string key="Wolf">
-    <value>un Mugsy Mannaro🐶 (🐺)</value>
+    <value>Mugsy Mannaro 🐺</value>
   </string>
   <string key="Cursed">
-    <value>39enne👦 (😾)</value>
+    <value>39enne 😾</value>
   </string>
   <string key="Gunner">
-    <value>Pootin che manda i terroristi a deeo🇷🇺 (🔫)</value>
+    <value>Putin 🔫</value>
   </string>
   <string key="Tanner">
-    <value>Troll Piddino💰 (👺)</value>
+    <value>Troll Piddino 👺</value>
   </string>
   <string key="Fool">
-    <value>Dekaffeh🍵 (🃏)</value>
+    <value>Dekaffeh 🃏</value>
   </string>
   <string key="WildChild">
-    <value>Beembo Malato mtt 100 laic🤒 (👶)</value>
+    <value>Bimbo Malato 👶</value>
   </string>
   <string key="Beholder">
-    <value>Barista🍾 (👁)</value>
+    <value>Barista 👁</value>
   </string>
   <string key="ApprenticeSeer">
-    <value>Chicco di Kaffeh🌰 (🙇)</value>
+    <value>Chicco di Kaffeh 🙇</value>
   </string>
   <string key="Cultist">
-    <value>cuelo ke nn mtt laic e amen🙏🏻(👤)</value>
+    <value>Quello che non mette i laic e gli amen 👤</value>
   </string>
   <string key="CultistHunter">
-    <value>qll ke denunzia ki nn mtt laic e amen👎🏻(💂)</value>
+    <value>Quello che denuncia chi non mette i laic e gli amen 💂</value>
   </string>  
+
  <string key="RanAway">
     <value>👻 Fuggito</value>
   </string>
@@ -470,406 +489,445 @@
   <string key="PlayersAlive">
     <value>Giocatori in vita</value>
   </string>
+
   <!-- New strings 4 MAY 2016-->
+
   <string key="Mason">
-    <value>UNO DELLA KASTAH👁‍🗨!!1! (👷)</value>
+    <value>Un Membro della Kastah 👷</value>
   </string>
+
   <string key="RoleInfoMason">
-
-    <value>Sei un membro della KASTAH, organizzazione segreta che governa il mondo e se ci sono altri della KASTAH, saprai chi sono; tuttavia, sei un cittadino comune... A parte i poteri forti...</value>
+    <value>Sei un Membro della Kastah 👷, l’organizzazione segreta che governa il mondo nascondendo immagini di triangoli nei cartoni Disney per traviare la mente dei bambini. O meglio, questo è quello che pensi: realmente non hai grossi poteri se non sapere chi sono gli altri Membri della Kastah qualora ci siano. A parte questo sei un cittadino comune, a parte la tua amicizia coi poteri forti, ovviamente. 
+</value>
   </string>
+
   <string key="MasonEaten">
-
-    <value>Al risveglio dei contadini, viene ritrovato il corpo di {0} con il suo cappuccio nero ancora in testa e il sangue che fuoriusciva dalle feritoie per gli occhi e le gambe staccate a suon di morsi! Uno della KASTAH👷 è morto!</value>
+    <value>Al risveglio dei contadini, viene ritrovato il corpo di {0} con il cappuccio nero ancora in testa, il sangue che fuoriusciva dalle feritoie per gli occhi, e il portafoglio pieno di soldi rubati in mano. Un Membro della Kastah 👷 è morto!</value>
   </string>
+
   <string key="MasonTeam">
-    <value>  Gli altri membri della KASTAH sono: {0}</value>
+    <value>\nGli altri Membri della Kastah sono: {0}</value>
   </string>
+
   <!-- new strings May 6 2016-->
+
   <string key="CultTargetDead">
-
-    <value>Il vostro membro piu' nuovo si reca a casa di {0} per convertirlo, ma trova invece una casa malmessa, sangue ovunque, e ciuffi di peli di Mugsy sparsi per il corridoio...</value>
+    <value>Il vostro membro più nuovo si reca a casa di {0} per convertirlo, ma trova invece una casa malmessa, sangue ovunque, e ciuffi di peli di Mugsy Mannari sparsi per il corridoio...</value>
   </string>
+
   <string key="GuardBlockedWolf">
-   <value>Ti introduci nella casa di {0} per mangiarlo, ma improvvisamente vedi un veliero salpare. È Corto Maltese, che sta partendo con la tua vittima! Nulla da fare, al Capitano non si comanda! Torni a casa, a stomaco vuoto...</value>
+   <value>Ti introduci nella casa di {0} per sommergerlo di dolcezza e rubargli i dati della carta di credito, ma improvvisamente un pop up compare sullo schermo del computer: è il GDPR 👼 che sta proteggendo la praivasi della tua vittima! Nulla da fare, quei cookies dovrai andare a rubarli da qualche altra parte!</value>
   </string>
+
   <!-- new strings May 9 2016-->
+
   <string key="CultUnableToConvert">
-
-    <value>Spedite {0} per convertire {1}, ma la sua fede era troppo elevata, si rifiuta di nn mttr laic, non siete riusciti a convertirlo :(</value>
+    <value>Spedite {0} per convincere {1} a non mettere più laic e amen, ma la sua fede in Facebook era troppo elevata! Missione fallita!</value>
   </string>
+
   <!-- new string May 12 2016-->
+
   <string key="NameExists">
-
-    <value>{1}, un giocatore con il nome di {0} e' gia' entrato. Per favore cambia il tuo nome per partecipare, o Mugsy ti mangia... </value>
+    <value>@{1}, un giocatore con il nome di {0} è già entrato. Per favore cambia il tuo nome per partecipare. </value>
   </string>
+
   <string key="HarlotDiscoverCult">
-
-    <value>Ti rechi a casa di {0} per divertirti un po'... Ma quando stai per uscire, vedi il suo smartphone sul tavolo.. dai una sbirciata, e ti accorgi che nn mtt laic! Che persona triste......</value>
+    <value>Ti rechi a casa di {0} per divertirti un po', ma quando stai per uscire, vedi il suo smartphone sul tavolo. Con una veloce sbirciata ti accorgi che non mette mai i laic né dice mai amen! Che persona triste...</value>
   </string>
+
   <!-- new string May 13 2016-->
+
   <string key="Was">
     <value>era</value>
   </string>
+
   <string key="GenericDeathNoReveal">
-
-
     <value>Tutti si svegliano la mattina, e si accorgono che {0} non ha augurato il BUONGIORNISSIMOH... Preoccupati, controllano la sua casa per trovare i resti di {0}.</value>
-    <value>I quarantenni si svegliano al sorgere del sole, per poi trovare i resti di {0}, con glitter e bambini alati, morto in qualche modo la scorsa notte....</value>
+    <value>I quarantenni si svegliano al sorgere del sole, per poi trovare i resti di {0}, sommerso da glitter e bambini alati, morto in qualche modo la scorsa notte...</value>
   </string>
+
   <string key="MasonConverted">
-
-    <value>Cavoli.... {0} non si e' presentato alla riunione della KASTAH questa mattina.. E non ha neanche messo mi piace al buongiorno! Ma scherziamo?</value>
+    <value>Cavoli... {0} non si e' presentato alla riunione della Kastah questa mattina... E non ha neanche messo mi piace al buongiorno!! Ma scherziamo?!?!</value>
   </string>
-  <!-- new string May 16 2016-->
+
   <string key="FleeDisabled">
-
-    <value>Fuggire mentre il gioco e' in corso è stato disabilitato dal Comitato Quarantenni.</value>
+    <value>Fuggire mentre il gioco è in corso è stato disabilitato dal Comitato Quarantenni!</value>
   </string>
+
   <string key="IsDead"> <!-- used when gunner shoots a player -->
-    <value>e' morto</value>
+    <value>È morto</value>
   </string>
 
-  <!-- MORE STRINGS May 16, 2016 -->
-  <string key="AdminAdded">
-
-    <value>{0} E' stato aggiunto alla lista degli admin. usa /config per cambiare le impostazioni del gruppo.</value>
+  <string key="AdminAdded" deprecated="true">
+    <value>{0} è stato aggiunto alla lista degli admin. usa /config per cambiare le impostazioni del gruppo.</value>
   </string>
   <string key="AlreadyInGame">
-    <value>Sei gia' nella partita! ({0})</value>
+    <value>Sei già nella partita! ({0})</value>
   </string>
-  <string key="MultipleGames">
-
-    <value>Il tuo gruppo e' stato settato per far cominciare piu' partite... Uccisioni extra.</value>
+  <string key="MultipleGames" deprecated="true">
+    <value>Il tuo gruppo è stato settato per far cominciare più partite... Uccisioni extra.</value>
   </string>
-  <string key="GroupQueue">
-
-    <value>Il gruppo e' attualmente in lista d'attesa. Posizione:{0} / {1}</value>
+  <string key="GroupQueue" deprecated="true">
+    <value>Il gruppo è attualmente in lista d'attesa. Posizione:{0} / {1}</value>
   </string>
   <string key="MaintBreak">
-
     <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @greywolfdev per altre informazioni.</value>
   </string>
-  <string key="MaxGames">
-
+  <string key="MaxGames" deprecated="true">
     <value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
   </string>
-  <string key="SkipQueue">
-
-    <value>{0} e' un gruppo ufficiale, ed ha saltato la lista d'attesa!</value>
+  <string key="SkipQueue" deprecated="true">
+    <value>{0} è un gruppo ufficiale, ed ha saltato la lista d'attesa!</value>
   </string>
   <string key="NoGame">
-
     <value>Non ci sono partite in corso. Cominciane una con /startgame o comincia una partita Chaos con /startchaos</value>
   </string>
   <string key="GroupAdminOnly">
-    <value>Solo un admin del gruppo può usare questo comando. Togli il bot e rimettilo, ti rendera' admin.</value>
+    <value>Solo gli admin del gruppo possono usare questo comando. Chiedi al creatore o ad altri admin.</value>
   </string>
   <string key="ShuttingDown">
-
-    <value>Dopo questa partita, mi spegnero' per una manutenzione.</value>
+    <value>Dopo questa partita, mi spegnerò per una manutenzione.</value>
   </string>
   <string key="ShuttingDownUpdate">
-
-    <value>Dopo questa partita, mi spegnero' momentaneamente per un aggiornamento(automatizzato).</value>
+    <value>Dopo questa partita, mi spegnerò momentaneamente per un aggiornamento (automatizzato).</value>
   </string>
-  <string key="NullIdAdmin">
-
-    <value>UserId nullo.  Persona FALZAH!</value>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>UserId nullo.  Sei sicuro di aver mandato questo comando come risposta?</value>
   </string>
-  <string key="AlreadyAdmin">
-    <value>{0} E' gia' un admin!</value>
+  <string key="AlreadyAdmin" deprecated="true">
+    <value>{0} è già un admin!</value>
   </string>
-  <string key="NotAdmin">
-    <value>{0} Non e' un admin!</value>
+  <string key="NotAdmin" deprecated="true">
+    <value>{0} Non è un admin!</value>
   </string>
-  <string key="AdminRemoved">
-    <value>{0} E' stato rimosso dalla lista degli admin.</value>
+  <string key="AdminRemoved" deprecated="true">
+    <value>{0} è stato rimosso dalla lista degli admin.</value>
   </string>
-  <string key="LanguageSet">
+  <string key="LanguageSet" deprecated="true">
     <value>Lingua settata su {0}</value>
   </string>
+
     <string key="NoSeer">
-	<value>Non c'è il KAFFEH! E ora che si fa?</value>
+	<value>Fermi tutti, non c'è il KAFFEH 👳! E ora che si fa?!</value>
   </string>
+
   <string key="TimesUp">
 	<value>È scaduto il tempo!</value>
   </string>
+
   <!-- new strings june 10 2016 -->
+
   <string key="RoleInfoCupid">
-
-    <value>Sei il primo sito d'incontri in Italia: tra migliaia di profili e foto puoi trovare l'anima gemella di chiunque. Qualunque single può trovare la persona giusta in chat grazie al tuo aiuto. Scegli dunque la coppia perfetta. Se uno dei due morirà l'altro tenterà il suicidio. Il bello? Non ti dovrai ritenere responsabile delle loro morti.</value>
+    <value>Sei Meetic 🏹, il primo sito d'incontri in Italia! Tra migliaia di profili e foto puoi trovare l'anima gemella di chiunque, e qualunque single può trovare la persona giusta in chat grazie al tuo aiuto. Scegli dunque la coppia perfetta. Se uno dei due morirà l'altro tenterà il suicidio: Romeo e Giulietta who? Il bello è che non ti dovrai ritenere responsabile delle loro morti.</value>
   </string>
+
   <string key="RoleInfoDoppelganger">
-
-    <value>Sei un immigrato clandestino, venuto in Italia per rubare il lavoro a qualche povero onesto cittadino italiano. Scegli un cittadino, e, dato che ti accontenti di due spicci, appena questo morirà non avrai problemi a rubargli il lavoro.</value>
+    <value>Sei la Vicina Invidiosetta 🎭! Sei un essere spregevole e ficcanaso. Ficcanaso della vita degli altri a tal punto, che spii chiunque e costantemente dalle finestre. Tutto questo farti i fatti degli altri ti ha fatto dimenticare chi sei, ma non preoccuparti: diventerai ossessionata a tal punto da un tuo vicino di casa che quando morirà prenderai il suo ruolo.</value>
   </string>
+
   <string key="RoleInfoHunter">
-
-    <value>VIVA BEPPE!!!1! Tu sì che sai come fare il bene del tuo paese, e alla tua morte potrai creare un post funebre click-bait e farlo leggere a qualcuno, uccidendolo!</value>
+    <value> Sei Barbara D'Urso 🎯, eroina dei quarantenni di tutta Italia. Le tue d'ursointerviste, portate avanti col cuore, hanno scatenato la rabbia delle invidiosette della RAI, che provano costantemente a rubarti lo share del 260%. Se muori, potrai portare nella tomba con te un quarantenne fan di Mara Venier. Se vieni uccisa dai Mugsy, c'è la probabilità che tu riesca ad ucciderne uno, ma nel caso ce ne fossero altri, verresti accerchiata ed uccisa comunque.</value>
   </string>
+
   <string key="RoleInfoSerialKiller">
-
-    <value>Sei il Pulitore dei Contatti. Stanco dei BUONGIORNISSIMIH, KAFFEH, Vegani e Troll, Ogni notte potrai cancellare qualcuno dai tuoi contatti. Quando avrai finito, vincerai.</value>
+    <value>Sei il Pulitore di Contatti 🔪! Stanco dei BUONGIORNISSIMOH, del Kaffeh, delle Mamme Pancine, dei Troll, ma soprattutto di quegli idioti dei quarantenni, hai deciso di sbarazzarti di tutti loro. Ogni notte potrai cancellare qualcuno dai tuoi contatti. Quando avrai finito e rimarrai solo tu in tutto il villaggio, vincerai. Clicca, banna, banna, clicca!!</value>
   </string>
+
   <string key="CupidChosen">
+    <value>Hai ricevuto un messaggio da Meetic 🏹. Dice che la tua anima gemella è {0}. All'improvviso senti il bisogno di passare tutta la vita insieme. Se uno di voi due muore, l'altro si suiciderà. Se rimanete in vita fino alla fine della partita, vincete.</value>
+ </string>
 
-    <value>Hai ricevuto un messaggio da Meetic. Dice che la tua anima gemella è {0}. All'improvviso senti il bisogno di stare per tutta la vita insieme. Se uno di voi due muore, l'altro si suiciderà. Se rimanete in vita fino alla fine della partita, vincete.</value>
-	<value>Meetic ti ha inviato un messaggio! Dice che la tua vita è collegata a quella di {0}!  Il vostro legame deve essere eterno, e quindi se morirà, dovrai suicidarti. Se riuscite a sopravvivere fino alla fine, sarete entrambi vincitori.</value>
-</string>
   <string key="HunterLynchedChoice">
-
-    <value>Il villaggio ha deciso di impiccarti! Questa è la tua ultima possibilità, scegli a chi inviare il tuo post funebre click-bait in modo da ucciderlo!</value>
+    <value>I quarantenni hanno deciso di linciarti! Questa è la tua ultima possibilità, scegli un fan di Mara Venier e uccidilo!</value>
   </string>
+
   <string key="HunterNoChoiceLynched">
-
-    <value>{0} cerca di inviare il suo ultimo post funebre click-bait, ma non riesce a finirlo in tempo, e la sua morte sopraggiunge con un triste logout da Facebook</value>
+    <value>{0} cerca di portare a termine la sua ultima d'ursointervista, ma inizia la pubblicità. La sua morte sopraggiunge con il triste spot di "Sì con riso, senza lattosio".</value>
   </string>
+
   <string key="HunterSkipChoiceLynched">
-
-    <value>{0} finisce il suo post, guarda chi taggare..... ma non riesce a decidere a chi destinarlo.  Si lascia così morire, accettando il suo destino...</value>
+    <value>{0} controlla lo share, è crollato del 197%..... Mara Venier ha vinto.  Si lascia così morire, accettando il suo destino...</value>
   </string>
+
   <string key="HunterKilledFinalLynched">
-
-    <value>Mentre il cappio di stringe intorno al collo di {0}, lui finisce il suo post, sceglie chi taggarvici e preme invio. il post viene indirizzato a {1} giusto prima che faccia il logout! {1} cade a terra, senza vita.  {2}</value>
+    <value>Mentre il cappio si stringe intorno al collo di {0},uno dei suoi scagnozzi, Federicofashionstyle, sbuca da una siepe e assale un fan di Mara Venier. Federico,preso dalla rabbia,colpisce con delle extension {1}! {1} cade a terra, senza vita. {2}</value>
   </string>
+
   <string key="HunterShotChoice">
-
-    <value>Stai per morire!  Nei tuoi ultimi istanti di vita, Hai l'occasione di inviare un post funebre click-bait a qualcuno.... Sbrigati!</value>
+    <value>Stai per morire! Nei tuoi ultimi istanti di vita, hai l'occasione di uccidere un fan di Mara Venier... Sbrigati!</value>
   </string>
+
   <string key="HunterNoChoiceShot">
-
-    <value>{0} è morto prima di rendersene conto e poter scrivere il suo post funebre click-bait, immerso in un bagno di sangue.....</value>
+    <value>{0} è morta prima di rendersene conto e poter uccidere un fan di Mara Venier...</value>
   </string>
+
   <string key="HunterSkipChoiceShot">
-
-    <value>Mentre {0} è steso per terra, ansimante nei suoi ultimi attimi di vita, non riesce a decidere a chi inviare il suo post.... ed accetta il suo triste destino..</value>
+    <value>Mentre {0} è stesa per terra, ansimante nei suoi ultimi attimi di vita, non riesce a decidere quale fan di Mara Venier uccidere... ed accetta il suo triste destino.</value>
   </string>
+
   <string key="HunterKilledFinalShot">
-
-    <value>In fin di vita, {0} cade.... Ma non senza aver prima inviato il suo ultimo post funebre click-bait a {1}, che resta stecchito senza neanche accorgersene. {2}</value>
+    <value>In fin di vita, {0} cade.... Ma non senza aver prima ucciso {1}, brutto traditore fan di Mara Venier. {2}</value>
   </string>
+
   <string key="CultConvertSerialKiller">
+    <value>{0} si intrufola nella casa di {1}, apre la porta, e viene immediatamente accolto dal Pulitore di Contatti 🔪! {1} assale {0}, cancellandolo dalla rubrica e quindi dalla faccia della terra!</value>
+ </string>
 
-    <value>{0} si intrufola nella casa di {1}, apre la porta, e viene immediatamente accolto dal Pulitore Contatti! {1} assale {0}, cancellandolo dalla faccia della terra! {0} è morto, tra atroci sofferenze.. D:</value>
-	<value>Qll k nn mttn laic mandano {0} per convertire {1}, ma il corpo di {0} non si vede più uscire.. che fine avrà fatto? {0} è probabilmente morto....</value>
-  </string>
   <string key="HunterShotWolfMulti">
-
-    <value>I Mugsy hanno provato ad attaccare il Pentastellato la scorsa notte, ma prima di morire, è riuscito a taggare {0} e morire insieme a lui.</value>
+    <value>I Mugsy Mannari hanno provato ad attaccare Barbara D'urso 🎯 la scorsa notte, ma lei, prima di morire, è riuscita a lanciare un microfono addosso a {0}.</value>
   </string>
+
   <string key="HunterShotWolf">
-
-    <value>I Mugsy hanno provato ad attaccare il Pentastellato l'ultima notte, ma il Pentastellato è stato più veloce del Mugsy {0}, taggandolo nel suo famoso post click-bait!</value>
+    <value>I Mugsy Mannari 🐺 hanno provato ad attaccare Barbara D'urso 🎯 l'ultima notte, ma lei è stata più veloce di {0}, ed è riuscita a laciargli un microfono!</value>
   </string>
+
   <string key="SerialKillerKilledWolf">
-
-    <value>I Mugsy hanno provato ad avere uno snack notturno, ma sono stati invece sorpresi dal Pulitore! {0} è rimasto ucciso nello scontro!</value>
+    <value>I Mugsy Mannari 🐺 hanno provato ad avere uno snack notturno, ma sono stati invece sorpresi dal Pulitore 🔪! {0} è rimasto ucciso nello scontro!</value>
   </string>
+
   <string key="DefaultKilled">
-
-    <value>All'improvviso, {0} sparisce da Facebook, Twitter, Meetic senza lasciar tracce.. Ma sarà veramente esistito? {0} è ormai solo un vago ricordo nella mente delle persone! {1}</value>
+    <value>All'improvviso, {0} sparisce da Facebook, Twitter, Meetic senza lasciar tracce.. Ma sarà veramente esistito? {0} è ormai solo un vago ricordo nella mente delle persone. Il Pulitore di Contatti 🔪  ha colpito ancora! {1}</value>
   </string>
+
   <string key="GuardBlockedKiller">
-
-    <value>Hai provato ad cancellare dai contatti {0} , ma lo vedi partire nel vascello con Corto Maltese....Niente da fare..</value>
+    <value>Hai provato a cancellare dai contatti {0} , ma la praivasi del suo profilo è stata protetta dal gdpr 👼... Niente da fare...</value>
   </string>
+
   <string key="CultConvertHunter">
-
-    <value>I satanisti mandano {0} per convertire {1}, ma invece un colpo suona rumoroso e il corpo di {0} esce dalla finestra volando! {0} è morto....</value>
+    <value>Quelli che non mettono laic e amen👤 mandano {0} per convertire {1}, ma invece un colpo suona rumoroso e il corpo di {0} esce dalla finestra volando! Non si scherza con Barbara D'urso 🎯 e infatti {0} è morto....</value>
   </string>
+
   <string key="GuardKiller">
-
-    <value>Hai provato a salpare con il Pulitore, che ti cancella insieme al tuo vascello. Non esisti più..</value>
+    <value>Hai provato a salvare la praivasi del Pulitore di Contatti 🔪 che non ha per nulla approvato il tuo ficcanasare e ti ha ucciso!</value>
   </string>
+
   <string key="HarlotFuckKiller">
-
-    <value>Sei sgattaiolato nella casa di {0}, ma lui, arrabbiato, ti cancella dai contatti di tutti. Per colpa di {0}, è come se tu non esistessi! Dopo 5 minuti di agonia e vuoto perchè non hai più nessuno a cui dire di essere vegana, decidi di farla finita.....</value>
+    <value>Sei sgattaiolato nella casa di {0} per fargli assaggiare la tua torta fatta col latte materno ma era il Pulitore di Contatti 🔪 e ha cancellato la tua torta e te dalla faccia della terra! Povera Mamma! </value>
   </string>
+
   <string key="HarlotFuckKillerPublic">
-    <value>La Vegan Pammy {0} ha fatto l'errore di andare a casa del Pulitore Contatti!</value>
+    <value>Sembra che {0} volesse darsi alla pazza gioia ieri, sgattaiolando nelle case con la sua torta ancora calda di latte materno! Peccato il Pulitore di Contatti 🔪 non abbia passione per le torte e {0} è stata cancellata Facebook e ora non si trova più.</value>
   </string>
+
   <string key="DGToMason">
-
-    <value>Il sosia {0} è ora diventato uno della KASTAH, esattamente come te!</value>
+    <value>La Vicina Invidiosetta 🎭 {0} ha ficcanasato per bene nella vita del tuo amichetto della Kastah scomparso da poco ed è ora diventata anche lei una della Kastah, esattamente come te!</value>
   </string>
+
   <string key="DGTransformToMason">
-
-    <value>{0} è morto, e tu ti trasformi in uno della KASTAH.  I tuoi compagni (se presenti) sono: {1}</value>
+    <value>{0} è morto, e tu ti trasformi in uno della Kasta 👷. I tuoi compagni (se presenti) sono: {1}</value>
   </string>
+
   <string key="DGToCult">
-
-    <value>Il sosia {0} è ora diventato uno k nn mtt laic, esattamente come te!</value>
+    <value>La Vicina Invidiosetta 🎭 {0} è ora diventata quella che non mette laic ed amen 👤esattamente come te!</value>
   </string>
+
   <string key="DGTransformToCult">
-
-    <value>{0} è morto, e tu ti trasformi in uno k nn mtt laic. I tuoi compagni (se presenti) sono: {1}</value>
+    <value>{0} è morto, e tu ti trasformi in quello che non mette laic e amen 👤. I tuoi compagni (se presenti) sono: {1}</value>
   </string>
+
   <string key="DGToWolf">
-
-    <value>Il sosia {0} è ora diventato un Mugsy, esattamente come te!</value>
+<value>La Vicina Invidiosetta 🎭{0} è ora diventata un Mugsy Mannaro 🐺, esattamente come te!</value>
   </string>
+
   <string key="DGTransformToWolf">
-
-    <value>{0} è morto, e tu ti trasformi in un Mugsy. I tuoi compagni (se presenti) sono: {1}</value>
+    <value>{0} è morto, e tu ti trasformi in un Mugsy Mannaro 🐺. I tuoi compagni (se presenti) sono: {1}</value>
   </string>
+
   <string key="SerialKillerWins">
-
-    <value>L'ultima persona in vita è il pulitore! Ha vinto</value>
+    <value>L'ultima persona in vita è il Pulitore di Contatti 🔪 ! Dopo notti e notti di clicca, banna, banna, clicca, banna; ha vinto! </value>
   </string>
+
   <string key="AskKill">
-
-    <value>Chi vuoi cancellare stanotte?</value>
+    <value>Chi vuoi cancellare da Facebook stanotte?</value>
   </string>
+
   <string key="LoverDied">
-
-    <value>Con l'ultimo respiro di {0}, {1} accorre per vedere il suo cadavere e piange. Non riesce a sopportare la morte dell'amato, e si cancella da Facebook, Meetic e tutti i social network, sparendo dalla circolazione... Sarà ancora vivo? {2}</value>
+    <value>Con l'ultimo respiro di {0}, {1} accorre per vedere il suo cadavere e piange. Non riesce a sopportare la morte dell'amato e si cancella da Facebook, Meetic e tutti i social network, sparendo dalla circolazione... Sarà ancora vivo? {2}</value>
   </string>
+
   <string key="AskDoppelganger">
-
-    <value>A chi vuoi rubare il ruolo alla sua morte?</value>
+    <value>Chi vuoi spiare a tal punto da ereditare il ruolo alla sua morte?</value>
   </string>
+
   <string key="AskCupid1">
-
-    <value>Chi vuoi che siano gli innamorati? Scegli il primo giocatore</value>
+    <value>Chi vuoi far innamorare? Scegli il primo Quarantenne a cui mandare una richiesta di incontro! </value>
   </string>
+
   <string key="AskCupid2">
-
-    <value>Chi vuoi che siano gli innamorati? Scegli il secondo giocatore</value>
+    <value>Chi vuoi far innamorare? Scegli il secondo Quarantenne a cui mandare una richiesta di incontro! </value>
   </string>
+
   <string key="Hunter">
-    <value>Pentastellato🌟 (🎯)</value>
+    <value>Barbara D'urso 🎯</value>
   </string>
-  <string key="Cupid">
-    <value>Meetic💝 (🏹)</value>
-  </string>
-  <string key="SerialKiller">
-    <value>il Pulitore Contatti🔨 (🔪)</value>
-  </string>
-  <string key="Doppelgänger">
-    <value>Immigrati ke ci rubano il lavoro👳🏿(🎭)</value>
-  </string>
-  <string key="NewWCRoleModel">
 
-    <value>Sei diventato il beembo metti 100 laic. Il tuo modello è {0}</value>
+  <string key="Cupid">
+    <value>Meetic 🏹</value>
   </string>
+
+  <string key="SerialKiller">
+    <value>il Pulitore di Contatti 🔪</value>
+  </string>
+
+  <string key="Doppelgänger">
+    <value>La Vicina Invidiosetta 🎭</value>
+  </string>
+
+  <string key="NewWCRoleModel">
+    <value>Sei diventato un Bimbo Malato 👶. Quello che ti manterrà in vita mettendoti sempre laic è {0}</value>
+  </string>
+
   <string key="HunterKilledVisiter">
-    <value>Al centro della piazza centrale, viene ritrovato il corpo di {0}, agonizzante sussurrando il nome di BEPPEH. Sembra che lui abbia provato a visitare il Pentastellato! {1}</value>
+    <value>Al centro della piazza centrale, viene ritrovato il corpo di {0}, agonizzante sussurrando: Barbarella sei stata proprio tu! Sembra che lui abbia provato a visitare Barbara D'urso🎯 senza raccontarle una storia strappalacrime... Barbarella non l'ha presa benissimo! {1}</value>
   </string>
+
   <string key="CultAttempt">
-    <value>Uno del culto di qll k nn mttn laic ha provato a convincerti ad unirti, ma ti sei opposto con tutte le tue forze.</value>
+    <value>Uno del culto di quelli che non mettono mai laic ed amen ha provato a convincerti ad unirti al loro mondo scellerato, ma ti sei opposto con tutte le tue forze mettendo almeno 40 laic.</value>
   </string>
+
   <string key="LoversWin">
   <value>Meetic ha creato una coppia inseparabile! Gli amanti hanno vinto!</value>
   </string>
+
   <string key="SerialKillerWinsOverpower">
-    <value>Sorge il sole e gli ultimi due sopravvissuti si vedono nella piazza centrale. {0} vede {1}, lo guarda bene e con disprezzo lo cancella dai contatti. {1} è sparito dalla faccia della terra. Il pulitore contatti ha vinto!</value>
+    <value>Sorge il sole e gli ultimi due sopravvissuti si vedono nella piazza centrale. {0} vede {1}, lo guarda bene e con disprezzo lo cancella dai contatti. {1} è sparito dalla faccia della terra. Il Pulitore di Contatti ha vinto!</value>
   </string>
+
   <string key="NoWinner" isgif="true">
-    <value>Tutti nel villaggio sono morti....  non c'è niente ad eccezione dei corpi rimasti a terra. Nessuno ha vinto in questa partita.. A parte gli avvoltoi.</value>
+    <value>Tutti nel villaggio di Quarantenni sono morti...  Non c'è niente ad eccezione dei corpi rimasti a terra. Nessuno ha vinto in questa partita... A parte gli avvoltoi.</value>
   </string>
+
   <string key="SKHunterEnd">
-    <value>Il sole sorge, {0} e {1} si incontrano le villaggio. {0} tira il suo ban-hammer da pulizia contatti e salta su {1}. {1} riesce a taggare {0} sul post click-bait. Come {0} cade a terra, {1} vede il post e muore. Entrambi sono morti, il villaggio rimane desolato...</value>
+    <value>Il sole sorge, {0} e {1} si incontrano nel villaggio. {0} tira il suo ban-hammer da pulizia contatti e salta su {1}. {1} riesce a taggare {0} sul post click-bait. Come {0} cade a terra, {1} vede il post e muore. Entrambi sono morti, il villaggio rimane desolato...</value>
   </string>
+
   <string key="AlreadyOnWaitList">
-    <value>Stai già aspettando il prossimo kaffè su {0}</value>
+    <value>Stai già aspettando il prossimo Kaffeh da {0} stai calmo!</value>
   </string>
+
   <string key="AddedToWaitList">
-    <value>BUONGIORNISSIMOH! Non sei riuscito a prendere il kaffè su {0}?. Ti contatterò appena ne farò un altro. </value>
+    <value>BUONGIORNISSIMOH! Non sei riuscito a prendere il kaffè di {0}?. Ti contatterò appena ce ne sarà un altro. </value>
   </string>
+
   <string key="NotifyNewGame">
-    <value>BUONGIORNISSIMOH! IL KAFFÈÈÈÈ è quasi pronto su {0}</value>
+    <value>BUONGIORNISSIMOOOHH!!1!1! IL KAFFÈÈÈÈ è quasi pronto su {0}</value>
   </string>
+
     <string key="RoleModelChosen">
     <value>BUONGIORNISSIMOH! Ti ho dato il KAFFÈÈÈÈ e scelto {0}</value>
   </string>
+
     <string key="Won">
     <value>Vinto</value>
   </string>
+
   <string key="Lost">
     <value>Perso</value>
   </string>
+
     <string key="IdleCount">
-    <value>Il giocatore {0} è stato ucciso per non aver votato {1} volte nelle ultime 24 ore.</value>
+    <value>Il Quarantenne {0} è stato ucciso per non aver votato e messo laic {1} volte nelle ultime 24 ore</value>
   </string>
-  <!--New strings 7th of July-->
+
   <string key="AboutVG">
-    <value>Il tuo ruolo è semplice: sopravvivere. Ogni giorno, avrai l'occasione di linciare i Mugsy! Vota con attenzione!</value>
+    <value>Sei un quarantenne, condannato a passare le giornate in balia delle fake news, a lottare contro i poteri forti e a condividere brutti post su Facebook. Non fai molto: attendi solo che il tuo contatto venga cancellato o che i Mugsy si ribellino a te e decidano di ucciderti.</value>
   </string>
+
   <string key="AboutSeer">
-    <value>Sei il veggente. Ogni notte, potrai scegliere un giocatore e conoscere il loro ruolo. Svelati saggiamente: Se dici di essere il veggente, i Mugsy proveranno a mangiarti! Nota: Potresti non essere Veggente ma Folle, che vede ruoli casuali (anche veri) ma in partita. Se ti scrive l'Osservatore, saprai di essere il vero Veggente.\nTraditore🖕: Lo si può scrutare come Mugsy🐺 o come Contadino👱 (50% e 50%)</value>
+    <value>Sei il Kaffeh. Ogni notte, potrai scegliere un giocatore e conoscere il loro ruolo. Svelati saggiamente: Se dici di essere il Kaffeh, i Mugsy Mannari proveranno a mangiarti! Nota: Potresti non essere Kaffeh ma Dekaffeh, che vede ruoli casuali (anche veri) ma in partita. Se ti scrive il Barista, saprai di essere il vero Kaffeh.\nTroll Piddino: Lo si può scrutare come Mugsy Mannaro o come Quarantenne (50% e 50%)</value>
   </string>
+
   <string key="AboutWw">
-    <value>Ogni notte, potrai decidere di mangiare qualcuno e di giorno dovrai confondere gli altri e non farti linciare! Se almeno la metà dei giocatori in partita sono Mugsy, la partita finisce e vincete. \n Nota: Se attacchi l'ubriaco, dovrai rimanere fermo un turno per riprenderti dalla sbronza! Se attacchi il maledetto, diventerà un Mugsy come te!</value>
+    <value>Ogni notte, potrai decidere di mangiare qualcuno e di giorno dovrai confondere gli altri e non farti linciare! Se almeno la metà dei giocatori in partita sono Mugsy Mannari, la partita finisce e vincete. \n Nota: Se attacchi Mentana, dovrai rimanere fermo un turno per riprenderti dalla sbronza! Se attacchi il 39enne, diventerà un Mugsy Mannaro come te!</value>
   </string>
+
   <string key="AboutHarlot">
-    <value>Come prostituta, avrai la possibilità di "visitare" altri giocari ogni notte. Se non sono Mugsy(o killer) te lo dirà (perchè sopravviverai!). Nel caso sfortunato in cui tu visitassi un Mugsy(o serial killer), verrai ucciso. Se visiti il giocatore che i Mugsy stanno sbranando, verrete uccisi insieme. Però, se scegli un giocatore, e i Mugsy scelgono di venire a casa tua, sopravviverai! Non eri a casa, dopotutto...</value>
+    <value>Come Mamma Pancina, avrai la possibilità di "visitare" altri giocatori ogni notte. Se non sono Mugsy Mannari (o Pulitori di Contatti) te lo dirà (perchè sopravviverai!). Nel caso sfortunato in cui tu visitassi un Mugsy Mannaro (o Pulitore di Contatti), verrai ucciso. Se visiti il giocatore che i Mugsy Mannari stanno sbranando, verrete uccisi insieme. Però, se scegli un giocatore, e i Mugsy Mannari scelgono di venire a casa tua, sopravviverai! Non eri a casa, dopotutto...</value>
   </string>
+
   <string key="AboutDrunk">
-    <value>Sei solo un ubriacone! Da ubriaco, sei come un normale villico. Ma se venissi sbranato la notte dai Mugsy, tutto il tuo alcol nel sangue li farà ubriacare e dovranno stare fermi una notte.</value>
+    <value>Da Mentana, sei come un normale quarantenne. Se i Mugsy Mannari oseranno mangiarti, li tramortizzerai con un mega blastone tale che non si terranno in piedi e - di conseguenza - non potranno mangiare la notte successiva.</value>
   </string>
+
   <string key="AboutCursed">
-    <value>Come maledetto, sei come un normale villico... finchè i Mugsy non cercano di sbranarti. Se venissero a casa tua, dopo il morso diventerai un Mugsy come loro! Nota: Finchè i Mugsy non ti mangiano, la tua fazione è con i contadini, e vincerai con loro nel caso tutti i Mugsy morissero.</value>
+    <value>Come 39enne, sei come un normale quarantenne... finchè i Mugsy Mannari non cercano di sbranarti. Se venissero a casa tua, dopo il morso diventerai un Mugsy Mannaro come loro! Nota: Finchè i Mugsy Mannari non ti mangiano, la tua fazione è con i quarantenni, e vincerai con loro nel caso tutti i Mugsy Mannari morissero.</value>
   </string>
+
   <string key="AboutTraitor">
-    <value>Sei un bastardo traditore. Se riesci a sopravvivere a lungo e riuscire a uccidere tutti i Mugsy, ti trasformerai in un Mugsy, pronto a uccidere i vecchi alleati contadini di notte! Nota: Finchè non ti trasformi, il tuo team è con i villici. Ti conviene quindi cercare di uccidere i Mugsy. Se il veggente ti scrutasse, Potrebbe identificarti sia come Mugsy🐺, sia come Contadino👱.(50% e 50%)</value>
+    <value>Sei falzoh! Se riesci a sopravvivere a lungo e riuscire a uccidere tutti i Mugsy Mannari, ti trasformerai in un Mugsy Mannaro, pronto a uccidere quarantenni di notte! Nota: Finchè non ti trasformi, il tuo team è con i quarantenni. Ti conviene quindi cercare di uccidere i Mugsy Mannari. Se il Kaffeh ti scruta, può identificarti sia come Mugsy che come Quarantenne(50% e 50%).</value>
   </string>
+
   <string key="AboutGA">
-    <value>Sei l'Angelo Custode! Ogni notte, potrai proteggere un giocatore. Stai attento alle tue scelte però, se scegliessi un Mugsy, avrai il 50% di probabilità di essere mangiato. Se scegliessi il killer, verrai accoltellato alle spalle senza accortertene (100% probabilità)</value>
+    <value>Sei il GDPR. Ogni notte, potrai proteggere un giocatore. Stai attento alle tue scelte però, se scegli un Mugsy Mannaro, avrai il 50% di probabilità di essere mangiato. Se scegli il Pulitore di Contatti, verrai accoltellato alle spalle senza accorgertene (100% probabilità).</value>
   </string>
+
   <string key="AboutDetective">
-    <value>Tu vecchio volpone.. Di giorno, avrai l'occasione di investigare gli altri giocatori. Usa questo saggiamente però, visto che c'è il 40% di probabilità che i Mugsy ti vedano investigare</value>
+    <value>Di giorno, avrai l'occasione di investigare gli altri giocatori. Usa questo potere saggiamente però, visto che c'è il 40% di probabilità che i Mugsy Mannari ti vedano investigare.</value>
   </string>
+
   <string key="AboutGunner">
-    <value>Come Artigliere, avrai due proiettili d'argento all'inizio del gioco. Di giorno, avrai l'occasione di sparare ad un'altro giocatore. Dopo lo sparo, tutti sapranno il tuo ruolo! Stai attento però, hai solo 2 proiettili e i Mugsy vorranno sicuramente mangiarti, se ti sveli!</value>
+    <value>Come Putin, avrai due proiettili d'argento all'inizio del gioco. Di giorno, avrai l'occasione di sparare ad un'altro giocatore. Dopo lo sparo, tutti sapranno il tuo ruolo! Stai attento però, hai solo 2 proiettili e i Mugsy Mannari vorranno sicuramente mangiarti, se ti sveli!</value>
   </string>
+
   <string key="AboutTanner">
-    <value>Il Conciatore! Il suo obiettivo è semplice: Farsi Linciare. Se il conciatore riesce a farsi linciare. VINCE. Tutti gli altri perdono. Nota: Se non riesce a farsi linciare: perde. Non vince con i contadini</value>
+    <value>L' obiettivo del Troll Piddino è semplice: farsi Linciare. Se riesci a farti linciare, vinci tu, e tutti gli altri perdono. Altrimenti perdi. Non vinci con i quarantenni.</value>
   </string>
+
   <string key="AboutFool">
-    <value>un povero Folle che crede di essere il Veggente.... Quando sceglie di vedere il ruolo a qualcuno, gli verrà detto un ruolo casuale in partita. Nota: È più utile di quello che sembra, può sapere con esattezza i ruoli che ci sono in partita. Se vedete un ruolo, sarà in partita.</value>
+    <value>un povero Dekaffeh che crede di essere il Kaffeh.... Quando sceglie di vedere il ruolo a qualcuno, gli verrà detto un ruolo casuale in partita. Nota: È più utile di quello che sembra, può sapere con esattezza i ruoli che ci sono in partita. Se vedete un ruolo, sarà in partita.</value>
   </string>
+
   <string key="AboutCult">
-    <value>Come Satanista, il tuo obiettivo è convertire tutti gli altri giocatori (tranne i Mugsy) Al tuo culto. Se a fine partita, tutti i giocatori sono Satanisti, Vincono. \n Probabilità di convertire i seguenti ruoli: \n Sosia: 0% Finchè rimane sosia, è impossibile da convertire \n Veggente 40% Il veggente è il più difficile da convertire \n Angelo 60% Nota: Se protegge qualcuno, non lo troverai in casa \n Maledetto 60% \n Investigatore 70% \n Prostituta 70% Come l'angelo, se non è casa, non potrete convertirla \n Cacciatore 50% Avrai il 50% di convertire il cacciatore. Se fallite, C'è il 50% che vi spari.</value>
+    <value>Come Quello che non mette laic e amen, il tuo obiettivo è convertire tutti gli altri giocatori (tranne i Mugsy) al tuo culto. Se a fine partita, tutti i giocatori non mettono laic e amen, la setta vince. \n Probabilità di convertire i seguenti ruoli: \n Vicina Invidiosetta: 0% Finchè rimane sosia, è impossibile da convertire \n Kaffeh: 40% \n GDPR: 60% Nota: Se protegge qualcuno, non lo troverai in casa \n 39enne: 60% \n Moglie Gelosa Stalker: 70% \n Mamma Pancina: 70% Come per il GDPR, se non è casa, non potrete convertirla \n Barbara D'Urso: 50% Avrai il 50% di convertire Barbarella. Se fallite, c'è il 50% che lei vi spari.</value>
   </string>
+
   <string key="AboutCH">
-    <value>Il tuo lavoro è estirpare i Satanisti. Se ti visitano, ucciderai il loro ultimo membro e saprai quanti satanisti sono rimasti. Ogni notte potrai visitare un giocatore: Se sono satanisti, li ucciderai. Sennò, tornerai a casa, come se nulla fosse successo.</value>
+    <value>Il tuo lavoro è estirpare Quelli che non mettono laic e amen. Se ti visitano, ucciderai il loro ultimo membro e saprai quanti ne sono rimasti. Ogni notte potrai visitare un giocatore: se sono membri della setta, li ucciderai. Sennò, tornerai a casa, come se nulla fosse successo.</value>
   </string>
+
   <string key="AboutWC">
-    <value>Come Bimbo Ribelle, Alla prima notte, sceglierai il tuo genitore. Se morisse, ti trasformerai in un Mugsy. Nota: Finchè non ti trasformi, vincerai con i contadini, nel caso tutti i Mugsy morissero.</value>
+    <value>Come Bimbo Malato, la prima notte di gioco sceglierai il tuo genitore. Se morisse, ti trasformerai in un Mugsy. Nota: finchè non ti trasformi, vincerai con i quarantenni, nel caso tutti i Mugsy Mannari morissero.</value>
   </string>
+
   <string key="AboutAppS">
-    <value>Per ora, sei un normale villico. Nel caso il Veggente morisse, ti trasformerai nel suo sostituto. Nota: Se sei in partita, implica che c'è un vero "Veggente" in partita.</value>
+    <value>Per ora, sei un normale quarantenne. Nel caso il Kaffeh morisse, ti trasformerai nel suo sostituto. Nota: Se sei in partita, implica che c'è un vero Kaffeh in partita.</value>
   </string>
+
   <string key="AboutBH">
-    <value>Ti verrà detto chi è il veggente (quello vero, non il folle). Se morisse e il Sosia oppure l'Apprendista Veggente prendessero il suo posto, ti verrà detto. Una buona tattica è fingersi veggente e rivelare i ruoli al posto suo.</value>
+    <value>Ti verrà detto chi è il Kaffeh (quello vero, non il Dekaffeh). Se morisse e la Vicina Invidiosetta oppure il Chicco di Kaffeh prendessero il suo posto, ti verrà detto. Una buona tattica è fingersi veggente e rivelare i ruoli al posto suo.</value>
   </string>
+
   <string key="AboutMason">
-    <value>Il ruolo dei Massoni è semplice: sanno chi sono gli altri Massoni dato che partecipano a delle riunioni segrete del villaggio. Se sono da soli, sono semplici villici.</value>
+    <value>Il ruolo dei Membri della Kastah è semplice: sanno chi sono gli altri Membri dato che partecipano insieme alle riunioni segrete della P2. Se sono da soli, sono semplici quarantenni.</value>
   </string>
+
   <string key="AboutDG">
-    <value>Puoi scegliere un giocatore a inizio partita, erediti il suo ruolo \n Nota: Se il giocatore viene convertito ai satanisti, prenderai il suo ruolo originale. Tutte le altre regole normali si applicano: se erano bimbi ribelli e il loro modello è morto, diventerai un Mugsy. Sennò, erediterai il loro modello.\nI satanisti non possono convertire il Sosia (ma possono dopo che il sosia cambia ruolo) E - Il sosia NON può vincere a meno che si sono trasformati. Se a fine partita, il Sosia non si è trasformato, perde (eccezione: amante).</value>
+    <value>Puoi scegliere un giocatore a inizio partita, e se muore erediti il suo ruolo \n Nota: Se il giocatore viene convertito da quelli che non mettono laic, prenderai il suo ruolo originale. Se erano Bimbi Malati e il loro modello è morto, diventerai un Mugsy. Altrimenti, erediterai il loro modello.\nQuelli che non mettono laic non possono convertirti finché rimani una Vicina Invidiosetta. La Vicina Invidiosetta non può vincere a meno che si trasformi.</value>
   </string>
+
   <string key="AboutCupid">
-    <value>A Inizio partita, sceglie due giocatori. Dopo diventa a tutti gli effetti un normale villico. Questi due diventeranno follemente innamorati e se uno dei due muore, l'altro morirà. Nota: gli amanti sanno chi è l'altro, ma non sanno il loro ruolo. Se gli amanti sono gli ultimi due vivi, loro vincono, indipendemente dal loro ruolo. Se gli amanti sono di due team diversi(esempio: Mugsy + villico), e un team vince (esempio: Mugsy), anche l'amante (esempio:villico) vince. \n TL;DR Se tutti e due gli amanti sono vivi a fine partita, e almeno uno dei due è nel team vincitore, vincono insieme</value>
+    <value>A Inizio partita, sceglie due giocatori. Dopo diventa a tutti gli effetti un normale quarantenne. Questi due diventeranno follemente innamorati e se uno dei due muore, l'altro morirà. Nota: gli amanti sanno chi è l'altro, ma non sanno il loro ruolo. Se gli amanti sono gli ultimi due vivi, loro vincono, indipendentemente dal loro ruolo. Se gli amanti sono di due team diversi e un team vince, anche l'amante vince.</value>
   </string>
+
   <string key="AboutHunter">
-    <value>Un tipo vendicativo, col grilletto pronto. Quando gli altri ti visitano, potrebbero trovarsi morti, visto che la paranoia ti possiede e tu gli spari. \nSe I Mugsy ti attaccano, hai una chance di ucciderne uno di loro. Sennò, avrai la chance di sparare a qualcuno alla tua morte.\nNota: Per gli attacchi dei Mugsy, la probabilità inizia al 30%. Se c'è un Mugsy, il cacciatore ha il 30% di probabilità di ucciderlo (e sopravvivere. Per ogni Mugsy in più, la probabilità aumenta del 20% (2 Mugsy= 50%, 3= 70%). Cionostante - se ci sono molti Mugsy, mentre potresti ucciderne uno, verrai lo stesso accerchiato e ucciso.	\nSe I satanisti provano a convertirti, hanno il 50% di probabilità di fallire. Se falliscono, hai il 50% di probabilità di ucciderne uno!</value>
+    <value>Un tipo vendicativo, col grilletto pronto. Quando gli altri ti visitano, potrebbero trovarsi morti, visto che la paranoia ti possiede e tu gli spari. \nSe i Mugsy ti attaccano, hai una chance di ucciderne uno di loro. Sennò, avrai la chance di sparare a qualcuno alla tua morte.\nNota: Per gli attacchi dei Mugsy, la probabilità inizia al 30%. Se c'è un Mugsy, Barbara ha il 30% di probabilità di ucciderlo e sopravvivere. Per ogni Mugsy in più, la probabilità aumenta del 20% (2 Mugsy Mannari=50%, 3=70%). Se ci sono molti Mugsy Mannari, anche se ne uccidi uno, verrai lo stesso accerchiato e ucciso. \nSe Quelli che non mettono i laic provano a convertirti, hanno il 50% di probabilità di fallire. Se falliscono, hai il 50% di probabilità di ucciderne uno.</value>
   </string>
+
   <string key="AboutSK">
-    <value>Il serial killer è un giocatore solitario, nel suo proprio team. Può vincere solo se è l'ultimo giocatore vivo (eccezione: amanti). Come serial killer, puoi uccidere CHIUNQUE: Mugsy, cacciatori, artiglieri, angeli, qualunque cosa. Se I Mugsy provano ad attaccarti, ne ucciderai uno di loro (random) e sopravviverai.</value>
+    <value>Il Pulitore di Contatti è un giocatore solitario, nel suo proprio team. Può vincere solo se è l'ultimo giocatore vivo (eccezione: amanti). Come Pulitore, puoi uccidere qualsiasi giocatore. Se i Mugsy Mannari provano ad attaccarti, ne ucciderai uno di loro (random) e sopravviverai.</value>
   </string>
+
   <string key="AboutPara">
-    <value>Para è uno sciocco programmatore a cui piace abbaiare alle persone.  Forse è stato a contatto con i Mugsy troppo a lungo...</value>
+    <value>Para è uno sciocco programmatore a cui piace abbaiare alle persone.  Forse è stato a contatto con i Mugsy Mannari troppo a lungo...</value>
   </string>
+
   <string key="EndTime">
     <value>Durata della partita: {0}</value>
 	</string>
-	<!--New strings, July the 8th -->
 
   <string key="Day">
-<!--0 - Day -->
-    <value>Giorno {0}</value>:)
+<!-- Day -->
+    <value>Giorno {0}</value>
   </string>
 <string key="NodeShutsDown">
     <value>Si è verificato un errore imprevisto, e questo nodo è stato spento :/\n Per dettagli, vai su @werewolfsupport</value>
@@ -940,7 +998,6 @@
   <string key="Hide">
     <value>Nascondi</value>
   </string>
-  <!-- Game Mode Choices-->
   <string key="NormalOnly">
     <value>Solo Normale</value>
   </string>
@@ -950,8 +1007,6 @@
   <string key="PlayerChoice">
     <value>A scelta del Giocatore</value>
   </string>
-
-  <!-- Show Roles on End Game -->
   <string key="ShowNone">
     <value>Non mostrare nessuno</value>
   </string>
@@ -961,9 +1016,8 @@
   <string key="ShowAll">
     <value>Mostra tutti i giocatori</value>
   </string>
-
   <string key="Cancel">
-    <value>Indietro</value>
+    <value>Annulla</value>
   </string>
   <string key="AllowFleeQ">
     <!-- note, there is NO space after {0}.  This is on purpose -->
@@ -971,7 +1025,7 @@
   </string>
   <string key="AllowFleeA">
     <!-- note, there is NO space after {0}.  This is on purpose -->
-    <value>È {0} fuggire dopo l'inizio della partita</value>
+    <value>{0}fuggire dopo l'inizio della partita</value>
   </string>
   <string key="MaxPlayersQ">
     <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
@@ -980,7 +1034,7 @@
     <value>Giocatori massimi impostati a {0}</value>
   </string>
   <string key="ShowRolesDeathQ">
-    <value>Mostra o nascondi i ruoli alla morte?\nAttualmente: {0}</value>
+    <value>Mostrare i ruoli alla morte?\nAttualmente: {0}</value>
   </string>
   <string key="ShowRolesDeathA">
     <value>I ruoli verranno {0} alla morte.</value>
@@ -1021,7 +1075,7 @@
   <string key="AllowFoolA">
     <value>DEKAFFEH come ruolo impostato a {0}</value>
   </string>
-  <string key="AllowTannerQ">
+   <string key="AllowTannerQ">
     <value>Ammettere il troll piddino in partita, come ruolo?\nAttualmente: {0}</value>
   </string>
   <string key="AllowTannerA">
@@ -1058,152 +1112,1113 @@
     <value>Non sono stato in grado di riprendere l'ultima lista</value>
   </string>
   <string key="YouJoined">
-    <!-- 0 - Group Name -->
     <value>Hai joinato con successo nel gruppo {0}</value>
   </string>
     <string key="Ping2">
     <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
-  </string>
-   <!-- Update 4.0-->
- <string key="RoleInfoMayor">
-    <value>AH REGÀ BONGIORNISSIMO!\nTu sei Er Faina, l'unico che dice 'a verità ner villaggio\nScaglia il tuo accendino tra la folla e decidi chi bannare!</value>
+	</string>
+  <string key="RoleInfoMayor">
+    <value>Sei Google 🎖! Grazie a te, i quarantenni con pochi click possono diventare esperti mondiali riguardo ad ogni campo del sapere. Su di loro hai un’autorità così elevata che di te si fidano ciecamente! Per questo motivo, quando decidi di rivelarti, il tuo voto al linciaggio varrà doppio.</value>
   </string>
   <string key="RoleInfoPrince">
-    <value>SEI IL FATTO QUOTIDAINO!!\nDivulghi bufale e disinformazione ai quarantenni che, se proveranno a linciarti, falliranno la prima volta perché Facebook non banna mai queste pagine!
-</value>
+    <value>Sei la Laureata al Classico 👑! Ti senti talmente superiore agli altri che riuscirai per una volta a superare indenne il linciaggio, ma alla seconda morirai: tutti sanno che la tua borsa di Livorno non è originale!</value>
   </string>
-  <string key="RoleInfoClumsyGuy">
-    <value>Voterai SI oppure NO?\nMeglio kuei politici korrotti ridotti o Renzie a kasa?\nNon ti sai decidere, quindi potresti sbagliare il linciaggio, sei troppo occupato a pensare al referendum dopotutto..
-</value>
+ <string key="RoleInfoClumsyGuy">
+    <value>Sei Indeciso sul Referendum 🤕! Taglio dei parlamentari? Voterai sì o voterai no? Non è una scelta facile quando dovrebbero andarci tutti A CASAAAAAA!! Perché un governo che non è stato eletto dal popolo ti costringe a votare? Non sono capaci di fare il loro lavoro? A CASAAAA! Sei talmente indeciso che anche nel linciaggio il rischio è che ti cambi il voto su qualcun altro (50% di possibilità)..</value>
   </string>
   <string key="RoleInfoSorcerer">
-    <value>SEI LA CAMOMILLA!!!\nDi notte puoi scrutare una persona e vedere se è kaffeh (ke skifo) o un cuccioloso Mugsy!\nI 40enni non ti bevono, quindi non vedi l'ora che muoiano!</value>
+    <value>Sei la Camomilla 🔮! Di notte puoi scrutare una persona e vedere se è Kaffeh (che skifo) o un cuccioloso, bellissimo e dolcissimo Mugsy! Il tuo scopo è trovare quella schifosa bevanda marroncina per farla uccidere dai tuoi amichetti pelosi. Non ti importa un granché dei quarantenni, non ti bevono perché non hanno gusto: quindi non vedi l'ora che muoiano!</value>
+  </string>
+ <string key="ClumsyGuy">
+    <value>Indeciso sul Referendum 🤕</value>
   </string>
   <string key="RoleInfoBlacksmith">
-    <value>Tu sei Mark Zuckerberg, il capoccia di facebook, hai il potere di far andare down i server del tuo impero per impedire la diffusione eccessiva di sticker di mugsy, ma potrai farlo una sola volta, altrimenti i quarantenni si lamenteranno su twitter!</value>
+    <value>Sei Mark Zuckerberg 🛠! In qualità di capo supremo di Facebook (unica fonte di notizie e verità di tutti i quarantenni) hai il potere di far andare giù i server del tuo impero per impedire la diffusione eccessiva di sticker di Mugsy. Quando lo fai, nessuno potrà agire per una notte. Ocula le tue scelte: potrai farlo una sola volta, altrimenti i quarantenni si andranno a lamentare su Twitter!</value>
   </string>
   <string key="RoleInfoAlphaWolf">
-    <value>SEI LA KATENA DI ST ANTONIO!!!1!⛓\nEsisti per riprodurti nelle bacheche dei quarantenni, scegli la tua vittima e la potrai infettare, trasformandola in un mugsy mannaro\nRicorda, copiaincolla, nn kondividere!</value>
+    <value>Sei la Catena di Sant’Antonio ⚡️! Esisti per riprodurti nelle bacheche dei quarantenni. Scegli la tua vittima e avrai la possibilità di infettarla, trasformandola in un Mugsy Mannaro. Ricorda, copiaincolla, nn kondividere!!</value>
   </string>
   <string key="RoleInfoWolfCub">
-    <value>Sei Biscottino, l'amico fidato di mugsy, passereste giornate intere a scorrazzare nelle bacheche dei quarantenni.\nSe verrai ucciso verrai vendicato e due quarantenni moriranno, perckè i kanniolini sn mglio dll perzone!</value>
+    <value>Sei Biscottino 🐶, la dolcissima volpina amica fidata dei Mugsy. Siete sempre insieme e passate giornate intere a scorrazzare nelle bacheche dei quarantenni. Se verrai ucciso i Mugsy si arrabbieranno a tal punto che la notte successiva uccideranno due quarantenni! Poveri stolti, come si può vivere senza di te?</value>
   </string>
   <string key="PrinceLynched">
-    <value>Non appena Facebook decide che {0} sarà eliminato dai social lui intervene «Fermi, sono solo una pagina troll di disinformazione, non eliminatemi, voglio solo diffondere cazzate» Sentendosi magnanimi, i moderatori di Fb decidono di chiudere un occhio e non cancellano.. questa volta!</value>
+    <value>Appena scende la sera il villaggio di Quarantenni ha deciso che {0} sarà linciato stasera, lui urla «Aspettate! Sono Laureata al Classico. Sono superiore a tutti voi, poveri stolti!» Sentendosi sciocchi i Quarantenni la guardano allontanarsi con la sua Borsa di Livorno e tornano sconsolati nelle loro case.</value>
   </string>
   <string key="SorcererOther">
-    <value>Hai provato a controllare sul diario di {0}, ma non riesci a notare nè kaffe nè Mugsy...</value>
+    <value>Hai provato a scrutare {0}, ma non riesci a capire cos'è... Sei però sicuro che non sia né quello schifosissimo Kaffeh👳 né un dolcissimo Mugsy Mannaro 🐺</value>
   </string>
   <string key="MayorReveal">
-    <value>{0} urla fortissimo "A REGÁ BONGIORNISSIMO" e inizia a indignarsi per eventi accaduti di recente, davanti alla folla. È evidente che {0} sia Er Faina, e a chiunque esso lanci l'accendino, verrà contato un doppio voto di linciaggio.</value>
+    <value>{0} fa un passo avanti e mostra a tutti il suo logo con i suoi quattro inconfondibili colori. Da ora in poi, i voti di Google🎖 aka {0} per il linciaggio conteranno doppio.</value>
   </string>
   <string key="AskMayor">
-    <value>URLA "A REGÀ BONGIORNO" appena ti senti pronto di indignarti pubblicamente, come tuo solito.</value>
+    <value>Clicca "Rivelati" appena ti senti pronto a rivelarti pubblicamente come Google 🎖</value>
   </string>
   <string key="Reveal">
-    <value>A REGÀ BONGIORNO</value>
+    <value>Rivelati</value>
   </string>
   <string key="SpreadDust">
-    <value>Vorresti spegnere i server, per stanotte, per impedire che i Mugsy facciano vittime?</value>
+    <value>Vorresti mandare in tilt i server di Facebook per impedire ai Mugsy Mannari 🐺 di agire questa notte?</value>
   </string>
   <string key="BlacksmithSpreadSilver">
-    <value>Mentre migliaia di post di KAFFÈÈÈÈ, PULIZIA CONTATTI e VEGANI INFEROCITI vengono pubblicati, all'improvviso {0} annuncia che per stanotte, Facebook sarà in manutenzione per liberarsi dei Mugsy Mannari. I quarantenni si lamentano, impedendo a Zuckenberg di farlo per un'altra notte...</value>
+    <value>Mentre il villaggio di Quarantenni si scanna per scoprire chi sono i Mugsy Mannari 🐺 e le perzoneh falzeh, si accorgono che {0} vaga per la città spegnendo le centraline della corrente e mandando in tilt i server di Facebook! Per ora,o almeno,per stanotte, il villaggio dei quarantenni sarà al sicuro dagli attacchi dei Mugsy Mannari 🐺.</value>
   </string>
   <string key="Mayor">
-    <value>Er Faina 🚬 (🎖)</value>
+    <value>Google🎖</value>
   </string>
   <string key="Prince">
-    <value>il Fatto Quotidaino 💻 (👑)</value>
+    <value>Laureata al Classico 👑</value>
   </string>
   <string key="Sorcerer">
-    <value>la Camomilla 🍶 (🔮)</value>
-  </string>
-  <string key="ClumsyGuy">
-    <value>l'Indeciso sul Referendum 🤔 (🤕)</value>
+    <value>Camomilla 🔮</value>
   </string>
   <string key="Blacksmith">
-    <value>Zuckenberg👍🏻 (⚒)</value>
+    <value>Mark Zuckerberg ⚒</value>
   </string>
   <string key="AlphaWolf">
-    <value>La katena di St Antonio!!!1!⛓ (⚡️)</value>
+    <value>La Catena di Sant'Antonio ⚡️</value>
   </string>
   <string key="WolfCub">
     <value>Biscottino 🐶</value>
   </string>
   <string key="PlayerBittenWolves">
-    <value>La catena {1} offre a {0} la possibilità di diventare uno di voi copiaincollando la catena. Controllando la sua bacheca Facebook, l'ha effettivamente copiata e incollata(non condivisa).! Quindi {0} si trasformerà in uno sticker di Mugsy domani notte!</value>
+    <value>Appena i Mugsy Mannari 🐺 attaccano {0}, la Catena di Sant'Antonio⚡️ {1} prega tutti di fermarsi. {1} confessa che {0} dovrebbe copiare e incollare il tuo messaggio nelle bacheche dei quarantenni, così il branco se ne va, lasciando la vittima infetta. Diverrà un Mugsy Mannaro 🐺 domani notte! SMACKSMACKSMACK</value>
   </string>
-  <string key="PlayerBitten">
-    <value>Sei stato attaccato dai Mugsy, ma copiaincollando la katena sei stato accettato nello sticker pack. Invece di essere ucciso, sei stato accettato nello sticker pack, e ne farai parte domani sera!</value>
+ <string key="PlayerBitten">
+    <value>Sei stato attaccato dai Mugsy Mannari 🐺, ma la Catena di Sant'Antonio⚡️ ti ha scelto. Invece di essere ucciso, sei stato infettato... e diverrai un Mugsy Mannaro 🐺, la prossima notte!</value>
   </string>
   <string key="BittenTurned">
-    <value>Appena cala la notte, inizi a sentirti male! Dannato deka!! Appena i dolori spariscono, ti ritrovi nello sticker pack ufficiale dei Mugsy! Ora fai parte di loro!</value>
+    <value>Appena cala la notte, senti uno strano formicolio, e senti crescerti le orecchie in modo esagerato e il corpo riempirsi di una morbidissima pelliccia... Ora sei un Mugsy Mannaro 🐺!</value>
   </string>
   <string key="AboutMayor">
-    <value>Il sindaco del paese, in incognito. Se decide di mostrare pubblicamente il proprio ruolo, il suo voto varrà doppio. Se venisse convertito ai satanisti, perde il doppio voto.</value>
+    <value>Se Google decide di mostrare pubblicamente il proprio ruolo, il suo voto varrà doppio. Se venisse trasformato in uno di quelli che non mettono laic e amen perderebbe il doppio voto.</value>
   </string>
   <string key="AboutPrince">
-    <value>Il principe è un ruolo chiave nella strategia del team dei Villici.La prima volta che viene linciato, il suo ruolo viene rivelato a tutti e non muore. Muore normalmente se viene ucciso di notte o sparato. Può essere linciato normalmente al secondo tentativo. </value>
+    <value>La laureata al classico è un ruolo chiave nella strategia del team dei quarantenni. La prima volta che viene linciato, il suo ruolo viene rivelato a tutti e non muore. Muore normalmente se viene ucciso di notte o sparato. Può essere linciato normalmente al secondo tentativo. </value>
   </string>
   <string key="AboutSorcerer">
-    <value>Sei un potente Stregone, ed hai poteri di Veggenza. Tuttavia non userai i tuoi poteri per vincere col popolo, invece, Ti schiererai con i Lupi. \nOgni notte scruta come il veggente, ma può vedere SOLO il veggente e i lupi. Vince con i lupi.</value>
+    <value>La Camomilla, il suo scopo è trovare il Kaffeh! Ogni notte può scegliere un giocatore di cui farsi dire il ruolo: le verrà detto solo se il giocatore è un Mugsy o il Kaffeh.</value>
   </string>
   <string key="AboutClumsy">
-    <value>Sei il Ragazzo Goffo, talmente distratto che c'è un 50% di probabilità che il bot cambi il tuo voto di linciaggio a uno casuale.</value>
+    <value>Sei l'Indeciso sul Referendum, talmente distratto che c'è un 50% di probabilità che il bot cambi il tuo voto di linciaggio con uno casuale.</value>
   </string>
   <string key="AboutBlacksmith">
-    <value>Il fabbro è un abitante del villaggio che ha passato gli anni a forgiare spade elfiche. Una volta durante la partita, può decidere di spargere la polvere d'argento durante il giorno (verrà annunciato pubblicamente dal bot, e il suo ruolo verrà rivelato) e bloccare i lupi la notte seguente.</value>
+    <value>Il capo di Facebook, una volta durante la partita, può decidere di spegnere i server di Facebook (verrà annunciato pubblicamente dal bot, e il suo ruolo verrà rivelato) e bloccare i Mugsy Mannari🐺 durante la seguente notte.</value>
   </string>
   <string key="AboutAlphaWolf">
-    <value>Il Lupo Alfa è l'origine della maledizione, la rovina delle rovine. Finché vivo, ha il 20% di possibilità di infettare le sue vittime (Se la vittima è stata votata anche da lui). Se infettate, verranno informate in privato e si trasformeranno in lupi la notte successiva.</value>
+    <value>La Catena di Sant'Antonio è l'origine della maledizione, la rovina delle rovine. Finché è viva, ha il 20% di possibilità di infettare le sue vittime (se la vittima è stata votata anche da lui). Se infettate, verranno informate in privato e si trasformeranno in Mugsy Mannari la notte successiva.</value>
   </string>
   <string key="AboutWolfCub">
-    <value>Il cucciolo di Lupo è un normale lupo, e verrà visto come Lupo dal veggente. Ma se venisse ucciso, la notte seguente gli altri lupi uccideranno due persone, in preda alla rabbia.</value>
+    <value>Biscottino è un normale mugsy, e verrà visto come mugsy dal Kaffeh. Ma se venisse ucciso, la notte seguente i Mugsy Mannari uccideranno due persone, in preda alla rabbia.</value>
   </string>
   <string key="DGTransformToAlpha">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} è morto, e tu ti trasformi nella katena di St Antonio!!!1!⛓.  I tuoi compagni (se presenti) sono: {1}</value>
+    <value>{0} è morto, e tu ti trasformi nella Catena di Sant'Antonio⚡️. I tuoi compagni  Mugsy Mannari 🐺 (se presenti) sono: {1}</value>
   </string>
   <string key="DGTransformToWolfCub">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} è morto, e tu ti trasformi in un Biscottino 🐶.  I tuoi compagni (se presenti) sono: {1}</value>
+    <value>{0} è morto, e tu ti trasformi in Biscottino 🐶. I tuoi compagni (se presenti) sono: {1}</value>
   </string>
   <string key="VillageTeam">
-    <value>Team Villaggio</value>
+    <value>Team Quarantenni</value>
   </string>
   <string key="NeutralTeam">
     <value>Team Neutrale</value>
   </string>
-  <string key="WolfTeam">
-    <value>Team Mugsy</value>
-  </string>
   <string key="SerialKillerTeam">
-    <value>Team Pulitore Contatti</value>
+    <value>Team Pulitore di Contatti</value>
   </string>
-  <string key="CultTeam">
-    <value>Team qll k nn mttn like e amen</value>
-  </string>
-  <string key="TannerTeamEnd">
-    <value>Team Troll Piddino</value>
+  <string key="TannerTeam">
+    <value>Team Matteo Salvini</value>
   </string>
   <string key="VillageTeamEnd">
-    <value>Team Villaggio</value>
+    <value>Team Quarantenni</value>
   </string>
   <string key="NeutralTeamEnd">
     <value>Team Neutrale</value>
   </string>
   <string key="WolfTeamEnd">
-    <value>Team Mugsy</value>
+    <value>Team Mugsy Mannaro</value>
   </string>
   <string key="SerialKillerTeamEnd">
-    <value>Team Pulitore Contatti</value>
+    <value>Team Pulitore di Contatti</value>
   </string>
   <string key="CultTeamEnd">
-    <value>Team qll k nn mttn like e amen</value>
+    <value>Team Quello che non mette laic e amen</value>
   </string>
   <string key="TannerTeamEnd">
     <value>Team Troll Piddino</value>
   </string>
-   </strings>
+  <string key="CultConvertWolf">
+    <value>Quelli che non mettono laic e amen 👤  hanno mandato {0} per provare a convertire {1}, ma all'improvviso si vede la piccola testa di {0} volare fuori dalla finestra... Indovinate un po', i Mugsy Mannari 🐺 non possono stare senza i laic e gli amen quindi {0} è morto...</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} ha fatto visita a {1} per fargli assaggiare la sua torta fatta col latte materno, solo per trovare un misterioso sconosciuto che stava cancellando tutti i profili social di {1}! Il Pulitore di Contatti 🔪 decide di soddisfare {0} ascoltando tutte le sue storie su suo figlio prima di privare - anche lei - di Facebook!</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>I Quarantenni si svegliano e trovano il corpo di {0} per terra ricoperto di terra e acqua, il flebile profumo di quei chicchi pregiati ancora aleggia nell'aria... Il Chicco di Kaffeh 🙇 è morto.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Sembra che {0}, Mark Zuckenberh ⚒, sia stato estremamente sfortunato. Il profilo di Facebook di {0} è stato trovato cancellato e tutte le fodo eliminate. Sembra che il Pulitore di Contatti 🔪  non abbia apprezzato l'ultimo ampiamento dei server </value>
+  </string>
+  <string key="CultistKilled">
+    <value>{0} è stato trovato con il profilo di Facebook tutto cancellato. Il Pulitore di Contatti 🔪 ha colpito ancora e ha provato particolare piacere a estirpare dai social una tale piaga! {0} era uno di quelli che non mette laic e amen 👤 .</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Il mattino seguente, i Quarantenni furono affranti a trovare {0}, cioè Meetic 🏹, cancellato da Facebook. Stranamente mancava anche da tutti gli altri social network...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value> I Quarantenni speravano di incontrare il campione di blast {0}, ma {0} Mentana🍻 venne trovato morto nella propria casa, preso alla sprovvista mentre si preparava per l'ennesima Maratona sulle elezioni... Sembra che al Pulitore di Contatti🔪 non piacciano i giornalisti come Mentana🍻 che fanno maratone tutto il giorno!</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} può normalmente difendere contro il Pulitore di Contatti 🔪, ma ironicamente la sua stessa praivasi è stata violata {0} è morto.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Sembra che {0} sia stato preso alla sprovvista nel suo pisolino la scorsa notte! A notte fonda si è sentito un botto, e nel suo letto, il giorno seguente, si è trovato il cadavere di Putin 🔫 , con tutti i suoi profili social cancellati. Il Pulitore di Contatti🔪 ha vinto, senza ombra di dubbio.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Assassinato! {0} Google🎖 è stato trovato ucciso mentre permetteva a tutti i Quarantenni di scoprire la verità sulle scie chimiche! Chiaramente il Pulitore di Contatti 🔪 non apprezza tutto questo aiuto ai Quarantenni!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>I vicini di casa di {0} furono sorpresi a dormire la notte scorsa. I resti regali di {0}  la Laureata al Classico 👑  furono trovati, pergamena di laurea compresa nelle varie stanze della sua bellissima casa. Il Pulitore di Contatti 🔪 evidentemente non credeva che la sua borsa Livorno fosse originale!</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Il mattino è giunto e sulla piazza si intravede il piattino distrutto, la tazzina in frantumi e tutto quel preziosissimo liquido marroncino sparso per terra. Il Pulitore di Contatti🔪 non ha pietà proprio per il profilo Facebook di nessuno. {0} era il Kaffeh👳 e ora è morto.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Il profumo di fiori e erbe di campo si innalza per tutto il villaggio. È stato compiuto un errore. I Mugsy Mannari 🐺 hanno mangiato uno dei loro alleati. La Camomilla🔮 {0} è morta.</value>
+    <value>Grida di "Noooo, annusatemi!! Sono vostro alleato!" furono sentite in tutto il villaggio l'ultima notte. Tutto quello che trovarono i Quarantenni il mattino seguente furono una bustina ancora bagnata dal profumo inconfondibile di fiori ed erbe di campo... Sembra che {0}, la Camomilla 🔮, sia stata scambiata per il Kaffeh 👳...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>SMACKSMACKSMACK! I bacini dei Mugsy Mannari 🐺 si sono sentiti per tutto il villaggio. Hanno riempito di coccole il povero Bambino Malato 👶, {0} indifeso, lasciando di lui solo uno scheletro di dimensioni ridotte. L'intero villaggio si stupisce della crudeltà dei Mugsy Mannari 🐺...</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>I Quarantenni si svegliano la mattina, solo per trovare il corpo di {0}, quello che denuncia chi non mette laic e amen💂! Apparentemente è stato anche cancellato da Facebook! Lezione imparata: non denunciare mai il Pulitore di Contatti 🔪 </value>
+    
+    <value>Il corpo di {0}, quello che denuncia chi non mette laic e amen 💂 è stato trovato nel centro del villaggio con tutti i profili social cancellati! Controllare se il Pulitore di Contatti 🔪  fosse uno di quelli che non mette laic e amen 👤  non sembra più una buona idea..</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>Sembrava una notte tranquilla, visto che i Mugsy Mannari 🐺 avevano deciso di rimanere a casa, ma l'unico sfortunato è stato {0}, uno di quelli che non mettono laic e amen 👤  che ha provato a convertire alla sua scellerata setta uno dei Mugsy Mannari 🐺. La testa di {0} è stata trasformata in una buona cena a domicilio! SMACKSMACKSMACK</value>
+    <value>Quelli che non mettono laic e amen 👤  hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a convertire, è stato divorato dal Mugsy Mannaro 🐺 che ha visitato. Sfortunatamente per {0}, i Mugsy Mannari 🐺 non hanno interesse a far parte della loro setta di odiatori di laic.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>L'ultima notte, quelli che non mettono laic e amen 👤  hanno provato a convertire una persona più pazza di loro. Il loro membro più recente ha provato a convicere il Pulitore di Contatti🔪 ad aggiungersi alla loro schiera, ma il Pulitore non l'ha presa proprio benissimo e ha cancellato tutti i profili social di {0}.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Doveva essere una notte tranquilla dove {0} faceva il suo lavoro da protettore della praivasi della città, ma il GDPR {0} è misteriosamente sparito da tutti i social. Qualcuno ha provato a proteggere il Pulitore di Contatti 🔪  questa notte ma, lui, non ha bisogno di nessuna protezione.</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>{0} ha provato a proteggere la praivasi di un Mugsy Mannaro 🐺 questa notte. Pessima, pessima idea! I Mugsy Mannari 🐺 non hanno proprio interesse alla praivasi, loro uccidono di coccole tutti quanti.</value>
+  </string>
+  
+  
+  <!--Finali 1v1-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che solo {0} era rimasto in vita, {1} prova a sbranare{0}, ma l'addestramento di {0} si rivela efficace contro il malcapitato mugsy! Tutto quello che rimane ormai è la carcassa del Mugsy Mannaro 🐺con due colpi nel cranio e Barbara D'Urso 🎯 .</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che solo {0} è rimasto in vita, {1} prova a sbranare {0} quando {0} meno se l'aspetta, riuscendo a coglierlo impreparato. Mangiare l'ultima quarantenne sembra una passeggiata per {1}, che banchetta sul corpo ancora fresco di {0}, l'oramai compianta Barbara D'Urso 🎯 .</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} e {0} escono appena spuntano i primi raggi di luce. Vedendo il cappello che {0} indossa e i suoi piccoli arti deformi, la virtuosa e diafana {1} tira fuori la propria spada, terminando una volta per tutte questa setta che ha contaminato il villaggio.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo rimanente per unirsi prolungato di {0} secondi!\n{1} secondi rimanenti per cliccare Join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Tempo rimanente per unirsi ridotto di {0} secondi!\n{1} secondi rimanenti per cliccare Join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Solo gli admin del gruppo possono prolungare il timer più di una volta!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+    <value>Permettere ai giocatori di prolungare il timer?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+    <value>{0} prolungare il timer per i giocatori</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Scegli il tempo limite che può essere aggiunto ai giocatori con un singolo comando /extend.\nDefault: {0}\nAttualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo limite per /extend impostato a {0} secondi</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no webeti! {0} era Mentana 🍻! Ora, a casua del suo blastone, non potrai attaccare {1}...</value>
+  </string>
+    <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Non puoi unirti alla partita perché non sembri essere un membro di {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Per favore non usare i comandi per joinare. Usa questo bottone invece.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>Hanno votato in {0} su {1}.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Abilitare il Voto Segreto?\nAttuale: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Voto segreto impostato su: {0}</value>
+	</string>
+	
+  <string key="NoAutoJoin">
+    <value>{0}, per favore ricordati di joinare cliccando sul bottone.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Non trovo il gruppo. Prova ad usare il comando nel gruppo in cui vuoi togliere l'avviso di nuova partita, oppure aggiungi il link, l'ID o l'username dopo il comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Sei stato rimosso dalla lista d'attesa per {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} sono entrati in partita negli ultimi 30 secondi.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Abilita quelli che non mettono laic e amen</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Abilita il Troll Piddino</value>
+  </string>
+  <string key="AllowFool">
+    <value>Abilita il Dekaffeh</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Abilita Linciaggio Segreto</value>
+  </string>
+  <string key="RandomMode">
+    <value>Abilita modalità random</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Abilita estensione del timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostra ruoli alla morte</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Abilita di fuggire</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Mostra ID all'ingresso in partita</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Mostrare ID dei giocatori dopo l'ingresso in partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} ID</value>
+  </string>
+  
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Tutte</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Abilitare la modalità casuale?\nQuando la modalità casuale è attiva, Chaos, Linciaggi segreti, Mostrare Ruoli alla Morte, e Ammetti Satanisti / Folle / Conciatore verranno impostati automaticamente ogni volta che qualcuno inizierà una partita.\nAttualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modalità casuale impostata a: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Gif Pack NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Consentire gif packs NSFW ai giocatori?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>GIF NSFW: {0}</value>
+  </string>
+  
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Appena il sole iniziò a splendere sul villaggio, {0} si svegliò nel silenzio più assoluto. Dopo aver realizzato che nessuno era rimasto, {0} camminò e camminò, fino ad arrivare alla piazza centrale del villaggio. Alla vista dei cadaveri sparsi dappertutto, {0} sospirò. Il sogno della sua intera vita di esser linciato da tutti era morto come lo erano gli altri abitanti del villaggio. Raggiunse quindi e toccò la corda, che aveva portato via così tante vite, prima di attorcigliarla attorno al proprio collo e lasciarsi andare impiccato, con un sorriso triste stampato in faccia.</value>
+    <value>{0} si svegliò all'alba, da solo. {0} vide quant'era un completo fallimento, non essendo stato in grado a indurre il villaggio a soddisfare il suo masochistico desiderio di venir linciato a morte. {0} prese una corda e si impiccò da solo, rendendosi conto che nessuno può realizzare il suo sogno, visto che nessuno era rimasto.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} aprì gli occhi, ma invece di sentire il solito trambusto del villaggio, c'era un silenzio tombale. {0} osservò a lungo il triste soffitto, realizzando lentamente cos'era successo. Tutti erano morti. I Mugsy Mannari erano morti. Con una fitta al cuore, {0} si alzò, e iniziò a radunare la sua roba, prima di camminare fino al limitare del villaggio. Una lacrima scese dai suoi occhi, dopo che {0} pensò quanto vicino a lui i Mugsy Mannari erano alla vittoria. Ahimè, era tempo di iniziare una nuova vita, con un nuovo branco. {0} si gettò nell'oscurità della foresta, lontano dal silenzioso villaggio.</value>
+    <value>Nonostante tutti gli sforzi di {0}, i Mugsy Mannari amici di {0} giacevano per terra, immobili e senza vita. Anche se ai Mugsy Mannari fu portata vittoria, non era rimasto nessuno con cui gustare il sapore del trionfo, né stupidi quarantenni da deridere. {0} sbirciò nella sua palla di cristallo, e sparì silenziosamente, in una nuvola di fumo, in cerca di nuovi Mugsy Mannari, nuovi alleati, e nuovi tradimenti per commettere nuovi crimini contro l'umanità, ma soprattutto contro i Re che le vietano di partecipare ai loro balli.</value>
+  </string>
+    <string key="WhatVariantVets">
+    <value>Che variante?\nAttuale: {0}\nSiccome hai giocato più di 500 partite puoi entrare su: </value>
+  </string>
+  <string key="Skip">
+    <value>Salta</value>
+  </string>
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, e tu ti trasformi in Matteo Renzi 🐺🌝. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Hai visto che\n{0} NON era {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Vorresti scrivere un articolo noiosissimo e addormentare tutti 'sta notte?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Mentre il villaggio di Qarantenni discute su chi siano le perzoneh più falzeh {0} inizia a scrivere un articolo lunghissimo sul fatto che il 5G non faccia male e le scie chimiche non esistono... Vi sentite tutti particolarmente assonati da tutte quelle menzogne e cadete in un profondo sonno! Tutti i ruoli della notte non agiranno la prossima notte! </value>
+  </string>
+  <string key="SandmanNight">
+    <value>Mentre tutti tornano a casa, a malapena riescono ad arrivare nel letto dalla stanchezza. Si addormentano così profondamente che non si ricordano nemmeno di essere andati a dormire...</value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>Ammettere l'Immigrato Clandestino in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Immigrato Clandestino come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>L'immigrato Clandestino otrà essere usato ogni notte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>L'Immigrato Clandestino potrà agire ogni notte: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Ammetti l'Immigrato Clandestino</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Configurazione ladro</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>Sei Twitter 👱🌑 e il Kaffeh ti vedrà come Mugsy Mannaro anche se non è vero! </value>
+  </string>
+  <string key="WolfMan">
+    <value>Twitter 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Sei un semplice Quarantenne ma se il Kaffeh ti scrutasse ti vedrebbe come Mugsy Mannaro! Ops...</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>Sei Matteo Renzi 🐺🌝! Ci hai provato in tutti i modi a fingerti buono: segretario del PD, referendum nel 2016 e plurime foto con Obama... Niente, nessuno ti ha creduto MAI! Per questo hai deciso di abbracciare il tuo lato supercattivo e inserirti nelle fila dei Mugsy Mannari e usare quei dentini per sbranare quarantenni! Se il Kaffeh dovesse controllarti ti vedrà come un quarantenne qualsiasi, povero stolto!</value>
+  </string>
+  <string key="Lycan">
+    <value>Matteo Renzi 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Matteo Renzi è un Mugsy Mannaro, ma verrà visto Quarantenne dal Kaffeh. Inoltre, la Camomilla non lo vedrà come Mugsy.</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>Sei Roberto Giacobbo 🌀! Anni e anni alla conduzione di Voyager ti hanno dotato di poteri paranormali così pazzeschi che ora chi meglio di te può scoprire la reale essenza delle persone!? Ogni notte potrai scegliere un giocatore per sapere il suo ruolo. L'unica pecca? Lo vedrai SEMPRE sbagliato... O forse è quello quei i poteri forti vogliono che tu creda...</value>
+  </string>
+  <string key="Oracle">
+    <value>Roberto Giacobbo 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value> Roberto Giacobbo 🌀 scruterà i giocatori per sapere quali ruoli NON sono, tra quelli presenti in partita.</value>
+  </string>
+  <string key="RoleInfoSandman">
+    <value>Sei un Articolo de “La Repubblica” 💤, talmente noioso e alla mercé dei poteri forti che chiunque proverà a leggerti farà cadere tutto il villaggio in un sonno profondo! Potrai usare il tuo terribile potere una volta sola in partita, però: nessuno ha bisogno di sentirsi dire delle fesserie come che le scie chimiche non esistono o che il 5G non fa male.</value>
+  </string>
+  <string key="Sandman">
+    <value>Articolo di Repubblica 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Sei un Articolo de “La Repubblica”, Quando usi il tuo potere - una volta sola per partita - farai cadere tutti in un sonno così profondo che i ruoli notturni non potranno agire durante la notte successiva.</value>
+  </string>
+  <string key="RoleInfoPacifist">
+    <value>Sei il Nuovo DPCM di Conte ☮️! Appena Giuseppi attiverà il tuo potere, il villaggio intero entrerà in un lockdown immediato di 24 ore e, per quel lasso di tempo non ci sarà nessun linciaggio! Purtroppo, però, la notte i cattivi potranno agire lo stesso - si sa - col favore delle tenebre.</value>
+  </string>
+  <string key="Pacifist">
+    <value>Nuovo DPCM di Conte ☮️</value>
+  </string>
+<string key="AboutPacifist">
+    <value>Il Nuovo DPCM di Conte può convincere tutti a non linciare nessuno. Potrà farlo solo una volta.</value>
+  </string>
+  <string key="RoleInfoWiseElder">
+    <value>Sei Beppe Grillo 📚! Cresciuto e coccolato dalle fake news da quando eri poco più che un ragazzino, sei quasi invincibile! I quarantenni ti vedono come un luminare e ti porteranno rispetto e i Mugsy Mannari - la prima volta che proveranno ad attaccarti - scapperanno via con la coda tra le gambe all'urlo del tuo potentissimo VAFFANCULOOOO!!</value>
+  </string>
+  <string key="WiseElder">
+    <value>Beppe Grillo 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>Beppe Grillo sopravvive a un attacco notturno dei Mugsy Mannari. Se viene ucciso da BigPharma, Barbara D'Urso o Putin, essi si trasformeranno in Quarantenni.</value>
+  </string>
+  <string key="RoleInfoThief">
+    <value>Sei l'immigrato cladestino 😈! Puoi rubare il ruolo a un giocatore e trasformarlo in un Quarantenne! NB: Se provi a rubare al Pulitore, ti cancellerà dai contatti!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Sei un Immigrato Clandestino 😈! Arrivato in Italia con il barcone ti fai mantenere sulle spalle di quegli italiani che pagano regolarmente le tasse e sono brave persone. Ogni notte potrai cercare di rubare il lavoro a un povero italiano (50% di successo). Se proverai a rubare a un Mugsy Mannaro fallirai sempre, se proverai a rubare al Pulitore di Kontatti morirai!! </value>
+  </string>
+  <string key="Thief">
+    <value>Immigrato Clandestino 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>L'Immigrato Clandestino ruba il ruolo di un giocatore e lo trasforma in un semplice Quarantenne.\nSe c'è impostato L'immigrato clandestino per tutta la partita, quel giocatore si trasformerà nel nuovo Immigrato Clandestino e continuerà a rubare ruoli per tutta la partita.</value>
+  </string>  
+  <string key="AskPacifist">
+    <value>Clicca questo bottone quando vuoi tirare fuori il nuovo DPCM e far entrare il villaggio in lockdown per fermare il prossimo linciaggio del popolo!</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Nome del pacifista -->
+    <value>Conte ha Pubblicato il suo nuovo DPCM ☮️: {0}. Si ritorna in lockdown per le prossima 24 ore. Nessun linciato oggi! Andrà tutto bene!</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Dato il nuovo DPCM di Conte ☮️ siete tutti chiusi in casa e non ci sarà nessun linciaggio oggi!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Nome del vecchio saggio -->
+    <value>Hai provato ad entrare a casa di {0} ma sfortunatamente era Beppe Grillo 📚! {0} ha facilmente respinto l'attacco urlandoti VAFFANCULOOOOO ma, fortunatamente, accecato dalla rabbia non è riuscito a riconoscere gli aggressori.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>I Mugsy Mannari 🐺 hanno provato a riempirti di coccole e mangiarti, ma la tua saggezza sulla conoscenza delle fake news ti hanno reso più furbo di loro! Hai respinto con successo l'attacco, ma sfortunatamente non sei riuscito a riconoscere gli aggressori.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Nome del cacciatore urbano -->
+  <!-- {1} - Nome del vecchio saggio -->
+    <value>Barbara D'Urso 🎯, {0} realizzò di aver ucciso niente di meno che Beppe Grillo📚, {1}. {0} pianse amaramente, nei suoi ultimi istanti di vita, pentendosi dell'errore e giurando di non voler mai più condurre un programma in prima serata. Morì così come una semplice Quarantenne 👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Putin 🔫, {0} realizzò di aver lanciato il suo proiettile d'argento a Beppe Grillo 📚, {1}. {0} pianse amaramente, pentendosi dell'errore, decidendo di rottamare le armi e non impugnarle mai più, diventando un semplice Quarantenne 👱 con un profilo Facebook da gestire.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Hai provato a rubare il lavoro a {0}, ma sfortunatamente hai fallito...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Hai provato a rubare il lavoro a {0}, ma {0} è già morto...</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+  <!-- {0} - The new role -->
+    <value>Il tuo lavoro è stato rubato! Ora sei {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Hai rubato con successo il lavoro di {0}!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} non è più un tuo compagno e {1} è ora divenuto uno della Kastah, esattamente come te!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>I tuoi compagni della Kastah (se presenti) sono: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>{0} non è più un tuo compagno e {1} è ora divenuto uno di quelli che non mette laic ed amen, esattamente come te!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} non è più un tuo compagno e {1} è ora divenuto un Mugsy Mannaro 🐺, esattamente come te!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates" deprecated="true">
+    <!-- 0 - teammates's name -->
+    <value>I tuoi compagni (se presenti) sono: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>Come {0} vagò intorno per il villaggio, si rese conto che non c'erano più ruoli divertenti da rubare. Lasciò subito il povero villaggio in cerca di altri villaggi in cui ricominciare la sua illustre carriera.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Il tuo bersaglio del furto è ora {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>A quale giocatore vorresti rubare il lavoro?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} Voti sono stati assegnati a {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Oggi verrà linciato:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} Voti assegnati a {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Linciaggio segreto: Numero di voti</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Quando il linciaggio segreto è attivo, mostrare il numero di voti alla fine del linciaggio?\nAttualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Quando il linciaggio segreto è attivo, il numero di voti alla fine del linciaggio sarà: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Linciaggio segreto: Votanti</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, Far vedere il nome dei votanti di ogni giocatore votato?\nAttualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Strano... Vi siete riuniti per discutere su chi converitre alla vostra Kastah di quelli che non mettono laic e amen, ma {0} non è presente! Che fine avrà fatto?</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>DPCM!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Il linciaggio di oggi è stato annullato per merito della quarantena. Grazie nuovo DPCM di Conte ☮️!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>Il tuo ruolo - e quindi anche il tuo lavoro - è stato rubato! Ora sei un Immigrato Clandestino 😈 e potrai scegliere un nuovo bersaglio la prossima notte!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Il tuo ruolo - e quindi anche il tuo lavoro - è stato rubato! Ora sei un noioso Quarantenne 👱, costretta ad aspettare un nuovo post su Facebook tutto il giorno.</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>CLICCA, BANNA, BANNA, CLICCA, CLICCA il Pulitore di Contatti🔪 ti ha fatto visita! Ora non esisti più su Facebook!</value>
+	<value>Il Pulitore di Contatti🔪 ti ha teso una trappola, ti ha legato alla sedia mentre ti cancellava da Facebook! Che brutta fine!</value>
+  </string>
+ <string key="ThiefTeamEnd">
+	<value>Team Immigrato Clandestino</value>
+  </string>
+ <string key="StealKiller">
+    <value>Hai provato a rubare un ruolo e il lavoro, ma il tuo bersaglio era nientedimeno che il Pulitore di Contatti🔪 ! Ti ha visto introfolarti di soppiatto a casa sua e poco dopo ha iniziato a cancellarti da Facebook! Che brutta fine!</value>
+  </string>
+ <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>L'Immigrato Clandestino 😈, {0}, aveva ambizioni troppo alte e ha provato a rubare il ruolo e il lavoro al Pulitore di Contatti 🔪 ! Non è stata una scelta molto saggia  {0} è stato ritrovato morto e senza profili social!</value>
+  </string>
+  <string key="BeholderSeerStolen">
+	<value>L'Immigrato Clandestino 😈 ha rubato il lavoro e la moka al Kaffeh👳! {0} è ora è il nuovo Kaffeh 👳 e {1} ora non ha più un lavoro!</value>
+  </string>
+  <string key="Troublemaker">
+	<value>I Marò 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>Sei un Marò. In qualità di Marò, una volta sola in tutta la partite potrai fare in modo che i quarantenni lincino due volte durante lo stesso giorno.</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>Sei un Marò 🤯! Eri un normale quarantenne in vacanza in India se non fosse che per una piccola incomprensione sulle acque di competenza e un paio di proiettili sei rimasto intrappolato là. Una volta sola in tutta la partite potrete far partire il coro de “RIPORTATELI A CASAAAA!1!1”. I quarantenni si arrabbieranno talmente tanto per la vostra detenzione che linceranno due volte consecutive.</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>Vuoi urlare: RIPORTATECI A CASA!?1?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>Uno dei Marò 🤯 {0} vi informa che sono ancora detenuti ingiustamente in India! RIPORTATECI A CASAAAAAAA urlano, il villaggio di Quarantenni si infuria talmente tanto che lincerete due volte!</value>
+	<value>Uno dei Marò 🤯 {0} vi informa che sono ancora detenuti ingiustamente in India! RIPORTATECI A CASAAAAAAA urlano, il villaggio di Quarantenni si infuria talmente tanto che lincerete due volte!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>A causa dell'ingiusta detenzione dei Marò 🤯, lincerete due volte oggi! Le acque si calmeranno quando li avranno riportati a casa!!.</value>
+  </string>
+  <string key="Chemist">
+	<value>BigPharma 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>In qualità di BigPharma, di notte potrai fare visita a un giocatore per fargli bere il tuo vaccino. Se il giocatore beve la fiala avvelenata, muore. In caso contrario, muori tu.</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>Sei BigPharma 👨‍🔬! I poteri forti ci tengono che tu ti arricchisca. Per questo, di notte, potrai fare visita a qualche quarantenne per testare il tuo nuovo vaccino! Attento però una delle due fiale farà diventare la persona autistica e la farà morire! E potresti anche essere tu!?</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>Mentre i Quarantenni vanno a dormire tu sei nel tuo laboratorio segreto della Bayer a preparare il prossimo vaccino che vuole - segretamente - far diventare tutta la popolazione autistica!</value>
+  </string>
+  <string key="AskChemist">
+	<value>Chi vuoi provare a far diventare autistico col tuo vaccino?</value>
+  </string>
+  <string key="ChemistTargetDead">
+	<value>Sei andato a casa di {0} per fargli provare il tuo vaccino e, magari, farlo diventare autistico; ma appena arrivi scopri che era già morto! </value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>Sei stato visitato da BigPharma👨‍🔬 {0}! Ti ha costretto, con una lama puntata sulla gola, a farti iniettare il suo vaccino ma tu non ti sei lasciato intimidire dai poteri forti e hai reagito uccidendolo e cancellandolo dalla memoria di Facebook</value>
+  </string>
+  <string key="ChemistSK">
+	<value>Sei andato a casa di {0} per fargli provare il tuo vaccino, sfortunatamente però era il Pulitore di Contatti 🔪 e non si è lasciato intimidire, ti ha ucciso e ti ha cancellato da tutti i social network!</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<value>BigPharma 👨‍🔬 {0} voleva costringere il Pulitore di Contatti🔪  a scommettere la sua vita facendosi iniettare il nuovo vaccino... Purtroppo lui non aveva nessuna voglia di diventare autistico e ha reagito: {0} è stato ritrovato morto e cancellato dalla memoria di Facebook! Che brutta fine!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>Sei stato visitato da BigPharma👨‍🔬, che ti ha costretto a scegliere tra un potentissimo vaccino che ti avrebbe ucciso e una fiala innoqua! Ovviamente hai scelto il vaccino letale e ora sei morto e autistico allo stesso tempo! Poverino!</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>Hai visitato {0} e gli hai fatto scegliere tra il potentissimo vaccino che hai preparato e una fiala innoqua! Ovviamente ha scelto il vaccino e ora è contemporaneamente morto e autistico steso sul tappeto di casa. Te ne torni a casa soddisfatto! I poteri forti han vinto di nuovo!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Vittima di BigPharma-->
+  <!-- {1} - Viene sostituito da "(nome vittima) era (ruolo)" -->
+	<value>BigPharma👨‍🔬 ha visitato {0} e l'ha obbligato a scegliere tra un pericolosissimo vaccino potentissimo e una fiala innoqua! La fortuna è stata dalla parte di BigPharma👨‍🔬 mentre {0} è morto. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>Sei stato visitato da BigPharma👨‍🔬 {0}, che ti ha costretto a scegliere tra un vaccino potentissimo che ti avrebbe sicuramente fatto diventare autistico e una fiala innoqua! Per fortuna hai scelto quella innoqua! Che fortuna!</value>
+  </string>
+  <string key="ChemistFail">
+	<value>Hai visitato {0} e gli hai fatto scegliere un vaccino! Sfortunatamente per te, però, ha scelto quella innoqua mente tu ti sei dovuto inniettare il pericolosissimo vaccino! Ora sei contemporaneamente morto e autistico! Che brutta fine per BigPharma👨‍🔬!</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>BigPharma👨‍🔬 {0} è stato trovato morto! A quanto pare, {0} si è inniettato il suo nuovo pericolosissimo vaccino e ora giace - contemporaneamente morto e autistico - sul pavimento del salotto! Giocare d'azzardo con la vita di chi sa proteggersi dai poteri forti non è sempre facile!</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>{0} Non era a casa! Torni a casa deluso, che sfortuna.</value>
+  </string>
+  <string key="CultistsList">
+	<value>Quelli che non mettono LAIC e AMEN 👤  sono attualmente: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>Meteo Giuliacci🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Sei il Meteo Giuliacci 🐺☃️. Ogni notte, invece di attaccare le vittime come un normale Mugsy Mannaro 🐺 vai solitario per case, cambiando il meteo fino a zero gradi e congelando le persone e impedendo loro di usare le loro azioni notturne! Nota però che una persona trasformata non può essere visitata due notti di fila.</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>Sei il Meteo Giuliacci. Ogni notte potrai congelare un giocatore di tua scelta, impedendogli di compiere azioni notturne. Una persona trasformata non può essere visitata due notti di fila. Se tutti gli altri Mugsy muoiono, diventi un Mugsy normale.</value>
+  </string>
+  <string key="AskFreeze">
+	<value>A casa di chi vuoi cambiare il meteo e congelare gli abitanti?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>I Mugsy Mannari 🐺 sono {0}</value>
+  </string>
+<string key="WolfPackSnowList">
+    <value>I Mugsy Mannary 🐺 sono {0} e il Meteo Giuliacci🐺☃️  {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} è morto, e tu ti trasformi nel Pulitore di Contatti ⚡️. I tuoi compagni sono: {1} mentre il Meteo Giuliacci 🐺☃️{2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} è morto, e tu ti trasformi in Biscottino 🐶. I tuoi compagni sono: {1} e il Meteo Giuliacci 🐺☃️ {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} è morto, e tu ti trasformi in un Mugsy Mannaro🐺. I tuoi compagni sono: {1} e il Meteo Giuliacci 🐺☃️{2}</value>
+  </string>
+<string key="DGTransformToLycanWithSnow">
+    <value>{0} è morto, e tu ti trasformi in Matteo Renzi🐺🌝. I tuoi compagni sono: {1} e il Meteo Giuliacci🐺☃️ {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} è morto, e tu ti trasformi in il Meteo Giuliacci🐺☃️. I tuoi compagni (se ci sono ancora) sono: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Il sosia {0} è diventato il Meteo Giuliacci🐺☃️!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} è morto! per la rabbia sei diventato un Mugsy Mannaro 🐺 ! I tuoi compagni sono: {1} e il Meteo Giuliacci🐺☃️ {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} non è più il Meteo Giuliacci🐺☃️, adesso {1} lo è! </value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Appena apri la porta per uscire di casa una raffica di vento ti colpisce congelandoti! E' stato sicuramente il Meteo Giuliacci 🐺☃️. Alla fine della notte ritorni normale!. </value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Appena apri la porta per uscire di casa una raffica di vento ti colpisce congelandoti! E' stato sicuramente il Meteo Giuliacci 🐺☃️. Alla fine della notte ritorni normale!.</value>
+  </string>
+  <string key="CultistFrozen">
+    <value>Appena apri la porta per uscire di casa una raffica di vento ti colpisce congelandoti! E' stato sicuramente il Meteo Giuliacci 🐺☃️. Alla fine della notte ritorni normale!..</value>
+  </string>
+  <string key="CHFrozen">
+    <value>Appena apri la porta per uscire di casa una raffica di vento ti colpisce congelandoti! E' stato sicuramente il Meteo Giuliacci 🐺☃️. Alla fine della notte ritorni normale!. </value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Appena apri la porta per uscire di casa una raffica di vento ti colpisce congelandoti! E' stato sicuramente il Meteo Giuliacci 🐺☃️. Alla fine della notte ritorni normale!. </value>
+  </string>
+  <string key="GAFrozen">
+    <value>Appena apri la porta per uscire di casa una raffica di vento ti colpisce congelandoti! E' stato sicuramente il Meteo Giuliacci 🐺☃️. Alla fine della notte ritorni normale!. </value>
+  </string>
+  <string key="SKFrozen">
+    <value>Appena apri la porta per uscire di casa una raffica di vento ti colpisce congelandoti! E' stato sicuramente il Meteo Giuliacci 🐺☃️. Alla fine della notte ritorni normale!.</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Appena apri la porta per uscire di casa una raffica di vento ti colpisce congelandoti! E' stato sicuramente il Meteo Giuliacci 🐺☃️. Alla fine della notte ritorni normale!. </value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>Appena apri la porta per uscire di casa una raffica di vento ti colpisce congelandoti! E' stato sicuramente il Meteo Giuliacci 🐺☃️. Alla fine della notte ritorni normale!.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>Sei andato a casa di {0} per congelarlo ma appena sei arrivato hai incontrato un'oscura figura armata fino ai denti. Inizi uno scontro epico contro il GDPR che alla fine lo vede vincitore costringendoti ad andare via.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Sei andato a casa di {0} e l'hai congelato! Sta notte sarà costretto a farti compagnia, così non dovrai passare un altra notte al freddo e da solo.</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>Il Meteo Giuliacci 🐺☃️{0} ha cercato di congelare qualcuno la scorsa notte ma sfortunatamente era il Pulitore di Contatti🔪 ! Il Pulitore ha notato il visitatore {0} e dopo avergli tagliato la testa, ha deciso di appenderla come trofeo sopra al camino!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>Tutti i tuoi amici Mugsy Mannary 🐺 sono morti, sei l'ultimo rimasto! Date le circostanze preferisci iniziare a mangiare anche tu le persone piuttosto che trasformarle!</value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>Il Meteo Giuliacci 🐺☃️{0} ha provato a congelare neve Barbara D'Urso🎯  la scorsa notte ma quest'ultima se n'è accorta in tempo e gli ha piantato un microfono in gola!</value>
+  </string>
+     <string key="Lang">
+    <value>Cambia linguaggio</value>
+  </string>
+  <string key="Mode">
+    <value>Cambia modalità di gioco</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Imposta limite giocatori</value>
+  </string>
+  <string key="EndRoles">
+    <value>Mostra ruoli a fine partita</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Imposta il tempo massimo di estensione</value>
+  </string>
+  <string key="DayTimer">
+    <value>Imposta durata del giorno</value>
+  </string>
+  <string key="NightTimer">
+    <value>Imposta durata della notte</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Imposta durata del linciaggio</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Configurazione ruoli</value>
+  </string>
+  <string key="Mechanics">
+	<value>Meccaniche del gioco</value>
+  </string>
+  <string key="GroupSettings">
+	<value>Impostazioni del gruppo</value>
+  </string>
+  <string key="Timers">
+	<value>Durata fasi del gioco</value>
+  </string>
+  <string key="Done">
+	<value>Fatto!</value>
+  </string>
+  <string key="Back">
+	<value>Indietro</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Mischia lista dei giocatori</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Mischiare lista di giocatori ogni volta? Attualmente: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>La lista giocatori verrà mischiata ogni volta: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+	<value>Di notte sei fuori casa a preparare trappole, quindi i Mugsy e Quelli che non mettono laic non possono trovarti, a meno che nessuno sia morto il giorno precedente. Tutti quelli che ti visitano hanno una probabilità di cadere nelle trappole, in base a quante ne hai già predisposte. La probabilità è dimezzata per chiunque sia del team quarantenni come te. Però i Mugsy e il Pulitore di Contatti potrebbero vederti mentre scrivi i post, in base a quanti ne hai scritti, e ucciderti. Inoltre il Pulitore di Contatti potrà trovarti comunque a casa, indipendentemente se scrivi o meno, però potrebbe incappare in un tuo collaboratore e perdere il controllo della sua prossima vittima!</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>Sei il Sig. Distruggere ☠️. Ogni notte scrivi un post per diffamare chi è stato ucciso la notte prima. Chi visita il tuo profilo potrebbe incappare nei tuoi collaboratori e diventare la vittima del prossimo post. Almeno mentre scrivi sei al sicuro dai mugsy mannari!</value>
+  </string>
+  <string key="GraveDigger">
+	<value>Il Sig. Distruggere ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>I morti sono sepolti, e i vivi no. Questa sera non hai post da scrivere.</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+	<value>Scrivi fino a tarda notte per {0}. Possano i posteri imparare dagli errori dei caduti.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>Appena inizi a scrivere il post per l'ultima persona uscita da facebook, una folata di vento soffia dall'ombra, congelandoti. Sei costretto a far compagnia al Meteo Giuliacci🐺☃️ tutta la notte.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+	<value>Il branco dei Mugsy decide di dirigersi a casa di {0}, solo per trovare casa vuota. Tutto quello che si vede è la luce soffusa di una candela che illumina l'ultimo post scritto...</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+	<value>Il branco di Mugsy si dirige a casa di {0}, ma {1} incappa in un collaboratore del Sig. Distruggere e viene prontamente smascherato, diventando il bersaglio del suo prossimo post! ☠️ </value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+	<value>Appena ti appresti a richiudere le buche che hai fatto scavare tutta notte, noti un tanfo nauseante, diverso dal solito odore di cadaveri... La iena {0} è caduto in una buca ed è morto!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+	<value>Hai rimosso dai kontatti {0}, ma mentre lo facevi, sei stato scoperto da un suo collaboratore: il Sig. Distruggere è morto, ma si è portato anche te nella tomba. ☠️ </value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+	<value>Mentre ti dirigevi a casa di {0}, senti un dolore atroce attraversarti la gamba. Decidi di deviare verso la casa più vicina di {1}, tagliargli rapido la testa e tornare subito a casa.</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+	<value>Arrivi a casa di {0}, solo per trovare la figura del GDPR 👼 a proteggerla! Dato il dolore atroce alla gamba non perdi nemmeno tempo a lottare ma torni direttamente a casa.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+	<value>Un'altra notte inutile senza riuscire a uccidere uno di questi maledetti che non mettono laic e amen 👤 ! Frustrato, sfoghi la tua rabbia nell'ultimo post, facendo uscire il più becero populismo che ti pervade. Sfortunatamente per te, non fai in tempo a cancellarlo prima che il Sig. Distruggere lo veda: ormai sei diventato un suo bersaglio e {0} sei costretto a cancellare il tuo profilo.</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+	<value>Dopo un'altra lunga e faticosa notte, stai spegnendo il pc mentre il sole sta già sorgendo. Prima di disconnetterti però, noti un post particolare di {0}. E subito parte lo screeshot: il materiale per il post di domani è pronto, e Colui che denuncia deve cancellare il profilo.</value>
+  </string>
+  <!--{0}: cultist-->
+  <string key="CultFell">
+	<value>Dopo un'altra lunga e faticosa notte, stai spegnendo il pc mentre il sole sta già sorgendo. Prima di disconnetterti però, noti un post particolare di {0}. E subito parte lo screeshot: il materiale per il post di domani è pronto, colui che non metteva laic e amen deve cancellare il profilo.👤</value>
+  </string>
+  <!--{0}: cultist who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+	<value>Mentre scandagliate il profilo di {1}, {0} mette per sbaglio un laic a un commento. La copertura salta, e lui è costretto a chiudere il profilo.👤</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+	<value>Mentre vai a casa di {0}, provi a ricordarti a mente quale delle due bevande è quella velenosa, ma inciampi, e condividi per sbaglio un post contro i vaccini. Prima che te ne accorga sei già sulla bacheca del Sig. Distruggere...</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+	<value>"Potrei bere un po' di vino rosso", pensi tra te e te. Hai un presentimento strano che ti fa guardare la home di facebook, dove noti un post di {0}, che dice che il vino rosso funziona meglio dei vaccini. Lui è già finito sulla tua pagina, mentre ti è passata la voglia di vino.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+	<value>Metti il tuo rossetto preferito e vai a casa di {0} per cercare un po' di divertimento. Purtroppo, non ti eri accorta che è in realtà il Sig. Distruggere: il tuo profilo viene invaso da perfettine laureate al classico e le tue amiche mammine non sanno più che fare. Invano evochi Sabrina... sei costretta a chiudere il profilo.</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+	<value>A quanto pare il fato non vuole farti divertire. Non solo hai scandagliato post di trogloditi tutta la notte, ma quando finalmente trovi qualcuno con cui divertirti {0} si rivela una mammina pancina! Niente divertimento per stasera, solo altro lavoro.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+	<value>Vai a casa di {0}, stando attenta a non farlo insospettire con i tuoi ultimi post, ma non lo trovi... A quanto pare {0} è già impegnato a scrivere un posto contro un antivaccinista!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+	<value>La fortuna non è dalla tua parte stanotte.. Volevi solo proteggere {0}, ma per sbaglio ti scappa un like a un commento di una mammina pancina. Il Sig. Distruggere non perdona, sei già sulla sua bacheca e devi chiudere il profilo.</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+	<value>Mentre torni a casa, noti che {0}, il GDPR, ha messo un like al commento di una mammina pancina. Sicuramente è un errore, ma il tuo collaboratore ha già postato lo screeshot.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+	<value>Ti ingegni per rubare la pagina di {0}, il Sig. Distruggere, ma non ti accorgi di cadere dritto nella sua trappola! Sei stato scoperto e denunciato pubblicamente, il tuo profilo deve chiudere!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+	<value>Buona cosa che hai messo delle trappole. {0} ha provato a rubarti la pagina l'altra notte, ma è stato scoperto da un tuo collaboratore e la sua pagina è già stata chiusa.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+	<value>Dovresti controllare meglio dove vai con la tua ruspa. Sei incappato nel Sig. Distruggere, che ha screenshottato tutto e ti ha esposto alla gogna pubblica: devi cancellare il profilo!</value>
+  </string>
+  <!--{0}: Arsonist-->
+  <string key="ArsonistFellDigger">
+	<value>In uno dei commenti scorgi l'immagine di una ruspa: {0}, Matteo Salvini, ha cercato di invadere la tua pagina, ma non ci è riuscito.</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+	<value>Una delle tombe nel cimitero aveva troppe persone stanotte! A quanto pare {0} ha provato a visitare il becchino, è cascato in una tomba ed è morto! {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+	<value>Mentre la prostituta {0} tornava a casa dopo una notte di divertimento ha preso la scorciatoia per il cimitero. Data la tarda ora non stava prestando molta attenzione, e cadde in una tomba aperta! Forse doveva accettare quel lavoro di giorno il giorno prima...</value>
+  </string>
+  <!--{0}: cultist who died-->
+  <string key="CultistFellPublic">
+	<value>I satanisti hanno provato a bruciare la setta, ma come {0} guidava il gruppo tramite il cimitero, è stato colto di sorpresa da una trappola per orsi! Mentre urlava dal dolore e provava a levarsi la trappola, è caduto in una tomba aperta. Gli altri satanisti sono fuggiti in preda al panico!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+	<value>Forse Aladdin {0} stava provando a rubare ai morti. Magari era il Karma. Tutto ciò che sappiamo è che stava camminando nel cimitero quando è caduto dentro una tomba profonda. {0} pentendosi di non aver portato complici, di sicuro non riuscirà più a rubare nulla!</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+	<value>Come il branco esce in cerca di prede, {0} seguendo le tracce non si accorge della trappola per orsi che lo intrappola! Colto di sorpresa, {0} cade nelle tombe, dove una lancia d'argento trapassa il suo cranio! Per fortuna il Becchino tiene misure di sicurezza nel suo cimitero. {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>Stai solo facendo il tuo lavoro, mentre improvvisamente un pazzo killer ti nota e ti accoltella! Chi scaverà la tua tomba, adesso?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+	<value> Oggi sei ispirato, scorrendo la home di facebook noti un post che non ti piace del Sig. Distruggere {0}. Seguendo il tuo istinto, decidi di non mettere laic neanche a lui, così dovrà chiudere la pagina!</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>Stai semplicemente facendo il tuo lavoro, quando improvvisamente un Mugsy mannaro ti assale da dietro e ti uccide!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+	<value>Il branco impazza su fb, quando notano la presenza di un post del Sig. Distruggere {0}. Prima che possa reagire, uno di voi gli salta addosso e lo mangia in un sol boccone. La sua pagina verrà chiusa.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+	<value>{0} non ha ancora dato il BUONGIORNISSIMOOOOHH sta mattina. Cercate la sua pagina, ma vedete che è stata chiusa, sembra che i Mugsy mannari abbiano fatto un'altra vittima.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+	<value>{0} è sparito dalla circolazione e non ha ancora urlato al mondo la sua voglia di KAFFEH...Cercate la sua pagina, ma vedete che è stata chiusa, sembra che il pulitore di kontatti abbia fatto un'altra vittima ...</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Matteo Salvini</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="AllowArsonistQ">
+	<value>Ammettere Matteo Salvini? Attualmente: {0}</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="AllowArsonistA">
+	<value>Matteo Salvini è ora {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Piromane e Killer</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="BurningOverkillQ">
+	<value>Ammettere il Piromane e Serial killer nella stessa partita? Potrebbe essere mortale! 😈 Attualmente: {0}</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="BurningOverkillA">
+	<value>Piromane e Serial Killer nella stessa partita: {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value> Ogni notte potrai versare taniche di kerosene nelle case degli abitanti del villaggio, e la notte successiva potrai decidere se versare il kerosene in nuove case, oppure appiccare il fuoco a quelle già visitate. Vinci se rimani l'ultimo personaggio in vita.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value> Sei Matteo Salvini 🔥! Le notti focose al Papeete a cantare l'inno d'Italia e bere Mojito con le cubiste sono mai oramai un lontano ricordo e allora hai deciso di riprendere in mano i vecchi rancori e giocare con il... fuoco! Ogni notte potrai versare taniche di kerosene nelle case degli abitanti del villaggio. Magari ci perderanno la vita degli onestissimi italiani che pagano le tasse, o magari - se sei fortunato - bruceranno degli immigrati arrivati coi barconi a vivere sulle nostre spalle a 35 euro al giorno! Prima gli italiani!.</value>
+  </string>
+  <string key="Arsonist">
+	<value>Matteo Salvini 🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>Vuoi cospargere di kerosene una casa o vuoi vedere tutte le case bruciare?</value>
+  </string>
+  <!--{0}: Piromane-->
+  <string key ="ArsonistVisitKiller">
+	<value>Matteo Salvini{0} ha provato a cospargere la casa del Pulitore di contatti 🔪 con il kerosene. No, non è sopravvissuto a ciò. Ovviamente. </value>
+  </string>
+  <string key="Spark">
+	<value>Brucia 🔥</value>
+  </string>
+  <!--{0}: persona la cui casa è stata cosparsa di kerosene-->
+  <string key="Doused">
+	<value>Hai cosparso con successo la casa di {0}!</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>Un fuoco è stato appiccato nella tua casa, ma per fortuna il GDPR 👼  era lì e lo ha spento prima che divampasse! Sarebbe un buon pompiere, se non fosse così impegnato a proteggere gli altri...</value>
+  </string>
+  <!--{0}: persona salvata-->
+  <string key="GuardSavedFromFire">
+	<value>Non ti aspettavi che la casa di {0} potesse prender fuoco, ma sei comunque riuscito a salvarlo senza grandi problemi! Nessuno potrà dirti che sei un GDPR 👼 scadente!</value>
+  </string>
+  <!--{0}: persona di cui la casa è stata pulita dal kerosene di Matteo Salvini-->
+  <string key="CleanDoused">
+	<value>Non hai lottato contro nessuno a casa di {0}, quindi hai avuto tempo di perlustrarla e hai notato che la casa era piena di kerosene! Visto che non avevi niente da fare, hai ripulito la casa dal kerosene...</value>
+  </string>
+  <!--{0}: lista di persone morte bruciate-->
+  <string key="Burning">
+	<value>Il villaggio si sveglia con odore di fumo... Alcune case sono avvolte dalle fiamme! Provate a estinguere il fuoco, ma è troppo tardi per provare a salvare coloro che stavano dentro.\nPiangete per il lutto delle seguenti persone:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>L'unico rimasto in vita è Matteo Salvini🔥, sopra a un mucchio di cenere. Matteo Salvini🔥 ha vinto, viva l'Italia libera dall'immigrazione! I leghisti ballano soddisfatti al suo fianco!</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>Dovevi tenerti un estintore a casa! Ora tutto ciò che rimane della tua casa e di te stesso sono solo cenere...</value>
+	<value>A quanto pare non è stata una buona idea costruire una casa interamente in legno...\nLa scorsa notte ha preso fuoco e di te e della casa è rimasta solo cenere.</value>
+  </string>
+  <string key="Augur">
+	<value>Vecchietto che guarda i cantieri 🦅</value>
+  </string>
+  <!--{0}: ruolo non in partita-->
+  <string key="AugurSees">
+	<value>Come guardi il cantiere, vedi la malta assumere una forma molto strana. Ciò può solo significare che {0} non è nel villaggio.</value>
+	<value>Gli operai del nuovo Centro Anziani ti dicono che {0} non fa parte del villaggio in questo momento.</value>
+  </string>
+  <string key="AboutAugur">
+	<value>In qualità di Vecchietto che Guarda i Cantieri, ogni notte saprai quale ruolo non è in partita in quel momento.</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>Sei un Vecchietto che guarda i cantieri 🦅. 
+Sei un Vecchietto che Guarda i Cantieri 🦅 e sai tutto del tuo villaggio: chi c'è, chi non c'è, chi passa e quando passa, quanto cammina, dove va e perché ci va. Non ti sfugge proprio nulla! Le ore passate a guardare a guardare la costruzione del nuovo Centro Anziani ti hanno reso consapevole di due cose: questi giovani d'oggi non sanno neanche mettere insieme due mattoni con la malta! Alla tua età saltavi - con i mattoni e la malta sulle spalle - i fossi per la lunga! La tua seconda consapevolezza è che sai chi non è nel villaggio e quindi quale ruolo non è in partita!</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>La costruzione del nuovo Centro Anziani è terminata. Questo può solo significare che i ruoli non in gioco sono finiti.</value>
+  </string>
+  <!--{0}: vittima scelta dai Mugsy, {1}: Mugsy morto dalle fiamme-->
+  <string key="WolvesVisitBurn">
+	<value>Il branco di Mugsy Mannari entra a casa di {0}, ma all'improvviso l'abitazione viene avvolta dalle fiamme. È troppo tardi per salvare {1}, che muore bruciato vivo.</value>	  
+  </string>
+  <!--{0}: persona morta perché ha visitato una casa che bruciava, {1}: "(persona) era (ruolo)"-->
+  <string key="DefaultVisitBurn">
+	<value>{0} doveva rimanere a casa stanotte. Invece, è andato in una casa che ha preso immediatamente fuoco! {1}</value>
+  </string>
+  <!--{0}: Lupo morto, {1}: "(Lupo) era (ruolo)" per specificare che tipo di lupo era-->
+  <string key="WolfVisitBurn">
+	<value>I mugsy hanno provato a uccidere qualcuno stanotte, ma Matteo Salvini🔥 è stato più veloce di loro! {0} non è riuscito a fuggire dalle fiamme in tempo... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+	<value>Nonostante tu non conosca l'identità di BigPharma 👨‍🔬, sei sicuro che non commetterà mai più un errore del genere. BigPharma ha abbandonato il suo rischioso lavoro ed è diventato una normale quarantenne!</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value>Solo {0} e {1} sono rimasti... Improvvisamente {0} ride, tira fuori un fiammifero, lo accende e lo tira ai piedi di {1}, che viene avvolto dalle fiamme!</value>
+	<value>Mentre riposa tranquillo nella propria abitazione, c'è {0} che si avvicina furtivamente al perimetro della casa, la cosparge di kerosene e ci butta uno zippo! Tutto ciò che rimane di {1} è cenere.</value>
+  </string>
+    <string key="ArsonistTeamEnd">
+    <value>Team Matteo Salvini</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+	<value>Sei andato a divertirti con {0}, ma la casa era vuota!</value>
+  </string>
+  <string key="Validate">
+  <!-- Usato per il bottone sul menu della selezione ruoli -->
+	<value>‼ CONVALIDA ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Usato per il bottone sul menu della selezione ruoli -->
+	<value>✅ Valido ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>La configurazione dei ruoli è valida! È stata abilitata e verrà usata da ora in poi!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>La configurazione dei ruoli NON è valida! Per favore abilita più ruoli per permettere al bot di creare partite bilanciate!</value>
+  </string>
+  <string key="GroupIdleCount">
+  <!-- {0} - Morti per AFK delle ultime 24 ore nel gruppo attuale -->
+  <!-- Questa stringa è attaccata alla stringa "IdleCount", quindi cercare di fare in modo che la frase risultante abbia senso -->
+	<value> di cui {0} volte in questo gruppo</value>
+  </string>  
+ <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>Sei diventata la Vicina Invidiosetta . Prenderai il ruolo di {0} alla sua morte.</value>
+  </string>
+  <string key="RoleConfigInfo">
+  <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+	<value>Quali ruoli vorresti usare in partita?\n\nGuida alla Configurazione:\n\n✅ = Ruolo abilitato\n❌ = Ruolo disabilitato\n\nDopo la selezione dei ruoli, devi usare il bottone CONVALIDA nell'angolo in basso a sinistra per confermare e salvare la configurazione! Se non convalidi, non verrà salvato e i ruoli rimarranno tutti attivi!\n\nSe disabiliti troppi ruoli, il bot non sarà in grado di creare una partita bilanciata e la convalida fallirà! In quel caso basterà abilitare più ruoli e convalidare di nuovo.\n\nSe la convalida andrà a buon fine, nell'angolo in basso a sinistra ci sarà scritto ✅ Valido ✅ e la configurazione sarà utilizzata nelle partite!</value>
+  </string>
+  <string key="EnableAllRoles">
+	<value>Abilita Tutti</value>
+  </string>
+  <string key="DisableAllRoles">
+	<value>Disabilita Tutti</value>
+  </string>
+  <string key="CHHuntedYou">
+    <value>Quello che denunzia chi non mette laic e amen 💂‍♀️ ti ha visitato mentre stavi chattando con un quarantenne, cercando di convincerlo a cancellare il suo account Facebook. Quello che denunzia ha aperto un profilo di coppia a tuo nome, ora sei morto.</value></string>
+  <string key="ExitAnonymousMode">
+    <value>Non puoi usare questo bot come admin anonimo! Per favore, rimuovimi dalla modalità anonima (o chiedi a un admin che ne ha il potere) e riprova!</value>
+  </string>
+</strings>

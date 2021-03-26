@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Ini adalah versi Bahasa Indonesia oleh Tim Translator Naik Gaji, contact: @noirhime! -->
 <strings>
-  <language name="Bahasa (Indonesia)" base="Indonesia" variant="Bahasa Indonesia"/>
+  <language name="Bahasa (Indonesia)" base="Indonesia" variant="Bahasa Indonesia" owner="Tim Translator Naik Gaji" code="id"/>
   <string key="NotInGame">
     <value>Kamu belum bergabung di permainan ini</value>
   </string>
@@ -393,7 +393,7 @@
     <!-- 1 - target name -->
     <!-- 2 - Target's revealed name ( Target was a role) -->
     <value >DOR!! 💥 Warga menatap {0} 🔫 berdiri di samping jasad {1} yang tergeletak, moncong senapan masih diarahkan ke kepalanya yang terburai. {2}.</value>
-  <value >DOR!! 💥🔫 {0} memeriksa jasad {1} yang tergeletak, warga hanya bisa melihat namun tidak ada yang berani mendekat.{2}.</value>
+  <value >TETEW TETEW!! Terdengar suara senjata laser! 💥🔫 {0} memeriksa jasad {1} yang tergeletak, warga hanya bisa melihat namun tidak ada yang berani mendekat.{2}.</value>
   </string>
   <string key="WolfWins" >
     <value >🎉╰(◣﹏◢)╯🎉
@@ -1268,7 +1268,7 @@
   <string key="SerialKillerTeam">
     <value>Tim Serial Killer</value>
   </string>
-  <string key="CultTeam">
+  <string key="CultTeam" deprecated="true">
     <value>Tim Pemuja Kerang (Cultist)</value>
   </string>
   <string key="TannerTeam">
@@ -1884,8 +1884,8 @@
     <value>{0} bukanlah anggota tim serigala lagi. {1} sekarang menjadi Snow Wolf!</value>
   </string>
   <string key="HarlotFrozen">
-  </string>
   <value>Sudah dandan berjam-jam dan ingin wik wik dengan seseorang malam ini, saat kamu membuka pintu. Tiupan angin badai bercampur salju sangat kencang membuat sekujur tubuhmu tidak bisa digerakkan. Aneh entah apa yang terjadi, kamu berdiam di depan pintu hingga fajar.Ohh SnowWolf berulah) ゜o゜(</value>
+  </string>
   <string key="ChemistFrozen">
   <value>Kamu sempat terlelap kemudian bangun untuk meracik ramuanmu, sayangnya cuaca tampak tidak bersahabat. Badanmu menggigil dan terasa kaku. Kamu melihat seluruh botol ramuanmu beku oleh salju. Kamu tidak bisa melakukan apa-apa malam ini selain menunggu matahari terbit.Ohh SnowWolf berulah) ゜o゜(</value>
   </string>
@@ -1913,7 +1913,7 @@
   <value>Saat kamu tidur tadi malam, tiba-tiba kamu merasa sangat kedinginan. Kamu tidak bisa bangun dan menyadari bahwa SnowWolf 🐺☃️ sedang mengirimkan mantra pembekuan. Ahh.. kamu pun kembali tidur.. Dan tidak peduli.. Hanya saja kamu merasa mengigil dan membutuhkan kehangatan.</value>
   </string>
   <string key="GuardBlockedSnowWolf">
-  <value>Kamu pergi ke area rumah {0} untuk memulai mantra pembekuan. Namun kamu melihat sosok tinggi besar, si Guardian Angel. Kamu pun pulang karena merasa tidak mampu mengalahkannya</value>.
+  <value>Kamu pergi ke area rumah {0} untuk memulai mantra pembekuan. Namun kamu melihat sosok tinggi besar, si Guardian Angel. Kamu pun pulang karena merasa tidak mampu mengalahkannya.</value>
   </string>
   <string key="SuccessfulFreeze">
   <value>Kamu pergi ke rumah {0} dan membekukannya! Malam ini, dia tidak bisa melakukan apa-apa selain merasakan beku dan kaku sekujur tubuhnya.</value>
@@ -2114,11 +2114,11 @@
   </string>
   <!--{0}: grave digger-->
   <string key="WolvesSpotted">
-  <value>Serigala 🐺 sedang berjalan melintasi kuburan, karena mereka tiba-tiba melihat {0}, Grade Digger ☠️. Sebelum mereka dapat bereaksi, salah satu darinya melompat telentang dan membunuh dengan satu gigitan.(╯⊙ ⊱ ⊙╰ )</value>
+  <value>Serigala 🐺 sedang berjalan melintasi kuburan, karena mereka tiba-tiba melihat {0}, Grave Digger ☠️. Sebelum mereka dapat bereaksi, salah satu darinya melompat telentang dan membunuh dengan satu gigitan.(╯⊙ ⊱ ⊙╰ )</value>
   </string>
   <!--{0}: grave digger-->
   <string key="WolvesSpottedDiggerPublic">
-  <value>{0} ☠️ Seharusnya hari ini ikut Pertandingan balap karung! Tetapi sampai detik terakhir belum terlihat juga batang hidungnya. OUCHH NO! Sepertinya dia ikut dimakan oleh Serigala 🐺 karena melintas di Kuburan ketika Serigala 🐺 sedang bersenang-senang dengan mangsanya (╯⊙ ⊱ ⊙╰ )</value>
+  <value>{0} ☠️ Seharusnya hari ini ikut Pertandingan balap karung! Tetapi sampai detik terakhir belum terlihat juga batang hidungnya. OUCHH NO! Sepertinya dia ikut dimakan oleh Serigala saat tak sengaja melintas!!! (╯⊙ ⊱ ⊙╰ )</value>
   </string>
   <!--{0}: grave digger-->
   <string key="KillerSpottedDiggerPublic">
@@ -2160,7 +2160,7 @@
   </string>
   <!--{0}: arsonist-->
   <string key ="ArsonistVisitKiller">
-  <value>{0} mencoba menyiram rumah Serial Killer 🔪 dengan minyak tanah.. Terkejut melihat banyaknya potongan tubuh di rumah serial killer, dia menelusuri area rumah dan malah berlagak jadi detektif 🕵. \n\nMengetahui hal itu, Serial Killer membunuhnya dan menambah koleksinya. Arsonist yang malang...🤦‍♀️🤦‍♂️</value>
+  <value>{0} mencoba menyiram rumah Serial Killer 🔪 dengan minyak tanah.. Terkejut melihat banyaknya potongan tubuh di rumah serial killer, dia menelusuri area rumah dan malah berlagak jadi tukang tagih hutang. \n\nMengetahui hal itu, Serial Killer membunuhnya dan menambah koleksinya. Arsonist yang malang...🤦‍♀️🤦‍♂️</value>
   </string>
   <string key="Spark">
   <value>Bakar</value>
@@ -2226,6 +2226,48 @@
   <value>Hanya {0} dan {1} yang tersisa... Dengan santainya {0} tersenyum, mengeluarkan korek api, menyalakannya dan melempar kearah kaki {1}, yang kemudian terbakar 🔥!ARSONIST MEMENANGKAN PERMAINAN（゜◇゜）</value>
   </string>
   <string key="ArsonistTeamEnd">
-    <value>Arsonist Team</value>
+    <value>Tim Arsonist</value>
+  </string>
+    <string key="HarlotVisitNotHome">
+	<value>Kamu pengen ena ena sama {0}, tapi ternyata rumahnya kosong!</value>
+  </string>
+   <string key="Validate">
+  <!-- Used for the button in the role selection menu -->
+	<value>‼ Validasi ‼</value>
+  </string>
+  <string key="Valid">
+    <!-- Used for the button in the role selection menu -->
+	<value>✅ Valid ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>Konfigurasi peran sudah valid! Sudah diaktifkan dan digunakan sekarang!</value>
+  </string>
+    <string key="RoleConfigInvalid">
+	<value>Konfigurasi peran tidak vakid! Cobalah aktifkan beberapa peran yang tersedia agar bot dapat membuat game yang seimbang!</value>
+  </string>
+    <string key="GroupIdleCount">
+  <!-- {0} - Idle count in the last 24 hours in the current group -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+	<value>{0} dari kematiannya terjadi di group ini.</value>
+  </string>
+    <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>Kamu sekarang menjadi doppelgänger. Kamu akan mengambil alih peran si {0} setelah kematiannya.</value>
+  </string>
+    <string key="RoleConfigInfo">
+  <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+	<value>Peran apa yang ingin kamu gunakan dalam game ini?\n\nTutorial Konfigurasi:\n\n✅ = Role dinyalakan\n❌ = Role dimatikan\n\nSetelah memilih peran, kamu perlu menggunakan tombol VALIDASI di pojok bawah kiri untuk memvalidasi dan menyalakan peran pilihan! Jika tidak divalidasi, maka pilihan akan diabaikan dan semua peran akan digunakan!\n\nJika kamu mematikan banyak peran, bot tidak akan bisa untuk membuat game yang seimbang dan validasi akan gagal! Dalam hal ini, cukup nyalakan beberapa peran, dan validasi kembali.\n\nJika validasi berhasil, tombol kiri bawah akan menyatakan ✅ Valid ✅ dan konfigurasi peran akan digunakan!</value>
+  </string>
+    <string key="EnableAllRoles">
+	<value>Nyalakan semua</value>
+  </string>
+    <string key="DisableAllRoles">
+	<value>Matikan semua</value>
+  </string>
+    <string key="CHHuntedYou">
+    <value>Cultist Hunter 💂‍♀️ mengunjungi kamu ketika kamu sedang sembayang di altar. Kamu dibacok crot! crot!, lalu meninggoy</value>
+  </string>
+    <string key="ExitAnonymousMode">
+    <value>Kamu gak bisa menggunakan bot ini dalam mode admin anonim! Silakan keluar dari mode admin anonim (atau mintalah admin yang promote kamu untuk melakukannya) lalu coba lagi!</value>
   </string>
 </strings>
