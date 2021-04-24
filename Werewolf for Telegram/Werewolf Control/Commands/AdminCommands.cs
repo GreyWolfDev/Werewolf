@@ -87,9 +87,16 @@ namespace Werewolf_Control
 
             var language = GetLanguage(update.Message.From.Id);
 
-            var menu = UpdateHandler.GetConfigMenu(update.Message.Chat.Id, language);
-            Bot.Api.SendTextMessageAsync(update.Message.From.Id, GetLocaleString("WhatToDo", language),
-                replyMarkup: menu);
+            try
+            {
+                var menu = UpdateHandler.GetConfigMenu(update.Message.Chat.Id, language);
+                Bot.Api.SendTextMessageAsync(update.Message.From.Id, GetLocaleString("WhatToDo", language),
+                    replyMarkup: menu);
+            }
+            catch
+            {
+                RequestPM(update.Message.Chat.Id)
+            }
         }
 
         [Attributes.Command(Trigger = "uploadlang", LangAdminOnly = true)]
