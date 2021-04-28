@@ -95,7 +95,7 @@ namespace Werewolf_Control
             }
             catch
             {
-                RequestPM(update.Message.Chat.Id)
+                RequestPM(update.Message.Chat.Id);
             }
         }
 
