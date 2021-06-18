@@ -2376,3 +2376,4 @@ namespace Werewolf_Control.Handler
         }
     }
 }
+
