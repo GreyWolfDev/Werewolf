@@ -5838,8 +5838,9 @@ namespace Werewolf_Node
                         //notify
                         var newFlags2 = newAch2.GetUniqueFlags().ToList();
                         if (newAch2.Cast<bool>().All(x => x == false)) continue;
-                        var msg2 = "New Unlocks!".ToBold() + Environment.NewLine;
-                        msg2 = newFlags2.Aggregate(msg2, (current, a) => current + $"{a.GetName().ToBold()}\n{a.GetDescription()}\n\n");
+                        var msg2 = GetLocaleString("MoreAchUnlocked").ToBold() + Environment.NewLine;
+                        msg2 = newFlags2.Aggregate(
+                            msg2, (current, a) => current + $"{GetLocaleString(a.GetName(false)).ToBold()}\n{GetLocaleString(a.GetDescription(false))}\n\n");
                         Send(msg2, p.TelegramId);
                     }
                 }
@@ -5974,7 +5975,11 @@ namespace Werewolf_Node
                     p.NewAchievements = ach.ToByteArray();
                     db.SaveChanges();
 
-                    Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", player.Id);
+                    //composing message
+                    var msg = GetLocaleString("AchUnlocked") + Environment.NewLine;
+                    msg += GetLocaleString(a.GetName(false)).ToBold() + Environment.NewLine;
+                    msg += GetLocaleString(a.GetDescription(false));
+                    Send(msg, player.Id);
                 }
             }
         }
