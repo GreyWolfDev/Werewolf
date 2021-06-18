@@ -2021,7 +2021,13 @@ namespace Werewolf_Control.Handler
                 p.NewAchievements = ach.ToByteArray();
                 db.SaveChanges();
 
-                Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.TelegramId);
+                //composing message
+                var language = GetLanguage(p.TelegramId)
+                var msg = GetLocaleString("AchUnlocked", language) + Environment.NewLine;
+                msg += GetLocaleString(a.GetName(false), language).ToBold() + Environment.NewLine;
+                msg += GetLocaleString(a.GetDescription(false), language);
+                Send(msg, p.TelegramId);
+                //Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.TelegramId);
                 return true;
             }
             return false;
@@ -2370,4 +2376,3 @@ namespace Werewolf_Control.Handler
         }
     }
 }
-
