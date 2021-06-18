@@ -2022,7 +2022,7 @@ namespace Werewolf_Control.Handler
                 db.SaveChanges();
 
                 //composing message
-                var language = GetLanguage(p.TelegramId)
+                var language = GetLanguage(p.TelegramId);
                 var msg = GetLocaleString("AchUnlocked", language) + Environment.NewLine;
                 msg += GetLocaleString(a.GetName(false), language).ToBold() + Environment.NewLine;
                 msg += GetLocaleString(a.GetDescription(false), language);
