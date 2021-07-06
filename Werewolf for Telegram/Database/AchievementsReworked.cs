@@ -223,10 +223,7 @@ namespace Database
                     return value.ToString();
             }
             else
-            {
-                var achvId = (int)value;
-                return $"Achievement{achvId.ToString()}Descr";
-            } 
+                return $"Achievement{value.ToString()}Descr";
         }
         public static string GetName(this AchievementsReworked value, bool text = true)
         {
@@ -241,10 +238,7 @@ namespace Database
                 return (descriptionAttributes.Length > 0) ? descriptionAttributes[0].Name : value.ToString();
             }
             else
-            {
-                var achvId = (int)value;
-                return $"Achievement{achvId.ToString()}Name";
-            }
+                return $"Achievement{value.ToString()}Name";
         }
 
         public static byte[] ToByteArray(this BitArray bits)
