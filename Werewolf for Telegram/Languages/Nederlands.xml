@@ -9,6 +9,7 @@
 <!--- Last update: 2019-01-04 Fix voor 30 seconde join message. Nieuwe rollen toegevoegd (Troublemaker, chemist en snow wolf). Gedaan door @REXOTIUM -->
 <!--- Last update: 2019-03-26 Fix voor nieuw spel message. Nieuwe rollen toegevoegd (Gravedigger, Arsonist en Augur). Gedaan door @Raponsje en @Mipsels -->
 <!--- Last update: 2020-05-23 Nieuwe vertaling toegevoegd beginnend met "Validate". Gedaan door @REXOTIUM -->
+<!--- Last update: 2021-06-17 Fix voor aantal taalfouten (Serie Moordenaar ipv Seriemoordenaar) en nieuwe vertalingen beginnend met "ExitAnonymousMode". Gedaan door @REXOTIUM -->
 
 <strings>
   <language name="Nederlands" base="Nederlands" variant="Normal" owner="REXOTIUM"/>
@@ -1297,7 +1298,7 @@
   </string>
   <string key="SerialKillerKilledCH">
     <!--used when CH visits SK-->
-    <value>Het dorp ontwaakt en vindt het lichaam van {0}, de sekte jager, uitgeserveerd op een schaal voor het gemeentehuis. Lesje geleerd: Ga niet op bezoek bij de serie moordenaar!</value>
+    <value>Het dorp ontwaakt en vindt het lichaam van {0}, de sekte jager, uitgeserveerd op een schaal voor het gemeentehuis. Lesje geleerd: Ga niet op bezoek bij de seriemoordenaar!</value>
     <value>Het lichaam van {0}, de sektejager, ligt midden in honderd stukjes midden in het dorp. Controleren of de seriemoordenaar een sektelid is dus geen goed idee...</value>
   </string>
   <string key="CultConvertWolfPublic">
@@ -1502,7 +1503,7 @@
     <value>Dief volledige spel</value>
   </string>
   <string key="RoleInfoWolfMan">
-    <value>Je bent een gewone dorpeling, maar omdat je zoveel tijd in het bos doorbrengt raakt de ziener in de war en wordt je aangezien voor een wolf! Oeps!</value>
+    <value>Je bent een wolfman 👱🌚, gewone dorpeling, maar omdat je zoveel tijd in het bos doorbrengt raakt de ziener in de war en wordt je aangezien voor een wolf! Oeps!</value>
   </string>
   <string key="WolfMan">
     <value>De WolfMan 👱🌚</value>
@@ -1699,18 +1700,18 @@
     <value>Je rol is gestolen! Je zult je rest van je dagen slijten als Burger 👱.</value>
   </string>
   <string key="SerialKillerKilledYou" isgif="true">
-    <value>Klop klop! De Serie Moordenaar heeft je een bezoekje gebracht! Nu ben je dood...</value>
-	<value>De Serie Moordenaar heeft je in een hinderlaag laten lopen, vast gebonden, je organen verkocht via The Dark Web en jou dood laten bloeden!</value>
+    <value>Klop klop! De Seriemoordenaar heeft je een bezoekje gebracht! Nu ben je dood...</value>
+	<value>De Seriemoordenaar heeft je in een hinderlaag laten lopen, je vastgebonden, je organen verkocht via The Dark Web, en jou dood laten bloeden!</value>
   </string>
   <string key="ThiefTeamEnd">
 	<value>Dieven Team</value>
   </string>
   <string key="StealKiller">
-    <value>Je probeerde een rol te stelen... Maar de rol van de Serie Moordenaar proberen te stelen was niet zo slim! Je bent gesnapt en nu ben je dood...</value>
+    <value>Je probeerde een rol te stelen... Maar de rol van de Seriemoordenaar proberen te stelen was niet zo slim! Je bent gesnapt en nu ben je dood...</value>
   </string>
   <string key="ThiefStoleKiller">
     <!-- used when Thief steals SK -->
-    <value>De dief, {0}, jeeft geprobeerd de rol van de Serie Moordenaar te stelen! Dat was helaas niet zo'n succes: {0} is meerderdere keren gestoken en heeft geen lever meer...</value>
+    <value>De dief, {0}, jeeft geprobeerd de rol van de Seriemoordenaar te stelen! Dat was helaas niet zo'n succes: {0} is meerderdere keren gestoken en heeft geen lever meer...</value>
   </string>
   <string key="BeholderSeerStolen">
 	<value>De dief heeft te rol van de ziener gestolen! {0} is nu de ziener en {1} is niet langer nuttig voor je!</value>
@@ -2148,7 +2149,7 @@
   <!--{0}: role that is not part of the village-->
   <string key="AugurSees">
 	<value>Terwijl je naar de hemel staart zie je de vogels een vreemd patroon vormen. Dat kan alleen maar betekenen dat {0} niet in het dorp is.</value>
-	<value>The birds tell you that {0} is not part of the village right now.</value>
+	<value>Een klein vogeltje heeft je ingefluisterd dat niemand in het dorp een {0} is.</value>
   </string>
   <string key="AboutAugur">
 	<value>Jij bent de Priesteres 🦅. Iedere ochtend observeer je de vogels en achterhaald een rol die zeker niet in het spel voorkomt dit potje door hoe ze vliegen. Ze zullen je ook nooit een rol dubbel vertellen, dus gebruik die informatie goed!</value>
@@ -2219,5 +2220,17 @@
   </string>
   <string key="CHHuntedYou">
     <value>De Sektejager 💂‍♀️ bezocht je terwijl je aan het bidden was bij je altaar. Je werd begroet met een zwaard, en nu ben je dood.</value>
+  </string>
+  <string key="ExitAnonymousMode">
+	<value>Je kunt de bot niet gebruiken als anonieme admin! Verlaat anonieme modus en probeer het nog een keer!</value>
+  </string>
+  <string key="AskArsonistNoDoused">
+	<value>Wiens huis wil je besprenkelen met benzine?</value>
+  </string>
+  <string key="AlreadyDousedList">
+	<value>\nJe hebt de huizen van de volgende mensen al besprenkeld met benzine: {0}</value>
+  </string>
+  <string key="DoppelgangerEnd">
+	<value>Hoe ellendig kan het leven van iemand zijn als hij niet eens in staat is om zijn enige taak in het leven uit te voeren? Is het vermogen om het uiterlijk van anderen aan te nemen slechts een legende? We zullen het nooit te weten komen!\n{0} is nu alleen in het dorp en er is niemand om na te doen. De enige mogelijkheid die er nog bestaat is het kopiëren van de persoon in de spiegel!</value>
   </string>
 </strings>
