@@ -13,7 +13,6 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Helpers;
 using System.Threading;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 
 #pragma warning disable IDE0060 // Remove unused parameter
 
@@ -31,7 +30,7 @@ namespace Werewolf_Control
 //#endif
         }
 
-        public static void GroupList(long chatId, int fromId, int messageId = 0)
+        public static void GroupList(long chatId, long fromId, int messageId = 0)
         {
             //new method, fun times....
             //now determine what languages are available in public groups.
@@ -40,7 +39,7 @@ namespace Werewolf_Control
                 string[] disabledLangs = new string[] { /*"فارسی"*/ }; // Language bases of which no grouplist is accessible
                 var langs = PublicGroups.GetBaseLanguages().Where(x => !disabledLangs.Contains(x)); // do not fetch disabled langs
                 //create a menu out of this
-                List<InlineKeyboardCallbackButton> buttons = langs.OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"groups|{fromId}|{x}|null")).ToList();
+                List<InlineKeyboardButton> buttons = langs.OrderBy(x => x).Select(x => InlineKeyboardButton.WithCallbackData(x, $"groups|{fromId}|{x}|null")).ToList();
 
                 var baseMenu = new List<InlineKeyboardButton[]>();
                 for (var i = 0; i < buttons.Count; i++)
@@ -108,7 +107,7 @@ namespace Werewolf_Control
                 if (update.Message.Chat.Type != ChatType.Private)
                     Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
             }
-            catch (Exception e)
+            catch
             {
                 RequestPM(update.Message.Chat.Id);
                 return;

@@ -16,7 +16,6 @@ using Database;
 using Newtonsoft.Json;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.Payments;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
@@ -28,6 +27,7 @@ using Group = Database.Group;
 using RegHelper = Werewolf_Control.Helpers.RegHelper;
 using System.Collections;
 using System.Drawing;
+using Telegram.Bot.Types.InputFiles;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 #pragma warning disable IDE0060 // Remove unused parameter
@@ -97,14 +97,14 @@ namespace Werewolf_Control
             var menu = new Menu(1,
                 new List<InlineKeyboardButton>
                 {
-                    new InlineKeyboardCallbackButton("All of it!", build + "controlwebsitenode"),
-                    new InlineKeyboardCallbackButton("Control & Node", build + "releasecontrolnode"),
-                    new InlineKeyboardCallbackButton("Website & Control", build + "controlwebsite"),
-                    new InlineKeyboardCallbackButton("Website & Node", build + "nodewebsite"),
-                    new InlineKeyboardCallbackButton("Website Only", build + "website"),
-                    new InlineKeyboardCallbackButton("Control Only", build + "control"),
-                    new InlineKeyboardCallbackButton("Node Only", build + "node"),
-                    new InlineKeyboardCallbackButton("No", "build|no")
+                    InlineKeyboardButton.WithCallbackData("All of it!", build + "controlwebsitenode"),
+                    InlineKeyboardButton.WithCallbackData("Control & Node", build + "releasecontrolnode"),
+                    InlineKeyboardButton.WithCallbackData("Website & Control", build + "controlwebsite"),
+                    InlineKeyboardButton.WithCallbackData("Website & Node", build + "nodewebsite"),
+                    InlineKeyboardButton.WithCallbackData("Website Only", build + "website"),
+                    InlineKeyboardButton.WithCallbackData("Control Only", build + "control"),
+                    InlineKeyboardButton.WithCallbackData("Node Only", build + "node"),
+                    InlineKeyboardButton.WithCallbackData("No", "build|no")
                 });
 
             Send($"Select build to trigger", u.Message.Chat.Id,
@@ -549,7 +549,7 @@ namespace Werewolf_Control
 
                 using (var fs = new FileStream("Test.jpg", FileMode.Open))
                 {
-                    Bot.Api.SendPhotoAsync(update.Message.Chat.Id, new FileToSend("Chart.jpg", fs)).Wait();
+                    Bot.Api.SendPhotoAsync(update.Message.Chat.Id, new InputOnlineFile(fs, "Chart.jpg")).Wait();
                 }
             }
         }
@@ -806,7 +806,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "updatestatus", GlobalAdminOnly = true)]
         public static void UpdateStatus(Update u, string[] args)
         {
-            var menu = new InlineKeyboardMarkup(new[] { "Bot 1", "Bot 2", "Beta Bot", "Test Bot" }.Select(x => new InlineKeyboardCallbackButton(x, $"status|{u.Message.From.Id}|{x}|null")).ToArray());
+            var menu = new InlineKeyboardMarkup(new[] { "Bot 1", "Bot 2", "Beta Bot", "Test Bot" }.Select(x => InlineKeyboardButton.WithCallbackData(x, $"status|{u.Message.From.Id}|{x}|null")).ToArray());
 
             Bot.Api.SendTextMessageAsync(u.Message.From.Id, "Which bot?",
                 replyMarkup: menu);
@@ -1307,15 +1307,15 @@ namespace Werewolf_Control
                 //get the languages which they played, make a menu out of it
                 var rankings = db.GroupRanking.Where(x => x.GroupId == grp.Id && !x.Language.EndsWith("BaseAllVariants")).ToList();
                 var menu = rankings.Select(x => new[] {
-                    new InlineKeyboardCallbackButton(x.Language, $"pf|{grp.GroupId}|{x.Language}|i"),
-                    new InlineKeyboardCallbackButton(x.Show == false ? "☑️" : "✅", $"pf|{grp.GroupId}|{x.Language}|t")
+                    InlineKeyboardButton.WithCallbackData(x.Language, $"pf|{grp.GroupId}|{x.Language}|i"),
+                    InlineKeyboardButton.WithCallbackData(x.Show == false ? "☑️" : "✅", $"pf|{grp.GroupId}|{x.Language}|t")
                 }).ToList();
                 //add a button at the beginning and at the end
                 menu.Insert(0, new[] {
-                    new InlineKeyboardCallbackButton("Global", $"pf|{grp.GroupId}|null|i"),
-                    new InlineKeyboardCallbackButton(grp.Preferred == false ? "☑️" : "✅", $"pf|{grp.GroupId}|null|t")
+                    InlineKeyboardButton.WithCallbackData("Global", $"pf|{grp.GroupId}|null|i"),
+                    InlineKeyboardButton.WithCallbackData(grp.Preferred == false ? "☑️" : "✅", $"pf|{grp.GroupId}|null|t")
                 });
-                menu.Add(new[] { new InlineKeyboardCallbackButton("Done", "done") });
+                menu.Add(new[] { InlineKeyboardButton.WithCallbackData("Done", "done") });
                 //send everything
                 Send(
                     $"{grp.GroupId} | " + (grp.GroupLink == null ? grp.Name : $" <a href=\"{grp.GroupLink}\">{grp.Name}</a>") +
@@ -1354,7 +1354,7 @@ namespace Werewolf_Control
                         if (user != null)
                         {
                             //create a menu for this
-                            var buttons = new[] { new InlineKeyboardCallbackButton("Yes", "ohai|yes|" + user.Id), new InlineKeyboardCallbackButton("No", "ohai|no") };
+                            var buttons = new[] { InlineKeyboardButton.WithCallbackData("Yes", "ohai|yes|" + user.Id), InlineKeyboardButton.WithCallbackData("No", "ohai|no") };
                             Send($"Update OHAIDER Achievement using player {user.Name}?", u.Message.Chat.Id,
                                 customMenu: new InlineKeyboardMarkup(buttons));
                         }
@@ -1431,7 +1431,7 @@ namespace Werewolf_Control
                 if (someFileExists)
                 {
                     var fs = new FileStream(path, FileMode.Open);
-                    Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new FileToSend("errors.zip", fs));
+                    Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new InputOnlineFile(fs, "errors.zip"));
                 }
             }
             catch (Exception e)
@@ -1468,7 +1468,7 @@ namespace Werewolf_Control
             msg += $"NEW FILE\n_Name:_ {newlang.Name}\n_Base:_ {newlang.Base}\n_Variant:_ {newlang.Variant}\n_Last updated:_ {newlang.LatestUpdate.ToString("MMM dd")}\n\n";
             msg += "Are you sure?";
 
-            var buttons = new[] { new InlineKeyboardCallbackButton("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), new InlineKeyboardCallbackButton("No", $"movelang|no") };
+            var buttons = new[] { InlineKeyboardButton.WithCallbackData("Yes", $"movelang|yes|{oldfilename}|{newfilename}"), InlineKeyboardButton.WithCallbackData("No", $"movelang|no") };
             Bot.Send(msg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(buttons), parseMode: ParseMode.Markdown);
         }
 

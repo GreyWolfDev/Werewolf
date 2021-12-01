@@ -24,7 +24,7 @@ namespace Werewolf_Control.Helpers
     {
         internal static string TelegramAPIKey;
         public static HashSet<Node> Nodes = new HashSet<Node>();
-        public static Client Api;
+        public static TelegramBotClient Api;
 
         public static User Me;
         public static DateTime StartTime = DateTime.UtcNow;
@@ -73,7 +73,7 @@ namespace Werewolf_Control.Helpers
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            Api = new Client(TelegramAPIKey, LogDirectory);
+            Api = new TelegramBotClient(TelegramAPIKey);
 //#if !BETA
 //            Api.Timeout = TimeSpan.FromSeconds(1.5);
 //#else
@@ -103,12 +103,12 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-            Api.InlineQueryReceived += UpdateHandler.InlineQueryReceived;
-            Api.UpdateReceived += UpdateHandler.UpdateReceived;
-            Api.CallbackQueryReceived += UpdateHandler.CallbackReceived;
-            Api.ReceiveError += ApiOnReceiveError;
+            Api.OnInlineQuery += UpdateHandler.InlineQueryReceived;
+            Api.OnUpdate += UpdateHandler.UpdateReceived;
+            Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
+            Api.OnReceiveError += ApiOnReceiveError;
             //Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
-            Api.StatusChanged += ApiOnStatusChanged;
+            Api.OnStatusChanged += ApiOnStatusChanged;
             //Api.UpdatesReceived += ApiOnUpdatesReceived;
             Me = Api.GetMeAsync().Result;
             //Api.OnMessage += ApiOnOnMessage;
@@ -161,7 +161,7 @@ namespace Werewolf_Control.Helpers
         internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default, bool disableWebPagePreview = false)
         {
             Bot.MessagesSent++;
-            return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, disableWebPagePreview, replyMarkup);
+            return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, null, disableWebPagePreview, replyMarkup);
         }
 
         private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)

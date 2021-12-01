@@ -10,7 +10,6 @@ using System.Xml.Linq;
 using Database;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
@@ -33,7 +32,7 @@ namespace Werewolf_Control
             };
 #endif
 
-        private static Player GetDBPlayer(int id, WWContext db)
+        private static Player GetDBPlayer(long id, WWContext db)
         {
             return db.Players.FirstOrDefault(x => x.TelegramId == id);
         }
@@ -233,12 +232,12 @@ namespace Werewolf_Control
 
         internal static void RequestPM(long groupid)
         {
-            var button = new InlineKeyboardUrlButton("Start Me", "telegram.me/" + Bot.Me.Username);
+            var button = InlineKeyboardButton.WithUrl("Start Me", "telegram.me/" + Bot.Me.Username);
             Send(GetLocaleString("StartMe", GetLanguage(groupid)), groupid,
                 customMenu: new InlineKeyboardMarkup(new[] {button}));
         }
 
-        private static Node GetPlayerNode(int id)
+        private static Node GetPlayerNode(long id)
         {
             var node = Bot.Nodes.ToList().FirstOrDefault(n => n.Games.Any(g => g.Users.Contains(id)));
             if (node == null)

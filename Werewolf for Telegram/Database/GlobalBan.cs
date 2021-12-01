@@ -15,7 +15,7 @@ namespace Database
     public partial class GlobalBan
     {
         public int Id { get; set; }
-        public int TelegramId { get; set; }
+        public long TelegramId { get; set; }
         public string Reason { get; set; }
         public System.DateTime Expires { get; set; }
         public string BannedBy { get; set; }

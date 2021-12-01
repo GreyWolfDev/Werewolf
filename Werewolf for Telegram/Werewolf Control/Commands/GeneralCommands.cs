@@ -8,7 +8,6 @@ using Database;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Helpers;
@@ -157,7 +156,7 @@ namespace Werewolf_Control
             var langs = LanguageHelper.GetAllLanguages(); // Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
 
-            List<InlineKeyboardCallbackButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"setlang|{update.Message.From.Id}|{x}|null|base")).ToList();
+            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => InlineKeyboardButton.WithCallbackData(x, $"setlang|{update.Message.From.Id}|{x}|null|base")).ToList();
 
             var baseMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)
@@ -320,7 +319,7 @@ namespace Werewolf_Control
                             if (chatmember == null) // if we fail to determine their chatmember status, just let them try again
                                 return;
 
-                            if (chatmember.Status == ChatMemberStatus.Left || chatmember.Status == ChatMemberStatus.Kicked || (chatmember.Status == ChatMemberStatus.Restricted && !chatmember.CanSendMessages))
+                            if (chatmember.Status == ChatMemberStatus.Left || chatmember.Status == ChatMemberStatus.Kicked || (chatmember.Status == ChatMemberStatus.Restricted && !(chatmember.CanSendMessages ?? true)))
                             {
                                 Bot.Send(
                                     GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()),
@@ -397,7 +396,7 @@ namespace Werewolf_Control
                 }
 
                 var button = new InlineKeyboardMarkup(new[] {
-                        new InlineKeyboardCallbackButton(GetLocaleString("Cancel", grp.Language), $"stopwaiting|{id}")
+                        InlineKeyboardButton.WithCallbackData(GetLocaleString("Cancel", grp.Language), $"stopwaiting|{id}")
                     });
                 if (db.NotifyGames.Any(x => x.GroupId == id && x.UserId == update.Message.From.Id))
                 {
@@ -449,8 +448,8 @@ namespace Werewolf_Control
             
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
-            List<InlineKeyboardCallbackButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"getlang|{update.Message.From.Id}|{x}|null|base")).ToList();
-            buttons.Insert(0, new InlineKeyboardCallbackButton("All", $"getlang|{update.Message.From.Id}|All|null|base"));
+            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => InlineKeyboardButton.WithCallbackData(x, $"getlang|{update.Message.From.Id}|{x}|null|base")).ToList();
+            buttons.Insert(0, InlineKeyboardButton.WithCallbackData("All", $"getlang|{update.Message.From.Id}|All|null|base"));
 
             var baseMenu = new List<InlineKeyboardButton[]>();
             for (var i = 0; i < buttons.Count; i++)
@@ -510,8 +509,7 @@ namespace Werewolf_Control
                 {
                     new[]
                     {
-                    new InlineKeyboardUrlButton($"{name} Stats",
-                        "https://www.tgwerewolf.com/Stats/Player/" + id + "?referrer=stats")
+                        InlineKeyboardButton.WithUrl($"{name} Stats", "https://www.tgwerewolf.com/Stats/Player/" + id + "?referrer=stats")
                 }
 
                 };
@@ -527,7 +525,7 @@ namespace Werewolf_Control
                 {
                     new[]
                     {
-                        new InlineKeyboardUrlButton("Global Stats",
+                        InlineKeyboardButton.WithUrl("Global Stats",
                            "https://www.tgwerewolf.com/Stats?referrer=stats")
 
                     }
@@ -535,12 +533,12 @@ namespace Werewolf_Control
                 if (u.Message.Chat.Type != ChatType.Private)
                     buttons.Add(new[]
                     {
-                        new InlineKeyboardUrlButton( $"{u.Message.Chat.Title} Stats",
+                        InlineKeyboardButton.WithUrl( $"{u.Message.Chat.Title} Stats",
                         "https://www.tgwerewolf.com/Stats/Group/" + u.Message.Chat.Id + "?referrer=stats")
                     });
                 buttons.Add(new[]
                 {
-                    new InlineKeyboardUrlButton($"{u.Message.From.FirstName} Stats","https://www.tgwerewolf.com/Stats/Player/" + u.Message.From.Id + "?referrer=stats")
+                    InlineKeyboardButton.WithUrl($"{u.Message.From.FirstName} Stats","https://www.tgwerewolf.com/Stats/Player/" + u.Message.From.Id + "?referrer=stats")
 
                 });
                 var menu = new InlineKeyboardMarkup(buttons.ToArray());

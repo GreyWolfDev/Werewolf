@@ -10,7 +10,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.Payments;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Helpers;
@@ -35,17 +34,17 @@ namespace Werewolf_Control
             if (u.Message.Chat.Type == ChatType.Private)
             {
 #if RELEASE
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("Telegram", "donatetg"));
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("Xsolla", "xsolla"));
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Telegram", "donatetg"));
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Xsolla", "xsolla"));
 #else
-                menu.Buttons.Add(new InlineKeyboardUrlButton("Telegram", $"https://t.me/werewolfbot?start=donatetg"));
-                menu.Buttons.Add(new InlineKeyboardUrlButton("Xsolla", $"https://t.me/werewolfbot?start=xsolla"));
+                menu.Buttons.Add(InlineKeyboardButton.WithUrl("Telegram", $"https://t.me/werewolfbot?start=donatetg"));
+                menu.Buttons.Add(InlineKeyboardButton.WithUrl("Xsolla", $"https://t.me/werewolfbot?start=xsolla"));
 #endif
             }
             else
             {
-                menu.Buttons.Add(new InlineKeyboardUrlButton("Telegram", $"https://t.me/werewolfbot?start=donatetg"));
-                menu.Buttons.Add(new InlineKeyboardUrlButton("Xsolla", $"https://t.me/werewolfbot?start=xsolla"));
+                menu.Buttons.Add(InlineKeyboardButton.WithUrl("Telegram", $"https://t.me/werewolfbot?start=donatetg"));
+                menu.Buttons.Add(InlineKeyboardButton.WithUrl("Xsolla", $"https://t.me/werewolfbot?start=xsolla"));
             }
             var markup = menu.CreateMarkupFromMenu();
             var txt = $"Want to help keep Werewolf Moderator online? Donate now and gets: {"Custom gifs".ToBold()} and {"Badges".ToBold()}!\n\nClick the button below to donate!!\n\nMore Info: https://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-06-27";
@@ -185,12 +184,12 @@ namespace Werewolf_Control
                 {
                     i += " 🚫";
                 }
-                m.Buttons.Add(new InlineKeyboardCallbackButton(i, "customgif|" + i));
+                m.Buttons.Add(InlineKeyboardButton.WithCallbackData(i, "customgif|" + i));
             }
-            m.Buttons.Add(new InlineKeyboardCallbackButton("Show Badge: " + (d.ShowBadge ? "✅" : "🚫"), "customgif|togglebadge"));
-            m.Buttons.Add(new InlineKeyboardCallbackButton("❗️ RESET GIFS ❗️", "customgif|resetgifs"));
-            m.Buttons.Add(new InlineKeyboardCallbackButton("Done for now", "cancel|cancel|cancel"));
-            m.Buttons.Add(new InlineKeyboardCallbackButton("Submit for approval", "customgif|submit"));
+            m.Buttons.Add(InlineKeyboardButton.WithCallbackData("Show Badge: " + (d.ShowBadge ? "✅" : "🚫"), "customgif|togglebadge"));
+            m.Buttons.Add(InlineKeyboardButton.WithCallbackData("❗️ RESET GIFS ❗️", "customgif|resetgifs"));
+            m.Buttons.Add(InlineKeyboardButton.WithCallbackData("Done for now", "cancel|cancel|cancel"));
+            m.Buttons.Add(InlineKeyboardButton.WithCallbackData("Submit for approval", "customgif|submit"));
 
             return m.CreateMarkupFromMenu();
         }
@@ -235,10 +234,10 @@ namespace Werewolf_Control
                     }
                 }
                 var menu = new Menu(2);
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("Review", "reviewgifs|" + q.From.Id));
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("Dismiss", $"dismiss|" + q.From.Id));
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: SFW", "approvesfw|" + q.From.Id));
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("Approved: NSFW", "approvensfw|" + q.From.Id));
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Review", "reviewgifs|" + q.From.Id));
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Dismiss", $"dismiss|" + q.From.Id));
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Approved: SFW", "approvesfw|" + q.From.Id));
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Approved: NSFW", "approvensfw|" + q.From.Id));
                 Bot.Send($"User {q.From.Id} - {(q.From.Username == null ? q.From.FirstName : $"@{q.From.Username}")} - has submitted a gif pack for approval", Settings.AdminChatId, customMenu: menu.CreateMarkupFromMenu());
                 Bot.Send("Your GIF pack has been submitted to the admins for approval!\n\nPlease keep in mind that admins have a huge number of GIF packs to review, hence this process may take up to 2-5 working days.\n\nOur admins will keep track of the submitted GIF packs, you don’t have to PM them directly. Thank you for your patience!", q.From.Id);
                 return;
@@ -265,8 +264,8 @@ namespace Werewolf_Control
             if (choice == "resetgifs")
             {
                 var menu = new Menu();
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("❗️ CONFIRM RESET ❗️", "customgif|confirmreset"));
-                menu.Buttons.Add(new InlineKeyboardCallbackButton("Cancel", "customgif|cancelreset"));
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("❗️ CONFIRM RESET ❗️", "customgif|confirmreset"));
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Cancel", "customgif|cancelreset"));
                 Bot.Send("You are about to reset your custom GIF set! All your saved GIFs will be deleted! You can set them again, but you will not be able to restore your current GIFs. Are you sure you want to continue?", q.From.Id, customMenu: menu.CreateMarkupFromMenu());
                 return;
             }
@@ -299,7 +298,7 @@ namespace Werewolf_Control
             Bot.Api.SendTextMessageAsync(q.From.Id,
                 q.Data.Split('|')[1] + "\nOk, send me the GIF you want to use for this situation, as a reply\n" +
                 "#" + choice,
-                replyMarkup: new ForceReply() { Force = true });
+                replyMarkup: new ForceReplyMarkup());
         }
 
         public static void AddGif(Message m)
@@ -332,14 +331,14 @@ namespace Werewolf_Control
                         "users are unable to view them, we require you to use telegram's " +
                         "[new GIFs in .mp4 format](https://telegram.org/blog/gif-revolution). " +
                         "To fix this, try reuploading the GIF, your telegram app should then render it as .mp4. " +
-                        "Please send me the GIF you want to use for this situation, as a reply\n#" + gifchoice, replyMarkup: new ForceReply() { Force = true }, parseMode: ParseMode.Markdown);
+                        "Please send me the GIF you want to use for this situation, as a reply\n#" + gifchoice, replyMarkup: new ForceReplyMarkup(), parseMode: ParseMode.Markdown);
                     return;
                 }
 				if (m.Animation.FileSize >= 1048576) // Maximum size is 1 MB
 				{
 					Bot.Api.SendTextMessageAsync(m.From.Id, "This GIF is too large, the maximum allowed size is 1MB.\n\n" + 
 					"Please send me the GIF you want to use for this situation, as a reply\n#" + gifchoice, 
-					replyMarkup: new ForceReply() { Force = true });
+					replyMarkup: new ForceReplyMarkup());
 					return;
 				}
 				
@@ -432,7 +431,7 @@ namespace Werewolf_Control
                 var res = Program.xsollaClient.PostAsync(Program.XsollaLink, new StringContent(CreateXsollaJson(from), Encoding.UTF8, "application/json")).Result;
                 var token = JsonConvert.DeserializeObject<Dictionary<string, string>>(res.Content.ReadAsStringAsync().Result)["token"];
                 txt = $"Please click the button below to donate via Xsolla.\nPlease note that this link is ONLY for you and valid for 24 hours.";
-                markup = new InlineKeyboardMarkup(new InlineKeyboardButton[][] { new InlineKeyboardButton[] { new InlineKeyboardUrlButton("Donate Now!", $"https://tgwerewolf.com/donate/xsolla?uid={from.Id}&token={token}") } });
+                markup = new InlineKeyboardMarkup(new InlineKeyboardButton[][] { new InlineKeyboardButton[] { InlineKeyboardButton.WithUrl("Donate Now!", $"https://tgwerewolf.com/donate/xsolla?uid={from.Id}&token={token}") } });
             }
             catch (Exception e)
             {
@@ -456,7 +455,7 @@ namespace Werewolf_Control
             var menu = new Menu();
             Bot.Api.SendTextMessageAsync(q?.From.Id ?? m.From.Id,
                 "How much would you like to donate?  Please enter a whole number, in US Dollars (USD), in reply to this message",
-                replyMarkup: new ForceReply { Force = true });
+                replyMarkup: new ForceReplyMarkup());
         }
 
         public static void ValidateDonationAmount(Message m)
@@ -473,14 +472,14 @@ namespace Werewolf_Control
                 var api = RegHelper.GetRegValue("MainStripeProdAPI");
 #endif
                 Bot.Api.SendInvoiceAsync(m.From.Id, "Werewolf Donation", "Make a donation to Werewolf to help keep us online", "somepayloadtest", api,
-                    "startparam", "USD", new[] { new LabeledPrice() { Amount = amt * 100, Label = "Donation" } });
+                    "USD", new[] { new LabeledPrice() { Amount = amt * 100, Label = "Donation" } }, startParameter: "startparam");
             }
             else
             {
                 Bot.Api.SendTextMessageAsync(m.From.Id,
                     "Invalid input.\n" +
                     "How much would you like to donate?  Please enter a whole number, in US Dollars (USD), in reply to this message",
-                    replyMarkup: new ForceReply { Force = true });
+                    replyMarkup: new ForceReplyMarkup());
             }
 
         }

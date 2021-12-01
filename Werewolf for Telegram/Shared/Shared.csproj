@@ -47,11 +47,5 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Telegram.Bot\Telegram.Bot.csproj">
-      <Project>{5436a4df-7b54-41d3-855f-ad3f516ae377}</Project>
-      <Name>Telegram.Bot</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
