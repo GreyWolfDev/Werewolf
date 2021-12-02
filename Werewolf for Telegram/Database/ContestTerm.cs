@@ -14,7 +14,7 @@ namespace Database
     
     public partial class ContestTerm
     {
-        public int TelegramId { get; set; }
+        public long TelegramId { get; set; }
         public bool AgreedTerms { get; set; }
     }
 }

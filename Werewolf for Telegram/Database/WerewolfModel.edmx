@@ -18,7 +18,7 @@
           <Key>
             <PropertyRef Name="TelegramId" />
           </Key>
-          <Property Name="TelegramId" Type="int" Nullable="false" />
+          <Property Name="TelegramId" Type="bigint" Nullable="false" />
           <Property Name="AgreedTerms" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="GlobalBan">
@@ -336,7 +336,7 @@ warning 6002: The table/view 'werewolf.db_owner.v_InactivePlayersMain' does not 
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="TelegramId" Type="int" Nullable="false" />
+          <Property Name="TelegramId" Type="bigint" Nullable="false" />
           <Property Name="last" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -1306,12 +1306,12 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
         </EntityType>
         <ComplexType Name="PlayerMostKilled_Result">
           <Property Type="String" Name="Name" Nullable="false" />
-          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int64" Name="TelegramId" Nullable="false" />
           <Property Type="Int32" Name="times" Nullable="true" />
         </ComplexType>
         <ComplexType Name="PlayerMostKilledBy_Result">
           <Property Type="String" Name="Name" Nullable="false" />
-          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int64" Name="TelegramId" Nullable="false" />
           <Property Type="Int32" Name="times" Nullable="true" />
         </ComplexType>
         <ComplexType Name="PlayerRoles_Result">
@@ -1321,42 +1321,42 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
         <ComplexType Name="GlobalDay1Death_Result1">
           <Property Type="Int32" Name="pct" Nullable="true" />
           <Property Type="String" Name="Name" Nullable="false" />
-          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int64" Name="TelegramId" Nullable="false" />
         </ComplexType>
         <ComplexType Name="GlobalDay1Lynch_Result1">
           <Property Type="Int32" Name="pct" Nullable="true" />
           <Property Type="String" Name="Name" Nullable="false" />
-          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int64" Name="TelegramId" Nullable="false" />
         </ComplexType>
         <ComplexType Name="GlobalNight1Death_Result1">
           <Property Type="Int32" Name="pct" Nullable="true" />
           <Property Type="String" Name="Name" Nullable="false" />
-          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int64" Name="TelegramId" Nullable="false" />
         </ComplexType>
         <ComplexType Name="GlobalSurvivor_Result1">
           <Property Type="Decimal" Name="pct" Nullable="true" Precision="26" Scale="12" />
           <Property Type="String" Name="Name" Nullable="false" />
-          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int64" Name="TelegramId" Nullable="false" />
         </ComplexType>
         <ComplexType Name="GroupDay1Death_Result1">
           <Property Type="Int32" Name="pct" Nullable="true" />
           <Property Type="String" Name="Name" Nullable="false" />
-          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int64" Name="TelegramId" Nullable="false" />
         </ComplexType>
         <ComplexType Name="GroupDay1Lynch_Result1">
           <Property Type="Int32" Name="pct" Nullable="true" />
           <Property Type="String" Name="Name" Nullable="false" />
-          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int64" Name="TelegramId" Nullable="false" />
         </ComplexType>
         <ComplexType Name="GroupNight1Death_Result1">
           <Property Type="Int32" Name="pct" Nullable="true" />
           <Property Type="String" Name="Name" Nullable="false" />
-          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int64" Name="TelegramId" Nullable="false" />
         </ComplexType>
         <ComplexType Name="GroupSurvivor_Result1">
           <Property Type="Int32" Name="pct" Nullable="true" />
           <Property Type="String" Name="Name" Nullable="false" />
-          <Property Type="Int32" Name="TelegramId" Nullable="false" />
+          <Property Type="Int64" Name="TelegramId" Nullable="false" />
         </ComplexType>
         <EntityType Name="DailyCount">
           <Key>
@@ -1413,7 +1413,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="TelegramId" Type="Int32" Nullable="false" />
+          <Property Name="TelegramId" Type="Int64" Nullable="false" />
           <Property Name="last" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="BotStatu">
@@ -1429,7 +1429,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Key>
             <PropertyRef Name="TelegramId" />
           </Key>
-          <Property Name="TelegramId" Type="Int32" Nullable="false" />
+          <Property Name="TelegramId" Type="Int64" Nullable="false" />
           <Property Name="AgreedTerms" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="AspNetRole">
