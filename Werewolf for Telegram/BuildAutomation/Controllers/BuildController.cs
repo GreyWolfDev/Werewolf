@@ -64,9 +64,9 @@ namespace BuildAutomation.Controllers
                                 msg += "\nDo you want me to copy the files and update?";
                                 menu = new InlineKeyboardMarkup(new[]
                                 {
-                                    new InlineKeyboardCallbackButton("Yes",
+                                    InlineKeyboardButton.WithCallbackData("Yes",
                                         $"update|{(beta ? "beta" : "release")}{(node ? "node" : "control")}"),
-                                    new InlineKeyboardCallbackButton("No", "update|no")
+                                    InlineKeyboardButton.WithCallbackData("No", "update|no")
                                 });
                             }
 
@@ -143,19 +143,19 @@ namespace BuildAutomation.Controllers
 
 
 
-                    var none = new InlineKeyboardCallbackButton("No", "build|no");
+                    var none = InlineKeyboardButton.WithCallbackData("No", "build|no");
                     var yes = "Yes";
-                    var betaControl = new InlineKeyboardCallbackButton(yes, "build|betacontrol");
-                    var betaNode = new InlineKeyboardCallbackButton(yes, "build|betanode");
-                    var betaBoth = new InlineKeyboardCallbackButton(yes, "build|betaboth");
+                    var betaControl = InlineKeyboardButton.WithCallbackData(yes, "build|betacontrol");
+                    var betaNode = InlineKeyboardButton.WithCallbackData(yes, "build|betanode");
+                    var betaBoth = InlineKeyboardButton.WithCallbackData(yes, "build|betaboth");
 
-                    var releaseControl = new InlineKeyboardCallbackButton(yes, "build|releasecontrol");
-                    var releaseNode = new InlineKeyboardCallbackButton(yes, "build|releasenode");
-                    //var releaseBoth = new InlineKeyboardCallbackButton(yes, "build|releaseboth");
-                    var releaseWebSite = new InlineKeyboardCallbackButton(yes, "build|releasewebsite");
-                    //var releaseWN = new InlineKeyboardCallbackButton(yes, "build|releasenodewebsite");
-                    //var releaseWC = new InlineKeyboardCallbackButton(yes, "build|releasecontrolwebsite");
-                    //var releaseAll = new InlineKeyboardCallbackButton(yes, "build|releasewebsitebot");
+                    var releaseControl = InlineKeyboardButton.WithCallbackData(yes, "build|releasecontrol");
+                    var releaseNode = InlineKeyboardButton.WithCallbackData(yes, "build|releasenode");
+                    //var releaseBoth = InlineKeyboardButton.WithCallbackData(yes, "build|releaseboth");
+                    var releaseWebSite = InlineKeyboardButton.WithCallbackData(yes, "build|releasewebsite");
+                    //var releaseWN = InlineKeyboardButton.WithCallbackData(yes, "build|releasenodewebsite");
+                    //var releaseWC = InlineKeyboardButton.WithCallbackData(yes, "build|releasecontrolwebsite");
+                    //var releaseAll = InlineKeyboardButton.WithCallbackData(yes, "build|releasewebsitebot");
                     Menu menu;
 
                     msg += "\nThis commit contains changes to ";
@@ -165,13 +165,13 @@ namespace BuildAutomation.Controllers
                         {
                             menu = new Menu(1, new List<InlineKeyboardButton>
                             {
-                                new InlineKeyboardCallbackButton("All of it!", "build|betacontrolwebsitenode"),
-                                new InlineKeyboardCallbackButton("Control & Node", "build|betacontrolnode"),
-                                new InlineKeyboardCallbackButton("Website & Control", "build|betacontrolwebsite"),
-                                new InlineKeyboardCallbackButton("Website & Node", "build|betanodewebsite"),
-                                new InlineKeyboardCallbackButton("Website Only", "build|betawebsite"),
-                                new InlineKeyboardCallbackButton("Control Only", "build|betacontrol"),
-                                new InlineKeyboardCallbackButton("Node Only", "build|betanode"),
+                                InlineKeyboardButton.WithCallbackData("All of it!", "build|betacontrolwebsitenode"),
+                                InlineKeyboardButton.WithCallbackData("Control & Node", "build|betacontrolnode"),
+                                InlineKeyboardButton.WithCallbackData("Website & Control", "build|betacontrolwebsite"),
+                                InlineKeyboardButton.WithCallbackData("Website & Node", "build|betanodewebsite"),
+                                InlineKeyboardButton.WithCallbackData("Website Only", "build|betawebsite"),
+                                InlineKeyboardButton.WithCallbackData("Control Only", "build|betacontrol"),
+                                InlineKeyboardButton.WithCallbackData("Node Only", "build|betanode"),
                                 none
                             });
                             msg += "Control, Node, and Website";
@@ -180,9 +180,9 @@ namespace BuildAutomation.Controllers
                         {
                             menu = new Menu(1, new List<InlineKeyboardButton>
                             {
-                                new InlineKeyboardCallbackButton("Control & Node", "build|betacontrolnode"),
-                                new InlineKeyboardCallbackButton("Control Only", "build|betacontrol"),
-                                new InlineKeyboardCallbackButton("Node Only", "build|betanode"),
+                                InlineKeyboardButton.WithCallbackData("Control & Node", "build|betacontrolnode"),
+                                InlineKeyboardButton.WithCallbackData("Control Only", "build|betacontrol"),
+                                InlineKeyboardButton.WithCallbackData("Node Only", "build|betanode"),
                                 none
                             });
                             msg += "Control and Node";
@@ -191,9 +191,9 @@ namespace BuildAutomation.Controllers
                         {
                             menu = new Menu(1, new List<InlineKeyboardButton>
                             {
-                                new InlineKeyboardCallbackButton("Website & Control", "build|betacontrolwebsite"),
-                                new InlineKeyboardCallbackButton("Website Only", "build|betawebsite"),
-                                new InlineKeyboardCallbackButton("Control Only", "build|betacontrol"),
+                                InlineKeyboardButton.WithCallbackData("Website & Control", "build|betacontrolwebsite"),
+                                InlineKeyboardButton.WithCallbackData("Website Only", "build|betawebsite"),
+                                InlineKeyboardButton.WithCallbackData("Control Only", "build|betacontrol"),
                                 none
                             });
                             msg += "Control and Website";
@@ -202,9 +202,9 @@ namespace BuildAutomation.Controllers
                         {
                             menu = new Menu(1, new List<InlineKeyboardButton>
                             {
-                                new InlineKeyboardCallbackButton("Website & Node", "build|betanodewebsite"),
-                                new InlineKeyboardCallbackButton("Website Only", "build|betawebsite"),
-                                new InlineKeyboardCallbackButton("Node Only", "build|betanode"),
+                                InlineKeyboardButton.WithCallbackData("Website & Node", "build|betanodewebsite"),
+                                InlineKeyboardButton.WithCallbackData("Website Only", "build|betawebsite"),
+                                InlineKeyboardButton.WithCallbackData("Node Only", "build|betanode"),
                                 none
                             });
                             msg += "Node and Website";
@@ -243,13 +243,13 @@ namespace BuildAutomation.Controllers
                         {
                             menu = new Menu(1, new List<InlineKeyboardButton>
                             {
-                                new InlineKeyboardCallbackButton("All of it!", "build|releasecontrolwebsitenode"),
-                                new InlineKeyboardCallbackButton("Control & Node", "build|releasecontrolnode"),
-                                new InlineKeyboardCallbackButton("Website & Control", "build|releasecontrolwebsite"),
-                                new InlineKeyboardCallbackButton("Website & Node", "build|releasenodewebsite"),
-                                new InlineKeyboardCallbackButton("Website Only", "build|releasewebsite"),
-                                new InlineKeyboardCallbackButton("Control Only", "build|releasecontrol"),
-                                new InlineKeyboardCallbackButton("Node Only", "build|releasenode"),
+                                InlineKeyboardButton.WithCallbackData("All of it!", "build|releasecontrolwebsitenode"),
+                                InlineKeyboardButton.WithCallbackData("Control & Node", "build|releasecontrolnode"),
+                                InlineKeyboardButton.WithCallbackData("Website & Control", "build|releasecontrolwebsite"),
+                                InlineKeyboardButton.WithCallbackData("Website & Node", "build|releasenodewebsite"),
+                                InlineKeyboardButton.WithCallbackData("Website Only", "build|releasewebsite"),
+                                InlineKeyboardButton.WithCallbackData("Control Only", "build|releasecontrol"),
+                                InlineKeyboardButton.WithCallbackData("Node Only", "build|releasenode"),
                                 none
                             });
                             msg += "Control, Node, and Website";
@@ -258,9 +258,9 @@ namespace BuildAutomation.Controllers
                         {
                             menu = new Menu(1, new List<InlineKeyboardButton>
                             {
-                                new InlineKeyboardCallbackButton("Control & Node", "build|releasecontrolnode"),
-                                new InlineKeyboardCallbackButton("Control Only", "build|releasecontrol"),
-                                new InlineKeyboardCallbackButton("Node Only", "build|releasenode"),
+                                InlineKeyboardButton.WithCallbackData("Control & Node", "build|releasecontrolnode"),
+                                InlineKeyboardButton.WithCallbackData("Control Only", "build|releasecontrol"),
+                                InlineKeyboardButton.WithCallbackData("Node Only", "build|releasenode"),
                                 none
                             });
                             msg += "Control and Node";
@@ -269,9 +269,9 @@ namespace BuildAutomation.Controllers
                         {
                             menu = new Menu(1, new List<InlineKeyboardButton>
                             {
-                                new InlineKeyboardCallbackButton("Website & Control", "build|releasecontrolwebsite"),
-                                new InlineKeyboardCallbackButton("Website Only", "build|releasewebsite"),
-                                new InlineKeyboardCallbackButton("Control Only", "build|releasecontrol"),
+                                InlineKeyboardButton.WithCallbackData("Website & Control", "build|releasecontrolwebsite"),
+                                InlineKeyboardButton.WithCallbackData("Website Only", "build|releasewebsite"),
+                                InlineKeyboardButton.WithCallbackData("Control Only", "build|releasecontrol"),
                                 none
                             });
                             msg += "Control and Website";
@@ -280,9 +280,9 @@ namespace BuildAutomation.Controllers
                         {
                             menu = new Menu(1, new List<InlineKeyboardButton>
                             {
-                                new InlineKeyboardCallbackButton("Website & Node", "build|releasenodewebsite"),
-                                new InlineKeyboardCallbackButton("Website Only", "build|releasewebsite"),
-                                new InlineKeyboardCallbackButton("Node Only", "build|releasenode"),
+                                InlineKeyboardButton.WithCallbackData("Website & Node", "build|releasenodewebsite"),
+                                InlineKeyboardButton.WithCallbackData("Website Only", "build|releasewebsite"),
+                                InlineKeyboardButton.WithCallbackData("Node Only", "build|releasenode"),
                                 none
                             });
                             msg += "Node and Website";
@@ -324,7 +324,7 @@ namespace BuildAutomation.Controllers
                     //if (beta)
                     //{
                     //    var m = "Changes on beta branch. Do you want to build the website too?";
-                    //    var websiteYes = new InlineKeyboardCallbackButton("Yes", "build|website");
+                    //    var websiteYes = InlineKeyboardButton.WithCallbackData("Yes", "build|website");
                     //    menu = new InlineKeyboardMarkup(new[] { websiteYes, none });
                     //    bot.SendTextMessageAsync(GroupId, m, replyMarkup: menu, parseMode: ParseMode.Html, disableWebPagePreview: true);
                     //}

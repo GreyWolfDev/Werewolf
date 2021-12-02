@@ -23,5 +23,7 @@ namespace Database
         public int Id { get; set; }
         public int GamesPlayed { get; set; }
         public Nullable<bool> Show { get; set; }
+    
+        public virtual Group Group { get; set; }
     }
 }
