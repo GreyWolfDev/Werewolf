@@ -733,7 +733,7 @@ namespace Werewolf_Control
         {
             using (var db = new WWContext())
             {
-                var search = int.Parse(args[1].Trim());
+                var search = long.Parse(args[1].Trim());
                 var p = db.Players.FirstOrDefault(x => x.TelegramId == search);
                 if (p != null)
                     Send($"User: {p.Name}\nUserName: @{p.UserName}", u.Message.Chat.Id);
@@ -742,7 +742,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "getcommands", DevOnly = true)]
         public static void GetCommands(Update u, string[] args)
         {
-            var target = int.Parse(args[1]);
+            var target = long.Parse(args[1]);
             var reply = UpdateHandler.UserMessages[target].Messages.Aggregate("", (a, b) => a + "\n" + b.Command);
             Send(reply, u.Message.Chat.Id);
         }
@@ -1056,195 +1056,195 @@ namespace Werewolf_Control
 #endif
         }
 
-        [Attributes.Command(Trigger = "cleanmain", GlobalAdminOnly = true)]
-        public static void CleanMain(Update u, string[] args)
-        {
-            var skip = 0;
-            if (args.Length > 0)
-                int.TryParse(args[1], out skip);
-            if (skip > 0)
-                Send($"Skipping the first {skip} users", u.Message.Chat.Id);
-            using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\kick.log")))
-            {
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                //now, check the json file
-                var timeStarted = DateTime.UtcNow;
-                Send("Getting users from main chat, please wait...", u.Message.Chat.Id);
-                ChannelInfo channel = null;
-                try
-                {
-                    channel = CLI.GetChatInfo("WereWuff - The Game", u.Message.Chat.Id).Result;
-                }
-                catch (AggregateException e)
-                {
-                    Send(e.InnerExceptions[0].Message + "\n" + e.InnerExceptions[0].StackTrace, u.Message.Chat.Id);
-                }
-                catch (Exception e)
-                {
-                    while (e.InnerException != null)
-                        e = e.InnerException;
-                    Send(e.Message + "\n" + e.StackTrace, u.Message.Chat.Id);
-                }
-                if (channel == null) return;
-                var users = channel.Users.Skip(skip).ToList();
-                Send($"Beginning kick process.  Found {users.Count} users in the group", u.Message.Chat.Id);
-                var i = 0;
-                var removed = 0;
-                using (var db = new WWContext())
-                    foreach (var usr in users)
-                    {
-                        var id = usr.id;
-                        i++;
-                        sw.Flush();
-                        sw.Write($"\n{i}|{id}|{usr.deleted}|");
+        //[Attributes.Command(Trigger = "cleanmain", GlobalAdminOnly = true)]
+        //public static void CleanMain(Update u, string[] args)
+        //{
+        //    var skip = 0;
+        //    if (args.Length > 0)
+        //        int.TryParse(args[1], out skip);
+        //    if (skip > 0)
+        //        Send($"Skipping the first {skip} users", u.Message.Chat.Id);
+        //    using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\kick.log")))
+        //    {
+        //        Console.ForegroundColor = ConsoleColor.Cyan;
+        //        //now, check the json file
+        //        var timeStarted = DateTime.UtcNow;
+        //        Send("Getting users from main chat, please wait...", u.Message.Chat.Id);
+        //        ChannelInfo channel = null;
+        //        try
+        //        {
+        //            channel = CLI.GetChatInfo("WereWuff - The Game", u.Message.Chat.Id).Result;
+        //        }
+        //        catch (AggregateException e)
+        //        {
+        //            Send(e.InnerExceptions[0].Message + "\n" + e.InnerExceptions[0].StackTrace, u.Message.Chat.Id);
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            while (e.InnerException != null)
+        //                e = e.InnerException;
+        //            Send(e.Message + "\n" + e.StackTrace, u.Message.Chat.Id);
+        //        }
+        //        if (channel == null) return;
+        //        var users = channel.Users.Skip(skip).ToList();
+        //        Send($"Beginning kick process.  Found {users.Count} users in the group", u.Message.Chat.Id);
+        //        var i = 0;
+        //        var removed = 0;
+        //        using (var db = new WWContext())
+        //            foreach (var usr in users)
+        //            {
+        //                var id = usr.id;
+        //                i++;
+        //                sw.Flush();
+        //                sw.Write($"\n{i}|{id}|{usr.deleted}|");
 
-                        try
-                        {
-                            ChatMemberStatus status;
-                            try
-                            {
-                                //check their status first, so we don't make db calls for someone not even in the chat.
-                                status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
-                            }
-                            catch (AggregateException e)
-                            {
-                                if (e.InnerExceptions[0].Message.Contains("User not found"))
-                                {
-                                    sw.Write("NF|");
-                                    status = ChatMemberStatus.Member;
-                                }
-                                else
-                                    throw;
-                            }
+        //                try
+        //                {
+        //                    ChatMemberStatus status;
+        //                    try
+        //                    {
+        //                        //check their status first, so we don't make db calls for someone not even in the chat.
+        //                        status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
+        //                    }
+        //                    catch (AggregateException e)
+        //                    {
+        //                        if (e.InnerExceptions[0].Message.Contains("User not found"))
+        //                        {
+        //                            sw.Write("NF|");
+        //                            status = ChatMemberStatus.Member;
+        //                        }
+        //                        else
+        //                            throw;
+        //                    }
 
-                            if (status != ChatMemberStatus.Member)
-                                continue;
-                            //get the last time they played a game
-                            var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+        //                    if (status != ChatMemberStatus.Member)
+        //                        continue;
+        //                    //get the last time they played a game
+        //                    var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
 
-                            //get latest game player, check within 2 weeks
-                            var gp =
-                                p?.GamePlayers.Join(db.Games.Where(x => x.GroupId == Settings.PrimaryChatId),
-                                        x => x.GameId, y => y.Id, (gamePlayer, game) => new { game.TimeStarted, game.Id })
-                                    .OrderByDescending(x => x.Id)
-                                    .FirstOrDefault();
-                            var lastPlayed = DateTime.MinValue;
-                            if (gp != null)
-                            {
-                                lastPlayed = gp.TimeStarted.Value;
-                                if (gp.TimeStarted >= DateTime.UtcNow.AddDays(-14))
-                                    continue;
-                            }
+        //                    //get latest game player, check within 2 weeks
+        //                    var gp =
+        //                        p?.GamePlayers.Join(db.Games.Where(x => x.GroupId == Settings.PrimaryChatId),
+        //                                x => x.GameId, y => y.Id, (gamePlayer, game) => new { game.TimeStarted, game.Id })
+        //                            .OrderByDescending(x => x.Id)
+        //                            .FirstOrDefault();
+        //                    var lastPlayed = DateTime.MinValue;
+        //                    if (gp != null)
+        //                    {
+        //                        lastPlayed = gp.TimeStarted.Value;
+        //                        if (gp.TimeStarted >= DateTime.UtcNow.AddDays(-14))
+        //                            continue;
+        //                    }
 
-                            //at this point, they have been in the group at least 2 weeks, haven't played in the group in the past 2 weeks, and are a member.  Time to kick.
-                            try
-                            {
-                                //first, check if the user is in the group
-                                //sw.Write($"{status}");
-                                if (status != ChatMemberStatus.Member) //user is not in group, skip
-                                    continue;
-                                //kick
-                                Bot.Api.KickChatMemberAsync(Settings.PrimaryChatId, id);
-                                removed++;
-                                sw.Write($"Removed ({p?.Name ?? id.ToString()})");
+        //                    //at this point, they have been in the group at least 2 weeks, haven't played in the group in the past 2 weeks, and are a member.  Time to kick.
+        //                    try
+        //                    {
+        //                        //first, check if the user is in the group
+        //                        //sw.Write($"{status}");
+        //                        if (status != ChatMemberStatus.Member) //user is not in group, skip
+        //                            continue;
+        //                        //kick
+        //                        Bot.Api.KickChatMemberAsync(Settings.PrimaryChatId, id);
+        //                        removed++;
+        //                        sw.Write($"Removed ({p?.Name ?? id.ToString()})");
 
-                                //get their status
+        //                        //get their status
 
-                                while (status == ChatMemberStatus.Member) //loop
-                                {
-                                    //wait for database to report status is kicked.
-                                    try
-                                    {
-                                        status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
-                                    }
-                                    catch (AggregateException e)
-                                    {
-                                        if (e.InnerExceptions[0].Message.Contains("User not found"))
-                                        {
-                                            status = ChatMemberStatus.Kicked;
-                                        }
-                                        else
-                                            throw;
-                                    }
-                                    Thread.Sleep(500);
-                                }
-                                //status is now kicked (as it should be)
-                                var attempts = 0;
-                                sw.Write("|Unbanning-");
-                                while (status != ChatMemberStatus.Left) //unban until status is left
-                                {
-                                    attempts++;
-                                    sw.Write($"{status}");
-                                    sw.Flush();
-                                    Bot.Api.UnbanChatMemberAsync(Settings.PrimaryChatId, id);
-                                    Thread.Sleep(500);
-                                    try
-                                    {
-                                        status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
-                                    }
-                                    catch (AggregateException e)
-                                    {
-                                        if (e.InnerExceptions[0].Message.Contains("User not found"))
-                                        {
-                                            status = ChatMemberStatus.Left;
-                                        }
-                                        else
-                                            throw;
-                                    }
-                                }
-                                //yay unbanned
-                                sw.Write($"|Unbanned({attempts} attempts)");
-                                //let them know
-                                Send("You have been removed from the main chat as you have not played in that group in the 2 weeks.  You are always welcome to rejoin!", id);
-                            }
-                            catch (AggregateException ex)
-                            {
-                                var e = ex.InnerExceptions.First();
-                                if (e.Message.Contains("User not found"))
-                                    sw.Write($"Not Found - {p.Name}");
-                                else if (e.Message.Contains("USER_ID_INVALID"))
-                                    sw.Write($"Account Closed - {p.Name}");
-                                else
-                                {
-                                    sw.Write(e.Message);
-                                    //sw.WriteLine(e.StackTrace);
-                                }
-                            }
-                            catch (Exception e)
-                            {
-                                sw.WriteLine(e.Message);
-                                sw.WriteLine(e.StackTrace);
-                                // ignored
-                            }
-                            sw.Flush();
-                            //sleep 4 seconds to avoid API rate limiting
-                            Thread.Sleep(100);
+        //                        while (status == ChatMemberStatus.Member) //loop
+        //                        {
+        //                            //wait for database to report status is kicked.
+        //                            try
+        //                            {
+        //                                status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
+        //                            }
+        //                            catch (AggregateException e)
+        //                            {
+        //                                if (e.InnerExceptions[0].Message.Contains("User not found"))
+        //                                {
+        //                                    status = ChatMemberStatus.Kicked;
+        //                                }
+        //                                else
+        //                                    throw;
+        //                            }
+        //                            Thread.Sleep(500);
+        //                        }
+        //                        //status is now kicked (as it should be)
+        //                        var attempts = 0;
+        //                        sw.Write("|Unbanning-");
+        //                        while (status != ChatMemberStatus.Left) //unban until status is left
+        //                        {
+        //                            attempts++;
+        //                            sw.Write($"{status}");
+        //                            sw.Flush();
+        //                            Bot.Api.UnbanChatMemberAsync(Settings.PrimaryChatId, id);
+        //                            Thread.Sleep(500);
+        //                            try
+        //                            {
+        //                                status = Bot.Api.GetChatMemberAsync(Settings.PrimaryChatId, id).Result.Status;
+        //                            }
+        //                            catch (AggregateException e)
+        //                            {
+        //                                if (e.InnerExceptions[0].Message.Contains("User not found"))
+        //                                {
+        //                                    status = ChatMemberStatus.Left;
+        //                                }
+        //                                else
+        //                                    throw;
+        //                            }
+        //                        }
+        //                        //yay unbanned
+        //                        sw.Write($"|Unbanned({attempts} attempts)");
+        //                        //let them know
+        //                        Send("You have been removed from the main chat as you have not played in that group in the 2 weeks.  You are always welcome to rejoin!", id);
+        //                    }
+        //                    catch (AggregateException ex)
+        //                    {
+        //                        var e = ex.InnerExceptions.First();
+        //                        if (e.Message.Contains("User not found"))
+        //                            sw.Write($"Not Found - {p.Name}");
+        //                        else if (e.Message.Contains("USER_ID_INVALID"))
+        //                            sw.Write($"Account Closed - {p.Name}");
+        //                        else
+        //                        {
+        //                            sw.Write(e.Message);
+        //                            //sw.WriteLine(e.StackTrace);
+        //                        }
+        //                    }
+        //                    catch (Exception e)
+        //                    {
+        //                        sw.WriteLine(e.Message);
+        //                        sw.WriteLine(e.StackTrace);
+        //                        // ignored
+        //                    }
+        //                    sw.Flush();
+        //                    //sleep 4 seconds to avoid API rate limiting
+        //                    Thread.Sleep(100);
 
-                        }
-                        catch (AggregateException e)
-                        {
-                            sw.Write(e.InnerExceptions[0].Message);
-                        }
-                        catch (Exception e)
-                        {
-                            while (e.InnerException != null)
-                                e = e.InnerException;
-                            sw.Write($"{e.Message}");
-                        }
+        //                }
+        //                catch (AggregateException e)
+        //                {
+        //                    sw.Write(e.InnerExceptions[0].Message);
+        //                }
+        //                catch (Exception e)
+        //                {
+        //                    while (e.InnerException != null)
+        //                        e = e.InnerException;
+        //                    sw.Write($"{e.Message}");
+        //                }
 
-                    }
-
-
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Send(
-                    $"@{u.Message.From.Username} I have removed {removed} users from the main group.\nTime to process: {DateTime.UtcNow - timeStarted}",
-                    u.Message.Chat.Id);
+        //            }
 
 
+        //        Console.ForegroundColor = ConsoleColor.Gray;
+        //        Send(
+        //            $"@{u.Message.From.Username} I have removed {removed} users from the main group.\nTime to process: {DateTime.UtcNow - timeStarted}",
+        //            u.Message.Chat.Id);
 
 
-            }
-        }
+
+
+        //    }
+        //}
 
 
         [Attributes.Command(Trigger = "leavegroup", GlobalAdminOnly = true)]

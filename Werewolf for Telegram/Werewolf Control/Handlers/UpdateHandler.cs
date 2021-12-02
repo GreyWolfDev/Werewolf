@@ -428,13 +428,13 @@ namespace Werewolf_Control.Handler
 
 #endregion
                             }
-                            else if (update.Message.Chat.Type == ChatType.Private &&
-                                     update.Message?.ReplyToMessage?.Text ==
-                                     "Please reply to this message with your Telegram authorization code" &&
-                                     update.Message.From.Id == UpdateHelper.Devs[0])
-                            {
-                                CLI.AuthCode = update.Message.Text;
-                            }
+                            //else if (update.Message.Chat.Type == ChatType.Private &&
+                            //         update.Message?.ReplyToMessage?.Text ==
+                            //         "Please reply to this message with your Telegram authorization code" &&
+                            //         update.Message.From.Id == UpdateHelper.Devs[0])
+                            //{
+                            //    CLI.AuthCode = update.Message.Text;
+                            //}
                             else if (update.Message.Chat.Type == ChatType.Private &&
                                      (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
                                      (update.Message?.ReplyToMessage?.Text?.Contains(
@@ -831,7 +831,7 @@ namespace Werewolf_Control.Handler
                             Player by;
                             string json;
                             //get player target
-                            var pid = int.Parse(args[1]);
+                            var pid = long.Parse(args[1]);
                             var tplayer = DB.Players.FirstOrDefault(x => x.TelegramId == pid);
                             switch (args[0])
                             {
@@ -1070,7 +1070,7 @@ namespace Werewolf_Control.Handler
                             return;
                         case "ohai":
                             //update ohaider achievement
-                            var userid = int.Parse(args[2]);
+                            var userid = long.Parse(args[2]);
                             try
                             {
                                 using (var db = new WWContext())
@@ -1125,8 +1125,8 @@ namespace Werewolf_Control.Handler
                             }
                             return;
                         case "restore":
-                            var oldid = int.Parse(args[1]);
-                            var newid = int.Parse(args[2]);
+                            var oldid = long.Parse(args[1]);
+                            var newid = long.Parse(args[2]);
                             var result = DB.RestoreAccount(oldid, newid);
                             using (var db = new WWContext())
                             {

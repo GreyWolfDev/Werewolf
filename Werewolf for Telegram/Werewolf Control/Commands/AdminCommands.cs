@@ -598,7 +598,7 @@ namespace Werewolf_Control
                 }
                 else
                 {
-                    var pid = int.Parse(args[1]);
+                    var pid = long.Parse(args[1]);
                     var p = db.Players.FirstOrDefault(x => x.TelegramId == pid);
                     if (p == null)
                     {
@@ -745,7 +745,7 @@ namespace Werewolf_Control
                         Send("Please use /approvegifs <player id> <1|0 (nsfw)>", u.Message.Chat.Id);
                         return;
                     }
-                    var pid = int.Parse(parms[0]);
+                    var pid = long.Parse(parms[0]);
                     var nsfw = parms[1] == "1";
                     var p = db.Players.FirstOrDefault(x => x.TelegramId == pid);
                     if (p == null)
@@ -801,7 +801,7 @@ namespace Werewolf_Control
                         Send("Please use /disapprovegifs <player id> <reason>", u.Message.Chat.Id);
                         return;
                     }
-                    var pid = int.Parse(parms[0]);
+                    var pid = long.Parse(parms[0]);
                     var reason = args[1].Replace(parms[0] + " ", "");
                     var p = db.Players.FirstOrDefault(x => x.TelegramId == pid);
                     if (p == null)
