@@ -15,6 +15,6 @@ namespace Database
     {
         public Nullable<decimal> pct { get; set; }
         public string Name { get; set; }
-        public int TelegramId { get; set; }
+        public long TelegramId { get; set; }
     }
 }

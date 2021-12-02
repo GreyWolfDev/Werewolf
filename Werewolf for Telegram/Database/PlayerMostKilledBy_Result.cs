@@ -14,7 +14,7 @@ namespace Database
     public partial class PlayerMostKilledBy_Result
     {
         public string Name { get; set; }
-        public int TelegramId { get; set; }
+        public long TelegramId { get; set; }
         public Nullable<int> times { get; set; }
     }
 }

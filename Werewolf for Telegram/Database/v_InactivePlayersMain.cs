@@ -16,7 +16,7 @@ namespace Database
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int TelegramId { get; set; }
+        public long TelegramId { get; set; }
         public Nullable<System.DateTime> last { get; set; }
     }
 }
