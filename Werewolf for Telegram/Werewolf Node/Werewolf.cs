@@ -14,6 +14,7 @@ using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
 using Shared;
 using Telegram.Bot;
+using Telegram.Bot.Types.InputFiles;
 
 // ReSharper disable PossibleMultipleEnumeration warning
 #pragma warning disable 4014
@@ -231,7 +232,7 @@ namespace Werewolf_Node
                     case GameMode.Chaos:
                         FirstMessage = GetLocaleString("PlayerStartedChaosGame", u.FirstName);
 #if RELEASE
-                        _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new Telegram.Bot.Types.InputFiles.InputOnlineFile(GetRandomImage(StartChaosGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                        _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new InputOnlineFile(GetRandomImage(StartChaosGame)), caption: FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #else
                         _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage(StartChaosGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
 #endif
@@ -241,7 +242,7 @@ namespace Werewolf_Node
                     default:
                         FirstMessage = GetLocaleString("PlayerStartedGame", u.FirstName);
 #if RELEASE
-                        _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new Telegram.Bot.Types.InputFiles.InputOnlineFile(GetRandomImage(StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                        _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new InputOnlineFile(GetRandomImage(StartGame)), caption: FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #else
                         _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage(StartGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
 #endif
