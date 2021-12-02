@@ -733,7 +733,7 @@ namespace Werewolf_Control
         {
             using (var db = new WWContext())
             {
-                var search = int.Parse(args[1].Trim());
+                var search = long.Parse(args[1].Trim());
                 var p = db.Players.FirstOrDefault(x => x.TelegramId == search);
                 if (p != null)
                     Send($"User: {p.Name}\nUserName: @{p.UserName}", u.Message.Chat.Id);
@@ -742,7 +742,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "getcommands", DevOnly = true)]
         public static void GetCommands(Update u, string[] args)
         {
-            var target = int.Parse(args[1]);
+            var target = long.Parse(args[1]);
             var reply = UpdateHandler.UserMessages[target].Messages.Aggregate("", (a, b) => a + "\n" + b.Command);
             Send(reply, u.Message.Chat.Id);
         }

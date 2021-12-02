@@ -75,11 +75,11 @@ namespace Werewolf_Control.Helpers
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
             Api = new TelegramBotClient(TelegramAPIKey);
-//#if !BETA
-//            Api.Timeout = TimeSpan.FromSeconds(1.5);
-//#else
-//            Api.Timeout = TimeSpan.FromSeconds(20);
-//#endif
+            //#if !BETA
+            //            Api.Timeout = TimeSpan.FromSeconds(1.5);
+            //#else
+            //            Api.Timeout = TimeSpan.FromSeconds(20);
+            //#endif
             English = XDocument.Load(Path.Combine(LanguageDirectory, Program.MasterLanguage));
 
             //load the commands list
@@ -108,14 +108,14 @@ namespace Werewolf_Control.Helpers
             var cts = new CancellationTokenSource();
 
 
-            
+
             Me = Api.GetMeAsync().Result;
             //Api.OnMessage += ApiOnOnMessage;
             Console.Title += " " + Me.Username;
             if (!String.IsNullOrEmpty(updateid))
                 Api.SendTextMessageAsync(updateid, "Control updated\n" + Program.GetVersion());
             StartTime = DateTime.UtcNow;
-            
+
             //now we can start receiving
             Api.StartReceiving(ApiOnOnMessage, ApiOnReceiveError, receiverOptions, cts.Token);
         }
@@ -135,46 +135,48 @@ namespace Werewolf_Control.Helpers
 
         private static async Task ApiOnOnMessage(ITelegramBotClient bot, Update update, CancellationToken token)
         {
-            switch (update.Type)
+            new Task(() =>
             {
-                // UpdateType.Unknown:
-                // UpdateType.ChannelPost:
-                // UpdateType.EditedChannelPost:
-                // UpdateType.ShippingQuery:
-                // UpdateType.PreCheckoutQuery:
-                // UpdateType.Poll:
-                case UpdateType.InlineQuery:
-                    UpdateHandler.InlineQueryReceived(bot, update.InlineQuery);
-                break;
-                case UpdateType.CallbackQuery:
-                    UpdateHandler.CallbackReceived(bot, update.CallbackQuery);
-                    break;
-                default:
-                    UpdateHandler.UpdateReceived(bot, update);
-                    break;
-            //Api.OnInlineQuery += UpdateHandler.InlineQueryReceived;
-            //Api.OnUpdate += UpdateHandler.UpdateReceived;
-            //Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
-            //Api.OnReceiveError += ApiOnReceiveError;
-            ////Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
-            ////Api.OnStatusChanged += ApiOnStatusChanged;
-            ////Api.UpdatesReceived += ApiOnUpdatesReceived;
-            //UpdateType.Message            => BotOnMessageReceived(botClient, update.Message!),
-            //UpdateType.EditedMessage      => BotOnMessageReceived(botClient, update.EditedMessage!),
-            //UpdateType.CallbackQuery      => BotOnCallbackQueryReceived(botClient, update.CallbackQuery!),
-            //UpdateType.InlineQuery        => BotOnInlineQueryReceived(botClient, update.InlineQuery!),
-            //UpdateType.ChosenInlineResult => BotOnChosenInlineResultReceived(botClient, update.ChosenInlineResult!),
-            //_                             => UnknownUpdateHandlerAsync(botClient, update)
-            }
-
-        //try
-        //{
-        //    await handler;
-        //}
-        //catch (Exception exception)
-        //{
-        //    await HandleErrorAsync(botClient, exception, cancellationToken);
-        //}
+                switch (update.Type)
+                {
+                    // UpdateType.Unknown:
+                    // UpdateType.ChannelPost:
+                    // UpdateType.EditedChannelPost:
+                    // UpdateType.ShippingQuery:
+                    // UpdateType.PreCheckoutQuery:
+                    // UpdateType.Poll:
+                    case UpdateType.InlineQuery:
+                        UpdateHandler.InlineQueryReceived(bot, update.InlineQuery);
+                        break;
+                    case UpdateType.CallbackQuery:
+                        UpdateHandler.CallbackReceived(bot, update.CallbackQuery);
+                        break;
+                    default:
+                        UpdateHandler.UpdateReceived(bot, update);
+                        break;
+                        //Api.OnInlineQuery += UpdateHandler.InlineQueryReceived;
+                        //Api.OnUpdate += UpdateHandler.UpdateReceived;
+                        //Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
+                        //Api.OnReceiveError += ApiOnReceiveError;
+                        ////Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
+                        ////Api.OnStatusChanged += ApiOnStatusChanged;
+                        ////Api.UpdatesReceived += ApiOnUpdatesReceived;
+                        //UpdateType.Message            => BotOnMessageReceived(botClient, update.Message!),
+                        //UpdateType.EditedMessage      => BotOnMessageReceived(botClient, update.EditedMessage!),
+                        //UpdateType.CallbackQuery      => BotOnCallbackQueryReceived(botClient, update.CallbackQuery!),
+                        //UpdateType.InlineQuery        => BotOnInlineQueryReceived(botClient, update.InlineQuery!),
+                        //UpdateType.ChosenInlineResult => BotOnChosenInlineResultReceived(botClient, update.ChosenInlineResult!),
+                        //_                             => UnknownUpdateHandlerAsync(botClient, update)
+                }
+            }).Start();
+            //try
+            //{
+            //    await handler;
+            //}
+            //catch (Exception exception)
+            //{
+            //    await HandleErrorAsync(botClient, exception, cancellationToken);
+            //}
         }
 
         //private static void ApiOnUpdatesReceived(object sender, UpdateEventArgs updateEventArgs)

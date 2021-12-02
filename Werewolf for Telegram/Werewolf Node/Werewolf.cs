@@ -992,9 +992,9 @@ namespace Werewolf_Node
 
 
                 if (qtype == QuestionType.Kill2 && player.CurrentQuestion.QType == QuestionType.Kill2)
-                    player.Choice2 = int.Parse(choice);
+                    player.Choice2 = long.Parse(choice);
                 else if (qtype == player.CurrentQuestion.QType)
-                    player.Choice = int.Parse(choice);
+                    player.Choice = long.Parse(choice);
 
                 if (qtype == QuestionType.Lynch && player.PlayerRole == IRole.ClumsyGuy && player.CurrentQuestion.QType == QuestionType.Lynch)
                 {
