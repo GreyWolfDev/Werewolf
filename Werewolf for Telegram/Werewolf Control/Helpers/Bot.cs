@@ -126,7 +126,7 @@ namespace Werewolf_Control.Helpers
             //Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
             //Api.OnStatusChanged += ApiOnStatusChanged;
             //Api.UpdatesReceived += ApiOnUpdatesReceived;
-            Api.ReceiveAsync(null, cts);
+            Api.ReceiveAsync(null, cts.Token);
         }
         private static readonly Update[] EmptyUpdates = { };
         public static int MessageOffset { get; set; }
