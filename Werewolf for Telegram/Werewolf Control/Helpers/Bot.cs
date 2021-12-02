@@ -18,6 +18,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Telegram.Bot.Extensions.Polling;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Models;
+using Telegram.Bot.Exceptions;
 
 namespace Werewolf_Control.Helpers
 {
@@ -117,7 +118,169 @@ namespace Werewolf_Control.Helpers
             StartTime = DateTime.UtcNow;
 
             //now we can start receiving
-            Api.StartReceiving(ApiOnOnMessage, ApiOnReceiveError, receiverOptions, cts.Token);
+            //Api.StartReceiving(ApiOnOnMessage, ApiOnReceiveError, receiverOptions, cts.Token);
+            //Api.OnInlineQuery += UpdateHandler.InlineQueryReceived;
+            //Api.OnUpdate += UpdateHandler.UpdateReceived;
+            //Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
+            //Api.OnReceiveError += ApiOnReceiveError;
+            //Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
+            //Api.OnStatusChanged += ApiOnStatusChanged;
+            //Api.UpdatesReceived += ApiOnUpdatesReceived;
+            Api.ReceiveAsync(null);
+        }
+        private static readonly Update[] EmptyUpdates = { };
+        public static int MessageOffset { get; set; }
+        public static bool IsReceiving { get; set; }
+
+        private static CancellationTokenSource _receivingCancellationTokenSource;
+#pragma warning disable AsyncFixer03 // Avoid fire & forget async void methods
+        private static async void ReceiveAsync(this ITelegramBotClient client,
+            UpdateType[] allowedUpdates,
+            CancellationToken cancellationToken = default)
+        {
+            IsReceiving = true;
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                var timeout = 30;
+                var updates = EmptyUpdates;
+
+                try
+                {
+                    updates = await client.GetUpdatesAsync(
+                        MessageOffset,
+                        timeout: timeout,
+                        allowedUpdates: allowedUpdates,
+                        cancellationToken: cancellationToken
+                    ).ConfigureAwait(false);
+                }
+                catch (OperationCanceledException)
+                {
+                }
+                catch (ApiRequestException apiException)
+                {
+                    OnReceiveError?.Invoke("receiver", apiException);
+                }
+                catch (Exception generalException)
+                {
+                    OnReceiveGeneralError?.Invoke("receiver", generalException);
+                }
+
+                try
+                {
+                    foreach (var update in updates)
+                    {
+                        new Task(() =>
+                        {
+                            OnUpdateReceived(new UpdateEventArgs(update));
+                        }).Start();
+                        MessageOffset = update.Id + 1;
+                    }
+                }
+                catch
+                {
+                    IsReceiving = false;
+                    throw;
+                }
+            }
+
+            IsReceiving = false;
+        }
+
+        #region Events
+
+        /// <summary>
+        /// Occurs before sending a request to API
+        /// </summary>
+        public static event EventHandler<ApiRequestEventArgs> MakingApiRequest;
+
+        /// <summary>
+        /// Occurs after receiving the response to an API request
+        /// </summary>
+        public static event EventHandler<ApiResponseEventArgs> ApiResponseReceived;
+
+        /// <summary>
+        /// Raises the <see cref="OnUpdate" />, <see cref="OnMessage"/>, <see cref="OnInlineQuery"/>, <see cref="OnInlineResultChosen"/> and <see cref="OnCallbackQuery"/> events.
+        /// </summary>
+        /// <param name="e">The <see cref="UpdateEventArgs"/> instance containing the event data.</param>
+        static void OnUpdateReceived(UpdateEventArgs e)
+        {
+            OnUpdate?.Invoke("receiver", e);
+
+            switch (e.Update.Type)
+            {
+                case UpdateType.Message:
+                    //OnMessage?.Invoke("receiver", e);
+                    UpdateHandler.UpdateReceived(Api, e.Update);
+                    break;
+
+                case UpdateType.InlineQuery:
+                    //OnInlineQuery?.Invoke("receiver", e);
+                    UpdateHandler.InlineQueryReceived(Api, e.Update.InlineQuery);
+                    break;
+
+                case UpdateType.ChosenInlineResult:
+                    //OnInlineResultChosen?.Invoke("receiver", e);
+                    break;
+
+                case UpdateType.CallbackQuery:
+                    //OnCallbackQuery?.Invoke("receiver", e);
+                    UpdateHandler.CallbackReceived(Api, e.Update.CallbackQuery);
+                    break;
+
+                case UpdateType.EditedMessage:
+                    OnMessageEdited?.Invoke("receiver", e);
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Occurs when an <see cref="Update"/> is received.
+        /// </summary>
+        public static event EventHandler<UpdateEventArgs> OnUpdate;
+
+        /// <summary>
+        /// Occurs when a <see cref="Message"/> is received.
+        /// </summary>
+        public static event EventHandler<MessageEventArgs> OnMessage;
+
+        /// <summary>
+        /// Occurs when <see cref="Message"/> was edited.
+        /// </summary>
+        public static event EventHandler<MessageEventArgs> OnMessageEdited;
+
+        /// <summary>
+        /// Occurs when an <see cref="InlineQuery"/> is received.
+        /// </summary>
+        public static event EventHandler<InlineQueryEventArgs> OnInlineQuery;
+
+        /// <summary>
+        /// Occurs when a <see cref="ChosenInlineResult"/> is received.
+        /// </summary>
+        public static event EventHandler<ChosenInlineResultEventArgs> OnInlineResultChosen;
+
+        /// <summary>
+        /// Occurs when an <see cref="CallbackQuery"/> is received
+        /// </summary>
+        public static event EventHandler<CallbackQueryEventArgs> OnCallbackQuery;
+
+        /// <summary>
+        /// Occurs when an error occurs during the background update pooling.
+        /// </summary>
+        public static event EventHandler<ReceiveErrorEventArgs> OnReceiveError;
+
+        /// <summary>
+        /// Occurs when an error occurs during the background update pooling.
+        /// </summary>
+        public static event EventHandler<ReceiveGeneralErrorEventArgs> OnReceiveGeneralError;
+
+        #endregion
+
+        private static async Task Receive()
+        {
+            while (true)
+            {
+
+            }
         }
 
         //private static void ApiOnOnReceiveGeneralError(object sender, ReceiveGeneralErrorEventArgs receiveGeneralErrorEventArgs)
