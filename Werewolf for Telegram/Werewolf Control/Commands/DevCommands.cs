@@ -28,6 +28,7 @@ using RegHelper = Werewolf_Control.Helpers.RegHelper;
 using System.Collections;
 using System.Drawing;
 using Telegram.Bot.Types.InputFiles;
+using Telegram.Bot;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 #pragma warning disable IDE0060 // Remove unused parameter
@@ -187,7 +188,7 @@ namespace Werewolf_Control
                 Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"), update.Message.Chat.Id.ToString());
                 Bot.Running = false;
                 Program.Running = false;
-                Bot.Api.StopReceiving();
+                //Bot.Api.StopReceiving();
                 //Thread.Sleep(500);
                 using (var db = new WWContext())
                 {

@@ -284,7 +284,7 @@ namespace Werewolf_Control.Helpers
                         Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"), "-1001077134233");
                         Bot.Running = false;
                         Program.Running = false;
-                        Bot.Api.StopReceiving();
+                        //Bot.Api.StopReceiving();
                         //Thread.Sleep(500);
 #pragma warning disable CS0219 // Variable is assigned but its value is never used
                         using (var db = new WWContext())

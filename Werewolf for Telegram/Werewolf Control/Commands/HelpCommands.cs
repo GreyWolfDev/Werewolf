@@ -13,6 +13,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Helpers;
 using System.Threading;
+using Telegram.Bot;
 
 #pragma warning disable IDE0060 // Remove unused parameter
 

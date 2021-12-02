@@ -117,7 +117,7 @@ namespace Werewolf_Node.Models
         public bool HasBeenVoted { get; set; } = false;
         public bool HasStayedHome { get; set; } = false;
         public bool HasRepeatedVisit { get; set; } = false;
-        public HashSet<int> PlayersVisited { get; set; } = new HashSet<int>();
+        public HashSet<long> PlayersVisited { get; set; } = new HashSet<long>();
         public int ChangedRolesCount { get; set; } = 0;
         public int FirstToLynchCount { get; set; } = 0;
         public int BulletHitBaddies { get; set; } = 0;

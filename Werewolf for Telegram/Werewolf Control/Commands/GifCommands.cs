@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Database;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.Payments;
@@ -472,7 +473,7 @@ namespace Werewolf_Control
                 var api = RegHelper.GetRegValue("MainStripeProdAPI");
 #endif
                 Bot.Api.SendInvoiceAsync(m.From.Id, "Werewolf Donation", "Make a donation to Werewolf to help keep us online", "somepayloadtest", api,
-                    "USD", new[] { new LabeledPrice() { Amount = amt * 100, Label = "Donation" } }, startParameter: "startparam");
+                    "USD", new[] { new LabeledPrice("Donation", amt * 100) }, startParameter: "startparam");
             }
             else
             {

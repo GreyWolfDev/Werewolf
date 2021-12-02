@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using System.Runtime.Caching;
+using Telegram.Bot;
 
 namespace Werewolf_Control.Helpers
 {

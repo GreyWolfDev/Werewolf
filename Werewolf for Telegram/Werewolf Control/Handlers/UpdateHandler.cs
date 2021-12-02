@@ -18,6 +18,7 @@ using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
 using System.Collections;
 using Shared;
+using Telegram.Bot;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control.Handler
@@ -33,10 +34,10 @@ namespace Werewolf_Control.Handler
         internal static List<GlobalBan> BanList = new List<GlobalBan>();
 
         internal static bool SendGifIds = false;
-        public static void UpdateReceived(object sender, UpdateEventArgs e)
+        public static void UpdateReceived(ITelegramBotClient bot, Update update)
         {
             Bot.MessagesReceived++;
-            new Task(() => { HandleUpdate(e.Update); }).Start();
+            new Task(() => { HandleUpdate(update); }).Start();
         }
 
         private static bool AddCount(long id, Message m)
@@ -95,6 +96,7 @@ namespace Werewolf_Control.Handler
                                     break;
 
                             }
+
                             db.GlobalBans.Add(new GlobalBan
                             {
                                 BannedBy = "Moderator",
@@ -441,21 +443,21 @@ namespace Werewolf_Control.Handler
                                 Commands.ValidateDonationAmount(update.Message);
                             }
                             break;
-                        case MessageType.Animation:
-                            if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
-                            {
-                                var doc = update.Message.Animation;
-                                Send(doc.FileId, update.Message.Chat.Id);
-                            }
-                            else if (update.Message.Chat.Type == ChatType.Private &&
-                                     (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
-                                     (update.Message?.ReplyToMessage?.Text?.Contains(
-                                          "send me the GIF you want to use for this situation, as a reply") ??
-                                      false))
-                            {
-                                Commands.AddGif(update.Message);
-                            }
-                            break;
+                        //case MessageType.Animation:
+                        //    if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
+                        //    {
+                        //        var doc = update.Message.Animation;
+                        //        Send(doc.FileId, update.Message.Chat.Id);
+                        //    }
+                        //    else if (update.Message.Chat.Type == ChatType.Private &&
+                        //             (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
+                        //             (update.Message?.ReplyToMessage?.Text?.Contains(
+                        //                  "send me the GIF you want to use for this situation, as a reply") ??
+                        //              false))
+                        //    {
+                        //        Commands.AddGif(update.Message);
+                        //    }
+                        //    break;
                         case MessageType.Document:
                             if (update.Message.Document?.MimeType?.ToLower().Equals("image/gif") ?? false)
                             {
@@ -473,7 +475,9 @@ namespace Werewolf_Control.Handler
                                 }
                             }
                             break;
-                        case MessageType.Service:
+                        case MessageType.ChatMemberLeft:
+                        case MessageType.ChatMembersAdded:
+                        case MessageType.MigratedToSupergroup:
                             using (var DB = new WWContext())
                             {
                                 id = update.Message.Chat.Id;
@@ -510,7 +514,7 @@ namespace Werewolf_Control.Handler
                                         Bot.GetGroupNodeAndGame(id)?.SmitePlayer(m.LeftChatMember.Id);
                                     }
                                 }
-                                if (m.NewChatMember?.Id == Bot.Me.Id)
+                                if (m.NewChatMembers?[0]?.Id == Bot.Me.Id)
                                 {
                                     //added to a group
                                     grp = DB.Groups.FirstOrDefault(x => x.GroupId == id);
@@ -562,9 +566,9 @@ namespace Werewolf_Control.Handler
                                 }
                                 */
 
-                                else if (m.NewChatMember != null && (m.Chat.Id == Settings.SupportChatId || m.Chat.Id == Settings.PersianSupportChatId))
+                                else if (m.NewChatMembers?[0] != null && (m.Chat.Id == Settings.SupportChatId || m.Chat.Id == Settings.PersianSupportChatId))
                                 {
-                                    var uid = m.NewChatMember.Id;
+                                    var uid = m.NewChatMembers[0].Id;
                                     var p = DB.GlobalBans.FirstOrDefault(x => x.TelegramId == uid);
                                     if (p != null)
                                     {
@@ -766,10 +770,10 @@ namespace Werewolf_Control.Handler
 
         private static string[] nonCommandsList = new[] { "vote", "getlang", "validate", "setlang", "groups", "status", "done", "stopwaiting" };
 
-        public static void CallbackReceived(object sender, CallbackQueryEventArgs e)
+        public static void CallbackReceived(ITelegramBotClient bot, CallbackQuery query)
         {
             Bot.MessagesReceived++;
-            new Task(() => { HandleCallback(e.CallbackQuery); }).Start();
+            new Task(() => { HandleCallback(query); }).Start();
         }
 
         internal static void HandleCallback(CallbackQuery query)
@@ -2303,10 +2307,10 @@ namespace Werewolf_Control.Handler
         }
 
 
-        public static void InlineQueryReceived(object sender, InlineQueryEventArgs e)
+        public static void InlineQueryReceived(ITelegramBotClient botClient, InlineQuery inlineQuery)
         {
             Bot.MessagesReceived++;
-            new Task(() => { HandleInlineQuery(e.InlineQuery); }).Start();
+            new Task(() => { HandleInlineQuery(inlineQuery); }).Start();
         }
 
         internal static void HandleInlineQuery(InlineQuery q)

@@ -76,29 +76,29 @@ namespace Database
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getRoles_Result>("getRoles", groupNameParameter);
         }
     
-        public virtual ObjectResult<PlayerMostKilled_Result> PlayerMostKilled(Nullable<int> pid)
+        public virtual ObjectResult<PlayerMostKilled_Result> PlayerMostKilled(Nullable<long> pid)
         {
             var pidParameter = pid.HasValue ?
                 new ObjectParameter("pid", pid) :
-                new ObjectParameter("pid", typeof(int));
+                new ObjectParameter("pid", typeof(long));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PlayerMostKilled_Result>("PlayerMostKilled", pidParameter);
         }
     
-        public virtual ObjectResult<PlayerMostKilledBy_Result> PlayerMostKilledBy(Nullable<int> pid)
+        public virtual ObjectResult<PlayerMostKilledBy_Result> PlayerMostKilledBy(Nullable<long> pid)
         {
             var pidParameter = pid.HasValue ?
                 new ObjectParameter("pid", pid) :
-                new ObjectParameter("pid", typeof(int));
+                new ObjectParameter("pid", typeof(long));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PlayerMostKilledBy_Result>("PlayerMostKilledBy", pidParameter);
         }
     
-        public virtual ObjectResult<PlayerRoles_Result> PlayerRoles(Nullable<int> pid)
+        public virtual ObjectResult<PlayerRoles_Result> PlayerRoles(Nullable<long> pid)
         {
             var pidParameter = pid.HasValue ?
                 new ObjectParameter("pid", pid) :
-                new ObjectParameter("pid", typeof(int));
+                new ObjectParameter("pid", typeof(long));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PlayerRoles_Result>("PlayerRoles", pidParameter);
         }
@@ -164,33 +164,33 @@ namespace Database
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getDailyCounts_Result>("getDailyCounts");
         }
     
-        public virtual ObjectResult<Nullable<int>> GetIdleKills24Hours(Nullable<int> userid)
+        public virtual ObjectResult<Nullable<int>> GetIdleKills24Hours(Nullable<long> userid)
         {
             var useridParameter = userid.HasValue ?
                 new ObjectParameter("userid", userid) :
-                new ObjectParameter("userid", typeof(int));
+                new ObjectParameter("userid", typeof(long));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetIdleKills24Hours", useridParameter);
         }
     
-        public virtual int RestoreAccount(Nullable<int> oldTGId, Nullable<int> newTGId)
+        public virtual int RestoreAccount(Nullable<long> oldTGId, Nullable<long> newTGId)
         {
             var oldTGIdParameter = oldTGId.HasValue ?
                 new ObjectParameter("oldTGId", oldTGId) :
-                new ObjectParameter("oldTGId", typeof(int));
+                new ObjectParameter("oldTGId", typeof(long));
     
             var newTGIdParameter = newTGId.HasValue ?
                 new ObjectParameter("newTGId", newTGId) :
-                new ObjectParameter("newTGId", typeof(int));
+                new ObjectParameter("newTGId", typeof(long));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RestoreAccount", oldTGIdParameter, newTGIdParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> GetGroupIdleKills24Hours(Nullable<int> userid, Nullable<long> groupid)
+        public virtual ObjectResult<Nullable<int>> GetGroupIdleKills24Hours(Nullable<long> userid, Nullable<long> groupid)
         {
             var useridParameter = userid.HasValue ?
                 new ObjectParameter("userid", userid) :
-                new ObjectParameter("userid", typeof(int));
+                new ObjectParameter("userid", typeof(long));
     
             var groupidParameter = groupid.HasValue ?
                 new ObjectParameter("groupid", groupid) :

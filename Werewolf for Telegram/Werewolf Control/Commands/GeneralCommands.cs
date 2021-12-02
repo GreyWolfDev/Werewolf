@@ -5,10 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Database;
+using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
+
 using Werewolf_Control.Attributes;
 using Werewolf_Control.Helpers;
 
@@ -319,7 +321,9 @@ namespace Werewolf_Control
                             if (chatmember == null) // if we fail to determine their chatmember status, just let them try again
                                 return;
 
-                            if (chatmember.Status == ChatMemberStatus.Left || chatmember.Status == ChatMemberStatus.Kicked || (chatmember.Status == ChatMemberStatus.Restricted && !(chatmember.CanSendMessages ?? true)))
+                            var canSend = (chatmember as ChatMemberRestricted)?.CanSendMessages;
+
+                            if (chatmember.Status == ChatMemberStatus.Left || chatmember.Status == ChatMemberStatus.Kicked || (chatmember.Status == ChatMemberStatus.Restricted && !(canSend ?? true)))
                             {
                                 Bot.Send(
                                     GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()),

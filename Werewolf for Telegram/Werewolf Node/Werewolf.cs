@@ -13,6 +13,7 @@ using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
 using Shared;
+using Telegram.Bot;
 
 // ReSharper disable PossibleMultipleEnumeration warning
 #pragma warning disable 4014
@@ -3575,7 +3576,7 @@ namespace Werewolf_Node
             if (voteCult.Any())
             {
                 var votechoice = voteCult.Where(x => x.Choice != 0 && x.Choice != -1);
-                int choice = 0;
+                long choice = 0;
                 if (votechoice.Any())
                 {
                     choice = votechoice.GroupBy(x => x.Choice).OrderByDescending(x => x.Count()).First().Key;
@@ -5436,7 +5437,7 @@ namespace Werewolf_Node
             Night
         }
 
-        private int ChooseRandomPlayerId(IPlayer exclude, bool all = true)
+        private long ChooseRandomPlayerId(IPlayer exclude, bool all = true)
         {
             try
             {

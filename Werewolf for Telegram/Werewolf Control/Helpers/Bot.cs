@@ -15,6 +15,7 @@ using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
+using Telegram.Bot.Extensions.Polling;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Models;
 
@@ -103,13 +104,11 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-            Api.OnInlineQuery += UpdateHandler.InlineQueryReceived;
-            Api.OnUpdate += UpdateHandler.UpdateReceived;
-            Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
-            Api.OnReceiveError += ApiOnReceiveError;
-            //Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
-            Api.OnStatusChanged += ApiOnStatusChanged;
-            //Api.UpdatesReceived += ApiOnUpdatesReceived;
+            ReceiverOptions receiverOptions = new ReceiverOptions() { AllowedUpdates = { } };
+            var cts = new CancellationTokenSource();
+
+
+            
             Me = Api.GetMeAsync().Result;
             //Api.OnMessage += ApiOnOnMessage;
             Console.Title += " " + Me.Username;
@@ -118,7 +117,7 @@ namespace Werewolf_Control.Helpers
             StartTime = DateTime.UtcNow;
             
             //now we can start receiving
-            Api.StartReceiving();
+            Api.StartReceiving(ApiOnOnMessage, ApiOnReceiveError, receiverOptions, cts.Token);
         }
 
         //private static void ApiOnOnReceiveGeneralError(object sender, ReceiveGeneralErrorEventArgs receiveGeneralErrorEventArgs)
@@ -134,17 +133,56 @@ namespace Werewolf_Control.Helpers
         //    }
         //}
 
-        private static void ApiOnOnMessage(object sender, MessageEventArgs messageEventArgs)
+        private static async Task ApiOnOnMessage(ITelegramBotClient bot, Update update, CancellationToken token)
         {
-            
+            switch (update.Type)
+            {
+                // UpdateType.Unknown:
+                // UpdateType.ChannelPost:
+                // UpdateType.EditedChannelPost:
+                // UpdateType.ShippingQuery:
+                // UpdateType.PreCheckoutQuery:
+                // UpdateType.Poll:
+                case UpdateType.InlineQuery:
+                    UpdateHandler.InlineQueryReceived(bot, update.InlineQuery);
+                break;
+                case UpdateType.CallbackQuery:
+                    UpdateHandler.CallbackReceived(bot, update.CallbackQuery);
+                    break;
+                default:
+                    UpdateHandler.UpdateReceived(bot, update);
+                    break;
+            //Api.OnInlineQuery += UpdateHandler.InlineQueryReceived;
+            //Api.OnUpdate += UpdateHandler.UpdateReceived;
+            //Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
+            //Api.OnReceiveError += ApiOnReceiveError;
+            ////Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
+            ////Api.OnStatusChanged += ApiOnStatusChanged;
+            ////Api.UpdatesReceived += ApiOnUpdatesReceived;
+            //UpdateType.Message            => BotOnMessageReceived(botClient, update.Message!),
+            //UpdateType.EditedMessage      => BotOnMessageReceived(botClient, update.EditedMessage!),
+            //UpdateType.CallbackQuery      => BotOnCallbackQueryReceived(botClient, update.CallbackQuery!),
+            //UpdateType.InlineQuery        => BotOnInlineQueryReceived(botClient, update.InlineQuery!),
+            //UpdateType.ChosenInlineResult => BotOnChosenInlineResultReceived(botClient, update.ChosenInlineResult!),
+            //_                             => UnknownUpdateHandlerAsync(botClient, update)
+            }
+
+        //try
+        //{
+        //    await handler;
+        //}
+        //catch (Exception exception)
+        //{
+        //    await HandleErrorAsync(botClient, exception, cancellationToken);
+        //}
         }
 
-        private static void ApiOnUpdatesReceived(object sender, UpdateEventArgs updateEventArgs)
-        {
-            //MessagesReceived += updateEventArgs.UpdateCount;
-        }
+        //private static void ApiOnUpdatesReceived(object sender, UpdateEventArgs updateEventArgs)
+        //{
+        //    //MessagesReceived += updateEventArgs.UpdateCount;
+        //}
 
-        internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default, bool disableWebPagePreview = false)
+        internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Html, bool disableWebPagePreview = false)
         {
             //first answer the callback
             Bot.Api.AnswerCallbackQueryAsync(query.Id, edit ? null : text, showAlert);
@@ -153,61 +191,63 @@ namespace Werewolf_Control.Helpers
                 Edit(query, text, replyMarkup, parsemode, disableWebPagePreview);
         }
 
-        internal static Task<Message> Edit(CallbackQuery query, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default, bool disableWebPagePreview = false)
+        internal static Task<Message> Edit(CallbackQuery query, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Html, bool disableWebPagePreview = false)
         {
             return Edit(query.Message.Chat.Id, query.Message.MessageId, text, replyMarkup, parsemode, disableWebPagePreview);
         }
 
-        internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default, bool disableWebPagePreview = false)
+        internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Html, bool disableWebPagePreview = false)
         {
             Bot.MessagesSent++;
             return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, null, disableWebPagePreview, replyMarkup);
         }
 
-        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
+        //        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
+        //        {
+        //            try
+        //            {
+        //                using (var db = new WWContext())
+        //                {
+        //                    var id =
+        //#if RELEASE
+        //                        1;
+        //#elif RELEASE2
+        //                    2;
+        //#elif BETA
+        //                    3;
+        //#else
+        //                    4;
+        //#endif
+        //                    if (id == 4) return;
+        //                    var b = db.BotStatus.Find(id);
+        //                    b.BotStatus = statusChangeEventArgs.Status.ToString();
+        //                    CurrentStatus = b.BotStatus;
+        //                    db.SaveChanges();
+
+        //                }
+        //            }
+        //            finally
+        //            {
+
+        //            }
+
+        //        }
+
+
+        private static Task ApiOnReceiveError(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
         {
-            try
-            {
-                using (var db = new WWContext())
-                {
-                    var id =
-#if RELEASE
-                        1;
-#elif RELEASE2
-                    2;
-#elif BETA
-                    3;
-#else
-                    4;
-#endif
-                    if (id == 4) return;
-                    var b = db.BotStatus.Find(id);
-                    b.BotStatus = statusChangeEventArgs.Status.ToString();
-                    CurrentStatus = b.BotStatus;
-                    db.SaveChanges();
-
-                }
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-        private static void ApiOnReceiveError(object sender, ReceiveErrorEventArgs receiveErrorEventArgs)
-        {
-            if (!Api.IsReceiving)
-            {
-                Api.StartReceiving();
-            }
-            var e = receiveErrorEventArgs.ApiRequestException;
+            //if (!Api.IsReceiving)
+            //{
+            //    Api.StartReceiving();
+            //}
+            var e = exception;
             using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
             {
-                sw.WriteLine($"{DateTime.UtcNow} {e.ErrorCode} - {e.Message}\n{e.Source}");
+                sw.WriteLine($"{DateTime.UtcNow} - {e.Message}\n{e.Source}");
             }
-                
+
+            return Task.CompletedTask;
+
         }
 
         private static void Reboot()
