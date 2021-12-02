@@ -126,7 +126,7 @@ namespace Werewolf_Control.Helpers
             //Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
             //Api.OnStatusChanged += ApiOnStatusChanged;
             //Api.UpdatesReceived += ApiOnUpdatesReceived;
-            Api.ReceiveAsync(null);
+            Api.ReceiveAsync(null, cts);
         }
         private static readonly Update[] EmptyUpdates = { };
         public static int MessageOffset { get; set; }
@@ -136,7 +136,7 @@ namespace Werewolf_Control.Helpers
 #pragma warning disable AsyncFixer03 // Avoid fire & forget async void methods
         private static async void ReceiveAsync(this ITelegramBotClient client,
             UpdateType[] allowedUpdates,
-            CancellationToken cancellationToken = default)
+            CancellationToken cancellationToken)
         {
             IsReceiving = true;
             while (!cancellationToken.IsCancellationRequested)
