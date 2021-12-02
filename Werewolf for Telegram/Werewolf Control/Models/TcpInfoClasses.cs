@@ -97,7 +97,7 @@ namespace Werewolf_Control.Models
     public class PlayerSmiteInfo
     {
         public string JType { get; set; } = "PlayerSmiteInfo";
-        public int UserId { get; set; }
+        public long UserId { get; set; }
         public long GroupId { get; set; }
     }
     public class CallbackInfo

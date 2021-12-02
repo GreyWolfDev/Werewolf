@@ -284,11 +284,13 @@ namespace Werewolf_Control.Helpers
                         Process.Start(Path.Combine(Bot.RootDirectory, "Resources\\update.exe"), "-1001077134233");
                         Bot.Running = false;
                         Program.Running = false;
-                        Bot.Api.StopReceiving();
+                        //Bot.Api.StopReceiving();
                         //Thread.Sleep(500);
+#pragma warning disable CS0219 // Variable is assigned but its value is never used
                         using (var db = new WWContext())
                         {
                             var bot =
+
 #if DEBUG
                                 4;
 #elif BETA
@@ -307,6 +309,7 @@ namespace Werewolf_Control.Helpers
                         }
                         Environment.Exit(1);
                     }
+#pragma warning restore CS0219 // Variable is assigned but its value is never used
 
 
                     //check once every 5 seconds
@@ -318,7 +321,7 @@ namespace Werewolf_Control.Helpers
 #if !DEBUG
             catch (Exception e)
             {
-                Bot.Send($"Error in update monitor: {e.Message}\n{e.StackTrace}", -1001077134233, parseMode: ParseMode.Default);
+                Bot.Send($"Error in update monitor: {e.Message}\n{e.StackTrace}", -1001077134233, parseMode: ParseMode.Html);
             }
 #endif
         }

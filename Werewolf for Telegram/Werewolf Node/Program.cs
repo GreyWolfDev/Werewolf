@@ -278,7 +278,7 @@ namespace Werewolf_Node
                                     Guid = g.Guid,
                                     Cycle = g.Time,
                                     State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
-                                    Users = new HashSet<int>(g.Players?.Where(x => !x.IsDead)?.Select(x => x.TeleUser.Id)??new[]{0}),
+                                    Users = new HashSet<long>(g.Players?.Where(x => !x.IsDead)?.Select(x => x.TeleUser.Id)??new long[]{0}),
                                     Players = g.Players?.Select(x => new 
                                     {
                                         Bitten = x.Bitten?"Yes":"No",
@@ -375,7 +375,7 @@ namespace Werewolf_Node
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
-                var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
+                var menu = new ReplyKeyboardRemove();
                 return await Bot.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
             }
             else if (customMenu != null)
@@ -501,7 +501,7 @@ namespace Werewolf_Node
                             NodeId = ClientId,
                             Guid = g.Guid,
                             State = g.IsRunning ? GameState.Running : g.IsJoining ? GameState.Joining : GameState.Dead,
-                            Users = g.Players != null ? new HashSet<int>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)) : new HashSet<int>(),
+                            Users = g.Players != null ? new HashSet<long>(g.Players.Where(x => !x.IsDead).Select(x => x.TeleUser.Id)) : new HashSet<long>(),
                             PlayerCount = g.Players?.Count ?? 0
                             //Players = new HashSet<IPlayer>(g.Players)
                         };

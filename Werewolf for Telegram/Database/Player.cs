@@ -24,7 +24,7 @@ namespace Database
         }
     
         public int Id { get; set; }
-        public int TelegramId { get; set; }
+        public long TelegramId { get; set; }
         public string Name { get; set; }
         public string UserName { get; set; }
         public Nullable<bool> Banned { get; set; }

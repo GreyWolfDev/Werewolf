@@ -19,7 +19,7 @@ namespace Werewolf_Control.Models
             get { return _dateCreated; }
             set
             {
-                _dateCreated = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(Channel.date).ToLocalTime();
+                //_dateCreated = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(Channel.date).ToLocalTime();
             }
         }
     }

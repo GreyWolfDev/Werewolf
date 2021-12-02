@@ -284,6 +284,7 @@ namespace Werewolf_Web.Controllers
                     return Json("", JsonRequestBehavior.AllowGet);
                 }
                 var killed = DB.PlayerMostKilled(p.TelegramId).AsEnumerable().Where(x => x != null).Take(5);
+
                 if (!json)
                 {
                     var reply = "<table class=\"table table-hover\"><tbody><tr><th>Player Name</th><th>Times</th></tr>";
@@ -312,7 +313,9 @@ namespace Werewolf_Web.Controllers
                 {
                     return Json("", JsonRequestBehavior.AllowGet);
                 }
+
                 var killed = DB.PlayerMostKilledBy(p.TelegramId).AsEnumerable().Where(x => x != null).Take(5);
+
                 if (!json)
                 {
                     var reply = "<table class=\"table table-hover\"><tbody><tr><th>Player Name</th><th>Times</th></tr>";

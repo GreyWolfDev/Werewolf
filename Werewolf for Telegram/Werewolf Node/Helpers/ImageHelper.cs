@@ -7,6 +7,7 @@ using Telegram.Bot.Types;
 using System.IO;
 using System.Net;
 using Database;
+using Telegram.Bot;
 
 namespace Werewolf_Node.Helpers
 {

@@ -15,8 +15,10 @@ using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
+using Telegram.Bot.Extensions.Polling;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Models;
+using Telegram.Bot.Exceptions;
 
 namespace Werewolf_Control.Helpers
 {
@@ -24,7 +26,7 @@ namespace Werewolf_Control.Helpers
     {
         internal static string TelegramAPIKey;
         public static HashSet<Node> Nodes = new HashSet<Node>();
-        public static Client Api;
+        public static TelegramBotClient Api;
 
         public static User Me;
         public static DateTime StartTime = DateTime.UtcNow;
@@ -73,12 +75,12 @@ namespace Werewolf_Control.Helpers
 #elif BETA
             TelegramAPIKey = key.GetValue("BetaAPI").ToString();
 #endif
-            Api = new Client(TelegramAPIKey, LogDirectory);
-//#if !BETA
-//            Api.Timeout = TimeSpan.FromSeconds(1.5);
-//#else
-//            Api.Timeout = TimeSpan.FromSeconds(20);
-//#endif
+            Api = new TelegramBotClient(TelegramAPIKey);
+            //#if !BETA
+            //            Api.Timeout = TimeSpan.FromSeconds(1.5);
+            //#else
+            //            Api.Timeout = TimeSpan.FromSeconds(20);
+            //#endif
             English = XDocument.Load(Path.Combine(LanguageDirectory, Program.MasterLanguage));
 
             //load the commands list
@@ -103,22 +105,182 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-            Api.InlineQueryReceived += UpdateHandler.InlineQueryReceived;
-            Api.UpdateReceived += UpdateHandler.UpdateReceived;
-            Api.CallbackQueryReceived += UpdateHandler.CallbackReceived;
-            Api.ReceiveError += ApiOnReceiveError;
-            //Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
-            Api.StatusChanged += ApiOnStatusChanged;
-            //Api.UpdatesReceived += ApiOnUpdatesReceived;
+            ReceiverOptions receiverOptions = new ReceiverOptions() { AllowedUpdates = { } };
+            var cts = new CancellationTokenSource();
+
+
+
             Me = Api.GetMeAsync().Result;
             //Api.OnMessage += ApiOnOnMessage;
             Console.Title += " " + Me.Username;
             if (!String.IsNullOrEmpty(updateid))
                 Api.SendTextMessageAsync(updateid, "Control updated\n" + Program.GetVersion());
             StartTime = DateTime.UtcNow;
-            
+
             //now we can start receiving
-            Api.StartReceiving();
+            //Api.StartReceiving(ApiOnOnMessage, ApiOnReceiveError, receiverOptions, cts.Token);
+            //Api.OnInlineQuery += UpdateHandler.InlineQueryReceived;
+            //Api.OnUpdate += UpdateHandler.UpdateReceived;
+            //Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
+            //Api.OnReceiveError += ApiOnReceiveError;
+            //Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
+            //Api.OnStatusChanged += ApiOnStatusChanged;
+            //Api.UpdatesReceived += ApiOnUpdatesReceived;
+            Api.ReceiveAsync(null, cts.Token);
+        }
+        private static readonly Update[] EmptyUpdates = { };
+        public static int MessageOffset { get; set; }
+        public static bool IsReceiving { get; set; }
+
+        private static CancellationTokenSource _receivingCancellationTokenSource;
+#pragma warning disable AsyncFixer03 // Avoid fire & forget async void methods
+        private static async void ReceiveAsync(this ITelegramBotClient client,
+            UpdateType[] allowedUpdates,
+            CancellationToken cancellationToken)
+        {
+            IsReceiving = true;
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                var timeout = 30;
+                var updates = EmptyUpdates;
+
+                try
+                {
+                    updates = await client.GetUpdatesAsync(
+                        MessageOffset,
+                        timeout: timeout,
+                        allowedUpdates: allowedUpdates,
+                        cancellationToken: cancellationToken
+                    ).ConfigureAwait(false);
+                }
+                catch (OperationCanceledException)
+                {
+                }
+                catch (ApiRequestException apiException)
+                {
+                    OnReceiveError?.Invoke("receiver", apiException);
+                }
+                catch (Exception generalException)
+                {
+                    OnReceiveGeneralError?.Invoke("receiver", generalException);
+                }
+
+                try
+                {
+                    foreach (var update in updates)
+                    {
+                        new Task(() =>
+                        {
+                            OnUpdateReceived(new UpdateEventArgs(update));
+                        }).Start();
+                        MessageOffset = update.Id + 1;
+                    }
+                }
+                catch
+                {
+                    IsReceiving = false;
+                    throw;
+                }
+            }
+
+            IsReceiving = false;
+        }
+
+        #region Events
+
+        /// <summary>
+        /// Occurs before sending a request to API
+        /// </summary>
+        public static event EventHandler<ApiRequestEventArgs> MakingApiRequest;
+
+        /// <summary>
+        /// Occurs after receiving the response to an API request
+        /// </summary>
+        public static event EventHandler<ApiResponseEventArgs> ApiResponseReceived;
+
+        /// <summary>
+        /// Raises the <see cref="OnUpdate" />, <see cref="OnMessage"/>, <see cref="OnInlineQuery"/>, <see cref="OnInlineResultChosen"/> and <see cref="OnCallbackQuery"/> events.
+        /// </summary>
+        /// <param name="e">The <see cref="UpdateEventArgs"/> instance containing the event data.</param>
+        static void OnUpdateReceived(UpdateEventArgs e)
+        {
+            OnUpdate?.Invoke("receiver", e);
+
+            switch (e.Update.Type)
+            {
+                case UpdateType.Message:
+                    //OnMessage?.Invoke("receiver", e);
+                    UpdateHandler.UpdateReceived(Api, e.Update);
+                    break;
+
+                case UpdateType.InlineQuery:
+                    //OnInlineQuery?.Invoke("receiver", e);
+                    UpdateHandler.InlineQueryReceived(Api, e.Update.InlineQuery);
+                    break;
+
+                case UpdateType.ChosenInlineResult:
+                    //OnInlineResultChosen?.Invoke("receiver", e);
+                    break;
+
+                case UpdateType.CallbackQuery:
+                    //OnCallbackQuery?.Invoke("receiver", e);
+                    UpdateHandler.CallbackReceived(Api, e.Update.CallbackQuery);
+                    break;
+
+                case UpdateType.EditedMessage:
+                    OnMessageEdited?.Invoke("receiver", e);
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Occurs when an <see cref="Update"/> is received.
+        /// </summary>
+        public static event EventHandler<UpdateEventArgs> OnUpdate;
+
+        /// <summary>
+        /// Occurs when a <see cref="Message"/> is received.
+        /// </summary>
+        public static event EventHandler<MessageEventArgs> OnMessage;
+
+        /// <summary>
+        /// Occurs when <see cref="Message"/> was edited.
+        /// </summary>
+        public static event EventHandler<MessageEventArgs> OnMessageEdited;
+
+        /// <summary>
+        /// Occurs when an <see cref="InlineQuery"/> is received.
+        /// </summary>
+        public static event EventHandler<InlineQueryEventArgs> OnInlineQuery;
+
+        /// <summary>
+        /// Occurs when a <see cref="ChosenInlineResult"/> is received.
+        /// </summary>
+        public static event EventHandler<ChosenInlineResultEventArgs> OnInlineResultChosen;
+
+        /// <summary>
+        /// Occurs when an <see cref="CallbackQuery"/> is received
+        /// </summary>
+        public static event EventHandler<CallbackQueryEventArgs> OnCallbackQuery;
+
+        /// <summary>
+        /// Occurs when an error occurs during the background update pooling.
+        /// </summary>
+        public static event EventHandler<ReceiveErrorEventArgs> OnReceiveError;
+
+        /// <summary>
+        /// Occurs when an error occurs during the background update pooling.
+        /// </summary>
+        public static event EventHandler<ReceiveGeneralErrorEventArgs> OnReceiveGeneralError;
+
+        #endregion
+
+        private static async Task Receive()
+        {
+            while (true)
+            {
+
+            }
         }
 
         //private static void ApiOnOnReceiveGeneralError(object sender, ReceiveGeneralErrorEventArgs receiveGeneralErrorEventArgs)
@@ -134,17 +296,58 @@ namespace Werewolf_Control.Helpers
         //    }
         //}
 
-        private static void ApiOnOnMessage(object sender, MessageEventArgs messageEventArgs)
+        private static async Task ApiOnOnMessage(ITelegramBotClient bot, Update update, CancellationToken token)
         {
-            
+            new Task(() =>
+            {
+                switch (update.Type)
+                {
+                    // UpdateType.Unknown:
+                    // UpdateType.ChannelPost:
+                    // UpdateType.EditedChannelPost:
+                    // UpdateType.ShippingQuery:
+                    // UpdateType.PreCheckoutQuery:
+                    // UpdateType.Poll:
+                    case UpdateType.InlineQuery:
+                        UpdateHandler.InlineQueryReceived(bot, update.InlineQuery);
+                        break;
+                    case UpdateType.CallbackQuery:
+                        UpdateHandler.CallbackReceived(bot, update.CallbackQuery);
+                        break;
+                    default:
+                        UpdateHandler.UpdateReceived(bot, update);
+                        break;
+                        //Api.OnInlineQuery += UpdateHandler.InlineQueryReceived;
+                        //Api.OnUpdate += UpdateHandler.UpdateReceived;
+                        //Api.OnCallbackQuery += UpdateHandler.CallbackReceived;
+                        //Api.OnReceiveError += ApiOnReceiveError;
+                        ////Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
+                        ////Api.OnStatusChanged += ApiOnStatusChanged;
+                        ////Api.UpdatesReceived += ApiOnUpdatesReceived;
+                        //UpdateType.Message            => BotOnMessageReceived(botClient, update.Message!),
+                        //UpdateType.EditedMessage      => BotOnMessageReceived(botClient, update.EditedMessage!),
+                        //UpdateType.CallbackQuery      => BotOnCallbackQueryReceived(botClient, update.CallbackQuery!),
+                        //UpdateType.InlineQuery        => BotOnInlineQueryReceived(botClient, update.InlineQuery!),
+                        //UpdateType.ChosenInlineResult => BotOnChosenInlineResultReceived(botClient, update.ChosenInlineResult!),
+                        //_                             => UnknownUpdateHandlerAsync(botClient, update)
+                }
+            }).Start();
+            //try
+            //{
+            //    await handler;
+            //}
+            //catch (Exception exception)
+            //{
+            //    await HandleErrorAsync(botClient, exception, cancellationToken);
+            //}
         }
 
-        private static void ApiOnUpdatesReceived(object sender, UpdateEventArgs updateEventArgs)
-        {
-            //MessagesReceived += updateEventArgs.UpdateCount;
-        }
+        //private static void ApiOnUpdatesReceived(object sender, UpdateEventArgs updateEventArgs)
+        //{
+        //    //MessagesReceived += updateEventArgs.UpdateCount;
+        //}
 
-        internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default, bool disableWebPagePreview = false)
+        internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Html, bool disableWebPagePreview = false)
         {
             //first answer the callback
             Bot.Api.AnswerCallbackQueryAsync(query.Id, edit ? null : text, showAlert);
@@ -153,61 +356,63 @@ namespace Werewolf_Control.Helpers
                 Edit(query, text, replyMarkup, parsemode, disableWebPagePreview);
         }
 
-        internal static Task<Message> Edit(CallbackQuery query, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default, bool disableWebPagePreview = false)
+        internal static Task<Message> Edit(CallbackQuery query, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Html, bool disableWebPagePreview = false)
         {
             return Edit(query.Message.Chat.Id, query.Message.MessageId, text, replyMarkup, parsemode, disableWebPagePreview);
         }
 
-        internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Default, bool disableWebPagePreview = false)
+        internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Html, bool disableWebPagePreview = false)
         {
             Bot.MessagesSent++;
-            return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, disableWebPagePreview, replyMarkup);
+            return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, null, disableWebPagePreview, replyMarkup);
         }
 
-        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
+        //        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
+        //        {
+        //            try
+        //            {
+        //                using (var db = new WWContext())
+        //                {
+        //                    var id =
+        //#if RELEASE
+        //                        1;
+        //#elif RELEASE2
+        //                    2;
+        //#elif BETA
+        //                    3;
+        //#else
+        //                    4;
+        //#endif
+        //                    if (id == 4) return;
+        //                    var b = db.BotStatus.Find(id);
+        //                    b.BotStatus = statusChangeEventArgs.Status.ToString();
+        //                    CurrentStatus = b.BotStatus;
+        //                    db.SaveChanges();
+
+        //                }
+        //            }
+        //            finally
+        //            {
+
+        //            }
+
+        //        }
+
+
+        private static Task ApiOnReceiveError(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
         {
-            try
-            {
-                using (var db = new WWContext())
-                {
-                    var id =
-#if RELEASE
-                        1;
-#elif RELEASE2
-                    2;
-#elif BETA
-                    3;
-#else
-                    4;
-#endif
-                    if (id == 4) return;
-                    var b = db.BotStatus.Find(id);
-                    b.BotStatus = statusChangeEventArgs.Status.ToString();
-                    CurrentStatus = b.BotStatus;
-                    db.SaveChanges();
-
-                }
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-        private static void ApiOnReceiveError(object sender, ReceiveErrorEventArgs receiveErrorEventArgs)
-        {
-            if (!Api.IsReceiving)
-            {
-                Api.StartReceiving();
-            }
-            var e = receiveErrorEventArgs.ApiRequestException;
+            //if (!Api.IsReceiving)
+            //{
+            //    Api.StartReceiving();
+            //}
+            var e = exception;
             using (var sw = new StreamWriter(Path.Combine(RootDirectory, "..\\Logs\\apireceiveerror.log"), true))
             {
-                sw.WriteLine($"{DateTime.UtcNow} {e.ErrorCode} - {e.Message}\n{e.Source}");
+                sw.WriteLine($"{DateTime.UtcNow} - {e.Message}\n{e.Source}");
             }
-                
+
+            return Task.CompletedTask;
+
         }
 
         private static void Reboot()

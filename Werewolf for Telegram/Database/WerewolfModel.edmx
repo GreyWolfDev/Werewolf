@@ -26,7 +26,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TelegramId" Type="int" Nullable="false" />
+          <Property Name="TelegramId" Type="bigint" Nullable="false" />
           <Property Name="Reason" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Expires" Type="datetime" Nullable="false" />
           <Property Name="BannedBy" Type="nvarchar(max)" Nullable="false" />
@@ -283,7 +283,7 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TelegramId" Type="int" Nullable="false" />
+          <Property Name="TelegramId" Type="bigint" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
           <Property Name="UserName" Type="nvarchar(max)" />
           <Property Name="Banned" Type="bit" />
@@ -419,7 +419,7 @@ warning 6002: The table/view 'werewolf.dbo.v_GroupRanking' does not have a prima
           <Property Name="Language" Type="nvarchar" MaxLength="450" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="GroupLink" Type="nvarchar(max)" />
-          <Property Name="Ranking" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Ranking" Type="decimal" Precision="18" Scale="10" />
           <Property Name="LastRefresh" Type="datetime" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
@@ -599,16 +599,28 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_GroupRanking_Group">
+          <End Role="Group" Type="Self.Group" Multiplicity="1" />
+          <End Role="GroupRanking" Type="Self.GroupRanking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupRanking">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="bit_count" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="num" Type="bigint" Mode="In" />
         </Function>
         <Function Name="getDailyCounts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GetGroupIdleKills24Hours" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="userid" Type="int" Mode="In" />
+          <Parameter Name="userid" Type="bigint" Mode="In" />
           <Parameter Name="groupid" Type="bigint" Mode="In" />
         </Function>
         <Function Name="GetIdleKills24Hours" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="userid" Type="int" Mode="In" />
+          <Parameter Name="userid" Type="bigint" Mode="In" />
         </Function>
         <Function Name="getPlayTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="playerCount" Type="int" Mode="In" />
@@ -633,17 +645,17 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Parameter Name="groupid" Type="bigint" Mode="In" />
         </Function>
         <Function Name="PlayerMostKilled" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="pid" Type="int" Mode="In" />
+          <Parameter Name="pid" Type="bigint" Mode="In" />
         </Function>
         <Function Name="PlayerMostKilledBy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="pid" Type="int" Mode="In" />
+          <Parameter Name="pid" Type="bigint" Mode="In" />
         </Function>
         <Function Name="PlayerRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="pid" Type="int" Mode="In" />
+          <Parameter Name="pid" Type="bigint" Mode="In" />
         </Function>
         <Function Name="RestoreAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="oldTGId" Type="int" Mode="In" />
-          <Parameter Name="newTGId" Type="int" Mode="In" />
+          <Parameter Name="oldTGId" Type="bigint" Mode="In" />
+          <Parameter Name="newTGId" Type="bigint" Mode="In" />
         </Function>
         <EntityContainer Name="werewolfModelStoreContainer">
           <EntitySet Name="BotStatus" EntityType="Self.BotStatus" Schema="db_owner" store:Type="Tables" />
@@ -804,6 +816,10 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             <End Role="Player" EntitySet="Player" />
             <End Role="GroupAdmin" EntitySet="GroupAdmin" />
           </AssociationSet>
+          <AssociationSet Name="FK_GroupRanking_Group" Association="Self.FK_GroupRanking_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="GroupRanking" EntitySet="GroupRanking" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -897,6 +913,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="Flags" Type="Int64" />
           <Property Name="BetaGroup" Type="Boolean" />
           <Property Name="RoleFlags" Type="Int64" />
+          <NavigationProperty Name="GroupRanking" Relationship="werewolfModel.FK_GroupRanking_Group" FromRole="Group" ToRole="GroupRanking" />
         </EntityType>
         <EntityType Name="KillMethod">
           <Key>
@@ -911,7 +928,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TelegramId" Type="Int32" Nullable="false" />
+          <Property Name="TelegramId" Type="Int64" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Banned" Type="Boolean" />
@@ -1115,13 +1132,13 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySet Name="PlayerStats" EntityType="werewolfModel.PlayerStat" />
           <EntitySet Name="GroupStats" EntityType="werewolfModel.GroupStat" />
           <FunctionImport Name="PlayerMostKilled" ReturnType="Collection(werewolfModel.PlayerMostKilled_Result)">
-          <Parameter Name="pid" Mode="In" Type="Int32" />
+          <Parameter Name="pid" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="PlayerMostKilledBy" ReturnType="Collection(werewolfModel.PlayerMostKilledBy_Result)">
-          <Parameter Name="pid" Mode="In" Type="Int32" />
+          <Parameter Name="pid" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="PlayerRoles" ReturnType="Collection(werewolfModel.PlayerRoles_Result)">
-          <Parameter Name="pid" Mode="In" Type="Int32" />
+          <Parameter Name="pid" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="GlobalDay1Death" ReturnType="Collection(werewolfModel.GlobalDay1Death_Result1)" />
           <FunctionImport Name="GlobalDay1Lynch" ReturnType="Collection(werewolfModel.GlobalDay1Lynch_Result1)" />
@@ -1143,7 +1160,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <FunctionImport Name="getDailyCounts" ReturnType="Collection(werewolfModel.getDailyCounts_Result)" />
           <EntitySet Name="v_IdleKill24HoursMain" EntityType="werewolfModel.v_IdleKill24HoursMain" />
           <FunctionImport Name="GetIdleKills24Hours" ReturnType="Collection(Int32)">
-          <Parameter Name="userid" Mode="In" Type="Int32" />
+          <Parameter Name="userid" Mode="In" Type="Int64" />
           </FunctionImport>
           <EntitySet Name="v_PublicGroups" EntityType="werewolfModel.v_PublicGroups" />
           <EntitySet Name="GlobalBans" EntityType="werewolfModel.GlobalBan" />
@@ -1171,8 +1188,8 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             <End Role="GamePlayer" EntitySet="GamePlayers" />
           </AssociationSet>
           <FunctionImport Name="RestoreAccount">
-            <Parameter Name="oldTGId" Mode="In" Type="Int32" />
-            <Parameter Name="newTGId" Mode="In" Type="Int32" />
+            <Parameter Name="oldTGId" Mode="In" Type="Int64" />
+            <Parameter Name="newTGId" Mode="In" Type="Int64" />
           </FunctionImport>
           <EntitySet Name="C__MigrationHistory" EntityType="werewolfModel.C__MigrationHistory" />
           <EntitySet Name="GroupRanking" EntityType="werewolfModel.GroupRanking" />
@@ -1180,9 +1197,13 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <EntitySet Name="v_GroupRanking" EntityType="werewolfModel.v_GroupRanking" />
           <EntitySet Name="Language" EntityType="werewolfModel.Language" />
           <FunctionImport Name="GetGroupIdleKills24Hours" ReturnType="Collection(Int32)">
-            <Parameter Name="userid" Mode="In" Type="Int32" />
+            <Parameter Name="userid" Mode="In" Type="Int64" />
             <Parameter Name="groupid" Mode="In" Type="Int64" />
           </FunctionImport>
+          <AssociationSet Name="FK_GroupRanking_Group" Association="werewolfModel.FK_GroupRanking_Group">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="GroupRanking" EntitySet="GroupRanking" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="getPlayTime_Result">
           <Property Type="Int32" Name="Average" Nullable="true" />
@@ -1377,7 +1398,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TelegramId" Type="Int32" Nullable="false" />
+          <Property Name="TelegramId" Type="Int64" Nullable="false" />
           <Property Name="Reason" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Expires" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="BannedBy" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -1527,6 +1548,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="GamesPlayed" Type="Int32" Nullable="false" />
           <Property Name="Show" Type="Boolean" />
+          <NavigationProperty Name="Group" Relationship="werewolfModel.FK_GroupRanking_Group" FromRole="GroupRanking" ToRole="Group" />
         </EntityType>
         <EntityType Name="RefreshDate">
           <Key>
@@ -1545,7 +1567,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="Language" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="GroupLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Ranking" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Ranking" Type="Decimal" Precision="18" Scale="10" />
           <Property Name="LastRefresh" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -1561,6 +1583,18 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="IsDefault" Type="Boolean" Nullable="false" />
           <Property Name="LangCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
+        <Association Name="FK_GroupRanking_Group">
+          <End Type="werewolfModel.Group" Role="Group" Multiplicity="1" />
+          <End Type="werewolfModel.GroupRanking" Role="GroupRanking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupRanking">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
 using Database;
+using Telegram.Bot;
 using Telegram.Bot.Types;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Models;
@@ -209,7 +210,7 @@ sum(count(x.Gameid)) over (partition by players) as Games
         private static void SendImage(string path, long id)
         {
             var fs = new FileStream(path, FileMode.Open);
-            Bot.Api.SendPhotoAsync(id, new FileToSend("chart.png", fs));
+            //Bot.Api.SendPhotoAsync(id, new FileToSend("chart.png", fs));
         }
     }
 

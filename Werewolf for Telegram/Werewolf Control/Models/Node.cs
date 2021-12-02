@@ -42,7 +42,7 @@ namespace Werewolf_Control.Models
                 Language = "English",
                 GroupId = info.Chat.Id,
                 NodeId = ClientId,
-                Users = new HashSet<int> {update.Message.From.Id},
+                Users = new HashSet<long> {update.Message.From.Id},
                 State = GameState.Joining
             });
         }
