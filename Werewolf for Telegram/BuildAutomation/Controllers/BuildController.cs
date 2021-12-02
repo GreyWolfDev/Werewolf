@@ -14,10 +14,10 @@ using BuildAutomation.Models.Release;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Task = System.Threading.Tasks.Task;
 
@@ -32,7 +32,7 @@ namespace BuildAutomation.Controllers
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             string TelegramAPIKey = ConfigurationManager.AppSettings.Get("TelegramAPIToken");
-            var bot = new Telegram.Bot.Client(TelegramAPIKey, System.Environment.CurrentDirectory);
+            var bot = new Telegram.Bot.TelegramBotClient(TelegramAPIKey);  //System.Environment.CurrentDirectory
             try
             {
                 var body = Request.Content.ReadAsStringAsync().Result;
