@@ -11,7 +11,7 @@ namespace Werewolf_Control.Models
 {
     public class GameInfo
     {
-        public HashSet<int> Users { get; set; } = new HashSet<int>();  //update this to users alive
+        public HashSet<long> Users { get; set; } = new HashSet<long>();  //update this to users alive
         public long GroupId { get; set; }
         public string Guid { get; set; }
         public string Language { get; set; }
@@ -71,7 +71,7 @@ namespace Werewolf_Control.Models
             n?.Broadcast(json);
         }
 
-        public void SmitePlayer(int id)
+        public void SmitePlayer(long id)
         {
             var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
             if (n == null) return;

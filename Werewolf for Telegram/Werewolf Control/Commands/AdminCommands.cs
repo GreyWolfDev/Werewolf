@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
@@ -87,9 +87,16 @@ namespace Werewolf_Control
 
             var language = GetLanguage(update.Message.From.Id);
 
-            var menu = UpdateHandler.GetConfigMenu(update.Message.Chat.Id, language);
-            Bot.Api.SendTextMessageAsync(update.Message.From.Id, GetLocaleString("WhatToDo", language),
-                replyMarkup: menu);
+            try
+            {
+                var menu = UpdateHandler.GetConfigMenu(update.Message.Chat.Id, language);
+                Bot.Api.SendTextMessageAsync(update.Message.From.Id, GetLocaleString("WhatToDo", language),
+                    replyMarkup: menu);
+            }
+            catch
+            {
+                RequestPM(update.Message.Chat.Id);
+            }
         }
 
         [Attributes.Command(Trigger = "uploadlang", LangAdminOnly = true)]
@@ -98,7 +105,7 @@ namespace Werewolf_Control
             try
             {
                 var id = update.Message.Chat.Id;
-                if (update.Message.ReplyToMessage?.Type != MessageType.DocumentMessage)
+                if (update.Message.ReplyToMessage?.Type != MessageType.Document)
                 {
                     Send("Please reply to the file with /uploadlang", id);
                     return;
@@ -117,7 +124,7 @@ namespace Werewolf_Control
             }
             catch (Exception e)
             {
-                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Default);
+                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Html);
             }
         }
 
@@ -173,7 +180,7 @@ namespace Werewolf_Control
             var langs = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x)).ToList();
 
 
-            List<InlineKeyboardCallbackButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => new InlineKeyboardCallbackButton(x, $"validate|{update.Message.From.Id}|{x}|null|base")).ToList();
+            List<InlineKeyboardButton> buttons = langs.Select(x => x.Base).Distinct().OrderBy(x => x).Select(x => InlineKeyboardButton.WithCallbackData(x, $"validate|{update.Message.From.Id}|{x}|null|base")).ToList();
             //buttons.Insert(0, new InlineKeyboardButton("All", $"validate|{update.Message.From.Id}|All|null|base"));
 
             var baseMenu = new List<InlineKeyboardButton[]>();
@@ -214,7 +221,7 @@ namespace Werewolf_Control
         public static void GetIdles(Update update, string[] args)
         {
             //check user ids and such
-            List<int> ids = new List<int>();
+            List<long> ids = new List<long>();
             foreach (var arg in args.Skip(1).FirstOrDefault()?.Split(' ') ?? new[] { "" })
             {
                 if (int.TryParse(arg, out int id))
@@ -242,6 +249,7 @@ namespace Werewolf_Control
                 {
                     var idles = db.GetIdleKills24Hours(id).FirstOrDefault() ?? 0;
                     var groupidles = db.GetGroupIdleKills24Hours(id, update.Message.Chat.Id).FirstOrDefault() ?? 0;
+
                     //get the user
                     ChatMember user = null;
                     try
@@ -319,7 +327,7 @@ namespace Werewolf_Control
 #if !RELEASE
             //get the user to add the achievement to
             //first, try by reply
-            var id = 0;
+            long id = 0;
             var achIndex = 0;
             var param = args[1].Split(' ');
             if (u.Message.ReplyToMessage != null)
@@ -360,9 +368,9 @@ namespace Werewolf_Control
             if (id == 0)
             {
                 //check for arguments then
-                if (int.TryParse(param[0], out id))
+                if (long.TryParse(param[0], out id))
                     achIndex = 1;
-                else if (int.TryParse(param[1], out id))
+                else if (long.TryParse(param[1], out id))
                     achIndex = 0;
 
             }
@@ -401,7 +409,7 @@ namespace Werewolf_Control
 #if !RELEASE
             //get the user to add the achievement to
             //first, try by reply
-            var id = 0;
+            long id = 0;
             var achIndex = 0;
             var param = args[1].Split(' ');
             if (u.Message.ReplyToMessage != null)
@@ -442,9 +450,9 @@ namespace Werewolf_Control
             if (id == 0)
             {
                 //check for arguments then
-                if (int.TryParse(param[0], out id))
+                if (long.TryParse(param[0], out id))
                     achIndex = 1;
-                else if (int.TryParse(param[1], out id))
+                else if (long.TryParse(param[1], out id))
                     achIndex = 0;
 
             }
@@ -559,7 +567,7 @@ namespace Werewolf_Control
                 }
 
                 //TODO Send a result with the score, and buttons to approve or deny the account restore
-                Send($"{result}Accuracy score: {score}%\n\nDo you want to restore the account?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[] { new InlineKeyboardCallbackButton("Yes", $"restore|{oldP.TelegramId}|{newP.TelegramId}"), new InlineKeyboardCallbackButton("No", "restore|no") }));
+                Send($"{result}Accuracy score: {score}%\n\nDo you want to restore the account?", u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[] { InlineKeyboardButton.WithCallbackData("Yes", $"restore|{oldP.TelegramId}|{newP.TelegramId}"), InlineKeyboardButton.WithCallbackData("No", "restore|no") }));
             }
 #endif
         }
@@ -590,7 +598,7 @@ namespace Werewolf_Control
                 }
                 else
                 {
-                    var pid = int.Parse(args[1]);
+                    var pid = long.Parse(args[1]);
                     var p = db.Players.FirstOrDefault(x => x.TelegramId == pid);
                     if (p == null)
                     {
@@ -703,10 +711,10 @@ namespace Werewolf_Control
         {
             try
             {
-                var path = System.IO.Path.Combine(Settings.GifStoragePath, $"{fileid}.mp4");
+                var path = Path.Combine(Settings.GifStoragePath, $"{fileid}.mp4");
                 if (!System.IO.File.Exists(path))
                     using (var x = System.IO.File.OpenWrite(path))
-                        await Bot.Api.GetFileAsync(fileid, x);
+                        await Bot.Api.DownloadFileAsync(fileid, x);
 
                 return true;
             }
@@ -737,7 +745,7 @@ namespace Werewolf_Control
                         Send("Please use /approvegifs <player id> <1|0 (nsfw)>", u.Message.Chat.Id);
                         return;
                     }
-                    var pid = int.Parse(parms[0]);
+                    var pid = long.Parse(parms[0]);
                     var nsfw = parms[1] == "1";
                     var p = db.Players.FirstOrDefault(x => x.TelegramId == pid);
                     if (p == null)
@@ -793,7 +801,7 @@ namespace Werewolf_Control
                         Send("Please use /disapprovegifs <player id> <reason>", u.Message.Chat.Id);
                         return;
                     }
-                    var pid = int.Parse(parms[0]);
+                    var pid = long.Parse(parms[0]);
                     var reason = args[1].Replace(parms[0] + " ", "");
                     var p = db.Players.FirstOrDefault(x => x.TelegramId == pid);
                     if (p == null)
@@ -832,7 +840,7 @@ namespace Werewolf_Control
 #if !BETA
             string Prefix = "https://tgwerewolf.com/gifs/";
             List<string> FileIds = new List<string>();
-            List<int> UserIds = new List<int>();
+            List<long> UserIds = new List<long>();
 
             if (u.Message.ReplyToMessage != null)
             {

@@ -67,7 +67,7 @@ namespace StatsRotation
                     //    //Thread.Sleep(500);
                     //}
                 }
-                catch (Exception ex)
+                catch
                 {
 
                 }

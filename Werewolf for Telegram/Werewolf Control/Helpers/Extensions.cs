@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineKeyboardButtons;
+//using Telegram.Bot.Types.InlineKeyboardButtons;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Models;
 
@@ -157,11 +157,11 @@ namespace Werewolf_Control.Helpers
             //check for a user mention
             var mention = message?.Entities.FirstOrDefault(x => x.Type == MessageEntityType.Mention);
             var textmention = message?.Entities.FirstOrDefault(x => x.Type == MessageEntityType.TextMention);
-            var id = 0;
+            long id = 0;
             var username = "";
             if (!String.IsNullOrEmpty(args))
             {
-                if (!int.TryParse(args, out id))
+                if (!long.TryParse(args, out id))
                     username = args;
             }
             
