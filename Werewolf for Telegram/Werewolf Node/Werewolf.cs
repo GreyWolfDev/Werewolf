@@ -138,7 +138,7 @@ namespace Werewolf_Node
                     }
                     try
                     {
-                        var memberCount = Program.Bot.GetChatMembersCountAsync(chatid).Result;
+                        var memberCount = Program.Bot.GetChatMemberCountAsync(chatid).Result;
                         DbGroup.MemberCount = memberCount;
 
                         db.SaveChanges();
@@ -231,7 +231,7 @@ namespace Werewolf_Node
                     case GameMode.Chaos:
                         FirstMessage = GetLocaleString("PlayerStartedChaosGame", u.FirstName);
 #if RELEASE
-                        _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new FileToSend(GetRandomImage(StartChaosGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                        _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new Telegram.Bot.Types.InputFiles.InputOnlineFile(GetRandomImage(StartChaosGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #else
                         _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage(StartChaosGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
 #endif
@@ -241,7 +241,7 @@ namespace Werewolf_Node
                     default:
                         FirstMessage = GetLocaleString("PlayerStartedGame", u.FirstName);
 #if RELEASE
-                        _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new FileToSend(GetRandomImage(StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                        _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new Telegram.Bot.Types.InputFiles.InputOnlineFile(GetRandomImage(StartGame)), FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #else
                         _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage(StartGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
 #endif
@@ -1178,7 +1178,7 @@ namespace Werewolf_Node
 
             if (!String.IsNullOrWhiteSpace(image))
 #if RELEASE
-                Program.Bot.SendDocumentAsync(id, new FileToSend(image), text);
+                Program.Bot.SendDocumentAsync(id, new Telegram.Bot.Types.InputFiles.InputOnlineFile(image), text);
 #else
                 Send($"<a href='{GifPrefix}{image}.mp4'>\u200C</a>{text}", id, preview: true);
 #endif
