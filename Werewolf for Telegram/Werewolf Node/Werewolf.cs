@@ -1179,7 +1179,7 @@ namespace Werewolf_Node
 
             if (!String.IsNullOrWhiteSpace(image))
 #if RELEASE
-                Program.Bot.SendDocumentAsync(id, new Telegram.Bot.Types.InputFiles.InputOnlineFile(image), text);
+                Program.Bot.SendDocumentAsync(id, new Telegram.Bot.Types.InputFiles.InputOnlineFile(image), caption: text);
 #else
                 Send($"<a href='{GifPrefix}{image}.mp4'>\u200C</a>{text}", id, preview: true);
 #endif
