@@ -428,13 +428,13 @@ namespace Werewolf_Control.Handler
 
 #endregion
                             }
-                            else if (update.Message.Chat.Type == ChatType.Private &&
-                                     update.Message?.ReplyToMessage?.Text ==
-                                     "Please reply to this message with your Telegram authorization code" &&
-                                     update.Message.From.Id == UpdateHelper.Devs[0])
-                            {
-                                CLI.AuthCode = update.Message.Text;
-                            }
+                            //else if (update.Message.Chat.Type == ChatType.Private &&
+                            //         update.Message?.ReplyToMessage?.Text ==
+                            //         "Please reply to this message with your Telegram authorization code" &&
+                            //         update.Message.From.Id == UpdateHelper.Devs[0])
+                            //{
+                            //    CLI.AuthCode = update.Message.Text;
+                            //}
                             else if (update.Message.Chat.Type == ChatType.Private &&
                                      (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
                                      (update.Message?.ReplyToMessage?.Text?.Contains(
