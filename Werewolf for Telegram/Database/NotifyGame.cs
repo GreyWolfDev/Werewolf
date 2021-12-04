@@ -14,7 +14,7 @@ namespace Database
     
     public partial class NotifyGame
     {
-        public int UserId { get; set; }
+        public long UserId { get; set; }
         public long GroupId { get; set; }
     }
 }
