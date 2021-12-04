@@ -80,9 +80,10 @@ namespace Werewolf_Control
         {
             using (var db = new WWContext())
             {
-                var msg =
-                    db.BotStatus.ToList().Where(x => x.BotName != "Bot 2").Select(x => $"[{x.BotName.Replace("Bot 1", "Moderator")}](https://t.me/{x.BotLink}): *{x.BotStatus}* ").ToList()
-                        .Aggregate((a, b) => a + "\n" + b);
+                //var msg =
+                //    db.BotStatus.ToList().Where(x => x.BotName != "Bot 2").Select(x => $"[{x.BotName.Replace("Bot 1", "Moderator")}](https://t.me/{x.BotLink}): *{x.BotStatus}* ").ToList()
+                //        .Aggregate((a, b) => a + "\n" + b);
+                var msg = "Command currently disabled, sorry";
                 Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, msg, parseMode: ParseMode.Markdown, disableWebPagePreview: true);
             }
         }
