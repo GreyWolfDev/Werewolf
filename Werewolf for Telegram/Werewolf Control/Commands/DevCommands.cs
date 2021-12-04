@@ -1346,7 +1346,7 @@ namespace Werewolf_Control
                 //                }
                 //#endif
                 int id = 0;
-                if (int.TryParse(args[1], out id))
+                if (long.TryParse(args[1], out id))
                 {
                     //get the user from the database
                     using (var ww = new WWContext())
