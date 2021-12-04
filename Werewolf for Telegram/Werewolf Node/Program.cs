@@ -99,6 +99,7 @@ namespace Werewolf_Node
             APIToken = key.GetValue("BetaAPI").ToString();
 #endif
             Bot = new TelegramBotClient(APIToken);
+            
             Bot.OnMakingApiRequest += Bot_OnMakingApiRequest;
             Me = Bot.GetMeAsync().Result;
             do
@@ -111,7 +112,7 @@ namespace Werewolf_Node
             Thread.Sleep(-1);
         }
 
-        private static ValueTask Bot_OnMakingApiRequest(ITelegramBotClient botClient, Telegram.Bot.Args.ApiRequestEventArgs args, CancellationToken cancellationToken = default)
+        private static ValueTask Bot_OnMakingApiRequest(ITelegramBotClient botClient, Telegram.Bot.Args.ApiRequestEventArgs args, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (args.MethodName.Contains("Send"))
             {
