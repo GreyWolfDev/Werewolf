@@ -366,7 +366,7 @@ namespace Werewolf_Control.Helpers
                     if (output.Contains("failed"))
                     {
                         msg += "\n<b>Failed</b> to commit files. See control output for information";
-                        Console.WriteLine(output);
+                        //Console.WriteLine(output);
                     }
                     else if (output.Contains("nothing to commit"))
                     {
