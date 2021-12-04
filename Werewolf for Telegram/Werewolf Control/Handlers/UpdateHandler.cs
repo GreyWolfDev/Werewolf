@@ -239,7 +239,7 @@ namespace Werewolf_Control.Handler
 
 #if DEBUG
                 if (!new[] { -1001341772435 /*alphatest*/, -1001094155678 /*staff*/, -1001098399855 /*errorlog*/,
-                    -1001077134233 /*developer team chat*/}.Contains(id))
+                    -1001077134233 /*developer team chat*/, -1001135292560 /*para test chat*/}.Contains(id))
                 {
                     try
                     {
@@ -444,22 +444,28 @@ namespace Werewolf_Control.Handler
                             }
                             break;
                         //case MessageType.Animation:
-                        //    if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
-                        //    {
-                        //        var doc = update.Message.Animation;
-                        //        Send(doc.FileId, update.Message.Chat.Id);
-                        //    }
-                        //    else if (update.Message.Chat.Type == ChatType.Private &&
-                        //             (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
-                        //             (update.Message?.ReplyToMessage?.Text?.Contains(
-                        //                  "send me the GIF you want to use for this situation, as a reply") ??
-                        //              false))
-                        //    {
-                        //        Commands.AddGif(update.Message);
-                        //    }
+                            
                         //    break;
                         case MessageType.Document:
-                            if (update.Message.Document?.MimeType?.ToLower().Equals("image/gif") ?? false)
+                            if (update.Message.Animation != null)
+                            {
+                                if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
+                                {
+                                    var doc = update.Message.Animation;
+                                    Send(doc.FileId, update.Message.Chat.Id);
+                                }
+                                else if (update.Message.Chat.Type == ChatType.Private &&
+                                         (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
+                                         (update.Message?.ReplyToMessage?.Text?.Contains(
+                                              "send me the GIF you want to use for this situation, as a reply") ??
+                                          false))
+                                {
+                                    Commands.AddGif(update.Message);
+                                }
+                            }
+
+
+                            else if (update.Message.Document?.MimeType?.ToLower().Equals("image/gif") ?? false)
                             {
                                 if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
                                 {

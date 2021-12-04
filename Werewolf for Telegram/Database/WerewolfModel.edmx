@@ -47,7 +47,7 @@
           <Key>
             <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="AspNetRoles">
           <Key>
@@ -166,10 +166,10 @@
           <Property Name="LastRun" Type="datetime" />
           <Property Name="TotalPlayers" Type="int" />
           <Property Name="TotalGroups" Type="int" />
-          <Property Name="MostKilledFirstNightId" Type="int" />
-          <Property Name="MostLynchedFirstDayId" Type="int" />
-          <Property Name="MostKilledFirstDayId" Type="int" />
-          <Property Name="BestSurvivorId" Type="int" />
+          <Property Name="MostKilledFirstNightId" Type="bigint" />
+          <Property Name="MostLynchedFirstDayId" Type="bigint" />
+          <Property Name="MostKilledFirstDayId" Type="bigint" />
+          <Property Name="BestSurvivorId" Type="bigint" />
         </EntityType>
         <EntityType Name="Group">
           <Key>
@@ -275,7 +275,7 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
             <PropertyRef Name="UserId" />
             <PropertyRef Name="GroupId" />
           </Key>
-          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
           <Property Name="GroupId" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="Player">
@@ -957,7 +957,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             <PropertyRef Name="UserId" />
             <PropertyRef Name="GroupId" />
           </Key>
-          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int64" Nullable="false" />
           <Property Name="GroupId" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="v_NonDefaultGroups">
@@ -1249,10 +1249,10 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
           <Property Name="LastRun" Type="DateTime" Precision="3" />
           <Property Name="TotalPlayers" Type="Int32" />
           <Property Name="TotalGroups" Type="Int32" />
-          <Property Name="MostKilledFirstNightId" Type="Int32" />
-          <Property Name="MostLynchedFirstDayId" Type="Int32" />
-          <Property Name="MostKilledFirstDayId" Type="Int32" />
-          <Property Name="BestSurvivorId" Type="Int32" />
+          <Property Name="MostKilledFirstNightId" Type="Int64" />
+          <Property Name="MostLynchedFirstDayId" Type="Int64" />
+          <Property Name="MostKilledFirstDayId" Type="Int64" />
+          <Property Name="BestSurvivorId" Type="Int64" />
         </EntityType>
         <EntityType Name="PlayerStat">
           <Key>
