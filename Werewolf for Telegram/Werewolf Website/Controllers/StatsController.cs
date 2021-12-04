@@ -35,7 +35,7 @@ namespace Werewolf_Web.Controllers
             return View();
         }
 
-        public ActionResult Player(int id, bool json = false)
+        public ActionResult Player(long id, bool json = false)
         {
             if (json)
             {
@@ -223,7 +223,7 @@ namespace Werewolf_Web.Controllers
         }
 
         [HttpGet]
-        public JsonResult PlayerStats(int pid, bool json = false)
+        public JsonResult PlayerStats(long pid, bool json = false)
         {
             using (var DB = new WWContext())
             {
@@ -274,7 +274,7 @@ namespace Werewolf_Web.Controllers
         }
 
         [HttpGet]
-        public JsonResult PlayerKills(int pid, bool json = false)
+        public JsonResult PlayerKills(long pid, bool json = false)
         {
             using (var DB = new WWContext())
             {
@@ -304,7 +304,7 @@ namespace Werewolf_Web.Controllers
         }
 
         [HttpGet]
-        public JsonResult PlayerKilledBy(int pid, bool json = false)
+        public JsonResult PlayerKilledBy(long pid, bool json = false)
         {
             using (var DB = new WWContext())
             {
@@ -335,7 +335,7 @@ namespace Werewolf_Web.Controllers
         }
 
         [HttpGet]
-        public JsonResult PlayerDeaths(int pid, bool json = false)
+        public JsonResult PlayerDeaths(long pid, bool json = false)
         {
             using (var DB = new WWContext())
             {
@@ -351,17 +351,25 @@ namespace Werewolf_Web.Controllers
                               group gk by new { kid = gk.KillMethodId, gid = gk.GameId, day = gk.Day });
                 var temp = (from i in deaths
                             group i by i.Key.kid);
-                var totalDeaths = temp.Sum(x => x.Count());
+                var totalDeaths = temp.Any() ? temp.Sum(x => x.Count()) : 0;
                 // var totalDeaths = deaths.Sum(x => x.Count());
                 // var deathInfo = deaths.OrderByDescending(x => x.Count()).Take(5);
-                var deathInfo = temp.OrderByDescending(x => x.Count()).Take(5);
+                var deathInfo = temp.Any() ? temp.OrderByDescending(x => x.Count()).Take(5) : null;
+
                 if (!json)
                 {
                     var reply = "<table class=\"table table-hover\"><tbody><tr><th>Death Type</th><th>Percentage</th></tr>";
-                    foreach (var a in deathInfo)
+                    if (deathInfo != null)
                     {
-                        var killMethod = Enum.GetName(typeof(KillMthd), a.Key);
-                        reply += "<tr><td><b>" + killMethod + "</b></td><td>" + ((double)(a.Count() / (double)totalDeaths) * 100.0).ToString("#0.0") + "%</td></tr>";
+                        foreach (var a in deathInfo)
+                        {
+                            var killMethod = Enum.GetName(typeof(KillMthd), a.Key);
+                            reply += "<tr><td><b>" + killMethod + "</b></td><td>" + ((double)(a.Count() / (double)totalDeaths) * 100.0).ToString("#0.0") + "%</td></tr>";
+                        }
+                    }
+                    else
+                    {
+                        reply += "<tr><td><b>No deaths!</b></td><td></td></tr>";
                     }
                     reply += "</tbody></table>";
                     return Json(reply, JsonRequestBehavior.AllowGet);
@@ -376,11 +384,12 @@ namespace Werewolf_Web.Controllers
                     }
                     return Json(reply, JsonRequestBehavior.AllowGet);
                 }
+
             }
         }
 
         [HttpGet]
-        public JsonResult PlayerAchievements(int pid, bool json = false)
+        public JsonResult PlayerAchievements(long pid, bool json = false)
         {
             using (var DB = new WWContext())
             {
@@ -411,7 +420,7 @@ namespace Werewolf_Web.Controllers
         }
 
         [HttpGet]
-        public JsonResult PlayerLockedAchievements(int pid, bool json = false)
+        public JsonResult PlayerLockedAchievements(long pid, bool json = false)
         {
             using (var DB = new WWContext())
             {
@@ -428,7 +437,7 @@ namespace Werewolf_Web.Controllers
                 {
                     var reply = "<table class=\"table table-hover\"><tbody style=\"color: red\">";
                     foreach (AchievementsReworked a in Enum.GetValues(typeof(AchievementsReworked)))
-                    { 
+                    {
                         if (!has.Contains(a) && a != AchievementsReworked.None && a != AchievementsReworked.OHAIDER)
                             reply += "<tr><td><b>" + a.GetName() + "</b></td><td>" + a.GetDescription() + "</td></tr>";
                     }
@@ -440,7 +449,7 @@ namespace Werewolf_Web.Controllers
                 {
                     List<object> reply = new List<object>();
                     foreach (AchievementsReworked a in Enum.GetValues(typeof(AchievementsReworked)))
-                    { 
+                    {
                         if (!has.Contains(a) && a != AchievementsReworked.None && a != AchievementsReworked.OHAIDER)
                             reply.Add(new { name = a.GetName(), description = a.GetDescription() });
                     }
@@ -450,7 +459,7 @@ namespace Werewolf_Web.Controllers
         }
 
         [HttpGet]
-        public JsonResult PlayerImage(int pid)
+        public JsonResult PlayerImage(long pid)
         {
             using (var db = new WWContext())
             {
