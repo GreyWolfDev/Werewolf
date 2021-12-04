@@ -275,7 +275,7 @@ warning 6002: The table/view 'werewolf.dbo.NotifyGame' does not have a primary k
             <PropertyRef Name="UserId" />
             <PropertyRef Name="GroupId" />
           </Key>
-          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="bigint" Nullable="false" />
           <Property Name="GroupId" Type="bigint" Nullable="false" />
         </EntityType>
         <EntityType Name="Player">
@@ -957,7 +957,7 @@ warning 6002: The table/view 'werewolf.dbo.v_IdleKill24HoursMain' does not have 
             <PropertyRef Name="UserId" />
             <PropertyRef Name="GroupId" />
           </Key>
-          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int64" Nullable="false" />
           <Property Name="GroupId" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="v_NonDefaultGroups">

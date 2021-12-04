@@ -239,7 +239,7 @@ namespace Werewolf_Control.Handler
 
 #if DEBUG
                 if (!new[] { -1001341772435 /*alphatest*/, -1001094155678 /*staff*/, -1001098399855 /*errorlog*/,
-                    -1001077134233 /*developer team chat*/}.Contains(id))
+                    -1001077134233 /*developer team chat*/, -1001135292560 /*para test chat*/}.Contains(id))
                 {
                     try
                     {
