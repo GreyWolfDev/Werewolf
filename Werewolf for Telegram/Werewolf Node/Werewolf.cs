@@ -902,7 +902,7 @@ namespace Werewolf_Node
                     player.HasUsedAbility = true;
                     SendWithQueue(GetLocaleString("MayorReveal", player.GetName()));
 
-                    Program.MessagesSent++;
+                    //Program.MessagesSent++;
                     ReplyToCallback(query,
                         GetLocaleString("ChoiceAccepted"));
 
@@ -918,7 +918,7 @@ namespace Werewolf_Node
                     _doubleLynch = false; // peace overrides trouble
                     SendWithQueue(GetLocaleString("PacifistNoLynch", player.GetName()));
 
-                    Program.MessagesSent++;
+                    //Program.MessagesSent++;
                     ReplyToCallback(query,
                         GetLocaleString("ChoiceAccepted"));
                     return;
@@ -984,7 +984,7 @@ namespace Werewolf_Node
                         player.Choice2 = -1;
                     else if (qtype == player.CurrentQuestion.QType)
                         player.Choice = -1;
-                    Program.MessagesSent++;
+                    //Program.MessagesSent++;
                     ReplyToCallback(query,
                         GetLocaleString("ChoiceAccepted") + $" - {GetLocaleString("Skip")}");
                     player.CurrentQuestion = null;
@@ -1015,7 +1015,7 @@ namespace Werewolf_Node
                 if (choice == "-2" && qtype == QuestionType.Douse && player.PlayerRole == IRole.Arsonist && player.CurrentQuestion.QType == QuestionType.Douse)
                 {
                     player.Choice = -2;
-                    Program.MessagesSent++;
+                    //Program.MessagesSent++;
                     ReplyToCallback(query,
                         GetLocaleString("ChoiceAccepted") + $" - {GetLocaleString("Spark")}");
                     player.CurrentQuestion = null;
@@ -1078,7 +1078,7 @@ namespace Werewolf_Node
                             secondChoices.Select(
                                 x => new[] { InlineKeyboardButton.WithCallbackData(x.Name, $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Lover2}|{x.Id}") }).ToList();
                         player.Choice = 0;
-                        Program.MessagesSent++;
+                        //Program.MessagesSent++;
                         ReplyToCallback(query,
                             GetLocaleString("ChoiceAccepted") + " - " + target.Name);
 
@@ -1150,7 +1150,7 @@ namespace Werewolf_Node
                         AddAchievement(player, AchievementsReworked.FirstStone);
                     }
                 }
-                Program.MessagesSent++;
+                //Program.MessagesSent++;
                 ReplyToCallback(query,
                         GetLocaleString("ChoiceAccepted") + " - " + target.GetName(true));
                 if (clearCurrent)
@@ -1172,7 +1172,7 @@ namespace Werewolf_Node
 
         private void SendGif(string text, string image, long id = 0)
         {
-            Program.MessagesSent++;
+            //Program.MessagesSent++;
             if (id == 0)
                 id = ChatId;
             //Log.WriteLine($"{id} -> {image} {text}");
@@ -2580,7 +2580,7 @@ namespace Werewolf_Node
                             {
                                 if (p.CurrentQuestion.MessageId != 0)
                                 {
-                                    Program.MessagesSent++;
+                                    //Program.MessagesSent++;
                                     Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("LynchPeaceTimeout"));
                                 }
                             }
@@ -2615,7 +2615,7 @@ namespace Werewolf_Node
                         {
                             if (p.CurrentQuestion.MessageId != 0)
                             {
-                                Program.MessagesSent++;
+                                //Program.MessagesSent++;
                                 Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                             }
                         }
@@ -2841,7 +2841,7 @@ namespace Werewolf_Node
                     {
                         if (p.CurrentQuestion.MessageId != 0 && !new[] { QuestionType.Mayor, QuestionType.Pacifist }.Contains(p.CurrentQuestion.QType))
                         {
-                            Program.MessagesSent++;
+                            //Program.MessagesSent++;
                             Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                         }
                     }
@@ -3046,7 +3046,7 @@ namespace Werewolf_Node
                     {
                         if (p.CurrentQuestion.MessageId != 0)
                         {
-                            Program.MessagesSent++;
+                            //Program.MessagesSent++;
                             Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
                         }
                     }
@@ -5490,7 +5490,7 @@ namespace Werewolf_Node
 
         internal static Task<Telegram.Bot.Types.Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null)
         {
-            Program.MessagesSent++;
+            //Program.MessagesSent++;
             return Program.Bot.EditMessageTextAsync(id, msgId, text, replyMarkup: replyMarkup);
         }
 

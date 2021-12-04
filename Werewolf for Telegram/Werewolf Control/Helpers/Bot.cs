@@ -127,7 +127,16 @@ namespace Werewolf_Control.Helpers
             //Api.OnStatusChanged += ApiOnStatusChanged;
             //Api.UpdatesReceived += ApiOnUpdatesReceived;
             Api.ReceiveAsync(null, cts.Token);
+            Api.OnMakingApiRequest += Api_OnMakingApiRequest;
         }
+
+        private static ValueTask Api_OnMakingApiRequest(ITelegramBotClient botClient, ApiRequestEventArgs args, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (args.MethodName.Contains("Send"))
+                MessagesSent++;
+            return new ValueTask();
+        }
+
         private static readonly Update[] EmptyUpdates = { };
         public static int MessageOffset { get; set; }
         public static bool IsReceiving { get; set; }
@@ -167,6 +176,7 @@ namespace Werewolf_Control.Helpers
 
                 try
                 {
+                    MessagesReceived += updates.Length;
                     foreach (var update in updates)
                     {
                         new Task(() =>
@@ -363,7 +373,6 @@ namespace Werewolf_Control.Helpers
 
         internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Html, bool disableWebPagePreview = false)
         {
-            Bot.MessagesSent++;
             return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, null, disableWebPagePreview, replyMarkup);
         }
 
@@ -462,7 +471,7 @@ namespace Werewolf_Control.Helpers
 
         internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, ParseMode parseMode = ParseMode.Html)
         {
-            MessagesSent++;
+            //MessagesSent++;
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {

@@ -36,7 +36,6 @@ namespace Werewolf_Control.Handler
         internal static bool SendGifIds = false;
         public static void UpdateReceived(ITelegramBotClient bot, Update update)
         {
-            Bot.MessagesReceived++;
             new Task(() => { HandleUpdate(update); }).Start();
         }
 
@@ -220,8 +219,6 @@ namespace Werewolf_Control.Handler
         internal static void HandleUpdate(Update update)
         {
             {
-
-                Bot.MessagesProcessed++;
                 if (update.PreCheckoutQuery != null)
                 {
                     HandlePayment(update.PreCheckoutQuery);
@@ -333,6 +330,7 @@ namespace Werewolf_Control.Handler
                                         if (AddCount(update.Message.From.Id, update.Message)) return;
                                         try
                                         {
+                                            Bot.MessagesProcessed++;
                                             var result = Send(reply, update.Message.From.Id).Result;
                                             //if (update.Message.Chat.Type != ChatType.Private)
                                             //    Send(
@@ -342,6 +340,7 @@ namespace Werewolf_Control.Handler
                                         }
                                         catch
                                         {
+                                            Bot.MessagesProcessed++;
                                             Commands.RequestPM(update.Message.Chat.Id);
                                         }
                                     }
@@ -358,6 +357,7 @@ namespace Werewolf_Control.Handler
                                             StringComparison.InvariantCultureIgnoreCase));
                                 if (command != null)
                                 {
+                                    Bot.MessagesProcessed++;
 #if RELEASE2
                                     Send($"Bot 2 is retiring.  Please switch to @werewolfbot", update.Message.Chat.Id);
                                     if (update.Message.Chat.Type != ChatType.Private)
@@ -440,6 +440,7 @@ namespace Werewolf_Control.Handler
                                      (update.Message?.ReplyToMessage?.Text?.Contains(
                                           "Please enter a whole number, in US Dollars (USD)") ?? false))
                             {
+                                Bot.MessagesProcessed++;
                                 Commands.ValidateDonationAmount(update.Message);
                             }
                             break;
@@ -451,6 +452,7 @@ namespace Werewolf_Control.Handler
                             {
                                 if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
                                 {
+                                    Bot.MessagesProcessed++;
                                     var doc = update.Message.Animation;
                                     Send(doc.FileId, update.Message.Chat.Id);
                                 }
@@ -460,6 +462,7 @@ namespace Werewolf_Control.Handler
                                               "send me the GIF you want to use for this situation, as a reply") ??
                                           false))
                                 {
+                                    Bot.MessagesProcessed++;
                                     Commands.AddGif(update.Message);
                                 }
                             }
@@ -469,6 +472,7 @@ namespace Werewolf_Control.Handler
                             {
                                 if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
                                 {
+                                    Bot.MessagesProcessed++;
                                     Send("This is an old GIF, that is still in .gif format and not in .mp4 format. Please try reuploading it.", update.Message.Chat.Id);
                                 }
                                 else if (update.Message.Chat.Type == ChatType.Private &&
@@ -477,6 +481,7 @@ namespace Werewolf_Control.Handler
                                               "send me the GIF you want to use for this situation, as a reply") ??
                                           false))
                                 {
+                                    Bot.MessagesProcessed++;
                                     Commands.AddGif(update.Message);
                                 }
                             }
@@ -486,6 +491,7 @@ namespace Werewolf_Control.Handler
                         case MessageType.MigratedToSupergroup:
                             using (var DB = new WWContext())
                             {
+                                Bot.MessagesProcessed++;
                                 id = update.Message.Chat.Id;
                                 var m = update.Message;
                                 if (m.MigrateFromChatId != 0)
@@ -594,6 +600,7 @@ namespace Werewolf_Control.Handler
                             }
                             break;
                         case MessageType.SuccessfulPayment:
+                            Bot.MessagesProcessed++;
                             HandleSuccessfulPayment(update.Message);
                             break;
                         default:
@@ -778,7 +785,6 @@ namespace Werewolf_Control.Handler
 
         public static void CallbackReceived(ITelegramBotClient bot, CallbackQuery query)
         {
-            Bot.MessagesReceived++;
             new Task(() => { HandleCallback(query); }).Start();
         }
 
@@ -2315,13 +2321,13 @@ namespace Werewolf_Control.Handler
 
         public static void InlineQueryReceived(ITelegramBotClient botClient, InlineQuery inlineQuery)
         {
-            Bot.MessagesReceived++;
+            
             new Task(() => { HandleInlineQuery(inlineQuery); }).Start();
         }
 
         internal static void HandleInlineQuery(InlineQuery q)
         {
-
+            Bot.MessagesProcessed++;
             var commands = new InlineCommand[]
             {
                 new StatsInlineCommand(q.From),
