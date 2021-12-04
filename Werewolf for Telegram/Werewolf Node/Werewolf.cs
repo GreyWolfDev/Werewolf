@@ -5290,7 +5290,7 @@ namespace Werewolf_Node
                 Thread.Sleep(500);
             }
         }
-        public void FleePlayer(int banid)
+        public void FleePlayer(long banid)
         {
             if (IsInitializing)
             {
