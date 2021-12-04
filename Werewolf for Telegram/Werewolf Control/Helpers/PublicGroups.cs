@@ -77,7 +77,7 @@ namespace Werewolf_Control.Helpers
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine(e);
+                        //Console.WriteLine(e);
                     }
                 }
                 _lastGetAll = DateTime.UtcNow;

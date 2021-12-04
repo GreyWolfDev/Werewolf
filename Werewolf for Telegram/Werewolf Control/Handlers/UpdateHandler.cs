@@ -1113,7 +1113,7 @@ namespace Werewolf_Control.Handler
                                             count++;
                                         Thread.Sleep(200);
                                     }
-                                    Console.WriteLine("Saving");
+                                    //Console.WriteLine("Saving");
                                     db.SaveChanges();
                                     ohaimsg += $"\nAchievement added to {count} players\nFinished";
                                     Bot.Edit(query, ohaimsg);
@@ -1298,7 +1298,7 @@ namespace Werewolf_Control.Handler
                             LanguageHelper.ValidateLanguageFile(query.Message.Chat.Id, vlang.FilePath, query.Message.MessageId);
                             return;
                         case "upload":
-                            Console.WriteLine(choice);
+                            //Console.WriteLine(choice);
                             if (choice == "current")
                             {
                                 Bot.ReplyToCallback(query, "No action taken.");
@@ -2003,7 +2003,7 @@ namespace Werewolf_Control.Handler
 
             if (p != null)
             {
-                Console.WriteLine(p.Name);
+                //Console.WriteLine(p.Name);
                 var ach = p.NewAchievements == null ? new BitArray(200) : new BitArray(p.NewAchievements);
                 if (ach.HasFlag(a)) return false; //no point making another db call if they already have it
                 ach = ach.Set(a);

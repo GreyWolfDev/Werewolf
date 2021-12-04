@@ -55,12 +55,12 @@ namespace Werewolf_Control.Helpers
                     
                     if (t != null)
                     {
-                        Console.WriteLine(t);
+                        //Console.WriteLine(t);
                         switch (t)
                         {
                             case "GetStatusInfo":
                                 //web api is requesting current status
-                                Console.WriteLine("Getting Status");
+                                //Console.WriteLine("Getting Status");
                                 var status = new StatusResponseInfo
                                 {
                                     BotName = Bot.Me.Username,
@@ -146,7 +146,7 @@ namespace Werewolf_Control.Helpers
                 // ignored
                 while (e.InnerException != null)
                     e = e.InnerException;
-                Console.WriteLine(e.Message);
+                //Console.WriteLine(e.Message);
                 using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\tcperror.log"), true))
                     sw.WriteLine(e.Message + "\n" + e.StackTrace + "\n");
             }
