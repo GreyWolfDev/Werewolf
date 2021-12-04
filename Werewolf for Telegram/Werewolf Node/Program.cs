@@ -99,6 +99,7 @@ namespace Werewolf_Node
             APIToken = key.GetValue("BetaAPI").ToString();
 #endif
             Bot = new TelegramBotClient(APIToken);
+            Bot.OnMakingApiRequest += Bot_OnMakingApiRequest;
             Me = Bot.GetMeAsync().Result;
             do
             {
@@ -108,6 +109,15 @@ namespace Werewolf_Node
             new Thread(KeepAlive).Start();
             Console.Title = $"{ClientId} - {Version.FileVersion}";
             Thread.Sleep(-1);
+        }
+
+        private static ValueTask Bot_OnMakingApiRequest(ITelegramBotClient botClient, Telegram.Bot.Args.ApiRequestEventArgs args, CancellationToken cancellationToken = default)
+        {
+            if (args.MethodName.Contains("Send"))
+            {
+                MessagesSent++;
+            }
+            return new ValueTask();
         }
 
         private static void SetTimer()
@@ -370,7 +380,7 @@ namespace Werewolf_Node
 
         internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null, bool notify = false, bool preview = false)
         {
-            MessagesSent++;
+            //MessagesSent++;
             //message = message.FormatHTML();
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
