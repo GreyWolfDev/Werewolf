@@ -26,7 +26,8 @@ namespace Werewolf_Control
             var ts = DateTime.UtcNow - update.Message.Date;
             var send = DateTime.UtcNow;
             var message = GetLocaleString("PingInfo", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}",
-                $"\n{Program.MessagePxPerSecond.ToString("F0")} MAX IN | {Program.MessageTxPerSecond.ToString("F0")} MAX OUT");
+                $"\n{Program.MessageRxPerSecond.ToString("F0")} MAX IN | {Program.MessageTxPerSecond.ToString("F0")} MAX OUT");
+            message += $"\nActually processed per second: {Program.MessagePxPerSecond}";
             message += $"\nIN last min: {Program.MessagesReceived.Sum()}\nOUT last min: {Program.MessagesSent.Sum()}";
             var result = Bot.Send(message, update.Message.Chat.Id).Result;
             ts = DateTime.UtcNow - send;
