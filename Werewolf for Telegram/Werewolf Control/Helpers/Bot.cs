@@ -132,8 +132,11 @@ namespace Werewolf_Control.Helpers
 
         private static ValueTask Api_OnMakingApiRequest(ITelegramBotClient botClient, ApiRequestEventArgs args, CancellationToken cancellationToken = default(CancellationToken))
         {
-            if (args.MethodName.ToLower().StartsWith("send"))
+            var method = args.MethodName.ToLower();
+            if (method.StartsWith("send") || method.StartsWith("edit"))
+            {
                 MessagesSent++;
+            }
             return new ValueTask();
         }
 
