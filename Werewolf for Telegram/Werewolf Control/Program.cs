@@ -141,7 +141,7 @@ namespace Werewolf_Control
                 MessagesReceived.Insert(0, newMessages);
                 if (MessagesReceived.Count > 60)
                     MessagesReceived.RemoveAt(60);
-                MessageRxPerSecond = MessagesProcessed.Max();
+                MessageRxPerSecond = MessagesReceived.Max();
             }
             catch
             {
