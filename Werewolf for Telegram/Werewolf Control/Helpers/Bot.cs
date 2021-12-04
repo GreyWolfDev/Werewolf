@@ -167,6 +167,7 @@ namespace Werewolf_Control.Helpers
 
                 try
                 {
+                    MessagesReceived += updates.Length;
                     foreach (var update in updates)
                     {
                         new Task(() =>
