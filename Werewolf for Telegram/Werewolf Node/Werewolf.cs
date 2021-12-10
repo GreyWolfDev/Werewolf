@@ -1574,6 +1574,7 @@ namespace Werewolf_Node
                 case IRole.Spumpkin:
                 case IRole.Augur:
                 case IRole.GraveDigger:
+                case IRole.ScapeGoat:
                     p.Team = ITeam.Village;
                     break;
                 case IRole.Doppelgänger:
@@ -2784,10 +2785,22 @@ namespace Werewolf_Node
                         var t = choices.FirstOrDefault(x => x.PlayerRole == IRole.Tanner);
                         if (t != null && t.Votes > 0)
                             AddAchievement(t, AchievementsReworked.SoClose);
+                        var scapeGoat = Players.FirstOrDefault(x => x.PlayerRole == IRole.ScapeGoat && !x.IsDead);
+                        if (scapeGoat != null) //lets kill ScapeGoat
+                        {
+                            SendWithQueue(GetLocaleString("ScapeGoatLynched", scapeGoat.GetName()));
+                            KillPlayer(scapeGoat, KillMthd.Lynch, killers: Players.Where(x => x.Choice > 0), isNight: false);
+                        }
                     }
                     else // if (lynched.Votes == -2) // No lynch votes at all
                     {
                         SendWithQueue(GetLocaleString("NoLynchVotes"));
+                        var scapeGoat = Players.FirstOrDefault(x => x.PlayerRole == IRole.ScapeGoat && !x.IsDead);
+                        if (scapeGoat != null) //lets kill ScapeGoat
+                        {
+                            SendWithQueue(GetLocaleString("ScapeGoatLynched", scapeGoat.GetName()));
+                            KillPlayer(scapeGoat, KillMthd.Lynch, killers: null, isNight: false); //nobody voted, so no killers!
+                        }
                     }
 
                     if (CheckForGameEnd(true)) return;
