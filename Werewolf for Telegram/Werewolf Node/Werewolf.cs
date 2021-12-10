@@ -4042,6 +4042,11 @@ namespace Werewolf_Node
                             Send(GetLocaleString("CleanDoused", save.GetName()), ga.Id);
                             save.Doused = false;
                             cleanedDoused = true;
+                            ga.GACleanedDousedCount++;
+                            if (ga.GACleanedDousedCount >= 3)
+                            {
+                                AddAchievement(ga, AchievementsReworked.TheFirefighter);
+                            }
                         }
                         if (!save.WasSavedLastNight && !save.DiedLastNight && !cleanedDoused) //only send if save wasn't attacked
                             Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);

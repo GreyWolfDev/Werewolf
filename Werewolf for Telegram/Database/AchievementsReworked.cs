@@ -200,6 +200,8 @@ namespace Database
         GoodChoiceForYou = 92,
         [Display(Name = "Increase the Pack!"), Description("After the wolf cub died, infect 2 players as the alpha wolf!")]
         IncreaseThePack = 93,
+        [Display(Name = "The Firefighter!"), Description("As the Guardian Angel, clean at least two homes from the Arsonist's kerosene.")]
+        TheFirefighter = 94,
     } // MAX VALUE: 9223372036854775807
       // Good luck reaching this XD
 
