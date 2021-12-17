@@ -618,26 +618,26 @@ namespace Werewolf_Control
                     var id = u.Message.From.Id;
                     Send($"Sending gifs for {pid}", id);
                     Thread.Sleep(1000);
-                    Bot.Api.SendDocumentAsync(id, pack.CultWins, "Cult Wins");
-                    Bot.Api.SendDocumentAsync(id, pack.LoversWin, "Lovers Win");
+                    Bot.Api.SendDocumentAsync(id, pack.CultWins, caption: "Cult Wins");
+                    Bot.Api.SendDocumentAsync(id, pack.LoversWin, caption: "Lovers Win");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, pack.NoWinner, "No Winner");
-                    Bot.Api.SendDocumentAsync(id, pack.SerialKillerWins, "SK Wins");
+                    Bot.Api.SendDocumentAsync(id, pack.NoWinner, caption: "No Winner");
+                    Bot.Api.SendDocumentAsync(id, pack.SerialKillerWins, caption: "SK Wins");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, pack.StartChaosGame, "Chaos Start");
-                    Bot.Api.SendDocumentAsync(id, pack.StartGame, "Normal Start");
+                    Bot.Api.SendDocumentAsync(id, pack.StartChaosGame, caption: "Chaos Start");
+                    Bot.Api.SendDocumentAsync(id, pack.StartGame, caption: "Normal Start");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, pack.TannerWin, "Tanner Win");
-                    Bot.Api.SendDocumentAsync(id, pack.VillagerDieImage, "Villager Eaten");
+                    Bot.Api.SendDocumentAsync(id, pack.TannerWin, caption: "Tanner Win");
+                    Bot.Api.SendDocumentAsync(id, pack.VillagerDieImage, caption: "Villager Eaten");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, pack.VillagersWin, "Village Wins");
-                    Bot.Api.SendDocumentAsync(id, pack.WolfWin, "Single Wolf Wins");
+                    Bot.Api.SendDocumentAsync(id, pack.VillagersWin, caption: "Village Wins");
+                    Bot.Api.SendDocumentAsync(id, pack.WolfWin, caption: "Single Wolf Wins");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, pack.WolvesWin, "Wolf Pack Wins");
-                    Bot.Api.SendDocumentAsync(id, pack.SKKilled, "SK Killed");
+                    Bot.Api.SendDocumentAsync(id, pack.WolvesWin, caption: "Wolf Pack Wins");
+                    Bot.Api.SendDocumentAsync(id, pack.SKKilled, caption: "SK Killed");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, pack.ArsonistWins, "Arsonist Wins");
-                    Bot.Api.SendDocumentAsync(id, pack.BurnToDeath, "Arsonist Burnt");
+                    Bot.Api.SendDocumentAsync(id, pack.ArsonistWins, caption: "Arsonist Wins");
+                    Bot.Api.SendDocumentAsync(id, pack.BurnToDeath, caption: "Arsonist Burnt");
                     Thread.Sleep(500);
                     var msg = $"Approval Status: ";
                     switch (pack.Approved)
@@ -762,7 +762,7 @@ namespace Werewolf_Control
 
                     var pack = JsonConvert.DeserializeObject<CustomGifData>(json);
                     // save gifs for external access
-                    new Thread(() => Task.WhenAll(DownloadGifFromJson(pack, u))).Start();
+                    new Task(() => Task.WhenAll(DownloadGifFromJson(pack, u))).Start();
                     // end
                     var id = u.Message.From.Id;
                     pack.Approved = true;
@@ -882,7 +882,7 @@ namespace Werewolf_Control
             {
                 using (var db = new WWContext())
                 {
-                    foreach (int userid in UserIds)
+                    foreach (long userid in UserIds)
                     {
                         var p = db.Players.FirstOrDefault(x => x.TelegramId == userid);
                         if (p != null && p.CustomGifSet != null)
@@ -919,7 +919,7 @@ namespace Werewolf_Control
                 if (System.IO.File.Exists(path))
                 {
                     System.IO.File.Delete(path);
-                    DownloadTasks.Add(DownloadGif(fileId, u.Message.Chat, false));
+                    DownloadTasks.Add(DownloadGif(fileId, u.Message.Chat, true));
                 }
             }
 
