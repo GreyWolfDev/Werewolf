@@ -714,7 +714,7 @@ namespace Werewolf_Control
                 var path = Path.Combine(Settings.GifStoragePath, $"{fileid}.mp4");
                 if (!System.IO.File.Exists(path))
                     using (var x = System.IO.File.OpenWrite(path))
-                        await Bot.Api.DownloadFileAsync(fileid, x);
+                        await Bot.Api.DownloadFileAsync((await Bot.Api.GetFileAsync(fileid)).FilePath, x);
 
                 return true;
             }
