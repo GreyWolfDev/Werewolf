@@ -47,10 +47,10 @@ namespace DonationSite.Controllers.Webhook
                     {
                         case "user_validation":
                             var userId = obj?.user.id;
-                            var id = 0;
+                            long id = 0;
                             try
                             {
-                                id = int.Parse(userId);
+                                id = long.Parse(userId);
                             }
                             catch
                             {
@@ -66,7 +66,7 @@ namespace DonationSite.Controllers.Webhook
                             }
                             return Request.CreateResponse(HttpStatusCode.OK);
                         case "payment":
-                            var userid = int.Parse(obj?.user.id);
+                            var userid = long.Parse(obj?.user.id);
                             var amount = (int)obj?.purchase?.virtual_currency?.amount;
                             var p = db.Players.FirstOrDefault(x => x.TelegramId == userid);
                             if (p != null)
@@ -116,7 +116,7 @@ namespace DonationSite.Controllers.Webhook
                             }
                             return Request.CreateResponse(HttpStatusCode.OK);
                         case "refund":
-                            userid = int.Parse(obj?.user.id);
+                            userid = long.Parse(obj?.user.id);
                             var reason = obj?.refund_details?.reason;
                             amount = (int)obj?.purchase?.total?.amount;
                             await bot.SendTextMessageAsync(userid, $"Your donation did not pass through Xsolla because of: {reason}. If you have any questions please go to @werewolfsupport.");
