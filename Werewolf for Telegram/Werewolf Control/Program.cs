@@ -99,6 +99,10 @@ namespace Werewolf_Control
                 var count = db.GlobalBans.Count();
             }
 
+#if BETA
+            BetaUnlocked = File.Exists(Path.Combine(Bot.RootDirectory, ".betaunlocked"));
+#endif
+
             //start up the bot
             new Thread(() => Bot.Initialize(updateid)).Start();
             new Thread(NodeMonitor).Start();
