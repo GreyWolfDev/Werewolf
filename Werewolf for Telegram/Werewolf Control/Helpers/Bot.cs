@@ -152,7 +152,7 @@ namespace Werewolf_Control.Helpers
         private static CancellationTokenSource _receivingCancellationTokenSource;
 #pragma warning disable AsyncFixer03 // Avoid fire & forget async void methods
         private static async void ReceiveAsync(this ITelegramBotClient client,
-            UpdateType[] allowedUpdates,
+            ReceiverOptions options,
             CancellationToken cancellationToken)
         {
             IsReceiving = true;
@@ -166,7 +166,8 @@ namespace Werewolf_Control.Helpers
                     updates = await client.GetUpdatesAsync(
                         MessageOffset,
                         timeout: timeout,
-                        allowedUpdates: allowedUpdates,
+                        limit: options.Limit,
+                        allowedUpdates: options.AllowedUpdates,
                         cancellationToken: cancellationToken
                     ).ConfigureAwait(false);
                 }
