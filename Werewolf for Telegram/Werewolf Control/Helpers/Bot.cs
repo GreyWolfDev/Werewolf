@@ -227,23 +227,24 @@ namespace Werewolf_Control.Helpers
         /// <param name="e">The <see cref="UpdateEventArgs"/> instance containing the event data.</param>
         static void OnUpdateReceived(UpdateEventArgs e)
         {
+            if (e.Update.Message?.ViaBot != null) return;
+            if (e.Update.Message?.Document != null) return;
+            if (e.Update.Message?.Audio != null) return;
+            if (e.Update.Message?.Caption != null) return;
+            if (e.Update.Message?.ForwardFrom != null) return;
+            if (e.Update.Message?.Location != null) return;
+            if (e.Update.Message?.Game != null) return;
+            if (e.Update.Message?.Photo != null) return;
+            if (e.Update.Message?.Sticker != null) return;
+            if (e.Update.Message?.Video != null) return;
+            if (e.Update.Message?.Voice != null) return;
             Program.log.Info(JsonConvert.SerializeObject(e.Update));
             //OnUpdate?.Invoke("receiver", e);
             
             switch (e.Update.Type)
             {
                 case UpdateType.Message:
-                    if (e.Update.Message?.ViaBot != null) break;
-                    if (e.Update.Message?.Document != null) break;
-                    if (e.Update.Message?.Audio != null) break;
-                    if (e.Update.Message?.Caption != null) break;
-                    if (e.Update.Message?.ForwardFrom != null) break;
-                    if (e.Update.Message?.Location != null) break;
-                    if (e.Update.Message?.Game != null) break;
-                    if (e.Update.Message?.Photo != null) break;
-                    if (e.Update.Message?.Sticker != null) break;
-                    if (e.Update.Message?.Video != null) break;
-                    if (e.Update.Message?.Voice != null) break;
+                    
                     //OnMessage?.Invoke("receiver", e);
                     UpdateHandler.UpdateReceived(Api, e.Update);
                     break;
