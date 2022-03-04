@@ -133,6 +133,10 @@ namespace Werewolf_Control.Helpers
         private static ValueTask Api_OnMakingApiRequest(ITelegramBotClient botClient, ApiRequestEventArgs args, CancellationToken cancellationToken = default(CancellationToken))
         {
             var method = args.MethodName.ToLower();
+            if (method.StartsWith("getUpdate"))
+            {
+                Program.Log("Getting updates");
+            }
             if (method.StartsWith("send") || method.StartsWith("edit"))
             {
                 MessagesSent++;
@@ -165,20 +169,24 @@ namespace Werewolf_Control.Helpers
                         cancellationToken: cancellationToken
                     ).ConfigureAwait(false);
                 }
-                catch (OperationCanceledException)
+                catch (OperationCanceledException opException)
                 {
+                    Program.log.Error("Error getting updates", opException);
                 }
                 catch (ApiRequestException apiException)
                 {
+                    Program.log.Error("Error getting updates", apiException);
                     OnReceiveError?.Invoke("receiver", apiException);
                 }
                 catch (Exception generalException)
                 {
+                    Program.log.Error("Error getting updates", generalException);
                     OnReceiveGeneralError?.Invoke("receiver", generalException);
                 }
 
                 try
                 {
+                    Program.log.Info($"Received {updates.Length} updates, processing");
                     MessagesReceived += updates.Length;
                     foreach (var update in updates)
                     {
@@ -189,8 +197,9 @@ namespace Werewolf_Control.Helpers
                         MessageOffset = update.Id + 1;
                     }
                 }
-                catch
+                catch (Exception e)
                 {
+                    Program.log.Error("Error getting updates", e);
                     IsReceiving = false;
                     throw;
                 }
