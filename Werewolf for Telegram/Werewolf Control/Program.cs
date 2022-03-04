@@ -304,8 +304,8 @@ namespace Werewolf_Control
                     var TotalGames = Nodes.Sum(x => x.TotalGames);
                     //var NumThreads = Process.GetCurrentProcess().Threads.Count;
                     var Uptime = DateTime.UtcNow - Bot.StartTime;
-                    var MessagesRx = Bot.MessagesProcessed;
-                    var CommandsRx = Bot.CommandsReceived;
+                    var MessagesRx = Bot.MessagesReceived;
+                    var CommandsRx = Bot.MessagesProcessed;
                     var MessagesTx = Nodes.Sum(x => x.MessagesSent) + Bot.MessagesSent;
 
                     if (CurrentGames > MaxGames)
