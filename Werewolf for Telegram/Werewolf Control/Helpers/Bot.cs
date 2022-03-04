@@ -165,6 +165,7 @@ namespace Werewolf_Control.Helpers
                 try
                 {
                     //let's see if Telegram is responding slowly....
+                    Program.log.Info("Starting a getUpdates request");
                     sw.Start();
                     updates = await client.GetUpdatesAsync(
                         MessageOffset,
@@ -202,7 +203,8 @@ namespace Werewolf_Control.Helpers
                             OnUpdateReceived(new UpdateEventArgs(update));
                         }
                     }).Start();
-                    MessageOffset = updates[updates.Length - 1].Id + 1;
+                    if (updates.Length > 0)
+                        MessageOffset = updates[updates.Length - 1].Id + 1;
                 }
                 catch (Exception e)
                 {
