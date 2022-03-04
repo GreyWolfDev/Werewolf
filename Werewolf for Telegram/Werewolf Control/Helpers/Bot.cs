@@ -238,7 +238,7 @@ namespace Werewolf_Control.Helpers
             if (e.Update.Message?.Sticker != null) return;
             if (e.Update.Message?.Video != null) return;
             if (e.Update.Message?.Voice != null) return;
-            Program.log.Info(JsonConvert.SerializeObject(e.Update));
+            //Program.log.Info(JsonConvert.SerializeObject(e.Update));
             //OnUpdate?.Invoke("receiver", e);
             
             switch (e.Update.Type)
