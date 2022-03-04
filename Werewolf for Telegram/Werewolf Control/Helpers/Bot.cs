@@ -155,14 +155,17 @@ namespace Werewolf_Control.Helpers
             ReceiverOptions options,
             CancellationToken cancellationToken)
         {
+            var sw = new Stopwatch();
             IsReceiving = true;
             while (!cancellationToken.IsCancellationRequested)
             {
                 var timeout = 30;
                 var updates = EmptyUpdates;
-
+                sw.Reset();
                 try
                 {
+                    //let's see if Telegram is responding slowly....
+                    sw.Start();
                     updates = await client.GetUpdatesAsync(
                         MessageOffset,
                         timeout: timeout,
@@ -170,6 +173,8 @@ namespace Werewolf_Control.Helpers
                         allowedUpdates: options.AllowedUpdates,
                         cancellationToken: cancellationToken
                     ).ConfigureAwait(false);
+                    sw.Stop();
+                    Program.log.Info($"Time to receive updates: {sw.ElapsedMilliseconds}ms");
                 }
                 catch (OperationCanceledException opException)
                 {
