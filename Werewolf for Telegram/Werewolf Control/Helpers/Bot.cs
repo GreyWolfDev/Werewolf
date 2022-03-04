@@ -106,7 +106,7 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-            ReceiverOptions receiverOptions = new ReceiverOptions() { AllowedUpdates = {}, Limit = 40, ThrowPendingUpdates = true };
+            ReceiverOptions receiverOptions = new ReceiverOptions() { AllowedUpdates = new[] { UpdateType.Message, UpdateType.MyChatMember, UpdateType.InlineQuery, UpdateType.ChosenInlineResult, UpdateType.CallbackQuery }, Limit = 40, ThrowPendingUpdates = true };
             var cts = new CancellationTokenSource();
 
 
@@ -127,7 +127,7 @@ namespace Werewolf_Control.Helpers
             //Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
             //Api.OnStatusChanged += ApiOnStatusChanged;
             //Api.UpdatesReceived += ApiOnUpdatesReceived;
-            Api.ReceiveAsync(null, cts.Token);
+            Api.ReceiveAsync(receiverOptions, cts.Token);
             Api.OnMakingApiRequest += Api_OnMakingApiRequest;
         }
 
@@ -197,8 +197,7 @@ namespace Werewolf_Control.Helpers
                             OnUpdateReceived(new UpdateEventArgs(update));
                         }
                     }).Start();
-                    if (updates.Length != 0)
-                        MessageOffset = updates[updates.Length - 1].Id + 1;
+                    MessageOffset = updates[updates.Length - 1].Id + 1;
                 }
                 catch (Exception e)
                 {
