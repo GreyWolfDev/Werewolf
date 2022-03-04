@@ -106,7 +106,7 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-            ReceiverOptions receiverOptions = new ReceiverOptions() { AllowedUpdates = new[]{ UpdateType.Message, UpdateType.MyChatMember, UpdateType.InlineQuery, UpdateType.ChosenInlineResult, UpdateType.CallbackQuery } };
+            ReceiverOptions receiverOptions = new ReceiverOptions() { AllowedUpdates = new[] { UpdateType.Message, UpdateType.MyChatMember, UpdateType.InlineQuery, UpdateType.ChosenInlineResult, UpdateType.CallbackQuery } };
             var cts = new CancellationTokenSource();
 
 
@@ -189,14 +189,14 @@ namespace Werewolf_Control.Helpers
                 {
                     Program.log.Info($"Received {updates.Length} updates, processing");
                     MessagesReceived += updates.Length;
-                    foreach (var update in updates)
+                    new Task(() =>
                     {
-                        new Task(() =>
+                        foreach (var update in updates)
                         {
                             OnUpdateReceived(new UpdateEventArgs(update));
-                        }).Start();
-                        MessageOffset = update.Id + 1;
-                    }
+                        }
+                    }).Start();
+                    MessageOffset = updates[updates.Length - 1].Id + 1;
                 }
                 catch (Exception e)
                 {
@@ -240,13 +240,13 @@ namespace Werewolf_Control.Helpers
             if (e.Update.Message?.Sticker != null) return;
             if (e.Update.Message?.Video != null) return;
             if (e.Update.Message?.Voice != null) return;
-            Program.log.Info(JsonConvert.SerializeObject(e.Update));
+            //Program.log.Info(JsonConvert.SerializeObject(e.Update));
             //OnUpdate?.Invoke("receiver", e);
-            
+
             switch (e.Update.Type)
             {
                 case UpdateType.Message:
-                    
+
                     //OnMessage?.Invoke("receiver", e);
                     UpdateHandler.UpdateReceived(Api, e.Update);
                     break;
