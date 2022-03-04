@@ -1618,6 +1618,7 @@ namespace Werewolf_Control
             if (!Program.BetaUnlocked)
             {
                 Program.BetaUnlocked = true;
+                File.Create(Path.Combine(Bot.RootDirectory, ".betaunlocked"));
                 foreach (var id in new[] { u.Message.Chat.Id, -1001094155678 }.Distinct())
                     Bot.Send($"<b>Beta has been unlocked for all groups by {u.Message.From.FirstName.FormatHTML()}!</b>", id);
 
@@ -1635,6 +1636,7 @@ namespace Werewolf_Control
 #if BETA
             if (Program.BetaUnlocked)
             {
+                File.Delete(Path.Combine(Bot.RootDirectory, ".betaunlocked"));
                 Program.BetaUnlocked = false;
                 foreach (var id in new[] { u.Message.Chat.Id, -1001094155678 }.Distinct())
                     Bot.Send($"<b>Beta has been locked for non-betagroups by {u.Message.From.FirstName.FormatHTML()}!</b>", id);
