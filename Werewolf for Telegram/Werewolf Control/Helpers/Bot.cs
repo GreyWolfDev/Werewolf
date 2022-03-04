@@ -106,7 +106,7 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-            ReceiverOptions receiverOptions = new ReceiverOptions() { AllowedUpdates = { } };
+            ReceiverOptions receiverOptions = new ReceiverOptions() { AllowedUpdates = new[]{ UpdateType.Message, UpdateType.MyChatMember, UpdateType.InlineQuery, UpdateType.ChosenInlineResult, UpdateType.CallbackQuery } };
             var cts = new CancellationTokenSource();
 
 
