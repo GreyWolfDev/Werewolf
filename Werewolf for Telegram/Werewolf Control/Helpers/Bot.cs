@@ -227,6 +227,8 @@ namespace Werewolf_Control.Helpers
         /// <param name="e">The <see cref="UpdateEventArgs"/> instance containing the event data.</param>
         static void OnUpdateReceived(UpdateEventArgs e)
         {
+            if (e.Update.EditedMessage != null) return;
+            if (e.Update.Message?.ReplyToMessage != null) return;
             if (e.Update.Message?.ViaBot != null) return;
             if (e.Update.Message?.Document != null) return;
             if (e.Update.Message?.Audio != null) return;
@@ -238,7 +240,7 @@ namespace Werewolf_Control.Helpers
             if (e.Update.Message?.Sticker != null) return;
             if (e.Update.Message?.Video != null) return;
             if (e.Update.Message?.Voice != null) return;
-            //Program.log.Info(JsonConvert.SerializeObject(e.Update));
+            Program.log.Info(JsonConvert.SerializeObject(e.Update));
             //OnUpdate?.Invoke("receiver", e);
             
             switch (e.Update.Type)
