@@ -413,11 +413,11 @@
   <Import Project="..\Languages\Languages.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
+    <PreBuildEvent>"$(DevEnvDir)devenv" "$(SolutionDir)WerewolfForTelegram.sln" /Build $(configuration) /project "$(SolutionDir)Updater\Updater.csproj"</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(SolutionDir)Languages\*.xml" "$(ProjectDir)bin\Languages\" /i /y</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(SolutionDir)Languages\*.xml" "$(ProjectDir)bin\Languages\" /i /y
+xcopy "$(SolutionDir)Updater\bin\$(configuration)\Update.exe" "$(ProjectDir)Resources\" /i /y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
