@@ -12,7 +12,7 @@ namespace DonationSite.Models
         public bool? Approved { get; set; } = null;
         public string DenyReason { get; set; }
         public bool NSFW { get; set; }
-        public int ApprovedBy { get; set; }
+        public long ApprovedBy { get; set; }
         public string VillagerDieImage { get; set; }
         public string WolfWin { get; set; }
         public string WolvesWin { get; set; }
