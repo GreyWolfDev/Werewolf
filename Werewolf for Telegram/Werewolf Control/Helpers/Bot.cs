@@ -106,7 +106,7 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-            ReceiverOptions receiverOptions = new ReceiverOptions() { AllowedUpdates = new[] { UpdateType.Message, UpdateType.MyChatMember, UpdateType.InlineQuery, UpdateType.ChosenInlineResult, UpdateType.CallbackQuery }, Limit = 40, ThrowPendingUpdates = true };
+            ReceiverOptions receiverOptions = new ReceiverOptions() { AllowedUpdates = new[] { UpdateType.Message, UpdateType.MyChatMember, UpdateType.InlineQuery, UpdateType.ChosenInlineResult, UpdateType.CallbackQuery }, Limit = 100, ThrowPendingUpdates = true };
             var cts = new CancellationTokenSource();
 
 
@@ -127,7 +127,7 @@ namespace Werewolf_Control.Helpers
             //Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
             //Api.OnStatusChanged += ApiOnStatusChanged;
             //Api.UpdatesReceived += ApiOnUpdatesReceived;
-            Api.ReceiveAsync(null, cts.Token);
+            Api.ReceiveAsync(receiverOptions, cts.Token);
             Api.OnMakingApiRequest += Api_OnMakingApiRequest;
         }
 
@@ -152,23 +152,30 @@ namespace Werewolf_Control.Helpers
         private static CancellationTokenSource _receivingCancellationTokenSource;
 #pragma warning disable AsyncFixer03 // Avoid fire & forget async void methods
         private static async void ReceiveAsync(this ITelegramBotClient client,
-            UpdateType[] allowedUpdates,
+            ReceiverOptions options,
             CancellationToken cancellationToken)
         {
+            var sw = new Stopwatch();
             IsReceiving = true;
             while (!cancellationToken.IsCancellationRequested)
             {
                 var timeout = 30;
                 var updates = EmptyUpdates;
-
+                sw.Reset();
                 try
                 {
+                    //let's see if Telegram is responding slowly....
+                    Program.log.Info("Starting a getUpdates request");
+                    sw.Start();
                     updates = await client.GetUpdatesAsync(
                         MessageOffset,
                         timeout: timeout,
-                        allowedUpdates: allowedUpdates,
+                        limit: options.Limit,
+                        allowedUpdates: options.AllowedUpdates,
                         cancellationToken: cancellationToken
                     ).ConfigureAwait(false);
+                    sw.Stop();
+                    Program.log.Info($"Time to receive updates: {sw.ElapsedMilliseconds}ms");
                 }
                 catch (OperationCanceledException opException)
                 {
@@ -196,7 +203,8 @@ namespace Werewolf_Control.Helpers
                             OnUpdateReceived(new UpdateEventArgs(update));
                         }
                     }).Start();
-                    MessageOffset = updates[updates.Length - 1].Id + 1;
+                    if (updates.Length > 0)
+                        MessageOffset = updates[updates.Length - 1].Id + 1;
                 }
                 catch (Exception e)
                 {

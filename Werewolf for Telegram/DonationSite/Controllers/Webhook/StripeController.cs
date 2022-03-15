@@ -38,7 +38,7 @@ namespace DonationSite.Controllers.Webhook
                     if (stripeEvent.Type == Events.InvoicePaymentSucceeded)
                     {
                         var paymentIntent = stripeEvent.Data.Object as Invoice;
-                        var userid = int.Parse(paymentIntent.Number.Substring(0, paymentIntent.Number.IndexOf("-")));
+                        var userid = long.Parse(paymentIntent.Number.Substring(0, paymentIntent.Number.IndexOf("-")));
                         var amount = Convert.ToInt32(paymentIntent.Total / 100);
                         var p = db.Players.FirstOrDefault(x => x.TelegramId == userid);
                         if (p != null)

@@ -16,7 +16,7 @@ namespace DonationSite.Controllers
         public async Task<ActionResult> Index(string uid = null, string token = null)
         {
             ViewBag.Title = "Xsolla Donation";
-            if (uid != null && int.TryParse(uid, out int userId) && token != null)
+            if (uid != null && long.TryParse(uid, out long userId) && token != null)
             {
                 using (var db = new WWContext())
                 {
