@@ -321,7 +321,7 @@ namespace Werewolf_Control.Handler
                                 var args = GetParameters(update.Message.Text);
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
                                 //command is args[0]
-                                if (args[0].StartsWith("about"))
+                                if (args[0].StartsWith("about") && (update.Message?.From?.Id ?? 0) != 1087968824) // Anonymous admin, through @GroupAnonymousBot)
                                 {
                                     var reply = Commands.GetAbout(update, args);
                                     if (!String.IsNullOrEmpty(reply))
