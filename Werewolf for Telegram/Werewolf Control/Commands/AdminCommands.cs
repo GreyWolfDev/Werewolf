@@ -58,7 +58,7 @@ namespace Werewolf_Control
                 }
             }
 
-            if (int.TryParse(args[1], out int did))
+            if (long.TryParse(args[1], out long did))
                 Bot.GetGroupNodeAndGame(u.Message.Chat.Id)?.SmitePlayer(did);
 
         }
