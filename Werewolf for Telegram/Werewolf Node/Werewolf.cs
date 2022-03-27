@@ -3177,7 +3177,7 @@ namespace Werewolf_Node
 
             #region Arsonist Night
             var arsonist = Players.FirstOrDefault(x => !x.IsDead && x.PlayerRole == IRole.Arsonist);
-            if (arsonist != null)
+            if (arsonist != null && !arsonist.Frozen)
             {
                 if (arsonist.Choice == -2) //Spark
                 {
