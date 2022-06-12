@@ -41,6 +41,8 @@ namespace Shared
             var balanced = false;
             var attempts = 0;
             var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.Lycan, IRole.Thief, IRole.SnowWolf, IRole.Arsonist };
+            var revealedVgRoles = new[] { IRole.Blacksmith, IRole.Mayor, IRole.Pacifist, IRole.Gunner, IRole.Sandman, IRole.Troublemaker };
+            
 
             do
             {
@@ -112,6 +114,18 @@ namespace Shared
                     //check balance
                     var varianceAllowed = (playerCount / 4) + 1;
                     balanced = balanced && (Math.Abs(villageStrength - enemyStrength) <= varianceAllowed);
+
+
+                    // unbalanced if there's more than one revealed village role per 3 players
+                    var revealedVgRoleCount = rolesToAssign.Count(x => revealedVgRoles.Contains(x));
+                    if (revealedVgRoleCount * 3 > rolesToAssign.Count)
+                        balanced = false;
+
+                    // unbalanced if there's more than one role that can cause 2 lynches in between a baddie act per 4 players
+                    var onlyWolfBaddies = !rolesToAssign.Any(x => new[] { IRole.Arsonist, IRole.SerialKiller, IRole.Cultist }.Contains(x));
+                    var killStoppingRoleCount = rolesToAssign.Count(x => x == IRole.Troublemaker || x == IRole.Sandman || (onlyWolfBaddies && x == IRole.Blacksmith));
+                    if (killStoppingRoleCount * 4 > rolesToAssign.Count)
+                        balanced = false;
                 }
             } while (!balanced);
 
@@ -289,7 +303,7 @@ namespace Shared
                 case IRole.SnowWolf:
                     return 15;
                 case IRole.GraveDigger:
-                    return 8;
+                    return 5;
                 case IRole.Arsonist:
                     return 8;
                 case IRole.Spumpkin:
