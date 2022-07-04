@@ -15,7 +15,7 @@ using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
-using Telegram.Bot.Extensions.Polling;
+using Telegram.Bot.Polling;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Models;
 using Telegram.Bot.Exceptions;
@@ -133,7 +133,7 @@ namespace Werewolf_Control.Helpers
 
         private static ValueTask Api_OnMakingApiRequest(ITelegramBotClient botClient, ApiRequestEventArgs args, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var method = args.MethodName.ToLower();
+            var method = args.Request.MethodName.ToLower();
             if (method.StartsWith("getUpdate"))
             {
                 Program.Log("Getting updates");

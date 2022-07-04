@@ -114,7 +114,7 @@ namespace Werewolf_Node
 
         private static ValueTask Bot_OnMakingApiRequest(ITelegramBotClient botClient, Telegram.Bot.Args.ApiRequestEventArgs args, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var method = args.MethodName.ToLower();
+            var method = args.Request.MethodName.ToLower();
             if (method.StartsWith("send") || method.StartsWith("edit"))
             {
                 MessagesSent++;
