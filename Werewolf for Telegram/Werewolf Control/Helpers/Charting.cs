@@ -12,6 +12,7 @@ using Telegram.Bot;
 using Telegram.Bot.Types;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Models;
+using Color = System.Drawing.Color;
 
 namespace Werewolf_Control.Helpers
 {

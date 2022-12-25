@@ -213,7 +213,7 @@ namespace Werewolf_Node
                                 }
                                 catch (Exception e)
                                 {
-                                    Bot.SendTextMessageAsync(ErrorGroup, $"Error Occured during Node <code>{ClientId}</code> processing <code>GameStartInfo</code>:\n\n{e.ToString()}\n\nData:\n{gsi.ToString()}", ParseMode.Html);
+                                    Bot.SendTextMessageAsync(chatId: ErrorGroup, text: $"Error Occured during Node <code>{ClientId}</code> processing <code>GameStartInfo</code>:\n\n{e.ToString()}\n\nData:\n{gsi.ToString()}", parseMode: ParseMode.Html);
                                 }
                                 break;
                             case "ForceStartInfo":
@@ -388,15 +388,15 @@ namespace Werewolf_Node
             if (clearKeyboard)
             {
                 var menu = new ReplyKeyboardRemove();
-                return await Bot.SendTextMessageAsync(id, message, replyMarkup: menu, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
+                return await Bot.SendTextMessageAsync(chatId: id, text: message, replyMarkup: menu, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
             }
             else if (customMenu != null)
             {
-                return await Bot.SendTextMessageAsync(id, message, replyMarkup: customMenu, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
+                return await Bot.SendTextMessageAsync(chatId: id, text: message, replyMarkup: customMenu, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
             }
             else
             {
-                return await Bot.SendTextMessageAsync(id, message, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
+                return await Bot.SendTextMessageAsync(chatId: id, text: message, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
             }
         }
 

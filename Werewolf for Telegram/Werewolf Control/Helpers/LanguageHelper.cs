@@ -14,7 +14,6 @@ using System.Xml.Linq;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InputFiles;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Models;
 using File = System.IO.File;
@@ -450,7 +449,7 @@ namespace Werewolf_Control.Helpers
 
             //now send the file
             var fs = new FileStream(path, FileMode.Open);
-            Bot.Api.SendDocumentAsync(id, new InputOnlineFile(fs, "languages.zip"));
+            Bot.Api.SendDocumentAsync(id, new InputFile(fs, "languages.zip"));
         }
 
         public static void SendFile(long id, string choice)
@@ -458,14 +457,14 @@ namespace Werewolf_Control.Helpers
             var langOptions = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x));
             var option = langOptions.First(x => x.Name == choice);
             var fs = new FileStream(option.FilePath, FileMode.Open);
-            Bot.Api.SendDocumentAsync(id, new InputOnlineFile(fs, option.FileName + ".xml"));
+            Bot.Api.SendDocumentAsync(id, new InputFile(fs, option.FileName + ".xml"));
         }
 
         public static void SendFileByFilepath(long id, string filepath)
         {
             string filename = Path.GetFileNameWithoutExtension(filepath);
             var fs = new FileStream(filepath, FileMode.Open);
-            Bot.Api.SendDocumentAsync(id, new InputOnlineFile(fs, filename + ".xml"));
+            Bot.Api.SendDocumentAsync(id, new InputFile(fs, filename + ".xml"));
         }
 
         internal static void SendBase(string choice, long id)
@@ -489,7 +488,7 @@ namespace Werewolf_Control.Helpers
                 }
                 //now send the zip file
                 var fs = new FileStream(path, FileMode.Open);
-                Bot.Api.SendDocumentAsync(id, new InputOnlineFile(fs, $"{zipname}.zip"));
+                Bot.Api.SendDocumentAsync(id, new InputFile(fs, $"{zipname}.zip"));
 
             }
             catch (Exception e)

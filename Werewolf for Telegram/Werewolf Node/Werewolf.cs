@@ -14,7 +14,6 @@ using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
 using Shared;
 using Telegram.Bot;
-using Telegram.Bot.Types.InputFiles;
 
 // ReSharper disable PossibleMultipleEnumeration warning
 #pragma warning disable 4014
@@ -232,9 +231,9 @@ namespace Werewolf_Node
                     case GameMode.Chaos:
                         FirstMessage = GetLocaleString("PlayerStartedChaosGame", u.FirstName);
 #if RELEASE
-                        _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new InputOnlineFile(GetRandomImage(StartChaosGame)), caption: FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                        _joinMsgId = Program.Bot.SendDocumentAsync(chatId: ChatId, document: new InputFileId(GetRandomImage(StartChaosGame)), caption: FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #else
-                        _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage(StartChaosGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
+                        _joinMsgId = Program.Bot.SendTextMessageAsync(chatId: chatid, text: $"<a href='{GifPrefix}{GetRandomImage(StartChaosGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
 #endif
                         break;
 
@@ -242,9 +241,9 @@ namespace Werewolf_Node
                     default:
                         FirstMessage = GetLocaleString("PlayerStartedGame", u.FirstName);
 #if RELEASE
-                        _joinMsgId = Program.Bot.SendDocumentAsync(ChatId, new InputOnlineFile(GetRandomImage(StartGame)), caption: FirstMessage, replyMarkup: _joinButton).Result.MessageId;
+                        _joinMsgId = Program.Bot.SendDocumentAsync(chatId: ChatId, document: new InputFileId(GetRandomImage(StartGame)), caption: FirstMessage, replyMarkup: _joinButton).Result.MessageId;
 #else
-                        _joinMsgId = Program.Bot.SendTextMessageAsync(chatid, $"<a href='{GifPrefix}{GetRandomImage(StartGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
+                        _joinMsgId = Program.Bot.SendTextMessageAsync(chatId: chatid, text: $"<a href='{GifPrefix}{GetRandomImage(StartGame)}.mp4'>\u200C</a>{FirstMessage.FormatHTML()}", replyMarkup: _joinButton, parseMode: ParseMode.Html).Result.MessageId;
 #endif
                         break;
                 }
@@ -470,7 +469,7 @@ namespace Werewolf_Node
                             if (i == Settings.GameJoinTime - s)
                             {
                                 var str = s == 60 ? GetLocaleString("MinuteLeftToJoin") : GetLocaleString("SecondsLeftToJoin", s.ToString().ToBold());
-                                r = Program.Bot.SendTextMessageAsync(ChatId, str, parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
+                                r = Program.Bot.SendTextMessageAsync(chatId: ChatId, text: str, parseMode: ParseMode.Html, replyMarkup: _joinButton).Result;
                                 break;
                             }
                         }
@@ -481,8 +480,8 @@ namespace Werewolf_Node
 
                             if (Settings.GameJoinTime > i)
                                 r = Program.Bot.SendTextMessageAsync(
-                                    ChatId,
-                                    GetLocaleString(
+                                    chatId: ChatId,
+                                    text: GetLocaleString(
                                         _secondsToAdd > 0 ? "SecondsAdded" : "SecondsRemoved",
                                         Math.Abs(_secondsToAdd).ToString().ToBold(),
                                         TimeSpan.FromSeconds(Settings.GameJoinTime - i).ToString(@"mm\:ss").ToBold()
@@ -1179,7 +1178,7 @@ namespace Werewolf_Node
 
             if (!String.IsNullOrWhiteSpace(image))
 #if RELEASE
-                Program.Bot.SendDocumentAsync(id, new Telegram.Bot.Types.InputFiles.InputOnlineFile(image), caption: text);
+                Program.Bot.SendDocumentAsync(chatId: id, document: new InputFileId(image), caption: text);
 #else
                 Send($"<a href='{GifPrefix}{image}.mp4'>\u200C</a>{text}", id, preview: true);
 #endif
@@ -1422,7 +1421,7 @@ namespace Werewolf_Node
             LastPlayersOutput = DateTime.Now;
             try
             {
-                Program.Bot.SendTextMessageAsync(ChatId, GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), parseMode: ParseMode.Html, replyToMessageId: _playerListId);
+                Program.Bot.SendTextMessageAsync(chatId: ChatId, text: GetLocaleString(_playerListId != 0 ? "LatestList" : "UnableToGetList"), parseMode: ParseMode.Html, replyToMessageId: _playerListId);
             }
             catch { }
         }
@@ -1434,7 +1433,7 @@ namespace Werewolf_Node
             LastJoinButtonShowed = DateTime.Now;
             try
             {
-                var r = await Program.Bot.SendTextMessageAsync(ChatId, GetLocaleString("JoinByButton"), parseMode: ParseMode.Html, replyMarkup: _joinButton);
+                var r = await Program.Bot.SendTextMessageAsync(chatId: ChatId, text: GetLocaleString("JoinByButton"), parseMode: ParseMode.Html, replyMarkup: _joinButton);
                 _joinButtons.Add(r.MessageId);
             }
             catch

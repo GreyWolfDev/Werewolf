@@ -27,7 +27,6 @@ using Group = Database.Group;
 using RegHelper = Werewolf_Control.Helpers.RegHelper;
 using System.Collections;
 using System.Drawing;
-using Telegram.Bot.Types.InputFiles;
 using Telegram.Bot;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
@@ -54,7 +53,7 @@ namespace Werewolf_Control
                 {
                     try
                     {
-                        var r = Bot.Api.SendDocumentAsync(u.Message.Chat.Id, g, name + " - " + g).Result;
+                        var r = Bot.Api.SendDocumentAsync(chatId: u.Message.Chat.Id, document: new InputFileId(g), caption: name + " - " + g, messageThreadId: u.Message.MessageThreadId).Result;
                     }
                     catch (AggregateException e)
                     {
@@ -550,7 +549,7 @@ namespace Werewolf_Control
 
                 using (var fs = new FileStream("Test.jpg", FileMode.Open))
                 {
-                    Bot.Api.SendPhotoAsync(update.Message.Chat.Id, new InputOnlineFile(fs, "Chart.jpg")).Wait();
+                    Bot.Api.SendPhotoAsync(update.Message.Chat.Id, new InputFile(fs, "Chart.jpg")).Wait();
                 }
             }
         }
@@ -1432,7 +1431,7 @@ namespace Werewolf_Control
                 if (someFileExists)
                 {
                     var fs = new FileStream(path, FileMode.Open);
-                    Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new InputOnlineFile(fs, "errors.zip"));
+                    Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new InputFile(fs, "errors.zip"));
                 }
             }
             catch (Exception e)
