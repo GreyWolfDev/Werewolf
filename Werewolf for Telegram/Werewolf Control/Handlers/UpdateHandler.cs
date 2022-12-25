@@ -226,6 +226,24 @@ namespace Werewolf_Control.Handler
                 }
                 if (update.Message == null || update.Message.From.Id == 777000 /*Channel Post*/) return;
 
+                // Dirty hack for a dirtier "feature" by Telegram:
+                // EVERY message in a sub-forum counts as reply to the original forum creation message
+                // This doesn't make any sense at all so we just disregard these replies.
+                if (update.Message.ReplyToMessage != null && (update.Message.ReplyToMessage.Type == MessageType.ForumTopicCreated || update.Message.ReplyToMessage.Type == MessageType.ForumTopicReopened))
+                {
+                    update.Message.ReplyToMessage = null;
+                }
+
+                // Another dirty hack because of a weird design choice
+                // Not only messages in topics have a message thread ID, but also reply threads in ordinary supergroups
+                // Which in itself would be fine, but passing such a message thread ID as message_thread_id when making
+                // requests is an error. That's only allowed for forum groups. So let's disregard that thread ID otherwise
+                if (update.Message.MessageThreadId.HasValue && !(update.Message.Chat.IsForum ?? false))
+                {
+                    update.Message.MessageThreadId = null;
+                }
+
+
 #if !DEBUG
                 //ignore previous messages
                 if ((update.Message?.Date ?? DateTime.MinValue) < DateTime.Now.AddSeconds(-10))
