@@ -90,7 +90,7 @@ namespace Werewolf_Control
             try
             {
                 var menu = UpdateHandler.GetConfigMenu(update.Message.Chat.Id, language);
-                Bot.Api.SendTextMessageAsync(update.Message.From.Id, GetLocaleString("WhatToDo", language),
+                Bot.Api.SendTextMessageAsync(chatId: update.Message.From.Id, text: GetLocaleString("WhatToDo", language),
                     replyMarkup: menu);
             }
             catch
@@ -120,11 +120,11 @@ namespace Werewolf_Control
                 if (fileid != null)
                     LanguageHelper.UploadFile(fileid, id,
                         update.Message.ReplyToMessage.Document.FileName,
-                        update.Message.MessageId);
+                        update.Message.MessageId, update.Message.MessageThreadId);
             }
             catch (Exception e)
             {
-                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, e.Message, parseMode: ParseMode.Html);
+                Bot.Api.SendTextMessageAsync(chatId: update.Message.Chat.Id, text: e.Message, parseMode: ParseMode.Html, messageThreadId: update.Message.MessageThreadId);
             }
         }
 
@@ -153,7 +153,7 @@ namespace Werewolf_Control
                     status = "Not banned (in Werewolf)";
                 var firstSeen = p.GamePlayers?.OrderBy(x => x.GameId).FirstOrDefault()?.Game?.TimeStarted;
 
-                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, $"Player: {p.Name.FormatHTML()}\nCurrent Status: {status}\nPlayer first seen: {(firstSeen?.ToString("ddMMMyyyy H:mm:ss zzz").ToUpper() ?? "Hasn't played ever!")}", disableWebPagePreview: true, replyToMessageId: u.Message.MessageId, parseMode: ParseMode.Html);
+                Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: $"Player: {p.Name.FormatHTML()}\nCurrent Status: {status}\nPlayer first seen: {(firstSeen?.ToString("ddMMMyyyy H:mm:ss zzz").ToUpper() ?? "Hasn't played ever!")}", disableWebPagePreview: true, replyToMessageId: u.Message.MessageId, parseMode: ParseMode.Html, messageThreadId: u.Message.MessageThreadId);
             }
 
         }
@@ -198,8 +198,8 @@ namespace Werewolf_Control
             var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
             try
             {
-                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, "Validate which language?",
-                    replyToMessageId: update.Message.MessageId, replyMarkup: menu);
+                Bot.Api.SendTextMessageAsync(chatId: update.Message.Chat.Id, text: "Validate which language?",
+                    replyToMessageId: update.Message.MessageId, replyMarkup: menu, messageThreadId: update.Message.MessageThreadId);
             }
             catch (AggregateException e)
             {
@@ -254,7 +254,7 @@ namespace Werewolf_Control
                     ChatMember user = null;
                     try
                     {
-                        user = Bot.Api.GetChatMemberAsync(update.Message.Chat.Id, id).Result;
+                        user = Bot.Api.GetChatMemberAsync(chatId: update.Message.Chat.Id, userId: id).Result;
                     }
                     catch
                     {
@@ -618,26 +618,26 @@ namespace Werewolf_Control
                     var id = u.Message.From.Id;
                     Send($"Sending gifs for {pid}", id);
                     Thread.Sleep(1000);
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.CultWins), caption: "Cult Wins");
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.LoversWin), caption: "Lovers Win");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.CultWins), caption: "Cult Wins");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.LoversWin), caption: "Lovers Win");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.NoWinner), caption: "No Winner");
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.SerialKillerWins), caption: "SK Wins");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.NoWinner), caption: "No Winner");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.SerialKillerWins), caption: "SK Wins");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.StartChaosGame), caption: "Chaos Start");
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.StartGame), caption: "Normal Start");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.StartChaosGame), caption: "Chaos Start");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.StartGame), caption: "Normal Start");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.TannerWin), caption: "Tanner Win");
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.VillagerDieImage), caption: "Villager Eaten");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.TannerWin), caption: "Tanner Win");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.VillagerDieImage), caption: "Villager Eaten");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.VillagersWin), caption: "Village Wins");
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.WolfWin), caption: "Single Wolf Wins");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.VillagersWin), caption: "Village Wins");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.WolfWin), caption: "Single Wolf Wins");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.WolvesWin), caption: "Wolf Pack Wins");
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.SKKilled), caption: "SK Killed");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.WolvesWin), caption: "Wolf Pack Wins");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.SKKilled), caption: "SK Killed");
                     Thread.Sleep(250);
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.ArsonistWins), caption: "Arsonist Wins");
-                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.BurnToDeath), caption: "Arsonist Burnt");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.ArsonistWins), caption: "Arsonist Wins");
+                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.BurnToDeath), caption: "Arsonist Burnt");
                     Thread.Sleep(500);
                     var msg = $"Approval Status: ";
                     switch (pack.Approved)
@@ -671,7 +671,7 @@ namespace Werewolf_Control
             var r = Bot.Send(msg, u.Message.Chat.Id, parseMode: ParseMode.Markdown).Result;
             ts = DateTime.UtcNow - send;
             msg += $"\n*Time to reply*: {ts:mm\\:ss\\.ff}";
-            Bot.Api.EditMessageTextAsync(u.Message.Chat.Id, r.MessageId, msg, parseMode: ParseMode.Markdown);
+            Bot.Api.EditMessageTextAsync(chatId: u.Message.Chat.Id, messageId: r.MessageId, text: msg, parseMode: ParseMode.Markdown);
         }
 
         private static Task[] DownloadGifFromJson(CustomGifData pack, Update u)
@@ -714,7 +714,7 @@ namespace Werewolf_Control
                 var path = Path.Combine(Settings.GifStoragePath, $"{fileid}.mp4");
                 if (!System.IO.File.Exists(path))
                     using (var x = System.IO.File.OpenWrite(path))
-                        await Bot.Api.DownloadFileAsync((await Bot.Api.GetFileAsync(fileid)).FilePath, x);
+                        await Bot.Api.DownloadFileAsync(filePath: (await Bot.Api.GetFileAsync(fileId: fileid)).FilePath, x);
 
                 return true;
             }

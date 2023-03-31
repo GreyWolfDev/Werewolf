@@ -45,7 +45,7 @@ namespace Werewolf_Control.Helpers
                             start = DateTime.UtcNow.AddHours(-amount);
                             break;
                         default:
-                            Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, "Acceptable intervals are: hour(s), day(s), week(s)");
+                            Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: "Acceptable intervals are: hour(s), day(s), week(s)", messageThreadId: u.Message.MessageThreadId);
                             break;
                     }
                 }

@@ -61,7 +61,7 @@ namespace Werewolf_Control.Helpers
             return _langFiles;
         }
 
-        public static void ValidateFiles(long id, int msgId, string choice = null)
+        public static void ValidateFiles(long id, int msgId, int? messageThreadId, string choice = null)
         {
             var errors = new List<LanguageError>();
 
@@ -109,12 +109,12 @@ namespace Werewolf_Control.Helpers
                 result += "\n";
 
             }
-            Bot.Api.SendTextMessageAsync(id, result, parseMode: ParseMode.Markdown);
+            Bot.Api.SendTextMessageAsync(chatId: id, text: result, parseMode: ParseMode.Markdown);
             var sortedfiles = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).Where(x => x.Base == (choice ?? x.Base)).OrderBy(x => x.LatestUpdate);
             result = $"*Validation complete*\nErrors: {errors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString)}";
             result += $"\nMost recently updated file: {sortedfiles.Last().FileName}.xml ({sortedfiles.Last().LatestUpdate.ToString("MMM dd")})\nLeast recently updated file: {sortedfiles.First().FileName}.xml ({sortedfiles.First().LatestUpdate.ToString("MMM dd")})";
 
-            Bot.Api.EditMessageTextAsync(id, msgId, result, parseMode: ParseMode.Markdown);
+            Bot.Api.EditMessageTextAsync(chatId: id, messageId: msgId, text: result, parseMode: ParseMode.Markdown);
         }
 
         public static void ValidateLanguageFile(long id, string filePath, int msgId)
@@ -173,13 +173,13 @@ namespace Werewolf_Control.Helpers
             //Program.Send(result, id);
             Thread.Sleep(500);
             result += $"*Validation complete*.\nErrors: {errors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString)}";
-            Bot.Api.EditMessageTextAsync(id, msgId, result, parseMode: ParseMode.Markdown);
+            Bot.Api.EditMessageTextAsync(chatId: id, messageId: msgId, text: result, parseMode: ParseMode.Markdown);
 
         }
 
-        internal static void UploadFile(string fileid, long id, string newFileCorrectName, int msgID)
+        internal static void UploadFile(string fileid, long id, string newFileCorrectName, int msgID, int? messageThreadId)
         {
-            var file = Bot.Api.GetFileAsync(fileid).Result;
+            var file = Bot.Api.GetFileAsync(fileId: fileid).Result;
             var path = Directory.CreateDirectory(Bot.TempLanguageDirectory);
             //var fileName = file.FilePath.Substring(file.FilePath.LastIndexOf("/") + 1);
             var uri = $"https://api.telegram.org/file/bot{Bot.TelegramAPIKey}/{file.FilePath}";
@@ -244,7 +244,7 @@ namespace Werewolf_Control.Helpers
             }
 
             //send the validation result
-            Bot.Api.SendTextMessageAsync(id, OutputResult(newFile, newFileErrors, curFile, curFileErrors), parseMode: ParseMode.Markdown);
+            Bot.Api.SendTextMessageAsync(chatId: id, text: OutputResult(newFile, newFileErrors, curFile, curFileErrors), parseMode: ParseMode.Markdown, messageThreadId: messageThreadId);
             Thread.Sleep(500);
 
 
@@ -257,12 +257,12 @@ namespace Werewolf_Control.Helpers
                     InlineKeyboardButton.WithCallbackData($"Old", $"upload|{id}|current")
                 };
                 var menu = new InlineKeyboardMarkup(buttons.ToArray());
-                Bot.Api.SendTextMessageAsync(id, "Which file do you want to keep?", replyToMessageId: msgID,
-                    replyMarkup: menu);
+                Bot.Api.SendTextMessageAsync(chatId: id, "Which file do you want to keep?", replyToMessageId: msgID,
+                    replyMarkup: menu, messageThreadId: messageThreadId);
             }
             else
             {
-                Bot.Api.SendTextMessageAsync(id, "Fatal errors present, cannot upload.", replyToMessageId: msgID);
+                Bot.Api.SendTextMessageAsync(chatId: id, text: "Fatal errors present, cannot upload.", replyToMessageId: msgID, messageThreadId: messageThreadId);
             }
         }
 
@@ -272,7 +272,7 @@ namespace Werewolf_Control.Helpers
         {
             var msg = "Moving file to production..\n";
             msg += "Checking paths for duplicate language file...\n";
-            Bot.Api.EditMessageTextAsync(id, msgId, msg).Wait();
+            Bot.Api.EditMessageTextAsync(chatId: id, messageId: msgId, text: msg).Wait();
             fileName += ".xml";
             var tempPath = Bot.TempLanguageDirectory;
             var langPath = Bot.LanguageDirectory;
@@ -305,7 +305,7 @@ namespace Werewolf_Control.Helpers
                 {
                     msg += $"Found duplicate language (matching base and variant) with filename {Path.GetFileNameWithoutExtension(lang.FilePath)}\n";
                     msg += "Aborting!";
-                    Bot.Api.EditMessageTextAsync(id, msgId, msg);
+                    Bot.Api.EditMessageTextAsync(chatId: id, messageId: msgId, text: msg);
                     return;
                 }
             }
@@ -429,7 +429,7 @@ namespace Werewolf_Control.Helpers
             Bot.Edit(id, msgId, msg, parsemode: ParseMode.Html);
         }
 
-        public static void SendAllFiles(long id)
+        public static void SendAllFiles(long id, int? messageThreadId)
         {
 
             //need to zip up all the files
@@ -449,25 +449,25 @@ namespace Werewolf_Control.Helpers
 
             //now send the file
             var fs = new FileStream(path, FileMode.Open);
-            Bot.Api.SendDocumentAsync(id, new InputFile(fs, "languages.zip"));
+            Bot.Api.SendDocumentAsync(chatId: id, document: new InputFile(fs, "languages.zip"), messageThreadId: messageThreadId);
         }
 
-        public static void SendFile(long id, string choice)
+        public static void SendFile(long id, int? messageThreadId, string choice)
         {
             var langOptions = Directory.GetFiles(Bot.LanguageDirectory, "*.xml").Select(x => new LangFile(x));
             var option = langOptions.First(x => x.Name == choice);
             var fs = new FileStream(option.FilePath, FileMode.Open);
-            Bot.Api.SendDocumentAsync(id, new InputFile(fs, option.FileName + ".xml"));
+            Bot.Api.SendDocumentAsync(chatId: id, document: new InputFile(fs, option.FileName + ".xml"), messageThreadId: messageThreadId);
         }
 
-        public static void SendFileByFilepath(long id, string filepath)
+        public static void SendFileByFilepath(long id, int? messageThreadId, string filepath)
         {
             string filename = Path.GetFileNameWithoutExtension(filepath);
             var fs = new FileStream(filepath, FileMode.Open);
-            Bot.Api.SendDocumentAsync(id, new InputFile(fs, filename + ".xml"));
+            Bot.Api.SendDocumentAsync(chatId: id, document: new InputFile(fs, filename + ".xml"), messageThreadId: messageThreadId);
         }
 
-        internal static void SendBase(string choice, long id)
+        internal static void SendBase(string choice, long id, int? messageThreadId)
         {
             try
             {
@@ -488,12 +488,12 @@ namespace Werewolf_Control.Helpers
                 }
                 //now send the zip file
                 var fs = new FileStream(path, FileMode.Open);
-                Bot.Api.SendDocumentAsync(id, new InputFile(fs, $"{zipname}.zip"));
+                Bot.Api.SendDocumentAsync(chatId: id, document: new InputFile(fs, $"{zipname}.zip"), messageThreadId: messageThreadId);
 
             }
             catch (Exception e)
             {
-                Bot.Api.SendTextMessageAsync(id, e.Message);
+                Bot.Api.SendTextMessageAsync(chatId: id, text: e.Message, messageThreadId: messageThreadId);
             }
         }
 

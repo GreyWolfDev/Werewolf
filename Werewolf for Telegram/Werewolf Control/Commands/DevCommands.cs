@@ -77,7 +77,7 @@ namespace Werewolf_Control
                     {
                         g.CreatedBy = "BAN";
                         db.SaveChanges();
-                        Bot.Api.LeaveChatAsync(groupid);
+                        Bot.Api.LeaveChatAsync(chatId: groupid);
                         Send($"{g.Name} has been banned.", u.Message.Chat.Id);
                     }
                 }
@@ -549,7 +549,7 @@ namespace Werewolf_Control
 
                 using (var fs = new FileStream("Test.jpg", FileMode.Open))
                 {
-                    Bot.Api.SendPhotoAsync(update.Message.Chat.Id, new InputFile(fs, "Chart.jpg")).Wait();
+                    Bot.Api.SendPhotoAsync(chatId: update.Message.Chat.Id, photo: new InputFile(fs, "Chart.jpg"), messageThreadId: update.Message.MessageThreadId).Wait();
                 }
             }
         }
@@ -808,7 +808,7 @@ namespace Werewolf_Control
         {
             var menu = new InlineKeyboardMarkup(new[] { "Bot 1", "Bot 2", "Beta Bot", "Test Bot" }.Select(x => InlineKeyboardButton.WithCallbackData(x, $"status|{u.Message.From.Id}|{x}|null")).ToArray());
 
-            Bot.Api.SendTextMessageAsync(u.Message.From.Id, "Which bot?",
+            Bot.Api.SendTextMessageAsync(chatId: u.Message.From.Id, text: "Which bot?",
                 replyMarkup: menu);
             if (u.Message.Chat.Type != ChatType.Private)
                 Send(GetLocaleString("SentPrivate", GetLanguage(u.Message.From.Id)), u.Message.Chat.Id);
@@ -1269,7 +1269,7 @@ namespace Werewolf_Control
                     Send("Para said I can't play with you guys anymore, you are a bad influence! *runs out the door*", grpid)
                         .ContinueWith((result) =>
                         {
-                            Bot.Api.LeaveChatAsync(grpid);
+                            Bot.Api.LeaveChatAsync(chatId: grpid);
                         });
                 }
                 catch (Exception e)
@@ -1431,7 +1431,7 @@ namespace Werewolf_Control
                 if (someFileExists)
                 {
                     var fs = new FileStream(path, FileMode.Open);
-                    Bot.Api.SendDocumentAsync(u.Message.Chat.Id, new InputFile(fs, "errors.zip"));
+                    Bot.Api.SendDocumentAsync(chatId: u.Message.Chat.Id, document: new InputFile(fs, "errors.zip"), messageThreadId: u.Message.MessageThreadId);
                 }
             }
             catch (Exception e)
@@ -1606,7 +1606,7 @@ namespace Werewolf_Control
                     result += "Player is clean, no werewolf bans on record.\n";
                 }
 
-                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, result, parseMode: ParseMode.Html);
+                Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, result, parseMode: ParseMode.Html, messageThreadId: u.Message.MessageThreadId);
             }
         }
 

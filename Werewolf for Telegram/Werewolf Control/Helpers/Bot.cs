@@ -115,7 +115,7 @@ namespace Werewolf_Control.Helpers
             //Api.OnMessage += ApiOnOnMessage;
             Console.Title += " " + Me.Username;
             if (!String.IsNullOrEmpty(updateid))
-                Api.SendTextMessageAsync(updateid, "Control updated\n" + Program.GetVersion());
+                Api.SendTextMessageAsync(chatId: updateid, text: "Control updated\n" + Program.GetVersion());
             StartTime = DateTime.UtcNow;
 
             //now we can start receiving
@@ -127,7 +127,7 @@ namespace Werewolf_Control.Helpers
             //Api.OnReceiveGeneralError += ApiOnOnReceiveGeneralError;
             //Api.OnStatusChanged += ApiOnStatusChanged;
             //Api.UpdatesReceived += ApiOnUpdatesReceived;
-            Api.ReceiveAsync(receiverOptions, cts.Token);
+            Api.ReceiveAsync(options: receiverOptions, cancellationToken: cts.Token);
             Api.OnMakingApiRequest += Api_OnMakingApiRequest;
         }
 
@@ -168,7 +168,7 @@ namespace Werewolf_Control.Helpers
                     Program.log.Info("Starting a getUpdates request");
                     sw.Start();
                     updates = await client.GetUpdatesAsync(
-                        MessageOffset,
+                        offset: MessageOffset,
                         timeout: timeout,
                         limit: options.Limit,
                         allowedUpdates: options.AllowedUpdates,
@@ -394,7 +394,7 @@ namespace Werewolf_Control.Helpers
         internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Html, bool disableWebPagePreview = false)
         {
             //first answer the callback
-            Bot.Api.AnswerCallbackQueryAsync(query.Id, edit ? null : text, showAlert);
+            Bot.Api.AnswerCallbackQueryAsync(callbackQueryId: query.Id, text: edit ? null : text, showAlert: showAlert);
             //edit the original message
             if (edit)
                 Edit(query, text, replyMarkup, parsemode, disableWebPagePreview);
@@ -407,7 +407,7 @@ namespace Werewolf_Control.Helpers
 
         internal static Task<Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null, ParseMode parsemode = ParseMode.Html, bool disableWebPagePreview = false)
         {
-            return Bot.Api.EditMessageTextAsync(id, msgId, text, parsemode, null, disableWebPagePreview, replyMarkup);
+            return Bot.Api.EditMessageTextAsync(chatId: id, messageId: msgId, text: text, parseMode: parsemode, entities: null, disableWebPagePreview: disableWebPagePreview, replyMarkup: replyMarkup);
         }
 
         //        private static void ApiOnStatusChanged(object sender, StatusChangeEventArgs statusChangeEventArgs)
@@ -503,22 +503,22 @@ namespace Werewolf_Control.Helpers
         }
 
 
-        internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, ParseMode parseMode = ParseMode.Html)
+        internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, ParseMode parseMode = ParseMode.Html, int? messageThreadId = null)
         {
             //MessagesSent++;
             //message = message.Replace("`",@"\`");
             if (clearKeyboard)
             {
                 //var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
-                return Api.SendTextMessageAsync(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: parseMode);
+                return Api.SendTextMessageAsync(chatId: id, text: message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: parseMode, messageThreadId: messageThreadId);
             }
             else if (customMenu != null)
             {
-                return Api.SendTextMessageAsync(id, message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: parseMode);
+                return Api.SendTextMessageAsync(chatId: id, text: message, replyMarkup: customMenu, disableWebPagePreview: true, parseMode: parseMode, messageThreadId: messageThreadId);
             }
             else
             {
-                return Api.SendTextMessageAsync(id, message, disableWebPagePreview: true, parseMode: parseMode);
+                return Api.SendTextMessageAsync(chatId: id, text: message, disableWebPagePreview: true, parseMode: parseMode, messageThreadId: messageThreadId);
             }
 
         }

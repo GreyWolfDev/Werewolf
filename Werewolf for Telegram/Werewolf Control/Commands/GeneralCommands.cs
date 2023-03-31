@@ -32,7 +32,7 @@ namespace Werewolf_Control
             var result = Bot.Send(message, update.Message.Chat.Id).Result;
             ts = DateTime.UtcNow - send;
             message += "\n" + GetLocaleString("Ping2", GetLanguage(update.Message.From.Id), $"{ts:mm\\:ss\\.ff}");
-            Bot.Api.EditMessageTextAsync(update.Message.Chat.Id, result.MessageId, message);
+            Bot.Api.EditMessageTextAsync(chatId: update.Message.Chat.Id, messageId: result.MessageId, text: message);
 
         }
 #if (BETA || DEBUG)
@@ -47,8 +47,8 @@ namespace Werewolf_Control
         {
             if (args[1] == null) //only send the message if there is no extra args (otherwise it's more likely for other bots)
             {
-                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, "[Website](https://www.tgwerewolf.com/?referrer=help)\n/rolelist (don't forget to /setlang first!)\n[Telegram Werewolf Support Group](http://telegram.me/greywolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/greywolfdev)",
-                                                            parseMode: ParseMode.Markdown, disableWebPagePreview: true);
+                Bot.Api.SendTextMessageAsync(chatId: update.Message.Chat.Id, text: "[Website](https://www.tgwerewolf.com/?referrer=help)\n/rolelist (don't forget to /setlang first!)\n[Telegram Werewolf Support Group](http://telegram.me/greywolfsupport)\n[Telegram Werewolf Dev Channel](https://telegram.me/greywolfdev)",
+                                                            parseMode: ParseMode.Markdown, disableWebPagePreview: true, messageThreadId: update.Message.MessageThreadId);
             }
         }
 
@@ -73,7 +73,7 @@ namespace Werewolf_Control
                 $"Uptime: {DateTime.UtcNow - Bot.StartTime}\nConnected Nodes: {Bot.Nodes.Count}\n" +
                 $"Current Games: {Bot.Nodes.Sum(x => x.CurrentGames)}\n" +
                 $"Current Players: {Bot.Nodes.Sum(x => x.CurrentPlayers)}";
-            Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, result, parseMode: ParseMode.Markdown);
+            Bot.Api.SendTextMessageAsync(chatId: update.Message.Chat.Id, text: result, parseMode: ParseMode.Markdown, messageThreadId: update.Message.MessageThreadId);
         }
 
         [Command(Trigger = "getstatus")]
@@ -85,7 +85,7 @@ namespace Werewolf_Control
                 //    db.BotStatus.ToList().Where(x => x.BotName != "Bot 2").Select(x => $"[{x.BotName.Replace("Bot 1", "Moderator")}](https://t.me/{x.BotLink}): *{x.BotStatus}* ").ToList()
                 //        .Aggregate((a, b) => a + "\n" + b);
                 var msg = "Command currently disabled, sorry";
-                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, msg, parseMode: ParseMode.Markdown, disableWebPagePreview: true);
+                Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: msg, parseMode: ParseMode.Markdown, disableWebPagePreview: true, messageThreadId: u.Message.MessageThreadId);
             }
         }
 
@@ -178,7 +178,7 @@ namespace Werewolf_Control
 
             var curLangFileName = GetLanguage(update.Message.From.Id);
             var curLang = langs.First(x => x.FileName == curLangFileName);
-            Bot.Api.SendTextMessageAsync(update.Message.From.Id, GetLocaleString("WhatLang", curLangFileName, curLang.Base),
+            Bot.Api.SendTextMessageAsync(chatId: update.Message.From.Id, text: GetLocaleString("WhatLang", curLangFileName, curLang.Base),
                 replyMarkup: menu);
             if (update.Message.Chat.Type != ChatType.Private)
                 Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
@@ -443,7 +443,7 @@ namespace Werewolf_Control
                         return;
 
                     case 1:
-                        LanguageHelper.SendFileByFilepath(update.Message.Chat.Id, lang[0]);
+                        LanguageHelper.SendFileByFilepath(update.Message.Chat.Id, update.Message.MessageThreadId, lang[0]);
                         return;
 
                     default: //shouldn't happen, but you never know...
@@ -472,8 +472,8 @@ namespace Werewolf_Control
             var menu = new InlineKeyboardMarkup(baseMenu.ToArray());
             try
             {
-                Bot.Api.SendTextMessageAsync(update.Message.Chat.Id, GetLocaleString("GetLang", GetLanguage(update.Message.Chat.Id)),
-                    replyToMessageId: update.Message.MessageId, replyMarkup: menu);
+                Bot.Api.SendTextMessageAsync(chatId: update.Message.Chat.Id, text: GetLocaleString("GetLang", GetLanguage(update.Message.Chat.Id)),
+                    replyToMessageId: update.Message.MessageId, replyMarkup: menu, messageThreadId: update.Message.MessageThreadId);
             }
             catch (AggregateException e)
             {
@@ -520,7 +520,7 @@ namespace Werewolf_Control
 
                 };
                 var menu = new InlineKeyboardMarkup(buttons.ToArray());
-                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, "Stats", replyMarkup: menu);
+                Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: "Stats", replyMarkup: menu, messageThreadId: u.Message.MessageThreadId);
             }
             else
             {
@@ -548,7 +548,7 @@ namespace Werewolf_Control
 
                 });
                 var menu = new InlineKeyboardMarkup(buttons.ToArray());
-                Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, "Stats", replyMarkup: menu);
+                Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: "Stats", replyMarkup: menu, messageThreadId: u.Message.MessageThreadId);
             }
         }
         
@@ -575,7 +575,7 @@ namespace Werewolf_Control
             
             try
             {
-                var result = Bot.Api.SendTextMessageAsync(update.Message.From.Id, reply).Result;
+                var result = Bot.Api.SendTextMessageAsync(chatId: update.Message.From.Id, text: reply).Result;
                 if (update.Message.Chat.Type != ChatType.Private)
                     Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
             }

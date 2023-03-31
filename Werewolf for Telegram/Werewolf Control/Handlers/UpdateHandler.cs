@@ -258,7 +258,7 @@ namespace Werewolf_Control.Handler
                 {
                     try
                     {
-                        Bot.Api.LeaveChatAsync(update.Message.Chat.Id).Wait();
+                        Bot.Api.LeaveChatAsync(chatId: update.Message.Chat.Id).Wait();
                     }
                     catch
                     {
@@ -836,7 +836,7 @@ namespace Werewolf_Control.Handler
 
                     if (args[0] == "cancel")
                     {
-                        Bot.Api.DeleteMessageAsync(query.Message.Chat.Id, query.Message.MessageId);
+                        Bot.Api.DeleteMessageAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId);
                         return;
                     }
 
@@ -879,26 +879,26 @@ namespace Werewolf_Control.Handler
                                     var id = query.From.Id;
                                     Send($"Sending gifs for {pid}", id);
                                     Thread.Sleep(1000);
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.CultWins), caption: "Cult Wins");
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.LoversWin), caption: "Lovers Win");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.CultWins), caption: "Cult Wins");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.LoversWin), caption: "Lovers Win");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.NoWinner), caption: "No Winner");
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.SerialKillerWins), caption: "SK Wins");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.NoWinner), caption: "No Winner");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.SerialKillerWins), caption: "SK Wins");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.StartChaosGame), caption: "Chaos Start");
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.StartGame), caption: "Normal Start");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.StartChaosGame), caption: "Chaos Start");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.StartGame), caption: "Normal Start");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.TannerWin), caption: "Tanner Wins");
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.VillagerDieImage), caption: "Villager Eaten");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.TannerWin), caption: "Tanner Wins");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.VillagerDieImage), caption: "Villager Eaten");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.VillagersWin), caption: "Village Wins");
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.WolfWin), caption: "Single Wolf Wins");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.VillagersWin), caption: "Village Wins");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.WolfWin), caption: "Single Wolf Wins");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.WolvesWin), caption: "Wolf new InputFileId(pack.Wins)");
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.SKKilled), caption: "SK Killed");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.WolvesWin), caption: "Wolf new InputFileId(pack.Wins)");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.SKKilled), caption: "SK Killed");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.ArsonistWins), caption: "Arsonist Wins");
-                                    Bot.Api.SendDocumentAsync(id, new InputFileId(pack.BurnToDeath), caption: "Arsonist Burnt");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.ArsonistWins), caption: "Arsonist Wins");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.BurnToDeath), caption: "Arsonist Burnt");
                                     Thread.Sleep(500);
                                     var msg = $"Approval Status: ";
                                     switch (pack.Approved)
@@ -946,7 +946,7 @@ namespace Werewolf_Control.Handler
                                     DB.SaveChanges();
                                     Bot.Send(msg, query.Message.Chat.Id);
                                     Bot.Send(msg, pid);
-                                    Bot.Api.DeleteMessageAsync(query.Message.Chat.Id, query.Message.MessageId);
+                                    Bot.Api.DeleteMessageAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId);
                                     break;
                                 case "approvensfw":
                                     nsfw = true;
@@ -977,7 +977,7 @@ namespace Werewolf_Control.Handler
                                     DB.SaveChanges();
                                     Bot.Send(msg, query.Message.Chat.Id);
                                     Bot.Send(msg, pid);
-                                    Bot.Api.DeleteMessageAsync(query.Message.Chat.Id, query.Message.MessageId);
+                                    Bot.Api.DeleteMessageAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId);
                                     break;
 
                                 case "dismiss":
@@ -988,7 +988,7 @@ namespace Werewolf_Control.Handler
                                         pack.Submitted = false;
                                         DB.SaveChanges();
                                     }
-                                    Bot.Api.DeleteMessageAsync(query.Message.Chat.Id, query.Message.MessageId);
+                                    Bot.Api.DeleteMessageAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId);
                                     break;
                             }
                         }
@@ -1296,13 +1296,13 @@ namespace Werewolf_Control.Handler
                             //choice = args[1];
                             if (choice == "All")
                             {
-                                LanguageHelper.ValidateFiles(query.Message.Chat.Id, query.Message.MessageId);
+                                LanguageHelper.ValidateFiles(query.Message.Chat.Id, query.Message.MessageId, query.Message.MessageThreadId);
                                 return;
                             }
 
                             if (args[4] != "base" && args[3] == "All")
                             {
-                                LanguageHelper.ValidateFiles(query.Message.Chat.Id, query.Message.MessageId, choice);
+                                LanguageHelper.ValidateFiles(query.Message.Chat.Id, query.Message.MessageId, query.Message.MessageThreadId, choice);
                                 return;
                             }
 
@@ -1406,14 +1406,14 @@ namespace Werewolf_Control.Handler
                             if (choice == "All")
                             {
                                 Bot.ReplyToCallback(query, "One moment...");
-                                LanguageHelper.SendAllFiles(query.Message.Chat.Id);
+                                LanguageHelper.SendAllFiles(query.Message.Chat.Id, query.Message.MessageThreadId);
                                 return;
                             }
 
                             if (args[4] != "base" && args[3] == "All")
                             {
                                 Bot.ReplyToCallback(query, "One moment...");
-                                LanguageHelper.SendBase(choice, query.Message.Chat.Id);
+                                LanguageHelper.SendBase(choice, query.Message.Chat.Id, query.Message.MessageThreadId);
                                 return;
                             }
 
@@ -1428,7 +1428,7 @@ namespace Werewolf_Control.Handler
                                 return;
                             }
                             Bot.ReplyToCallback(query, "One moment...");
-                            LanguageHelper.SendFile(query.Message.Chat.Id, glang.Name);
+                            LanguageHelper.SendFile(query.Message.Chat.Id, query.Message.MessageThreadId, glang.Name);
                             break;
                         case "stopwaiting":
                             using (var db = new WWContext())
@@ -1440,7 +1440,7 @@ namespace Werewolf_Control.Handler
                         case "lang":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
@@ -1471,7 +1471,7 @@ namespace Werewolf_Control.Handler
                         case "setlang":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
@@ -1486,7 +1486,7 @@ namespace Werewolf_Control.Handler
                                 grp.AddFlag(GroupConfig.RandomLangVariant);
                                 grp.Language = defaultfile.FileName;
                                 DB.SaveChanges();
-                                Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("LangSet", language, langbase + ": Random"));
+                                Bot.Api.AnswerCallbackQueryAsync(callbackQueryId: query.Id, text: GetLocaleString("LangSet", language, langbase + ": Random"));
                                 Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: menu);
                                 return;
                             }
@@ -1521,7 +1521,7 @@ namespace Werewolf_Control.Handler
 
                                     ig?.LoadLanguage(slang.FileName);
                                     menu = GetConfigMenu(groupid, language);
-                                    Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("LangSet", language, slang.Base + (String.IsNullOrWhiteSpace(slang.Variant) ? "" : ": " + slang.Variant)));
+                                    Bot.Api.AnswerCallbackQueryAsync(callbackQueryId: query.Id, text: GetLocaleString("LangSet", language, slang.Base + (String.IsNullOrWhiteSpace(slang.Variant) ? "" : ": " + slang.Variant)));
                                     Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: menu);
                                 }
                                 else if (p != null)
@@ -1572,7 +1572,7 @@ namespace Werewolf_Control.Handler
                         case "maxplayer":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
@@ -1592,7 +1592,7 @@ namespace Werewolf_Control.Handler
                         case "setmaxplayer":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
@@ -1600,7 +1600,7 @@ namespace Werewolf_Control.Handler
                             grp.MaxPlayers = int.Parse(choice);
                             if (grp.MaxPlayers > oldMaxPlayers && grp.RoleFlags.HasValue)
                                 grp.RoleFlags = (long)((IRole)grp.RoleFlags & ~IRole.VALID);
-                            Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("MaxPlayersA", language, choice));
+                            Bot.Api.AnswerCallbackQueryAsync(callbackQueryId: query.Id, text: GetLocaleString("MaxPlayersA", language, choice));
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.GroupSettings));
                             DB.SaveChanges();
@@ -1626,7 +1626,7 @@ namespace Werewolf_Control.Handler
                         case "mode":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
@@ -1641,12 +1641,12 @@ namespace Werewolf_Control.Handler
                         case "setmode":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
                             grp.Mode = choice;
-                            Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("GameModeA", language, choice));
+                            Bot.Api.AnswerCallbackQueryAsync(callbackQueryId: query.Id, text: GetLocaleString("GameModeA", language, choice));
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.GroupSettings));
                             DB.SaveChanges();
@@ -1670,12 +1670,12 @@ namespace Werewolf_Control.Handler
                         case "setendroles":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
                             grp.ShowRolesEnd = choice;
-                            Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("ShowRolesEndA", language, choice));
+                            Bot.Api.AnswerCallbackQueryAsync(callbackQueryId: query.Id, text: GetLocaleString("ShowRolesEndA", language, choice));
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.Mechanics));
                             DB.SaveChanges();
@@ -1683,7 +1683,7 @@ namespace Werewolf_Control.Handler
                         case "daytimer":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
@@ -1700,12 +1700,12 @@ namespace Werewolf_Control.Handler
                         case "setday":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
                             grp.DayTime = int.Parse(choice);
-                            Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("SetDayTimeA", language, int.Parse(choice) + 60));
+                            Bot.Api.AnswerCallbackQueryAsync(callbackQueryId: query.Id, text: GetLocaleString("SetDayTimeA", language, int.Parse(choice) + 60));
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.Timers));
                             DB.SaveChanges();
@@ -1713,7 +1713,7 @@ namespace Werewolf_Control.Handler
                         case "nighttimer":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
@@ -1730,12 +1730,12 @@ namespace Werewolf_Control.Handler
                         case "setnight":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
                             grp.NightTime = int.Parse(choice);
-                            Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("SetNightTimeA", language, choice));
+                            Bot.Api.AnswerCallbackQueryAsync(callbackQueryId: query.Id, text: GetLocaleString("SetNightTimeA", language, choice));
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.Timers));
                             DB.SaveChanges();
@@ -1743,7 +1743,7 @@ namespace Werewolf_Control.Handler
                         case "lynchtimer":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
@@ -1760,12 +1760,12 @@ namespace Werewolf_Control.Handler
                         case "setlynch":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
                             grp.LynchTime = int.Parse(choice);
-                            Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("SetLynchTimeA", language, choice));
+                            Bot.Api.AnswerCallbackQueryAsync(callbackQueryId: query.Id, text: GetLocaleString("SetLynchTimeA", language, choice));
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.Timers));
                             DB.SaveChanges();
@@ -1849,7 +1849,7 @@ namespace Werewolf_Control.Handler
                         case "maxextend":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
@@ -1866,12 +1866,12 @@ namespace Werewolf_Control.Handler
                         case "setmaxextend":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
                             grp.MaxExtend = int.Parse(choice);
-                            Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString("MaxExtendA", language, choice));
+                            Bot.Api.AnswerCallbackQueryAsync(callbackQueryId: query.Id, text: GetLocaleString("MaxExtendA", language, choice));
                             Bot.ReplyToCallback(query,
                                 GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroup.Timers));
                             DB.SaveChanges();
@@ -1883,7 +1883,7 @@ namespace Werewolf_Control.Handler
                         case "togglerole":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
@@ -1918,7 +1918,7 @@ namespace Werewolf_Control.Handler
                         case "validateroles":
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
@@ -1953,7 +1953,7 @@ namespace Werewolf_Control.Handler
 
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
-                                Bot.Api.EditMessageReplyMarkupAsync(query.Message.Chat.Id, query.Message.MessageId).Wait();
+                                Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
                                 return;
                             }
 
@@ -1988,7 +1988,7 @@ namespace Werewolf_Control.Handler
 
                                 grp.Flags = (long)flags;
                                 command = command.Substring(3);
-                                Bot.Api.AnswerCallbackQueryAsync(query.Id, GetLocaleString($"{chosen.ToString()}A", language, current ? GetLocaleString(pos, language) : GetLocaleString(neg, language)));
+                                Bot.Api.AnswerCallbackQueryAsync(callbackQueryId: query.Id, text: GetLocaleString($"{chosen.ToString()}A", language, current ? GetLocaleString(pos, language) : GetLocaleString(neg, language)));
                                 Bot.ReplyToCallback(query, GetLocaleString("WhatToDo", language), replyMarkup: GetConfigSubmenu(groupid, language, ConfigGroupAttribute.GetConfigGroup(command)));
                                 DB.SaveChanges();
                             }
@@ -2081,7 +2081,7 @@ namespace Werewolf_Control.Handler
                 var path = Path.Combine(Settings.GifStoragePath, $"{fileid}.mp4");
                 if (!System.IO.File.Exists(path))
                     using (var x = System.IO.File.OpenWrite(path))
-                        await Bot.Api.DownloadFileAsync((await Bot.Api.GetFileAsync(fileid)).FilePath, x);
+                        await Bot.Api.DownloadFileAsync(filePath: (await Bot.Api.GetFileAsync(fileId: fileid)).FilePath, x);
             }
             catch (Exception e)
             {
@@ -2366,7 +2366,7 @@ namespace Werewolf_Control.Handler
                 var com = q.Query;
                 choices = commands.Where(command => command.Command.StartsWith(com) || Commands.ComputeLevenshtein(com, command.Command) < 3).ToList();
             }
-            Bot.Api.AnswerInlineQueryAsync(q.Id, choices.Select(c => 
+            Bot.Api.AnswerInlineQueryAsync(inlineQueryId: q.Id, results: choices.Select(c => 
                 new InlineQueryResultArticle(c.Command, c.Command,
                     new InputTextMessageContent(c.Content)
                     {
@@ -2376,7 +2376,7 @@ namespace Werewolf_Control.Handler
                 )
                 {
                     Description = c.Description,
-                }).Cast<InlineQueryResultArticle>().ToArray(), 0, true);
+                }).Cast<InlineQueryResultArticle>().ToArray(), cacheTime: 0, isPersonal: true);
         }
     }
 }

@@ -52,7 +52,7 @@ namespace Werewolf_Control
             /*
             if (!BetaGroups.Contains(update.Message.Chat.Id) & !UpdateHelper.Devs.Contains(update.Message.From.Id))
             {
-                Bot.Api.LeaveChatAsync(update.Message.Chat.Id);
+                Bot.Api.LeaveChatAsync(chatId: update.Message.Chat.Id);
                 return;
             }
             */
@@ -85,13 +85,13 @@ namespace Werewolf_Control
 #if BETA
                 if (grp.BetaGroup != true & !UpdateHelper.Devs.Contains(update.Message.From.Id) & !Program.BetaUnlocked)
                 {
-                    Bot.Api.LeaveChatAsync(update.Message.Chat.Id);
+                    Bot.Api.LeaveChatAsync(chatId: update.Message.Chat.Id);
                     return;
                 }
 #endif
                 if (grp.CreatedBy == "BAN")
                 {
-                    Bot.Api.LeaveChatAsync(grp.GroupId);
+                    Bot.Api.LeaveChatAsync(chatId: grp.GroupId);
                     return;
                 }
                 if (!String.IsNullOrEmpty(update.Message.Chat.Username))
@@ -342,27 +342,27 @@ namespace Werewolf_Control
 
         public static void KickChatMember(long chatid, int userid)
         {
-            var status = Bot.Api.GetChatMemberAsync(chatid, userid).Result.Status;
+            var status = Bot.Api.GetChatMemberAsync(chatId: chatid, userId: userid).Result.Status;
 
             if (status == ChatMemberStatus.Administrator) //ignore admins
                 return;
             //kick
-            Bot.Api.KickChatMemberAsync(chatid, userid);
+            Bot.Api.BanChatMemberAsync(chatId: chatid, userId: userid);
             //get their status
-            status = Bot.Api.GetChatMemberAsync(chatid, userid).Result.Status;
+            status = Bot.Api.GetChatMemberAsync(chatId: chatid, userId: userid).Result.Status;
             while (status == ChatMemberStatus.Member) //loop
             {
                 //wait for database to report status is kicked.
-                status = Bot.Api.GetChatMemberAsync(chatid, userid).Result.Status;
+                status = Bot.Api.GetChatMemberAsync(chatId: chatid, userId: userid).Result.Status;
                 Thread.Sleep(500);
             }
             //status is now kicked (as it should be)
             
             while (status != ChatMemberStatus.Left) //unban until status is left
             {
-                Bot.Api.UnbanChatMemberAsync(chatid, userid);
+                Bot.Api.UnbanChatMemberAsync(chatId: chatid, userId: userid);
                 Thread.Sleep(500);
-                status = Bot.Api.GetChatMemberAsync(chatid, userid).Result.Status;
+                status = Bot.Api.GetChatMemberAsync(chatId: chatid, userId: userid).Result.Status;
             }
             //yay unbanned
             

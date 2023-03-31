@@ -58,7 +58,7 @@ namespace Werewolf_Control.Helpers
                 try
                 {
                     //check all admins
-                    var t = Bot.Api.GetChatAdministratorsAsync(group).Result;
+                    var t = Bot.Api.GetChatAdministratorsAsync(chatId: group).Result;
                     admins = t.Where(x => !string.IsNullOrEmpty(x.User.FirstName)).Select(x => x.User.Id).ToList(); // if their first name is empty, the account is deleted
                     AdminCache.Set(itemIndex, admins, policy); // Write admin list into cache
                 }

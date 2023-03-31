@@ -58,16 +58,16 @@ namespace Werewolf_Control
 
                 if (messageId != 0)
                 {
-                    var result = Bot.Api.EditMessageTextAsync(chatId, messageId,
-                            GetLocaleString("WhatLangGroup", GetLanguage(fromId)),
+                    var result = Bot.Api.EditMessageTextAsync(chatId: chatId, messageId: messageId,
+                            text: GetLocaleString("WhatLangGroup", GetLanguage(fromId)),
                             replyMarkup: menu).Result;
                 }
                 else
                 {
                     try
                     {
-                        var result = Bot.Api.SendTextMessageAsync(fromId,
-                            GetLocaleString("WhatLangGroup", GetLanguage(fromId)),
+                        var result = Bot.Api.SendTextMessageAsync(chatId: fromId,
+                            text: GetLocaleString("WhatLangGroup", GetLanguage(fromId)),
                             replyMarkup: menu).Result;
                         if (chatId != fromId)
                             Send(GetLocaleString("SentPrivate", GetLanguage(fromId)), chatId);
@@ -104,7 +104,7 @@ namespace Werewolf_Control
             reply += "/aboutGA - " + GetLocaleString("GuardianAngel", lang) + "\n";
             try
             {
-                var result = Bot.Api.SendTextMessageAsync(update.Message.From.Id, reply).Result;
+                var result = Bot.Api.SendTextMessageAsync(chatId: update.Message.From.Id, text: reply).Result;
                 if (update.Message.Chat.Type != ChatType.Private)
                     Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
             }

@@ -49,7 +49,7 @@ namespace Werewolf_Control
             }
             var markup = menu.CreateMarkupFromMenu();
             var txt = $"Want to help keep Werewolf Moderator online? Donate now and gets: {"Custom gifs".ToBold()} and {"Badges".ToBold()}!\n\nClick the button below to donate!!\n\nMore Info: https://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-06-27";
-            Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, txt, replyMarkup: markup, parseMode: ParseMode.Html, disableWebPagePreview: true);
+            Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: txt, replyMarkup: markup, parseMode: ParseMode.Html, disableWebPagePreview: true, messageThreadId: u.Message.MessageThreadId);
         }
 
         [Attributes.Command(Trigger = "customgif")]
@@ -89,8 +89,8 @@ namespace Werewolf_Control
                 //    return;
                 //}
 
-                Bot.Api.SendTextMessageAsync(u.Message.From.Id,
-                    "Ready to build your custom gif pack? Great! Before we begin, a few notes you should be aware of:\n" +
+                Bot.Api.SendTextMessageAsync(chatId: u.Message.From.Id,
+                    text: "Ready to build your custom gif pack? Great! Before we begin, a few notes you should be aware of:\n" +
                     "• Your pack will be submitted for approval.  An admin will check it, and once approved, you can start using it in games\n" +
                     "• NSFW packs will be marked NSFW, and only groups that allow them will use it.  Check with your group admin first.\n" +
                     "• Gifs that will NOT be allowed:\n" +
@@ -197,7 +197,7 @@ namespace Werewolf_Control
 
         public static void RequestGif(CallbackQuery q)
         {
-            Bot.Api.DeleteMessageAsync(q.From.Id, q.Message.MessageId);
+            Bot.Api.DeleteMessageAsync(chatId: q.From.Id, messageId: q.Message.MessageId);
             var choice = q.Data.Split('|')[1].Split(' ')[0];
             if (choice == "submit")
             {
@@ -296,8 +296,8 @@ namespace Werewolf_Control
                     return;
                 }
             }
-            Bot.Api.SendTextMessageAsync(q.From.Id,
-                q.Data.Split('|')[1] + "\nOk, send me the GIF you want to use for this situation, as a reply\n" +
+            Bot.Api.SendTextMessageAsync(chatId: q.From.Id,
+                text: q.Data.Split('|')[1] + "\nOk, send me the GIF you want to use for this situation, as a reply\n" +
                 "#" + choice,
                 replyMarkup: new ForceReplyMarkup());
         }
@@ -328,7 +328,7 @@ namespace Werewolf_Control
 				
                 if (m.Animation == null && m.Document != null)
                 {
-                    Bot.Api.SendTextMessageAsync(m.From.Id, "This GIF is in old .gif format, but since iOS " +
+                    Bot.Api.SendTextMessageAsync(chatId: m.From.Id, text: "This GIF is in old .gif format, but since iOS " +
                         "users are unable to view them, we require you to use telegram's " +
                         "[new GIFs in .mp4 format](https://telegram.org/blog/gif-revolution). " +
                         "To fix this, try reuploading the GIF, your telegram app should then render it as .mp4. " +
@@ -337,7 +337,7 @@ namespace Werewolf_Control
                 }
 				if (m.Animation.FileSize >= 1048576) // Maximum size is 1 MB
 				{
-					Bot.Api.SendTextMessageAsync(m.From.Id, "This GIF is too large, the maximum allowed size is 1MB.\n\n" + 
+					Bot.Api.SendTextMessageAsync(chatId: m.From.Id, text: "This GIF is too large, the maximum allowed size is 1MB.\n\n" + 
 					"Please send me the GIF you want to use for this situation, as a reply\n#" + gifchoice, 
 					replyMarkup: new ForceReplyMarkup());
 					return;
@@ -443,19 +443,19 @@ namespace Werewolf_Control
 
             if (q != null)
             {
-                Bot.Api.EditMessageTextAsync(q.Message.Chat.Id, q.Message.MessageId, txt, disableWebPagePreview: true, replyMarkup: markup);
+                Bot.Api.EditMessageTextAsync(chatId: q.Message.Chat.Id, messageId: q.Message.MessageId, text: txt, disableWebPagePreview: true, replyMarkup: markup);
             }
             else if (m != null)
             {
-                Bot.Api.SendTextMessageAsync(from.Id, txt, disableWebPagePreview: true, replyMarkup: markup, replyToMessageId: m.MessageId);
+                Bot.Api.SendTextMessageAsync(chatId: from.Id, text: txt, disableWebPagePreview: true, replyMarkup: markup, replyToMessageId: m.MessageId);
             }
         }
 
         public static void GetDonationInfo(CallbackQuery q = null, Message m = null)
         {
             var menu = new Menu();
-            Bot.Api.SendTextMessageAsync(q?.From.Id ?? m.From.Id,
-                "How much would you like to donate?  Please enter a whole number, in US Dollars (USD), in reply to this message",
+            Bot.Api.SendTextMessageAsync(chatId: q?.From.Id ?? m.From.Id,
+                text: "How much would you like to donate?  Please enter a whole number, in US Dollars (USD), in reply to this message",
                 replyMarkup: new ForceReplyMarkup());
         }
 
@@ -472,13 +472,13 @@ namespace Werewolf_Control
 #elif RELEASE
                 var api = RegHelper.GetRegValue("MainStripeProdAPI");
 #endif
-                Bot.Api.SendInvoiceAsync(m.From.Id, "Werewolf Donation", "Make a donation to Werewolf to help keep us online", "somepayloadtest", api,
-                    "USD", new[] { new LabeledPrice("Donation", amt * 100) }, startParameter: "startparam");
+                Bot.Api.SendInvoiceAsync(chatId: m.From.Id, title: "Werewolf Donation", description: "Make a donation to Werewolf to help keep us online", payload: "somepayloadtest", providerToken: api,
+                    currency: "USD", prices: new[] { new LabeledPrice("Donation", amt * 100) }, startParameter: "startparam");
             }
             else
             {
-                Bot.Api.SendTextMessageAsync(m.From.Id,
-                    "Invalid input.\n" +
+                Bot.Api.SendTextMessageAsync(chatId: m.From.Id,
+                    text: "Invalid input.\n" +
                     "How much would you like to donate?  Please enter a whole number, in US Dollars (USD), in reply to this message",
                     replyMarkup: new ForceReplyMarkup());
             }

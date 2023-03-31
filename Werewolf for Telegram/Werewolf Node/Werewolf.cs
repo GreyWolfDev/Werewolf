@@ -138,7 +138,7 @@ namespace Werewolf_Node
                     }
                     try
                     {
-                        var memberCount = Program.Bot.GetChatMemberCountAsync(chatid).Result;
+                        var memberCount = Program.Bot.GetChatMemberCountAsync(chatId: chatid).Result;
                         DbGroup.MemberCount = memberCount;
 
                         db.SaveChanges();
@@ -501,7 +501,7 @@ namespace Werewolf_Node
                     }
                     Thread.Sleep(1000);
                 }
-                Program.Bot.EditMessageReplyMarkupAsync(ChatId, _joinMsgId, null);
+                Program.Bot.EditMessageReplyMarkupAsync(chatId: ChatId, messageId: _joinMsgId, replyMarkup: null);
                 IsJoining = false;
                 IsInitializing = true;
 
@@ -1257,7 +1257,7 @@ namespace Werewolf_Node
                                 }
                             }
                             else
-                                Program.Bot.EditMessageTextAsync(ChatId, _playerListId, m.Msg, ParseMode.Html, disableWebPagePreview: true);
+                                Program.Bot.EditMessageTextAsync(chatId: ChatId, messageId: _playerListId, text: m.Msg, parseMode: ParseMode.Html, disableWebPagePreview: true);
                             continue;
                         }
 
@@ -2580,7 +2580,7 @@ namespace Werewolf_Node
                                 if (p.CurrentQuestion.MessageId != 0)
                                 {
                                     //Program.MessagesSent++;
-                                    Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("LynchPeaceTimeout"));
+                                    Program.Bot.EditMessageTextAsync(chatId: p.Id, messageId: p.CurrentQuestion.MessageId, text: GetLocaleString("LynchPeaceTimeout"));
                                 }
                             }
                             catch { } // ignored
@@ -2615,7 +2615,7 @@ namespace Werewolf_Node
                             if (p.CurrentQuestion.MessageId != 0)
                             {
                                 //Program.MessagesSent++;
-                                Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                                Program.Bot.EditMessageTextAsync(chatId: p.Id, messageId: p.CurrentQuestion.MessageId, text: GetLocaleString("TimesUp"));
                             }
                         }
                         catch
@@ -2841,7 +2841,7 @@ namespace Werewolf_Node
                         if (p.CurrentQuestion.MessageId != 0 && !new[] { QuestionType.Mayor, QuestionType.Pacifist }.Contains(p.CurrentQuestion.QType))
                         {
                             //Program.MessagesSent++;
-                            Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                            Program.Bot.EditMessageTextAsync(chatId: p.Id, messageId: p.CurrentQuestion.MessageId, text: GetLocaleString("TimesUp"));
                         }
                     }
                     catch
@@ -3046,7 +3046,7 @@ namespace Werewolf_Node
                         if (p.CurrentQuestion.MessageId != 0)
                         {
                             //Program.MessagesSent++;
-                            Program.Bot.EditMessageTextAsync(p.Id, p.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                            Program.Bot.EditMessageTextAsync(chatId: p.Id, messageId: p.CurrentQuestion.MessageId, text: GetLocaleString("TimesUp"));
                         }
                     }
                     catch
@@ -5285,7 +5285,7 @@ namespace Werewolf_Node
         {
             foreach (var id in _joinButtons)
             {
-                Program.Bot.DeleteMessageAsync(ChatId, id);
+                Program.Bot.DeleteMessageAsync(chatId: ChatId, messageId: id);
                 Thread.Sleep(500);
             }
         }
@@ -5331,7 +5331,7 @@ namespace Werewolf_Node
             try
             {
                 if (IsJoining) //try to remove the joining button...
-                    Program.Bot.EditMessageReplyMarkupAsync(ChatId, _joinMsgId, null);
+                    Program.Bot.EditMessageReplyMarkupAsync(chatId: ChatId, messageId: _joinMsgId, replyMarkup: null);
             }
             catch
             {
@@ -5388,7 +5388,7 @@ namespace Werewolf_Node
             if (hunter.Choice == 0)
             {
                 SendWithQueue(GetLocaleString(method == KillMthd.Lynch ? "HunterNoChoiceLynched" : "HunterNoChoiceShot", hunter.GetName()));
-                Program.Bot.EditMessageTextAsync(hunter.Id, hunter.CurrentQuestion.MessageId, GetLocaleString("TimesUp"));
+                Program.Bot.EditMessageTextAsync(chatId: hunter.Id, messageId: hunter.CurrentQuestion.MessageId, text: GetLocaleString("TimesUp"));
             }
             else
             {
@@ -5476,7 +5476,7 @@ namespace Werewolf_Node
         internal static void ReplyToCallback(CallbackQuery query, string text = null, bool edit = true, bool showAlert = false, InlineKeyboardMarkup replyMarkup = null)
         {
             //first answer the callback
-            Program.Bot.AnswerCallbackQueryAsync(query.Id, edit ? null : text, showAlert);
+            Program.Bot.AnswerCallbackQueryAsync(callbackQueryId: query.Id, text: edit ? null : text, showAlert: showAlert);
             //edit the original message
             if (edit)
                 Edit(query, text, replyMarkup);
@@ -5490,7 +5490,7 @@ namespace Werewolf_Node
         internal static Task<Telegram.Bot.Types.Message> Edit(long id, int msgId, string text, InlineKeyboardMarkup replyMarkup = null)
         {
             //Program.MessagesSent++;
-            return Program.Bot.EditMessageTextAsync(id, msgId, text, replyMarkup: replyMarkup);
+            return Program.Bot.EditMessageTextAsync(chatId: id, messageId: msgId, text: text, replyMarkup: replyMarkup);
         }
 
         internal void LogException(AggregateException ae)
