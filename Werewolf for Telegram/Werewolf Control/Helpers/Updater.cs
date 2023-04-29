@@ -201,7 +201,7 @@ namespace Werewolf_Control.Helpers
                 // Get the specified name of build definition.
                 var target = definitions.First(d => d.Name == buildDefinitionName);
 
-                // Build class has many properties, hoqever we can set only these properties.
+                // Build class has many properties, however we can set only these properties.
                 //ref: https://www.visualstudio.com/integrate/api/build/builds#queueabuild
                 //In this nuget librari, we should set Project property.
                 //It requires project's GUID, so we're compelled to get GUID by API.
