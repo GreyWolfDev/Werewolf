@@ -54,12 +54,21 @@ namespace Werewolf_Control
                 using (var sw = new StreamWriter(Path.Combine(Bot.RootDirectory, "..\\Logs\\error.log"), true))
                 {
                     var e = (eventArgs.ExceptionObject as Exception);
+                    sw.WriteLine("\n\nCONTROL: UNHANDLED EXCEPTION");
                     sw.WriteLine(DateTime.UtcNow);
+                    do
+                    {
                     sw.WriteLine(e.Message);
-                    sw.WriteLine(e.StackTrace + "\n");
+                        sw.WriteLine(e.StackTrace);
+                        sw.WriteLine("\nInner Exception:");
+                        e = e.InnerException;
+                    }
+                    while (e != null);
+                    sw.WriteLine("NULL");
+                }
+
                     if (eventArgs.IsTerminating)
                         Environment.Exit(5);
-                }
             };
 #endif
             //get the version of the bot and set the window title
