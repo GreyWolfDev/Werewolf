@@ -416,7 +416,7 @@ namespace Werewolf_Control
             //hope str is a link, and compare the hash part
             var index = str.LastIndexOf("me/");
             if (index == -1) return null;
-            var hash = str.Substring(index); //dummy variable becase LINQ to Entity doesn't like it.
+            var hash = str.Substring(index); //dummy variable because LINQ to Entity doesn't like it.
             return db.Groups.FirstOrDefault(x => x.GroupLink.EndsWith(hash));
         }
     }
