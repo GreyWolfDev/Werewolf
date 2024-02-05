@@ -114,7 +114,7 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "moveachv", DevOnly = true)]
         public static void MoveAchv(Update update, string[] args)
         {
-            if (!int.TryParse(args[1], out int userid))
+            if (!long.TryParse(args[1], out long userid))
             {
                 Bot.Send("Command syntax: /moveachv USERID", update.Message.Chat.Id);
                 return;
@@ -772,7 +772,7 @@ namespace Werewolf_Control
                             db.SaveChanges();
                             Send($"{p.Name} (@{p.UserName}) donation level is now {p.DonationLevel}", u.Message.Chat.Id);
                             var msg = "";
-                            if (wasLocked)
+                            if (wasLocked && p.DonationLevel >= 10)
                             {
                                 msg = "GIF Pack unlocked. Your current donation level is " + p.DonationLevel + "\n" + "Now you can use /customgif to make your personal pack.";
                             }
@@ -926,12 +926,12 @@ namespace Werewolf_Control
             if (args.Length < 2 || String.IsNullOrEmpty(args[1]))
                 return;
             //now check for ids
-            var toBan = new List<int>();
-            var did = 0;
+            var toBan = new List<long>();
+            long did = 0;
             var banReason = "";
             foreach (var arg in args[1].Split(' '))
             {
-                if (int.TryParse(arg, out did))
+                if (long.TryParse(arg, out did))
                 {
                     toBan.Add(did);
                 }
@@ -983,7 +983,7 @@ namespace Werewolf_Control
         public static void RemoveBan(Update u, string[] args)
         {
 #if !BETA
-            var tosmite = new List<int>();
+            var tosmite = new List<long>();
 
             foreach (var e in u.Message.Entities)
             {
@@ -1035,7 +1035,7 @@ namespace Werewolf_Control
             {
                 foreach (var userid in args[1].Split(' '))
                 {
-                    if (!int.TryParse(userid, out int id)) continue;
+                    if (!long.TryParse(userid, out long id)) continue;
 
                     using (var db = new WWContext())
                     {
