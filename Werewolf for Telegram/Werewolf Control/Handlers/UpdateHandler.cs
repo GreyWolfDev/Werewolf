@@ -1,4 +1,4 @@
-﻿using Database;
+www﻿using Database;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
@@ -757,7 +757,7 @@ namespace Werewolf_Control.Handler
             //    }
             //    db.SaveChanges();
             //}
-            Bot.Api.AnswerPreCheckoutQueryAsync(q.Id);
+            Bot.Api.AnswerPreCheckoutQueryAsync(q.Id).Wait();
         }
 
 
