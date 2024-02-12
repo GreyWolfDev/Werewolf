@@ -1,4 +1,4 @@
-www﻿using Database;
+using Database;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
