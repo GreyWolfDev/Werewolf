@@ -1492,6 +1492,9 @@ namespace Werewolf_Node
                     else
                         rolesToAssign[i] = IRole.Villager;
                 }
+
+                SendWithQueue("<b>DEBUG MODE!</b>\nAssigned roles:\n" + 
+                    string.Join("\n", Enumerable.Range(0, Players.Count).Select(i => $"{Players[i].GetName()}: {rolesToAssign[i]}")));
 #endif
 
                 //assign the roles 
@@ -3163,6 +3166,11 @@ namespace Werewolf_Node
                                         target.DugGravesLastNight = 0;
                                     }
                                     break;
+                                case IRole.Arsonist:
+                                    // Arsonist can act despite being frozen.
+                                    // target.Frozen is still true, so the snow wolf cannot freeze them a second time in a row.
+                                    Send(GetLocaleString("ArsonistNotFrozen"), target.Id);
+                                    break;
                                 default:
                                     Send(GetLocaleString("DefaultFrozen"), target.Id);
                                     break;
@@ -3176,7 +3184,7 @@ namespace Werewolf_Node
 
             #region Arsonist Night
             var arsonist = Players.FirstOrDefault(x => !x.IsDead && x.PlayerRole == IRole.Arsonist);
-            if (arsonist != null && !arsonist.Frozen)
+            if (arsonist != null) // Arsonist can *not* be frozen! Fire beats ice!
             {
                 if (arsonist.Choice == -2) //Spark
                 {
