@@ -927,7 +927,7 @@ namespace Werewolf_Node
                 #endregion
 
 
-                if (player.CurrentQuestion == null || player.CurrentQuestion.QType != qtype)
+                if (player.CurrentQuestion == null || player.CurrentQuestion.QType != qtype || !player.CurrentQuestion.ValidAnswers.Contains(query.Data))
                 {
                     return;
                 }
@@ -1480,8 +1480,8 @@ namespace Werewolf_Node
                 //force roles for testing
                 IRole[] requiredRoles = new IRole[]
                 {
-                    IRole.Spumpkin,
-                    IRole.Wolf
+                    IRole.Wolf,
+                    IRole.Gunner
                 };
                 int requiredCount = requiredRoles.Length;
 
@@ -1492,6 +1492,9 @@ namespace Werewolf_Node
                     else
                         rolesToAssign[i] = IRole.Villager;
                 }
+
+                SendWithQueue("<b>DEBUG MODE!</b>\nAssigned roles:\n" + 
+                    string.Join("\n", Enumerable.Range(0, Players.Count).Select(i => $"{Players[i].GetName()}: {rolesToAssign[i]}")));
 #endif
 
                 //assign the roles 
@@ -3163,6 +3166,11 @@ namespace Werewolf_Node
                                         target.DugGravesLastNight = 0;
                                     }
                                     break;
+                                case IRole.Arsonist:
+                                    // Arsonist can act despite being frozen.
+                                    // target.Frozen is still true, so the snow wolf cannot freeze them a second time in a row.
+                                    Send(GetLocaleString("ArsonistNotFrozen"), target.Id);
+                                    break;
                                 default:
                                     Send(GetLocaleString("DefaultFrozen"), target.Id);
                                     break;
@@ -3176,11 +3184,12 @@ namespace Werewolf_Node
 
             #region Arsonist Night
             var arsonist = Players.FirstOrDefault(x => !x.IsDead && x.PlayerRole == IRole.Arsonist);
-            if (arsonist != null && !arsonist.Frozen)
+            if (arsonist != null) // Arsonist can *not* be frozen! Fire beats ice!
             {
                 if (arsonist.Choice == -2) //Spark
                 {
-                    foreach (var burn in Players.Where(x => !x.IsDead && x.Doused && x.PlayerRole != IRole.Arsonist))
+                    var burning = Players.Where(x => !x.IsDead && x.Doused && x.PlayerRole != IRole.Arsonist).ToList();
+                    foreach (var burn in burning)
                     {
                         if (ga?.Choice == burn.Id)
                         {
@@ -3190,7 +3199,8 @@ namespace Werewolf_Node
                         }
                         else
                         {
-                            KillPlayer(burn, KillMthd.Burn, killer: arsonist, hunterFinalShot: false);
+                            KillPlayer(burn, KillMthd.Burn, killer: arsonist, hunterFinalShot: false, 
+                                dyingSimultaneously: burning.Where(x => (ga?.Choice ?? 0) != x.Id).ToList());
                             burn.Doused = false;
                             burn.Burning = true;
                             SendGif(GetLocaleString("Burn"), GetRandomImage(BurnToDeath), burn.Id);
@@ -4934,7 +4944,7 @@ namespace Werewolf_Node
                 to.CurrentQuestion = (new QuestionAsked
                 {
                     QType = qtype,
-                    ValidAnswers = choices.Select(x => x[0].Text).ToArray(),
+                    ValidAnswers = choices.Select(x => x[0].CallbackData).ToArray(),
                     MessageId = msgId
                 });
             }
@@ -5514,10 +5524,10 @@ namespace Werewolf_Node
             Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
         }
 
-        private void KillPlayer(IPlayer p, KillMthd? killMethod, IPlayer killer = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true)
-            => KillPlayer(p, killMethod, killers: new IPlayer[] { killer }, isNight: isNight, diedByVisitingVictim: diedByVisitingVictim, diedByVisitingKiller: diedByVisitingKiller, killedByRole: killedByRole ?? killer?.PlayerRole, hunterFinalShot: hunterFinalShot);
+        private void KillPlayer(IPlayer p, KillMthd? killMethod, IPlayer killer = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true, List<IPlayer> dyingSimultaneously = null)
+            => KillPlayer(p, killMethod, killers: new IPlayer[] { killer }, isNight: isNight, diedByVisitingVictim: diedByVisitingVictim, diedByVisitingKiller: diedByVisitingKiller, killedByRole: killedByRole ?? killer?.PlayerRole, hunterFinalShot: hunterFinalShot, dyingSimultaneously: dyingSimultaneously);
 
-        private void KillPlayer(IPlayer p, KillMthd? killMethod, IEnumerable<IPlayer> killers = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true)
+        private void KillPlayer(IPlayer p, KillMthd? killMethod, IEnumerable<IPlayer> killers = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true, List<IPlayer> dyingSimultaneously = null)
         {
             // if it was a death by love, don't handle it separately
             p.DiedLastNight = isNight && killMethod != KillMthd.LoverDied;
@@ -5533,13 +5543,16 @@ namespace Werewolf_Node
                 p.DiedByFleeOrIdle = true;
                 return;
             }
-            if (p.InLove && Players.Any(x => x.Id == p.LoverId && !x.IsDead))
+
+            // Only kill the lover if they are not already dying at the very same time (that is, when both of them are burnt by arsonist).
+            if (p.InLove && Players.Any(x => x.Id == p.LoverId && !x.IsDead && !(dyingSimultaneously?.Contains(x) ?? false)))
             {
                 if (killMethod.HasValue && new[] { KillMthd.HunterShot, KillMthd.Shoot }.Contains(killMethod.Value) && killers.Count() == 1
                 && !new[] { p, Players.First(x => x.Id == p.LoverId) }.Any(x => new[] { ITeam.Village, ITeam.Neutral, ITeam.Thief }.Contains(x.Team)))
                     AddAchievement(killers.First(), AchievementsReworked.DoubleShot);
                 KillLover(p, sendNoMessage: isNight);
             }
+
             switch (p.PlayerRole)
             {
                 case IRole.WolfCub:
