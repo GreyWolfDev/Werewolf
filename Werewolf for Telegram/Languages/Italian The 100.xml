@@ -1,0 +1,2224 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Currently updated by @Ponyta. Ask me for anything, thanks -->
+<!-- Last updated on 1 July 2020 -->
+<!-- Linguaggio aggiornato esclusivamente da @Ponyta. Per qualsiasi errore, contattatemi. Grazie -->
+<!-- Ultimo aggiornamento il 1 Luglio 2020 -->
+<!--Se stai usando questo file come base per una nuova variante ricorda che le stringhe con <value> multiple vanno tradotte una sola volta quindi quelle extra puoi tranquillamente eliminarle-->
+<!--Per la stessa ragione puoi aggiungere più <value> a stringhe che ne hanno di meno, e il bot sceglierà casualmente ogni volta-->
+<!--Inoltre, le stringhe con "deprecated="true"> non sono più utilizzate, quindi puoi saltarle completamente. Consiglio Notepad++ o Wuffpad-->
+<strings>
+<!-- Importante: Cambiare il "language name" e la "variant" per nuovi linguaggi. "owner" è opzionale, serve per lasciare un contatto per eventuali modifiche-->
+  <language name="Italian - The 100" base="Italiano" variant="The 100" owner="@Neremijastrial e @DonyDeBa" code="it" isDefault="false"/>
+  <string key="NotInGame" deprecated="true">
+    <value>Sembra che tu non stia partecipando a nessuna partita in questo momento...</value>
+  </string>
+  <string key="PlayerStartedGame">
+    <value>{0} vuole lottare contro A.L.I.E, clicca Join per unirti alla resistenza! Distruggerai "la puttana dal vestito rosso" o la aiuterai a controllare le menti?</value>
+    <value>{0} ha scatenato una guerra! Diventerai Heda o morirai tra le mura di Polis?</value>
+    <value>{0} ha dato il via al Praimfaya! Clicca Join per entrare nel bunker... e probabilmente essere buttato fuori!</value>
+    <value>{0} ha iniziato una guerra, clicca Join per unirti al tuo Clan e vincere... o morire da eroe.</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+    <value>{0} ha dato il via alla lotta contro A.L.I.E. in stile caos! Clicca Join per unirti alla resistenza!</value>
+    <value>{0} ha dato il via al Praimfaya in stile caos! Clicca Join per unirti al bunker... e probabilmente essere buttato fuori!</value>
+	<value>{0} ha scatenato una guerra in stile caos! Clicca Join per unirti al tuo Clan e vincere... o morire da eroe.</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>Non puoi unirti ora! Il conflitto è già iniziato.</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Ti sei già unito!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Ancora 1 minuto per unirsi alla lotta contro A.L.I.E.!</value>
+    <value>Ancora 1 minuto per combattere per il tuo Clan!</value>
+    <value>Solo 60 secondi rimanenti per evitare il Praimfaya! Entra nel bunker prima di finire arrosto!</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>Ancora {0} secondi per sconfiggere "la puttana dal vestito rosso"!</value>
+    <value>Il delirio inizierà fra {0} secondi! Clicca Join per unirti! </value>
+    <value>Solo {0} secondi rimanenti per partecipare al conflitto!</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Ah, non siamo abbastanza. Niente da fare contro A.L.I.E.!</value>
+    <value>Non abbiamo reclutato abbastanza Terrestri! La guerra tra i Clan è annullata!</value>
+    <value>Ah, a quanto pare a nessuno è fregato niente del Praimfaya in arrivo...</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Il gioco sta iniziando, aspettate qualche secondo mentre assegno i ruoli e aggiorno il database.</value>
+    <value>La partita è iniziata! Vi sto assegnando i ruoli in privato. Buona fortuna a tutti!</value>
+    <value>Sto iniziando la partita! Controllate la chat privata per ricevere i vostri ruoli!</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <value>{0} è bannato per aver tentato un exploit (i nomi che iniziano per / non sono ammessi)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, per favore, cambia il tuo nome per partecipare!</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Mi dispiace, non c'è più posto nei clan, potrai solo osservare.</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} si è unito. {1}/{3} giocatori, {2} minimo.</value>
+  </string>
+  <string key="PMTheBot">
+    <value>\n{0} Benvenuto a Werewolf! \nPer favore avviami cliccando il bottone qua sotto oppure manualmente su {1}.\nAffinchè io possa scriverti, devi prima avviarmi.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Ormai sei morto, hai servito con onore il tuo Clan, ma non puoi andartene! Avresti dovuto prendere il chip, mio caro!</value>
+  </string>
+  <string key="Flee">
+    <value>{0} ha disertato... il suo Clan non tratta bene i disertori...</value>
+    <value>{0} è fuggito! Che tutti quegli stronzi finiscano pure nella Città della Luce...</value>
+    <value>{0} è fuggito! Il suo Clan è molto deluso...</value>
+    <value>{0} è scappato dal bunker... preferisce diventare la Torcia Umana col Praimfaya!</value>
+    <value>{0} è scappato dal Conclave! Vigliacco!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>\n{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>Rimangono in {0} a lottare.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Hey, non ti ho ancora chiesto nulla!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Non mi pare tu stia giocando.</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Non posso trovare un giocatore tramite questo nome!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>Questa non è una risposta valida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} vota per portare nella Città della Luce {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} vota per de-chippare {1}</value>
+    <value>{0} vota per linciare {1}</value>
+    <value>{0} vota per condannare a morte {1}</value>
+    <value>{0} vota per gettare al rogo {1}</value>
+  </string>
+  <string key="IdleKill">
+    <value>{0} non ha votato per due notti consecutive. Il suo Clan ha visto ciò come un atto di tradimento. {0} viene condannato a morte per dare l'esempio.\n{1}</value>
+    <value>{0} non ha votato per due notti consecutive. Il suo popolo ha visto ciò come complicità con il nemico. {0} viene bruciato al rogo pubblicamente.\n{1}</value>
+    <value>{0} non ha votato per due notti consecutive. Il suo popolo ha visto ciò come un tradimento. {0} viene torturato e ucciso davanti a tutti.\n{1}</value>
+    <value>{0} si è scordato di votare per due volte di fila. I membri del suo Clan, non contenti di questa assenza di partecipazione al bene del suo popolo, decidono di impiccare {0} per negligenza.\n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>🖕 Hai appena deciso di prendere il chip. Ora fai parte della Città della Luce. Congratulazioni, hai sconfitto la sofferenza e la morte! Ora tocca agli altri seguire il tuo esempio, o moriranno...</value>
+    <value>🖕 Tutti i chippati sono stati uccisi, ma, alla fine, tu hai capito la causa benevola di A.L.I.E., e hai preso il Chip. Adesso fai parte della Città della Luce.</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Scelta accettata</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nLexa, 👳 (ovvero la tua grande Heda), è {0}. Proteggila a qualsiasi costo!</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>🙇‍♂️ Hai vinto il Conclave, dunque sei appena diventato il nuovo Comandante! {0}, sei il successore di Lexa 👳!</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>🙇‍♂️ {0} ha sconfitto gli altri Sanguenero, ha vinto il Conclave ed è ora il nuovo Comandante dopo {1} 👳!</value>
+  </string>
+  <string key="SeerSees">
+    <value>👳 Hai scoperto che\n{0} è {1}!</value>
+    <value>👳 La Fiamma ti fa capire che\n{0} è {1}!</value>
+    <value>👳 La saggezza dei vecchi Comandanti ti fa intuire che\n{0} è {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Chi vuoi linciare?</value>
+    <value>Chi vuoi che sia messo a morte?</value>
+    <value>Chi vuoi de-chippare?</value>
+    <value>A chi vuoi friggere il chip?</value>
+  </string>
+  <string key="AskDetect">
+    <value>🕵️‍♂️ Chi vuoi spiare per conto di Azgeda?</value>
+    <value>🕵️‍♂️ Chi vuoi spiare per conto della tua Regina?</value>
+  </string>
+  <string key="AskShoot">
+    <value>🔫 Bellamy, a chi vuoi sparare? {0} proiettili rimanenti</value>
+    <value>🔫 Carichi la tua arma. A chi sparare? Ti rimangono solo {0} proiettili.</value>
+    <value>🔫 Prendi la mira per sparare. Chi pensi sia pericoloso? Hai ancora {0} proiettili.</value>
+  </string>
+  <string key="AskVisit">
+    <value>💋 Chi vuoi molestare stanotte?</value>
+    <value>💋 Chi costringi a divertirsi con te?</value>
+    <value>💋 In quale casa ti vuoi intrufolare?</value>	
+  </string>
+<!-- Usato sia per Veggente, Folle che lo Stregone. -->  
+  <string key="AskSee">
+    <value>👳 Chi vuoi sottoporre alla saggezza dei vecchi Comandanti?</value>
+    <value>👳 Chi vuoi controllare stanotte?</value>
+    <value>👳 Su chi vuoi meditare?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Chi vuoi proteggere?</value>
+  </string>
+  <string key="AskEat">
+    <value>🐺 A chi vuoi far prendere il chip?</value>
+    <value>🐺 Chi forzi a prendere il chip stanotte?</value>
+    <value>🐺 Chi si unirà alla Città della Luce?</value>
+  </string>
+  <string key="AskHunt">
+    <value>💂‍♂️ Chi vuoi decapitare, se è un Prime?</value>
+    <value>💂‍♂️ Quale Prime cancellerai per sempre?</value>
+    <value>💂‍♂️ Chi vuoi scoprire se è diventato un Prime?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>👶 Chi vuoi come supporto psicologico?</value>
+    <value>👶 Chi vuoi come surrogato dei tuoi genitori?</value>
+    <value>👶 Chi vuoi come aiuto contro i tuoi incubi?</value>
+  </string>
+  <string key="AskConvert">
+    <value>👤 Chi diventerà un Prime?</value>
+    <value>👤 Chi guadagnerà l'immortalità di un Prime?</value>
+    <value>👤 Chi si unirà all'élite di Sanctum?</value>
+    <value>👤 A chi dai il Mind Drive resettato?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  Sii sicuro di discutere con {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Sei Luna (😾). Per adesso sei una normale Guerriera terrestre, ma solo fin quando i Chippati non ti faranno visita. A quel punto darai di matto e comincerai ad odiare il genere umano: diventerai una chippata a tua volta, pronta a uccidere tutti durante il Conclave per restare l'unica sopravvissuta sulla Terra... che (per quello che tu crederai) è morire solo fisicamente. Ma i Terrestri rimasti ti linceranno, se ti scoprono. Buona fortuna!</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Sei Echo (🕵️). Spia Azgeda al servizio della tua Regina, durante il giorno puoi scegliere una persona da spiare per capire chi è veramente e spifferarlo al tuo Clan. Ma sta' attenta - il tuo ruolo di spia potrebbe essere rivelato a quei pazzi dei Chippati! (40% di probabilità)</value>
+    <value>Sei Echo (🕵️). Di giorno puoi investigare qualcuno e fare la spia ad Azgeda riguardo al suo ruolo ma, ogni volta che indagherai, avrai il 40% di possibilità di essere scoperta dai Chippati. Fai attenzione, o farai la fine della ragazza a cui hai rubato il nome!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Sei Jasper 🍻 , un tempo parte integrante dei 100, ma in seguito all'uccisione della tua amata Maya ti sei dato all'alcol. Finora hai rifiutato di ascoltare i seguaci di A.L.I.E.... ma se uno di loro ti dovesse convincere a prendere il chip, almeno fermerai i chippati per una notte!</value>
+    <value>Ti svegli in un lago di Moonshine (e di lacrime)... Che sbornia... com'è che ti chiami...? Ah già - sei Jasper! 🍻 ...QUANTO TI MANCA MAYA! *piange*</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Sei Lincoln (👼🏾) e ogni notte proteggi qualcuno dai chippati e/o Blodreina (🔪), la tua ex impazzita. Se proteggi un chippato, hai solo il 50% di possibilità di sopravvivere, mentre se proteggi Blodreina morirai sicuramente... sai, la storia si ripete.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Sei Bellamy (🔫), il cuore del gruppo. Tu puoi provare a salvare il tuo popolo, A QUALSIASI COSTO! Hai 2 proiettili che potrai utilizzare di giorno per uccidere. Ma attenzione, quando sparerai, nella Città della Luce sentiranno tutto (tranne il dolore 🌚) e tutti sapranno che sei armato e pericoloso...</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Tu sei Ontari (💋). Durante la notte puoi scegliere di assecondare le tue voglie e "far visita" ad un altro Terrestre, e verificare se è un Chippato o meno. Tuttavia, se sceglierai di spassartela con Blodreina (🔪) oppure con un Chippato (🐺), o con chi sarà ucciso da loro, ci lascerai le penne e perderai la possibilità di diventare Comandante come marionetta della Regina Nia. La nota positiva: se i Chippati ti scelgono per unirti a loro nella Città della Luce, non potranno torturarti e ucciderti, perché eri occupata in quel momento.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Sei Gustus (🖕🏻)! Per ora sei un semplice Guerriero terrestre che non crede in alleanze dannose, ma nel momento in cui non rimarranno più Chippati, ti convincerai che A.L.I.E. aveva ragione e diventerai un Chippato a tua volta. Nel caso in cui Lexa (👳‍♀) ti controllasse, potresti essere identificato sia come semplice Guerriero che come Chippato! Si sa, è difficile scovare i traditori... Ma attento a non farti scoprire: saresti legato a un palo e torturato dagli altri, fino a essere trapassato e ucciso con una spada. Sai com'è, jus drein jus daun.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Sei un Chippato (🐺)! Di notte la vocina di A.L.I.E. nella tua testa prende il sopravvento, quindi chipperai a destra e a manca, fino a quando non saranno tutti nella Città della Luce! Occhio a non farti scoprire da chi non è dei vostri!</value>
+    <value>Sei un Chippato (🐺)! Che importa della guerra, del Conclave, del Praimfaya o di tutto il resto? L'obiettivo è uno solo: salvare l'umanità da morte e sofferenza! Ogni notte, con le buone o con le cattive potrai scegliere di far unire qualcuno alla Città della Luce, ma di giorno dovrai depistare i Terrestri per non farti de-chippare... o linciare! Buona fortuna!</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value>Sei Lexa 👳‍♂️, una dei Terrestri più importanti. Grazie alla saggezza della Fiamma e dei vecchi Comandanti, ogni notte puoi controllare qualcuno e scoprire la verità su di lui. (NB: crederai di essere Heda anche se sei Clarke 🃏... che dire, quella Fiamma ha proprio lasciato il segno)</value>
+    <value>Sei Lexa 👳‍♂️, una dei Terrestri più importanti. Grazie alla saggezza della Fiamma, ogni notte puoi decidere di indagare su qualcuno e scoprire chi è davvero. Attenzione a non rivelarti durante il giorno: si sa, i Chippati sono ansiosi di distruggere la Fiamma...</value>
+	</string>
+  <string key="RoleInfoVillager" >
+    <value>Sei un semplice Guerriero terrestre 👨‍🌾, costretto a seguire gli ordini di altri andando in guerra. Spera di non finire arrosto nel Praimfaya, o tra quegli svitati dei Chippati.</value>
+    <value>Sei un semplice Guerriero terrestre 👨‍🌾, ma puoi comunque cercare di portare onore al tuo Clan e al tuo Comandante, giustiziando chi minaccia loro e la Coalizione... e forse, FORSE, col tuo eroismo sarai degno di entrare nel bunker e ti salverai dal Praimfaya.</value>
+	</string>
+  <string key="RoleInfoTanner" >
+    <value>Sei McCreary (👺). Sei così incompreso e bistrattato da Diyoza e da tutti gli altri prigionieri che ne hai piene le palle, quindi hai deciso che vuoi morire... però in modo originale! Fatti linciare o condannare a morte, e all'ultimo secondo attiverai la bomba all'etilodio dall'Eligius IV: darai fuoco all'unica valle abitabile della terra! Così vinci solo tu (e il tuo ipotetico amante) e tutti gli altri bastardi schiattano di sicuro! OH, SÌ!</value>
+    <value>Sei Paxton "Cimitero" McCreary (👺). Hai messo incinta Diyoza, la tua acerrima nemica. Sei un criminale megalomane, ma con manie suicide... Il tuo più grande sogno perverso è rimanere ucciso dalle tue azioni, eventualmente col tuo amore del momento! Fatti ammazzare, e tutti gli altri perderanno!</value>	
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>Sei Charlotte (👶)! Hai davvero così tanti traumi... Scegli qualcuno con cui confidarti - ma se lui morirà, gli scagnozzi di A.L.I.E. non ci penseranno due volte e ti persuaderanno ad abbandonare il tuo dolore mentale, facendoti diventare una Chippata come loro.</value>
+    <value>Sei Charlotte (👶)! Povera piccola creatura turbata, hai bisogno di trovare qualcuno a cui mostrare i tuoi demoni! Ma se il tizio che hai scelto come supporto psicologico morirà, il dolore ti farà accettare il chip di A.L.I.E., e così entrerai nella Città della Luce (basta sofferenza!)</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>Sei Titus (👁). In quanto Custode della Fiamma, prova a proteggere l'identità di Lexa mentre la saggezza dei vecchi Comandanti le suggerisce la verità sulle azioni dei Clan.</value>
+    <value>Sei Titus, il Custode della Fiamma (👁), la spalla destra del Comandante e sua guida spirituale. Tu, e soltanto tu, sai chi è il vero Comandante, Lexa, a cui devi fedeltà eterna. Prova a proteggere la sua identità nel suo difficile compito, e cerca di farla sopravvivere fino a fine guerra!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>Sei Aiden 🙇‍♂️, un Natblida, e come tale potresti prendere il posto di Lexa 👳‍♂️ e diventare il prossimo Heda! Ma attento alla testa...</value>
+    <value>Sei Aiden 🙇‍♂️. Questo significa che in questo delirio è ancora viva Lexa 👳‍♂️, il Comandante. Nel caso lei morisse o divenisse una Prime 👤, tu vincerai il Conclave e diverrai il prossimo Heda.</value>
+  </string>
+  <string key="RoleInfoCultist" >
+    <value>Sei un Prime (👤). Il tuo obiettivo è convertire tutti i giocatori in Prime, impiantando i Mind Drive così da ricomporre la tua famigliola felice e ristabilire il controllo di Sanctum. È indispensabile che voi Prime agiate di notte: rischiate il linciaggio dalla folla inferocita, e il demone Gabriel (💂🏻‍♀) è sempre dietro l'angolo... pronto a decapitarvi uno per uno!</value>
+    <value>Sei un Prime (👤), oltretutto di pessimo umore dato che quei ficcanaso arrivati dalla Terra hanno sfatato il mito che tu sia una divinità, impedendoti di reincarnarti. Ogni notte, puoi scegliere un tizio a cui regalare l'immortalità di un Prime. Se tra linciaggi, de-chippamenti ed eclissi tutta la popolazione rimasta viva ha ormai il Mind Drive in testa, voi Prime avete vinto.</value>
+  </string>
+  <string key="RoleInfoCultistHunter" >
+    <value>Sei Gabriel 💂‍♂️. DEATH IS LIFE! Odi a morte i Prime che osano cercare l'immortalità come se fossero dèi.
+La tua missione è eliminare il folle culto di cui sei involontario artefice.
+Di notte puoi visitare chiunque tu voglia e se scopri che ha il Mind Drive, lo elimini. Se non è un Prime, lo lascerai vivere. Se i Prime provano a farti tornare nel loro sistema teocratico, l'ultimo che si era reincarnato morirà e ti verrà detto quanti ne sono rimasti.</value>
+  </string>
+  <string key="LynchTime" >
+    <value>L'ennesima notte piena di violenza si avvicina. Con l'angoscia di essere osservati da A.L.I.E. in ogni loro mossa, i Terrestri si preparano a decidere chi sarà linciato questa sera...\nOgnuno ha {0} secondi per votare!</value>
+    <value>Il tramonto annuncia la notte imminente, e l'umanità deve fare un'altra scelta spietata per la sopravvivenza.\nOgnuno ha {0} secondi per votare!</value>
+    <value>Il crepuscolo si avvicina inesorabile. Col Praimfaya che incombe minaccioso, i Clan iniziano a decidere chi far fuori questa sera...\nOgnuno ha {0} secondi per scegliere il possibile Chippato!</value>
+    <value>La sera si avvicina. Avendone abbastanza di combattere nella Fossa e di mangiare cubetti in brodo ogni santo giorno, la Wonkru cerca di togliere di mezzo il suo tiranno...\nOgnuno ha {0} secondi per votare!</value>
+	</string>
+  <string key="DayTime" >
+    <value>Il sole è sorto. Avete {0} secondi per scannarvi e insultarvi.</value>
+    <value>Con il sorgere del Sole, termina la notte. Ora tutti hanno {0} secondi per discutere sul da farsi.</value>
+  </string>
+  <string key="NightTime" >
+    <value>Il buio è calato. Tutti ritornano nelle proprie case con la speranza di non essere torturati per prendere il chip, o arrostiti, o ridotti a cubi. Ruoli della notte: avete {0} secondi per agire!</value>
+    <value>La giornata è finita e la luna è alta in cielo. Ognuno torna nella propria casa, preoccupato. Ruoli della notte: avete {0} secondi per fare le vostre scelte!</value>
+	</string>
+  <string key="LynchKill" >
+    <value>I Clan hanno espresso i loro voti, tra dubbi e sospetti. {0} è morto. Yu gonplei ste odon.\n{1}</value>
+    <value>I Clan hanno deciso che {0} sarà il linciato di oggi. La tua battaglia è finita.\n{1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>Incapace di accordarsi su chi uccidere, la gente torna frustrata alle proprie abitazioni, in attesa di un'altra notte piena d'ansia...</value>
+    <value>La folla, con idee opposte su chi linciare, torna delusa alle proprie case, preparandosi al peggio...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>Nessuno ha votato! Qualcosa mi puzza... che siano tutti schiavi di A.L.I.E., o Prime...?</value>
+    <value>La folla si fa silenziosa, nessuno ha il coraggio di accusare...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value>🐺 Azgeda si riunisce al mattino, ma {0} manca all'appello. La migliore e più fedele spia della Regina Nia è trovata morta, con la sua spada nel ventre e la pittura rituale del suicidio. La porta era stata sbarrata e poi divelta dai nemici. Questo può significare solo una cosa. Echo (🕵️) ha rifiutato il chip, preferendo la morte piuttosto che tradire il suo Clan.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value>🐺 Si leva il sole, e per la disperazione di tutti, {0} non si trova da nessuna parte. Magari Lincoln (👼🏾) è stato costretto a prendere il chip? O forse ha deciso di non proteggere più nessuno? Ma ecco che infine viene trovato morto per le troppe torture. Poco male, secondo i Chippati... dopotutto, nella Città della Luce non esiste la morte, e sarebbe ancora vivo, se solo avesse accettato il chip!</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value>🐺 Sorge il sole su un giorno terribile. Arkadia è in lutto per {0}. Bellamy (🔫), ovvero la guida, il cuore e la colonna portante della Skaikru, è stato trovato morto... con un proiettile nel cuore tanto grande che aveva. I Chippati non hanno gradito la sua ottima mira e la sua testardaggine nel non farsi controllare da A.L.I.E.
+Meglio ucciso da delle marionette che da Clarke, comunque...</value>
+    <value>🐺 Uscendo dalle case, ecco lo sconvolgente ritrovamento del corpo di {0}. Skaikru, avete perso il vostro amato Bellamy (🔫): ha combattuto tutta la notte contro i Chippati, ma invano. Però è morto con onore... una pallottola nel petto - che terribile fine...</value>
+  </string>
+  <string key="SeerEaten" >
+    <value>🐺 A Polis è l'alba ormai. L'assedio notturno dei Chippati alla torre del Comandante {0} è stato lungo. Nonostante la strenua resistenza e il sacrificio di molti guerrieri, con disperazione di tutti Lexa (👳) è morta. La Fiamma è stata salvata, però... Speriamo che ci sia un Natblida pronto a diventare il prossimo Heda.</value>
+   </string>
+  <string key="DrunkEaten" >
+    <value>🐺 Un biglietto avvisa gli Skaikru della terribile decisione di {0}. Jasper (🍻) ha infine deciso di unirsi alla Città della Luce, ma prima di prendere il chip e scappare via a suicidarsi, si è almeno premurato di avvertire i suoi amici. May we meet again.</value>
+  </string>
+  <string key="FoolEaten" >
+    <value>🐺 È stata una notte di lotta estrema nella torre di Polis. Al sorgere del sole, si scopre che {0} è stata uccisa dai Chippati sul trono del Comandante, nel tentativo di distruggere A.L.I.E. 2.  A quanto pare Clarke (🃏) credeva di essere una Comandante e ha provato a usare la Fiamma per cercare di sconfiggere A.L.I.E.
+Tutti i Terrestri scoprono così che non era altro che una Natblida artificiale, indegna dell'Ascensione, ma comunque eroica per avere tentato di capire qualcosa in questo macello.</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>🐺 Il mattino è giunto. Ed ecco {0} ritrovato con un pugnale nel collo! Meglio la morte che tradire i propri cari per conto di un'A.I. impazzita.\n{1}</value>
+    <value>🐺 Un'altra notte di terrore è finita. Seguendo una terrificante scia di sangue la Coalizione trova {0} torturato a morte, nella sua casa.\n{1}</value>
+    <value>🐺 Nella notte le urla di {0} si sono sentite fino a Nakara. All'alba, la gente trova lo sfortunato legato a una croce. Pare che abbia rifiutato il chip, preferendo la morte.\n{1}</value>
+  </string>
+  <string key="HunterKilledCultist">
+    <value>💂‍♂️ Un odore tremendo proviene dalla casa di {0}... Viene ritrovato il suo corpo decapitato. Un Prime è stato ucciso da Gabriel! I Figli di Gabriel sono un passo più vicini al loro obiettivo...</value>
+    <value>💂‍♂️ La gente trova nel palazzo il cadavere di {0}! Ha un taglio nel collo, e c'è un Mind Drive in briciole sul pavimento di marmo! Il "demone" Gabriel ha eliminato per sempre un altro di quei falsi dei!</value>
+    <value>💂‍♂️ Sembra che questo sarà il quinto e ultimo corpo di {0}. Il Mind Drive è stato distrutto da Gabriel! Ecco che succede a chi cerca di essere immortale.</value>
+    <value>💂‍♂️ {0} si era fatto convincere a impiantarsi un Mind Drive. Ma Gabriel l'ha scoperto e non l'ha presa molto bene... Dato che le parole non sono servite, la spada ha eliminato questo nuovo Prime.</value>
+  </string>
+  <string key="NoAttack" >
+    <value>Il giorno successivo i Terrestri si riuniscono sotto la torre di Polis, sollevati - nessun morto la scorsa notte. (Che i Chippati abbiano fatto unire qualcuno alla Città della Luce senza ucciderlo...?)</value>
+    <value>Appena si fa giorno, tutti si riuniscono sotto la torre di Polis. Pare che ci siano tutti, e che nessuno sia morto durante la notte!</value>	
+  </string>
+  <string key="CursedBitten" >
+    <value>🐺 Sei stata convinta a entrare nella Città della Luce... Ora sei pronta a far fuori il genere umano come volevi: tanto sarà salvato da A.L.I.E.!</value>	
+  </string>
+  <string key="WolfTeam">
+    <value>🐺 I membri della Città della Luce sono: {0}</value>
+    <value>I Chippati: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value>🐺 {0} si è convinta a entrare nella Città della Luce... è Luna (😾) kom Floukru! Era ora che scovaste quella Sanguenero: si sarà pur sottratta alla Fiamma, scappando dal Conclave, ma ora è una Chippata anche lei! Date il benvenuto alla nuova arrivata!</value>
+  </string>
+  <string key="WolvesEatYou" >
+    <value>🐺 Ops! I seguaci di A.L.I.E. ti hanno ucciso mentre tentavano di farti prendere il chip!</value>
+    <value>🐺 Oh no! I Chippati ti hanno torturato al punto da ucciderti!</value>
+    <value>🐺 Nonostante gli sforzi, quei fanatici non sono riusciti a costringerti a prendere il chip, quindi ti hanno ucciso.</value>
+    <value>🐺 Hai rifiutato il chip e alla fine sei morto per le torture. Meglio cadavere che marionetta di questa A.L.I.E.!</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value>🍻 Oh no! {0} era Jasper (🍻)! Lo hai convinto a entrare nella Città della Luce, ma prima di prendere il chip ti ha sfidato a bere! Non ricordi bene che è successo dopo, ma ora sei KO per una notte...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>👼 Hai provato a proteggere un Chippato! Ma lui ti ha torturato senza pietà per farti prendere il chip... tu hai fatto fin troppa resistenza, e così sei morto.</value>
+  </string>
+  <string key="GuardSaved" >
+    <value>👼 Hai salvato la libertà e forse anche la vita di {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value>👼 {0} non è stato attaccato dai seguaci di A.L.I.E.:, quindi questa notte l'hai passata a disegnare.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>👼 Hai deciso di proteggere {0}, ma non era a casa!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>Sei stato protetto da Lincoln (👼🏾), che ha scacciato i Chippati 🐺 e/o Blodreina 🔪! (oppure ti ha salvato dal Praimfaya)</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value>Ontari (💋) ha deciso di darsi una calmata durante la notte sbagliata, e di rimanere nella Torre di Polis. {0} non ha preso il chip, ma è stata uccisa dai seguaci di A.L.I.E. in quanto Sanguenero in grado di ottenere la Fiamma...</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value>Strano... {0} non era nella sua camera... Che peccato!...</value>
+    <value>Strano... {0} non era in casa...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value>Hai fatto visita a {0} per divertirti un po' a sue spese, ma ti sei trovata davanti una bella sorpresa. Era un maledetto Chippato, e non ha gradito il tentativo di molestia e sputtanamento. Così ha deciso di ringraziarti con una sbarra di ferro sulla zucca. Ora sei morta... e non puoi più stuprare nessuno! D:</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value>💋 {0} questa notte ha scelto la vittima sbagliata per spassarsela! La sua morte dimostra che i Chippati la ritenevano una Natblida pericolosa, perché era in grado di fermarli... quindi l'hanno uccisa con una sbarra di ferro in testa. RIP.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value>💋 {0} ha fatto visita a {1}, pronta a concedersi un po' di divertimento... che lui volesse o no. Ma ha trovato un Chippato impegnato a torturare {1}! Fulmineo, il Chippato si gira verso {0} con l'intento di costringere anche Ontari a "salvarsi"... {0} è morta.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value>💋 Ora sai che {0} non è un Chippato, visto che te lo sei sbattuto per bene la scorsa notte! Non era contento... ma nessuna traccia di strani chip!</value>
+    <value>💋 Stanotte te la sei spassata con {0} e, dopo averlo accidentalmente buttato giù dal letto, ha urlato dal dolore. {0} non è un Chippato!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>💋 Era abbastanza scuro e non hai potuto vedere bene, ma nel bel mezzo della notte sei stato svegliato da quella ninfomane di Ontari (💋) che abusava di te. Incatenato, non hai potuto opporre resistenza, fin quando lei non se n'è andata...</value>
+    <value>💋Nel bel mezzo della notte sei stato svegliato e incatenato da quella pervertita di Ontari (💋), che ha poi abusato di te. Non hai potuto dire di no o opporre resistenza, fin quando lei non se n'è andata...</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value>Hai beccato {0} mentre ti spiava, con tanto di arco e frecce tra le mani! Direi che si tratta di Echo 🕵️‍♂️, una spia di Azgeda!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value>🕵️‍♂️ A furia di spiare, hai scoperto che {0} è {1}!</value>
+  </string>
+  <string key="HarlotShot" >
+    <value>🔫 Sembra che una notte con quella ninfomane di Ontari abbia traumatizzato {0}! Bellamy (🔫) non ha gradito l'approccio indesiderato. {1} è morta.</value>
+  </string>
+  <string key="DefaultShot" >
+    <value>🔫 Improvvisamente si sente uno sparo. Gli Skaikru e i Terrestri escono dalle proprie case per cogliere {0} in piedi accanto al corpo di {1}, con l'arma ancora puntata alla sua testa.\n{2}</value>
+  </string>
+  <string key="WolfWins" >
+    <value>A.L.I.E. ha vinto! La Fiamma è distrutta!</value>
+  </string>
+  <string key="WolvesWin" >
+    <value>A.L.I.E. ha vinto! I Chippati hanno fatto TUTTO il possibile per la sua causa... e ora sono sereni e felici!</value>
+  </string>
+  <string key="VillageWins" >
+  <value>I Clan hanno vinto! Se ne tornano alle loro nazioni, in attesa della prossima chiamata alle armi dei loro capi...</value>
+  </string>
+  <string key="TannerWins" >
+    <value>Oh no! Avete linciato McCreary! Ora la Valle è in fiamme... la sua bomba all'etilodio lanciata giù dall'Eligius IV ha distrutto tutto! GAME OVER.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Giocatori rimasti vivi, ruolo e fazione:</value>
+  </string>
+  <string key="CultistVotedConvert" >
+    <value>{0} vota per far diventare un Prime {1}</value>
+    <value>{0} vota per rendere un Prime {1}</value>
+  </string>
+  <string key="CultConvertCultHunter">
+    <value>{0} è stato inviato a fare il suo sporco lavoro, per far diventare un Prime {1}... ma era quel demone di Gabriel! {0} è morto per sempre: il suo Mind Drive è distrutto!</value>
+  </string>
+  <string key="CultHunterKilledCultVisit">
+    <value>{0} ti ha fatto visita la scorsa notte, pronto a offrirti l'immortalità di un Prime...  ma tu non torneresti mai tra quei falsi dèi assassini! Lo hai catturato, interrogato e poi ucciso, quindi hai distrutto il suo Mind Drive! Ora sai che restano {1} Prime!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>👤 I Prime ti hanno offerto l'immortalità, e tu hai accettato! Ora sei uno di loro. Ogni notte, avrai la possibilità di offrire anche tu un Mind Drive resettato a qualcun altro... Non farti scoprire!</value>
+  </string>
+  <string key="CultTeam">
+    <value>👤 Prime: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>👤 {0} è diventato un Prime!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>👤 {0} è stato inviato a farsi un nuovo alleato, è andato da {1}... ma nessuno era in casa!</value>
+  </string>
+  <string key="CultWins" >
+    <value>Tutti i Chippati sono morti, ma tutti i sopravvissuti hanno accettato il Mind Drive... I Prime hanno vinto!</value>
+  </string>
+  <string key="HunterVisitDead">
+     <value>💂‍♂️ Hai visitato {0}, ma era già morto!</value>
+  </string>
+  <string key="HunterFindCultist">
+    <value>💂‍♂️ Uccidi {0}, poi distruggi il suo Mind Drive. DEATH IS LIFE!</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>💂‍♂️ Hai fatto visita alla casa di {0}, ma non era un Prime, perciò te ne ritorni nella foresta di Sanctum, nei pressi dell'Anomalia.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>👶 Il supporto emotivo di {0} è morto! Ha accettato il chip, e fa ora parte della Città della Luce!</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>👶 {0} è morto! Hai accettato il chip! I tuoi nuovi alleati sono: {1}</value>
+  </string>
+  <string key="Villager">
+    <value>un Guerriero terrestre 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Jasper 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Ontari 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Lexa 👳 </value>
+  </string>
+  <string key="Traitor">
+    <value>Gustus 🖕</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Lincoln 👼🏾</value>
+  </string>
+  <string key="Detective">
+    <value>Echo 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>un Chippato 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Luna 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Bellamy 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>McCreary 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Clarke 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Charlotte 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Titus 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Aiden 🙇 </value>
+  </string>
+  <string key="Cultist">
+    <value>un Prime 👤</value>
+  </string>
+  <string key="CultistHunter">
+    <value>Gabriel 💂</value>
+  </string>  
+ <string key="RanAway">
+    <value>👻 Fuggito</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Morto</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 In vita</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Persone in vita</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>un Criminale della Eligius IV 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Sei un Criminale della Eligius IV (👷). Dopo l'eclissi cerchi di sopravvivere come tutti gli altri, ma hai il vantaggio di sapere chi fossero i tuoi vecchi compagni criminali (a patto che ne sia rimasto in vita qualcuno...)</value>
+    <value>Sei un Criminale della Eligius IV (👷). Stanchi di fare i minatori su asteroidi del cazzo, vi siete ammutinati per tornare sulla Terra. Ora, in questo mondo completamente distrutto, l'unica certezza sono i tuoi vecchi compagni criminali (sempre che ne sia rimasto in vita qualcuno...)</value>
+    <value>Sei un Criminale della Eligius IV (👷). Dopo 109 anni dalla partenza siete finalmente ritornati sulla Terra, ormai distrutta. Perciò tu e i tuoi compagni criminali (sempre che ne sia rimasto qualcuno...) cercate ora di aiutare ciò che resta dell'umanità a vincere questa guerra e di avere così ciò che vi spetta. Quei cannoni sonici saranno utilissimi...</value>
+  </string>
+  <string key="MasonEaten">
+    <value>È l'alba, e viene ritrovato il corpo senza vita di {0}. Uno dei Criminali della Eligius IV (👷) è morto! Il suo passato di supercriminale non è bastato a proteggerlo contro la violenza diabolica della stessa A.I. che ha causato la fine del suo mondo...</value>
+  </string>
+  <string key="MasonTeam">
+    <value>\nGli altri Criminali della Eligius IV sono: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>👤 Il Prime più recente si reca a casa di {0} per proporgli l'immortalità, ma trova invece una casa malmessa, sangue ovunque, e chip distrutti sul pavimento...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>Ti introduci nella casa di {0} per convincerlo a entrare nella Città della Luce, ma improvvisamente incontri un energumeno armato fino ai denti. È Lincoln. Te le suona per bene, e anche se non senti il dolore, alla fine sei costretto a scappare via, sconfitto.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>Spedite {0} per offrire un Mind Drive ripulito a {1}, ma non c'è stato verso, non siete riusciti a convincerlo a unirsi alla vostra élite. Beh, che idiota...</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, un giocatore con il nome di {0} è già entrato. Per favore cambia il tuo nome per partecipare. </value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>💋 Ti rechi a casa di {0} per divertirti un po'... Ma quando stai per uscire, ti accorgi di uno strano laboratorio... Nascosto malamente, dietro una porta situata in fondo a una stanza piena di scheletri appesi...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>Tutti si svegliano la mattina, e si accorgono che {0} non si trova in giro... Controllano la sua casa per poi trovare il corpo di {0}.</value>
+    <value>La gente si sveglia al sorgere del sole, per poi trovare i resti di {0}, morto in qualche modo la scorsa notte...</value>
+  </string>
+  <string key="MasonConverted">
+    <value>👷 Porca troia... {0} non si è presentato alla riunione dei Criminali questa mattina... dove cazzo è finito...?!</value>
+  </string>
+  <string key="FleeDisabled">
+    <value>Fuggire mentre il gioco è in corso è stato disabilitato dall'admin del gruppo!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>è morto</value>
+  </string>
+  <string key="AdminAdded" deprecated="true">
+    <value>{0} è stato aggiunto alla lista degli admin. usa /config per cambiare le impostazioni del gruppo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Sei già nella partita! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Il tuo gruppo e' stato settato per far cominciare piu' partite... Uccisioni extra.</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <value>Il gruppo e' attualmente in lista d'attesa. Posizione:{0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Scusa, sto per prendere una pausa manutenzione. Non puoi avviare un gioco adesso. In attesa di {0} partite per finire... Controlla @greywolfdev per altre informazioni.</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <value>Mi dispiace, il numero massimo di partite simultanee è stato raggiunto. ({0}).  Posizione nella lista d'attesa: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <value>{0} e' un gruppo ufficiale, ed ha saltato la lista d'attesa!</value>
+  </string>
+  <string key="NoGame">
+    <value>Non ci sono guerre in corso. Cominciane una con /startgame o comincia un vero delirio di caos e violenza con /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Solo gli admin del gruppo possono usare questo comando. Chiedi al creatore o ad altri admin.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Dopo questa partita, mi spegnero' per una manutenzione.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Dopo questa partita, mi spegnero' momentaneamente per un aggiornamento (automatizzato).</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>UserId nullo.  Sei sicuro di aver mandato questo comando come risposta?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <value>{0} E' gia' un admin!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <value>{0} Non e' un admin!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <value>{0} E' stato rimosso dalla lista degli admin.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <value>Lingua settata su {0}</value>
+  </string>
+    <string key="NoSeer">
+	<value>Il Comandante non c'è! 😢</value>
+  </string>
+  <string key="TimesUp">
+	<value>È scaduto il tempo!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Sei Jason Rothenberg (🏹): all'inizio delle riprese scegli due personaggi per farli innamorare e illudere tutti i fan che avranno una vita felice. Dopo diventerai a tutti gli effetti un normale Guerriero terrestre (👱) (karma); se uno dei due amanti muore, l'altro si ucciderà. Gli amanti vincono insieme anche se di Clan diversi, mentre tu non vincerai con loro, ma con i terrestri.
+Puoi anche far innamorare te stesso di un personaggio... Almeno avrai interesse a non farlo morire male.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Sei Priya (🎭). La leggenda di Sanctum narra che tu sia in grado di reincarnarti nel corpo di altre persone e, ma per farlo devi trovare un corpo 😈. 
+Tutto ciò che devi fare è scegliere il malcapitat... ehm il fortunato e fare in modo che muoia! A quel punto ti sostituirai a lui. Se entro fine partita non ci sarai riuscita, perderai (eccezione: amante).
+Sii positiva, in fondo l'hai già fatto con Delilah e chissà quanti altri...
+I Prime (👤) possono renderti una di loro solo dopo che hai ottenuto il corpo di chi hai scelto per reincarnarti.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Sei Diyoza (🎯), criminale addomesticata ma che non rinuncia alla sua indole vendicativa. Hai preso possesso dell'Eligius IV, ma da quando ti sei scongelata dall'ibernazione non riesci a dormire bene, e tantomeno a separarti dalla tua pistola!
+Venderai cara la pelle, ma se muori puoi portare qualcun altro nella tomba. Se vieni uccisa dai Chippati, c'è la probabilità che tu riesca ad ucciderne uno per vendicarti, ma nel caso ce ne fossero altri, verresti accerchiata ed uccisa comunque. Maledetti bastardi.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>YOU ARE WONKRU, OR YOU ARE THE ENEMY OF WONKRU!
+Sei Blodreina (🔪). Fuggita di recente dal Bunker (nostalgia del pavimento?), il tuo obiettivo è far morire tutti coloro che non fanno parte del Wonkru. Ogni notte, puoi aggiungere il corpo di un nemico morto nella Fossa al menù del tuo Clan di Cannibali. Se qualcuno ti sfida, lo ucciderai, però i Chippati hanno comunque il 20% di probabilità in più di ucciderti se ti attaccano. Sai, non sentono il dolore, a differenza tua.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>🏹 Hai avuto un colpo di fulmine. La memoria di {0} non svanirà mai dal tuo cuore. Il tuo obiettivo è rimanere entrambi vivi. Se uno di voi due muore, l'altro morirà di dispiacere... e la vostra storia finirà. Brutta cosa illudere i fan... Maledetto Jason Rothenberg.</value>
+    <value>🏹 La freccia di Jason Rothenberg (🏹) ti ha colpito! Ti sei innamorato perdutamente di {0}! Se muore, condividerai il suo destino. Se riuscite a sopravvivere fino alla fine, sarete due Osleya, visto che le storie d'amore hanno un tasso di sopravvivenza peggiore di un Conclave!</value>
+    <value>🏹 Che fortuna! In questo mondo difficile e pericoloso sei riuscito a trovare {0}, l'amore della tua vita! Ma si sa, la morte e Jason Rothenberg sono sempre dietro l'angolo... la vostra storia potrebbe finire con {0} ucciso e tu suicidato per la perdita. Ah, che bello il vero amore!</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>🎯 La Wonkru ha deciso di impiccarti! Questa è la tua ultima possibilità! Veloce, scegli uno stronzo a cui sparare!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>🎯 {0} fruga per la sua pistola mentre il cappio si stringe sempre più, ma non riesce a usarla in tempo, e la sua morte sopraggiunge con la rumorosa rottura del collo...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>🎯 {0} estrae la sua pistola, guarda alla folla... ma non riesce a decidere a chi sparare. Diyoza si lascia così morire, accettando il suo destino...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>🎯 Mentre il cappio si stringe intorno al collo di {0}, lei tira fuori una pistola, la carica, prende la mira e preme il grilletto, sparando in testa a {1} giusto prima che il pavimento si ritiri! {1} crepa. {2}</value>
+    <value>🎯 Mentre {0} viene linciata dalla folla, lei afferra la propria pistola e con la destrezza di un ex militare e terrorista, riesce a sparare in testa a {1}, pensando che sia un nemico! {1} crepa. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>🎯 Stai per morire! Nei tuoi ultimi istanti di vita, hai l'occasione di sparare a qualcuno... Sbrigati!</value>
+    <value>🎯 Cazzo, stai per morire! Hai pochi istanti per scegliere un possibile bastardo a cui sparare... Veloce!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>🎯 {0} è morta prima di rendersene conto e poter tirare fuori la sua pistola, immersa in un bagno di sangue...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>🎯 Mentre {0} è stesa per terra, ansimante nei suoi ultimi attimi di vita, non riesce a decidere a chi sparare... e accetta il suo triste destino. Fanculo.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>🎯 In fin di vita, {0} cade... Ma non senza afferrare la pistola e sparare a {1}, che si becca il proiettile precisamente tra gli occhi. BOOM, HEADSHOT! {2}</value>
+    <value>🎯 In fin di vita, {0} cade... Ma non perde tempo e con prontezza tira fuori la sua pistola, spara al collo di {1} e lo uccide! {2}</value>
+    <value>🎯 {0} cade e sta per morire... Ma l'ex terrorista resta pericolosa anche in fin di vita, e infatti afferra la pistola, mira a {1} e lo fa fuori. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>👤 {0} si intrufola nella casa di {1}, apre la porta, il Mind Drive resettato già in mano, e viene immediatamente accolto da una pazza maniaca ricoperta di sangue! {1} affonda la spada nel corpo di {0}, urlando "YOU ARE WONKRU, OR YOU ARE THE ENEMY OF WONKRU"! {0} è morto.</value>
+    <value>👤 I Prime mandano {0} per convincere {1} ad accettare la loro immortalità, invece {0} finisce a combattere nella Fossa! Al posto del suo corpo, si trovano solo strani cubetti... Mi sa che {0} è morto "per il bene di tutti"...</value>
+    <value>👤 Il Prime {0} voleva spiegare a {1} che essere immortali è possibile, grazie a un Mind Drive resettato... ma Blodreina onora la morte, talmente tanto che ha pensato di omaggiarla uccidendo {0}.</value>
+    <value>👤 {0} voleva proporre un patto a {1}: immortalità in cambio del suo aiuto ai Prime. Purtroppo non ha convinto {1} del vantaggio di unirsi ai Prime. Quell'assassina l'ha trafitto con una lancia ben scagliata... che mira!</value>
+ </string>
+  <string key="HunterShotWolfMulti">
+    <value>🎯 I Chippati hanno provato a far ingoiare il chip a Diyoza la scorsa notte, ma l'ex terrorista è riuscita a portarne uno con sé nella tomba! {0} è morto (🐺)</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>🎯 L'ultima notte, i membri della Città della Luce hanno provato a convincere Diyoza a unirsi a loro, ma l'ex terrorista si è opposta ed è riuscita a uccidere {0}, un chippato 🐺, con la sua cara pistola!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>🔪 I Chippati hanno provato a convincere una pazza omicida a entrare nella Città della Luce. Poveri illusi! Si vede che non hanno SCELTO bene, perché Blodreina ha affrontato i nemici del Wonkru e {0} è stato ucciso nello scontro!</value>
+    <value>🔪 {0} voleva spiegare a Blodreina che vivere senza sofferenze e ricordi dolorosi è possibile, grazie al chip di A.L.I.E... ma Blodreina onora la morte, talmente tanto che ha pensato di omaggiarla facendo fuori {0}.</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>🔪 A quanto pare {0} aveva commesso un crimine contro la Wonkru, e Blodreina non perdona. I Clan si riuniscono al mattino per trovare {0} tagliato a cubetti... Buona colazione! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>👼 Hai provato ad arricchire il menù con il corpo di {0}, ma invece ti sei scontrata con Lincoln (👼🏾)! Niente da fare, è riuscito a portare quel nemico del Wonkru via da te e dalla Fossa...</value>
+    <value>👼 Hai provato ad arricchire il menù con il corpo di {0}, ma invece ti sei scontrata con Lincoln (👼🏾)! Credendo di trovarti davanti un'allucinazione del tuo amato, ritrovi momentaneamente la ragione... Ah, l'amore...</value>
+    <value>👼 Hai provato a uccidere quel traditore di {0}, ma Lincoln (👼🏾) ti ferma! Lui fa appello alla tua umanità e riesce a impedirti di ucciderlo. Ah, l'amore...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>🎯 I Prime mandano {0} per offrire l'immortalità a {1}, ma invece un colpo risuona rumoroso dentro la navicella GAGARIN e il cadavere di {0} esce volando fuori dal portellone! {0} è morto...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>🔪 Hai provato a proteggere Blodreina dopo che era uscita dal bunker, ma da tempo lei non ha più bisogno di protezione... Semmai gli altri devono essere protetti dalla tua ex. In più non ha creduto che tu fossi il vero Lincoln e, in preda alla furia per averle ricordato la sua umanità, ti ha massacrato! Sei morto...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>💋 Sei riuscita a intrufolarti nel bunker da {0}, in cerca di qualcuno da legare al letto per soddisfare le tue perversioni. Peccato che Octavia kom Skaikru sia ormai diventata molto più pericolosa di te: appena ti vede, tira fuori un coltello e ti pugnala, urlando: YOU ARE THE ENEMY OF WONKRU!</value>
+    <value>💋 Sei riuscita ad andare nel bunker da {0}, in cerca di qualcuno di potente con cui soddisfare le tue voglie. Ma Blodreina non può tollerare alcuna minaccia al suo potere nel bunker, tantomeno una Natblida e per giunta un'edonista come te! Appena ti vede, ti pugnala a morte. Preparati a entrare nel menù del Wonkru ;)</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>💋 Sembra che {0} abbia cercato qualcuno di potente con cui soddisfare le sue voglie. È sgattaiolata nel bunker. Peccato che Blodreina l'abbia uccisa e squartata per farci delle salutari monoporzioni! {0} è morta.</value>
+    <value>💋 Al risveglio, si trova il corpo di {0} disteso per terra nel bunker, senza vita. La pugnalata al petto fa intendere che abbia visitato Blodreina in persona. {0} è pronta per essere aggiunta al menù del Clan di cannibali...</value>
+  </string>
+  <string key="DGToMason">
+    <value>🎭 Priya {0} si è reincarnata nel corpo di una tua collega minatore, quindi ora è diventata un Criminale della Eligius IV, proprio come te!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>🎭 {0} è morto, quindi tu prendi la mente e il corpo di una Criminale della Eligius IV. I tuoi compagni (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>🎭 Avete dato un Mind Drive a Priya {0}, perciò ora è diventata una Prime senza scrupoli morali, esattamente come te!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>🎭 {0} è morto, e tu ti reincarni in un Prime. Gli altri Prime (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>🎭 Priya {0} è entrata nella Città della Luce! Ora è diventata un Chippato, proprio come te!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>🎭 {0} è morto, e tu ti reincarni in un Chippato. Nella Città della Luce trovi gli altri (se presenti): {1}</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>L'ultima persona in vita è Blodreina!</value>
+    <value>Blodreina ha ucciso tutti i nemici del Wonkru!</value>
+    <value>È rimasta soltanto la Regina Rossa...!</value>
+  </string>
+  <string key="AskKill">
+    <value>🔪 Chi è il nemico del Wonkru stanotte?</value>
+    <value>🔪 Chi vuoi trafiggere stanotte?</value>
+  </string>
+  <string key="LoverDied">
+    <value>❤️ Lo shock value di Jason Rothenberg ha colpito ancora! A causa della morte inutilmente crudele che è toccata al suo innamorato, {1} soffre le pene dell'inferno e piange tutte le sue lacrime sul cadavere di {0}. Di lì a poco sprofonda in una terribile depressione, consapevole che al suo prossimo amante toccherà la stessa sorte, conoscendo lo showrunner. Decide così di farla finita, per risparmiare a lui (e a noi fan) altro dolore. {1} si spara con la pistola più vicina che trova, giusto per aggiungere altra crudeltà gratuita alla vicenda. {2}</value>
+    <value>❤️ Un'altra ship dello show è naufragata! Jason Rothenberg è riuscito di nuovo a "intensificare la drammaticità e sottolineare l’universale fragilità della vita"... scrivendo una morte orribile per {0} e, per buona misura, prevedendo che {1}, il suo amante, si tagliasse la gola per disperazione. {1} ha smesso di soffrire, a differenza di noi fan. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>🎭 In chi vuoi reincarnarti alla sua morte?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>🏹 Quale ship vuoi fare diventare realtà, per poi distruggerla sotto i colpi della tua scrittura?
+Scegli il primo sfortunato. (Puoi anche essere tu... Se vuoi affezionarti a un personaggio, cercherai di non farlo morire!)</value>
+  </string>
+  <string key="AskCupid2">
+    <value>🏹 Chi vuoi che sia il suo amante? Scegli il secondo sfortunato</value>
+  </string>
+  <string key="Hunter">
+    <value>Diyoza 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Jason Rothenberg 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Blodreina 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Priya 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>🎭 Ti sei reincarnata in Charlotte (👶). Il tuo supporto psicologico è {0}</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>🎯 Davanti alla navicella GAGARIN viene ritrovato il corpo di {0} con uno sparo in testa. Sembra che abbia provato ad andare da Diyoza. {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>👤 Un Prime ha provato a convincerti ad accettare un Mind Drive ripulito, ma la tua moralità era troppo grande per farti accettare l'immortalità.</value>
+  </string>
+  <string key="LoversWin">
+    <value>Il vero amore trionfa, alla faccia di radiazioni, guerre, fanatismi e Jason Rothenberg! La coppia è arrivata alla fine della serie!</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>Sorge il sole e gli ultimi due sopravvissuti si vedono al di fuori del bunker. {0} vede {1}, urla "YOU ARE THE ENEMY OF WONKRU!", poi sguaina la spada ed uccide {1}. Blodreina ha vinto!</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Il genere umano si è estinto... ci sono solo corpi rimasti a terra. Nessuno ha vinto in questa folle guerra... tranne gli avvoltoi e i vermi mutanti.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>Il sole sorge, {0} e {1} si incontrano tra il bunker e la navicella GAGARIN. Blodreina 🔪 sguaina la spada e salta su Diyoza 🎯. {1} sfodera la pistola e spara in faccia a {0}. Come {0} cade a terra, riesce ad affondare la spada nel cuore di {1}. Entrambe sono morte, la Valle rimane desolata...</value>
+    <value>Il sole sorge, {0} e {1} si incontrano tra il bunker e la navicella GAGARIN. Blodreina 🔪 sguaina la spada e salta su Diyoza 🎯. {1} sfodera la pistola e spara in faccia a {0}. Come {0} cade a terra, riesce ad affondare la spada nel cuore di {1}. Resta solo il silenzio... Un giardino, due serpenti... L'Eden non ha mai avuto una possibilità...</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Sei già in lista d'attesa per {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Sei stato aggiunto alla lista d'attesa per {0}. Ti contatterò appena una partita sta per cominciare. </value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>Una nuova partita sta per cominciare su {0}</value>
+  </string>
+    <string key="RoleModelChosen">
+    <value>Non hai fatto una scelta, quindi il bot ti ha scelto {0}</value>
+  </string>
+    <string key="Won">
+    <value>Vinto</value>
+  </string>
+  <string key="Lost">
+    <value>Perso</value>
+  </string>
+    <string key="IdleCount">
+    <value>Il giocatore {0} è stato condannato a morte per non aver votato {1} volte nelle ultime 24 ore.</value>
+  </string>
+  <string key="AboutVG">
+    <value>Sei un semplice Guerriero terrestre 👨‍🌾, ma puoi comunque cercare di portare onore al tuo Clan e al tuo Comandante, giustiziando chi minaccia loro e la Coalizione... e forse, FORSE, col tuo eroismo sarai degno di entrare nel bunker e ti salverai dal Praimfaya.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Sei Lexa 👳‍♂️, una dei Terrestri più importanti. Grazie alla saggezza della Fiamma e dei vecchi Comandanti, ogni notte puoi controllare qualcuno e scoprire la verità su di lui. (N.B.: crederai di essere Heda anche se sei Clarke 🃏... che dire, quella Fiamma ha proprio lasciato il segno). Se ti scrive Titus, saprai di essere il vero Heda.\nGustus🖕: Lo si può vedere come Chippato🐺 o come Guerriero👱 (50% e 50%) (E non troverai mai A.L.I.E.🐺🌝, perché non hai preso il chip)</value>
+  </string>
+  <string key="AboutWw">
+    <value>Sei un Chippato (🐺)! Che importa della guerra, del Conclave, del Praimfaya o di tutto il resto? L'obiettivo è uno solo: salvare l'umanità da morte e sofferenza! Ogni notte, con le buone o con le cattive potrai scegliere di far unire qualcuno alla Città della Luce, ma di giorno dovrai depistare i Terrestri per non farti de-chippare... o linciare! Buona fortuna! \n Nota: Se vai da Jasper, dovrai rimanere fermo un turno per riprenderti dalla sbronza! Se vai da Luna, diventerà un Chippato come te!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Sei Ontari (💋). Durante la notte puoi scegliere di assecondare le tue voglie e "far visita" ad un altro Terrestre, e verificare se è un Chippato o meno. Tuttavia, se sceglierai di spassartela con Blodreina (🔪) oppure con un Chippato (🐺), o con chi sarà ucciso da loro, ci lascerai le penne e perderai la possibilità di diventare Comandante come marionetta della Regina Nia. La nota positiva: se i Chippati ti scelgono per unirti a loro nella Città della Luce, non potranno torturarti e ucciderti, perché eri occupata in quel momento.</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Sei Jasper 🍻 , un tempo parte integrante dei 100, ma in seguito all'uccisione della tua amata Maya ti sei dato all'alcol. Finora hai rifiutato di ascoltare i seguaci di A.L.I.E.... ma se uno di loro ti dovesse convincere a prendere il chip, almeno fermerai i chippati per una notte!</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Sei Luna (😾). Per adesso sei una normale Guerriera terrestre, ma solo fin quando i Chippati non ti faranno visita. A quel punto darai di matto e comincerai ad odiare il genere umano: diventerai una chippata a tua volta, pronta a uccidere tutti durante il Conclave per restare l'unica sopravvissuta sulla Terra... che (per quello che tu crederai) è morire solo fisicamente. Ma i Terrestri rimasti ti linceranno, se ti scoprono. Buona fortuna!</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Sei Gustus (🖕🏻)! Per ora sei un semplice Guerriero terrestre che non crede in alleanze dannose, ma nel momento in cui non rimarranno più Chippati, ti convincerai che A.L.I.E. aveva ragione e diventerai un Chippato a tua volta. Nel caso in cui Lexa (👳‍♀) ti controllasse, potresti essere identificato sia come semplice Guerriero che come Chippato! Si sa, è difficile scovare i traditori... Ma attento a non farti scoprire: saresti legato a un palo e torturato dagli altri, fino a essere trapassato e ucciso con una spada. Sai com'è, jus drein jus daun.</value>
+  </string>
+  <string key="AboutGA">
+    <value>Sei Lincoln (👼🏾) e ogni notte proteggi qualcuno dai chippati e/o Blodreina (🔪), la tua ex impazzita. Se proteggi un chippato, hai solo il 50% di possibilità di sopravvivere, mentre se proteggi Blodreina morirai sicuramente... sai, la storia si ripete.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Sei Echo (🕵️). Di giorno puoi investigare qualcuno e fare la spia ad Azgeda riguardo al suo ruolo ma, ogni volta che indagherai, avrai il 40% di essere scoperto dai Chippati. Fai attenzione, o farai la fine della ragazza a cui hai rubato il nome!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Sei Bellamy (🔫), il cuore del gruppo. Tu puoi provare a salvare il tuo popolo, A QUALSIASI COSTO! Hai 2 proiettili che potrai utilizzare di giorno per uccidere. Ma attenzione, quando sparerai, nella Città della Luce sentiranno tutto (tranne il dolore 🌚) e tutti sapranno che sei armato e pericoloso...</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Sei Paxton "Cimitero" McCreary (👺). Hai messo incinta Diyoza, la tua acerrima nemica. Sei un criminale megalomane, ma con manie suicide... Il tuo più grande sogno perverso è rimanere l'unico uomo sulla terra, eventualmente col tuo amore del momento! Fatti uccidere, e tutti gli altri perderanno!</value>
+  </string>
+  <string key="AboutFool">
+    <value>Sei Clarke (🃏): ti crederai Lexa (👳🏽‍♀️) a causa dello shock post-traumatico che hai da quando è morta, quindi ogni notte vedrai ruoli a caso presenti in partita. Nota: È più utile di quello che sembra, può sapere con esattezza i ruoli che ci sono in partita. Se vedete un ruolo, sarà in partita.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Sei un Prime (👤). Il tuo obiettivo è convertire tutti i giocatori in Prime, impiantando i Mind Drive così da ricomporre la tua famigliola felice e ristabilire il controllo di Sanctum. Se tra linciaggi, de-chippamenti ed eclissi tutta la popolazione rimasta viva ha ormai il Mind Drive in testa, voi Prime avete vinto. \n Probabilità di trasformare in Prime i seguenti ruoli: \n Priya (sosia): 0% Finchè rimane Priya, è impossibile da trasformare in Prime, perché conosce tutto di voi \n Lexa (veggente) 40% Il Comandante è il più difficile da trasformare, a causa della saggezza dei comandanti nella Fiamma \n Lincoln (angelo) 60% Nota: Se protegge qualcuno, non lo troverai in casa \n Maledetto 60% \n Echo (investigatore) 70% \n Ontari (prostituta) 70% Come Lincoln, se non è casa, non potrete trasformarla in Prime \n Diyoza (cacciatore) 50% Avrai il 50% di trasformare Diyoza in un Prime. Se fallite, c'è il 50% che vi spari.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Sei Gabriel 💂‍♂️. DEATH IS LIFE! Odi a morte i Prime che osano cercare l'immortalità come se fossero dèi.
+La tua missione è eliminare il folle culto di cui sei involontario artefice.
+Di notte puoi visitare chiunque tu voglia e se scopri che ha il Mind Drive, lo elimini. Se non è un Prime, lo lascerai vivere. Se i Prime provano a farti tornare nel loro sistema teocratico, l'ultimo che si era reincarnato morirà e ti verrà detto quanti ne sono rimasti.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Sei Charlotte (👶)! Povera piccola creatura turbata, hai bisogno di trovare qualcuno a cui mostrare i tuoi demoni! Ma se il tizio che hai scelto come supporto psicologico morirà, il dolore ti farà accettare il chip di A.L.I.E., e così entrerai nella Città della Luce (basta sofferenza!)</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Sei Aiden 🙇‍♂️. Questo significa che in questo delirio è ancora viva Lexa 👳‍♂️, il Comandante. Nel caso lei morisse o divenisse una Prime 👤, tu vincerai il Conclave e diverrai il prossimo Heda.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Sei Titus, il Custode della Fiamma (👁), la spalla destra del Comandante e sua guida spirituale. Tu, e soltanto tu, sai chi è il vero Comandante, Lexa, a cui devi fedeltà eterna. Prova a proteggere la sua identità nel suo difficile compito, e cerca di farla sopravvivere fino a fine guerra! Se Lexa muore e Priya (Sosia) oppure Aiden (l'Apprendista Veggente) prendono il suo posto, ti verrà detto. Una buona tattica è fingersi Comandante e rivelare i ruoli al posto suo.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Sei un Criminale della Eligius IV (👷). Stanchi di fare i minatori su asteroidi del cazzo, vi siete ammutinati per tornare sulla Terra. Ora, in questo mondo completamente distrutto, l'unica certezza sono i tuoi vecchi compagni criminali (sempre che ne sia rimasto in vita qualcuno...)</value>
+  </string>
+  <string key="AboutDG">
+    <value>Sei Priya (🎭). La leggenda di Sanctum narra che tu sia in grado di reincarnarti nel corpo di altre persone, ma per farlo devi trovare un corpo 😈. 
+Tutto ciò che devi fare è scegliere il malcapitat... ehm il fortunato e fare in modo che muoia! A quel punto ti sostituirai a lui. Se entro fine partita non ci sarai riuscita, perderai (eccezione: amante). 
+Sii positiva, in fondo l'hai già fatto con Delilah e chissà quanti altri...
+I Prime (👤) possono renderti una di loro solo dopo che hai ottenuto il corpo di chi hai scelto per reincarnarti. \n Nota: Tutte le altre regole normali si applicano: se colui che hai scelto era Charlotte (bimbo ribelle) e il suo modello è morto, diventerai un Chippato. Sennò, erediterai il ruolo del suo modello.</value>
+  </string>
+  <string key="AboutCupid">
+    <value>Sei Jason Rothenberg (🏹): all'inizio delle riprese scegli due personaggi per farli innamorare e illudere tutti i fan che avranno una vita felice. Dopo diventerai a tutti gli effetti un normale Guerriero terrestre (👱) (karma); se uno dei due amanti muore, l'altro si ucciderà. Gli amanti vincono insieme anche se di Clan diversi, mentre tu non vincerai con loro, ma con i terrestri.
+Puoi anche far innamorare te stesso di un personaggio... Almeno avrai interesse a non farlo morire male.
+Nota: gli amanti sanno chi è l'altro, ma non sanno il loro ruolo. Se gli amanti sono gli ultimi due vivi, loro vincono, indipendemente dal loro ruolo. Se gli amanti sono di due team diversi (esempio: Chippato + Terrestre), e un team vince (esempio: Chippati), anche l'amante (esempio: Guerriero terrestre) vince. \n TL;DR Se tutti e due gli amanti sono vivi a fine partita, e almeno uno dei due è nel team vincitore, vincono insieme</value>
+  </string>
+  <string key="AboutHunter">
+    <value>Sei Diyoza (🎯), criminale addomesticata ma che non rinuncia alla sua indole vendicativa. Hai preso possesso dell'Eligius IV, ma da quando ti sei scongelata dall'ibernazione non riesci a dormire bene, e tantomeno a separarti dalla tua pistola!
+Venderai cara la pelle, ma se muori puoi portare qualcun altro nella tomba. Se vieni uccisa dai Chippati, c'è la probabilità che tu riesca ad ucciderne uno per vendicarti, ma nel caso ce ne fossero altri, verresti accerchiata ed uccisa comunque. Maledetti bastardi.\nNota: Per gli attacchi dei Chippati (lupi), la probabilità inizia al 30%. Se c'è un Chippato, Diyoza ha il 30% di probabilità di ucciderlo (e sopravvivere. Per ogni Chippato in più, la probabilità aumenta del 20% (2 Chippati= 50%, 3= 70%). Cionostante - se ci sono molti Chippati, mentre potresti ucciderne uno, verrai lo stesso accerchiata e uccisa. \nSe i Prime (satanisti) provano a offrirti un Mind Drive, hanno il 50% di probabilità di fallire. Se falliscono, hai il 50% di probabilità di ucciderne uno!</value>
+  </string>
+  <string key="AboutSK">
+    <value>Sei Blodreina (🔪). Fuggita di recente dal Bunker (nostalgia del pavimento?), il tuo obiettivo è di far morire tutti coloro che non fanno parte del Wonkru. Ogni notte, puoi aggiungere il corpo di un nemico morto nella Fossa al menù del tuo Clan di Cannibali. Se qualcuno ti sfida, lo ucciderai, però i Chippati hanno comunque il 20% di probabilità in più di ucciderti se ti attaccano. Sai, non sentono il dolore, a differenza tua. Puoi vincere solo se sei l'ultimo giocatore vivo (eccezione: amanti). Come Blodreina, puoi uccidere CHIUNQUE: Chippati, Diyoza, Bellamy, Lincoln, qualunque cosa. Se i Chippati provano ad attaccarti, ne ucciderai uno di loro (random) e sopravviverai.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para è uno sciocco programmatore a cui piace abbaiare alle persone.  Forse è stato a contatto con i lupi troppo a lungo...</value>
+  </string>
+  <string key="EndTime">
+    <value>Durata della guerra: {0}</value>
+	</string>
+  <string key="Day">
+<!-- Day -->
+    <value>Giorno {0}</value>
+  </string>
+<string key="NodeShutsDown">
+    <value>Si è verificato un errore imprevisto, e questo nodo è stato spento :/\n Per dettagli, vai su @werewolfsupport</value>
+  </string>
+<string key="SentPrivate">
+    <value>Ti ho scritto in privato</value>
+  </string>
+  <string key="StartPM">
+    <value>Scrivimi un messaggio in privato così posso risponderti: @werewolfbot</value>
+  </string> 
+  <string key="PMTrue">
+    <value>Grazie per avermi startato! Posso scriverti in privato ora.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Devi rispondere all'utente che vuoi cacciare!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Cosa vorresti fare?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Puoi entrare in partita solo dentro un gruppo!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Puoi cominciare una partita solo dentro un gruppo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo di Risposta: {0}\nMessaggi per secondo: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Che lingua?\nAttuale: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Che variante?\nAttuale: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Lingua impostata a {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Quale file di linguaggio vuoi avere?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Non ci sono nodi online al momento, per favore riprova più tardi</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Devi usare questo comando in un gruppo!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Non sei un admin globale...</value>
+  </string>
+  <string key="NotPara">
+    <value>Tu non sei Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sì</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Ammesso</value>
+  </string>
+  <string key="Disallow">
+    <value>Non Ammesso</value>
+  </string>
+  <string key="Show">
+    <value>Mostra</value>
+  </string>
+  <string key="Hide">
+    <value>Nascondi</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Solo Normale</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>A scelta del Giocatore</value>
+  </string>
+  <string key="ShowNone">
+    <value>Non mostrare nessuno</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostra solo i giocatori in vita</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostra tutti i giocatori</value>
+  </string>
+  <string key="Cancel">
+    <value>Annulla</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Vuoi che sia ammesso fuggire dal gioco in partita?\nNota: I giocatori potranno sempre fuggire prima dell'inizio\nAttualmente:{0}</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>{0}fuggire dopo l'inizio della partita</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Quanti giocatori vuoi impostare come massimo?\nAttualmente: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Giocatori massimi impostati a {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostrare i ruoli alla morte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>I ruoli verranno {0} alla morte.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Che modalità di gioco vuoi che giochi questo gruppo?\nAttualmente: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modalità di gioco impostata a {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Quali ruoli vuoi che siano mostrati alla fine della partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Ruoli mostrati alla fine impostati a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Scegli il tempo base (in secondi) per il giorno. Questo verrà modificato in base al numero di giocatori.\nTempo minimo aggiunto in base ai giocatori è 60 secondi.  Impostazione base: {0}\nAttuale: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Tempo base del giorno impostato a {0} secondi</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Scegli quanto dovranno durare le notti in secondi. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Le notti dureranno {0} secondi</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Imposta il tempo (in secondi) per il linciaggio di giorno. Impostazione base: {0}\nAttuale:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>I linciaggi dureranno {0} secondi</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Ammettere il Folle in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Folle come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Ammettere il Conciatore in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Conciatore come ruolo impostato a {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Ammettere i Satanisti in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Satanista come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Grazie mille, Abbi una bella giornata :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Di che lingua si vuole cercare un gruppo in cui giocare?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Questi sono i gruppi per {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membri</value>
+  </string>
+  <string key="StartMe">
+    <value>Per favore startami così potrò scriverti in privato</value>
+  </string>
+    <string key="PlayerNoPM">
+    <value>{0} non ha startato il bot, ed è stato rimosso dal gioco!</value>
+  </string>
+  <string key="LatestList">
+    <value>Questa è l'ultima lista disponibile</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Non sono stato in grado di riprendere l'ultima lista</value>
+  </string>
+  <string key="YouJoined">
+    <value>Hai joinato con successo nel gruppo {0}</value>
+  </string>
+    <string key="Ping2">
+    <value>Tempo impiegato per mandare il messaggio del ping: {0}</value>
+  </string>
+  <string key="RoleInfoMayor">
+    <value>Sei Kane🎖: Puoi mostrare pubblicamente la tua carica di Cancelliere e far valere doppio il tuo voto. Se invece di suicidarti sceglierai di continuare a vivere con Abby e diventare a tutti gli effetti un Prime, perderai il doppio voto e il rispetto di Raven.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Sei segretamente il Principe Roan di Azgeda (👑), esiliato dalla tua tirannica madre, la Regina Nia, e adesso vivi tra i normali Guerrieri terrestri.
+Se proveranno a linciarti, potrai mostrare il tuo retaggio e restare vivo. Ma potrai farlo solo una volta...</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Sei Wells (🤕). Sei talmente distratto che oltre a non accorgerti che Charlotte ti vuole morto, potresti sbagliare al 50% a votare. Vinci comunque con i Terrestri.
+(Ma gli altri potrebbero cominciare ad odiarti così tanto che forse non ci sarà bisogno di Charlotte per ucciderti...)</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Sei Sheidheda (🔮), il Comandante Oscuro. Stimi i Chippati, che impongono la loro visione agli altri, un po' come fai tu. D'altronde c'è bisogno di una guida per quelle povere pecorelle... Ecco perché vuoi trovare questa A.L.I.E. e i suoi seguaci 🐺, così da aiutarli.
+Vuoi anche trovare il Comandante attuale, Lexa 👳🏻‍♂, per farlo uccidere dai tuoi alleati, visto che ostacola la riuscita del vostro piano di dominio. Di notte potrai usare il potere della Fiamma che è rimasto nella tua mente per trovare i Chippati o Lexa.
+Vinci solo se vincono i Chippati.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Sei Raven (⚒), l'inventrice e meccanica del clan Skaikru, e come tale sei in grado di impedire ai Chippati di attaccare voi e i Terrestri, ma solo per una notte. Di giorno, potrai scegliere di rivelarti craccando i sistemi di A.L.I.E. e ostacolando così i Chippati. Per il resto, sei come una normale Terrestre.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Sei Jaha (⚡️), colui a cui A.L.I.E. ha affidato il sacro compito di diffondere i chip e riunire tutti nella Città della Luce.
+Sai benissimo che il tuo non è solo uno spaccio di chip, però i miscredenti sono ancora troppi: devi rimediare e portare tutti alla salvezza. 
+Così notte dopo notte, insieme ai compagni chippati (se presenti), sceglierai una persona da "convertire"... finché sarai vivo, infatti, c'è un 20% di probabilità che la persona si decida a inghiottire il chip invece di morire in seguito alle torture, e se lo farà diventerà lui stesso un Chippato dalla notte successiva.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Sei lo Zainetto di A.L.I.E. (🐶). Sei protetto da tutti i Chippati, perché sei la fonte d'energia dell'intelligenza artificiale che ha salvato il mondo. Per questo se vieni distrutto i Chippati si infurieranno e ti vendicheranno cercando di chippare due persone invece di una.</value>
+    <value>Sei lo Zainetto di A.L.I.E. (🐶). Sei protetto da tutti i Chippati, perché sei la fonte d'energia dell'intelligenza artificiale che ha salvato il mondo. Per questo se vieni distrutto i Chippati si infurieranno e puniranno i responsabili per due volte di seguito.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Appena i Terrestri hanno deciso che {0} sarà il linciato stasera, lui grida: "Aspettate! Sono Roan, il Principe di Azgeda. Questa corona lo dimostra: è quella di mio nonno Theo. Ogni notte mi alleno a combattere, e i guerrieri possono testimoniare che provo dolore. Quindi non posso aver preso il chip." Temendo la furia del futuro Re di Azgeda, tutti i Clan lo lasciano stare.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Con il potere residuo della Fiamma, hai provato a controllare {0}, ma non sei riuscito a capire chi è... Sei però sicuro che non è né Lexa né un Chippato!</value>
+  </string>
+  <string key="MayorReveal">
+    <value>🎖 {0} fa un passo avanti e con un discorso mostra a tutti il proprio carisma di Cancelliere. Da ora in poi, i voti di Kane 🎖 {0} per il de-chippaggio conteranno doppio.</value>
+  </string>
+  <string key="AskMayor">
+    <value>🎖 Clicca "Fa' un discorso" appena ti senti pronto a rivelarti pubblicamente come il Cancelliere</value>
+  </string>
+  <string key="Reveal">
+    <value>🎖 Fa' un discorso</value>
+  </string>
+  <string key="SpreadDust">
+    <value>⚒ Vorresti craccare i sistemi di A.L.I.E., rendendo i Chippati incapaci di spacciare i chip stanotte?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>⚒ Mentre gli Skaikru si infuriano per decidere chi de-chippare, si accorgono che {0} esulta seduta dietro grossi monitor pieni di scritte verdi. Per ora, o almeno per stanotte, tutti i Clan saranno al sicuro dalla follia di A.L.I.E.</value>
+  </string>
+  <string key="Mayor">
+    <value>Kane 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Roan 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Sheidheda 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Wells 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Raven ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Jaha ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>lo Zainetto di A.L.I.E. 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>⚡️ Appena i Chippati vanno a casa di {0}, Jaha ⚡️ {1} prega tutti di fermarsi. {1} fa un discorso talmente convincente che {0} accetta di unirsi alla Città della Luce senza bisogno di torture! E così tutti se ne vanno, lasciando il chip in mano al nuovo Chippato. Entrerà nella Città domani notte!</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>⚡️ Sei stato attaccato dai Chippati, ma Jaha ti ha fatto il lavaggio del cervello, indottrinandoti con le sue favole sul mondo idilliaco della Città della Luce. Così, invece di torturarti fino alla morte, ti hanno convinto a prendere il chip... quindi diverrai un Chippato, la prossima notte!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>⚡️ Appena cala la notte, ingoi il chip, ed ecco che di colpo ti ritrovi in una città futuristica meravigliosa! Sotto i grattacieli passeggiano sereni tutti coloro che hanno scelto la salvezza dal dolore e dalla morte...</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Sei Kane🎖: Puoi mostrare pubblicamente la tua carica di Cancelliere e far valere doppio il tuo voto. Se invece di suicidarti sceglierai di continuare a vivere con Abby e diventare a tutti gli effetti un Prime, perderai il doppio voto e il rispetto di Raven.\nVinci con il popolo.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Sei segretamente il Principe Roan di Azgeda (👑), esiliato dalla tua tirannica madre, la Regina Nia, e adesso vivi tra i normali Guerrieri terrestri.
+Se proveranno a linciarti, potrai mostrare il tuo retaggio e restare vivo. Ma potrai farlo solo una volta...</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Sei Sheidheda (🔮), il Comandante Oscuro. Stimi i Chippati, che impongono la loro visione agli altri, un po' come fai tu. D'altronde c'è bisogno di una guida per quelle povere pecorelle... Ecco perché vuoi trovare questa A.L.I.E. e i suoi seguaci🐺, così da aiutarli.
+Vuoi anche trovare il Comandante attuale, Lexa👳🏻‍♂, per farlo uccidere dai tuoi alleati, visto che ostacola la riuscita del vostro piano di dominio. Di notte potrai usare il potere della Fiamma che è rimasto nella tua mente per trovare i Chippati o Lexa. (Tuttavia, non troverai mai A.L.I.E.🐺🌝, perché non hai preso il chip)
+Vinci solo se vincono i Chippati.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Sei Wells (🤕). Sei talmente distratto che oltre a non accorgerti che Charlotte ti vuole morto, potresti sbagliare al 50% a votare. Vinci comunque con i Terrestri.
+(Ma gli altri potrebbero cominciare ad odiarti così tanto che forse non ci sarà bisogno di Charlotte per ucciderti...)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Sei Raven (⚒), l'inventrice e meccanica del clan Skaikru, e come tale sei in grado di impedire ai Chippati di attaccare voi e i Terrestri, ma solo per una notte. Di giorno, potrai scegliere di rivelarti craccando i sistemi di A.L.I.E. e ostacolando così i Chippati. Per il resto, sei come una normale Terrestre.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Sei Jaha (⚡️), colui a cui A.L.I.E. ha affidato il sacro compito di diffondere i chip e riunire tutti nella Città della Luce.
+Sai benissimo che il tuo non è solo uno spaccio di chip, però i miscredenti sono ancora troppi: devi rimediare e portare tutti alla salvezza. 
+Così notte dopo notte, insieme ai compagni chippati (se presenti), sceglierai una persona da convertire... finché sarai vivo, infatti, c'è un 20% di probabilità che la persona si decida a inghiottire il chip invece di morire in seguito alle torture, e se lo farà diventerà lui stesso un Chippato dalla notte successiva. (Se la vittima è stata votata anche da te).</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Sei lo Zainetto di A.L.I.E. (🐶). Sei protetto da tutti i Chippati, perché sei la fonte d'energia dell'intelligenza artificiale che ha salvato il mondo. Per questo se vieni distrutto i Chippati si infurieranno e puniranno i responsabili per due volte di seguito.</value>
+  </string>
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, e tu prendi il corpo di Jaha, quindi adesso "sei" lui agli occhi di tutti e ti comporti di conseguenza. Potrai convincere il resto dell'umanità a unirsi a voi.
+Gli altri abitanti della Città della Luce (se presenti) sono: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>La tua coscienza viene caricata nello Zainetto di A.L.I.E., che quindi non è più {0}. In questa nuova forma, ora sei importantissimo per i Chippati!  Gli altri abitanti della Città della Luce (se presenti) sono: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Team Terrestri</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Team Blodreina</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Team McCreary</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Team Terrestri</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Team Neutrale</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Team Chippati</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Team Blodreina</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Team Prime</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Team McCreary</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>👤 I Prime hanno mandato {0} per provare a offrire un Mind Drive resettato a {1}, ma all'improvviso si vede la testa di {0} volare fuori dalla finestra...! {0} è morto.</value>
+    <value>👤 I Prime hanno mandato {0} per offrire l'immortalità a {1}. Purtroppo non lo ha convinto del vantaggio di unirsi ai Prime: niente batte la Città della Luce agli occhi dei Chippati... Altro che Mind Drive! {0} è morto...</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+<!-- used when Harlot visit's SK's victim, and dies -->
+<!--{0} = Harlot name, {1} = SK's victim name-->
+<!--New Death Strings 05 DEC-->
+    <value>💋 {0} ha fatto visita a {1}, pronta a concedersi una notte di passione a sue spese. Ma ha trovato una ragazza con una luce folle negli occhi intenta a trafiggere {1} con la sua spada! Blodreina scambia Ontari per un'amante complice del tradimento di {1} così decide di uccidere anche lei, urlando: YOU ARE THE ENEMY OF WONKRU!</value>
+  </string>
+  <string key="ApprenticeSeerEaten">
+    <value>🙇‍♂️ Trikru si sveglia e trova il corpo di {0}, ucciso dai Chippati. Aiden 🙇 avrebbe accettato solo la Fiamma, se avesse vinto il Conclave, e non un surrogato. Aiden 🙇 è morto. Decapitato, ovviamente.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value> ⚒ Sembra che {0} abbia cercato di mettere un po' di buonsenso nella testa di Blodreina, ma non sapeva dei suoi traumi dell'Anno Oscuro. Raven è stata trovata trafitta all'addome, e cubi di carne sono stati staccati dal suo corpo, già pronti per una bella cenetta. Gli Skaikru piangono la triste fine della loro inventrice e meccanica.</value>
+  </string>
+  <string key="CultistKilled">
+    <value>🔪 {0} è stato trovato pugnalato a morte. Blodreina non accetta affronti al suo potere, specialmente da un'élite di falsi dèi! Chi tradisce è nemico del Wonkru, indipendentemente da Clan d'origine, pianeta, razza, o lingua! {0} era un Prime 👤.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>🔪 Il mattino seguente, i clan sono affranti nel trovare {0}, cioè Jason Rothenberg 🏹, tagliato dalla testa ai piedi. Stranamente (ma neanche tanto) il cuore non era presente...</value>
+    <value>🔪 Il mattino seguente, i clan sono inquietati nel trovare {0}, cioè Jason Rothenberg 🏹, fatto a cubetti dalla testa ai piedi. "Stranamente" Blodreina ha deciso di fargliela pagare per le sofferenze inflittele in amore.</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>🔪 I Clan speravano di far bisboccia mattutina con {0}, ma Jasper è stato trovato morto nella Fossa dei combattimenti... Sembra che a Blodreina non piacciano gli ubriaconi che creano caos nel suo bunker!</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>🔪 {0} Il mattino seguente, i clan sono affranti nel trovare {0}, il loro amato Lincoln, proprio fuori dal bunker. Stranamente il cuore è stato rimosso, però non sono stati espiantati cubetti di carne... anzi, il corpo è ricoperto di lacrime... {0} è morto.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>🔪 Sembra che {0} abbia litigato con la sorella la scorsa notte - il peggior litigio finora! Il giorno seguente, si è trovato il cadavere di Bellamy steso sul letto con una pugnalata nel petto. Niente da fare, Blodreina non dev'essere messa in discussione da nessuno, neppure da suo fratello.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>🔪 Terribile! {0}, il Cancelliere Kane è stato trovato morto sul suo tavolo mentre si spremeva i neuroni cercando di trovare un modo per fermare i folli piani di Octavia! Chiaramente Blodreina temeva troppo il suo carisma, dopo il discorso contro di lei nella Fossa!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>🔪 Il bunker è invaso da guardie armate del clan Azgeda che investigano sulla sparizione del Principe Roan, {0}. Nessun cadavere è stato scoperto, ma si crede che sia opera di Blodreina... chissà se i resti del Principe saranno mai trovati...</value>
+  </string>
+  <string key="SeerKilled">
+    <value>🔪 Il mattino è giunto e a colazione i cubetti hanno un colore strano. Sul letto si scopre il corpo della povera {0}, con un colpo di pistola al torace. Un taglio eseguito al collo con precisione chirurgica testimonia la sparizione della Fiamma, che i Terrestri scoprono però essere al sicuro dai Chippati e da Blodreina. {0} era Lexa.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>🐺 È stato compiuto un errore. I Chippati hanno ucciso uno dei loro alleati. Sheidheda è stato trovato da loro, ma non aveva il coltello dalla parte del manico. Siccome non voleva il chip per non sentirsi controllato, non li ha convinti di essere dalla parte di A.L.I.E., anche se diceva di voler trovare la Fiamma di Lexa. {0} è morto.</value>
+    <value>🐺 Grida di "Sono vostro alleato, idioti, anche se non voglio prendere questo maledetto chip!" sono state udite l'ultima notte. I Terrestri il mattino seguente hanno trovato il corpo martoriato di {0}. Il Comandante Oscuro non è riuscito a convincere i Chippati, a quanto sembra. Un problema in meno per i clan!</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>🐺 Durante la notte, è stata torturata e uccisa la povera, indifesa Charlotte {0}. Gli Skaikru sono stupiti della crudeltà di A.L.I.E....</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+<!--used when CH visits SK-->
+    <value>🔪 Wonkru si sveglia la mattina, solo per trovare nella Valle il corpo tagliato a pezzi di {0}, Gabriel 💂‍♂️... Lezione imparata: mai fare la predica a Blodreina sul concetto di totalitarismo!</value>
+    <value>🔪 Il corpo di {0}, Gabriel 💂‍♂️, è stato trovato nel centro della strada, tagliato in cento pezzetti. Associare il dispotismo di Blodreina a quello dei Prime non sembra una buona idea...</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <value>👤 Sembrava una notte tranquilla, visto che i Chippati hanno deciso di rimanere a casa, ma l'unico sfortunato è stato {0}, un Prime che ha provato a offrire un Mind Drive a un Chippato. Purtroppo per {0}, niente batte la Città della Luce!</value>
+    <value>👤 I Prime hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a offrire l'immortalità, è stato ucciso dal Chippato che ha visitato. Sfortunatamente per {0}, i Chippati non hanno alcun interesse a far parte della loro élite.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <value>👤 I Prime pensavano di aggiungere un nuovo membro alla loro élite, ma si sbagliavano! {0}, un Prime, è stato trovato squartato e tritato a pezzetti nella piazza centrale! Vicino a lui, il suo Mind Drive è stato trovato sbriciolato da un colpo di spada.</value>
+    <value>👤 L'ultima notte, i Prime hanno provato a far diventare immortale una persona più psicopatica di loro. Il loro membro più recente ha provato a convertire Blodreina, che non ha apprezzato e ha creato una nuova pietanza, nel refettorio del bunker, con gli organi interni di {0}.</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>👼 Doveva essere una notte tranquilla dove {0} aiutasse qualcuno con grande altruismo, ma Lincoln ha provato a proteggere Blodreina dopo che era uscita dal bunker. Tuttavia da tempo lei non ha più bisogno di protezione... Semmai gli altri devono essere protetti dalla sua ex. In più Octavia non ha creduto che lui fosse il vero Lincoln e, in preda alla furia per averle ricordato la sua umanità, lo ha massacrato...</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>👼 {0} ha provato a proteggere un Chippato questa notte. Si trovano i disegni di Lincoln inchiodati agli alberi del territorio dei Trikru. Chiaramente i Chippati non hanno bisogno di protezione, perché nella Città della Luce non esistono il dolore o la morte.</value>
+  </string>
+  
+  
+  <!--Finali 1v1-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che solo {0} è rimasta in vita nella Valle, {1} prova a convincere {0} a prendere il chip a suon di torture, ma l'addestramento da Marine di Diyoza 🎯 si rivela efficace contro il malcapitato Chippato🐺! Tutto quello che rimane ormai è il cadavere del Chippato con due colpi nel cranio e l'ex superterrorista.</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sapendo che solo {0} è rimasta in vita, {1} prova a immobilizzare Diyoza 🎯 quando lei meno se l'aspetta, riuscendo a coglierla impreparata. {0} si oppone e si scatena una lotta all'ultimo sangue, ma infine è costretta a prendere il chip, giusto prima di morire per le ferite riportate. Diyoza, l'ex superterrorista, è ora morta a terra.</value>
+  </string>
+  <string key="CHKillsCultistEnd">
+    <!--{0} = last cultist's name, {1} = CH's name -->
+    <value>{1} e {0} escono appena spuntano i primi raggi di luce dei due soli. Vedendo le ricche vesti che {0} indossa, l'ex Prime Gabriel 💂‍♂️ {1} tira fuori la propria pistola, terminando una volta per tutte questo culto teocratico immorale che ha contaminato la bellezza di Sanctum.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Tempo rimanente prolungato di {0} secondi!\n{1} secondi rimanenti per unirsi alla guerra!</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>Tempo rimanente ridotto di {0} secondi!\n{1} secondi rimanenti per unirsi alla guerra!</value>
+  </string>
+  <string key="CantExtend">
+    <value>Solo gli admin del gruppo possono prolungare il timer più di una volta!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+    <value>Permettere ai giocatori di prolungare il timer?\nAttualmente: {0}\nNota: Gli admin saranno sempre in grado di prolungare il timer.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+    <value>{0} prolungare il timer per i giocatori</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Scegli il tempo limite che può essere aggiunto ai giocatori con un singolo comando /extend.\nDefault: {0}\nAttualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Tempo limite per /extend impostato a {0} secondi</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} era Jasper! Ora sei ubriaco, e non potrai far entrare {1} nella Città della Luce...</value>
+  </string>
+    <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Non puoi unirti alla partita perché non sembri essere un membro di {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Per favore non usare i comandi per joinare. Usa questo bottone invece.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>Hanno votato in {0} su {1}.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Abilitare il Voto Segreto?\nAttuale: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Voto segreto impostato su: {0}</value>
+	</string>
+	
+  <string key="NoAutoJoin">
+    <value>{0}, per favore ricordati di joinare cliccando sul bottone.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Non trovo il gruppo. Prova ad usare il comando nel gruppo in cui vuoi togliere l'avviso di nuova partita, oppure aggiungi il link, l'ID o l'username dopo il comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Sei stato rimosso dalla lista d'attesa per {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} sono entrati in partita negli ultimi 30 secondi.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Abilita i Satanisti</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Abilita Conciatore</value>
+  </string>
+  <string key="AllowFool">
+    <value>Abilita Folle</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Abilita linciaggio segreto</value>
+  </string>
+  <string key="RandomMode">
+    <value>Abilita modalità random</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Permetti l'estensione del timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostra ruoli alla morte</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Abilita di fuggire</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Mostra ID all'ingresso in partita</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Mostrare ID dei giocatori dopo l'ingresso in partita?\nAttualmente: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} ID</value>
+  </string>
+  
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Tutte</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Abilitare la modalità casuale?\nQuando la modalità casuale è attiva, Chaos, Linciaggi segreti, Mostrare Ruoli alla Morte, e Ammetti Satanisti / Folle / Conciatore verranno impostati automaticamente ogni volta che qualcuno inizierà una partita.\nAttualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modalità casuale impostata a: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Gif Pack NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Consentire gif packs NSFW ai giocatori?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>GIF NSFW: {0}</value>
+  </string>
+  
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>🌅 Mentre il sole inizia a sorgere sulla Valle, {0} viene svegliato dal suono del silenzio. Realizzando che nessun altro è rimasto vivo, McCreary 👺 cammina e cammina, guardando tutti i cadaveri sparsi tra la GAGARIN, il bunker e l'erba. {0} sospira. Il sogno di una vita, quello di farsi ammazzare dal resto della razza umana, è morto con loro. Va sulla navicella, sale su nella stratosfera... poi, il sorriso stampato sulla faccia, preme un bottone, e guarda la Valle che si avvicina, seduto accanto agli enormi barili di Etilodio...</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>🌅 {0} apre gli occhi, ma invece di sentire l'usuale trambusto di quei poveracci, sente un silenzio assordante. Scopre presto che tutti sono schiattati. I Chippati sono morti, dannazione a loro. Scazzato, Sheidheda 🔮 cerca e impacchetta le sue cose, prima di incamminarsi sulla navicella. Beh, è tempo di iniziare una nuova vita, su un altro pianeta da dominare. {0} giunge sull'Eligius IV e si iberna, pronto a far danni altrove.</value>
+  </string>
+    <string key="WhatVariantVets">
+    <value>Che variante?\nAttuale: {0}\nSiccome hai giocato più di 500 partite puoi entrare su: </value>
+  </string>
+  <string key="Skip">
+    <value>Salta</value>
+  </string>
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} è morto, e tu ti sei unita alla coscienza dell'Intelligenza Artificiale A.L.I.E., diventando lei. I cittadini della tua Città (se ci sono) sono: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Capisci che\n{0} NON è {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Vorresti ibernare tutti i giocatori questa notte?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>😴 Mentre i Clan discutono, {0} convince tutti a provare le capsule dell'Eligius per dormire stanotte. Così nessuno potrà uccidersi o fare danno, almeno per una notte.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Tutti arrivano sull'Eligius IV (la maggioranza sconvolti nel vedere lo spazio per la prima volta), poi si stendono nelle capsule e si addormentano provando l'ebbrezza di diventare dei ghiaccioli per una notte...</value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>Ammettere il Ladro in partita, come ruolo?\nAttualmente: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Ladro come ruolo impostato a {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Il ladro potrà essere usato ogni notte?\nAttualmente: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Il ladro potrà agire ogni notte: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Ammetti il ladro</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Configurazione ladro</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>Sei Murphy (👱🌚), un semplice Skaikru, ma visto che pur di salvarti la pelle sei pronto a fare di tutto, risulti ambiguo e doppiogiochista. 
+Dato che i tuoi compagni non si fidano nemmeno di darti una pistola, purtroppo Lexa (👳🏻) ti crederà uno dei Chippati (mentre tu sei solo un tizio incompreso che anzi la rifiuta, la merda di A.L.I.E.!)...</value>
+  </string>
+  <string key="WolfMan">
+    <value>Murphy 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Sei Murphy (👱🌚), un semplice Skaikru, ma visto che pur di salvarti la pelle sei pronto a fare di tutto, risulti ambiguo e doppiogiochista. 
+Dato che i tuoi compagni non si fidano nemmeno di darti una pistola, purtroppo Lexa (👳🏻) ti crederà uno dei Chippati (mentre tu sei solo un tizio incompreso che anzi la rifiuta, la merda di A.L.I.E.!)...</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>Sei A.L.I.E. (🐺🌝)! Sei l'AI creata da Becca "per rendere la vita migliore", nonché la fonte suprema di chip, e tutti vedono il tuo ologramma come una persona in carne e ossa.
+Sembri innocua come un normale Guerriero terrestre 👨, e anche Lexa 👳🏻 ti vedrà come tale. Ma nemmeno Sheidheda 🔮, che potrebbe essere un valido alleato, riuscirà ad identificarti... la mente umana è così fallata, a volte!</value>
+  </string>
+  <string key="Lycan">
+    <value>A.L.I.E. 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Sei A.L.I.E. (🐺🌝)! Sei l'AI creata da Becca "per rendere la vita migliore", nonché la fonte suprema di chip, e tutti vedono il tuo ologramma come una persona in carne e ossa.
+Sembri innocua come un normale Guerriero terrestre 👨, e anche Lexa 👳🏻 ti vedrà come tale. Ma nemmeno Sheidheda 🔮, che potrebbe essere un valido alleato, riuscirà ad identificarti... la mente umana è così fallata, a volte!</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>Sei Madi (🌀), una giovane Comandante. Con le conoscenze che hai non sei in grado di vedere i ruoli degli altri, ma puoi vedere ciò che NON sono... ti servirebbe solo un po' più di allenamento con la tua Seda per diventare un Comandante a tutti gli effetti... Ma per il momento sei comunque utilissima per vincere la guerra. Spera di non farti traviare o uccidere dai nemici.</value>
+  </string>
+  <string key="Oracle">
+    <value>Madi 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Sei Madi (🌀), una giovane Comandante. Con le conoscenze che hai non sei in grado di vedere i ruoli degli altri, ma puoi vedere ciò che NON sono... ti servirebbe solo un po' più di allenamento con la tua Seda per diventare un Comandante a tutti gli effetti... Ma per il momento sei comunque utilissima per vincere la guerra. Spera di non farti traviare o uccidere dai nemici.</value>
+  </string>
+  <string key="RoleInfoSandman">
+    <value>Sei Jordan (😴). In una notte soltanto, potrai rimettere tutti a dormire in criogenesi nelle capsule dell'Eligius, così potrai di nuovo rivedere tutti i tuoi amici come dei ghiaccioli... in fondo 26 anni non ti erano bastati, ammettilo! Anche i nemici faranno tanti bei sogni omicidi... nessuno potrà uccidersi o fare danno e renderai i tuoi genitori fieri di te. Perciò nessuno potrà fare qualcosa in quella notte... a parte te e Delilah 😏</value>
+  </string>
+  <string key="Sandman">
+    <value>Jordan 😴</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Sei Jordan (😴). In una notte soltanto, potrai rimettere tutti a dormire in criogenesi nelle capsule dell'Eligius, così potrai di nuovo rivedere tutti i tuoi amici come dei ghiaccioli... in fondo 26 anni non ti erano bastati, ammettilo! Anche i nemici faranno tanti bei sogni omicidi... nessuno potrà uccidersi o fare danno e renderai i tuoi genitori fieri di te. Perciò nessuno potrà fare qualcosa in quella notte... a parte te e Delilah 😏</value>
+  </string>
+  <string key="RoleInfoPacifist">
+    <value>Sei Monty (☮️). Quando non coltivi alghe, puoi scegliere di convincere tutti gli altri a non linciare nessuno. Però puoi farlo solo una volta, in fondo "Jus drein jus daun"! Per di più se ti riveli insieme a Finn (🤯) vale solo l'azione dell'ultimo rivelato... quel ragazzino fuori di melone può far perdere la pazienza anche a te!</value>
+  </string>
+  <string key="Pacifist">
+    <value>Monty ☮️</value>
+  </string>
+  <string key="AboutPacifist">
+    <value>Sei Monty (☮️). Quando non coltivi alghe, puoi scegliere di convincere tutti gli altri a non linciare nessuno. Però puoi farlo solo una volta, in fondo "Jus drein jus daun"! Per di più se ti riveli insieme a Finn (🤯) vale solo l'azione dell'ultimo rivelato... quel ragazzino fuori di melone può far perdere la pazienza anche a te!</value>
+  </string>
+  <string key="RoleInfoWiseElder">
+    <value>Sei Sinclair 📚. Con le conoscenze acquisite sull'Arca sei in grado di sopravvivere ad un attacco dei Chippati. Se Bellamy 🔫, Diyoza 🎯 o Abby 👨🏻‍🔬 ti uccideranno, l'assassino diventerà un semplice Guerriero terrestre per il senso di colpa di aver ucciso un bravo e saggio uomo.</value>
+  </string>
+  <string key="WiseElder">
+    <value>Sinclair 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>Sei Sinclair 📚. Con le conoscenze acquisite sull'Arca sei in grado di sopravvivere ad un attacco dei Chippati. Se Bellamy 🔫, Diyoza 🎯 o Abby 👨🏻‍🔬 ti uccideranno, l'assassino diventerà un semplice Guerriero terrestre per il senso di colpa di aver ucciso un bravo e saggio uomo.</value>
+  </string>
+  <string key="RoleInfoThief">
+    <value>Sei Emori (😈)! Pur di sopravvivere, rubi il ruolo a un altro sperando di ottenere vantaggi. Il derubato diventerà un Guerriero terrestre! N.B.: se provi ad appropriarti del ruolo a Blodreina (🔪) morirai, non sei all'altezza della regina del Wonkru!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Sei Emori (😈)! Pur di sopravvivere, rubi il ruolo a un altro! Ma si sa, rubare è un vizio contagioso... e infatti, siccome il tuo nome ormai è sinonimo di ladro, trasferirai questo titolo a chi deruberai! Quella persona diventerà la nuova "Emori" e dovrà rubare a qualcun altro per sopravvivere meglio, poi il nuovo derubato farà lo stesso, e così via, finché ci sarà qualcuno a cui fregare il ruolo... e sempre che il neoladro non muoia prima! N.B.: se provi ad appropriarti del ruolo a Blodreina (🔪) morirai, è pericolosa!</value>
+  </string>
+  <string key="Thief">
+    <value>Emori 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Sei Emori (😈)! Pur di sopravvivere, rubi il ruolo a un altro sperando di ottenere vantaggi. Il derubato diventerà un Guerriero terrestre! N.B.: se provi ad appropriarti del ruolo a Blodreina (🔪) morirai, non sei all'altezza della regina del Wonkru! \nSe c'è impostato il Ladro per tutta la partita, quel giocatore si trasformerà nel nuovo ladro e si continuerà a rubare ruoli per tutta la partita.</value>
+  </string>  
+  <string key="AskPacifist">
+    <value>Decidi se fare adesso il tuo commovente discorso e fermare il prossimo linciaggio dei Terrestri!</value>
+  </string>
+  <string key="PacifistNoLynch">
+  <!-- {0} - Nome del pacifista -->
+    <value>Mentre si vota la prossima persona da uccidere, Monty ☮️ {0} inizia a fare un commovente discorso sull'amore, la giustizia e l'importanza di vivere serenamente, senza fare scelte crudeli. Anche se alcuni Clan sono poco convinti, alla fine tutti decidono di lasciar perdere, almeno per stanotte.</value>
+  </string>
+  <string key="PacifistNoLynchNow">
+    <value>Monty ☮️ ha convinto tutti a non linciare nessuno! Il motto "Jus drein jus daun" può aspettare per una notte.</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Nome del vecchio saggio -->
+    <value>Hai provato ad entrare a casa di {0}. Purtroppo per A.L.I.E., Sinclair 📚 non è diventato l'insegnante di Raven girandosi i pollici tutto il giorno! {0} ha disattivato con un malware tutti i chip che avevi in tasca!
+Almeno, non vi ha visti in faccia mentre scappavate!</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>I Chippati hanno provato a farti entrare nella Città della Luce, ma le tue conoscenze da ingegnere 📚 ti hanno reso più furbo di loro! Hai hackerato e disattivato la riserva di chip che avevano stanotte, solo che purtroppo eri occupato ad attivare il malware e non li hai riconosciuti mentre fuggivano!</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Nome del cacciatore urbano -->
+  <!-- {1} - Nome del vecchio saggio -->
+    <value>Diyoza 🎯, {0}, ha realizzato di aver ucciso nientedimeno che l'ingegnere Sinclair 📚, {1}.
+{0}, piena di sensi di colpa, seppellisce la sua pistola e decide di non voler più impugnare armi. Diyoza si dà all'agricoltura 👱, e come contadina alleverà sua figlia... un giorno, forse, solo una setta di svitati biancovestiti riuscirà a farle cambiare idea...</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Bellamy 🔫, {0}, ha scoperto di aver sparato a Sinclair 📚, {1}, credendolo sotto il controllo di A.L.I.E.! Ma era pulito!
+{0}, ricoperto del biasimo degli Skaikru, profondamente amareggiato si pente e decide di non usare mai più le armi, diventando per il futuro come un semplice e inoffensivo Terrestre 👱.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Hai provato a rubare il ruolo a {0}, ma sfortunatamente hai fallito...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Hai provato ad appropriarti del ruolo di {0}, ma era già morto...</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+  <!-- {0} - The new role -->
+    <value>Il tuo ruolo è stato rubato! Ora sei {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Hai rubato con successo il ruolo di {0}!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} non è più un tuo compagno, e {1} è ora divenuto un Criminale della Eligius IV, proprio come te!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Sei diventata una Criminale della Eligius IV! 👷‍♂️ I tuoi compagni di prigionia (se ci sono) sono: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old cultist's name -->
+    <!-- 1 - new cultist's name -->
+    <value>Uno dei Prime ha... tolto il suo Mind Drive?! {0} ha abbandonato il palazzo ma {1} è felice di essersi unita a voi! Viva l'immortalità e i privilegi!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>Un Chippato {0} ha in qualche modo fritto il proprio chip. Ma allo stesso momento, avete un nuovo membro nella Città della Luce! Emori😈 {1} è diventata un Chippato e osserva entusiasta la Città della Luce!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates" deprecated="true">
+    <!-- 0 - teammates's name -->
+    <value>I tuoi compagni (se ci sono) sono: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>La razza umana è estinta, resta solo Emori 😈, {0}. Non le è rimasto nulla...</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Il tuo bersaglio del furto è ora {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>A chi vorresti rubare il ruolo per avere i suoi vantaggi?</value>
+    <value>A chi vorresti rubare il ruolo per avvantaggiarti?</value>
+    <value>A chi vorresti rubare il ruolo per affrontare meglio questa guerra?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} Voti sono stati assegnati a {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Il linciato di oggi:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} Voti assegnati a {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Linciaggio segreto: Numero di voti</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Quando il linciaggio segreto è attivo, mostrare il numero di voti alla fine del linciaggio?\nAttualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Quando il linciaggio segreto è attivo, il numero di voti alla fine del linciaggio sarà: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Linciaggio segreto: Votanti</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, Far vedere il nome dei votanti di ogni giocatore votato?\nAttualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
+  </string>
+  <string key="CultistBitten">
+  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<value>Strano... Vi siete riuniti per discutere su chi portare tra i Prime oggi, ma {0} non è presente! Che fine avrà fatto?</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Pacifist's button -->
+	<value>Ferma questa follia, se vuoi!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+	<value>Il linciaggio è iniziato, ma tu non puoi più sopportare tutto quest'odio. I Terrestri ti osservano parlare con passione di amore e pace, affascinati quanto sconcertati da queste idee. Alla fine, convinti dal tuo discorso, smettono di votare!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>Oh no! Emori 😈 si è appropriata della tua identità la scorsa notte! Sei diventato il nuovo ladro aka "la nuova" Emori... ora prova a rubare il ruolo a qualcun altro per sopravvivere meglio in questo casino!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Il tuo ruolo è stato rubato! Ora sei un semplice guerriero Terrestre 👱. Spera di non finire arrosto nel Praimfaya, o tra quegli svitati dei Chippati!</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Ti svegli nel mezzo della notte sentendo un urlo: YOU ARE WONKRU, OR YOU ARE THE ENEMY OF WONKRU! CHOOSE!
+La tua reazione di difesa convince Blodreina 🔪 che meriti la morte, quindi lei affonda la sua spada nel tuo petto. Addio.</value>
+  </string>
+  
+  <string key="ThiefTeamEnd">
+	<value>Team Ladro</value>
+  </string>
+  
+  <string key="StealKiller">
+    <value>Ti sei intrufolata nel bunker e hai provato a derubare l'identità della pericolosissima Blodreina 🔪. Complimenti per il coraggio. Sembrava addormentata, ma quando ti sei avvicinata, lei istantaneamente ti ha accoltellato all'addome. Sei morta.</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>Il villaggio trova {0} appesa proprio fuori dal bunker, la parola "LADRA" è incisa sul suo petto. Sembra proprio che {0} abbia provato a rubare il ruolo alla persona sbagliata...</value>
+  </string>
+  <string key="BeholderSeerStolen">
+	<value>Emori ha rubato il ruolo a Lexa! Tuo malgrado, {0} è ora il nuovo Comandante mentre {1} non ha più la saggezza della Fiamma con sé!</value>
+  </string>
+  <string key="Troublemaker">
+	<value>Finn 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>Sei Finn 🤯. Come ogni amante di Clarke, sei condannato a soffrire (e a crepare male prima o poi). Nel frattempo, un giorno, quando sarai particolarmente furioso perché non trovi Clarke, in preda alla paranoia e alla follia omicida potrai sfogarti creando morte e distruzione nel vicino villaggio dei terrestri, provocando due linciaggi di vendetta quella sera!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>Sei Finn 🤯. Come ogni amante di Clarke, sei condannato a soffrire (e a crepare male prima o poi). Nel frattempo, un giorno, quando sarai particolarmente furioso perché non trovi Clarke, in preda alla paranoia e alla follia omicida potrai sfogarti creando morte e distruzione nel vicino villaggio dei terrestri, provocando due linciaggi di vendetta quella sera!</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>Cerca Clarke! CLARKE È IN PERICOLO!!!!</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>Finn 🤯 {0} sta creando caos e confusione nel villaggio dei terrestri accanto ad Arkadia! Corre e grida furioso cercando Clarke, del tutto fuori controllo, e uccide inermi Terrestri in preda alla paranoia e alla follia omicida! Il suo comportamento causerà ben due linciaggi di vendetta stasera!</value>
+	<value>Finn 🤯 {0} sta creando casino nel villaggio dei terrestri nei pressi di Arkadia! Brandendo l'orologio di Jake Griffin, corre urlando: "CLARKE! DOVE SEI!", e in preda alla rabbia e alla paranoia spara a decine di poveri Terrestri! I Clan, infuriati, linceranno due volte per rappresaglia! JUS DREIN JUS DAUN!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>A causa di quel coglione di Finn, lincerete due volte oggi! I Clan si calmeranno soltanto dopo.</value>
+  </string>
+  <string key="Chemist">
+	<value>Abby 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>Sei Abby 👨‍🔬! L'amore che provi per tua figlia Clarke è immenso e cercherai di creare il Sanguenero per salvare lei e l'umanità, a qualsiasi prezzo... Di notte fabbricherai due formule, di cui una in grado di proteggere dalle radiazioni e una no, identiche all'occhio umano. La notte dopo averle prodotte, potrai scegliere un povero incosciente e obbligarlo a iniettarvi insieme le due formule. Inutile dire che uno dei due morirà per le reazioni avverse... Buona fortuna!</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>Sei Abby 👨‍🔬! L'amore che provi per tua figlia Clarke è immenso e cercherai di creare il Sanguenero per salvare lei e l'umanità, a qualsiasi prezzo... Di notte fabbricherai due formule, di cui una in grado di proteggere dalle radiazioni e una no, identiche all'occhio umano. La notte dopo averle prodotte, potrai scegliere un povero incosciente e obbligarlo a iniettarvi insieme le due formule. Inutile dire che uno dei due morirà per le reazioni avverse... Buona fortuna!</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>Mentre gli Skaikru e il resto della Coalizione vanno a dormire, per stare sveglia tu prendi giusto qualche pillola di antidolorifico... poi vai nel laboratorio di Becca a mischiare polimeri e ossigenatori per realizzare il siero. Sta' attenta a non farti vedere dai droni!</value>
+  </string>
+  <string key="AskChemist">
+	<value>Chi vuoi usare come cavia da laboratorio?</value>
+  </string>
+  <string key="ChemistTargetDead">
+	<value>Sei andata a cercare {0} per "convincerlo" a immolarsi per la scienza - ma appena arrivi a casa sua, scopri che è morto!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>Sei stata visitata da quella tossica di Abby 👨‍🔬 {0}! Parlando del progresso della scienza, voleva costringerti a iniettarti una dose di Sanguenero... ma tu, urlando al tradimento contro il Wonkru, l'hai pugnalata più e più volte! Il Sanguenero non serve a Blodreina!</value>
+  </string>
+  <string key="ChemistSK">
+	<value>Tormentata dai pessimi ricordi, sei andata nel bunker da {0} per farle iniettare il Sanguenero artificiale... sfortunamente Blodreina 🔪 non ha apprezzato, e ti ha pugnalato! Ora sei morta... e le tue proteine aiuteranno la sopravvivenza del Wonkru.</value>
+    <value>Tormentata dai mal di testa e dalla voglia di essere morta fuori dal bunker, sei andata nel bunker da {0} per costringerla a iniettarsi il Sanguenero sperimentale... ovviamente Blodreina 🔪 non era d'accordo, e ti ha uccisa con la sua spada!</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<value>Abby 👨‍🔬 {0} voleva costringere Blodreina 🔪 a far da cavia per il bene dell'umanità! Eppure, a quanto pare Octavia l'ha considerata una traditrice per questo... ed era stanca dei suoi tradimenti. E poi, il colore del sangue non conta nulla per la Wonkru! {0} è stata trovata pugnalata, con le dosi di Sanguenero e i barattoli di pillole ancora dentro lo zaino!</value>
+    <value>Abby 👨‍🔬 {0} è andata da Octavia, la Regina Rossa 🔪, per spingerla a iniettarsi uno dei due preparati sperimentali. Ma il Sanguenero e la Fiamma sono ormai simboli del passato e una minaccia per Blodreina! Abby è diventata una traditrice ed è finita uccisa, per fornire tante proteine al Wonkru.</value>
+    <value>{0} 👨‍🔬 voleva convincere Blodreina 🔪 a far da cavia per il suo Sanguenero artificale, per sconfiggere le radiazioni e uscire dal bunker. Purtroppo, così la Regina del Wonkru si è ricordata che sono bloccati sotto Polis, quindi è impazzita dalla frustrazione e l'ha trapassata più volte con la sua spada. La dottoressa Abby è morta.</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>Ti ha visitato Abby 👨‍🔬! Parlando della salvezza del genere umano, ti ha fatto scegliere una dose di Sanguenero artificiale... e tu ovviamente hai preso quello con la formula sbagliata! Dopo una tremenda agonia data dalle reazioni avverse, è sopraggiunta la morte. Che brutta fine... but IT'S FOR SCIENCE!</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>Sei andata da {0} e gli hai fatto scegliere una delle due dosi! La cavia purtroppo si è iniettata quella imperfetta, ed è morta... ma ora sì che potrai salvare Clarke e l'umanità! Serve giusto qualche altra sperimentazione per essere sicuri... d'altronde il destino di tutti è nelle tue mani!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Vittima del chimico -->
+  <!-- {1} - Viene sostituito da "(nome vittima) era (ruolo)" -->
+	<value>Abby 👨‍🔬 ha visitato {0} e gli ha fatto scegliere una dose del suo Sanguenero sintetizzato in laboratorio! La dottoressa ha scelto la formula perfetta, mentre {0} si è iniettato quella "da migliorare" ed è morto tra atroci sofferenze. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>Ti ha visitato Abby 👨‍🔬 {0}, che ti ha gentilmente costretto a fare da cavia per l'umanità. Tra le due dosi uguali alla vista, tu scegli la formula del Sanguenero che funziona! Che fortuna!</value>
+  </string>
+  <string key="ChemistFail">
+	<value>Sei andata da {0} e gli hai fatto scegliere una delle due dosi di Sanguenero artificiale! Sfortunatamente per te, si è iniettato quello migliore, mentre a te è toccato quello che ti ha uccisa!... E ora, chi sintetizzerà le dosi per tutti?!</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>Abby 👨‍🔬 {0} è stata trovata morta! A quanto pare, {0} si è iniettata la dose di Sanguenero "da perfezionare", e non aveva un antidoto per le reazioni avverse! La scienza funziona per ipotesi ed esperimenti, per tentativi ed errori... Ma ora, chi preparerà il Sanguenero artificiale per tutti?</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>La cavia di stasera, {0}, non era a casa! Torni indietro delusa, che sfortuna.</value>
+  </string>
+  <string key="CultistsList">
+	<value>I Prime sono attualmente: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>un Distributore di chip difettosi 🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Sei un Distributore di chip difettosi (🐺☃️), alleato della famigerata A.L.I.E., e ogni notte potrai obbligare un terrestre ad inghiottire un chip. In questo modo egli non sarà in grado di ricordare cose dolorose e nemmeno di compiere le azioni notturne, dato che A.L.I.E. gli toglierà la sua volontà... ma solo per una notte! Dopo infatti il suo chip difettoso smetterà di funzionare e, per non fondergli il cervello, non potrai far prendere un altro chip alla stessa persona, a meno che non fai passare almeno un giorno tra i due chippamenti (quindi un giorno sì e uno no).</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>Sei un Distributore di chip difettosi (🐺☃️), alleato della famigerata A.L.I.E., e ogni notte potrai obbligare un terrestre ad inghiottire un chip. In questo modo egli non sarà in grado di ricordare cose dolorose e nemmeno di compiere le azioni notturne, dato che A.L.I.E. gli toglierà la sua volontà... ma solo per una notte! Dopo infatti il suo chip difettoso smetterà di funzionare e, per non fondergli il cervello, non potrai far prendere un altro chip alla stessa persona, a meno che non fai passare almeno un giorno tra i due chippamenti (quindi un giorno sì e uno no).</value>
+  </string>
+  <string key="AskFreeze">
+	<value>Chi vuoi chippare per una notte?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>I Chippati sono {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>I Chippati sono {0} e il Distributore di chip difettosi 🐺☃️ è {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} è morto, e tu prendi il corpo di Jaha, quindi adesso "sei" lui agli occhi di tutti e ti comporti di conseguenza. Potrai convincere il resto dell'umanità a unirsi a voi.
+Gli altri abitanti della Città della Luce sono: {1} mentre il Distributore di chip difettosi 🐺☃️ è {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>La tua coscienza viene caricata nello Zainetto di A.L.I.E., che quindi non è più {0}. In questa nuova forma, ora sei importantissimo per i Chippati! Gli altri abitanti della Città della Luce sono: {1} e il Distributore di chip difettosi 🐺☃️ è {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} è morto, e tu ti reincarni in un Chippato. Nella Città della Luce trovi gli altri: {1} e il Distributore di chip difettosi 🐺☃️ {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} è morto, e tu ti sei unita alla coscienza dell'Intelligenza Artificiale A.L.I.E., diventando lei. I cittadini della tua Città sono: {1} e il Distributore di chip difettosi 🐺☃️ {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} è morto, e tu prendi il corpo del Distributore di chip difettosi 🐺☃️. Gli altri abitanti della Città della Luce (se ci sono ancora) sono: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Priya🎭 {0} si è reincarnata nel Distributore di chip difettosi 🐺☃️!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} è morto! Hai accettato il chip! Nella Città della Luce trovi gli altri: {1} e il Distributore di chip difettosi 🐺☃️ {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} non è più il Distributore di chip difettosi 🐺☃️, adesso lo è {1}!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Appena apri la porta per uscire di casa un tizio 🐺☃️ ti cattura e ti convince a inghiottire un chip che somiglia alla Fiamma... Finisci di colpo in una magnifica città piena di grattacieli e strade nuovissime, e per questa notte spariscono i tuoi bollenti spiriti... Finché in mattinata tutto scompare, come se nulla fosse accaduto.</value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Dopo esserti svegliata, pronta a preparare un'altra formula per perfezionare il Sanguenero artificiale, uno sconosciuto 🐺☃️ ti cattura e ti costringe a inghiottire un chip, ancora una volta! Tornata nella Città della Luce, A.L.I.E. ti ordina di distruggere tutte le siringhe. Tuttavia, la mattina dopo il chip ti lascia di nuovo libera. Ne deduci che era difettoso.</value>
+  </string>
+  <string key="CultistFrozen">
+    <value>Dopo esserti preparato per andare a offrire il Mind Drive a un nuovo alleato, un nemico 🐺☃️ irrompe e ti costringe a inghiottire un chip con lo stesso marchio del Mind Drive. Gli altri Prime ti legano e ti assicurano che ci penseranno loro a regalare l'immortalità a qualcuno. Dopo alcune ore, riescono a friggere il chip, che si scopre essere difettoso.</value>
+  </string>
+  <string key="CHFrozen">
+    <value>Appena prendi la tua spada pronto per andare a decapitare qualche Prime, un tizio 🐺☃️ ti immobilizza e ti costringe a inghiottire un chip con lo stesso marchio del Mind Drive. Dopo tutta la notte in una magnifica città come quelle del passato, finalmente ti liberi del tutto. Con qualche analisi, scopri che ti hanno dato un chip difettoso di un'AI dagli intenti alquanto sospetti...</value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Ti siedi per iniziare a indagare sui ruoli altrui, quando all'improvviso un tizio 🐺☃️ ti immobilizza e ti costringe a inghiottire un chip con lo stesso marchio sacro della Fiamma. Mentre cerchi di distruggere la Città della Luce nel poco tempo che hai grazie alle informazioni di Bekka Pramheda, il chip guasto smette di funzionare.</value>
+  </string>
+  <string key="GAFrozen">
+    <value>Non appena esci di casa, pronto a difendere un innocente, qualcuno 🐺☃️ ti colpisce alla testa. Ti svegli legato, e un chippato ti fa inghiottire un chip a forza. Così, eccoti nella Città della Luce. Per fortuna col sorgere del sole sei libero.</value>
+  </string>
+  <string key="SKFrozen">
+    <value>Mentre nel refettorio del bunker ammiri la sfilza di ottimi cubetti che serviranno da colazione per domani, qualcuno 🐺☃️ ti colpisce alla testa. Ti svegli legata come un salame, e un tizio ti fa inghiottire un chip a forza. Così, eccoti nella Città della Luce. Per fortuna col sorgere del sole sei libera. Giuri che quando questo nemico del Wonkru sarà catturato, soffrirà le pene dell'inferno, giù nella Fossa...</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Mentre ti aggiri silenziosamente in giro, un tizio 🐺☃️ ti immobilizza e ti convince a inghiottire un chip così da lenire il tuo dolore per la faccenda di Murphy e Ontari. Però la mattina non riesci più ad accedere alla Città della Luce, o a vedere A.L.I.E...</value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>Mentre dormivi la scorsa notte, uno sconosciuto 🐺☃️ ti immobilizza, ti ricatta e ti costringe a inghiottire un chip. Così, eccoti nella Città della Luce. Per fortuna col sorgere del sole sei di nuovo libero.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>Sei andato a casa di {0} per fargli prendere il chip difettoso, ma appena sei arrivato hai incontrato un energumeno armato fino ai denti. È Lincoln. Te le suona per bene, e anche se non senti il dolore, alla fine sei costretto a scappare via, sconfitto.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Sei andato a casa di {0} e l'hai chippato col tuo chip difettoso! Per stanotte sarà sotto il controllo di A.L.I.E. e non potrà agire. Meglio di niente!</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>Il Distributore di chip difettosi 🐺☃️ {0} ha cercato di spacciare i suoi chip a Blodreina 🔪 la scorsa notte! Lei ha notato il visitatore {0} e dopo averlo trafitto lo ha squartato per farci delle salutari monoporzioni!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>Tutti gli altri Chippati sono morti, sei l'ultimo rimasto! Data la situazione critica, adesso preferisci aiutare meglio la causa con dei chip funzionanti, tanto agli altri non servono più... Perciò ora torturerai anche tu le persone!</value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>Il Distributore di chip difettosi 🐺☃️ {0} ha provato a convincere Diyoza a prendere uno dei suoi chip la scorsa notte, ma lei gli ha piantato un proiettile in faccia!</value>
+  </string>
+     <string key="Lang">
+    <value>Cambia linguaggio</value>
+  </string>
+  <string key="Mode">
+    <value>Cambia modalità di gioco</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Modifica limite giocatori</value>
+  </string>
+  <string key="EndRoles">
+    <value>Mostra ruoli a fine partita</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Modifica il tempo massimo di estensione</value>
+  </string>
+  <string key="DayTimer">
+    <value>Modifica durata del giorno</value>
+  </string>
+  <string key="NightTimer">
+    <value>Modifica durata della notte</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Modifica durata del linciaggio</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Configurazione ruoli</value>
+  </string>
+  <string key="Mechanics">
+	<value>Meccaniche del gioco</value>
+  </string>
+  <string key="GroupSettings">
+	<value>Impostazioni del gruppo</value>
+  </string>
+  <string key="Timers">
+	<value>Durata fasi del gioco</value>
+  </string>
+  <string key="Done">
+	<value>Fatto!</value>
+  </string>
+  <string key="Back">
+	<value>Indietro</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Mischia lista dei giocatori</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Mischiare lista di giocatori ogni volta? Attualmente: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>La lista giocatori verrà mischiata ogni volta: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+	<value>Sei Becca Pramheda (☠️). È tua responsabilità dare degna sepoltura ai cadaveri di coloro che tu stessa, indirettamente, hai fatto morire, perciò passerai tutte le notti a scavare le tombe. Tuttavia spesso non riesci a ricoprire ogni fossa, perciò lasci buche in giro (e ti credo, con quanti morti ci sono!) Quindi qualcun altro potrebbe caderci e morire... Dannazione, dove vai porti la morte! Almeno, i chippati non possono ucciderti se non sei nella tua villa, dato che conosci alla perfezione le mosse della tua creazione tecnologica.</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>Sei Becca Pramheda (☠️). È tua responsabilità dare degna sepoltura ai cadaveri di coloro che tu stessa, indirettamente, hai fatto morire, perciò passerai tutte le notti a scavare le tombe. Tuttavia spesso non riesci a ricoprire ogni fossa, perciò lasci buche in giro (e ti credo, con quanti morti ci sono!) Quindi qualcun altro potrebbe caderci e morire... Dannazione, dove vai porti la morte! Almeno, i chippati non possono ucciderti se non sei nella tua villa, dato che conosci alla perfezione le mosse della tua creazione tecnologica.</value>
+    <value>Sei Becca Pramheda (☠️). Hai prima distrutto e poi salvato l'umanità... o almeno, ciò che ne restava. Purtroppo essa tra guerre, catastrofi e fanatismi continua a sbagliare, così adesso ogni notte la aiuti a seppellire i morti che si lascia dietro.
+Il lavoro è tanto, perciò prepari tante buche. Però il pensiero di aver sterminato la razza umana ti tormenta, per questo spesso ti dimentichi proprio di ricoprirle. Quindi qualcun altro potrebbe cadere in una fossa e morire... +1 al conteggio morti che hai sulla coscienza.
+Nota comunque che i Chippati non possono ucciderti per scoprire dov'è la Fiamma, poiché non ti vedranno nell'oscurità delle tue buche... e dei tuoi rimorsi.</value>
+  </string>
+  <string key="GraveDigger">
+	<value>Becca Pramheda ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>I morti finora sono stati sepolti. Ti metti a dormire, sperando che l'umanità la smetta di massacrarsi a vicenda.</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+	<value>Scavi fino a tarda notte per {0}. Possano i loro corpi riposare in pace, e le loro anime trascendere per far parte della mente del Giudice...</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>Appena uscita dalla tua casa per sotterrare coloro che sono passati a miglior vita, uno sconosciuto 🐺☃️ cerca di convincerti a prendere il chip. Tu ovviamente ti accorgi che è difettoso, così lo inghiotti tranquillamente. Passi una nottata a cercare di trovare A.L.I.E. 1.0 per parlarle, ma senza l'aiuto di A.L.I.E. 2.0 è impossibile. Comunque il mattino dopo, come previsto, il chip nel tuo corpo smette di funzionare.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+	<value>Il gruppo dei Chippati decide di dirigersi a casa di {0}, solo per trovarla vuota. Tutto quello che si vede è la luce soffusa di una candela davanti a un mappamondo...</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+	<value>I Chippati si dirigono a casa di {0}, ma nel giardino, improvvisamente {1} fa scattare una trappola, e cade in una fossa dove viene trafitto a morte!</value>
+    <value>I Chippati si dirigono a casa di {0} per "convincerla" a tornare dalla sua creazione digitale. Ma nel giardino, {1} finisce in una trappola a caduta e muore trafitto. Qualcuno qui sa come proteggersi dai nemici...</value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+	<value>Appena ti appresti a richiudere le tombe che hai scavato tutta notte, noti che un Chippato, {0}, è caduto in una delle tue trappole ed è morto!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+	<value>Hai ucciso {0}, ma mentre uscivi dalla sua casa ti sei avvicinato troppo a una tomba non finita e ci sei caduto dentro... Ora il tuo braccio fa davvero male...</value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+	<value>Mentre ti dirigevi da {0}, senti un dolore atroce al braccio. Decidi di deviare verso la casa più vicina di {1}, un altro traditore, che infine muore.</value>
+    <value>Mentre ti dirigevi da quel traditore di {0}, senti un dolore atroce al braccio. Per stasera quindi decidi di sopraffarne un altro più facile, {1}, che uccidi mentre dorme.</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+	<value>Arrivi a casa di {0}, solo per trovare un energumeno a proteggerla! È Lincoln! Dato il dolore atroce al braccio (e al cuore...) non perdi nemmeno tempo a lottare ma te ne scappi immediatamente.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+	<value>Un'altra notte inutile senza riuscire a uccidere uno di questi maledetti Prime! Frustrato, corri freneticamente attraverso il cimitero di {0}, senza accorgerti della fossa. Urli e cerchi di aggrapparti al bordo, ma è troppo tardi. Cadi all'indietro in una tomba che Becca non ha richiuso e il suono del tuo collo che si spezza è l'ultima cosa che senti prima che tutto diventi nero... per sempre, stavolta.</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+	<value>Dopo un'altra lunga e faticosa notte, ritorni alla tua casa mentre il sole rosso sta già sorgendo. Ma vedi una strana maschera antigas sul bordo di una fossa... e dentro ci trovi il cadavere di {0}. Forse Gabriel 💂🏻‍♀️ ha sospettato a torto di te... perché sapeva che hai creato i Mind Drive per la missione Eligius III.</value>
+    <value>Dopo un'altra lunga notte a scavare, ritorni alla tua casa su questa luna, mentre il sole rosso sta già sorgendo. C'è una strana maschera antigas sul bordo di una fossa... purtroppo dentro trovi il cadavere di {0}. Gabriel 💂🏻‍♀️ deve aver sospettato a torto di te... perché sapeva che hai creato i Mind Drive per la Eligius Corporation.</value>
+  </string>
+  <!--{0}: cultist-->
+  <string key="CultFell">
+	<value>Ritorni a casa dopo una faticosa nottata, quando senti un urlo dalle tombe non finite! Ti rechi subito sul posto, solo per trovare {0} morto dentro una tomba. Perché i Prime provano a offrirti un Mind Drive? Non sanno chi sei? Non sanno che NON li avevi progettati per diventare immortali?</value>
+  </string>
+  <!--{0}: cultist who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+	<value>Mentre vai a casa di {1}, {0} suggerisce che sarebbe una buona idea controllare se Gabriel è nei paraggi. Lo segui nel cimitero quando improvvisamente una trappola gli cattura l'anca! Tutto quello che senti è il suo urlo mentre finisce dritto dentro una fossa e voi scappate via in preda al terrore.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+	<value>Mentre vai a casa di {0}, provi a ricordarti a mente quale delle due formule del Sanguenero è quella che ti convince meno, e inciampi, cadendo in una tomba non finita dove una lancia ti infilza tra le costole. Prima che tu possa dire una parola, sei già morta...</value>
+    <value>Sei riuscita a scoprire dov'è Becca, {0}... quindi stanotte stavi andando alla sua villa, per farti aiutare con la formula del Sanguenero, così da non dovere più cercare esseri umani da sacrificare e evitare il biasimo degli altri. Mentre rifletti sul complesso di Dio che ti affligge, non vedi una buca davanti a te, vi cadi dentro e muori. Speriamo che il tuo lavoro salvi comunque l'umanità...</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+	<value>"Oggi potrei tornare a lavorare sul siero per metabolizzare le radiazioni", pensi tra te e te. Hai un presentimento strano che ti fa guardare la tomba accanto a te, e come se il destino ti sentisse, noti un paio di siringhe con dentro la sostanza nera. Peccato che c'è anche il cadavere di {0}... che tristezza.</value>
+    <value>Mentre torni a casa dopo una lunga nottata, noti che una donna è rimasta uccisa in una delle tue trappole. Scopri che {0} era una scienziata come te. Le fiale di siero antiradiazioni accanto al suo cadavere dimostrano che stava proseguendo il tuo lavoro per il bene dell'umanità. Ora ti senti ancora più in colpa... :(</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+	<value>Ti metti il tuo mantello preferito e vai a casa di {0} per cercare un po' di divertimento. Purtroppo non arrivi lontano, dato che metti il piede in una trappola e cadi dentro una tomba, restandoci secca...</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+	<value>A quanto pare il fato agisce in modi strani. Hai scavato tombe tutta la notte, e trovi {0}, Ontari 💋, morta nella tua trappola. Ti senti in colpa. Povera ragazza.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+	<value>Vai a casa di {0}, stando attenta a tutte le buche scavate nel giardino, ma appena arrivi, la casa è vuota.. A quanto pare {0} è fuori a scavarne altre!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+	<value>La fortuna non è dalla tua parte stanotte... Volevi solo proteggere {0}, ma mentre stavi perlustrando la casa cadi in una delle buche e muori poco dopo. C'era davvero bisogno di mettere trappole in un cimitero?</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+	<value>Mentre torni a casa, noti dei fogli di disegni per terra. Lì accanto vedi {0}, Lincoln 👼, caduto in una delle tue buche! Forse hai esagerato con le tue trappole.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+	<value>Ti infiltri nel il cimitero per rubare il ruolo a {0}, ma concentrata a non far rumore non noti la trappola finché non ti cattura la gamba! Non solo hai fatto rumore, ma inciampi e cadi, rompendoti l'osso del collo!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+	<value>{0}, povera ragazza, è caduta in una delle tue buche! Sembrava una poveretta, che dispiacere! Forse voleva rubare qualcosa... ma tu l'avresti aiutata, se solo te lo avesse chiesto!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+	<value>🔥 Dovevi raggiungere prima l'America con la tua tempesta di radiazioni. Becca ☠️, la scienziata che ti aveva scatenato la prima volta, ti ha notato all'orizzonte. Mentre provavi a metterla fuori gioco, lei ha avvertito gli esseri umani di rifugiarsi nel bunker e poi si è nascosta nel suo laboratorio. Ora non potrai più uccidere nessuno... uffa però.</value>
+  </string>
+  <!--{0}: Arsonist-->
+  <string key="ArsonistFellDigger">
+	<value>Ti svegli di notte a causa del forte bagliore arancione fuori dalla finestra. Allarmata, guardi e noti che si avvicina {0}, ciò che i Terrestri chiamano il Praimfaya 🔥. Avvisi gli altri, poi vai nel tuo laboratorio sotterraneo e ti salvi. Scopri poi che anche il resto dell'umanità si è salvato nei bunker. La letalità del Praimfaya è stata annullata grazie a te!</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+	<value>Una delle tombe nel cimitero aveva troppe persone stanotte! A quanto pare {0} ha provato a visitare Becca, è cascato in una tomba scoperta ed è morto! {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+	<value>Mentre Ontari {0} tornava a casa dopo una notte di divertimento ha preso la scorciatoia per il cimitero. Data l'ora non stava prestando molta attenzione, così è caduta in una tomba aperta! Forse doveva darsi una calmata...</value>
+  </string>
+  <!--{0}: cultist who died-->
+  <string key="CultistFellPublic">
+	<value>I Prime hanno provato a controllare la presenza di Gabriel nel cimitero, ma mentre {0} guidava l'élite teocratica di Sanctum attraverso le tombe aperte, è stato colto di sorpresa da una fossa! Ci è caduto dritto dentro... dopotutto non puoi davvero sfuggire alla morte! Gli altri Prime sono scappati terrorizzati!</value>
+    <value>I Prime volevano controllare la presenza del "demone" Gabriel nel cimitero, ma {0} è caduto dritto dentro una tomba aperta, dove è morto! Vedendo realizzati i loro peggiori incubi, gli altri Prime sono scappati in preda al panico! Al Mind Drive di {0} penseranno dopo.</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+	<value>Forse Emori 😈 {0} stava provando a rubare ai morti. Magari era il Karma. Tutto ciò che sappiamo è che stava camminando nel cimitero quando è caduta dentro una tomba profonda. {0} si pente di non aver portato complici dei Sangedakru... di sicuro ora non riuscirà mai più a rubare nulla!</value>
+    <value>Emori 😈 {0} stava vagando come al solito, stavolta in un posto pieno di morti. Forse voleva rubare gli averi di un defunto per prendere il suo posto nella società, o forse stava cercando il suo amato. Fatto sta che è inciampata ed è finita in una tomba profonda. {0} è morta.</value>
+    <value>Questo ladro 😈 poco esperto, {0}, stava provando a rubare ai morti, invece che a qualcun altro. Tutto ciò che sappiamo è che stava camminando nel cimitero quando è caduto dentro una tomba scoperta. Perlomeno ora questa catena di furti finirà una volta per tutte!</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+	<value>Come i Chippati escono in cerca di persone da "salvare", {0} seguendo le tracce non si accorge della trappola davanti a lui! Colto di sorpresa, {0} cade in una tomba, dove una lancia trapassa il suo cranio! Purtroppo per lui, Becca tiene misure di sicurezza nel suo triste cimitero. {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>Stai solo facendo il tuo lavoro per A.L.I.E., mentre improvvisamente una pazza assassina del Wonkru ti nota e ti trafigge con la sua spada! Chi scaverà la tua tomba, adesso?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+	<value>Come cammini attraverso un cimitero con in mano la tua spada insanguinata, noti Becca {0}. Seguendo il tuo istinto, decidi che hai trovato almeno due nemici del Wonkru oggi!</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>Stai semplicemente facendo il tuo triste lavoro, quando all'improvviso un Chippato ti assale da dietro e per errore ti fa cadere in una delle tue buche. Ora come rimedierai ai tuoi sbagli?</value>
+    <value>Nella tua villa super tecnologica saresti stata inattaccabile, ma qui nel giardino è diverso. Provi a ricondurre alla ragione quelle persone e l'AI nella loro testa, ma loro non ti ascoltano e finiscono con l'ucciderti. E ora chi lotterà contro la tua creazione?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+	<value>I Chippati vagano nel cimitero, quando notano la presenza di Becca Pramheda {0}. Prima che possa reagire, uno di voi la immobilizza e la tortura per scoprire dov'è l'aggiornamento di A.L.I.E., ma inutilmente. Becca muore per le ferite riportate.</value>
+    <value>I Chippati vagano nel cimitero, quando notano la presenza di Becca Pramheda {0}. Uno di voi la attacca per interrogarla, ma per errore la fa cadere in una delle tombe aperte. Becca muore per le ferite riportate.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+	<value>{0} non si è presentata tra gli altri come al solito. Che fine avrà fatto? I Clan si apprestano a cercarla, quando qualcuno trova il suo cadavere martoriato nel cimitero, con la sua pala ancora in mano. Sembra che i Chippati l'abbiano attaccata di sorpresa... Becca è l'ennesima vittima della follia di A.L.I.E.!</value>
+    <value>Sembra che chi è stato traviato dalla sua pericolosa AI abbia infine raggiunto Becca Pramheda {0}, che è stata sorpresa nel suo giardino. Evidentemente ha criticato troppo il modo in cui A.L.I.E. voleva rendere la vita migliore, per cui alla fine è stata uccisa. Perlomeno la tomba per seppellirla è già scavata...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+	<value>{0} è sparita dalla circolazione... Sarà rimasta a dormire fino a tardi, in pena per le sue colpe? Andate a cercarla e nel cimitero, vicino a una pala, trovate il suo cadavere privo di alcuni muscoli. Sembra che Blodreina l'abbia sorpresa di notte...</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Piromane</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="AllowArsonistQ">
+	<value>Ammettere il Piromane? Attualmente: {0}</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="AllowArsonistA">
+	<value>il Piromane è ora {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Piromane e Killer</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="BurningOverkillQ">
+	<value>Ammettere il Piromane e Serial killer nella stessa partita? Potrebbe essere mortale! 😈 Attualmente: {0}</value>
+  </string>
+    <!--{0} = "Ammesso" / "Non Ammesso" -->
+  <string key="BurningOverkillA">
+	<value>Piromane e Serial Killer nella stessa partita: {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>Sei il Praimfaya! 🔥 
+Sei composto per il 99% di radiazioni gamma e per il restante 1% del rancore dei fan, e bruci ogni cosa che incontri... Dopo la Prima Apocalisse, quando hai distrutto la società umana scatenato dalle bombe nucleari, adesso provieni dalle enormi centrali nucleari danneggiate!
+Ogni notte, puoi decidere chi avvelenare con le tue radiazioni. Quando infine ti scatenerai, ucciderai tutti i poveri malcapitati che hai irraggiato, bruciandoli fino alle ossa.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>Sei il Praimfaya! 🔥 
+Sei composto per il 99% di radiazioni gamma e per il restante 1% del rancore dei fan, e bruci ogni cosa che incontri... Dopo la Prima Apocalisse, quando hai distrutto la società umana scatenato dalle bombe nucleari, adesso provieni dalle enormi centrali nucleari danneggiate!
+Ogni notte, puoi decidere chi avvelenare con le tue radiazioni. Quando infine ti scatenerai, ucciderai tutti i poveri malcapitati che hai irraggiato, bruciandoli fino alle ossa.</value>
+  </string>
+  <string key="Arsonist">
+	<value>il Praimfaya 🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>🔥 Chi vuoi avvelenare di radiazioni gamma stasera? (Se almeno una persona è intossicata, puoi scegliere di scatenare le tue fiamme!)</value>
+        <value>Vuoi avvelenare qualcuno di radiazioni gamma o vuoi scatenare le tue fiamme, stasera?</value>
+  </string>
+  <!--{0}: Piromane-->
+  <string key ="ArsonistVisitKiller">
+	<value>Il Praimfaya 🔥 {0} ha provato a intossicare Blodreina con le sue radiazioni. Ma lei ha vinto il Conclave finale, si è rifugiata nel bunker e la tempesta letale ha fallito.</value>
+  </string>
+  <string key="Spark">
+	<value>Brucia tutto 🔥</value>
+  </string>
+  <!--{0}: persona la cui casa è stata cosparsa di kerosene-->
+  <string key="Doused">
+	<value>Hai riempito con successo {0} di radiazioni!</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>La sensazione di forte bruciore in tutto il corpo ti sveglia di notte! Ti affacci alla finestra, e c'è una montagna di fuoco vicinissima all'orizzonte! Il panico ti supera ma sei già troppo debole per le radiazioni. Mentre inizi a perdere conoscenza, noti un guerriero Trikru 👼🏾 che irrompe davanti a te, afferrandoti e portandoti giù nel bunker appena in tempo per salvarti la vita.</value>
+  </string>
+  <!--{0}: persona salvata-->
+  <string key="GuardSavedFromFire">
+	<value>Sei arrivato da {0} appena in tempo. Non hai mai visto una cintura di fuoco come quella che vedi all'orizzonte, alta come una montagna e fatta di radiazioni, che distrugge tutto ciò che incontra! Decidi immediatamente di aiutare {0}, portandolo nel bunker.</value>
+  </string>
+  <!--{0}: persona di cui la casa è stata pulita dal kerosene del piromane-->
+  <string key="CleanDoused">
+	<value>Mentre proteggi {0} noti che emana uno strano alone luminescente attorno al suo corpo. Capisci che il Praimfaya (🔥) ha iniziato ad avvelenarlo con le sue radiazioni. Decidi di aiutare {0} curandolo con uno dei tuoi antidoti.</value>
+  </string>
+  <!--{0}: lista di persone morte bruciate-->
+  <string key="Burning">
+	<value>Arriva la mattina, e dal bunker qualcuno nota che {0} sono morti tra le fiamme del Praimfaya. Di loro e delle loro case rimangono solo fumo e cenere radioattiva.\nPiangete per il lutto delle seguenti persone:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>Solo il crepitìo degli alberi ormai ridotti a scheletri può essere udito in giro, mentre i resti di Polis e del mondo intero stanno ancora bruciando di fuoco radioattivo. Il Praimfaya 🔥 ha vinto, distruggendo il genere umano. GAME OVER.</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>Avresti dovuto rifugiarti nel bunker! Ora tutto ciò che rimane di te e della tua casa non è che è fumo e cenere radioattivi...</value>
+	<value>La sensazione di forte bruciore in tutto il corpo ti sveglia di notte! Ti affacci alla finestra, e in una visione da incubo, ecco una cintura di fuoco radioattivo alta quanto una montagna, ormai vicinissima alla tua casa! C'è fuoco ovunque intorno a te! Debolissimo per le radiazioni, svieni, e infine muori, bruciato dal Praimfaya 🔥.</value>
+  </string>
+  <string key="Augur">
+	<value>Gaia 🦅</value>
+  </string>
+  <!--{0}: ruolo non in partita-->
+  <string key="AugurSees">
+	<value>Come studi sul quaderno di Bekka Pramheda, i simboli che si intrecciano con la psicologia e la mente umana ti suggeriscono che {0} non è presente tra i Clan.</value>
+	<value>Le nozioni del funzionamento della Fiamma sul quaderno ti dicono che {0} non fa parte dei Clan in questo momento.</value>
+  </string>
+  <string key="AboutAugur">
+	<value>Sei Gaia (🦅). In qualità di Seda, hai potuto studiare il quaderno di Bekka Pramheda e così puoi attingere alla saggezza della Fiamma... ma in modo molto diverso da Lexa (👳🏻) e da Madi (🌀). 
+Hai il potere di vedere cose nascoste: sei l'unica che può vedere chi NON è presente in questa guerra, e mai lo stesso ruolo per due volte!</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>Sei Gaia (🦅). In qualità di Seda, hai potuto studiare il quaderno di Bekka Pramheda e così puoi attingere alla saggezza della Fiamma... ma in modo molto diverso da Lexa (👳🏻) e da Madi (🌀). 
+Hai il potere di vedere cose nascoste: sei l'unica che può vedere chi NON è presente in questa guerra, e mai lo stesso ruolo per due volte!</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>Non trovi nulla di significativo oggi. Questo può solo significare che i ruoli che non partecipano alla guerra sono terminati.</value>
+  </string>
+  <!--{0}: vittima scelta dai lupi, {1}: lupo morto dalle fiamme-->
+  <string key="WolvesVisitBurn">
+	<value>I Chippati entrano a casa di {0}, ma all'improvviso si accorgono di un forte bagliore aranciato dalle finestre. Scappano via, ma a {1} cede il ginocchio e così rimane lì fin quando l'abitazione non viene avvolta dalle fiamme radioattive. {1} muore bruciato vivo.</value>	  
+  </string>
+  <!--{0}: persona morta perchè ha visitato una casa che bruciava, {1}: "(persona) era (ruolo)"-->
+  <string key="DefaultVisitBurn">
+	<value>{0} doveva rimanere a casa sua stanotte. Invece, è andato in una casa che è stata distrutta dal Praimfaya! {1}</value>
+  </string>
+  <!--{0}: Lupo morto, {1}: "(Lupo) era (ruolo)" per specificare che tipo di lupo era-->
+  <string key="WolfVisitBurn">
+	<value>I Chippati stanotte volevano far entrare qualcuno nella Città della Luce, ma il Praimfaya li ha raggiunti! {0} non è riuscito a fuggire in tempo per mettersi in salvo nel bunker... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+	<value>Nonostante Abby 👨‍🔬 sia disposta a tutto per salvare la figlia e l'umanità, il senso di colpa per aver causato la morte di un brav'uomo come Sinclair 📚 l'ha infine spinta ad abbandonare per sempre provette e perfluorochimici, per diventare così come una normale Terrestre!</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value>Solo {0} e {1} sono rimasti... Improvvisamente {0} si scatena, e una tempesta di fuoco radioattivo alta quanto una montagna arriva a distruggere tutto ciò che incontra! L'ultimo essere umano ancora in vita non riesce a fuggire e viene avvolto dalle fiamme. {1} brucia consumandosi come un fiammifero in un incendio. GAME OVER.</value>
+  </string>
+    <string key="ArsonistTeamEnd">
+    <value>Team Praimfaya</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+	<value>Sei andata da {0}, ma la casa era vuota!</value>
+  </string>
+  <string key="Validate">
+  <!-- Usato per il bottone sul menu della selezione ruoli -->
+	<value>‼ CONVALIDA ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Usato per il bottone sul menu della selezione ruoli -->
+	<value>✅ Valido ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>La configurazione dei ruoli è valida! È stata abilitata e verrà usata da ora in poi!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>La configurazione dei ruoli NON è valida! Per favore abilita più ruoli per permettere al bot di creare partite bilanciate!</value>
+  </string>
+  <string key="GroupIdleCount">
+  <!-- {0} - Morti per AFK delle ultime 24 ore nel gruppo attuale -->
+  <!-- Questa stringa è attaccata alla stringa "IdleCount", quindi cercare di fare in modo che la frase risultante abbia senso -->
+	<value> di cui {0} volte in questo gruppo</value>
+  </string>  
+ <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>Sei diventato Priya 🎭. Ti reincarnerai in {0} alla sua morte.</value>
+  </string>
+  <string key="RoleConfigInfo">
+  <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+	<value>Quali ruoli vorresti usare in partita?\n\nGuida alla Configurazione:\n\n✅ = Ruolo abilitato\n❌ = Ruolo disabilitato\n\nDopo la selezione dei ruoli, devi usare il bottone CONVALIDA nell'angolo in basso a sinistra per confermare e salvare la configurazione! Se non convalidi, la selezione non verrà salvata e i ruoli rimarranno tutti attivi!\n\nSe disabiliti troppi ruoli, il bot non sarà in grado di creare una partita bilanciata e la convalida fallirà! In quel caso basterà abilitare più ruoli e convalidare di nuovo.\n\nSe la convalida andrà a buon fine, nell'angolo in basso a sinistra ci sarà scritto ✅ Valido ✅ e la configurazione sarà utilizzata nelle partite!</value>
+  </string>
+  <string key="EnableAllRoles">
+	<value>Abilita Tutti</value>
+  </string>
+  <string key="DisableAllRoles">
+	<value>Disabilita Tutti</value>
+  </string>
+  <string key="CHHuntedYou">
+    <value>Mentre sei impegnato a ripulire l'ennesimo Mind Drive, ecco che quel bastardo di Gabriel 💂‍♂️ irrompe all'improvviso e ti decapita. Game over.</value>
+    <value>Mentre sei nel laboratorio segreto a resettare l'ennesimo Mind Drive, ecco che quel traditore di Gabriel 💂‍♂️ irrompe all'improvviso e ti decapita. Fine dei giochi...</value>
+  </string>  
+    <string key="ExitAnonymousMode">
+    <value>Non puoi usare il bot mentre sei un admin anonimo! Chiedi all'admin che ti ha promosso di rimuoverti questo permesso!</value>
+  </string>
+   <string key="AskArsonistNoDoused">
+    <value>Chi vuoi riempire di radiazioni gamma stasera?</value>
+  </string>
+  <string key="AlreadyDousedList">
+    <value>\nPersone già irraggiate: {0}</value>
+  </string>
+  <string key="DoppelgangerEnd">
+    <value>Ah! Che disgrazia! \n{0} è ormai sola e non ha più nessuno in cui reincarnarsi. L'unica cosa che può fare è guardarsi allo specchio e accettare il suo destino: quello sarà il suo ultimo corpo!</value>
+  </string>
+  
+  <!-- Per qualsiasi problema inerente alle traduzioni, potete contattarmi su @Ponyta -->
+</strings>
