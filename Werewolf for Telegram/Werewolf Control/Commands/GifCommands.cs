@@ -36,16 +36,16 @@ namespace Werewolf_Control
             {
 #if !BETA
                 menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Telegram", "donatetg"));
-                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Xsolla", "xsolla"));
+                //menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Xsolla", "xsolla")); // Xsolla disabled
 #else
                 menu.Buttons.Add(InlineKeyboardButton.WithUrl("Telegram", $"https://t.me/werewolfbot?start=donatetg"));
-                menu.Buttons.Add(InlineKeyboardButton.WithUrl("Xsolla", $"https://t.me/werewolfbot?start=xsolla"));
+                //menu.Buttons.Add(InlineKeyboardButton.WithUrl("Xsolla", $"https://t.me/werewolfbot?start=xsolla")); // Xsolla disabled
 #endif
             }
             else
             {
                 menu.Buttons.Add(InlineKeyboardButton.WithUrl("Telegram", $"https://t.me/werewolfbot?start=donatetg"));
-                menu.Buttons.Add(InlineKeyboardButton.WithUrl("Xsolla", $"https://t.me/werewolfbot?start=xsolla"));
+                //menu.Buttons.Add(InlineKeyboardButton.WithUrl("Xsolla", $"https://t.me/werewolfbot?start=xsolla")); // Xsolla disabled
             }
             var markup = menu.CreateMarkupFromMenu();
             var txt = $"Want to help keep Werewolf Moderator online? Donate now and gets: {"Custom gifs".ToBold()} and {"Badges".ToBold()}!\n\nClick the button below to donate!!\n\nMore Info: https://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-06-27";
@@ -424,6 +424,10 @@ namespace Werewolf_Control
 
         public static void GetXsollaLink(CallbackQuery q = null, Message m = null)
         {
+            // Xsolla disabled
+            Bot.Send("Donations via Xsolla are currently unavailable, sorry. You can /donate through Telegram instead!", (q?.Message ?? m).Chat.Id);
+            return;
+
             var from = q?.From ?? m?.From;
             var txt = "";
             InlineKeyboardMarkup markup = null;
