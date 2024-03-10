@@ -106,7 +106,7 @@ namespace Werewolf_Control.Helpers
                 }
             }
 
-            ReceiverOptions receiverOptions = new ReceiverOptions() { AllowedUpdates = new[] { UpdateType.Message, UpdateType.MyChatMember, UpdateType.InlineQuery, UpdateType.ChosenInlineResult, UpdateType.CallbackQuery }, Limit = 100, ThrowPendingUpdates = true };
+            ReceiverOptions receiverOptions = new ReceiverOptions() { AllowedUpdates = new[] { UpdateType.Message, UpdateType.MyChatMember, UpdateType.InlineQuery, UpdateType.ChosenInlineResult, UpdateType.CallbackQuery, UpdateType.PreCheckoutQuery }, Limit = 100, ThrowPendingUpdates = true };
             var cts = new CancellationTokenSource();
 
 
@@ -273,6 +273,10 @@ namespace Werewolf_Control.Helpers
 
                 case UpdateType.EditedMessage:
                     //OnMessageEdited?.Invoke("receiver", e);
+                    break;
+
+                case UpdateType.PreCheckoutQuery:
+                    UpdateHandler.PreCheckoutReceived(Api, e.Update.PreCheckoutQuery);
                     break;
             }
         }

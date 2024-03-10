@@ -34,7 +34,7 @@ namespace Werewolf_Control
             var menu = new Menu();
             if (u.Message.Chat.Type == ChatType.Private)
             {
-#if RELEASE
+#if !BETA
                 menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Telegram", "donatetg"));
                 menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Xsolla", "xsolla"));
 #else
@@ -473,7 +473,7 @@ namespace Werewolf_Control
                 var api = RegHelper.GetRegValue("MainStripeProdAPI");
 #endif
                 Bot.Api.SendInvoiceAsync(chatId: m.From.Id, title: "Werewolf Donation", description: "Make a donation to Werewolf to help keep us online", payload: "somepayloadtest", providerToken: api,
-                    currency: "USD", prices: new[] { new LabeledPrice("Donation", amt * 100) }, startParameter: "startparam");
+                    currency: "USD", prices: new[] { new LabeledPrice("Donation", amt * 100) }, startParameter: "donatetg").Wait();
             }
             else
             {
