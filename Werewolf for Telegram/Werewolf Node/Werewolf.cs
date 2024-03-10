@@ -3180,7 +3180,8 @@ namespace Werewolf_Node
             {
                 if (arsonist.Choice == -2) //Spark
                 {
-                    foreach (var burn in Players.Where(x => !x.IsDead && x.Doused && x.PlayerRole != IRole.Arsonist))
+                    var burning = Players.Where(x => !x.IsDead && x.Doused && x.PlayerRole != IRole.Arsonist).ToList();
+                    foreach (var burn in burning)
                     {
                         if (ga?.Choice == burn.Id)
                         {
@@ -3190,7 +3191,8 @@ namespace Werewolf_Node
                         }
                         else
                         {
-                            KillPlayer(burn, KillMthd.Burn, killer: arsonist, hunterFinalShot: false);
+                            KillPlayer(burn, KillMthd.Burn, killer: arsonist, hunterFinalShot: false, 
+                                dyingSimultaneously: burning.Where(x => (ga?.Choice ?? 0) != x.Id).ToList());
                             burn.Doused = false;
                             burn.Burning = true;
                             SendGif(GetLocaleString("Burn"), GetRandomImage(BurnToDeath), burn.Id);
@@ -5514,10 +5516,10 @@ namespace Werewolf_Node
             Send(Program.Version.FileVersion + $"\nGroup: {ChatId} ({ChatGroup})\nLanguage: {DbGroup?.Language ?? "null"}\n{Program.ClientId}\n{e.Message}\n{e.StackTrace}", Program.ErrorGroup);
         }
 
-        private void KillPlayer(IPlayer p, KillMthd? killMethod, IPlayer killer = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true)
-            => KillPlayer(p, killMethod, killers: new IPlayer[] { killer }, isNight: isNight, diedByVisitingVictim: diedByVisitingVictim, diedByVisitingKiller: diedByVisitingKiller, killedByRole: killedByRole ?? killer?.PlayerRole, hunterFinalShot: hunterFinalShot);
+        private void KillPlayer(IPlayer p, KillMthd? killMethod, IPlayer killer = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true, List<IPlayer> dyingSimultaneously = null)
+            => KillPlayer(p, killMethod, killers: new IPlayer[] { killer }, isNight: isNight, diedByVisitingVictim: diedByVisitingVictim, diedByVisitingKiller: diedByVisitingKiller, killedByRole: killedByRole ?? killer?.PlayerRole, hunterFinalShot: hunterFinalShot, dyingSimultaneously: dyingSimultaneously);
 
-        private void KillPlayer(IPlayer p, KillMthd? killMethod, IEnumerable<IPlayer> killers = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true)
+        private void KillPlayer(IPlayer p, KillMthd? killMethod, IEnumerable<IPlayer> killers = null, bool isNight = true, bool diedByVisitingVictim = false, bool diedByVisitingKiller = false, IRole? killedByRole = null, bool hunterFinalShot = true, List<IPlayer> dyingSimultaneously = null)
         {
             // if it was a death by love, don't handle it separately
             p.DiedLastNight = isNight && killMethod != KillMthd.LoverDied;
@@ -5533,13 +5535,16 @@ namespace Werewolf_Node
                 p.DiedByFleeOrIdle = true;
                 return;
             }
-            if (p.InLove && Players.Any(x => x.Id == p.LoverId && !x.IsDead))
+
+            // Only kill the lover if they are not already dying at the very same time (that is, when both of them are burnt by arsonist).
+            if (p.InLove && Players.Any(x => x.Id == p.LoverId && !x.IsDead && !(dyingSimultaneously?.Contains(x) ?? false)))
             {
                 if (killMethod.HasValue && new[] { KillMthd.HunterShot, KillMthd.Shoot }.Contains(killMethod.Value) && killers.Count() == 1
                 && !new[] { p, Players.First(x => x.Id == p.LoverId) }.Any(x => new[] { ITeam.Village, ITeam.Neutral, ITeam.Thief }.Contains(x.Team)))
                     AddAchievement(killers.First(), AchievementsReworked.DoubleShot);
                 KillLover(p, sendNoMessage: isNight);
             }
+
             switch (p.PlayerRole)
             {
                 case IRole.WolfCub:
