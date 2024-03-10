@@ -927,7 +927,7 @@ namespace Werewolf_Node
                 #endregion
 
 
-                if (player.CurrentQuestion == null || player.CurrentQuestion.QType != qtype)
+                if (player.CurrentQuestion == null || player.CurrentQuestion.QType != qtype || !player.CurrentQuestion.ValidAnswers.Contains(query.Data))
                 {
                     return;
                 }
@@ -1480,8 +1480,8 @@ namespace Werewolf_Node
                 //force roles for testing
                 IRole[] requiredRoles = new IRole[]
                 {
-                    IRole.Spumpkin,
-                    IRole.Wolf
+                    IRole.Wolf,
+                    IRole.Gunner
                 };
                 int requiredCount = requiredRoles.Length;
 
@@ -4934,7 +4934,7 @@ namespace Werewolf_Node
                 to.CurrentQuestion = (new QuestionAsked
                 {
                     QType = qtype,
-                    ValidAnswers = choices.Select(x => x[0].Text).ToArray(),
+                    ValidAnswers = choices.Select(x => x[0].CallbackData).ToArray(),
                     MessageId = msgId
                 });
             }
