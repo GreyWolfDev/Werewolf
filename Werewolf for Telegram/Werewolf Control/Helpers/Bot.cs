@@ -238,6 +238,7 @@ namespace Werewolf_Control.Helpers
             if (e.Update.EditedMessage != null) return;
             if (e.Update.Message?.ViaBot != null && e.Update.Message.Chat.Type != ChatType.Private) return;
             if (e.Update.Message?.Document != null && e.Update.Message.Chat.Type != ChatType.Private) return;
+            if (e.Update.Message?.Animation != null && e.Update.Message.Chat.Type != ChatType.Private) return;
             if (e.Update.Message?.Audio != null) return;
             if (e.Update.Message?.Caption != null && e.Update.Message.Chat.Type != ChatType.Private) return;
             if (e.Update.Message?.Location != null) return;
