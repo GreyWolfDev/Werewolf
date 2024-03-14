@@ -2324,7 +2324,7 @@ namespace Werewolf_Node
         /// </summary>
         /// <param name="visitor">The visiting player</param>
         /// <param name="visited">The visited player</param>
-        /// <returns>true if the player surived the visit</returns>
+        /// <returns>true if the player survived the visit</returns>
         private VisitResult VisitPlayer(IPlayer visitor, IPlayer visited)
         {
             if (visited == null) return VisitResult.TargetNull;
@@ -2957,7 +2957,7 @@ namespace Werewolf_Node
                             detect.CorrectSnooped.Clear();             //clear the correct snoop list
                         detect.CorrectSnooped.Add(check.Id);              //add the current snoop to list
 
-                        //if snooped 4 times correct continously
+                        //if snooped 4 times correct continuously
                         if (detect.CorrectSnooped.Count() >= 4)
                         {
                             AddAchievement(detect, AchievementsReworked.Streetwise);
