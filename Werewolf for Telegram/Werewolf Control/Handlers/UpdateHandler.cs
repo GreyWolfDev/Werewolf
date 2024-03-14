@@ -461,6 +461,7 @@ namespace Werewolf_Control.Handler
                             
                         //    break;
                         case MessageType.Document:
+                        case MessageType.Animation:
                             if (update.Message.Animation != null)
                             {
                                 if (UpdateHelper.Devs.Contains(update.Message.From.Id) && SendGifIds)
