@@ -2264,7 +2264,7 @@ namespace Werewolf_Control.Handler
                 List<InlineKeyboardButton> lastRow = new List<InlineKeyboardButton>
                 {
                     disabledRoles.HasFlag(IRole.VALID)
-                        ? InlineKeyboardButton.WithCallbackData(GetLocaleString("Valid", language), $"dummmy")
+                        ? InlineKeyboardButton.WithCallbackData(GetLocaleString("Valid", language), $"dummy")
                         : InlineKeyboardButton.WithCallbackData(GetLocaleString("Validate", language), $"validateroles|{id}"),
 
                     InlineKeyboardButton.WithCallbackData(GetLocaleString("Back", language), $"{ConfigGroup.RoleConfig.ToString()}|{id}|back")

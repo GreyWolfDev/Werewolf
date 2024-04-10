@@ -19,7 +19,7 @@ namespace Werewolf_Control.Attributes
         public bool GlobalAdminOnly { get; set; } = false;
 
         /// <summary>
-        /// Is this command limted to language admins only
+        /// Is this command limited to language admins only
         /// </summary>
         public bool LangAdminOnly { get; set; } = false;
 
