@@ -2270,13 +2270,6 @@ namespace Werewolf_Node
                         Transform(p, IRole.Seer, TransformationMethod.ApprenticeSeer, roleModel: roleModel);
                     }
                     break;
-                case IRole.Beholder:
-                    var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
-                    Send(
-                        seer != null
-                            ? GetLocaleString("BeholderSeer", $"{seer.GetName()}")
-                            : GetLocaleString("NoSeer"), p.Id);
-                    break;
                 case IRole.Traitor:
                     if (Players.Count(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)) == 0)
                     {
