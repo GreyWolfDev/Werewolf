@@ -334,16 +334,6 @@ namespace Werewolf_Control
                             }
 
                             game.AddPlayer(u, gameid);
-
-                            // Hacky, fun command for next game with Para. Most likely to be reverted later :P
-                            if (new long[] { 129046388, 142032675 }.Contains(u.Message.From.Id) && NextGameWithParaSubscribers.ContainsKey(game.GroupId))
-                            {
-                                foreach (var nextgameWithParaSubscriber in NextGameWithParaSubscribers[game.GroupId])
-                                {
-                                    Bot.Send($"Para just joined the game in {game.ChatGroup.ToBold()}! Hurryyyyyy!!!! 🐺", nextgameWithParaSubscriber);
-                                }
-                                NextGameWithParaSubscribers.Remove(game.GroupId);
-                            }
                             return;
                         }
                         catch (AggregateException e)
@@ -427,24 +417,6 @@ namespace Werewolf_Control
                     Send(GetLocaleString("AddedToWaitList", grp.Language, grp.Name.ToBold()),
                         update.Message.From.Id, customMenu: button);
                 }
-            }
-        }
-
-        private static Dictionary<long, HashSet<long>> NextGameWithParaSubscribers = new Dictionary<long, HashSet<long>>();
-
-        [Command(Trigger = "nextgamewithpara", Blockable = true, InGroupOnly = true)]
-        public static void NextGameWithPara(Update update, string[] args)
-        {
-            // Hacky, fun command for next game with Para. Most likely to be reverted later :P
-            var chatid = update.Message?.Chat.Id ?? 0;
-            var userid = update.Message?.From?.Id ?? 0;
-            if (chatid != 0 && userid != 0)
-            {
-                if (!NextGameWithParaSubscribers.ContainsKey(chatid))
-                    NextGameWithParaSubscribers.Add(chatid, new HashSet<long>());
-
-                NextGameWithParaSubscribers[chatid].Add(userid);
-                Send($"You have successfully subscribed to the next game with Para in {update.Message.Chat.Title?.ToBold() ?? "Unknown Group"}!", userid);
             }
         }
 
