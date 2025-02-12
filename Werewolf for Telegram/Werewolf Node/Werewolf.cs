@@ -3185,11 +3185,7 @@ namespace Werewolf_Node
                     foreach (var burn in burning)
                     {
                         if (ga?.Choice == burn.Id)
-                        {
-                            Send(GetLocaleString("GuardSavedYouFromFire"), burn.Id);
-                            Send(GetLocaleString("GuardSavedFromFire", burn.GetName()), ga.Id);
-                            burn.Doused = false;
-                        }
+                            burn.WasSavedLastNight = true;
                         else
                         {
                             KillPlayer(burn, KillMthd.Burn, killer: arsonist, hunterFinalShot: false, 
@@ -3772,7 +3768,6 @@ namespace Werewolf_Node
                         {
                             chemist.HasUsedAbility = false;
                             KillPlayer(target, KillMthd.Chemistry, killer: chemist);
-                            target.ChemistFailed = false;
                             Send(GetLocaleString("ChemistVisitYouSuccess"), target.Id);
                             Send(GetLocaleString("ChemistSuccess", target.GetName()), chemist.Id);
                             if (++chemist.ChemistVisitSurviveCount == 3)
@@ -4037,8 +4032,17 @@ namespace Werewolf_Node
                         bool cleanedDoused = false;
                         if (save.WasSavedLastNight)
                         {
-                            Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
-                            Send(GetLocaleString("GuardSavedYou"), save.Id);
+                            if (save.Doused && arsonist?.Choice == -2) // they were saved from burning
+                            {
+                                Send(GetLocaleString("GuardSavedFromFire", save.GetName()), ga.Id);
+                                Send(GetLocaleString("GuardSavedYouFromFire"), save.Id);
+                                save.Doused = false;
+                            }
+                            else
+                            {
+                                Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
+                                Send(GetLocaleString("GuardSavedYou"), save.Id);
+                            }
                         }
                         else if (save.Doused)
                         {
@@ -4048,7 +4052,6 @@ namespace Werewolf_Node
                         }
                         if (!save.WasSavedLastNight && !save.DiedLastNight && !cleanedDoused) //only send if save wasn't attacked
                             Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
-                        save.WasSavedLastNight = false;
                         break;
                     case VisitResult.Fail:
                         Send(GetLocaleString("GuardEmptyHouse", save.GetName()), ga.Id);
@@ -4387,6 +4390,7 @@ namespace Werewolf_Node
             foreach (var p in Players)
             {
                 p.DiedLastNight = false;
+                p.WasSavedLastNight = false;
                 p.Choice = 0;
                 p.Votes = 0;
                 if (p.BeingVisitedSameNightCount >= 3)
