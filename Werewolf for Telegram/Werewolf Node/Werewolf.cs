@@ -4024,13 +4024,14 @@ namespace Werewolf_Node
             }
             #endregion
 
-            #region GA Night
+            #region GA Night. Only notifies the GA about the impact of his actions, and cleans kerosene. Everything else is handled in the attacker's regions.
 
-            if (ga != null && !ga.Frozen && !ga.IsDead)
+            if (ga != null && !ga.Frozen && (!ga.IsDead || ga.DiedLastNight)) // if the GA died in the current night, their save still happens, so tell them!
             {
                 var save = Players.FirstOrDefault(x => x.Id == ga.Choice);
                 switch (VisitPlayer(ga, save))
                 {
+                    case VisitResult.AlreadyDead: // The person might have been saved by GA (from wolves/sk/etc.) but then still have died to chemist (or others?)
                     case VisitResult.Success:
                         if (WolfRoles.Contains(save.PlayerRole) && !save.WasSavedLastNight) ga.GAGuardWolfCount++;
                         bool cleanedDoused = false;
