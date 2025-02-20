@@ -394,7 +394,12 @@ namespace Werewolf_Control
                             ach = ach.Set(a);
                             p.NewAchievements = ach.ToByteArray();
                             db.SaveChanges();
-                            Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.TelegramId);
+                            var language = GetLanguage(p.TelegramId);
+                            var msg = GetLocaleString("AchUnlocked", language) + Environment.NewLine;
+                            msg += GetLocaleString(a.GetName(false), language).ToBold() + Environment.NewLine;
+                            msg += GetLocaleString(a.GetDescription(false), language);
+                            Send(msg, p.TelegramId);
+                            //Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.TelegramId);
                             Send($"Achievement {a} unlocked for {p.Name}", u.Message.Chat.Id);
                         }
                     }

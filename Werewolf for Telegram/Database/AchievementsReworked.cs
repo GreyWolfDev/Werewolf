@@ -205,30 +205,40 @@ namespace Database
 
     public static partial class Extensions
     {
-        public static string GetDescription(this AchievementsReworked value)
+        public static string GetDescription(this AchievementsReworked value, bool text = true)
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
+            if (text)
+            {
+                FieldInfo fi = value.GetType().GetField(value.ToString());
 
-            DescriptionAttribute[] attributes =
-                (DescriptionAttribute[])fi.GetCustomAttributes(
-                typeof(DescriptionAttribute),
-                false);
+                DescriptionAttribute[] attributes =
+                    (DescriptionAttribute[])fi.GetCustomAttributes(
+                    typeof(DescriptionAttribute),
+                    false);
 
-            if (attributes != null &&
-                attributes.Length > 0)
-                return attributes[0].Description;
+                if (attributes != null &&
+                    attributes.Length > 0)
+                    return attributes[0].Description;
+                else
+                    return value.ToString();
+            }
             else
-                return value.ToString();
+                return $"Achievement{value.ToString()}Descr";
         }
-        public static string GetName(this AchievementsReworked value)
+        public static string GetName(this AchievementsReworked value, bool text = true)
         {
-            var fieldInfo = value.GetType().GetField(value.ToString());
+            if (text)
+            {
+                var fieldInfo = value.GetType().GetField(value.ToString());
 
-            var descriptionAttributes = fieldInfo.GetCustomAttributes(
-                typeof(DisplayAttribute), false) as DisplayAttribute[];
+                var descriptionAttributes = fieldInfo.GetCustomAttributes(
+                    typeof(DisplayAttribute), false) as DisplayAttribute[];
 
-            if (descriptionAttributes == null) return string.Empty;
-            return (descriptionAttributes.Length > 0) ? descriptionAttributes[0].Name : value.ToString();
+                if (descriptionAttributes == null) return string.Empty;
+                return (descriptionAttributes.Length > 0) ? descriptionAttributes[0].Name : value.ToString();
+            }
+            else
+                return $"Achievement{value.ToString()}Name";
         }
 
         public static byte[] ToByteArray(this BitArray bits)
