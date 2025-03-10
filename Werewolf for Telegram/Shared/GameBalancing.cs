@@ -200,7 +200,6 @@ namespace Shared
             //for smaller games, all roles will be available and chosen randomly.  For large games, it will be about the
             //same as it was before....
 
-
             if (rolesToAssign.Any(x => x == IRole.CultistHunter))
             {
                 rolesToAssign.Add(IRole.Cultist);
@@ -308,6 +307,8 @@ namespace Shared
                     return 8;
                 case IRole.Spumpkin:
                     return 2;
+                case IRole.ScapeGoat:
+                    return 1;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }
