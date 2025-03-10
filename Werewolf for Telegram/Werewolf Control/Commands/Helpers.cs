@@ -143,25 +143,25 @@ namespace Werewolf_Control
             {
                 node.StartGame(update, gameMode);
                 //notify waiting players
-                using (var db = new WWContext())
-                {
-                    var notify = db.NotifyGames.Where(x => x.GroupId == update.Message.Chat.Id).ToList();
-                    var groupName = update.Message.Chat.Title.ToBold();
-                    if (update.Message.Chat.Username != null)
-                        groupName += $" @{update.Message.Chat.Username}";
-                    else if (grp.GroupLink != null)
-                        groupName = $"<a href=\"{grp.GroupLink}\">{update.Message.Chat.Title}</a>";
-                    foreach (var n in notify)
-                    {
-                        if (n.UserId != update.Message.From.Id)
-                            Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
-                        Thread.Sleep(500);
-                    }
+                //using (var db = new WWContext())
+                //{
+                    //var notify = db.NotifyGames.Where(x => x.GroupId == update.Message.Chat.Id).ToList();
+                    //var groupName = update.Message.Chat.Title.ToBold();
+                    //if (update.Message.Chat.Username != null)
+                        //groupName += $" @{update.Message.Chat.Username}";
+                    //else if (grp.GroupLink != null)
+                        //groupName = $"<a href=\"{grp.GroupLink}\">{update.Message.Chat.Title}</a>";
+                    //foreach (var n in notify)
+                    //{
+                        //if (n.UserId != update.Message.From.Id)
+                            //Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
+                        //Thread.Sleep(500);
+                    //}
 
                     //just to be sure...
                     //db.Database.ExecuteSqlCommand($"DELETE FROM NotifyGame WHERE GroupId = {update.Message.Chat.Id}");
-                    db.SaveChanges();
-                }
+                    //db.SaveChanges();
+                //}
             }
             else
             {
