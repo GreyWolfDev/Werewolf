@@ -390,12 +390,16 @@ namespace Werewolf_Control
                             var ach = new BitArray(200);
                             if (p.NewAchievements != null)
                                 ach = new BitArray(p.NewAchievements);
-                            if (ach.HasFlag(a)) return; //no point making another db call if they already have it
+                            if (ach.HasFlag(a))
+                            {
+                                Send($"Achievement {a} was already unlocked for {p.Name.ToBold()}!", u.Message.Chat.Id);
+                                return; //no point making another db call if they already have it
+                            }
                             ach = ach.Set(a);
                             p.NewAchievements = ach.ToByteArray();
                             db.SaveChanges();
                             Send($"Achievement Unlocked!\n{a.GetName().ToBold()}\n{a.GetDescription()}", p.TelegramId);
-                            Send($"Achievement {a} unlocked for {p.Name}", u.Message.Chat.Id);
+                            Send($"Achievement {a} unlocked for {p.Name.ToBold()}", u.Message.Chat.Id);
                         }
                     }
                 }
@@ -472,12 +476,16 @@ namespace Werewolf_Control
                             var ach = new BitArray(200);
                             if (p.NewAchievements != null)
                                 ach = new BitArray(p.NewAchievements);
-                            if (!ach.HasFlag(a)) return; //no point making another db call if they already have it
+                            if (!ach.HasFlag(a))
+                            {
+                                Send($"Achievement {a} was not even unlocked for {p.Name.ToBold()}!", u.Message.Chat.Id);
+                                return; //no point making another db call if they already have it
+                            }
                             ach = ach.Unset(a);
                             p.NewAchievements = ach.ToByteArray();
                             db.SaveChanges();
 
-                            Send($"Achievement {a} removed from {p.Name}", u.Message.Chat.Id);
+                            Send($"Achievement {a} removed from {p.Name.ToBold()}", u.Message.Chat.Id);
                         }
                     }
                 }
