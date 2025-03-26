@@ -324,6 +324,8 @@ namespace Werewolf_Control.Handler
                         case MessageType.Text:
                             if (update.Message.Text.StartsWith("!") || update.Message.Text.StartsWith("/"))
                             {
+                                var isAnonymousSender = update.Message.SenderChat != null;
+                                var isAnonymousAdmin = isAnonymousSender && (update.Message.SenderChat.Id == update.Message.Chat.Id);
 
                                 if (BanList.Any(x => x.TelegramId == (update.Message?.From?.Id ?? 0)) ||
                                     SpamBanList.Contains(update.Message?.From?.Id ?? 0))
@@ -334,7 +336,7 @@ namespace Werewolf_Control.Handler
                                 var args = GetParameters(update.Message.Text);
                                 args[0] = args[0].ToLower().Replace("@" + Bot.Me.Username.ToLower(), "");
                                 //command is args[0]
-                                if (args[0].StartsWith("about") && (update.Message?.From?.Id ?? 0) != 1087968824) // Anonymous admin, through @GroupAnonymousBot)
+                                if (args[0].StartsWith("about") && isAnonymousSender) // Anonymous admin, through @GroupAnonymousBot)
                                 {
                                     var reply = Commands.GetAbout(update, args);
                                     if (!String.IsNullOrEmpty(reply))
@@ -379,7 +381,9 @@ namespace Werewolf_Control.Handler
                                         Bot.Api.LeaveChat(update.Message.Chat.Id);
                                     }
 #endif
-                                    if (update.Message.From.Id == 1087968824) // Anonymous admin, through @GroupAnonymousBot
+                                    if (command.AllowAnonymousAdmins ?
+                                        isAnonymousSender && !isAnonymousAdmin :
+                                        isAnonymousSender) // Anonymous admin, or channel
                                     {
                                         Send(GetLocaleString("ExitAnonymousMode", GetLanguage(update.Message.Chat.Id)), update.Message.Chat.Id);
                                         return;
@@ -426,7 +430,7 @@ namespace Werewolf_Control.Handler
                                         Send(GetLocaleString("GroupCommandOnly", GetLanguage(id)), id);
                                         return;
                                     }
-                                    if (command.GroupAdminOnly & !UpdateHelper.IsGroupAdmin(update) &
+                                    if (command.GroupAdminOnly & !isAnonymousAdmin & !UpdateHelper.IsGroupAdmin(update) &
                                         !UpdateHelper.Devs.Contains(update.Message.From.Id) &
                                         !UpdateHelper.IsGlobalAdmin(update.Message.From.Id))
                                     {

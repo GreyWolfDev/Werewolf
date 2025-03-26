@@ -23,7 +23,7 @@ namespace Werewolf_Control
 {
     public static partial class Commands
     {
-        [Attributes.Command(Trigger = "smite", GroupAdminOnly = true, Blockable = true, InGroupOnly = true)]
+        [Attributes.Command(Trigger = "smite", GroupAdminOnly = true, Blockable = true, InGroupOnly = true, AllowAnonymousAdmins = true)]
         public static void Smite(Update u, string[] args)
         {
             //if (u.Message.ReplyToMessage == null)
@@ -217,7 +217,7 @@ namespace Werewolf_Control
         }
 
 
-        [Attributes.Command(Trigger = "getidles", GroupAdminOnly = true)]
+        [Attributes.Command(Trigger = "getidles", GroupAdminOnly = true, AllowAnonymousAdmins = true)]
         public static void GetIdles(Update update, string[] args)
         {
             //check user ids and such

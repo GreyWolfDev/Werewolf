@@ -39,5 +39,10 @@ namespace Werewolf_Control.Attributes
         public bool Blockable { get; set; } = false;
 
         public bool InGroupOnly { get; set; } = false;
+
+        /// <summary>
+        /// Can this command be run by anonymous admins in groups
+        /// </summary>
+        public bool AllowAnonymousAdmins { get; set; } = false;
     }
 }
