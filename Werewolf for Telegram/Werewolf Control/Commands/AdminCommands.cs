@@ -270,7 +270,7 @@ namespace Werewolf_Control
             Send(reply, update.Message.Chat.Id);
         }
 
-        [Attributes.Command(Trigger = "remlink", GroupAdminOnly = true, InGroupOnly = true)]
+        [Attributes.Command(Trigger = "remlink", GroupAdminOnly = true, InGroupOnly = true, AllowAnonymousAdmins = true)]
         public static void RemLink(Update u, string[] args)
         {
             using (var db = new WWContext())
@@ -284,7 +284,7 @@ namespace Werewolf_Control
             Send($"Your group link has been removed.", u.Message.Chat.Id);
         }
 
-        [Attributes.Command(Trigger = "setlink", GroupAdminOnly = true, InGroupOnly = true)]
+        [Attributes.Command(Trigger = "setlink", GroupAdminOnly = true, InGroupOnly = true, AllowAnonymousAdmins = true)]
         public static void SetLink(Update update, string[] args)
         {
             //args[1] should be the link

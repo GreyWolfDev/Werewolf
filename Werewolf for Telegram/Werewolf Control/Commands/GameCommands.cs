@@ -73,7 +73,7 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "forcestart", Blockable = true, GroupAdminOnly = true, InGroupOnly = true)]
+        [Command(Trigger = "forcestart", Blockable = true, GroupAdminOnly = true, InGroupOnly = true, AllowAnonymousAdmins = true)]
         public static void ForceStart(Update update, string[] args)
         {
             var id = update.Message.Chat.Id;
