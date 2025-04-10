@@ -517,21 +517,23 @@ namespace Werewolf_Control
                     id = m.ForwardFrom.Id;
                     name = m.ForwardFrom.FirstName;
                 }
+
                 var buttons = new List<InlineKeyboardButton[]>
                 {
                     new[]
                     {
                         InlineKeyboardButton.WithUrl($"{name} Stats", "https://www.tgwerewolf.com/Stats/Player/" + id + "?referrer=stats")
-                }
-
+                    }
                 };
+
+                if (GenerateViewAchievementsButton(id, name) is InlineKeyboardButton achsBtn)
+                    buttons.Add(new[] { achsBtn });
+
                 var menu = new InlineKeyboardMarkup(buttons.ToArray());
                 Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: "Stats", replyMarkup: menu, messageThreadId: u.Message.MessageThreadId);
             }
             else
             {
-
-
                 //change this to buttons
                 var buttons = new List<InlineKeyboardButton[]>
                 {
@@ -539,25 +541,53 @@ namespace Werewolf_Control
                     {
                         InlineKeyboardButton.WithUrl("Global Stats",
                            "https://www.tgwerewolf.com/Stats?referrer=stats")
-
                     }
                 };
+
                 if (u.Message.Chat.Type != ChatType.Private)
                     buttons.Add(new[]
                     {
                         InlineKeyboardButton.WithUrl( $"{u.Message.Chat.Title} Stats",
                         "https://www.tgwerewolf.com/Stats/Group/" + u.Message.Chat.Id + "?referrer=stats")
                     });
+
                 buttons.Add(new[]
                 {
                     InlineKeyboardButton.WithUrl($"{u.Message.From.FirstName} Stats","https://www.tgwerewolf.com/Stats/Player/" + u.Message.From.Id + "?referrer=stats")
-
                 });
+                
+                if (GenerateViewAchievementsButton(u.Message.From.Id, u.Message.From.FirstName) is InlineKeyboardButton achsBtn)
+                    buttons.Add(new[] { achsBtn });
+
                 var menu = new InlineKeyboardMarkup(buttons.ToArray());
                 Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: "Stats", replyMarkup: menu, messageThreadId: u.Message.MessageThreadId);
             }
         }
-        
+
+        private static InlineKeyboardButton GenerateViewAchievementsButton(long id, string name)
+        {
+            // You can change this to your own's organization url after forking and deploying it.
+            // Eg: https://GreyWolfDev.github.io/WerewolfAchievementViewer/achs/
+            var achievemetnsViewUrl = "https://task-system.github.io/WerewolfAchievementViewer/achs/";
+
+            using (var db = new WWContext())
+            {
+                //find the player
+                var p = db.Players.FirstOrDefault(x => x.TelegramId == id);
+                if (p != null)
+                {
+                    var ach = p.NewAchievements == null ? new System.Collections.BitArray(200) : new System.Collections.BitArray(p.NewAchievements);
+
+                    var urlData = Uri.EscapeDataString(Convert.ToBase64String(ach.ToByteArray()));
+                    var urlName = Uri.EscapeDataString(name);
+
+                    return InlineKeyboardButton.WithWebApp($"{name} Achievements", new WebAppInfo() { Url = achievemetnsViewUrl + urlData + $"/{urlName}" });
+                }
+            }
+
+            return null;
+        }
+
         [Command(Trigger = "myidles")]
         public static void MyIdles(Update update, string[] args)
         {
