@@ -3263,6 +3263,7 @@ namespace Werewolf_Node
                 int eatCount = 0;
                 foreach (var choice in choices.Where(x => x != 0 && x != -1))
                 {
+                    voteWolves = wolves.Where(x => !x.Drunk && !x.IsDead);
                     if (!voteWolves.Any()) break; //if wolf dies from first choice, and was alone...
                     var target = Players.FirstOrDefault(x => x.Id == choice);
                     IPlayer visitorWuff;
@@ -3297,7 +3298,7 @@ namespace Werewolf_Node
                                             AddAchievement(w, AchievementsReworked.DontStayHome);
                                         goto default;
                                     case IRole.Cursed:
-                                        Transform(target, IRole.Wolf, TransformationMethod.BiteCursed, newTeamMembers: wolves);
+                                        Transform(target, IRole.Wolf, TransformationMethod.BiteCursed, newTeamMembers: wolves.Where(x => !x.IsDead));
                                         break;
                                     case IRole.Drunk:
                                         if (bitten)
