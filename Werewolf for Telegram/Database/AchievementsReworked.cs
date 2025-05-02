@@ -200,9 +200,27 @@ namespace Database
         GoodChoiceForYou = 92,
         [Display(Name = "Increase the Pack!"), Description("After the wolf cub died, infect 2 players as the alpha wolf!")]
         IncreaseThePack = 93,
+        [Display(Name = "Firefighter"), Description("As the guardian angel, clean three houses of kerosene.")]
+        Firefighter = 94,
+        [Display(Name = "Helpful Paranoia"), Description("As the hunter, shoot two attackers!")]
+        HelpfulParanoia = 95,
+        [Display(Name = "S-Tier Hunter"), Description("As the hunter, take down a wolf and a cultist in the same night!")]
+        STierHunter = 96,
+        [Display(Name = "Triple Kill"), Description("As a serial killer or wolf, have at least three people die by your hand in the same night!")]
+        TripleKill = 97,
+        [Display(Name = "Resist the Beast"), Description("As a trio of wild child, traitor, and cursed, all remain human and win the game with the village.")]
+        ResistTheBeast = 98,
+        [Display(Name = "At least you tried..."), Description("As the guardian angel, save someone at night only to watch them die to the chemist's poison.")]
+        AtLeastYouTried = 99,
+        [Display(Name = "Lucky Night"), Description("Survive the chemist's visit and enjoy the harlot's visit in the same night!")]
+        LuckyNight = 100,
+        [Display(Name = "In the Middle of the Trouble"), Description("As the guardian angel, save a werewolf from an attack and survive!")]
+        InTheMiddleOfTheTrouble = 101,
+        [Display(Name = "Am I hallucinating?!"), Description("As the fool, see a role which the seer can never see")]
+        AmIHallucinating = 102,
     } // MAX VALUE: 9223372036854775807
       // Good luck reaching this XD
-
+      
     public static partial class Extensions
     {
         public static string GetDescription(this AchievementsReworked value)

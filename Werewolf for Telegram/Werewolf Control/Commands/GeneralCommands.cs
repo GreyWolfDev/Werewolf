@@ -323,6 +323,12 @@ namespace Werewolf_Control
                             if (chatmember == null) // if we fail to determine their chatmember status, just let them try again
                                 return;
 
+                            if ((chatmember is ChatMemberAdministrator cma && cma.IsAnonymous) || (chatmember is ChatMemberOwner cmo && cmo.IsAnonymous))
+                            {
+                                Bot.Send(GetLocaleString("ExitAnonymousMode", GetLanguage(u.Message.From.Id)), u.Message.Chat.Id);
+                                return;
+                            }
+
                             var canSend = (chatmember as ChatMemberRestricted)?.CanSendMessages;
 
                             if (chatmember.Status == ChatMemberStatus.Left || chatmember.Status == ChatMemberStatus.Kicked || (chatmember.Status == ChatMemberStatus.Restricted && !(canSend ?? true)))

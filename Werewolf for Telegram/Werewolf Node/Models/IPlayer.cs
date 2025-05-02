@@ -48,6 +48,11 @@ namespace Werewolf_Node.Models
         public bool DiedLastNight { get; set; }
 
         /// <summary>
+        /// Number of people whom this player killed last night
+        /// </summary>
+        public int KilledLastNight { get; set; } = 0;
+
+        /// <summary>
         /// How many votes against them they have (lynching)
         /// </summary>
         public int Votes { get; set; } = 0;
@@ -145,6 +150,12 @@ namespace Werewolf_Node.Models
         public bool CultLeader { get; set; } = false;
         public bool ConvertedToCult { get; set; } = false;
         public bool FrozeHarlot { get; set; } = false;
+        public int HasCleanedDoused { get; set; } = 0;
+        public int HasShotHunterAttacker { get; set; } = 0;
+        public bool HasShotHunterAttackerThisNight { get; set; } = false;
+        public bool HasSeenImpossible { get; set; } = false;
+        public bool InMiddleOfTrouble { get; set; } = false;
+        public bool JustPromotedFromTraitor { get; set; } = false;
 
         public int DonationLevel { get; set; } = 0;
         public bool Founder { get; set; } = false;

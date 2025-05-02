@@ -1480,8 +1480,10 @@ namespace Werewolf_Node
                 //force roles for testing
                 IRole[] requiredRoles = new IRole[]
                 {
-                    IRole.Wolf,
-                    IRole.Gunner
+                    IRole.Cursed,
+                    IRole.WildChild,
+                    IRole.Traitor,
+                    IRole.Wolf
                 };
                 int requiredCount = requiredRoles.Length;
 
@@ -2270,13 +2272,6 @@ namespace Werewolf_Node
                         Transform(p, IRole.Seer, TransformationMethod.ApprenticeSeer, roleModel: roleModel);
                     }
                     break;
-                case IRole.Beholder:
-                    var seer = Players.FirstOrDefault(x => x.PlayerRole == IRole.Seer);
-                    Send(
-                        seer != null
-                            ? GetLocaleString("BeholderSeer", $"{seer.GetName()}")
-                            : GetLocaleString("NoSeer"), p.Id);
-                    break;
                 case IRole.Traitor:
                     if (Players.Count(x => !x.IsDead && WolfRoles.Contains(x.PlayerRole)) == 0)
                     {
@@ -2364,7 +2359,12 @@ namespace Werewolf_Node
                         KillPlayer(visitor, KillMthd.VisitWolf, killer: visited, diedByVisitingKiller: true, killedByRole: IRole.Wolf);
                         return VisitResult.VisitorDied;
                     case IRole.GuardianAngel:
-                        if (!visited.WasSavedLastNight && Program.R.Next(100) < 50)
+                        if (visited.WasSavedLastNight) // if the wolf is actually attacked, the GA will never die!
+                        {
+                            visitor.InMiddleOfTrouble = true;
+                            return VisitResult.Success;
+                        }
+                        else if (Program.R.Next(100) < 50)
                         {
                             KillPlayer(visitor, KillMthd.GuardWolf, killer: visited, diedByVisitingKiller: true, killedByRole: IRole.Wolf);
                             return VisitResult.VisitorDied;
@@ -2983,6 +2983,7 @@ namespace Werewolf_Node
                 p.CurrentQuestion = null;
                 p.Votes = 0;
                 p.DiedLastNight = false;
+                p.KilledLastNight = 0;
                 p.BeingVisitedSameNightCount = 0;
                 if (p.Bitten)
                 { // p.Bitten may also still be true if the bitten player was wc or dg and turned ww by rm death the same day - in that case, do nothing
@@ -3192,14 +3193,10 @@ namespace Werewolf_Node
                     foreach (var burn in burning)
                     {
                         if (ga?.Choice == burn.Id)
-                        {
-                            Send(GetLocaleString("GuardSavedYouFromFire"), burn.Id);
-                            Send(GetLocaleString("GuardSavedFromFire", burn.GetName()), ga.Id);
-                            burn.Doused = false;
-                        }
+                            burn.WasSavedLastNight = true;
                         else
                         {
-                            KillPlayer(burn, KillMthd.Burn, killer: arsonist, hunterFinalShot: false, 
+                            KillPlayer(burn, KillMthd.Burn, killer: arsonist, hunterFinalShot: false,
                                 dyingSimultaneously: burning.Where(x => (ga?.Choice ?? 0) != x.Id).ToList());
                             burn.Doused = false;
                             burn.Burning = true;
@@ -3266,6 +3263,7 @@ namespace Werewolf_Node
                 int eatCount = 0;
                 foreach (var choice in choices.Where(x => x != 0 && x != -1))
                 {
+                    voteWolves = wolves.Where(x => !x.Drunk && !x.IsDead);
                     if (!voteWolves.Any()) break; //if wolf dies from first choice, and was alone...
                     var target = Players.FirstOrDefault(x => x.Id == choice);
                     IPlayer visitorWuff;
@@ -3300,7 +3298,7 @@ namespace Werewolf_Node
                                             AddAchievement(w, AchievementsReworked.DontStayHome);
                                         goto default;
                                     case IRole.Cursed:
-                                        Transform(target, IRole.Wolf, TransformationMethod.BiteCursed, newTeamMembers: wolves);
+                                        Transform(target, IRole.Wolf, TransformationMethod.BiteCursed, newTeamMembers: wolves.Where(x => !x.IsDead));
                                         break;
                                     case IRole.Drunk:
                                         if (bitten)
@@ -3343,6 +3341,18 @@ namespace Werewolf_Node
                                             }
                                             if (shotWuff != null)
                                             {
+                                                target.HasShotHunterAttacker++;
+                                                if (target.HasShotHunterAttacker == 2)
+                                                {
+                                                    AddAchievement(target, AchievementsReworked.HelpfulParanoia);
+                                                }
+
+                                                if (target.HasShotHunterAttackerThisNight)
+                                                {
+                                                    AddAchievement(target, AchievementsReworked.STierHunter);
+                                                }
+                                                target.HasShotHunterAttackerThisNight = true;
+
                                                 if (voteWolves.Count() > 1)
                                                 {
                                                     //commented out: we don't want the hunter to be bitten if he shot.
@@ -3612,6 +3622,18 @@ namespace Werewolf_Node
                                     {
                                         if (Program.R.Next(100) < Settings.HunterKillCultChance)
                                         {
+                                            target.HasShotHunterAttacker++;
+                                            if (target.HasShotHunterAttacker == 2)
+                                            {
+                                                AddAchievement(target, AchievementsReworked.HelpfulParanoia);
+                                            }
+
+                                            if (target.HasShotHunterAttackerThisNight)
+                                            {
+                                                AddAchievement(target, AchievementsReworked.STierHunter);
+                                            }
+                                            target.HasShotHunterAttackerThisNight = true;
+
                                             KillPlayer(newbie, KillMthd.HunterCult, killer: target, diedByVisitingKiller: true);
                                             //notify everyone
                                             foreach (var c in voteCult)
@@ -3779,11 +3801,12 @@ namespace Werewolf_Node
                         {
                             chemist.HasUsedAbility = false;
                             KillPlayer(target, KillMthd.Chemistry, killer: chemist);
-                            target.ChemistFailed = false;
                             Send(GetLocaleString("ChemistVisitYouSuccess"), target.Id);
                             Send(GetLocaleString("ChemistSuccess", target.GetName()), chemist.Id);
                             if (++chemist.ChemistVisitSurviveCount == 3)
                                 AddAchievement(chemist, AchievementsReworked.GoodChoiceForYou);
+                            if (target.WasSavedLastNight && ga != null)
+                                AddAchievement(ga, AchievementsReworked.AtLeastYouTried);
                         }
                         else // chemist commits suicide by accident... oops!
                         {
@@ -3843,7 +3866,12 @@ namespace Werewolf_Node
                                 GetLocaleString("HarlotVisitNonWolf", target.GetName()),
                             harlot.Id);
                         if (!target.IsDead)
+                        {
                             Send(GetLocaleString("HarlotVisitYou"), target.Id);
+
+                            if (chemist != null && chemist.Choice == target.Id && chemist.ChemistFailed)
+                                AddAchievement(target, AchievementsReworked.LuckyNight);
+                        }
                         break;
                     case VisitResult.VisitorDied:
                         if (!target.Burning)
@@ -3977,6 +4005,8 @@ namespace Werewolf_Node
                                 fool.FoolCorrectSeeCount++;
                             if (possibleRoles[0] == IRole.Beholder && target.PlayerRole == IRole.Beholder)
                                 fool.FoolCorrectlySeenBH = true;
+                            if (new[] { IRole.WolfMan, IRole.Traitor }.Contains(possibleRoles[0]))
+                                fool.HasSeenImpossible = true;
                         }
                         catch
                         {
@@ -4031,30 +4061,45 @@ namespace Werewolf_Node
             }
             #endregion
 
-            #region GA Night
+            #region GA Night. Only notifies the GA about the impact of his actions, and cleans kerosene. Everything else is handled in the attacker's regions.
 
-            if (ga != null && !ga.Frozen && !ga.IsDead)
+            if (ga != null && !ga.Frozen && (!ga.IsDead || ga.DiedLastNight)) // if the GA died in the current night, their save still happens, so tell them!
             {
                 var save = Players.FirstOrDefault(x => x.Id == ga.Choice);
                 switch (VisitPlayer(ga, save))
                 {
+                    case VisitResult.AlreadyDead: // The person might have been saved by GA (from wolves/sk/etc.) but then still have died to chemist (or others?)
                     case VisitResult.Success:
                         if (WolfRoles.Contains(save.PlayerRole) && !save.WasSavedLastNight) ga.GAGuardWolfCount++;
                         bool cleanedDoused = false;
                         if (save.WasSavedLastNight)
                         {
-                            Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
-                            Send(GetLocaleString("GuardSavedYou"), save.Id);
+                            if (save.Doused && arsonist?.Choice == -2) // they were saved from burning
+                            {
+                                Send(GetLocaleString("GuardSavedFromFire", save.GetName()), ga.Id);
+                                Send(GetLocaleString("GuardSavedYouFromFire"), save.Id);
+                                save.Doused = false;
+                            }
+                            else
+                            {
+                                Send(GetLocaleString("GuardSaved", save.GetName()), ga.Id);
+                                Send(GetLocaleString("GuardSavedYou"), save.Id);
+                            }
                         }
                         else if (save.Doused)
                         {
                             Send(GetLocaleString("CleanDoused", save.GetName()), ga.Id);
                             save.Doused = false;
                             cleanedDoused = true;
+                            ga.HasCleanedDoused++;
+
+                            if (ga.HasCleanedDoused == 3)
+                            {
+                                AddAchievement(ga, AchievementsReworked.Firefighter);
+                            }
                         }
                         if (!save.WasSavedLastNight && !save.DiedLastNight && !cleanedDoused) //only send if save wasn't attacked
                             Send(GetLocaleString("GuardNoAttack", save.GetName()), ga.Id);
-                        save.WasSavedLastNight = false;
                         break;
                     case VisitResult.Fail:
                         Send(GetLocaleString("GuardEmptyHouse", save.GetName()), ga.Id);
@@ -4359,6 +4404,12 @@ namespace Werewolf_Node
                                     break;
                             }
                         }
+
+                        foreach (var pl in Players)
+                        {
+                            if ((WolfRoles.Contains(pl.PlayerRole) || pl.PlayerRole == IRole.SerialKiller) && pl.KilledLastNight >= 3)
+                                AddAchievement(pl, AchievementsReworked.TripleKill);
+                        }
                     }
                     if (!String.IsNullOrEmpty(msg))
                         SendWithQueue(msg);
@@ -4393,6 +4444,8 @@ namespace Werewolf_Node
             foreach (var p in Players)
             {
                 p.DiedLastNight = false;
+                p.KilledLastNight = 0;
+                p.WasSavedLastNight = false;
                 p.Choice = 0;
                 p.Votes = 0;
                 if (p.BeingVisitedSameNightCount >= 3)
@@ -4404,6 +4457,8 @@ namespace Werewolf_Node
                     Send(GetLocaleString("PlayerBitten"), p.Id);
                 }
                 p.BeingVisitedSameNightCount = 0;
+                p.HasShotHunterAttackerThisNight = false;
+                p.JustPromotedFromTraitor = false;
             }
 
         }
@@ -5536,7 +5591,14 @@ namespace Werewolf_Node
             p.DiedByVisitingKiller = diedByVisitingKiller;
             p.DiedByVisitingVictim = diedByVisitingVictim;
             p.IsDead = true;
-            if (killers != null && killMethod.HasValue) DBKill(killers, p, killMethod.Value);
+            if (killers != null && killMethod.HasValue)
+            {
+                DBKill(killers, p, killMethod.Value);
+
+                if (isNight)
+                    foreach (var k in killers) 
+                        k.KilledLastNight++;
+            }
             // if it was an idle kill or flee, all further consequences will be skipped
             if (killMethod == KillMthd.Idle || killMethod == KillMthd.Flee)
             {
@@ -5734,6 +5796,8 @@ namespace Werewolf_Node
             {
                 //check for convention
                 var convention = Players.Count(x => x.PlayerRole == IRole.Cultist && !x.IsDead) >= 10;
+                var beastResisted = new[] { IRole.WildChild, IRole.Cursed, IRole.Traitor }.Count(r => Players.Any(x => x.Won && x.PlayerRole == r)) == 3;
+
                 foreach (var player in Players.Where(x => !x.Fled)) //flee / afk? no achievements for you.
                 {
                     var p = GetDBPlayer(player, db);
@@ -5843,6 +5907,12 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.PsychopathKiller);
                         if (!ach2.HasFlag(AchievementsReworked.ColdAsIce) && player.FrozeHarlot)
                             newAch2.Set(AchievementsReworked.ColdAsIce);
+                        if (!ach2.HasFlag(AchievementsReworked.ResistTheBeast) && beastResisted && player.Won && new[] { IRole.WildChild, IRole.Cursed, IRole.Traitor }.Contains(player.PlayerRole))
+                            newAch2.Set(AchievementsReworked.ResistTheBeast);
+                        if (!ach2.HasFlag(AchievementsReworked.AmIHallucinating) && player.HasSeenImpossible)
+                            newAch2.Set(AchievementsReworked.AmIHallucinating);
+                        if (!ach2.HasFlag(AchievementsReworked.InTheMiddleOfTheTrouble) && player.InMiddleOfTrouble)
+                            newAch2.Set(AchievementsReworked.InTheMiddleOfTheTrouble);
 
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();

@@ -26,6 +26,11 @@ namespace Werewolf_Control
         [Attributes.Command(Trigger = "donate")]
         public static void Donate(Update u, string[] args)
         {
+            // Donations disabled as of 2024-06-08
+            var link = $"<a href=\"https://t.me/greywolfdev/1318\">currently disabled</a>";
+            Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: $"Donations are {link}, sorry!", parseMode: ParseMode.Html, disableWebPagePreview: true).Wait();
+            return;
+
             //Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, 
             //    "Want to help keep Werewolf online? Please donate to:\n" +
             //    "•PayPal: PayPal.me/greywolfdevelopment\n" +
@@ -36,16 +41,16 @@ namespace Werewolf_Control
             {
 #if !BETA
                 menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Telegram", "donatetg"));
-                //menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Xsolla", "xsolla")); // Xsolla disabled
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Xsolla", "xsolla"));
 #else
                 menu.Buttons.Add(InlineKeyboardButton.WithUrl("Telegram", $"https://t.me/werewolfbot?start=donatetg"));
-                //menu.Buttons.Add(InlineKeyboardButton.WithUrl("Xsolla", $"https://t.me/werewolfbot?start=xsolla")); // Xsolla disabled
+                menu.Buttons.Add(InlineKeyboardButton.WithUrl("Xsolla", $"https://t.me/werewolfbot?start=xsolla"));
 #endif
             }
             else
             {
                 menu.Buttons.Add(InlineKeyboardButton.WithUrl("Telegram", $"https://t.me/werewolfbot?start=donatetg"));
-                //menu.Buttons.Add(InlineKeyboardButton.WithUrl("Xsolla", $"https://t.me/werewolfbot?start=xsolla")); // Xsolla disabled
+                menu.Buttons.Add(InlineKeyboardButton.WithUrl("Xsolla", $"https://t.me/werewolfbot?start=xsolla"));
             }
             var markup = menu.CreateMarkupFromMenu();
             var txt = $"Want to help keep Werewolf Moderator online? Donate now and gets: {"Custom gifs".ToBold()} and {"Badges".ToBold()}!\n\nClick the button below to donate!!\n\nMore Info: https://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-06-27";
@@ -424,8 +429,9 @@ namespace Werewolf_Control
 
         public static void GetXsollaLink(CallbackQuery q = null, Message m = null)
         {
-            // Xsolla disabled
-            Bot.Send("Donations via Xsolla are currently unavailable, sorry. You can /donate through Telegram instead!", (q?.Message ?? m).Chat.Id);
+            // Donations disabled as of 2024-06-08
+            var link = $"<a href=\"https://t.me/greywolfdev/1318\">currently disabled</a>";
+            Bot.Api.SendTextMessageAsync(chatId: (q?.Message ?? m).Chat.Id, text: $"Donations are {link}, sorry!", parseMode: ParseMode.Html, disableWebPagePreview: true).Wait();
             return;
 
             var from = q?.From ?? m?.From;
@@ -457,6 +463,11 @@ namespace Werewolf_Control
 
         public static void GetDonationInfo(CallbackQuery q = null, Message m = null)
         {
+            // Donations disabled as of 2024-06-08
+            var link = $"<a href=\"https://t.me/greywolfdev/1318\">currently disabled</a>";
+            Bot.Api.SendTextMessageAsync(chatId: q?.From.Id ?? m.From.Id, text: $"Donations are {link}, sorry!", parseMode: ParseMode.Html, disableWebPagePreview: true).Wait();
+            return;
+
             var menu = new Menu();
             Bot.Api.SendTextMessageAsync(chatId: q?.From.Id ?? m.From.Id,
                 text: "How much would you like to donate?  Please enter a whole number, in US Dollars (USD), in reply to this message",

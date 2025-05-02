@@ -18,5 +18,6 @@ namespace Werewolf_Control.Models
         public Bot.ChatCommandMethod Method { get; set; }
         public bool InGroupOnly { get; set; }
         public bool LangAdminOnly { get; set; }
+        public bool AllowAnonymousAdmins { get; set; }
     }
 }
