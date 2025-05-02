@@ -56,4 +56,4 @@ To set up werewolf on a private server, follow these steps:
 ## GIF SUPPORT
 In order to use GIFs with the bot, you will need to "teach" the bot the new GIF IDs.  From Telegram, run `/learngif`, the bot will respond with `GIF learning = true`.  Now send it a GIF, and the bot will reply with an ID.  Send the bot all the GIFs you need.  In the Node project, go to Helpers > Settings.cs and find the GIF lists.  You'll need to remove all of the existing IDs and put in the IDs you just got from the bot.
 
-You can test these by running `/dumpgifs` (preferrably in Private Message!).  Make sure you check out DevCommands.cs, and look at the `DumpGifs()` method - most of it is commented out.  Uncomment what you need.
+You can test these by running `/dumpgifs` (preferably in Private Message!).  Make sure you check out DevCommands.cs, and look at the `DumpGifs()` method - most of it is commented out.  Uncomment what you need.
