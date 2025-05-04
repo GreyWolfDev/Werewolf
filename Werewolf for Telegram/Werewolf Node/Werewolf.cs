@@ -1379,7 +1379,7 @@ namespace Werewolf_Node
                                     .Aggregate("",
                                         (current, p) =>
                                             current +
-                                            p.GetName(dead: true) + ": " + (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? loveEmoji : "") : "") + "\n");
+                                            p.GetName(dead: true) + ": " + (p.DiedByFleeOrIdle ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Idle")) : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? loveEmoji : "") : "") + "\n");
 
                                 msg += players.Where(x => !x.IsDead).OrderBy(x => Program.R.Next())
                                     .Aggregate("",
@@ -1395,7 +1395,7 @@ namespace Werewolf_Node
                                        .Aggregate("",
                                            (current, p) =>
                                                current +
-                                               ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
+                                               ($"{p.GetName(dead: p.IsDead)}: {(p.IsDead ? ((p.DiedByFleeOrIdle ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Idle")) : GetLocaleString("Dead")) + (DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "") : "")) : GetLocaleString("Alive"))}\n"));
                                 //{(p.HasUsedAbility & !p.IsDead && new[] { IRole.Prince, IRole.Mayor, IRole.Gunner, IRole.Blacksmith }.Contains(p.PlayerRole) ? " - " + GetDescription(p.PlayerRole) : "")}  //OLD CODE SHOWING KNOWN ROLES
                             }
                         }
@@ -4909,7 +4909,7 @@ namespace Werewolf_Node
                         msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}\n" + Players.OrderBy(x => x.TimeDied).Aggregate(msg, (current, p) => current + $"\n{p.GetName()}");
                         break;
                     case "All":
-                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}\n" + Players.OrderBy(x => x.TimeDied).Aggregate("", (current, p) => current + ($"{p.GetName()}: {(p.IsDead ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won ? GetLocaleString("Won") : GetLocaleString("Lost"))}\n"));
+                        msg = $"{GetLocaleString("PlayersAlive")}: {Players.Count(x => !x.IsDead)} / {Players.Count}\n" + Players.OrderBy(x => x.TimeDied).Aggregate("", (current, p) => current + ($"{p.GetName()}: {(p.IsDead ? (p.DiedByFleeOrIdle ? (p.Fled ? GetLocaleString("RanAway") : GetLocaleString("Idle")) : GetLocaleString("Dead")) : GetLocaleString("Alive")) + " - " + GetDescription(p.PlayerRole) + (p.InLove ? "❤️" : "")} {(p.Won ? GetLocaleString("Won") : GetLocaleString("Lost"))}\n"));
                         break;
                     default:
                         msg = GetLocaleString("RemainingPlayersEnd") + Environment.NewLine;
