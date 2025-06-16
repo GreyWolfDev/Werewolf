@@ -23,6 +23,35 @@ namespace Werewolf_Control
 {
     public static partial class Commands
     {
+        [Attributes.Command(Trigger = "setgrouptopic", GroupAdminOnly = true, InGroupOnly = true)]
+        public static void SetGroupTopic(Update update, string[] args)
+        {
+            var chatId = update.Message.Chat.Id;
+            var topicId = update.Message.MessageThreadId;
+
+            if (topicId == null)
+            {
+                Bot.Api.SendTextMessageAsync(chatId, "This command must be used inside a topic/thread (not inside default general topic).", messageThreadId: topicId);
+                return;
+            }
+
+            using (var db = new WWContext())
+            {
+                var group = db.Groups.FirstOrDefault(g => g.GroupId == chatId);
+
+                if (group == null)
+                {
+                    group = MakeDefaultGroup(chatId, update.Message.Chat.Title, "setgrouptopic");
+                    db.Groups.Add(group);
+                }
+
+                group.GroupTopicId = topicId;
+                db.SaveChanges();
+            }
+
+            Bot.Api.SendTextMessageAsync(chatId, "Group topic has been set successfully.", messageThreadId: topicId);
+        }
+
         [Attributes.Command(Trigger = "smite", GroupAdminOnly = true, Blockable = true, InGroupOnly = true, AllowAnonymousAdmins = true)]
         public static void Smite(Update u, string[] args)
         {

@@ -824,6 +824,7 @@ namespace Werewolf_Control.Handler
                                     var id = query.From.Id;
                                     Send($"Sending gifs for {pid}", id);
                                     Thread.Sleep(1000);
+                                    // INFO: dumping gifs, no need of topic send (this is mostly done in pm...)
                                     Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.CultWins), caption: "Cult Wins");
                                     Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.LoversWin), caption: "Lovers Win");
                                     Thread.Sleep(250);

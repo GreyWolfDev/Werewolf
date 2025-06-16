@@ -179,9 +179,9 @@ namespace Werewolf_Control
             var curLangFileName = GetLanguage(update.Message.From.Id);
             var curLang = langs.First(x => x.FileName == curLangFileName);
             Bot.Api.SendTextMessageAsync(chatId: update.Message.From.Id, text: GetLocaleString("WhatLang", curLangFileName, curLang.Base),
-                replyMarkup: menu);
+                replyMarkup: menu, messageThreadId: update.Message.MessageThreadId);
             if (update.Message.Chat.Type != ChatType.Private)
-                Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
+                Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id, messageThreadId: update.Message.MessageThreadId);
         }
 
         [Command(Trigger = "start")]
@@ -581,7 +581,7 @@ namespace Werewolf_Control
             
             try
             {
-                var result = Bot.Api.SendTextMessageAsync(chatId: update.Message.From.Id, text: reply).Result;
+                var result = Bot.Api.SendTextMessageAsync(chatId: update.Message.From.Id, text: reply, messageThreadId: update.Message.MessageThreadId).Result;
                 if (update.Message.Chat.Type != ChatType.Private)
                     Send(GetLocaleString("SentPrivate", GetLanguage(update.Message.From.Id)), update.Message.Chat.Id);
             }

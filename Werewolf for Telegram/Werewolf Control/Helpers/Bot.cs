@@ -513,6 +513,20 @@ namespace Werewolf_Control.Helpers
         {
             //MessagesSent++;
             //message = message.Replace("`",@"\`");
+
+            // Try to load GroupTopicId from the database if no thread ID is provided
+            if (messageThreadId == null)
+            {
+                using (var db = new WWContext())
+                {
+                    var group = db.Groups.FirstOrDefault(g => g.GroupId == id);
+                    if (group?.GroupTopicId != null)
+                    {
+                        messageThreadId = group.GroupTopicId;
+                    }
+                }
+            }
+
             if (clearKeyboard)
             {
                 //var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };
