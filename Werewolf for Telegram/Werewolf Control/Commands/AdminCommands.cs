@@ -1,4 +1,4 @@
-using Database;
+﻿using Database;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -23,6 +23,114 @@ namespace Werewolf_Control
 {
     public static partial class Commands
     {
+        [Attributes.Command(Trigger = "setgrouptopic", GroupAdminOnly = true, InGroupOnly = true)]
+        public static void SetGroupTopic(Update update, string[] args)
+        {
+            long chatId = update.Message.Chat.Id;
+            int? topicId = update.Message.MessageThreadId;
+
+            int? currentTopicId;
+
+            using (var db = new WWContext())
+            {
+                currentTopicId = db.Groups
+                    .Where(g => g.GroupId == chatId)
+                    .Select(g => g.GroupTopicId)
+                    .FirstOrDefault();
+            }
+
+            bool inGeneralTopic = topicId == null || topicId == 0;
+
+            string infoText = $"Current Topic ID: `{(currentTopicId.HasValue ? currentTopicId.Value.ToString() : "None")}`\n\n";
+
+            if (inGeneralTopic)
+            {
+                infoText += "This message is in the general topic (no thread ID).\n" +
+                            "You cannot set this as the group topic. Only specific threads can be set.";
+            }
+            else
+            {
+                infoText += $"> You are currently inside topic ID: `{topicId}`.\n" +
+                            "Choose what you'd like to do:";
+            }
+
+            var buttons = new List<InlineKeyboardButton[]>();
+
+            if (!inGeneralTopic)
+            {
+                buttons.Add(new[]{
+                    InlineKeyboardButton.WithCallbackData("Set Topic", "setgrouptopic_cmd|set"),
+                });
+            }
+            
+            buttons.Add(new[]{
+                InlineKeyboardButton.WithCallbackData("Unset Topic", "setgrouptopic_cmd|unset")
+            });
+            
+
+            var inlineKeyboard = new InlineKeyboardMarkup(buttons);
+
+            Bot.Send(
+                infoText,
+                chatId,
+                customMenu: inlineKeyboard,
+                parseMode: ParseMode.Markdown,
+                messageThreadId: topicId,
+                forceTopic: false // TODO: use this param in other admin cmd, cmd which admin are allowed to use anywhere
+            );
+        }
+
+        internal static void SetGroupTopicCallback(CallbackQuery query)
+        {
+            var chatId = query.Message.Chat.Id;
+            var topicId = query.Message.MessageThreadId;
+
+            using (var db = new WWContext())
+            {
+                var group = db.Groups.FirstOrDefault(g => g.GroupId == chatId);
+                if (group == null)
+                {
+                    group = MakeDefaultGroup(chatId, query.Message.Chat.Title, "setgrouptopic_callback");
+                    db.Groups.Add(group);
+                }
+
+                string[] args = query.Data.Split('|');
+                string action = args.Length > 1 ? args[1] : "";
+
+                switch (action)
+                {
+                    case "set":
+                        if (topicId == null)
+                        {
+                            Bot.ReplyToCallback(query, "This must be used inside a topic/thread.");
+                            return;
+                        }
+
+                        group.GroupTopicId = topicId;
+                        db.SaveChanges();
+
+                        Bot.Api.EditMessageTextAsync(chatId, query.Message.MessageId,
+                            "Group topic has been set successfully.");
+                        break;
+
+                    case "unset":
+                        group.GroupTopicId = null;
+                        db.SaveChanges();
+
+                        Bot.Api.EditMessageTextAsync(chatId, query.Message.MessageId,
+                            "Group topic has been unset.");
+                        break;
+
+                    default:
+                        Bot.ReplyToCallback(query, "Invalid topic action.");
+                        break;
+                }
+
+                Bot.Api.AnswerCallbackQueryAsync(query.Id);
+            }
+        }
+
+
         [Attributes.Command(Trigger = "smite", GroupAdminOnly = true, Blockable = true, InGroupOnly = true, AllowAnonymousAdmins = true)]
         public static void Smite(Update u, string[] args)
         {

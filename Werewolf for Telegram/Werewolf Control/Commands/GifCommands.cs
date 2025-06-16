@@ -28,7 +28,7 @@ namespace Werewolf_Control
         {
             // Donations disabled as of 2024-06-08
             var link = $"<a href=\"https://t.me/greywolfdev/1318\">currently disabled</a>";
-            Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: $"Donations are {link}, sorry!", parseMode: ParseMode.Html, disableWebPagePreview: true).Wait();
+            Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: $"Donations are {link}, sorry!", parseMode: ParseMode.Html, disableWebPagePreview: true, messageThreadId: u.Message.MessageThreadId).Wait();
             return;
 
             //Bot.Api.SendTextMessageAsync(u.Message.Chat.Id, 
@@ -106,7 +106,7 @@ namespace Werewolf_Control
                     "\n\n" +
                     "PLEASE NOTE: Changing any gifs will automatically remove the approval for your pack, and an admin will need to approve it again\n" +
                     "Let's begin! Select the situation you want to set a gif for",
-                    replyMarkup: GetGifMenu(data));
+                    replyMarkup: GetGifMenu(data), messageThreadId: u.Message.MessageThreadId);
 
                 var msg = "Current Approval Status:\n";
                 switch (data.Approved)
@@ -123,7 +123,7 @@ namespace Werewolf_Control
                         msg += "Disapproved By " + dby.Name + " for: " + data.DenyReason;
                         break;
                 }
-                Bot.Send(msg, u.Message.From.Id);
+                Bot.Send(msg, u.Message.From.Id, messageThreadId: u.Message.MessageThreadId);
             }
 
         }
@@ -304,7 +304,7 @@ namespace Werewolf_Control
             Bot.Api.SendTextMessageAsync(chatId: q.From.Id,
                 text: q.Data.Split('|')[1] + "\nOk, send me the GIF you want to use for this situation, as a reply\n" +
                 "#" + choice,
-                replyMarkup: new ForceReplyMarkup());
+                replyMarkup: new ForceReplyMarkup(), messageThreadId: q.Message.MessageThreadId);
         }
 
         public static void AddGif(Message m)
@@ -337,14 +337,14 @@ namespace Werewolf_Control
                         "users are unable to view them, we require you to use telegram's " +
                         "[new GIFs in .mp4 format](https://telegram.org/blog/gif-revolution). " +
                         "To fix this, try reuploading the GIF, your telegram app should then render it as .mp4. " +
-                        "Please send me the GIF you want to use for this situation, as a reply\n#" + gifchoice, replyMarkup: new ForceReplyMarkup(), parseMode: ParseMode.Markdown);
+                        "Please send me the GIF you want to use for this situation, as a reply\n#" + gifchoice, replyMarkup: new ForceReplyMarkup(), parseMode: ParseMode.Markdown, messageThreadId: m.MessageThreadId);
                     return;
                 }
 				if (m.Animation.FileSize >= 1048576) // Maximum size is 1 MB
 				{
 					Bot.Api.SendTextMessageAsync(chatId: m.From.Id, text: "This GIF is too large, the maximum allowed size is 1MB.\n\n" + 
 					"Please send me the GIF you want to use for this situation, as a reply\n#" + gifchoice, 
-					replyMarkup: new ForceReplyMarkup());
+					replyMarkup: new ForceReplyMarkup(), messageThreadId: m.MessageThreadId);
 					return;
 				}
 				
@@ -431,7 +431,7 @@ namespace Werewolf_Control
         {
             // Donations disabled as of 2024-06-08
             var link = $"<a href=\"https://t.me/greywolfdev/1318\">currently disabled</a>";
-            Bot.Api.SendTextMessageAsync(chatId: (q?.Message ?? m).Chat.Id, text: $"Donations are {link}, sorry!", parseMode: ParseMode.Html, disableWebPagePreview: true).Wait();
+            Bot.Api.SendTextMessageAsync(chatId: (q?.Message ?? m).Chat.Id, text: $"Donations are {link}, sorry!", parseMode: ParseMode.Html, disableWebPagePreview: true, messageThreadId: (q?.Message ?? m).MessageThreadId).Wait();
             return;
 
             var from = q?.From ?? m?.From;
@@ -465,13 +465,13 @@ namespace Werewolf_Control
         {
             // Donations disabled as of 2024-06-08
             var link = $"<a href=\"https://t.me/greywolfdev/1318\">currently disabled</a>";
-            Bot.Api.SendTextMessageAsync(chatId: q?.From.Id ?? m.From.Id, text: $"Donations are {link}, sorry!", parseMode: ParseMode.Html, disableWebPagePreview: true).Wait();
+            Bot.Api.SendTextMessageAsync(chatId: q?.From.Id ?? m.From.Id, text: $"Donations are {link}, sorry!", parseMode: ParseMode.Html, disableWebPagePreview: true, messageThreadId: q.Message.MessageThreadId).Wait();
             return;
 
             var menu = new Menu();
             Bot.Api.SendTextMessageAsync(chatId: q?.From.Id ?? m.From.Id,
                 text: "How much would you like to donate?  Please enter a whole number, in US Dollars (USD), in reply to this message",
-                replyMarkup: new ForceReplyMarkup());
+                replyMarkup: new ForceReplyMarkup(), messageThreadId: (q?.Message ?? m).MessageThreadId);
         }
 
         public static void ValidateDonationAmount(Message m)
@@ -488,14 +488,14 @@ namespace Werewolf_Control
                 var api = RegHelper.GetRegValue("MainStripeProdAPI");
 #endif
                 Bot.Api.SendInvoiceAsync(chatId: m.From.Id, title: "Werewolf Donation", description: "Make a donation to Werewolf to help keep us online", payload: "somepayloadtest", providerToken: api,
-                    currency: "USD", prices: new[] { new LabeledPrice("Donation", amt * 100) }, startParameter: "donatetg").Wait();
+                    currency: "USD", prices: new[] { new LabeledPrice("Donation", amt * 100) }, startParameter: "donatetg", messageThreadId: m.MessageThreadId).Wait();
             }
             else
             {
                 Bot.Api.SendTextMessageAsync(chatId: m.From.Id,
                     text: "Invalid input.\n" +
                     "How much would you like to donate?  Please enter a whole number, in US Dollars (USD), in reply to this message",
-                    replyMarkup: new ForceReplyMarkup());
+                    replyMarkup: new ForceReplyMarkup(), messageThreadId: m.MessageThreadId);
             }
 
         }
