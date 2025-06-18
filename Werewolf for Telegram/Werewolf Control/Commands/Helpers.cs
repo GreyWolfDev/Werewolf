@@ -1,20 +1,21 @@
-﻿using Shared;
+﻿using Database;
+using Shared;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Database;
+using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Control.Handler;
 using Werewolf_Control.Helpers;
 using Werewolf_Control.Models;
-using Telegram.Bot;
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace Werewolf_Control
 {
@@ -32,6 +33,99 @@ namespace Werewolf_Control
                 -1001268085464, -1001322721489
             };
 #endif
+
+        internal static void TestPlayerNameValidation()
+        {
+            // Fix: enable Unicode output for fancy letters and emoji
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            var testCases = new List<(string Name, bool Expected, string Description)>
+            {
+                ("John", true, "Latin letters"),
+                ("𝕁𝕠𝕙𝕟", true, "Stylized Latin (math bold)"),
+                ("ＡＢＣ", true, "Full-width Latin"),
+                ("李", false, "Single CJK (non-Latin) character"),
+                ("😎😎", false, "Emoji only"),
+                ("  ", false, "Whitespace only"),
+                ("A", false, "Only one Latin letter"),
+                ("AB", true, "Two Latin letters"),
+                ("ㅤㅤㅤ", false, "Hangul fillers (invisible)"),
+                ("⌘ KMohZaid ⌘", true, "Latin letters surrounded by symbols"),
+                ("AswatthamA", true, "Regular Latin name"),
+                ("Cuenta Eliminada", true, "Spanish Latin name"),
+                ("ဂွေးဂျိနက်မမ", false, "Burmese script (non-Latin)"),
+                ("Jasmine", true, "Regular Latin name"),
+                ("Van", true, "Short but valid Latin name"),
+                ("", false, "Empty string"),
+                ("ℛ𝒶𝓃𝒶𝒹 ℬℯ𝓃 ℛ𝒶𝓂𝒶𝒹𝒶𝓃", true, "Fancy Unicode Latin")
+            };
+
+            foreach (var (name, expected, description) in testCases)
+            {
+                bool actual;
+                string msg;
+                (actual, msg) = Commands.ValidatePlayerName(name);
+
+                Console.WriteLine($"Name: \"{name}\"");
+                Console.WriteLine($"Description: {description}");
+                Console.WriteLine($"Message: {msg}");
+                Console.WriteLine($"Expected: {(expected ? "Valid" : "Invalid")}, Actual: {(actual ? "Valid" : "Invalid")}");
+
+                if (actual == expected)
+                {
+                    Console.WriteLine("✅ TEST PASS");
+                }
+                else
+                {
+                    Console.WriteLine("❌ TEST FAIL");
+                }
+
+                Console.WriteLine(new string('-', 50));
+            }
+
+            Console.WriteLine(new string('-', 50));
+            Console.WriteLine("PRESSING ENTER WILL START ACTUAL BOT RUN, AFTER WHICH YOU WILL SEE MESSED UP BOT STATUS MESSAGE.");
+            Console.WriteLine(new string('-', 50));
+            Console.ReadLine(); // this is to stop program from overriding output screen with running bot status message
+        }
+
+        internal static (bool, string) ValidatePlayerName(string name)
+        {
+            
+
+            // TODO: move to string xml file, for translation support
+            string blankMsg = "❌ Your name appears to be blank. Please set a readable name in your Telegram profile and try again.";
+            string noEnoughReadableChar = "❌ Your name must contain at least 2 readable letters. Please update your Telegram name.";
+
+            if (string.IsNullOrWhiteSpace(name))
+            {                
+                return (false, blankMsg);
+            }
+
+            var trimmedName = name.Trim();
+            var textElements = StringInfo.GetTextElementEnumerator(trimmedName);
+
+            int letterCount = 0;
+
+            while (textElements.MoveNext())
+            {
+                string element = textElements.GetTextElement();
+                var category = CharUnicodeInfo.GetUnicodeCategory(element, 0);
+
+                if (category == UnicodeCategory.UppercaseLetter ||
+                    category == UnicodeCategory.LowercaseLetter)
+                {
+                    letterCount++;
+                }
+            }
+
+            if (letterCount < 2)
+            {
+                return (false,noEnoughReadableChar);
+            }
+
+            return (true,"Valid.");
+        }
 
         private static Player GetDBPlayer(long id, WWContext db)
         {
