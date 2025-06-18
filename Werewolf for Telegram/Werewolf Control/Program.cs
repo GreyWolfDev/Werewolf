@@ -43,8 +43,13 @@ namespace Werewolf_Control
         internal static readonly HttpClient xsollaClient = new HttpClient();
         internal const string MasterLanguage = "English.xml";
         internal static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+
         static void Main(string[] args)
         {
+            // INFO: uncomment below method call for testing. Some names are already there for testing purpose.
+            //Commands.TestPlayerNameValidation();
+
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 
 #if !DEBUG

@@ -239,8 +239,44 @@ namespace Werewolf_Control
                         return;
                     }
 
+                    // check for force join
+                    bool isForceJoin = false;
+                    if (args[1].StartsWith("forcejoin"))
+                    {
+                        isForceJoin = true;
+                        // remove "force" from starting, so below if statement work for force join also
+                        args[1] = args[1].Substring("force".Length); 
+                    }
+
+                    // handle join command
                     if (args[1].StartsWith("join") && args[1].Length == 48) // 4 "join" + 22 node id + 22 game id
                     {
+                        // check if user have validate name
+                        bool isValid;
+                        string msg;
+                        (isValid, msg) = ValidatePlayerName(p.Name);
+                        if(!isValid && !isForceJoin)
+                        {
+                            
+
+                            // TODO: move to string xml file for translation support
+                            string warningMsg = "⚠️ If you join the game using the button below, you can join successfully, " +
+                    "but you may receive a warning if your name is unreadable or invalid.";
+
+
+                            string forceJoinURI = $"https://t.me/{Bot.Me.Username}/?start={"force" + args[1]}";
+
+                            // send user messaage
+                            Bot.Send(msg+"\n\n"+warningMsg, u.Message.Chat.Id, customMenu: new InlineKeyboardMarkup(new[]
+                            {
+                                new[]
+                                {
+                                    InlineKeyboardButton.WithUrl("Force Join Game", forceJoinURI)
+                                }
+                            }));
+                            return;
+                        }
+
                         //okay, they are joining a game.
                         string nodeid = "";
                         string gameid = "";
@@ -340,6 +376,14 @@ namespace Werewolf_Control
                             }
 
                             game.AddPlayer(u, gameid);
+
+                            // notify group about force join
+                            if (isForceJoin) {
+                                // TODO:  move to strings xml for translation support
+                                string forceJoinNotice = $"⚠️ Player with name '[{p.Name}](tg://user?id={p.TelegramId})' used force join button, their name is detected as unreadable by bot.";
+                                
+                                Bot.Send(forceJoinNotice, game.GroupId, parseMode: ParseMode.Markdown); 
+                            }
                             return;
                         }
                         catch (AggregateException e)
