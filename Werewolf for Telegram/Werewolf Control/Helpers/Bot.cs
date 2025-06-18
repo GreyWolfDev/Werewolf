@@ -102,6 +102,7 @@ namespace Werewolf_Control.Helpers
                         c.InGroupOnly = ca.InGroupOnly;
                         c.LangAdminOnly = ca.LangAdminOnly;
                         c.AllowAnonymousAdmins = ca.AllowAnonymousAdmins;
+                        c.AllowOutsideConfiguredTopic = ca.AllowOutsideConfiguredTopic;
                         Commands.Add(c);
                     }
                 }
@@ -509,13 +510,13 @@ namespace Werewolf_Control.Helpers
         }
 
 
-        internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, ParseMode parseMode = ParseMode.Html, int? messageThreadId = null)
+        internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, ParseMode parseMode = ParseMode.Html, int? messageThreadId = null, bool forceTopic = true)
         {
             //MessagesSent++;
             //message = message.Replace("`",@"\`");
 
             // Try to load GroupTopicId from the database if no thread ID is provided
-            if (messageThreadId == null)
+            if (messageThreadId == null && forceTopic)
             {
                 using (var db = new WWContext())
                 {

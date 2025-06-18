@@ -438,6 +438,31 @@ namespace Werewolf_Control.Handler
                                             id);
                                         return;
                                     }
+                                    // If command is not allow outside topic, or it is not admin / dev command. Check topic id and restrict to topic.
+                                    // Kmoh COOKED : (Oops... i forgot another thing that i had to write down. It was in my mind a second ago...)
+                                    if (!(command.AllowOutsideConfiguredTopic || command.GlobalAdminOnly || command.LangAdminOnly || command.GroupAdminOnly || command.DevOnly) )
+                                    {
+                                        // Only apply this restriction in groups (topics are only meaningful in groups)
+                                        if (update.Message.Chat.Type == ChatType.Group || update.Message.Chat.Type == ChatType.Supergroup)
+                                        {
+                                            int? currentTopicId;
+                                            using (var db = new WWContext())
+                                            {
+                                                currentTopicId = db.Groups
+                                                    .Where(g => g.GroupId == id)
+                                                    .Select(g => g.GroupTopicId)
+                                                    .FirstOrDefault();
+                                            }
+
+                                            // If a specific topic is set for the group and this message is NOT in that topic
+                                            if (currentTopicId == null || currentTopicId != update.Message.MessageThreadId)
+                                            {
+                                                Bot.Send($"This command can only be used in the configured topic/thread. (Topic id : {currentTopicId})", id,messageThreadId: update.Message.MessageThreadId, forceTopic : false);
+                                                return;
+                                            }
+                                        }
+                                    }
+
                                     Bot.CommandsReceived++;
                                     command.Method.Invoke(update, args);
                                 }
@@ -788,6 +813,12 @@ namespace Werewolf_Control.Handler
                     if (args[0] == "customgif")
                     {
                         Commands.RequestGif(query);
+                        return;
+                    }
+
+                    if (args[0] == "setgrouptopic_cmd")
+                    {
+                        Commands.SetGroupTopicCallback(query);
                         return;
                     }
 

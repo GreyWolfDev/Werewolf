@@ -44,5 +44,10 @@ namespace Werewolf_Control.Attributes
         /// Can this command be run by anonymous admins in groups
         /// </summary>
         public bool AllowAnonymousAdmins { get; set; } = false;
+
+        /// <summary>
+        /// Allow commands to be run outside configured topic in group.
+        /// </summary>
+        public bool AllowOutsideConfiguredTopic {get; set; } = false;
     }
 }
