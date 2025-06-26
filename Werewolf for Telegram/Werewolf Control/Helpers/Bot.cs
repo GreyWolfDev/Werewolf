@@ -32,6 +32,7 @@ namespace Werewolf_Control.Helpers
         public static User Me;
         public static DateTime StartTime = DateTime.UtcNow;
         public static bool Running = true;
+        public static Dictionary<long, int?> ChatTopicIdCache = new Dictionary<long, int?>();
         public static long CommandsReceived = 0;
         public static long MessagesProcessed = 0;
         public static long MessagesReceived = 0;
@@ -510,22 +511,26 @@ namespace Werewolf_Control.Helpers
         }
 
 
-        internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, ParseMode parseMode = ParseMode.Html, int? messageThreadId = null, bool forceTopic = true)
+        internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, ParseMode parseMode = ParseMode.Html, int? messageThreadId = null)
         {
             //MessagesSent++;
             //message = message.Replace("`",@"\`");
 
-            // Try to load GroupTopicId from the database if no thread ID is provided
-            if (messageThreadId == null && forceTopic)
+            // Try to load GroupTopicId from the database if no thread ID is provided, with caching
+            if (messageThreadId == null)
             {
-                using (var db = new WWContext())
-                {
-                    var group = db.Groups.FirstOrDefault(g => g.GroupId == id);
-                    if (group?.GroupTopicId != null)
+                if (ChatTopicIdCache.ContainsKey(id))
+                    messageThreadId = ChatTopicIdCache[id];
+                else
+                    using (var db = new WWContext())
                     {
-                        messageThreadId = group.GroupTopicId;
-                    }
-                }
+                        var group = db.Groups.FirstOrDefault(g => g.GroupId == id);
+                        if (group?.GroupTopicId != null)
+                        {
+                            messageThreadId = group.GroupTopicId;
+                            ChatTopicIdCache[id] = messageThreadId;
+                        }
+                    }   
             }
 
             if (clearKeyboard)

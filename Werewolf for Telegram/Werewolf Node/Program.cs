@@ -380,24 +380,11 @@ namespace Werewolf_Node
             }
         }
 
-        internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null, bool notify = false, bool preview = false, bool isPlayerDM = false)
+        internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null, bool notify = false, bool preview = false, int? messageThreadId = null)
         {
             //MessagesSent++;
             //message = message.FormatHTML();
             //message = message.Replace("`",@"\`");
-
-            // Try to load GroupTopicId from the database, only if it is not player dm
-            int? messageThreadId = null;
-            if(!isPlayerDM)
-                using (var db = new WWContext())
-                {
-                    var group = db.Groups.FirstOrDefault(g => g.GroupId == id);
-                    if (group?.GroupTopicId != null)
-                    {
-                        messageThreadId = group.GroupTopicId;
-                    }
-                }
-            
 
             if (clearKeyboard)
             {

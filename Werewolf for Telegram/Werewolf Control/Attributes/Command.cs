@@ -48,6 +48,6 @@ namespace Werewolf_Control.Attributes
         /// <summary>
         /// Allow commands to be run outside configured topic in group.
         /// </summary>
-        public bool AllowOutsideConfiguredTopic {get; set; } = false;
+        public bool AllowOutsideConfiguredTopic { get; set; } = false;
     }
 }
