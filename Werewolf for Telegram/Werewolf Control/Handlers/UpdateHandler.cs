@@ -438,6 +438,33 @@ namespace Werewolf_Control.Handler
                                             id);
                                         return;
                                     }
+                                    // If command is not allow outside topic, or it is not admin / dev command. Check topic id and restrict to topic.
+                                    if (!(command.AllowOutsideConfiguredTopic || command.GlobalAdminOnly || command.LangAdminOnly || command.DevOnly) )
+                                    {
+                                        // Only apply this restriction in groups (topics are only meaningful in groups)
+                                        if (update.Message.Chat.Type == ChatType.Group || update.Message.Chat.Type == ChatType.Supergroup)
+                                        {
+                                            int? currentTopicId;
+                                            if (Bot.ChatTopicIdCache.ContainsKey(id))
+                                                currentTopicId = Bot.ChatTopicIdCache[id];
+                                            else
+                                                using (var db = new WWContext())
+                                                {
+                                                    currentTopicId = db.Groups
+                                                        .Where(g => g.GroupId == id)
+                                                        .Select(g => g.GroupTopicId)
+                                                        .FirstOrDefault();
+                                                }
+
+                                            // If a specific topic is set for the group and this message is NOT in that topic
+                                            if (currentTopicId != update.Message.MessageThreadId)
+                                            {
+                                                Bot.Send(GetLocaleString("MustRunInConfiguredTopic", GetLanguage(id), currentTopicId), id, messageThreadId: update.Message.MessageThreadId ?? 0);
+                                                return;
+                                            }
+                                        }
+                                    }
+
                                     Bot.CommandsReceived++;
                                     command.Method.Invoke(update, args);
                                 }
@@ -824,26 +851,30 @@ namespace Werewolf_Control.Handler
                                     var id = query.From.Id;
                                     Send($"Sending gifs for {pid}", id);
                                     Thread.Sleep(1000);
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.CultWins), caption: "Cult Wins");
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.LoversWin), caption: "Lovers Win");
+                                    // TODO: make Send() work with document also
+                                    
+                                    int? topicId = DB.Groups.FirstOrDefault(g => g.Id == id).GroupTopicId;
+
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.CultWins), caption: "Cult Wins", messageThreadId: topicId);
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.LoversWin), caption: "Lovers Win", messageThreadId: topicId);
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.NoWinner), caption: "No Winner");
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.SerialKillerWins), caption: "SK Wins");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.NoWinner), caption: "No Winner", messageThreadId: topicId);
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.SerialKillerWins), caption: "SK Wins", messageThreadId: topicId);
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.StartChaosGame), caption: "Chaos Start");
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.StartGame), caption: "Normal Start");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.StartChaosGame), caption: "Chaos Start", messageThreadId: topicId);
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.StartGame), caption: "Normal Start", messageThreadId: topicId);
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.TannerWin), caption: "Tanner Wins");
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.VillagerDieImage), caption: "Villager Eaten");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.TannerWin), caption: "Tanner Wins", messageThreadId: topicId);
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.VillagerDieImage), caption: "Villager Eaten", messageThreadId: topicId);
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.VillagersWin), caption: "Village Wins");
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.WolfWin), caption: "Single Wolf Wins");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.VillagersWin), caption: "Village Wins", messageThreadId: topicId);
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.WolfWin), caption: "Single Wolf Wins", messageThreadId: topicId);
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.WolvesWin), caption: "Wolf new InputFileId(pack.Wins)");
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.SKKilled), caption: "SK Killed");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.WolvesWin), caption: "Wolf new InputFileId(pack.Wins)", messageThreadId: topicId);
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.SKKilled), caption: "SK Killed", messageThreadId: topicId);
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.ArsonistWins), caption: "Arsonist Wins");
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.BurnToDeath), caption: "Arsonist Burnt");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.ArsonistWins), caption: "Arsonist Wins", messageThreadId: topicId);
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.BurnToDeath), caption: "Arsonist Burnt", messageThreadId: topicId);
                                     Thread.Sleep(500);
                                     var msg = $"Approval Status: ";
                                     switch (pack.Approved)

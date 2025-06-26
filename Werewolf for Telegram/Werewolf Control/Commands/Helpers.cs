@@ -170,9 +170,9 @@ namespace Werewolf_Control
             }
         }
 
-        internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null)
+        internal static Task<Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Nullable<int> messageThreadId = null)
         {
-            return Bot.Send(message, id, clearKeyboard, customMenu);
+            return Bot.Send(message, id, clearKeyboard, customMenu, messageThreadId: messageThreadId);
         }
 
 

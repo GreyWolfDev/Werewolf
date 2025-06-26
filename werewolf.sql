@@ -381,6 +381,7 @@ CREATE TABLE [dbo].[Group](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](max) NOT NULL,
 	[GroupId] [bigint] NOT NULL,
+	[GroupTopicId] [int] NULL,
 	[Preferred] [bit] NULL,
 	[Language] [nvarchar](max) NULL,
 	[DisableNotification] [bit] NULL,
