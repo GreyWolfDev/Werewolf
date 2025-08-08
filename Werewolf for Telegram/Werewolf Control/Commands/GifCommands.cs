@@ -57,6 +57,29 @@ namespace Werewolf_Control
             Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: txt, replyMarkup: markup, parseMode: ParseMode.Html, disableWebPagePreview: true, messageThreadId: u.Message.MessageThreadId);
         }
 
+        [Attributes.Command(Trigger = "donatenew", DevOnly = true)]
+        public static void DonateNew(Update u, string[] args)
+        {
+            // Donations re-enabl preparation 2025-08-08
+            var menu = new Menu();
+            if (u.Message.Chat.Type == ChatType.Private)
+            {
+#if !BETA
+                menu.Buttons.Add(InlineKeyboardButton.WithCallbackData("Telegram", "donatetg"));
+#else
+                menu.Buttons.Add(InlineKeyboardButton.WithUrl("Telegram", $"https://t.me/werewolfbot?start=donatetgnew"));
+#endif
+            }
+            else
+            {
+                menu.Buttons.Add(InlineKeyboardButton.WithUrl("Telegram", $"https://t.me/werewolfbot?start=donatetgnew"));
+            }
+            var markup = menu.CreateMarkupFromMenu();
+            var txt = $"Want to help keep Werewolf Moderator online? Donate now and gets: {"Custom gifs".ToBold()} and {"Badges".ToBold()}!\n\nClick the button below to donate!!\n\nMore Info: https://telegra.ph/Custom-Gif-Packs-and-Donation-Levels-06-27";
+            Bot.Api.SendTextMessageAsync(chatId: u.Message.Chat.Id, text: txt, replyMarkup: markup, parseMode: ParseMode.Html, disableWebPagePreview: true, messageThreadId: u.Message.MessageThreadId);
+        }
+
+
         [Attributes.Command(Trigger = "customgif")]
         public static void SetCustomGifs(Update u, string[] args)
         {
@@ -474,6 +497,15 @@ namespace Werewolf_Control
                 replyMarkup: new ForceReplyMarkup());
         }
 
+        public static void GetDonationInfoNew(CallbackQuery q = null, Message m = null)
+        {
+            // Donations re-enable preparation 2025-08-08
+            var menu = new Menu();
+            Bot.Api.SendTextMessageAsync(chatId: q?.From.Id ?? m.From.Id,
+                text: "How much would you like to donate?  Please enter a whole number, in TON (XTR), in reply to this message",
+                replyMarkup: new ForceReplyMarkup());
+        }
+
         public static void ValidateDonationAmount(Message m)
         {
             var input = m.Text.Replace("$", "");
@@ -495,6 +527,32 @@ namespace Werewolf_Control
                 Bot.Api.SendTextMessageAsync(chatId: m.From.Id,
                     text: "Invalid input.\n" +
                     "How much would you like to donate?  Please enter a whole number, in US Dollars (USD), in reply to this message",
+                    replyMarkup: new ForceReplyMarkup());
+            }
+
+        }
+
+        public static void ValidateDonationAmountNew(Message m)
+        {
+            var input = m.Text.Replace("$", "");
+            var amt = 0;
+            if (int.TryParse(input, out amt))
+            {
+#if DEBUG
+                var api = RegHelper.GetRegValue("DebugStripeTestAPI");
+#elif BETA
+                var api = RegHelper.GetRegValue("BetaStripeProdAPI");
+#elif RELEASE
+                var api = RegHelper.GetRegValue("MainStripeProdAPI");
+#endif
+                Bot.Api.SendInvoiceAsync(chatId: m.From.Id, title: "Werewolf Donation", description: "Make a donation to Werewolf to help keep us online", payload: "somepayloadtest", providerToken: "",
+                    currency: "XTR", prices: new[] { new LabeledPrice("Donation", amt) }, startParameter: "donatetgnew").Wait();
+            }
+            else
+            {
+                Bot.Api.SendTextMessageAsync(chatId: m.From.Id,
+                    text: "Invalid input.\n" +
+                    "How much would you like to donate?  Please enter a whole number, in TON (XTR), in reply to this message",
                     replyMarkup: new ForceReplyMarkup());
             }
 
