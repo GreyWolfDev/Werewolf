@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -96,7 +97,7 @@ namespace Werewolf_Control
                 }
                 if (!String.IsNullOrEmpty(update.Message.Chat.Username))
                     grp.GroupLink = "https://telegram.me/" + update.Message.Chat.Username;
-                else if (!(grp.GroupLink?.Contains("joinchat")??true)) //if they had a public link (username), but don't anymore, remove it
+                else if (!Regex.IsMatch(link, @"^(https?:\/\/)?t(elegram)?\.me\/(\+|joinchat\/)([a-zA-Z0-9_\-]+)$")) //if they had a public link (username), but don't anymore, remove it
                     grp.GroupLink = null;
 
                 //remove usernames & links from the other groups that have the same username in the db
