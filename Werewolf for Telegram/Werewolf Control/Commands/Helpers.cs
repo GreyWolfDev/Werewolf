@@ -94,9 +94,13 @@ namespace Werewolf_Control
                     Bot.Api.LeaveChatAsync(chatId: grp.GroupId);
                     return;
                 }
+
+                // If they have a public link (username), save it
                 if (!String.IsNullOrEmpty(update.Message.Chat.Username))
-                    grp.GroupLink = "https://telegram.me/" + update.Message.Chat.Username;
-                else if (!(grp.GroupLink?.Contains("joinchat")??true)) //if they had a public link (username), but don't anymore, remove it
+                    grp.GroupLink = "https://t.me/" + update.Message.Chat.Username;
+
+                //if they had a public link (username), but don't anymore, remove it
+                else if (grp.GroupLink != null && !grp.GroupLink.Contains("/joinchat/") && !grp.GroupLink.Contains("/+"))
                     grp.GroupLink = null;
 
                 //remove usernames & links from the other groups that have the same username in the db
