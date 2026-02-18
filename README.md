@@ -1,5 +1,7 @@
 # Werewolf for Telegram
 
+[![@werewolfbot MAU](https://tgbotmau.quoi.dev/api/bot/werewolfbot/mau/badge?style=flat "@werewolfbot MAU")](https://tgbotmau.quoi.dev/?bot=werewolfbot)
+
 This is the main repo for Werewolf for Telegram.
 
 For language file updates, please submit the xml file on Telegram to the [support chat](http://telegram.me/werewolfsupport) and ask for assistance
