@@ -141,6 +141,9 @@ namespace Shared
 
         [Role("🎃", false)]
         Spumpkin = 8796093022208,
+
+        [Role("🍚")]
+        Chef = 17592186044416,
     }
 
     public class RoleAttribute : Attribute
