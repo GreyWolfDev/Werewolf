@@ -3868,9 +3868,20 @@ namespace Werewolf_Node
                 var barGoers = Players.Where(x => !x.IsDead && x.PlayerRole == IRole.Villager && Program.R.Next(100) < goToBarChance).ToList();
 
                 if (barGoers.Count == 0)
+                {
                     Send(GetLocaleString("BarOpenEmpty"), barkeep.Id);
+
+                    barkeep.ConsecutiveNoBarVisitors++;
+                    if (Players.Count >= 10 && barkeep.ConsecutiveNoBarVisitors >= 3)
+                        AddAchievement(barkeep, AchievementsReworked.GoingOutOfBusiness);
+                }
                 else
                 {
+                    barkeep.ConsecutiveNoBarVisitors = 0;
+
+                    if (barGoers.Count >= 3)
+                        AddAchievement(barkeep, AchievementsReworked.LiquidBusiness);
+
                     List<string> newDrunks = new List<string>();
 
                     foreach (var barGoer in barGoers)
@@ -3892,15 +3903,18 @@ namespace Werewolf_Node
 
                             case VisitResult.VisitorDied:
                                 if (barGoer.DiedByVisitingVictim && barGoer.KilledByRole == IRole.Arsonist)
+                                {
+                                    AddAchievement(barGoer, AchievementsReworked.GoingDownWithMyBeer);
                                     SendGif(GetLocaleString("VillagerVisitBurningBar"), GetRandomImage(BurnToDeath), barGoer.Id);
+                                }
                                 break;
-                        }   
+                        }
                     }
 
                     string barkeepMsg = GetLocaleString("BarOpenFull", barGoers.Count);
                     if (newDrunks.Any())
                         barkeepMsg += "\n" + GetLocaleString("BarNewDrunks", string.Join(", ", newDrunks));
-                    
+
                     if (!barkeep.IsDead) // if barkeep died tonight, don't bother telling them what happened in their bar.
                         Send(barkeepMsg, barkeep.Id);
                 }
@@ -4293,9 +4307,21 @@ namespace Werewolf_Node
                         else if (visitors == 1)
                             actionTracked = GetLocaleString("ActionTrackHomeVisitedByOne", target.GetName());
                         else
+                        {
                             actionTracked = GetLocaleString("ActionTrackHomeNotVisited", target.GetName());
+
+                            chef.FoodWastedOnPlayers.Add(target.Id);
+                            if (chef.FoodWastedOnPlayers.Count >= 3)
+                                AddAchievement(chef, AchievementsReworked.FoodWaste);
+                        }
                     }
                     Send(actionTracked, chef.Id);
+
+                    if (visitors >= 3)
+                        AddAchievement(chef, AchievementsReworked.TrafficControl);
+
+                    if (target.DiedLastNight)
+                        AddAchievement(chef, AchievementsReworked.DefinitelyDead);
                 }
 
             }
@@ -6045,6 +6071,8 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.AmIHallucinating);
                         if (!ach2.HasFlag(AchievementsReworked.InTheMiddleOfTheTrouble) && player.InMiddleOfTrouble)
                             newAch2.Set(AchievementsReworked.InTheMiddleOfTheTrouble);
+                        if (!ach2.HasFlag(AchievementsReworked.AlcoholicsAnonymous) && player.PlayerRole == IRole.Drunk && Players.Count(x => x.PlayerRole == IRole.Drunk) >= 3)
+                            newAch2.Set(AchievementsReworked.AlcoholicsAnonymous);
 
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();

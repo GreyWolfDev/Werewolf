@@ -159,6 +159,8 @@ namespace Werewolf_Node.Models
         public bool HasSeenImpossible { get; set; } = false;
         public bool InMiddleOfTrouble { get; set; } = false;
         public bool JustPromotedFromTraitor { get; set; } = false;
+        public int ConsecutiveNoBarVisitors { get; set; } = 0;
+        public HashSet<long> FoodWastedOnPlayers { get; set; } = new HashSet<long>();
 
         public int DonationLevel { get; set; } = 0;
         public bool Founder { get; set; } = false;
