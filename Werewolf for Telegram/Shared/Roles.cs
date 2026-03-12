@@ -144,6 +144,9 @@ namespace Shared
 
         [Role("🍚")]
         Chef = 17592186044416,
+
+        [Role("🍸")]
+        Barkeep = 35184372088832,
     }
 
     public class RoleAttribute : Attribute

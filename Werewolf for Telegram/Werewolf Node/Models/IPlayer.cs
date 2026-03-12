@@ -108,6 +108,7 @@ namespace Werewolf_Node.Models
         /// </summary>
         public List<IRole> SawRoles { get; set; } = new List<IRole>();
         public bool IsActionTracked { get; set; } = false;
+        public int BarVisits { get; set; } = 0;
 
         public string Language { get; set; } = "English";
         public bool Won { get; set; } = false;

@@ -1480,10 +1480,8 @@ namespace Werewolf_Node
                 //force roles for testing
                 IRole[] requiredRoles = new IRole[]
                 {
-                    IRole.Chef,
-                    IRole.Wolf,
-                    IRole.Harlot,
-                    IRole.Thief
+                    IRole.Barkeep,
+                    IRole.Arsonist
                 };
                 int requiredCount = requiredRoles.Length;
 
@@ -1579,6 +1577,7 @@ namespace Werewolf_Node
                 case IRole.Augur:
                 case IRole.GraveDigger:
                 case IRole.Chef:
+                case IRole.Barkeep:
                     p.Team = ITeam.Village;
                     break;
                 case IRole.Doppelgänger:
@@ -2313,6 +2312,7 @@ namespace Werewolf_Node
             ThiefSteal,
             ThiefStolen,
             KillElder,
+            VisitBarTooOften,
         }
 
         /// <summary>
@@ -3090,6 +3090,7 @@ namespace Werewolf_Node
              * Cultist Hunter
              * Cult
              * Chemist
+             * Barkeep
              * Harlot
              * Seer
              * Sorcerer
@@ -3182,6 +3183,9 @@ namespace Werewolf_Node
                                     break;
                                 case IRole.Chef:
                                     Send(GetLocaleString("ChefFrozen"), target.Id);
+                                    break;
+                                case IRole.Barkeep:
+                                    Send(GetLocaleString("BarkeepFrozen"), target.Id);
                                     break;
                                 case IRole.Arsonist:
                                     // Arsonist can act despite being frozen.
@@ -3856,6 +3860,54 @@ namespace Werewolf_Node
             }
             #endregion
 
+            #region Barkeep Night
+            var barkeep = Players.FirstOrDefault(x => x.PlayerRole == IRole.Barkeep && (!x.IsDead || x.Burning)); // if the bar is on flames, people do visit it (and die)
+            if (barkeep != null && !barkeep.Frozen)
+            {
+                var goToBarChance = 1000.0 / (Players.Count + 5); // in percent, i.e. 50 means the chance is 1 in 2. This is true at 15 players.
+                var barGoers = Players.Where(x => !x.IsDead && x.PlayerRole == IRole.Villager && Program.R.Next(100) < goToBarChance).ToList();
+
+                if (barGoers.Count == 0)
+                    Send(GetLocaleString("BarOpenEmpty"), barkeep.Id);
+                else
+                {
+                    List<string> newDrunks = new List<string>();
+
+                    foreach (var barGoer in barGoers)
+                    {
+                        switch (VisitPlayer(barGoer, barkeep))
+                        {
+                            // should always be success, unless the arsonist set the bar on fire that night, in which case the visitors die.
+                            case VisitResult.Success:
+                                barGoer.BarVisits++;
+                                if (barGoer.BarVisits >= Settings.BarVisitsTillDrunk)
+                                {
+                                    Transform(barGoer, IRole.Drunk, TransformationMethod.VisitBarTooOften);
+                                    Send(GetLocaleString("VillagerVisitBarTurns", barkeep.GetName()), barGoer.Id);
+                                    newDrunks.Add(barGoer.GetName());
+                                }
+                                else
+                                    Send(GetLocaleString("VillagerVisitBar", barGoer.BarVisits), barGoer.Id);
+                                break;
+
+                            case VisitResult.VisitorDied:
+                                if (barGoer.DiedByVisitingVictim && barGoer.KilledByRole == IRole.Arsonist)
+                                    SendGif(GetLocaleString("VillagerVisitBurningBar"), GetRandomImage(BurnToDeath), barGoer.Id);
+                                break;
+                        }   
+                    }
+
+                    string barkeepMsg = GetLocaleString("BarOpenFull", barGoers.Count);
+                    if (newDrunks.Any())
+                        barkeepMsg += "\n" + GetLocaleString("BarNewDrunks", string.Join(", ", newDrunks));
+                    
+                    if (!barkeep.IsDead) // if barkeep died tonight, don't bother telling them what happened in their bar.
+                        Send(barkeepMsg, barkeep.Id);
+                }
+            }
+
+            #endregion
+
             #region Harlot Night
 
             //let the harlot know
@@ -4242,9 +4294,9 @@ namespace Werewolf_Node
                             actionTracked = GetLocaleString("ActionTrackHomeVisitedByOne", target.GetName());
                         else
                             actionTracked = GetLocaleString("ActionTrackHomeNotVisited", target.GetName());
-                }
+                    }
                     Send(actionTracked, chef.Id);
-            }
+                }
 
             }
             #endregion
@@ -4374,6 +4426,10 @@ namespace Werewolf_Node
                                 case IRole.WolfCub:
                                 case IRole.Wolf:
                                     msg = GetLocaleString("WolfVisitBurn", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
+                                    break;
+                                case IRole.Villager:
+                                    // only way a villager can "visit" someone is by going to the bar.
+                                    msg = GetLocaleString("BarVisitorBurn", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
                                     break;
                                 default:
                                     msg = GetLocaleString("DefaultVisitBurn", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");

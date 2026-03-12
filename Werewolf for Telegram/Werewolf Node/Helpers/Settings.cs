@@ -105,6 +105,7 @@ namespace Werewolf_Node
             ChemistSuccessChance = 50,
             GraveDiggerConversionChance = 30,
             AugurConversionChance = 40,
+            BarVisitsTillDrunk = 3,
 #else
             TannerChance = 40,
             FoolChance = 20,
@@ -131,6 +132,7 @@ namespace Werewolf_Node
             ChemistSuccessChance = 50,
             GraveDiggerConversionChance = 30,
             AugurConversionChance = 40,
+            BarVisitsTillDrunk = 3,
 #endif
 
             GameJoinTime = 180,

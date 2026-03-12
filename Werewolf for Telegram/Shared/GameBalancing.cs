@@ -310,6 +310,8 @@ namespace Shared
                     return 2;
                 case IRole.Chef:
                     return 3;
+                case IRole.Barkeep:
+                    return 1 + allRoles.Count(x => x == IRole.Villager);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }

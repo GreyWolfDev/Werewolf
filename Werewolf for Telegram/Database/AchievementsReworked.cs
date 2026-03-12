@@ -134,7 +134,7 @@ namespace Database
         President = 59,
         [Display(Name = "I Helped!"), Description("As a wolf cub, the alive pack has 2 successful eat attempts after you die")]
         IHelped = 60,
-        [Display(Name = "It Was a Busy Night!"), Description("During the same night, got visited by 3 or more different visiting roles")]
+        [Display(Name = "It Was a Busy Night!"), Description("During the same night, got visited by 3 or more different visitors")]
         ItWasABusyNight = 61,
         [Display(Name = "Strongest Alpha"), Description("As the alpha wolf, successfully infect the serial killer!")]
         StrongestAlpha = 62,
