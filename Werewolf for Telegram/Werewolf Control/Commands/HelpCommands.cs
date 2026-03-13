@@ -141,7 +141,7 @@ namespace Werewolf_Control
             reply += "/aboutOracle - " + GetLocaleString("Oracle", lang) + "\n";
             reply += "/aboutWolfMan - " + GetLocaleString("WolfMan", lang) + "\n";
             reply += "/aboutLycan - " + GetLocaleString("Lycan", lang) + "\n";
-            reply += "/aboutPacifist - " + GetLocaleString("Pacifist", lang) + "\n";
+            reply += "/aboutImam - " + GetLocaleString("Imam", lang) + "\n";
             reply += "/aboutWiseElder - " + GetLocaleString("WiseElder", lang) + "\n";
             reply += "/aboutThief - " + GetLocaleString("Thief", lang) + "\n";
             reply += "/aboutTroublemaker - " + GetLocaleString("Troublemaker", lang) + "\n";

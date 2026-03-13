@@ -42,7 +42,7 @@ namespace Werewolf_Node
         public Locale Locale;
         public Locale Fallback;
         public Group DbGroup;
-        private bool _playerListChanged = true, _silverSpread, _sandmanSleep, _pacifistUsed, _doubleLynch;
+        private bool _playerListChanged = true, _silverSpread, _sandmanSleep, _ImamUsed, _doubleLynch;
         private DateTime _timeStarted;
         private TimeSpan? _timePlayed = null;
         public readonly IRole[] WolfRoles = { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan };
@@ -910,19 +910,19 @@ namespace Werewolf_Node
                 else if (qtype == QuestionType.Mayor && player.PlayerRole == IRole.Mayor && choice == "reveal" && player.HasUsedAbility)
                     return;
 
-                if (qtype == QuestionType.Pacifist && player.PlayerRole == IRole.Pacifist && choice == "peace" && !player.HasUsedAbility)
+                if (qtype == QuestionType.Imam && player.PlayerRole == IRole.Imam && choice == "peace" && !player.HasUsedAbility)
                 {
                     player.HasUsedAbility = true;
-                    _pacifistUsed = true;
+                    _ImamUsed = true;
                     _doubleLynch = false; // peace overrides trouble
-                    SendWithQueue(GetLocaleString("PacifistNoLynch", player.GetName()));
+                    SendWithQueue(GetLocaleString("ImamNoLynch", player.GetName()));
 
                     //Program.MessagesSent++;
                     ReplyToCallback(query,
                         GetLocaleString("ChoiceAccepted"));
                     return;
                 }
-                else if (qtype == QuestionType.Pacifist && player.PlayerRole == IRole.Pacifist && choice == "peace" && player.HasUsedAbility)
+                else if (qtype == QuestionType.Imam && player.PlayerRole == IRole.Imam && choice == "peace" && player.HasUsedAbility)
                     return;
                 #endregion
 
@@ -968,7 +968,7 @@ namespace Werewolf_Node
                     {
                         player.HasUsedAbility = true;
                         _doubleLynch = true;
-                        _pacifistUsed = false; // trouble overrides peace
+                        _ImamUsed = false; // trouble overrides peace
                         SendWithQueue(GetLocaleString("TroublemakerDoubleLynch", player.GetName()));
                     }
 
@@ -1559,7 +1559,7 @@ namespace Werewolf_Node
                 case IRole.ClumsyGuy:
                 case IRole.Prince:
                 case IRole.WolfMan:
-                case IRole.Pacifist:
+                case IRole.Imam:
                 case IRole.WiseElder:
                 case IRole.Blacksmith:
                 case IRole.Troublemaker:
@@ -2288,11 +2288,11 @@ namespace Werewolf_Node
                         SendMenu(choices, p, GetLocaleString("AskMayor"), QuestionType.Mayor);
                     }
                     break;
-                case IRole.Pacifist:
+                case IRole.Imam:
                     if (!p.HasUsedAbility && (GameDay != 1 || Time != GameTime.Night))
                     {
-                        var choices = new[] { new[] { InlineKeyboardButton.WithCallbackData(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Pacifist}|peace") } }.ToList();
-                        SendMenu(choices, p, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
+                        var choices = new[] { new[] { InlineKeyboardButton.WithCallbackData(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Imam}|peace") } }.ToList();
+                        SendMenu(choices, p, GetLocaleString("AskImam"), QuestionType.Imam);
                     }
                     break;
             }
@@ -2556,10 +2556,10 @@ namespace Werewolf_Node
                 }
 
                 if (CheckForGameEnd()) return;
-                if (_pacifistUsed)
+                if (_ImamUsed)
                 {
-                    SendWithQueue(GetLocaleString("PacifistNoLynchNow"));
-                    _pacifistUsed = false;
+                    SendWithQueue(GetLocaleString("ImamNoLynchNow"));
+                    _ImamUsed = false;
                     return;
                 }
 
@@ -2572,10 +2572,10 @@ namespace Werewolf_Node
                 {
                     Thread.Sleep(1000);
                     if (CheckForGameEnd()) return;
-                    if (_pacifistUsed)
+                    if (_ImamUsed)
                     {
-                        SendWithQueue(GetLocaleString("PacifistNoLynchNow"));
-                        _pacifistUsed = false;
+                        SendWithQueue(GetLocaleString("ImamNoLynchNow"));
+                        _ImamUsed = false;
                         foreach (var p in Players.Where(x => x.CurrentQuestion != null))
                         {
                             try
@@ -2589,16 +2589,16 @@ namespace Werewolf_Node
                             catch { } // ignored
                             p.CurrentQuestion = null;
                         }
-                        var pacifist = Players.FirstOrDefault(x => x.PlayerRole == IRole.Pacifist & !x.IsDead);
-                        if (pacifist != null)
+                        var Imam = Players.FirstOrDefault(x => x.PlayerRole == IRole.Imam & !x.IsDead);
+                        if (Imam != null)
                         {
-                            if (Players.Count(x => x.Choice == pacifist.Id) > (double)Players.Count(x => !x.IsDead) / 2)
+                            if (Players.Count(x => x.Choice == Imam.Id) > (double)Players.Count(x => !x.IsDead) / 2)
                             {
-                                AddAchievement(pacifist, AchievementsReworked.EveryManForHimself);
+                                AddAchievement(Imam, AchievementsReworked.EveryManForHimself);
                             }
-                            else if (pacifist.LoverId != 0 && Players.Count(x => x.Choice == pacifist.LoverId) > (double)Players.Count(x => !x.IsDead) / 2)
+                            else if (Imam.LoverId != 0 && Players.Count(x => x.Choice == Imam.LoverId) > (double)Players.Count(x => !x.IsDead) / 2)
                             {
-                                AddAchievement(Players.First(x => x.Id == pacifist.LoverId), AchievementsReworked.MySweetieSoStrong);
+                                AddAchievement(Players.First(x => x.Id == Imam.LoverId), AchievementsReworked.MySweetieSoStrong);
                             }
                         }
                         return;
@@ -2841,7 +2841,7 @@ namespace Werewolf_Node
                 {
                     try
                     {
-                        if (p.CurrentQuestion.MessageId != 0 && !new[] { QuestionType.Mayor, QuestionType.Pacifist }.Contains(p.CurrentQuestion.QType))
+                        if (p.CurrentQuestion.MessageId != 0 && !new[] { QuestionType.Mayor, QuestionType.Imam }.Contains(p.CurrentQuestion.QType))
                         {
                             //Program.MessagesSent++;
                             Program.Bot.EditMessageTextAsync(chatId: p.Id, messageId: p.CurrentQuestion.MessageId, text: GetLocaleString("TimesUp"));
@@ -3748,8 +3748,8 @@ namespace Werewolf_Node
                                 case IRole.WiseElder:
                                     ConvertToCult(target, voteCult, Settings.WiseElderConversionChance);
                                     break;
-                                case IRole.Pacifist:
-                                    ConvertToCult(target, voteCult, Settings.PacifistConversionChance);
+                                case IRole.Imam:
+                                    ConvertToCult(target, voteCult, Settings.ImamConversionChance);
                                     break;
                                 case IRole.GraveDigger:
                                     ConvertToCult(target, voteCult, Settings.GraveDiggerConversionChance);
@@ -5054,17 +5054,17 @@ namespace Werewolf_Node
                 SendMenu(choices, mayor, GetLocaleString("AskMayor"), QuestionType.Mayor);
             }
 
-            var pacifist = Players.FirstOrDefault(x => x.PlayerRole == IRole.Pacifist & !x.IsDead);
-            if (pacifist != null && GameDay == 1)
+            var Imam = Players.FirstOrDefault(x => x.PlayerRole == IRole.Imam & !x.IsDead);
+            if (Imam != null && GameDay == 1)
             {
                 var choices = new[]
                 {
                     new[]
                     {
-                        InlineKeyboardButton.WithCallbackData(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Pacifist}|peace")
+                        InlineKeyboardButton.WithCallbackData(GetLocaleString("Peace"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Imam}|peace")
                     }
                 }.ToList();
-                SendMenu(choices, pacifist, GetLocaleString("AskPacifist"), QuestionType.Pacifist);
+                SendMenu(choices, Imam, GetLocaleString("AskImam"), QuestionType.Imam);
             }
 
             var sandman = Players.FirstOrDefault(x => x.PlayerRole == IRole.Sandman & !x.IsDead & !x.HasUsedAbility);

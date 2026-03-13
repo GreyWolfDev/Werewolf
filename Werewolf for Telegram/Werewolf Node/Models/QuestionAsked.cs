@@ -27,7 +27,7 @@
         SpreadSilver,
         Kill2,
         Sandman,
-        Pacifist,
+        Imam,
         Thief,
         Trouble,
         Chemistry,

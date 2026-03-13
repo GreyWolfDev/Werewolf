@@ -104,7 +104,7 @@ namespace Shared
         Lycan = 1073741824,
 
         [Role("☮️")]
-        Pacifist = 2147483648,
+        Imam = 2147483648,
 
         [Role("📚")]
         WiseElder = 4294967296,

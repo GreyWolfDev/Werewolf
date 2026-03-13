@@ -156,7 +156,7 @@ namespace Werewolf_Node.Models
         //new roles
         Sorcerer, AlphaWolf, WolfCub, Blacksmith, ClumsyGuy, Mayor, Prince,
         //more new roles, from april fools.....
-        Lycan, Pacifist, WiseElder, Oracle, Sandman, WolfMan, Thief,
+        Lycan, Imam, WiseElder, Oracle, Sandman, WolfMan, Thief,
         //halloween role
         Spumpkin,
         //and once again, new roles! :D
