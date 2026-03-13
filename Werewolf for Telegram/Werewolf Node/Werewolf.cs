@@ -3658,9 +3658,9 @@ namespace Werewolf_Node
                                     //notify everyone
                                     foreach (var c in voteCult)
                                     {
-                                        Send(GetLocaleString("CultConvertCultHunter", newbie.GetName(), target.GetName()), c.Id);
+                                        Send(GetLocaleString("CultConvertZombieHunter", newbie.GetName(), target.GetName()), c.Id);
                                     }
-                                    Send(GetLocaleString("CultHunterKilledCultVisit", newbie.GetName(), CountZombiesAlive()), target.Id);
+                                    Send(GetLocaleString("ZombieHunterKilledCultVisit", newbie.GetName(), CountZombiesAlive()), target.Id);
                                     break;
                                 case IRole.Wolf:
                                 case IRole.AlphaWolf:
