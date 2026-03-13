@@ -205,10 +205,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Anda adalah Timbalan Pengerusi🙇 Jika Pengerusi (sebenar) dibuang sekolah, anda akan menggantikan tempatnya sebagai seorang Pengerusi baru.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Anda adalah seorang pelajar yang suka ponteng kelas👤 Setiap hari, anda boleh memilih seorang pelajar lain untuk menghasut mereka menyertai Geng Ponteng Kelas anda. Jika semua pelajar menyertai geng ponteng. Geng anda akan kongker sekolah Budakgiler Official🤣</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Terdapat Kaki ponteng di sekolah anda, cuba untuk menghasut murid-murid lain untuk ponteng kelas malam bersama! selaku Cikgu Disiplin💂 Setiap malam, pilih seorang murid yang dicurigai. Jika mereka Kaki Ponteng, mereka akan dibuang sekolah terus. Jika ada Kaki Ponteng cuba untuk menghasut anda untuk ponteng kelas bersama, murid tersebut akan terus dibuang sekolah. Malang la Kaki Ponteng tu sampai cikgu dan murid pun tak kenal.</value>
   </string>
   <string key="LynchTime" >
@@ -266,7 +266,7 @@
     <!-- 1 - victim role -->
     <value>Bila semua warga sekolah bangun pada waktu pagi, mereka dapati ada benda yang pelik berlaku. Mereka menyelidik dan mendapati {0}, {1} telah dibuli dengan teruk sekali sampai bengkak kepala💀</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Guru Disiplin mencari bau rokok yang datang dari stor sukan sekolah telah menemukan seorang pelajar {0} yang sedang ponteng kelas sambil merokok lalu merotan pelajar tersebut🤦🏻‍♀ Pelajar Kaki Ponteng itu akhirnya dibuang sekolah oleh Cikgu Disiplin!</value>
   </string>
@@ -372,34 +372,34 @@
   <string key="RemainingPlayersEnd">
     <value>Pelajar dan cikgu yang masih bertahan, peranan dan kumpulan :</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} telah memilih untuk mengajak {1} ponteng kelas</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>Kumpulan Kaki Ponteng menghantar ahli baru mereka {0} untuk mengajak {1} ponteng sekolah...kwajaa budak-budak ni, Cikgu Disiplin nak diajak ponteng!! Memang nak mampus la kan, akhirnya {0} telah dirotan sampai tercirit lalu dibuang sekolah!! Padan dengan muka kau!!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
-    <value>{0} came to your house last night, ready to convert you....  but you shoved your sword right through them.  A cultist is dead... {1} remain!</value>
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{0} came to your house last night, ready to convert you....  but you shoved your sword right through them.  A Zombie is dead... {1} remain!</value>
   </string>
   <string key="CultConvertYou">
     <value>Geng budak ponteng sekolah telah berjaya mengubah dan menghasut anda untuk ponteng kelas pada hari ini. Anda kini seorang Budak ponteng. Setiap hari, anda perlu mencari seorang pelajar untuk ponteng kelas bersama😈 (lagi ramai lagi bagus HAHAH)</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Geng ponteng: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} telah menyertai geng ponteng!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>Kumpulan Kaki Ponteng menghantar ahli baru mereka {0} ke kelas {1} untuk mengajak ponteng kelas skali, malangnya kelas kosong sebab semua pelajar pergi rombongan sambil belajar. 🤦</value>
   </string>
@@ -410,7 +410,7 @@
     <!-- 0 - target name -->
     <value>Anda mencari pelajar {0} yang dikatakan suka ponteng kelas tetapi dia telah dibuang sekolah!💀</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Anda ternampak {0} yang sedang ponteng kelas sambil merokok di belakang stor sekolah, anda segera mendapatkan pelajar tersebut lalu merotan mereka.</value>
   </string>
@@ -427,7 +427,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} telah dibuang sekolah! tidak ada lagi orang yang akan buat kerja sekolah untukmu, Anda berasa tidak puas hati lalu membuat keputusan untuk menyertai geng pembuli! Rakan kaki buli anda adalah: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>Murid/Pelajar👱</value>
@@ -474,10 +474,10 @@
   <string key="ApprenticeSeer">
     <value>Timbalan pengerusi🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Kaki ponteng👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Cikgu Disiplin💂‍♀</value>
   </string>
   <!-- These are for the player list -->
@@ -510,7 +510,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Kumpulan Kaki Ponteng menghantar ahli baru {0} untuk mengajak pelajar lain ponteng kelas sekali, tetapi telah dibuli dengan teruk sehingga berbuih mulut. Pembuli pun tak suka ponteng kelas tau, padan muka kau!!</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -692,12 +692,12 @@
     <value>Penculikan anda gagal pada malam ini! Pelajar yang bernama {0} sedang diawasi oleh Pengawal Keselamatan Sekolah yang amat digeruni oleh para pelajar dan semua warga sekolah💀 Anda terpaksa membatalkan hasrat anda untuk menculik hari ini :')</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Geng Ponteng Kelas memberi tugasan kepada budak baru {0} untuk mengajak {1} ponteng bersama👻 tetapi {0} telah dibelasah dengan teruk sampai pecah bibir! {0} pengsan di tempat kejadian☠️</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Geng Pelajar Ponteng memberi tugasan kepada budak baru {0} untuk mengajak {1} ponteng kelas Cikgu Mia yang membosankan pada hari ini di stor sekolah dan berjanji untuk berjumpa di sana bersama geng baru, namun {0} tidak muncul jua! Budak baru ponteng telah diculik🌝</value>
     <value>Apabila {0} masuk ke kelas dengan serta merta telah diserkup dengan guni lalu {1} menculik {0} dan membawa lari keluar dari sekolah!! {0} telah diculik.</value>
@@ -722,7 +722,7 @@
     <value>Idola anda {0} telah dibuang sekolah. Sekarang anda telah menggantikan tempatnya menjadi Ahli Jawatan Kuasa. Ahli AJK ; {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} si Peniru telah menjadi ahli kumpulan Kaki Ponteng sekolah seperti anda, welcome to the club new member😈</value>
   </string>
   <string key="DGTransformToCult">
@@ -869,10 +869,10 @@
     <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+    <value>As a Zombie, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are Zombie - the cult wins</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die.</value>
   </string>
   <string key="AboutWC">
     <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
@@ -1280,7 +1280,7 @@
   <string key="BlacksmithKilled">
     <value>Nampaknya seperti {0} selaku Penolong Ketua Kelas tidak bernasib baik apabila dia telah diserang hendap oleh Penculik dan {0} telah dimasukan ke dalam guni dan menghilangkan diri malam tadi.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} telah hilang selepas waktu rehat tamat dengan kesan stor yang bersepah serta ubat botol pelali yang ditinggalkan oleh Penculik! {0} adalah Kaki Ponteng👤</value>
   </string>
   <string key="CupidKilled">
@@ -1316,11 +1316,11 @@
     <value>Kelibat {0} Cikgu Disiplin, telah hilang dari pandangan usai sahaja waktu rehat telah tamat. Nampaknya {0} mengesyaki seseorang adalah Kaki Ponteng pagi tadi lalu mengekorinya untuk merotan pelajar tersebut, tetapi secara tiba-tiba Guru Disiplin💂‍♀ itu hilang! Tips ; “Jangan cuba merotan Penculik💀” *gelak jahat</value>
     <value>Rotan milik {0} yang patah dijumpai di dalam bilik muzik Sekolah ! Guru Disiplin yang garang itu telah hilang💀 nampaknya {0} tersilap langkah! merotan penculik adalah bukan satu idea yang bijak🤢</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Apabila semua kembali ke kelas masing-masing, Pembuli pun seakan-akan malas untuk membuli, tiba-tiba {0} salah seorang dari Kaki Ponteng cuba untuk mengajak si Pembuli untuk ponteng sekolah sekali namun {0} telah dibuli balik dengan teruk sehingga masuk ICU...silap la kacau orang yang tengah tiada mood!</value>
     <value>Kaki ponteng sekolah menghadapi masalah besar apabila mereka cuba untuk mengajak si Pembuli untuk join mereka tetapi {0} telah dibuli. Malang bagi {0}, Pembuli memang tidak sama sekali minat untuk join pakatan mereka.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>{0} dilaporkan hilang hari ini! Penculik mula menculik pelajar yang suka ponteng kelas💀 {0} adalah Kaki Ponteng👤</value>
     <value>Geng Kaki ponteng kelas cikgu MiaRose cuba untuk menambah ahli, tapi mereka silap! {0} Kaki Ponteng telah diculik semalam! Nota kecil ditinggalkan khas untuk Geng mereka “Kalau taknak kena culik sila berhenti daripada ponteng kelas!”💀</value>
   </string>
@@ -1341,8 +1341,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sekolah  semakin sunyi dan sepi, hanya 2 pelajar yang masih bertahan dalam sekolah tersebut. {1} mula mengorak langkah untuk membuli {0} si budak Taekwando dengan membelasahnya menggunakan kayu sofbol sehingga pecah kepala🤢. {1} yang membelasah pelajar terakhir ini membuktikan bahawa dia adalah Kaki buli yang terhebat😈 dan budak Taekwando telah tewas dalam kejadian tersebut😷!</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1) dan {0} sedang sibuk dengan hari kokurikulum yang diadakan di sekolah Budakgiler. {0} mula berasa bosan lalu pergi ke belakang sekolah untuk ponteng! Tiba-tiba rakan sekelasnya ternampak {0} sedang panjat pagar belakang sekolah, lalu pelajar tersebut mengadu hal tersebut kepada Cikgu Disiplin untuk mengejar pelajar yang hendak ponteng tersebut. {1} bergegas ke arah tempat itu lalu cepat-cepat merotannya! {0} gagal untuk ponteng sekolah💀</value>
   </string>
   

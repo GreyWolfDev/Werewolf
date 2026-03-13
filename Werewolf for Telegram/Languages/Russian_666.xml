@@ -220,10 +220,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>Ты запасной глаз. Сейчас ты обычный единорог. Однако если всевидящее око ослепнет, ты встанешь на его место.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Ты Бальтазар! Твоя задача - каждую ночь вербовать по 1 человеку в прислуги Сатаны. Если все оставшиеся в живых окажутся сектантами - вы выиграете!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Ты Антихрист. В селе появилась новая секта, уничтожь её! Выбирай каждую ночь человека, и, если он завербован, он умрёт. А если сектанты захотят завербовать тебя - умрёт их новейший член...</value>
   </string>
   <string key="LynchTime">
@@ -277,7 +277,7 @@
     <value>На утро все увидели новую скульптуру. Это была туша единорога {0}, правда, рога там не было. Хм, где же о... А, ясно\n{1}.</value>
     <value>{0} нанюхался пыльцы до смерти\n{1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Заметное зловоние исходит из дома {0}. Жители вошли в дом и обнаружили там лежащее у алтаря тело.</value>
     <value>-1 для ярых поклонников Сатаны! Ангел сделал чёткий выстрел в {0}!</value>
   </string>
@@ -368,7 +368,7 @@
   <string key="RemainingPlayersEnd">
     <value>Оставшиеся игроки, их роли и команды:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>{0} проголосовал(а), чтобы завербовать {1}.</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -396,7 +396,7 @@
   <string key="HunterVisitDead">
     <value>Ты отправился охотиться на {0}, но он оказался мёртвым!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Ты отправился в дом {0} и нашёл его молящимся у алтаря Сатане... Ты быстро пропустил свой меч через сектанта и убил его!</value>
   </string>
   <string key="HunterFailedToFind">
@@ -453,10 +453,10 @@
   <string key="ApprenticeSeer">
     <value>Запасной глаз 👨‍💻</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Сатанист 🚷</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Антихрист ✝️</value>
   </string>
   <string key="PlayersAlive">
@@ -775,10 +775,10 @@
     <value>Fool - Дурак (селянин, которому в начале игры говорят, что он всевидящее око, но вместо правильных ролей игроков такой селянин будет узнавать рандомные роли).</value>
   </string>
   <string key="AboutCult">
-    <value>Cultist - Сектант (игрок, цель которого это завербовать всех селян и убить всех бабочек).</value>
+    <value>Zombie - Сектант (игрок, цель которого это завербовать всех селян и убить всех бабочек).</value>
   </string>
   <string key="AboutCH">
-    <value>Cultist Hunter - Охотник на Сектантов (селянин, который каждую ночь ходит к игрокам;\nесли такой игрок подойдёт к сектанту, первый убьёт второго;\nесли такого игрока попытаются завербовать сектанты, первый убьёт последнего завербованного сектанта).</value>
+    <value>Zombie Hunter - Охотник на Сектантов (селянин, который каждую ночь ходит к игрокам;\nесли такой игрок подойдёт к сектанту, первый убьёт второго;\nесли такого игрока попытаются завербовать сектанты, первый убьёт последнего завербованного сектанта).</value>
   </string>
   <string key="AboutWC">
     <value>Wild Child - Дикий Ребёнок (селянин, который в начале игры должен выбрать свой «пример для подражания»;\nесли «пример для подражания»» умирает, Дикий Ребёнок становится бабочкой;\nесли Дикий Ребёнок не выбирает «пример для подражания», игра выберет рандомного игрока для этой цели).</value>
@@ -1139,7 +1139,7 @@
   <string key="BlacksmithKilled">
     <value>Похоже, что {0}, дождик, был осушен кем-то</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} был дезинтегрирован кем-то. Единственное, что от него осталось, это ничего.</value>
   </string>
   <string key="CupidKilled">
@@ -1174,11 +1174,11 @@
     <value>Проснувшись утром, селяне увидели остатки мантии {0}, Антихриста. Не ходите к Ангелу!</value>
   </string>
   <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>На этот раз бабочки решили поступить верно и наказали {0}. Культист был опылён бабочками.</value>
   </string>
   <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
     <value>Радуясь вербовке очередного сектанта, секта совершила ошибку: {0}, сектант, был дезинтегрирован чем-то невообразимо крутым. Ангелом!</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1197,8 +1197,8 @@
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Зная, что остался только {0}, {1} выбрал время, когда {0} будет наиболе уязвим. Всё, что осталось - побелевшее тело кое-еого</value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1}, выйдя на улицу, увидел странную татуировку-пентаграмму на руке {0}, не выдержал, и убил его</value>
   </string>
   <string key="SecondsAdded">

@@ -175,10 +175,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>Sei Near! Come uno dei più talentuosi orfani della Wammy's House, sei il successore del grande L! Non sai se sarai mai alla sua altezza ma sei sicuro che, se L morisse, diventerai l'unico capace di sventare il piano malato di Kira!</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Sei lo Shinigami! Anche se non sei un vero Dio della morte, la tua veste è un travestimento impeccabile e il tuo obbiettivo è far entrare tutti i membri della partita all'interno del tuo gruppo di Shinigami, ma attento, Mello potrebbe scoprirvi!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Sei Mello! Sei uno dei più talentuosi orfani della Wammy's House, ed hai delle capacità intuitive estremamente elevate. Ogni notte puoi scegliere una persona da visitare, se quest'ultima si rivelerà uno "Shinigami" la ucciderai senza pietà. Ricorda, anche se uno Shinigami cercasse di farti entrare nel suo culto terminerai la sua vita.</value>
   </string>
   <string key="LynchTime">
@@ -220,7 +220,7 @@
   <string key="DefaultEaten" >
     <value>Il mattino è giunto, e con lui un fetore che sa di tragedia. Seguendo l'odore, i popolani trovano {0} morto per infarto. KIRA HA FATTO LA SUA MOSSA\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
   <value>Dopo il sorgere del sole viene fatta un'indagine nella casa di {0}, accanto al suo corpo, crivellato di colpi, si vede un mantello nero strappato. Uno shinigami è stato assassinato da Mello!</value>
   </string>
    <string key="NoAttack" >
@@ -304,7 +304,7 @@
   <string key="RemainingPlayersEnd">
     <value>Giocatori rimasti vivi, ruolo e fazione:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} vota per convertire {1}</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -331,7 +331,7 @@
   <string key="HunterVisitDead">
     <value>Hai dato la caccia a {0}, ma era già morto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Fai visita alla casa di {0}, sfoderi così la tua pistola ed uccidi il malvagio Shinigami.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -388,10 +388,10 @@
   <string key="ApprenticeSeer">
     <value>Near 🙇 </value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Shinigami 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Mello 💂</value>
   </string>  
  <string key="RanAway">
@@ -1090,7 +1090,7 @@
   <string key="BlacksmithKilled">
     <value>Sembra che Soichiro Yagami sia morto! Nella sua casa si trovano macchie di sangue ovunque! Questa non è opera di Kira...  {0} era Soichiro Yagami!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Higuchi Kyosuke ha colpito ancora! E questa volta ha ucciso uno Shinigami! Sembra proprio che non si faccia scrupoli...  {0} era uno Shinigami!</value>
   </string>
   <string key="CupidKilled">
@@ -1123,10 +1123,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Oggi Mello ha fatto un errore madornale, il suo obbiettivo era naturalmente quello di uccidere gli shinigami, però oggi ha visitato Higuchi Kyosuke, il quale lo ha punito senza pietà, ponendo fine alla sua vita. {0} era Mello!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Oggi gli shinigami credevano di poter convertire Kira e farlo entrare nel proprio culto, che sciocchi! Naturalmente il corpo di {0} è stato trovato senza vita al centro di una strada deserta di Tokyo. {0} era uno Shinigami!</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Oggi gli shinigami hanno cercato di convertire Higuchi Kyosuke, banalmente {0} viene ucciso senza pietà dal presidente della Yotsuba. {0} era uno Shinigami!</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1145,8 +1145,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>In Giappone sono rimaste solo due persone: {1} è un assassino spietato che vuole creare un nuovo mondo, {0} è Hirozaku Ukita, {1} prende una penna e scrive il nome di {0} lo interrompe un colpo di pistola che non va a segno. {0} dopo pochi secondi cade a terra senza vita.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>In Giappone sono rimaste solo due persone in vita: {0} è uno Shinigami e {1} Mello. Finale scontato, {1} spara un colpo, uno solo, che uccide il povero {0}.</value>
   </string>
   
@@ -1447,9 +1447,9 @@
     <value>Your teammates (if any) are: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
-    <value>{0} is no longer your teammate and {1} has now become a cultist, just like you!</value>
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
+    <value>{0} is no longer your teammate and {1} has now become a Zombie, just like you!</value>
   </string>
   <string key="ThiefToWolf">
     <!-- 0 - old wolf's name -->
@@ -1505,8 +1505,8 @@
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
   </string>
   

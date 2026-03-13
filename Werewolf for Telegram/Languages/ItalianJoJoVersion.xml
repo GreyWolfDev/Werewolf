@@ -189,10 +189,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Kakyoin, ti sei ripromesso di proteggere il vecchio Joseph, se muore erediterai il suo stand e abbandonerai il tuo.</value>
 </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Siete vampiri che si sono ribellati a Dio, ogni notte avrete la possibilità di far diventare qualcuno come voi.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Sei Rudolf Van Stroheim, il tuo compito è quello di cacciare vampiri ribelli per aiutare joJo a sconfiggere il male. Buona fortuna!</value>
   </string>
   <string key="LynchTime" >
@@ -233,7 +233,7 @@
     <value> è mattina e gli avventurieri trovano {0} fatto a pezzi. Non disperate potete ancora cambiare le sorti dell' avventura\n{1}</value>
     <value>Purtroppo il suo stand non è riuscito a sovrastare la potenza di quello nemico, {0} è deceduto\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Un odore rancido proviene dalla casa di {0}... Stroheim ha ucciso un vampiro ribelle stanotte.</value>
   </string>
   <string key="NoAttack" >
@@ -317,7 +317,7 @@
   <string key="RemainingPlayersEnd">
     <value>Giocatori rimasti vivi, ruolo e fazione:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} vota per rubare l'umanità a {1}</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -330,7 +330,7 @@
     <value>La setta ti ha vampirificato! Ora sei uno di loro. Ogni notte, avrai la possibilità di convertire un altro giocatore.</value>
   </string>
   <string key="CultTeam">
-    <value>gli altri cultists: {0}</value>
+    <value>gli altri Zombies: {0}</value>
   </string>
   <string key="CultJoin">
     <value>{0} ha aderito alla setta!</value>
@@ -344,7 +344,7 @@
   <string key="HunterVisitDead">
     <value>Hai dato la caccia a {0}, ma era già morto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Fai visita alla casa di {0}, e lo cogli a pregare l'essere supremo Kars... Accendi così i riflettori ultravioletti e lo vaporizzi.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -401,10 +401,10 @@
   <string key="ApprenticeSeer">
     <value>Kakyoin Noriaki 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Vampiro ribelle 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Rudolf Van Stroheim 💂</value>
   </string>  
  <string key="RanAway">
@@ -1098,7 +1098,7 @@
   <string key="BlacksmithKilled">
     <value>Sembra che {0},Speedwagon, sia stato estremamente sfortunato. Il corpo di {0} è stato trovato affettato con vari coltelli. Analizzando i coltelli conficcati nelle sue mani, piedi e la testa, appartenevano alla sua stessa fucina. Sembra che Kira abbia ampliato la sua collezione di armi insieme a quella di mani...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} è stato trovato pugnalato a morte da un candeliere del suo altare. Kira ha colpito ancora, indipendentemente da razza, lingua e religione! {0} era un Vampiro ribelle.</value>
   </string>
   <string key="CupidKilled">
@@ -1131,10 +1131,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>tutti trovano i resti esplosi di {0}, Stroheim, da quello che sembra, è meglio non controllare se Kira sia unVampiro ribelle!</value>
  </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Sembrava una notte tranquilla, visto che i servitori di Dio hanno deciso di rimanere in camera, ma l'unico sfortunato è stato {0}, un Vampiro ribelle che ha provato a convertire un servitore di Dio.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>I Vampiri ribelli pensavano di convertire un nuovo membro tra di loro, ma si sbagliavano! {0}, un Vampiro è stato trovato a pezzi in pubblico, Kira non ha gradito la pubblicità della maschera.</value>
 </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1154,8 +1154,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sapendo che solo {0} era rimasto in vita, {1} prova a uccidere {0} quando {0} meno se l'aspettava, riuscendolo a cogliere impreparato. purtroppo {0} non è riuscito a difendersi, ovvero Josuke.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} e {0} escono appena spuntarono i primi raggi di luce. Vedendo che {0} si copriva con un ombrello, il virtuoso {1} tira fuori i proiettori ultravioletti, terminando una volta per tutte queste sette che hanno contaminato il villaggio.</value>
   </string>
   
@@ -1456,8 +1456,8 @@
     <value>i tuoi compagni (se presenti) sono: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} non è più un Vampiro ribelle, {1} è adesso diventato un Vampiro ribelle, esattamente come te!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1514,8 +1514,8 @@
   <string key="SecretLynchShowVotersA">
     <value>quando il linciaccio segreto è attivo e il conteggio dei voti è mostrato, il nome del votante per ogni giocatore votato sarà: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Strano... nel secondo in cui stavate discutendo su chi convertire, vi siete accorti che {0} non c'è! Cosa gli sarà successo??</value>
   </string>
   
@@ -1619,7 +1619,7 @@
   <string key="ChemistTargetEmpty">
 	<value>{0} Non era a casa! Torni a casa deluso, che sfortuna.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>I vampiri ribelli sono attualmente: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1670,7 +1670,7 @@
   <string key="ChemistFrozen">
     <value>Dopo esserti svegliato pronto a ideare una delle tue strategie vincentie una raffica di vento entra dalla finestra congelandoti 🐺☃️. Non ti resta altro che aspettare la mattina per scongelarti.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Dopo esserti preparato per andare a vampirificare qualcuno esci dalla porta per essere colpito da una raffica di vento che ti congela 🐺☃️. I tuoi compagni vampiri ribelli vedendoti ti deridono ma ti assicurano che ci penseranno loro a convertire qualcuno. </value>
   </string>
   <string key="CHFrozen">
@@ -1811,11 +1811,11 @@
   <string key="HunterFellDigger">
 	<value>Dopo un'altra lunga e faticosa notte, ritorni alla tua casa mentre il sole sta già sorgendo. Prima di arrivare a casa, noti una torcia ultravioletta poggiata sopra una tomba non finita. Dentro la tomba noti il cadavere di {0}. Il cacciatore di Satanisti non avrebbe dovuto sospettare di te...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>Ritorni a casa dopo una faticosa nottata, quando senti un urlo dalle tombe non finite! Ti rechi subito sul posto, solo per trovare {0} morto dentro una tomba. Da quando i vampiri ribelli provano a vampirificare i becchini?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>Mentre vai a casa di {1}, {0} suggerisce che sarebbe una buona idea bruciare la chiesa. Ti guidano tramite il cimitere quando improvvisamente una trappola per orsi gli cattura l'anca! Tutto quello che senti è il suo urlo mentre casca nella tomba e voi scappate via.</value>
   </string>
@@ -1871,8 +1871,8 @@
   <string key="HarlotFellPublic">
 	<value>Mentre Lisa Lisa {0} tornava a casa dopo una notte di divertimento ha preso la scorciatoia per il cimitero. Data la tarda ora non stava prestando molta attenzione, e cadde in una tomba aperta! Forse doveva accettare quel lavoro di giorno il giorno prima...</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>I vampiri ribelli hanno provato a passare per il cimitero, ma come {0} guidava il gruppo tramite il cimitero, è stato colto di sorpresa da una trappola per orsi! Mentre urlava dal dolore e provava a levarsi la trappola, è caduto in una tomba aperta. Gli altri vampiri sono fuggiti in preda al panico!</value>
   </string>
   <!--{0}: thief-->

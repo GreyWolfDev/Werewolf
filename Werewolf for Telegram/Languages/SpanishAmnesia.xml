@@ -178,10 +178,10 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
   <string key="RoleInfoApprenticeSeer" >
     <value >Que extraño… ¡No puedes recordar quién eres!</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Que extraño… No puedes recordar quién eres, ¡solo que deberías hacer algo durante la noche!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Que extraño… No puedes recordar quién eres, ¡solo que deberías hacer algo durante la noche!</value>
   </string>
   <string key="LynchTime" >
@@ -226,8 +226,8 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
   <string key="DefaultEaten" >
     <value>Mientras todos se levantan a la mañana, perciben un terrible olor. Lo siguen para encontrar a {0}, que está descuartizado en la pocilga, pero falta su cabeza. Después de investigar la casa buscando un culpable, el pueblo se da cuenta que {1}.</value>
   </string>
-  <string key="HunterKilledCultist">
-    <value>Un gran hedor viene de la casa de {0}… Los aldeanos la inspeccionan hasta encontrar un cuerpo tirado frente a un altar oscuro…  ¡Un cultista ha sido asesinado por el cazador!</value>
+  <string key="HunterKilledZombie">
+    <value>Un gran hedor viene de la casa de {0}… Los aldeanos la inspeccionan hasta encontrar un cuerpo tirado frente a un altar oscuro…  ¡Un Zombiea ha sido asesinado por el cazador!</value>
   </string>
   <string key="NoAttack" >
     <value>Los aldeanos se reúnen por la mañana en el centro del pueblo, suspirando de alivio. Parece que esta noche no ha habido ningún ataque.</value>
@@ -310,7 +310,7 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
   <string key="RemainingPlayersEnd">
     <value>Jugadores vivos restantes, roles y equipos:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} votó hacer algo a {1}</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -332,12 +332,12 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
     <value>{0} fue a casa de {1}, ¡pero no había nadie en casa!</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >Nadie recuerda quién es en realidad, pero las únicas personas vivas son cultistas… ¡El culto ha ganado!</value>
+    <value >Nadie recuerda quién es en realidad, pero las únicas personas vivas son Zombieas… ¡El culto ha ganado!</value>
   </string>
   <string key="HunterVisitDead">
     <value>¡{0} ya ha muerto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>¿Ocurrió algo en casa de {0} anoche? No pareces recordarlo…</value>
   </string>
   <string key="HunterFailedToFind">
@@ -349,7 +349,7 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
   <string key="WildChildTransform">
     <value>¡{0} ha muerto! Tu rol ha cambiado, pero ¿qué eres ahora? Quizás no recuerdes quién eres, pero recuerdas a alguien importante: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>un aldeano 👱</value>
   </string>
@@ -395,11 +395,11 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
   <string key="ApprenticeSeer">
     <value>el aprendiz de vidente 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>un cultista 👤</value>
+  <string key="Zombie">
+    <value>un Zombiea 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>el cazador de cultistas 💂</value>
+  <string key="ZombieHunter">
+    <value>el cazador de Zombieas 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -443,7 +443,7 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
     <value>@{1}, un jugador con el nombre {0} ya se ha unido. Por favor, cambia tu nombre para continuar. Olvida tu antigua vida.</value>
   </string>
   <string key="HarlotDiscoverCult">
-    <value>Quizás no recuerdes quién eres, ¡pero recuerdas que {0} es un cultista 👤!</value>
+    <value>Quizás no recuerdes quién eres, ¡pero recuerdas que {0} es un Zombiea 👤!</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -719,10 +719,10 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
     <value>Al necio se le dice que es la vidente. Cuando elija a alguien para adivinar su rol, se le dirá uno al azar.</value>
   </string>
   <string key="AboutCult">
-    <value>Como cultista, tu objetivo es convertir a todos los demás jugadores (excepto a los hombres lobo) a tu culto. Si al final de la partida todos los jugadores vivos son cultistas, el culto gana.</value>
+    <value>Como Zombiea, tu objetivo es convertir a todos los demás jugadores (excepto a los hombres lobo) a tu culto. Si al final de la partida todos los jugadores vivos son Zombieas, el culto gana.</value>
   </string>
   <string key="AboutCH">
-    <value>Tu trabajo es acabar con el Culto. Si un cultista te ataca, su miembro más reciente morirá. Cada noche escogerás a que jugador vas a «cazar»; si es cultista, morirá.</value>
+    <value>Tu trabajo es acabar con el Culto. Si un Zombiea te ataca, su miembro más reciente morirá. Cada noche escogerás a que jugador vas a «cazar»; si es Zombiea, morirá.</value>
   </string>
   <string key="AboutWC">
     <value>Al principio del juego, elegirás a alguien para ser tu «modelo a seguir». Si lo matan, te convertirás en hombre lobo.</value>
@@ -754,7 +754,7 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
     <value>
       Jugador vengativo y de gatillo fácil. Como cazador, formas tu propio equipo. Y cuando alguien venga a visitarte, puede que se encuentren la muerte, ya que la paranoia puede contigo y disparas. Si son los hombres lobo los que atacan, tienes una oportunidad de llevarte a uno por delante. Además, si te matan, tendrás la oportunidad de disparar a alguien mientras mueres.
       Nota: Para los ataques de los hombres lobo, la probabilidad empieza en un 30%. Si solo hay un lobo, el cazador tiene un 30% de probabilidad de matarlo (y sobrevivir). Por cada hombre lobo adicional, suma un 20% (2 hombres lobo = 50%, 3 = 70%, etc). Ten en cuenta que si hay varios hombres lobo, aunque mates a uno, te superan en número y morirás.
-      Si los cultistas intentan convertirte, tienen un 50% de probabilidad de fallar. Si fallan, ¡tú tendrás un 50% de probabilidad de matar a uno!
+      Si los Zombieas intentan convertirte, tienen un 50% de probabilidad de fallar. Si fallan, ¡tú tendrás un 50% de probabilidad de matar a uno!
     </value>
   </string>
   <string key="AboutSK">
@@ -1128,8 +1128,8 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
   <string key="BlacksmithKilled">
     <value>Parece que {0}, que al parecer era el herrero del pueblo, ha tenido muy mala suerte durante la noche, ya que se lo ha encontrado en su mesa de herrería junto con 5 cuchillos, sacados de su armería, clavados en manos, pies y cabeza. Los aldeanos pronto lo olvidarán, pero el asesino no, pues desde hoy conserva los miembros de {0}.</value>
   </string>
-  <string key="CultistKilled">
-    <value>{0} fue apuñalado hasta la muerte con un candelabro que había al lado de su altar. ¡El asesino en serie, que ha olvidado todo código ético, ha atacado de nuevo! {0} era un cultista.</value>
+  <string key="ZombieKilled">
+    <value>{0} fue apuñalado hasta la muerte con un candelabro que había al lado de su altar. ¡El asesino en serie, que ha olvidado todo código ético, ha atacado de nuevo! {0} era un Zombiea.</value>
   </string>
   <string key="CupidKilled">
     <value>A la mañana siguiente, los aldeanos se levantan destrozados al encontrar a Cupido, {0}, dividido en dos. Curiosamente, le faltaba el corazón. Hay amores que nunca se olvidan...</value>
@@ -1161,15 +1161,15 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
     <value>¡ÑAMÑAMÑAM! Anoche se oyó el ruido de los dientes de los lobos contra la carne de un tierno niño salvaje, {0}. ¡Aunque se olvidaron por ahí su pequeño esqueleto!</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
-    <value>Los aldeanos se despiertan por la mañana y se encuentran los restos del cuerpo de {0}, el cazador de cultistas, cortados en pedazos en un carro al lado del ayuntamiento. Lección aprendida: ¡olvídate de visitar al asesino!</value>
-    <value>El cuerpo de {0}, quien parece ser el cazador de cultistas, fue encontrado en el centro de la ciudad cortado en un centenar de piezas. Comprobar si el asesino en serie era un cultista no parece ser una buena idea.</value>
+    <value>Los aldeanos se despiertan por la mañana y se encuentran los restos del cuerpo de {0}, el cazador de Zombieas, cortados en pedazos en un carro al lado del ayuntamiento. Lección aprendida: ¡olvídate de visitar al asesino!</value>
+    <value>El cuerpo de {0}, quien parece ser el cazador de Zombieas, fue encontrado en el centro de la ciudad cortado en un centenar de piezas. Comprobar si el asesino en serie era un Zombiea no parece ser una buena idea.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
-    <value>Aunque parecía que los hombres lobo se habían olvidado de salir a cazar, un cultista despistado decidió visitarlos, lo que hizo demasiado difícil que los hombres lobo se resistieran. ¡La cabeza de {0} se convirtió en una deliciosa cena!</value>
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>Aunque parecía que los hombres lobo se habían olvidado de salir a cazar, un Zombiea despistado decidió visitarlos, lo que hizo demasiado difícil que los hombres lobo se resistieran. ¡La cabeza de {0} se convirtió en una deliciosa cena!</value>
     <value>El culto se encontró con problemas inesperados anoche. Su miembro más reciente, {0}, tuvo la desgracia de visitar a un hombre lobo, justo la noche que estos habían decidido quedarse en casa. Desafortunadamente para el culto, los hombres lobo no tienen ningún interés en unirse al nuevo movimiento religioso y era una oportunidad que no podían dejar pasar. {0} ha muerto.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
-    <value>El culto pensaba que tendría un nuevo miembro en sus filas, pero pronto tuvieron que olvidarse de ello. {0}, un cultista, fue descuartizado y sus restos fueron esparcidos por todo el pueblo. El libro «santo» estaba colocado junto a un cuchillo, como muestra clara de que la religión es la que manda.</value>
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
+    <value>El culto pensaba que tendría un nuevo miembro en sus filas, pero pronto tuvieron que olvidarse de ello. {0}, un Zombiea, fue descuartizado y sus restos fueron esparcidos por todo el pueblo. El libro «santo» estaba colocado junto a un cuchillo, como muestra clara de que la religión es la que manda.</value>
     <value>Anoche, el culto trató de convertir al aldeano más loco del pueblo. Su miembro más reciente, {0}, trató de convertir al asesino, y este hizo una nueva obra de arte en la plaza del pueblo, exhibiendo todos los órganos internos y dejándolos olvidados por ahí.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1189,9 +1189,9 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{1} se acuerda de pronto de que en el pueblo solo queda {0}, así que aprovecha mientras {0} está enfrascado trabajando en un nuevo arco en su casa y se mete en en su casa para despedazar el cuerpo de {0}.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
-    <value>{1} y {0} se encuentran en la plaza del pueblo. Sin embargo, {1} hoy no tiene ganas de sermones y antes de que {0} saque su libro sagrado, se abalanza sobre él y lo mata. {0} era el último cultista en pie.</value>
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>{1} y {0} se encuentran en la plaza del pueblo. Sin embargo, {1} hoy no tiene ganas de sermones y antes de que {0} saque su libro sagrado, se abalanza sobre él y lo mata. {0} era el último Zombiea en pie.</value>
   </string>
   
   <!-- Extend time -->
@@ -1295,7 +1295,7 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
     <value>Todas</value>
   </string>
     <string key="RandomModeQ">
-    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan cultistas, necio o veterano.\nActualmente:{0}</value>
+    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan Zombieas, necio o veterano.\nActualmente:{0}</value>
   </string>
   <string key="RandomModeA">
     <value>Modo aleatorio: {0}</value>
@@ -1557,16 +1557,16 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
     <value>Entre los nombres de tu cabeza, aparece uno nuevo: {0}!</value>
   </string>
   <string key="ThiefToCult">
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
     <value>Te empiezas a olvidar de un nombre… ¿Cómo era, {1}? Espera… ¿De qué estabas hablando? Entre los nombres en tu cabeza, aparece uno nuevo: {0}.</value>
   </string>
   <string key="ThiefToWolf">
@@ -1648,9 +1648,9 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
   <string key="SecretLynchShowVotersA">
     <value>Cuando los linchamientos secretos estén activados y se muestre el recuento de votos, el nombre del votante por cada jugador votado será del siguiente modo: {0}</value>
   </string>
-  <string key="CultistBitten">
-<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
-<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
+<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
     <value>Te empiezas a olvidar de un nombre… ¿Cómo era, {0}?
 </value>
   </string>
@@ -1757,7 +1757,7 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
   <string key="ChemistTargetEmpty">
   <value>¡{0} no estaba en casa!</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
   <value>Quizás que no recuerdes quién eres, pero te acuerdas de alguien importante: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1808,7 +1808,7 @@ Actualizado con roles del "April Fool's day" 2018 por @malwod (22/09/2018)-->
   <string key="ChemistFrozen">
     <value>¿Ocurrió algo anoche? No pareces recordarlo…</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>¿Ocurrió algo anoche? No pareces recordarlo…</value>
   </string>
   <string key="CHFrozen">

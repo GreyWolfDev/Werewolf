@@ -323,10 +323,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >خائن کثیف! فعلا روستایی هستی ولی اگه همه گرگا بمیرن گرگ میشی. پیشگو میتونه استعلامت کنه ولی معلوم نیست بهش راستشو بگم</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >تو الان آقا گرگه ای! هر شب یه نفرو بخور</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >تو جادوگری🔮! به گرگ ها در پیدا کردن پیشگو کمک میکنی، تو از نقش بازیکن ها آگاه نمیشی و فقط میتونی پیشگو و گرگ هارو شناسایی کنی!</value>
 	<value>تو قاتل زنجیره ای هستی. هر شب یه نفرو میکشی و بدنشو به کلکسیونت اضافه میکنی. هدف تو اینه که همه رو بکشی!</value>
 	<value>تو الان آقا گرگه ای! هر شب یه نفرو بخور</value>
@@ -399,7 +399,7 @@
     <!-- 1 - victim role -->
     <value>آخه این روستایی ساده بدبخت به شما چیکار داشت که خوردینش کثافتا! یه گوشه نشسته بود داشت پفکشو میخورد. خدا بیامرزتت {0} روستایی خوبی بودی 😢😢  {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>صبح روز بعد اعضای روستا بدن تیکه تیکه شده ی {0} رو دیدن که روی زمین افتاده. قاتل زنجیره ای بازم به یه نفر حمله کرد</value>
   </string>
@@ -505,34 +505,34 @@
   <string key="RemainingPlayersEnd">
     <value>بازیکن های باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >نظر {0} اینه که {1} رو تبدیل کنید</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>خب {0} رفت که {1} رو به فرقه دعوت کنه ولی {1} شکارچی بود و کشتش!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>دیشب {0} اومد به فرقه دعوتت کنه ولی تو زدی کشتیش! {1} باقی مونده</value>
   </string>
   <string key="CultConvertYou">
     <value>شما مورد حمله گرگ ها قرار گرفتید، اما آلفا گرگ شما را انتخاب میکنه! شما به جای اینکه بمیرید آلوده میشید و فردا شب به یک گرگ تبدیل میشید!!</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>همزمان با فرارسیدن شب، به شما احساس سوزن سوزن شدن عجیب و غریبی دست میده و بدن شما به شدت درد میکنه! انگار شما دارید به چیزی تبدیل میشد!......... شما درحال حاضر یک گرگ هستید!  گرگ ها عبارتند از: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value > گرگ ها به ‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌{0} حمله کردند ولی آلفا گرگ ونارو متوقف کرد به دستش گفت که شما آلوده شدید و فردا شب به یک گرگ تبدیل میشید، گرگ ها شما رو رها کردند و شما رو فردا توی دستشون میبینن!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>خب  {0} رفت {1} رو بخوره ولی خونه نبود</value>
   </string>
@@ -543,7 +543,7 @@
     <!-- 0 - target name -->
     <value>رفتی {0} رو بکشی ولی مرده بود</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>رفتی خونه {0} و دیدی داره عبادت میکنه. اعصابت خورد شد زدی کشتیش</value>
   </string>
@@ -560,7 +560,7 @@
     <!-- 0 - teamate's names -->
     <value>همزادت یعنی {0} مرد و چون فرقه گرا بود تو هم فرقه گرا شدی.بقیه فرقه گراها عبارت اند از: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>روستایی 👱</value>
@@ -607,10 +607,10 @@
   <string key="ApprenticeSeer">
     <value>پیشگوی رزرو 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>فرقه گرا 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>شکارچی 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -643,7 +643,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>عضو جدید فرقه رفت خونه {0} که به راه راست هدایتش کنه ولی دید کشته شده</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -848,7 +848,7 @@
     <value>رفتی {0} رو به قتل برسونی ولی فرشته نگهبان جلوتو گرفت</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value> فرقه گرای عزیز رفت که کلانتر {1} رو به فرقه دعوت کنه ولی کلانتر {0} رو کشت</value>
   </string>
@@ -872,7 +872,7 @@
     <value>خب {0} همزادت بود و مرد. چون اون ناظر بود تو هم ناظر شدی شدی و پیشگو کسی نیست جز: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>همزاد، یعنی {0} هم مثل تو گرگ شد.</value>
   </string>
 
@@ -1473,7 +1473,7 @@
 - آره😞
 متاسفانه دیشب {0} آهنگر روستا توسط قاتل زنجیره ای در اصطبل به قتل رسید!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب قاتل زنجیره ای به فرقه گراها حمله کرد و {0} رو به قتل رسوند!</value>
   </string>
   <string key="CupidKilled">
@@ -1506,10 +1506,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>شکارچی {0} مشغول پیداکردن فرقه گرا ها بود اما درست زمانی که داشت توی جنگل قدم میزد قاتل زنجیره ای بهش حمله میکنه و میکشتش!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب {0} رفت که گرگارو دعوت کنه به فرقه! ولی گرگا بهش حمله کردن و جنازه تکه تکه شدشو توی نقاط مختلف روستا ول کردن!</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>شب قبل فرقه گرا ها میخواستن یک عضو جدید رو به فرقه دعوت کنن، {0} مامور شد که یکی رو به فرقه دعوت کنه، اما دیگه خبری از {0} نشد! صبح روز بعد اعضای فرقه جنازه {0} رو توی روستا پیدا میکنند! قاتل زنجیره ای {0} رو کشته!</value>
   </string>
   
@@ -1529,8 +1529,8 @@
 	    <value> کلانتر  {0} توی روستا با {1} تنها مونده! {1} میره که به کلانتر حمله کنه و اونو بکشه، اما کلانتر از خواب بلند میشه و متوجه {1} میشه سریع میره سمت تفنگش اما فرصت نمیکنه که تفنگشو دستش بگیره و {1} میگیره و تیکه تیکش میکنه! {1} تنها گرگ بازمانده روستاست🐺</value>
   </string>
   
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>تنها فرقه گرای بازمانده روستا {0} بود که زمانی که صبح داشت سمت میدون شهر میرفت، با شکارچی {1} روبه رو میشه! شکارچی، همون موقع تفنگشو در میاره که به {0} شلیک کنه ولی {0} فرار میکنه، شکارچی دنبالش میره و توی جنگل پیداش میکنه و با چاقو میکشتش!  شکارچی برنده این دور بازیه!</value>
   </string>
   
@@ -1869,8 +1869,8 @@
       <value>هم تیمی های شما(درصورت وجود) عبارت اند از:{0}.</value>
     </string>
     <string key="ThiefToCult">
-      <!-- 0 - old cultist's name -->
-      <!-- 1 - new cultist's name -->
+      <!-- 0 - old Zombie's name -->
+      <!-- 1 - new Zombie's name -->
       <value>حاجی {0} دیگه هم تیمی شما نیست به جاش {1} فرقه شده دقیقا مثل شماها.</value>
     </string>
     <string key="ThiefToWolf">
@@ -1930,8 +1930,8 @@
     <string key="SecretLynchShowVotersA">
       <value>وقتی حالت رای مخفی روشن است. و تعداد رای ها در اخر رای گیری نشان داده خواهد شد.نام رای دهنده به هر بازیکن نیز نشان داده خواهد شد:{0}</value>
     </string>
-    <string key="CultistBitten">
-    <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <string key="ZombieBitten">
+    <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
       <value>عجیبه .... امشب جمع شدین که یکی رو فرقه کنید اما متوجه شدین که {0} اینجا نیست!یعنی چه اتفاقی براش افتاده؟🤔</value>
     </string>
     
@@ -2048,7 +2048,7 @@
   <string key="ChemistTargetEmpty">
 	<value> رفتی که با {0} نوشیدنی بخوری اما خونه نبود! </value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value> اعضای فرقه درحال حاضر: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -2123,7 +2123,7 @@
   <string key="ChemistFrozen">
     <value> هنگامی که وسایل خود را برای خوردن نوشیدنی جمع میکردید باد سردی از پنجره ها وزید و شما یخ زدید 🐺☃️! از گوشه ی چشم معجون هایت را دیدی که منجمد شده اند. بنظر میرسد که آنها هم راه فراری نداشتند. بزودی خورشید طلوع میکند و دیگر مشکلی نخواهید داشت. </value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value> وقتی که داشتی برای دعوت کردن آماده میشدی باد سردی وزید و تو یخ زدی 🐺☃️! هم تیمی های تو بهت قول دادند که امشب کارشون رو خوب انجام بدن. </value>
   </string>
   <string key="CHFrozen">
@@ -2264,11 +2264,11 @@
   <string key="HunterFellDigger">
 	<value> بعد از یک شب خسته کننده شما به خانه برمیگردید قبل از اینکه وارد خانه شوید شمشیری کنار یک قبر میبینید مثل اینکه شکارچی یعنی {0} توی قبر افتاده</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value> بعد از یک شب خسته کننده در راه خانه صدای فریادی از یک قبر ناتمام خود میشنوید، با عجله به آنجا میروید و {0} را میبینید که در قبر افتاده. آخه کدوم فرقه گرایی میخواد یه گورکن رو تبدیل کنه؟</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value> در راه خانه {1} ناگهان {0} تصمیم میگیرد به سراغ یک کلیسا برود. اما در قبرستان داخل یک قبر افتاد. شما صدای فریاد او را قبل از افتادن میشنوید اما برای نجات خود فرار میکند! </value>
   </string>
@@ -2324,8 +2324,8 @@
   <string key="HarlotFellPublic">
 	<value> فاحشه {0} در راه خانه ی گورکن بود که درون یک قبر افتاد و مرد. شاید بهتر بود یک شغل دیگه انتخاب میکرد. </value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value> فرقه گراها میخواستند کلیسا رو آتیش بزنند، اما {0} که گروه رو هدایت میکرد درون یک قبر افتاد. او فریاد میزد اما بقیه فرقه گراها برای نجات جان خود فرار کردند. </value>
   </string>
   <!--{0}: thief-->

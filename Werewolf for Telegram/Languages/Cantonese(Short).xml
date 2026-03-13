@@ -166,10 +166,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>你係學徒先知🙇 /aboutAppS</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>你係邪教👤 /aboutCult</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>你係邪殺💂 /aboutCH</value>
   </string>
   <string key="LynchTime" >
@@ -212,7 +212,7 @@
   <string key="DefaultEaten" >
     <value>狼食左 {0}\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>邪殺殺左 {0}\n{0} 係 邪教👤</value>
   </string>
   <string key="NoAttack" >
@@ -296,7 +296,7 @@
   <string key="RemainingPlayersEnd">
     <value>生還者</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value>{0} 想拉 {1}</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -323,7 +323,7 @@
   <string key="HunterVisitDead">
     <value>{0} 一早死左</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>{0} 係邪教 俾你殺左</value>
   </string>
   <string key="HunterFailedToFind">
@@ -335,7 +335,7 @@
   <string key="WildChildTransform">
     <value>{0} 死左 所以你變左狼\n狼友\n{1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>廢村👱</value>
   </string>
@@ -381,10 +381,10 @@
   <string key="ApprenticeSeer">
     <value>學徒先知🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>邪教👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>邪殺💂</value>
   </string>
   <!-- These are for the player list-->
@@ -1036,7 +1036,7 @@
   <string key="BlacksmithKilled">
     <value>連殺殺左 {0}\n{0} 係 鐵匠⚒</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>連殺殺左 {0}\n{0} 係 邪教👤</value>
   </string>
   <string key="CupidKilled">
@@ -1069,10 +1069,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>連殺殺左 {0}\n{0} 係 邪殺💂 (邪殺搵連殺)</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>狼食左 {0}\n{0} 係 邪教👤 (邪教拉狼)</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>連殺殺左 {0}\n{0} 係 邪教👤 (邪教拉連殺)</value>
     </string>
   <string key="GAGuardedKiller">
@@ -1090,8 +1090,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>狼 {1} 食左 {0}\n{0} 係 獵人🎯</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>邪殺 {1} 殺左 {0}\n{0} 係 邪教👤</value>
   </string>
   <!-- Extend time -->

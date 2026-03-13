@@ -205,10 +205,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>.rees eht sa ecalp rieht ekat lliw uoy ,seid rees (laer) eht fI  .rees ecitnerppa eht era uoY</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>.niw yeht ,stsitluc era dne eht ta sreyalp gnivil gniniamer lla fI .tsitluc a ot trevnoc ot reyalp a esoohc yam uoy ,thgin yrevE  .tsitluc a era uoY</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>.seid rebmem tsewen s'tluc eht ,uoy trevnoc ot seirt tluc eht fI  .eid yeht ,tsitluc a era yeht fI  .reyalp a esoohc ,thgin hcaE  !enoyreve gnitrevnoc morf nwot ni tluc eht pots ot gniyrt ,retnuH tsitluC eht era uoY</value>
   </string>
   <string key="LynchTime" >
@@ -263,7 +263,7 @@
 <!-- 1 - victim role -->
     <value>{1}\nMONMONMONMON  .gnissim daeh ,nep gip eht ni trapa dedderhs {0} dnif ot llems eht wollof yehT  .knits elbirret a llems yeht ,gninrom eht ni sesir enoyreve sA</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 <!-- 0 - victim name -->
     <value>!retnuh tluc eht yb dellik neeb sah tsitluc A .ratla krad a fo tnorf ni gniyl ydob a dnif ot ti stcepsni egalliv eht  ...esuoh s'{0} morf gnimoc si hcnets elbaeciton A</value>
   </string>
@@ -369,34 +369,34 @@
   <string key="RemainingPlayersEnd">
     <value>:maet dna ,selor ,sreyalp gnivil gniniameR</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
 <!-- 0 - Voter's name -->
 <!-- 1 - target name -->
     <value>{1} trevnoc ot detov sah {0}</value>
   </string>
   <string key="CultConvertCultHunter">
-<!-- 0 - Yougest Cultist (killed)'s name' -->
+<!-- 0 - Yougest Zombie (killed)'s name' -->
 <!-- 1 - CultHunter's name -->
     <value>!daed si {0} !retnuh tluc eht erew yeht ,revewoh ...{1} trevnoc dna ,krow ytrid ruoy od ot tnes saw {0}</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-<!-- 0 - Youngest Cultist's name -->
-<!-- 1 - Number of cultists left -->
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - Number of Zombies left -->
     <value>!niamer {1} ...daed si tsitluc A  .meht hguorht thgir drows ruoy devohs uoy tub  ....uoy trevnoc ot ydaer ,thgin tsal esuoh ruoy ot emac {0}</value>
   </string>
   <string key="CultConvertYou">
     <value>.reyalp rehtona trevnoc ot ecnahc a evah lliw uoy ,thgin rehto yrevE  .tsitluc a won era uoY  !redro rieht ot uoy detrevnoc sah tluc ehT</value>
   </string>
   <string key="CultTeam">
-<!-- 0 - Number of cultists -->
+<!-- 0 - Number of Zombies -->
     <value>{0} :stsitluC</value>
   </string>
   <string key="CultJoin">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>!tluc eht denioj sah {0}</value>
   </string>
   <string key="CultVisitEmpty">
-<!-- 0 - Newest cultist's name -->
+<!-- 0 - Newest Zombie's name -->
 <!-- 1 - target name -->
     <value>!emoh saw eno on tub ...{1} trevnoc dna ,krow ytrid ruoy od ot tnes saw {0}</value>
   </string>
@@ -407,7 +407,7 @@
 <!-- 0 - target name -->
     <value>!daed ydaerla era yeht tub ,{0} tnuh ot tnew uoY</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
 <!-- 0 - target name -->
     <value>.tsitluc live eht hguorht thgir drows ruoy nur ylkciuq uoY .dog nwonknu emos ot ratla na erofeb gniyarp meht dnif dna esuoh s'{0} otni og uoY</value>
   </string>
@@ -422,7 +422,7 @@
   <string key="WildChildTransform">
 <!-- 0 - role's name -->
 <!-- 0 - teamate's names -->
-<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
     <value>{1} :era setammaet wen ruoY !flowerew a emoceb evah uoy ,egar ruoy nI !deid sah {0}</value>
   </string>
@@ -471,10 +471,10 @@
   <string key="ApprenticeSeer">
     <value>🙇 reeS ecitnerppA eht</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>👤 tsitluC a</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
 <!-- These are for the player list -->
     <value>💂 retnuH tsitluC eht</value>
   </string>
@@ -506,7 +506,7 @@
     <value>{0} :era snosam ehT  </value>
   </string>
   <string key="CultTargetDead">
-<!-- 0 - Youngest cultists name -->
+<!-- 0 - Youngest Zombies name -->
     <value>...yawrood eht no deggans ruf flow fo stib dna ,erehwyreve doolb ,kcerw etelpmoc a esuoh eht sdnif daetsni tub ,meht trevnoc ot esuoh s'{0} ot revo sdaeh rebmem tsewen ruoY</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -687,12 +687,12 @@
     <value>...thginot uoy rof llik oN !legna naidraug eht yb ffo thguof erew uoy tub ,noitcelloc ruoy rof ydob s'{0} tcelloc ot deirt uoY</value>
   </string>
   <string key="CultConvertHunter">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>....daed si {0} !wodniw eht fo tuo gniylf semoc ydob s'{0} dna tuo sgnir tohs a daetsni tub ,{1} trevnoc ot yrt ot {0} sdnes tluc ehT</value>
   </string>
   <string key="CultConvertSerialKiller">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>....daed si {0} !OHCYSP A TAHW !ydob rieht fo trap yreve otni dehsup sevink ,wodniw eht fo tuo gniylf semoc ydob s'{0} daetsni tub ,{1} trevnoc ot yrt ot {0} sdnes tluc ehT</value>
     <value>:D daed si {0} !emit eritne eht gnilkcac ,redro lacitebahpla ni snagro s'{0} otni peed efink eht segnulp {1} !!!efink a htiw cainam dezarc a yb deteerg yletaidemmi si dna ,rood eht nepo spop ,esuoh s'{1} ot revo skaens {0}</value>
@@ -717,7 +717,7 @@
     <value>{1} :era (yna fi) setammaet ruoY  .nosam a otni mrofsnart uoy dna ,deid sah {0}</value>
   </string>
   <string key="DGToCult">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>!uoy ekil tsuj ,tsitluc a emoceb won sah {0} regnagleppod ehT</value>
   </string>
   <string key="DGTransformToCult">
@@ -1262,7 +1262,7 @@
   <string key="BlacksmithKilled">
     <value>...eno nagro sih edisgnola noitcelloc nopaew sih dnapxe ot gnipoh saw rellik laires eht ebyaM .thgin tsal elbat s'namstfarc eht ot dennip dna ,daeh dna teef ,sdnah sih otni degnulp dnuof erew ,yromra s'{0} morf hserf ,sevink eviF .ykculnu ylemertxe neeb evah tsum ,htimskcalb tnediser eht ,{0} ekil smeeS</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>.tsitluC a saw {0} !noigiler ro egaugnal ,ecar fo sseldrager ,niaga kcurts sah rellik laires ehT .ratla rieht yb kcitseldnac a htiw htaed ot debbats dnuof saw {0}</value>
   </string>
   <string key="CupidKilled">
@@ -1300,12 +1300,12 @@
     <value>...aedi doog a eb ot mees ton seod tsitluc a saw relliK laireS eht fi gnikcehC .seceip derdnuh a otni ylesicerp tuc tiebla ,nwot fo elddim eht ni dnuof saw ,retnuH tsitluC eht ,{0} fo ydob ehT</value>
   </string>
   <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>!spetsrood 'sevlow eht ot dereviled ,reppus enif a ot detrevnoc saw daeh s'{0} .tsiser ot tluciffid oot devorp ,sevlow eht htiw elbuort truoc ot dediced taht tsitluc a ,{0} gnihsinup ,ecno rof doog yats ot dediced sevlow eht taht demees ti elihW</value>
     <value>.tnemevom suoigiler wen eht gninioj ni tseretni on evah sevlow ,{0} rof yletanutrofnU .suoiciled etiuq {0} dnuof flow eht dna ,emoh yats ot dediced sevlow eht thgin eht no flow a gnitisiv fo enutrofsim eht dah rebmem tsewen riehT .thgin tsal elbuort detcepxenu otni nar tluc ehT</value>
   </string>
   <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
     <value>.tnahpmuirt saw noigiler esohw wohs ot tnemetats a fi sa ,efink a htiw debbats dnuof saw koob "yloh" rieht ylegnartS !gninrom eht ni erauqs nwot eht ta decalp dna seceip ot decnim saw ,tsitluc a ,{0} !gnorw erew yeht tub ,sknar rieht ni rebmem wen a evah dluow yeht thguoht tluc ehT</value>
     <value>.snagro lanretni s'{0} fo erauqs nwot eht ni tra fo eceip wen a edam relliK laireS eht dna ,relliK laireS eht trevnoc ot deirt rebmem tsewen riehT .era yeht naht reizarc egalliv eht ni nosrep eno eht trevnoc ot deirt tluc eht ,thgin tsaL</value>
   </string>
@@ -1326,8 +1326,8 @@
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>.ecaf eht ot sehsals lellarap htiw denroda ,retnuh eht ,{0} fo ydob detailitum a si sniamer ereht lla rof ,{1} rof sseltroffe eb ot devorp regalliv lanif eht gnitanimilE .tsewol rieht ta saw draug s'{0} erehw emit a esohc {1} ,tfel saw {0} ylno gniwonK</value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <!-- Extend time -->
     <value>.egalliv eht detanimatnoc evah taht tluc eht fo sgninrael detsiwt eht ot dne na gnittup ,emit lanif eht rof drows rieht sward {1} suoethgir eht ,kcen s'{0} dnuora nrow ssorc gniremmihs a gnieeS .thgilyad ni tuo klaw {0} dna {1}</value>
   </string>
@@ -1624,8 +1624,8 @@
     <value>{0} :era (yna fi) setammaet ruoY</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>!uoy ekil tsuj ,tsitluc a emoceb won sah {1} dna etammaet ruoy regnol on si {0}</value>
   </string>
   <string key="ThiefToWolf">
@@ -1682,8 +1682,8 @@
   <string key="SecretLynchShowVotersA">
     <value>{0} :lliw reyalp detov yreve rof eman s'retov eht ,gniwohs si tnuoc etov eht dna no denrut si hcnyl terces nehW</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>??meht ot deneppah sah tahW !ereh t'nsi {0} taht ezilaer uoy ,thginot trevnoc ot mohw no gnissucsid trats uoy dnoces ehT ...egnartS</value>
   </string>
 
@@ -1792,7 +1792,7 @@
   <string key="ChemistTargetEmpty">
 	<value>.kcul dab ruoy gnisruc ,emoh kcab esactius ruoy gard uoY !emoh t'nsaw {0}</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>{0} :yltnerruc era srebmem tluc ehT</value>
   </string>
   <string key="SnowWolf">
@@ -1843,7 +1843,7 @@
   <string key="ChemistFrozen">
     <value>hguoht ,won dewaht er'uoy gniht dooG ...renoos pu emac nus eht gnihsiw ,dehgis yllatnem uoY .rehtie lleps gnizeerf eht fo tnurb eht epacse t'ndid yeht ekil skooL .revo detsorf snoitop ruoy fo selttob eht was uoy ,seye ruoy fo renroc eht morF .️☃️🐺 ezeerf ot uoy gnisuac ,swodniw eht morf ni welb dniw fo tsug gnorts a ,snoitop ruoy teg ot pu ekaw ot gniraperp ,peels ruoy ni derrits uoy sA</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>.tnemssarrabme ni gnignirc ,esuoh eht evael uoy ,nezorfnu er'uoy taht woN .thginot fo krow doog ekam ll'yeht taht desimorp yeht ,yawrood eht yb uoy gnivaeL .esimed ruoy ta gnihgual pu dedne yeht tub ,elpoep tluc ot gnola uoy gnirb ot retfa noos yb deppord stsitluc wollef ruoY .️☃️🐺 ezeerf ot uoy gnisuac ,yawrood eht morf ni welb dniw fo tsug a ,esuoh ruoy evael ot deraperp dna kaolc ruoy dennod uoy sA</value>
   </string>
   <string key="CHFrozen">
@@ -1984,11 +1984,11 @@
   <string key="HunterFellDigger">
 	<value>...uoy detcepsus evah ton dluohs retnuh tsitluc ehT .{0} fo ydob daed eht ees uoy evarg taht edisnI .evarg dehsinifnu na ot txen dnuorg eht no gniyl drows a eciton uoy ,evirra uoy erofeb tsuJ .gnisir ydaerla nus eht htiw emoh ruoy ot kcab klaw uoy ,thgin gnirit rehtona retfA</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>?yawyna ,reggid evarg a trevnoc ot seirt tluc fo dnik tahW .evarg dehsinifnu na ni daed gniyl {0} dnif ot tsuj ,ereht yrruh uoY !sevarg dehsinifnu ruoy fo eno morf maercs a raeh uoy ylneddus nehw ,thgin gnirit rehtona morf nruter uoY</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>.sevil ruoy rof nur uoy dna evarg a otni llaf yeht erofeb maercs rieht si raeh nac uoy llA !elkna rieht dnuora spans part raeb a ylneddus nehw drayevarg eht hguorht uoy dael yehT .llew sa hcruhc eht nwod nrub ot aedi doog a eb dluow ti taht sediced ylneddus {0} ,esuoh s'{1} ot yaw ruoy nO</value>
   </string>
@@ -2044,8 +2044,8 @@
   <string key="HarlotFellPublic">
 	<value>!yadretsey dereffo tog yeht boj emityad taht nekat evah dluohs yeht ebyaM .pets txen reh rednu sdnuorg on tlef yeht litnu evarg derevocnu eht ees t'ndid yeht taht yzzid tib a llits neeb evah tsum yehT .drayevarg lacol eht hguorht tuctrohs a ekat ot deirt yeht nuf fo thgin a retfa emoh tnew {0} tolrah eht sA</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>...rorret ni delf stsitluc rehto eht dna evarg nepo na otni llef eh nehw demaercs eH  !elkna sih dnuora deppans part raeb a ,drayevarg eht hguorht puorg eht del {0} sa tub ,hcruhc eht nrub ot deirt stluc ehT</value>
   </string>
   <!--{0}: thief-->

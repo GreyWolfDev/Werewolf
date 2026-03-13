@@ -176,10 +176,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >C'est étrange... Vous ne semblez pas vous souvenir qui vous êtes !</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >C'est étrange... Vous ne semblez pas vous souvenir qui vous êtes, seulement que vous devez faire quelque chose durant la nuit !</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >C'est étrange... Vous ne semblez pas vous souvenir qui vous êtes, seulement que vous devez faire quelque chose durant la nuit !</value>
   </string>
   <string key="LynchTime" >
@@ -224,8 +224,8 @@
   <string key="DefaultEaten" >
     <value>Alors que le village se réveille, on retrouve les restes de {0} dispersés sur la place de village, un papier à la main où est écrit : "je suis pas venu ici pour souffrir, okay ?"./n {1}    </value>
   </string>
-  <string key="HunterKilledCultist">
-    <value>Une puanteur insoutenable émane de la maison de {0}....  Les villageois l'investissent et découvrent un corps en spasmes sur un autel d'onyx... Le chasseur de cultistes a fait son job.!</value>
+  <string key="HunterKilledZombie">
+    <value>Une puanteur insoutenable émane de la maison de {0}....  Les villageois l'investissent et découvrent un corps en spasmes sur un autel d'onyx... Le chasseur de Zombiees a fait son job.!</value>
   </string>
   <string key="NoAttack" >
     <value >Les villageois se réunissent le lendemain, et à la surprise générale, personne n'est mort. Pour fêter cela, certains n'hésitent pas à s'adonner à des plaisirs charnels. </value>
@@ -308,7 +308,7 @@
   <string key="RemainingPlayersEnd">
     <value>Soudain, les survivants se souviennent de tout ! Leurs noms, rôles et équipes étaient :</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} a jeté son dévolu sur {1}</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -330,12 +330,12 @@
     <value>{0} a été dans la maison de {1}, mais il n'était malheureusement pas chez lui !</value>
   </string>
   <string key="CultWins" >
-    <value >Ils ne semblent pas se souvenir qui ils sont, mais le seul peuple qui reste debout est celui des cultistes... Les cultistes gagnent et leur culte connaît un impressionnant succès dans le monde entier!</value>
+    <value >Ils ne semblent pas se souvenir qui ils sont, mais le seul peuple qui reste debout est celui des Zombiees... Les Zombiees gagnent et leur culte connaît un impressionnant succès dans le monde entier!</value>
   </string>
   <string key="HunterVisitDead">
     <value>{0} est mort d'une mort lente et douloureuse...!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Est-ce qu'il s'est passé quelque chose à la maison de {0} la nuit dernière ? Vous ne semblez pas vous souvenir...</value>
   </string>
   <string key="HunterFailedToFind">
@@ -347,7 +347,7 @@
   <string key="WildChildTransform">
     <value>{0} est mort. Votre rôle a changé, mais qu'est-ce que c'était ? Et qu'êtes vous devenu au final ? Vous ne vous souvenez pas qui vous êtes, mais vous vous souvenez de quelqu'un d'important : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>un villageois 👱</value>
   </string>
@@ -393,10 +393,10 @@
   <string key="ApprenticeSeer">
     <value>l'apprenti voyant 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>un cultiste 👤</value>
+  <string key="Zombie">
+    <value>un Zombiee 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>l'inquisiteur 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -445,7 +445,7 @@
     <value>@{1}, un joueur avec ce nom ({0}) a déjà rejoint la partie. Merci de changer votre nom pour rejoindre la partie.</value>
   </string>
   <string key="HarlotDiscoverCult">
-    <value>Vous êtes certain de ne pas savoir qui vous êtes, mais au moins maintenant vous savez que {0} est un cultiste 👤 !</value>
+    <value>Vous êtes certain de ne pas savoir qui vous êtes, mais au moins maintenant vous savez que {0} est un Zombiee 👤 !</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -718,10 +718,10 @@
     <value>Le fou pense être voyant. Mais lorsqu'il dévoile le rôle d'un joueur, il est informé d'un rôle au hasard.</value>
   </string>
   <string key="AboutCult">
-    <value>En tant que cultiste, votre but est de convertir tous les autres joueurs (à part les loups) à votre culte. Si tous les joueurs vivants à la fin de la partie font partie du culte, les cultistes gagnent.</value>
+    <value>En tant que Zombiee, votre but est de convertir tous les autres joueurs (à part les loups) à votre culte. Si tous les joueurs vivants à la fin de la partie font partie du culte, les Zombiees gagnent.</value>
   </string>
   <string key="AboutCH">
-    <value>Votre job est de traquer les cultistes. S'ils tentent de vous convertir, leur membre le plus récent mourra. De plus, chaque nuit, vous pourrez traquer un joueur et s'il est cultiste, vous le tuerez.</value>
+    <value>Votre job est de traquer les Zombiees. S'ils tentent de vous convertir, leur membre le plus récent mourra. De plus, chaque nuit, vous pourrez traquer un joueur et s'il est Zombiee, vous le tuerez.</value>
   </string>
   <string key="AboutWC">
     <value>L'enfant sauvage choisit un autre joueur en début de partie, qui sera son idole. S'il venait à mourir, l'enfant sauvage entrerait dans une rage incontrôlable et deviendrait un loup garou...</value>
@@ -739,7 +739,7 @@
     <value>
       Vos ancêtres étaient capable de se metamorphoser en quelqu'un d'autre... Vous n'avez pas cette capacité, mais vous pouvez choisir un joueur en début de partie. S'il vient à mourir, vous prendrez son rôle.
       Remarque: S'il était converti au culte, vous recevrez son rôle initial. Toutes les autres règles normales s'appliquent : si vous devenez l'enfant sauvage dont le modèle est mort, vous serez loup. S'il n'est pas mort, vous aurez ce même modèle.
-      Les cultistes ne peuvent convertir un Doppelgänger qui n'a pas encore repris un rôle. Si le Doppelgänger n'est pas devenu quelqu'un d'autre à la fin de la partie, il perd sauf s'il est l'un des deux amoureux.
+      Les Zombiees ne peuvent convertir un Doppelgänger qui n'a pas encore repris un rôle. Si le Doppelgänger n'est pas devenu quelqu'un d'autre à la fin de la partie, il perd sauf s'il est l'un des deux amoureux.
     </value>
   </string>
   <string key="AboutCupid">
@@ -752,7 +752,7 @@
     <value>
       Vous êtes la gachette folle ! Le fusiller est un peu paranoïaque, et peut tuer ses visiteurs nocturnes. Si les loups vous attaquent, vous avez une chance d'en abattre un. Si vous mourrez, vous aurez la possibilité de tuer un autre joueur.
       Remarque: Contre un loup seul le fusiller a 30% de chance de l'abattre et survivre. Ajoutez 20% par loup supplémentaire, mais dans ce cas, vous ne survivrez pas.
-      Si les cultistes tentent de vous convertir, ils auront 50% de chance de réussir. S'ils échouent vous aurez 50% de chance de tuer l'un d'entre eux !
+      Si les Zombiees tentent de vous convertir, ils auront 50% de chance de réussir. S'ils échouent vous aurez 50% de chance de tuer l'un d'entre eux !
     </value>
   </string>
   <string key="AboutSK">
@@ -927,10 +927,10 @@
     <value>Rôle du fou: {0}</value>
   </string>
   <string key="AllowCultQ">
-    <value>Autoriser le rôle de cultiste ?\nActuel: {0}</value>
+    <value>Autoriser le rôle de Zombiee ?\nActuel: {0}</value>
   </string>
   <string key="AllowCultA">
-    <value>Rôle de cultiste : {0}</value>
+    <value>Rôle de Zombiee : {0}</value>
   </string>
   <string key="ThankYou">
     <value>Merci, passez une bonne journée ! :)</value>
@@ -1084,7 +1084,7 @@
     <value>Equipe Céréales Killer</value>
   </string>
   <string key="CultTeam">
-    <value>Equipe Cultiste</value>
+    <value>Equipe Zombiee</value>
   </string>
   <string key="TannerTeam">
     <value>Equipe tanneur</value>
@@ -1103,7 +1103,7 @@
     <value>Equipe Céréales Killer</value>
   </string>
   <string key="CultTeamEnd">
-    <value>Equipe Cultiste</value>
+    <value>Equipe Zombiee</value>
   </string>
   <string key="TannerTeamEnd">
     <value>Equipe tanneur</value>
@@ -1124,8 +1124,8 @@
   <string key="BlacksmithKilled">
     <value>Il semblerait que {0}, le forgeron, soit extrêmement malchanceux. Cinq couteaux de sa propre armurerie sont plantés dans son corps, le punaisant contre le mur... Le céréales killer semble avoir agrandi sa collection d'organes...</value>
   </string>
-  <string key="CultistKilled">
-    <value>{0} est retrouvé poignardé avec un chandelier.. Le céréales killer semble n'avoir que faire de la religion ! {0} était un Cultiste.</value>
+  <string key="ZombieKilled">
+    <value>{0} est retrouvé poignardé avec un chandelier.. Le céréales killer semble n'avoir que faire de la religion ! {0} était un Zombiee.</value>
   </string>
   <string key="CupidKilled">
     <value>Le jour se lève et les villageois découvrent le coeur brisé {0} alias Cupidon, dépecé par un psycopathe collectionneur de doigts de pieds...</value>
@@ -1158,15 +1158,15 @@
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Les villageois se réveillent et retrouvent le corps de {0}, l'inquisiteur, démembré et répandu sur la grand place. Morale de l'histoire : ne pas déranger le céréales killer !</value>
-    <value>Le corps de {0}, l'inquisiteur, est retrouvé au milieu du village, découpé en morceaux. Ce n'était pas une bonne idée d'aller voir le céréales killer... Au moins, on sait qu'il n'est pas cultiste !</value>
+    <value>Le corps de {0}, l'inquisiteur, est retrouvé au milieu du village, découpé en morceaux. Ce n'était pas une bonne idée d'aller voir le céréales killer... Au moins, on sait qu'il n'est pas Zombiee !</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
-    <value>Les loups ont fait une bonne action cette nuit, en dévorant le cultiste {0}. Il a été converti en délicieux repas... cuisson ? Saignant !</value>
-    <value>Les cultistes ont fait face à l'innatendu cette nuit. Leur plus jeune membre a rendu visite à un loup, qui l'a trouvé fort apétissant. Malheureusement pour {0}, les loups ne sont pas très interessés pour rejoindre la secte à la mode.</value>
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>Les loups ont fait une bonne action cette nuit, en dévorant le Zombiee {0}. Il a été converti en délicieux repas... cuisson ? Saignant !</value>
+    <value>Les Zombiees ont fait face à l'innatendu cette nuit. Leur plus jeune membre a rendu visite à un loup, qui l'a trouvé fort apétissant. Malheureusement pour {0}, les loups ne sont pas très interessés pour rejoindre la secte à la mode.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
-    <value>Les cultistes souhaitaient agrandir leur confrérie, mais ils ont échoué. {0} est retrouvé mort, criblé de coups de couteaux. Mmmhh.... Le céréales killer ne semble pas intéressé par la religion.</value>
-    <value>Cette nuit, les cultistes ont trouvé encore plus fou qu'eux ! Leur membre le plus jeune, parti convertir le céréales killer, n'est jamais revenu. Repose en paix, {0}.</value>
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
+    <value>Les Zombiees souhaitaient agrandir leur confrérie, mais ils ont échoué. {0} est retrouvé mort, criblé de coups de couteaux. Mmmhh.... Le céréales killer ne semble pas intéressé par la religion.</value>
+    <value>Cette nuit, les Zombiees ont trouvé encore plus fou qu'eux ! Leur membre le plus jeune, parti convertir le céréales killer, n'est jamais revenu. Repose en paix, {0}.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
     <value>Cette nuit, {0} était sensé sauver le village des tueurs, mais il a mal choisi son protégé. Il est retrouvé mort avec un postit "je sais me protéger tout seul, merci"...</value>

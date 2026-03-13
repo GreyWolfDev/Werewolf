@@ -131,9 +131,9 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
     <value>Usted es Ron Weasley, usted sabrá quién es el verdadero Profesor de Adivinación (y no el Argus Filch). ¡Utiliza esto para ayudar a tu equipo, Hogwarts!</value>
   </string><string key="RoleInfoApprenticeSeer">
     <value>Usted es Firenze, Aprendiz de Adivino, y lucha por Hogwarts. Si el profesor de adivinación muere, tomará su lugar como Profesor.</value>
-  </string><string key="RoleInfoCultist">
+  </string><string key="RoleInfoZombie">
     <value>Usted es uno de los Dementores. Durante la noche, podrás elegir a alguien para dar el beso de la muerte y reemplazarlo por un Dementor. Si todos los jugadores restantes al final del juego son reemplazados por Dementores, ¡Ellos vencen!</value>
-  </string><string key="RoleInfoCultistHunter">
+  </string><string key="RoleInfoZombieHunter">
     <value>Los Dementores están en Hogwarts tratando de aspirar toda la felicidad y esparcir el miedo y la tristeza, y usted, Remus Lupin, ¡Debe defender la escuela! Durante la noche podrás usar el hechizo patronus para investigar un Mago. Si él/ella es un Dementor, él/ella muere. Si los dementores te atacan, el Dementor más débil morirá.</value>
   </string><string key="LynchTime">
     <value>La noche se acerca y los Magos en Hogwarts se reúnen para decidir quién irá a Azkaban hoy... ¡Todo el mundo tiene ahora {0} segundos para votar!</value>
@@ -162,7 +162,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
     <value>A medida que el sol se levanta sobre Hogwarts, los alumnos encuentran {0} acostado encima de una mesa usada, ¿¿¿¿CON UNA ESFERA DE NIEVE Y CARTAS DE POKEMON???? JAJAJAJAJA QUE FAIL, {0} era el Argus Filch</value>
   </string><string key="DefaultEaten">
     <value>A medida que todos se levantan para hacer sus tareas diarias, sienten un olor horrible. Ellos siguen el olor para encontrar {0} descuartizado/a en el bosque. AVADA KEDAVRA.\n{1}</value>
-  </string><string key="HunterKilledCultist">
+  </string><string key="HunterKilledZombie">
     <value>El dormitorio de {0} está bastante frío... Los alumnos y profesores deciden entonces entrar allí y sienten un vacío, como si no existiera más felicidad en el mundo ... Dejando claro que Remus Lupin conjuró a su Patronus, llenando el lugar de luz y enviando el Dementor de nuevo a Azkaban.</value>
   </string><string key="NoAttack">
     <value>Los alumnos y profesores se unen al salón principal durante la mañana y dan un suspiro de alivio - parece que no hubo ningún ataque la noche pasada.</value>
@@ -218,7 +218,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
     <value>¡Oh no! ¡Han enviado a Severus Snape para Azkabán! Él ha ganado la partida.</value>
   </string><string key="RemainingPlayersEnd">
     <value>Jugadores restantes, roles y facción:</value>
-  </string><string key="CultistVotedConvert">
+  </string><string key="ZombieVotedConvert">
     <value>{0} ha votado para dar el beso de la muerte y reemplazar a {1} por un dementor.</value>
   </string><string key="CultConvertCultHunter">
     <value>{0} fue enviado para dar el beso de la muerte y reemplazar {1} por un Dementor... Sin embargo, ¡Él era Remus Lupin, y tenía una gran manera de alejar a los Dementores! Regresó a Azkabán. </value>
@@ -236,7 +236,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
     <value>Todos los Magos murieron y los únicos sobrevivientes son los Dementores ... ¡Los Dementores vencieron!</value>
   </string><string key="HunterVisitDead">
     <value>Usted fue a investigar a {0}, ¡Pero al llegar allí se encontró sólo con los sentimientos de tristeza y soledad!</value>
-  </string><string key="HunterFindCultist">
+  </string><string key="HunterFindZombie">
     <value>Usted invade el cuarto de {0} y siente un aire de tristeza y depresión en su lugar. Usted sabe muy bien qué hacer en estas ocasiones: invocar el encantamiento Patronus.</value>
   </string><string key="HunterFailedToFind">
     <value>Usted entra en el dormitorio de {0} pero no se siente vacío e infeliz. {0} no forma parte de los Dementores... Todavía...</value>
@@ -244,7 +244,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
     <value>El gran ejemplo de vida de {0} acaba de morir. ¡En ataque de furia, se ha convertido en un Mortífago!</value>
   </string><string key="WildChildTransform">
     <value>¡{0} fue muerto/a! ¡En un ataque de furia, usted se convierte en un Mortífago! Sus nuevos compañeros son: {1}</value>
-  </string><!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter--><string key="Villager">
+  </string><!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter--><string key="Villager">
     <value>Simple Mago👱</value>
   </string><string key="Drunk">
     <value>Horace Slughorn 🍻</value>
@@ -274,9 +274,9 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
     <value>Ron Weasley 👁</value>
   </string><string key="ApprenticeSeer">
     <value>Firenze 🙇</value>
-  </string><string key="Cultist">
+  </string><string key="Zombie">
     <value>un Dementor 👤</value>
-  </string><string key="CultistHunter">
+  </string><string key="ZombieHunter">
     <value>Remus Lupin 💂</value>
   </string><!-- These are for the player list --><string key="RanAway">
     <value>🏃</value>
@@ -389,11 +389,11 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
   </string><string key="GuardBlockedKiller">
     <value>Usted fue a divertirse un poco con {0}. ¡Pero llegando allí, Lily Potter acabó con su diversión! Sin bromas esa noche...</value>
   </string><string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Los Dementores mandan a {0} para dar el beso de la muerte y sustituir {1} por un Dementor. Llegando allí {0} es recibido con ¡Un Avda Kedavra bien en el pecho! {0} está muerto...</value>
   </string><string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Los Dementores mandan a {0} para dar el beso de la muerte y sustituir {1} por un Dementor. Al llegar allí descubre que fue una pérdida de tiempo, sólo siente odio y furia, sin tener nada que hacer {0} regresó a su cuarto...</value>
     <value>Los Dementores mandan a {0} para dar el beso de la muerte y sustituir {1} por un Dementor. Al llegar allí descubre que fue una pérdida de tiempo, sólo siente odio y furia, sin tener nada que hacer {0} regresó a su cuarto...</value>
@@ -758,7 +758,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
     <value>Hogwarts despierta y encuentra el cuerpo de Firenze todo ensangrentado, es un día triste en la escuela... ¡{0} murió!</value>
   </string><string key="BlacksmithKilled">
     <value>Parece que {0}, Minerva McGonagall, tuvo mucha mala suerte. Se encontraron marcas de hechizos en su cuerpo. Y varias varitas desaparecieron, ¡Gellert Grindelwald tuvo su fiesta!</value>
-  </string><string key="CultistKilled">
+  </string><string key="ZombieKilled">
     <value>Por la mañana todos encuentran el manto de {0}. Gellert Grindelwald no le importa detalles como la raza, ¡Todos son experimentos para él! Los dementores perdieron a {0}...</value>
   </string><string key="CupidKilled">
     <value>Los magos encuentran el corazón de {0} partido en dos, Luna Lovegood está muerta. Es extraño el hecho de que falte su corazón, claramente una obra macabra más de Gellert Grindelwald.</value>
@@ -782,10 +782,10 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
     <!--used when CH visits SK-->
     <value>Hogwarts se despertó esta mañana sólo para encontrar un cuerpo torturado y muerto en el lecho del lago negro. {0}, el Inquisidor, Remus Lupin, investigó al mago equivocado. Gellert Grindwald utilizó todos los hechizos de tortura que se pueden imaginar.</value>
   </string><string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Pésima elección de los dementores al visitar un Mortífago que decidió quedarse en su dormitorio durante la noche. {0} regresó a Azkaban. Los comensales parecen conocer una buena forma de apartar a los Dementores.</value>
   </string><string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>Por la mañana los magos se despiertan en medio de ruidos, todos van tras los sonidos y paran cerca del Sauce Boxeador. Ellos divisan a alguien apartar a un Dementor. Los dementores deben pensar bien en quién visitar, pues, Gellert Grindelwald no le importa la raza, ¡Todos son experimentos para él! Los dementores perdieron a {0}...</value>
   </string><string key="GAGuardedKiller">
     <value>{0} se encontró frente a una persona equivocada durante la noche. Se encontraron marcas extrañas en las paredes del pasillo que llevaba a uno de los dormitorios, y la investigación de los profesores concluyó que alguien destruyó el espíritu protector de Lily Potter. Una nota con las palabras &quot;Gellert Grindwald estuvo aquí&quot; fue encontrado en el lugar.</value>
@@ -795,7 +795,7 @@ Sin embargo, si intentas encantar a un Mortífago, o alguien que está siendo at
     <value>Sólo {0} y {1} sobrevivieron, y {1} quería cambiar eso... En medio de la noche, se dirigió al dormitorio de {0}, sin pensar que no sería fácil matar a Harry Potter. Lo que restó de {1} fue un pedazo de su brazo con la marca tenebrosa estampada. ¡El último Mortífago murió!</value>
   </string><string key="WolfKillsHunterEnd">
     <value>Sólo {0} y {1} sobrevivieron, y {1} quería cambiar eso... En medio de la noche, se dirige al dormitorio de {0}, que todavía estaba durmiendo. Lo que restó de {0} fue sólo su mano, sosteniendo su varita.</value>
-  </string><string key="CHKillsCultistEnd">
+  </string><string key="CHKillsZombieEnd">
     <value>Al llegar cerca de {0} y sentir un sentimiento de tristeza y depresión, {1} ya se da cuenta que {0} fue sustituido por un dementor. Entonces, {1} toma su varita por última vez invocando su patronus contra {0}. Ahora Hogwarts está a salvo de la invasión de los Dementores.</value>
   </string><string key="SecondsAdded">
     <value>El tiempo para unirse se ha ampliado en {0} segundos! Ahora quedan {1} segundos para unirse a la partida!</value>

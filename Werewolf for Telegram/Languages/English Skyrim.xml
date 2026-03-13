@@ -409,12 +409,12 @@
         <value>Greybeards Apprentice(apprentice seer) -- As an apprentice, you learn the way of the Voice since young. If the Greybeard dies, you will become the new Greybeard, and Klimmek(the beholder) will know your true identity too..
         </value>
     </string>
-    <string key="RoleInfoCultist">
-        <value>Vampire(cultist) -- You are a Vampire! Once a normal human, you now are an immortal being that can, every night, choose a player to turn them into a vampire too! If all remaining living players at the end are vampires, they win. Watch out for the Dawnguard!
+    <string key="RoleInfoZombie">
+        <value>Vampire(Zombie) -- You are a Vampire! Once a normal human, you now are an immortal being that can, every night, choose a player to turn them into a vampire too! If all remaining living players at the end are vampires, they win. Watch out for the Dawnguard!
         </value>
     </string>
-    <string key="RoleInfoCultistHunter">
-        <value>Dawnguard Agent(Cultist Hunter) - The vampires think they can rule Skyrim. It is your job to stop them. Every night, you may choose a player to visit and see if they are a vampire(Off course they will die if they are). If the vampires try to convert you, you will survive and kill the youngest vampire.
+    <string key="RoleInfoZombieHunter">
+        <value>Dawnguard Agent(Zombie Hunter) - The vampires think they can rule Skyrim. It is your job to stop them. Every night, you may choose a player to visit and see if they are a vampire(Off course they will die if they are). If the vampires try to convert you, you will survive and kill the youngest vampire.
         </value>
     </string>
     <string key="LynchTime">
@@ -506,9 +506,9 @@
         <value>It seemed a quiet night for {0}, but that changed fast. The dragons attacked {0} during the night! They easily torn {0} appart, and his/her death comes very quickly.\n{1}
         </value>
     </string>
-    <string key="HunterKilledCultist">
+    <string key="HunterKilledZombie">
         <!-- 0 - victim name -->
-        <!-- ACTUALLY,CH KILLING CULTIST -->
+        <!-- ACTUALLY,CH KILLING Zombie -->
         <value>Suddenly, {0} comes running to the city square, crying in pain.\n{0} crumbles to the ground, an arrow deep in their chest.\n{0} slowly turns into dust, and everybody knows that they were a vampire. This is clearly the Dawnguard's handywork! One less vampire to care about.
         </value>
         <value>There are sounds of fight coming from {0}'s house. In the next morning, there's an official Dawnguard sign in front of their house saying that {0} was a vampire and now has been... "Properly taken care of"</value>
@@ -705,13 +705,13 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
     <string key="RemainingPlayersEnd">
         <value>Remaining living players, roles, and team:</value>
     </string>
-    <string key="CultistVotedConvert">
+    <string key="ZombieVotedConvert">
         <!-- 0 - Voter's name -->
         <!-- 1 - target name -->
         <value>{0} has voted to turn {1}</value>
     </string>
     <string key="CultConvertCultHunter">
-        <!-- 0 - Yougest Cultist (killed)'s name' -->
+        <!-- 0 - Yougest Zombie (killed)'s name' -->
         <!-- 1 - CultHunter's name -->
         <value>{0} was sent to do your dirty work, and turn {1}... however, they were a Dawnguard! {0} is dead!
         </value>
@@ -720,8 +720,8 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
 		<value>{0} had ONE job: turning the next player into a vampire, while avoiding {1}. What did they do? Went STRAIGHT into a trap.\nThey thought they were stronger than the Dawnguard, but the vampire dust sitting on the ground tells a clear message about the winner of that fight.</value>
     </string>
     <string key="CultHunterKilledCultVisit">
-        <!-- 0 - Youngest Cultist's name -->
-        <!-- 1 - Number of cultists left -->
+        <!-- 0 - Youngest Zombie's name -->
+        <!-- 1 - Number of Zombies left -->
         <value>{0} came to your house last night, ready to turn you into a vampire.... but you shoved your silver sword right through their chest! A dragon is dead... {1} remain!
         </value>
         <value>{0} tried to use their foul tricks with you. It's a shame that you didn't fell for them! You quickly slay another vampire. It leaves only their {1} friend(s).
@@ -734,16 +734,16 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
         </value>
     </string>
     <string key="CultTeam">
-        <!-- 0 - Number of cultists -->
+        <!-- 0 - Number of Zombies -->
         <value>Vampires: {0}</value>
     </string>
     <string key="CultJoin">
-        <!-- 0 - new cultist's name -->
+        <!-- 0 - new Zombie's name -->
         <value>{0} has been turned into a vampire!</value>
         <value>There is a new vampire among you, and their name is {0}!</value>
     </string>
     <string key="CultVisitEmpty">
-        <!-- 0 - Newest cultist's name -->
+        <!-- 0 - Newest Zombie's name -->
         <!-- 1 - target name -->
         <value>{0} was sent to do your dirty work, and turn {1} into a vampire... but no one was home!
         </value>
@@ -760,7 +760,7 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
         <value>You went to hunt {0}, but they are already dead!</value>
         <value>You went to hunt down {0}, but found only a corpse!</value>
     </string>
-    <string key="HunterFindCultist">
+    <string key="HunterFindZombie">
         <!-- 0 - target name -->
         <value>You go into {0}'s house and find them with a little girl, almost biting her neck. Despicable vampires! You shoot your crossbow and hit the vampire in the head. You enter the home and dismember {0}, putting all pieces in a huge fire right in front of their home.
         </value>
@@ -789,7 +789,7 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
         <value>{0}, your loved adopter has died! In your rage, you have become a dragon! Your fellow dragons are: {1}
         </value>
     </string>
-    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
     <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
     <string key="Villager">
         <value>a peasant 👱</value>
@@ -836,10 +836,10 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
     <string key="ApprenticeSeer">
         <value>the Apprentice Greybeard 🙇</value>
     </string>
-    <string key="Cultist">
+    <string key="Zombie">
         <value>a Vampire 👤</value>
     </string>
-    <string key="CultistHunter">
+    <string key="ZombieHunter">
         <value>a Dawnguard 💂</value>
     </string>
     <!-- These are for the player list -->
@@ -875,7 +875,7 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
         <value>Your fellow Companions are: {0}</value>
     </string>
     <string key="CultTargetDead">
-        <!-- 0 - Youngest cultists name -->
+        <!-- 0 - Youngest Zombies name -->
         <value>Your newest member heads over to {0}'s house to bite and turn them, but instead finds the house a complete wreck, blood everywhere, and worse: there is a fire starting! The dragons were mercyless. Your youngest member quickly leaves the area.
         </value>
         <value>Your newest member heads over to {0}'s house to bite and turn them, but is confronted with nothing more than a burned down corpse.
@@ -1127,7 +1127,7 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
         </value>
     </string>
     <string key="CultConvertHunter">
-        <!-- 0 - Youngest Cultist's name -->
+        <!-- 0 - Youngest Zombie's name -->
         <!-- 1 - target's name -->
         <value>The vampires sends {0} to try to convert {1}, but the Forsworn didn't want anything to do with your covenant of vampires... The Forsworn dismembered {0} and burned they body in a huge fire. No healing magic will safe your partner now...
         </value>
@@ -1135,7 +1135,7 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
         </value>
     </string>
     <string key="CultConvertSerialKiller">
-        <!-- 0 - Youngest Cultist's name -->
+        <!-- 0 - Youngest Zombie's name -->
         <!-- 1 - target's name -->
         <value>The vampires sends {0} to try to convert {1}, but it seems that the power of the Night Mother protected her agent! {0} never comes back, but a letter arrives instead: the Night Mother's sigil painted in the paper, using {0}'s blood as paint.
         </value>
@@ -1176,7 +1176,7 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
         </value>
     </string>
     <string key="DGToCult">
-        <!-- 0 - new cultist's name -->
+        <!-- 0 - new Zombie's name -->
         <value>The Face Sculptor was bitten, and now {0} becomes a vampire, just like you!</value>
         <value>With the death of your teammate, the Face Sculptor offers themselves to take your former partner's place. Now {0} becomes a vampire, just like you!
         </value>
@@ -1802,7 +1802,7 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
         <value>Seems like the Stormcloaks couldn't protect {0}. Their camp is found completely clean of bodies, weapons, horses and/or every sign of living people. The Dark Brotherhood left behind only {0}'s head to warn us.
         </value>
     </string>
-    <string key="CultistKilled">
+    <string key="ZombieKilled">
         <value>{0} was found with a wooden *thing* stabbed in their hearts. It seems that even the vampires cannot escape from the Night Mother! The Dark Brotherhood had struck again.
         </value>
     </string>
@@ -1846,13 +1846,13 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
         <value>The body of {0}, the capitain of he Dawnguard, was found in the middle of town, albeit cut precisely into a hundred pieces. Next time, the Dawnguard will leave the Dark Brotherhood alone.</value>
     </string>
     <string
-        key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+        key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
         <value>Something that does not happen very often: the dragons didn't attack. The vampires thought it would be a goo idea to hunt on their own, but you can't turn a dragon into a vampire! {0} is killed as an example.
         </value>
         <value>Vampires are not included in a dragon's diet. So, a dragon dropped {0}'s body in flames, in the middle of the town square!
         </value>
     </string>
-    <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
         <value>The vampires thought the Dark Brotherhood wasn't important, and tried to convert one of their ranks! Sadly for {0}, the vampires learned in the worst way that you can't turn a trained murderer into a vampire just like that.
         </value>
         <value>The Dark Brotherhood does not fear simple magics. A trained Serial Killer won't just turn into a vampire without fighting! {0} died, clearly overwhelmed by the killer's skill.
@@ -1877,8 +1877,8 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
         <value>Knowing only {0} was left, {1} chose a time where {0}’s guard was at their lowest. Eliminating the final villager proved to be effortless for {1}, for all there remains is a mutiliated body of {0}, the Forsworn, completely burned by fire.
         </value>
     </string>
-    <string key="CHKillsCultistEnd">
-        <!--{0} = last cultist's name, {1} = CH's name -->
+    <string key="CHKillsZombieEnd">
+        <!--{0} = last Zombie's name, {1} = CH's name -->
         <value>{1} and {0} walk out in daylight. Seeing the pale skin and hungry looks of {0}, the righteous {1} draws their huge crossbow and fire a shot perfctly in the center of {0}'s forehead. The vampires are finally slain!
         </value>
     </string>
@@ -2049,7 +2049,7 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
   <string key="DGTransformToLycan">
     <!-- 0 - target's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} has died, and you transform into the A Dragon Cultist. Remember: you work for the dragons now. Your teammates (if any) are: {1}</value>
+    <value>{0} has died, and you transform into the A Dragon Zombie. Remember: you work for the dragons now. Your teammates (if any) are: {1}</value>
   </string>
   <string key="NegSeerSees">
     <!-- 0 - target's name -->
@@ -2097,13 +2097,13 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
     <value>You are a Dragon. BUT you fight for the good guys! You gave up on your Dovah actions, founded the Greybeards and now assist the Dragonborn. The problem is, all greybeards are newbies. You will appear as a Dragon(a hostile one) if they try to see your role!</value>
   </string>
   <string key="RoleInfoLycan">
-    <value>You are the Dragon Cultist! You fight for the Dragons and serve them, but is seen as a normal human (or Villager) by the Greybeards. Convenient, isn't it?</value>
+    <value>You are the Dragon Zombie! You fight for the Dragons and serve them, but is seen as a normal human (or Villager) by the Greybeards. Convenient, isn't it?</value>
   </string>
   <string key="Lycan">
-    <value>the Dragon Cultist 🐺🌝</value>
+    <value>the Dragon Zombie 🐺🌝</value>
   </string>
   <string key="AboutLycan">
-    <value>The Dragon Cultist works for the Dragons and kills just like them, but will appear to be a villager to the Greybeard(seer)</value>
+    <value>The Dragon Zombie works for the Dragons and kills just like them, but will appear to be a villager to the Greybeard(seer)</value>
   </string>
 
   <string key="RoleInfoOracle">
@@ -2247,8 +2247,8 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
     <value>Your teammates (if any) are: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} is no longer your teammate and {1} has now become a vampire, just like you!</value>
   </string>
   <string key="ThiefToWolf">
@@ -2305,8 +2305,8 @@ HELP US STOPPING THE VAMPIRE THREAT."</value>
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
   <value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
   </string>
   

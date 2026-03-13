@@ -7,7 +7,7 @@
 	02/08/17	- Added Random Mode, NSFW Gifs, Menu choices
 	22/05/17	- Added String: "NoAutoJoin" "GroupNotFound" "DeletedFromWaitList" "HaveJoined"
 	19/05/17	- Update language node details, updates for 4.2
-	01/01/17	- Added String: "HunterKillsWolfEnd", "WolfKillsHunterEnd", "CHKillsCultistEnd", "SecondsAdded", "SecondsRemoved", "CantExtend", "AllowExtendQ", "AllowExtendA", "MaxExtendQ", "MaxExtendA", "WolvesEatDrunkBlockSecondKill"
+	01/01/17	- Added String: "HunterKillsWolfEnd", "WolfKillsHunterEnd", "CHKillsZombieEnd", "SecondsAdded", "SecondsRemoved", "CantExtend", "AllowExtendQ", "AllowExtendA", "MaxExtendQ", "MaxExtendA", "WolvesEatDrunkBlockSecondKill"
 	01/01/17	- Fixed String: "AboutAlphaWolf", "AboutDrunk"
 	08/12/16	- Fixed String: "CultConvertSerialKiller", "CupidChosen"
 	05/12/16	- Added String: bunch of strings dated 05/12 and "SetDayTimeQ"
@@ -202,10 +202,10 @@
 	<string key="RoleInfoApprenticeSeer" >
 		<value>你係學徒先知。一開始你係普通村民，如有先知死咗或者入咗邪教，你會承繼佢。</value>
 	</string>
-	<string key="RoleInfoCultist" >
+	<string key="RoleInfoZombie" >
 		<value>你係邪教會員。\n1. 每一晚要令其他人去追隨你。（狼人不能追隨你）\n2. d人離開咗間屋就追隨唔到你，小心唔好入錯邪教殺手屋企。\n3. 最後如果每個人類都追隨你，你就會贏。\n4. 被入會嘅人會失去原來嘅身份。</value>
 	</string>
-	<string key="RoleInfoCultistHunter" >
+	<string key="RoleInfoZombieHunter" >
 		<value>你係邪教殺手，而家綠毛村入面有邪教！\n1. 如果邪教會員要你追隨佢，你唔會追隨到佢，但係佢地最後入會果個會死。\n2. 你每一晚要去一個人屋企，如佢係邪教會員，佢就會死。</value>
 	</string>
 	<string key="LynchTime" >
@@ -248,7 +248,7 @@
 	<string key="DefaultEaten" >
 		<value>日出之後，有陣血腥味……你地跟住d血腥味去行，見到【{0}】d內臟比狼人扯晒出黎。好噁心！！\n【{1}】。</value>
 	</string>
-	<string key="HunterKilledCultist">
+	<string key="HunterKilledZombie">
 		<value>你地發現【{0}】間屋好奇怪……你地行入去，見到有條屍瞓咗係個綠毛神神像隔離……原來佢係【邪教會員】，但係佢竟然唔係比狼殺死，究竟係邊個做架呢！?！?</value>
 	</string>
 	<string key="NoAttack" >
@@ -332,7 +332,7 @@
 	<string key="RemainingPlayersEnd">
 		<value>生還名單：</value>
 	</string>
-	<string key="CultistVotedConvert" >
+	<string key="ZombieVotedConvert" >
 		<value>【{0}】想【{1}】信教。</value>
 	</string>
 	<string key="CultConvertCultHunter">
@@ -359,7 +359,7 @@
 	<string key="HunterVisitDead">
 		<value>你想隊冧【{0}】，但係佢一早已經死咗！</value>
 	</string>
-	<string key="HunterFindCultist">
+	<string key="HunterFindZombie">
 		<value>你去到【{0}】間屋，發現佢拜緊綠毛神，你就拎出你把又長又粗又硬嘅寶劍吉佢，一個邪教會員就咁比你吉死咗！</value>
 	</string>
 	<string key="HunterFailedToFind">
@@ -371,7 +371,7 @@
 	<string key="WildChildTransform">
 		<value>【{0}】已死！ 所以你變咗狼人，你班狼友係：【{1}】</value>
 	</string>
-	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 	<string key="Villager">
 		<value>村民 👱</value>
 	</string>
@@ -417,10 +417,10 @@
 	<string key="ApprenticeSeer">
 		<value>學徒先知 🙇</value>
 	</string>
-	<string key="Cultist">
+	<string key="Zombie">
 		<value>邪教會員 👤</value>
 	</string>
-	<string key="CultistHunter">
+	<string key="ZombieHunter">
 		<value>邪教殺手 💂</value>
 	</string>
 	<!-- These are for the player list-->
@@ -1138,7 +1138,7 @@
 	<string key="BlacksmithKilled">
 		<value>村中既鐵匠【{0}】今晚真係行衰運，一天光成班村民就發現佢既頭同四肢分別俾五把佢自己鑄造嘅銀劍插咗佢張工作枱上面。唔通而家連環殺手除咗收集人體器官之外仲順便集佢既殺人工具??</value>
 	</string>
-	<string key="CultistKilled">
+	<string key="ZombieKilled">
 		<value>一朝早村民就係邪教教會張神枱上面發現【{0}】俾人用個燭台插死咗。邪教會員【{0}】死咗。</value>
 	</string>
 	<string key="CupidKilled">
@@ -1173,11 +1173,11 @@
 		<value>尋晚邪教殺手【{0}】明明諗住去滅教，點知原來佢去咗搵連環殺手。村民一起身就見到【{0}】條屍攤咗係村口……大家記住唔好再嘗試去搵連殺喇……</value>
 	</string>
 	<string key="CultConvertWolfPublic">
-		<!--used when Cultists convert the wolves, only if wolves stayed home-->
+		<!--used when Zombies convert the wolves, only if wolves stayed home-->
 		<value>正當難得今晚狼群想留係屋企抖下，偏偏邪教就揀咗去其中一隻狼間屋度到傳教！ 既然有人送上門狼就當然唔客氣啦。邪教新丁【{0}】就咁就俾狼咬死咗啦。</value>
 	</string>
 	<string key="CultConvertKillerPublic">
-		<!--used when Cultists convert the SK-->
+		<!--used when Zombies convert the SK-->
 		<value>邪教尋晚興致勃勃咁去到一間屋度傳教，點知原來去錯咗連環殺手屋企。村民一起身就發現邪教新丁【{0}】條屍俾人斬碎撒咗係村口。</value>
 	</string>
 	<string key="GAGuardedKiller">
@@ -1195,8 +1195,8 @@
 		<!--{0} = hunter's name, {1} = wolf's name-->
 		<value>當太陽升起，見到成條村得番【{0}】一個，於是【{1}】就趁住【{0}】最冇戒心既時候撲上去食咗佢。地上面剩低【{0}】俾狼咬到爛哂既屍體。呢條村既村民死死哂啦……</value>
 	</string>
-	<string key="CHKillsCultistEnd">
-		<!--{0} = last cultist's name, {1} = CH's name -->
+	<string key="CHKillsZombieEnd">
+		<!--{0} = last Zombie's name, {1} = CH's name -->
 		<value>天一光，村入面淨番【{1}】同埋【{0}】。突然間一把利刀劃過【{0}】條頸，正義既【{1}】殺咗呢條村最後一個邪教會員，正式為呢個十惡不赦既邪教晝上句號！</value>
 	</string>
 	<!-- Extend time -->
@@ -1501,8 +1501,8 @@
 		<value>你成為了共濟會員，你嘅共濟之友︰【{0}】</value>
 	</string>
 	<string key="ThiefToCult">
-		<!-- 0 - old cultist's name -->
-		<!-- 1 - new cultist's name -->
+		<!-- 0 - old Zombie's name -->
+		<!-- 1 - new Zombie's name -->
 		<value>【{0}】唔再係你嘅同伴，而【{1}】就係你新嘅教友。</value>
 	</string>
 	<string key="ThiefToWolf">
@@ -1555,8 +1555,8 @@
 	</string>
 	
 	<!--  ADDED 2018JUL18 -->
-	<string key="CultistBitten">
-		<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<string key="ZombieBitten">
+		<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 		<value>當你地傾緊今晚同邊個傳教嗰陣，先醒起原來【{0}】成晚都唔喺到！到底佢去咗邊？？😱😱😱</value>
 	</string>
 

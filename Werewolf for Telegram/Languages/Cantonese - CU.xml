@@ -201,7 +201,7 @@
 	Tom 修改 9 條 "DayTime" 字串（共 9 條—增加 "\n/players 去睇邊個仲喺山城。" ）
 	
 	13/07/2017 (v2.3) :
-	Tom 修正 "RoleInfoCultist" 字串
+	Tom 修正 "RoleInfoZombie" 字串
 	Tom 修改 "左" 為 "咗" （共 12 條）
 	Tom 修正 "AskVisit" 字串
 	
@@ -255,7 +255,7 @@
 	Tom 修改 "GAGuardedWolf" 字串（加「\n【組爸媽 👫】已被 Quit U 。」）
 	Tom 修改 "WolfKillsHunterEnd" 字串（加「\n【TA 👨‍🎓】已被 Quit U 。」）
 		Note: 由於學霸（即 "Wolf" ）不止一種，所以 "HunterKillsWolfEnd" 、 "HunterShotWolfMulti" 、 "HunterShotWolf" 及 "SerialKillerKilledWolf" 字串延於 v1.17 作出修改。
-	Tom 修改 "CHKillsCultistEnd" 字串（加「\n【莊員 🕺】已被 Quit U 。」）
+	Tom 修改 "CHKillsZombieEnd" 字串（加「\n【莊員 🕺】已被 Quit U 。」）
 	
 	08/07/2017 (v1.15) :
 	KC 刪除 1 條 "JoinButton" 字串
@@ -353,9 +353,9 @@
     03/07/2017 (v1.2) :
 	KC 修改 "RoleInfoXXXXX" 字串（共 28 條—加圖案）
 	KC 修改 "學生陣營" 為 "學渣陣營" （共 33 條）
-	Ku 修改 "RoleInfoCultistHunter" 字串
+	Ku 修改 "RoleInfoZombieHunter" 字串
 	Ku 修改 "DefaultEaten" 字串
-	Tom 修改 "CultistHunter" 圖案
+	Tom 修改 "ZombieHunter" 圖案
 	Tom 修改 "AboutXXXXX" 字串（共 29 條—加圖案）
 
     02/07/2017 (v1.1) :
@@ -636,10 +636,10 @@
 	<string key="RoleInfoApprenticeSeer">
 		<value>你係旗佬 🏳。\n一開始你係學渣。如果有大組長 Quit 咗 U 或者上咗莊，你會承繼佢。</value>
 	</string>
-	<string key="RoleInfoCultist">
+	<string key="RoleInfoZombie">
 		<value>你係莊員 🕺。\n1）每一次考試要拉其他人去傾莊。（學霸唔能夠去傾莊）\n2）啲人離開咗宿舍房間就去唔到傾莊，小心唔好入錯代表會房間。\n3）最後如果每個人都上咗莊，你就會贏。\n4）上莊嘅人會失去原來嘅身份。</value>
 	</string>
-	<string key="RoleInfoCultistHunter">
+	<string key="RoleInfoZombieHunter">
 		<value>你係代表會成員 🤗，而家代表會要冚人檔收人旗！\n1）如果莊員要你傾莊，你唔會去到，佢哋最後上莊嗰個會被 Bam 而 Quit U 。\n2）你每一晚要去一個人嘅宿舍房間，如果佢係莊員，佢就會被 Bam 而 Quit U 。</value>
 	</string>
 	<string key="LynchTime">
@@ -699,7 +699,7 @@
 		<value>考完試之後，大家決定一齊去幾日日本放鬆一下，但平時係咁 Yo 人嘅【{0}】竟然深潛大海！咁佢哋就 PM 【{0}】問下佢，原來佢瀨咗嘢，俾人踢出校。\n【{1}】</value>
 		<value>考完試之後，大家決定一齊去幾日韓國放鬆一下，但平時係咁 Yo 人嘅【{0}】竟然深潛大海！咁佢哋就 PM 【{0}】問下佢，原來佢瀨咗嘢，俾人踢出校。\n【{1}】</value>
 	</string>
-	<string key="HunterKilledCultist">
+	<string key="HunterKilledZombie">
 		<value>你哋收到 Massmail 發現學校某支大莊嘅莊員【{0}】辭職仲 Quit 埋 U ，聽聞呢單嘢有內情，究竟發生乜嘢事呢？\n【莊員 🕺】已被 Quit U 。</value>
 	</string>
 	<string key="NoAttack">
@@ -805,7 +805,7 @@
 	<string key="RemainingPlayersEnd">
 		<value>山城人數：</value>
 	</string>
-	<string key="CultistVotedConvert">
+	<string key="ZombieVotedConvert">
 		<value>【{0}】想【{1}】嚟傾莊。</value>
 	</string>
 	<string key="CultConvertCultHunter">
@@ -835,7 +835,7 @@
 		<value>你去到【{0}】間宿，發現佢係莊員，但係佢已經執緊嘢 Quit U ！</value>
 		<value>你去到【{0}】間宿，發現佢間房有 Table Stand ，當你滿心歡喜想對佢嚴刑逼供嗰陣，原來佢已經 Quit 咗 U ， Table Stand 只係佢唔小心留低咋！</value>
 	</string>
-	<string key="HunterFindCultist">
+	<string key="HunterFindZombie">
 		<value>你去到【{0}】間宿，發現佢練緊和聲Beat，佢簡直不打自招。你仲見到一大堆 Banner 、 Table Stand 乜乜乜，斷到正！你報串之後，聽講佢被 Quit 咗 U 。</value>
 	</string>
 	<string key="HunterFailedToFind">
@@ -849,7 +849,7 @@
 		<value>【{0}】已遠走高飛！生無可戀的你專心讀書變咗做學霸，你班學霸朋友係：【{1}】</value>
 	</string>
 	
-<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 	<string key="Villager">
 		<value>學渣 👱</value>
 	</string>
@@ -895,10 +895,10 @@
 	<string key="ApprenticeSeer">
 		<value>旗佬 🏳</value>
 	</string>
-	<string key="Cultist">
+	<string key="Zombie">
 		<value>莊員 🕺</value>
 	</string>
-	<string key="CultistHunter">
+	<string key="ZombieHunter">
 		<value>代表會成員 🤗</value>
 	</string>
 	
@@ -1715,7 +1715,7 @@
 	<string key="BlacksmithKilled">
 		<value>Killer改完卷，發現肥嘅人數少過舊年好多。佢上 CUHK Secrets 嗰陣見到啲人多謝某人嘅 Tips 令佢哋 Pass 到 Exam 。Killer查到原來係【{0}】，決定直接踢【{0}】出校。\n【學長 🤶】已被 Quit U 。</value>
 	</string>
-	<string key="CultistKilled">
+	<string key="ZombieKilled">
 		<value>教授喺火車站見到莊員【{0}】 Dem Beat 特別出力，覺得佢應該係表演藝術人才，留喺中大係大材小用，所以就畀咗張 Quit U Form 同演藝學院單張佢。\n【莊員 🕺】已被 Quit U 。</value>
 	</string>
 	<string key="CupidKilled">
@@ -1752,10 +1752,10 @@
 	<string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
 		<value>代表會成員【{0}】明明諗住去冚人檔收人旗，點知誤闖Killer個 Lab 同倒瀉咗啲實驗品，仲要唔小心炸埋個 Lab 。最後【{0}】因為擅闖禁地同危險行為俾人踢咗出校。\n【代表會成員 🤗】已被 Quit U 。</value>
 	</string>
-	<string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+	<string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
 		<value>當學霸專心摺宿溫書之際，莊員【{0}】上門去搵一位學霸傾莊！學霸見到佢自動送上門，於是同校方報串，屈【{0}】私下收 FM OCamp 錢，因此【{0}】 Quit 咗 U 。\n【莊員 🕺】已被 Quit U 。</value>
 	</string>
-	<string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+	<string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
 		<value>莊員尋晚興致勃勃咁去拉人入會同收會費，點知撞親咁啱心情唔靚嘅Killer，仲要令佢跌落未圓湖。個Killer喺港大爬返出嚟嗰陣迷迷糊糊，剩係記得其中一件蛋散個名，唔好彩嘅【{0}】因此被踢出校。\n【莊員 🕺】已被 Quit U 。</value>
   	</string>
 	<string key="GAGuardedKiller">
@@ -1775,8 +1775,8 @@
 	<!--{0} = hunter's name, {1} = wolf's name-->
 		<value>最後一次考試前夕，當TA【{0}】係咁日以繼夜，夜以繼日，再日以繼夜，夜以繼日咁做 Paper 嗰陣，學霸【{1}】決定趁佢病，攞佢命！學霸發動 WannaCry 攻擊令佢交唔到 Paper ！可憐TA功虧一簣，輸咗俾學霸……\n【TA 👨‍🎓】已被 Quit U 。</value>
 	</string>
-	<string key="CHKillsCultistEnd">
-	<!--{0} = last cultist's name, {1} = CH's name -->
+	<string key="CHKillsZombieEnd">
+	<!--{0} = last Zombie's name, {1} = CH's name -->
 		<value>而家淨番【{1}】同埋【{0}】。作為代表會有特權嘅【{1}】發現【{0}】係漏網之魚！嗱嗱聲 BAM 埋佢令大學冇晒莊，還大家一個安靜冇 Beat 嘅讀書環境。\n【莊員 🕺】已被 Quit U 。</value>
 	</string>
 	

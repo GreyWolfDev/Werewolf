@@ -205,10 +205,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>You are the reporter's assistant (🙇). If the reporter cannot do his job anymore, you will step up and become the reporter yourself.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>You are a hooligan (👤). You like violence and pyrotechnics. You can convince other people to do so too until only hooligans are left standing and the tournament is ruined.</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>You are the policeman (💂), trying to take care of every match and arresting the hooligans. Every match, you can investigate one person and find out if they are hooligans or not.</value>
   </string>
   <string key="LynchTime">
@@ -263,7 +263,7 @@
 <!-- 1 - victim role -->
     <value>As everyone heads out of the stadium, they see {0} lying in the bushes, covered in his own blood. {1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 <!-- 0 - victim name -->
     <value>Loud sirens can be heard, even shots, as the police arrests {0}. He will get a stadium ban forever. One of the hooligan has been found out.</value>
   </string>
@@ -369,36 +369,36 @@
   <string key="RemainingPlayersEnd">
     <value>Remaining living football players, roles, and team:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
 <!-- 0 - Voter's name -->
 <!-- 1 - target name -->
     <value>{0} has voted to make {1} into a hooligan.</value>
   </string>
   <string key="CultConvertCultHunter">
-<!-- 0 - Yougest Cultist (killed)'s name' -->
+<!-- 0 - Yougest Zombie (killed)'s name' -->
 <!-- 1 - CultHunter's name -->
     <value>{0} was sent to persuade {1} to become a hooligan only to be confronted with a weapon and hand cuffs. He is arrested and cannot go into stadiums ever again.</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-<!-- 0 - Youngest Cultist's name -->
-<!-- 1 - Number of cultists left -->
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - Number of Zombies left -->
     <value>{0} wanted you to become a hooligan but you take your weapon out and arrest him instead! {1} hooligans remain!</value>
   </string>
   <string key="CultConvertYou">
     <value>The hooligans convinced you that football is a waste of time and beating people up is the better sport. So you have become one of them. Every game, you can convince another person to become a hooligan too.</value>
   </string>
   <string key="CultTeam">
-<!-- 0 - Number of cultists -->
-<!-- 0 - Number of cultists -->
+<!-- 0 - Number of Zombies -->
+<!-- 0 - Number of Zombies -->
     <value>Hooligans: {0}</value>
     <value>{0} has decided violence is good, football is bad and joined the hooligans!</value>
   </string>
   <string key="CultJoin">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>{0} has joined the hooligans!</value>
   </string>
   <string key="CultVisitEmpty">
-<!-- 0 - Newest cultist's name -->
+<!-- 0 - Newest Zombie's name -->
 <!-- 1 - target name -->
     <value>You wanted {1} to become a hooligan so you sent {0} to convince him. However, {0} couldn't find him on his usual position.</value>
   </string>
@@ -409,7 +409,7 @@
 <!-- 0 - target name -->
     <value>You wanted {0} to become a hooligan but he got fouled and you deem him too weak now.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
 <!-- 0 - target name -->
     <value>You take a look at {0} and see a Molotov cocktail in his hand. Before he can harm anyone, you make sure to arrest him.</value>
   </string>
@@ -424,7 +424,7 @@
   <string key="WildChildTransform">
 <!-- 0 - role's name -->
 <!-- 0 - teamate's names -->
-<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
     <value>{0}just had to leave the competition. Furious and without purpose, you join the offenders! Your new teammates are: {1}</value>
   </string>
@@ -473,10 +473,10 @@
   <string key="ApprenticeSeer">
     <value>the Assistant 👜 (🙇)</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>a Hooligan 🎆 (👤)</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
 <!-- These are for the player list -->
     <value>the Police man 👮 (💂)</value>
   </string>
@@ -508,7 +508,7 @@
     <value>  The defenders are: {0}</value>
   </string>
   <string key="CultTargetDead">
-<!-- 0 - Youngest cultists name -->
+<!-- 0 - Youngest Zombies name -->
     <value>Your newest member heads over to {0} to make him a hooligan but {0} decides he likes his way of violence more and punches your newest member in the face.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -689,12 +689,12 @@
     <value>You tried to let your anger on {0} out, only to find you couldn't hit him because the goalkeeper was in the way...</value>
   </string>
   <string key="CultConvertHunter">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>You wanted to make {1} a hooligan but you decided on the wrong person! {0} is the striker and kicks you for even daring to try...</value>
   </string>
   <string key="CultConvertSerialKiller">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>You send {0} to convince {1} violence is awesome, but {1} has his own sense of destruction. You loose one member as the salty Holland fouls him...</value>
   </string>
@@ -718,7 +718,7 @@
     <value>{0} has left the tournament. You pick up his shirt and become a defender! Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToCult">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>The naked {0} picked up one of the hooligans shirts! He is now one of you!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1251,7 +1251,7 @@
   <string key="BlacksmithKilled">
     <value>A red sun rises. Blood has been spilled last game. The weather man {0} got fouled by the Salty Holland!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} wanted to convince the Salty Holland to become a hooligan, but he regrets this now as he is on his way to the hospital!</value>
   </string>
   <string key="CupidKilled">
@@ -1289,12 +1289,12 @@
 	<value>The police man tried to check the wrong person out. {0} is found in a locker, but his gun cannot be found anywhere... :S Hopefully, the Salty Holland didn't keep it.</value>
   </string>
   <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
 	<value>The Hooligans tried to convert one of the offenders, but {0} got injured in the process...</value>
 	<value>As {0} tries to convince an offender, the offender decides to do the police's job and made sure {0} would not be able to participate in the tournament again.</value>
   </string>
   <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
 	<value>The hooligans wanted to add another violent member to their team. Too late they realized that their choice was even more violent than them. {0} was fouled and had to be send to the hospital cause of that mistake!</value>
 	<value>{0} tried to pursue the Holland into joining the hooligans. He didn't realize his error fast enough and got injured badly by the Holland.</value>
   </string>
@@ -1316,8 +1316,8 @@
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>As only the striker was left, {1} made sure to keep all balls out of reach as he fouls {0} one last time before the tournament is over.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <!-- Extend time -->
     <value>{1} and {0} enter the final game of the tournament. Only they are left. {0} tries to throw a Molotov cocktail at the policeman, but fails. He gets hand cuffed and send to prison for a long time... {1} smiles fondly as he realizes all hooligans are gone.</value>
   </string>

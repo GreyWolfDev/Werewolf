@@ -89,7 +89,7 @@ namespace Werewolf_Control
         {
             var lang = GetLanguage(update.Message.Chat.Id);
             // var reply =
-            //    "/AboutVG - Villager\n/AboutSeer - Seer\n/AboutWw - Werewolf\n/AboutHarlot - Harlot\n/AboutDrunk - Drunk\n/AboutCursed - Cursed\n/AboutTraitor - Traitor\n/AboutGA - Guardian Angel\n/AboutDetective - Detective\n/AboutGunner - Gunner\n/AboutTanner - Tanner\n/AboutFool - Fool\n/AboutCult - Cultist\n/AboutCH - Cultist Hunter\n/AboutWC - Wild Child\n/AboutAppS - Apprentice seer\n/AboutBH - Beholder\n/AboutMason - Mason\n/AboutDG - Doppelgänger\n/AboutCupid - Cupid\n/AboutHunter - Hunter\n/AboutSK - Serial Killer";
+            //    "/AboutVG - Villager\n/AboutSeer - Seer\n/AboutWw - Werewolf\n/AboutHarlot - Harlot\n/AboutDrunk - Drunk\n/AboutCursed - Cursed\n/AboutTraitor - Traitor\n/AboutGA - Guardian Angel\n/AboutDetective - Detective\n/AboutGunner - Gunner\n/AboutTanner - Tanner\n/AboutFool - Fool\n/AboutCult - Zombie\n/AboutCH - Zombie Hunter\n/AboutWC - Wild Child\n/AboutAppS - Apprentice seer\n/AboutBH - Beholder\n/AboutMason - Mason\n/AboutDG - Doppelgänger\n/AboutCupid - Cupid\n/AboutHunter - Hunter\n/AboutSK - Serial Killer";
 
             var reply = "";
             reply += "/aboutVG - " + GetLocaleString("Villager", lang) + "\n";
@@ -116,8 +116,8 @@ namespace Werewolf_Control
             Thread.Sleep(300);
             reply = "/aboutDetective - " + GetLocaleString("Detective", lang) + "\n";
             reply += "/aboutAppS - " + GetLocaleString("ApprenticeSeer", lang) + "\n";
-            reply += "/aboutCult - " + GetLocaleString("Cultist", lang) + "\n";
-            reply += "/aboutCH - " + GetLocaleString("CultistHunter", lang) + "\n";
+            reply += "/aboutCult - " + GetLocaleString("Zombie", lang) + "\n";
+            reply += "/aboutCH - " + GetLocaleString("ZombieHunter", lang) + "\n";
             reply += "/aboutWC - " + GetLocaleString("WildChild", lang) + "\n";
             reply += "/aboutFool - " + GetLocaleString("Fool", lang) + "\n";
             reply += "/aboutMason - " + GetLocaleString("Mason", lang) + "\n";

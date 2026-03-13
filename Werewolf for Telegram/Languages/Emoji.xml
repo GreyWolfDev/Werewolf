@@ -176,10 +176,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>👇🙇❗️👳💀➡️👇👳❗️</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>👇👤❗️🌙💱👤❗️👥👥👥➡️👤👤👤 👇🏆❗️</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>👇💂❗️🌙👇👉🏠❗️🏠👤➡️👤💀❗️</value>
   </string>
   <string key="LynchTime">
@@ -224,7 +224,7 @@
   <string key="DefaultEaten">
     <value>🐺🍝 {0}❗️ {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>💂🗡 {0}❗️ 👤💀❗️</value>
   </string>
   <string key="NoAttack">
@@ -308,7 +308,7 @@
   <string key="RemainingPlayersEnd">
     <value>👥</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>{0} 🖐💱 {1}</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -335,7 +335,7 @@
   <string key="HunterVisitDead">
     <value>👇👉 {0} 🏚☠❗️</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>👇👉 {0} 🏠▪️👤❗️👇🗡👤❗️</value>
   </string>
   <string key="HunterFailedToFind">
@@ -345,7 +345,7 @@
     <value>👨💀❗️ {0} 👶➡️🐺❗️</value>
   </string>
   <string key="WildChildTransform">
-<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
     <value>{0} 💀❗️👇➡️🐺❗️ 🐺🐺🐺 {1}</value>
   </string>
   <string key="Villager">
@@ -393,10 +393,10 @@
   <string key="ApprenticeSeer">
     <value>🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
 <!-- These are for the player list -->
     <value>💂</value>
   </string>
@@ -721,10 +721,10 @@
     <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+    <value>As a Zombie, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are Zombie - the cult wins</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die.</value>
   </string>
   <string key="AboutWC">
     <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
@@ -1100,7 +1100,7 @@
   <string key="BlacksmithKilled">
     <value>{0}, ⚒ ☠. 🔪🔪🔪🔪🔪➡⚒</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} 🔎☠🔪. {0} 👉👤.</value>
   </string>
   <string key="CupidKilled">
@@ -1135,11 +1135,11 @@
     <value>👱👱👱🔎 {0}, 💂👈🔪. ⚠, ⛔🚶👨🔪❕</value>
   </string>
   <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>🐺🐺🚫☠➡👨, {0}, 👈👤, 🚶➡🐺, 🐺☠👉👤. 👤💀.</value>
   </string>
   <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
     <value>👤👤💭👈👨🔜👤, ⚠🚫❕ {0}, 👈👤, 👈🔪. 😇📕👈🔪...</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1158,8 +1158,8 @@
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{1} 💭 {0} 🙂, {1} 🍝 {0}, {0} 🚫🎯. {1} 🏆❕</value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <!-- Extend time -->
     <value>{1} ➕ {0} 🚶🚶, {1} 👀 {0} ➡👤, {1} 💂☠{0}❕ {1} 🏆❕</value>
   </string>

@@ -181,10 +181,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>你是先知学徒，一旦真正的先知死亡，你就会继承他们的使命。</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>你是邪教徒。你可以在晚上施洗任意一名玩家，让他们成为你的一员。如果所有玩家都受洗成邪教徒，邪教徒就赢了。</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>村里出现了邪教活动，所有人的思想自由都受到了威胁！作为邪教捕手，你的任务是每晚捕捉一名玩家，如果刚好是邪教徒，他就会死。如果有人想施洗你，最新加入的那位邪教徒就会死于非命。</value>
   </string>
   <string key="LynchTime" >
@@ -226,7 +226,7 @@
   <string key="DefaultEaten" >
     <value>旭日初升，恶臭四溢。村民们寻着气味而走，赫然发现 {0} 身首异处，躯体被撕成了碎片。这回糟了！\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>一阵恶臭从 {0} 的家里飘出。村民打开门，发现一具尸体静静地躺在祭坛上。想必是被邪教捕手杀的吧！\n {0} 是邪教徒。</value>
   </string>
   <string key="NoAttack" >
@@ -318,7 +318,7 @@
   <string key="RemainingPlayersEnd">
     <value>剩余玩家、角色及所属团队：</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value> {0} 希望为 {1} 受洗</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -346,7 +346,7 @@
     <value>你想捕捉 {0} ，然而眼下你只看到他冰冷的尸体。</value>
     <value>你带着怀疑 {0} 是邪教徒而准备捕捉的心情前往他家，却发现他的尸体已经被狼人咬得残缺不全。</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>你潜入了 {0} 的家，发现他正在一尊不知名的塑像前祈祷。你的剑如箭般插进他的背，穿过他的心 —— 你已把一名邪教徒歼灭。</value>
   </string>
   <string key="HunterFailedToFind">
@@ -358,7 +358,7 @@
   <string key="WildChildTransform">
     <value>你的偶像 {0} 死了！没有依靠的你，面对{0}的死亡，痛不欲生，你所有的愤怒都爆发了！你对于这个社会，世界的恨，让你成为了狼人！当前狼群： {1} </value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>村民👱</value>
   </string>
@@ -404,10 +404,10 @@
   <string key="ApprenticeSeer">
     <value>先知学徒🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>邪教徒👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>邪教捕手💂</value>
   </string>
   <!-- These are for the player list -->
@@ -1130,7 +1130,7 @@
   <string key="BlacksmithKilled">
     <value>看来 {0} 昨晚倒霉出奇了……他的尸体，被发现的时候，已经被他自己的大锤砸烂了……【铁匠 ⚒】被谋杀了。</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value> {0} 被发现被斩首在了奇怪的祭坛旁边……看来，信邪教得永生是一个骗局。【邪教徒 👤】被谋杀了。</value>
   </string>
   <string key="CupidKilled">
@@ -1163,10 +1163,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>早上， {0} 的尸体被发现，他平时带着的十字架，反而被刺进了他的太阳穴。。。【邪教捕手 💂】被谋杀了。</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>昨天 {0} 试图给狼人讲经，然而狼人所信仰的，只有自己的犬齿。【邪教徒 👤】自作死被吃了。</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>昨晚 {0} 试图给连环杀手讲经，然而连环杀手觉得很烦，就把他杀了。【邪教徒 👤】被杀了。</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1183,8 +1183,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>半夜， {0} 躲在屋子里，摩挲着他的宝贝枪，这是时 {1} 偷偷跑了进来，一口咬到了心神不定的猎人的喉咙……【猎人🎯】死的好惨啊。</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>清晨， {0} 跑出来进行例行朝拜，正好撞上 {1} ，于是被他“驱魔”了。【邪教徒👤】死了。</value>
   </string>
 
@@ -1449,7 +1449,7 @@
   <string key="ShufflePlayerListA">
     <value>每次将对对玩家列表随机安排\nPlayer list will be shuffled every time: {0}</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>目前邪教教会成员: {0}</value>
   </string>
   
@@ -1524,7 +1524,7 @@
   <string key="ChemistFrozen">
     <value>气温骤降，加热器也坏了，你不能合成你的药了。</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>当你开始准备邪教入会仪式事宜时，一阵风，把你冻住了。</value>
   </string>
   <string key="CHFrozen">
@@ -1649,8 +1649,8 @@
     <value>你的队友(如果有的话) ： {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} 不再是你的队友 而且{1}现在变成了一个 👤邪教徒</value>
   </string>
   <string key="ThiefToWolf">
@@ -1690,8 +1690,8 @@
   <string key="ThiefTeamEnd">
 	<value>小偷队伍</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>奇怪，当你们决定今晚让谁入会时，邪教徒 {0} 好像不在家。</value>
   </string>
   <string key="ThiefStoleYourRoleThief">
@@ -1877,11 +1877,11 @@
   <string key="HunterFellDigger">
 	<value>当你疲惫地回到家时，却突然听到从你未填完的坑中的一声大叫。你连忙过去...却发现{0}正躺在你新挖的墓穴中，很可惜，{0}是邪教捕手</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>当你疲惫地回到家时，却突然听到从你未填完的坑中的一声大叫。你连忙过去...却发现{0}正躺在你新挖的墓穴中，幸好，{0}是👤邪教徒</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>当你们正走近{0}家时，准备施洗{0}时，{1}突然脚下一空，跌入了一个未完工的墓穴中，{1}也失去了意识...</value>
   </string>
@@ -1937,8 +1937,8 @@
   <string key="HarlotFellPublic">
 	<value>妓女{0}从村里消失了...不过，有人发现，在公墓里出现了一座新坟墓，而且，墓碑上除了昨天死去的人的名字，还有仓促刻下几个字：妓女{0}亦安息在此 </value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>{0}从村里消失了...不过，有人发现，在公墓里出现了一座新坟墓，而且，墓碑上除了昨天死去的人的名字，还有仓促刻下几个字：👤邪教徒{0}亦安息在此</value>
   </string>
   <!--{0}: thief-->

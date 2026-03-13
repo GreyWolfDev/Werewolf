@@ -186,10 +186,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>You are Ginny Weasley 🙇, the apprentice Divination Professor and a fighter of Hogwarts. If Professor Sybill Trelawney dies, you will take the crystal ball and substitute the Divination class. </value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>You are one of the terrifying Dementors 👤. During the night, you can choose someone to kiss, sucking away all their life force for them to become one of you. If all the remaining players at the end of the game are Dementors, they will rule all over Hogwarts!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>The Dementors are at Hogwarts trying to inhale all souls and spread fear and sadness. You are Remus Lupin 💂, a powerful wizard! During the night you can use the Patronus spell to investigate a Wizard. If they are a Dementor, they will no longer dare to come close to Hogwarts. If the dementors attack you, the weaker Dementor will run away in fear.</value>
   </string>
   <string key="LynchTime" >
@@ -244,7 +244,7 @@
     <!-- 1 - victim role -->
     <value>As everyone gets up to do their daily tasks, they smell something horrible. They follow the smell to find {0} quartered in the forest, killed by a terrible forbidden spell. AVADA KEDAVRA. {1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Teachers were wondering why {0} did not attend their classes today, so they sent a student to check on their chambers. Upon entering their chambers, nothing seems out of the ordinary, except for the room to be lighter and the presence of {0}. It's clear that Remus Lupin has conjured his Patronus, sending a Dementor 👤 back to Azkaban.</value>
   </string>
@@ -350,34 +350,34 @@
   <string key="RemainingPlayersEnd">
     <value>Remaining players, roles and faction:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} has voted to replace {1} with a Dementor.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Youngest Cultist (killed)'s name' -->
+    <!-- 0 - Youngest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>{0} was sent to give the kiss of death and replace {1} with a Dementor ... However, he was Remus Lupin 💂, and had a great way to ward off the Dementors! {0} has returned to Azkaban.</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} went to your office last night, ready to administer the kiss of death and replace you ... But you had a great way to protect yourself. One of the Dementors 👤 returned to Azkaban ... {1} Dementor(s) remaining!</value>
   </string>
   <string key="CultConvertYou">
     <value>You received the kiss of death of a Dementor 👤 and was replaced by one of them. During the night, you can try to kiss them to death with your fellow Dementors and replace other wizards ...</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Dementors: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} received the kiss of death and was replaced by a Dementor!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} was sent to give {1} the kiss of death ... But no one was in the chambers.</value>
   </string>
@@ -388,7 +388,7 @@
     <!-- 0 - target name -->
     <value>You went to investigate {0}, but when you got there you found only the feelings of sadness and ... is that candy? You returned to your chambers, candy in hand.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>You invade {0}'s room and feel an air of sadness and depression. You know very well what to do on these occasions: invoke the Patronus enchantment.</value>
   </string>
@@ -405,7 +405,7 @@
     <!-- 0 - teamate's names -->
     <value>You saw your role model, {0}, die before you. Alas, hatred seeps their way in and you turned to the Death Eater's side. Your new teammates are: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>a Wizard 👱</value>
@@ -452,10 +452,10 @@
   <string key="ApprenticeSeer">
     <value>Ginny Weasley 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>a Dementor 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Remus Lupin 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -487,7 +487,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>The most recent member of the Dementors runs to the room of {0} to give the kiss of death and replace them with a Dementor, but it finds instead disorder, blood and pieces ... The objective has been assassinated!</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -617,12 +617,12 @@
     <value>You went to have a little fun with {0}. But upon getting there, Lily J. Potter 👼 ended your fun! No jokes for the night ...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>The Dementors command {0} to kiss {1} till their death and replace them with a Dementor. Arriving there, {0} was greeted with an Expelliarmus followed by a Sectumsempra that was shot right into their chest! {0} is dead...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>{0} sneaks over to {1}'s room, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} attempts to plunge the knife deep into {0}'s organs in alphabetical order, cackling the entire time! {0}, being a Dementor 👤, is unscathed, but being frightened by Grindelwald 🔪, they have decided to return to Azkaban.</value>
   </string>
@@ -646,7 +646,7 @@
     <value>{0} has died, and you become a member of Dumbledore's Army 👷.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0}, Nymphadora Tonks 🎭, was replaced by a Dementor.</value>
   </string>
   <string key="DGTransformToCult">
@@ -1175,7 +1175,7 @@ However, if you protect a Death Eater, you may have a fate worse than death.</va
   <string key="BlacksmithKilled">
     <value>Seems like {0}, the resident wandmaker Garrick Ollivander ⚒, must have been extremely unlucky. {0}'s frail body looks as though it has been injured by spells, freshly casted from {0}'s wands, with some knives found plunged into his hands, feet and head, and pinned to the craftsman's table last night. Oh, look at his head! Maybe Gellert Grindelwald 🔪 did cast Crucio till his neck broke like that...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Everyone seems to feel a little happier. {0} the Dementor 👤 seems to have ran back to Azkaban. Gellert Grindelwald 🔪 must have scared this poor Dementor out of their (non-existent) mind!</value>
   </string>
   <string key="CupidKilled">
@@ -1211,11 +1211,11 @@ However, if you protect a Death Eater, you may have a fate worse than death.</va
     <value>Remus Lupin 💂 may have been a smart man, but even the intelligent can fall prey to Gellert Grindelwald's 🔪 "antics". {0}'s bedroom was broken into and spray-painted with his house colours, using - you guessed it - his own blood.</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Voldemort seems to have trained his followers well! Despite taking a day off from killing people, the Death Eaters 🐺 remained alert. {0}, a poor Dementor 👤, thought that they could catch a Death Eater offguard, but no - they've been sent back to Azkaban.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>The Dementors 👤 tried to give Gellert Grindelwald 🔪 the Kiss, but {0}, the newest member, was too spooked out by Grindelwald's so-called pranks and decided to return to Azkaban!</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1236,8 +1236,8 @@ However, if you protect a Death Eater, you may have a fate worse than death.</va
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>The last Death Eater 🐺 has gotten tired of trying to capture Harry Potter 🎯 alive, knowing that their efforts will be futile. {1} casts a Killing Curse on {0}, knowing that his signature Expelliarmus can't save him. All hail Lord Voldemort.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>A feeling of sadness and dread envelopes {1}, undoubtedly the work of a Dementor 👤. Knowing only {0} was left in Hogwarts, Remus Lupin 💂 casts a Patronus charm, sending his Patronus towards {0}'s bedroom. A feeling of happiness and relief signals that his job here is done.</value>
   </string>
 
@@ -1536,8 +1536,8 @@ However, if you protect a Death Eater, you may have a fate worse than death.</va
     <value>Wanting to properly learn Defence Against the Dark Arts, you joined Dumbledore's Army 👷. Your teammates (if any) are: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>Strange, {0} is no longer your teammate and {1} has now become a being without spirit, that nonetheless seek life, just like you!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1594,8 +1594,8 @@ However, if you protect a Death Eater, you may have a fate worse than death.</va
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
   </string>
   

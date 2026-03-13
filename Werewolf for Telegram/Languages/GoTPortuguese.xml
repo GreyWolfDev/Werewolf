@@ -191,10 +191,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Você é Bran Stark, cuidando de Rickon, Verão e Cão Felpudo.  Caso seu pai morra, você tomará seu lugar como Senhor de Winterfell enquanto Robb está na guerra.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Você é um Homem sem Rosto.  Vindo da Cidade Livre de Bravos, você poderá escolher alguém para levar a Casa do Preto e Branco. Se todos os jogadores restantes ao final do jogo forem Homens sem Rosto, vocês vencem!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Os Homens sem Rosto estão em Westeros tentando converter todo mundo, e você, Arya Stark, é procurada após deixar a Casa do Preto e Branco, portanto deve eliminar todos!  Durante a noite você poderá escolher alguém para inquirir.  Se ele for um Homem sem Rosto, ele morre.  Caso eles te achem, o membro mais recente irá atrás de você e será morto.</value>
   </string>
   <string key="LynchTime" >
@@ -239,7 +239,7 @@
   <string key="DefaultEaten" >
     <value>À medida que todos se levantam durante a manhã, sentem um cheiro horrível.  Eles seguem o cheiro para encontrar {0} morto, enrolado em manto carmesim. {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Um cheiro esquisito está sendo exalado pela casa de {0}... As pessoas decidem então entrar lá e encontram um corpo, seu rosto desfigurado e sua garganta cortada deixam bem claro que houve... Um membro dos Homens sem Rosto foi torturado e morto por Arya Stark!</value>
   </string>
   <string key="NoAttack" >
@@ -320,7 +320,7 @@
   <string key="RemainingPlayersEnd">
     <value>Jogadores restantes, papéis e lado:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} votou para converter {1}</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -344,7 +344,7 @@
   <string key="HunterVisitDead">
     <value>Você foi inquirir {0}, mas chegando lá só encontrou seu corpo sem vida!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Você encontra {0} e vê rostos nas paredes, você sabe o que fazer... Depois de pegar Agulha, você o retalha e ele está morto!</value>
   </string>
   <string key="HunterFailedToFind">
@@ -356,7 +356,7 @@
   <string key="WildChildTransform">
     <value>{0} disse "fuck the king" e foi morto! Agora você se junta ao exército Lannister! Seus novos companheiros são: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>um Westerosi 👱</value>
   </string>
@@ -402,10 +402,10 @@
   <string key="ApprenticeSeer">
     <value>Bran Stark 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Homem sem Rosto 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Arya Stark 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -1129,7 +1129,7 @@
   <string key="BlacksmithKilled">
     <value>Parece que {0}, Oberyn Martell, é bem azarado. Além de ter a cabeça explodida, diversos venenos seus desapareceram, o Mindinho fez a festa!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>De manhã todos encontram {0} morto. O Mindinho não se importa com religião, todos são brinquedinhos para ele! Os Homens sem Rosto vão sentir falta de {0}...</value>
   </string>
   <string key="CupidKilled">
@@ -1162,10 +1162,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Westeros acordou essa manhã só para encontrar um corpo morto na Baixada das Pulgas. {0}, Arya Stark, visitou a pessoa errada. O Mindinho utilizou a própria Agulha para o seu serviço.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Péssima escolha dos Homens sem Rosto ao visitar um Lannister que decidiu ficar em casa durante a noite. {0} está morto.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Ontem a noite o Homens sem Rosto decidiram visitar a única pessoa mais estranha do que eles, o Mindinho, e por causa disso, {0} foi morto.</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1180,7 +1180,7 @@
   <string key="WolfKillsHunterEnd">
 	<value>Apenas {0} e {1} sobreviveram, e {1} queria mudar isso... Na calada da noite, se dirigiu à casa de {0}, que ainda estava dormindo. O que restou de {0} foi apenas Vento Cinzento dormindo.</value>
   </string>
-  <string key="CHKillsCultistEnd">
+  <string key="CHKillsZombieEnd">
 	<value>Vendo o símbolo preto e branco em {0}, {1} já se dá conta que {0} faz parte dos Homens sem Rosto. Então, {1} tira sua Agulha pela última vez e a crava no peito de {0}. Agora Westeros está salva da contaminação dos Homens sem Rosto.</value>
   </string>
   <string key="SecondsAdded">

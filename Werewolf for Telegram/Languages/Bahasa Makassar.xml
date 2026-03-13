@@ -205,11 +205,11 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>Kau apprentice seer. Punna mate seer (sanro) kau sambeangi.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value>Kau cultist. Punna bangngi kio'ki tawwa antama ri pangngissengangnu.</value>
+  <string key="RoleInfoZombie" >
+    <value>Kau Zombie. Punna bangngi kio'ki tawwa antama ri pangngissengangnu.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value>Kaumi Cultist Hunter, Teako pa'beangi pangngissengang cultist pila' jai. Boya ngasengi anjo cultistka nampa bunoi.</value>
+  <string key="RoleInfoZombieHunter" >
+    <value>Kaumi Zombie Hunter, Teako pa'beangi pangngissengang Zombie pila' jai. Boya ngasengi anjo Zombieka nampa bunoi.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
@@ -263,7 +263,7 @@
     <!-- 1 - victim role -->
     <value>Kamase ri kodong, nia' anu a'rasa kamma sikuyuang botto'na. {0} ni buntuluki i rawa ri peo ka, tenamo NOMNOMNOMNOM\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Ri bangngia balla'na {0} ni pantamai CH. Ka issengangi ammake pattirokanja jari ni bunoi sigang cult hunter !</value>
   </string>
@@ -369,51 +369,51 @@
   <string key="RemainingPlayersEnd">
     <value>Pakarenayya, roles, sigang tim:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} anne na pile {1}</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>{0} ni suro mange ri {1}... mingka sitojenna Cult Hunter na battui. {0} moterang !</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
-    <value>{0} battu ri balla'nu, mingka anjo battua cultist. hhhmmm battui tolona mateko iya ni samballe sigang CH. {1} anjo mami cultist.</value>
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{0} battu ri balla'nu, mingka anjo battua Zombie. hhhmmm battui tolona mateko iya ni samballe sigang CH. {1} anjo mami Zombie.</value>
   </string>
   <string key="CultConvertYou">
-    <value>Ni pantama'ko a'jari cultist, jai pangngisengangna anrinni. Punna bangngi akkulle ko angkio' poleang tau maraeng antama anjari cultist.</value>
+    <value>Ni pantama'ko a'jari Zombie, jai pangngisengangna anrinni. Punna bangngi akkulle ko angkio' poleang tau maraeng antama anjari Zombie.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
-    <value>Cultists: {0}</value>
+    <!-- 0 - Number of Zombies -->
+    <value>Zombies: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
-    <value>{0} anjari cultist.</value>
+    <!-- 0 - new Zombie's name -->
+    <value>{0} anjari Zombie.</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
-    <value>{0} nu suro mange ri balla'na angkioki {1} amminawang anjari cultist. Mingka assuluki ammali kopi.</value>
+    <value>{0} nu suro mange ri balla'na angkioki {1} amminawang anjari Zombie. Mingka assuluki ammali kopi.</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value>Mate ngasengmi werewolf, Tau biasayya mami attalasa' mingka amminawang ngasengmi ri cultist. Ammetai Cult !</value>
+    <value>Mate ngasengmi werewolf, Tau biasayya mami attalasa' mingka amminawang ngasengmi ri Zombie. Ammetai Cult !</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
     <value>Mae nu battui {0}, mingka matemi kamase !</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Mangeko ri balla'na {0}. Nu gappai appanggaukang kodi jari ni alleangi berang nampa ni te'ba'.</value>
   </string>
   <string key="HunterFailedToFind">
     <!-- 0 - target name -->
-    <value>Mangeko ri balla'na {0}. Mingka tenaja panggaukang kodi nu gappa jari ammotere' mako, sitojenna {0} teai cultist.</value>
+    <value>Mangeko ri balla'na {0}. Mingka tenaja panggaukang kodi nu gappa jari ammotere' mako, sitojenna {0} teai Zombie.</value>
   </string>
   <string key="WildChildToWolves">
     <!-- 0 - Werechild's name -->
@@ -424,7 +424,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} ammoterang tau nu pinawanga rikodong, sanna' paccena nyawanu, kodi pa'kasia'nu nampa anjari werewolf mako ! Agang berunu: {1}.</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>Villager 👱</value>
@@ -471,11 +471,11 @@
   <string key="ApprenticeSeer">
     <value>Apprentice Seer 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>Cultist 👤</value>
+  <string key="Zombie">
+    <value>Zombie 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>Cultist Hunter 💂</value>
+  <string key="ZombieHunter">
+    <value>Zombie Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -506,7 +506,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Mangeko ri balla'na {0} mingka matemi ni kokko' parakang.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -688,12 +688,12 @@
     <value>Ri bangngia assulukko mae a'boya tau la nu buno. Nu ciniki {0} !!! Ero'mi nu tobo' mingka nia' Guardian Angel ri bokona. Salamaki tawwa tena nu anggappa anne alloa.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
-    <value>Cult {0} mange ri {1} eroki na kio' antama anjari cultist, mingka sala tannangi hunter na kio'. {0} ni pasambila assulukang balla' ! {0} mate.</value>
+    <value>Cult {0} mange ri {1} eroki na kio' antama anjari Zombie, mingka sala tannangi hunter na kio'. {0} ni pasambila assulukang balla' ! {0} mate.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Cult {0} mange ri {1}, mingka {0} ni patapassaki naung ri tanayya, le'ba'na ni patappasa ni tobo' poleangi sigang {0} ni buno jangang garring.</value>
     <value>{0} na katto pa'ke'bu balla'na {1}. Ta'sungkena pa'ke'bu balla'na {1} na bu'bu'na badi'na nampa na tobo' lantang {0} !!! {0} mate.</value>
@@ -718,8 +718,8 @@
     <value>{0} moterang, jari kau sambeangi anjari mason. Agangnu (punna' nia') : {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
-    <value>Doppelganger {0} anjari cultist singkamma kau !</value>
+    <!-- 0 - new Zombie's name -->
+    <value>Doppelganger {0} anjari Zombie singkamma kau !</value>
   </string>
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
@@ -865,10 +865,10 @@
     <value>Fool merasa dirinya Seer (Penerawang). Padahal, semuanya tipu belaka.</value>
   </string>
   <string key="AboutCult">
-    <value>Hidup Pemuja Kerang Kutil Ajaib (Cultist)! Hasut warga agar pengikutmu bertambah banyak, maka kamu menang!</value>
+    <value>Hidup Pemuja Kerang Kutil Ajaib (Zombie)! Hasut warga agar pengikutmu bertambah banyak, maka kamu menang!</value>
   </string>
   <string key="AboutCH">
-    <value>Pemuja Kerang Kutil Ajaib sangat sudah menyebar. Tugas Cultist Hunter berburu dan membunuh mereka satu per satu. Jika ada Cultist datang padamu, dia pasti mati.</value>
+    <value>Pemuja Kerang Kutil Ajaib sangat sudah menyebar. Tugas Zombie Hunter berburu dan membunuh mereka satu per satu. Jika ada Zombie datang padamu, dia pasti mati.</value>
   </string>
   <string key="AboutWC">
     <value>Di awal permainan, pilih panutan hidupmu. Ketika Panutanmu mati, kamu akan jadi serigala.</value>
@@ -883,13 +883,13 @@
     <value>Mason adalah warga yang sederhana. Mereka memiliki kebiasaan berkumpul dan saling berbagi informasi. Mason mengetahui siapa mason lainnya dan bekerja dengan baik.</value>
   </string>
   <string key="AboutDG">
-    <value>Doppelganger akan memilih pemain lain dan ketika pemain tersebut mati, dia akan menjadi peran tersebut. Cultist tidak dapat menghasut Doppelganger. Jika peran yang dipilih adalah Wild Child dan panutannya sudah mati, kamu akan menjadi serigala.</value>
+    <value>Doppelganger akan memilih pemain lain dan ketika pemain tersebut mati, dia akan menjadi peran tersebut. Zombie tidak dapat menghasut Doppelganger. Jika peran yang dipilih adalah Wild Child dan panutannya sudah mati, kamu akan menjadi serigala.</value>
   </string>
   <string key="AboutCupid">
     <value>Lope Lope di udara. Cupid akan memilih 2 pemain jomblo untuk dijadikan pasangan (lovers). Mereka akan saling mengetahui nama pasangannya, tapi tidak tahu peran masing-masing. Jika lovers pilihanmu bertahan hidup, mereka akan menang.</value>
   </string>
   <string key="AboutHunter">
-    <value>Hunter memiliki keinginan untuk membalas dendam sangat tinggi. Pemain yang datang ke rumahmu, tak segan kamu bunuh. Jika warga menggantungmu, kamu dapat membunuh satu orang lagi sebelum mati. Setelah serigala menyerangmu, kamu dapat membunuh 1 serigala saat itu juga. Cultist yang berusaha datang untuk menghasutmu memiliki kemungkinan 50% gagal.</value>
+    <value>Hunter memiliki keinginan untuk membalas dendam sangat tinggi. Pemain yang datang ke rumahmu, tak segan kamu bunuh. Jika warga menggantungmu, kamu dapat membunuh satu orang lagi sebelum mati. Setelah serigala menyerangmu, kamu dapat membunuh 1 serigala saat itu juga. Zombie yang berusaha datang untuk menghasutmu memiliki kemungkinan 50% gagal.</value>
   </string>
   <string key="AboutSK">
     <value>Serial Killer adalah Pembunuh kelas kakap. Keluar dari penjara tak membuatnya bertobat. Bunuh siapaun yang kamu mau, maka kamu akan menang.</value>
@@ -1256,8 +1256,8 @@
   <string key="BlacksmithKilled">
     <value>Ni cini {0} mate ni tobo cappi, assuluki parru'na, tenai bolotingna ni alle sigang serial killer.</value>
   </string>
-  <string key="CultistKilled">
-    <value>{0} mate i rate ri passambayangangna. Serial killer ko'biki ammake badi' ! {0} cultist.</value>
+  <string key="ZombieKilled">
+    <value>{0} mate i rate ri passambayangangna. Serial killer ko'biki ammake badi' ! {0} Zombie.</value>
   </string>
   <string key="CupidKilled">
     <value>Bari'basa dudu {0} anjo biasayya pa'bunting tawwa mate ni ko'bi sigang Serial Killer.</value>
@@ -1289,16 +1289,16 @@
     <value>NOMNOMNOMNOM ! Batena tong angnganre wolf ri bangngia. {0} bukunna mami ammantang. Na kana tawwa anne matea wild child.</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
-    <value>Ri bari'basa'ka nia' ni sipolong kalenna {0}, Cultist Hunter, anjo ni kana teako sambarang tau nu paressa.</value>
-    <value>Kalenna {0}, Cultist Hunter, ni gappai tappolong salapang ri tangngana pa'rasanganga. SK pata panggaukang.</value>
+    <value>Ri bari'basa'ka nia' ni sipolong kalenna {0}, Zombie Hunter, anjo ni kana teako sambarang tau nu paressa.</value>
+    <value>Kalenna {0}, Zombie Hunter, ni gappai tappolong salapang ri tangngana pa'rasanganga. SK pata panggaukang.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Kajili-jili {0} antama ri balla'na tawwa. Na kana kutaeng tau biasaji pata balla, mingka wolf pata balla. {0} mate a'talaka cera'.</value>
     <value>Ri bangngia {0} ni lollongi sigang wolf. na saba' {0} na kioki amminawang ri pangngissengangna mingka teai anjo wolfka.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
-    <value>Na kanamo cultist la anggappai agang beru ! {0}, cultist, mate ri tangngana pa'rasangang na saba' SK la na pantama anjari cultist.</value>
-    <value>Ri bangngia, nia tau la kio' antama anjari cultist. Mingka tena na issengi angkana SK anjo. {0} tenai pajana sipolong.</value>
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
+    <value>Na kanamo Zombie la anggappai agang beru ! {0}, Zombie, mate ri tangngana pa'rasangang na saba' SK la na pantama anjari Zombie.</value>
+    <value>Ri bangngia, nia tau la kio' antama anjari Zombie. Mingka tena na issengi angkana SK anjo. {0} tenai pajana sipolong.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
     <value>Sala tannangi {0} ri bangngia, na kana kutaeng tau biasa na parakai, {0} mate ri cappa'na poko' untia ni gentung sigang SK. Nampa na kana anjo SK ya "Akkulleji ku parakai kalengku".</value>
@@ -1316,8 +1316,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Ni issengi angkana {0} tenami, {1} na pilei wattunna {0} ero' na buno. ma'nassa ero' memang tongmi na buno {1}, Minka cara'deki {0} nia' bom na pasang ri kalenna, jari hunter, wattuna ni buno a'lappoki kalenna sigang wolf</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} sibuntulu {0} ri tangngana agadang. Na cini kana maraengi tanja'na {0} ka ammakei pattirokanja. Sitojengna {1} tenamo na pikkiri' la'bu na te'ba anjo tawwa sumpaeng. ammetami tawwa ngaseng.</value>
   </string>
   

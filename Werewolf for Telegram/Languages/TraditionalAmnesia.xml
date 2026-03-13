@@ -188,10 +188,10 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
   <string key="RoleInfoApprenticeSeer" >
     <value>糟糕! 你竟然忘記自己的身份! 但你想起晚上有些事情要處理. </value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>糟糕! 你竟然忘記自己的身份! 但你想起晚上有些事情要處理. </value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>糟糕! 你竟然忘記自己的身份! 但你想起晚上有些事情要處理. </value>
   </string>
   <string key="LynchTime" >
@@ -233,7 +233,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
   <string key="DefaultEaten" >
     <value>正當太陽升起, 一陣臭味溢出. 跟著氣味而走, 赫然發現 {0} 的身軀 —— 血跡斑斑, 身首異處. 這回糟了!\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>一陣惡臭從{0}的家傳出來. 村民們一打開門, 赫見一具屍體, 靜靜地躺在一個祭壇上. 想必是邪教獵人的毒手吧! \n{0} 是邪教徒. </value>
   </string>
   <string key="NoAttack" >
@@ -324,7 +324,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
   <string key="RemainingPlayersEnd">
     <value>一道閃電劃過長空, 所有生還者終於想起自己的身份了! 餘下的玩家、角色與所屬團隊：</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value>{0} 突然想起了 {1} 的名字! </value>
   </string>
   <string key="CultConvertCultHunter">
@@ -351,7 +351,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
   <string key="HunterVisitDead">
     <value>{0} 已經死了! </value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>你昨晚在 {0} 的家做了甚麼呢? 看來你自己也忘了. </value>
   </string>
   <string key="HunterFailedToFind">
@@ -363,7 +363,7 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
   <string key="WildChildTransform">
     <value>{0} 死了, 你的身份好像有些轉變, 你到底現在又是甚麼呢? \n突然,  {1} 的名字在你腦海中閃過! </value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>村民 👱</value>
   </string>
@@ -409,10 +409,10 @@ Traditional Chinese Translated by @meowmeoww, @Cojad.
   <string key="ApprenticeSeer">
     <value>先知的學徒 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>邪教徒 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>邪教獵人 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -1160,7 +1160,7 @@ GuardEmptyHouse*
   <string key="BlacksmithKilled">
     <value>難以辨識的屍體, 應該是小鎮的鐵匠 {0} 吧! 他肯定是非常的不幸! 五把鐵匠才打造出來的新刀子, 此時卻是穿過鐵匠四肢與頭部把鐵匠給釘在了工作台上. 昨晚殺人魔肯定是想要順便在他的內臟收藏旁邊增添一組武器收藏吧...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} 被發現在被燭台給刺穿而死在聖桌上. 殺人魔再度行動了, 不管是什麼種族, 語言, 宗教都可能成為他的目標! {0} 是邪教徒!</value>
   </string>
   <string key="CupidKilled">
@@ -1196,11 +1196,11 @@ GuardEmptyHouse*
     <value>村民早上醒來只見鎮公所前邪教獵人 {0} 的屍體變成數截的放在公所前的一個推車內. 教訓: 千萬別去拜訪殺人魔的家!</value>
     <value>邪教獵人 {0} 被整齊的切割成數百塊大小一致的屍塊陳列在市中心廣場上. 去試探殺人魔是否為邪教徒顯然不是個好主意...</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>本來今晚狼人本來不打算出門狩獵乖乖在家, 一個倒楣的邪教徒 {0} 試圖去說服狼人入教, 當獵物自己送上了狼人的門前, 狼人們可不會知道什麼叫做拒絕, 喜滋滋的將門前的獵物變成的今晚的大餐...真是不請自來的美味啊!</value>
     <value>邪教徒昨晚遇到了意料之外麻煩, 他們的新成員 {0} 很不幸地去拜訪了一個決定留在家中的狼人, 狼人發現上門的傢伙皮白肉嫩非常的美味可開心了! 至於什麼真主阿里, 狼人是一點興趣都沒有...</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>邪教徒們本以為他們即再添一位新成員, 但他們錯了, {0} 被切成肉泥般棄置在中心廣場, 一把刀還插在他們的"聖"書上, 似乎在宣告著誰的信仰才是勝利?</value>
     <value>昨晚, 邪教徒試圖去洗腦小鎮內比他們都還要瘋的傢伙, 他們的新成員 {0} 被派去向殺人魔宣教, 殺人魔又多了一個掛在中心廣場的器官藝術品.</value>
   </string>

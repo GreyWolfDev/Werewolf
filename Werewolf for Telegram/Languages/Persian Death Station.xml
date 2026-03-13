@@ -209,10 +209,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >تو هکر بازداشتی هستی 🤖 تویه هکری که پلیس فتا دستگیرت کرده و الان تو بازداشگاهی ولی اگه هکر اصلی بمیره میان و از تو کمک میگیرن </value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >عده ای هستین که مثل سم بین ضد شورشیا پخش میشین و همشونو وادار به پیروی از خودتون میکنین تا پیروز نشین عقب نشینی نمیکنین و هرشب یک نفرو برای شورشی شدن دعوت میکنین</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >تو ضد شورش هستی ⚔️. تویگان ویژه ی ضدشورش شهر هستی و وظیفه تو حمایت از شهروندای بیگناه و پیدا کردنو کشتن شورشی های شهره تو هرشب میتونی کوپه یه شهروند بری و بازجویی تا اگه شورشی بود دخلشو بیاری.اگه کوپه یه خلافکار بری نمیفهمی که خلافکاره یایه شهروند سادست ولی اگه بری کوپه بمب گذار اون تورو میفرسته اون دنیا البته اگه شورشی ها به اشتباه بیان کوپه تو و بخوان تورو هم به یک شورشی تبدیل کنن جدید ترین عوضشون رو اسیرمیکنی ومیکشی</value>
   </string>
   <string key="LynchTime" >
@@ -270,7 +270,7 @@
     <!-- 1 - victim role -->
     <value>این مسافره بدبخت داشت تلویزیونشو می دیدید چیکارش داشتین عاخه {0} مسافر  خوبی بودی 😢😢  {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>اینطور که معلومه ضد شورش دیشب زده یکی از اعضای شورشی {0} رو کشته</value>
   </string>
@@ -376,34 +376,34 @@
   <string key="RemainingPlayersEnd">
     <value>مسافرهای  باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >نظر {0} اینه که {1} رو شورشی کنید</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>خب {0} رفت که {1} رو به گروه شورشیا دعوت کنه ولی {1} ضد شورش بود و کشتش!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>دیشب {0} اومد به گروه شورشیا دعوتت کنه ولی تو زدی کشتیش! {1} باقی مونده</value>
   </string>
   <string key="CultConvertYou">
     <value>تو الان عضو شورشی هستی و هر شب با بقیه یارات باید یه نفرو به گروه شورشیا خودتون دعوت کنین</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>شورشی ها: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>الان {0} شورشی شد</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>خب  {0} رفت {1} رو به شورشا دعوت کنه ولی کسی تو کوپه نبود</value>
   </string>
@@ -414,7 +414,7 @@
     <!-- 0 - target name -->
     <value>رفتی {0}ولی قبل تو یکی رفته بود سراغش و کشته بودنش</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value> رفتی تو کوپه {0} و دیدی جلسه گزاشتن برا شورش و تو زدی یکیشونو کشتی</value>
   </string>
@@ -431,7 +431,7 @@
     <!-- 0 - teamate's names -->
     <value>چون {0} عشقتو کشتن و مرده الان تو خلافکار شدی و یارات عبارت اند از : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>مسافر 🧔</value>
@@ -478,10 +478,10 @@
   <string key="ApprenticeSeer">
     <value> هکر بازداشتی 🤖</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value> شورشی 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>ضدشورش ⚔️</value>
   </string>
   <!-- These are for the player list -->
@@ -513,7 +513,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>عضو جدید شورشی رفت کوپه {0} که به راه راست هدایتش کنه ولی دید کشته شده</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -702,7 +702,7 @@
     <value>رفتی {0} تو کوپه اش بمب گزاشتی اما بادیگارد خنثی کردش </value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>شورشیه کثیف  یعنی {0} رفت که {1} رو به شورشیا دعوت کنه ولی {1} پلیس بود و با تفنگش زد {0} رو سرویس کرد </value>
   </string>
@@ -726,7 +726,7 @@
     <value>خب {0} ازش تقلید می کردی مرد. چون اون دانشجو بود تو هم دانشجو شدی و بقیه دانشجو ها عبارت اند از: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>تقلید، یعنی {0} هم چون یکی از اعضای شورشی رو به عنوان اینکه ازش تقلید کنه انتخاب کرده بود الان شورشی شد.</value>
   </string>
 
@@ -1276,7 +1276,7 @@
 - آره گرفتن پارش کردن😞
 متاسفانه دیشب {0}آشپز قطار توسط بمب گذار در دستشویی به قتل رسید!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب بمب گذار به شورشی ها حمله کرد و تو کوپه یکیشون بمب گذاشت و{0} رو منفجر کرد!</value>
   </string>
   <string key="CupidKilled">
@@ -1309,10 +1309,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>ضد شورش {0} مشغول پیداکردن شورشی  ها بود اما درست زمانی که داشت توی راهروی قطار قدم میزد پاش روی یکی از بمبای بمب گذار میره و بومممم! ضد شورش منفجر میشه!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب {0} رفت در کوپه خلافکارا تا یکیشونو به شورشی ها دعوت کنه ! ولی خلافکارا بهش حمله کردن و جنازه تکه تکه شدشو توی رستوران قطار پخش کردن!</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>دیشب یکی از شورشی ها یعنی، {0} مامور شد که یکی رو به فرقه دعوت کنه، اما دیگه خبری از {0} نشد!صبح بعد شورشی ها جنازه {0} رو توی یکی از کوپه های خالی پیدا میکنند!بمب گزار {0} رومنفجر کرده!</value>
   </string>
   
@@ -1332,8 +1332,8 @@
 	    <value>  {0} پلیس توی قطار با {1} تنها مونده! {1} میره که به پلیس حمله کنه و اونو بکشه، اما پلیس از خواب بلند میشه و متوجه {1} میشه سریع میره سمت تفنگش و تفنگشو بر میداره تا میاد تیر بزنه میبینه زارت تفنگ آب پاشه یکی از مسافراس و {1} میگیره و جر وا جرش میکنه! {1} تنها خلافکار تنها  بازمانده قطاره</value>
   </string>
   
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>تنها شورشی بازمانده قطار  {0} بود که زمانی که صبح داشت سمت دستشویی قطار میرفت، با ضد شورش {1} روبه رو میشه! ضد شورش، همون موقع تفنگشو در میاره که به {0} شلیک کنه ولی {0} فرار میکنه، ضد شورش دنبالش میره و توی یکی از کوپه ها پیداش میکنه و با قندون میکشتش!  ضد شورش برنده این دور بازیه!</value>
   </string>
   
@@ -1646,8 +1646,8 @@
       <value>هم تیمی های شما(درصورت وجود) عبارت اند از:{0}.</value>
     </string>
     <string key="ThiefToCult">
-      <!-- 0 - old cultist's name -->
-      <!-- 1 - new cultist's name -->
+      <!-- 0 - old Zombie's name -->
+      <!-- 1 - new Zombie's name -->
       <value>حاجی {0} دیگه همتیمی شما نیست به جاش {1} شورشی شده دقیقا مثل شماها.</value>
     </string>
     <string key="ThiefToWolf">
@@ -1707,8 +1707,8 @@
     <string key="SecretLynchShowVotersA">
       <value>وقتی حالت رای مخفی روشن است. و تعداد رای ها در اخر رای گیری نشان داده خواهد شد.نام رای دهنده به هر بازیکن نیز نشان داده خواهد شد:{0}</value>
     </string>
-    <string key="CultistBitten">
-    <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <string key="ZombieBitten">
+    <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
       <value>عجیبه .... امشب جمع شدین که یکی رو شورشی کنید اما متوجه شدین که {0} اینجا نیست!یعنی چه اتفاقی براش افتاده؟🤔</value>
     </string>
     
@@ -1816,7 +1816,7 @@
   <string key="ChemistTargetEmpty">
 	<value> رفتی که با {0} نوشیدنی بخوری اما تو گوپه نبود! </value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value> اعضای شورشی درحال حاضر: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1867,7 +1867,7 @@
   <string key="ChemistFrozen">
     <value> داشتی وسایل آزمایشگاه رو جمع می کردی اما دیشب مواد زده بودی! امروز نمیتونی کاری کنی. </value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value> داشتی میرفتی یکیو دعوت کنی که موادی که دیشب بت ساقی زدی اثر کرد! هم تیمی های تو بهت قول دادند که امشب کارشون رو خوب انجام بدن. </value>
   </string>
   <string key="CHFrozen">

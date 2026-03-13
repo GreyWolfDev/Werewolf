@@ -234,10 +234,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>Вы - ученик Чародея  🙇! Вы долго обучались у Чародея и теперь вы готовы заменить его, в случае смерти!</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Вы - Вампир 👤! Каждую ночь вы со своей семьёй можете выбрать жертву для атаки... Но вы не убьете её ! Ваша семья придерживается идеи не убивать людей и позволяет испить жертве вашей крови, после чего она становится очередным вампиром. Ваша цель - захватить всё село, превратив всех жителей в вампиров!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Вы - Ван Хельсинг 💂! Самый известный охотник на монстров прибыл в деревню, чтобы не позволить испортить его монстрам! Уничтожьте всех вампров и не дайте разрастись их семье! </value>
   </string>
   <string key="LynchTime">
@@ -308,7 +308,7 @@
 -->
     <value>Сегодня утром селяне обнаружили бездыханное тело {0}. Обыскав его, они обнаружили, что это был {1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
 -->
     <value>Рядом с домом {0} был обнаружен пустой бутылек святой воды, а в самом доме труп с отрубленной головой и осиновым колом, загнанным в грудь. Похоже, этой ночью на славу потрудился Ван Хельсинг...</value>
@@ -436,7 +436,7 @@
   <string key="RemainingPlayersEnd">
     <value>Выжившие игроки:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <!-- 0 - Voter's name -->
 -->
     <!-- 1 - target name -->
@@ -444,16 +444,16 @@
     <value>{0} хочет укусить {1}</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
 -->
     <!-- 1 - CultHunter's name -->
 -->
     <value>Твоя семья отправила новенького вампира, чтобы он укусил {1}, но обратно к вам вернулась только голова {0}. Похоже, вы послали его к Ван Хельсингу...</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
 -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 1 - Number of Zombies left -->
 -->
     <value>Сегодня к тебе в дом пришел {0} и, грозно раскрыв свою пасть, полетел на тебя, но ты не растерялся и отрубил его голову. Судя по дневнику убитого, в селе осталось еще {1} вампир(ов) .</value>
   </string>
@@ -461,17 +461,17 @@
     <value>Сегодня ночью к тебе пришли вампиры и теперь ты один из них.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
 -->
     <value>В селе {0} вампиров </value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
 -->
     <value>{0} стал новым вампиром!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
 -->
     <!-- 1 - target name -->
 -->
@@ -485,7 +485,7 @@
 -->
     <value>Ты пришел в дом {0} приготовив свой клинок к атаке, но нашел в доме лишь труп...</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
 -->
   <!-- 0 - target name -->
@@ -505,7 +505,7 @@
 -->
     <!-- 0 - teamate's names -->
 -->
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 -->
     <value>{0} умер! Ты впал в ярость и превратился в Вервольфа! Твоя стая: {1}</value>
   </string>
@@ -554,10 +554,10 @@
   <string key="ApprenticeSeer">
     <value>Ученик Чародея 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Вампир 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
   <!-- These are for the player list -->
 -->
     <value>Ван Хельсинг 💂</value>
@@ -593,7 +593,7 @@
     <value>  Другие Скелеты: {0}</value>
   </string>
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
 -->
     <value>Твоя семью отправила {0} чтобы он принес свежей крови, однако он нашел только холодный труп...</value>
   </string>
@@ -793,11 +793,11 @@
     <value>{0} истёк кровью, но из последних сил достал револьвер и выстрелил.  Из дула вылетела пуля с написаным на ней именем {1} и прилетела по назначению. {2} мертв. </value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
 -->
     <!-- 1 - target's name -->
 -->
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
 -->
     <!-- 1 - target's name -->
 -->
@@ -829,18 +829,18 @@
     <value>Заточив свой нож, ты отправился в дом {0}, но встретил там каменную гаргулью, которая хорошенечко тебе наваляла.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
 -->
     <!-- 1 - target's name -->
 -->
     <value>Вы решили отправиться в дом {1}, однако напорослись на Эррона Блэка!Теперь тело {0} похоже на дуршлаг...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
 -->
     <!-- 1 - target's name -->
 -->
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
 -->
     <!-- 1 - target's name -->
 -->
@@ -872,7 +872,7 @@
     <value>{0} мертв, и ты вселился в его... Скелет? Да, да, теперь ты скелет! Другие скелеты: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
 -->
     <value>Ваша семья устроила траур по поводу смерти одного из вас..  Но позже к вам вернулся {0} в теле умершего, теперь он - часть вашей семьи !</value>
   </string>
@@ -1427,7 +1427,7 @@
   <string key="BlacksmithKilled">
     <value>Похоже, что {0}, Знахарь, лишился всех своих трав, а также рук и ног. Изуродованное тело валяется среди растоптанных тыкв.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} был связан и брошен умирать от солнечного света. Любой может стать жертвой Джейсона. {0} был вампиром.</value>
   </string>
   <string key="CupidKilled">
@@ -1466,14 +1466,14 @@
     <value>Тело {0}, Ван Хельсинга, знаменитого охотника на вампиров, было найдено в центре села разрезанным на мелкие кусочки. Не стоило проверять, является ли Джейсон кровопийцей.</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
 -->
     <value>На этот раз вервольфы сделали доброе дело и наказали {0}. Любитель человеческой крови был безжалостно съеден.</value>
     <value>Отправляясь пить кровь селян, {0} столкнулся носом к носу с вервольфом!</value>
     <value>Отправляясь пить кровь селян, {0} столкнулся носом к носу с вервольфом! Вервольфы любит не только кровь, но и мясо. Особенно мясо упитанных вампиров.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
 -->
     <value>Радуясь поимке новой жертвы, вампиры совершили ошибку: {0}, любитель свежей крови, был распотрошён и выставлен на главной площади!</value>
     <value>Ночью вампиры пытались укусить любителя крови, большего чем они сами, и Джейсон нарисовал на площади кровью вампира огромную тыкву. {0} мёртв.</value>
@@ -1498,8 +1498,8 @@
 -->
     <value>Зная, что остался только {0}, {1} выбрал время, когда {0} будет наиболе уязвим. Всё, что осталось - изуродованное тело Эррон Блэка 🎯 с глубокими ранами.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
 -->
     <value>При свете дня встретились {1} и {0}. Увидев прикрывающегося от солнечных лучей {0}, {1} зарядил серебряную пулю и оборвал жизнь последнему кровопийце.</value>
   </string>

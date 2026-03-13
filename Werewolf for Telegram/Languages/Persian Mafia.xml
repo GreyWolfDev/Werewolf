@@ -214,10 +214,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >تو معاون بازپرس هستی یعنی اگه بازپرس اصلی بمیره تو بازپرس میشی</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >تو معتاد هستی، هر شب یه نفرو به اعتیاد دعوت میکنی اگه همه بازیکنای زنده معتاد بشن تو میبری</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >تو پلیس مبارزه با مواد مخدری! هرشب به خونه یکی میری و خونش رو میگردی اگه تو خونش مواد پیدا کنی میکشیش! ولی اگه چیزی پیدا نکنی ولش میکنی.\nتخصص تو در پیدا کردن معتاد ها هست پس اگه بری خونه ی مافیا، نمیتونی بفهمی که مافیاست یا شهروند اما اگه به خونه قاتل بری اون تو رو میکشه😶راستی اگه یه معتاد به خونت بیاد و بخواد تو رو معتاد کنه میزنی میکشیش</value>
   </string>
   <string key="LynchTime" >
@@ -275,7 +275,7 @@
     <!-- 1 - victim role -->
     <value>مافیا ها دیشب باز هم به یه نفر حمله کردن و دکتر هم نتونست نجاتش بده😔 اخه این {0} بیچاره چیکار به شما داشت که کشتینش😕 {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>اینطور که معلومه پلیس مبارزه با مواد مخدر دیشب زده یکی از معتاد ها یعنی {0} رو کشته!</value>
   </string>
@@ -385,34 +385,34 @@
   <string key="RemainingPlayersEnd">
     <value>بازیکن های باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >نظر {0} اینه که {1} رو معتاد کنید</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>خب {0} رفت که {1} رو معتاد کنه ولی {1} پلیس مبارزه با مواد مخدر بود و کشتش!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>دیشب {0} اومد معتادت کنه ولی تو زدی کشتیش! {1} باقی مونده</value>
   </string>
   <string key="CultConvertYou">
     <value>تو الان معتاد هستی و هر شب با دوستای معتادت باید یه نفرو معتاد کنین</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>معتاد ها: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>الان {0} معتاد شد</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>خب  {0} رفت {1} رو معتاد کنه ولی خونه نبود</value>
   </string>
@@ -423,7 +423,7 @@
     <!-- 0 - target name -->
     <value>رفتی {0} رو بکشی ولی مرده بود</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>رفتی خونه {0} و دیدی داره مواد میکشه. اعصابت خورد شد زدی کشتیش</value>
   </string>
@@ -440,7 +440,7 @@
     <!-- 0 - teamate's names -->
     <value>چون {0} زندانبانت بود و مرده الان تو مافیایی و یارات عبارت اند از : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>شهروند 👱(👱)</value>
@@ -487,10 +487,10 @@
   <string key="ApprenticeSeer">
     <value>معاون بازپرس 🙇(🙇)</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>معتاد 💊(👤)</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>پلیس مبارزه با مواد مخدر 👮‍♂️(💂)</value>
   </string>
   <!-- These are for the player list -->
@@ -522,7 +522,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>معتاد جدید رفت خونه {0} که به اعتیاد دعوتش کنه ولی دید کشته شده</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -710,7 +710,7 @@
     <value>رفتی {0} رو به قتل برسونی ولی دکتر اونجا بود نذاشت کاری کنی ، متاسفم</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>معتاد عزیز یعنی {0} رفت که {1} رو معتاد کنه ولی {1} مافیا بازنشسته بود و با تفنگش زد {0} رو کشت</value>
   </string>
@@ -734,7 +734,7 @@
     <value>خب چون وکیل {0} بودی و مرد و اونم شهروند آگاه بود تو هم شهروند آگاه شدی و بقیه شهروندان آگاه عبارت اند از: {1}.</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>وکیل، یعنی {0} هم چون وکالت یکی از معتاد ها رو به عهده داشت الان معتاد شد</value>
   </string>
 
@@ -1269,7 +1269,7 @@
   <string key="BlacksmithKilled">
     <value>شهروندان جسد محافظ رو توی پارک بغل خونه اش پیدا میکنن! به نظر نمیاد این کار مافیاها باشه...\nدیشب {0} توسط قاتل زنجیره ای به قتل رسید😔💔</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>این طور که معلومه قاتل زنجیره ای از اعتیاد و معتادا زیاد خوشش نمیاد! اون دیشب به یکی از معتاد ها یعنی {0} حمله کرد و توی خونه‌ش کشتش...</value>
   </string>
   <string key="CupidKilled">
@@ -1302,10 +1302,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>پلیس مبارزه با مواد مخدر {0} به خونه قاتل زنجیره ای رفت و داشت خونه رو میگشت تا شاید مواد پیدا کنه، اصولا قاتل خوشش نمیاد کسی خونه‌ش رو بگرده! فردای اون روز اهالی شهر جسد {0} رو پیدا میکنن که با دست‌بند به تابلوی اداره پلیس آویزون شده..</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب {0} رفت که به مافیا ها مواد بفروشه! ولی مافیا ها بهش حمله کردن و جنازه تکه تکه شدشو توی نقاط مختلف شهر پخش کردن!</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>دیشب معتاد {0} به خونه قاتل زنجیره ای رفت که بهش مواد بده ولی روز بعد همون مواد رو تو معدش پیدا میکنن!</value>
   </string>
   
@@ -1325,8 +1325,8 @@
 	    <value>مافیا بازنشسته{0} با تنها بازمانده مافیا یعنی {1} تنها مونده! اونها تصمیم میگیرن که با هم دوئل کنن! {0} تفنگش رو سریع تر درمیاره اما دقت پایینش کار دستش میده! تیری که از اسلحه {0} شلیک شد به دست {1} اصابت میکنه اما {1} گلوله رو به سر {0} شلیک میکنه و اون رو از پا درمیاره...مافیا {1} تنها بازمانده شهره!</value>
   </string>
   
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>صبح روز بعد فقط دو نفر تو شهر زنده موندن! معتاد {0} و پلیس مبارزه با مواد مخدر {1}. {1} به خونه آخرین معتاد میره و فکر میکنه که اون اونجاست ولی اونجا کسی رو پیدا نمیکنه! همینطور که داشت خیابونا رو میگشت {0} رو توی پارک دید که بساطش هم برپا بود! {1} نتونست این وضع رو تحمل کنه و با یه تیر {0} رو خلاص کرد.</value>
   </string>
   
@@ -1637,8 +1637,8 @@
       <value>هم تیمی های شما(درصورت وجود) عبارت اند از:{0}.</value>
     </string>
     <string key="ThiefToCult">
-      <!-- 0 - old cultist's name -->
-      <!-- 1 - new cultist's name -->
+      <!-- 0 - old Zombie's name -->
+      <!-- 1 - new Zombie's name -->
       <value>حاجی {0} دیگه همتیمی شما نیست به جاش {1} معتاد شده دقیقا مثل شماها.</value>
     </string>
     <string key="ThiefToWolf">
@@ -1698,8 +1698,8 @@
     <string key="SecretLynchShowVotersA">
       <value>وقتی حالت رای مخفی روشن است. و تعداد رای ها در اخر رای گیری نشان داده خواهد شد.نام رای دهنده به هر بازیکن نیز نشان داده خواهد شد:{0}</value>
     </string>
-    <string key="CultistBitten">
-    <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <string key="ZombieBitten">
+    <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
       <value>معتاد ها تو پاتوقشون دور هم جمع شدن که تصمیم بگیرن برن به کی جنس بفروشن ولی {0} توی جمع حاضر نبود! یعنی چه اتفاقی براش افتاده؟🤔</value>
     </string>
     
@@ -1808,7 +1808,7 @@
   <string key="ChemistTargetEmpty">
 	<value> رفتی که با {0} دوئل بکنی اما خونه نبود! </value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value> معتاد ها درحال حاضر: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1860,7 +1860,7 @@
   <string key="ChemistFrozen">
     <value>دیشب که داشتی برای دوئل از خونه میزدی بیرون یه دفعه یه چیز محکم از پشت خورد تو سرت!! فردا که بیدار شدی دیدی جلوی در خونه خودت دست و پات رو بستن و ولت کردن...\nبعد از یکم داد و بیداد اهالی شهر تو رو میبینن و میان دست و پاتو باز میکنن</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>دیشب که داشتی برای جنس فروختن از خونه میزدی بیرون یه دفعه یه چیز محکم از پشت خورد تو سرت!! فردا که بیدار شدی دیدی جلوی در خونه خودت دست و پات رو بستن و ولت کردن...\nبعد از یکم داد و بیداد اهالی شهر تو رو میبینن و میان دست و پاتو باز میکنن</value>
   </string>
   <string key="CHFrozen">
@@ -2001,11 +2001,11 @@
   <string key="HunterFellDigger">
 	<value> بعد از یک شب خسته کننده شما به خانه برمیگردید قبل از اینکه وارد خانه شوید اسلحه ای کنار یک قبر میبینید مثل اینکه پلیس مبارزه با مواد مخدر یعنی {0} توی قبر افتاده</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value> بعد از یک شب خسته کننده در راه خانه صدای فریادی از یک قبر ناتمام خود میشنوید، با عجله به آنجا میروید و {0} را میبینید که در قبر افتاده. آخه کدوم معتادیی میخواد یه قبرکن رو معتاد کنه؟</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>تو راه خونه {1} ناگهان {0} تصمیم میگیره بره اونور پشت بوته ها مواد بزنه . اما در قبرستان داخل یک قبر افتاد. شما صدای فریاد اون رو قبل از افتادن میشنوید اما برای نجات خودتون فرار میکنید!</value>
   </string>
@@ -2061,8 +2061,8 @@
   <string key="HarlotFellPublic">
 	<value> ساقی {0} در راه خانه ی قبرکن بود که درون یک قبرباز افتاد و مرد. شاید بهتر بود یک شغل دیگه انتخاب میکرد. </value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>معتاد ها میخواستند به قبرکن جنس بفروشن، اما {0} که گروه رو هدایت میکرد داخل یک قبر افتاد. او فریاد میزد اما بقیه معتاد ها برای نجات جان خود فرار کردند.</value>
   </string>
   <!--{0}: thief-->

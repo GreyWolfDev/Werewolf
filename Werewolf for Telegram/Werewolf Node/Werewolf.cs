@@ -1110,14 +1110,14 @@ namespace Werewolf_Node
                     player.Choice = -1;
                 }
 
-                if (qtype == QuestionType.Convert && player.PlayerRole == IRole.Cultist && player.CurrentQuestion.QType == QuestionType.Convert)
+                if (qtype == QuestionType.Convert && player.PlayerRole == IRole.Zombie && player.CurrentQuestion.QType == QuestionType.Convert)
                 {
                     var others =
                         Players.Where(
-                            x => !x.IsDead && x.PlayerRole == IRole.Cultist && x.Id != player.Id);
+                            x => !x.IsDead && x.PlayerRole == IRole.Zombie && x.Id != player.Id);
                     foreach (var w in others)
                     {
-                        Send(GetLocaleString("CultistVotedConvert", player.GetName(), target.GetName()), w.Id);
+                        Send(GetLocaleString("ZombieVotedConvert", player.GetName(), target.GetName()), w.Id);
                     }
                 }
 
@@ -1522,7 +1522,7 @@ namespace Werewolf_Node
 
                 foreach (var p in Players)
                 {
-                    p.CultLeader = p.PlayerRole == IRole.Cultist;
+                    p.CultLeader = p.PlayerRole == IRole.Zombie;
                 }
 
             }
@@ -1565,7 +1565,7 @@ namespace Werewolf_Node
                 case IRole.Troublemaker:
                 case IRole.Fool:
                 case IRole.Harlot:
-                case IRole.CultistHunter:
+                case IRole.ZombieHunter:
                 case IRole.Seer:
                 case IRole.GuardianAngel:
                 case IRole.WildChild:
@@ -1595,7 +1595,7 @@ namespace Werewolf_Node
                 case IRole.Tanner:
                     p.Team = ITeam.Tanner;
                     break;
-                case IRole.Cultist:
+                case IRole.Zombie:
                     p.Team = ITeam.Cult;
                     break;
                 case IRole.SerialKiller:
@@ -1693,12 +1693,12 @@ namespace Werewolf_Node
                             }
                         }
                         return msg;
-                    case IRole.Cultist:
-                        msg = GetLocaleString("RoleInfoCultist");
-                        if (Players?.Count(x => x.PlayerRole == IRole.Cultist && !x.IsDead) > 1)
+                    case IRole.Zombie:
+                        msg = GetLocaleString("RoleInfoZombie");
+                        if (Players?.Count(x => x.PlayerRole == IRole.Zombie && !x.IsDead) > 1)
                         {
-                            msg += " " + GetLocaleString("CultistsList",
-                                Players?.Where(x => x.PlayerRole == IRole.Cultist && !x.IsDead).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
+                            msg += " " + GetLocaleString("ZombiesList",
+                                Players?.Where(x => x.PlayerRole == IRole.Zombie && !x.IsDead).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
                         }
                         return msg;
                     default:
@@ -2000,10 +2000,10 @@ namespace Werewolf_Node
                 foreach (var m in oldTeamMates)
                     Send(GetLocaleString("MasonConverted", p.GetName()), m.Id);
 
-            // notify cultists if given
-            if (p.PlayerRole == IRole.Cultist && toRole != IRole.Cultist && oldTeamMates != null)
+            // notify Zombies if given
+            if (p.PlayerRole == IRole.Zombie && toRole != IRole.Zombie && oldTeamMates != null)
                 foreach (var c in oldTeamMates)
-                    Send(GetLocaleString("CultistBitten", p.GetName()), c.Id);
+                    Send(GetLocaleString("ZombieBitten", p.GetName()), c.Id);
 
             // actually transform the player
             if (bullet.HasValue) p.Bullet = bullet.Value;
@@ -2059,12 +2059,12 @@ namespace Werewolf_Node
                 #endregion
                 #region Cult
                 case TransformationMethod.ConvertToCult:
-                    var cultists = Players.GetPlayersForRoles(new[] { IRole.Cultist }, exceptPlayer: p);
+                    var Zombies = Players.GetPlayersForRoles(new[] { IRole.Zombie }, exceptPlayer: p);
                     Send(GetLocaleString("CultConvertYou"), p.Id);
-                    Send(GetLocaleString("CultTeam", cultists.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), p.Id);
+                    Send(GetLocaleString("CultTeam", Zombies.Select(x => x.GetName()).Aggregate((a, b) => a + ", " + b)), p.Id);
                     var cultMsg = GetLocaleString("CultJoin", $"{p.GetName()}");
-                    cultMsg += "\n" + GetLocaleString("CultistsList", Players?.Where(x => x.PlayerRole == IRole.Cultist && !x.IsDead).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
-                    foreach (var c in cultists)
+                    cultMsg += "\n" + GetLocaleString("ZombiesList", Players?.Where(x => x.PlayerRole == IRole.Zombie && !x.IsDead).Select(x => x.GetName()).Aggregate((current, next) => current + ", " + next));
+                    foreach (var c in Zombies)
                         Send(cultMsg, c.Id);
                     break;
                 #endregion
@@ -2091,7 +2091,7 @@ namespace Werewolf_Node
                 #region Doppelgänger
                 case TransformationMethod.Doppelgänger:
                     var teammates2 = "";
-                    if (!new[] { IRole.Mason, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.WildChild, IRole.Lycan, IRole.SnowWolf }.Contains(p.PlayerRole))
+                    if (!new[] { IRole.Mason, IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Zombie, IRole.WildChild, IRole.Lycan, IRole.SnowWolf }.Contains(p.PlayerRole))
                     {
                         //tell them their new role
                         Send(GetRoleInfo(p.PlayerRole), p.Id);
@@ -2171,8 +2171,8 @@ namespace Werewolf_Node
                             }
                             Send(GetLocaleString("DGTransformToSnowWolf", roleModel.GetName(), teammates2), p.Id);
                             break;
-                        case IRole.Cultist:
-                            foreach (var w in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
+                        case IRole.Zombie:
+                            foreach (var w in Players.Where(x => x.PlayerRole == IRole.Zombie & !x.IsDead && x.Id != p.Id))
                             {
                                 Send(GetLocaleString("DGToCult", p.GetName()), w.Id);
                                 teammates2 += $"{w.GetName()}" + ", ";
@@ -2186,9 +2186,9 @@ namespace Werewolf_Node
                 #endregion
                 #region Alpha
                 case TransformationMethod.AlphaBitten:
-                    if (p.PlayerRole == IRole.Cultist)
-                        foreach (var m in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
-                            Send(GetLocaleString("CultistBitten", p.GetName()), m.Id);
+                    if (p.PlayerRole == IRole.Zombie)
+                        foreach (var m in Players.Where(x => x.PlayerRole == IRole.Zombie & !x.IsDead && x.Id != p.Id))
+                            Send(GetLocaleString("ZombieBitten", p.GetName()), m.Id);
                     var msg1 = GetLocaleString("BittenTurned");
                     if (newTeamMembers?.Count() > 1)
                     {
@@ -2241,8 +2241,8 @@ namespace Werewolf_Node
                                 Send(GetLocaleString("ThiefToSnowWolf", roleModel.GetName(), p.GetName()), w.Id);
                             }
                             break;
-                        case IRole.Cultist:
-                            foreach (var w in Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead && x.Id != p.Id))
+                        case IRole.Zombie:
+                            foreach (var w in Players.Where(x => x.PlayerRole == IRole.Zombie & !x.IsDead && x.Id != p.Id))
                             {
                                 Send(GetLocaleString("ThiefToCult", roleModel.GetName(), p.GetName()), w.Id);
                             }
@@ -2399,10 +2399,10 @@ namespace Werewolf_Node
                         case IRole.WolfCub:
                             Send(GetLocaleString("WolfFell", visitor.GetName()), visited.Id);
                             break;
-                        case IRole.CultistHunter:
+                        case IRole.ZombieHunter:
                             Send(GetLocaleString("HunterFellDigger", visitor.GetName()), visited.Id);
                             break;
-                        case IRole.Cultist:
+                        case IRole.Zombie:
                             Send(GetLocaleString("CultFell", visitor.GetName()), visited.Id);
                             break;
                         case IRole.GuardianAngel:
@@ -2488,7 +2488,7 @@ namespace Werewolf_Node
 
         private void ConvertToCult(IPlayer target, IEnumerable<IPlayer> voteCult, int chance = 100)
         {
-            var cultists = Players.GetPlayersForRoles(new[] { IRole.Cultist });
+            var Zombies = Players.GetPlayersForRoles(new[] { IRole.Zombie });
 
             if (Program.R.Next(100) < chance)
             {
@@ -2496,11 +2496,11 @@ namespace Werewolf_Node
                     foreach (var c in voteCult)
                         AddAchievement(c, AchievementsReworked.DontStayHome);
 
-                Transform(target, IRole.Cultist, TransformationMethod.ConvertToCult, newTeamMembers: cultists, oldTeamMates: Players.Where(x => x.PlayerRole == IRole.Mason && x.Id != target.Id && !x.IsDead));
+                Transform(target, IRole.Zombie, TransformationMethod.ConvertToCult, newTeamMembers: Zombies, oldTeamMates: Players.Where(x => x.PlayerRole == IRole.Mason && x.Id != target.Id && !x.IsDead));
             }
             else
             {
-                foreach (var c in cultists)
+                foreach (var c in Zombies)
                 {
                     Send(GetLocaleString("CultUnableToConvert", voteCult.OrderByDescending(x => x.DayCult).First().GetName(), target.GetName()), c.Id);
                 }
@@ -2877,7 +2877,7 @@ namespace Werewolf_Node
                     //kill them
                     gunner.Bullet--;
                     gunner.HasUsedAbility = true;
-                    if (new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Cultist, IRole.SerialKiller, IRole.Lycan, IRole.SnowWolf, IRole.Arsonist }.Contains(check.PlayerRole))
+                    if (new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Zombie, IRole.SerialKiller, IRole.Lycan, IRole.SnowWolf, IRole.Arsonist }.Contains(check.PlayerRole))
                         gunner.BulletHitBaddies++;
                     //update database
                     switch (check.PlayerRole)
@@ -2949,7 +2949,7 @@ namespace Werewolf_Node
                     Send(GetLocaleString("DetectiveSnoop", check.GetName(), GetDescription(check.PlayerRole)), detect.Id);
 
                     //if snooped non-bad-roles:
-                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan, IRole.Cultist, IRole.SerialKiller, IRole.SnowWolf, IRole.Arsonist }.Contains(check.PlayerRole))
+                    if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan, IRole.Zombie, IRole.SerialKiller, IRole.SnowWolf, IRole.Arsonist }.Contains(check.PlayerRole))
                         detect.CorrectSnooped.Clear();     //clear correct snoop list
                     else
                     {
@@ -2990,8 +2990,8 @@ namespace Werewolf_Node
                     p.Bitten = false;
                     if (!p.IsDead && !WolfRoles.Contains(p.PlayerRole) && p.PlayerRole != IRole.SnowWolf)
                     {
-                        List<IPlayer> oldTeamMembers = p.PlayerRole == IRole.Cultist
-                            ? Players.Where(x => x.PlayerRole == IRole.Cultist && !x.IsDead && x.Id != p.Id).ToList()
+                        List<IPlayer> oldTeamMembers = p.PlayerRole == IRole.Zombie
+                            ? Players.Where(x => x.PlayerRole == IRole.Zombie && !x.IsDead && x.Id != p.Id).ToList()
                             : Players.Where(x => x.PlayerRole == IRole.Mason && !x.IsDead && x.Id != p.Id).ToList();
                         Transform(p, IRole.Wolf, TransformationMethod.AlphaBitten, oldTeamMates: oldTeamMembers,
                             newTeamMembers: Players.Where(x => !x.IsDead && (WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf)));
@@ -3075,7 +3075,7 @@ namespace Werewolf_Node
              * Arsonist
              * Wolves
              * Serial Killer
-             * Cultist Hunter
+             * Zombie Hunter
              * Cult
              * Chemist
              * Harlot
@@ -3134,10 +3134,10 @@ namespace Werewolf_Node
                                 case IRole.Chemist:
                                     Send(GetLocaleString("ChemistFrozen"), target.Id);
                                     break;
-                                case IRole.Cultist:
-                                    Send(GetLocaleString("CultistFrozen"), target.Id);
+                                case IRole.Zombie:
+                                    Send(GetLocaleString("ZombieFrozen"), target.Id);
                                     break;
-                                case IRole.CultistHunter:
+                                case IRole.ZombieHunter:
                                     Send(GetLocaleString("CHFrozen"), target.Id);
                                     break;
                                 case IRole.Fool:
@@ -3556,7 +3556,7 @@ namespace Werewolf_Node
             #region Cult Hunter Night
 
             //cult hunter
-            var hunter = Players.GetPlayerForRole(IRole.CultistHunter);
+            var hunter = Players.GetPlayerForRole(IRole.ZombieHunter);
             if (hunter != null && !hunter.Frozen)
             {
                 var hunted = Players.FirstOrDefault(x => x.Id == hunter.Choice);
@@ -3564,9 +3564,9 @@ namespace Werewolf_Node
                 switch (VisitPlayer(hunter, hunted))
                 {
                     case VisitResult.Success:
-                        if (hunted.PlayerRole == IRole.Cultist)
+                        if (hunted.PlayerRole == IRole.Zombie)
                         {
-                            Send(GetLocaleString("HunterFindCultist", hunted.GetName()), hunter.Id);
+                            Send(GetLocaleString("HunterFindZombie", hunted.GetName()), hunter.Id);
                             Send(GetLocaleString("CHHuntedYou"), hunted.Id);
                             KillPlayer(hunted, KillMthd.Hunt, killer: hunter);
                             hunter.CHHuntedCultCount++;
@@ -3591,7 +3591,7 @@ namespace Werewolf_Node
             #region Cult Night
 
             //CULT
-            var voteCult = Players.Where(x => x.PlayerRole == IRole.Cultist & !x.IsDead & !x.Frozen);
+            var voteCult = Players.Where(x => x.PlayerRole == IRole.Zombie & !x.IsDead & !x.Frozen);
 
             if (voteCult.Any())
             {
@@ -3651,7 +3651,7 @@ namespace Werewolf_Node
                                         }
                                     }
                                     break;
-                                case IRole.CultistHunter:
+                                case IRole.ZombieHunter:
                                     //kill the newest cult member
                                     KillPlayer(newbie, KillMthd.Hunt, killer: target, diedByVisitingKiller: true);
                                     AddAchievement(newbie, AchievementsReworked.CultFodder);
@@ -3660,7 +3660,7 @@ namespace Werewolf_Node
                                     {
                                         Send(GetLocaleString("CultConvertCultHunter", newbie.GetName(), target.GetName()), c.Id);
                                     }
-                                    Send(GetLocaleString("CultHunterKilledCultVisit", newbie.GetName(), CountCultistsAlive()), target.Id);
+                                    Send(GetLocaleString("CultHunterKilledCultVisit", newbie.GetName(), CountZombiesAlive()), target.Id);
                                     break;
                                 case IRole.Wolf:
                                 case IRole.AlphaWolf:
@@ -3861,7 +3861,7 @@ namespace Werewolf_Node
                 {
                     case VisitResult.Success:
                         Send(
-                            (target.PlayerRole == IRole.Cultist && Program.R.Next(100) < Settings.HarlotDiscoverCultChance) ?
+                            (target.PlayerRole == IRole.Zombie && Program.R.Next(100) < Settings.HarlotDiscoverCultChance) ?
                                 GetLocaleString("HarlotDiscoverCult", target.GetName()) :
                                 GetLocaleString("HarlotVisitNonWolf", target.GetName()),
                             harlot.Id);
@@ -4170,7 +4170,7 @@ namespace Werewolf_Node
                     switch (VisitPlayer(thief, target))
                     {
                         case VisitResult.Success:
-                            if (Program.R.Next(100) < Settings.ThiefStealChance && !WolfRoles.Contains(target.PlayerRole) && target.PlayerRole != IRole.Cultist && target.PlayerRole != IRole.SnowWolf)
+                            if (Program.R.Next(100) < Settings.ThiefStealChance && !WolfRoles.Contains(target.PlayerRole) && target.PlayerRole != IRole.Zombie && target.PlayerRole != IRole.SnowWolf)
                                 StealRole(thief, target);
                             else goto fail;
                             break;
@@ -4251,7 +4251,7 @@ namespace Werewolf_Node
                             switch (p.PlayerRole)
                             {
                                 case IRole.Blacksmith:
-                                case IRole.Cultist:
+                                case IRole.Zombie:
                                 case IRole.Cupid:
                                 case IRole.Drunk:
                                 case IRole.GuardianAngel:
@@ -4296,7 +4296,7 @@ namespace Werewolf_Node
                                     msg = GetLocaleString("WolfFellPublic", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
                                     break;
                                 case IRole.Harlot:
-                                case IRole.Cultist:
+                                case IRole.Zombie:
                                 case IRole.Thief:
                                     msg = GetLocaleString(p.PlayerRole.ToString() + "FellPublic", p.GetName());
                                     break;
@@ -4335,14 +4335,14 @@ namespace Werewolf_Node
                                     else //died from hunter
                                         msg = GetLocaleString(voteWolvesCount > 1 ? "HunterShotWolfMulti" : "HunterShotWolf", p.GetName()) + " " + GetLocaleString("PlayerRoleWas", p.GetName(), GetDescription(p.PlayerRole));
                                     break;
-                                case IRole.CultistHunter: //killed by sk
+                                case IRole.ZombieHunter: //killed by sk
                                     msg = GetLocaleString("SerialKillerKilledCH", p.GetName());
                                     break;
-                                case IRole.Cultist:
+                                case IRole.Zombie:
                                     switch (p.KilledByRole)
                                     {
-                                        case IRole.CultistHunter:
-                                            msg = GetLocaleString("HunterKilledCultist", p.GetName());
+                                        case IRole.ZombieHunter:
+                                            msg = GetLocaleString("HunterKilledZombie", p.GetName());
                                             break;
                                         case IRole.Hunter:
                                             msg = GetLocaleString("HunterKilledVisiter", p.GetName(), $"{GetDescription(p.PlayerRole)} {GetLocaleString("IsDead")}");
@@ -4463,15 +4463,15 @@ namespace Werewolf_Node
 
         }
 
-        private int CountCultistsAlive()
+        private int CountZombiesAlive()
         {
-            int cultists = 0;
-            // check for alive cultists
-            cultists += Players.Count(x => x.PlayerRole == IRole.Cultist && !x.IsDead);
+            int Zombies = 0;
+            // check for alive Zombies
+            Zombies += Players.Count(x => x.PlayerRole == IRole.Zombie && !x.IsDead);
             // check for dg about to transform
-            cultists += Players.Count(x => x.PlayerRole == IRole.Doppelgänger && !x.IsDead && Players.FirstOrDefault(rm => rm.Id == x.RoleModel && rm.IsDead)?.PlayerRole == IRole.Cultist);
+            Zombies += Players.Count(x => x.PlayerRole == IRole.Doppelgänger && !x.IsDead && Players.FirstOrDefault(rm => rm.Id == x.RoleModel && rm.IsDead)?.PlayerRole == IRole.Zombie);
             // return the sum
-            return cultists;
+            return Zombies;
         }
 
         private bool CheckForGameEnd(bool checkbitten = false)
@@ -4560,9 +4560,9 @@ namespace Werewolf_Node
                     if (alivePlayers.Any(x => x.PlayerRole == IRole.Arsonist) && !alivePlayers.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0))
                         return DoGameEnd(ITeam.Arsonist);
                     //check for cult
-                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Cultist))
+                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Zombie))
                     {
-                        var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Cultist);
+                        var other = alivePlayers.FirstOrDefault(x => x.PlayerRole != IRole.Zombie);
                         if (other == null) //two cults
                             return DoGameEnd(ITeam.Cult);
                         switch (other.PlayerRole)
@@ -4573,16 +4573,16 @@ namespace Werewolf_Node
                             case IRole.Lycan:
                             case IRole.SnowWolf: // shouldn't happen but well
                                 return DoGameEnd(ITeam.Wolf);
-                            case IRole.CultistHunter:
-                                var cultist = alivePlayers.FirstOrDefault(x => x.PlayerRole == IRole.Cultist);
-                                SendWithQueue(GetLocaleString("CHKillsCultistEnd", cultist.GetName(), other.GetName()));
-                                DBKill(other, cultist, KillMthd.Hunt);
+                            case IRole.ZombieHunter:
+                                var Zombie = alivePlayers.FirstOrDefault(x => x.PlayerRole == IRole.Zombie);
+                                SendWithQueue(GetLocaleString("CHKillsZombieEnd", Zombie.GetName(), other.GetName()));
+                                DBKill(other, Zombie, KillMthd.Hunt);
                                 return DoGameEnd(ITeam.Village);
                             default:
                                 //autoconvert the other
                                 if (other.PlayerRole != IRole.Doppelgänger && other.PlayerRole != IRole.Thief)
                                 {
-                                    Transform(other, IRole.Cultist, TransformationMethod.AutoConvertToCult);
+                                    Transform(other, IRole.Zombie, TransformationMethod.AutoConvertToCult);
                                 }
                                 return DoGameEnd(ITeam.Cult);
                         }
@@ -4602,7 +4602,7 @@ namespace Werewolf_Node
 
             if (alivePlayers.Any(x => x.Team == ITeam.Arsonist)) //there is still Arsonist alive, do nothing (surely more than two players)
                 return false;
-            //is everyone left a cultist?
+            //is everyone left a Zombie?
             if (alivePlayers.All(x => x.Team == ITeam.Cult))
                 return DoGameEnd(ITeam.Cult);
 
@@ -4626,7 +4626,7 @@ namespace Werewolf_Node
                 return DoGameEnd(ITeam.Wolf);
             }
 
-            if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole) && x.PlayerRole != IRole.SnowWolf && x.PlayerRole != IRole.Cultist && x.PlayerRole != IRole.SerialKiller && x.PlayerRole != IRole.Arsonist)) //checks for SK and snow wolf are actually useless...
+            if (alivePlayers.All(x => !WolfRoles.Contains(x.PlayerRole) && x.PlayerRole != IRole.SnowWolf && x.PlayerRole != IRole.Zombie && x.PlayerRole != IRole.SerialKiller && x.PlayerRole != IRole.Arsonist)) //checks for SK and snow wolf are actually useless...
                 //no wolf, no cult, no SK, no Arsonist... VG wins!
                 if (!checkbitten || alivePlayers.All(x => !x.Bitten)) //unless bitten is about to turn into a wolf
                     return DoGameEnd(ITeam.Village);
@@ -5203,10 +5203,10 @@ namespace Werewolf_Node
                         else
                             msg = null;
                         break;
-                    case IRole.Cultist:
-                        targets = targetBase.Where(x => x.PlayerRole != IRole.Cultist).ToList();
+                    case IRole.Zombie:
+                        targets = targetBase.Where(x => x.PlayerRole != IRole.Zombie).ToList();
                         msg = GetLocaleString("AskConvert");
-                        var otherCults = targetBase.Where(x => x.PlayerRole == IRole.Cultist).ToList();
+                        var otherCults = targetBase.Where(x => x.PlayerRole == IRole.Zombie).ToList();
                         if (otherCults.Any())
                         {
                             var andStr = GetLocaleString("And");
@@ -5214,7 +5214,7 @@ namespace Werewolf_Node
                         }
                         qtype = QuestionType.Convert;
                         break;
-                    case IRole.CultistHunter:
+                    case IRole.ZombieHunter:
                         targets = targetBase.ToList();
                         msg = GetLocaleString("AskHunt");
                         qtype = QuestionType.Hunt;
@@ -5795,7 +5795,7 @@ namespace Werewolf_Node
             using (var db = new WWContext())
             {
                 //check for convention
-                var convention = Players.Count(x => x.PlayerRole == IRole.Cultist && !x.IsDead) >= 10;
+                var convention = Players.Count(x => x.PlayerRole == IRole.Zombie && !x.IsDead) >= 10;
                 var beastResisted = new[] { IRole.WildChild, IRole.Cursed, IRole.Traitor }.Count(r => Players.Any(x => x.Won && x.PlayerRole == r)) == 3;
 
                 foreach (var player in Players.Where(x => !x.Fled)) //flee / afk? no achievements for you.
@@ -5875,12 +5875,12 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.BrokenClock);
                         if (!ach2.HasFlag(AchievementsReworked.SmartGunner) && player.PlayerRole == IRole.Gunner & player.BulletHitBaddies >= 2)
                             newAch2.Set(AchievementsReworked.SmartGunner);
-                        if (!ach2.HasFlag(AchievementsReworked.CultCon) && player.PlayerRole == IRole.Cultist && !player.IsDead && convention)
+                        if (!ach2.HasFlag(AchievementsReworked.CultCon) && player.PlayerRole == IRole.Zombie && !player.IsDead && convention)
                             newAch2.Set(AchievementsReworked.CultCon);
                         if (!ach2.HasFlag(AchievementsReworked.SerialSamaritan) && player.PlayerRole == IRole.SerialKiller && player.SerialKilledWolvesCount >= 3)
                             newAch2.Set(AchievementsReworked.SerialSamaritan);
-                        if (!ach2.HasFlag(AchievementsReworked.CultistTracker) && player.PlayerRole == IRole.CultistHunter && player.CHHuntedCultCount >= 3)
-                            newAch2.Set(AchievementsReworked.CultistTracker);
+                        if (!ach2.HasFlag(AchievementsReworked.ZombieTracker) && player.PlayerRole == IRole.ZombieHunter && player.CHHuntedCultCount >= 3)
+                            newAch2.Set(AchievementsReworked.ZombieTracker);
                         if (!ach2.HasFlag(AchievementsReworked.ImNotDrunk) && player.PlayerRole == IRole.ClumsyGuy && player.ClumsyCorrectLynchCount >= 3)
                             newAch2.Set(AchievementsReworked.ImNotDrunk);
                         if (!ach2.HasFlag(AchievementsReworked.WuffieCult) && player.PlayerRole == IRole.AlphaWolf && player.AlphaConvertCount >= 3)

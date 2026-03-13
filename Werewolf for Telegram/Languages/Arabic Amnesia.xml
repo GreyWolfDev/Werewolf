@@ -176,10 +176,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
   </string>
   <string key="LynchTime" >
@@ -229,7 +229,7 @@
     <!-- 1 - victim role -->
     <value>بينما يستيقظ الجميع في الصباح، يشمون رائحةً مريعة. فيتبعون الرائحة ليعثروا على {0} ممزقٌ إلى أشلاء في الحظيرة ورأسه مفقود. نم نم نم نم نم\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>رائحة نتنة قوية تأتي من منزل {0}... يذهب أهل القرية ليتحققوا منها فيجدوا جثة ملقية أمام مذبحٍ مظلم. لقد قُتل طائفي بواسطة صائد الطائفيين!</value>
   </string>
@@ -314,7 +314,7 @@
   <string key="RemainingPlayersEnd">
     <value>فجأةً، الناجون تذكروا كل شيء! أسمائهم وأدوارهم وفرقهم كانت كالآتي:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value>صوت {0} للقيام بشيءٍ لـ{1}</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -341,7 +341,7 @@
   <string key="HunterVisitDead">
     <value>إن {0} كان ميتًا مسبقًا!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
   </string>
   <string key="HunterFailedToFind">
@@ -353,7 +353,7 @@
   <string key="WildChildTransform">
     <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>قروي 👱</value>
   </string>
@@ -399,10 +399,10 @@
   <string key="ApprenticeSeer">
     <value>تلميذ العراف 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>طائفي 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>صائد الطائفيين 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -714,7 +714,7 @@
   <string key="AboutHarlot">
     <!-- hunter! ayylmao -->
 	<value>
-	The Harlot will be given the chance to visit another player each night. They will notice something happened, even if they don't remember what. The harlot dies if they visit a wolf or the Serial Killer, so visiting is a good way to find safe players, even if it's as a sacrifice! The harlot will also die if they visit a house attacked by the wolves or if the Serial Killer chooses to kill them! When visiting a cultist, the harlot has a 50% chance of finding out their role!
+	The Harlot will be given the chance to visit another player each night. They will notice something happened, even if they don't remember what. The harlot dies if they visit a wolf or the Serial Killer, so visiting is a good way to find safe players, even if it's as a sacrifice! The harlot will also die if they visit a house attacked by the wolves or if the Serial Killer chooses to kill them! When visiting a Zombie, the harlot has a 50% chance of finding out their role!
 	
 	NIGHT ACTIONS, every night!</value>
   </string>
@@ -770,13 +770,13 @@
   <string key="AboutCult">
   <!-- CULT CONVERSION RATES AND WHO'S HOME HERE! ayylmao -->
     <value>
-	Every night, all cultists in the cult vote to decide who to convert. The cult wins when every single alive player is a cultist. It's not that simple to convert players, though!
+	Every night, all Zombies in the cult vote to decide who to convert. The cult wins when every single alive player is a Zombie. It's not that simple to convert players, though!
 	
 	NIGHT ACTIONS, every night!</value>
   </string>
   <string key="AboutCH">
     <value>
-	The Cultist Hunter has a single job: kill all cultists. Every night, they get to visit a player, who won't feel anything... unless they are a cultist, in which case, the Cultist Hunter will kill them! If the cult chooses to convert the CH, their newest member dies.
+	The Zombie Hunter has a single job: kill all Zombies. Every night, they get to visit a player, who won't feel anything... unless they are a Zombie, in which case, the Zombie Hunter will kill them! If the cult chooses to convert the CH, their newest member dies.
 	
 	NIGHT ACTIONS, every night!</value>
   </string>
@@ -806,7 +806,7 @@
   </string>
   <string key="AboutDG">
     <value>
-      The Doppelgänger chooses a player during the first night of the game. Once they die, the Doppelgänger will become what they were! Unless the player was converted to the cult, the Doppelgänger will become what they were at the time of death! When becoming a Wild Child, the Doppelgänger will inherit their role model. The Doppelgänger cannot be converted to a cultist until they change roles, and will not be able to win (except as a lover) unless they've changed roles!
+      The Doppelgänger chooses a player during the first night of the game. Once they die, the Doppelgänger will become what they were! Unless the player was converted to the cult, the Doppelgänger will become what they were at the time of death! When becoming a Wild Child, the Doppelgänger will inherit their role model. The Doppelgänger cannot be converted to a Zombie until they change roles, and will not be able to win (except as a lover) unless they've changed roles!
       
 	  FIRST NIGHT ACTION, then none until their role changes!
     </value>
@@ -820,7 +820,7 @@
   </string>
   <string key="AboutHunter">
     <value>
-      The Hunter is just like a villager... Until someone visits them, or they die! Anyone who visits the Hunter's house will find themselves dead (other than the cult - there's a 50% chance the cult will convert the Hunter, and then a 50% chance a cultist will be killed if the conversion fails), unless they go there to attack the Hunter. The Serial Killer will be able to kill the Hunter, and a pack of wolves will also be able to do that... However, the Hunter won't go down without a fight! When they're killed - be it by lynching or a murder, but not a wolf attack - the Hunter will be given a choice to shoot and kill someone out of the players alive!
+      The Hunter is just like a villager... Until someone visits them, or they die! Anyone who visits the Hunter's house will find themselves dead (other than the cult - there's a 50% chance the cult will convert the Hunter, and then a 50% chance a Zombie will be killed if the conversion fails), unless they go there to attack the Hunter. The Serial Killer will be able to kill the Hunter, and a pack of wolves will also be able to do that... However, the Hunter won't go down without a fight! When they're killed - be it by lynching or a murder, but not a wolf attack - the Hunter will be given a choice to shoot and kill someone out of the players alive!
 	  Wolf attacks work differently, though! If a sole wolf attacks the hunter, there's a 30% chance they'll be able to kill the wolf and survive. Otherwise, the Hunter will be killed by the wolves, but may be able to take one down (instead of choosing a player to kill) as they go! For two wolves, the chance of killing one of them is 50%. For three, it's 70%; for four, 90%, and for packs with five wolves or more, the Hunter will definitely be able to kill one of them as they die!
 	  
 	  NO ACTIONS, until they die!
@@ -1206,7 +1206,7 @@
   <string key="BlacksmithKilled">
     <value>يبدو أنه {0} الحداد، يبدو أنه كان غير محظوظٍ للغاية. خمس سكاكين جديدة من مستودع {0} وجدت ليلة الأمس مغروسةً على يديه وقدميه ورأسه وهو مثبت على طاولة الحدادة. ربما كان السفاح يأمل أن ينمي من مجموعة أسلحته بجانب مجموعة الأعضاء البشرية...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>عُثر على {0} مطعون حتى الموت بواسطة شمعدان خاصٌ بالمذبح. السفاح ضرب مجددًا، لا مبالٍ بالعرق أو اللغة أو الدين! {0} كان طائفي.</value>
   </string>
   <string key="CupidKilled">
@@ -1244,12 +1244,12 @@
     <value>جثة {0}، صائد الطائفيين، عُثر عليها في وسط البلدة، ولو أنها مقطعة بدقة إلى مائة قطعة. لا يبدو أن التحقق مما إذا كان السفاح طائفي فكرةً جيدة...</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>بينما كان يبدو أن الذئاب قررت البقاء جيدةً لمرة، إلا أنها عاقبت {0}، طائفي قرر افتعال المشاكل مع الذئاب، لتبرهن صعوبة مقاومة ذلك. رأس {0} تحول لعشاءٍ ممتاز، تم توصيله لعتبة منزل الذئاب!</value>
     <value>الطائفة علقت في مشكلةٍ غير متوقعة الليلة الماضية. أحدث عضوٍ فيهم كان سيء الحظ لزيارته ذئبًا في الليلة التي قررت فيها الذئاب البقاء في المنزل، والذئب وجد {0} لذيذًا نوعًا ما. لسوء حظ {0}، الذئاب ليس لديها اهتمام في الإنضمام لحركة طائفةٍ جديدة.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>الطائفة ظنوا أنهم سيكسبون عضوً جديدً في صفوفهم، لكنهم كانوا مخطئين! {0}، طائفي فُرم لقطع ووُضع في ميدان البلدة في الصباح! وخلافًا للعادة كتاب "الطائفة" خاصته عُثر عليه مطعونًا بسكين، كما لو أنه تصريحٌ ليبين أي عقيدةٍ هي المنتصرة.</value>
     <value>الليلة الماضية، الطائفة حاولت تحويل الوحيد في القرية الأكثر جنونًا منهم. أحدث عضو حاول تحويل السفاح، والسفاح صنع قطعةً فنيةً جديدة في ميدان البلدة مكونةً من أعضاء {0} الداخلية.</value>
   </string>
@@ -1273,8 +1273,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>بمعرفة أن {0} هو آخر من تبقى، يستغل {1} الوقت الذي يكون فيه حذر {0} في أدنى مستوياته. فيقصي {1} آخر قروي بدون أدنى جهد، ولم يتبقى سوى جثة مشوهه تخص {0}، الصياد، وعليها خدوشٌ متوازية في الوجه.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>يتمشى {0} و {1} تحت ضوء الشمس. وبرؤية وميض قلادة حول عنق {0}، الزكي {1} يستل سيفه للمرة الأخيرة، ليضع حدًا لتعاليم الطائفة المحرفة التي لوثت القرية.</value>
   </string>
 
@@ -1575,8 +1575,8 @@
     <value>You may not remember who you are, but you do remember someone important: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>You start to forget a name... What was it, {0}? Wait... What were you thinking about, again? Amidst the names in your head, a new one appears: {1}!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1630,8 +1630,8 @@
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-      <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+      <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
   </string>
   
@@ -1740,7 +1740,7 @@
   <string key="ChemistTargetEmpty">
 	<value>{0} wasn't home!</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>تذكر أن تتناقش مع: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1791,7 +1791,7 @@
   <string key="ChemistFrozen">
     <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
   </string>
   <string key="CHFrozen">
@@ -1932,11 +1932,11 @@
   <string key="HunterFellDigger">
 	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>Did something happen at {1}'s house last night? You can't seem to remember... but you do remember that {0} is now dead.</value>
   </string>
@@ -1992,8 +1992,8 @@
   <string key="HarlotFellPublic">
 	<value>بينما كانت الزوارة {0} عائدةً للمنزل بعد قضاء ليلةٍ من المرح، حاولت سلك طريقًا مختصر خلال المقبرة. لا بد أنها كانت تشعر ببعض الدوخة والذي جعلها لا ترى القبر المفتوح حتى شعرت بأنه لا يوجد أرض تحت قدمها عندما خطت. ربما كان ينبغي عليها القبول القبول بتلك الوظيفة النهارية التي عُرضت عليها في الأمس.</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>حاولت الطائفة حرق المعبد، لكن بينما كان {0} يقودهم خلال المقبرة، علق فخ دببة حول كاحله! صرخ صرخةً مدوية أثناء سقوطه في القبر المفتوح وفر بقية الطائفييين مذعورين...</value>
   </string>
   <!--{0}: thief-->

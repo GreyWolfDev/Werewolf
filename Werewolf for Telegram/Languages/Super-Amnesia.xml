@@ -190,10 +190,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>⁣</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>⁣</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>⁣</value>
   </string>
   <string key="LynchTime">
@@ -235,7 +235,7 @@
   <string key="DefaultEaten">
     <value>{0}\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>{0}</value>
   </string>
   <string key="NoAttack">
@@ -322,7 +322,7 @@
   <string key="RemainingPlayersEnd">
     <value>⁣</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value>{0}\n{1}</value>
     <value>{1}\n{0}</value>
   </string>
@@ -353,7 +353,7 @@
   <string key="HunterVisitDead">
     <value>{0}</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>{0}</value>
   </string>
   <string key="HunterFailedToFind">
@@ -366,7 +366,7 @@
     <value>{0}\n{1}</value>
     <value>{1}\n{0}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>👱</value>
   </string>
@@ -412,10 +412,10 @@
   <string key="ApprenticeSeer">
     <value>🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>💂</value>
   </string>
   <!-- These are for the player list -->
@@ -1139,7 +1139,7 @@
   <string key="BlacksmithKilled">
     <value>{0}</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0}</value>
   </string>
   <string key="CupidKilled">
@@ -1172,10 +1172,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>{0}</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>{0}</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>{0}</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1196,8 +1196,8 @@
     <value>{0}\n{1}</value>
     <value>{1}\n{0}</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{0}\n{1}</value>
     <value>{1}\n{0}</value>
   </string>
@@ -1507,8 +1507,8 @@
     <value>{0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0}\n{1}</value>
   </string>
   <string key="ThiefToWolf">
@@ -1565,8 +1565,8 @@
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>{0}</value>
   </string>
   
@@ -1675,7 +1675,7 @@
   <string key="ChemistTargetEmpty">
 	<value>{0}</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>{0}</value>
   </string>
   <string key="SnowWolf">
@@ -1754,7 +1754,7 @@
   <string key="ChemistFrozen">
     <value>⁣</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>⁣</value>
   </string>
   <string key="CHFrozen">
@@ -1897,11 +1897,11 @@
   <string key="HunterFellDigger">
 	<value>{0}</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>{0}</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>{0}\n{1}</value>
 	<value>{1}\n{0}</value>
@@ -1958,8 +1958,8 @@
   <string key="HarlotFellPublic">
 	<value>{0}</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>{0}</value>
   </string>
   <!--{0}: thief-->

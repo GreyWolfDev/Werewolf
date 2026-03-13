@@ -206,10 +206,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Você recebeu um Kadabra 🙇. Quando o Alakazam estiver desmaiado, seu Kadabra evoluirá!</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Você faz parte de uma organização que clona Mewtwo👤. Todos os dias, você pode escolher um treinador para contratar para sua organização e clonar Mewtwo. Se todos os Pokémon restantes forem Mewtwo. Sua organização do mal vence.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Você tropeçou em um Mew 💂! Mew precisa de ajuda para limpar todos os Mewtwo clonados</value>
   </string>
   <string key="LynchTime" >
@@ -282,7 +282,7 @@
 	<value >A Equipe Rocket encontrou {0}. Equipe Rocket enviou Articuno! Articuno usou Blizzard. {1} não pode mais batalhar.</value>
     <value>A Equipe Rocket encontrou {0}. Equipe Rocket enviou Moltres! Moltres usou Heat Wave. {1} não pode mais batalhar.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Mew encontrou um Mewtwo clonado! Mew libertou o Mewtwo clonado de {0}.</value>
   </string>
@@ -388,34 +388,34 @@
   <string key="RemainingPlayersEnd">
     <value>Treinadores vivos restantes, Pokémon e times:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} votou para contratar {1}</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Youngest Cultist (killed)'s name' -->
+    <!-- 0 - Youngest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>O Mewtwo de {0} foi enviado para lurar(convencer) {1} ... Porém, ele(ela) tem um Mew! {0} perdeu seu Mewtwo e foi despedido!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} veio até você com um Mewtwo clonado tentando te contratar para sua Fábrica de clones do Mal. Mew libertou Mewtwo de {0}!! Há apenas {1} trabalhadores na Fábrica!</value>
   </string>
   <string key="CultConvertYou">
     <value>Um Membro da Fábrica de Clones veio até você e convenceu você a se juntar ao time deles com um Mewtwo clonado. Você abandonou seu Pokémon e escolheu o Mewtwo. Agora o seu trabalho é usar lure(convencer) em mais treinadores para se juntar ao seu time.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Membros da Fábrica de Clones: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} foi contratado pela Fábrica!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} e Mewtwo foi mandado para lurar(converter) {1}... mas ninguém estava em casa!</value>
   </string>
@@ -426,7 +426,7 @@
     <!-- 0 - target name -->
     <value>Mew foi procurar o Pokémon de {0}, mas ele já não pode mais batalhar!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Mew foi procurar {0} e descobriu que ele(ela) possui un Mewtwo clonado! Mew libertou Mewtwo de {0}!</value>
   </string>
@@ -443,7 +443,7 @@
     <!-- 1 - teamate's names -->
     <value>{0} perdeu uma Batalha Pokémon! Perdendo toda a esperança, você resolve se juntar à Equipe Rocket! Seus companheiros são: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>o Magikarp 👱</value>
   </string>
@@ -489,10 +489,10 @@
   <string key="ApprenticeSeer">
     <value>o Kadabra 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>o Mewtwo 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>o Mew 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -524,7 +524,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Seu membro mais novo se dirigiu à {0} e tentou usar o Lure(convencer) {0} para se juntar à Fabrica com seu Mewtwo. Mas você descobriu que o Pokémon dele não pode mais batalhar e não tem mais motivação para ter outro Pokémon.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -708,12 +708,12 @@
     <value>Você e seu Dragonite foram até {0} e o desafiou para uma batalha Pokémon. Mr. Mime surgiu do nada e usou Barrier, eles se foram... Você não conseguiu batalhar. Grr 😡</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>A Equipe Rocket enviou {0} para tentar convencer {1} a se juntar no seu time, mas {1} estava zangado e pediu a Gengar para iniciar uma batalha de Pokémon! {0} perdeu com seu Mewtwo desmaiado.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>A Equipe Rocket enviou {0} para tentar convencer {1} a se juntar no seu time, mas {1} estava zangado e pediu a Dragonite para iniciar uma batalha de Pokémon! {0} perdeu com seu Mewtwo desmaiado.</value>
   </string>
@@ -737,7 +737,7 @@
     <value>O Pikachu de {0} desmaiou, e o Ditto se transformou em um Pikachu. Seus companheiros (se tiver) são: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>O Ditto de {0} se transformou em um Mewtwo e se juntou ao time da Fábrica!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1289,7 +1289,7 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
 <string key="BlacksmithKilled">
 <value>Parece que o Stun Spore do Vileplume de {0} não foi o bastante para evitar o ataque do poderoso Dragonite! o Dragonite usa seu Dragon Pulse e o Vileplume está fora de combate!.</value>
 </string>
-<string key="CultistKilled">
+<string key="ZombieKilled">
 <value>Os dias de clonagem do Mewtwo de {0} chegaram ao fim! O Poderoso Dragonite solta sua fúria do dragão, o Mewtwo desmaia, todos sentirão falta do Mewtwo de {0} na fábrica de clonagem...</value>
 </string>
 <string key="CupidKilled">
@@ -1324,11 +1324,11 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
 <value>A Fábrica de Clonagem comemóra o resultado da última batalha. {0} e seu Mew desafiaram o Dragonite para uma batalha, porém os esforços de Mew para derrotá-lo foram inúteis, o Mew está fora de batalha e não pode prosseguir na Liga.</value>
 </string>
 <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
 <value>A Fábrica de clonagem desafiou um membro da Equipe Rocket para a batalha! Porém após uma árdua luta {0} e um dos Mewtwo clonados não conseguiram superar o Pokémon da Equipe Rocket e está fora da Liga Pokémon.</value>
 </string>
 <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
 <value>Ontem a Fábrica de clonagem tentou clonar o Dragonite, porém o Dragonite superou fácilmente {0} e um dos clones do Mewtwo que não podem mais seguir o combate.</value>
 </string>
 <string key="GAGuardedKiller">
@@ -1346,8 +1346,8 @@ Talvez você ainda tenha algum resíduo de prata sobrando. Quem sabe? Talvez ele
 <!--{0} = hunter's name, {1} = wolf's name-->
 <value>A Equipe Rocket percebe que {0} não passou no Centro Pokémon e seu Gengar está debilitado, {1} envia o Wobbufet para atacar o Gengar de {0} que não consegue evitar o ataque, {1} comemora a vitória sobre o Gengar de {0}! a Equipe Rocket vence a Liga Pokémon!.</value>
 </string>
-<string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+<string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <value>{1} e {0} se preparam para as finais! Percebendo que {0} possui um clone do Mewto, {1} ordena que seu Mew ataque o Pokémon rival, que não é páreo para os ataques do poderoso Pokémon, {1} e Mew vencem a Liga Pokémon! E os dias de Clonagem dos membros da Fábrica chegam ao fim!.</value>
 </string>
 <!-- Extend time -->

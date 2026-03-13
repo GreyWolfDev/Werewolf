@@ -263,10 +263,10 @@
 	<string key="RoleInfoApprenticeSeer">
 		<value>你係學徒先知 🙇。\n先知死咗或者入咗邪教你就會頂佢個位嚟做。</value>
 	</string>
-	<string key="RoleInfoCultist">
+	<string key="RoleInfoZombie">
 		<value>你係邪教魔徒 👤。\n每晚你都可以拉一個人入教，到最後所有人都係教友就贏！</value>
 	</string>
-	<string key="RoleInfoCultistHunter">
+	<string key="RoleInfoZombieHunter">
 		<value>你係驅魔人 💂。\n每晚你都可以去一個人屋企，如果佢係邪教魔徒，你會殺咗佢。如果佢哋嚟傳你教，最遲入教嗰個教友就會死。</value>
 	</string>
 	<string key="LynchTime">
@@ -324,7 +324,7 @@
 	<string key="DefaultEaten">
 		<value>村民一起身就聞到陣屍臭味，佢哋跟住陣味嚟行，結果發現成個豬欄都係【{0}】嘅內臟，身首異處。\n【{1}】</value>
 	</string>
-	<string key="HunterKilledCultist">
+	<string key="HunterKilledZombie">
 		<value>一陣強烈嘅臭味喺【{0}】間屋度傳出嚟。望入去，你哋見到一條屍瞓咗喺個黑闇祭壇嘅前面……驅魔人又殺咗一個魔徒！</value>
 	</string>
 	<string key="NoAttack">
@@ -420,7 +420,7 @@
 	<string key="RemainingPlayersEnd">
 		<value>生還玩家名單、身份同隊伍︰</value>
 	</string>
-	<string key="CultistVotedConvert">
+	<string key="ZombieVotedConvert">
 		<value>【{0}】話想感召【{1}】！</value>
 	</string>
 	<string key="CultConvertCultHunter">
@@ -447,7 +447,7 @@
 	<string key="HunterVisitDead">
 		<value>【{0}】早就死咗！</value>
 	</string>
-	<string key="HunterFindCultist">
+	<string key="HunterFindZombie">
 		<value>你尋晚入咗【{0}】屋企，見佢係度進行緊啲不知名儀式？你拎起你長劍，一嘢劈落去，了結咗佢嘅性命。</value>
 	</string>
 	<string key="HunterFailedToFind">
@@ -459,7 +459,7 @@
 	<string key="WildChildTransform">
 		<value>短命種【{0}】死咗，你變咗做狼人。你班狼友︰【{1}】</value>
 	</string>
-	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 	<string key="Villager">
 		<value>村民 👱</value>
 	</string>
@@ -505,10 +505,10 @@
 	<string key="ApprenticeSeer">
 		<value>學徒先知 🙇</value>
 	</string>
-	<string key="Cultist">
+	<string key="Zombie">
 		<value>邪教魔徒 👤</value>
 	</string>
-	<string key="CultistHunter">
+	<string key="ZombieHunter">
 		<value>驅魔人 💂</value>
 	</string>
 	<!-- These are for the player list -->
@@ -1247,7 +1247,7 @@
 	<string key="BlacksmithKilled">
 		<value>睇嚟【{0}】尋晚都幾唔好彩。被人釘撚咗喺張工作台上面，佢嘅頭、雙手同雙腳，俾五把新鑄嘅刀，釘到實一實。鐵匠間屋成個武器庫咁，好可能除咗兩粒腎之外，連環殺手仲拎咗啲新玩具返去慢慢玩……\n【鐵匠 ⚒】皮已收。</value>
 	</string>
-	<string key="CultistKilled">
+	<string key="ZombieKilled">
 		<value>【{0}】死撚咗喺個黑闇祭壇度，身上佈滿幾百個窿，心臟位置仲插住一支蠟蠋臺，應該係俾人用蠟蠋臺無限穿插至死。又一個被連環殺手殺嘅受害人，無分語言、膚色同宗教，全部都係連環殺手嘅獵物。\n【邪教魔徒 👤】皮已收。</value>
 	</string>
 	<string key="CupidKilled">
@@ -1280,10 +1280,10 @@
 	<string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
 		<value>天一光，村民就發現咗【{0}】條屍散修修咁，浸咗喺村個水池入面。睇真啲，乜原來條頸掛住辟邪用嘅十字架同大蒜，隔離仲有把用嚟斬妖除魔嘅黑刀。真係陰鳩公囉，邪教魔徒又殺唔撚到，仲要輸埋兩粒腎。\n【驅魔人 💂】皮已收。</value>
 	</string>
-	<string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+	<string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
 		<value>唔知係咪拜神拜到腦裝屎，尋晚【{0}】拎住嗰邪神像鳩鳩下咁衝咗入間狼屋度，仲指住其中一隻狼講「比利卡比利那那，撲撲利那比比路多」。本來班狼都未夠鐘嗌肚餓嘅，見有筍野送上門，轉個頭就將呢條戇鳩仔咬到血肉模糊。\n【邪教魔徒 👤】皮已收。</value>
 	</string>
-	<string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+	<string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
 		<value>尋晚【{0}】仲諗住捉人返總部，舉行神聖嘅性交洗禮，點撚知捉着個癲佬，傳唔撚到教之餘連閪都屌唔到，最慘係連條命都冇撚埋，剩返條無咗兩粒腎嘅鹹魚趴咗喺座黑暗祭壇前面。\n【邪教魔徒 👤】皮已收。</value>
 	</string>
 	<string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1304,8 +1304,8 @@
 		<!--{0} = hunter's name, {1} = wolf's name-->
 		<value>正當全村死撚晒，得返失眠既【{0}】喺度戇戇鳩鳩咁玩佢碌炮，【{1}】靜雞雞咁潛入咗佢屋企，睇準佢自 High 到完全失去戒心之際，一啖咬撚咗佢個頭落黎，真係陰鳩公囉，明明有得射都射唔撚出。\n【獵人 🎯】皮已收</value>
 	</string>
-	<string key="CHKillsCultistEnd">
-		<!--{0} = last cultist's name, {1} = CH's name -->
+	<string key="CHKillsZombieEnd">
+		<!--{0} = last Zombie's name, {1} = CH's name -->
 		<value>清晨時分總係帶住少少嘅神秘，有兩個身影忽然喺教堂出面閃過，【{0}】正想拎個綠毛邪神令出黎開壇作法，【{1}】即刻喺底褲抽咗當年明太祖賜落黎既尚方寶劍出嚟，大喝一句：「仲唔比我捉到你個死臭閪，仆街啦你！」劍光一閃，剩低嘅就得返一地綠色血泊同條咸魚。\n【邪教魔徒 👤】皮已收。
 		</value>
 		<value>最後，全村死剩兩個人：一個信邪教信到上撚晒腦嘅邪教徒；同一個打死都唔會信教嘅驅魔人。【{0}】好希望將世上唯一嘅真神介紹比【{1}】，一講就講咗三粒鐘。原本【{1}】見佢係自己以外嘅最後一個村民，都諗住放佢一馬。殊不知【{0}】實在係太撚煩，竟然無啦啦開口唱「Only You」，仲諗住唱到佢信為止，不勝其煩嘅【{1}】於是拎起佢把劍，一野插落佢把口到。「舒服晒。」\n【邪教魔徒 👤】皮已收。</value>
@@ -1672,8 +1672,8 @@
 		<value>你成為了共濟會員，你嘅共濟之友︰【{0}】</value>
 	</string>
 	<string key="ThiefToCult">
-		<!-- 0 - old cultist's name -->
-		<!-- 1 - new cultist's name -->
+		<!-- 0 - old Zombie's name -->
+		<!-- 1 - new Zombie's name -->
 		<value>【{0}】唔再係你嘅同伴，而【{1}】就係你新嘅教友。</value>
 	</string>
 	<string key="ThiefToWolf">
@@ -1726,8 +1726,8 @@
 	</string>
 	
 	<!--  ADDED 2018JUL18 -->
-	<string key="CultistBitten">
-		<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<string key="ZombieBitten">
+		<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 		<value>當你地傾緊今晚同邊個傳教嗰陣，先醒起原來【{0}】成晚都唔喺到！到底佢去咗邊？？😱😱😱</value>
 	</string>
 
@@ -1854,7 +1854,7 @@
 	<string key="ChemistTargetEmpty">
 		<value>【{0}】屋企冇人！睇嚟你真係冇乜運。</value>
 	</string>
-	<string key="CultistsList">
+	<string key="ZombiesList">
 		<value>呢班就係你嘅教友︰【{0}</value>
 	</string>
 	<string key="SnowWolf">
@@ -1905,7 +1905,7 @@
 	<string key="ChemistFrozen">
 		<value>你喺床上輾轉反側，內心期盼住研製藥水嘅成果。突然一陣寒風吹過，令你喺床上凍結，動彈不得 🐺☃️！你眼角瞥一瞥你樽藥水…「屌那星，變撚埋冰」，然後只能望住你全間屋困喺冰天雪地之中，直至日出先慢慢解凍…</value>
 	</string>
-	<string key="CultistFrozen">
+	<string key="ZombieFrozen">
 		<value>你披上你件斗蓬準備出門會合其他教徒出去傳教，點知一陣寒風猛吹，吹到你結冰 🐺☃️。你班教友見你咁撚夜都未蒲頭就過嚟睇吓你咩事，然後不停恥笑你嘅不幸遭遇：「你哋睇吓個戇鳩仔！」佢哋應承你會替你完成傳教嘅任務後就離你而去。直至天光之後你先慢慢解凍，然後自己一個戇戇鳩鳩咁行去村廣場… </value>
 	</string>
 	<string key="CHFrozen">
@@ -2071,11 +2071,11 @@
 	<string key="HunterFellDigger">
 		<value>又一個辛勞嘅夜晚，天都光晒你先收得工返屋企。然後你經過墓園，發現墓穴多咗條屍，旁邊仲有一把劍。個戇鳩驅魔人【{0}】竟然以為你係邪教魔徒，你心諗佢咁樣仆街真係抵撚死啦…</value>
 	</string>
-	<!--{0}: cultist-->
+	<!--{0}: Zombie-->
 	<string key="CultFell">
 		<value>你挖完墓準備返屋企，墳場無啦啦有人失控咁尖叫！你即刻趕過去，發現【{0}】反晒白眼咁瞓喺個墓穴入面。你慨嘆一聲：「屌…啲邪教都鳩吓鳩吓咁，又要我幫佢哋執屍…」</value>
 	</string>
-	<!--{0}: cultist who fell, {1}: grave digger-->
+	<!--{0}: Zombie who fell, {1}: grave digger-->
 	<string key="CultConvertGraveDigger">
 		<value>你哋去緊【{1}】屋企傳教嘅時候，【{0}】忽發奇想話：「不如我哋去燒咗座教堂？」\n你哋認為呢個提議戇鳩得嚟又幾刺激，於是就掉頭。【{0}】一個箭步衝去教堂，點知俾個捕獸器夾住然後跌咗落個墓穴！佢驚惶呼叫請人救佢，但你哋內心都恥笑緊佢係豬隊友，然後決定見死不救，各自逃命！</value>
 	</string>
@@ -2131,8 +2131,8 @@
 	<string key="HarlotFellPublic">
 		<value>妓女【{0}】尋晚喺路上仆街跌死咗喺個墳墓度，佢死得好慘…紅唇烈焰，極待撫慰，希望佢下世搵到份好啲嘅工作啦。</value>
 	</string>
-	<!--{0}: cultist who died-->
-	<string key="CultistFellPublic">
+	<!--{0}: Zombie who died-->
+	<string key="ZombieFellPublic">
 		<value>尋晚邪教魔徒打算一把火燒咗個教堂，然後【{0}】興奮得滯，仆咗落個墓穴死撚咗！其他教徒即刻逃命，消失得無影無蹤…</value>
 	</string>
 	<!--{0}: thief-->

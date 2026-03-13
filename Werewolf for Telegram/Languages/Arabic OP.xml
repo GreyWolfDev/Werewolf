@@ -207,10 +207,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >أنت فيفي 🙇، العرافة المتدربة، بديلة روبن (الحقيقية). إذا ماتت روبن (الحقيقية)، فستتمكني من أكل فاكهة زهرة-زهرة وتكتسبين مهارة اوجوس فلور. تحتاج مساعدة؟ > /aboutAppS</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >أنت من فريق اليونكو العظيم 👤. كل ليلة، يمكنك إختيار لاعب لكي تغسل دماغه لينضم لفريق اليونكو. إذا كان جميع اللاعبين الأحياء المتبقين في النهاية جزءٌ من فريق اليونكو، فستفوز. تحتاج مساعدة؟ د > /aboutCult</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >أنت ملك القراصنة المستقبلي خاصتنا مونكي دي لوفي 💂، تحاول القضاء على كل قرصان من فريق اليونكو كي تمنعهم من غسل دماغ الآخرين! كل ليلة، إختر لاعبًا. إن كان من فريق اليونكو فسيموت. إن حاول فريق اليونكو غسل دماغك، أحدث عضو في الفريق سيموت من من عضب ضربتك غومو غمو نو كونغ غان. تحتاج مساعدة؟ > /aboutCH</value>
   </string>
   <string key="LynchTime" >
@@ -268,7 +268,7 @@
     <!-- 1 - victim role -->
     <value>يطل الصباح ويأتي طائر الأخبار ليلقي بصحفيةٍ على سطح السفينة. أخبارٌ عاجلة!!! {0} أسرته البحرية! القرصان المشهور ما زال غير قادر على الهرب منه البحرية. {1} </value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>سفينة قريبة أحيطت بالنيران السوداء من جميع جهاتها – عندما يحاول القراصنة إلقاء نظرةٍ أقرب يلاحظون أنها أحد سفن اليونكو 👤 -- {0} (يالدهشة?!?)... أحد اليونكو دمره ملك القراصنة المستقبلي خاصتنا مونكي دي لوفي 💂!</value>
   </string>
@@ -374,34 +374,34 @@
   <string key="RemainingPlayersEnd">
     <value>اللاعبين الأحياء المتبقين، الأدوار، والفرق:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >صوت {0} لتجنيد {1} في فريق اليونكو حيث أنه قرصان قوي وجدير بلقبنا.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>أُرسل {0} لتجنيد {1} في فريق اليونكو... برغم ذلك، يتضح أن ذلك الشخص ليس سوى... ملك القراصنة المستقبلي! لا أحد يجرؤ على معارضة ملك القراصنة (حتى لو كان في المستقبل). مات {0}!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>أتى {0} لسفينتك الليلة الماضية، جاهزًا لتجنيدك في اليونكو.... لكنهم لا يعلمون بأن هدفك هو ان تصبح ملك القراصنة، وليس مجرد يونكو. لقد هدد بأخذ حياة رفاقك إن لم تنضم لهم، لذا لم تتردد بالإطاحة به لحماية رفاقك. تبقى{1}!</value>
   </string>
   <string key="CultConvertYou">
     <value>لقد ضمك اليونكو لهم! أنت الآن أحد اليونكو، أقوى قرصان في البحر. كل ليلة، أنت وفريقك يمكنكم تجنيد المزيد من القراصنة الأقوياء في اليونكو.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Yonkou - Members: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>انضم {0} لليونكو!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>ذهب {0} لضم {1}... لكن لم يعثر على سفينته!</value>
   </string>
@@ -412,7 +412,7 @@
     <!-- 0 - target name -->
     <value>ذهبت لقتال {0}، لكنه كان ميتًا!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>ذهبت لسفينة {0} ووجدته يخطط لقتل رفاقك. لذا تحولت بسرعة للغير الرابع ونفذت ضربة غومو غومو نو كونغ غان لإزالة أي تهديد لرفاقك.</value>
   </string>
@@ -429,7 +429,7 @@
     <!-- 0 - teamate's names -->
     <value>مات {0}! وبتذوقك طعم الحرية التي افتقدتها طويلًا، انضممت فورًا للبحرية وأقسمت بالإطاحة بكل القراصنة! رفاقك الجدد هم: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>قرصان 👱</value>
   </string>
@@ -475,10 +475,10 @@
   <string key="ApprenticeSeer">
     <value>فيفي، تلميذة العرافة🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>فريق اليونكو 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>مونكي دي لوفي، ملك القراصنة المستقبلي 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -510,7 +510,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>أحدث عضو فيكم توجه لسفينة {0} ليضمه لليونكو، لكن بدلًا من ذلك يجد السفينة تعمها الفوضى والدماء متناثرة في كل مكان وقطع من زي البحرية مبعثرة في الأنحاء...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -693,12 +693,12 @@
     <value>حاولت أخذ فاكهة الشيطان الخاصة بـ{0} كي تضمها لمجموعتك، لكن تم صدك من قبل الملاك الحارس! لا ضحية لك الليلة...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>اليونكو أرسلّ {0} لمحاولة ضم {1}، لكن بدلًا من ذلك جثة {0} تأتي محلقةً من على السفينة، وهي مقطوعة قطعة واحدة ميتقيمة والدماء تغكيها بالكامل! مات {0}....</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>اليونكو أرسلّ {0} لمحاولة ضم {1}، لكن بدلًا من ذلك جثة {0} المظلمة تأتي في علبة كتحذير! كم يمكن أن يصبح اللحية السوداء متوحشًا! مات {0}....</value>
 	<value>يتسلل {0} لسفينة {1}، وعند فتحه للباب يجد فورًا مختلٌ مجنون يُحيط به الظلام!!! أُهرب، لأن هذه هي المخيفة ”يامي-يامي نو مي“ (فاكهة الشيطان الظلام)، لكن لا يمكنك الهرب!!!!! يومئ {1} بيده و{0} تسحبه جاذبية الظلام ليختفي للأبد. حيث أن اللحية السوداء كالمختل يظل يثرثر طوال الوقت- زيهاهاهاهاهاها! مات {0} :D</value>
@@ -723,7 +723,7 @@
     <value>مات {0}، وتم دعوتك للإنضمام للأعمال الباروكية كعميلٍ سري. زملاؤك (إذا كان هناك) هم: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>بون كوري، {0} انضم لفريق اليونكو (ماذا تقول؟!)!</value>
   </string>
   <string key="DGTransformToCult">
@@ -867,10 +867,10 @@ https://teespring.com/stores/werewolf-for-telegram</value>
     <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+    <value>As a Zombie, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are Zombie - the cult wins</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die.</value>
   </string>
   <string key="AboutWC">
     <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
@@ -1283,7 +1283,7 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   <string key="BlacksmithKilled">
     <value>يبدو أنه {0} الحداد، يبدو أنه كان غير محظوظٍ للغاية. خمس سكاكين جديدة من مستودع {0} وجدت ليلة الأمس مغروسةً على يديه وقدميه ورأسه وهو مثبت على طاولة الحدادة. ربما كان السفاح يأمل أن ينمي من مجموعة أسلحته بجانب مجموعة الأعضاء البشرية...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>عُثر على {0} مطعون حتى الموت بواسطة شمعدان خاصٌ بالمذبح. السفاح ضرب مجددًا، لا مبالٍ بالعرق أو اللغة أو الدين! {0} كان طائفي.</value>
   </string>
   <string key="CupidKilled">
@@ -1321,12 +1321,12 @@ https://teespring.com/stores/werewolf-for-telegram</value>
     <value>جثة {0}، صائد الطائفيين، عُثر عليها في وسط البلدة، ولو أنها مقطعة بدقة إلى مائة قطعة. لا يبدو أن التحقق مما إذا كان السفاح طائفي فكرةً جيدة...</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>بينما كان يبدو أن الذئاب قررت البقاء جيدةً لمرة، إلا أنها عاقبت {0}، طائفي قرر افتعال المشاكل مع الذئاب، لتبرهن صعوبة مقاومة ذلك. رأس {0} تحول لعشاءٍ ممتاز، تم توصيله لعتبة منزل الذئاب!</value>
     <value>الطائفة علقت في مشكلةٍ غير متوقعة الليلة الماضية. أحدث عضوٍ فيهم كان سيء الحظ لزيارته ذئبًا في الليلة التي قررت فيها الذئاب البقاء في المنزل، والذئب وجد {0} لذيذًا نوعًا ما. لسوء حظ {0}، الذئاب ليس لديها اهتمام في الإنضمام لحركة طائفةٍ جديدة.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>الطائفة ظنوا أنهم سيكسبون عضوً جديدً في صفوفهم، لكنهم كانوا مخطئين! {0}، طائفي فُرم لقطع ووُضع في ميدان البلدة في الصباح! وخلافًا للعادة كتاب "الطائفة" خاصته عُثر عليه مطعونًا بسكين، كما لو أنه تصريحٌ ليبين أي عقيدةٍ هي المنتصرة.</value>
     <value>الليلة الماضية، الطائفة حاولت تحويل الوحيد في القرية الأكثر جنونًا منهم. أحدث عضو حاول تحويل السفاح، والسفاح صنع قطعةً فنيةً جديدة في ميدان البلدة مكونةً من أعضاء {0} الداخلية.</value>
   </string>
@@ -1350,8 +1350,8 @@ https://teespring.com/stores/werewolf-for-telegram</value>
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>بمعرفة أن {0} هو آخر من تبقى، يستغل {1} الوقت الذي يكون فيه حذر {0} في أدنى مستوياته. فيقصي {1} آخر قروي بدون أدنى جهد، ولم يتبقى سوى جثة مشوهه تخص {0}، الصياد، وعليها خدوشٌ متوازية في الوجه.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>يتمشى {0} و {1} تحت ضوء الشمس. وبرؤية وميض قلادة حول عنق {0}، الزكي {1} يستل سيفه للمرة الأخيرة، ليضع حدًا لتعاليم الطائفة المحرفة التي لوثت القرية.</value>
   </string>
 
@@ -1652,9 +1652,9 @@ https://teespring.com/stores/werewolf-for-telegram</value>
     <value>رفاقك (إذا كان هنا) هم: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
-    <value>{0} is no longer your teammate and {1} has now become a cultist, just like you!</value>
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
+    <value>{0} is no longer your teammate and {1} has now become a Zombie, just like you!</value>
   </string>
   <string key="ThiefToWolf">
     <!-- 0 - old wolf's name -->
@@ -1710,8 +1710,8 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
   </string>
   
@@ -1820,7 +1820,7 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   <string key="ChemistTargetEmpty">
 	<value>{0} wasn't home! You drag your suitcase back home, cursing your bad luck.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>The cult members are currently: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1871,8 +1871,8 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   <string key="ChemistFrozen">
     <value>As you stirred in your sleep, preparing to wake up to get your potions, a strong gust of wind blew in from the windows, causing you to freeze 🐺☃️. From the corner of your eyes, you saw the bottles of your potions frosted over. Looks like they didn't escape the brunt of the freezing spell either. You mentally sighed, wishing the sun came up sooner... Good thing you're thawed now, though</value>
   </string>
-  <string key="CultistFrozen">
-    <value>As you donned your cloak and prepared to leave your house, a gust of wind blew in from the doorway, causing you to freeze 🐺☃️. Your fellow cultists dropped by soon after to bring you along to cult people, but they ended up laughing at your demise. Leaving you by the doorway, they promised that they'll make good work of tonight. Now that you're unfrozen, you leave the house, cringing in embarrassment. </value>
+  <string key="ZombieFrozen">
+    <value>As you donned your cloak and prepared to leave your house, a gust of wind blew in from the doorway, causing you to freeze 🐺☃️. Your fellow Zombies dropped by soon after to bring you along to cult people, but they ended up laughing at your demise. Leaving you by the doorway, they promised that they'll make good work of tonight. Now that you're unfrozen, you leave the house, cringing in embarrassment. </value>
   </string>
   <string key="CHFrozen">
     <value>As you grabbed your sword, a gust of wind blew in from the window, causing you to freeze, back still arched 🐺☃️. You mentally groaned, your limbs aching from being in this position until now... </value>
@@ -2012,11 +2012,11 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   <string key="HunterFellDigger">
 	<value>بعد ليلةٍ مرهقة، تعود للمنزل عند بدء شروق الشمس. وقبل أن تصل، تلاحظ وجود سيفٌ مرميٌ على الأرض بجانب قبرٍ غير مكتمل. بداخل ذلك القبر تجد جثة {0} ميتًا. ما كان ينبغي على صائد الطائفيين أن يشك بك...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>You return from another tiring night, when suddenly you hear a scream from one of your unfinished graves! You hurry there, just to find {0} lying dead in an unfinished grave. What kind of cult tries to convert a grave digger, anyway?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>On your way to {1}'s house, {0} suddenly decides that it would be a good idea to burn down the church as well. They lead you through the graveyard when suddenly a bear trap snaps around their ankle! All you can hear is their scream before they fall into a grave and you run for your lives.</value>
   </string>
@@ -2072,8 +2072,8 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   <string key="HarlotFellPublic">
 	<value>بينما كانت الزوارة {0} عائدةً للمنزل بعد قضاء ليلةٍ من المرح، حاولت سلك طريقًا مختصر خلال المقبرة. لا بد أنها كانت تشعر ببعض الدوخة والذي جعلها لا ترى القبر المفتوح حتى شعرت بأنه لا يوجد أرض تحت قدمها عندما خطت. ربما كان ينبغي عليها القبول القبول بتلك الوظيفة النهارية التي عُرضت عليها في الأمس.</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>حاولت الطائفة حرق المعبد، لكن بينما كان {0} يقودهم خلال المقبرة، علق فخ دببة حول كاحله! صرخ صرخةً مدوية أثناء سقوطه في القبر المفتوح وفر بقية الطائفييين مذعورين...</value>
   </string>
   <!--{0}: thief-->

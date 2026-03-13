@@ -258,10 +258,10 @@
     <value>😳تو میس ویندو هستی؛ اگه یودا بمیره تو مسئولیتش رو به عهده میگیری!
 </value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>😃تو ملکه آمیدالا هستی؛ هر شب یه نفرو به گروه خودت یعنی گروه جمهوری طلبان دعوت میکنی. اگه همه مسافرای زنده جمهوری طلب بشن تو برنده میشی!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>💀تو بوبا فت هستی، یه شکارچی جایزه بگیر مزدور که بهت دستور دادن ملکه آمیدالا رو بکشی. اگه اونو بکشی، گروه جمهوری طلبان متلاشی میشه ولی اگه کسی بهش پیوسته باشه اولین کسی که جمهوری طلب شده میمیره.
 </value>
   </string>
@@ -327,7 +327,7 @@
     <value>😢آخه این جدای ساده بدبخت به شما چیکار داشت که کشتینش کثافتا! یه گوشه نشسته بود داشت با شمشیر لیزریش بازی میکرد. خدا بیامرزتت {0} روستایی خوبی بودی 😢😢  {1}
 </value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>🤦‍♂️لعنتی! دیشب بوبا فت زده ملکه آمیدالا {0} رو کشته!
 
@@ -463,21 +463,21 @@
     <value>✅مسافرای باقی مونده:
 </value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>👈نظر {0} اینه که {1} رو جمهوری طلب کنید!
 </value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>😿اوه؛ {0} رفت که {1} رو جمهوری طلب کنه ولی {1} بوبا فت بود و کشتش!
 </value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>😁هه، {0} اومد تو رو جمهوری طلب کنه ولی تو کشتیش مزدور! {1} باقی مونده!
 </value>
   </string>
@@ -486,18 +486,18 @@
 </value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>👥جمهوری طلبان ها: {0}
 
 </value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>😄ایول، الان {0} هم جمهوری طلبه!
 </value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>😦خب {0} رفت خونه {1} تا باهاش حرف بزنه و به گروه جمهوری طلبان دعوتش کنه ولی اون خونه نبود!
 </value>
@@ -511,7 +511,7 @@
     <value>😐رفتی {0} رو شکار کنی ولی خودش از قبل مرده بود؛ خدا بیامرز راضی به زحمت شما نبود!
 </value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>😏رفتی خونه {0} و دیدی داره به نفع جمهوری طلبان نقشه میکشه؛ یه پوزخند زدی و تفنگ لیزری تو گذاشتی روی سرش و شکارش کردی. ایول؛ از شر یکی شون خلاص شدی!
 </value>
@@ -530,7 +530,7 @@
   <string key="WildChildTransform">
     <!-- 0 - role's name -->
     <!-- 0 - teamate's names -->
-    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
     <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
     <value>😢چون شخص محبوبت یعنی {0} مرده از هم از غم و خشم تبدیل شدی به یه سیت و بقیه سیت ها هم عبارتند از: {1} !
 
@@ -582,10 +582,10 @@
   <string key="ApprenticeSeer">
     <value>مک ویندو 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>جمهوری طلب 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
   <!-- These are for the player list -->
     <value>بوبا فت 💂</value>
   </string>
@@ -620,7 +620,7 @@
 </value>
   </string>
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>🙀جمهوری طلب جدید رفت خونه {0} که جمهوری طلبش کنه ولی مرده بود!
 </value>
   </string>
@@ -792,7 +792,7 @@
     <value>💢هان سولو یعنی {0} آخرین لحظه تفنگشو در آورد و {1} رو کشت! {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>📛جمهوری طلب عزیز یعنی {0} رفت خونه دارت سیدیوس یعنی {1} که جمهوری طلبش کنه ولی {1} که خودش امپراتور بود اینقدر عصبانی شد که با قدرت صاعقه وحشتناکش {0} تا سر مرگ شکنجه داد و بعد تک تک اعضای بدنشو به ترتیب حروف الفبا برید و گذاشت تو شیشه الکل😐
 </value>
@@ -821,7 +821,7 @@
 </value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>🔱جمهوری طلب عزیز رفت که {0} رو به گروه جمهوری طلبان دعوت کنه ولی {1} هان سولو بود و اونو کشت!</value>
   </string>
@@ -850,7 +850,7 @@
 </value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>❇️روح هولوگرامی که از تو خوشش اومد بود یعنی {0} مثل خودت خلبان شد!
 </value>
   </string>
@@ -1410,7 +1410,7 @@
 - آره😞
 متاسفانه دیشب {0} آهنگر روستا توسط قاتل زنجیره ای در اصطبل به قتل رسید!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب قاتل زنجیره ای به فرقه گراها حمله کرد و {0} رو به قتل رسوند!</value>
   </string>
   <string key="CupidKilled">
@@ -1464,8 +1464,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value> کلانتر  {0} توی روستا با {1} تنها مونده! {1} میره که به کلانتر حمله کنه و اونو بکشه، اما کلانتر از خواب بلند میشه و متوجه {1} میشه سریع میره سمت تفنگش اما فرصت نمیکنه که تفنگشو دستش بگیره و {1} میگیره و تیکه تیکش میکنه! {1} تنها گرگ بازمانده روستاست🐺</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
   <!-- Extend time -->
     <value>تنها فرقه گرای بازمانده روستا {0} بود که زمانی که صبح داشت سمت میدون شهر میرفت، با شکارچی {1} روبه رو میشه! شکارچی، همون موقع تفنگشو در میاره که به {0} شلیک کنه ولی {0} فرار میکنه، شکارچی دنبالش میره و توی جنگل پیداش میکنه و با چاقو میکشتش!  شکارچی برنده این دور بازیه!</value>
   </string>

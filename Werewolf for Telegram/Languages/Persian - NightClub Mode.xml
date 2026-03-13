@@ -278,10 +278,10 @@
   <string key="RoleInfoApprenticeSeer" >
    <value >تو پیشگوز رزرو هستی . 🙇🏻 یعنی اگه پیشگوز اصلی بمیره تو به جاش گوز بو میکنی و نقش بازیکنارو میفهمی.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >تو آقای طوسی هستی 👤 ، هر شب میتونی یه نفرو به کلاست دعوت کنی اگه همه ی بازیکنای زنده تو کلاسات عضو بشن میبرین. </value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
      <value >تو شکارچی هستی 💂🏻‍♀️، یه آقای طوسی تو روستا داریم ! که هر شب یه نفرو به کلاسش دعوت میکنه وظیفه ی تو اینه که آقای طوسی و دانش آموزای کونیشو پیدا کنی و به گا بدی و نزاری تعداد کونیا افزایش پیدا کنه.</value>
   </string>
   <string key="LynchTime" >
@@ -339,7 +339,7 @@
   <string key="DefaultEaten" >
     <value>روستاییا بیدار میشن و میبنن بوی آب کیر روستارو برداشته ، آخه بُکُنای قهارِ کیری ! این بدبخت به شما چیکار داشت که کص و کونشو جر دادین ! یه گوشه نشسته بود داشت پورن میدید. خدا بیامرزتت {0} کونِ خوبی داشتی {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>اینطور که معلومه شکارچی دیشب زده آقای طوسی یعنی ، {0} رو بگا داده 💂🏻‍♀️</value>
   </string>
   <string key="NoAttack" >
@@ -428,7 +428,7 @@
   <string key="RemainingPlayersEnd">
     <value>بازیکون های به گا نرفته عبارت اند از : </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >نظر {0} اینه که {1} رو به کلاس های آقای طوسی دعوت کنیم</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -455,7 +455,7 @@
   <string key="HunterVisitDead">
     <value>رفتی یکی از کونیای آقای طوسی یعنی {0} رو بگایی ولی دیدی از قبل بگا رفته.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>رفتی خونه ی {0} و دیدی یکی از شاگردای اُستاد طوسیه. گرفتی کیرِتو کردی تو حَلقش و خَفش کردی</value>
   </string>
   <string key="HunterFailedToFind">
@@ -467,7 +467,7 @@
   <string key="WildChildTransform">
     <value>چون این کون پشم {0} الگوت بود و مرده ، تو یه بُکُن قهّار شدی. یارای بُکُن وحشریت عبارت اند از : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>روستایی جقی 👱🏻</value>
@@ -514,10 +514,10 @@
   <string key="ApprenticeSeer">
     <value>پیشگوز رزرو 🙇🏻</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>شاگرد طوسی 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>شکارچی 💂🏻‍♀️</value>
   </string>
   <!-- These are for the player list -->
@@ -707,7 +707,7 @@
     <value>یکی از شاگردای آقای طوسی یعنی {0} رفت خونه ی {1} تا به کلاس دعوتش کنه ولی {1} پریود بود ، اعصابش کیری شد و با تفنگ زد {0} و بگا داد.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>آقای طوسی شاگرد کونیِ جدیدش یعنی {0} رو فرستاد خونه ی {1} تا به کلاس دعوتش کنه . {0} وقتی در و باز کرد و رفت تو ، قاتل حشری از پشت گرفتش و به صورت سگی یه دل سیر کردش. بعد چاقوش رو تو همه سوراخاش فرو کرد. {0} با ذکر کیرم توت مرد.</value>
     <value>این {0} کصمغزِ کونی رفت خونه {1} تا به کلاس آقای طوسی دعوتش کنه ولی طرف قاتل حشری بود... {0} به گای سگ رفت.</value>
@@ -1257,7 +1257,7 @@
 + کونش ذوب شده 🤢
 دیشب قاتل حشری بعد از 85 بار تجاوز به {0} ، تیکه تیکه ش کرده و تو کونش با قیف اسید رخته !</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب قاتل حشری کیر به دست وارد دارالکونِ آقای طوسی شد و یکی از شاگرداش یعنی {0} و به گا داد.</value>
   </string>
   <string key="CupidKilled">
@@ -1290,10 +1290,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>لاشه ی {0} ، یعنی شکارچی رو روستاییا وقتی داشتن وسط روستا جق میزدن پیدا کردن. دیشب شکارچی رفته خونه قاتل حشری تا چک کنه ببینه یکی از شاگردای کونی آقای طوسی هست یا نه ولی قاتل حشری کیر {0} رو بریده و گذاشته دهنش. شکارچی کیر به دهن مرده 😮</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب آقای طوسی {0} رو فرستاد پیش بُکُنای قهّار به امید اینکه بتونه عضو کلاسشون کنه ! ولی نمیدونست بُکُنای قهّار به هیچکس رحم نمیکنن . {0} به گا رفته.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>آقای طوسی وشاگرداش به امید اینکه یه شاگرد کونی دیگه هم به جمعشون اضافه میشه {0} رو مامور کردن تا بره خونه قاتل حشری ! صب روز بعد دیدن جنازه {0} در حالی که کیر و خایه هاش از گردنش آویزونه و سوراخ کونش مثل تونل توحیده وسط روستاس. {0} به گا رفته.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1311,8 +1311,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>پریود {0} با این کیری {1} توی روستا تنها میمونه ! {1} که مثل سگ حشریه و چشمش همه جارو کون میبینه راس میکنه و تصمیم میگیره بره کونِ {0} بزاره ! پریود از همه چی بی خبر داره از تفنگش که تنها داراییشه به عنوان دیلدو استفاده میکنه و لوله ی تفنگو کرده تو کونش ! ناگهان {1} کیر به دست وارد خونه اش میشه. {0} از ترس میرینه به خودش و تا میاد تفنگو از کونش دربیاره و به {1} شلیک کنه ، {1} میگیره کیرش رو میکنه تو حلقِ {0} و انقد عقب جلو میکنه تا آبش میاد. {0} خفه میشه و میمیره ! {1} تنها بُکُنِ قهّاری هست که زنده مونده 🐺</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>خب {1} و {0} یعنی تنها بازمونده ها ، با هم میرن حمومِ روستا تا جق بزنن ! {0} با یه متودِ جدید جق و شروع میکنه و به {1} میگه که این روش و آقای طوسی بهم یاد داده ! {1} وقتی این جمله رو میشنوه میفهمه {0} یکی از شاگردای کونیه طوسی هست و بلافاصله تفنگشو برمیداره و وسط خایه های {0} شلیک میکنه. {1} جق و ادامه میده و آب کیرش رو میریزه رو جنازه ی {0}. شکارچی برنده ی این بازیه!</value>
   </string>
   
@@ -1637,8 +1637,8 @@
 	  <value>بی خایه های دیگه عبارتند از: {0} </value>
 	</string>
 	<string key="ThiefToCult">
-	  <!-- 0 - old cultist's name -->
-	  <!-- 1 - new cultist's name -->
+	  <!-- 0 - old Zombie's name -->
+	  <!-- 1 - new Zombie's name -->
 	  <value>{0} دیگه شاگرد طوسی نیست.ازاین به بعد {1} همشاگردی جدیدتونه!</value>
 	</string>
 	<string key="ThiefToWolf">
@@ -1698,8 +1698,8 @@
     <string key="SecretLynchShowVotersA">
       <value>وقتی حالت رای مخفی روشن است. و تعداد رای ها در اخر رای گیری نشان داده خواهد شد.نام رای دهنده به هر بازیکن نیز نشان داده خواهد شد:{0}</value>
     </string>
-    <string key="CultistBitten">
-	<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <string key="ZombieBitten">
+	<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	  <value>همونطور که نشسته بودید سرکلاس قرآن میخوندید متوجه شدید {0} سرکلاس نیومده.کجا میتونه رفته باشه کسکش؟</value>
 	</string>
 	
@@ -1810,7 +1810,7 @@
   <string key="ChemistTargetEmpty">
 	<value> رفتی که با {0} آبکیر بخوری اما خونه نبود! </value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value> شاگردان طوسی : {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1861,7 +1861,7 @@
   <string key="ChemistFrozen">
     <value>دیشب یکی اومد و کون سفیدشو که توی تاریکی برق میزد بهت نشون داد و برق کونش تورو گرفت و کصخل شدی و اون شب فقط جق زدی . کمرت به فاک رفته از بس جق زدی </value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>دیشب یکی اومد و کون سفیدشو که توی تاریکی برق میزد بهت نشون داد و برق کونش تورو گرفت و کصخل شدی و اون شب فقط جق زدی . کمرت به فاک رفته از بس جق زدی </value>
   </string>
   <string key="CHFrozen">
@@ -2002,11 +2002,11 @@
   <string key="HunterFellDigger">
 	<value> بعد از یک شب خسته کننده شما به خانه برمیگردید قبل از اینکه وارد خانه شوید شمشیری کنار یک قبر میبینید مثل اینکه شکارچی یعنی {0} توی قبر افتاده</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value> رفتی خونه ی {0} که یه حرکتی بزنی ولی تا چشمت به صابون افتاد ازش استفاده کردی ولی بگا رفتی کصخل</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value> در راه خانه {1} ناگهان {0} تصمیم میگیرد به سراغ یک کلیسا برود. اما در قبرستان داخل یک قبر افتاد. شما صدای فریاد او را قبل از افتادن میشنوید اما برای نجات خود فرار میکند! </value>
   </string>
@@ -2062,8 +2062,8 @@
   <string key="HarlotFellPublic">
 	<value> خب این کص مشنگ روزگار {0} رفت خونه ی کون شور و جر خورده اومد بیرون  </value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value> خب این کص مشنگ روزگار {0} رفت خونه ی کون شور و جر خورده اومد بیرون  </value>
   </string>
   <!--{0}: thief-->

@@ -205,10 +205,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >You are Vivi 🙇, the Apprentice seer, a replacement for (real) Robin. If the (real) Robin dies, you will be able to eat the Flower-Flower Fruit and gain the skill of Ojos Fleur. Need help? > /aboutAppS</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >You are from the team of the mighty Yonkou 👤. Every night, you may choose a player to brainwash them to join Team Yonkou. If all remaining living players at the end are part of Team Yonkou, you win. Need help? > /aboutCult</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >You are our very own future Pirate King Monkey D. Luffy 💂, trying to take on every pirate from Team Yonkou from brainwashing others! Each night, choose a player. If they are from Team Yonkou, they die. If the Team Yonkou tries to brainwash you, the team's newest member dies from the wrath of your Gomu Gomu no Kong Gun. Need help? > /aboutCH</value>
   </string>
   <string key="LynchTime" >
@@ -265,7 +265,7 @@
     <!-- 1 - victim role -->
     <value>Early morning as News Coo drop a set of newspaper on the deck. Breaking news!!! {0} is captured by the marine! Famous pirate is still unable to run away from the marines. {1} </value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>A nearby ship has been completely submerged with black flames all around – when pirates try to have a closer look it is one of the Yonkou’s 👤 -- {0}'s ship (Shock?!?)... One of the Yonkous has just been completely devastated by our very own future Pirate King Monkey D. Luffy 💂!</value>
   </string>
@@ -371,34 +371,34 @@
   <string key="RemainingPlayersEnd">
     <value>Remaining living players, roles, and team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} has voted to recruit {1} into Team Yonkou as the pirate is strong and worthy of our title.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>{0} was sent to recruit {1} into Yonkou... however, that person turns out to be none other than…. the future pirate king! Noone dares to oppose THE pirate king (even if it’s in the future). {0} is dead!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} came to your ship last night, ready to recruit you into Yonkou.... But little did they know, your goal is Pirate King, not just Yonkou. Threatening your crew’s life if you don’t join them, you didn’t hesitate to bring them down in the name of protecting your nakama.  {1} remain!</value>
   </string>
   <string key="CultConvertYou">
     <value>The Yonkou has recruit you to their order! You are now a part of Yonkou, the strongest pirate of the sea. Every other night, you and your team can recruit more strong pirates into Yonkou.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Yonkou - Members: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} has joined the Yonkou!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} was sent to recruit {1}... but their ship is not found!</value>
   </string>
@@ -409,7 +409,7 @@
     <!-- 0 - target name -->
     <value>You went to battle {0}, but they are already dead!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>You go into {0}'s ship and find them plotting to kill your nakamas. You quickly go gear fourth and execute your Gomu-gomu no Kong Gun to remove any threat to your nakama.</value>
   </string>
@@ -426,7 +426,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} has died! While savoring that long lost freedom, you have immediately joined the marines and vowed to bring down all pirates! Your new teammates are: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>a Pirate 👱</value>
   </string>
@@ -472,10 +472,10 @@
   <string key="ApprenticeSeer">
     <value>Vivi, the Apprentice Seer 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Team Yonkou 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Monkey D. Luffy, the future pirate king 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -507,7 +507,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Your newest member heads over to {0}'s ship to recruit them to join Yonkou, but instead finds the ship a complete wreck, blood everywhere, and bits and pieces of marine uniform scattered around...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -692,12 +692,12 @@
     <value>You tried to collect {0}'s devil fruit for your collection, but you were fought off by the guardian angel! No kill for you tonight...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>The Yonkou sends {0} to try to convert {1}, but instead a body flies out of one of the ships and {0}'s body comes flying out, with one clean slash and blood all over! {0} is dead....</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>The Yonkou sends {0} to try to convert {1}, but instead a {0}'s dark body comes back in a parcel, as a warning! HOW RUTHLESS CAN BLACKBEARD GET! {0} is dead....</value>
   </string>
@@ -721,7 +721,7 @@
     <value>{0} has died, and you are invited to join Baroque works as a secret agent. Your teammate agents (if any) are: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Bon Kurei, {0} has now joined Team Yonkou (Say what?!)!</value>
   </string>
   <string key="DGTransformToCult">
@@ -868,10 +868,10 @@
     <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+    <value>As a Zombie, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are Zombie - the cult wins</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die.</value>
   </string>
   <string key="AboutWC">
     <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>

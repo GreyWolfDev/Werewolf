@@ -174,11 +174,11 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >You are the apprentice seer. If the (real) seer dies, you will take their place as the seer.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >You are a cultist. Every night, you may choose a player to convert to your cult. If all remaining living players at the end are cultists, they win.</value>
+  <string key="RoleInfoZombie" >
+    <value >You are a Zombie. Every night, you may choose a player to convert to your cult. If all remaining living players at the end are Zombies, they win.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value >There is a cultist in the town, trying to convert everyone! Each night, you can choose a player. If they are a cultist, they die. If the cult tries to convert you, the newest member dies.</value>
+  <string key="RoleInfoZombieHunter" >
+    <value >There is a Zombie in the town, trying to convert everyone! Each night, you can choose a player. If they are a Zombie, they die. If the cult tries to convert you, the newest member dies.</value>
   </string>
   <string key="LynchTime" >
     <value>
@@ -222,8 +222,8 @@
   <string key="DefaultEaten" >
     <value>As everyone rises in the morning, they smell a terrible stink. They follow the smell to find {0} shredded apart in the pig pen, head missing. NOMNOMNOMNOM {1}</value>
   </string>
-  <string key="HunterKilledCultist">
-    <value>A noticeable stench is coming from {0}'s house... the village inspects it to find a body lying in front of a dark altar... a cultist has been killed by the hunter!</value>
+  <string key="HunterKilledZombie">
+    <value>A noticeable stench is coming from {0}'s house... the village inspects it to find a body lying in front of a dark altar... a Zombie has been killed by the hunter!</value>
   </string>
   <string key="NoAttack" >
     <value >The villagers gather the next morning in the village center, to sighs of relief - it appears there was no attack the previous night.</value>
@@ -306,20 +306,20 @@
   <string key="RemainingPlayersEnd">
     <value>Remaining living players, roles, and team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} has voted to convert {1}</value>
   </string>
   <string key="CultConvertCultHunter">
     <value>{0} was sent to do your dirty work, and convert {1}... however, they were the cult hunter! {0} is dead!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <value>{0} came to your house last night, ready to convert you... but you shoved your sword right through the evil cultist. A cultist is dead... {1} remain!</value>
+    <value>{0} came to your house last night, ready to convert you... but you shoved your sword right through the evil Zombie. A Zombie is dead... {1} remain!</value>
   </string>
   <string key="CultConvertYou">
-    <value>The cult has converted you to their order! You are now a cultist. Every other night, you will have a chance to convert another player.</value>
+    <value>The cult has converted you to their order! You are now a Zombie. Every other night, you will have a chance to convert another player.</value>
   </string>
   <string key="CultTeam">
-    <value>Cultists: {0}</value>
+    <value>Zombies: {0}</value>
   </string>
   <string key="CultJoin">
     <value>{0} has joined the cult!</value>
@@ -328,16 +328,16 @@
     <value>{0} was sent to do your dirty work, and convert {1}... but no one was home!</value>
   </string>
   <string key="CultWins" >
-    <value >All the wolves have died, and the only people left standing have all been converted to cultists.. The cult has won!</value>
+    <value >All the wolves have died, and the only people left standing have all been converted to Zombies.. The cult has won!</value>
   </string>
   <string key="HunterVisitDead">
     <value>You went to hunt {0}, but they are already dead!</value>
   </string>
-  <string key="HunterFindCultist">
-    <value>You go into {0}'s house, and find them praying before an altar to some unknown god...  You quickly slide your sword right through the evil cultist.</value>
+  <string key="HunterFindZombie">
+    <value>You go into {0}'s house, and find them praying before an altar to some unknown god...  You quickly slide your sword right through the evil Zombie.</value>
   </string>
   <string key="HunterFailedToFind">
-    <value>You go to {0}'s house, but there is no mysterious chanting. They are not a cultist, so you return home.</value>
+    <value>You go to {0}'s house, but there is no mysterious chanting. They are not a Zombie, so you return home.</value>
   </string>
   <string key="WildChildToWolves">
     <value>{0}'s role model just died! In their rage, they have become a werewolf!</value>
@@ -345,7 +345,7 @@
   <string key="WildChildTransform">
     <value>{0} has died! In your rage, you have become a werewolf! Your new teammates are: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>a Villager 👱</value>
   </string>
@@ -391,11 +391,11 @@
   <string key="ApprenticeSeer">
     <value>the Apprentice Seer 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>a Cultist 👤</value>
+  <string key="Zombie">
+    <value>a Zombie 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>the Cultist Hunter 💂</value>
+  <string key="ZombieHunter">
+    <value>the Zombie Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">

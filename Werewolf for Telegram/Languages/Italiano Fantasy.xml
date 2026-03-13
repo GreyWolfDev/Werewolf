@@ -213,10 +213,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>Sei l'Apprendista Mago 🙇 (🙇)! Pasticcione ma desideroso di imparare, prenderai il posto del Vecchio Mago (quello vero) nel caso in cui dovesse morire. Sei il Gufo Parlante è in partita, diventerà il tuo alleato più prezioso.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Sei un Vampiro 🧛🏻 (👤)! Hai una forte ambizione: rendere tua la Foresta Incantata e colonizzarla con il tuo gruppo di vampiri! Di giorno eviti la luce del sole e ti rintani in casa... di notte, agisci! Ogni notte puoi scegliere un giocatore da mordere e trasformare in Vampiro. Se tutti i giocatori rimastri vivi sono Vampiri... avete vinto!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Sei un Cacciatore di Vampiri 💂🧄! Sei un essere umano cresciuto con le creature magiche... e odi i Vampiri con tutto te stesso! Non ti darai pace finché non riuscirai a trovarli e ucciderli tutti! Ogni notte, armato e con una ghirlanda d'aglio portata al collo, sceglierai un giocatore a cui far visita. Se è un Vampiro, lo ucciderai. Se i Vampiri provano a morderti e trasformarti, l'ultimo Vampiro che si è aggiunto al gruppo morirà.</value>
   </string>
   <string key="LynchTime">
@@ -270,7 +270,7 @@ Ognuno ha {0} secondi per votare!
 <!-- 1 - victim role -->
     <value>Un'altra notte è passata e la Foresta Incantata si rempie di luci, colori e profumi. Purtroppo, però, le creature magiche fanno una terribile scoperta: {0} è stato trovato morto poco lontano dal suo rifugio! Le creature magiche si attristano per la sua prematura scomparsa. \n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 <!-- 0 - victim name -->
 <!-- 0 - victim name -->
     <value>Vicino ad un rifugio c'è uno strano odore di... aglio? Le creature magiche trovano {0} a terra con un paletto di legno conficcato nel petto e una collana di aglio attorno al collo... Il Cacciatore di Vampiri ha trovato una delle sue prede!</value>
@@ -377,34 +377,34 @@ Ognuno ha {0} secondi per votare!
   <string key="RemainingPlayersEnd">
     <value>Giocatori rimasti vivi, ruolo e team:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
 <!-- 0 - Voter's name -->
 <!-- 1 - target name -->
     <value>{0} ha scelto di trasformare {1}</value>
   </string>
   <string key="CultConvertCultHunter">
-<!-- 0 - Yougest Cultist (killed)'s name' -->
+<!-- 0 - Yougest Zombie (killed)'s name' -->
 <!-- 1 - CultHunter's name -->
     <value>{0} è stato mandato per trasformare {1}... peccato che si trattava del Cacciatore di Vampiri! {0} è morto!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-<!-- 0 - Youngest Cultist's name -->
-<!-- 1 - Number of cultists left -->
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - Number of Zombies left -->
     <value>{0} è arrivato per trasformarti in Vampiro la scorsa notte... non poteva sapere che gli stavi dando la caccia! Sei riuscito ad ucciderlo senza problemi! {1} Vampiri rimasti!</value>
   </string>
   <string key="CultConvertYou">
     <value>Un Vampiro ti ha fatto visita, ti ha morso e sei stato trasformato in una notturna creatura succhiasangue che odia l'aglio. D'ora in poi, ogni notte, avrai la possibilità di convertire in Vampiro un giocatore a tua scelta. Attenzione, c'è un Cacciatore di Vampiri che vi sta cercando...</value>
   </string>
   <string key="CultTeam">
-<!-- 0 - Number of cultists -->
+<!-- 0 - Number of Zombies -->
     <value>Vampiri: {0}</value>
   </string>
   <string key="CultJoin">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>{0} è diventato un Vampiro!</value>
   </string>
   <string key="CultVisitEmpty">
-<!-- 0 - Newest cultist's name -->
+<!-- 0 - Newest Zombie's name -->
 <!-- 1 - target name -->
     <value>{0} è stato inviato per trasformare {1}... ma non c'era nessuno!</value>
   </string>
@@ -415,7 +415,7 @@ Ognuno ha {0} secondi per votare!
 <!-- 0 - target name -->
     <value>Ti sei recato da {0} per ucciderlo, ma era già morto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
 <!-- 0 - target name -->
     <value>Girovagando nella Foresta Incantata, trovi {0} mentre affonda i canini nel collo di un'innocente creatura. Senza esitare, ti lanci all'attacco e riesci ad uccidere l'ostile Vampiro!</value>
   </string>
@@ -477,10 +477,10 @@ Ognuno ha {0} secondi per votare!
   <string key="ApprenticeSeer">
     <value>l'Apprendista Mago 🙇 (🙇)</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>un Vampiro 🧛🏻 (👤) </value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
 <!-- These are for the player list -->
     <value>il Cacciatore di Vampiri 💂🧄 (💂)</value>
   </string>
@@ -510,7 +510,7 @@ Ognuno ha {0} secondi per votare!
     <value>  Gli altri Gnomi sono: {0}</value>
   </string>
   <string key="CultTargetDead">
-<!-- 0 - Youngest cultists name -->
+<!-- 0 - Youngest Zombies name -->
     <value>Uno dei nuovi Vampiri si reca nel rifugio di {0} per convertirlo, tuttavia una sorpresa lo accoglie: tracce di sangue ovunque, mobili distrutti, impronte di creature diverse e un fetore terribile di chi non si lava da mesi...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -688,12 +688,12 @@ Ad ogni modo con te è meglio fare attenzione: sei pur sempre un Drago!</value>
     <value>Hai provato ad intrufolarti nel rifugio di {0}, però hai incontrato un luminoso Angelo che ti ha impedito di uccidere la tua vittima! Sconfitto e con qualche cicatrice, te ne torni strisciando da dove sei venuto...</value>
   </string>
   <string key="CultConvertHunter">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>Uno dei Vampiri invia {0} per trasformare {1}... Nessuno pensava di trovarsi davanti un Drago irascibile! Nemmeno un Vampiro immortale come {0} riuscirebbe a sopravvivere a quel getto infuocato! Di {0}, ormai, non resta che cenere...</value>
   </string>
   <string key="CultConvertSerialKiller">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>Uno dei Vampiri invia {0} per mordere e trasformare {1}, ma... Sorpresa! Appena gli occhi di {0} si posano su quelli del Basilisco... la sua vita, seppur immortale, termina in un istante! {0} è morto. Non era così immortale, dopotutto...</value>
   </string>
@@ -717,8 +717,8 @@ Ad ogni modo con te è meglio fare attenzione: sei pur sempre un Drago!</value>
     <value>{0} è morto e tu ti trasformi in uno Gnomo. Gli altri Gnomi (se presenti) sono: {1}</value>
   </string>
   <string key="DGToCult">
-<!-- 0 - new cultist's name -->
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
+<!-- 0 - new Zombie's name -->
     <value>Lo Spirito dell'Acqua {0} è diventato un Vampiro proprio come te!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1249,7 +1249,7 @@ Dopo essersi accertate della veridicità del suo racconto, le creature magiche l
   <string key="BlacksmithKilled">
     <value>Sembra che {0}, lo Spirito della Terra, abbia avuto un terribile incontro, la scorsa notte. Le creature magiche l'hanno trovato morto nei pressi della Grande Quercia. Il suo corpo non aveva segni di lotta, però sul suo volto era segnata un'espressione di puro terrore. Consapevoli che il Basilisco ha eliminato un'altra innocente vittima, le creature magiche si radunano per compiangere e commemorare la vita perduta di {0}.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Che strano! I Vampiri non erano immortali? Non proprio, a quanto pare... {0} è stato trovato pietrificato nei pressi del suo rifugio. Accanto al suo corpo vengono ritrovate tracce di pelle di serpente. Con il Basilisco non si scherza! {0} era un Vampiro.</value>
   </string>
   <string key="CupidKilled">
@@ -1284,11 +1284,11 @@ Dopo essersi accertate della veridicità del suo racconto, le creature magiche l
     <value>Le creature magiche fanno una triste scoperta. Trovano il corpo di {0}, il Cacciatore di Vampiri, pietrificato e con un'espressione di pure stupore sul volto. Ha avuto proprio un brutto incontro: si aspettava di incontrare gli occhi immortali di un Vampiro... e invece ha incontrato quelli del Basilisco!</value>
   </string>
   <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Sembra che le creature oscure abbiano deciso di non attaccare, la scorsa notte. Ciò non ha impedito loro di uccidere il Vampiro {0}, mandato per cercare di convertire uno di loro. Che sia da lezione, con gli Orchi non si scherza!</value>
   </string>
   <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
     <value>I Vampiri credevano di allargare il loro gruppo, questa notte... quanto si sbagliavano! Il Vampiro {0} ha incontrato gli occhi letali del Basilisco, dando definitivamente fine alla sua vampiresca esistenza. L'immortalità dei Vampiri, per un Basilisco, è davvero una sciocchezza!</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1309,8 +1309,8 @@ Dopo essersi accertate della veridicità del suo racconto, le creature magiche l
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sapendo che {0} era l'unico sopravvissuto, {1} si reca da {0} per ucciderlo e scopre di avere a che fare con un possente Drago. Usando l'astuzia e attendendo il momento migliore per agire, {1} attacca il Drago bloccandogli ali e muso e impedendogli così di reagire. {0} viene incredibilmente sconfitto in un lago di sangue, mentre la creatura oscura grida e festeggia per la vittoria aggiudicata!</value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <!-- Extend time -->
     <value>{1} e {0}, sapendo di essere gli unici rimasti in vita, si incontrano sotto le fronde della Grande Quercia. Scoprendo che {0} è un Vampiro, {1} non ci pensa due volte ad usare il suo paletto e conficcarglielo dritto nel cuore. Felice di aver vinto e di aver finalmente eliminato tutti quegli orribili succhiasangue dalla Foresta Incantata, il Cacciatore di Vampiri si toglie la sua collana d'aglio e l'appende alle fronde della Grande Quercia come ricordo del suo ammirevole operato. Vittoria!</value>
   </string>
@@ -1593,8 +1593,8 @@ Dopo essersi accertate della veridicità del suo racconto, le creature magiche l
     <value>I tuoi compagni di team (se presenti) sono: {0}</value>
   </string>
   <string key="ThiefToCult">
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
     <value>{0} non fa più parte del gruppo, mentre {1} è ora un Vampiro come te!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1650,8 +1650,8 @@ Dopo essersi accertate della veridicità del suo racconto, le creature magiche l
   <string key="SecretLynchShowVotersA">
     <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
   </string>
-  <string key="CultistBitten">
-<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
     <value>Strano... Vi siete riuniti per discutere su chi trasformare in Vampiro oggi, ma {0} non è presente! Che fine avrà fatto?</value>
   </string>
   <string key="Peace">
@@ -1752,7 +1752,7 @@ Dopo essersi accertate della veridicità del suo racconto, le creature magiche l
   <string key="ChemistTargetEmpty">
     <value>Non sei riuscito a trovare {0}... Amareggiato, torni sui tuoi passi e ritorni verso casa.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value>I Vampiri attualmente sono: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1803,7 +1803,7 @@ Dopo essersi accertate della veridicità del suo racconto, le creature magiche l
   <string key="ChemistFrozen">
     <value>Mentre stavi preparando intrugli e pozioni alquanto dubbie, avverti un forte rumore provenire dalla porta. Non appena provi ad uscire, ti accorgi che non ci riesci. Qualcuno ti ha segregato in casa piazzando un pesante masso proprio davanti alla porta! Dannazione, dovevi uscire a prendere un ingrediente, ora cosa farai? Nulla, a quanto pare... i Fauni e i Druidi domani ti aiuteranno ad uscire di casa! Stupido Troll!</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Sei furioso! Un dannato Troll ha bloccato l'uscita del tuo rifugio, impedendoti di unirti ai tuoi compagni per convertire qualcuno. Gli altri Vampiri ti assicurano che andranno comunque a svolgere il loro dovere e poi ritorneranno per sbloccarti l'ingresso.</value>
   </string>
   <string key="CHFrozen">
@@ -1942,11 +1942,11 @@ Dopo essersi accertate della veridicità del suo racconto, le creature magiche l
     <value>Un'altra notte inutile senza aver trovato nemmeno un Vampiro! Frustrato, corri freneticamente tra i sentieri della Foresta Incantata, senza renderti conto di essere entrato nella zona dell'Angelo della Morte {0}. Si sa, lì corre voce che ci siano i fantasmi... non ci credevi finché non li hai visti dirigersi verso di te! Spaventato, provi a fuggire... purtroppo inciampi e batti la testa su una roccia affilata lì vicino. La ferita è troppo profonda, purtoppo non sopravvivi...</value>
   </string>
   <string key="HunterFellDigger">
-<!--{0}: cultist-->
+<!--{0}: Zombie-->
     <value>Dopo un'altra lunga notte, ritorni alla tua casa mentre il sole sta già sorgendo. Prima di arrivare, trovi il corpo di {0} immerso in una pozza di sangue. Se il Cacciatore di Vampiri non avesse avuto tanta fretta, probabilmente non sarebbe caduto sopra a quel masso appuntito...</value>
   </string>
   <string key="CultFell">
-<!--{0}: cultist who fell, {1}: grave digger-->
+<!--{0}: Zombie who fell, {1}: grave digger-->
     <value>Ti avvii verso casa dopo una faticosa nottata, quando senti un urlo riecheggiare fra gli alberi. Ti rechi subito sul posto, solo per trovare le ceneri di {0}. A quanto pare un Vampiro voleva convertirti ma... chissà cosa sarà successo, non è riuscito ad evitare i raggi del sole!</value>
   </string>
   <string key="CultConvertGraveDigger">
@@ -1998,10 +1998,10 @@ Dopo essersi accertate della veridicità del suo racconto, le creature magiche l
     <value>Girano strane voci sull'Angelo della Morte e sui suoi presunti fantasmi... a quanto pare sono vere, dato che {0} è morto per la paura! {1}</value>
   </string>
   <string key="HarlotFellPublic">
-<!--{0}: cultist who died-->
+<!--{0}: Zombie who died-->
     <value>La Sirena {0} voleva attirare a sé l'Angelo della Morte, la scorsa notte... peccato che abbia visto dei fantasmi e ne era talmente attratta tanto da uscire dall'acqua e seguirli trascinandosi nei sentieri della Foresta Incantata. Purtroppo, è rimasta incastrata tra due alberi... è morta per disidratazione e asfissia! </value>
   </string>
-  <string key="CultistFellPublic">
+  <string key="ZombieFellPublic">
 <!--{0}: thief-->
     <value>I Vampiri volevano convertire l'Angelo della Morte, tuttavia un gruppo di fantasmi li ha fatti desistere. Mentre il sole stava per sorgere e il gruppo se ne andava, il Vampiro {0} resta indietro per osservare affascinato i fantasmi... Per lui, purtroppo, non c'è più tempo: il sole sorge e uccide il Vampiro trasformandolo in cenere!</value>
   </string>

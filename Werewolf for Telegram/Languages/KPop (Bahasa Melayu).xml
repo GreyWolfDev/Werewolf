@@ -206,10 +206,10 @@ Pemain {0},{1} telah dibunuh kerana tidak mengundi 2 kali dalam 24 jam yang lalu
 	<string key="RoleInfoApprenticeSeer">
 		<value>Anda seorang Manager SM Entertainment :bow:  Jika CEO SM Entertainment ( sebenar ) mati. Anda akan mengambil alih tempat mereka sebagai CEO baru SM Entertainment</value>
 	</string>
-	<string key="RoleInfoCultist">
-		<value>Anda seorang Ahli SHINEE a.k.a kumpulan kpop yang tidak terkenal (Cultist):bust_in_silhouette:.Disebabkan tidak terkenal,anda mahu hasut orang lain sertai kumpulan kpop anda.Jadi, setiap malam anda boleh memilih pemain lain untuk menghasut mereka menyertai kumpulan kpop  anda. Jika semua pemain yang tinggal pada akhir permainan adalah kumpulan kpop SHINEE mereka akan menang dan terkenal!</value>
+	<string key="RoleInfoZombie">
+		<value>Anda seorang Ahli SHINEE a.k.a kumpulan kpop yang tidak terkenal (Zombie):bust_in_silhouette:.Disebabkan tidak terkenal,anda mahu hasut orang lain sertai kumpulan kpop anda.Jadi, setiap malam anda boleh memilih pemain lain untuk menghasut mereka menyertai kumpulan kpop  anda. Jika semua pemain yang tinggal pada akhir permainan adalah kumpulan kpop SHINEE mereka akan menang dan terkenal!</value>
 	</string>
-	<string key="RoleInfoCultistHunter">
+	<string key="RoleInfoZombieHunter">
 		<value>Terdapat kumpulan kpop yang tidak terkenal mencuba untuk menghasut orang lain untuk menyertai kumpulan mereka. Sebagai seorang CEO YG Entertainment :guardsman:♀ setiap malam anda boleh menyekat ahli SHINEE dari menghasut orang</value>
 	</string>
 	<string key="LynchTime">
@@ -269,7 +269,7 @@ Pemain {0},{1} telah dibunuh kerana tidak mengundi 2 kali dalam 24 jam yang lalu
 		<value> Bila semua orang bangun pada waktu pagi, lagu universe dari kumpulan Exo kedengaran . Mereka berebut keluar dan mendapati {o} telah memindahkan barang kerana dimarahi oleh Ahli Kumpulan Exo !
 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ {0} adalah {1}</value>
 	</string>
-	<string key="HunterKilledCultist">
+	<string key="HunterKilledZombie">
 		<!-- 0 - victim name -->
 		<value>Bau hangus cd dan poster yang datang dari rumah {0} ... Penduduk kpop memeriksa dan mendapati seseorang sedang merayu agar tidak dipecat dari YG di hadapan sebuah lorong gelap ... Ahli kumpulan Shinee telah kantoi dan dihalau oleh YG Entertainment!🤣🤣</value>
 	</string>
@@ -376,34 +376,34 @@ Pemain {0},{1} telah dibunuh kerana tidak mengundi 2 kali dalam 24 jam yang lalu
 	<string key="RemainingPlayersEnd">
 		<value>Baki pemain yang tinggal, peranan, dan pasukan:</value>
 	</string>
-	<string key="CultistVotedConvert">
+	<string key="ZombieVotedConvert">
 		<!-- 0 - Voter's name -->
 		<!-- 1 - target name -->
 		<value>{0} telah mengundi untuk menghasut {1}</value>
 	</string>
 	<string key="CultConvertCultHunter">
-		<!-- 0 - Yougest Cultist (killed)'s name' -->
+		<!-- 0 - Yougest Zombie (killed)'s name' -->
 		<!-- 1 - CultHunter's name -->
 		<value>{0} telah ditugaskan untuk memperkenalkan kumpulan SHINEE, dan menukar {1} ... walau bagaimanapun, dia adalah CEO YG Entertainment! {0} telah dimarahi dan ditendang dari dunia kpop!</value>
 	</string>
 	<string key="CultHunterKilledCultVisit">
-		<!-- 0 - Youngest Cultist's name -->
-		<!-- 1 - Number of cultists left -->
+		<!-- 0 - Youngest Zombie's name -->
+		<!-- 1 - Number of Zombies left -->
 		<value>{0} datang ke syarikat anda malam tadi, bersedia untuk menjemput anda...tetapi anda cepat menviralkannya agar dia dibuang dari dunia kpop!! Salah seorang kumpulan SHINEE telah dibuang...{1} masih hidup!</value>
 	</string>
 	<string key="CultConvertYou">
 		<value>Ahli SHINEE:bust_in_silhouette: telah berjaya mengubah dan menghasut anda! Anda kini telah menyertai kumpulan kpop mereka! Setiap malam, anda mempunyai peluang untuk mengubah pemain lain untuk menyertai kumpulan kpop tidak terkenal anda untuk dikenali ramai.</value>
 	</string>
 	<string key="CultTeam">
-		<!-- 0 - Number of cultists -->
+		<!-- 0 - Number of Zombies -->
 		<value>Ahli kumpulan SHINEE adalah : {0}</value>
 	</string>
 	<string key="CultJoin">
-		<!-- 0 - new cultist's name -->
+		<!-- 0 - new Zombie's name -->
 		<value>{0} telah menyertai kumpulan kumpulan SHINEE!</value>
 	</string>
 	<string key="CultVisitEmpty">
-		<!-- 0 - Newest cultist's name -->
+		<!-- 0 - Newest Zombie's name -->
 		<!-- 1 - target name -->
 		<value>{0} telah dihantar ke rumah {1} untuk mengajak dia memyertai kumpulan SHINEE!Akan tetapi {0} terdengar lagu kpop yang pelik dan telah meninggalkan satu surat jemputan sesi uji bakat di pintu rumahnya.</value>
 	</string>
@@ -414,7 +414,7 @@ Pemain {0},{1} telah dibunuh kerana tidak mengundi 2 kali dalam 24 jam yang lalu
 		<!-- 0 - target name -->
 		<value>Anda pergi untuk mendengar suara nyanyian {0}, tetapi mereka sudah berpindah!</value>
 	</string>
-	<string key="HunterFindCultist">
+	<string key="HunterFindZombie">
 		<!-- 0 - target name -->
 		<value>Anda pergi ke syarikat {0}dan anda mendapati dia sedang menari didalam bilik latihan menari untuk dance practise!Tariannya begitu teruk sekali lalu anda merakam video dan menviralkannya untuk dimalukan!!!</value>
 	</string>
@@ -431,7 +431,7 @@ Pemain {0},{1} telah dibunuh kerana tidak mengundi 2 kali dalam 24 jam yang lalu
 		<!-- 0 - teamate's names -->
 		<value>{0} telah berpindah! Dalam kemarahan anda, anda telah diangkat menjadi ahli kumpulan EXO! Rakan sekumpulan baru anda adalah: {1}</value>
 	</string>
-	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 	<!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
 	<string key="Villager">
 		<value>Peminat Kpop 👱</value>
@@ -478,10 +478,10 @@ Pemain {0},{1} telah dibunuh kerana tidak mengundi 2 kali dalam 24 jam yang lalu
 	<string key="ApprenticeSeer">
 		<value>ManagerSM Entertainment 🙇</value>
 	</string>
-	<string key="Cultist">
+	<string key="Zombie">
 		<value>Ahli SHINEE👤</value>
 	</string>
-	<string key="CultistHunter">
+	<string key="ZombieHunter">
 		<value>CEO JYP Entertainment 💂</value>
 	</string>
 	<!-- These are for the player list -->
@@ -513,7 +513,7 @@ Pemain {0},{1} telah dibunuh kerana tidak mengundi 2 kali dalam 24 jam yang lalu
 	</string>
 	<!-- new strings May 6 2016-->
 	<string key="CultTargetDead">
-		<!-- 0 - Youngest cultists name -->
+		<!-- 0 - Youngest Zombies name -->
 		<value>Ahli kumpulan SHINEE telah menghantar {0} untuk menjemput {0},namun sebaliknya telah berlaku perselisihan faham dan menyebabkan {0} telah ditendang keluar dari kumpulan SHINEE!Kesian betul!{0}telah berhenti dari kpop world....</value>
 	</string>
 	<string key="GuardBlockedWolf">
@@ -694,12 +694,12 @@ Pemain {0},{1} telah dibunuh kerana tidak mengundi 2 kali dalam 24 jam yang lalu
 		<value>Anda cuba untuk mengumpul gambar {0} untuk koleksi anda, tetapi anda telah dilawan oleh Ahli KUMPULAN2 2PM! Tiada GAMBAR untuk anda malam ini ...</value>
 	</string>
 	<string key="CultConvertHunter">
-		<!-- 0 - Youngest Cultist's name -->
+		<!-- 0 - Youngest Zombie's name -->
 		<!-- 1 - target's name -->
 		<value>Ahli SHINEE menghantar {0} untuk cuba menghasut {1}, tetapi sebaliknya satu tendangan dusyumm dilepaskan dan badan {0} terbang keluar dari tingkap! {0} telah koma ...</value>
 	</string>
 	<string key="CultConvertSerialKiller">
-		<!-- 0 - Youngest Cultist's name -->
+		<!-- 0 - Youngest Zombie's name -->
 		<!-- 1 - target's name -->
 		<value>ahli Shinee telah menghantar {0} untuk cuba menukarkan {1}, tetapi jasad {0} terkeluar daripada tingkap, gambar {0} berterbangan di seluruh kpop World! PSIKO betul! {0} telah trauma dan melarikan diri ke hutan....</value>
 		<value>{0} menyelinap ke rumah {1}, membuka pintu, kemudian di sapa oleh ahli kumpulan Bangtans Boys!!! {1} mengambil gambar  {0} berpelukkan dengan biawak dan mencetak gambarnya sambil mengilai! {0} telah disahkan gila... D:</value>
@@ -724,7 +724,7 @@ Pemain {0},{1} telah dibunuh kerana tidak mengundi 2 kali dalam 24 jam yang lalu
 		<value>{0} telah berpindah, dan anda bertukar menjadi Fans Stalker. Rakan sekumpulan anda (jika ada) adalah: {1}</value>
 	</string>
 	<string key="DGToCult">
-		<!-- 0 - new cultist's name -->
+		<!-- 0 - new Zombie's name -->
 		<value>Doppelgänger {0} kini telah menjadi Ahli SHINEE, sama seperti anda!</value>
 	</string>
 	<string key="DGTransformToCult">
@@ -871,10 +871,10 @@ Pemain {0},{1} telah dibunuh kerana tidak mengundi 2 kali dalam 24 jam yang lalu
 		<value>Sebagai si Bodoh anda  diberitahu mereka sebagai Seer... apabila mereka memilih untuk melihat peranan seseorang pada waktu malam, mereka diberitahu peranan yang rawak.</value>
 	</string>
 	<string key="AboutCult">
-		<value>Sebagai Ahli Cultist, matlamat anda adalah untuk menukar semua pemain lain (kecuali serigala) kepada agama anda. Jika pada akhir permainan, semua pemain hidup adalah Ahli Cultist, pengamal ajaran sesat itu akan menang.</value>
+		<value>Sebagai Ahli Zombie, matlamat anda adalah untuk menukar semua pemain lain (kecuali serigala) kepada agama anda. Jika pada akhir permainan, semua pemain hidup adalah Ahli Zombie, pengamal ajaran sesat itu akan menang.</value>
 	</string>
 	<string key="AboutCH">
-		<value>Tugas anda adalah untuk memburu pengamal ajaran sesat iaitu Ahli Cultist. Jika Ahli Cultist menyerang anda, ahli terbaru mereka akan mati. Setiap malam anda boleh mengambil pemain untuk 'diburu' - jika mereka pengamal ajaran sesat, mereka akan mati.</value>
+		<value>Tugas anda adalah untuk memburu pengamal ajaran sesat iaitu Ahli Zombie. Jika Ahli Zombie menyerang anda, ahli terbaru mereka akan mati. Setiap malam anda boleh mengambil pemain untuk 'diburu' - jika mereka pengamal ajaran sesat, mereka akan mati.</value>
 	</string>
 	<string key="AboutWC">
 		<value>Budak Liar sebenarnya adalah anak serigala, ibu bapanya telah mati dibunuh dan dia dibela oleh seorang penduduk kampung iaitu orang tua angkatnya ataupun "role modelnya" Pada awal permainan, anda akan memilih seseorang untuk menjadi orang tua angkat anda. Jika mereka mati, naluri Serigala Jadian anda akan muncul dan anda menjadi serigala untuk membalas dendam ke atas kematian role model anda.</value>
@@ -892,7 +892,7 @@ Pemain {0},{1} telah dibunuh kerana tidak mengundi 2 kali dalam 24 jam yang lalu
 		<value>
       Keturunan anda mempunyai kemahiran untuk menukar orang lain ... semasa anda tidak mempunyai kebolehan mereka sepenuhnya, anda boleh mengambil pemain pada permulaan permainan. Jika pemain itu mati, anda akan menjadi apa yang mereka jadi.
       Nota: Jika pemain itu ditukar kepada Cult, anda akan mengambil peranan asal mereka. Arahan asal sebelum ini dipakai: Jika mereka Kanak-kanak Liar dan role model mereka mati, anda akan menjadi serigala. Jika tidak, anda akan mewarisi role model mereka.
-       Cultist tidak boleh menukar Doppelgänger (tetapi boleh selepas doppelganger beralih peranan). Juga - Doppelgänger TIDAK boleh menang kecuali mereka berubah. Jika pada akhir permainan, Doppelgänger masih tidak berubah, mereka kalah (pengecualian: lover)
+       Zombie tidak boleh menukar Doppelgänger (tetapi boleh selepas doppelganger beralih peranan). Juga - Doppelgänger TIDAK boleh menang kecuali mereka berubah. Jika pada akhir permainan, Doppelgänger masih tidak berubah, mereka kalah (pengecualian: lover)
     </value>
 	</string>
 	<string key="AboutCupid">
@@ -905,7 +905,7 @@ Pemain {0},{1} telah dibunuh kerana tidak mengundi 2 kali dalam 24 jam yang lalu
 		<value>
       Pencetus bahagia, pemain yang penuh dendam kesumat. Sebagai pemburu, anda cuba untuk menjadi low profile. Walau bagaimanapun, apabila orang lain datang untuk melawat anda, mereka mungkin mendapati diri mereka mati, kerana paranoia dan anda menembak. Jika serigala menyerang anda, anda mempunyai peluang untuk mengambil salah seekor daripada mereka bersama anda. Jika tidak, jika anda mati, anda akan mendapat peluang untuk menembak seseorang sebelum anda mati.
        Nota: Untuk serangan serigala, peluang bermula pada 30%. Jika terdapat satu serigala, pemburu mempunyai peluang 30% untuk membunuh serigala (dan hidup). Bagi setiap serigala tambahan, tambah 20% (2 serigala = 50%, 3 = 70%, dan lain-lain). Walau bagaimanapun - jika terdapat banyak serigala, ketika kamu membunuh seorang daripada mereka, anda masih akan dikerumuni dan terbunuh.
-       Jika Cultist cuba untuk mengubah kamu, mereka mempunyai peluang 50% untuk gagal. Jika mereka gagal, anda mempunyai peluang 50% untuk membunuh salah seorang daripada mereka!
+       Jika Zombie cuba untuk mengubah kamu, mereka mempunyai peluang 50% untuk gagal. Jika mereka gagal, anda mempunyai peluang 50% untuk membunuh salah seorang daripada mereka!
     </value>
 	</string>
 	<string key="AboutSK">
@@ -1076,10 +1076,10 @@ Nota: Para adalah pembuat bot ini.</value>
 		<value>Tanner sebagai peranan yang ditetapkan untuk: {0}</value>
 	</string>
 	<string key="AllowCultQ">
-		<value>Benarkan Cultist 👤 sebagai pilihan peranan?\nSekarang: {0}</value>
+		<value>Benarkan Zombie 👤 sebagai pilihan peranan?\nSekarang: {0}</value>
 	</string>
 	<string key="AllowCultA">
-		<value>Cultist sebagai peranan yang ditetapkan untuk: {0}</value>
+		<value>Zombie sebagai peranan yang ditetapkan untuk: {0}</value>
 	</string>
 	<string key="ThankYou">
 		<value>Terima kasih, semoga hari ini hari yang baik :)</value>
@@ -1267,7 +1267,7 @@ Nota: Para adalah pembuat bot ini.</value>
 	<string key="BlacksmithKilled">
 		<value>Nampak seperti {0}, ahli Kumpulan Blackpink mempunyai nasib malang. Lima gambar, masih panas dari  printer {0} dijumpai ikat di tangan,kaki, kepala pada meja solek. Anehnya telefon milik {0} turut hilang. Mungkin Ahli Bangtans Boys ingin mengumpul koleksi telefon selain daripada koleksi gambar…  </value>
 	</string>
-	<string key="CultistKilled">
+	<string key="ZombieKilled">
 		<value>{0} di jumpai dirantai dengan basikal dekat kawasan letak kereta sambil tertulis di dahi tandatangan yg aneh dan sekeping gambar {0} sebelum pembedahan. Bts melakukan lagi, tanpa mengira agama, bahasa atau bangsa! {0} adalah Ahli Kumpulan SHINEE.</value>
 	</string>
 	<string key="CupidKilled">
@@ -1305,12 +1305,12 @@ Penduduk Kpop berharap dapat berjumpa {0} , tetapi apa mereka jumpa dalam rumah 
 		<value>Setelah melawat ahli Bangtans Boys, {0} YG Entertainment telah dicaci dan diviralkan didalam satu laman web. Nampaknya mencari pasal dengan ahli Bangtan Boys bukan idea yang bijak.. </value>
 	</string>
 	<string key="CultConvertWolfPublic">
-		<!--used when Cultists convert the wolves, only if wolves stayed home-->
+		<!--used when Zombies convert the wolves, only if wolves stayed home-->
 		<value>Walaupun nampak macam Exo cuba menjadi baik,{0} seorang ahli kumpulan SHINEE  yang cuba mengajak Exo menyertai kumpulan mereka,namun membuktikan Exo tidak berminat terhadap kumpulan tersebut. {0} cuba memaksa Exo dan membuatkan dia dimarahi Exo!...</value>
 		<value>Ahli kumpulan SHINEE mengalami masalah semalam. Seorang ahli mereka telah dimarahi oleh Exo menyebabkan ahli mereka berkurang.Exo berasa puas hati kerana {0} telah dimarahi.Kasihan {0},Exo tidak berminat menyertai kumpulan SHINEE </value>
 	</string>
 	<string key="CultConvertKillerPublic">
-		<!--used when Cultists convert the SK-->
+		<!--used when Zombies convert the SK-->
 		<value>Ahli kumpulan SHINEE ingatkan mereka akan dapat ahli baru, mereka salah! {0} ,seorang ahli kumpulan SHINEE ,telah diviralkan atas niat buruknya dilaman sosial! Gambar muka mereka turut dimuat naikkan</value>
 		<value>Semalam ahli kumpulan SHINEE {0} cuba pula untuk mengajak ahli Bangtans boys menyertai mereka.Tapi sayangnya ahli Bangtan Boys bersedia menambahkan koleksi gambar dan disebar ke seluruh bandar</value>
 	</string>
@@ -1332,8 +1332,8 @@ Penduduk Kpop berharap dapat berjumpa {0} , tetapi apa mereka jumpa dalam rumah 
 		<!--{0} = hunter's name, {1} = wolf's name-->
 		<value>Mengetahui hanya {0} tinggal, {1} memilih waktu yang tepat untuk menyerang {0}.Menyingkir penduduk terakhir ini membuktikan Exo yang paling hebat dan akhirnya AHLI GOT7 dihalau dari dunia kpop.</value>
 	</string>
-	<string key="CHKillsCultistEnd">
-		<!--{0} = last cultist's name, {1} = CH's name -->
+	<string key="CHKillsZombieEnd">
+		<!--{0} = last Zombie's name, {1} = CH's name -->
 		<value>{1} dan {0} keluar waktu siang.Terdengar lagu yang dinyanyikan oleh {0} , yang betul {1} keluarkan surat pemecatan untuk kali terakhir menghapuskan ahli Kumpulan SHINEE yang mendominasikan penduduk Kpop.</value>
 	</string>
 	<!-- Extend time -->

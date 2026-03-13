@@ -210,10 +210,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >تو پیشگوی ممنونی رزرو هستی یعنی اگه پیشگوی ممنونی بمیره تو پیشگو میشی بمولا</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >تو فرقه مولایی  هستی، هر شب یه نفرو به فرقه مولایی خودت دعوت میکنی اگه همه بازیکنای مولایی، عضو فرقه ی مولایی تو بشن تو میبری</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >ممنون ترین نقش روستارو داری شکارچی ,از روستا حفاظت میکنی و هرشب خونه یه نفر میری اگه فرقه مولایی باشه ممنونش میکنی وگرنه ربات بهت میگه نه ممنون اهلش نیستم</value>
   </string>
   <string key="LynchTime" >
@@ -271,7 +271,7 @@
     <!-- 1 - victim role -->
     <value>آخه این روستایی ممنون چیکارتون داشت که ممنون کردینش کثافتا،یه گوشه نشسته بود داشت ممنونشو میکرد بمولا {0} مولایه خوبی بودی 😢😢  {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>اینطور که معلومه شکارممنون دیشب یکی از اهالی فرقه مولایی {0} رو ممنون کرده</value>
   </string>
@@ -377,34 +377,34 @@
   <string key="RemainingPlayersEnd">
     <value>ممنون های باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value > نظر {0} اینه که {1} رو ممنون کنید بمولا</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>خب {0} رفت که {1} رو به فرقه مولایی دعوت کنه ولی {1} شکارچی ممنون بود و ممنونش کرد!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>دیشب {0} اومد به فرقه  مولایی دعوتت کنه ولی تو زدی ممنونش! {1} باقی مونده</value>
   </string>
   <string key="CultConvertYou">
     <value>تو الان عضو فرقه مولایی هستی و هر شب با بقیه یارات باید یه نفرو به فرقه  مولایی خودتون ممنون کنین</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>فرقه مولایی ها: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>الان {0} عضو فرقه مولایی شد</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>خب  {0} رفت {1} رو به فرقه مولایی ممنون کنه ولی خونه نبود</value>
   </string>
@@ -415,7 +415,7 @@
     <!-- 0 - target name -->
     <value>رفتی {0} رو ممنون کنی ولی مرده بود</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>رفتی خونه {0} و دیدی داره مولایی عبادت میکنه. اعصابت خورد شد زدی ممنونش کردی</value>
   </string>
@@ -432,7 +432,7 @@
     <!-- 0 - teamate's names -->
     <value>چون {0} الگوت بود وممنون شده الان تو گرگ مولایی هستی و یارای مولاییت عبارت اند از : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value> روستایی ممنون👱</value>
@@ -479,10 +479,10 @@
   <string key="ApprenticeSeer">
     <value>پیشگوی رزرو ممنونی🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>فرقه مولایی 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>شکارممنون 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -514,7 +514,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>عضو جدید فرقه رفت خونه {0} که به راه مولا هدایتش کنه ولی دید ممنون شده</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -703,7 +703,7 @@
     <value>رفتی {0} رو ممنون کنی ولی فرشته ممنون جلوی کار مولاییتو گرفت</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>فرقه گرای مولایی یعنی {0} رفت که {1} رو به دین مولایی دعوت کنه ولی {1} کلانتر بود و با تفنگش زد {0} رو ممنون کرد</value>
   </string>
@@ -727,7 +727,7 @@
     <value>خب {0} همزادممنونت بود و ممنون شد. چون اون فراممون بود تو هم فراممون شدی و بقیه فراممون ها عبارت اند از: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>همزادممنون، یعنی {0} هم چون یکی از اعضای فرقه مولایی رو به عنوان مدل ممنون کرده بود الان فرقه مولایی شد.</value>
   </string>
 
@@ -1277,7 +1277,7 @@
 - آره😞
 متاسفانه دیشب {0} ممنونگر روستا توسط قاتل زنجیره ای در اصطبل به قتل رسید!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب مولایی به فرقه های مولایی حمله کرد و {0} رو ممنون کرد!</value>
   </string>
   <string key="CupidKilled">
@@ -1310,10 +1310,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>شکارچی ممنون {0} مشغول پیداکردن فرقه های مولایی بود اما درست زمانی که داشت توی جنگل قدم میزد قاتل مولایی بهش حمله میکنه و ممنونش میکنه!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب {0} رفت که گرگای مولایی رو به دین مولا دعوت کنه! ولی گرگای مولایی بهش حمله کردن و ممنونش کردن!</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>شب قبل فرقه گرا ها میخواستن یک عضو جدید رو به دین مولا دعوت کنن، {0} مامور شد که یکی رو به دین مولا دعوت کنه، اما دیگه خبری از {0} نشد! صبح روز بعد فرقه های مولایی جنازه {0} رو توی روستا پیدا میکنند! قاتل مولایی {0} رو ممنون کرده!</value>
   </string>
   
@@ -1333,8 +1333,8 @@
 	    <value> کلانتر  {0} توی روستا با {1} تنها مونده! {1} میره که به کلانتر حمله کنه و اونو بکشه، اما کلانتر از خواب بلند میشه و متوجه {1} میشه سریع میره سمت تفنگش اما فرصت نمیکنه که تفنگشو دستش بگیره و {1} میگیره و ممنونش! {1} تنها گرگ ممنون روستاست🐺</value>
   </string>
   
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>تنها فرقه گرای مولایی بازمانده روستا {0} بود که زمانی که صبح داشت سمت میدون شهر میرفت، با شکارچی ممنون{1} روبه رو میشه! شکارچی ممنون، همون موقع تفنگشو در میاره که به {0} شلیک کنه ولی {0} فرار میکنه، شکارچی دنبالش میره و توی جنگل پیداش میکنه و با چاقو ممنونش میکنه!  شکارچی ممنون این دور بازیه!</value>
   </string>
   
@@ -1648,8 +1648,8 @@
       <value>هم تیمی های شما(درصورت وجود) عبارت اند از:{0}.</value>
     </string>
     <string key="ThiefToCult">
-      <!-- 0 - old cultist's name -->
-      <!-- 1 - new cultist's name -->
+      <!-- 0 - old Zombie's name -->
+      <!-- 1 - new Zombie's name -->
       <value>حاجی {0} دیگه همتیمی شما نیست به جاش {1} فرقه مولایی شده دقیقا مثل شماها.</value>
     </string>
     <string key="ThiefToWolf">
@@ -1709,8 +1709,8 @@
     <string key="SecretLynchShowVotersA">
       <value>وقتی حالت رای مخفی روشن است. و تعداد رای ها در اخر رای گیری نشان داده خواهد شد.نام رای دهنده به هر بازیکن نیز نشان داده خواهد شد:{0}</value>
     </string>
-    <string key="CultistBitten">
-    <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <string key="ZombieBitten">
+    <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
       <value>عجیبه .... امشب جمع شدین که یکی رو به دین مولایی دعوت کنید اما متوجه شدین که {0} اینجا نیست!یعنی چه اتفاقی براش افتاده؟🤔</value>
     </string>
     
@@ -1818,7 +1818,7 @@
   <string key="ChemistTargetEmpty">
 	<value> رفتی که با {0} نوشیدنی ممنون کنی اما خونه نبود! </value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value> اعضای فرقه مولایی درحال حاضر: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1869,7 +1869,7 @@
   <string key="ChemistFrozen">
     <value>   هنگامی که وسایل خود را برای خوردن نوشیدنی ممنون میکردید باد سردی از پنجره ها وزید و شما نیمه ممنون شدید 🐺☃️! از گوشه ی چشم معجون هایت را دیدی که نیمه ممنون شده اند. بنظر میرسد که آنها هم راه ممنون نداشتند. بزودی خورشید ممنون میکند و دیگر مشکلی نخواهید داشت به مولا. </value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value> وقتی که داشتی برای ممنون کردن آماده میشدی باد سردی وزید و تو نیمه ممنون شدی 🐺☃️! هم تیمی های تو بهت قول دادند که امشب کارشون رو خوب ممنون کنن. </value>
   </string>
   <string key="CHFrozen">
@@ -2010,11 +2010,11 @@
   <string key="HunterFellDigger">
 	<value> بعد از یک شب خسته کننده شما به خانه برمیگردید قبل از اینکه وارد خانه شوید شمشیری کنار یک قبر میبینید مثل اینکه شکارچی ممنون یعنی {0} توی قبر افتاده</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value> بعد از یک شب خسته کننده در راه خانه صدای فریادی از یک قبر ناتمام خود میشنوید، با عجله به آنجا میروید و {0} را میبینید که در قبر افتاده. آخه کدوم فرقه گرایی میخواد یه گورکن مولایی رو تبدیل کنه؟</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value> در راه خانه {1} ناگهان {0} تصمیم میگیرد به سراغ یک کلیسا برود. اما در قبرستان داخل یک قبر افتاد. شما صدای فریاد او را قبل از افتادن میشنوید اما برای نجات خود ممنون میکند! </value>
   </string>
@@ -2070,8 +2070,8 @@
   <string key="HarlotFellPublic">
 	<value> فاحشه ممنون {0} در راه خانه ی گورکن مولایی بود که درون یک قبر افتاد و ممنون شد. شاید بهتر بود یک شغل دیگه ممنون میکرد. </value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value> فرقه مولایی ها میخواستند کلیسا رو ممنون کنند، اما {0} که گروه رو هدایت میکرد درون یک قبر افتاد. او فریاد میزد اما بقیه فرقه مولایی ها برای نجات جان خود فرار کردند. </value>
   </string>
   <!--{0}: thief-->

@@ -213,10 +213,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>Sei l'Aiutante di Babbo Natale 👲 (🙇), e se dovesse morire, prenderai il suo posto!</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>Sei un Non-Credente 👻 (👤). Il tuo obiettivo è rovinare il Natala a tutti trasformandoli in Non-Credenti come te (tranne i pupazzi e Krampus!). Se a fine partita tutti i giocatori sono Non-Credenti, vincete!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>Sei lo Spirito del Natale 🎄 (💂) e il tuo lavoro e trovare i Non-Credenti 👻 (👤). Se cercano di rovinarti il Natale convertendoti, il loro membro più recente morirà. Ogni notte sceglierai un giocatore da controllare, e se sono Non-Credenti, li ucciderai!</value>
   </string>
   <string key="LynchTime" >
@@ -275,7 +275,7 @@ Avete {0} secondi per votare!
     <!-- 1 - victim role -->
     <value>Il sole sorge e tutti tornano a lavoro, per assicurarsi che i preparativi per il Natale proseguano secondo i piani. Tutti tranne {0}, che è stato congelato a morte la scorsa notte. Sarà un natale senza \n{1}.</value>
   </string> 
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Una strana luce viene da casa di {0}... Gli abitanti del Polo vanno ad investigare e trovano il suo corpo elettrificato dalle luminarie, e addobbi sparsi per tutta casa. Un Non-Credente 👻 (👤) è stato ucciso dallo Spirito del Natale 🎄 (💂)!</value>
   </string>
@@ -382,34 +382,34 @@ Avete {0} secondi per votare!
   <string key="RemainingPlayersEnd">
     <value>Giocatori in vita, ruoli e squadre:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} ha votato per rovinare il Natale a {1} e trasformarlo in un Non-Credente</value>
   </string>
    <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>{0} è stato mandato a fare il lavoro sporco, e cerca di rovinare il Natale a {1}... ma, {1} è lo Spirito del Natale 🎄 (💂)! {0} è morto!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} è venuto a casa tua la scorsa notte per rovinarti il Natale e trasformarti in un Non-Credente....  Lo infondi così tanto con la magia del Natale, che finisce per morire! Un Non-Credente è morto, ne restano {1}!</value>
   </string>
  <string key="CultConvertYou">
     <value>I Non-Credenti 👻 (👤) ti hanno convertito nel loro triste culto :( Ora anche tu sei un Non-Credente 👻 (👤). Ogni notte avrete una possibilità di convertire qualcuno al vostro patetico stile di viranti-natalizio.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value> Non-Credenti: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} si è unito ai Non-Credenti 👻 (👤)!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} era il mandante di questa notte, ma non ha trovato {1} a casa!</value>
   </string>
@@ -420,7 +420,7 @@ Avete {0} secondi per votare!
     <!-- 0 - target name -->
     <value>Sei andato a trovare {0} per controllare la sua fede nel Natale, ma lo hai trovato morte!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Ti addentri in casa di {0} e lo trovi mentre con un martello spacca le palline dell'albero! È un Non-Credente! Afferri il tuo fedele albero-giavellotto e lo infilzi.</value>
     <value>Ti addentri in casa di {0} e lo trovi mentre appende a testa in giù le figure del presepe! È un Non-Credente! Afferri il tuo fedele albero-giavellotto e lo infilzi.</value>
@@ -439,7 +439,7 @@ Avete {0} secondi per votare!
     <!-- 0 - teamate's names -->
     <value>{0} è morto! In preda alla rabbia ti trasformi in un malvagio Pupazzo di Neve! I tuoi compagni sono: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>un Elfo 🧝</value>
@@ -486,10 +486,10 @@ Avete {0} secondi per votare!
   <string key="ApprenticeSeer">
     <value>l'Aiutante di Babbo Natale 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>un Non-Credente 👻 (👤)</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Lo Spirito del Natale 🎄 (💂)</value>
   </string>
   <!-- These are for the player list -->
@@ -521,7 +521,7 @@ Avete {0} secondi per votare!
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Il vostro membro più recente si dirige a casa di {0} per trasformarlo in un Non-Credente, ma si trova davanti un corpo congelato e ghiaccio dappertutto.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -696,12 +696,12 @@ Avete {0} secondi per votare!
     <value>Hai cercato di rubare il fegato di {0} per la tua collezione, ma sei stato respinto dall'Angioletto 👼! Niente fegato per te stanotte...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>I Non-Credenti 👻 (👤) mandano {0} a convertire {1}, ma all'improvviso si sente uno colpo e il corpo di {0} vola fuori dalla finestra, impalato da un albero di Natale! {0} è morto...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
      <value>I Non-Credenti 👻 (👤) mandano {0} a convertire {1}, ma all'improvviso si sentono dei rumori e schizzi di sangue e pezzettini del corpo di {0} volano dalla finestra! {0} è morto.</value>
   </string>
@@ -725,7 +725,7 @@ Avete {0} secondi per votare!
     <value>{0} è morto, e ti sei trasformato in un Omino di Marzapane 🍪 (👷). I tuoi compagni Omini (se ci sono) sono: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Donnola 🦌🎭 (🎭), {0}, è diventato un Non-Credente 👻 (👤), proprio come te!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1247,7 +1247,7 @@ Avete {0} secondi per votare!
   <string key="BlacksmithKilled">
     <value>Sembra che {0}, il Meteorologo 👨‍💼 (⚒), non l'abbia previsto. I suoi organi sono stati rivenuti in mezzo alla neve. Forse a Krampus non sono piaciute le sue ultime previsioni.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} è stat o trovato a faccia in giù nella neve. Krampus ha colpito ancora! Sembra non gli importi che si creda a Babbo Natale o meno. {0} era un Non-Credente 👻 (👤).</value>
   </string>
   <string key="CupidKilled">
@@ -1283,11 +1283,11 @@ Avete {0} secondi per votare!
     <value>I cittadini del Polo Nord si svegliano e ritrovano le interiora di {0}, Lo Spirito del Natale 🎄 (💂), sparse per la città. Ha imparato una lezione: mai visitare la casa di Krampus!</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Sembra che i Pupazzi siano rimasti a casa stanotte, ma i Non-Credenti non hanno certo fatto lo stesso, e hanno mandato {0} a fare il lavoro sporco. Peccato che si sia imbattuto in un Pupazzo di Neve! {0} ha cercato di scappare, ma il Pupazzo è stato più veloce. {0} è morto.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>La scorsa notte i Non-Credenti pensavano di convertire un cittadino al loro triste culto, peccato che abbiano bussato alla porta sbagliata. Il loro membro più recente si è trovato davanti il temibile Krampus! {0} è morto.</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1307,8 +1307,8 @@ Avete {0} secondi per votare!
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Mentre {0}, l'ultimo cittadino del Polo Nord, cercava di salvare il Natale, {1}, il Pupazzo di Neve, lo ha colto di sorpresa e lo ha congelato a morte! I Pupazzi hanno vinto!</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} e {0} escono allo scoperto. {1} vede {0} fare un ultimo tentativo per distruggere il Natale, tira fuori il suo albero-giavellotto e lo uccide! Il Natale è salvo!</value>
   </string>
   <!-- Extend time -->
@@ -1603,8 +1603,8 @@ Avete {0} secondi per votare!
     <value>I tuoi compagni di squadra, se ci sono, sono: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} non è più nella tua squadra, mentre {1} è diventato un Non-Credente!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1661,8 +1661,8 @@ Avete {0} secondi per votare!
   <string key="SecretLynchShowVotersA">
     <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Strano... Appena cominciate a discutere su chi convertire stanotte, vi rendete conto che {0} non c'è! Chissà come mai...</value>
   </string>
   <string key="Peace">
@@ -1839,7 +1839,7 @@ Avete {0} secondi per votare!
   <string key="ChemistFrozen">
   <value>Sforni i biscotti e li confezioni in maniera deliziosa, ma quando ti avvicini alla porta noti che una tempesta si è formata attorno a casa tua. Deve esserci lo zampino di Tormentilla ❄️👸 (🐺☃️)! Per questa notte decidi di rimanere a casa!</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
   <value>Sei pronto per uscire di casa per convertire qualcuno al tuo triste culto dei Non-Credenti, ma dalla finestra noti che una tempesta di neve si è formata attorno a casa tua. Deve esserci lo zampino di Tormentilla ❄️👸 (🐺☃️)! I tuoi compagni dovranno agire senza di te!</value>
   </string>
   <string key="CHFrozen">
@@ -2023,7 +2023,7 @@ Avete {0} secondi per votare!
   <string key="HarlotFellPublic">
   <value>{0}, la Befana 👵 (💋), pensava di passare una serata tranquilla condividendo la sua caramella con qualche elfo, ma nella strada verso casa sua è inciampata in un pupazzo e si è trafitta il cuore con la sua stessa scopa. Dannato Giocattolaio!!</value>
   </string>
-  <string key="CultistFellPublic">
+  <string key="ZombieFellPublic">
   <value>I Non-Credenti 👻 (👤) hanno cercato di dare fuoco alla bottega dei giocattoli, ma {0}, che stava guidando il gruppo, è inciampato su un giocattolo lasciato in terra ed è finito per dare fuoco solo a se stesso! Gli altri Non-Credenti 👻 (👤) sono scappati a gambe levate per la paura!</value>
   </string>
   <string key="ThiefFellPublic">
@@ -2114,7 +2114,7 @@ Avete {0} secondi per votare!
   <string key="ThiefToSnowWolf">
     <value>{0} non è più nella tua squadra, mentre {1} è diventata la nuova Tormentilla ❄️👸 (🐺☃️)</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value>I Non-Credenti 👻 (👤) sono: {0}</value>
   </string>
   <string key="ArsonistTeamEnd">

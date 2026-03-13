@@ -245,10 +245,10 @@
       <value>Du bist der Azubi des Wachmanns. 🙇\nDu stehst an zweiter Stelle. Aktuell noch ohne Fähigkeit, geduldig auf deinen Einsatz wartend. Du wünschst ihn dir nicht explizit herbei - immerhin wäre das der Wunsch nach der Arbeitslosigkeit des aktuellen Wachmanns - wenn er aber eintritt, dann ist deine Zeit gekommen und du wirst zu einem waschechten Wachmann.</value>
       <value>Du bist der Sti... äh Azubi vom Wachmann. 🙇\nDu wolltest schon immer Wachmann sein, doch leider waren deine Noten nicht gut genug, als du dich auf die Stelle beworben hast. Aus Mitleid darfst Du jetzt erstmal ne 3-jährige Ausbilung machen, bis dein Vorgänger ins Gras beißt. Dann fragt niemand mehr nach Abschluss!</value>
     </string>
-    <string key="RoleInfoCultist" >
+    <string key="RoleInfoZombie" >
       <value>Du bist ein Mobber. 👤\nJeden gott-verdammten Tag mobbst du und dein erbämliches Team jemanden. Es gibt welche, die dem Stand halten können und manche sind so schwach, dass sie mit euch mobben. Erbämlich...</value>
     </string>
-    <string key="RoleInfoCultistHunter" >
+    <string key="RoleInfoZombieHunter" >
       <value>Du bist der/die Gleichberechtigungsbeauftragte. 💂\nZuerst musst Du Deine Rolle 3-mal fehlerfrei aufsagen!\nUnd nun zu Deiner Aufgabe: Laut Meldungen wird in der Eierfabrik hartes Mobbing betrieben! Du musst das unterbinden und hast die Erlaubnis, Mobber selbst zu feuern.</value>
     </string>
     <string key="LynchTime" >
@@ -319,7 +319,7 @@
 	  <value>Als fast jeder sein Arbeitspensum geschafft hat, bemerken die Dorfbewohner eine schrecklich schwarze Farbspur. Sie folgen ihr und finden {0} 's Arbeitszeugnis 🐺. Er ist wohl völlig überstürzt aufgebrochen... {1}</value>
 	  <value>Es wird Feierabend und alle versammeln sich. Alle? Nein! Irgendwer fehlt... Dann fällt es euch ein: {0} fehlt ... Man steht etwas ratlos beisammen, erst dann bemerkt man das auseinandergerissene Schreiben des Chefs neben einem Haufen schwarzer Eier 🐺, er wurde gefeuert! {1}</value>
   	</string>
-  	<string key="HunterKilledCultist">
+  	<string key="HunterKilledZombie">
 	  <!-- 0 - victim name -->
 	  <!-- bezieht sich auf den Kultistenjäger -->
 	  <value>Während des Feierabend fällt sofort auf, dass {0} fehlt... Er ist nicht wirklich positiv zum Betriebsklima beigetragen... Ein Mobber 👤 wurde gefeuert von dem Ordnungshelfer 💂!</value>
@@ -430,20 +430,20 @@
     <string key="RemainingPlayersEnd">
       <value>Verbleibende lebende Maler, Rollen und Teams:</value>
     </string>
-    <string key="CultistVotedConvert" >
+    <string key="ZombieVotedConvert" >
       <!-- 0 - Voter's name -->
       <!-- 1 - target name -->
       <value>{0} hat gewählt, {1} zu einem Mobber zu machen.</value>
       <value>{0} will {1} mobben. Nett ist das nicht!</value>
     </string>
     <string key="CultConvertCultHunter">
-      <!-- 0 - Yougest Cultist (killed)'s name -->
+      <!-- 0 - Yougest Zombie (killed)'s name -->
       <!-- 1 - CultHunter's name -->
       <value>In diesem Tag war es die Aufgabe von {0}, eine weitere Person zu einem Mobber zu machen. Das Glück war anscheinend Anderen zuteil, da {1} als Glecihberechtigungsbeauftragte 💂 wohl so ziemlich das unglücklichste Ziel darstellte. Das Aufeinandertreffen hatte daher kein neues Kultmitglied zur Folge, sondern führte im Gegenteil zum Feuern eures jüngsten Mitglieds.</value>
     </string>
     <string key="CultHunterKilledCultVisit">
-      <!-- 0 - Youngest Cultist's name -->
-      <!-- 1 - Number of cultists left -->
+      <!-- 0 - Youngest Zombie's name -->
+      <!-- 1 - Number of Zombies left -->
       <value>{0} kommt zu deinem Arbeitsplatz, mit der festen Überzeugung, dich vom Mobbing zu überzeugen. Zu seinem Unglück durchschaust du die Masche deines Gegenübers und greifst, mehr aus Reflex als aus Wissen, nach deinem Telefon und lässt euren Chef mithören. Ein Mobber 👤 ist weg... {1} sind noch da!</value>
       <value>{0} versucht dich zu mobben. Doch du erinnerst dich an den Kurs "Umgang mit Mobbing" und reagierst so suverän, dass {0} nicht mehr mobben möchte. Leider will er auch nicht mehr mitarbeiten. Er verrät Dir aber noch, dass es noch {1} Mobber 👤 gibt.</value>
     </string>
@@ -451,15 +451,15 @@
       <value>Der Besuch eines Mobbers hat dich in deinem Glauben zutiefst erschüttert; dir wird klar, dass nur dessen Art die einzig Richtige sein kann und dass es dein Schicksal ist, ebenso ein Mobber 👤 zu sein. Jede Nacht suchst du dir mit deinen Mitmobbern einen Spieler aus, den einer von euch dann zu Überzeugen versucht, auch mitzumachen.</value>
     </string>
     <string key="CultTeam">
-      <!-- 0 - Number of cultists -->
+      <!-- 0 - Number of Zombies -->
       <value>Mobber: {0}</value>
     </string>
     <string key="CultJoin">
-      <!-- 0 - new cultist's name -->
+      <!-- 0 - new Zombie's name -->
       <value>{0} trat dem Mobbingteam bei!</value>
     </string>
     <string key="CultVisitEmpty">
-      <!-- 0 - Newest cultist's name -->
+      <!-- 0 - Newest Zombie's name -->
       <!-- 1 - target name -->
       <value>{0} wurde gesendet, um {1} zu überzeugen... aber keiner war am Malen!</value>
     </string>
@@ -470,7 +470,7 @@
       <!-- 0 - target name -->
       <value>Deine Abneigung richtet sich gegen Mobber, nicht gegen bereits gefeuerte Personen. Was machst du also hier bei {0}?</value>
     </string>
-    <string key="HunterFindCultist">
+    <string key="HunterFindZombie">
       <!-- 0 - target name -->
       <value>Um deinem Gleichstellungsauftrag nachzukommen, gehst du zum Arbeitsplatz von {0}, um nachzuschauen, ob er jemanden mobbt. Zu deinem großen Vergnügen tut er das, was Augenblicklich zu einem Anruf beim Boss und dem Feuern von {0} führt.</value>
     </string>
@@ -485,7 +485,7 @@
       <!-- 0 - role's name -->
       <!-- 1 - teamate's names -->
       <value>{0} wurde gefeuert! In deiner Wut wurdest du zu einem Emos 🐺! Die anderen Emos sind: {1}</value></string>
-    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter -->
+    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter -->
     <string key="Villager">
       <value>ein Maler 👱</value>
     </string>
@@ -531,10 +531,10 @@
     <string key="ApprenticeSeer">
       <value>der Sti... äh Auszubildene des Wachmanns 🙇</value>
     </string>
-    <string key="Cultist">
+    <string key="Zombie">
       <value>ein Mobber 👤</value>
     </string>
-    <string key="CultistHunter">
+    <string key="ZombieHunter">
       <value>der Gleichstellungsbeauftragte 💂</value>
     </string>
 
@@ -573,7 +573,7 @@
 
     <!-- new strings May 6 2016-->
     <string key="CultTargetDead">
-      <!-- 0 - Youngest cultists name -->
+      <!-- 0 - Youngest Zombies name -->
       <!-- Vorlage
 		<value>Euer neuestes Mitglied lief zum Haus von {0}, um ihn zu bekehren, aber das Haus war vollkommen zerstört, überall Blut, und Fäden eines Wolfsfells 🐺 vor der Tür...</value>
     -->
@@ -789,7 +789,7 @@
       <value>Du hast versucht, den Arbeitstag von {0} mit deinen Geschenken zu vermiesen, wurdest aber von Rafael 👼 abgewehrt! Diesmal hat es nicht geklappt :/</value>
     </string>
     <string key="CultConvertHunter">
-      <!-- 0 - Youngest Cultist's name -->
+      <!-- 0 - Youngest Zombie's name -->
       <!-- 1 - target's name -->
       <value>Das Mobbingteam sendet {0}, um {1} zu überzeugen, doch stattdessen hört man einen wütenden Schrei 🎯, kurz bevor euer jüngstes Mitglied aus der Firma geworfen wird! {0} ist gefeuert...</value>
     </string>
@@ -819,7 +819,7 @@
       <value>{0} ist gestorben, und du verwandelst dich in einen Eier-Freikünstler 👷. Deine Kameraden sind (falls vorhanden): {1}</value>
     </string>
     <string key="DGToCult">
-      <!-- 0 - new cultist's name -->
+      <!-- 0 - new Zombie's name -->
       <value>Der Goldhase 🎭 {0} ist zum Mobber geworden, genau wie du!</value>
     </string>
     <string key="DGTransformToCult">
@@ -1401,7 +1401,7 @@
     <string key="BlacksmithKilled">
       <value>Bestürzt guckt ihr euch um. Ja, es stimmt: {0}, der Farbmaschienenmechaniker ⚒, wurde gefeuert. Ganz klar das Werk von jemanden, der Farbe nicht scheut: Der Weihnachtsmann hat zugeschenkt 🔪.</value>
     </string>
-    <string key="CultistKilled">
+    <string key="ZombieKilled">
       <value>Eigentlich freut man sich ja nicht, wenn ein Kollege den Arbeitsplatz verlässt. Aber bei {0} ist das ein anderer Fall: Sein Mobbing 👤 war echt grässlich. Eigentlich gut, dass der Weihnachtsmann 🔪 sich mit seinem messerscharfen Geschenken drum gekümmert hat...</value>
     </string>
     <string key="CupidKilled">
@@ -1452,13 +1452,13 @@
       <value>Der Körper von {0}, dem Kultjäger 💂 wurde bis zur Unkenntlichkeit verstümmelt auf dem Altar der Kirche gefunden. Den Serienmörder für einen Kultisten zu halten war eindeutig sein letzter Fehler...</value>-->
     </string>
     <string key="CultConvertWolfPublic">
-      <!-- used when Cultists convert the wolves, only if wolves stayed home -->
+      <!-- used when Zombies convert the wolves, only if wolves stayed home -->
       <value>Da will man als Emo 🐺 einmal seine schwarzen Eier behalten... Aber wenn man von {0} schon wegen Mobbing 👤 angesprochen wird, wie soll man da wiederstehen?</value>
       <!--<value>Eigentlich wollten die Wölfe  letzte Nacht ja fasten (wie vorbildlich!) - aber wer kann schon der Versuchung einerskleinen Mitternachtsnack auf zwei Beinen widerstehen?! Richtig: niemand. Das musste {0} am eigenen Leib erfahren, auch sein Glaube konnte den Kultisten 👤 nicht vor den scharfen Zähnen der Wölfe beschützen...</value>
       <value>Das Leben als Kultist 👤 ist nicht leicht. Nicht nur muss man sich davon erholen, bisher ein Leben lang an das Falsche geglaubt zu haben, nein, es stehen auch noch immer diese Nachtwanderungen auf dem Programm. {0} verirrte sich dabei letzte Nacht in das Haus eines ruhenden Werwolfs 🐺, war aber selbst ebenfalls zu müde, um wegzurennen - am Morgen kann er es nicht mehr, nur noch die Knochen sind von seinen Beinen übrig geblieben. So wie es aussieht, haben Werwölfe kein Interesse daran, sich neuen kultigen Kreisen anzuschließen....</value>-->
     </string>
     <string key="CultConvertKillerPublic">
-      <!-- used when Cultists convert the SK -->
+      <!-- used when Zombies convert the SK -->
       <value>Hmmm... Dass der Mobber 👤 jetzt fehlt, ist ja nicht so schlimm. Aber der Weihnachtsmann 🎅🔪 scheint noch sein Unwesen zu treiben. {0} wurde mit Geschenken überhäuft und gefeuert!</value>
       <!-- Strangely their "holy" book was found stabbed with a knife, as if a statement to show whose religion was triumphant.</value>
       Hast du das gesucht? Nö, stand schon da. <value>Was für ein Fehler... Die Kultisten 👤 haben letzte Nacht die einzige Person im Dorf besucht, die noch verrückter ist als sie selbst. Dafür können alle Bewohner heute ein abstraktes Kunstwerk, bestehend aus den zerstückelten Organen des verstorbenen {0}, vor dem Rathaus bestaunen. Vielleicht nicht jedermanns Geschmack... aber der Serienmörder 🔪 hat seinen ganz eigenen Sinn für Ästhetik.</value>
@@ -1489,8 +1489,8 @@
       <!-- <value>Aus gutem Grund hat {1} sich den Jäger 🎯 bis zuletzt aufgespart: mit seinem Gewehr ist er schon eine einschüchternde Erscheinung, doch scharfe Werwolfklauen sind schließlich auch eine nicht zu unterschätzende Waffe. Mit seiner gesammelten Erfahrung 🐺 war der arme {0} mit seiner Büchse allerdings chancenlos: mit seinem Tod stirbt der letzte menschliche Bewohner des Dorfes...</value>
       <value>Was ein schlauer Wolf. 🐺 Obwohl {0} die längste Zeit überaus wachsam war, hat jener es doch geschafft, ihn in einem unaufmerksamen Moment zu erwischen. Den letzten Dorfbewohner zu töten war dann keine schwere Aufgabe mehr für {1} und alles was jetzt von {0}, dem Jäger 🎯, noch übrig bleibt, ist sein Kopf, geziert mit zwei langen Kratzern.</value> -->
     </string>
-    <string key="CHKillsCultistEnd">
-      <!--{0} = last cultist's name, {1} = CH's name -->
+    <string key="CHKillsZombieEnd">
+      <!--{0} = last Zombie's name, {1} = CH's name -->
       <value>{0} reibt sich die Hände. Nur noch {1} ist angestellt. Wenn man jetzt noch schnell über Mobbing 👤 redet, könnte man gewinnen - Dumm nur, dass {1} ausgerechnet die Gleichstellungsbeauftragte 💂 ist. Sie (und die Gleichberechtigung) haben gewonnen!</value>
       <!--<value>Auch wenn dem Dorf nur noch zwei Personen geblieben sind, freut sich {1} auf die Aussicht, in dieser Nacht dem Kult entgültig den Garaus zu machen, obgleich die letzte andere überlebende Person im Dorf ein Kultist sein mag oder nicht - die Gewissheit zählt. In gewohnter Montur und Manier ist das Vorhaben für den Kultistenjäger 💂 kein Problem, den Job erledigt er immerhin jede Nacht. Und tatsächlich wird er fündig! Ein schimmerndes Kreuz, das sich auf einem Tisch im Eingang des Hauses von {0} befindet, verrät eindeutig, dass hier ein Kultist 👤 hausen muss. Doch fehlt jede Spur des Enttarten. Hinter ein großen Vase vor dem Haus versteckt, wartet {1} auf den erst am Morgen zurückkehrenden Kultisten. Was dieser in der Nacht getrieben hat, lässt {1} zwar erschaudern, kann ihn aber nicht daran hindern, sich von hinten zu nähern und das Dorf um eine weitere Person zu dezimieren.</value>
       <value>{1} und {0} laufen gemeinsam auf das Zentrum des Dorfes zu. Als {0} plötzlich beginnt, von seinem Kult 👤 zu erzählen, zögert der Andere nicht lange und erhebt sein Schwert ein letztes Mal, auf dass die falsche Lehre des Kultes dem Dorf nie wieder schaden könne. Der Kultistenjäger 💂 schwört, das Dorf auch weiterhin vor fremden und unheimlichen Kulturen zu verteidigen - auch wenn er so wohl auf lange Zeit der einzige Bewohner bleiben wird...</value>-->
@@ -1869,7 +1869,7 @@
   </string>
 
 
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>Das Mobbing-Team 👥 besteht aktuell aus: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1920,7 +1920,7 @@
   <string key="ChemistFrozen">
     <value>Das ist auch selten! Während du deine neuen Ostereier vorstellst, stellt der Eismacher 🐺❄️ dir einen Eisbecher neuer Eis-Kreationen entgegen. Die Gefahr ignorierend greifst du zu und isst auf. Dabei vergesst ihr völlig, die neuen Ei-Kreationen zu verkosten.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Hochmotiviert, das Mobbing auf die Spitze zu treiben, siehst du einen großen Eisbecher 🐺❄️ an deinem Platz. Mit Nüssen und Nuss-Nougat-Sauce? Da greifst du zu, die Gefahr des Brain-Freeze ignorierend. So gut gelaunt hast du keine Lust auf Mobbing, aber hast auch keine Zeit, es ist ein echt großer Eisbecher!</value>
   </string>
   <string key="CHFrozen">
@@ -2024,8 +2024,8 @@
 	<value>Ist geheimes Lynchen aktiviert und die Anzahl der Stimmen wird angezeigt, dann wird der Name der Wähler eines Gewählten: {0}</value>
   </string>
 
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Komisch... Ihr seid zusammen gekommen, um zu wählen, wen ihr heute mobben wollt. Doch irgendwer fehlt... {0}! Wo der sich wohl rumtreibt?</value>
   </string>
 
@@ -2208,7 +2208,7 @@
   <string key="HarlotFellPublic">
 	<value>Ihr vermisst den Hasen 💋 {0} gerade, da fällt euch der komische Gestank auf, riecht irgendwie verbrannt. So als wäre ein UFO 🛸 unterwegs und ein Alien 👽/☠️ unter euch.</value>
   </string>
-  <string key="CultistFellPublic">
+  <string key="ZombieFellPublic">
 	<value>Ihr vermisst {0} gerade, da fällt euch der komische Gestank auf, riecht irgendwie verbrannt. So als wäre ein UFO 🛸 unterwegs und ein Alien 👽/☠️ unter euch. Aber das gute ist, dass {0} Mobbing betrieb 👤, auch wenn wohl das Mobbing nicht mit ihm die Firma verließ.</value>
   </string>
   <string key="ThiefFellPublic">

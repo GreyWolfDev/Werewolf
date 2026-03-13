@@ -205,10 +205,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Eres La Popis. Aprendiz de Doña Florinda 🙇‍♂. ¡Tenga, tenga, tenga, tenga y tenga!. Sí Doña Florinda muere, ocuparás su puesto.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Eres un Alumno Copión 👤. ¡Gozas haciendo trampas! Cada noche puedes elegir a otro jugador para convertirlo en un Alumno copión. Si al final de la partida todos los jugadores vivos son Alumnos Copiones, ganas.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Eres El Profesor Jirafales 💂‍♂, ¡Ta, ta, ta, ta, ta! tu trabajo es acabar con los Alumnos copiones. Si los Alumnos quieren robar tus apuntes para copiarse, su miembro más reciente morirá. Cada noche escogerás a que jugador vas a «cazar»; si es alumno copión, morirá.</value>
   </string>
   <string key="LynchTime" >
@@ -265,7 +265,7 @@
     <!-- 1 - victim role -->
     <value>Al levantarse todo el mundo, un olor terrible inunda la vecindad. Siguen el rastro hasta encontrar a {0} muerto en las escaleras, con un tiro en la frente...  ¡Bang! {1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Un gran hedor viene de la casa de {0}. Los vecinos la inspeccionan hasta encontrar un cuerpo yaciente junto a unas copias de la tarea de mañana. ¡Un Alumno Copión ha sido asesinado por El Marshall 🎯!</value>
   </string>
@@ -371,34 +371,34 @@
   <string key="RemainingPlayersEnd">
     <value>Jugadores restantes, roles y equipos:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} ha votado convertir a {1}.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>Enviaron a {0} para hacer el trabajo sucio y convertir a {1}...; sin embargo, ¡era El Profesor Jirafales💂‍♂️!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} vino a tu casa esta noche para que te unieras a su causa…, pero no contaba con que eras El Profesor Jirafales y lo expulsaste de una. Un Alumno Copión ha muerto… ¡Queda(n) {1}!</value>
   </string>
   <string key="CultConvertYou">
     <value>¡Los Alumnos Copiones te ha convertido a su grupo! Ahora eres un Alumno Copión más. Cada noche tendrás ocasión de convertir a otra persona.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Alumnos Copiones: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>¡{0} se ha unido a Los Alumnos Copiones!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} fue enviado a hacer el trabajo sucio y convertir a {1}..., ¡pero no había nadie en casa!</value>
   </string>
@@ -409,7 +409,7 @@
     <!-- 0 - target name -->
     <value>¡Fuiste a cazar a {0}, pero ya estaba muerto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Vas a la casa de {0} y te lo encuentras concentrado copiando la tarea … Rápidamente, le quitas tus apuntes, le pones mala calificación y lo expulsas en el acto.</value>
   </string>
@@ -426,7 +426,7 @@
     <!-- 0 - teamate's names -->
     <value>¡{0} ha muerto! En un ataque de rabia, ¡te has convertido en Secuaz de El Shory! Tus nuevos compañeros son: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>un Vecino 👱</value>
   </string>
@@ -472,10 +472,10 @@
   <string key="ApprenticeSeer">
     <value>La Popis 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Alumno Copión 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>El Profesor Jirafales 💂</value>
   </string>
 <!-- These are for the player list -->
@@ -507,7 +507,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>El miembro más reciente de los Alumnos Copiones fue a convertir a {0} a su casa, pero en su lugar encontró la casa destrozada, sangre por todas partes y pisadas de los Secuaces de El Shory en la entrada.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -690,12 +690,12 @@ Nota: Los enamorados se conocen entre sí, pero no saben sus roles. Si estos son
     <value>Quisiste incorporar el cuerpo de {0} para tu colección, ¡pero Ñoño lo protegió! No ha habido muertes esta noche.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Los Alumnos Copiones envían a {0} para intentar convertir a {1}, pero en vez de eso, suena un disparo y ¡el cuerpo de {0} sale volando por la ventana! {0} ha muerto.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Los Alumnos Copiones envían a {0} para intentar convertir a {1}, pero en vez de eso, el cuerpo de {0} sale volando por la ventana, ¡con cuchillos clavados por todo el cuerpo! ¡QUÉ PSICÓPATA! {0} ha muerto.</value>
 	<value>{0} se cuela en casa de {1}, abre la puerta, ¡¡y es recibido por un loco con un cuchillo!! {1} hunde el cuchillo en cada uno de los órganos internos de {0} por orden alfabético, ¡carcajeando todo el tiempo! {0} ha muerto.</value>
@@ -720,7 +720,7 @@ Nota: Los enamorados se conocen entre sí, pero no saben sus roles. Si estos son
     <value>{0} ha muerto y tú te conviertes en Reportero. Tus compañeros del periódico (si los hay) son: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>El Chamois (doble) {0} se ha convertido en Alumno Copión, ¡igual que tú!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1270,7 +1270,7 @@ Nota: Los enamorados se conocen entre sí, pero no saben sus roles. Si estos son
   <string key="BlacksmithKilled">
     <value>Parece que {0}, El Sargento Refugio, ha tenido muy mala suerte durante la noche, ya que se lo ha encontrado en su patrulla junto con 5 cuchillos clavados en manos, pies y cabeza. Tal vez El Pocastrancas tenía la esperanza de ampliar su colección de órganos con el corazón, hígado y estómago de {0}.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} fue apuñalado hasta la muerte con un lapiz al lado de su silla. ¡El Pocastrancas ha atacado de nuevo, sin importarle nada! {0} era un Alumno Copión.</value>
   </string>
   <string key="CupidKilled">
@@ -1306,11 +1306,11 @@ Nota: Los enamorados se conocen entre sí, pero no saben sus roles. Si estos son
     <value>Los vecinos se despertaron por la mañana y se encontraron los restos del cuerpo de {0}, El Profesor Jirafales, cortados en pedazos en un carro al lado de la Escuela. Lección aprendida: ¡no hay que visitar a El Pocastrancas!</value>
     <value>El cuerpo de {0}, El Profesor Jirafales, fue encontrado en el centro de la ciudad cortado en un centenar de piezas. Comprobar si la El Pocastrancas era un Los Alumno Copión no parece ser una buena idea.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Aunque parecía que Los  secuaces de El Shory habían decidido quedarse en casa, un Alumno Copión decidió visitarlos, siendo demasiado difícil de resistir para Los  secuaces de El Shory. ¡La cabeza de {0} se convirtió en un blanco para sus tiros!</value>
     <value>Los Alumnos Copiones se encontraron con problemas inesperados anoche. Su miembro más reciente, {0}, tuvo la desgracia de visitar a un secuaz de El Shory, justo la noche que estos habían decidido quedarse en casa. Desafortunadamente para los Alumnos Copiones, Los  secuaces de El Shory no tienen ningún interés en unirse a ningún grupo de tramposos y era una oportunidad que no podían dejar pasar. {0} ha muerto.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Los Alumnos Copiones pensaban que tendría un nuevo miembro en su grupo, pero ¡nada más lejos de la realidad! {0}, un Alumno Copión, fue descuartizado y sus restos fueron esparcidos por todo el pueblo. Los apuntes con las copias fueron encontrados junto a un cuchillo, como muestra clara de quien es el que manda.</value>
     <value>Anoche, Los Alumnos Copiones trataron de convertir al vecino más loco de la vecindad. Su miembro más reciente, {0}, trató de convertir a El Pocastrancas, y este hizo una nueva obra de arte en la patio de la vecindad, exhibiendo a todos sus órganos internos.</value>
   </string>
@@ -1331,8 +1331,8 @@ Nota: Los enamorados se conocen entre sí, pero no saben sus roles. Si estos son
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{1} sabe que en la vecindad solo queda {0}, así que aprovecha mientras {0} está ocupado limpiando el arma en su casa y se mete para matarlo, {0} ha muerto.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} y {0} se encuentran en la plaza del pueblo. Sin embargo, {1} hoy no tiene ganas de molesta y antes de que {0} pueda mostrarle ls copia, se abalanza sobre él le quita los apuntes y lo expulsa. {0} era el último Alumno Copión</value>
   </string>
   
@@ -1437,7 +1437,7 @@ Nota: Los enamorados se conocen entre sí, pero no saben sus roles. Si estos son
     <value>Todas</value>
   </string>
     <string key="RandomModeQ">
-    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan cultistas, necio o veterano.\nActualmente:{0}</value>
+    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan Zombieas, necio o veterano.\nActualmente:{0}</value>
   </string>
   <string key="RandomModeA">
     <value>Modo aleatorio: {0}</value>
@@ -1636,8 +1636,8 @@ Nota: Los enamorados se conocen entre sí, pero no saben sus roles. Si estos son
     <value>Tus compañeros (si los hay) son: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} ya no forma parte de tu equipo, y {1} se ha convertido en Alumno Copión, ¡como tú!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1694,8 +1694,8 @@ Nota: Los enamorados se conocen entre sí, pero no saben sus roles. Si estos son
   <string key="SecretLynchShowVotersA">
     <value>Cuando los linchamientos secretos estén activados y se muestre el recuento de votos, el nombre del votante por cada jugador votado será del siguiente modo: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>¡Qué extraño! Mientras discutes a quién convertir esta noche, te das cuenta de que… ¡{0} no está por aquí! 🤔 ¿Qué le habrá pasado?</value>
   </string>
   

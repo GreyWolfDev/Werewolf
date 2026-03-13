@@ -127,9 +127,9 @@
     <value>Usted es Jabba el Hutt, Se te revelará mediante tus contactos en Tatooine la identidad del maestro Yoda.(y no C3PO). ¡Utiliza esto para ayudar a los Jedi!</value>
   </string><string key="RoleInfoApprenticeSeer">
     <value>Usted es Luke Skywalker, por ahora, eres un padawan normal. Sin embargo, si el Maestro Yoda muere, te convertirás en el nuevo Maestro más poderoso del lado luminoso y podrás elegir a un jugador y saber su rol.</value>
-  </string><string key="RoleInfoCultist">
+  </string><string key="RoleInfoZombie">
     <value>Como un Caballero de Ren, tu objetivo es convertir a todos los otros jugadores (excepto los soldados clon) a su orden de culto a Darth Vader. Si al final del juego, todos los jugadores de la partida vivos son Caballeros de Ren – La Primera Orden gana.</value>
-  </string><string key="RoleInfoCultistHunter">
+  </string><string key="RoleInfoZombieHunter">
     <value>Los Caballeros de Ren estan intentando dominar la galaxia y usted, Rey, ¡Debe defenderla! Durante la noche podrás usarla fuerza para investigar a alguien. Si es un Caballero de Ren, él/ella muere.  Si los caballeros de Ren tratan de convertirte, el último miembro que se unió a la orden de los caballeros de Ren muere..</value>
   </string><string key="LynchTime">
     <value>La noche se acerca y los Jedi se reúnen para decidir quién será expulsado del templo por estar cerca del lado oscuro... ¡Todo el mundo tiene ahora {0} segundos para votar!</value>
@@ -158,7 +158,7 @@
     <value>A medida que el sol se levanta sobre Coruscant, los padawan encuentran a {0} acostado encima de una mesa usada, ¿¿¿¿CON UNA TÚNICA JEDI???? JAJAJAJAJA QUE FAIL, {0} era C3PO</value>
   </string><string key="DefaultEaten">
     <value>A medida que todos se levantan para hacer sus tareas diarias, sienten un olor horrible. Ellos siguen el olor para encontrar {0} descuartizado/a en el patio del templo. La orden 66 ha sido ejecutada.\n{1}</value>
-  </string><string key="HunterKilledCultist">
+  </string><string key="HunterKilledZombie">
     <value>Un gran grito viene de la habitación de {0}. Los padawans la inspeccionan hasta encontrar un cuerpo yaciente frente a un altar con la insignia de los caballeros de Ren. ¡Un caballero de ren ha sido asesinado por Darth Maul</value>
   </string><string key="NoAttack">
     <value>Los Jedi y sus padawans se reunen en la sala central del Templo, no hay perturbaciones en la fuerza. Parece que esta noche no ha habido ningún ataque.</value>
@@ -214,7 +214,7 @@
     <value>¡Oh no! ¡Han expulsado al Cazarrecompensas del Templo! Él ha ganado la partida.</value>
   </string><string key="RemainingPlayersEnd">
     <value>Jugadores restantes, roles y facción:</value>
-  </string><string key="CultistVotedConvert">
+  </string><string key="ZombieVotedConvert">
     <value>{0}  ha votado para revelarle la historia del gran Lord Sith Darth Vader y reemplazar a {1} por un caballero de Ren.</value>
   </string><string key="CultConvertCultHunter">
     <value>{0} fue enviado para revelar la historia del gran Lord Sith Darth Vader y reemplazar {1} por un caballero de Ren... Sin embargo, ¡Ella era Rey, y tenía un gran manejo de la fuerza, sobradamente para derrotar a un caballero de Ren! Has sido derrotado, Rey te ha matado. </value>
@@ -232,7 +232,7 @@
     <value>Todos los Jedi murieron y los únicos sobrevivientes son los Caballeros de Ren ... ¡La Orden de Ren venció!</value>
   </string><string key="HunterVisitDead">
     <value>Usted fue a investigar a {0}, ¡Pero al llegar allí encontró en la fuerza sentimientos de tristeza y soledad!</value>
-  </string><string key="HunterFindCultist">
+  </string><string key="HunterFindZombie">
     <value>Vas a la habitación de {0} y te lo encuentras meditando frente al simbolo de la Orden de Ren… Rápidamente, introduces tu sable en el pecho y le das muerte en el acto..</value>
   </string><string key="HunterFailedToFind">
     <value>Usted entra en la habitación de {0} pero no se ve ningún símbolo de la Orden de Ren. {0} no forma parte de los Caballeros... Todavía...</value>
@@ -240,7 +240,7 @@
     <value>El gran ejemplo a seguir de {0} acaba de morir. ¡En ataque de furia, se ha convertido al lado oscuro!</value>
   </string><string key="WildChildTransform">
     <value>¡{0} ha muerto! ¡En un ataque de furia, usted se convierteal lado oscuro! Sus nuevos compañeros son: {1}</value>
-  </string><!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter--><string key="Villager">
+  </string><!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter--><string key="Villager">
     <value>Simple Padawan👱</value>
   </string><string key="Drunk">
     <value>Jar Jar Binks 🍻</value>
@@ -270,9 +270,9 @@
     <value>Jabba the Hut 👁</value>
   </string><string key="ApprenticeSeer">
     <value>Luke Skywalker 🙇</value>
-  </string><string key="Cultist">
+  </string><string key="Zombie">
     <value>un Caballero de Ren 👤</value>
-  </string><string key="CultistHunter">
+  </string><string key="ZombieHunter">
     <value>Rey 💂</value>
   </string><!-- These are for the player list --><string key="RanAway">
     <value>🏃</value>
@@ -385,11 +385,11 @@
   </string><string key="GuardBlockedKiller">
     <value>Fuiste a divertirte un poco con {0}. ¡Pero llegando allí, Obi Wan Kenobi acabó con tu diversión! Sin bromas esa noche</value>
   </string><string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Los caballeros de Ren mandan a {0} para revelar la historia del gran Lord Sith Darth Vader y sustituir {1} por un caballero de Ren. Llegando allí {0} es recibido con ¡Un golpe de sable laser que atraviesa su pecho! {0} está muerto...</value>
   </string><string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Los caballeros de Ren mandan a {0} para revelar la historia del gran Lord Sith Darth Vader y sustituir {1} por un caballero de Ren. Al llegar allí descubre que fue una pérdida de tiempo, sólo siente odio y furia, sin tener nada que hacer {0} regresó a su cuarto...</value>
     <value>Los caballeros de Ren mandan a {0} para revelar la historia del gran Lord Sith Darth Vader y sustituir {1} por un caballero de Ren. Al llegar allí descubre que fue una pérdida de tiempo, sólo siente odio y furia, sin tener nada que hacer {0} regresó a su cuarto...</value>
@@ -750,7 +750,7 @@
     <value>El templo Jedi despierta y encuentra el cuerpo de Luke Skywalker hecho pedazos, es un día triste en el templo... ¡{0} murió</value>
   </string><string key="BlacksmithKilled">
     <value>Parece que {0}, R2D2, tuvo mucha mala suerte. Se encontraron solo pedazos de lo que era. ¡El general Grievous tuvo su fiesta!</value>
-  </string><string key="CultistKilled">
+  </string><string key="ZombieKilled">
     <value>Por la mañana todos encuentran la armadura de {0}. Al general Grievous no le importa detalles como la raza, ¡Todos los Jedi son posibles sables para añadir a su colección! Los soldados clon perdieron a {0}...</value>
   </string><string key="CupidKilled">
     <value>>Los padawans y los maestros encuentran el cuerpo de {0} partido en dos, Snoke está muerto. Es extraño el hecho de muera habiendo hablado tan poco de su personaje, claramente una obra macabra más de El general Grievous.</value>
@@ -774,10 +774,10 @@
     <!--used when CH visits SK-->
     <value>El templo Jedi se despertó esta mañana sólo para encontrar un cuerpo desmembrado y sin vida.{0}, Rey, investigó a la persona equivocada. El general Grievous utilizó todos los métodos de tortura que se pueden imaginar.</value>
   </string><string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Pésima elección de los caballeros de Ren al visitar un soldado clon que decidió quedarse en su dormitorio durante la noche. {0} fue expulsado del templo Jedi. Los padawan parecen conocer una buena forma de apartar a los caballeros de Ren</value>
   </string><string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>Por la mañana los padawans y sus maestros se despiertan en medio de ruidos, todos van tras los sonidos y paran cerca de la entrada al templo. Ellos divisan a alguien apartar a un caballero de Ren. Los caballeros de Ren deben pensar bien en quién visitar, pues, al general Grievous no le importa el bando, ¡Todos son víctimas para él! Los caballeros de Ren perdieron a {0}...</value>
   </string><string key="GAGuardedKiller">
     <value>{0}  se encontró frente a una persona equivocada durante la noche. Se encontraron marcas extrañas en las paredes del pasillo que llevaba a uno de los dormitorios, y la investigación de los padawans y maestros concluyó que alguien destruyó al Maestro Obi Wan Kenobi. Un mensaje sonó en el templo jedi &quot;Fue el general Grievous&quot; todos supieron que el despiadado general había sido el culpable.</value>
@@ -787,7 +787,7 @@
     <value>Sólo {0} y {1} sobrevivieron, y {1} Darth Maul, quería cambiar eso... En medio de la noche, se dirigió al dormitorio de {0}, sin pensar que no sería fácil matar a Darth Maul. Lo que restó de {1} fue un pedazo de su brazo con el blaster aún en su mano. ¡El último soldado clon murió</value>
   </string><string key="WolfKillsHunterEnd">
     <value>Sólo {0} y {1} sobrevivieron, y {1} quería cambiar eso... En medio de la noche, se dirige al dormitorio de {0}, que todavía estaba durmiendo. Lo que restó de {0} fue sólo su mano, sosteniendo su icónico sable laser.</value>
-  </string><string key="CHKillsCultistEnd">
+  </string><string key="CHKillsZombieEnd">
     <value>Al llegar cerca de {0} y sentir un perturbamiento en la fuerza, {1} ya se da cuenta que {0} fue sustituido por un caballero de Ren. Entonces, {1} toma su sable laser por última vez cogiendo impulso contra {0}. Ahora el templo Jedi está a salvo de la invasión de los caballeros de Ren.</value>
   </string><string key="SecondsAdded">
     <value>El tiempo para unirse se ha ampliado en {0} segundos! Ahora quedan {1} segundos para unirse a la partida!</value>
@@ -876,7 +876,7 @@
     <value>Todas</value>
   </string>
     <string key="RandomModeQ">
-    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan cultistas, necio o veterano.\nActualmente:{0}</value>
+    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan Zombieas, necio o veterano.\nActualmente:{0}</value>
   </string>
   <string key="RandomModeA">
     <value>Modo aleatorio: {0}</value>

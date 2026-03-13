@@ -212,10 +212,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>Dat is vreemd... Je kunt je niet herinneren wie je bent!</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Dat is vreemd... Je kunt je niet herinneren wie je bent, alleen dat je 's nachts iets moet doen!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Dat is vreemd... Je kunt je niet herinneren wie je bent, alleen dat je 's nachts iets moet doen!</value>
   </string>
   <string key="RoleInfoHunter">
@@ -307,7 +307,7 @@
 	<!-- 1 - victim role -->
     <value>Iedereen wordt langzaam wakker... maar wat riekt er daar? Het spoor wordt gevolgd tot een schuur, die vlug opengebroken wordt. Binnen ligt het lijk van {0}, half opgevreten. NOMNOMNOMNOM {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 	<!-- 0 - victim name -->
     <value>Er komt een geurtje uit het huis van {0}...een paar dorpelingen schoppen de deur open, om een lijk te vinden, uitgespreid in een vijfpuntig symbool, wat afgehakte tentakels ernaast... een Sektelid 👤 is vermoord door de Sektejager 🎯!</value>
   </string>
@@ -413,34 +413,34 @@
   <string key="RemainingPlayersEnd">
     <value>Plots kunnen de overlevende spelers zich alles herinneren! Hun namen, rollen en facties:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
 	<!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} heeft gestemd om iets te doen bij {1}</value>
   </string>
   <string key="CultConvertCultHunter">
-	<!-- 0 - Yougest Cultist (killed)'s name' -->
+	<!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>{0} ging naar {1} toe en nu is {0} dood!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-	<!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+	<!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} is dood! Er spookt een nummer door je hoofd... {1}</value>
   </string>
   <string key="CultConvertYou">
     <value>Je rol is veranderd, maar van wat, en naar wat?</value>
   </string>
   <string key="CultTeam">
-	<!-- 0 - Number of cultists -->
+	<!-- 0 - Number of Zombies -->
     <value>Je mag dan vergeten zijn wie jij bent, maar je herinnert je wel een belangrijk nummer: {0}</value>
   </string>
   <string key="CultJoin">
-	<!-- 0 - new cultist's name -->
+	<!-- 0 - new Zombie's name -->
     <value>Te midden van alle namen in je hoofd verschijnt er een nieuwe: {0}!</value>
   </string>
   <string key="CultVisitEmpty">
-	<!-- 0 - Newest cultist's name -->
+	<!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} ging naar {1} toe, maar was blijkbaar vergeten dat {1} niet thuis was!</value>
   </string>
@@ -451,7 +451,7 @@
 	<!-- 0 - target name -->
     <value>Je bent vergeten waarom je hier bent. En {0} is dood!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
 	<!-- 0 - target name -->
     <value>Is er iets gebeurd bij {0} thuis vannacht? Je kunt het je niet herinneren...</value>
   </string>
@@ -468,7 +468,7 @@
     <!-- 1 - teamate's names -->
     <value>{0} is dood! Je rol is veranderd, maar van wat, en naar wat? Je mag dan vergeten zijn wie jij bent, maar je herinnert je wel een belangrijk iemand: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter, Hunter, Cupid, SerialKiller, Doppelgänger, Mason-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter, Hunter, Cupid, SerialKiller, Doppelgänger, Mason-->
   <string key="Villager">
     <value>een Burger 👱</value>
   </string>
@@ -514,10 +514,10 @@
   <string key="ApprenticeSeer">
     <value>de Leerling van de Ziener 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>een Sektelid 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>de Sektejager 💂</value>
   </string>
   <string key="Hunter">
@@ -590,7 +590,7 @@
     <value>@{1}, een speler met de naam {0} speelt al mee. Verander je naam alsjeblieft</value>
   </string>
   <string key="HarlotDiscoverCult">
-    <value>Je mag dan vergeten zijn wie jij bent, maar je weet in ieder geval dit: {0} is a Cultist 👤!</value>
+    <value>Je mag dan vergeten zijn wie jij bent, maar je weet in ieder geval dit: {0} is a Zombie 👤!</value>
   </string>
   <string key="Was">
     <value>was</value>
@@ -1200,7 +1200,7 @@
     <value>Het lijkt dat dorpssmid {0} ⚒ erg onfortuinlijk is. Met vijf net door {0} gesmede messen in zijn handpalmen, voeten en voorhoofd, wordt hij aan zijn werkbank genageld gevonden. Mogelijk wilde de seriemoordenaar 🔪 naast zijn orgaancollectie ook zijn wapenarsenaal uitbreiden...</value>
     <value>Het ziet er naar uit dat {0} is vergeten de wapenkamer op slot te doen. De seriemoordenaar heeft hier dankbaar gebruik van gemaakt. Helaas moest {0} dit bekopen met zijn leven... De Smid ⚒ is dood</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} werd doodgestoken gevonden voor zijn altaar. De seriemoordenaar heeft weer toegeslagen, ongeacht ras, taal of religie! {0} was een Sektelid.</value>
   </string>
   <string key="CupidKilled">
@@ -1256,8 +1256,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Terwijl {0} twijfelend en paranoïde om zich heen staarde, zoekt {1} het tijdstip uit waarbij {0} bijna in dommeld. Het vermoorden van de laatste dorpeling is een appeltje, eitje klus voor {1}🐺. Alles wat er over blijft van {0}🎯 is een gemutileerd lichaam met mooie parallelle krassen over zijn gezicht.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{0} en {1} komen buiten in het ochtendlicht. {1} ziet een kruisje schitteren om de nek van {0}, de rechtschapen {1} trekt zijn zwaard om voor de laatste keer af te rekenen met de verdraaide denkbeelden van de sekte die het dorp vervuilden.</value>
   </string>
   
@@ -1475,11 +1475,11 @@
     <value>Het lichaam van {0}, de sektejager, word gevonden in het midden van het dorp, in honderd kleine stukjes gesneden. Kijken of de seriemoordenaar een sektelid is, is blijkbaar geen goed idee...</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Het zit de sekte niet mee. Ze zijn hun nieuwste lid, {0}, verloren aan de weerwolven toen ze vannacht een wolf wilde bekeren. Blijkbaar hebben ze geen interesse</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>De sekte heeft vannacht geprobeerd de seriemoordenaar toe te voegen aan hun gezelschap maar het enige wat er is gebeurd is dat {0} is toegevoegd aan zijn killcount.</value>
   </string>
   
@@ -1567,8 +1567,8 @@
     <value>Je mag dan vergeten zijn wie jij bent, maar je herinnert je wel een belangrijk iemand: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} naam verdwijnt uit je geheugen en te midden van alle namen in je hoofd verschijnt er een nieuwe: {1}!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1624,8 +1624,8 @@
   <string key="SecretLynchShowVotersA">
     <value>Wanneer de geheime lynch modus aan staat en de stemmen telling zichtbaar is, wie op wie gestemd heeft is dan: {0}</value>
   </string>
-  <string key="CultistBitten">
-	<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+	<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Dat is raar? Is {0} jullie vergadering vergeten? Of vergeet jij nu iets? Het zal wel niet belangrijk zijn....</value>
   </string>
   <string key="Peace">
@@ -1733,7 +1733,7 @@
   <string key="ChemistTargetEmpty">
 	<value>Je bent blijkbaar vergeten dat {0} niet thuis was vannacht!</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>De volgende namen zweven door je hoofd: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1784,7 +1784,7 @@
   <string key="ChemistFrozen">
 	<value>Het is ineens heel erg koud... Brrrr. Geen wonder dat je wakker bent geworden.. Maar moest je nog iets doen vannacht? Hmmm niet dat het uitmaakt, je kan je namelijk toch niet bewegen... Naja dan slaap je maar gewoon verder.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
 	<value>Het is ineens heel erg koud... Brrrr. Geen wonder dat je wakker bent geworden.. Maar moest je nog iets doen vannacht? Hmmm niet dat het uitmaakt, je kan je namelijk toch niet bewegen... Naja dan slaap je maar gewoon verder.</value>
   </string>
   <string key="CHFrozen">
@@ -1925,11 +1925,11 @@
   <string key="HunterFellDigger">
 	<value>Is er iets gebeurd vannacht? Je kunt het je niet herinneren... Maar je moet wel steeds aan {0} denken, maar waarom?</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>Is er iets gebeurd vannacht? Je kunt het je niet herinneren... Maar je moet wel steeds aan {0} denken, maar waarom?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>Is er iets gebeurd bij {1} thuis vannacht? Je kunt het je niet herinneren... Maar je weet wel dat {0} nu dood is.</value>
   </string>
@@ -1985,8 +1985,8 @@
   <string key="HarlotFellPublic">
 	<value>Terwijl de hoer {0} naar huis ging na een nachtje plezier wilde ze even afsteken over de begraafplaats. Waarschijnlijk was ze nog een beetje duizelig en heeft daarom niet gezien dat er nog een open graf was tot er ineens geen grond was onder de volgende stap. Misschien had ze toch dat 9 tot 5 baantje moeten aannemen dat ze gister aangeboden had gekregen!</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>De sekte heeft geprobeert de kerk af te branden, maar terwijl {0} voor de groep uit liep over de begraafplaats lag daar ineens een berenklem! Een luide schreew, een val in een open graf en de rest van de sekte is vol angst gevlucht...</value>
   </string>
   <!--{0}: thief-->

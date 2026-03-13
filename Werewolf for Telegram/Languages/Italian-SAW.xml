@@ -210,11 +210,11 @@ variant="SAW MODE"/>
 
     <value >Sei l'Apprendista Spia. Lavorerai per il Governo a fianco della Spia, il tuo indiscusso maestro. In caso dovesse morire, ti è stata data istruzione su come prendere il suo posto, e continuare la sua opera. Buona fortuna, giovane spia...</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
 
     <value >Sei un membro dell'Associazione per la Sopravvivenza. Uno dei proverbi più famosi è sempre stato:"L'unione fa la forza". Ti sei reso conto fin da subito che l'unico modo per sopravvivere è collaborare, e anche se Jigsaw ha proibito qualsiasi associazione, sei convinto che se ogni Fase della Mala Sorte riuscirai ad assumere qualcuno nella tua associazione, potrete sopravvivere senza problemi...</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
 
     <value >Sei il Punitore di Proibite Slealtà. Jigsaw ti ha chiamato personalmente nel gioco per far rispettare le regole ferreamente. Non c'è pietà per nessuno, se qualcuno dovesse formare associazioni per sopravvivere in massa, lo ucciderai all'istante. Auguri, e spera che Jigsaw non cambi idea su di te e ti uccida come un comune Giocatore...</value>
   </string>
@@ -274,7 +274,7 @@ variant="SAW MODE"/>
 
     <value>I monitor si accendono davanti agli occhi increduli dei Giocatori. La scena mostra il cadavere maciullato di {0}, disteso a terra in una pozza di sangue, con la bocca e gli occhi squarciati in modo da formare un sadico Smiley...\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 
     <value>Durante questa Fase le regole sono state fatte rispettare. Sui monitor dei Giocatori compare l'immagine del cadavere di {0}, con ancora in mano il simbolo dell'Associazione per la Sopravvivenza, gli occhi infilati in due buchi nel ventre e i reni posto sulle orbite... Il Punitore di Proibite Slealtà ha fatto il suo lavoro...</value>
   </string>
@@ -381,7 +381,7 @@ variant="SAW MODE"/>
 
     <value>Giocatori rimasti vivi, ruolo, e fazione:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} vota per assumere {1}</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -414,7 +414,7 @@ variant="SAW MODE"/>
 
     <value>Hai dato la caccia a {0}, ma era già morto...</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
 
     <value>Entri nella cella di {0}, e lo cogli in fragrante mentre parla con i suoi compagni dell'Associazione. Senza pensarci due volte lo trucidi e infierisci sul suo cadavere... Le regole vanno rispettate...</value>
   </string>
@@ -477,10 +477,10 @@ variant="SAW MODE"/>
 
     <value>l'Apprendista Spia🙇 </value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>un membro dell'Associazione per la Sopravvivenza👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>il Punitore di Proibite Slealtà💂</value>
 
 
@@ -1251,7 +1251,7 @@ variant="SAW MODE"/>
   <string key="BlacksmithKilled">
     <value>La genialità di Jigsaw nell'uccidere le vittime è di nuovo apparsa in tutto il suo splendore. {0} è inginocchiato davanti alla sua scrivania, con il torace aperto e le costole raffinatamente recise. Il collo ha due piccoli tagli dai quali escono le carotidi, abilmente infilate in bocca con il sangue che sgorga nell'esofago e zampilla dallo stomaco, ormai esploso per la pressione... Il Sigilliere è morto...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>L'Associazione stavolta ha fatto un passo falso. {0} ha la testa coperta dalla maschera di Jigsaw, ma nel petto nudo del cadavere sono marchiate e ancora fumanti le parole:"Non potete più scappare". I fogli con i nomi dei probabili membri dell'Associazione sono ancora sparsi a terra, ma è difficile distinguere la calligrafia. Un Membro dell'Associazione per la Sopravvivenza è morto…</value>
   </string>
   <string key="CupidKilled">
@@ -1284,10 +1284,10 @@ variant="SAW MODE"/>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Un'ultima speranza è stata concessa ai Giocatori, la misericordia di Jigsaw è forse pari a quella di Dio, e stavolta ha concesso il paradiso a chi era a un passo dall'inferno. {0} forse pensava di trovare un Membro dell'Associazione per la Sopravvivenza in quella cella, e invece ha trovato la morte, e i Giocatori una speranza... Il Punitore di Proibite Slealtà è morto...</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>La lungimiranza degli SPEG non è paragonabile a quella di Jigsaw... Quando {0} ha visitato la cella sbagliata per aggiungere un Membro all'Associazione per la Sopravvivenza, la rabbia della regola infranta si è abbattuta su di lui, e se Jigsaw perdona, gli SPEG sono molto più spietati...</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Povero {0}. Voleva che l'Associazione per la Sopravvivenza guadagnasse un nuovo, gagliardo membro, e invece ne ha perso uno. Il suo corpo giace inerme nella sua cella, con le pagine dei progetti dell'Associazione ficcate nelle orbite degli occhi, e un rivolo solo di sangue che scivola fuori dalla maschera di Jigsaw, inchiodata al ventre...</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1306,8 +1306,8 @@ variant="SAW MODE"/>
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{0} aspetta tremante nella sua cella, le mani sudate avvinghiate al calcio della pistola, aspettando {1} per accogliere quel dannato SPEG come andava fatto. {0} si accinge ad entrare nella cella per finire il lavoro, e nota di sfuggita dalle telecamere che Will Hunt lo sta aspettando con la pistola in pugno. Ridacchando fra sé e sè, {1} lancia una delle chiavi appese alla cinta davanti alla porta della cella di {0}, che spara in preda al panico. "Molto furbo", pensa sarcastico {1}, poi si avvicina quasi noncurante e, staccata una granata dalla cintura, la lancia nella cella. Si tappa le orecchie per qualche secondo ed infine si allontana fischiettando, contento di aver finito un'altra giornata di lavoro...</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{0} ci mette pochi secondi a rendersi conto dell'accaduto. Jigsaw esce trionfante dalla sua cella, e comincia a ridere... {0} emette un urlo lancinante mentre Jigsaw lo inchioda al muro. "L'esperimento alla fine ha avuto successo, amico mio..." dice con una nota di divertimento nella voce "Gli esseri umani non sono più attaccati alla propria vita come una volta...". Jigsaw estrae il coltello e tappa la bocca a {0}, che lo fissa implorante... "Perciò avrò modo di insegnarlo loro un'altra volta..." Jigsaw si toglie la maschera rivelando il volto di {1}, sorridente. La lama scivola liscia e recide la carotide in poco tempo. {1} esce dalla Roulette sorridendo nonostante l'esperimento sia fallito...</value>
   </string>
   

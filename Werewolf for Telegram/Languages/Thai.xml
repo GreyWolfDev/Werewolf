@@ -205,10 +205,10 @@
 	<string key="RoleInfoApprenticeSeer">
 		<value>คุณคือลูกศิษย์ของหมอดู ถ้าหมอดู (ที่แท้จริง) ตาย ในฐานะที่คุณเป็นลูกศิษย์อันดับหนึ่งคุณจะได้สานต่องานของอาจารย์ของคุณ</value>
 	</string>
-	<string key="RoleInfoCultist">
+	<string key="RoleInfoZombie">
 		<value>คุณเป็นพวกคลั่งลัทธิ ในทุก ๆ คืนคุณสามารถเลือกคนหนึ่งคนที่จะแปลงเป็นสาวก ถ้าคนที่มีชีวิตทั้งหมดที่เหลืออยู่เป็นสาวกของคุณ พวกคุณจะชนะ</value>
 	</string>
-	<string key="RoleInfoCultistHunter">
+	<string key="RoleInfoZombieHunter">
 		<value>คุณเป็นนักล่าพวกคลั่งลัทธิ คุณพยายามที่จะปกป้องหมู่บ้านของคุณจากการถูกครอบงำโดยพวกลัทธินอกรีต ในทุก ๆ คืน เลือกผู้เล่นหนึ่งคน ถ้าเขาเป็นพวกคลั่งลัทธิเขาจะตาย ถ้าพวกนั้นพยายามจะครอบงำคุณ สมาชิกที่พึ่งเข้ามาใหม่ล่าสุดจะตาย</value>
 	</string>
 	<string key="LynchTime">
@@ -270,7 +270,7 @@
 		<!-- 1 - victim role -->
 		<value>เมื่อทุกคนตื่นเช้าขึ้นมา พวกเขาได้กลิ่นประหลาดๆ จึงได้เดินตามกลิ่นแปลกๆไปและได้พบกับ ชิ้นส่วนของ {0} เป็นชิ้นเล็กๆ หัวหายไป… ง่ำๆๆ อร่อยจริงฮูว!\n{1}</value>
 	</string>
-	<string key="HunterKilledCultist">
+	<string key="HunterKilledZombie">
 	    <!-- 0 - victim name -->
 		<value>มีเสียงดังมาจากบ้านของ {0} ดูเหมือนจะมีพวกชาวลัทธิประหลาดๆ โดนล่าโดยนักล่าลัทธินอกรีตซะแล้ว!</value>
 	</string>
@@ -376,34 +376,34 @@
 	<string key="RemainingPlayersEnd">
 		<value>ผู้เล่นที่เหลืออยู่ อาชีพ และทีม:</value>
 	</string>
-	<string key="CultistVotedConvert">
+	<string key="ZombieVotedConvert">
 	    <!-- 0 - Voter's name -->
 		<!-- 1 - target name -->
 		<value>{0} ได้โหวตเพื่อให้ล่อลวง {1}</value>
 	</string>
 	<string key="CultConvertCultHunter">
-	    <!-- 0 - Yougest Cultist (killed)'s name' -->
+	    <!-- 0 - Yougest Zombie (killed)'s name' -->
 		<!-- 1 - CultHunter's name -->
 		<value>{0} ได้ส่งคุณไปทำงานสกปรก และได้พยายามล่อลวง {1}... แต่โชคชะตาเล่นตลก เขาดันเป็นนักล่าลัทธินอกรีต! {0} ตายซะแล้ว!</value>
 	</string>
 	<string key="CultHunterKilledCultVisit">
-	    <!-- 0 - Youngest Cultist's name -->
-		<!-- 1 - Number of cultists left -->
+	    <!-- 0 - Youngest Zombie's name -->
+		<!-- 1 - Number of Zombies left -->
 		<value>{0} มาที่บ้านคุณเมื่อคืนนี้และพร้อมที่จะล่อลวงคุณ แต่คุณเผลอฆ่าเขาโดยไม่ได้ตั้งใจ พวกบ้าลัทธิตายไปอีกหนึ่ง ตอนนี้เหลืออีก {1}!</value>
 	</string>
 	<string key="CultConvertYou">
 		<value>พวกคลั่งลัทธิได้ล่อลวงคุณสำเร็จ! ตอนนี้คุณเป็นพวกคลั่งลัทธิเหมือนกัน ทุก ๆ คืนคุณสามารถล่อลวงคนอื่นมาคลั่งลัทธิได้เหมือนกันนะ</value>
 	</string>
 	<string key="CultTeam">
-	    <!-- 0 - Number of cultists -->
+	    <!-- 0 - Number of Zombies -->
 		<value>ทีมคลั่งลัทธิ: {0}</value>
 	</string>
 	<string key="CultJoin">
-	    <!-- 0 - new cultist's name -->
+	    <!-- 0 - new Zombie's name -->
 		<value>{0} ได้เข้าร่วมลัทธิ!</value>
 	</string>
 	<string key="CultVisitEmpty">
-	    <!-- 0 - Newest cultist's name -->
+	    <!-- 0 - Newest Zombie's name -->
 		<!-- 1 - target name -->
 		<value>{0} ได้ส่งคุณไปทำงานสกปรก และได้พยายามล่อลวง {1}... แต่ดันไม่มีใครอยู่บ้าน!</value>
 	</string>
@@ -414,7 +414,7 @@
 	    <!-- 0 - target name -->
 		<value>คุณพยายามจะล่า {0}, แต่น่าเสียดายดูเหมือนเขาจะตายไปซะแล้ว!</value>
 	</string>
-	<string key="HunterFindCultist">
+	<string key="HunterFindZombie">
 	    <!-- 0 - target name -->
 		<value>คุณไปที่บ้านของ {0} และพบว่าพวกเขากำลังสวดมนต์แปลก ๆ ให้กับเทพเจ้าลึกลับ คุณวิ่งเข้าไปพร้อมกับเฉือนเจ้าพวกบ้าคลั่งลัทธิด้วยดาบของคุณ!</value>
 	</string>
@@ -431,7 +431,7 @@
 		<!-- 0 - teamate's names -->
 		<value>{0} ได้ตาย! ด้วยความโกรธของคุณ คุณจึงกลายเป็นหมาป่าแทน เพื่อนร่วมทีมของคุณคือ: {1}</value>
 	</string>
-	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 	<!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
 	<string key="Villager">
 		<value>ชาวบ้าน 👱</value>
@@ -478,10 +478,10 @@
 	<string key="ApprenticeSeer">
 		<value>ลูกศิษย์ของหมอดู 🙇</value>
 	</string>
-	<string key="Cultist">
+	<string key="Zombie">
 		<value>พวกคลั่งลัทธิ 👤</value>
 	</string>
-	<string key="CultistHunter">
+	<string key="ZombieHunter">
 		<value>นักล่าลัทธินอกรีต 💂</value>
 	</string>
 	<!-- These are for the player list -->
@@ -513,7 +513,7 @@
 	</string>
 	 <!-- new strings May 6 2016-->
 	<string key="CultTargetDead">
-	    <!-- 0 - Youngest cultists name -->
+	    <!-- 0 - Youngest Zombies name -->
 		<value>สมาชิกใหม่ของคุณตรงไปที่บ้านของ {0} เพื่อโน้มน้าว แต่สิ่งแรกที่พบคือเลือดจำนวนมาก และขนของหมาป่า</value>
 	</string>
 	<string key="GuardBlockedWolf">
@@ -695,12 +695,12 @@
 		<value>คุณพยายามจะเก็บร่างของ {0} มาใส่คอลเล็คชั่นสะสมของคุณ แต่เทวดาฟันน้ำนมปกป้องไว้ได้! อดเลย</value>
 	</string>
 	<string key="CultConvertHunter">
-	    <!-- 0 - Youngest Cultist's name -->
+	    <!-- 0 - Youngest Zombie's name -->
 		<!-- 1 - target's name -->
 		<value>กลุ่มลัทธิส่ง {0} เพื่อพยายามชักชวน {1} ให้เข้าพวก แต่เสียงปืนกลับดังขึ้น ร่างของ {0} ปลิวออกมาจากหน้าต่าง! {0} ตาย....</value>
 	</string>
 	<string key="CultConvertSerialKiller">
-	    <!-- 0 - Youngest Cultist's name -->
+	    <!-- 0 - Youngest Zombie's name -->
 		<!-- 1 - target's name -->
 		<value>กลุ่มลัทธิส่ง {0} เพื่อพยายามชักชวน {1} แต่ร่างของ {0} กลับลอยออกมานอกหน้าต่างพร้อมมีดปักอยู่ทุกส่วนของร่างกาย! นี่มันโรคจิตชัดๆ!!!! {0} ตาย....</value>
 		<value>{0} ย่องเข้าบ้านของ {1} แล้วเปิดประตู แต่ทันใดก็พบกับคนบ้าถือมีด!! {1} แทงมีดเข้าใส่อวัยวะของ {0} เรียงตามตัวอักษรของชื่อ พร้อมหัวเราะคิกคักไปตลอดเวลา! {0} ได้ตายลง...</value>
@@ -725,7 +725,7 @@
 		<value>{0} ได้ตายลงและคุณได้กลายร่างเป็นเมสัน เพื่อนร่วมทีม (ถ้ามี) ของคุณคือ: {1}</value>
 	</string>
 	<string key="DGToCult">
-	    <!-- 0 - new cultist's name -->
+	    <!-- 0 - new Zombie's name -->
 		<value>ตอนนี้ doppelganger {0} ได้กลายเป็นพวกคลั่งลัทธิ… เหมือนกับคุณ!</value>
 	</string>
 	<string key="DGTransformToCult">
@@ -1285,7 +1285,7 @@
 	<string key="BlacksmithKilled">
 		<value>ดูเหมือนว่าช่างตีเหล็ก {0} จะโชคไม่ดีเอามากๆ มีดอดาแมนเทียมของสุดรักที่ {0} ทำขึ้นมา ถูกฆาตกรต่อเนื่องนำไปใช้ชำแหละร่างกายของของเขาเอง</value>
 	</string>
-	<string key="CultistKilled">
+	<string key="ZombieKilled">
 		<value>ร่างของ {0} ถูกพบพร้อมกับธูปเทียนดอกไม้สำหรับทำพิธีกรรม ฆาตกรต่อเนื่องล่าเหยื่อของเขาอีกครั้ง ไม่ว่าเหยื่อจะนับถืออะไรก็ตาม {0} เป็นพวกคลั่งลัทธิ</value>
 	</string>
 	<string key="CupidKilled">
@@ -1323,12 +1323,12 @@
 		<value>ร่างของนักล่าพวกนอกรีต {0} ถูกพบกระจายหลายร้อยชื้นอยู่ที่ใจกลางเมือง ดูเหมือนการเชิญชวนฆาตกรต่อเนื่องมาเข้าลัทธิ จะไม่ใช่ความคิดที่ดีนัก...</value>
 	</string>
 	<string key="CultConvertWolfPublic">
-	    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+	    <!--used when Zombies convert the wolves, only if wolves stayed home-->
 		<value>ดูเหมือนแค่มนุษย์จะไม่พอเสียแล้ว {0} อยากจะลองเผยแพร่ลัทธิไปยังเหล่าหมาป่าดูบ้าง แต่ว่าหมาป่ามองเขาเป็นอาหารแสนอร่อยแทน อ่า...อาหารส่งฟรีถึงบ้าน ดีจริงที่คืนนี้ไม่ได้ออกจากบ้านซะก่อน!</value>
 		<value>สมาชิกใหม่ไฟแรง อยากหาสมาชิกเข้ากลุ่มให้มากขึ้น จึงลองเชิญชวนหมาป่าเข้าลัทธิ ซึ่งเจ้าตัวก็อยู่บ้านพอดี กลิ่นหอมของหมูกระทะที่ติดเสื้อ {0} จากอาหารเย็น ทำให้เจ้าบ้านทนหิวไม่ไหว.... ต้องขอขอบคุณสำหรับความทุ่มเทของ {0} ที่สุดท้ายหมาป่าก็ไม่ได้มีความสนใจเข้าร่วมลัทธิใดๆ</value>
 	</string>
 	<string key="CultConvertKillerPublic">
-	    <!--used when Cultists convert the SK-->
+	    <!--used when Zombies convert the SK-->
 		<value>กลุ่มลัทธิคิดว่า พวกเขากำลังจะได้สมาชิกมาเพิ่ม แต่ผิดแล้วละ! สมาชิก {0} โดนสับละเอียดกองไว้กลางหมู่บ้าน   น่าแปลก ที่มีคัมภีร์โดนมีดปักตกอยู่ด้วย ราวกับจะบอกว่า ความเชื่อไหนเหนือกว่า</value>
 		<value>เมื่อคืน กลุ่มลัทธิพยายามจะโน้มน้าวให้ใครคนหนึ่งที่บ้ากว่าพวกเขาให้มาเข้าร่วม   สมาชิกน้องใหม่พยายามชักชวนฆาตกรต่อเนื่อง แล้วก็กลายเป็นงานศิลปะชิ้นใหม่กลางหมู่บ้าน โดยฆาตกรรังสรรค์จากเครื่องในของ {0} </value>
 	</string>
@@ -1350,8 +1350,8 @@
 	    <!--{0} = hunter's name, {1} = wolf's name-->
 		<value>เมื่อรู้ว่า เหลือแค่ {0} เป็นคนสุดท้าย {1} เลือกที่จะรอเวลาที่ความระแวดระวังของ {0} ลดต่ำสุด การกำจัดชาวบ้านคนสุดท้ายดูจะเป็นงานหวานหมูของ {1} เมื่อสิ่งที่เหลืออยู่ในที่สุด คือ ร่างเละเป็นชิ้นๆ ของนักล่า {1} พร้อมรอยเล็บพาดบนใบหน้า</value>
 	</string>
-	<string key="CHKillsCultistEnd">
-	    <!--{0} = last cultist's name, {1} = CH's name -->
+	<string key="CHKillsZombieEnd">
+	    <!--{0} = last Zombie's name, {1} = CH's name -->
 		<value>{1} และ {0} ก้าวออกมาในรุ่งสาง   เมื่อเห็นกางเขนส่องประกายออกมาจากคอของ {0} แล้ว {1} ผู้ผดุงความยุติธรรมชักดาบออกมาเป็นครั้งสุดท้าย และจบบัญชีกับลัทธิเผยแพร่คำสอนที่ถูกบิดเบือน ที่สร้างรอยด่างพร้อยให้หมู่บ้านมานาน</value>
 	</string>
 	
@@ -1652,8 +1652,8 @@
 		<value>เพื่อนร่วมทีม (ถ้ามี) ของคุณคือ: {0}</value>
 	</string>
 	<string key="ThiefToCult">
-	<!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+	<!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
 		<value>{0} โดนขโมยใบอนุญาตเข้าลัทธิ และ {1} ได้มาคลั่งลัทธิเหมือนกับคุณ!</value>
 	</string>
 	<string key="ThiefToWolf">
@@ -1710,8 +1710,8 @@
 	<string key="SecretLynchShowVotersA">
 		<value>เมื่อเปิดโหมดการแขวนคอแบบลับและแสดงคะแนนแล้ว จะแสดงชื่อผู้โหวตหลังโหวตเสร็จเสมอ\nCurrent: {0}</value>
 	</string>
-	<string key="CultistBitten">
-	<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<string key="ZombieBitten">
+	<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 		<value>แปลกแฮะ... คุณไปที่บ้าน {0} เพื่อที่จะเผยแพร่ลัทธิ แต่เขาไม่อยู่บ้าน! เกิดอะไรขึ้นกับเขากันนะ??</value>
 	</string>
 	
@@ -1820,7 +1820,7 @@
 	<string key="ChemistTargetEmpty">
 		<value>{0} ไม่อยู่ที่บ้าน! คุณลากกระเป๋ากลับบ้านไปพร้อมความหงุดหงิดในโชคที่ไม่ดีของคุณเอง</value>
 	</string>
-	<string key="CultistsList">
+	<string key="ZombiesList">
 		<value>สมาชิกลัทธินอกรีต: {0}</value>
 	</string>
 	<string key="SnowWolf">
@@ -1871,7 +1871,7 @@
 	<string key="ChemistFrozen">
 		<value>ขณะที่กำลังงัวเงีย เตรียมไปหยิบขวดยามาเตรียมไว้ บังเกิดลมกรรโชกแรงพัดเข้ามาทางหน้าต่าง หนาวถึงขั้วหัวใจ 🐺☃️ เมื่อเหลือบตามองไปดู ก็พบว่าขวดยาโดนแช่แข็งติดอยู่ตรงนั้น ดูเหมือนว่านักเคมีอย่างเขาก็ไม่รอดไปจากมนต์น้ำแข็งเช่นกัน   คุณถอนหายใจแรงๆ ภาวนาให้พระอาทิตย์รีบๆขึ้น จะได้หายแข็งเป็นรูปปั้นสักที</value>
 	</string>
-	<string key="CultistFrozen">
+	<string key="ZombieFrozen">
 		<value>ขณะที่คุณสวมเสื้อคลุมเตรียมออกไปเทศน์ บังเกิดลมกรรโชกแรงพัดผ่านประตู แช่แข็งคุณไว้ 🐺☃️ เพื่อนร่วมลัทธิที่มารับคุณไปร่วมพิธี กลับยืนหัวเราะขบขันให้กับความซวยนี้ แต่ก็สัญญาว่าจะดำเนินงานคืนนี้ไปให้ลุล่วงโดยปล่อยคุณแข็งอยู่ตรงนี้อยู่ดี เมื่อหายแข็งแล้ว คุณจึงเดินตัวหดๆออกจากบ้านอย่างน่าสมเพช</value>
 	</string>
 	<string key="CHFrozen">
@@ -2012,11 +2012,11 @@
 	<string key="HunterFellDigger">
 		<value>หลังจากคืนที่เหนื่อยล้าอีกคืนหนึ่ง คุณเดินกลับบ้านในตอนพระอาทิตย์เบิกฟ้าแล้ว แต่ก่อนที่จะถึงบ้าน คุณสังเกตเห็นดาบตกอยู่บนพื้นข้างๆหลุมศพที่คุณยังไม่ได้จัดการกลบ ในหลุมนั้น คุณพบร่างของ {0} นอนอยู่ นักล่าพวกคลั่งลัทธิไม่น่ามาสงสัยคุณเลย...</value>
 	</string>
-	<!--{0}: cultist-->
+	<!--{0}: Zombie-->
 	<string key="CultFell">
 		<value>คุณกำลังกลับจากการทำงานที่แสนเหน็ดเหนื่อยอีกคืน ตอนนั้นเอง คุณได้ยินเสียงกรีดร้องดังขึ้นมาจากหลุมศพที่ยังฝังไม่เ่สร็จหลุมหนึ่ง คุณเร่งรุดไปที่นั่น แล้วพบ {0} นอนตายอยู่ในนั้น จะว่าไป ลัทธิบ้าบออะไรกันนะ ถึงพยายามชักชวนสัปเหร่อให้มาเป็นพวก</value>
 	</string>
-	<!--{0}: cultist who fell, {1}: grave digger-->
+	<!--{0}: Zombie who fell, {1}: grave digger-->
 	<string key="CultConvertGraveDigger">
 		<value>ในขณะที่กำลังไปบ้านของ {1} {0} คิดว่า มันเป็นความคิดที่ดีที่จะเผาโบสถ์ด้วยซะเลย เขาพาคุณเดินผ่านสุสานเพื่อไปเผา ทันใดนั้น กับดักก็ทำงาน!   สิ่งที่คุณได้ยินต่อมา คือ เสียงกรีดร้องของเขาก่อนที่จะร่วงลงไปในหลุม   คุณรีบโกยอ้าวหนีเอาตัวรอด</value>
 	</string>
@@ -2072,8 +2072,8 @@
 	<string key="HarlotFellPublic">
 		<value>ในขณะที่โสเภณี {0} กลับบ้านหลังจากค่ำคืนสุขสันต์ เขาพยายามลัดผ่านสุสานหมู่บ้าน   ท่าทางจะยังเมาหน่อยๆ จนไม่ได้สังเกตเห็นหลุมฝังศพที่ยังไม่ได้กลบจนกระทั่งมารู้ตัวว่าเหยียบอากาศไปแล้ว บางที เขาน่าจะรับงานช่วงกลางวันเมื่อวานนี้มากกว่านะ!</value>
 	</string>
-	<!--{0}: cultist who died-->
-	<string key="CultistFellPublic">
+	<!--{0}: Zombie who died-->
+	<string key="ZombieFellPublic">
 		<value>พวกคลั่งลัทธิพยายามจะเผาโบสถ์ แต่ขณะที่ {0} นำทางพรรคพวกผ่านสุสาน ดันไปทำกับดักทำงาน! เขากรีดร้องขณะที่ร่วงลงไปในหลุม ส่วนพวกคลั่งลัทธิคนอื่นๆ วิ่งหนีกระจัดกระจาย</value>
 	</string>
 	<!--{0}: thief-->

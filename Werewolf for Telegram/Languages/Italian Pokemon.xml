@@ -189,10 +189,10 @@
     <value>Sei l'allenatore di Kadabra. Se l'allenatore di Alakazam dovesse cadere in battaglia o se avesse bisogno di sparire, dovrai prendere il suo posto e lasciare che Kadabra si evolva in un Alakazam.</value>
     <value>Sei l'allenatore di Kadabra. Questo significa che in giro c'è l'allenatore di Alakazam. Nel caso fosse battuto o succedesse altro, dovrai lasciare che il tuo Pokémon evolva.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Sei uno dei Pokémon controllati da Mewtwo, grazie ad un dispositivo rubato al Team Rocket, Mewtwo è in grado di controllare i Pokémon anche a distanza. Ogni notte vi manderà a casa di qualcuno nel tentativo di prenderne il controllo. L'obiettivo è quello di liberare i Pokémon dal controllo degli umani.</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Sei Mew! Ogni notte vai alla ricerca di Pokémon soggiogati dal controllo mentale di Mewtwo per renderli nuovamente liberi. Se qualcuno di loro provasse a controllare la tua mente, non solo interromperesti il controllo ma sapresti anche quanti altri ce ne sono in circolazione. Sei immune alla maggior parte dei malintenzionati, quindi puoi visitarli senza essere sconfitto, ma sta attento, non si sa mai...</value>
   </string>
   <string key="LynchTime">
@@ -240,7 +240,7 @@
     <value>Il mattino è giunto, e con esso una brutta notizia. Gli allenatori trovano {0} privo di sensi, pare che i suoi Pokémon siano stati rubati. MEOWMEOWMEOW\n{1}</value>
     <value>Un'altra notte di terrore è finita. Seguendo una scia di detriti lasciati dal combattimento, gli allenatori trovano {0} privo di sensi, in strada. MEOWMEOWMEOW\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>C'è silenzio nella casa di {0}... resta solo quell'aggeggio per controllare la mente, ormai inutilizzabile. Uno dei Pokémon controllati da Mewtwo è stato liberato dal piccolo Mew!</value>
   </string>
   <string key="NoAttack">
@@ -324,7 +324,7 @@
   <string key="RemainingPlayersEnd">
     <value>Allenatori rimasti vivi, ruolo e fazione:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>{0} vota per prendere il controllo di {1} </value>
   </string>
   <string key="CultConvertCultHunter">
@@ -351,7 +351,7 @@
   <string key="HunterVisitDead">
     <value>Hai fatto visita a {0}, ma era già fuori gioco!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Esplori la casa di {0}, e ti accorgi subito che qualcosa non va. Ti concentri ed usi i tuoi poteri psichici, come pensavi, questo Pokémon era sotto il controllo di Mewtwo.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -408,10 +408,10 @@
   <string key="ApprenticeSeer">
     <value>l'allenatore di Kadabra 🥄 (🙇) </value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>un Pokémon controllato da Mewtwo 💆‍♂️ (👤)</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Mew 🧠 (💂)</value>
   </string>
   <string key="RanAway">
@@ -1077,7 +1077,7 @@
   <string key="BlacksmithKilled">
     <value>Sembra che {0} sia stato colto di sorpresa. {0} ed il suo Pikachu vengono ritrovati gravemente feriti in riva al fiume.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} è stato trovato sulla riva del fiume gravemente ferito. Gyarados ha colpito ancora, indipendentemente da razza, lingua o capacità di intendere e di volere! {0} era un Pokémon controllato da Mewtwo 💆‍♂️.</value>
   </string>
   <string key="CupidKilled">
@@ -1115,12 +1115,12 @@
     <value>Gravi ferite su tutto il corpo di {0}, Mew è stato trovato sul bordo della fontana. Controllare Gyarados non sembra mai una buona idea..</value>
   </string>
   <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Sembrava una notte tranquilla, visto che il Team Rocket non ha rubato Pokémon, l'unico sfortunato è stato {0}, un Pokémon sotto il controllo di Mewtwo che ha provato a soggiogare un Pokémon. {0} non ha avuto una buona idea, provando a soggiogare un membro del Team Rocket!</value>
     <value>I Pokémon sotto il controllo di Mewtwo hanno incontrato un problema non previsto questa notte. Il loro ultimo adepto, ha provato a soggiogare un membro del Team Rocket. Sfortunatamente {0} non era all'altezza dello scontro.</value>
   </string>
   <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
     <value>I Pokémon sotto il controllo di Mewtwo pensavano di aver trovato un candidato ideale, ma si sbagliavano! {0}, un Pokémon sotto il controllo di Mewtwo è stato trovato gravemente ferito, nei pressi della piscina pubblica.</value>
     <value>L'ultima notte, i Pokémon sotto il controllo di Mewtwo hanno provato a convincere Gyarados ad unirsi a loro, ora {0} è fuori gioco.</value>
   </string>
@@ -1141,8 +1141,8 @@
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sapendo che solo {0} era rimasto in piedi, {1} prova a metterlo fuori gioco. Scyther fu colto di sorpesa, {1} riuscì a metterlo fuori combattimento, prima che {0} potesse contrattaccare .</value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <!-- Extend time -->
     <value>{1} e {0} sono gli ultimi rimasti in piedi. Lo sguardo perso nel vuoto e gli ordini impartiti da  Mewtwo rendevano {0}  un vero e proprio zombi, ma niente paura c'è {1} il piccolo Mew che concentrandosi appena un po' libera il povero sfortunato dal controllo ora non gli resta che trovare Mewtwo e farlo rinsavire.</value>
   </string>
@@ -1433,8 +1433,8 @@
     <value>I tuoi compagni (se presenti) sono: {0}</value>
   </string>
   <string key="ThiefToCult">
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
     <value>{0} non è più un Pokémon controllato da Mewtwo e {1} è ora un Pokémon controllato da Mewtwo, esattamente come te!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1490,8 +1490,8 @@
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
     <value>Strano... Vi siete riuniti per fare il punto della situazione, ma {0} non è presente! Che fine avrà fatto?</value>
   </string>
   <string key="Peace">
@@ -1594,7 +1594,7 @@
   <string key="ChemistTargetEmpty">
     <value>{0} non era a casa! Riproverai domani.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value>I Pokémon controllati da Mewtwo sono attualmente: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1645,7 +1645,7 @@
   <string key="ChemistFrozen">
     <value>Ti stai preparando ad uscire per catturare il tuo obiettivo, ma appena metti il naso fuori dalla porta, vieni leccato da un'enorme lingua che ti paralizza. Deve essere opera della lingue di Lickitung 👅. Dovrai rimandare a domani sera tutti i tuoi piani.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Ti prepari come ogni notte, pronto a soggiogare qualcun altro e invece... Una leccata ti paralizza, deve essere stato Lickitung 👅.</value>
   </string>
   <string key="CHFrozen">
@@ -1786,11 +1786,11 @@
   <string key="HunterFellDigger">
 	<value>Come al solito, dopo l'allenamento, controlli di non aver fatto troppi danni. Noti che in un'angolo del giardino c'è un pintino rosa. Hai messo fuori gioco Mew. {0} non potrà più essere d'aiuto.</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>Come al solito, durante il controllo mattutino, vedi un Pokémon spaesato! Si tratta di {0} era un Pokémon sotto il controllo di Mewtwo.</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>Mentre vai a casa di {1}, {0} suggerisce che sarebbe divertente provare controllare la mente di uno dei Pokémon più potenti presenti in città. Purtoppo, finiscono colpiti dal suo Lanciafiamme. Qualcuno è appena finito K.O., gli altri scappano via spaventati.</value>
   </string>
@@ -1846,8 +1846,8 @@
   <string key="HarlotFellPublic">
 	<value>Il Rattata di {0} voleva intrufolarsi a casa di Dragonite per fare uno spuntino. Ma è rimasto colpito da uno dei suoi attacchi.</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>I Pokémon controllati da Mewtwo hanno provato a soggiogare la mente di Dragonite, ma come {0} ha provato ad avvicinarsi a lui è stato colpito da un potente Iper Raggio che non era neppure indirizzato a lui. I suoi compagni sono fuggiti in preda al panico!</value>
   </string>
   <!--{0}: thief-->

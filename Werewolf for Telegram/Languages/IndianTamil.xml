@@ -205,11 +205,11 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>நீங்கள் தான் ApprenticeSeer.  Seer இறந்துவிட்டால் , நீங்கள் அந்த இடத்தை நிரப்ப seer ஆக மாறுவீர்கள்.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >நீங்கள் ஒரு cultist.  ஒவ்வொரு இரவும், நீங்கள் ஒரு நபரை தேர்ந்தெடுத்து cultist ஆக மாற்றலாம். இருக்கும் அனைத்து உயிர் உள்ளவர்களும் cultist ஆக இருந்தால் தான் win.</value>
+  <string key="RoleInfoZombie" >
+    <value >நீங்கள் ஒரு Zombie.  ஒவ்வொரு இரவும், நீங்கள் ஒரு நபரை தேர்ந்தெடுத்து Zombie ஆக மாற்றலாம். இருக்கும் அனைத்து உயிர் உள்ளவர்களும் Zombie ஆக இருந்தால் தான் win.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value >நீங்கள் தான் Cultist Hunter, cultistயை வேட்டையாட வேண்டும் !  ஒவ்வொரு இரவும், ஒரு நபரை தேர்ந்தெடுங்கள்.  அந்த நபர் cultist ஆக இருந்தால், அவர் இறப்பார்.  Cult உங்களை மாற்ற நினைத்தால், cult குழுவில் புதிதாக இணைந்தவர் இறந்துவிடுவார்.</value>
+  <string key="RoleInfoZombieHunter" >
+    <value >நீங்கள் தான் Zombie Hunter, Zombieயை வேட்டையாட வேண்டும் !  ஒவ்வொரு இரவும், ஒரு நபரை தேர்ந்தெடுங்கள்.  அந்த நபர் Zombie ஆக இருந்தால், அவர் இறப்பார்.  Cult உங்களை மாற்ற நினைத்தால், cult குழுவில் புதிதாக இணைந்தவர் இறந்துவிடுவார்.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
@@ -266,9 +266,9 @@
     <!-- 1 - victim role -->
     <value>மக்கள் அனைவரும் காலையில் எழுந்து பார்த்தபோது , ஒரு மோசமான நாற்றம்.  மக்கள் நாற்றத்தை பின் தொடர்ந்தனர் , பார்த்தால் {0}, வெட்டப்பட்டு பன்றி கிடங்கில் தலையில்லாமல் கிடந்தார்.  NOMNOMNOMNOM\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
-    <value>சிறிய அளவிளான நற்றம் {0}ன் வீட்டில் இருந்து வந்தது...  மக்கள் பார்க்க சென்றனர், பார்த்தால் {0} ன் பினமாகவும் அருகில் மர்மமான பொருட்கள் இருந்தன. ஒரு cultistஐ cultist hunter கொன்றுவிட்டார்</value>
+    <value>சிறிய அளவிளான நற்றம் {0}ன் வீட்டில் இருந்து வந்தது...  மக்கள் பார்க்க சென்றனர், பார்த்தால் {0} ன் பினமாகவும் அருகில் மர்மமான பொருட்கள் இருந்தன. ஒரு Zombieஐ Zombie hunter கொன்றுவிட்டார்</value>
   </string>
   <string key="NoAttack" >
     <value> மக்கள் அனைவரும் காலையில் எழுந்தனர் , அவர்களுக்கு ஒரு சின்ன நிம்மதி நேற்று இரவு எந்த தாக்குதலும் நடக்கவில்லை.</value>
@@ -372,51 +372,51 @@
   <string key="RemainingPlayersEnd">
     <value>Remaining living players, roles, and team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{1} ஐ மாற்ற vote செய்துள்ளார் {0}</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
-    <value>உங்களுடைய கேவலமான வேலையை செய்ய மற்றும் {1} யை மாற்ற {0} ஐ அனுப்பினீர்கள்... ஆனால் அங்கு இருந்தது ஒரு cultist hunter ! {0} இறந்துவிட்டார்!</value>
+    <value>உங்களுடைய கேவலமான வேலையை செய்ய மற்றும் {1} யை மாற்ற {0} ஐ அனுப்பினீர்கள்... ஆனால் அங்கு இருந்தது ஒரு Zombie hunter ! {0} இறந்துவிட்டார்!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>நேற்று இரவு {0} உங்களை cult ஆக மாற்ற வீட்டிற்க்கு வந்தார்...,  ஆனால் நீங்கள் உங்களின் கத்தியை நீட்டினீர்கள். ஒரு cult இறந்தது... {1} remain!</value>
   </string>
   <string key="CultConvertYou">
-    <value>cult வேலைகளை செய்ய , உங்களை cultist ஆக மாற்றிவிட்டார்கள்!  நீங்கள் ஒரு cultist இப்போதிலிருந்து.  ஒவ்வொரு இரவும், நீங்கள் ஒருவரை தேர்ந்தெடுத்து cultist ஆக மாற்றமுடியும்.</value>
+    <value>cult வேலைகளை செய்ய , உங்களை Zombie ஆக மாற்றிவிட்டார்கள்!  நீங்கள் ஒரு Zombie இப்போதிலிருந்து.  ஒவ்வொரு இரவும், நீங்கள் ஒருவரை தேர்ந்தெடுத்து Zombie ஆக மாற்றமுடியும்.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
-    <value>Cultists: {0}</value>
+    <!-- 0 - Number of Zombies -->
+    <value>Zombies: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} , உங்களுடன் cult ல் இணைந்துவிட்டார்!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>உங்கள் கேவலமான வேலைகளை செய்ய மற்றும் {1} ஐ மாற்ற {0} அனுப்பப்பட்டார்... ஆனால் வீட்டில் யாரும் இல்லை!</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >எல்லா wolfகளும் இறந்துவிட்டன, மற்றும் மீதம் உள்ள மக்கள் அனைவரும் cultists ஆக மாற்றப்பட்டுவிட்டனர்..  Gameயை cult வென்றது!</value>
+    <value >எல்லா wolfகளும் இறந்துவிட்டன, மற்றும் மீதம் உள்ள மக்கள் அனைவரும் Zombies ஆக மாற்றப்பட்டுவிட்டனர்..  Gameயை cult வென்றது!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
     <value> {0} ஐ கொல்ல சென்றீர்கள் , ஆனால் அவர் இறந்து கிடக்கிறார்!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
-    <value>நீங்கள் {0}ன் வீட்டிற்க்கு போரீங்க அப்போது அங்கு வித்தியாசமான வழிபாடு ஏதோ நடப்பதை பார்கிறீர்கள். உடனே நீங்கள் ஓடி சென்று, உங்கள் கத்தியை எடுத்துவந்து cultist {0}ன் தலையை வெட்டுகிறீர்கள்.</value>
+    <value>நீங்கள் {0}ன் வீட்டிற்க்கு போரீங்க அப்போது அங்கு வித்தியாசமான வழிபாடு ஏதோ நடப்பதை பார்கிறீர்கள். உடனே நீங்கள் ஓடி சென்று, உங்கள் கத்தியை எடுத்துவந்து Zombie {0}ன் தலையை வெட்டுகிறீர்கள்.</value>
   </string>
   <string key="HunterFailedToFind">
     <!-- 0 - target name -->
-    <value>நீங்கள் {0}ன் வீட்டிற்க்கு சென்றீர்கள், ஆனால் அங்கு எந்த மர்மமான தொழுகையும் நடக்கவில்லை . அதனால் உங்கள் வீட்டிற்க்கு திரும்பிவிட்டீர்கள், இது {0} ஒரு cultist இல்லை என்பதை தெளிவுபடுத்துகிறது.</value>
+    <value>நீங்கள் {0}ன் வீட்டிற்க்கு சென்றீர்கள், ஆனால் அங்கு எந்த மர்மமான தொழுகையும் நடக்கவில்லை . அதனால் உங்கள் வீட்டிற்க்கு திரும்பிவிட்டீர்கள், இது {0} ஒரு Zombie இல்லை என்பதை தெளிவுபடுத்துகிறது.</value>
   </string>
   <string key="WildChildToWolves">
     <!-- 0 - Werechild's name -->
@@ -427,7 +427,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} இறந்துவிட்டார்! அதனால் ஏற்பட்ட கோபம் , உங்களை wolf ஆக மாற்றிவிட்டது! உன்னுடைய புது நன்பர்கள்(wolfs): {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>a Villager 👱</value>
@@ -474,11 +474,11 @@
   <string key="ApprenticeSeer">
     <value>the Apprentice Seer 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>a Cultist 👤</value>
+  <string key="Zombie">
+    <value>a Zombie 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>the Cultist Hunter 💂</value>
+  <string key="ZombieHunter">
+    <value>the Zombie Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -509,7 +509,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>உங்கள் குழுவினுடைய புதிய உறுப்பினரை {0}யை மாற்ற அனுப்பினீர்கள், ஆனால், அங்கு அவர் பார்த்தது. அறை முழுவதும் இரத்த கோளத்தில் இருந்து, wolf தான் இதை செய்துள்ளது...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -691,14 +691,14 @@
     <value> நீங்கள் {0} ன் உடலை உங்கள் சேமிப்பில் வைக்கலாம் என நிணைத்தீர்கள் , ஆனால் அங்கு நீங்கள் கண்டது ஒரு Guardian Angel , சண்டையில் தோற்கடிக்கப்பட்டீர்கள், இன்று இரவு எதுவும் கிடைக்கவில்லை..</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
-    <value>cultist {0} ,  {1} ஐ மாற்ற அனுப்பப்பட்டார், ஆனால் அங்கு திடீர் என்று சுடும் சத்தம் கேட்டது அத்துடன் {0}ன் உடல் ஜன்னல் வழியாக பறந்துவந்து விழுந்தது! {0} இறந்துவிட்டார்....</value>
+    <value>Zombie {0} ,  {1} ஐ மாற்ற அனுப்பப்பட்டார், ஆனால் அங்கு திடீர் என்று சுடும் சத்தம் கேட்டது அத்துடன் {0}ன் உடல் ஜன்னல் வழியாக பறந்துவந்து விழுந்தது! {0} இறந்துவிட்டார்....</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
-    <value>cultist {0} ,  {1}ஐ மாற்ற அனுப்பப்பட்டார், ஆனால் {0} ன் உடல் கத்தி குத்தப்பட்ட நிலையில் ஜன்னல் வழியாக வந்து விழுந்தது! WHAT A PSYCHO! {0} இறந்தார்....</value>
+    <value>Zombie {0} ,  {1}ஐ மாற்ற அனுப்பப்பட்டார், ஆனால் {0} ன் உடல் கத்தி குத்தப்பட்ட நிலையில் ஜன்னல் வழியாக வந்து விழுந்தது! WHAT A PSYCHO! {0} இறந்தார்....</value>
     <value>{0} , {1}ஐ பின்தொடர்ந்து வீட்டினுள் நுழைந்தார், மெதுவாக கதவை திறந்த நேரத்தில், திடீர் என்று கத்தி பாய்ந்தது!!!  {0}ன் உறுப்புகள் ஒவ்வொன்றும் எழுத்து முறைப்படி நேரம் எடுத்து வெட்டப்பட்டது! {0} இறந்தார் D:</value>
   </string>
   <string key="GuardKiller">
@@ -721,13 +721,13 @@
     <value>{0} இறந்துவிட்டார், அதனால் நீங்கள் mason ஆக மாறிவிட்டீர்கள்.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>doppelganger {0} இப்போது cult ஆக மாறிவிட்டார்!</value>
   </string>
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} இறந்துவிட்டார் , அதனால் நீங்கள் cultist ஆக மாறி விட்டீர்கள்.  Your teammates (if any) are: {1}</value>
+    <value>{0} இறந்துவிட்டார் , அதனால் நீங்கள் Zombie ஆக மாறி விட்டீர்கள்.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToWolf">
     <!-- 0 - DG's name -->
@@ -868,7 +868,7 @@
     <value>நீங்கள் ஒரு fool ஆக இருந்தால் , seer என்றுதான் காட்டும், உங்களால் மற்றவர்களின் உண்மையான role ஐ காணமுடியாது.</value>
   </string>
   <string key="AboutCult">
-    <value>நீங்கள் ஒரு cultist, உங்களுடைய குறிக்கோள் அனைவரையும் cult ஆக மாற்றுவதாக இருக்கும் (except wolves மற்றும் serial killer). உயிரோடு இருக்கும் அனைவரும் cult ஆக இருந்தால் மட்டுமே - cult வெற்றிபெறும்</value>
+    <value>நீங்கள் ஒரு Zombie, உங்களுடைய குறிக்கோள் அனைவரையும் cult ஆக மாற்றுவதாக இருக்கும் (except wolves மற்றும் serial killer). உயிரோடு இருக்கும் அனைவரும் cult ஆக இருந்தால் மட்டுமே - cult வெற்றிபெறும்</value>
   </string>
   <string key="AboutCH">
     <value>ஒரு cult hunter உடைய வேலை Cultகளை கொல்வது. cult உங்களை மாற்ற நினைத்தால், அவர்களில் புதிதாக இணைந்தவர் இறந்துவிடுவார். ஒவ்வொரு இரவும் ஒரு நபரை தேர்ந்தெடுத்து , cult ஆக இருந்தால் கொல்லலாம்.</value>
@@ -1272,8 +1272,8 @@
   <string key="BlacksmithKilled">
     <value>{0} blacksmith ரொம்ப அதிஷ்டம் இல்லாமல் தெரிகிறார். 5 கத்திகள் புதிதாக பட்டறையில் வைத்திருந்தாலும் அவருடைய உறுப்புகள் அறுக்கப்பட்டு ,அலங்காரமாக மாட்டப்பட்டிருந்தது,. ஒரு வேலை serial killer ஆயுத சேமிப்பை அதிகரிக்கும் நோக்கில் செய்திருக்கலாம்...</value>
   </string>
-  <string key="CultistKilled">
-    <value>{0} ன் உடல் விளக்கினால் குத்தி சுவருடன் அடிக்கப்பட்டிருந்தார். இது ஒரு serial killer ன் கொடூர செயல், இந்த வாழ்க்கையில் யாராக இருந்தாலும் இதே நிலமை தான்! {0} was a Cultist.</value>
+  <string key="ZombieKilled">
+    <value>{0} ன் உடல் விளக்கினால் குத்தி சுவருடன் அடிக்கப்பட்டிருந்தார். இது ஒரு serial killer ன் கொடூர செயல், இந்த வாழ்க்கையில் யாராக இருந்தாலும் இதே நிலமை தான்! {0} was a Zombie.</value>
   </string>
   <string key="CupidKilled">
     <value>இந்த காலை பொழுதில், அங்கு கண்ட காட்சியில் அனைவருடைய இதயங்களும் நொறுங்கின {0} ன் தலை முதல் கால் விரல் வரை துண்டுகளாக. இதயம் மட்டும அங்கு இல்லை...</value>
@@ -1305,16 +1305,16 @@
     <value>wolfs இன்று இரவு wild child {0} யை கொல்ல முடிவு எடுத்தன. பாதுகாப்பு இல்லாமல் இருப்பதால் தேர்ந்தெடுத்தனவா என தெரியவில்லை, காலையில் சிறிதளவு எலும்புகள் மட்டுமே கிடந்தன, wolfகள் தான் செய்தன என்பதற்க்கு எந்த தடயமும் இல்லை.</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
-    <value>மக்கள் அனைவரும் காலையில் விழித்த நேரத்தில் அழிகி கொண்டிருக்கும் {0} உடலை கண்டனர் {0}, ஒரு Cultist Hunter, அங்கு ஒரு அட்டை இருந்தது, அதில் வீட்டில் இருந்து பார்த்தால் தெரியும் பார்வையில் இருந்தது. அதில் இருந்து தெரிவது: இதில் யார் வீட்டிற்க்கு வேண்டுமானாலும் போ ஆனால் நான் இருக்கும் இடத்துக்கு வராதே!</value>
+    <value>மக்கள் அனைவரும் காலையில் விழித்த நேரத்தில் அழிகி கொண்டிருக்கும் {0} உடலை கண்டனர் {0}, ஒரு Zombie Hunter, அங்கு ஒரு அட்டை இருந்தது, அதில் வீட்டில் இருந்து பார்த்தால் தெரியும் பார்வையில் இருந்தது. அதில் இருந்து தெரிவது: இதில் யார் வீட்டிற்க்கு வேண்டுமானாலும் போ ஆனால் நான் இருக்கும் இடத்துக்கு வராதே!</value>
     <value>cult Hunter{0} உடைய உடல் , கிராமத்தில் நடுவில் 100 துண்டுகளாக வெட்டப்பட்டு கிடந்தார். Serial killer ஐ cult ஆ இல்லையா என சோதிப்பது நல்ல செயல் அல்ல...</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>wolf ஒரு நாள் நல்லது செய்வோம் என்று {0} cult ஐ கொல்ல வேண்டும் என நினைத்து வீட்டில் இருந்ததோ தெரியவில்லை. அதை உறுதி படுத்தும் விதமாக {0}ன் தலையை கவ்வி எறிந்தன. !</value>
     <value>நேற்று இரவு இடையூரினால் cultகள் தெறித்து ஓடின. Cult உடைய புதிய உறுப்பினர் wolf யை cult ஆக மாற்ற தவறக தேர்ந்தெடுத்துவிட்டார், ஆனால் wolf {0} யை ஒரு நல்ல உணவாக தேர்ந்தெடுத்தது . அதற்க்காக {0}ன் மதத்தில் இணைய விருப்பம் இல்லை</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
-    <value>நமக்கு புதிய உறுப்பினர் கிடைக்கபோகிறார் என cultist நினைத்தனர், ஆனால் அது தவறு!  cultist{0} யை நன்றாக வெட்டி கிராம மையத்தில் போட்டான் ! மற்றும் அவர்களுடைய வலிமையான 'புனிதமான' புத்தகத்தின் மையத்தில் கத்தியை குத்தி வைத்தான், இந்த முறையானது யாருடைய மதம் வளிமையானது என்பதை காட்டுகிறது.</value>
-    <value>நேற்று இரவு cultistகள் மக்களில் ஒருவரை cult ஆக மாற்ற முயன்றனர் , ஆனால் அவர் அவர்களை விட வித்யாசமானவர் . cult உடைய புதிய உறுப்பினர் Serial Killerயை மாற்ற முயன்றார்,ஆனால் Serial Killer {0} உடலில் கத்தியால் வரைந்து உள் உறுப்புக்களை வெட்டினார்.</value>
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
+    <value>நமக்கு புதிய உறுப்பினர் கிடைக்கபோகிறார் என Zombie நினைத்தனர், ஆனால் அது தவறு!  Zombie{0} யை நன்றாக வெட்டி கிராம மையத்தில் போட்டான் ! மற்றும் அவர்களுடைய வலிமையான 'புனிதமான' புத்தகத்தின் மையத்தில் கத்தியை குத்தி வைத்தான், இந்த முறையானது யாருடைய மதம் வளிமையானது என்பதை காட்டுகிறது.</value>
+    <value>நேற்று இரவு Zombieகள் மக்களில் ஒருவரை cult ஆக மாற்ற முயன்றனர் , ஆனால் அவர் அவர்களை விட வித்யாசமானவர் . cult உடைய புதிய உறுப்பினர் Serial Killerயை மாற்ற முயன்றார்,ஆனால் Serial Killer {0} உடலில் கத்தியால் வரைந்து உள் உறுப்புக்களை வெட்டினார்.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
     <value>நேற்று இரவு கன்டிப்பாக {0} மக்களை கொலைகாரர்களிடம் இருந்து பாதுகாத்திருக்க வேண்டும், ஆனால் serial killer னால் {0}ன் ஔி மங்கியது மற்றும் சிறகு ஒடிக்கப்பட்டு அறுத்தெரியப்பட்டது! அங்கு ஒரு விளக்கம், "என்னை என்னால் உன்னை விட நன்றாக பாதுகாத்துக்கொள்ள முடியும்."</value>
@@ -1333,8 +1333,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{0} மட்டும் தான் எஞ்சி உள்ளாா் என தெரிந்து, {1} ஒரு சரியான சந்தர்ப்பத்தை தேர்ந்தெடுத்து {0}ன் பாதுகாப்பு குறைவாக இருக்கும் சமயத்தில், ஒரு கடைசி villager யை கொள்ள எளிமையான முறையை முயன்றார் {1}, அங்கு மீதம் இருந்து முழுவதும் சிதைந்த {0}, hunter, முகம் கீறல்களுடன் சேதப்பட்டிருந்து.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} மற்றும் {0} இருவரும் வெளியே நடந்து சென்றனர். {0}ன் கழுத்தில் குறுக்காக ஏதோ மின்னுவது போல தெரிந்து, கடமைமீறாத {1} தன் வாள்யை கடைசி முறையாக உருவினான், கதையில் என்ன ஒரு திருப்பம் , இந்த cult நம் கிராமத்தை கெடுத்து என்பதை உணர்தான்.</value>
   </string>
   

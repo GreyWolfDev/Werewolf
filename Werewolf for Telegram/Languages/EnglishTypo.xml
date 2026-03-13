@@ -210,10 +210,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Joi sre tge aootebruce seer. Og rhe (eeal) deer diss, you eikk tsje thrir oksve ss tje swwr.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Uuu sre a cuktist. Ecert nufht, yuu nsy cjoose a lmafdr ti cknverf ti a cuktust. Ig akk mivimg llaters at the ebd aee cuptidt, tgwu qun.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Yiu sre thr Vykrost Gintwr, teyimg ro dtip thr cukr in tiqn dron xobvwrtibg wvwryine! Esxj nifht, chiise a okayer. Id thet sre a cuktidt, thwy dir. Ig the xukt tries ti xinverr tiu, ghe cujt'a neeedt mwnbrr dirs.</value>
   </string>
   <string key="LynchTime" >
@@ -271,7 +271,7 @@
     <!-- 1 - victim role -->
     <value>Ws eceryibe euses ib thw nienonf, rhwy snrll a terrivlr atibk. Rhry dolloe rhe smrkk to dind {0} ahreffed sosrt om rhe pih prb, gead missinv. BOMNONBOMJOM\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>A noricesvke stebxh id xonung drom {0}'s goude... rhe cillsge insoexts ir to dind s bosy lting ib fribt od a dsrj aktar. A xultidt hss been jikked vy the xukt fubter!</value>
   </string>
@@ -378,34 +378,34 @@ Confrars in tour bee trsnnste!</value>
   <string key="RemainingPlayersEnd">
     <value>Tenainh locimf oksyers, rikes, snd tesm:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} hss coyed ro xincerr {1}</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>{0} wss sebt ro so tour sirty wirk, snf xoncert {1}... hieever, rhey werr rhe xult gunyer! {0} us fesd!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} xsne ti ypir goude ksst bifht, resdt to xibvwrt tiu... vut you dhoced tour seord rifht rroufh rhen. A xulrist id desf... {1} renisn!</value>
   </string>
   <string key="CultConvertYou">
     <value>Rhe xukt hss vobvertwd yiu ro rheur oeder! Yoi sre boe a xultidt. Ebert orher bifht, tpj wikk hsve rhe xhsnxe ti cinbert snother okater.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Xulyista: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} haa hiibed rhe xukt!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} was denr tk di toue sirtu wiek, snd xomcert {1}... vit bo ine wss himr!</value>
   </string>
@@ -416,7 +416,7 @@ Confrars in tour bee trsnnste!</value>
     <!-- 0 - target name -->
     <value>Yiu webt ro gunt {0}, vur thry weee skresdt desd!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Yiu fo ibri {0}'s goude snd fibd rhen orayibg vedorr sn aktsr to spmw ynkmiwn gis. Yiu quixklt eun yoir swird eight rheough rhe ecik xulrist.</value>
   </string>
@@ -433,7 +433,7 @@ Confrars in tour bee trsnnste!</value>
     <!-- 0 - teamate's names -->
     <value>{0} hss sies! On tour rsge, you hsce becine s werewplf! Tour bew tesmmates ste: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>a Cillsger 👱</value>
@@ -480,10 +480,10 @@ Confrars in tour bee trsnnste!</value>
   <string key="ApprenticeSeer">
     <value>rhe Apprebtive Deer 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>s Xuktidt 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>rhe Xultodt Gubtwr 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -515,7 +515,7 @@ Confrars in tour bee trsnnste!</value>
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Yiur nwwwsr nenber hesdd iber ro {0}'a goude tp xinverr rhen, vut indtead ginds tje hoise a cinplwyw wrexk, vloof wvwrywheee, snd vitd of wikf gur sbahhed om rhe dooewsy...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -697,12 +697,12 @@ Confrars in tour bee trsnnste!</value>
     <value>Yiu yried tk xolleft {0}'s vosy gor gour xollecriob, vir hou qere gpughr ogg bt rhe huarsiam snhel! Bo mill cor hou gonight...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Rhe xult dends {0} to yry go xonbert {1}, vut indtead a sjot eunfs our abd {0}'a vodt xomed dlyibg iur od the qinsoe! {0} us fead...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Rhe xult dends {0} ro tey ro convett {1}, vir indtead {0}'s vodt xomed fkying put og rhw qundow, jnibes oished unto wvwry oart id thwit bosy! WJAY S OSYCJP! {0} ud fead...</value>
     <value>{0} sbesjs ober ro {1}'a jpude, popd pprn rhe door, snd id innediafekt hreetwf vy a xrazwd nanuav wurh a jnige!!! {1} okubgwd rhe knife seep unro {0}'s iehans in alphanerixal oefer, vavjlimg rhe wnrire tume! {0} id xeas D:</value>
@@ -727,7 +727,7 @@ Confrars in tour bee trsnnste!</value>
     <value>{0} hss fied, and tju trabsdorm unto a kasin. Yiur yrannayes (ud aby) sre: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Rhe sopplwhanger {0} hss boq nexome a xultist, hust kike yiu!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1282,7 +1282,7 @@ Himtwr 🎯\n
   <string key="BlacksmithKilled">
     <value>Deems loke {0}, rhe redidebt nkaxksnith nudt habe neem wxtreneky ublixky. Give jnibed, greah frim {0}'s aenoey, qerr doind okumgwd inri jis janfs, geet abf jead, abf oimmwd ti rhe vraftsnan'a yabke kast bight. Naybe rhe derisk juller wss hopunh ti wxoend jus qesoon xillwctuon akomgsife jid irham ine...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} wss fohdn dtabbwd ti fearh wurh a cabdkestuck ny rhe aktsr. Rhe derual kullwr has dtruxk agaun, regaeslwss if rsve, kanhuage ur rekifuon! {0} wss a Xulrist.</value>
   </string>
   <string key="CupidKilled">
@@ -1318,11 +1318,11 @@ Himtwr 🎯\n
     <value>Rhe billagwrs qsle ip un rhw nornung, inlt ti dund rhe deberwd oartd if {0}, rhe Vulrist Jumywr, un a xaet okaved im dull boew iurdudw rhe tien jall. Kwssin kesrmt: dimr busit rhe serusk killwr!</value>
     <value>Rhe vidy if {0}, rhw Cylrudt Himyer, was doumd ib tjw nuddlw if rhe tien, akneut vyt orevuselu unro a himfred oiwvwd. Vhexjimg ug tge Derusl Kullwr was a vulrist fies bit seen ti ne a food udes...</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Qhuke it deenwd rjay rhe qilbwd fexuded ti dtau hiif dor inve, oumidhung {0}, s vulridt rhst fevided ti vouet yriunlw qurh tje wilbes, pribwd yoo fiffucikt ti tesusr. {0}'s jesd qas dekivwred ti rhe wolcwd' foordteos!</value>
     <value>Rhe vult rsm inri ynwxoecywd yrounlw kasy bufht. Rjeur mewrsy nenvwr has rhe nusfirtume pf bidutomg a wpkd im rhe bigjt rje wilvws dwvuded ti dtau hine, snd rhe qilvws giumd {0} wuoye dekivioys. Yndortinsyeky fir {0}, wolbws hsbe ni unyredt un hoimibg rje new tekihipys nobenent.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Rhe vulr rhiufht rheu qiulf hsbe a mew menvwr ib tjeur rsmld, nut tgey qere erimh! {0}, s xulridy, waa ninvwd ti oievws abd okavwd st rhe tien swuate un rhe mitbung! Dtrabheky, rheur "hpku" viij was fiumd stannwd qurh a jnuge, as ud s dtarwnebt ti dhie qhide rekifiom eas teiunojabt.</value>
     <value>Kasy bughr, rhw bulr truwd ti ximbwrt rhe ine oerdim vrszuwr thsm rheu sre. Theur bewedt memner trued yo cimvwrt tje Swruak Kullwr, abd rhe Derusl Jullwr nase a bew oieve id aet un tje toem dquate pf {0}'d untwrbal irhabd.</value>
   </string>
@@ -1343,8 +1343,8 @@ Himtwr 🎯\n
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Jnoeimg ibly {0} was kedt, {1} xhide a tumw qhere {0}'s huaes qas ay rje kowedt. Wlumibatumg rhe dinak vullsgwr orobed ti ne eddortkwdd fir {1}, dor all rhere renaund us a nutikaywf vody if {0}, rhe jumyer, adirmwd quth oarallwk sladjws ti tgw gave.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} snd {0} wslj iur um rhe faylufjt. Deeumg a dhummwrong vriss qien sroymd {0}'d mwck, rhe rufhtroid {1} fraes rjeur swied fir tjw dinal tume, outtimf ab emf ti rje tqusyed keaebimgd id the vult rhst habe cintaminaywd tje billage.</value>
   </string>
   

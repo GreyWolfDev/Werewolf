@@ -200,10 +200,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >خیلی عجیبه ولی بکیرم .... یادت نمیاد چه عنی هستی</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >خیلی عجیبه ولی بکیرم .... یادت نمیاد چه عنی هستی! فقط یادته تو شب باید یه گوهی بخوری</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >خیلی عجیبه ولی بکیرم .... یادت نمیاد چه عنی هستی! فقط یادته تو شب باید یه گوهی بخوری</value>
   </string>
   <string key="LynchTime" >
@@ -247,7 +247,7 @@
   <string key="DefaultEaten" >
     <value>جقیا می بینن که {0} بگا رفته و بعد از گشتن خونش می فهمن که : {1}</value>63
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>چه کیری مثله اینکه شکارچی کص دستمون یه فرقه گرای اوبی رو کشته!😲 .... {0} مرده!😮</value>
   </string>
   <string key="NoAttack" >
@@ -331,7 +331,7 @@
   <string key="RemainingPlayersEnd">
     <value> یک دفعه همه ی افراد نقشای کیریشون رو به یاد میارن و با توبه جق رو کنار میزارن :</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >خب {0} رای داد تا یه کاری با {1} بکنیم</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -358,7 +358,7 @@
   <string key="HunterVisitDead">
     <value>مثه اینکه {0} همین الانش هم بگا رفته!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>مثه اینکه دیشب تو خونه {0} یه اتفاقی افتاده بوده ولی انقد جق زدی یادت نمیاد چی!</value>
   </string>
   <string key="HunterFailedToFind">
@@ -370,7 +370,7 @@
   <string key="WildChildTransform">
     <value>خب {0} بگا رفته و نقش تو عوض شده ولی از چی به چی نمیدونی کمتر بزن! ....... یه شخص کیر کلفت مهم یادت میاد! : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 
     -<string key="Villager">
 
@@ -475,14 +475,14 @@
 </string>
 
 
-    -<string key="Cultist">
+    -<string key="Zombie">
 
     <value>فرقه گرای کون گلابی 👤</value>
 
 </string>
 
 
-    -<string key="CultistHunter">
+    -<string key="ZombieHunter">
 
     <value>شکارچی کیر به دست 💂</value>
 
@@ -1282,7 +1282,7 @@
 - آره😞
 متاسفانه دیشب {0} آهنگر روستا توسط قاتل زنجیره ای در اصطبل به قتل رسید!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب قاتل زنجیره ای به فرقه گراها حمله کرد و {0} رو به قتل رسوند!</value>
   </string>
   <string key="CupidKilled">
@@ -1315,10 +1315,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>شکارچی {0} مشغول پیداکردن رئیس فرقه بود زمانی که داشت توی جنگل دنبال ردی از رئیس فرقه میگشت قاتل زنجیره ای بهش حمله میکنه و میکشتش!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب {0} رفت که گرگارو دعوت کنه به فرقه! ولی گرگا بهش حمله کردن و جنازه تکه تکه شدشو توی نقاط مختلف روستا ول کردن!</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>شب قبل فرقه گرا ها میخواستن یک عضو جدید رو به فرقه دعوت کنن، {0} مامور شد که یکی رو به فرقه دعوت کنه، اما دیگه خبری از {0} نشد! صبح روز بعد اعضای فرقه جنازه {0} رو جلوی در خونه رئیس فرقه پیدا میکنن! قاتل زنجیره ای {0} رو کشته!</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1337,8 +1337,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>کلانتر  {0} توی روستا با {1} تنها مونده! {1} میره که به کلانتر حمله کنه و اونو بکشه، اما کلانتر از خواب بلند میشه و متوجه {1} میشه سریع میره سمت تفنگش اما فرصت نمیکنه که تفنگشو دستش بگیره و {1} میگیره و تیکه تیکش میکنه! {1} تنها گرگ بازمانده روستاست🐺</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>تنها فرقه گرای بازمانده روستا {0} بود که زمانی که صبح داشت سمت میدون شهر میرفت، با شکارچی {1} روبه رو میشه! شکارچی، همون موقع تفنگشو در میاره که به {0} شلیک کنه ولی {0} فرار میکنه، شکارچی دنبالش میره و توی جنگل پیداش میکنه و با چاقو میکشتش!  شکارچی برنده این دور بازیه!</value>
   </string>
 
@@ -1645,8 +1645,8 @@
     <value>یادت نمیاد کی هستی اما یه چیز مهم رو یادته : {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>کیرم دهنت کم کم داری یه اسمی رو فراموش میکنی...چی بود؟ {0}یه اسم جدید توی ذهنت پیدا میشه: {1}!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1702,8 +1702,8 @@
     <string key="SecretLynchShowVotersA">
       <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
     </string>
-    <string key="CultistBitten">
-    <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <string key="ZombieBitten">
+    <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
       <value>خیلی عجیبه ولی بکیرم...یه اتفاقی افتاده {0} دیگه با شما نیست! ینی کجامیتونه رفته بده باشه؟</value>
     </string>
     
@@ -1811,7 +1811,7 @@
      <string key="ChemistTargetEmpty">
        <value>{0} خونه نبود!</value>
      </string>
-     <string key="CultistsList">
+     <string key="ZombiesList">
        <value>افرادی که به خاطر میاری عبارت اند از:{0}</value>
      </string>
      <string key="SnowWolf">
@@ -1862,7 +1862,7 @@
      <string key="ChemistFrozen">
        <value>چه اتفاقی دیشب افتاد؟ تو نمیتونی به یاد بیاری .....بکیرم</value>
      </string>
-     <string key="CultistFrozen">
+     <string key="ZombieFrozen">
        <value>چه اتفاقی دیشب افتاد؟ تو نمیتونی به یاد بیاری .....بکیرم</value>
      </string>
      <string key="CHFrozen">
@@ -2003,11 +2003,11 @@
      <string key="HunterFellDigger">
        <value>دیشب چه اتفاقی افتاد؟ یادت نمیاد انقد جق زدی اما یه اسمی همش تو ذهنت میاد {0} اما دلیلش چیه؟</value>
      </string>
-     <!--{0}: cultist-->
+     <!--{0}: Zombie-->
      <string key="CultFell">
        <value>دیشب چه اتفاقی افتاد؟ یادت نمیاد انقد جق زدی اما یه اسمی همش تو ذهنت میاد {0} اما دلیلش چیه؟</value>
      </string>
-     <!--{0}: cultist who fell, {1}: grave digger-->
+     <!--{0}: Zombie who fell, {1}: grave digger-->
      <string key="CultConvertGraveDigger">
        <value>دیشب یه اتفاقی تو خونه {0} افتاد اما انقد جق زدی نمیدونی چه اتفاقی افتاد فقط  یادت میاد که {1} مرده .</value>
      </string>
@@ -2063,8 +2063,8 @@
      <string key="HarlotFellPublic">
        <value> الکسیس {0} در راه خانه ی گورکن بود که درون یک قبر افتاد و مرد. شاید بهتر بود یک شغل دیگه انتخاب میکرد.</value>
      </string>
-     <!--{0}: cultist who died-->
-     <string key="CultistFellPublic">
+     <!--{0}: Zombie who died-->
+     <string key="ZombieFellPublic">
        <value>فرقه گراهای کون گلابی میخواستند کلیسا رو آتیش بزنند، اما {0} که گروه رو هدایت میکرد درون یک قبر افتاد. او فریاد میزد اما بقیه فرقه گراهای کون گلابی برای نجات جان خود فرار کردند</value>
      </string>
      <!--{0}: thief-->

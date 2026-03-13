@@ -152,7 +152,7 @@
     <value>Siapakah orang tua angkat anda? 👪</value>
   </string>
   <string key="AskConvert">
-    <value>Siapakah yang anda mahu hasut untuk menyertai Cultist? 🎃</value>
+    <value>Siapakah yang anda mahu hasut untuk menyertai Zombie? 🎃</value>
   </string>
   <string key="DiscussWith">
     <!--Leave the leading spaces here please-->
@@ -206,11 +206,11 @@
   <string key="RoleInfoApprenticeSeer">
     <value>Anda seorang Perantis Seer(Apprentice Seer)🙇 Jika peramal (sebenar) mati, anda akan mengambil tempat mereka sebagai peramal tersebut.</value>
   </string>
-  <string key="RoleInfoCultist">
-    <value>Anda seorang Ahli Cultist a.k.a pengamal Ajaran Sesat (Cultist)👤 Setiap malam, anda boleh memilih pemain lain untuk menghasut mereka menyertai Ajaran Sesat anda. Jika semua pemain yang tinggal pada akhir permainan adalah pengamal ajaran sesat, mereka akan menang!</value>
+  <string key="RoleInfoZombie">
+    <value>Anda seorang Ahli Zombie a.k.a pengamal Ajaran Sesat (Zombie)👤 Setiap malam, anda boleh memilih pemain lain untuk menghasut mereka menyertai Ajaran Sesat anda. Jika semua pemain yang tinggal pada akhir permainan adalah pengamal ajaran sesat, mereka akan menang!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
-    <value>Terdapat Ahli Cultist di bandar, cuba untuk menukar semua orang!💂 Setiap malam, pilih seorang  pemain. Jika mereka Ahli Cultist, mereka akan mati. Jika ada Ahli Cultist cuba untuk menukar anda, ahli terbaru mereka akan mati.</value>
+  <string key="RoleInfoZombieHunter">
+    <value>Terdapat Ahli Zombie di bandar, cuba untuk menukar semua orang!💂 Setiap malam, pilih seorang  pemain. Jika mereka Ahli Zombie, mereka akan mati. Jika ada Ahli Zombie cuba untuk menukar anda, ahli terbaru mereka akan mati.</value>
   </string>
   <string key="LynchTime">
     <!-- 0 - number of seconds -->
@@ -267,9 +267,9 @@
     <!-- 1 - victim role -->
     <value>Bila semua orang bangun pada waktu pagi, mereka terhidu bau busuk yang teramat sangat. Mereka mengikuti bau tersebut dan mendapati mayat {0} tercincang di dalam kandang haiwan dengan keadaan tanpa kepala! NOMNOMNOMNOM\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
-    <value>Bau busuk yang datang dari rumah {0}... kampung memeriksadan mendapati sekujur badan yang terbaring di hadapan sebuah lorong gelap ... pengamal ajaran sesat telah dibunuh oleh Pemburu Cultist!</value>
+    <value>Bau busuk yang datang dari rumah {0}... kampung memeriksadan mendapati sekujur badan yang terbaring di hadapan sebuah lorong gelap ... pengamal ajaran sesat telah dibunuh oleh Pemburu Zombie!</value>
   </string>
   <string key="NoAttack">
     <value>Penduduk kampung berkumpul pada keesokan harinya di pusat kampung, untuk mengeluh lega - ternyata tidak ada serangan pada malam sebelumnya.</value>
@@ -373,45 +373,45 @@
   <string key="RemainingPlayersEnd">
     <value>Baki pemain yang tinggal, peranan, dan pasukan:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} telah mengundi untuk menghasut {1}</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
-    <value>{0} telah dihantar untuk melakukan kerja kotor anda, dan menukar {1} ... walau bagaimanapun, dia adalah Pemburu Cultist! {0} telah mati!</value>
+    <value>{0} telah dihantar untuk melakukan kerja kotor anda, dan menukar {1} ... walau bagaimanapun, dia adalah Pemburu Zombie! {0} telah mati!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
-    <value>{0} datang ke rumah anda malam tadi, bersedia untuk menghasut anda .... tetapi anda menghunus pedang anda dan memancung kepalanya!!! salah seorang Ahli Cultist mati... {1} masih hidup!</value>
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{0} datang ke rumah anda malam tadi, bersedia untuk menghasut anda .... tetapi anda menghunus pedang anda dan memancung kepalanya!!! salah seorang Ahli Zombie mati... {1} masih hidup!</value>
   </string>
   <string key="CultConvertYou">
-    <value>Ahli Cultist telah berjaya mengubah dan menghasut anda! Anda kini seorang pengamal ajaran sesat. Setiap malam, anda mempunyai peluang untuk mengubah pemain lain.</value>
+    <value>Ahli Zombie telah berjaya mengubah dan menghasut anda! Anda kini seorang pengamal ajaran sesat. Setiap malam, anda mempunyai peluang untuk mengubah pemain lain.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
-    <value>Ahli Cultist adalah : {0}</value>
+    <!-- 0 - Number of Zombies -->
+    <value>Ahli Zombie adalah : {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} telah menyertai kumpulan ajaran sesat!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
-    <value>{0} telah dihantar untuk melakukan kerja kotor anda, dan bersedia untuk menghasut {1} ... selepas mengetuk pintu beberapa kali, anda mendapati dia tiada di rumah! anda menyelitkan Borang Pendaftaran Memasuki Cultist di bawah pintu rumahnya dan pulang.</value>
+    <value>{0} telah dihantar untuk melakukan kerja kotor anda, dan bersedia untuk menghasut {1} ... selepas mengetuk pintu beberapa kali, anda mendapati dia tiada di rumah! anda menyelitkan Borang Pendaftaran Memasuki Zombie di bawah pintu rumahnya dan pulang.</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value>Semua serigala telah mati, yang tinggal adalah orang yang mengamalkan ajaran sesat. Cultist menang! 🐚</value>
+    <value>Semua serigala telah mati, yang tinggal adalah orang yang mengamalkan ajaran sesat. Zombie menang! 🐚</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
     <value>Anda pergi untuk memburu {0}, tetapi mereka sudah mati!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Anda pergi ke rumah {0}, dan mendapati dia membaca mentera di hadapan kerang yang besar ... Anda cepat-cepat menghunus pedang anda ke arah pengamal ajaran sesat tersebut.</value>
   </string>
@@ -428,7 +428,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} telah mati! Dalam kemarahan anda, anda telah menjadi serigala jadian! Rakan sepasukan baru anda adalah: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>Penduduk Kampung 👱</value>
@@ -475,11 +475,11 @@
   <string key="ApprenticeSeer">
     <value>Perantis Seer 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>Ahli Cultist 👤</value>
+  <string key="Zombie">
+    <value>Ahli Zombie 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>Pemburu Cultist 💂</value>
+  <string key="ZombieHunter">
+    <value>Pemburu Zombie 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -510,7 +510,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Ahli kumpulan terbaru anda telah pergi ke rumah {0} untuk menukar mereka, tetapi sebaliknya mendapati rumah itu hancur, darah berlumuran di merata tempat, dan ada cebisan bulu serigala tersangkut pada pintu, sungguh mencurigakan...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -691,14 +691,14 @@
     <value>Anda cuba untuk mengumpul badan {0} untuk koleksi anda, tetapi anda telah dilawan oleh Dewa penjaga! Tiada pembunuhan untuk anda malam ini ...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Pengamal Ajaran Sesat menghantar {0} untuk cuba menhasut {1}, tetapi sebaliknya satu das tembakan dilepaskan dan badan {0} terbang keluar dari tingkap! {0} telah mati ...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
-    <value>Ahli Cultist telah menghantar {0} untuk cuba menukarkan {1}, tetapi jasad {0} terkeluar daripada tingkap, pisau ditusuk keserata tubuh! PSIKO betul! {0} telah mati....</value>
+    <value>Ahli Zombie telah menghantar {0} untuk cuba menukarkan {1}, tetapi jasad {0} terkeluar daripada tingkap, pisau ditusuk keserata tubuh! PSIKO betul! {0} telah mati....</value>
     <value>{0} menyelinap ke rumah {1}, membuka pintu, kemudian di sapa oleh orang gila dengan pisau!!! {1} menusuk pisau ke dalam organ {0} dan mencari-carit organnya sambil mengilai! {0} telah mati D:</value>
   </string>
   <string key="GuardKiller">
@@ -721,8 +721,8 @@
     <value>{0} telah meninggal dunia, dan anda bertukar menjadi buruh. Rakan sepasukan anda (jika ada) adalah: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
-    <value>Doppelgänger {0} kini telah menjadi Ahli Cultist, sama seperti anda!</value>
+    <!-- 0 - new Zombie's name -->
+    <value>Doppelgänger {0} kini telah menjadi Ahli Zombie, sama seperti anda!</value>
   </string>
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
@@ -868,10 +868,10 @@
     <value>Sebagai si Bodoh anda  diberitahu mereka sebagai Seer... apabila mereka memilih untuk melihat peranan seseorang pada waktu malam, mereka diberitahu peranan yang rawak.</value>
   </string>
   <string key="AboutCult">
-    <value>Sebagai Ahli Cultist, matlamat anda adalah untuk menukar semua pemain lain (kecuali serigala) kepada agama anda. Jika pada akhir permainan, semua pemain hidup adalah Ahli Cultist, pengamal ajaran sesat itu akan menang.</value>
+    <value>Sebagai Ahli Zombie, matlamat anda adalah untuk menukar semua pemain lain (kecuali serigala) kepada agama anda. Jika pada akhir permainan, semua pemain hidup adalah Ahli Zombie, pengamal ajaran sesat itu akan menang.</value>
   </string>
   <string key="AboutCH">
-    <value>Tugas anda adalah untuk memburu pengamal ajaran sesat iaitu Ahli Cultist. Jika Ahli Cultist menyerang anda, ahli terbaru mereka akan mati. Setiap malam anda boleh mengambil pemain untuk 'diburu' - jika mereka pengamal ajaran sesat, mereka akan mati.</value>
+    <value>Tugas anda adalah untuk memburu pengamal ajaran sesat iaitu Ahli Zombie. Jika Ahli Zombie menyerang anda, ahli terbaru mereka akan mati. Setiap malam anda boleh mengambil pemain untuk 'diburu' - jika mereka pengamal ajaran sesat, mereka akan mati.</value>
   </string>
   <string key="AboutWC">
     <value>Budak Liar sebenarnya adalah anak serigala, ibu bapanya telah mati dibunuh dan dia dibela oleh seorang penduduk kampung iaitu orang tua angkatnya ataupun "role modelnya" Pada awal permainan, anda akan memilih seseorang untuk menjadi orang tua angkat anda. Jika mereka mati, naluri Serigala Jadian anda akan muncul dan anda menjadi serigala untuk membalas dendam ke atas kematian role model anda.</value>
@@ -889,7 +889,7 @@
     <value>
       Keturunan anda mempunyai kemahiran untuk menukar orang lain ... semasa anda tidak mempunyai kebolehan mereka sepenuhnya, anda boleh mengambil pemain pada permulaan permainan. Jika pemain itu mati, anda akan menjadi apa yang mereka jadi.
       Nota: Jika pemain itu ditukar kepada Cult, anda akan mengambil peranan asal mereka. Arahan asal sebelum ini dipakai: Jika mereka Kanak-kanak Liar dan role model mereka mati, anda akan menjadi serigala. Jika tidak, anda akan mewarisi role model mereka.
-       Cultist tidak boleh menukar Doppelgänger (tetapi boleh selepas doppelganger beralih peranan). Juga - Doppelgänger TIDAK boleh menang kecuali mereka berubah. Jika pada akhir permainan, Doppelgänger masih tidak berubah, mereka kalah (pengecualian: lover)
+       Zombie tidak boleh menukar Doppelgänger (tetapi boleh selepas doppelganger beralih peranan). Juga - Doppelgänger TIDAK boleh menang kecuali mereka berubah. Jika pada akhir permainan, Doppelgänger masih tidak berubah, mereka kalah (pengecualian: lover)
     </value>
   </string>
   <string key="AboutCupid">
@@ -902,7 +902,7 @@
     <value>
       Pencetus bahagia, pemain yang penuh dendam kesumat. Sebagai pemburu, anda cuba untuk menjadi low profile. Walau bagaimanapun, apabila orang lain datang untuk melawat anda, mereka mungkin mendapati diri mereka mati, kerana paranoia dan anda menembak. Jika serigala menyerang anda, anda mempunyai peluang untuk mengambil salah seekor daripada mereka bersama anda. Jika tidak, jika anda mati, anda akan mendapat peluang untuk menembak seseorang sebelum anda mati.
        Nota: Untuk serangan serigala, peluang bermula pada 30%. Jika terdapat satu serigala, pemburu mempunyai peluang 30% untuk membunuh serigala (dan hidup). Bagi setiap serigala tambahan, tambah 20% (2 serigala = 50%, 3 = 70%, dan lain-lain). Walau bagaimanapun - jika terdapat banyak serigala, ketika kamu membunuh seorang daripada mereka, anda masih akan dikerumuni dan terbunuh.
-       Jika Cultist cuba untuk mengubah kamu, mereka mempunyai peluang 50% untuk gagal. Jika mereka gagal, anda mempunyai peluang 50% untuk membunuh salah seorang daripada mereka!
+       Jika Zombie cuba untuk mengubah kamu, mereka mempunyai peluang 50% untuk gagal. Jika mereka gagal, anda mempunyai peluang 50% untuk membunuh salah seorang daripada mereka!
     </value>
   </string>
   <string key="AboutSK">
@@ -1073,10 +1073,10 @@ Nota: Para adalah pembuat bot ini.</value>
     <value>Tanner sebagai peranan yang ditetapkan untuk: {0}</value>
   </string>
   <string key="AllowCultQ">
-    <value>Benarkan Cultist 👤 sebagai pilihan peranan?\nSekarang: {0}</value>
+    <value>Benarkan Zombie 👤 sebagai pilihan peranan?\nSekarang: {0}</value>
   </string>
   <string key="AllowCultA">
-    <value>Cultist sebagai peranan yang ditetapkan untuk: {0}</value>
+    <value>Zombie sebagai peranan yang ditetapkan untuk: {0}</value>
   </string>
   <string key="ThankYou">
     <value>Terima kasih, semoga hari ini hari yang baik :)</value>
@@ -1250,7 +1250,7 @@ Nota: Para adalah pembuat bot ini.</value>
     <value>Pasukan Tanner </value>
   </string>
   <string key="CultConvertWolf">
-    <value>Ahli Cultist menghantar {0} untuk tukarkan {1}, tetapi kepala {0} terbang keluar daripada tingkap! Semua orang terkejut dan mungkin makanan dia tidak sesuai dimakan! {0} telah mati...</value>
+    <value>Ahli Zombie menghantar {0} untuk tukarkan {1}, tetapi kepala {0} terbang keluar daripada tingkap! Semua orang terkejut dan mungkin makanan dia tidak sesuai dimakan! {0} telah mati...</value>
   </string>
   <string key="HarlotFuckedKilledPublic">
     <!-- used when Harlot visit's SK's victim, and dies -->
@@ -1264,7 +1264,7 @@ Nota: Para adalah pembuat bot ini.</value>
   <string key="BlacksmithKilled">
     <value>Nampak seperti {0}, si Tukang Besi mempunyai nasib malang. Lima pisau, masih segar dari peralatan {0} dijumpai ditikam di tangan,kaki, kepala pada meja barangan kraf. Mungkin Pembunuh Bersiri ingin mengumpul koleksi senjata selain daripada koleksi organ… </value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} di jumpai ditikam sampai mati dengan batang lilin dekat altar. Pembunuh bersiri melakukan lagi, tanpa mengira agama, bahasa atau bangsa! {0} adalah Pengamal Ajaran Sesat.</value>
   </string>
   <string key="CupidKilled">
@@ -1299,15 +1299,15 @@ Nota: Para adalah pembuat bot ini.</value>
   <string key="SerialKillerKilledCH">
     <!--used when CH visits SK-->
     <value>Penduduk kampung bangun pagi ini, menjumpai sebagai tubuh {0}, Pemburu Ajaran Sesat diletakkan di luar Town Hall. Pengajaran: Jangan melawat pembunuh upahan!</value>
-    <value>Jasad {0}, Pemburu Cultist, ditemui ditengah bandar, walaupun di potong dengan tepat dalam 100 bahagian. Memburu Pembunuh Bersiri nampaknya bukan idea yang bijak… </value>
+    <value>Jasad {0}, Pemburu Zombie, ditemui ditengah bandar, walaupun di potong dengan tepat dalam 100 bahagian. Memburu Pembunuh Bersiri nampaknya bukan idea yang bijak… </value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Walaupun nampak macam serigala mahu menjadi baik, menghukum {0}, seorang pengamal ajaran sesat yang cuba mencari masalah dengan serigala, membuktikan sukar untuk dihalang. Kepala {0} dijadikan makan malam dan dihantar ke rumah serigala.</value>
-    <value>Pengamal ajaran sesat mengalami masalah semalam. Terdapat seorang ahli baru bernasib malang melawat serigala dan bermalam, serigala merasakan {0} sangat sedap. Sayangnya untuk {0}, serigala tidak berminat menyertai kumpulan Cultist.</value>
+    <value>Pengamal ajaran sesat mengalami masalah semalam. Terdapat seorang ahli baru bernasib malang melawat serigala dan bermalam, serigala merasakan {0} sangat sedap. Sayangnya untuk {0}, serigala tidak berminat menyertai kumpulan Zombie.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>Puak cult ingatkan mereka akan dapat ahli baru mereka silap! {0}, seorang pengamal ajaran sesat, dicincang dan diletakkan di kota pagi ini! Anehnya buku mereka ditetak dengan pisau, sebagai menunjukkan puak mana lebih berkuasa.</value>
     <value>Semalam, ahli cult cuba untuk ajak Pembunuh Bersiri menyertai mereka. Pembunuh bersiri menghiasi bandar dengan hasil seni organ dalaman {0}.</value>
   </string>
@@ -1329,8 +1329,8 @@ Nota: Para adalah pembuat bot ini.</value>
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Mengetahui hanya {0} tinggal, {1} memilih waktu yang tepat untuk memakan {0}.Menyingkir penduduk terakhir ini membuktikan Serigala Jadian yang paling hebat dan akhirnya Pemburu mati dicakar di muka.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} dan {0} keluar waktu siang.Ternampak simbol dipakai oleh {0} , yang betul {1} keluarkan pedang untuk kali terakhir menghapuskan ajaran sesat yang mendominasikan penduduk kampung.</value>
   </string>
   <!-- Extend time -->
@@ -1635,8 +1635,8 @@ Nota: Para adalah pembuat bot ini.</value>
     <value>Ahli pasukan anda: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} bukan lagi pasukan anda dan {1} telah menjadi pengamal ajaran sesat seperti anda!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1693,8 +1693,8 @@ Nota: Para adalah pembuat bot ini.</value>
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
   <value>Pelik ketika anda berbincang untuk ajak orang menyertai ajaran anda, anda menyedari {0} tiada di sini! Apa yang berlaku pada mereka??</value>
   </string>
   
@@ -1803,8 +1803,8 @@ Nota: Para adalah pembuat bot ini.</value>
   <string key="ChemistTargetEmpty">
   <value>{0} tiada di rumah! Anda mengheret beg sambil menyumpah nasib malang anda.</value>
   </string>
-  <string key="CultistsList">
-  <value>Senarai keahlian ahli cultist terkini: {0}</value>
+  <string key="ZombiesList">
+  <value>Senarai keahlian ahli Zombie terkini: {0}</value>
   </string>
   <string key="SnowWolf">
   <value>Serigala Salju🐺☃️</value>
@@ -1854,8 +1854,8 @@ Nota: Para adalah pembuat bot ini.</value>
   <string key="ChemistFrozen">
     <value>Semasa anda terjaga daripada tidur, bersedia untuk bangun dan mendapatkan ramuan anda, bayu angin yang kencang meniup ke dalam daripada tingkap menyebabkan anda beku 🐺☃️. Daripada sudut penglihatan mata, anda melihat botol-botol ramuan anda turut membeku. Nampaknya ia juga tidak terlepas daripada serangan mantera  beku itu. Anda mengeluh, mengimpikan matahari akan segera terbit. Syukurlah anda mulai selesa sekarang daripada kesejukan. </value>
   </string>
-  <string key="CultistFrozen">
-    <value>Semasa anda menggantungkan jubah dan bersedia untuk meninggalkan rumah anda, bayu angin berhembus melalui daun pintu, menyebabkan anda membeku 🐺☃️. Rakan-rakan cultist anda singgah ke  rumah anda untuk membawa ahli yang baharu, tetapi mereka malah mentertawakan anda.  Sejurus mereka meninggalkan rumah anda,  mereka berjanji akan melakukan kerja yang baik pada malam ini. Setelah anda pulih seperti sediakala, anda meninggalkan rumah, merengek malu.  </value>
+  <string key="ZombieFrozen">
+    <value>Semasa anda menggantungkan jubah dan bersedia untuk meninggalkan rumah anda, bayu angin berhembus melalui daun pintu, menyebabkan anda membeku 🐺☃️. Rakan-rakan Zombie anda singgah ke  rumah anda untuk membawa ahli yang baharu, tetapi mereka malah mentertawakan anda.  Sejurus mereka meninggalkan rumah anda,  mereka berjanji akan melakukan kerja yang baik pada malam ini. Setelah anda pulih seperti sediakala, anda meninggalkan rumah, merengek malu.  </value>
   </string>
   <string key="CHFrozen">
     <value>Semasa mengambil pedang anda, bayu angin berhembus ke dalam melalui tingkap, menyebabkan anda membeku dalam keadaan badan membongkok 🐺☃️. Anda mengerang kesakitan, anggota badan mulai terasa lenguh dek berada dalam keadaan yang membongkok sehingga sekarang...  </value>
@@ -1995,11 +1995,11 @@ Nota: Para adalah pembuat bot ini.</value>
   <string key="HunterFellDigger">
   <value>Selepas satu malam yang melelahkan, anda kembali ke rumah anda ketika hari semakin senja. Sebelum anda tiba, anda melihat pedang berbaring di atas tanah di sebelah kubur yang belum selesai. Di dalam kubur itu anda melihat mayat yang mati {0}. Pemburu kultus tidak sepatutnya disyaki ...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
   <value>Anda kembali dari malam yang lain yang melelahkan, apabila tiba-tiba anda mendengar jeritan dari salah satu kubur yang belum selesai digali! Anda bergegas ke sana, hanya untuk mencari {0} terbaring mati di kubur yang belum selesai. Apa jenis kultus yang cuba menukar penggali kubur?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
   <value>Dalam perjalanan ke  rumah {1} , {0} tiba-tiba memutuskan bahawa ia akan menjadi idea yang baik untuk membakar tempat itu juga. Mereka membawa anda melalui tanah perkuburan apabila tiba-tiba perangkap terkena di pergelangan kaki mereka! Apa yang dapat anda dengar adalah jeritan mereka sebelum mereka jatuh ke dalam kubur dan anda berlari untuk nyawa anda.</value>
   </string>
@@ -2056,9 +2056,9 @@ Nota: Para adalah pembuat bot ini.</value>
   <string key="HarlotFellPublic">
   <value>Sebagai pedagang {0} pulang ke rumah selepas malam yang menggembirakan mereka cuba untuk mengambil jalan pintas melalui tanah perkuburan tempatan. Mereka mesti masih agak pening sehingga mereka tidak melihat kubur yang ditemui sehingga mereka tidak merasakan alasan di bawah langkah seterusnya. Mungkin mereka sepatutnya mengambil kerja siang hari yang mereka tawarkan semalam!</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
-  <value>Para ahli cuba membakar tempat, tetapi sebagai {0} mengetuai kumpulan itu melalui kawasan tanah perkuburan itu, perangkap menerkam di pergelangan kakinya! Dia menjerit apabila dia jatuh ke kubur terbuka dan ahli cultist lain melarikan diri ...</value>
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
+  <value>Para ahli cuba membakar tempat, tetapi sebagai {0} mengetuai kumpulan itu melalui kawasan tanah perkuburan itu, perangkap menerkam di pergelangan kakinya! Dia menjerit apabila dia jatuh ke kubur terbuka dan ahli Zombie lain melarikan diri ...</value>
   </string>
   <!--{0}: thief-->
   <string key="ThiefFellPublic">

@@ -214,12 +214,12 @@ HENSHIN! until you do.</value>
   <string key="RoleInfoApprenticeSeer" >
     <value >You are the Cafe Assistant (apprentice seer 🙇). Someday, if the Cafe Owner (seer) is gone, you must take over to maintain the Cafe so the Riders have somewhere to return to.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >You are a Shocker Grunt (Cultist 👤), concerned only with spreading the gospel of Shocker. Everyone else can be lured into the simple life of a Shocker Grunt except ambitious Kaijin and Shadowmoon - the more Grunts, the merrier!
+  <string key="RoleInfoZombie" >
+    <value >You are a Shocker Grunt (Zombie 👤), concerned only with spreading the gospel of Shocker. Everyone else can be lured into the simple life of a Shocker Grunt except ambitious Kaijin and Shadowmoon - the more Grunts, the merrier!
 </value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value >You are Kamen Rider Accel (Cultist Hunter 💂). If Shocker Grunts try to convert you, the newest member (also the fall guy) will get arrested. Each episode, you may launch an investigation into any cast member, arresting them if they are a Shocker Grunt.</value>
+  <string key="RoleInfoZombieHunter" >
+    <value >You are Kamen Rider Accel (Zombie Hunter 💂). If Shocker Grunts try to convert you, the newest member (also the fall guy) will get arrested. Each episode, you may launch an investigation into any cast member, arresting them if they are a Shocker Grunt.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
@@ -284,7 +284,7 @@ The end of the episode draws near, and the cast gathers to decide who they are g
     <value>Everyone hears an explosion, and finds the smouldering remains of {0}.\n{1}</value>
     <value>{0} puts up a fight, but Shocker has deemed {0} unfit for further experimentation, and eliminates him! \n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>The air is filled with traces of steam, jet exhaust and static electricity near {0}. A Shocker Grunt just got busted by Kamen Rider Accel!</value>
     <value> {0} hears the sound of the Engine blade, shortly before he explodes. Despair was his goal, courtesy of Kamen Rider Accel</value>
@@ -402,34 +402,34 @@ The end of the episode draws near, and the cast gathers to decide who they are g
   <string key="RemainingPlayersEnd">
     <value>Remaining players in the episode:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} has managed to convince {1} on the benefits of joining Shocker.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>{0} approached {1}, only to get struck by a cleverly concealed Engine Blade. {0} got arrested by Kamen Rider Accel!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} approached you and felt the wrath of the Engine Blade; {1} remain! Clearly that Shocker Grunt was too new!</value>
   </string>
   <string key="CultConvertYou">
     <value>You have joined the ranks of the Shocker Grunts. EEEEEE!</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Shocker Grunts: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} has become a Shocker Grunt!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} was sent to do your dirty work, and recruit {1}... but couldn’t find him.</value>
   </string>
@@ -440,7 +440,7 @@ The end of the episode draws near, and the cast gathers to decide who they are g
     <!-- 0 - target name -->
     <value>On a lead, you wanted to arrest {0}, but all you find is a slightly singed black costume.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>You locate {0} and throw your Engine Blade at him, knocking him out cold. Time for a raise!</value>
   </string>
@@ -461,7 +461,7 @@ new teammates are: {1}</value>
   </string>
   <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, 
 
-WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>a Regular Human (a Villager) 👱</value>
@@ -508,11 +508,11 @@ WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
   <string key="ApprenticeSeer">
     <value>the Cafe Assistant (the Apprentice Seer) 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>a Shocker Grunt (MLM) (a Cultist) 👤</value>
+  <string key="Zombie">
+    <value>a Shocker Grunt (MLM) (a Zombie) 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>Kamen Rider Accel (the Cultist Hunter) 💂</value>
+  <string key="ZombieHunter">
+    <value>Kamen Rider Accel (the Zombie Hunter) 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -544,7 +544,7 @@ WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Your newest Shocker Grunt approaches {0}’s last known location to recruit them, but instead finds the remnants of an intense battle.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -719,7 +719,7 @@ disappears, the other one will no longer be able to function, and is practically
     <value>Dying, {0} falls to the ground.... And pulls a last-minute FinalAttackRide on {1}, who explodes alongside the crafty Kamen Rider Decade! {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
-  	<!-- 0 - Youngest Cultist's name -->
+  	<!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>{0} creeps behind {1}, who anticipates the meeting and takes him out in a single punch.</value>
  	<value>The Shocker Grunts sends {0} to try to recruit {1}, but Shadowmoon reveals himself with a Rider Punch!</value>
@@ -745,7 +745,7 @@ disappears, the other one will no longer be able to function, and is practically
     <value>You tried to eliminate {0}, but he withstood your onslaught thanks to a rousing speech by Kamen Rider Fourze, and you slink away to fight another day..</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>The Shocker Grunts send {0} to try to recruit {1}, but {0} didn’t even realise Kamen Rider Accel was waiting..</value>
   </string>
@@ -769,7 +769,7 @@ disappears, the other one will no longer be able to function, and is practically
     <value>{0} has disappeared, and you pick up his belt. Your Riotrooper comrade(s) (if any) is/are: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>The Roidmude {0} has learnt the ways of Shocker Grunts, and will now spread the good word of Shocker.</value>
   </string>
   <string key="DGTransformToCult">
@@ -932,7 +932,7 @@ role and the emoji in front of the string.
     <value>While there are deluded fanboys, you take it one step further.\n \nAs an ambitious cosplayer (Fool)🃏, you’ve pretty much convinced yourself that you’re part of the cast, with self-insertion fanfics and surprisingly immersive costumes.</value>
   </string>
   <string key="AboutCult">
-    <value>EEEEEEEEE!\n \nGimp suits and masks are your thing, you’re a Shocker Grunt (Cultist) 👤! Time to spread the good word of Shocker!.</value>
+    <value>EEEEEEEEE!\n \nGimp suits and masks are your thing, you’re a Shocker Grunt (Zombie) 👤! Time to spread the good word of Shocker!.</value>
   </string>
   <string key="AboutCH">
     <value>Shocker incidents have been on the rise, and it’s time to take up the Engine Blade.\n \nAs Kamen Rider Accel (Cult Hunter) 💂, you arrest Shocker Grunts as and when you encounter them. HEN… SHIN!</value>
@@ -1387,7 +1387,7 @@ over your fellow Kaijin (if any) as the Great Leader of Shocker. They are: {1}</
   <string key="BlacksmithKilled">
     <value>{0}'s machinations have come to an end - they’ve found your weak spot and punched you like Ryuki did, and you’re forced to erase your entire existence in shame.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} tried to convert Shadowmoon, and got dismissed with extreme prejudice (a Rider Punch to the face, to be specific). EEEEE!</value>
   </string>
   <string key="CupidKilled">
@@ -1425,14 +1425,14 @@ good tag team with the Kaijins, if they had known!</value>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Kamen Rider Accel, {0}, tried investigating Shadowmoon. As with all Neo-Heisei Riders, his reliance on finicky gadgets has been his undoing, and Shadowmoon gets the jump on him!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed 
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed 
 
 home-->
     <value>The Kaijins were milling about when {0}, the newest Shocker Grunt, 
 
 foolishly approached them. The subsequent beating was explodey and mildly entertaining.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>{0} quickly learnt the strength of Shadowmoon the hard way, as {0} lay battered on the ground, his last EEEEEEEE escaping his lips..</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1451,8 +1451,8 @@ foolishly approached them. The subsequent beating was explodey and mildly entert
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Knowing only {0} was left, {1} chose a time where {0}'s guard was at their lowest - taking shitty polaroid pictures. Eliminating Kamen Rider Decade proved to be effortless for {1}, for all there remains {0}'s broken Decadriver.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} and {0} walk out in daylight. Seeing a gimp mask shoved unceremoniously into {0}'s backpack, the righteous Kamen Rider Accel, {1}, draws their Engine Blade, putting an end to the weird, slighty twisted life of the Shocker Grunt.</value>
   </string>
   

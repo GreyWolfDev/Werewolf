@@ -59,10 +59,10 @@ namespace Shared
         ApprenticeSeer = 32768,
 
         [Role("👤")]
-        Cultist = 65536,
+        Zombie = 65536,
 
         [Role("💂")]
-        CultistHunter = 131072,
+        ZombieHunter = 131072,
 
         [Role("👷")]
         Mason = 262144,

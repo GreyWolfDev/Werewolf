@@ -381,10 +381,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>你係組爸媽 🏳。一開始你係學渣。如果chief組爸Quit咗U或者發咗癲，你會承繼佢。</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>你係MECH痴線佬 🕺。\n1）每一次考試要拉其他人去發癲。（學霸同killer唔會受你感染）\n2）啲人離開咗宿舍房間就唔會畀你感染，小心唔好入錯輔導員房間。\n3）最後如果每個人都變咗MECH痴線佬，你就會贏。\n4）受感染嘅人會失去原來嘅身份。</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>你係輔導員 🤗，而家學生輔導處要營造一個愉快學習環境！\n1）如果MECH痴線佬想感染你，你會用愛令最新受感染嘅MECH痴線佬自動Quit U。\n2）你每一晚要去一個人嘅宿舍房間，如果佢係MECH痴線佬，佢就會被你感動Quit U。</value>
   </string>
   <string key="LynchTime">
@@ -450,7 +450,7 @@
     <value>考完試之後，大家決定去坑口村飲個夜茶，但係【{0}】件垃圾竟然放飛機！咁佢地就踩咗上【{0}】間房度，點知佢個老死話佢瀨咗嘢，俾人踢出校。\n【{1}】</value>
 	<value>考完試之後，大家決定去荷里活百老匯睇夜場，但係【{0}】件垃圾竟然放飛機！咁佢地就踩咗上【{0}】間房度，點知佢個老死話佢瀨咗嘢，俾人踢出校。\n【{1}】</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>你地收到Massmail發現學校同學【{0}】畀counsellor勸服quit U，聽聞呢單嘢有內情，究竟發生乜嘢事呢？\n【MECH痴線佬 🕺】已被Quit U。</value>
   </string>
  <string key="NoAttack">
@@ -552,7 +552,7 @@
   <string key="RemainingPlayersEnd">
     <value>清水灣人口：</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>【{0}】想【{1}】陪佢發癲。</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -581,7 +581,7 @@
     <value>你去到【{0}】間房，發現佢已經痴咗線，並且執緊嘢Quit U！</value>
 	<value>你去到【{0}】間房，發現佢倒斃房中，身邊有盆炭同有張above mean都係得c minus嘅paper！</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>你去到【{0}】間房，發現佢練緊MECH cheers，佢簡直不打自招，自爆讀MECH讀到發癲嘅經歷畀你聽！你用愛感化佢之後，聽講佢向ARRO申請咗Quit U。</value>
   </string>
   <string key="HunterFailedToFind">
@@ -594,7 +594,7 @@
   <string key="WildChildTransform">
     <value>【{0}】已遠走高飛！生無可戀的你專心讀書變咗做學霸，你班學霸朋友係：【{1}】</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>學渣 👱</value>
   </string>
@@ -640,10 +640,10 @@
   <string key="ApprenticeSeer">
     <value>組爸媽 🏳</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>MECH痴線佬 🕺</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>輔導員 🤗</value>
   </string>
   <!-- These are for the player list-->
@@ -1388,7 +1388,7 @@
   <string key="BlacksmithKilled">
     <value>Killer明改完卷，發現肥嘅人數少過舊年好多。佢上UST FYS Secrets嗰陣見到啲人多謝某人嘅Tips令佢地Pass到Exam。Killer明查到原來係【{0}】，決定直接摺埋【{0}】。\n【USTSpace 🤶】已被Quit U。</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>教授喺Atrium見到MECH痴線佬【{0}】Dem cheers特別出力，覺得佢應該係表演藝術人才，留喺科大係大材小用，所以就畀咗張Quit U Form同TVB藝員訓練班單張佢。\n【MECH痴線佬 🕺】已被Quit U。</value>
   </string>
   <string key="CupidKilled">
@@ -1424,10 +1424,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>輔導員【{0}】明明諗住去感化人，點知誤闖Killer個Lab同倒瀉咗啲實驗品，仲要唔小心炸埋個Lab。最後【{0}】因為擅闖禁地同危險行為俾人踢咗出校。\n【輔導員 🤗】已被Quit U。</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>當學霸專心摺hall溫書之際，MECH痴線佬【{0}】上門去叫一位學霸發癲！學霸見到佢自動送上門，於是同校方報串，屈【{0}】破壞社會安寧，增加同學自殺風險，因此【{0}】畀校方Quit咗U。\n【MECH痴線佬 🕺】已被Quit U。</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>MECH痴線佬尋晚興致勃勃咁去拉人發癲，點知撞親咁啱心情唔靚嘅Killer，仲要令佢跌落蚊池。個Killer喺中大爬返出嚟嗰陣迷迷糊糊，剩係記得其中一件蛋散個名，唔好彩嘅【{0}】因此被踢出校。\n【MECH痴線佬 🕺】已被Quit U。</value>
     </string>
   <string key="GAGuardedKiller">
@@ -1446,8 +1446,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
       <value>最後一次考試前夕，當TA【{0}】係咁日以繼夜，夜以繼日，再日以繼夜，夜以繼日咁做Paper嗰陣，學霸【{1}】決定趁佢病，攞佢命！學霸發動WannaCry攻擊令佢交唔到Paper！可憐TA功虧一簣，輸咗俾學霸……\n【TA 👨‍🎓】已被Quit U。</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>而家淨番【{1}】同埋【{0}】。作為輔導員有特權嘅【{1}】發現【{0}】係漏網之魚！嗱嗱聲愛埋佢令大學冇晒MECH痴線佬，還大家一個安靜嘅讀書環境。\n【MECH痴線佬 🕺】已被Quit U。</value>
   </string>
   <!-- Extend time -->
@@ -1764,8 +1764,8 @@
     <value>同你同床搞基嘅有：【{0}】</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>M嘢王【{1}】M咗【{0}】個張Student ID！佢依家係MECH痴線佬，就好似你咁！</value>
   </string>
   <string key="ThiefToWolf">
@@ -1822,8 +1822,8 @@
   <string key="SecretLynchShowVotersA">
     <value>當啟用不記名Evaluation Form時，事後公開每位玩家嘅選擇已設定為：{0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>奇怪喇……Final period嘅某一晚開始，【{0}】冇再一齊叫春，話MECH爛grade，到底發生咗咩事？</value>
   </string>
   
@@ -1941,7 +1941,7 @@
   <string key="ChemistTargetEmpty">
 	<value>你去到【{0}】間房，發現佢間房冇人！</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>MECH痴線佬名單：【{0}】</value>
   </string>
   <string key="SnowWolf">
@@ -1992,7 +1992,7 @@
   <string key="ChemistFrozen">
     <value>你想搵人飲杯，點知講座教授突然叫保安封鎖你間房，唔畀你出入！</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>你想搵人一齊發癲，點知講座教授突然叫保安封鎖你間房，唔畀你出入！</value>
   </string>
   <string key="CHFrozen">
@@ -2134,11 +2134,11 @@
   <string key="HunterFellDigger">
 	<value>當你返到宿舍時，發現有條屍口吐白沫。原來佢係輔導員【{0}】！</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>當你返到宿舍時，發現有條屍口吐白沫。原來佢係MECH痴線佬【{0}】！</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>你去到見到【{1}】間房中門大開，煙霧彌漫。MECH痴線佬【{0}】好不幸咁畀煙濁親，頓時全身抽搐，七孔流血，與世長辭！</value>
   </string>
@@ -2194,8 +2194,8 @@
   <string key="HarlotFellPublic">
 	<value>Hell雞【{0}】嘅屍體畀人喺宿舍抬出嚟，死者衣著暴露、口吐白沫、七孔流血，身上有好大陣煙味。經調查相信死者生前一次過吸入一千包煙，因尼古丁中毒而死……</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>MECH痴線佬【{0}】嘅屍體畀人喺宿舍抬出嚟，死者手執MECH3030 notes、口吐白沫、七孔流血，身上有好大陣煙味。經調查相信死者生前一次過吸入一千包煙，因尼古丁中毒而死……</value>
   </string>
   <!--{0}: thief-->

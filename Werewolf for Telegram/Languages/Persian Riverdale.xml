@@ -209,10 +209,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >تو ورونیکایی🙇 دوست صمیمی بتی وقتی که اون جایی حضور نداشته باشه تو به جاش براس اجرای نقشه ها میری اما هروقت اون دیگه نتونه فعالیت کنه تو به جاش نقشه میکشی و انجامشون میدی.</value>ّ
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >و عضو مزرعه هستی هرشب یه نفرو به مزرعه دعوت میکنی تا زمانی که همه شهروندان ریوردیل عضو مزرعه بشن تو برنده میشی</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >تو چالرز هستی مامور فدرال که دنبال دستگیری اهالی مزرعه و خلافکارانش هستی هرروز به یک خونه میری و اگر از اهالی مزرعه بود دستگیرش میکنی.</value>
   </string>
   <string key="LynchTime" >
@@ -270,7 +270,7 @@
     <!-- 1 - victim role -->
     <value>آخه این ریوردیلی گناه چیکارتون کرده بود که قربانیش کردین کثافتا 😢😢 خدابیامرز {0} چیزی نبود جز {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>مثل این که چارلز اسمیت یکی دیگه از اهالی مزرعه {0} رو دستگیر کرده.</value>
   </string>
@@ -377,34 +377,34 @@
   <string key="RemainingPlayersEnd">
     <value>بازیکن های باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >نظر {0} اینه که {1} رو تبدیل کنید</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>خب {0} رفت که {1} رو به مزرعه دعوت کنه ولی {1} چارلز بود و دستگیرش کرد!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>یکی از اهالی مزرعه {0} اومد تورو هم به مزرعه دعوت کنه توهم دستگیرش کردی حالا {1} نفر دیگه تو مزرعه باقی موندن</value>
   </string>
   <string key="CultConvertYou">
     <value>تو با موفقیت وارد مزرعه شدی  </value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>دوستای تو عبارتند از {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>دعوت دیشبتون موثر بود و {0} حالا به عضویت مزرعه درومده.</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>عضو مزرعه {0} رفت که {1} رو به مزرعه دعوت کنه اما خونه نبود!</value>
   </string>
@@ -415,7 +415,7 @@
     <!-- 0 - target name -->
     <value>رفتی {0} رو بکشی ولی مرده بود</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>رفتی خونه {0} دیدی داره مراسمات مذهبی انجام میده عصبانی شدی و دستگیرش کردی.</value>
   </string>
@@ -432,7 +432,7 @@
     <!-- 0 - teamate's names -->
     <value>تو {0} رو به عنوان قربانی نشانه گذاری کرده بودی حالا که مرده توهم یه گارگویل شدی و یارات عبارت اند از : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>ریوردیلی👱</value>
@@ -479,10 +479,10 @@
   <string key="ApprenticeSeer">
     <value> ورونیکا لاج🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>عضو مزرعه 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>چارلز اسمیت 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -514,7 +514,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>عضو جدید فرقه رفت خونه {0} که به راه راست هدایتش کنه ولی دید کشته شده</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -702,7 +702,7 @@
     <value>رفتی {0} رو به قتل برسونی ولی ارچی جلوتو گرفت</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>عضو مزرعه عزیز یعنی {0} رفت که {1} رو به دینش دعوت کنه ولی {1} کلانتر بود و با تفنگش زد {0} رو کشت</value>
   </string>
@@ -726,7 +726,7 @@
     <value>خب {0} همزادت بود و مرد. چون اون افعی بود تو هم افعی شدی و بقیه افعی ها عبارت اند از: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>فنگز، یعنی {0} هم چون یکی از اعضای مزرعه رو به عنوان مدل انتخاب کرده بود الان عضو مزرعه شد.</value>
   </string>
 
@@ -1268,7 +1268,7 @@
   <string key="BlacksmithKilled">
     <value>قربانی دیشب بلک هود هیکل ورزیده و قدرتمندی داشت ! مثل این که مدداگ ⚒ {0} دیشب به قتل رسیده!!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب بلک هود به مزرعه حمله کرد و یکی از پیروانش {0} رو به قتل رسوند!!</value>
   </string>
   <string key="CupidKilled">
@@ -1301,10 +1301,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>چارلز اسمیت {0} رفت یه نفر دیگه رو دستگیر کنه اما متاسفانه اون بلک هود بود و به طرز وحشی ای کشتش.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب {0} رفت که یک نفر رو به مزرعه دعوت کنه اما اون یکی از اعضای گارگویل ها بود و اونو قربانی کرد</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>صبح روز بعد جسد {0} با لباس سرتاپا سفید کنار خیابون پیدا شد شاید اون نباید به خونه بلک هود میرفت تا دعوتش کنه!!</value>
   </string>
   
@@ -1325,8 +1325,8 @@
 	    <value> کلانتر  {0} توی ریوردیل با {1} تنها مونده! {1} میره که به کلانتر حمله کنه و اونو بکشه، اما کلانتر از خواب بلند میشه و متوجه {1} میشه سریع میره سمت تفنگش اما فرصت نمیکنه که تفنگشو دستش بگیره و {1} میگیره و تیکه تیکش میکنه! {1} تنها گارگویل باقی مونده ریوردیله🐺</value>
   </string>
   
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>فقط یکی از اعضای مزرعه {0} به همراه شکارچی {1} توی شهر باقی مونده چارلز از پشت به دستای {0}" دستبند میزنه و اونو راهی زندان میکنه چارلز بالاخره برنده میشه!</value>
   </string>
   
@@ -1635,8 +1635,8 @@
       <value>هم تیمی های شما(درصورت وجود) عبارت اند از:{0}.</value>
     </string>
     <string key="ThiefToCult">
-      <!-- 0 - old cultist's name -->
-      <!-- 1 - new cultist's name -->
+      <!-- 0 - old Zombie's name -->
+      <!-- 1 - new Zombie's name -->
       <value>حاجی {0} دیگه هم تیمی شما نیست به جاش {1} عضو مزرعه  شده دقیقا مثل شماها.</value>
     </string>
     <string key="ThiefToWolf">
@@ -1696,8 +1696,8 @@
     <string key="SecretLynchShowVotersA">
       <value>وقتی حالت رای مخفی روشن است. و تعداد رای ها در اخر رای گیری نشان داده خواهد شد.نام رای دهنده به هر بازیکن نیز نشان داده خواهد شد:{0}</value>
     </string>
-    <string key="CultistBitten">
-    <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <string key="ZombieBitten">
+    <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
       <value>عجیبه .... امشب جمع شدین که یکی رو به مزرعه دعوت کنید کنید اما متوجه شدین که {0} اینجا نیست!یعنی چه اتفاقی براش افتاده؟🤔</value>
     </string>
     
@@ -1805,7 +1805,7 @@
   <string key="ChemistTargetEmpty">
 	<value> رفتی که با {0} مذاکره کنی اما خونه نبود! </value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value> اعضای فرقه درحال حاضر: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1858,7 +1858,7 @@
   <string key="ChemistFrozen">
     <value>داشتی اماده میشدی تا کاراتو انجام بدی اما خواکین اومد و باهات گریفین و گارگویل بازی کرد و تو نتونستی به کارات برسی.. </value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value> داشتی اماده میشدی تا کاراتو انجام بدی اما خواکین اومد و باهات گریفین و گارگویل بازی کرد و تو نتونستی به کارات برسی. </value>
   </string>
   <string key="CHFrozen">
@@ -1999,11 +1999,11 @@
   <string key="HunterFellDigger">
 	<value> بعد از یک شب خسته کننده شما به خانه برمیگردید قبل از اینکه وارد خانه شوید دستبندی کنار یک قبر میبینید مثل اینکه چارلز یعنی {0} توی قبر افتاده</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value> بعد از یک شب خسته کننده در راه خانه صدای فریادی از یک قبر ناتمام خود میشنوید، با عجله به آنجا میروید و {0} رو میبینید که اومده دعوت شما آخه کدوم عاقلی گورکن رو به مزرعه دعوت میکنه؟</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value> در راه خانه {1} ناگهان {0} تصمیم میگیرد به سراغ یک کلیسا برود. اما در قبرستان داخل یک قبر افتاد. شما صدای فریاد او را قبل از افتادن میشنوید اما برای نجات خود فرار میکند! </value>
   </string>
@@ -2059,8 +2059,8 @@
   <string key="HarlotFellPublic">
 	<value> اولین {0} در راه خانه ی گورکن بود که درون یک قبر افتاد و مرد. شاید بهتر بود یک شغل دیگه انتخاب میکرد. </value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value> اعضای مزرعه میخواستند کلیسا رو آتیش بزنند، اما {0} که گروه رو هدایت میکرد درون یک قبر افتاد. او فریاد میزد اما بقیه اعضای مزرعه برای نجات جان خود فرار کردند. </value>
   </string>
   <!--{0}: thief-->

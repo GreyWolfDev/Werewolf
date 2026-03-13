@@ -182,10 +182,10 @@
 	<string key="RoleInfoApprenticeSeer">
 		<value>Você é Aprendiz de Vidente 🙇, e joga pela Aldeia. Você ainda não tem permissão para usar a bola de cristal... Ainda. Vidente morreu, sua bola acendeu. Saiba mais: /aboutAppS</value>
 	</string>
-	<string key="RoleInfoCultist">
+	<string key="RoleInfoZombie">
 		<value>Você é Integrante da Seita 👤. Durante a noite, você poderá escolher alguém para converter à Seita. Se todos os jogadores restantes ao final do jogo forem Integrantes, a Seita vence! Saiba mais: /aboutCult</value>
 	</string>
-	<string key="RoleInfoCultistHunter">
+	<string key="RoleInfoZombieHunter">
 		<value>A Seita está tentando converter todo mundo, e você, Agente da Inquisição 💂, deve proteger a Aldeia!  Durante a noite você poderá escolher alguém para inquirir. Se for da Seita, a pessoa morre. Caso a Seita tente te converter, o membro mais recente morre. Mas cuidado: se você tentar inquirir um Serial Killer, quem morre é você! Saiba mais: /aboutCH</value>
 	</string>
 	<string key="LynchTime">
@@ -228,7 +228,7 @@
 	<string key="DefaultEaten">
 		<value>NOMNOMNOMNOM Os aldeões se levantam de manhã com um forte chheiro e encontram o corpo de {0}, sem vida, jogado na porta de sua casa, cheio de mordidas e esquartejado. {1}</value>
 	</string>
-	<string key="HunterKilledCultist">
+	<string key="HunterKilledZombie">
 		<value>Um aldeão olha para a casa de {0} e vê fumaça saindo pela janela. Chamando o resto da aldeia para prevenir um incêndio, entram e encontram o corpo de {0}, com marcas de tortura, rodeado por velas acesas caídas no chão. Um Integrante da Seita morreu!</value>
 	</string>
 	<string key="NoAttack">
@@ -312,7 +312,7 @@
 	<string key="RemainingPlayersEnd">
 		<value>Jogadores restantes, papéis e lado:</value>
 	</string>
-	<string key="CultistVotedConvert">
+	<string key="ZombieVotedConvert">
 		<value>{0} votou para converter {1}</value>
 	</string>
 	<string key="CultConvertCultHunter">
@@ -339,7 +339,7 @@
 	<string key="HunterVisitDead">
 		<value>Quando você chegou na casa de {0}, notou que seu corpo já estava sem vida. Você chegou tarde.</value>
 	</string>
-	<string key="HunterFindCultist">
+	<string key="HunterFindZombie">
 		<value>Quando você chega na casa de {0}, ouve alguém rezando em uma outra língua. Entendendo que {0} faz parte da Seita, você acaba com sua vida!</value>
 	</string>
 	<string key="HunterFailedToFind">
@@ -396,10 +396,10 @@
 	<string key="ApprenticeSeer">
 		<value>Aprendiz de Vidente 🙇</value>
 	</string>
-	<string key="Cultist">
+	<string key="Zombie">
 		<value>Integrante da Seita 👤</value>
 	</string>
-	<string key="CultistHunter">
+	<string key="ZombieHunter">
 		<value>Agente da Inquisição 💂</value>
 	</string>
 	<string key="RanAway">
@@ -728,7 +728,7 @@ Atacar um Maçom significa se livrar de quem está gerenciando a Aldeia. Por um 
 Um Casal ❤️ continua com seus papéis originais, mas o amor muda tudo. Se um dos dois morrer, o outro não aguenta a dor de perder sua alma gêmea e morre junto. O lado bom é que se, no final do jogo, uma pessoa do Casal estiver no time vitorioso, a outra também ganha junto, independente do seu time. O Casal pode escolher pra que time vai jogar: o time de uma das pessoas, o time da outra, ou o próprio Casal (alguns grupos não autorizam jogar pelo Casal). Jogando pelo Casal, o objetivo final é serem os únicos sobreviventes da Aldeia. Quando isso acontece, o Casal ganha, todos os outros perdem, e o jogo acaba com um final especial!</value>
 	</string>
 	<string key="AboutHunter">
-		<value>Uma Sentinela passa a noite de vigília, e não vai ser pega desprevenida por qualquer um. Além de poder se defender de Lobisomens e Cultistas, uma Sentinela pode vingar a própria morte atirando em alguém. Quando morrer por qualquer motivo que não seja o ataque de um Lobisomem, uma Sentinela tem a opção de escolher uma pessoa dentre todos os jogadores vivos para matar, e assim levar junto consigo.\n\nQuando uma Sentinela for atacada por um único Lobisomem, tem 30% de chance de matar o Lobisomem e, assim, sobreviver. Já quando for atacada por mais de um Lobisomem, a Sentinela com certeza morrerá, mas terá a chance de levar um dos Lobisomens consigo. Se forem dois Lobisomens, a chance é de 50%; se forem três, 70%; se forem 4, 90%; e, se forem mais do que quatro, um dos Lobisomens com certeza morrerá. Se a Sentinela morrer por causa do ataque de um Lobisomem, ela não poderá escolher uma pessoa para matar. Ao invés disso, o bot escolhe um dos Lobisomens para morrer.\n\nSe um Integrante da Seita tentar converter uma Sentinela, tem uma chance de 25% dela estar de mau humor e matar o Integrante da Seita.\n\nChances de conversão para a Seita 👥: 50%\n\nTime: Aldeia</value>
+		<value>Uma Sentinela passa a noite de vigília, e não vai ser pega desprevenida por qualquer um. Além de poder se defender de Lobisomens e Zombieas, uma Sentinela pode vingar a própria morte atirando em alguém. Quando morrer por qualquer motivo que não seja o ataque de um Lobisomem, uma Sentinela tem a opção de escolher uma pessoa dentre todos os jogadores vivos para matar, e assim levar junto consigo.\n\nQuando uma Sentinela for atacada por um único Lobisomem, tem 30% de chance de matar o Lobisomem e, assim, sobreviver. Já quando for atacada por mais de um Lobisomem, a Sentinela com certeza morrerá, mas terá a chance de levar um dos Lobisomens consigo. Se forem dois Lobisomens, a chance é de 50%; se forem três, 70%; se forem 4, 90%; e, se forem mais do que quatro, um dos Lobisomens com certeza morrerá. Se a Sentinela morrer por causa do ataque de um Lobisomem, ela não poderá escolher uma pessoa para matar. Ao invés disso, o bot escolhe um dos Lobisomens para morrer.\n\nSe um Integrante da Seita tentar converter uma Sentinela, tem uma chance de 25% dela estar de mau humor e matar o Integrante da Seita.\n\nChances de conversão para a Seita 👥: 50%\n\nTime: Aldeia</value>
 	</string>
 	<string key="AboutSK">
 		<value>Um Serial Killer é a pessoa mais perigosa da Aldeia. Seu único objetivo é matar todos da Aldeia, e, depois de escolher uma vítima, o único jeito dela sobreviver é sendo protegida por um Anjo da Guarda. Não tem ninguém que um Serial Killer não consiga pegar de surpresa, e ninguém que consiga se esconder pra se salvar. Além disso, se alguém fizer a tolice de visitar a casa de um Serial Killer, a pessoa morrerá. A única exceção é quando uma alcateia ataca um Serial Killer. Nesse caso, os Lobisomens tem 20% de chance de pegar o Serial Killer desprevenido e vencer a luta. Perigoso como um Serial Killer é, ao menos ele não tem aliados, e, como todo mundo, pode ser morto durante o dia.\n\nChances de conversão para a Seita 👥: 0% e mata o Integrante mais novo.\n\nTime: Serial Killer</value>
@@ -1071,7 +1071,7 @@ Atual: {0}</value>
 	<string key="BlacksmithKilled">
 		<value>{0} e um Serial Killer descobriram que bigornas não matam apenas se caírem em cima de alguém. O corpo de {0} é encontrado atravessado em sua própria bigorna e sem sua orelha direta...</value>
 	</string>
-	<string key="CultistKilled">
+	<string key="ZombieKilled">
 		<value>Parece que Serial Killers não gostam de religião, visto que {0} está com uma vela no lugar de sua orelha direta e em cima de um candelabro, sangrando... A Seita perdeu um membro.</value>
 	</string>
 	<string key="CupidKilled">
@@ -1122,7 +1122,7 @@ Atual: {0}</value>
 	<string key="WolfKillsHunterEnd">
 		<value>Apenas {0} e {1} sobreviveram, e {0}, sabendo que corria perigo, tentou dormir por algumas horas antes da vigília noturna... Mas {1} não tinha mais motivos para se esconder, e atacou {0} antes mesmo do sol se pôr. A única coisa que sobrou de {0} foram os ossos...</value>
 	</string>
-	<string key="CHKillsCultistEnd">
+	<string key="CHKillsZombieEnd">
 		<value>Vendo um símbolo estranho rodeando o pescoço de {0}, {1} já se dá conta que {0} faz parte da Seita. Então, {1} tira sua espada pela última vez e a crava no peito de {0}. Agora a aldeia está salva da contaminação da Seita.</value>
 	</string>
 	<string key="SecondsAdded">
@@ -1411,8 +1411,8 @@ Atual: {1}</value>
     <value>Seus companheiros (se houver) são: {0}</value>
   </string>
 	<string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} não é mais seu companheiro, e {1} agora se tornou um integrande da Seita, igualzinho a você!</value>
   </string>
 	<string key="ThiefToWolf">
@@ -1468,8 +1468,8 @@ Atual: {1}</value>
 	<string key="SecretLynchShowVotersA">
     <value>Quando o votos secretos durante os enforcamentos são ativados e a contagem de votos é mostrada, os nomes dos votantes para cada jogador votado será: {0}</value>
   </string>
-	<string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Estranho... Assim que a Seita começa a discutir quem será convertido esta noite, você percebe que {0} não está aqui! O que será que aconteceu com {0}??</value>
   </string>
 	<string key="Peace">
@@ -1573,7 +1573,7 @@ Atual: {1}</value>
   <string key="ChemistTargetEmpty">
 	<value>{0} não estava em casa! Você carrega sua maleta de volta para casa, resmungando pela sua má sorte.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>Os membros da seita são, atualmente: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1624,8 +1624,8 @@ Atual: {1}</value>
   <string key="ChemistFrozen">
     <value>Você está dormindo na cama, prestes a acordar para preparar suas poções, quando uma forte rajada de vento entra pela janela, fazendo você congelar 🐺☃️. Pelo canto dos seus olhos, você percebe seus potes de poção também gelarem. Parece que elas também não escaparam do feitiço congelante. Você suspirou mentalmente, desejando que o sol nascesse mais cedo ... Ainda bem que você já está começando a derreter</value>
   </string>
-  <string key="CultistFrozen">
-    <value>Você veste sua túnica e se prepara para deixar sua casa, quando uma rajada de vento forte entra pela porta e te congela 🐺☃️. Seus companheiros cultistas apareçeram rapidamente para te apresentar novos integrantes da Seita, mas eles rolaram de rir da sua desgraça. Saindo pela sua porta, eles prometem que farão um bom trabalho esta noite. Agora que você está começando a descongelar, você se prepara para sair de casa, morto de vergonha... </value>
+  <string key="ZombieFrozen">
+    <value>Você veste sua túnica e se prepara para deixar sua casa, quando uma rajada de vento forte entra pela porta e te congela 🐺☃️. Seus companheiros Zombieas apareçeram rapidamente para te apresentar novos integrantes da Seita, mas eles rolaram de rir da sua desgraça. Saindo pela sua porta, eles prometem que farão um bom trabalho esta noite. Agora que você está começando a descongelar, você se prepara para sair de casa, morto de vergonha... </value>
   </string>
   <string key="CHFrozen">
     <value>Você branda sua espada, quando uma rajada de vento forte entra pela porta e te congela, ainda em posição de ataque 🐺☃️. Você geme mentalmente, seus membros doem de estar nesta posição até agora ... </value>
@@ -1759,17 +1759,17 @@ Atual: {1}</value>
   </string>
   <!--{0}: grave digger-->
   <string key="HunterFell">
-	<value>Outra noite sem poder matar um daqueles Cultistas sangrentos! Frustrado, você caminha sobre o cemitério, sem perceber a armadilha do urso até que ela se feche ao redor do seu tornozelo. Você grita e luta, mas é tarde demais. Você cai para trás em uma cova que foi deixada aberta por {0} e o som de seu pescoço quebrando é a última coisa que você ouve antes que tudo fique preto.</value>
+	<value>Outra noite sem poder matar um daqueles Zombieas sangrentos! Frustrado, você caminha sobre o cemitério, sem perceber a armadilha do urso até que ela se feche ao redor do seu tornozelo. Você grita e luta, mas é tarde demais. Você cai para trás em uma cova que foi deixada aberta por {0} e o som de seu pescoço quebrando é a última coisa que você ouve antes que tudo fique preto.</value>
   </string>
   <!--{0}: cult hunter-->
   <string key="HunterFellDigger">
 	<value>Depois de outra noite cansativa, você volta para sua casa com o sol já nascendo. Pouco antes de você chegar, você percebe uma espada caída no chão ao lado de um túmulo inacabado. Dentro desse túmulo, você vê o cadáver de {0}. O Agente da Inquisição 💂 não irá mais encher o seu saco...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>Você volta de outra noite cansativa, quando de repente ouve um grito de uma de suas sepulturas inacabadas! Você corre para lá e encontra o cadáver fresco de {0}. Que tipo de Seita tenta converter um coveiro, afinal?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>No caminho para a casa de {1}, {0} decide subitamente que seria uma boa ideia incendiar a igreja também. Caminhando através do cemitério, de repente, uma armadilha de urso prende o tornozelo de {0}! Tudo que você pode ouvir é seu grito antes que {0} caia em uma cova e você corra como se não houvesse amanhã.</value>
   </string>
@@ -1825,9 +1825,9 @@ Atual: {1}</value>
   <string key="HarlotFellPublic">
 	<value>Quando {0}, A Amante 💋, voltou para casa depois de uma noite divertida, tentou fazer um atalho pelo cemitério local. {0} deve ter ficado muito fraco(a) para não ter visto o túmulo descoberto à sua frente. O chão não estava mais debaixo de seus pés quando deu o próximo passo. Muitas das diversões da Aldeia foram enterradas hoje...</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
-	<value>A Seita 👤 tentou queimar a igreja, mas quando {0} liderou o grupo pelo cemitério, uma armadilha de urso estalou em torno de seu tornozelo! {0} gritou quando caiu na cova aberta e os outros cultistas fugiram aterrorizados ...</value>
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
+	<value>A Seita 👤 tentou queimar a igreja, mas quando {0} liderou o grupo pelo cemitério, uma armadilha de urso estalou em torno de seu tornozelo! {0} gritou quando caiu na cova aberta e os outros Zombieas fugiram aterrorizados ...</value>
   </string>
   <!--{0}: thief-->
   <string key="ThiefFellPublic">

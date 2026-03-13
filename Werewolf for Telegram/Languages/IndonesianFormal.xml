@@ -205,11 +205,11 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>Anda adalah Apprentice Seer, si murid penerawang. Jika Seer sejati telah mati Anda yang akan menggantikannya.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >Anda adalah Cultist, anggota sekte sesat. Setiap malam Anda akan memilih satu pemain lain yang akan diajak untuk bergabung. Jika seluruh warga desa telah menjadi anggota sekte, Anda menang.</value>
+  <string key="RoleInfoZombie" >
+    <value >Anda adalah Zombie, anggota sekte sesat. Setiap malam Anda akan memilih satu pemain lain yang akan diajak untuk bergabung. Jika seluruh warga desa telah menjadi anggota sekte, Anda menang.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value>Anda mengetahui keberadaan cultist di desa, setiap malam Anda akan memilih satu pemain yang akan diburu. Jika ia seorang cultist atau ia mengajak Anda bergabung, ia akan mati di tangan Anda.</value>
+  <string key="RoleInfoZombieHunter" >
+    <value>Anda mengetahui keberadaan Zombie di desa, setiap malam Anda akan memilih satu pemain yang akan diburu. Jika ia seorang Zombie atau ia mengajak Anda bergabung, ia akan mati di tangan Anda.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
@@ -266,9 +266,9 @@
     <!-- 1 - victim role -->
     <value>Ketika matahari bersinar di pagi hari, tercium bau busuk menyengat. Warga mencari sumber bau busuk tersebut dan menemukan {0} tercabik di dalam kandang ternak tanpa kepala. {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
-    <value>Bau busuk tercium di rumah {0}...  Warga menatap mayat anggota sekte di atas altar, terbunuh oleh pemburu cultist!</value>
+    <value>Bau busuk tercium di rumah {0}...  Warga menatap mayat anggota sekte di atas altar, terbunuh oleh pemburu Zombie!</value>
   </string>
   <string key="NoAttack" >
     <value >Warga bernafas lega, tidak ada yang terbunuh tadi malam.</value>
@@ -372,51 +372,51 @@
   <string key="RemainingPlayersEnd">
     <value>Pemain Tersisa, Peran, dan Tim:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} memilih menghasut {1}</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
-    <value>{0} dikirim untuk menghasut {1} ternyata ia seorang Cultist Hunter. {0} Tewas!</value>
+    <value>{0} dikirim untuk menghasut {1} ternyata ia seorang Zombie Hunter. {0} Tewas!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
-    <value>{0} ke rumah semalam dan mencoba menghasut Anda. Namun Anda sigap mendorongnya dan menghunuskan pedang tepat di dadanya! Seorang Cultist mati, {1} tersisa!</value>
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{0} ke rumah semalam dan mencoba menghasut Anda. Namun Anda sigap mendorongnya dan menghunuskan pedang tepat di dadanya! Seorang Zombie mati, {1} tersisa!</value>
   </string>
   <string key="CultConvertYou">
     <value>Cult telah berhasil menghasut Anda!  Kini Anda bisa merekrut pemain lain tiap malam.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
-    <value>Cultists: {0}</value>
+    <!-- 0 - Number of Zombies -->
+    <value>Zombies: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
-    <value>{0} telah menjadi seorang cultist!</value>
+    <!-- 0 - new Zombie's name -->
+    <value>{0} telah menjadi seorang Zombie!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} berangkat untuk menghasut {1}. Tapi tidak ada orang di rumah!</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >Semua serigala telah mati, warga desa yang tersisa telah bergabung ke aliran sesat. Cultist menang!</value>
+    <value >Semua serigala telah mati, warga desa yang tersisa telah bergabung ke aliran sesat. Zombie menang!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
     <value>Anda berangkat untuk memburu {0}, tapi ia telah mati terlebih dulu!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
-    <value>Anda pergi ke rumah {0}, dan menemukan ia sedang melakukan ritual sesat..  Anda pun langsung menusukkan pedang tepat di dadanya, seorang cultist tewas.</value>
+    <value>Anda pergi ke rumah {0}, dan menemukan ia sedang melakukan ritual sesat..  Anda pun langsung menusukkan pedang tepat di dadanya, seorang Zombie tewas.</value>
   </string>
   <!-- 0 - target name -->
   <string key="HunterFailedToFind">
-    <value>Anda pergi ke rumah {0}, dan tidak menemukan ritual mencurigakan.  Ia bukan seorang cultist, Anda pun kembali ke rumah.</value>
+    <value>Anda pergi ke rumah {0}, dan tidak menemukan ritual mencurigakan.  Ia bukan seorang Zombie, Anda pun kembali ke rumah.</value>
   </string>
   <string key="WildChildToWolves">
     <!-- 0 - Werechild's name -->
@@ -427,7 +427,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} telah mati, dalam amarahmu kini kau menjadi Serigala, Tim Serigalamu adalah: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Warga Desa 👱</value>
   </string>
@@ -473,11 +473,11 @@
   <string key="ApprenticeSeer">
     <value>Apprentice Seer 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>Cultist 👤</value>
+  <string key="Zombie">
+    <value>Zombie 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>Cultist Hunter 💂</value>
+  <string key="ZombieHunter">
+    <value>Zombie Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -508,7 +508,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Anggota kalian pergi ke rumah {0} untuk dihasut, tapi ia malah menemukan rumah yang hancur, bekas cakaran binatang buas, dan darah di mana-mana...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -692,14 +692,14 @@
     <value>Anda mencoba membunuh {0} dan mengoleksi potongan tubuhnya... Namun Anda dikalahkan oleh Guardian Angel! Tidak ada korbanmu malam ini....</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
-    <value>Perkumpulan Cultist menyuruh {0} mencoba menghasut {1}, terdengar suara tembakan.. Tubuh {0} terhempas keluar jendela! {0} telah mati...</value>
+    <value>Perkumpulan Zombie menyuruh {0} mencoba menghasut {1}, terdengar suara tembakan.. Tubuh {0} terhempas keluar jendela! {0} telah mati...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
-    <value>Perkumpulan Cultist menyuruh {0} untuk menghasut {1}. Namun, terlihat dari dalam rumah terdengar keributan.  Tubuh {0} terlempar keluar jendela dengan bekas tusukan di seluruh badan. Sungguh psikopat!! {0} terbunuh...</value>
+    <value>Perkumpulan Zombie menyuruh {0} untuk menghasut {1}. Namun, terlihat dari dalam rumah terdengar keributan.  Tubuh {0} terlempar keluar jendela dengan bekas tusukan di seluruh badan. Sungguh psikopat!! {0} terbunuh...</value>
   </string>
   <string key="GuardKiller">
     <value>Anda telah mencoba melindungi Serial Killer. Justru dia menusukmu berkali-kali! Anda terbunuh...</value>
@@ -721,13 +721,13 @@
     <value> {0} telah mati, dan Anda berubah menjadi Mason. Rekan-rekan Anda adalah: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Si Doppelgänger {0} telah menjadi Culstist!</value>
   </string>
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} telah mati dan Anda menjadi seorang Cultist.  Rekan-rekan Anda adalah: {1}</value>
+    <value>{0} telah mati dan Anda menjadi seorang Zombie.  Rekan-rekan Anda adalah: {1}</value>
   </string>
   <string key="DGToWolf">
     <!-- 0 - DG's name -->
@@ -788,7 +788,7 @@
     <value>Di tengah alun alun desa, terlihat mayat {0}, bekas beberapa tembakan.  Sepertinya dia telah mencoba mengganggu seorang Hunter {1}</value>
   </string>
   <string key="CultAttempt">
-    <value>Seorang Cultist mencoba untuk menghasut Anda, namun iman Anda terlalu kuat.</value>
+    <value>Seorang Zombie mencoba untuk menghasut Anda, namun iman Anda terlalu kuat.</value>
   </string>
   <string key="AlreadyOnWaitList">
     <!-- 0 - target's name -->
@@ -868,10 +868,10 @@
     <value>Fool, dia menerima pemberitahuan bahwa ialah sang Seer.... memilih 1 pemain setiap malam untuk mengetahui perannya, namun hasilnya acak.</value>
   </string>
   <string key="AboutCult">
-    <value>Sebagai cultist, tujuan kalian adalah menghasut semua pemain (terkecuali serigala) sebagai anggota sekte. Jika semua yang hidup sampai akhir adalah cultist, cultist menang.</value>
+    <value>Sebagai Zombie, tujuan kalian adalah menghasut semua pemain (terkecuali serigala) sebagai anggota sekte. Jika semua yang hidup sampai akhir adalah Zombie, Zombie menang.</value>
   </string>
   <string key="AboutCH">
-    <value>Tugas Anda adalah membasmi Cultist, tiap malam Anda akan memburu mereka. Jika mereka mendatangi rumah Anda, mereka mati.</value>
+    <value>Tugas Anda adalah membasmi Zombie, tiap malam Anda akan memburu mereka. Jika mereka mendatangi rumah Anda, mereka mati.</value>
   </string>
   <string key="AboutWC">
     <value>Di awal permainan, pilih seorang panutan hidup. Ketika sang Panutan mati, Anda akan jadi serigala.</value>
@@ -888,7 +888,7 @@
   <string key="AboutDG">
     <value>
       Anda adalah keturunan dari ras yang dapat mengubah bentuk, Anda akan memilih salah satu pemain di awal permainan dan menjadi dirinya jika pemain tersebut tewas.
-      Note: Jika pemain yang Anda pilih menjadi cultist dan mati, Anda akan menjadi peran awal dari pemain tersebut. Jika yang Anda pilih adalah wild child dan ia mati, maka Anda akan menjadi wild child dengan pilihan panutan yang sama.
+      Note: Jika pemain yang Anda pilih menjadi Zombie dan mati, Anda akan menjadi peran awal dari pemain tersebut. Jika yang Anda pilih adalah wild child dan ia mati, maka Anda akan menjadi wild child dengan pilihan panutan yang sama.
       Cult tidak dapat menghasut Doppelgänger (kecuali ia telah menjadi bentuk panutannya) dan kalah jika ia tidak berubah dari bentuk Doppelgänger (kecuali lovers)
     </value>
   </string>
@@ -902,7 +902,7 @@
     <value>
       Seorang pendendam, yang tidak segan-segan untuk menembak jika terluka. Karena Anda tidak percaya dengan pemain lain, mereka akan mati jika mengunjungimu, jika Serigala menyerangmu Anda akan membawa salah satu dari mereka (acak) mati bersamamu. Namun jika Anda terluka atau digantung, Anda dapat menembak salah satu pemain dengan waktu yang sangat singkat!
       Note: Serigala menyerang, kemungkinan membawa serta dimulai dari 30 persen jika hanya 1 Serigala, dan dijumlahkan 20 persen jika ada serigala lainnya. 30, 50, 70. dan kemungkinan Anda akan selamat. Namun jika Serigala yang menyerangmu terlalu banyak, Anda akan mati.
-      Jika cultist menghasutmu, 50 persen Anda akan bergabung dan 50 persen Anda akan menembaknya.
+      Jika Zombie menghasutmu, 50 persen Anda akan bergabung dan 50 persen Anda akan menembaknya.
     </value>
   </string>
   <string key="AboutSK">
@@ -1073,10 +1073,10 @@
     <value>Pilihan Tanner dalam Peran: {0}</value>
   </string>
   <string key="AllowCultQ">
-    <value>Apakah Anda ingin Cultist dalam pilihan peran?\nPengaturan saat ini: {0}</value>
+    <value>Apakah Anda ingin Zombie dalam pilihan peran?\nPengaturan saat ini: {0}</value>
   </string>
   <string key="AllowCultA">
-    <value>Pilihan Cultist dalam Peran: {0}</value>
+    <value>Pilihan Zombie dalam Peran: {0}</value>
   </string>
   <string key="ThankYou">
     <value>Terima kasih, Selamat bermain :)</value>

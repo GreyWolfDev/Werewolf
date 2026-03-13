@@ -206,10 +206,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>당신은 예언자 제자입니다 🙇. 만약에 에언자가 죽으면, 당신이 그의 자리를 채우게 됩니다.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>당신은 마녀교도입니다 👤. 매 밤마다, 마녀교에 데리고 올 사람을 정하세요. 만약에 남은 플레이어들이 다 마녀교도라면, 그들이 이깁니다.</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>당신 마녀교도 헌터 입니다 💂, 마녀교를 멈추세요! 매 밤마다, 플레이어를 선택하세요. 만약 그(녀)가 마녀교도였다면, 그는 죽습니다. 만약에 그들이 당신을 데려가려고 하면, 마녀교에 제일 늦게 들어간 멤버가 죽습니다</value>
   </string>
   <string key="LynchTime">
@@ -266,7 +266,7 @@
     <!-- 1 - victim role -->
     <value>아침에 일어나자, 지독한 냄새가 어디서부터 풍겨온다 . 냄새를 따라가보니 {0}의 머리는 없고, 그의 몸은 먹혀 있었다. 냠냠냠냠냠\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>고약한 냄새가 {0}집에서 난다... 사람들은 그의 시체를 어둠의 제단 옆에서 발견하였다. 헌터(💂)가 마녀교도 멤버를 죽였다!</value>
   </string>
@@ -372,49 +372,49 @@
   <string key="RemainingPlayersEnd">
     <value>남은 생존자, 역할, 팀:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0}님이 {1}님을 데려오자고 투표했습니다</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>{0}님을 보내서 {1}님을 데려오려고 했지만... 그(녀)는 마녀교도 헌터였다💂! {0}님은 죽었습니다!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0}님이 당신을 마녀교로 데려가려고 찾아왔지만.... 그(녀)를 칼로 죽였다. {1}명이 남았네요!</value>
   </string>
   <string key="CultConvertYou">
     <value>마녀교가 당신을 선택해서, 마녀교랑 합류하게 됐다. 매일 밤에, 다른 플레이어를 선택하여 그(녀)를 데려올 수 있다,</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
     <value>마녀교도 멤버: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0}님이 합류했네요!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0}님을 보내서 {1}님을 데려오려고 했지만... 집에 아무도 없었다!</value>
   </string>
@@ -425,7 +425,7 @@
     <!-- 0 - target name -->
     <value>{0}님을 사냥하러 갔지만, 이미 그(녀)는 사망하였다!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>{0}님 집에 그(녀)가 마녀한테 기도하고 있는걸 발견했다. 당신은 재빠르게 그(녀)를 찔러 죽인다.</value>
   </string>
@@ -440,7 +440,7 @@
   <string key="WildChildTransform">
     <!-- 0 - role's name -->
     <!-- 0 - teamate's names -->
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
     <value>{0}님이 사망하셨다. 분노에 휩싸여, 당신은 늑대인간이 되었다. 당신의 새로운 동료들은: {1}</value>
   </string>
@@ -489,10 +489,10 @@
   <string key="ApprenticeSeer">
     <value>예언자의 제자 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>마녀교도 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
   <!-- These are for the player list -->
     <value>마녀교 헌터 💂</value>
   </string>
@@ -524,7 +524,7 @@
     <value>일꾼들 👷: {0}</value>
   </string>
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>{0}님을 데리러 마녀교도를 보내지만, 집은 엉망이었고, 벽에는 피가 묻어있었다…</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -706,12 +706,12 @@
     <value>{0}님을 죽여 시체를 수집하고 싶었지만, 수호 천사(👼)가 그(녀)를 지키고있었다! 결국엔 아무도 못 죽였다...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>마녀교도가 {0}님한테 {1}님을 데려오라고 명령하지만, 갑자기 총(🎯) 소리가 들리면서 {0}님의 시체가 창문 밖으로 날라갔다! {0}님은 죽었습니다...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>마녀교도가 {0}님한테 {1}님을 데려오라고 명령하지만, {0}님의 시체가 창문 밖으로 날아간다…몸 전체에 칼로 찔렀다는 자국이 남아있다! 미친 싸이코🔪! {0}님은 죽었습니다...</value>
     <value>{0}님이 {1}님 집에 다가가서 문을 여는데, 식칼을 들고있는 미친 살인마가 그(녀)를 반겼다!!! {1}님이 {0}님을 칼로 찌르면서 놀고있다! {0}님은 죽었습니다 D:</value>
@@ -736,7 +736,7 @@
     <value>{0}님이 죽어 당신은 일꾼(👷)이 되었습니다. 당신의 동료는: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} 도플갱어가 당신처럼 마녀교도(👤)가 되었습니다!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1234,22 +1234,22 @@
     <value>연쇄 살인마 팀</value>
   </string>
   <string deprecated="true" key="CultTeam">
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
+    <!-- 0 - Number of Zombies -->
     <value>마녀교도 팀: {0}</value>
   </string>
   <string deprecated="true" key="TannerTeam">
@@ -1287,7 +1287,7 @@
   <string key="BlacksmithKilled">
     <value>대장장이 {0}님은 불길했었다. {0}님이 만든 5개에 식칼이 그(녀)의 손, 발 과 머리에 꼽혀, 작업 테이블에 박혀있다. 살인마가 내장 컬렉션에 무기 컬렉션까지 추가할려고 했던건가요?</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0}님은 제단 옆에 있던 촛대로 살인을 당했다. 살인마가 다시 나타서, 인종, 종교, 언어에 상관 없이, 사람을 죽이기 시작했다! {0}님은 마녀교도였다</value>
   </string>
   <string key="CupidKilled">
@@ -1347,8 +1347,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{0}님만 남았다는걸 알고, {1}님은 {0}님이 방심한 틈을 타서 공격을 하였다. {1}님에게는 별거 아닌 마지막 생존자를 죽이고 결국 남는 것은 사냥꾼인 {0}님의 흉터랑 상처 투성이인 시체뿐.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
   <!-- Extend time -->
     <value>{1}님이랑 {0}님이 집에서 천천히 마주 보면서 나온다. {0}님 목에 반짝 빛나는 십자가를 보자마자, 정의로운 {1}님은 마지막으로 칼을 뽑아, 마을을 세뇌시킨 마녀교에게 드디어 끝을 내린다.</value>
   </string>

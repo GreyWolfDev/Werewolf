@@ -252,12 +252,12 @@
     <value>!Eres el aprendiz de bruja 🙇! Has estado estudiando las recetas de las pociones junto con Herminia durante años.
 	Si Herminia muere, tomarás su puesto.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>¡Eres un vampiro! Cada noche tú y tu clan votáis el cuello más apetitoso del pueblo para chuparle la sangre. Si por algún casual se convierte en vampiro...
 	pues ¡Bienvenido sea, ¡cuántos más mejor!
-	[Eres un cultista 👤]</value>
+	[Eres un Zombiea 👤]</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>Eres el caza-vampiros 💂️. Te has entrenado toda tu vida para matar a esas malditas criaturas chupasangre.
 	Todos odian a los vampiros, los monstruos te aceptan en Halloween Town con la condición de que los extermines.
 	Cada noche puedes sorprender a un monstruo y comprobar si es vampiro o no atravesándolo con tu estaca de madera de pino, perfecta para atravesar el corazón de un vampiro, pero ineficaz para cualquier otro monstruo.</value>
@@ -329,7 +329,7 @@
     <value>Al amanecer, los demonios descubren restos de sangre. Siguiendo el rastro encuentran un apetitoso desayuno, el cuerpo inerte de {0}. Al terminar, aprovechan para coger todo lo que brilla de la casa, descubriendo que {1}.
 	Los humanos han actuado de nuevo.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Al despertaros veis al caza-vampiros entrar a su casa sonriente y con su estaca ensangrentada, al parecer, esta noche ha conseguido eliminar a {0}, un vampiro. Es normal que se sienta orgulloso.</value>
   </string>
@@ -442,19 +442,19 @@
   <string key="RemainingPlayersEnd">
     <value>Monstruos restantes, roles y equipos:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >A {0} le parece más apetitoso el cuello de {1}.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>Habéis decidido ir a la casa de {1} y alimentaros de su deliciosa sangre... Pero justo cuando {0} le iba a hincar el diente el cuerpo se gira y le clava una estaca en el corazón. Es lo que suele pasar cuando intentas morder a un cazador de vampiros, {0} muere en el acto.</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>Tu instinto de cazador te dice que hay vampiros cerca... Sin dudarlo un momento coges tu estaca y entras en batalla dispuesto a cargarte a todos ellos, pero son demasiado rápidos y escapan. Al menos pudiste matar a {0}. Quedan {1} vampiros.</value>
   </string>
   <string key="CultConvertYou">
@@ -462,15 +462,15 @@
 	Al amanecer tu corazón ya no tiene nada que bombear y sientes unas incontrolables ganas de beber sangre. Te has convertido en un vampiro.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Vampiros: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>La sangre de {0} estaba deliciosa, no habéis dejado ni una gota. Ahora {0} es uno de los vuestros.</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>Decidisteis ir a casa de {1}, pero no había nadie... {0} se quedó sin cena.</value>
   </string>
@@ -481,7 +481,7 @@
     <!-- 0 - target name -->
     <value>Sospechabas de {0} y fuiste a darle caza, ¡pero ya estaba muerto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Has visto a {0} un poco pálido, vas a su casa para comprobar si está bien y le encuentras bebiendo sangre embotellada. Coges la estaca y antes de que se dé cuenta ya es vampiro muerto. ¡Buen trabajo!</value>
   </string>
@@ -498,7 +498,7 @@
     <!-- 0 - teamate's names -->
     <value>¡{0} ha muerto! ¿Qué son monstruos de verdad? Sin mirar atrás te quitas el disfraz y huyes tan lejos como te sea posible. Gracias a dios, encuentras una casa en la que viven humanos y no dudas en pedirles ayuda. A partir de ahora eres uno de ellos. Tus compañeros son: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
  <string key="Villager">
     <value>una calabaza 👱</value>
   </string>
@@ -544,10 +544,10 @@
   <string key="ApprenticeSeer">
     <value>el aprendiz de bruja 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>un vampiro 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>el cazador de vampiros 💂</value>
   </string>
 <!-- These are for the player list -->
@@ -584,7 +584,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>La primera noche de {0}, que por fin va a probar sangre fresca, se ve truncada por los humanos que se han adelantado a los vampiros. Solo queda el cadáver de su víctima y sangre que no se puede beber...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -765,12 +765,12 @@
     <value>Deseoso de tener un buen aperitivo, vas a la guarida de {0}. Sin embargo, una enorme esfinge te pide que resuelvas unos acertijos para asegurarse de que no eres humano. ¿Qué se cree? ¡Claro que no eres humano! Desgraciadamente, como chupacabras tampoco tienes ni zorra de adivinanzas. Esta noche vas a pasar mucha hambre.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>{1} se había hecho una pequeña herida entrenando, lo que atrajo a {0} que no pudo resistir el aroma de su sangre.  Pero resultó ser el centauro, que nunca baja la guardia y menos en horas de descanso. Sin dudarlo lanzó una flecha a su visitante matándolo en el acto.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>{0} fue a casa de {1} dispuesto a beber toda sangre y dejarle seco, pero resultó que quien estaba en el menú del día era él. El chupacabras fue más rápido y se lo comió tan rápido que solo le sirvió de pequeño aperitivo. {0} ha muerto. 
 	{0} se cuela en casa de {1}, abre la puerta, ¡¡y es recibido por un Chupacabras!! {1} hunde el cuchillo en cada uno de los órganos internos de {0} por orden alfabético, ¡carcajeando todo el tiempo! {0} ha muerto.</value>
@@ -795,8 +795,8 @@
     <value>{0} ha muerto y tú tomas su alma y posees su cuerpo. Tus compañeros de equipo son: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
-    <value>{0}, un demonio, ha tomado el cuerpo de un cultista y se ha convertido en uno de vosotros.</value>
+    <!-- 0 - new Zombie's name -->
+    <value>{0}, un demonio, ha tomado el cuerpo de un Zombiea y se ha convertido en uno de vosotros.</value>
   </string>
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
@@ -938,10 +938,10 @@
     <value>Al necio se le dice que es la vidente. Cuando elija a alguien para adivinar su rol, se le dirá uno al azar.</value>
   </string>
   <string key="AboutCult">
-    <value>Como cultista, tu objetivo es convertir a todos los demás jugadores (excepto a los hombres lobo) a tu culto. Si al final de la partida todos los jugadores vivos son cultistas, el culto gana.</value>
+    <value>Como Zombiea, tu objetivo es convertir a todos los demás jugadores (excepto a los hombres lobo) a tu culto. Si al final de la partida todos los jugadores vivos son Zombieas, el culto gana.</value>
   </string>
   <string key="AboutCH">
-    <value>Tu trabajo es acabar con el Culto. Si un cultista te ataca, su miembro más reciente morirá. Cada noche escogerás a que jugador vas a «cazar»; si es cultista, morirá.</value>
+    <value>Tu trabajo es acabar con el Culto. Si un Zombiea te ataca, su miembro más reciente morirá. Cada noche escogerás a que jugador vas a «cazar»; si es Zombiea, morirá.</value>
   </string>
   <string key="AboutWC">
     <value>Al principio del juego, elegirás a alguien para ser tu «modelo a seguir». Si lo matan, te convertirás en hombre lobo.</value>
@@ -973,7 +973,7 @@
     <value>
       Jugador vengativo y de gatillo fácil. Como cazador, formas tu propio equipo. Y cuando alguien venga a visitarte, puede que se encuentren la muerte, ya que la paranoia puede contigo y disparas. Si son los hombres lobo los que atacan, tienes una oportunidad de llevarte a uno por delante. Además, si te matan, tendrás la oportunidad de disparar a alguien mientras mueres.
       Nota: Para los ataques de los hombres lobo, la probabilidad empieza en un 30%. Si solo hay un lobo, el cazador tiene un 30% de probabilidad de matarlo (y sobrevivir). Por cada hombre lobo adicional, suma un 20% (2 hombres lobo = 50%, 3 = 70%, etc). Ten en cuenta que, si hay varios hombres lobo, aunque mates a uno, te superan en número y morirás.
-      Si los cultistas intentan convertirte, tienen un 50% de probabilidad de fallar. Si fallan, ¡tú tendrás un 50% de probabilidad de matar a uno!
+      Si los Zombieas intentan convertirte, tienen un 50% de probabilidad de fallar. Si fallan, ¡tú tendrás un 50% de probabilidad de matar a uno!
     </value>
   </string>
   <string key="AboutSK">
@@ -1348,7 +1348,7 @@
   <string key="BlacksmithKilled">
     <value>EL chupacabras fue a comerse a alguien, pero se topó con una valla, desgraciadamente para él, destrozarla le llevó toda la noche, se volvió a casa con el estómago vacío. {0} ha muerto.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} se disponía a ir a por su cena de esta noche, pero no sabía que él estaba en otro menú, al abrir la puerta para salir se encuentra con una figura pequeñita y antes de poder decir nada se le abalanza al cuello y muere. El chupacabras es más rápido y esta noche a disfrutado de un menú especial. {0} era un vampiro.</value>
   </string>
   <string key="CupidKilled">
@@ -1383,10 +1383,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>El cuerpo de {0}, el cazador de vampiros fue encontrado en el centro de la ciudad cortado en un centenar de piezas. Comprobar si el chupacabras era un vampiro no parece ser una buena idea.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Los vampiros se encontraron con una sorpresa anoche. Su miembro más reciente, {0}, tuvo la desgracia de visitar a un humano, justo la noche que los humanos habían decidido no atacar. Desafortunadamente para el joven vampiro, los humanos no dudaron en cargárselo en cuanto le vieron. {0} ha muerto.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Anoche, los vampiros intentaron atacar al monstruo incorrecto. Su miembro más reciente, {0}, trató de alimentarse del chupacabras, y este hizo una nueva obra de arte en la plaza del pueblo, exhibiendo todos los órganos internos al pueblo.{0} ha muerto.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1405,8 +1405,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Solo faltaba {0}, para {1} le ha sido muy fácil tenderle una trampa y matarle rápidamente.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} y {0} se encuentran en la plaza del pueblo. {1} no se lo piensa dos veces y le clava una estaca en el corazón a {0}. Ya no quedan más vampiros en el pueblo.</value>
   </string>
   
@@ -1511,7 +1511,7 @@
     <value>Todas</value>
   </string>
     <string key="RandomModeQ">
-    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan cultistas, necio o veterano.\nActualmente:{0}</value>
+    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan Zombieas, necio o veterano.\nActualmente:{0}</value>
   </string>
   <string key="RandomModeA">
     <value>Modo aleatorio: {0}</value>

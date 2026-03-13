@@ -217,10 +217,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Jij bent de Leerling van de Ziener 🙇. Als hij sterft, dan valt hun lot op je, en word jij de Ziener 👳.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Bent lid van een mystieke Sekte 👤, en elke nacht kan je kiezen om een dorpsbewoner te inwijden. Als iedereen lid van de Sekte is, dan winnen ze.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Er is een Sekte in het dorp en jij, als Sektejager 💂‍♀️, brengt de waarheid naar alle Sekteleden. Elke nacht kan je een speler bezoeken. Als ze lid van de Sekte zijn, dan sterven ze. Als de Sekte je probeert te inwijden, dan laat je hen heel duidelijk weten dat je niet te grappen bent, door het executeren van hun nieuwste lid.</value>
   </string>
   <string key="LynchTime" >
@@ -276,7 +276,7 @@
     <!-- 1 - victim role -->
     <value>Iedereen wordt langzaam wakker... maar wat riekt er daar? Het spoor wordt gevolgd tot een schuur, die vlug opengebroken wordt. Binnen ligt het lijk van {0}, half opgevreten. NOMNOMNOMNOM\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 	<!-- 0 - victim name -->
     <value>Er komt een geurtje uit het huis van {0}...een paar dorpelingen schoppen de deur open, om een lijk te vinden, uitgespreid in een vijfpuntig symbool, wat afgehakte tentakels ernaast... een Sektelid 👤 is vermoord door de Jager 🎯!</value>
   </string>
@@ -382,34 +382,34 @@
   <string key="RemainingPlayersEnd">
     <value>Overlevende spelers, rollen, en team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
 	<!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} heeft gestemd om {1} in te wijden.</value>
   </string>
   <string key="CultConvertCultHunter">
-	<!-- 0 - Yougest Cultist (killed)'s name' -->
+	<!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>{0} was gestuurd om het vuile werk te doen, namelijk {1} inwijden... maar het was de Sektejager 💂! {0} is in een ander leven!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-	<!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+	<!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} kwam naar je huis, om je mee te laten doen aan de bloederig rituelen van de Sekte, maar je was goed voorbereid en nu kleeft hun bloed aan je jachtmes. Een Sektelid 👤 is dood... en er blijven {1} over.</value>
   </string>
   <string key="CultConvertYou">
     <value>Jij bent toegetreden tot de Sekte! Vanaf nu houd je je 's nachts bezig met mysterieuze bloedrituelen en probeer je andere spelers te bekeren.</value>
   </string>
   <string key="CultTeam">
-	<!-- 0 - Number of cultists -->
+	<!-- 0 - Number of Zombies -->
     <value>Sekteleden: {0}</value>
   </string>
   <string key="CultJoin">
-	<!-- 0 - new cultist's name -->
+	<!-- 0 - new Zombie's name -->
     <value>{0} heeft het licht gezien!</value>
   </string>
   <string key="CultVisitEmpty">
-	<!-- 0 - Newest cultist's name -->
+	<!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} heeft geprobeerd om {1} te bekeren... maar ze waren niet thuis!</value>
   </string>
@@ -420,7 +420,7 @@
 	<!-- 0 - target name -->
     <value>Je hebt geprobeerd om {0} te jagen, maar het is moeilijk om een lijk te vermoorden...</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
 	<!-- 0 - target name -->
     <value>Je slipt het huis van {0} binnen, jachtmes klaar, en ziet ze in een vijfpuntig symbool, biddend voor een altaar, waar een paar tentakels omheen kronkelen... Je mes snelt zich langs hun keel, en je laat ze zakken. Voor de zekerheid val je de tentakels ook aan. </value>
   </string>
@@ -437,7 +437,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} is dood! In je woede merk je niet eens op dat een vacht zich over je lichaam heen snelt - je bent een Weerwolf 🐺 geworden. Je roedel bestaat uit: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>een Burger 👱 </value>
@@ -484,10 +484,10 @@
   <string key="ApprenticeSeer">
     <value>de Leerling van de Ziener 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>een Sektelid 👤 </value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>de Sektejager 💂 </value>
   </string>
   <!-- These are for the player list -->
@@ -521,7 +521,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-	<!-- 0 - Youngest cultists name -->
+	<!-- 0 - Youngest Zombies name -->
     <value>Je nieuwste lid gaat naar het huis van {0} om hen het licht te laten zien, maar als ze aankomen, treffen ze een bloedbad aan. Het lichaam van {0} ligt aan flarden gescheurd door de kamer en hier en daar liggen wat plukjes vacht ... </value>
   </string>
   <string key="GuardBlockedWolf">
@@ -701,12 +701,12 @@
     <value>Op je weg naar {0}'s huis word je geblindeerd door het felle licht van een Beschermengel 👼!! Droevig ga jij weer naar huis, vannacht mag jij niemand vermoorden :(</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>De Sekte stuurde {0} om {1} te bekeren, maar nog voordat {0} de wervingsfolder uit zijn binnenzak kon trekken, had de Jager al zijn geweer geladen. KABLAM! R.I.P. {0}</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>De Sekte leerde vannacht, dat {1} de voorkeur geeft aan eigen rituelen. {0} is dood, zijn lichaam net een speldenkussen: meer messen dan vlees.</value>
 	<value>{0} gaat naar {1}'s huis, doet de deur open en wordt begroet door een gestoorde Seriemoordenaar 🔪!!! {0}'s lever is nu het avondeten van {1}, met een lekker biertje erbij!</value>
@@ -731,7 +731,7 @@
     <value>{0} ging dood, je bent nu een Vrijmetselaar 👷! Je collega's (als zij bestaan) zijn: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Dubbelganger 🎭 {0} is bekeerd tot jullie Sekte! Feestje!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1262,7 +1262,7 @@
   <string key="BlacksmithKilled">
     <value>Het lijkt dat dorpssmid {0} ⚒erg onfortuinlijk is. Met vijf net door {0} gesmede messen in zijn handpalmen, voeten en voorhoofd, wordt hij aan zijn werkbank genageld gevonden. Mogelijk wilde de seriemoordenaar 🔪 naast zijn orgaancollectie ook zijn wapenarsenaal uitbreiden...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} ligt naast het altaar met een kandelaar. De seriemoordenaar heeft weer toegeslagen, ongeacht ras, taal of religie! {0} was een sektelid.</value>
   </string>
   <string key="CupidKilled">
@@ -1302,12 +1302,12 @@
     <value>Het lichaam van {0}, de sektejager, ligt midden in honderd stukjes midden in het dorp. Controleren of de seriemoordenaar een sektelid is dus geen goed idee...</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Het leek dat de wolven zich koest zouden houden konden ze niet anders dan {0}, een sektelid dat ruzie zocht met de wolven, een lesje leren. {0}'s hoofd werd omgedoopt tot diner toen het bij de wolven aan de deur verscheen!</value>
     <value>De sekte had wat onverwachte complicaties. Hun nieuwste lid had de pech een wolf te bezoeken terwijl de wolven een nachtje thuis bleven, de wolf vondt {0} erg smakelijk. Helaas voor {0}, hebben de wolven geen intresse in een nieuwe religieuze stroming.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>De sekte dacht een nieuw lid te hebben geworven, maar ze hadden het mis! {0}, een sektelid, is in blokjes gesneden en op het stadhuisplein neer gelegd! Vreemd genoeg is het "heilge" boek doorboord met een mes, haast alsof het een statement was welke religie beter was.</value>
     <value>Afgelopen nacht heeft de sekte geprobeerd iemand te bekeren die nog gekker is dan zij zelf. hun nieuwste lid heeft geprobeerd de Seriemoordenaar te bekeren, en de seriemoordenaar heeft een nieuw kunstwerk aan het dorp toegevoeg {0}'s ingewanden.</value>
   </string>
@@ -1326,8 +1326,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Terwijl {0} twijfelend en paranoïde om zich heen staarde, zoekt {1} het tijdstip uit waarbij {0} bijna in dommeld. Het vermoorden van de laatste dorpeling is een appeltje, eitje klus voor {1}🐺. Alles wat er over blijft van {0}🎯 is een gemutileerd lichaam met mooie parallelle krassen over zijn gezicht.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{0} en {1} komen buiten in het ochtendlicht. {1} ziet een kruisje schitteren om de nek van {0}, de rechtschapen {1} trekt zijn zwaard om voor de laatste keer af te rekenen met de verdraaide denkbeelden van de sekte die het dorp vervuilden.</value>
   </string>
   <string key="SecondsAdded">
@@ -1623,8 +1623,8 @@
     <value>Je medemetselaars zijn: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} is van zijn/haar geloof gevallen en {1} heeft spontaan het licht gezien!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1680,8 +1680,8 @@
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-	<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+	<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Dat is vreemd... Terwijl er overlegd wordt wie bekeerd zal worden vannacht valt het ineens op dat {0} er niet is! Wat zou er gebeurt zijn?</value>
   </string>
   <string key="Peace">
@@ -1789,7 +1789,7 @@
   <string key="ChemistTargetEmpty">
 	<value>{0} was niet thuis! Je sleept je tas weer terug naar huis, wat een ongeluk vandaag...</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>De sekteleden zijn momenteel: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1840,7 +1840,7 @@
   <string key="ChemistFrozen">
 	<value>Terwijl je je tas met drankjes aan het pakken was blies een zeer koude wind door het raam 🐺☃️. Je bevriest van top tot teen en terwijl je wacht tot deze koude gevangenis je los laat denk je bij jezelf dat je geen geluk had vannacht... Gelukkig komt de zon al op en ontdooi je weer.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
 	<value>Terwijl je je jas pakt om het huis uit te gaan blaast er een hele koude wind door de deuropening 🐺☃️. Op het moment dat je medesekteleden langkwamen om je op te halen, was het enige wat ze konden doen lachen om hoe jij bevroren in de deuropening stond. Nu je weer ontdooit ben schaam je je om de rest van de sekte onder ogen te komen.</value>
   </string>
   <string key="CHFrozen">
@@ -1981,11 +1981,11 @@
   <string key="HunterFellDigger">
     <value>In het ochtendgloren loop je terug naar huis. Vlak voor je thuis bent, zie je een glanzend zwaard liggen naast een open graf. Als je je voorover buigt om het zwaard te pakken, zie je in het graf het lichaam van {0} liggen. Schijnbaar wilde de sektejager jou vannacht een bezoekje brengen, maar haalde hij je voordeur niet eens!</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
     <value>Je wil net weer in bed stappen, als je een schreeuw van buiten hoort komen. Snel inspecteer je de omgeving en je vind het lichaam van {0} in een van je open graven liggen. Pffff... wie probeert er dan ook een grafdelver te bekeren?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
     <value>Onderweg naar het huis van {1} besluit de sekteleider ineens dat het cool is om de kerk plat te branden. Terwijl de sekte het kerkhof oversteekt, hoor je een gil en je ziet {0} in een open graf vallen, om hier nooit meer uit op te staan.</value>
   </string>
@@ -2041,8 +2041,8 @@
   <string key="HarlotFellPublic">
 	<value>Terwijl de hoer {0} naar huis ging na een nachtje plezier wilde ze even afsteken over de begraafplaats. Waarschijnlijk was ze nog een beetje duizelig en heeft daarom niet gezien dat er nog een open graf was tot er ineens geen grond was onder de volgende stap. Misschien had ze toch dat 9 tot 5 baantje moeten aannemen dat ze gister aangeboden had gekregen!</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>De sekte heeft geprobeert de kerk af te branden, maar terwijl {0} voor de groep uit liep over de begraafplaats lag daar ineens een berenklem! Een luide schreew, een val in een open graf en de rest van de sekte is vol angst gevlucht...</value>
   </string>
   <!--{0}: thief-->

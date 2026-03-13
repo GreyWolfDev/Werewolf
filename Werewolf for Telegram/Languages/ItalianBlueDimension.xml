@@ -212,10 +212,10 @@ LUI ti parla dell’importanza della tua sopravvivenza ma ti dice anche di aspet
     <value >Sei LA RUOTA DI SCORTA.
 Odi aspettare e sapere di essere una semplice ruota di scorta ti manda su tutte le furie. Beh, quando (e se) il (vero) prediletto morirà, erediterai il ruolo di ILLUMINATO</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Sei il COLONIZZATORE, il tuo enorme carisma ti ha portato a credere di poter convincere ogni uomo e conquistare ogni donna con i tuoi ideali. Vuoi colonizzare questo mondo e governarlo come più ti va, ogni notte ti aggiri per la Blue Dimension alla ricerca di persone vuote e senza uno scopo pronte a seguire il tuo sogno folle. Tu sai bene che infondo, guerra e colonizzazione fanno parte del DNA dei terrestri, non conosci termini come bene o male per te esiste solo il tuo obiettivo.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Sei stato scelto dai farfalloni per dare la caccia a quegli stolti colonizzatori che vogliono rendere il paradiso delle farfalle uno zoo, pieno di scimmioni appena evoluti! Devi fare di tutto per dargli la caccia, spremiti  le meningi e scegli il bersaglio giusto, mi raccomando! attento ai demoni.Sei il PURIFICATORE!</value>
   </string>
   <string key="LynchTime" >
@@ -273,7 +273,7 @@ Odi aspettare e sapere di essere una semplice ruota di scorta ti manda su tutte 
     <value>Il farfallone ti porta la foto di {0} fatto a pezzi su di un meraviglioso campo fiorito ora “dipinto di rosso”.\n{1}</value>
     <value>Un'altra notte di terrore è finita. {0} è morto. Te lo conferma la foto del farfallone messaggero.\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Oh cosa accade? Una farfalla nera ti consegna la posta, aprendola una foto cade a terra, questa raffigura {0} con la capoccia mozzata, un umano è stato eliminato. Aprendo la posta noti anche una lettera con su scritto: “Io faccio il mio lavoro, un uomo vuole colonizzare questo mondo, sono stato scelto per fare fuori lui e tutti i suoi sottoposti, oggi ne ho terminato uno, non ringraziatemi…” Un colonizzatore è stato eliminato dal purificatore! Che stile!</value>
   </string>
   <string key="NoAttack" >
@@ -357,7 +357,7 @@ Odi aspettare e sapere di essere una semplice ruota di scorta ti manda su tutte 
   <string key="RemainingPlayersEnd">
     <value>Umani rimasti vivi, ruolo e fazione:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} sceglie di provare a conversare e convincere {1}</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -384,7 +384,7 @@ Odi aspettare e sapere di essere una semplice ruota di scorta ti manda su tutte 
   <string key="HunterVisitDead">
     <value>Hai dato la caccia a {0}, ma era già morto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Fai visita alla casa di {0}, e lo cogli a pianificare chissà cosa... Sfoderi così la spada per fendere l’avido colonizzatore.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -441,10 +441,10 @@ Odi aspettare e sapere di essere una semplice ruota di scorta ti manda su tutte 
   <string key="ApprenticeSeer">
     <value>La Ruota Di Scorta🙇 </value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>il Colonizzatore👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Il Purificatore💂</value>
   </string>  
  <string key="RanAway">
@@ -1148,7 +1148,7 @@ Sei stato scelto! Invece di essere ucciso, sei stato infettato... e diverrai un 
   <string key="BlacksmithKilled">
     <value>Sembra che {0}, il famoso erede dello scienziato blu, sia stato estremamente sfortunato. Il corpo di {0} è stato trovato bruciato con uno strano acido e la sua pericolosa attrezzatura è stata rubata. Secondo la posta del farfallone è stato l’errante. Molto violento però (?)...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} è stato trovato pugnalato a morte. A confermare il suo decesso di ha pensato l'affidabile farfallone messaggero. L’errante ha colpito ancora, indipendentemente da razza, lingua e religione! Lui deve portare a termine la sua missione. {0} era un Colonizzatore👤.</value>
   </string>
   <string key="CupidKilled">
@@ -1186,11 +1186,11 @@ Il Farfallone messaggero conferma il decesso di {0}.</value>
     <value>Gli umani si svegliano la mattina, solo per trovare le foto del corpo tagliato a pezzi di {0}, il Purificatore. Lezione imparata: non indagare mai l’errante!</value>
     <value>Il corpo di {0}, il Purificatore, è stato fotografato dal farfallone messaggero. Controllare l’errante non sembra stata una buona idea...</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Sembrava una notte tranquilla, visto che i demoni hanno deciso di prendersi una pausa, l'unico sfortunato è stato {0}, un Colonizzatore che ha provato a convertire un Demone. Dalla testa di {0} è stata esportata ed assorbita tutta la malvagità! Il Farfallone messaggero conferma il decesso.</value>
     <value>I Colonizzatori hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a fare proseliti, è stato divorato dal demone che ha visitato. Sfortunatamente per {0}, i demoni non amano conversare. Il Farfallone messaggero conferma il decesso.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>I colonizzatori pensavano di convertire un nuovo membro tra di loro, ma si sbagliavano! {0}, un colonizzatore è stato trovato tritato nella piazza centrale dal farfallone messaggero che lo fotografa bene!</value>
     <value>L'ultima notte, i colonizzatori  hanno provato a soggiogare una persona più pazza di loro. Il loro membro più recente ha provato a convertire l'errante e l’errante ha creato una nuova opera d’arte moderna marchiando il colonizzatore a fuoco. Il farfallone messaggero conferma l’avvenuto decesso di {0}.</value>
   </string>
@@ -1211,8 +1211,8 @@ Il Farfallone messaggero conferma il decesso di {0}.</value>
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value> Il demone avverte la presenza di {0} che era rimasto in vita, {1} prova così a sbranarlo quando {0} meno se l'aspettava, riuscendo a coglierlo impreparato. Beh mangiare l'ultimo umano sembrò una passeggiata per {1}, che banchettò sul corpo ancora fresco di {0}, il povero intenso burbero.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} e {0} escono rispettivamente dai propri rifugi appena spuntano i primi raggi di luce. Vengono teletrasportati entrambi in un'arena,  li {0} capisce ormai di essere spacciato, il virtuoso {1} tira fuori la propria spada, terminando una volta per tutte la stirpe di questi  sporchi colonizzatori che hanno contaminato il pianeta con le loro menzogne.</value>
   </string>
   

@@ -177,10 +177,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >تو پیشگوی رزرو هستی یعنی اگه پیشگوی اصلی بمیره تو پیشگو میشی جاکش 😐</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >تو رئیس فرقه هستی، هر شب یه نفرو به فرقه خودت دعوت میکنی اگه همه بازیکنای زنده، عضو فرقه تو بشن تو میبری 😐</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >یه رئیس فرقه توی روستاس! هر شب یه نفرو به فرقه خودش دعوت میکنه. تو باید رییس فرقه و اعضای تخمیشو پیدا کنی و به گا بدی! 😐</value>
   </string>
   <string key="LynchTime" >
@@ -225,7 +225,7 @@
   <string key="DefaultEaten" >
     <value>آخه این روستایی ساده بدبخت به شما چیکار داشت که خوردینش کثافتا! یه گوشه نشسته بود داشت لایو میدید. خدا بیامرزتت {0} جقی خوبی بودی 😢😢  {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>اینطور که معلومه شکارچی دیشب زده رئیس فرقه {0} رو بگا داده</value>
   </string>
   <string key="NoAttack" >
@@ -309,7 +309,7 @@
   <string key="RemainingPlayersEnd">
     <value>بازیکن های باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >نظر {0} اینه که {1} رو تبدیل کنید</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -336,7 +336,7 @@
   <string key="HunterVisitDead">
     <value>رفتی {0} رو بکشی ولی مرده بود</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>رفتی خونه {0} و دیدی داره لایو میبینه. شق کردی گرفتی بگاش دادی</value>
   </string>
   <string key="HunterFailedToFind">
@@ -348,7 +348,7 @@
   <string key="WildChildTransform">
     <value>چون {0} الگوت بود و مرده الان تو گرگی و یارات عبارت اند از : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>روستایی 👱</value>
   </string>
@@ -394,10 +394,10 @@
   <string key="ApprenticeSeer">
     <value>پیشگوی رزرو 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>فرقه گرا 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>شکارچی 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -574,7 +574,7 @@
     <value>فرقه گرای عزیز یعنی {0} رفت که {1} رو به دینش دعوت کنه ولی {1} کلانتر بود و با تفنگش زد {0} رو کشت</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>فرقه گرای کیری  {0} اشتباهی قاتل کسکش رو دعوت کرد  {1}, و باعث شد  {0} به صورت خشن باهاش سکس کنه و بدنشو تیکه تیکه کنه و بگا دادش {0} قاعدتا گاییده شده و مرده ....</value>
     <value>{0} کسخل رفت خونه این {1}که دعوتش کنه ولی متاسفانه هرجفتشون بگا رفتن بیچاره ها {1} چاقوشو مثل کیرش کرد توی بدنش به راحتی  {0}بیچاره گاییدش و بگا رفت طرفش و اون الان {0} مرده </value>
@@ -1113,7 +1113,7 @@
 - آره😞
 متاسفانه دیشب {0} کسکش اعظم جناب اهنگر  توسط قاتل جقی در اصطبل  به قتل رسید..!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value> دیشب قاتل زنجیره ای به حرمسرای فرقه حمله کرد و {0} را کشت</value>
   </string>
   <string key="CupidKilled">
@@ -1146,10 +1146,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>شکارچی {0}در حال جق زدن مشغول پیداکردن رئیس فرقه بود زمانی که داشت توی جنگل دنبال رد پای رئیس فرقه میرفت قاتل زنجیره ای بهش حمله میکنه و ،معامِلَشو میبُره و میکشتش!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب {0} رفت که گرگارو دعوت کنه به فرقه! ولی نمیدونست ک گرگا پارش میکنن،گرگا {0} رو پاره پوره کردن و جنازشو ریختن تو غذای رییس فرقه</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>شب قبل فرقه گرا ها میخواستن یک عضو جدید رو به جقی کنن و به فرقه دعوت کنن، {0} مامور شد که یکی رو به فرقه دعوت کنه، اما دیگه خبری از {0} نشد! صبح روز بعد اعضای فرقه بعد از جق صبحگاهی قلب {0} رو جلوی در خونه رئیس فرقه پیدا میکنن! قاتل زنجیره ای {0} تیکه تیکه کرده!</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1167,8 +1167,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>شکارچی {0} توی روستا با {1} تنها مونده! {1} میره که به شکارچی حمله کنه و اونو بکشه، اما شکارچی در حال جق زدن بلند میشه و متوجه {1} میشه سریع میره سمت تفنگش اما فرصت نمیکنه که تفنگشو دستش بگیره و {1} میگیره و پارش میکنه! {1} تنها گرگ بازمانده روستاست و تنهایی تا اخرش جق میزنه🐺💦</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>تنها فرقه گرای بازمانده روستا {0} بود که زمانی که صبح بعد از جق زدن داشت سمت میدون شهر میرفت، با شکارچی {1} روبه رو میشه! شکارچی، همون موقع تفنگشو در میاره که به {0} شلیک کنه ولی {0} همون موقع گلنارشو در میاره و میگه اینو بگیر و منو نکش ولی شکارچی همونجا گلنارو تو حلقش فرو میکنه و اون میمیره ،شکارچی برنده اس</value>
   </string>
   

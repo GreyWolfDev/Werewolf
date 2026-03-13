@@ -296,13 +296,13 @@
     <value>Du bist Parvati Patil 🙇. Dir gefällt die Wahrsagerei sehr - doch bisher habt ihr in Firenze ja einen würdigen Wahrsager. Sollte er jedoch einmal nicht mehr sein, dann ist dein Job, ihn zu vertreten.</value>
     <value>Du bist Parvati Patil 🙇 und der Wahrsagerei verfallen. Doch aktuell sind die Teeblätter noch bei Firenze. Er hat dir allerdings versprochen, dir seine Gerätschaften zu übergeben, sollte er sterben.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Du bist ein Dementor 👤, ein Wesen, das aus Angst entsteht. Du ernährst dich von den schönen Gefühlen der Mitmenschen und kannst ihnen die schlimmste Strafe der Zaubererwelt zufügen: den Kuss eines Dementors. Dies saugt dem Opfer die Seele aus und gilt als schlimmer als der Tod. Durch die dadurch entstehende Angstatmosphäre kannst du in deinem Opfer einen neuen Dementor entstehen lassen, solange es schwach genug ist. Du gewinnst, wenn nur noch Dementoren am Leben sind.</value>
     <value>Du bist ein Dementor 👤  und stehst für pure Angst. Du gewinnst, wenn die ganze Zaubererwelt nur noch aus Dementoren besteht. Ihr könnt es jede Nacht versuchen, einen weiteren Dementor aus der Angst eines Zauberers entstehen zu lassen.</value>
     <value>Du bist ein Dementor 👤. Du stehst für Angst und Schrecken und ernährst dich von den guten Erinnerungen der anderen. Du kannst durch den Dementorenkuss die Seele eines Zauberers aussaugen. Du kannst es versuchen, dadurch einen neuen Dementor entstehen zu lassen. Manche Zauberer haben allerdings eine gewisse Immunität, da sie den Patronuszauber beherrschen. Wenn nur noch Dementoren leben, gewinnt ihr.</value>
     <value>Du bist Dementor 👤 und wachst über das Zauberergefängnis Askaban. Du stehst für die Angst schlechthin und lebst von der Positivität und Wärme der Zaubererwelt. Durch das Aussaugen jeglicher positiven Energie kannst du, solange das Opfer keinen starken Patronus zaubert, jede Nacht einen weiteren Dementor aus der Angst des Opfers erschaffen. Wenn alle Überlebenden Dementoren sind, so gewinnt ihr, die Wächter von Askaban.</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Du bist Remus Lupin 💂. Du kennst dich exzellent mit Dementoren und vor allem mit dem Kampf gegen ebendiese aus. So hast du immer ein Stück Schokolade bei dir, das den erkalteten Opfern von leichten Dementorenangriffen zurück zu positiver Energie und Wärme verhilft. Dein Patronus ist ein Wolf - naja, bei dir ja naheliegend. Du kannst jede Nacht bei einem Spieler einen Patronus zaubern und diesen dadurch vernichten, solange dieser ein Dementor ist.</value>
     <value>Du bist Moony 💂. Gemeinsam mit deinen Schulfreunden Tatze, Krone und Wurmschwanz hast du früher sehr viel Spaß in Hogwarts gehabt. Heutzutage bist du Mitglied im Orden des Phönix und kämpfst gegen das Böse. Eine deiner Spezialitäten ist der Patronus-Zauber. Du kannst jede Nacht einen Patronus zu einem Spieler schicken. Falls dieser ein Dementor ist, wirst du ihn dadurch zerstören.</value>
     <value>Du bist Remus Lupin 💂. Du hast Harry Potter gezeigt, wie man gegen Dementoren kämpft, indem du ihm beigebracht hast, wie er seinen Hirsch-Patronus zaubern kann. Dein Ziel ist es, jede Nacht einen Patronus zu einem potentiellen Dementor zu schicken, um diese Angst-Wesen endgültig zu vernichten.</value>
@@ -395,7 +395,7 @@
     <value>Es scheint so, als hätten die Todesser 🐺 heute Nacht {0} aufgelauert. Zumindest findet ihr ihn/sie tot in Hogsmeade. {1}.</value>
     <value>Wie ihr alle ja wisst: Den Schmerz zu unterdrücken macht ihn nur schlimmer, wenn man ihn schließlich spürt. Also am besten direkt erst einmal ausheulen und danach diskutieren - denn heute scheint ihr alle schmerzhaft zu bemerken, dass die Todesser 🐺 {0} ermordet haben. {1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- {0} - victim name -->
     <value>Am nächsten Morgen findet man {0} 👤 vor der peitschenden Weide. Er/Sie wurde wohl von einem Patronus zerstört!</value>
     <value>{0} liegt leblos in der heulenden Hütte. Remus Lupin muss dem Dementor 👤 wohl mit seinen positiven Gedanken den Garaus gemacht haben.</value>
@@ -547,7 +547,7 @@
   <string key="RemainingPlayersEnd">
     <value>Verbleibende lebende Spieler, Zauberer und Teams:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <!-- {0} - Voter's name -->
     <!-- {1} - target name -->
     <value>{0} hat gewählt, bei {1} einen neuen Dementor zu erschaffen.</value>
@@ -556,14 +556,14 @@
     <value>{0} will aus der Seele von {1} einen weiteren Dementor erschaffen.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- {0} - Yougest Cultist (killed)'s name' -->
+    <!-- {0} - Yougest Zombie (killed)'s name' -->
     <!-- {1} - CultHunter's name -->
     <value>In dieser Nacht war es die Aufgabe von {0}, {1} zu küssen. Leider war dies Remus Lupin 💂 und hat einen mächtigen Wolfs-Patronus heraufbeschworen, der zu stark für {0} war. Er/Sie ist nun endgültig von uns gegangen.</value>
     <value>Heute sollte {0} die Seele von {1} aussaugen. Leider war dies bei Remus Lupin 💂 nicht so einfach möglich, denn er hat {0} mit einem Patronuszauber zerstört.</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- {0} - Youngest Cultist's name -->
-    <!-- {1} - Number of cultists left -->
+    <!-- {0} - Youngest Zombie's name -->
+    <!-- {1} - Number of Zombies left -->
     <value>{0} 👤 wollte sich von deinen positiven Gefühlen ernähren. Doch zum Glück weißt du, dass man einen Dementor mit einem Patronus zerstören kann. {1} Dementoren sind noch übrig.</value>
     <value>{0} 👤 wollte dich küssen. Doch zum Glück hast du einen mächtigen Patronus gezaubert und {0} zerstört. {1} Dementoren sind noch am Leben.</value>
     <value>{0} war ein Dementor 👤, der aus dir einen weiteren erschaffen wollte. Naja, da hat er/sie nicht mit deinem Wolfs-Patronus gerechnet, der ihn/sie direkt eliminiert hat. Es leben noch {1} Dementoren.</value>
@@ -574,17 +574,17 @@
     <value>Ein Dementor 👤 hat dich erfolgreich angegriffen. In dieser dunklen, kalten Stimmung wirst du nun selbst zu einem Dementor.</value>
   </string>
   <string key="CultTeam">
-    <!-- {0} - Number of cultists -->
+    <!-- {0} - Number of Zombies -->
     <value>Dementoren: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- {0} - new cultist's name -->
+    <!-- {0} - new Zombie's name -->
     <value>{0} ist ein weiterer Dementor!</value>
     <value>Ihr könnt euch über einen weiteren Dementoren in Form von {0} freuen.</value>
     <value>Auch wenn es eine eiskalte und ängstliche Feier wird: {0} ist nun ebenfalls ein Dementor.</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- {0} - Newest cultist's name -->
+    <!-- {0} - Newest Zombie's name -->
     <!-- {1} - target name -->
     <value>{0} wurde gesendet, um {1} zu küssen, aber er/sie war nicht aufzufinden.</value>
     <value>{0} findet das Bett von {1} verlassen vor, keine Spur einer menschlichen Seele, die von euch ausgesaugt werden könnte.</value>
@@ -602,7 +602,7 @@
     <value>Mit deinem Patronus kannst du bei toten Personen nichts mehr ausrichten. Was machst du also hier bei {0}?</value>
     <value>Dein Patronus kann zwar nicht nur Dementoren vernichten, sondern auch Nachrichten überbringen, aber das bringt doch beides nichts bei einer toten Person wie {0}.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- {0} - target name -->
     <value>Heute Nacht schickst du deinen Wolfs-Patronus zu {0}. Da es sich hierbei um einen Dementoren 👤 handelt, vernichtest du diesen.</value>
     <value>{0} scheint Dementor 👤 gewesen zu sein. Zumindest war es ganz schön anstrengend, in der Kälte in dessen Anwesenheit all die positiven Gedanken aufrecht zu erhalten. Du hast es aber geschafft, denn dein Patronus hat {0} zerstört. Jetzt aber schnell ein Stückchen Schokolade!</value>
@@ -627,7 +627,7 @@
     <value>Weil {0} starb, hast du die Kontrolle über deine Verwandlungsfähigkeit als Maledictus verloren. Du bist nun für immer im Schlangenkörper gefangen und zählst dich nun zu den Todessern 🐺. Die anderen Todesser sind: {1}</value>
     <value>Nagini, du hast einen Großteil deines menschlichen Lebens gemeinsam mit {0} verbracht. Da dieses Vorbild nun tot ist, wirst du von jetzt an im Schlangenkörper für die Todesser 🐺 kämpfen. Diese sind: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>ein Muggel 👱</value>
@@ -674,10 +674,10 @@
   <string key="ApprenticeSeer">
     <value>Parvati Patil 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>ein Dementor 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Remus Lupin 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -720,7 +720,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- {0} - Youngest cultists name -->
+    <!-- {0} - Youngest Zombies name -->
     <value>Ihr wolltet bei {0} einen neuen Dementor entstehen lassen, doch es wurde nur eine Leiche 🐺 gefunden...</value>
     <value>Ihr wolltet euch von den positiven Gedanken von {0} ernähren, allerdings gab es diese gar nicht mehr. {0} ist bereits tot 🐺.</value>
     <value>Ihr hättet gerne einmal {0} geküsst. Doch es gab gar keine Seele mehr zum Aussaugen - dafür haben die Todesser 🐺 bereits gesorgt.</value>
@@ -902,12 +902,12 @@
     <value>Immer diese mütterliche Liebe. Dein Fluch auf {0} scheint keine Wirkung zu haben, zu stark ist Lilys 👼 Schutz.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- {0} - Youngest Cultist's name -->
+    <!-- {0} - Youngest Zombie's name -->
     <!-- {1} - target's name -->
     <value>Die Dementoren senden {0}, um aus der Fröhlichkeit von {1} weitere Dementoren entstehen zu lassen. Doch stattdessen erkennt man einen silbrig leuchtenden Patronus in Form eines Hundes. Sirius 🎯 scheint den Dementor vernichtet zu haben! {0} ist tot...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- {0} - Youngest Cultist's name -->
+    <!-- {0} - Youngest Zombie's name -->
     <!-- {1} - target's name -->
     <value>{0} schleicht durchs Schloss, um {1} zu suchen. Doch bevor er/sie gefunden wird, scheint es einen Angriff eines Obscurus zu geben. Scheinbar habt ihr versucht, Gellert Grindelwald 🔪 zu besuchen, dessen Obscurus-Begleiter euch nicht so sehr mochte. {0} ist tot.</value>
   </string>
@@ -935,7 +935,7 @@
     <value>{0} ist gestorben und du verwandelst dich in einen rothaarigen Zauberer, der im Fuchsbau lebt. Du bist jetzt also einer der Weasleys 👷. Deine Familie (falls vorhanden) besteht aus: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- {0} - new cultist's name -->
+    <!-- {0} - new Zombie's name -->
     <value>Tonks 🎭 ({0}) hat sich euch Dementoren zu sehr genähert. Um nicht aufzufallen, hat sie sich ebenso in einen Dementor verwandelt. Doch in Ermangelung ihrer positiven Gedanken kann sie sich nun nicht mehr zurückverwandeln, sie bleibt nun dauerhaft ein Dementor.</value>
   </string>
   <string key="DGTransformToCult">
@@ -1507,7 +1507,7 @@ Weißbuchenholz, 12 ¾ Zoll, Drachenherzfaser. So weißt du auch, welche Zaubers
     <value>Am frühen Morgen hört man einen schrillen Schrei von {0}. Man findet die Leiche 🔪 von {0} mit unnatürlich abgespreizten Gliedmaßen auf dem Boden, das schmerzverzerrte Gesicht noch immer starr zur Decke gerichtet. Er/Sie war Garrick Ollivander ⚒. </value>
     <value>Ihr findet {0} tot auf dem Boden, daneben eine Tabelle mit den Spalten "Holz", "Länge" und "Kern". In seinen/ihren Taschen befindet sich eine Drachenherzfaser und eine Phönixfeder. Es scheint so, als wäre Garrick Ollivander ⚒ das letzte Opfer Grindelwalds 🔪 gewesen.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Ihr findet {0}, der tot am großen See auf dem Schlossgelände liegt. Viel erkennt man allerdings nicht mehr, denn es scheint so, als hätte er/sie sowieso nur noch aus Angst und Schrecken bestanden. Anscheinend hat Gellert Grindelwald 🔪 den Dementor besiegt 👤.</value>
     <value>Eine düstere, unheimlich wirkende Gestalt liegt tot vor dem verbotenen Wald. Ihr erkennt, dass es sich dabei um {0} handelt. Diese/r scheint wohl ein Dementor 👤 gewesen zu sein, der auf brutalste Weise von Grindelwald 🔪 vernichtet wurde.</value>
   </string>
@@ -1557,12 +1557,12 @@ Weißbuchenholz, 12 ¾ Zoll, Drachenherzfaser. So weißt du auch, welche Zaubers
     <value>Freut euch, wenn ihr ein Dementoren seid. Remus Lupin 💂 ({0}) ist tot 🔪! Da scheint Grindelwald dem Meister des Patronus-Zaubers aus dem Weg geschafft zu haben.</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Eigentlich wollten die Todesser 🐺 letzte Nacht eine kleine Party feiern. Als mit {0} ein Dementor 👤 hereinplatzte, hatte diese/r keine Chance, das zu überstehen...</value>
     <value>Die Dementoren 👤 wollten heute Nacht wohl die positive Energie eines Todessers 🐺 nutzen, um aus diesem einen neuen Dementor entstehen zu lassen. Das hat wohl nicht so gut geklappt, denn {0} liegt nun tot auf dem Boden, über ihm erstrahlt das dunkle Mal.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>Eigentlich wollte Grindelwald 🔪 letzte Nacht nicht unbedingt so viel töten. Aber wenn mit {0} ein Dementor 👤 hereinplatzt, dann lässt er sich die Möglichkeit auch nicht einfach entgehen...
 
  </value>
@@ -1592,8 +1592,8 @@ Weißbuchenholz, 12 ¾ Zoll, Drachenherzfaser. So weißt du auch, welche Zaubers
     <value>Aus gutem Grund hat {1} sich {0} - Sirius 🎯 - als den letzten Zauberer bis ganz zum Schluss aufgehoben. Leider erwischte diesen der Fluch des Todessers 🐺, bevor er/sie den Zauberstab zücken konnte. Mit seinem Dahinscheiden stirbt der letzte gute Zauberer in Hogwarts.</value>
     <value>Sirius 🎯 dachte schon, er wäre der letzte Überlebende in Hogwarts. Doch scheinbar hat er {1} nicht gesehen, welche/r ihm einen letzten Fluch in den Rücken jagt - den Todesfluch. Dadurch kippt {0} vor dem Todesser 🐺 um, der sich jetzt tatsächlich als letzter Überlebender herausstellt.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} spürt die Leere des Schlosses. Es scheint keine Überlebenden mehr zu geben. Wobei - die Leere fühlt sich zudem noch eiskalt an und so langsam schwinden alle Hoffnungen und schönen Gefühle aus dem Kopf. Es scheint so, als würde hier noch irgendwo ein Dementor herumlungern. Lupin 💂 nimmt noch einmal all seine Kraft zusammen und denkt an seinen Sohn Ted, sodass er ein letztes Mal den Patronus-Wolf in der großen Halle heraufbeschwört. Als dabei gerade {0} 👤 hereinschwebt, wird diese/r direkt zerstört.</value>
     <value>Remus Lupin 💂 hatte gerade noch ein paar Irrwichte beseitigt, indem {1} diese aus der Gestalt einiger Vollmonde in gelbe Quaffels verwandelte, als es um ihn herum plötzlich eiskalt wird. Der große See friert augenblicklich zu. Es scheint sich mit {0} wohl ein Dementor 👤 zu nähern, der durch Lupins stärksten Patronus-Zauber zerstört wird.
 </value>
@@ -1909,8 +1909,8 @@ Weißbuchenholz, 12 ¾ Zoll, Drachenherzfaser. So weißt du auch, welche Zaubers
     <value>Zu den Weasleys gehören (falls vorhanden) außer dir: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- {0} - old cultist's name -->
-    <!-- {1} - new cultist's name -->
+    <!-- {0} - old Zombie's name -->
+    <!-- {1} - new Zombie's name -->
     <value>{0} ist nun kein Dementor mehr. {1} hat dessen Rolle eingenommen.</value>
   </string>
   <string key="ThiefToWolf">
@@ -1964,8 +1964,8 @@ Weißbuchenholz, 12 ¾ Zoll, Drachenherzfaser. So weißt du auch, welche Zaubers
   <string key="SecretLynchShowVotersA">
     <value>Ist geheimes Lynchen aktiviert und die Anzahl der Stimmen wird angezeigt, dann wird der Name der Wähler eines Gewählten: {0}</value>
   </string>
-  <string key="CultistBitten">
-	<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+	<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Komisch... {0} ist nicht mehr zum Dementorentreffen erschienen. Wie ist das nur passiert?</value>
     <value>Wo ist eigentlich {0} hin? Er sprühte gestern schon so mit positiver Energie, so untypisch für einen Dementor...</value>
   </string>
@@ -2094,7 +2094,7 @@ Weißbuchenholz, 12 ¾ Zoll, Drachenherzfaser. So weißt du auch, welche Zaubers
 	<value>{0} hatte am Abend wohl schon etwas anderes vor und konnte deiner Einladung nicht folgen.</value>
     <value>Scheinbar war {0} die Mitgliedschaft im Slug-Club nicht so wichtig wie erhofft - Er/Sie hatte wohl Besseres zu tun.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>Die Dementoren 👥 sind aktuell: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -2150,7 +2150,7 @@ Weißbuchenholz, 12 ¾ Zoll, Drachenherzfaser. So weißt du auch, welche Zaubers
   <string key="ChemistFrozen">
     <value>Du überlegst dir gerade, wen du als nächstes in den Slug-Club einladen sollst, als du auf deinem privaten Balkon stehst und das warme Wetter genießt. Durch das Fensterglas siehst du, wie der Basilisk 🐺☃️ aus einem Heizungsrohr in dein Büro kriecht. Nach einem kurzen Blick in dessen Augen erstarrst du zu Stein und hoffst, dass dich jemand findet, der dich in den Krankenflügel bringt.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Du verbreitest Angst und Schrecken und möchtest heute Nacht einen weiteren Dementor entstehen lassen - doch als du durch das Schulhaus schwebst, siehst du durch den Geist des fast kopflosen Nicks zwei grässliche Augenpaare - du blickst dem Basilisken 🐺☃️ fast direkt in die Augen. Du erstarrst sofort zu Stein.</value>
   </string>
   <string key="CHFrozen">
@@ -2301,11 +2301,11 @@ Weißbuchenholz, 12 ¾ Zoll, Drachenherzfaser. So weißt du auch, welche Zaubers
 	<value>Du willst gerade das Grab vollenden, das du die ganze Nacht gegraben hast. Jedoch sieht das irgendwie komisch aus - es scheint bereits gefüllt zu sein? Wie kommt {0} denn hierhin? Er/Sie scheint tot zu sein...</value>
   </string>
   <string key="CultFell">
-	<!--{0}: cultist-->
+	<!--{0}: Zombie-->
 	<value>Du willst gerade das Grab vollenden, das du die ganze Nacht gegraben hast. Jedoch sieht das irgendwie komisch aus - es scheint bereits gefüllt zu sein? Wie kommt {0} denn hierhin? Er/Sie scheint tot zu sein...</value>
   </string>
   <string key="CultConvertGraveDigger">
-	<!--{0}: cultist who fell, {1}: grave digger-->
+	<!--{0}: Zombie who fell, {1}: grave digger-->
 	<value>Auf dem Weg zu {1} schwebt {0} entschlossen voran über das Schlossgelände. Doch irgendwas scheint dort komisch zu sein. Hagrid ☠️ steht vor seiner Hütte und spielt mit Norbert, seinem norwegischen Stachelbuckel-Baby, der in einem seiner Gräber herumtanzt. Schon ein süßer Anblick. {1} schwebt in eines der offenen Gräber, als im selben Moment ein Patronus herbeischwebt und ihn/sie für immer im Grab begräbt. Wer hat Hagrid denn diesen Patronus geschickt?</value>
   </string>
   <string key="ChemistFell">
@@ -2361,8 +2361,8 @@ One of the graves on the graveyard contained too many people tonight... Apparent
 	<!--{0}: harlot-->
 	<value>Es scheint so, als hätte Romilda Vane 💋 die heutige Nacht gerne mit Hagrid ☠️ verbracht 🥴. Naja, wo die Liebe hinfällt...? Auf jeden Fall scheint sie nie bei seiner Hütte angekommen zu sein, denn {0} liegt verblutet in einem der offenen Gräber.</value>
   </string>
-  <string key="CultistFellPublic">
-	<!--{0}: cultist who died-->
+  <string key="ZombieFellPublic">
+	<!--{0}: Zombie who died-->
 	<value>Es scheint so, als hätte {0} heute Nacht gerne Hagrids ☠️ Seele ausgesaugt. Naja, soweit scheint er/sie nicht gekommen zu sein, denn der Dementor 👤 ist in einem Grab von einem Patronus gefangen - für immer...</value>
   </string>
   <string key="ThiefFellPublic">

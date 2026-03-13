@@ -47,10 +47,10 @@
   <string key="ApprenticeSeer">
     <value>the Little Witch 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>a Vampire 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>the Vampire Slayer 💂</value>
   </string>
   <string key="Mason">
@@ -166,10 +166,10 @@
     <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+    <value>As a Zombie, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are Zombie - the cult wins</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die.</value>
   </string>
   <string key="AboutWC">
     <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
@@ -882,10 +882,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >You are the Little Witch 🙇. You are the witch's sister and for now you don't have many powers and can't do many things either. If your sister dies, their powers will be passed down to you.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >You are a Vampire 👤. Every night, you and your clan can choose one person to attack... Not that you'll kill them! Your clan has a strict no-killing rule, so the most you have ever done to your victim was drink their blood... And, well... if that turns them into vampires, who are you to complain? The more the merrier!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >You are the Vampire Slayer 💂, trying to stop the vampires in town from converting everyone! Each night, you get to choose a player. If they are a vampire, they will die. If the vampires try to visit you, the vampire's newest member dies.</value>
   </string>
   <string key="RoleInfoMason">
@@ -1054,15 +1054,15 @@
     <value>The first thing you realized was a prickle in your neck, then another, then another... At the end of the night, you didn't even feel the blood loss anymore, and the vampire clan accepted you as one of their own.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>The Vampire's clan is composed of: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} was a wonderful meal, and now is your fellow clanmate!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>Your clan visited {1}'s den, but there was no one inside... You might be used to your new body by now, but {0}, the newest member of your clan, won't stop complaining about hunger...</value>
   </string>
@@ -1080,7 +1080,7 @@
     <value>No Witch!</value>
   </string>
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Your clan goes into {0}'s den ready for a nice snack, finding evidence of a fight there, and lots of blood in the ground... But you're not that hungry tonight, and return home without drinking a drop of blood from there.</value>
   </string>
   <string key="CultUnableToConvert">
@@ -1260,7 +1260,7 @@
     <!-- 0 - mason collegues's name -->
     <value>Your teammates (if any) are: {0}</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>The Vampirea are currently: {0}</value>
   </string>
   <string key="GroupIdleCount">
@@ -1268,7 +1268,7 @@
   <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
 	<value>{0} of those kills were in this group.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>A noticeable stench is coming from {0}'s den... the Halloween Town's monsters inspects it to find a rejuvenated corpse lying inside a bier and a wooden spear in thier heart, it seems they couldn't rejuvenate after that. A vampire has been killed by the vampire slayer!</value>
   </string>
@@ -1323,26 +1323,26 @@
   <string key="TannerWins" isgif="true" >
     <value >HAHAHAHA YOU FOOLS!! The Clown wins!!</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} has chosen to drink {1}'s blood.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>Your clan showed up in {1}'s den, ready to drink the tastiest blood of all. Unfortunately, they chose the wrong house. {0} was killed in the fight with the vampire slayer.</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} enters your house to drink your blood. Fortunately, you aren't asleep. You took your sword and slayed them mercilessly. A blood-sucking vampire is dead... {1} remain!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
     <value>You entered {0}'s den silently to slay the vampire, but all you saw is a dead body...</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>You went to check {0}'s house and find them drinking the blood of a human. Before they decided to drink your blood, you took your sword and slayed them mercilessly.</value>
   </string>
@@ -1461,12 +1461,12 @@
     <value>You went to {0}'s den to touch them, but there was an invisible shield that made it impossible, the Fairy made it! You came to your den without doing what you wanted to do... sad.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>The clan chosen {0} to drink every drops of {1}'s blood, but all they saw is a souless body there. {0} is dead...</value>
   </string>
    <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>The clan chosen {0} to drink every drops of {1}'s blood, but all they saw is a dead monster near a hammer. {0} is dead...</value>
   </string>
@@ -1490,7 +1490,7 @@
     <value>{0} has died, and you transform into a Gnome. Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>The Shapeshifter {0} has now become a Vampire, just like you</value>
   </string>
   <string key="DGTransformToCult">
@@ -1580,7 +1580,7 @@
   <string key="BlacksmithKilled">
     <value>When morning comes, everyone had expected to see their beloved Unicorn strolling around town as part of its daily routine, but all they found was the mangled body of {0}, the Unicorn lying in a pool of its own blood with its head missing. Sameal had taken the Unicorn head as a trophy to decorate its house. The villagers mourned as they would no longer see their beloved Unicorn puke rainbows around town.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>A head has been severed off from the body. The head belongs to {0}! Samael has ripped the vampire's head of from the body for being too sparkly and unsmart in collecting blood.</value>
   </string>
    <string key="CupidKilled">
@@ -1609,11 +1609,11 @@
     <value>The body of {0}, the Vampire Hunter, was found in the middle of town, albeit cut precisely into a hundred pieces. Checking if the Sameal was a sparkly vampire does not seem to be a good idea...</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>Sameal was fed up with {0}'s begging to donate blood and join their sparkly clan then Sameal suck {0}'s soul out and sever {0}'s head from their body.</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>The vampire clan ran into unexpected trouble last night. Their newest member had the misfortune of visiting a wolf on the night the wolves decided to stay in their dens, and the wolf found {0} quite delicious. Unfortunately for {0}, wolves have no interest in joining their sparkly clan.</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1632,8 +1632,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Knowing only {0} was left, {1} chose a time where {0}'s guard was at their lowest. Eliminating the final monster of Halloween Town proved to be effortless for {1}, for all there remains is the mutiliated body of {0}, the ork, adorned with parallel slashes to the face.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} and {0} walk out in daylight. Seeing a drop of blood slowly dripping down {0}'s neck, the righteous {1} draws their sword for the final time, putting an end to the twisted learnings of the vampire clan that have contaminated Halloween Town.</value>
   </string>
   <string key="WolvesEatDrunkBlockSecondKill">
@@ -1743,7 +1743,7 @@
   <string key="ChemistFrozen">
     <value>While you were sleeping last night, you suddenly felt really cold. Waking up to check, you realised that you couldn't move at all! Looks like the Fenrir 🐺☃️ has cast a freezing spell on you. You go back to sleep, unconcerned, since it didn't affect you at all... apart from making you feel cold.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>While you were sleeping last night, you suddenly felt really cold. Waking up to check, you realised that you couldn't move at all! Looks like the Fenrir 🐺☃️ has cast a freezing spell on you. You go back to sleep, unconcerned, since it didn't affect you at all... apart from making you feel cold.</value>
   </string>
   <string key="CHFrozen">
@@ -1820,11 +1820,11 @@
     <string key="HunterFellDigger">
 	<value>After another tiring night, you walk back to your home with the sun already rising. Just before you arrive, you notice a sword lying on the ground next to an unfinished sarcophagus. Inside that, you see the dead body of {0}. The vampire slayer should have not suspected you...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>You return from another tiring night, when suddenly you hear a scream from one of your unfinished sarcophagus! You hurry there, just to find {0} lying dead. What kind of vampire tries to drink the blood of a bloodless mummy, anyway?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>On your way to {1}'s den, {0} suddenly decides that it would be a good idea to burn down the church as well. They lead you near the tombstones when they suddenly slip on scattered bandages all over the floor! All you can hear is their scream before they fall into a sarcophagus and you run for your lives.</value>
   </string>
@@ -1876,8 +1876,8 @@
   <string key="HarlotFellPublic">
 	<value>One of the sarcophagus on the graveyard contained too many monsters tonight... Apparently {0} tried to visit the mummy, fell into a sarcophagus and died!</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>One of the sarcophagus on the graveyard contained too many monsters tonight... Apparently {0} tried to visit the mummy, fell into a sarcophagus and died!</value>
   </string>
   <!--{0}: thief-->
@@ -1969,8 +1969,8 @@
     <value>{0} is no longer your teammate and {1} has now become a wolf, just like you!</value>
   </string>
     <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} is no longer your teammate and {1} has now become a Vampire, just like you!</value>
   </string>
    <string key="ThiefTransformToMason">
@@ -1999,8 +1999,8 @@
   <!-- 0 - Thief's name -->
     <value>As {0} wanders around Halloween Town, he found out that there are no more monsters left for him to deceive into trading roles with. Such a sad day for this ugly green creature. He quickly left this poor town in search for another one to use his sneaky moves on.</value>
   </string>
-    <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>That's strange... You thought it was just dark but you weren't able to find {0} when it was time to discuss which den you want to attack tonight. Where are they and what happened to them?</value>
   </string>
     <string key="LynchPeaceTimeout">

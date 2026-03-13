@@ -209,10 +209,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >تو شادونه 🙇🏻 بیدی وقتی سالار خان نفله وشه تو جاشو وگیری</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >کیانوش تو با سواد 👥بیدی باید هر شب برای یه نفر کلاس وزاری و اونو باسواد وکنی اگه همه برره ایا با سواد وشن با هم میرید شهر میبرید</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >هااا سحر ناز 💂🏾‍♀️این کیانوش داره کلاس وزاره هر روز یکی رو با سواد وکنه اگه همه با سواد وشن میرن شهر برره خالی میشه تو از کتاب بدت ویاد هر شب وری خونه یه نفر اگه کتاب وخونه وزنی وکشیش با خنجرت اگه بالا برره ای باشه تو نوفهمی اگه غوووووول 🔪باشه وزنه لهت وکنه اگه با سواد ها وخوان تو رو گول وزنن با خنجر وزنی کلاس اولیشون رو وکشی</value>
   </string>
   <string key="LynchTime" >
@@ -270,7 +270,7 @@
     <!-- 1 - victim role -->
     <value> اخه این پایین برره ای بدبخت رو چرا وزنید؟ ای بیچاره چیکارتون وکرده؟ {0}بدبخت داشت تخت حلقوبشو ومیخورد کثافتا😢😢  {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>هاه ها ها سحر ناز یکی از باسوادا رو وکشته {0} با سواد شده بید</value>
   </string>
@@ -377,34 +377,34 @@
   <string key="RemainingPlayersEnd">
     <value>برره ای های باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >نظر{0} این بید که {1} رو با سواد وکنیم</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>کیانوش تو هیچ چیز نوفهمی {0} ورفت سحرناز{1} رو با سواد وکنه ولی سحرناز وزد با چاقو وکشتش</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>دیشب { این شمپت{0} میومد تو رو با سواد وکنه تو با خنجرت وکشتیش .{1} تا باسواد دیگه ومونده</value>
   </string>
   <string key="CultConvertYou">
     <value>خب تو باسواد شده بیدی جیگر از فردا با بقیه برین همه رو با سواد وکنید</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>باسواد ها:{0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>خب {0} با سواد وشد</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>ای شمپت {0} رفت خونه {1} با سوادش وکنه ولی خونه نبید</value>
   </string>
@@ -415,7 +415,7 @@
     <!-- 0 - target name -->
     <value>ورفتی {0} اگه باسواد بود وکشی ولی نفله وشده بود</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>ورفتی خونه {0} ودیدی کتاب  وخونه خنجرو وکشیدی و از پشت نصفش وکردی</value>
   </string>
@@ -432,7 +432,7 @@
     <!-- 0 - teamate's names -->
     <value>ها ای {0} معلمت بید الان و مرده تو هم رفتی قاطی بالا برره ایا ملتو نفله وکنی بچه های بالا اینا هستن:{1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>پایین برره ای 👱</value>
@@ -479,10 +479,10 @@
   <string key="ApprenticeSeer">
     <value>شادونه  🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>با سواد 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>سحرناز 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -514,7 +514,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>تازه با سواد شده {0}رفت یکیو با سواد وکنه ولی دید نفله شده بید</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -701,7 +701,7 @@
     <value>خواستی {0} وکشی ولی دکتر جکول امپول بهت زد طرف فرار وکرد</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>ها این باسواده{0} ورفت یاور طغرل رو باسواد وکنه یاور طغرل {1} اولش راه ویومد ولی توی جدول ضرب اعصابش خورد وشت با تیر زد{0} رو نفله وکرد</value>
   </string>
@@ -725,7 +725,7 @@
     <value>ها خرزو خان همزادت{0} یه  نخودکار بید  حالا تو هم نخود کار وشدی بقیه نخود کارا اینا هستن:{1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>خرزو خان{0} چون یه باسواد رو انتخاب کرده بید الان باسواد وشده</value>
   </string>
 
@@ -1273,7 +1273,7 @@
   <string key="BlacksmithKilled">
     <value>اهالی برره صبح زود برای صرف چای نخود☕️ و صبحونه ورن قهوه خونه تیمور قهوه چی اما وبینن در قهوه خونه بازبید وقتی ورن داخل وبینن تیمور{0} افتاده کف قهوه خونه نفله وشده 🙁 جای مشت غووول تو صورت تیمور ومونده قهوه خونه تا طلاع ثانوی تعطیل میباشه</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>ای {0} که تازه باسواد شده بید داشت کتاب تاریخ برره رو ومیخوند که غووول برره اومد خود و کتابشو نصف وکرد😑</value>
   </string>
   <string key="CupidKilled">
@@ -1306,11 +1306,11 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>سحر ناز 💂🏾‍♀️نصف شب داشت دنبال کیانوش ومیگشت.که تو کوچه غوووول برره 🔪🔪رو وبینه {0} میاد خودشو چس وکنه برای غووول خنجر وکشه غووول هم وزنه نفله اش وکنه </value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>ای{0} بدبخت وره یه بالا برره ای ابله رو با سواد وکنه اما بالا برره ایا با چماق تا وخوره وزدنش
     {0} نفله شده بید</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>دیشب کیانوش وخواست یه نفر دیگه رو هم با سواد وکنه {0} وفرستاد که بهش درس وده اما این کیانوش نوفهمه که غوووول با سواد نوشه{0} نفله وشد</value>
   </string>
   
@@ -1330,8 +1330,8 @@
 	    <value>یاور طغرل {0}جلوی در ژاندرمری چرت وزنه که وبینه{1} که یه بالا برره ای بید داره با چماغ ویاد براش.{0} سریع تفنگشه اماده وکنه اما افسوس که تفنگ گیر وکنه و {1} با چماق وزنه یاور طغرل رو به فنا وده</value>
   </string>
   
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>کیانوش استقرار زاده تنها وموند تو روستا{0} به سمت میدون کره بز وره که یهو سحر ناز جلوش سبز وشه .{1} وگوعه هان کجابیدی از دست من فرار وکنی؟ الان با خنجرم نصفت وکنم.{0} فرار وکنه به سمت مزرعه و{1} با خنجر به دنبالش وره که یهو بین راه پای کیانوش گیر وکنه به چال اسکندرون سحرناز ورسه بالای سرش همونجا کیانوش رو نفله وکنه و در چال اسکندون خاکش وکنه .روی قبر کیانوش نوشته شده بید"اینجا قبری کسی بید که در زندگانی هیچ چیز نوفهید"</value>
   </string>
   
@@ -1650,8 +1650,8 @@
               <value>هم تیمی های شما(درصورت وجود) عبارت اند از:{0}.</value>
             </string>
             <string key="ThiefToCult">
-              <!-- 0 - old cultist's name -->
-              <!-- 1 - new cultist's name -->
+              <!-- 0 - old Zombie's name -->
+              <!-- 1 - new Zombie's name -->
               <value>این {0} دیگه همتیمی شما نبید به جاش {1} باسواد وشده دقیقا مثل شماها.</value>
             </string>
             <string key="ThiefToWolf">
@@ -1711,8 +1711,8 @@
             <string key="SecretLynchShowVotersA">
               <value>وقتی حالت رای مخفی روشن است. و تعداد رای ها در اخر رای گیری نشان داده خواهد شد.نام رای دهنده به هر بازیکن نیز نشان داده خواهد شد:{0}</value>
             </string>
-            <string key="CultistBitten">
-            <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+            <string key="ZombieBitten">
+            <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
               <value>عجیب بید.... امشب جمع وشدین که یکی رو باسواد وکنید اما متوجه شده بیدین که {0} اینجا نبید!یعنی چه اتفاقی براش افتاده بید؟🤔</value>
             </string>
             

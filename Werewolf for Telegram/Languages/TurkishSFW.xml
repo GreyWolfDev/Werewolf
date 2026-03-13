@@ -205,10 +205,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Gözcü çırağısın. Eğer “gerçek” gözcü ölürse onun yerini alacaksın.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Gizli tarikat üyesisin. Her gece tarikata almak için birini seçebilirsin. Tüm kalan oyuncular tarikat üyesi olduğunda kazanıyorsun.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Tarikatçı avcısısın. Tüm köyün tarikata girmesini engellemeye çalışıyorsun!  Her gece bir oyuncu seçiyorsun.  Seçtiğin kişi tarikat üyesiyse ölür. Eğer seni tarikata almaya çalışırlarsa tarikatın en yeni üyesi ölür.</value>
   </string>
   <string key="LynchTime" >
@@ -266,7 +266,7 @@
     <!-- 1 - victim role -->
     <value>Sabah pis bir kokuya uyandı herkes.  Kokuyu takip ettiler ahırda {0}’i parçalanmış vaziyette buldular, kafası yoktu. NOMNOMNOMNOM\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>{0}'in evinden garip bir koku geliyor...  Köylüler içeriye girince ayin odasında cansız vücudunu buldu. Tarikat üyesini, Tarikatçı avcısı avlamış. </value>
   </string>
@@ -372,34 +372,34 @@
   <string key="RemainingPlayersEnd">
     <value>Kalan oyuncu, rol ve takımlar:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0}, {1}’i çevirmek için oy kullandı.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>{0} senin pis işini yapmak için gönderildi, {1}’i çevirecekti... ama o Tarikatcı Avcısıydı! {0} nalları dikti!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} dün gece evine geldi, seni çevirecekti... Sen de kılıcını çektin anında. Tarikatçı yerde... {1} Tarikat üyesi kaldı!</value>
   </string>
   <string key="CultConvertYou">
     <value>Tarikat üyesi seni çevirdi!  Şimdi tarikatçısın. Her gece birisini tarikat üyesine çevirebilirsin.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Tarikat üyesi sayısı: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} Tarikata katıldı!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} senin pis işini yapmak için gönderildi, {1}’i çevirecekti... ama evde kimse yok!</value>
   </string>
@@ -410,7 +410,7 @@
     <!-- 0 - target name -->
     <value> {0}’i avlamaya gittin, ama o zaten ölü!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>{0}'in evine gitti ve sunağın önünde bilmemne tanrısına tapınırken buldun... Hemen kılıcını çektin ve kafasını uçurdun.</value>
   </string>
@@ -427,7 +427,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} hakkın rahmetine kavuştu! Öfke içinde sen de kurtadama dönüştün! Yeni takım arkadaşın: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>Köylü 👱</value>
@@ -474,10 +474,10 @@
   <string key="ApprenticeSeer">
     <value>Gözcü Çırağı 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Tarikatçı 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Tarikatçı Avcısı 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -509,7 +509,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Tarikatın en yeni üyesi {0}'ın evine, onu ikna etmeye gitti ama ev tam bir enkaz her yer kan, kapıda kurt tüyleri var...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -694,12 +694,12 @@
     <value> {0}'in cesedini koleksiyonuna eklemek için çalışıyordun ama koruyucu melek tarafından püskürtüldün! Bu gece öldürme yok...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Tarikat üyeleri {0}’i,  {1}’i dönüştürmek için gönderdi, ama onun yerine bir ateş açıldı ve {0}'in vücudu pencereden dışarı fırladı! {0} ölü...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Tarikat üyeleri {0}’i, {1}’i dönüştürmek için gönderdi, ama onun yerine bir ateş açıldı ve {0}'in vücudu pencereden dışarı fırladı, bıçaklar vücudunun her yerine sokulmuş! NASIL BIR PSIKOPAT! {0} ölü...</value>
     <value>{0}, {1} 'in evine gizlice girer, kapıyı açar ve hemen çılgın bir manyak tarafından bıçakla karşılanır !!!  {1} bıçağı, {0} 'in organlarına alfabetik sıraya göre sokar ve acı çekerek can verir! {0} öldü. Hüüü.</value>
@@ -724,7 +724,7 @@
     <value>{0} öldü ve sen masona dönüştün. Takım arkadaşların (eğer varsa): {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value> Çift-giden {0} şimdi tarikat üyesi oldu, tıpkı senin gibi!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1283,7 +1283,7 @@
   <string key="BlacksmithKilled">
     <value>Ne talihsizlik ama {0}, kendi bilediği silahlar tarafından bedenine geçirilerek şiş kebap olmuştu, anlaşılan seri katil demircilerden böyle koleksiyon yapıyordu.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} sunaklarının yanında bir şamdanla ölümüne bıçaklanmış olarak bulundu. Seri katil, ırk, dil veya din ne olursa olsun yine acımıyor!  {0} bir Tarikatçıydı.</value>
   </string>
   <string key="CupidKilled">
@@ -1321,12 +1321,12 @@
     <value>Tarikatçı Avcısı {0} sen bu hallere düşecek adam mıydın? Köylüler her sokak başı bir uzvunu topluyor, ne yazık ama. Kimse Seri katilin Tarikatçı olduğuna inanmamalı bu sayede.</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Bir kurtu tarikata almak iyi bir fikir değil gibi, kurtlar her ne kadar istemese de {0} inatçıydı ve sonu kötü bitti. </value>
     <value>Tarikat dün gece beklenmedik bir belaya girişti, en yeni üyeleri olan {0} Kurtların akşam yemeği olmuştu.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value> Tarikat, saflarında yeni bir üye olacağını düşündü, ama yanılıyorlardı!  Bir elçi olan {0}, parçalara kıyıldı ve sabah kent meydanına  zımbalandı!  Garip bir şekilde, "kutsal" kitaplarının, sanki dininin kandırmaca olduğunu gösteren bir açıklama gibi, bıçağa saplanmış olarak bulundu..</value>
     <value> Dün gece, tarikat köydeki bir kişiyi daha delice dönüştürmeye çalıştı. En yeni üyeleri Seri Katili dönüştürmeye çalıştı ve Seri Katil, {0} 'ın iç organlarını kasaba meydanında yeni bir sanat eseri yaptı..</value>
   </string>
@@ -1350,8 +1350,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sadece {0}’ın kaldığını bilerek, {1} {0}’ı odağının en düşük olduğu bir zamanda yakaladı. Son köylüyü ortadan kaldırmak, {1} için zahmetsiz olacaktı, çünkü geriye kalan tek şey, suratına paralel kesikler atılmış {0} adlı bir vücut. </value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} ve {0} gün ışığına çıkar.  {0} 'ın boynuna takılan parıldayan bir haç gördüğünde, {1} kılıcını son kez çeker ve köyü kirleten tarikatın yayılmış umuduna son verir. </value>
   </string>
 
@@ -1652,8 +1652,8 @@
     <value>Takım arkadaşların (eğer varsa): {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} artık takım arkadaşın değil ama üzülme {1} artık sana katılıyor yani Tarikatçı oluyor!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1710,8 +1710,8 @@
   <string key="SecretLynchShowVotersA">
     <value> Gizli linç açıksa ve oy sayısı gösterildiğinde, oy veren her seçmenin ismi: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value> Garip... Bu gece kimi dönüştürdüğünüzü tartışmaya başladığınızda, {0} 'ın burada olmadığını fark ettiniz!  Ona ne oldu?</value>
   </string>
   
@@ -1820,7 +1820,7 @@
   <string key="ChemistTargetEmpty">
 	<value>{0} evde değildi! Çantanı eve geri sürükleyip kötü şansına küfrediyorsun.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>Tarikat üyesi sayısı: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1871,7 +1871,7 @@
   <string key="ChemistFrozen">
     <value>İksirlerini kontrol etmek için uykundan uyandın ama o da ne pencereden esen soğuk rüzgar donmana sebep oldu 🐺☃️. Gözlerinin köşesinden, iksirlerinin şişelerinin donduğunu gördün. Görünüşe göre donma büyüsünün yaratığından da kaçamamışlar. Zihinsel olarak iç çektin, güneşin daha erken gelmesini dileğiyle...</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value> Pelerini takıp evinden ayrılmaya hazırlanırken, kapıdan donmuş bir rüzgar sesi geldi. 🐺☃️. Dost tarikatçılar seni kapıda görüp durumuna bir süre güldüler, merak etme sensiz de başarabilirler. </value>
   </string>
   <string key="CHFrozen">
@@ -2012,11 +2012,11 @@
   <string key="HunterFellDigger">
 	<value> Yorucu bir geceden sonra, güneş doğarken evinize dönüyorsunuz. Gelmeden hemen önce, bitmemiş bir mezarın yanında yerde yatan bir kılıç görüyorsunuz.  O mezarın içinde {0} cesedini görüyorsun.  Tarikatçı avcısı sizden şüphelenmemeliydi ...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value> Başka bir yorucu geceden dönerken, aniden bitmemiş mezarlarınızdan birinde bir çığlık duydunuz! İşte orada acele edin, bitmemiş bir mezarda ölü duran {0}’i gördün. Zaten ne tür bir tarikat mezarcıyı dönüştürmeye çalışır ki??</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value> {1} 'in evine giderken, {0} birdenbire kiliseyi de ziyaret etmenin iyi bir fikir olduğuna karar verir.  Birdenbire bir ayı tuzağı ayak bileği çevresine oturarak mezara kapaklanır!  Duyabildiğiniz tek şey onların bir mezara düşmeden çığlıkları ve hayatınız için kaçıyorsunuz. </value>
   </string>
@@ -2072,8 +2072,8 @@
   <string key="HarlotFellPublic">
 	<value> Yancı {0} bir gecenin ardından eve dönerken yerel mezarlıktan kestirme bir yol ile gitmeye çalıştı. Ancak bilmediği yollardan gitmemeli kendi mezarına düştü.  Belki de dün teklif edilen gündüz işini almalılardı! </value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value> Tarikatçılar kiliseyi yakmaya çalıştı, ancak {0} gruba mezarlıktan gelmek isterken ayak bileği etrafına bir ayı tuzağı girdi!  Açık bir mezara düştüğünde çığlık attı ve diğer Tarikatçılar dehşete düştü..</value>
   </string>
   <!--{0}: thief-->

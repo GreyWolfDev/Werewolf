@@ -62,7 +62,7 @@ namespace Database
         DoubleShifter = 4194304,
         [Display(Name = "Hey Man, Nice Shot"), Description("As the hunter, use your dying shot to kill a wolf or serial killer")]
         HeyManNiceShot = 8388608,
-        [Display(Name = "That's Why You Don't Stay Home"), Description("As a wolf or cultist, kill or convert a harlot that stayed home")]
+        [Display(Name = "That's Why You Don't Stay Home"), Description("As a wolf or Zombie, kill or convert a harlot that stayed home")]
         DontStayHome = 16777216,
         [Display(Name = "Double Vision"), Description("Be one of two seers at the same time")]
         DoubleVision = 33554432,
@@ -82,9 +82,9 @@ namespace Database
         Developer = 4294967296,
         [Display(Name = "The First Stone"), Description("Be the first to cast a lynch vote 5 times in a single game")]
         FirstStone = 8589934592,
-        [Display(Name = "Smart Gunner"), Description("As the Gunner, both of your bullets hit a wolf, serial killer, or cultist")]
+        [Display(Name = "Smart Gunner"), Description("As the Gunner, both of your bullets hit a wolf, serial killer, or Zombie")]
         SmartGunner = 17179869184,
-        [Display(Name = "Streetwise"), Description("Find a different wolf, serial killer, or cultist 4 nights in a row as the detective")]
+        [Display(Name = "Streetwise"), Description("Find a different wolf, serial killer, or Zombie 4 nights in a row as the detective")]
         Streetwise = 34359738368,
         [Display(Name = "Speed Dating"), Description("Have the bot select you as a lover (cupid failed to choose)")]
         OnlineDating = 68719476736,
@@ -92,7 +92,7 @@ namespace Database
         BrokenClock = 137438953472,
         [Display(Name = "So Close!"), Description("As the Tanner, be tied for the most lynch votes")]
         SoClose = 274877906944,
-        [Display(Name = "Cultist Convention"), Description("Be one of 10 or more cultists alive at the end of a game")]
+        [Display(Name = "Zombie Convention"), Description("Be one of 10 or more Zombies alive at the end of a game")]
         CultCon = 549755813888,
         [Display(Name = "Self Loving"), Description("As cupid, pick yourself as one of the lovers")]
         SelfLoving = 1099511627776,
@@ -102,7 +102,7 @@ namespace Database
         TannerOverkill = 4398046511104,
         [Display(Name = "Serial Samaritan"), Description("As the Serial Killer, kill at least 3 wolves in single game")]
         SerialSamaritan = 8796093022208,
-        [Display(Name = "Cultist Fodder"), Description("Be the cultist that is sent to attempt to convert the Cult Hunter")]
+        [Display(Name = "Zombie Fodder"), Description("Be the Zombie that is sent to attempt to convert the Cult Hunter")]
         CultFodder = 17592186044416,
         [Display(Name = "Lone Wolf"), Description("In a chaos game of 10 or more people, be the only wolf - and win")]
         LoneWolf = 35184372088832,
@@ -118,8 +118,8 @@ namespace Database
         Veteran = 1125899906842624,
         [Display(Name = "No Sorcery!"), Description("As a wolf, kill your sorcerer")]
         NoSorcery = 2251799813685248,
-        [Display(Name = "Cultist Tracker"), Description("As the cultist hunter, kill at least 3 cultists in one game")]
-        CultistTracker = 4503599627370496,
+        [Display(Name = "Zombie Tracker"), Description("As the Zombie hunter, kill at least 3 Zombies in one game")]
+        ZombieTracker = 4503599627370496,
         [Display(Name = "I'M NOT DRUN-- *BURPPP*"), Description("As the clumsy guy, have at least 3 correct lynches by the end of the game")]
         ImNotDrunk = 9007199254740992,
         [Display(Name = "Wuffie-Cult"), Description("As the alpha wolf, successfully convert at least 3 victims into wolves")]

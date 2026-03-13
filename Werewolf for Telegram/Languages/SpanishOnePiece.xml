@@ -206,10 +206,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>Eres Pudding 🙇‍♂️. Si Viola es derrotada, despertaras tu tercer ojo y podras sustituir su Clairvoyance.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>Eres un zombie de Gekko Moria 👤. Cada noche puedes elegir a otro pirata para robarle su sombra y ponerla en el cuerpo de un zombie. Si al final de la aventura todos los Piratas que no han sido derrotados son zombies encontraran el One Piece.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>Eres Luffy 💂‍♂️ ¡Hay un muchos piratas en Raftel y tu trataras de reclutar nuevos nakama! Cada noche, elige a otro pirata para invitarlo a tu banda; si es un zombie de Gekko Moria, le haras comer sal y sera derrotado. Si un zombie de Gekko Moria trata de robarte tu sombra, el último miembro que fue zombificado terminara comiendo sal.</value>
   </string>
   <string key="LynchTime" >
@@ -264,7 +264,7 @@
     <!-- 1 - victim role -->
     <value>Al empezar el nuevo dia los Mugiwaras notan que {0} no aparece. ¡Parece que ha sido absorbido por la Yami Yami no mi!, {1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Un cadaver aparece en Raftel, {0} ha sido obligado a comer sal. ¡Un zombie de Gekko Moria ha sido derrotado por Luffy.</value>
   </string>
@@ -370,34 +370,34 @@
   <string key="RemainingPlayersEnd">
     <value>Piratas restantes, roles y equipos:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} ha votado por robarle su sombra a {1}.</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>{0} fue enviado para hacer tu trabajo sucio y robarle la sombra a {1}...; sin embargo, ¡se trataba de Luffy ¡{0} fue obligado a tragar sal y ha sido derrotado!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} vino a tu campamento esta noche para robarte la sombra… pero lo encerraste en una torikago y le hiciste comer sal. Un zombie de Gekko Moria ha sido derrotado… ¡Queda(n) {1}!</value>
   </string>
   <string key="CultConvertYou">
     <value>¡Los zombies de Gekko Moria te han robado la sombra! Has sido zombificado y ahora eres uno de ellos 👤. Cada noche tendrás ocasión de robarle la sombra a otro pirata.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Zombies de Gekko Moria: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>¡{0} se ha unido al ejercito de Moria!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} fue enviado a hacer tu trabajo sucio y robsrle la sombra a {1}... ¡pero no había nadie en el campamento!</value>
   </string>
@@ -408,7 +408,7 @@
     <!-- 0 - target name -->
     <value>¡Fuiste a tratar de unir a tu banda a {0}, pero ya habia sido derrotado.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Vas a buscar a {0} y te lo encuentras adorando un cartel de busqueda de Gekko Moria. Rápidamente, lo obligas a comer sal para derrotarlo. [{0} era un zombie de Gekko Moria].</value>
   </string>
@@ -425,7 +425,7 @@
     <!-- 0 - teamate's names -->
     <value>¡{0} ha sido derrotado! Esa era tu señal para reunirte con los piratas de Kurohige. Tus aliados son: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Pirata Simple 👱‍♂️</value>
   </string>
@@ -471,10 +471,10 @@
   <string key="ApprenticeSeer">
     <value>Pudding 🙇‍♂️</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Zombie de Gekko Moria 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Luffy 💂‍♂️</value>
   </string>
 <!-- These are for the player list -->
@@ -506,7 +506,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>El miembro más reciente del ejercito de Gekko Moria fue a robarle su sombra a {0}, pero parece ser que alguien llego antes que el.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -688,12 +688,12 @@
     <value>Quisiste usar la Ito Ito no mi con {0}, ¡pero Ace lo protegió! Y no has podido asesinarlo.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Los zombies de Gekko Moria envían a {0} para intentar robarle la sombra a {1}, sin embargo fueron recibidos por Roronoa Zoro y {0} acaba siendo derrotado. {0} ha sido obligado a comer sal.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Los zombies de Gekko Moria envían a {0} para intentar robarle su sombra a {1}, pero en vez de eso, el cuerpo de {0} sale volando por la isla, ¡con hilos disperos por todo el cuerpo! ¡QUÉ PSICÓPATA! {0} ha muerto.</value>
 	<value>Los zombies de Gekko Moria envían a {0} para intentar robarle su sombra a {1}, pero en vez de eso, el cuerpo de {0} sale volando por la isla, ¡con hilos disperos por todo el cuerpo! ¡QUÉ PSICÓPATA! {0} ha muerto.</value>
@@ -718,7 +718,7 @@
     <value>{0} ha sido derrotado y tú te conviertes en un miembro de la Franky Family. Tus compañeros de desmantelamiento (si los hay) son: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Mr. 2 {0} se ha convertido en zombie de Gekko Moria, ¡igual que tú!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1259,7 +1259,7 @@
   <string key="BlacksmithKilled">
     <value>Parece que {0}, Franky, ha tenido muy mala suerte durante la noche, ya que sus partes roboticas han aparecido dispersas por todo el lugar. Parece que Doflamingo le ha atacado.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} fue destazado en varios pedazos mientras veia un cartel de Gekko Moria. ¡Doflamingo ha atacado de nuevo! {0} era un zombie de Gekko Moria.</value>
   </string>
   <string key="CupidKilled">
@@ -1295,11 +1295,11 @@
     <value>El sombrero de paja de Luffy aparece tirado en medio de la isla, al parecer esta rodeado de hilos de la Ito Ito no mi {0}. Lección aprendida: ¡no hay que invitar a Doflamingo a ser tu nakama.</value>
     <value>El sombrero de paja de Luffy aparece tirado en medio de la isla, al parecer esta rodeado de hilos de la Ito Ito no mi {0}. Lección aprendida: ¡no hay que invitar a Doflamingo a ser tu nakama.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Aunque parecía que los piratas de Kurohige habían decidido quedarse en su campamento, un zombie de Gekko Moria decidió visitarlos. ¡{0} Ha sido absorbido por la Yami Yami no mi!</value>
     <value>Aunque parecía que los piratas de Kurohige habían decidido quedarse en su campamento, un zombie de Gekko Moria decidió visitarlos. ¡{0} Ha sido absorbido por la Yami Yami no mi!</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Al parecer los zombies de Gekko Moria intentaron tener una nueva sombra entre sus filas, pero, ¡estaban equivocados! {0}, un zombie de Gekko Moria, fue descuartizado y sus restos fueron esparcidos por toda la isla!</value>
     <value>Al parecer los zombies de Gekko Moria intentaron tener una nueva sombra entre sus filas, pero, ¡estaban equivocados! {0}, un zombie de Gekko Moria, fue descuartizado y sus restos fueron esparcidos por toda la isla!</value>
   </string>
@@ -1320,8 +1320,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{1} sabe que en Raftel solo queda {0}, así que aprovecha mientras {0} está tomando una siesta para absorberlo con la Yami Yami no mi.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} y {0} se encuentran en el centro de la isla. Sin embargo, {1} hoy no tiene ganas de perder su sombra y antes de que {0} haga algo, se abalanza sobre él, lo incapacita y lo hace comer sal. {0} era el último zombie de Gekko Moria en pie.</value>
   </string>
   
@@ -1426,7 +1426,7 @@
     <value>Todas</value>
   </string>
     <string key="RandomModeQ">
-    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una aventura, se asignarán aleatoriamente los siguientes parámetros: aventuras caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan cultistas, necio o veterano.\nActualmente:{0}</value>
+    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una aventura, se asignarán aleatoriamente los siguientes parámetros: aventuras caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan Zombieas, necio o veterano.\nActualmente:{0}</value>
   </string>
   <string key="RandomModeA">
     <value>Modo aleatorio: {0}</value>
@@ -1624,8 +1624,8 @@
     <value>Tus compañeros desmanteladores (si los hay) son: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} ha recuperado su sombra, y {1} se ha convertido en un zombie de Gekko Moria, ¡como tú!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1682,8 +1682,8 @@
   <string key="SecretLynchShowVotersA">
     <value>Cuando la batalla secreta este activada y se muestre el recuento de ataques, el nombre del pirata por cada ataque efectuado será del siguiente modo: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>¡Qué extraño! Mientras decide  a quién robarle la sombra esta noche, se dan cuenta de que… ¡{0} ha recuperado su sombra! 🤔</value>
   </string>
   

@@ -244,10 +244,10 @@ Best played with secret lynch and no role reveal after death. -->
   <string key="RoleInfoApprenticeSeer" >
     <value>好奇怪，你竟然醒唔起自己係邊個。</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>好奇怪，你竟然醒唔起自己係邊個，不過你記得你應該係夜晚有啲野搞嘅。</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>好奇怪，你竟然醒唔起自己係邊個，不過你記得你應該係夜晚有啲野搞嘅。</value>
   </string>
   <string key="LynchTime" >
@@ -305,7 +305,7 @@ Best played with secret lynch and no role reveal after death. -->
   <string key="DefaultEaten" >
     <value> {0} 已經死咗，原來佢係 {1} 。</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value> {0} 已經死咗。</value>
   </string>
   <string key="NoAttack" >
@@ -396,7 +396,7 @@ Best played with secret lynch and no role reveal after death. -->
   <string key="RemainingPlayersEnd">
     <value>生還玩家名單、身份同隊伍︰</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value> {0} 話想搞 {1} ！</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -423,7 +423,7 @@ Best played with secret lynch and no role reveal after death. -->
   <string key="HunterVisitDead">
     <value> {0} 已經死咗！</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>到底尋晚 {0} 屋企有冇野發生呢？你好似都唔多記得……</value>
   </string>
   <string key="HunterFailedToFind">
@@ -435,7 +435,7 @@ Best played with secret lynch and no role reveal after death. -->
   <string key="WildChildTransform">
     <value> {0} 死咗，搞到你個身份變咗喎，但係究竟由咩變做咩呢？雖然你唔記得自己係邊個，但係 {1} 似乎係好重要嘅人。</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>村民 👱</value>
   </string>
@@ -481,10 +481,10 @@ Best played with secret lynch and no role reveal after death. -->
   <string key="ApprenticeSeer">
     <value>學徒先知 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>邪教魔徒 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>驅魔人 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -1221,7 +1221,7 @@ Best played with secret lynch and no role reveal after death. -->
   <string key="BlacksmithKilled">
     <value> {0} 已經死咗！</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>  {0} 已經死咗！</value>
   </string>
   <string key="CupidKilled">
@@ -1254,10 +1254,10 @@ Best played with secret lynch and no role reveal after death. -->
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value> {0} 已經死咗！</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value> {0} 已經死咗！</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value> {0} 已經死咗！</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1275,8 +1275,8 @@ Best played with secret lynch and no role reveal after death. -->
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value> {0} 已經比 {1} 咬死咗！</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>到底 {1} 做咗啲咩呢? {0} 都死埋。</value>
   </string>
 

@@ -219,10 +219,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >رون ویزلی .. باز هم هنوز به مدرسه نرسیده ، دردسر ها آغاز شده . هری قطعا درون کوپه ی خود آینه ای را که دامبلدور برایش گذاشته پیدا میکند ، بالاخره پیشگویی اتفاق افتاد . هرماینی هم در حال کمک به اوست ولی تو هنوز باید صبر کنی . فکر تلخیست ولی شاید دشمنان ، هری را از بین ببرند . آن زمان چه ؟ شاید تو باید آخرین سنگر و اخرین امید باشی . اگر به هر دلیلی هری کشته شد تو باید وارد عمل شوی . در آن صورت به کوپه ی وی برو و به کمک همان آینه ، شروع به پیدا کردن و از بین بردن مرگخواران کن </value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >گرگینه .. لرد سیاه وارد عمل شده است و قرارست هاگوارتز به آتش کشیده شود . ولی حال چرا باید از لرد پیروی کنید ؟ شاید بهتر باشد شما هم تا همه چیز در آشوب است ، به فکر نژاد خود باشید . اکنون جدا از مرگخواران وارد قطار شده اید و میتوانید هر تعداد از دانش آموزان را که بخواهید گاز گرفته و تبدیل کنید . تعداد اعضای خود را به راحتی افزایش دهید . کاری به کار مرگخواران نباید داشته باشید زیرا خشم لرد سیاه چیزی نیست که دنبالش باشید ولی اگر در انتهای مسیر ، فقط نژاد شما یعنی دسته ی گرگینه ها زنده مانده باشند ، پیروزی برای شما خواهد بود </value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >ریموس لوپین .. مرگخواران به قطار حمله کرده اند ولی این تمام خطری نیست که دانش آموزان را تهدید میکند . گرگینه ها هم سوار قطار شده اند و تلاش میکنند تا مسافران را تبدیل کنند . هیچکس به اندازه ی تو با گرگینه ها آشنایی ندارد . برای همین از طرف محفل ماموریت ویژه ای برای تو در نظر گرفته شده ، تا در قطار به دنبال اعضای دسته ی گرگینه ها بگردی و آنان را از بین ببری . هر شب به کوپه ی یکی از مسافران برو و اگر گرگینه بود او را شکار کن . اگر هم گرگینه ها به خیال تبدیل تو به کوپه ات آمدند میتوانی حداقل یکی از آنان را از بین ببری</value>
   </string>
   <string key="LynchTime" >
@@ -280,7 +280,7 @@
     <!-- 1 - victim role -->
     <value>جسد {0} زیر میز های سالن غذا خوری پیدا شده . {1} مرده</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>دیشب ریموس لوپین یکی از گرگینه ها رو پیدا کرد و اونو از بین برد . {0} مرده</value>
   </string>
@@ -386,34 +386,34 @@
   <string key="RemainingPlayersEnd">
     <value>افراد زنده ،نقش و تیم شون:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >نظر {0} اینه که {1} رو تبدیل کنید تا وارد دسته ی گرگینه تون بشه</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>جدید ترین عضو دسته ی گرگینه ها يعني {0} رفت تا {1} را بکشه اما اون ریموس لوپین بود و كشتش . {0} مرده</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>دیشب {0} به کوپه ی تو اومد تا تو رو تبدیل به گرگینه کنه ... زهی خیال باطل . تو اونو از بین بردی ولی قبلش اطلاعاتی تونستی ازش بگیری . تعداد گرگینه های باقی مونده {1} هستش . ولی مشکلی که پیش اومد اینه که گرگینه ها الان دیگه هویت اصلی تو رو میدونن</value>
   </string>
   <string key="CultConvertYou">
     <value>گرگینه ها به تو حمله کردن و تو رو تبدیل کردن . حالا تو هم وارد دسته ی اونا شدی</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>تعداد گرگینه های توی قطار {0} تا هستش</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>خب ، {0} تبدیل شد و به دسته ی گرگینه ها پیوست</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>جدیدترین گرگینه یعنی {0} به کوپه ی {1} رفت تا اونو به عنوان اولین ماموریتش تبدیل کنه ولی اون توی کوپه ش نبود</value>
   </string>
@@ -424,7 +424,7 @@
     <!-- 0 - target name -->
     <value>تو رفتی تا {0} رو از بین ببری ولی با جسدش روبرو شدی</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>گرگینه های لعنتی ... دیشب وارد کوپه ی {0} شدی و بعد از دیدن دسته ی گرگینه ها به اونا حمله کردی . صاحب کوپه رو از بین بردی و باعث شدی باقی اونا متفرق بشن</value>
   </string>
@@ -488,10 +488,10 @@
   <string key="ApprenticeSeer">
     <value>رون ویزلی 🍽 (🙇)</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>عضو دسته ی گرگینه ها 🐾 (👤)</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>ریموس لوپین 🌒 (💂)</value>
   </string>
   <!-- These are for the player list -->
@@ -523,7 +523,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>جدیدترین عضو دسته تون یعنی {0} وارد یکی از کوپه ها شد ولی با زمینی که به خون آغشته شده بود مواجه شد . فرد مورد نظر مرده بوده</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -706,12 +706,12 @@
     <value>رفتی تا {0} رو بکشی ولی یه جن خونگی مزاحم اونجا بود و از اون محافظت کرد </value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>جدیدترین عضو دسته ی گرگینه ها ، {0} ، به کوپه ی سورس اسنیپ رفت تا اونو تبدیل کنه ولی اسنیپ {1} رو کشت. انگار هنوزم دل خوشی از گرگینه ها نداره..</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>گرگینه ها {0} رو فرستادن تا یکی دیگه رو تبدیل کنه ولی هیچ خبر نداشتن که اون به کوپه ی گلرت گریندلوالد رفته . {1} هم بدون ذره ای رحم اونو کشت</value>
     <value>دیشب {0} وارد کوپه ی گلرت گریندلوالد شد تا اونو تبدیل کنه ولی {1} بدون کوچکترین احساسی {0} رو تیکه تیکه کرد</value>
@@ -736,7 +736,7 @@
     <value>ارشد {0} مرده حالا تو دیگه میتونی جاشو بگیری .. از الان به بعد تو یه ارشدی . ارشد های دیگه : {1} هستن</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>بارتی کراوچ پسر ، یعنی {0} حالا دیگه یکی از گرگینه هاست</value>
   </string>
   <string key="DGTransformToCult">
@@ -1283,7 +1283,7 @@
   <string key="BlacksmithKilled">
     <value>هوش سرشار لونا بالاخره کار دستش داد . دیشب {0} کشته شد</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>گریندلوالد یکی از گرگینه ها ، یعنی {0} رو کشت</value>
   </string>
   <string key="CupidKilled">
@@ -1319,11 +1319,11 @@
     <value>دیشب که ریموس لوپین برای گشتن دنبال گرگینه ها توی کوپه ها سرک میکشید ، با گریندلوالد روبرو شد و گریندلوالد اونو کشت . {0} مرده</value>
     <value>بدن بی جون ریموس لوپین توی راهروی قطار افتاده . دیشب گریندلوالد {0} ، استاد سابق دفاع در برابر جادوی سیاه رو کشت</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب گرگینه ها به طور اشتباه وارد کوپه ی یکی از مرگخوارا شدن . با هم درگیر شدن و مرگخوار ، زد {0} رو کشت</value>
     <value>گرگینه ها فکر نمیکردن که این کوپه ای که دارن واردش میشن برای یکی از مرگخواراست . مرگخوار هم عصبانی شد و {0} ، جدیدترین عضو دسته ی گرگینه ها رو کشت</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>گرگینه ها وارد کوپه ی گریندلوالد شدن . بیچاره ها ... گریندلوالد هم زد {0} رو کشت</value>
     <value>دیشب گرگینه ها ندونسته وارد کوپه ی گریندلوالد شدن تا اونو تبدیل کنن ولی اون به راحتی زد جدیدترین عضو دسته ی اونا یعنی {0} رو کشت</value>
   </string>
@@ -1344,8 +1344,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>فقط مرگخوار و سورس اسنیپ توی قطار مونده بودن که مرگخوار زرنگ یعنی {1} شب وقتی اسنیپ یعنی {0} چوبدستی عزیزش رو کنار گذاشته بود بهش حمله کرد و بدون اینکه بذاره به سمت چوبش یک قدم برداره کشتش</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>ریموس لوپین یعنی {1} چند وقت بود که {0} رو زیر نظر داشت و وقتی مطمئن شد که اون عضو دسته ی گرگینه هاست . بهش حمله کرد و اونو کشت</value>
   </string>
   
@@ -1649,8 +1649,8 @@
     <value>اسم بقیه ارشد ها: {0} هست</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>شخص {0} دیگه هم تیمی شما نیست و {1} مثل تو گرگینه شد</value>
   </string>
   <string key="ThiefToWolf">
@@ -1707,8 +1707,8 @@
   <string key="SecretLynchShowVotersA">
     <value>وقتی رای گیری مخفیانه روشن باشد ، و تعداد ارا به نمایش گذاشته شود اسم رای دهندگان : {0} می باشد</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value> عجیب است از زمانی که تصمیم گرفته اید به کسی حمله کنید {0} اینجا حضور نداد  ، چه اتفاقی برای او افتاده </value>
   </string>
 
@@ -1817,7 +1817,7 @@
   <string key="ChemistTargetEmpty">
 	<value>شخص {0} در کوپه اش نبود و نتونستی اونو مجبور به انتخاب نوشیدنی کنی</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>گرگینه ها در حال حاضر : {0} هستند</value>
   </string>
   <string key="SnowWolf">
@@ -1868,7 +1868,7 @@
   <string key="ChemistFrozen">
     <value>وقتی میخواستی نوشیدنی هات رو برداری یکسلی به کوپه تو اومد و تورو  بیهوش کرد ،خب خداروشکر حالا تو به آرومی به هوش اومدی</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>وقتی خواستی کوپه ات را ترک کنی یکسلی به کوپه تو اومد و تورو  بیهوش کرد ،خب خداروشکر حالا تو به آرومی به هوش اومدی</value>
   </string>
   <string key="CHFrozen">
@@ -2009,11 +2009,11 @@
   <string key="HunterFellDigger">
 	<value>وقتی از کوپه ات خارج شدی فهمیدی که ریموس لوپین {0} اشتباهی به کوپه تو اومده و عنکبوتات اونو کشتن. بخشکی شانس!</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>وقتی از کوپه ات خارج شدی متوجه شدی عنکبوتات، {0} یکی از گرگینه ها رو کشتن</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>وقتی میخواستی به کوپه روبیوس هاگرید {1} بری، {0} تصمیم گرفت تا به این کوپه حمله کنه ولی گرفتار یکی از عنکبوت ها شد و تو موفق به فرار شدی</value>
   </string>
@@ -2069,8 +2069,8 @@
   <string key="HarlotFellPublic">
 	<value>تصویر اتلاین گمبل {0} از تابلوی توی کوپه روبیوس هاگرید دیدن کرد و یهو یه عنکبوت پرید رو تابلوش. متاسفانه اونم همراه تابلوش از بین رفت.</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>گرگینه ها به کوپه روبیوس هاگرید حمله کردند ولی {0} گیر یکی از عنکبوتاش افتاد و مرد، بقیه گروه فرار کردند</value>
   </string>
   <!--{0}: thief-->

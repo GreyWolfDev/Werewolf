@@ -177,10 +177,10 @@
 	<string key="RoleInfoApprenticeSeer">
 		<value>Ты ученик.</value>
 	</string>
-	<string key="RoleInfoCultist">
+	<string key="RoleInfoZombie">
 		<value>Ты секта.</value>
 	</string>
-	<string key="RoleInfoCultistHunter">
+	<string key="RoleInfoZombieHunter">
 		<value>Ты культхант.</value>
 	</string>
 	<string key="LynchTime">
@@ -222,7 +222,7 @@
 	<string key="DefaultEaten">
 		<value>{0} съеден волком.\n{1}.</value>
 	</string>
-	<string key="HunterKilledCultist">
+	<string key="HunterKilledZombie">
 		<value>Культхант убил {0}.</value>
 	</string>
 	<string key="NoAttack">
@@ -306,7 +306,7 @@
 	<string key="RemainingPlayersEnd">
 		<value>Оставшиеся игроки:</value>
 	</string>
-	<string key="CultistVotedConvert">
+	<string key="ZombieVotedConvert">
 		<value>{0} голосует за {1}.</value>
 	</string>
 	<string key="CultConvertCultHunter">
@@ -333,7 +333,7 @@
 	<string key="HunterVisitDead">
 		<value>{0} уже мертв.</value>
 	</string>
-	<string key="HunterFindCultist">
+	<string key="HunterFindZombie">
 		<value>{0} секта.</value>
 	</string>
 	<string key="HunterFailedToFind">
@@ -390,10 +390,10 @@
 	<string key="ApprenticeSeer">
 		<value>Ученик 🙇</value>
 	</string>
-	<string key="Cultist">
+	<string key="Zombie">
 		<value>Секта 👤</value>
 	</string>
-	<string key="CultistHunter">
+	<string key="ZombieHunter">
 		<value>Культхант 💂</value>
 	</string>
 	<string key="PlayersAlive">
@@ -712,10 +712,10 @@
 		<value>Fool - Дурак (селянин, которому в начале игры говорят, что он Провидец, но вместо правильных ролей игроков такой селянин будет узнавать рандомные роли).</value>
 	</string>
 	<string key="AboutCult">
-		<value>Cultist - Сектант (игрок, цель которого это завербовать всех селян и убить всех волков).</value>
+		<value>Zombie - Сектант (игрок, цель которого это завербовать всех селян и убить всех волков).</value>
 	</string>
 	<string key="AboutCH">
-		<value>Cultist Hunter - Охотник на Сектантов (селянин, который каждую ночь ходит к игрокам;\nесли такой игрок подойдёт к сектанту, первый убьёт второго;\nесли такого игрока попытаются завербовать сектанты, первый убьёт последнего завербованного сектанта).</value>
+		<value>Zombie Hunter - Охотник на Сектантов (селянин, который каждую ночь ходит к игрокам;\nесли такой игрок подойдёт к сектанту, первый убьёт второго;\nесли такого игрока попытаются завербовать сектанты, первый убьёт последнего завербованного сектанта).</value>
 	</string>
 	<string key="AboutWC">
 		<value>Wild Child - Дикий Ребёнок (селянин, который в начале игры должен выбрать свой «пример для подражания»;\nесли «пример для подражания»» умирает, Дикий Ребёнок становится волком;\nесли Дикий Ребёнок не выбирает «пример для подражания», игра выберет рандомного игрока для этой цели).</value>
@@ -1082,7 +1082,7 @@
 	<string key="BlacksmithKilled">
 		<value>Кузя {0} убит серией.</value>
 	</string>
-	<string key="CultistKilled">
+	<string key="ZombieKilled">
 		<value>Секта {0} убит серией.</value>
 	</string>
 	<string key="CupidKilled">
@@ -1118,13 +1118,13 @@
 		<value>Культхант {0} пришел к серии.</value>
 	</string>
 	<string key="CultConvertWolfPublic">
-		<!--used when Cultists convert the wolves, only if wolves stayed home-->
-		<!--used when Cultists convert the wolves, only if wolves stayed home-->
+		<!--used when Zombies convert the wolves, only if wolves stayed home-->
+		<!--used when Zombies convert the wolves, only if wolves stayed home-->
 		<value>Секта {0} попытался завербовать волка.</value>
 	</string>
 	<string key="CultConvertKillerPublic">
-		<!--used when Cultists convert the SK-->
-		<!--used when Cultists convert the SK-->
+		<!--used when Zombies convert the SK-->
+		<!--used when Zombies convert the SK-->
 		<value>Секта {0} попытался завербовать серию.</value>
 	</string>
 	<string key="GAGuardedKiller">
@@ -1147,9 +1147,9 @@
 		<!--{0} = hunter's name, {1} = wolf's name-->
 		<value>Волк {1} убил ковбоя {0}.</value>
 	</string>
-	<string key="CHKillsCultistEnd">
-		<!--{0} = last cultist's name, {1} = CH's name -->
-		<!--{0} = last cultist's name, {1} = CH's name -->
+	<string key="CHKillsZombieEnd">
+		<!--{0} = last Zombie's name, {1} = CH's name -->
+		<!--{0} = last Zombie's name, {1} = CH's name -->
 		<value>Культхант {1} убил секту {0}.</value>
 	</string>
 	<string key="SecondsAdded">
@@ -1474,9 +1474,9 @@
 		<value>Камни: {0}</value>
 	</string>
 	<string key="ThiefToCult">
-		<!-- 0 - old cultist's name -->
+		<!-- 0 - old Zombie's name -->
 		-->
-		<!-- 1 - new cultist's name -->
+		<!-- 1 - new Zombie's name -->
 		-->
 		<value>{1} теперь секта вместо {0}.</value>
 	</string>
@@ -1508,7 +1508,7 @@
 	<string key="RoleInfoThiefFull">
 		<value>Вор каждую ночь с вероятностью 50% меняется ролью с игроком.</value>
 	</string>
-	<string key="CultistBitten">
+	<string key="ZombieBitten">
 		<value>{0} больше не секта.</value>
 	</string>
 	<string key="LynchPeaceTimeout">
@@ -1605,7 +1605,7 @@
 	<string key="ChemistTargetEmpty">
 		<value>{0} нет дома.</value>
 	</string>
-	<string key="CultistsList">
+	<string key="ZombiesList">
 		<value>Секта: {0}</value>
 	</string>
 	<string key="SnowWolf">
@@ -1656,7 +1656,7 @@
 	<string key="ChemistFrozen">
 		<value>Снежный пришел к тебе.</value>
 	</string>
-	<string key="CultistFrozen">
+	<string key="ZombieFrozen">
 		<value>Снежный пришел к тебе.</value>
 	</string>
 	<string key="CHFrozen">
@@ -1749,11 +1749,11 @@
 	<string key="HunterFellDigger">
 		<value>Культхант {0} мёртв.</value>
 	</string>
-	<!--{0}: cultist-->
+	<!--{0}: Zombie-->
 	<string key="CultFell">
 		<value>Секта {0} мёртв.</value>
 	</string>
-	<!--{0}: cultist who fell, {1}: grave digger-->
+	<!--{0}: Zombie who fell, {1}: grave digger-->
 	<string key="CultConvertGraveDigger">
 		<value>{1} - гроб, {0} - мёртв.</value>
 	</string>
@@ -1809,8 +1809,8 @@
 	<string key="HarlotFellPublic">
 		<value>Члп {0} пришел к гробу.</value>
 	</string>
-	<!--{0}: cultist who died-->
-	<string key="CultistFellPublic">
+	<!--{0}: Zombie who died-->
+	<string key="ZombieFellPublic">
 		<value>Секта {0} пришел к гробу.</value>
 	</string>
 	<!--{0}: thief-->

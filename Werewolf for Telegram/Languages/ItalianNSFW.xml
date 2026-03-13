@@ -194,10 +194,10 @@
 	<string key="RoleInfoApprenticeSeer" >
 		<value >Sei l'apprendista Veggente, ma comunemente detto stronzo, perché approfitti della morte del veggente prendendogli il posto! Che cattiveria!</value>
 	</string>
-	<string key="RoleInfoCultist" >
+	<string key="RoleInfoZombie" >
 		<value >W Satana. Devi convertire tutti. Attenzione però, se provate a convertire un cacciatore potrebbe squartarvi in pochi secondi… </value>
 	</string>
-	<string key="RoleInfoCultistHunter" >
+	<string key="RoleInfoZombieHunter" >
 		<value >Sei il cacciatore di satanisti! Ogni notte, puoi scegliere un giocatore. Se è un membro della setta, allora morirà. Ah, se un satanista prova a convertirti, l'ultimo membro arruolato dalla setta morirà e scoprirai quanti altri satanisti si annidano nel tuo villaggio.</value>
 	</string>
 	<string key="LynchTime" >
@@ -246,7 +246,7 @@
 		<value>Non ce la faccio più… È triste ogni volta dire agli altri che muore gente! Un giorno uno viene sbranato, un altro giorno un satanista viene ucciso, un tizio viene ucciso a caso dall'artigliere… Non ne posso più di dare notizie negative! Ho bisogno di uno psicologo… Ah comunque {0} è morto, giusto per dirvelo.\n{1}</value>
 		<value>Sembrava una notte di amore e dolci sogni… fino a quando i poveri resti di {0} non sono stati trovati nel suo letto.\n{1}</value>
 	</string>
-	<string key="HunterKilledCultist">
+	<string key="HunterKilledZombie">
 		<value>{0} viene ritrovato morto con una decina di ferite da taglio. Accanto a lui le figure di Satana, Giuda e Lucifero. È stato quindi il cacciatore di satanisti. Però è bravo con quella spada, Kirito guarda e impara!</value>
 	</string>
 	<string key="NoAttack" >
@@ -334,7 +334,7 @@
 	<string key="RemainingPlayersEnd">
 		<value>Giocatori rimasti vivi, ruolo e fazione:</value>
 	</string>
-	<string key="CultistVotedConvert" >
+	<string key="ZombieVotedConvert" >
 		<value >{0} vota per convertire {1}</value>
 	</string>
 	<string key="CultConvertCultHunter">
@@ -361,7 +361,7 @@
 	<string key="HunterVisitDead">
 		<value>Hai dato la caccia a {0} ma lo hai trovato già morto!</value>
 	</string>
-	<string key="HunterFindCultist">
+	<string key="HunterFindZombie">
 		<value>Bussi allegramente alla porta di {0} e all'apertura della porta lo trovi con la statuetta ancora in mano e dietro di lui l'altare con il pentacolo. La tua spada non perdona. Stasera patè di satanisti!</value>
 	</string>
 	<string key="HunterFailedToFind">
@@ -419,10 +419,10 @@
 	<string key="ApprenticeSeer">
 		<value>Il Veggente Stronzo 🙇 </value>
 	</string>
-	<string key="Cultist">
+	<string key="Zombie">
 		<value>il Satanista 👤</value>
 	</string>
-	<string key="CultistHunter">
+	<string key="ZombieHunter">
 		<value>il Cacciatore di Satanisti 💂</value>
 	</string>
 	<string key="RanAway">
@@ -630,7 +630,7 @@
 		<value>Eh! Volevi aggiungere {0} alla collezione dei cadaveri ma ti si para l'angelo custode davanti. Ti sale il folle in testa che neanche Yuno in modalità yandere può tenerti testa. Provi ad accoltellarlo ma è troppo rapido, non riesci. Finché ti stanchi e te ne ritorni al manicomio per riposarti. Non ce l'hai fatta. DANNATO ANGELO!</value>
 	</string>
 	<string key="CultConvertHunter">
-	  <!-- 0 - Youngest Cultist's name -->
+	  <!-- 0 - Youngest Zombie's name -->
 	  <!-- 1 - target's name -->
 		<value>
 			Spedite {0} a convertire {1}.
@@ -638,7 +638,7 @@
 		</value>
 	</string>
 	<string key="CultConvertSerialKiller">
-		<!-- 0 - Youngest Cultist's name -->
+		<!-- 0 - Youngest Zombie's name -->
 		<!-- 1 - target's name -->
 		<value>
 			Spedite {0} a convertire {1}.
@@ -1199,7 +1199,7 @@
   <string key="BlacksmithKilled">
     <value>Sembra {0} la scorsa notte abbia avuto un cliente davvero testardo. A nulla sono servite le offerte di campioncini della sua roba, il killer non ha voluto sentire ragioni e l'ha trafitto con le sue siringhe lasciandolo a morire per overdose. Lo Spacciatore è morto.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} è stato ritrovato accanto al suo altare, con una candela nera nel culo e la statuetta di Satana forzata in gola. Il killer si è divertito con questo satanista… </value>
   </string>
   <string key="CupidKilled">
@@ -1234,10 +1234,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Il Cacciatore di Satanisti ha scelto la persona sbagliata da controllare questa notte. Anziché un “pacifico” satanista intento nella sua preghiera alternativa si è trovato di fronte un pazzo psicopatico che gli ha strappato la katana di mano e l'ha usata per tagliarlo in due. {0} è morto.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>I lupi avevano deciso di starsene a casa per questa notte… ma non sono stati lasciati in pace. {0} era andato da uno di loro sperando di poter portare la parola di Satana. Il lupo non ha apprezzato la visita notturna e l'ha sbranato.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Povero {0}. Aveva deciso di dare la sua anima a Satana e sperava di poterne recuperare un'altra per lui questa notte. Ma ha scelto la casa sbagliata e si è trovato davanti un pazzo senz'anima che gli ha strappato il cuore dal petto facendogli incontrare il suo amato Satana anzitempo.</value>
   </string>
   <string key="GAGuardedKiller"><!-- used when GA guards SK -->
@@ -1256,8 +1256,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{0} stava ripulendo il suo fucile quando {1} ormai a corto di prede lo ha attaccato. La mani nude del Cacciatore non sono bastate contro gli artigli del lupo, di lui rimangono solo brandelli.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} e {0} si trovano faccia a faccia sulla piazza. Il Satanista estrae i pentacoli ed inizia lanciarli come shuriken ma {1} è troppo veloce! Si avvicina a {0} ed estrae con calma la katana. Tremante {0} si aggrappa alla sua statuetta di Satana e la usa per farsi scudo. Inutilmente, dato che la katana di {1} la taglia sia lui che la statua come se fossero fatti di burro.</value>
   </string>
 
@@ -1571,8 +1571,8 @@
     <value>I tuoi compari massoni (se ci sono) sono: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} non è più dei vostri, in compenso {1} si è letto il Necronomicon ed è diventato un satanista, proprio come voi!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1629,8 +1629,8 @@
   <string key="SecretLynchShowVotersA">
     <value>Quando il voto segreto è impostato e viene mostrata la conta dei voti, il nome dei votanti per ogni giocatore votato sarà:{0}</value>
   </string>
-    <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Strano… quando vi riunite per complottare su chi convertire stanotte vi accorgete che {0} se l'è filata. Ma che cazzo… </value>
   </string>
   
@@ -1754,7 +1754,7 @@ Cazzi suoi.</value>
   <string key="ChemistTargetEmpty">
 	<value>Sei passato da {0} ma non l'hai trovato in casa. Si vede che sta ad un festino migliore. </value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>I satanisti al momento sono: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1807,7 +1807,7 @@ Il giocatore che si beccherà il tuo starnuto in faccia, sarà costretto a prend
   <string key="ChemistFrozen">
     <value>Mentre stavi per uscire pronto a sfidare qualcuno un brutto lupastro spelacchiato 🐺☃️ ti si è avvicinato e ti ha scatarrato addosso. Incantato raccogli campioni dello schifo e ti metti a studiarlo al microscopio per capirne effetti e provenienza… ci resterai tutta la notte.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Stavi giusto lucidando il tuo pentacolo quando hai sentito bussare. “Avanti, è aperto” ma anziché i tuoi compari satanisti è entrato un lupo malconcio 🐺☃️ che dopo essertisi avvicinato ti ha starnutito in faccia mentre lo fissavi sbalordito.
 	Quando poco dopo sono passati i tuio compagni ti hanno trovato con il fazzoletto al naso e il termometro all'ascella. Niente proselitismo per te stanotte, sei malato.</value>
   </string>
@@ -1954,11 +1954,11 @@ Scansafatiche… stattene a casa, va'.</value>
   <string key="HunterFellDigger">
   <value>Un’altra notte di duro lavoro è finita, finalmente. Mentre te ne vai verso casa, noti che in una delle tue botole c’è {0} senza un piede e a collo torto… Ben gli sta! Guai a chi sospetta dello Scavafosse… </value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
   <value>Te ne torni a casa da un’altra notte da schifo, quando all’improvviso senti un urlo da una delle tombe che hai lasciato aperte! Accorri di tutta fretta per vedere {0} steso malamente nella fossa. Sto demente voleva convertirti, hahahahahah!</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
   <value>Sulla strada per casa di {1}, {0} decide che sarebbe il caso di fare una Disco Inferno alla chiesa. Vi porta attraverso il camposanto, quando una trappola per orsi si avvinghia alla sua caviglia facendolo impazzire dal dolore! Presi dalla strizza decidete di abbandonarlo nella fossa e scappate urlando come bambine, sperando di aver salva la vita. Patetico.</value>
   </string>
@@ -2013,8 +2013,8 @@ Scansafatiche… stattene a casa, va'.</value>
   <string key="HarlotFellPublic">
   <value>Mentre la puttanella {0} stava andando a casa dopo una notte di sesso appagante, ha deciso di fare tappa al cimitero per provare a godere su un palo d’argento… A quanto pare si è spinta troppo oltre, ed è rimasta ferita a morte!</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 <value>La setta ha provato ad organizzare una Disco Inferno alla chiesta, ma non appena {0} guida i seguaci per il cimitero, una trappola per orsi gli si avvinghia alla caviglia e lo fa cadere in una fossa. Quei cuor di leone dei suoi seguaci sono scappati a gambe levate, lasciandolo a morire solo come un cane… </value>
   </string>
   <!--{0}: thief-->

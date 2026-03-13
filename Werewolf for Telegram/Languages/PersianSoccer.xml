@@ -205,10 +205,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>تو خبرنگار جایگزین هستی (🙇). اگر خبرنگار نتونه به کارش ادامه بده تو رو جایگزین خودش میکنه</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>تو یه تماشاگر افراطی هستی (👤). با بهم ریختن جو، بازی رو برای بازیکنا سخت تر میکنی</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>تو یه پلیسی (💂), تلاش میکنی بازی ها با آرامش برگزار بشن. هر بازی میتونی یه نفر که به نظم اعتقاد نداره رو از ورزشگاه بیرون کنی.</value>
   </string>
   <string key="LynchTime">
@@ -263,7 +263,7 @@
 <!-- 1 - victim role -->
     <value>مردم در نزدیکی استادیوم بدن پر از خون {0} رو پیدا کردن. اون یه {1} بود.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 <!-- 0 - victim name -->
     <value>پلیس یکی از هواداران پر سر و صدا رو اخراج کرد. {0} دیگه حق اومدن به ورزشگاه رو نداره.</value>
   </string>
@@ -369,36 +369,36 @@
   <string key="RemainingPlayersEnd">
     <value>بازیکنان باقی مونده:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
 <!-- 0 - Voter's name -->
 <!-- 1 - target name -->
     <value>نظر {0} اینه که {1} رو گول بزنید.</value>
   </string>
   <string key="CultConvertCultHunter">
-<!-- 0 - Yougest Cultist (killed)'s name' -->
+<!-- 0 - Yougest Zombie (killed)'s name' -->
 <!-- 1 - CultHunter's name -->
     <value>وای وای! {0} میخواست {1} که یه پلیسه رو گول بزنه اما {1} اون رو از ورزشگاه اخراج کرد.</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-<!-- 0 - Youngest Cultist's name -->
-<!-- 1 - Number of cultists left -->
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - Number of Zombies left -->
     <value>تو بازی قبل {0} میخواست تو رو گول بزنه اما تو گولشو نخوردی و از ورزشگاه اخراجش کردی، الان {1} تا از این طرفدارها توی ورزشگاه هست</value>
   </string>
   <string key="CultConvertYou">
     <value>شما را متقاعد کردند که فوتبال بازی کردن بیهودست. از حالا تنها یک تماشاچی هستید.</value>
   </string>
   <string key="CultTeam">
-<!-- 0 - Number of cultists -->
-<!-- 0 - Number of cultists -->
+<!-- 0 - Number of Zombies -->
+<!-- 0 - Number of Zombies -->
     <value>تعداد تماشاگران: {0}</value>
     <value>{0} بازیکن تصمیم گرفتند که فقط تماشاچی باشند.</value>
   </string>
   <string key="CultJoin">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>الان {0} فقط یه تماشاگره!</value>
   </string>
   <string key="CultVisitEmpty">
-<!-- 0 - Newest cultist's name -->
+<!-- 0 - Newest Zombie's name -->
 <!-- 1 - target name -->
     <value>تو بازی قبل {0} میخواست {1} رو گول بزنه اما نتونست اون رو توی زمین پیدا کنه</value>
   </string>
@@ -409,7 +409,7 @@
 <!-- 0 - target name -->
     <value>تو میخواستی {0} رو اخراج کنی اما از اون خبری نیست!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
 <!-- 0 - target name -->
     <value>تو متوجه {0} شدی پس سریع از ورزشگاه اخراجش کردی!</value>
   </string>
@@ -424,7 +424,7 @@
   <string key="WildChildTransform">
 <!-- 0 - role's name -->
 <!-- 0 - teamate's names -->
-<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
     <value>چون دوست تو یعنی {0} از بین ما رفته و تو حالا یه خاطی هستی، یارات عبارتند از: {1}</value>
   </string>
@@ -473,10 +473,10 @@
   <string key="ApprenticeSeer">
     <value>خبرنگار جایگزین 👜 (🙇)</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>تماشاگر افراطی 🎆 (👤)</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
 <!-- These are for the player list -->
     <value>پلیس 👮 (💂)</value>
   </string>
@@ -508,7 +508,7 @@
     <value>  مدافعان عبارتند از: {0}</value>
   </string>
   <string key="CultTargetDead">
-<!-- 0 - Youngest cultists name -->
+<!-- 0 - Youngest Zombies name -->
     <value>شما میخواستید {0} رو گول بزنید اما {0} از بازی خارج شده بود.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -690,12 +690,12 @@
     <value>تو به {0} حمله کردی اما گنده تیم یعنی دروازه بان جلوی تو رو گرفت.</value>
   </string>
   <string key="CultConvertHunter">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>  یه تماشاگر مزاحم {1} شد اما اون وقت این حرفا رو نداشت و زد {0} رو پرپر کرد.</value>
   </string>
   <string key="CultConvertSerialKiller">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>شما {0} رو فرستادید تا {1} رو گول بزنید اما {1} وحشی تر از این بود که با شما هم صحبت بشه پس {0} رو بشدت مجروح کرد</value>
   </string>
@@ -719,7 +719,7 @@
     <value>{0} که یک مدافعا بود بازی رو ترک کرد و پستش به شما رسید، بقیه مدافعان عبارتند از: {1}</value>
   </string>
   <string key="DGToCult">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>ولگرد یعنی {0} حوصلش سر رفته برای همین به شما پیوست.</value>
   </string>
   <string key="DGTransformToCult">
@@ -1251,7 +1251,7 @@
   <string key="BlacksmithKilled">
     <value>صبح شده و وقتی وارد ورزشگاه میشن بدن {0} رو میبینند که توسط وحشی تیکه تیکه شده!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} میخواست وحشی رو گول بزنه اما وحشی با یه لبخند اون رو راهی بیمارستان کرد.</value>
   </string>
   <string key="CupidKilled">
@@ -1286,11 +1286,11 @@
 	<value>پلیس {0} وقتی که میخواست جلوی یه تماشاگر افراطی رو بگیره با اون درگیر شد و مجروح شده، مثه اینکه اون هوادار خلی وحشی بود!</value>
   </string>
   <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
 	<value>توی بازی قبل {0} میخواست یه خاطی رو گول بزنه اما سر از بیمارستان درآورد.</value>
   </string>
   <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
 	<value>مثه اینکه {0} میخواست وحشی رو گول بزنه اما سر از بیمارستان درآورد</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1310,8 +1310,8 @@
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{0} فکر میکنه تنها کسیه که باقی مونده اما {1} لحظه آخر روش خطا میکنه و نمیزاره به هدفش برسه.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <!-- Extend time -->
     <value>{1} و {0} با هم وارد ورزشگاه میشن وقتی که پلیس به {0} نزدیک شد اون با ترس پا به فرار گذاشت و پلیس برنده شد.</value>
   </string>

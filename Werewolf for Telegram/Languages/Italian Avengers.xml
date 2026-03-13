@@ -208,10 +208,10 @@
     <value>Sei Phil Coulson. Se Fury dovesse cadere in battaglia o se avesse bisogno di sparire, dovrai prendere il suo posto di Direttore dello S.H.I.E.L.D. </value>
     <value>Sei Phil Coulson. Questo significa che in giro, c'è Fury. Nel caso morisse o succedesse altro, diverrai il Direttore dello S.H.I.E.L.D..</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Sei un fan della DC proveniente da un altro universo. Ogni notte, puoi scegliere qualcuno e regalargli un poster di Batman. Se porterai tanta gente nel tuo fanclub, potrete evocare Batman anche in questo universo e la Marvel smetterà di esistere.</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Sei Stan Lee! Ogni notte, puoi scegliere un cittadino e lasciargli una cartolina autografata. Se è un fan della DC, lo rispedirai nel suo universo. Ah, se malauguratamente, un fan provasse a regalarti il poster di batman, lo rispediresti nel suo universo ed in più sapresti quanti ne restano. Sei immune alla maggior parte dei cattivi, quindi puoi visitarli senza morire, ma sta attento, qualcuno è sfuggito persino al tuo controllo.</value>
   </string>
   <string key="LynchTime">
@@ -265,7 +265,7 @@
     <value>Il mattino è giunto, e con esso una brutta notizia. I cittadini trovano {0} fatto a pezzi in piazza, pare sia stata usata un arma non umana. WOWWOWWOWWOW\n{1}</value>
     <value>Un'altra notte di terrore è finita. Seguendo una terrificante scia di sangue gli abitanti trovano {0} fatto a pezzi, in strada. WOWWOWWOWWOW\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Un portale è stato aperto nella casa di {0}... la casa è vuota, resta solo quel vecchio poster di Batman... un fan della DC è stato rispedito nel suo universo da Stan Lee!</value>
   </string>
   <string key="NoAttack">
@@ -349,7 +349,7 @@
   <string key="RemainingPlayersEnd">
     <value>Guerrieri rimasti vivi, ruolo e fazione:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>{0} vota per regalare il poster di Batman a {1} </value>
   </string>
   <string key="CultConvertCultHunter">
@@ -376,7 +376,7 @@
   <string key="HunterVisitDead">
     <value>Hai fatto visita a {0}, ma era già morto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Fai visita alla casa di {0}, e lo cogli a venerare il poster di Batman... Sfoderi così la matita e lo rispedisci da dove è venuto.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -433,10 +433,10 @@
   <string key="ApprenticeSeer">
     <value>il Vice-Direttore dello S.H.I.E.L.D. 🥈🛡 (🙇) </value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>un fan DC 🦇 (👤)</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Stan Lee 👴🏻 (💂)</value>
   </string>
   <string key="RanAway">
@@ -1133,7 +1133,7 @@
   <string key="BlacksmithKilled">
     <value>Sembra che {0}, il fidato agente addetto alla difesa, sia stato colto di sorpresa. Il corpo di {0} è stato trovato senza cuore.  </value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} è stato trovato sul ciglio della sdrada senza il cuore, il poster macchiato di sangue, in terra. Ultron ha colpito ancora, indipendentemente da razza, lingua o universo! {0} era un Fan della DC 🦇.</value>
   </string>
   <string key="CupidKilled">
@@ -1171,12 +1171,12 @@
     <value>Il corpo di {0}, Stan Lee, è stato trovato nel giardino di casa sua. La matita polverizzata. Controllare Ultron non sembra mai una buona idea..</value>
   </string>
   <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Sembrava una notte tranquilla, visto che gli invasori hanno deciso di non attacare, l'unico sfortunato è stato {0}, un fan della DC che ha provato ad ampliare il fanclub. Le sue ceneri sono state rinvenute nella fontana del parco. {0} non ha avuto una buona idea, provando a convincere un invasore!</value>
     <value>I fan della DC hanno incontrato un problema non previsto questa notte. Il loro ultimo iscritto, mandato porta a porta, si è imbattuto in un alieno invasore. Sfortunatamente per {0}, non c'è stato nulla da fare.</value>
   </string>
   <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
     <value>I fan della DC pensavano di aver trovato un candidato ideale, ma si sbagliavano! {0}, un fan della DC è stato trovato appeso a testa in giù come un pipistrello, ma privo di vita e del cuore. </value>
     <value>L'ultima notte, i fan della DC hanno provato a convincere Ultron ad unirsi al fanclub, il loro ultimo acquisto ha avuto una breve conversazione con lui, conclusasi con la morte del giovane {0}.</value>
   </string>
@@ -1197,8 +1197,8 @@
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sapendo che solo {0} era rimasto in vita, {1} prova a metterlo fuori gioco. Thor fu colto di sorpesa, {1} riuscì a metterlo fuori combattimento, prima che {0}potesse impugnare il martello.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <!-- Extend time -->
     <value>{1} e {0} escono appena spuntarono i primi raggi di luce, pare che sulla terra fosse tornata a reganre la pace. Vedendo la maglietta con la "S" sul petto, il cappuccio verde, l'anello verde al dito, il mantello nero e la catenina col fulmine giallo che {0} indossava sul collo, il temuto {1} tira fuori la matita, apre un portale e rispedisce l'lultimo fan della DC nel proprio universo, cancellando il mito di Batman dal suo universo.</value>
   </string>
@@ -1488,8 +1488,8 @@ L'ex mago, non può rivelare l'identità del nuovo mago.</value>
     <value>I tuoi compagni (se presenti) sono: {0}</value>
   </string>
   <string key="ThiefToCult">
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
     <value>{0} non è più un tuo compagno e {1} è ora divenuto un Fan della DC, esattamente come te!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1545,8 +1545,8 @@ L'ex mago, non può rivelare l'identità del nuovo mago.</value>
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
     <value>Strano... Vi siete riuniti per la riunione del fanclub, ma {0} non è presente! Che fine avrà fatto?</value>
   </string>
   <string key="Peace">
@@ -1649,7 +1649,7 @@ L'ex mago, non può rivelare l'identità del nuovo mago.</value>
   <string key="ChemistTargetEmpty">
     <value>{0} Non era nel posto prefissato! L'operazione è saltata.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value>I Fan della DC sono attualmente: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1700,7 +1700,7 @@ L'ex mago, non può rivelare l'identità del nuovo mago.</value>
   <string key="ChemistFrozen">
     <value>Ti stai preparando ad uscire per eliminare il tuo obiettivo, ma il tuo braccio artificiale, non vuole saperne di funzionare, è molto strano, la tecnologia del wakanda non si inceppa mai. Deve essere opera della inibitore Kree 👨‍🔬👽. Dovrai rimandare a domani sera tutti i tuoi piani, non puoi uscire così.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Ti prepari come ogni notte, il poster di Batman sotto al braccio, la maglietta di Green Lantern, le mutande di Superman, le scarpe con la saetta di Flash ma quando stai per uscire lo vedi. Un Kree che ti punta addosso uno strano aggeggio, deve essere quel famoso raggio inibitore 👨‍🔬👽. Probabilmente non avrebbe alcun effetto su di te, ma visto che sei ricercato tanto quanto lui, non puoi chiamare la polizia. Stanotte maratona del Cavaliere Oscuro, giusto per tenere alta la fede. </value>
   </string>
   <string key="CHFrozen">
@@ -1841,11 +1841,11 @@ L'ex mago, non può rivelare l'identità del nuovo mago.</value>
   <string key="HunterFellDigger">
 	<value>Come al solito, dopo la notte di lavoro, fai il solito giro di perlustrazione. Noti una matita sul pavimento, sì, senza dubbio è quella di Stan Lee. Manca il prototipo che può far viaggiare nel multiverso, deve essersi teletrasportato altrove. {0} non potrà più essere d'aiuto. Magari la prossima volta una telefonata prima di passare, non guasterebbe...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>Solito giro di controllo e controllo videosorveglianza, anche se stavolta non ce n'è bisogno, l'odore di sangue è ben chiaro! Si vede una persona, un certo {0} morto trafitto du una rudimentale freccia e morto dissanguato. Il sistema deve averlo scambiato per un alieno, e visto come è conciato, non gli si può dare torto.</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>Mentre vai a casa di {1}, {0} suggerisce che sarebbe divertente affiggere i poster di Batman a casa di Iron Man. Purtoppo, finiscono per attivare una delle sue trappole. Qualcuno ci ha appena rimesso le penne, gli altri scappano via spaventati.</value>
   </string>
@@ -1901,8 +1901,8 @@ L'ex mago, non può rivelare l'identità del nuovo mago.</value>
   <string key="HarlotFellPublic">
 	<value>Il giovane {0}, Quicksilver, aveva imparato a non fidarsi di nessuno. Stanotte voleva assicurarsi che Iron Man facesse ancora parte dei buoni, così si è intrufolato a casa sua ma è rimasto vittima del potente sistema di sicurezza.</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>I Fan della DC hanno provato ad imbrattare casa di Iron Man con gli emblemi dei loro eroi preferiti, ma come {0} ha provato a spruzzare la vernice sulle pareti, è stato colto di sorpresa da una freccia di vibranio! Gli altri, udite le urla di dolore, sono fuggiti in preda al panico!</value>
   </string>
   <!--{0}: thief-->

@@ -206,10 +206,10 @@
   <string key="ApprenticeSeerEaten">
     <value>Утром тренеры собрались, чтобы попрощаться с {0}. Его Кадабра 🙇 был повержен в битве Покéмонов этой ночью.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Ты из организации, занимающейся клонированием Мьюту 👤. Каждый день ты можешь выбрать тренера и попытаться нанять в команду по клонированию Мьюту. Если Покéмоны станут Мьюту - твоя злая организация победит.</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Ты наткнулся на Мью 💂! Мью нуждается в твоей помощи по очистке всех клонированных Мьюту.</value>
   </string>
   <string key="LynchTime">
@@ -283,7 +283,7 @@
     <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно! Артикуно использует Ледяной Луч. {0} выбит! {1}</value>
     <value>Команда Ракета нашла {0}. Команда Ракета отправляет Молтрес! Молтрес использует Огненный Луч. {0} выбит! {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 <!-- 0 - victim name -->
     <value>Мью нашел клонированного Мьюту! Мью освободил клонированного Мьюту от {0}.</value>
   </string>
@@ -389,34 +389,34 @@
   <string key="RemainingPlayersEnd">
     <value>Оставшиеся в живых тренеры, Покéмоны и команда:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
 <!-- 0 - Voter's name -->
 <!-- 1 - target name -->
     <value>{0} предлагает нанять {1}</value>
   </string>
   <string key="CultConvertCultHunter">
-<!-- 0 - Yougest Cultist (killed)'s name' -->
+<!-- 0 - Yougest Zombie (killed)'s name' -->
 <!-- 1 - CultHunter's name -->
     <value>Мьюту тренера {0} отправился заманить {1} в вашу команду... Тем не менее, у него/ее есть Мью! {0} потерял своего Мьюту и был уволен!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-<!-- 0 - Youngest Cultist's name -->
-<!-- 1 - Number of cultists left -->
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - Number of Zombies left -->
     <value>{0} пришел к тебе с клонированным Мьюту пытаясь нанять тебя на их злобную фабрику клонирования. Мью освободил Мьюту от {0}!! {1} работников фабрики осталось!</value>
   </string>
   <string key="CultConvertYou">
     <value>Работник фабрики клонирования пришел к тебе и уговорил тебя присоединиться к их команде с клонированным Мьюту. Ты бросил своего Покéмоны и выбрал Мьюту. Теперь твоя работа заманить больше тренеров в команду.</value>
   </string>
   <string key="CultTeam">
-<!-- 0 - Number of cultists -->
+<!-- 0 - Number of Zombies -->
     <value>Работники фабрики клонирования: {0}</value>
   </string>
   <string key="CultJoin">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>{0} присоединился к команде!</value>
   </string>
   <string key="CultVisitEmpty">
-<!-- 0 - Newest cultist's name -->
+<!-- 0 - Newest Zombie's name -->
 <!-- 1 - target name -->
     <value>{0} и Мьюту отправились заманить {1}... но никого не было дома!</value>
   </string>
@@ -427,7 +427,7 @@
 <!-- 0 - target name -->
     <value>Мью отправился за Покéмоном тренера {0}, но они уже выбиты!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
 <!-- 0 - target name -->
     <value>Мью ушел искать {0} и увидел, что у него/неё клонированный Мьюту! Мью освободил Мьюту от {0}!</value>
   </string>
@@ -443,7 +443,7 @@
 <!-- 1 - teamate's names -->
     <value>{0} только что проиграл Битву Покéмонов! Утратив всякую надежду ты присоединился к Команде Ракета! Твоя новая команда: {1}</value>
   </string>
-<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Маджикарп 👱</value>
   </string>
@@ -489,10 +489,10 @@
   <string key="ApprenticeSeer">
     <value>Кадабра 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Мьюту 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
 <!-- These are for the player list -->
     <value>Мью 💂</value>
   </string>
@@ -524,7 +524,7 @@
     <value>  Члены клуба Пикачу: {0}</value>
   </string>
   <string key="CultTargetDead">
-<!-- 0 - Youngest cultists name -->
+<!-- 0 - Youngest Zombies name -->
     <value>Ваш самый новый член направился к {0} и попытался заманить его в команду с помощью Мьюту. Но вы нашли его Покéмона только что выбитым и тренера, потерявшего всякую надежду найти нового Покéмона.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -695,7 +695,7 @@
     <value>{0} приказал Генгару использовать Проклятье! {0} и {1} были выбиты. {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>{0} приказал Мьюту атаковать {1} не зная его могущества и силы его Покéмона! Драгонайт появился. Драгонайт использовал Ярость! Мьюту повержен!</value>
     <value>Фабрика клонирования посылает {0} чтобы заманить {1} в команду, но вместо этого {1} разозлился и приказал Драгонайту начать битву Покéмонов! {0} и его/ее Мьюту повержены.</value>
@@ -721,7 +721,7 @@
     <value>Ты и твой Драгонайт направились к {0} и вызвали его на битву Покéмонов. Мистер Мим появился из ниоткуда, применил Барьер и они исчезли. Сегодня без битвы.</value>
   </string>
   <string key="CultConvertHunter">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>Фабрика клонирования посылает {0} чтобы заманить {1} в команду, но вместо этого {1} разозлился и приказал Генгару начать битву Покéмонов! {0} и его/ее Мьюту повержены.</value>
   </string>
@@ -745,7 +745,7 @@
     <value>Пикачу тренера {0} был повержен, и Дитто трансформировался в Пикачу. Твоя команда (если есть): {1}</value>
   </string>
   <string key="DGToCult">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>Дитто тренера {0} трансформировался в Мьюту и присоединился к команде!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1292,7 +1292,7 @@
   <string key="AboutWolfCub">
     <value>Вы - Работник Игрового Уголка Ракеты и Ваш Покéмон - Поригон🐶! Вы любимец Команды Ракета, и если кто-то посмеет отобрать вашего Покéмона - тренерам не сдобровать! - каждый член Команды Ракета будет атаковать по 2 тренера следующей ночью!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Клонированные Мьюту пусть и сильны, но мощь Драгонайта в разы сильнее. Работник фабрики клонирования {0} узнал это на собственной шкуре.</value>
   </string>
   <string key="CupidKilled">
@@ -1329,12 +1329,12 @@
     <value>Проснувшись утром тренеры заметили нехватку одного тренера. {0}, владелец могущественного Мью, проиграл битву Драгонайту! А вместе с этим село лишилось единственного борца с Фабрикой Клонирования...</value>
   </string>
   <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>{0}, работник фабрики клонирования, решил пойти на риск: наведаться в штаб-квартиру Команды Ракета! Игра не стоила свеч, а Команда Р заимела интересный трофей. {0} повержен!</value>
     <value>Первое правило работников фабрики клонирования - НЕ СОВАТЬСЯ К КОМАНДЕ РАКЕТА!!! Стажер {0} не очень любил читать правила, за что и поплатился.</value>
   </string>
   <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
     <value>Стажер фабрики клонирования {0} перепутал список домов для вербовки с черным списком домов. Первым оказался адрес тренера Драгонайта, что быстро прервало рабочий день {0}. {0} и его Мьюту выбиты.</value>
     <value>"Не ходите дети, в этот дом гулять, там живет ужасный Драгонайт!". Не послушав предупреждения {0} решил пригласить пополнить ряды тренера Драгонайта. За свою дерзость он поплатился Покéмоном. {0} и его Мьюту выбиты.</value>
   </string>
@@ -1354,8 +1354,8 @@
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Зная, что остался только {0} и его Генгар , {1} дождался пока Генгар упадет в спячку. Команда Ракета превратила эту спячку в вечный сон. </value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
     <value>Поутру на главной площади встретились {1} и {0}. Выполняя рабочую установку фабрики, {0} достал свой Покéбол и продемострировал своего Мьюту. {1} выпустил Мью, выбил последнего клонированного Мьюьту и прервал порочный цикл.</value>
   </string>
   <string key="SecondsAdded">
@@ -1598,8 +1598,8 @@
     <value>Ваши товарищи по клубу (если есть): {0}</value>
   </string>
   <string key="ThiefToCult">
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
     <value>{0} лишился своего Мьюту, а {1} теперь стал новым обладателем Мьюту, как и вы!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1655,8 +1655,8 @@
   <string key="SecretLynchShowVotersA">
     <value>Когда секретное голосование включено и подсчет голосов отображается, имя избирателя для каждого проголосовавшего игрока будет: {0}</value>
   </string>
-  <string key="CultistBitten">
-<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
     <value>Странно ... Вы начинаете обсуждать, кого клонировать сегодня вечером, вы понимаете, что {0} здесь нет! Что с ними случилось?</value>
   </string>
   <string key="Peace">
@@ -1760,7 +1760,7 @@
   <string key="ChemistTargetEmpty">
 	<value>Тренера {0} не было дома! Ты отправляешься домой со своим Зубатом, проклиная безуспешный и неудачный поход.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>Список сотрудников Фабрики Клонирования: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1811,7 +1811,7 @@
   <string key="ChemistFrozen">
     <value>Потренировав своего Зубата, ты собираешься отправиться с ним на бой против другого тренера. Однако, ты замечаешь в окне два жутких огромных светящихся глаза. Арбок 🐺☃ использует против Зубата Свирепый Взгляд, и твой Покемон теперь парализован! Кажется, битву придется отложить до следующего раза. Вздыхая, ты ждешь, когда же паралич наконец пройдет. На рассвете ты замечаешь, что твой Зубат снова может двигаться.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Приготовившись отправиться в путь со своим клонированным Мьюту, ты чувствуешь на себе чей-то Свирепый Взгляд. Арбоку 🐺☃ удается парализовать твоего Мьюту. Другие владельцы Клонированных Мьюту зашли за тобой по пути на Фабрику, но увидев, что твой Мьюту парализован, лишь посмеялись, пообещали, что справятся без тебя, и оставили вас дома. К утру твой Мьюту смог перебороть паралич, и ты стыдливо выходишь на улицу.</value>
   </string>
   <string key="CHFrozen">
@@ -1952,11 +1952,11 @@
   <string key="HunterFellDigger">
 	<value>Возвращаясь домой, ты замечаешь, что с одной из ям, выкопанных твоим Диглеттом ☠️, что-то не то. Приблизившись, ты видишь в ней Мью тренера {0}. Не стоило ему тебя подозревать...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>Возвращаясь домой, ты замечаешь, что в одной из ям, выкопанных твоим Диглеттом ☠️, находится Мьюту. Работник Фабрики {0} пытался нанять тебя. Как это глупо! В этом городе ещё так много другой работы для тебя!</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>По дороге к дому {1}, {0} внезапно решает осмотреться на месте. Но ему стоило смотреть под ноги, чтобы не провалиться в одну из ям, выкопанных Диглеттом! Вы быстро убегаете подальше от этого дома.</value>
   </string>
@@ -2012,8 +2012,8 @@
   <string key="HarlotFellPublic">
 	<value>Кажется, Диглетт сегодня был настроен не очень дружелюбно! Вы обнаружили Джиглипафф тренера {0} в одной из его ям!</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>Работник Фабрики Мьюту {0} хотел предложить работу на фабрике владельцу Диглетта, но увидел вместо этого его работу. Изнутри.</value>
   </string>
   <!--{0}: thief-->

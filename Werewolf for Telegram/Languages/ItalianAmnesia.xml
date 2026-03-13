@@ -180,10 +180,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>Che strano.. Non riesci a ricordare cosa sei!</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>Che strano.. Non riesci a ricordare cosa sei, ricordi soltanto che dovresti fare qualcosa la notte!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>Che strano.. Non riesci a ricordare cosa sei, ricordi soltanto che dovresti fare qualcosa la notte!</value>
   </string>
     <string key="LynchTime">
@@ -234,7 +234,7 @@
 
     <value>Il mattino è giunto, e con lui un fetore che sa di tragedia.  Seguendo l'odore, i villici trovano {0} fatto a pezzi nel fienile, senza testa.  NOMNOMNOMNOM\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 
     <value>Un odore rancido proviene dalla casa di {0}...  durante l'ispezione viene ritrovato un corpo senza vita, chinato inerme davanti ad un altare oscuro...  un satanista è stato ucciso dal cacciatore di sette!</value>
   </string>
@@ -320,7 +320,7 @@
   <string key="RemainingPlayersEnd">
   <value>Giocatori rimasti vivi, ruolo, e fazione:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value>{0} vota per fare qualcosa a {1}</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -347,7 +347,7 @@
   <string key="HunterVisitDead">
     <value>{0} è già morto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Sarà successo qualcosa a casa di {0}? Non ne sei neanche sicuro...</value>
   </string>
   <string key="HunterFailedToFind">
@@ -359,7 +359,7 @@
   <string key="WildChildTransform">
     <value>{0} è morto! Il tuo ruolo è cambiato, ma da cosa, e a cosa? \nPotresti non ricordarti chi sei, ma riesci a ricordare qualcuno di importante: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>un Contadino👱</value>
   </string>
@@ -405,10 +405,10 @@
   <string key="ApprenticeSeer">
     <value>l'Apprendista Veggente🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>il Satanista👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>il Cacciatore di Satanisti💂</value>
   </string>
   <!-- These are for the player list -->
@@ -1117,7 +1117,7 @@
   <string key="BlacksmithKilled">
     <value>Sembra che {0}, il fabbro di zona, sia stato estremamente sfortunato. Il corpo di {0} è stato trovato affettato con vari coltelli. Analizzando i coltelli conficcati nelle sue mani, piedi e la testa, appartenevano alla sua stessa fucina. Sembra che il serial killer abbia ampliato la sua collezione di armi insieme a quella di organi...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} è stato trovato pugnalato a morte da un candeliere del suo altare. Il serial killer ha colpito ancora, indipendentemente da razza, lingua e religione! {0} era un Satanista👤.</value>
   </string>
   <string key="CupidKilled">
@@ -1153,11 +1153,11 @@
     <value>I villici si svegliano la mattina, solo per trovare il corpo tagliato a pezzi di {0}, il Cacciatore di Satanisti, in un carro appena fuori il centro della città.. Lezione imparata: non visitare il Serial Killer!</value>
     <value>Il corpo di {0}, il Cacciatore di Satanisti, è stato trovato nel centro della città, tagliato precisamente in cento pezzi. Controllare se il Serial Killer fosse un satanista non sembra una buona idea..</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Sembrava una notte tranquilla, visto che i lupi hanno deciso di rimanere a casa, ma l'unico sfortunato è stato {0}, un satanista che ha provato a convertire un lupo. La testa di {0} è stata trasformata in una buona cena a domicilio!</value>
     <value>I satanisti hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a fare proseliti, è stato divorato dal lupo che ha visitato. Sfortunatamente per {0}, i lupi non hanno interesse a far parte della loro setta.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>I satanisti pensavano di convertire un nuovo membro tra di loro, ma si sbagliavano! {0}, un satanista è stato trovato tritato nella piazza centrale! Vicino ad esso, il suo "sacro" libro è stato trovato infilzato da parte a parte da un coltello, come ad indicare quale religione è la dominante.</value>
     <value>L'ultima notte, i satanisti hanno provato a convertire una persona più pazza di loro. Il loro membro più recente ha provato a convertire il Serial Killer, e il Serial Killer ha creato una nuova scultura di arte moderna, nella piazza della città, con gli organi interni di {0}.</value>
   </string>
@@ -1178,8 +1178,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sapendo che solo {0} era rimasto in vita, {1} prova a sbranare {0} quando {0} meno se l'aspettava, riuscendolo a cogliere impreparato. Mangiare l'ultimo contadino sembrò una passeggiata per {1}, che banchettò sul corpo ancora fresco di {0}, l'ex Cacciatore.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} e {0} escono appena spuntarono i primi raggi di luce. Vedendo il Pentacolo che {0} indossava sul collo, il virtuoso {1} tira fuori la propria spada, terminando una volta per tutte queste sette che hanno contaminato il villaggio.</value>
   </string>
   
@@ -1470,8 +1470,8 @@
     <value>\nPotresti non ricordarti chi sei, ma riesci a ricordare qualcuno di importante: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>Ti stai dimenticando quel nome.. qual era, {0}? Aspetta, cosa stai pensando? Un nuovo nome appare nella tua testa: {1}!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1528,8 +1528,8 @@
   <string key="SecretLynchShowVotersA">
     <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Strano... Vi siete riuniti per discutere su chi convertire oggi, ma {0} non è presente! Che fine avrà fatto?</value>
   </string>
   
@@ -1637,7 +1637,7 @@
   <string key="ChemistTargetEmpty">
 	<value>{0} non era a casa!</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>Ricordati di parlarne con: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1688,7 +1688,7 @@
   <string key="ChemistFrozen">
     <value>Sarà successo qualcosa? Non ne sei neanche sicuro...</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Sarà successo qualcosa? Non ne sei neanche sicuro...</value>
   </string>
   <string key="CHFrozen">
@@ -1829,11 +1829,11 @@
   <string key="HunterFellDigger">
 	<value>Sarà successo qualcosa? Non ne sei neanche sicuro... Un nome ti viene in mente: {0}. Ma per quale ragione?</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>Sarà successo qualcosa? Non ne sei neanche sicuro... Un nome ti viene in mente: {0}. Ma per quale ragione?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>Sarà successo qualcosa a casa di {1}? Non ne sei neanche sicuro... Ma ricordi che {0} è morto.</value>
   </string>
@@ -1889,8 +1889,8 @@
   <string key="HarlotFellPublic">
 	<value>Mentre la prostituta {0} tornava a casa dopo una notte di divertimento ha preso la scorciatoia per il cimitero. Data la tarda ora non stava prestando molta attenzione, e cadde in una tomba aperta! Forse doveva accettare quel lavoro di giorno il giorno prima...</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>I satanisti hanno provato a bruciare la setta, ma come {0} guidava il gruppo tramite il cimitero, è stato colto di sorpresa da una trappola per orsi! Mentre urlava dal dolore e provava a levarsi la trappola, è caduto in una tomba aperta. Gli altri satanisti sono fuggiti in preda al panico!</value>
   </string>
   <!--{0}: thief-->

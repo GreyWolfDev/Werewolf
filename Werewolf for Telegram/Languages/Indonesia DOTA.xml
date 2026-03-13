@@ -213,11 +213,11 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Kamu adalah Ilusi🙇 (Apprentice Seer).  Kamu sangatlah berbeda dari Ilusi yang lain. Kamu telah ditakdirkan untuk berubah menjadi Dark Seer jika dia mati.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >Eidolon👤 (Cultist).  Pemuja Enigma, setiap malam kamu harus memilih pemain untuk kamu ajak menjadi pemuja enigma. Jika diakhir permainan semua pemain yang hidup adalah Eidolon, maka tim Eidolon menang.</value>
+  <string key="RoleInfoZombie" >
+    <value >Eidolon👤 (Zombie).  Pemuja Enigma, setiap malam kamu harus memilih pemain untuk kamu ajak menjadi pemuja enigma. Jika diakhir permainan semua pemain yang hidup adalah Eidolon, maka tim Eidolon menang.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value >Bounty Hunter💂 (Cultist Hunter) pengumpul uang dari para Eidolon.  Eidolon adalah orang-orang yang paling kamu cari, kamu akan mendapatkan uang jika berhasil membunuh mereka.  Jika Eidolon mencoba mengajakmu bergabung, kamu akan membunuh Eidolon terbaru.</value>
+  <string key="RoleInfoZombieHunter" >
+    <value >Bounty Hunter💂 (Zombie Hunter) pengumpul uang dari para Eidolon.  Eidolon adalah orang-orang yang paling kamu cari, kamu akan mendapatkan uang jika berhasil membunuh mereka.  Jika Eidolon mencoba mengajakmu bergabung, kamu akan membunuh Eidolon terbaru.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
@@ -281,7 +281,7 @@
     <value>Hari ini, {0} menjadi santapan lycan untuk makan malam mereka. NOMNOMNOMNOM {1}</value>
     <value>Azeroth terasa lebih mencekam dari sebelumnya. Creep menemukan kepala {0} di depan tempat tinggal Roshan. NOMNOMNOMNOM {1} </value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Hari ini, Bounty Hunter💂 mendapatkan bayarannya. {0} si Eidolon telah berhasil dibunuh oleh Bounty Hunter💂!</value>
   </string>
@@ -389,34 +389,34 @@
   <string key="RemainingPlayersEnd">
     <value>Pemain yang masih hidup, role, dan tim:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} telah memilih untuk mengubah {1}</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
     <value>{0} dikirim oleh pasukan Eidolon ke rumah {1}... Tetapi, dia adalah Bounty Hunter! {0} mati dan semua hartanya telah dirampas!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>Malam kemarin, {0} datang kepadamu untuk mengubahmu menjadi Eidolon....  Tetapi, dengan sigap kamu membunuh dan merampas uang dari Enigma!  Eidolon telah mati... {1} tersisa!</value>
   </string>
   <string key="CultConvertYou">
     <value>Kekuatan Enigma berhasil merubahmu menjadi Eidolon!  Setiap malam, kamu bisa mengajak creep lain untuk menjadi pengikut Enigma.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Eidolon tersisa: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} berubah menjadi Eidolon, Enigma memiliki pengikut yang lain!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>Malam kemarin, {0} datang ke rumah {1} untuk mengubahnya menjadi Eidolon.... Tetapi, ia tak ada dirumah . . . .</value>
   </string>
@@ -427,7 +427,7 @@
     <!-- 0 - target name -->
     <value>Kamu pergi ke rumah {0} untuk memburunya, tetapi ternyata dia telah mati!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Kamu pergi ke rumah {0}, hal yang aneh terlihat saat dia menghitung semua emas yang ia miliki sembari memuja Enigma ...  Kamu langsung melemparkan pedang ke arahnya dan mengambil semua emas yang ia miliki.</value>
   </string>
@@ -444,7 +444,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} telah mati! Dalam amarahmu, kamu berubah menjadi Lycan! Pasukan Lycanmu adalah: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Creep 👱</value>
   </string>
@@ -490,10 +490,10 @@
   <string key="ApprenticeSeer">
     <value>Illusion 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Eidolon 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Bounty Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -525,7 +525,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Anggota Eidolon terbaru mencoba mengajak {0} bergabung, tapi ia melihat rumah {0} telah hancur berantakan darah dimana-mana,bekas cakar serigala, dan beberapa bulu dari serigala. Targetmu telah dibunuh oleh Lycan!</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -709,12 +709,12 @@
     <value>Kamu mencoba untuk membunuh {0} dan menjadikannya sebagai bahan makan malammu, tetapi Guardian Angel dari Omniknight telah berjaga didepan rumah {0}! Kamu lari ketakutan, tak ada jatah makan malam untukmu hari ini. . .</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Eidolon mengutus {0} untuk mengajak {1} bergabung, BOOM sebuah ledakan dari stormhammer dan badan  {0} terlempar keluar rumah! {0} is dead....</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Eidolon mengutus {0} untuk mengajak {1} bergabung, tapi saat ia berhasil masuk kedalam rumah tiba-tiba sebuah pisau tertancap didada {0}. PUDGE MEMANG TIDAK WARAS! {0} telah mati....</value>
   </string>
@@ -739,7 +739,7 @@
     <value>{0} telah mati, kamu berubah menjadi Meepo.  Temanmu, (jika ada) adalah: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Rubick {0} telah berubah menjadi Eidolon, sama sepertimu!</value>
   </string>
   <string key="DGTransformToCult">

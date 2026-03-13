@@ -169,10 +169,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Você é o Aprendiz de Hacker. Caso o Hacker morra, você tomará seu lugar como Hacker. Empolgante, não?</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Você é um agente da Nova Ordem. Vocês são um grupo de protestantes, que acham que deveriam assumir o poder... (de uma forma bruta). Durante a noite, você poderá escolher alguém para converter à Nova ordem. Se todos os jogadores restantes ao final do jogo forem da Nova Ordem, ela vence!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >A Nova Ordem está infiltrada no exército tentando converter todo mundo, e você foi incumbido de proteger o exército.  Durante a noite você poderá escolher um jogador.  Se ele for da Nova Ordem, ele morre. Caso a Nova Ordem tente te converter, você saberá quem é o membro mais recente e irá matá-lo. Você é o Agente de Controle.</value>
   </string>
   <string key="LynchTime" >
@@ -214,7 +214,7 @@
   <string key="DefaultEaten" >
     <value>Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o Coronel pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele havia morrido. {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o Coronel pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, sem notícia dele. O Agente de Controle então se pronuncia: "{0} era um Agente da Nova Ordem, e agora está morto. A menos que você queira que um fantasma dele responda a chamada."</value>
   </string>
   <string key="NoAttack" >
@@ -298,7 +298,7 @@
   <string key="RemainingPlayersEnd">
     <value>Jogadores restantes, papéis e lado:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} votou para converter {1} para a nova ordem.</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -325,7 +325,7 @@
   <string key="HunterVisitDead">
     <value>Você foi averiguar {0}, mas ele já estava morto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Você invade o dormitório de {0} e descobre que ele estava organizando alguns planos da Nova Ordem...  Você rapidamente corta a garganta de {0} com sua faca e acaba de vez com um membro da Nova Ordem.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -337,7 +337,7 @@
   <string key="WildChildTransform">
     <value>{0}, seu melhor amigo, foi morto! Num ataque de fúria, você se torna um terrorista! Seus novos companheiros são: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>um Soldado 👱</value>
   </string>
@@ -383,10 +383,10 @@
   <string key="ApprenticeSeer">
     <value>o Aprendiz de Hacker 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>um membro da Nova ordem 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>o Agente de Controle 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -1120,7 +1120,7 @@
   <string key="BlacksmithKilled">
     <value>Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o Coronel pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele havia morrido. Havia um corte em {0} com algumas minas dentro, o que provavelmente era obra do louco. {0} era o Plantador de Minas.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o Coronel pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele havia morrido. Havia um corte em {0}, o que provavelmente era obra do louco. {0} era um Agente da Nova Ordem.</value>
   </string>
   <string key="CupidKilled">
@@ -1153,10 +1153,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Os soldados acordam marchando para o pátio central, e para a surpresa de todos, {0} não respondeu à chamada. Então, o Coronel pede para um dos soldados ir verificar no dormitório de {0}, e o soldado volta, cabisbaixo com a notícia de que ele havia morrido. A primeira suspeita foi sobre a Nova Ordem, mas depois perceberam que isso era obra do louco. {0} era o Agente de Controle.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>A Nova Ordem pensou que não era necessário usar força bruta para falar com terroristas que tinham os mesmos interesses: Eliminar o Exército. Que péssimo pensamento, pois no primeiro contato, {0} foi morto.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>A Nova Ordem foi no dormitório do Louco para tentar convencê-lo a se juntar a eles, mas na primeira conversa, o Louco atravessou uma faca pela barriga de {0}.</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1171,7 +1171,7 @@
   <string key="WolfKillsHunterEnd">
 	<value>No meio da guerra, se vêem de pé apenas {0} e {1}. {1} viu um RPG na mão de seu amigo Terrorista morto. Ele pega o RPG e, num unico disparo, acerta {0}, que tem seus membros por todos os lados agora. O coldre de armas de {0} permaneceu intacto, o coldre que {1} usou como troféu de batalha. Os Terroristas haviam vencido.</value>
   </string>
-  <string key="CHKillsCultistEnd">
+  <string key="CHKillsZombieEnd">
 	<value>No meio da guerra, se vêem de pé apenas {0} e {1}. Enquanto {0} carregava medrosamente sua arma, {1} percebe que {0} era a mesma pessoa dos registros de membros da Nova Ordem. Então, num rápido movimento, {1} saca sua arma e atira na cabeça de {0}, que cai duro no chão. O último membro da Nova Ordem morreu.</value>
   </string>
   <string key="SecondsAdded">

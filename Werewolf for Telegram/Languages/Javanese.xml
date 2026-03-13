@@ -205,11 +205,11 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>Kowe dadi Murid Seer 🙇. Murid Seer ki sekolah ning SD Seer. Nek misal Seer mati, kowe bakal ngganteni dadi Seer sing anyar.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value>Kowe dadi Cultist 👤. Cultist ki penganut sekte aliran sesat. Pas bengi, kowe diwenehi kesempatan nggo ngubah uwong-uwong ben melu sekte-mu. Nek pas rampungan dolanan gur tinggal Cultist tok, berarti Cultist sing menang. Ayo Cultist, Ndesone dikuasai ben menang! Haha!</value>
+  <string key="RoleInfoZombie" >
+    <value>Kowe dadi Zombie 👤. Zombie ki penganut sekte aliran sesat. Pas bengi, kowe diwenehi kesempatan nggo ngubah uwong-uwong ben melu sekte-mu. Nek pas rampungan dolanan gur tinggal Zombie tok, berarti Zombie sing menang. Ayo Zombie, Ndesone dikuasai ben menang! Haha!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value>Kowe Cultist Hunter 💂! Ceritane ono aliran sesat/Cultist sing nyebar ajaran sesat, terus ngerekrut warga ben dadi pengikut! Pas bengi, pilih uwong sing mbok curigai. Nek wonge kuwi Culitst, wonge mati. Nek Cultist pengen ngubah kowe dadi anggota Cultist. anggota terakhir Culrist bakal mati.</value>
+  <string key="RoleInfoZombieHunter" >
+    <value>Kowe Zombie Hunter 💂! Ceritane ono aliran sesat/Zombie sing nyebar ajaran sesat, terus ngerekrut warga ben dadi pengikut! Pas bengi, pilih uwong sing mbok curigai. Nek wonge kuwi Culitst, wonge mati. Nek Zombie pengen ngubah kowe dadi anggota Zombie. anggota terakhir Culrist bakal mati.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
@@ -266,9 +266,9 @@
     <!-- 1 - victim role -->
     <value>🌄 Kukuruyukkk... \nPas Warga ndeso podo tangi isuk, ning ketoke ono sing ra beres. kabeh do kroso mambu anyir. sakwise digoleki ambune kui makbenduduk Warga nemokake mayit {0} ajur mumur digrawut-grawut ning kandang babi, ndase ilang. NYAMNYAMNYAM {1}</value><value>🌄 Kukuruyukkk... \nIsuk-isuk ono berita seko yu Juminten sing bar kuliah teko Wosingten, yen kroso mambu anyir ning cerak omahe.\nJebule kuwi mambu mayit e si {0} sing wis mati dipangan Serigala! {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
-    <value>📰 Ujug-ujug ono berita seko yu Juminten sing bar kuliah teko Wosingten, yen si Cultist 👤 {0} wis mati dipanah karo Cultist Hunter 💂.</value>
+    <value>📰 Ujug-ujug ono berita seko yu Juminten sing bar kuliah teko Wosingten, yen si Zombie 👤 {0} wis mati dipanah karo Zombie Hunter 💂.</value>
   </string>
   <string key="NoAttack" >
     <value>🌄 Kukuruyukkk... \nWarga ndeso isuk-isuk wis podo kumpul nang Alun-alun lan jumlahe lengkap - Owalah, jebul ra ono sing dipangan Serigala mau bengi.</value>
@@ -372,51 +372,51 @@
   <string key="RemainingPlayersEnd">
     <value>Pemain sing isih slamet:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} wis milih ngerekrut {1} dijak melu sekte 👤</value>
   </string>
   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - CultHunter's name -->
-    <value>{0} dikirim karo sekte kanggo ngerekrut {1}... jebule, wonge ki Cultist Hunter 💂! {0} modyar we dibacok pedang!</value>
+    <value>{0} dikirim karo sekte kanggo ngerekrut {1}... jebule, wonge ki Zombie Hunter 💂! {0} modyar we dibacok pedang!</value>
   </string>
   <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
-    <value>{0} teko nang omahmu lan pengen ngerekrut kowe.... tapi kowe kanthi sigap mbacokake pedangmu nang arahe deknen. Cultist 👤 modyar... Cultist e tinggal {1}!</value>
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{0} teko nang omahmu lan pengen ngerekrut kowe.... tapi kowe kanthi sigap mbacokake pedangmu nang arahe deknen. Zombie 👤 modyar... Zombie e tinggal {1}!</value>
   </string>
   <string key="CultConvertYou">
-    <value>Cultist 👤 wis ngerekrut kowe dadi pengikut sekte! Kowe saiki dadi anggota aliran sesat anyaran. Pendhak wengi, kowe iso milih kanggo ngerekrut uwong mlebu melu sektemu.</value>
+    <value>Zombie 👤 wis ngerekrut kowe dadi pengikut sekte! Kowe saiki dadi anggota aliran sesat anyaran. Pendhak wengi, kowe iso milih kanggo ngerekrut uwong mlebu melu sektemu.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
-    <value>Anggota Cultist: {0}</value>
+    <!-- 0 - Number of Zombies -->
+    <value>Anggota Zombie: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
-    <value>{0} wis gabung melu sekte Cultist 👤! Ciye-ciye ono cah anyaran.</value>
+    <!-- 0 - new Zombie's name -->
+    <value>{0} wis gabung melu sekte Zombie 👤! Ciye-ciye ono cah anyaran.</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} wis mbok kirim nggo ngajak {1} gabung melu sekte 👤... tapi sakne, ra ono uwong nang ngomah!</value>
   </string>
   <string key="CultWins" >
-    <value>Kabeh Serigala wis mati, lan warga sing isih urip wis melu gabung nang sekte Cultist... Dolanan dimenangke Cultist 👤!</value>
+    <value>Kabeh Serigala wis mati, lan warga sing isih urip wis melu gabung nang sekte Zombie... Dolanan dimenangke Zombie 👤!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
-    <value>Kowe lungo nang ngomahe {0} nggo ngoyak Cultist, tapi wonge jebule wis mati!</value>
+    <value>Kowe lungo nang ngomahe {0} nggo ngoyak Zombie, tapi wonge jebule wis mati!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
-    <value>Kowe lungo nang ngomahe {0}, lan ngonangi si {0} lagi donga karo dewa sing ra dikenal... Kowe langsung ngetokake pedang suci banjur mbacok ndase {0}. Cultist 👤 modyar.</value>
+    <value>Kowe lungo nang ngomahe {0}, lan ngonangi si {0} lagi donga karo dewa sing ra dikenal... Kowe langsung ngetokake pedang suci banjur mbacok ndase {0}. Zombie 👤 modyar.</value>
   </string>
   <!-- 0 - target name -->
   <string key="HunterFailedToFind">
-    <value>Kowe lungo nang ngomahe {0}, tapi kowe ra nemokake barang sing janggal nang kono. Wonge udu Cultist, kowe banjur bali ngomah.</value>
+    <value>Kowe lungo nang ngomahe {0}, tapi kowe ra nemokake barang sing janggal nang kono. Wonge udu Zombie, kowe banjur bali ngomah.</value>
   </string>
   <string key="WildChildToWolves">
     <!-- 0 - Werechild's name -->
@@ -427,7 +427,7 @@
     <!-- 0 - teamate's names -->
     <value>Panutanmu si {0} wis mati! Sinambi mangkel, kowe berubah/malih dadi Serigala 🐺! Kancamu sing anyar yaiku: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
  <string key="Villager">
     <value>Warga Ndeso 👱</value>
@@ -474,11 +474,11 @@
   <string key="ApprenticeSeer">
     <value>Murid Seer 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>Cultist 👤</value>
+  <string key="Zombie">
+    <value>Zombie 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>Cultist Hunter 💂</value>
+  <string key="ZombieHunter">
+    <value>Zombie Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -509,7 +509,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Anggota anyaranmu lungo nang omahe {0} arep direkrut, tapi anggota anyaranmu malah delok omahe si {0} wis ra toto, getih nang ngendi-endi, lan ono wulu Serigala nyangkut nang cerak lawang...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -530,7 +530,7 @@
   </string>
   <string key="HarlotDiscoverCult">
     <!-- 0 - target's name -->
-    <value>Kowe mlipir nang ngomahe {0} banjur tumpak-tumpakan... Pas wis rampung olehmu seneng-seneng, kowe delok tempat semedi si Cultist nang kamar e...</value>
+    <value>Kowe mlipir nang ngomahe {0} banjur tumpak-tumpakan... Pas wis rampung olehmu seneng-seneng, kowe delok tempat semedi si Zombie nang kamar e...</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -691,14 +691,14 @@
     <value>Kowe nyoba arep nambah koleksi jeroane {0}, nanging wonge wis dilindungu Guardian Angel 👼! Sokor wonge ra iso dipateni...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
-    <value>Cultist 👤 ngutus si {0} nggo ngrekrut {1}, nanging ono suworo tembakan seko Hunter lan awake {0} menculat seko jendelo! {0} wis modyar....</value>
+    <value>Zombie 👤 ngutus si {0} nggo ngrekrut {1}, nanging ono suworo tembakan seko Hunter lan awake {0} menculat seko jendelo! {0} wis modyar....</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
-    <value>Cultist 👤 ngutus si {0} nggo ngrekrut {1}, nanging bar kuwi krungu suworo jeritan, sisa mayit e {0} sumebar metu seko jendelo, akeh bekas tusukan nang awake! PANCEN WONG EDAN! {0} wis modyar....</value>
+    <value>Zombie 👤 ngutus si {0} nggo ngrekrut {1}, nanging bar kuwi krungu suworo jeritan, sisa mayit e {0} sumebar metu seko jendelo, akeh bekas tusukan nang awake! PANCEN WONG EDAN! {0} wis modyar....</value>
 	<value>Si {0} 👤 mlipir nang ngomahe {1} ben direkrut, wonge dibukake lawang, nanging ujug-ujug kaget amarga nang ngarepe ono wong stres ngacungke peso 🔪!!! {1} pesone banjur ditusuke nang dadane si {0}, ditusuk ping akeh banget nganti mati! {0} wis modyar.</value>
   </string>
   <string key="GuardKiller">
@@ -721,13 +721,13 @@
     <value>{0} wis modyar, lan kowe malih dadi Mason. Koncomu (nek misal ono) yaiku: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
-    <value>Si Doppelganger 🎭 {0} saiki wis malih dadi Cultist 👤, jan plek koyo kowe!</value>
+    <!-- 0 - new Zombie's name -->
+    <value>Si Doppelganger 🎭 {0} saiki wis malih dadi Zombie 👤, jan plek koyo kowe!</value>
   </string>
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} wis modyar, lan kowe malih dadi Cultist 👤. Koncomu (nek misal ono) yaiku: {1}</value>
+    <value>{0} wis modyar, lan kowe malih dadi Zombie 👤. Koncomu (nek misal ono) yaiku: {1}</value>
   </string>
   <string key="DGToWolf">
     <!-- 0 - DG's name -->
@@ -784,7 +784,7 @@
     <value>Nang tengah alun-alun, kabeh warga podo nemoke mayit {0} bekas ditembaki. Ketoke wonge waton mlebu nang ngomahe Hunter! {1}</value>
   </string>
   <string key="CultAttempt">
-    <value>Cultist 👤 nyobo arep ngrekrut kowe, tapi kowe terlalu sholeh/sholehah, wonge banjur mbok tolak!</value>
+    <value>Zombie 👤 nyobo arep ngrekrut kowe, tapi kowe terlalu sholeh/sholehah, wonge banjur mbok tolak!</value>
   </string>
   <string key="AlreadyOnWaitList">
     <!-- 0 - target's name -->
@@ -868,16 +868,16 @@
     <value>Fool iki tim warga. Nanging, bot ngandani de'e ki Seer. Pas wektune de'e nerawang peran'e pemain liyane, de'e diandani peran sing kadang bener kadang ndlepus, amargo presentase kebenarane hasil terawangane fool mung 40%. </value>
   </string>
   <string key="AboutCult">
-    <value>Cultist iki tim dhewe. Selaku Cultist, tujuan'e pemain kuwi ngubah pikiran pemain sing liyane ben melu kelompok Cultist. Cara dolanmu ngono, tujuanmu yo ngubah pemain liyane (kecuali Serigala yo) mlebu kelompokmu. Nek pemainne kabeh wes dadi Cultist, Cultist menang.</value>
+    <value>Zombie iki tim dhewe. Selaku Zombie, tujuan'e pemain kuwi ngubah pikiran pemain sing liyane ben melu kelompok Zombie. Cara dolanmu ngono, tujuanmu yo ngubah pemain liyane (kecuali Serigala yo) mlebu kelompokmu. Nek pemainne kabeh wes dadi Zombie, Zombie menang.</value>
   </string>
   <string key="AboutCH">
-    <value>Cultist Hunter iki tim warga, gaweane berburu Cultist. Nek Cultist nekani omahe CH, anggotane sing paling anyar bakalan modyar. Pendhak mbengi, CH iki iso milih pemain nggo mbok cek -- nek de'e Cultist, de'e modyar.</value>
+    <value>Zombie Hunter iki tim warga, gaweane berburu Zombie. Nek Zombie nekani omahe CH, anggotane sing paling anyar bakalan modyar. Pendhak mbengi, CH iki iso milih pemain nggo mbok cek -- nek de'e Zombie, de'e modyar.</value>
   </string>
   <string key="AboutWC">
     <value>Wild Child iki jane tim warga. Nang awal permainan, Wild Child bakalan milih pemain liyane selaku panutan. Nek panutane kuwi modyar, sing dadi Wild Child bakalan dadi Serigala tur pindah tim.</value>
   </string>
   <string key="AboutAppS">
-    <value>Murid Seer iki tim warga sing koyo warga biasa, ra ndhuwe kekuatan opo-opo. Nanging, nek Seer'e modyar, Murid Seer bakalan dadi Seer anyaran. Nek Seer'e keno rekrut Cultist, Murid Seer ra bakal iso malih dadi Seer.</value>
+    <value>Murid Seer iki tim warga sing koyo warga biasa, ra ndhuwe kekuatan opo-opo. Nanging, nek Seer'e modyar, Murid Seer bakalan dadi Seer anyaran. Nek Seer'e keno rekrut Zombie, Murid Seer ra bakal iso malih dadi Seer.</value>
   </string>
   <string key="AboutBH">
     <value>Beholder iki tim warga sing diandani sopo Seer'e (Seer sing tenanan, dudu sing Fool).</value>
@@ -888,8 +888,8 @@
   <string key="AboutDG">
     <value>
       Doppelgänger ki jane ndhuwe tim dhewe. Nang mbengi pertama pemain'e bakalan iso milih sopo sing meh tiru peranne. Nek pemain sing ditiru mati, DG bakalan malih peran tur melu tim'e kuwi. Nek DG ora milih, mengko bot bakalan milih acak.
-      Elingo: Nek pemain'e kuwi malah dadi Cultist, DG bakalan malih dadi peran asline. Aturan sing liyane tetep: nek pemain sing ditiru kuwi WC tur panutan'e modyar, DG bakalan dadi Serigala. Nek ora, DG bakal ngewarisi panutan'e kuwi.
-      Cultist ra iso lebokke DG nang tim'e (isone di wektu DG ganti peran). DG iki ra iso menang kecuali nek de'e uwes malih. Nek ngasi dolanan bar DGne ora malih, DG-kalah kecuali nek de'e lover.
+      Elingo: Nek pemain'e kuwi malah dadi Zombie, DG bakalan malih dadi peran asline. Aturan sing liyane tetep: nek pemain sing ditiru kuwi WC tur panutan'e modyar, DG bakalan dadi Serigala. Nek ora, DG bakal ngewarisi panutan'e kuwi.
+      Zombie ra iso lebokke DG nang tim'e (isone di wektu DG ganti peran). DG iki ra iso menang kecuali nek de'e uwes malih. Nek ngasi dolanan bar DGne ora malih, DG-kalah kecuali nek de'e lover.
     </value>
   </string>
   <string key="AboutCupid">
@@ -902,7 +902,7 @@
     <value>
       Hunter iki tim warga sing ora iso turu nyenyak. Nek Hunter mati diobong warga, Hunter iso milih wong liyo ben melu mati bareng Hunter'e. Nek Hunter dipangan Serigala, Hunter duwe kesempatan nggo mateni Serigala kuwi, tapi ra bakal duwe kesempatan nggo mateni pemain liyane. Wektu Hunter dipateni Serial Killer, Hunter'e iso milih sopo sing arep ditembak.
       Elingo: Nggo serangan Serigala, kesempatane mulai seko 30%. Nek Serigalane siji, Hunter'e dadi duwe kesempatan 30% nggo mateni Serigalane tur tetep urip. Nggo Serigala masing-masing Hunter'e duwe kesempatan tambahan 20% (2 Serigala = 50%, 3 = 70%, sak uwes'e). Nek Serigalane akeh, Hunter ki malah iso nggowo Serigala siji -- tapi bakalan tetep mati pisan soale kakean Serigala.
-      Yen Cultist nyobo convert Hunter, 50% Hunter iso gagal direkrut tur terkadang koe iso mateni salah 1 Cultist sing nyobo ngrekrut koe!
+      Yen Zombie nyobo convert Hunter, 50% Hunter iso gagal direkrut tur terkadang koe iso mateni salah 1 Zombie sing nyobo ngrekrut koe!
     </value>
   </string>
   <string key="AboutSK">
@@ -1239,7 +1239,7 @@
     <value>Tim SK</value>
   </string>
   <string key="CultTeam">
-    <value>Tim Cultist</value>
+    <value>Tim Zombie</value>
   </string>
   <string key="TannerTeam">
     <value>Tim Tanner</value>
@@ -1258,13 +1258,13 @@
     <value>Tim SK</value>
   </string>
   <string key="CultTeamEnd">
-    <value>Tim Cultist</value>
+    <value>Tim Zombie</value>
   </string>
   <string key="TannerTeamEnd">
     <value>Tim Tanner</value>
   </string>
   <string key="CultConvertWolf">
-    <value>Cultist 👤 ngirim {0} nggo ngrekrut si {1},SEMPRUL sing direkrut jebule Serigala!\nWarga ndeso malah weruh ndase {0} mencelat metu seko jendelo... Kabeh do bingung ngopo kok iso ngono kuwi!\n{0} wis modyar...</value>
+    <value>Zombie 👤 ngirim {0} nggo ngrekrut si {1},SEMPRUL sing direkrut jebule Serigala!\nWarga ndeso malah weruh ndase {0} mencelat metu seko jendelo... Kabeh do bingung ngopo kok iso ngono kuwi!\n{0} wis modyar...</value>
   </string>
   
   <string key="HarlotFuckedKilledPublic"> 
@@ -1281,8 +1281,8 @@
   <string key="BlacksmithKilled">
     <value>Ketoke omahe {0} si Pandhe Wesi ⚒, lagi keno alangan. Ono 5 peso tumancep ning awake {0}, ning tangan, sikil lan ndase dituncepke ono ing mejo kerjane. Kok organ tubuh e ora digowo nggo koleksi ya?\nMungkin Serial Killer 🔪 gur pengen nambah koleksi senjata sing selanjute nggo mateni kowe. iyoo kowe...</value>
   </string>
-  <string key="CultistKilled">
-    <value>Si {0} ditemokake ketusuk wesi wadah lilin ning tempat semedi. Serial Killer 🔪 beraksi meneh tanpo pandang bulu! {0} ki jebule Cultist 👤.</value>
+  <string key="ZombieKilled">
+    <value>Si {0} ditemokake ketusuk wesi wadah lilin ning tempat semedi. Serial Killer 🔪 beraksi meneh tanpo pandang bulu! {0} ki jebule Zombie 👤.</value>
   </string>
   <string key="CupidKilled">
     <value>Isuk-isuk warga ndeso nemokke mayit {0} Si Mak Comblang a.k.a. Cupid 🏹 mati kejiret busur panah e dewe. Mesakke, sopo hayo seng mateni?</value>
@@ -1315,18 +1315,18 @@
   </string>
   <string key="SerialKillerKilledCH"> 
 	<!--used when CH visits SK-->
-    <value>Warga ndeso tangi isuk-isuk nemokke mayit {0} si Cultist Hunter 💂. Niat golek kutil jebul salah marani, seng diparani malah Serial Killer 🔪!</value>
-    <value>Mayit e {0} si Cultist Hunter 💂 ditemokke warga ndeso ambyar neng kidul rel, dikiro ketubruk kreto jebul Cultist Hunter 💂 e marani Serial Killer 🔪. Dikiro serial killer e kutilan opo yo...</value>
+    <value>Warga ndeso tangi isuk-isuk nemokke mayit {0} si Zombie Hunter 💂. Niat golek kutil jebul salah marani, seng diparani malah Serial Killer 🔪!</value>
+    <value>Mayit e {0} si Zombie Hunter 💂 ditemokke warga ndeso ambyar neng kidul rel, dikiro ketubruk kreto jebul Zombie Hunter 💂 e marani Serial Killer 🔪. Dikiro serial killer e kutilan opo yo...</value>
   </string>
   <string key="CultConvertWolfPublic">
-	<!--used when Cultists convert the wolves, only if wolves stayed home-->
+	<!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Serigalane 🐺 wes kadung kesel ameh metu, jebul {0} 👤 teko gowo formulir, niat ngerekrut malah ketemu serigala keluwen. Sikil e {0} 👤 seng diconvert dadi sayur sop, ngaterke panganan gratis kanggo serigala 🐺!</value>
-    <value>Cultist 👤 nyobo ngerekrut uwong mau bengi. Niat ngerekrut seng ditekani malah omah e Serigala 🐺, ketepakan serigalane memeng metu, keluwen, njuk {0} dipangan masio rodo kecut sithik. Mesakke {0} 👤, Serigalane 🐺 ra gelem melu dadi Cultist.</value>
+    <value>Zombie 👤 nyobo ngerekrut uwong mau bengi. Niat ngerekrut seng ditekani malah omah e Serigala 🐺, ketepakan serigalane memeng metu, keluwen, njuk {0} dipangan masio rodo kecut sithik. Mesakke {0} 👤, Serigalane 🐺 ra gelem melu dadi Zombie.</value>
   </string>
   <string key="CultConvertKillerPublic">
-	<!--used when Cultists convert the SK-->
-    <value>Cultist 👤 wes niat apik ngerekrut Serial Killer ben nduwe konco. Nanging de'e lewih seneng dewean, njuk {0} si cultist 👤 dipateni karo serial killer! Anggota cultist 👤 kelong siji.</value>
-    <value>Mau bengi Cultist 👤 meh nyobo ngerekrut uwong, jebul seng direkrut kuwi serial killer, njuk cultist 👤 e malah didadekke pajangan neng taman kuto, {0} si cultist 👤 anyaran wes mati.</value>
+	<!--used when Zombies convert the SK-->
+    <value>Zombie 👤 wes niat apik ngerekrut Serial Killer ben nduwe konco. Nanging de'e lewih seneng dewean, njuk {0} si Zombie 👤 dipateni karo serial killer! Anggota Zombie 👤 kelong siji.</value>
+    <value>Mau bengi Zombie 👤 meh nyobo ngerekrut uwong, jebul seng direkrut kuwi serial killer, njuk Zombie 👤 e malah didadekke pajangan neng taman kuto, {0} si Zombie 👤 anyaran wes mati.</value>
   </string>
   <string key="GAGuardedKiller">
     <!-- used when GA guards SK -->
@@ -1348,9 +1348,9 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{1} nyobo mangan si {0} pas wonge lengah kekeselen jogo malem.{1} iso nyakot gulune Hunter, terus didedelduel nganti awake {0} remuk, Hunter 🎯 mati dicakot Serigala 🐺.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
-    <value>{1} karo {0} do mlaku metu pas awan-awan. Ning kono gulune si {0} wis dikalungi clurit karo si Cultist Hunter sing jenenge {1}, sinambi nugel gulune, Cultist Hunter 💂 ngomong: iki lho cah, Cultist sing marai resah ndeso ket awal mau!</value>
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>{1} karo {0} do mlaku metu pas awan-awan. Ning kono gulune si {0} wis dikalungi clurit karo si Zombie Hunter sing jenenge {1}, sinambi nugel gulune, Zombie Hunter 💂 ngomong: iki lho cah, Zombie sing marai resah ndeso ket awal mau!</value>
   </string>
   
   <!-- Extend time -->

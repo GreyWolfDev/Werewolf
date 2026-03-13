@@ -177,10 +177,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>Sei il Sadico (Apprendista Veggente) 🙇. Normalmente, non estrai informazioni da solo, ma se il Torturatore non si trova, verrai assunto per fare il suo lavoro!</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>Congratulazioni, sei un Testimone di Geova (Satanista) 👤! Vuoi solo che tutti, mafiosi o meno, venerino il tuo Culto. Ora esci e converti queste povere persone!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>Sei l'Agente Riscossore (Cacciatore di Satanisti) 💂. Sei informato di Testimoni di Geova che non pagano le tasse, che destabilizzano l'economia del paese. Il tuo scopo è arrestarli!</value>
   </string>
   <string key="LynchTime" >
@@ -226,7 +226,7 @@
     <value>Il giornale è appena uscito! È riportato che {0} è stato arrestato dalla polizia perchè faceva parte del giro mafioso. {1}</value>
     <value>Il giornale è appena uscito! La polizia ha fatto un blitz a casa di {0} con conseguente arresto! {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Il giornale è appena uscito! Un membro dei testimoni di Geova 👤, {0}, è stato arrestato da ufficiali federali. Sembra che l'accusa fosse di Evasione di Tasse.</value>
   </string>
   <string key="NoAttack" >
@@ -310,7 +310,7 @@
   <string key="RemainingPlayersEnd">
     <value>Giocatori rimasti vivi, ruolo, e fazione:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} ha votato per convertire {1} al culto dei testimoni di Geova.</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -337,7 +337,7 @@
   <string key="HunterVisitDead">
     <value>Volevi arrestare {0}, ma è stato già arrestato!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Vai a casa di {0} di notte, per trovare casa piena di volantini dei Testimoni di Geova. Lo arresti immediatamente. </value>
   </string>
   <string key="HunterFailedToFind">
@@ -349,7 +349,7 @@
   <string key="WildChildTransform">
     <value>{0} se ne è andato. Determinato nella tua vendezza, persuadi il commissario nell'assumerti. I tuoi colleghi sono: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>un Mafioso 👱</value>
   </string>
@@ -395,10 +395,10 @@
   <string key="ApprenticeSeer">
     <value>il Sadico 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>un Testimone di Geova 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>l'Agente Riscossore 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -1100,7 +1100,7 @@
   <string key="BlacksmithKilled">
     <value>Il giornale è appena uscito! A pagina 6:  Sparizione Misteriosa di {0}. Era il Delatore ⚒ Questa è opera del Sequestratore Seriale. </value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Il giornale è appena uscito! Nella pagina 10:  Sparizione Misteriosa di {0}. Di lui rimangono solo alcuni numeri della Torre di Guardia. {0} era un Testimone di Geova 👤 Questa è opera del Sequestratore Seriale. </value>
   </string>
   <string key="CupidKilled">
@@ -1134,10 +1134,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Il giornale è appena uscito! Nella pagina 9:  Sparizione Misteriosa. {0}, il rispettabilissimo Agente Riscossore ha cercato di far pagare le tasse al Rapitore Seriale ed è stato fatto sparire. </value>
 	</string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Il giornale è appena uscito! {0} ha provato a convertire al culto di Geova un poliziotto ed è stato arrestato per aver evaso le tasse!</value>
 	</string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Il giornale è appena uscito! Nella pagina 9:  Sparizione Misteriosa. Il testimone di Geova {0} ha provato a convertire il Sequestratore Seriale questa notte ed è scomparso nel nulla!</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1157,8 +1157,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Il giornale è appena uscito! {1} ha fatto un bliz a casa di {0}. Fortunatamente il raid ha colto di sorpresa l'Operaio e non ha potuto fare nulla se non farsi arrestare.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>Il giornale è appena uscito! {1} ha arrestato l'ultimo dei Testimoni di Geova per aver usato il suo culto come scusa per evadere le tasse. {0} è stato imprigionato!</value>
   </string>
 

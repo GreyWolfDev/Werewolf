@@ -235,11 +235,11 @@
     <value>Sei Aiden 🙇‍♂️, un Natblida, e come tale potresti prendere il posto di Lexa 👳‍♂️ e diventare il prossimo Heda! Ma attento alla testa...</value>
     <value>Sei Aiden 🙇‍♂️. Questo significa che in questo delirio è ancora viva Lexa 👳‍♂️, il Comandante. Nel caso lei morisse o divenisse una Prime 👤, tu vincerai il Conclave e diverrai il prossimo Heda.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>Sei un Prime (👤). Il tuo obiettivo è convertire tutti i giocatori in Prime, impiantando i Mind Drive così da ricomporre la tua famigliola felice e ristabilire il controllo di Sanctum. È indispensabile che voi Prime agiate di notte: rischiate il linciaggio dalla folla inferocita, e il demone Gabriel (💂🏻‍♀) è sempre dietro l'angolo... pronto a decapitarvi uno per uno!</value>
     <value>Sei un Prime (👤), oltretutto di pessimo umore dato che quei ficcanaso arrivati dalla Terra hanno sfatato il mito che tu sia una divinità, impedendoti di reincarnarti. Ogni notte, puoi scegliere un tizio a cui regalare l'immortalità di un Prime. Se tra linciaggi, de-chippamenti ed eclissi tutta la popolazione rimasta viva ha ormai il Mind Drive in testa, voi Prime avete vinto.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>Sei Gabriel 💂‍♂️. DEATH IS LIFE! Odi a morte i Prime che osano cercare l'immortalità come se fossero dèi.
 La tua missione è eliminare il folle culto di cui sei involontario artefice.
 Di notte puoi visitare chiunque tu voglia e se scopri che ha il Mind Drive, lo elimini. Se non è un Prime, lo lascerai vivere. Se i Prime provano a farti tornare nel loro sistema teocratico, l'ultimo che si era reincarnato morirà e ti verrà detto quanti ne sono rimasti.</value>
@@ -296,7 +296,7 @@ Tutti i Terrestri scoprono così che non era altro che una Natblida artificiale,
     <value>🐺 Un'altra notte di terrore è finita. Seguendo una terrificante scia di sangue la Coalizione trova {0} torturato a morte, nella sua casa.\n{1}</value>
     <value>🐺 Nella notte le urla di {0} si sono sentite fino a Nakara. All'alba, la gente trova lo sfortunato legato a una croce. Pare che abbia rifiutato il chip, preferendo la morte.\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>💂‍♂️ Un odore tremendo proviene dalla casa di {0}... Viene ritrovato il suo corpo decapitato. Un Prime è stato ucciso da Gabriel! I Figli di Gabriel sono un passo più vicini al loro obiettivo...</value>
     <value>💂‍♂️ La gente trova nel palazzo il cadavere di {0}! Ha un taglio nel collo, e c'è un Mind Drive in briciole sul pavimento di marmo! Il "demone" Gabriel ha eliminato per sempre un altro di quei falsi dei!</value>
     <value>💂‍♂️ Sembra che questo sarà il quinto e ultimo corpo di {0}. Il Mind Drive è stato distrutto da Gabriel! Ecco che succede a chi cerca di essere immortale.</value>
@@ -391,7 +391,7 @@ Tutti i Terrestri scoprono così che non era altro che una Natblida artificiale,
   <string key="RemainingPlayersEnd">
     <value>Giocatori rimasti vivi, ruolo e fazione:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value>{0} vota per far diventare un Prime {1}</value>
     <value>{0} vota per rendere un Prime {1}</value>
   </string>
@@ -419,7 +419,7 @@ Tutti i Terrestri scoprono così che non era altro che una Natblida artificiale,
   <string key="HunterVisitDead">
      <value>💂‍♂️ Hai visitato {0}, ma era già morto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>💂‍♂️ Uccidi {0}, poi distruggi il suo Mind Drive. DEATH IS LIFE!</value>
   </string>
   <string key="HunterFailedToFind">
@@ -476,10 +476,10 @@ Tutti i Terrestri scoprono così che non era altro che una Natblida artificiale,
   <string key="ApprenticeSeer">
     <value>Aiden 🙇 </value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>un Prime 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Gabriel 💂</value>
   </string>  
  <string key="RanAway">
@@ -1219,7 +1219,7 @@ Gli altri abitanti della Città della Luce (se presenti) sono: {1}</value>
   <string key="BlacksmithKilled">
     <value> ⚒ Sembra che {0} abbia cercato di mettere un po' di buonsenso nella testa di Blodreina, ma non sapeva dei suoi traumi dell'Anno Oscuro. Raven è stata trovata trafitta all'addome, e cubi di carne sono stati staccati dal suo corpo, già pronti per una bella cenetta. Gli Skaikru piangono la triste fine della loro inventrice e meccanica.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>🔪 {0} è stato trovato pugnalato a morte. Blodreina non accetta affronti al suo potere, specialmente da un'élite di falsi dèi! Chi tradisce è nemico del Wonkru, indipendentemente da Clan d'origine, pianeta, razza, o lingua! {0} era un Prime 👤.</value>
   </string>
   <string key="CupidKilled">
@@ -1256,11 +1256,11 @@ Gli altri abitanti della Città della Luce (se presenti) sono: {1}</value>
     <value>🔪 Wonkru si sveglia la mattina, solo per trovare nella Valle il corpo tagliato a pezzi di {0}, Gabriel 💂‍♂️... Lezione imparata: mai fare la predica a Blodreina sul concetto di totalitarismo!</value>
     <value>🔪 Il corpo di {0}, Gabriel 💂‍♂️, è stato trovato nel centro della strada, tagliato in cento pezzetti. Associare il dispotismo di Blodreina a quello dei Prime non sembra una buona idea...</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>👤 Sembrava una notte tranquilla, visto che i Chippati hanno deciso di rimanere a casa, ma l'unico sfortunato è stato {0}, un Prime che ha provato a offrire un Mind Drive a un Chippato. Purtroppo per {0}, niente batte la Città della Luce!</value>
     <value>👤 I Prime hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a offrire l'immortalità, è stato ucciso dal Chippato che ha visitato. Sfortunatamente per {0}, i Chippati non hanno alcun interesse a far parte della loro élite.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>👤 I Prime pensavano di aggiungere un nuovo membro alla loro élite, ma si sbagliavano! {0}, un Prime, è stato trovato squartato e tritato a pezzetti nella piazza centrale! Vicino a lui, il suo Mind Drive è stato trovato sbriciolato da un colpo di spada.</value>
     <value>👤 L'ultima notte, i Prime hanno provato a far diventare immortale una persona più psicopatica di loro. Il loro membro più recente ha provato a convertire Blodreina, che non ha apprezzato e ha creato una nuova pietanza, nel refettorio del bunker, con gli organi interni di {0}.</value>
   </string>
@@ -1281,8 +1281,8 @@ Gli altri abitanti della Città della Luce (se presenti) sono: {1}</value>
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sapendo che solo {0} è rimasta in vita, {1} prova a immobilizzare Diyoza 🎯 quando lei meno se l'aspetta, riuscendo a coglierla impreparata. {0} si oppone e si scatena una lotta all'ultimo sangue, ma infine è costretta a prendere il chip, giusto prima di morire per le ferite riportate. Diyoza, l'ex superterrorista, è ora morta a terra.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} e {0} escono appena spuntano i primi raggi di luce dei due soli. Vedendo le ricche vesti che {0} indossa, l'ex Prime Gabriel 💂‍♂️ {1} tira fuori la propria pistola, terminando una volta per tutte questo culto teocratico immorale che ha contaminato la bellezza di Sanctum.</value>
   </string>
   
@@ -1582,8 +1582,8 @@ Almeno, non vi ha visti in faccia mentre scappavate!</value>
     <value>Sei diventata una Criminale della Eligius IV! 👷‍♂️ I tuoi compagni di prigionia (se ci sono) sono: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>Uno dei Prime ha... tolto il suo Mind Drive?! {0} ha abbandonato il palazzo ma {1} è felice di essersi unita a voi! Viva l'immortalità e i privilegi!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1642,8 +1642,8 @@ Almeno, non vi ha visti in faccia mentre scappavate!</value>
   <string key="SecretLynchShowVotersA">
     <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Strano... Vi siete riuniti per discutere su chi portare tra i Prime oggi, ma {0} non è presente! Che fine avrà fatto?</value>
   </string>
   
@@ -1754,7 +1754,7 @@ La tua reazione di difesa convince Blodreina 🔪 che meriti la morte, quindi le
   <string key="ChemistTargetEmpty">
 	<value>La cavia di stasera, {0}, non era a casa! Torni indietro delusa, che sfortuna.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>I Prime sono attualmente: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1806,7 +1806,7 @@ Gli altri abitanti della Città della Luce sono: {1} mentre il Distributore di c
   <string key="ChemistFrozen">
     <value>Dopo esserti svegliata, pronta a preparare un'altra formula per perfezionare il Sanguenero artificiale, uno sconosciuto 🐺☃️ ti cattura e ti costringe a inghiottire un chip, ancora una volta! Tornata nella Città della Luce, A.L.I.E. ti ordina di distruggere tutte le siringhe. Tuttavia, la mattina dopo il chip ti lascia di nuovo libera. Ne deduci che era difettoso.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Dopo esserti preparato per andare a offrire il Mind Drive a un nuovo alleato, un nemico 🐺☃️ irrompe e ti costringe a inghiottire un chip con lo stesso marchio del Mind Drive. Gli altri Prime ti legano e ti assicurano che ci penseranno loro a regalare l'immortalità a qualcuno. Dopo alcune ore, riescono a friggere il chip, che si scopre essere difettoso.</value>
   </string>
   <string key="CHFrozen">
@@ -1953,11 +1953,11 @@ Nota comunque che i Chippati non possono ucciderti per scoprire dov'è la Fiamma
 	<value>Dopo un'altra lunga e faticosa notte, ritorni alla tua casa mentre il sole rosso sta già sorgendo. Ma vedi una strana maschera antigas sul bordo di una fossa... e dentro ci trovi il cadavere di {0}. Forse Gabriel 💂🏻‍♀️ ha sospettato a torto di te... perché sapeva che hai creato i Mind Drive per la missione Eligius III.</value>
     <value>Dopo un'altra lunga notte a scavare, ritorni alla tua casa su questa luna, mentre il sole rosso sta già sorgendo. C'è una strana maschera antigas sul bordo di una fossa... purtroppo dentro trovi il cadavere di {0}. Gabriel 💂🏻‍♀️ deve aver sospettato a torto di te... perché sapeva che hai creato i Mind Drive per la Eligius Corporation.</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>Ritorni a casa dopo una faticosa nottata, quando senti un urlo dalle tombe non finite! Ti rechi subito sul posto, solo per trovare {0} morto dentro una tomba. Perché i Prime provano a offrirti un Mind Drive? Non sanno chi sei? Non sanno che NON li avevi progettati per diventare immortali?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>Mentre vai a casa di {1}, {0} suggerisce che sarebbe una buona idea controllare se Gabriel è nei paraggi. Lo segui nel cimitero quando improvvisamente una trappola gli cattura l'anca! Tutto quello che senti è il suo urlo mentre finisce dritto dentro una fossa e voi scappate via in preda al terrore.</value>
   </string>
@@ -2015,8 +2015,8 @@ Nota comunque che i Chippati non possono ucciderti per scoprire dov'è la Fiamma
   <string key="HarlotFellPublic">
 	<value>Mentre Ontari {0} tornava a casa dopo una notte di divertimento ha preso la scorciatoia per il cimitero. Data l'ora non stava prestando molta attenzione, così è caduta in una tomba aperta! Forse doveva darsi una calmata...</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>I Prime hanno provato a controllare la presenza di Gabriel nel cimitero, ma mentre {0} guidava l'élite teocratica di Sanctum attraverso le tombe aperte, è stato colto di sorpresa da una fossa! Ci è caduto dritto dentro... dopotutto non puoi davvero sfuggire alla morte! Gli altri Prime sono scappati terrorizzati!</value>
     <value>I Prime volevano controllare la presenza del "demone" Gabriel nel cimitero, ma {0} è caduto dritto dentro una tomba aperta, dove è morto! Vedendo realizzati i loro peggiori incubi, gli altri Prime sono scappati in preda al panico! Al Mind Drive di {0} penseranno dopo.</value>
   </string>

@@ -188,11 +188,11 @@
     <value>你係【超遊者既朋友】，佢講左好多超遊既好處比你。\n一開始你係TRPG村既渣渣，如果超遊者撕咭或者做左狂信徒，你會學佢超遊。</value>
 
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>你係【狂信徒】。\n 你目標係宣揚邪神的威名，每一Round都可以令其他人變成狂信徒。(BOSS除外)\n 小心唔好入錯逢魔人屋企。\n 最後如果每個PC都追隨邪神，你就會贏。\n 被入教嘅人會失去原來嘅身份。</value>
 
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>你係InSane裡面既【逢魔人】，你命中注定會吸引怪異，挑戰怪異，戰勝怪異！\n如果狂信徒要你追隨佢，你唔會追隨佢，而且佢地最後入教果個會撕卡。\n你每一Round要去一個人屋企，如佢係狂信徒，佢就會死。</value>
   </string>
   <string key="LynchTime">
@@ -246,7 +246,7 @@
 	<value>【{0}】 間屋發生大火，救熄後發現【{0}】 被人反鎖係間屋裡面，佢死得好慘\n【{1}】 。</value>
 	<value>今日既水喉水變左紅色，你地上去水塔一睇，【{0}】 竟然死左係裡面！？\n【{1}】 。</value>
 	</string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>你地發現 【{0}】 間屋好奇怪...你地行入去，見到有條屍瞓左係個邪神像隔離...原來佢係 【狂信徒】 ，但係佢竟然唔係比BOSS殺死，究竟係邊個做架呢!?!?</value>
   </string>
   <string key="NoAttack">
@@ -339,7 +339,7 @@
   <string key="RemainingPlayersEnd">
     <value>生還名單：</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>【{0}】 想將【{1}】 變成【狂信徒】。</value>
   </string>
   <string key="CultConvertCultHunter">
@@ -366,7 +366,7 @@
   <string key="HunterVisitDead">
     <value>你想殺死 【{0}】 ，但係佢一早已經撕左卡!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>你去到 【{0}】 間屋，發現佢拜緊邪神，經過激烈既搏擊，你將呢個狂信徒殺死左!</value>
   </string>
   <string key="HunterFailedToFind">
@@ -378,7 +378,7 @@
   <string key="WildChildTransform">
     <value>【{0}】 已死! 所以你變左BOSS，BOSS重有： 【{1}】</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>渣渣 👱</value>
   </string>
@@ -424,10 +424,10 @@
   <string key="ApprenticeSeer">
     <value>超遊者朋友 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>狂信徒 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>逢魔人 💂</value>
   </string>
   <!-- These are for the player list-->
@@ -1150,7 +1150,7 @@
 	<string key="BlacksmithKilled">
 		<value>村中既魔法戰士【{0}】今晚真係行衰運，一天光成班村民就發現佢既頭同四肢分別俾五把佢自己嘅銀劍插咗佢張床上面。唔通而家紅色大人想表現一下佢嗰邊既藝術??</value>
 	</string>
-	<string key="CultistKilled">
+	<string key="ZombieKilled">
 		<value>一朝早村民就係【狂信徒】教會張神枱上面發現【{0}】俾人用個燭台插死咗。狂信徒【{0}】死咗。</value>
 	</string>
 	<string key="CupidKilled">
@@ -1186,11 +1186,11 @@
 		<value>尋晚狂信徒既殺手【{0}】明明諗住去滅教，點知原來佢去咗搵紅色大人。村民一起身就見到【{0}】條屍攤咗係村口……大家記住唔好再嘗試去搵連殺喇……</value>
 	</string>
 	<string key="CultConvertWolfPublic">
-		<!--used when Cultists convert the wolves, only if wolves stayed home-->
+		<!--used when Zombies convert the wolves, only if wolves stayed home-->
 		<value>難得今晚D BOSS想留係屋企抖下，偏偏狂信徒就揀咗去其中一隻BOSS間屋度到傳教！ 既然有人送上門BOSS就當然唔客氣啦。狂信徒新丁【{0}】就咁就俾BOSS斬死咗啦。</value>
 	</string>
 	<string key="CultConvertKillerPublic">
-		<!--used when Cultists convert the SK-->
+		<!--used when Zombies convert the SK-->
 		<value>狂信徒尋晚興致勃勃咁去到一間屋度傳教，點知原來去錯咗紅色大人屋企。村民一起身就發現狂信徒新丁【{0}】條屍俾人斬碎撒咗係村口。</value>
 	</string>
 	<string key="GAGuardedKiller">
@@ -1208,8 +1208,8 @@
 		<!--{0} = hunter's name, {1} = wolf's name-->
 		<value>當太陽升起，見到成條村得番【{0}】一個，於是【{1}】就趁住【{0}】最冇戒心既時候撲上去殺咗佢。地上面剩低【{0}】俾BOSS斬到爛哂既屍體。呢條村既村民死死哂啦……</value>
 	</string>
-	<string key="CHKillsCultistEnd">
-		<!--{0} = last cultist's name, {1} = CH's name -->
+	<string key="CHKillsZombieEnd">
+		<!--{0} = last Zombie's name, {1} = CH's name -->
 		<value>天一光，村入面淨番【{1}】同埋【{0}】。突然間一把利刀劃過【{0}】條頸，正義既【{1}】殺咗呢條村最後一個邪神(狂信徒)，正式為呢個十惡不赦既狂信徒晝上句號！</value>
 	</string>
 	<!-- Extend time -->
@@ -1516,8 +1516,8 @@
 		<value>你成為了神子，你嘅神子同伴︰【{0}】</value>
 	</string>
 	<string key="ThiefToCult">
-		<!-- 0 - old cultist's name -->
-		<!-- 1 - new cultist's name -->
+		<!-- 0 - old Zombie's name -->
+		<!-- 1 - new Zombie's name -->
 		<value>【{0}】唔再係你嘅同伴，而【{1}】就係你新嘅教友。</value>
 	</string>
 	<string key="ThiefToWolf">
@@ -1568,8 +1568,8 @@
 	<string key="SecretLynchShowVotersA">
 		<value>在暗票模式下，選民嘅名字將會被{0}</value>
 	</string>
-<string key="CultistBitten">
-		<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+<string key="ZombieBitten">
+		<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 		<value>當你地傾緊今晚同邊個傳教嗰陣，先醒起原來【{0}】成晚都唔喺到！到底佢去咗邊？？😱😱😱</value>
 	</string>
 
