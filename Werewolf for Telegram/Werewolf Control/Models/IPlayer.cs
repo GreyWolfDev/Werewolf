@@ -99,6 +99,17 @@ namespace Werewolf_Control.Models
         HunterKill,
         SerialKill,
         Lover1,
-        Lover2
+        Lover2,
+        Mayor,
+        SpreadSilver,
+        Kill2,
+        Sandman,
+        Imam,
+        Thief,
+        Trouble,
+        Chemistry,
+        Freeze,
+        Douse,
+        VisitImam
     }
 }

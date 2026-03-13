@@ -32,6 +32,7 @@
         Trouble,
         Chemistry,
         Freeze,
-        Douse
+        Douse,
+        VisitImam
     }
 }
