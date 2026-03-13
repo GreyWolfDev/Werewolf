@@ -208,10 +208,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Anda adalah Wartawan Pelatih 🙇. Jika Wartawan telah tiada, anda akan mengambil alih tempatnya sebagai wartawan.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Anda mempunyai fahaman yang pelik berkaitan tarian raver dan kehidupan hipster 👤. Setiap malam anda memilih seorang penduduk kampung untuk dijadikan pengikut anda. Anda akan menang jika semua penduduk Kampung Misteri mengikuti aliran anda.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Anda merupakan seorang Otai 💂. Sebagai otai, anda tidak suka kepada tarian dan kehidupan yang mengarut. Setiap malam anda melawat seorang penduduk kampung. Jika mereka Budak Raver/Hipster, mereka akan dihukum secara senyap mengikut adat Kampung Misteri.</value>
   </string>
   <string key="LynchTime" >
@@ -269,7 +269,7 @@
     <!-- 1 - victim role -->
     <value>Pagi keesokannya, salah seorang penduduk kampung mencari {0} dan mendapati kasutnya berada di telaga misteri di hujung kampung. Kini penduduk Kampung Misteri kehilangan {1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Kehidupan {0} yang hipster dengan tarian yang pelik menyebabkan otai kampung menghumbannya ke telaga misteri dihujung kampung. Padan muka sama hang..</value>
   </string>
@@ -375,34 +375,34 @@
   <string key="RemainingPlayersEnd">
     <value>Penduduk Kampung Misteri yang masih tinggal, watak, dan pasukan:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} telah mengajak kamu untuk mengajar {1} tentang raver dan hipster.</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} telah dihantar untuk menghasut, dan menghasut {1}... tetapi dia merupakan seorang OTAI! {0} dihumban ke telaga misteri.</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} datang ke rumah anda semalam, bersedia untuk meghasut anda menyertai tarian pelik... Tetapi anda mengambil rotan dan memukul {1}, salah seorang budak raver, dan menghumbannya ke dalam telaga misteri.</value>
   </string>
   <string key="CultConvertYou">
     <value>Anda tertarik dengan pendekatan raver dan hipster yang diberikan kepada anda. Kini anda menjadi sebahagian daripada mereka.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Budak Raver/Hipster: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} telah menyertai Budak Raver/Hipster!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} telah di hantar untuk mengajarkan tarian raver kepada {1}... tetapi dia tiada sesiapa di rumah!</value>
   </string>
@@ -413,7 +413,7 @@
     <!-- 0 - target name -->
     <value>Anda cuba untuk memburu {0}, tetapi dia telah hilang!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Anda masuk ke dalam rumah {0} dan mendapati dia sedang melakukan tarian yang pelik. Anda mengeluarkan rotan lalu memukul budak raver dan kemudiannya menghumban ke dia kedalam telaga misteri.</value>
   </string>
@@ -430,7 +430,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} telah hilang! dalam keadan marah, anda menyertai Orang Minyak! Rakan anda adalah: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>Orang Kampung 👱</value>
@@ -477,10 +477,10 @@
   <string key="ApprenticeSeer">
     <value>Wartawan Pelatih 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Budak Hipster/Raver 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Otai 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -512,7 +512,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Ahli terbaru anda telah menuju ke rumah {0} untuk mengajak jadi ahli raver, tetapi dia telah melarikan diri secara tiba-tiba. Sotong bergelimpahan dan video yang cuba ditularkan belum sempat dimuat naik...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -694,12 +694,12 @@
     <value>Kamu cuba menyerang {0} tetapi dia dijaga oleh Pak Guard yang berpengalaman...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Budak Raver/Hipster menghantar {0} ke rumah {1} untuk dijadikan rakan raver. Ternyata {1} tidak suka lalu mengenakan jampi keatas {0}. {0} pon pergi ke telaga misteri sambil bernyanyi.. 'Beginilah nasib diriku yang malang, oh tuhan..'</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Budak Raver/Hipster menghantar {0} ke rumah {1} untuk dijadikan rakan raver. Tanpa diduga {0} tercampak ke seluruh kawasan rumah itu lalu menghilang. Gilalah, macam tak percaya....</value>
     <value>{0} cuba menyelinap masuk ke rumah {1}. Tiba-tiba rumah tersebut terkunci keseluruhan. Entah macam mana {0} terbang menghentam syiling rumah dan dinding rumah lalu menghilang.</value>
@@ -724,7 +724,7 @@
     <value>{0} telah hilang, dan kamu berubah menjadi seperti dirinya.  Rakan RELA kamu adalah: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Hantu Raya {0} bertukar menjadi seperti anda. Seorang Budak Raver/Hipster! Bhahahaa!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1282,7 +1282,7 @@
   <string key="BlacksmithKilled">
     <value>Nampaknya {0}, seorang bomoh tidak bernasib baik. Daun kemenyan serta rempah kunyit bertaburan. Daun sireh menutupi jasad {0}. Nampaknya Pontinak tidak suka orang yang masuk ke alam mistik...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Mayat {0} dijumpai dengan mp3 lagu raver masih terpasang. Pontinak menyerang lagi, tidak mengira budak muda mahupun orang tua yang sudah berumur! {0} seorang budak Raver/Hipster.</value>
   </string>
   <string key="CupidKilled">
@@ -1320,12 +1320,12 @@
     <value>Kelihatan orang yang paling berpengaruh {0}, Otai, tidak memunculkan dirinya. Memperlakukan Pontianak sebagai Budak Hipster/Raver bukanlah idea yang bagus...</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Nampaknya orang Minyak mahu bertaubat untuk malam ini, tetapi {0}, ahli baru Budak Hipster/Raver mencetuskan masalah. Kepala {0} dilumur dengan minyak, sebelum di ratah.!</value>
     <value>Budak Hipster/Raver menghadapi masalah. Ahli terbaru mereka bersungguh-sungguh untuk merekrut sekutu raver baru, mereka melawat orang minyak semalam ketika orang minyak duduk di rumah. Orang minyak mendapati {0} sangat sesuai untuk dijadikan mangsa. Malang buat {0}, orang minyak tidak berminat untuk menyertai mereka.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>Budak Hipster/Raver ingat mereka boleh mempengaruhi orang baru tetapi mereka silap! {0}, seorang Budak Hipster/Raver tercincang dah diletakkan dekat pohon buluh! Anehnya telefon yang berbunyi lagu Hipster/Raver turut berbunyi.</value>
 	<value>Malam semalam Budak Hipster/Raver cuba menghasut penduduk kampung tetapi ahli terbaru cuba untuk menghasut Pontianak. Jasad {0} ditinggalkan di pohon buluh.</value>
   </string>
@@ -1349,8 +1349,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Mengetahui hanya {0} masih hidup, {1} mencari masa yang sesuai untuk bunuh  {0}. Menyingkar seorang penduduk kampung agak mudah bagi {1}, yang tinggal jasad {0} pemburu hantu bergelimpangan.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} dan {0} berjalan panas. Nampak gelagat tarian raver di lakukan oleh {0}, otai mengeluarkan rotan ke arah {1} menyebabkan dia lari tanpa sempat menoleh belakang meninggalkan kampung.</value>
   </string>
 
@@ -1564,13 +1564,13 @@
   </string>
 
   <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>Anda merupakan Pesara Tentera ☮️. Anda boleh mengarahkan semua supaya tidak melakukan hukuman. Ini boleh berlaku sekali dalam satu pusingan permainan.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>Pesara Tentera ☮️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>Pesara Tentera ☮️ boleh mengarahkan semua supaya tidak melakukan hukuman. Ini boleh berlaku sekali dalam satu pusingan permainan.</value>
   </string>
 
@@ -1597,14 +1597,14 @@
     <value>Secara lalai, Si Psiko 😈 akan menggunakan watak orang lain dan menjadikan orang itu sebagai Orang Kampung biasa.\nJika [Full Thief] mode dibuka, ia berpeluang 50% tukar watak dengan pemain lain setiap malam, Jika berjaya, pemain itu menjadi Si Psiko yang baru dan sambung watak tersebut!</value>
   </string>
   
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Tekan butang ini untuk semua pemain tidak mengundi!</value>
   </string>
-  <string key="PacifistNoLynch">
-  <!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
     <value>Sebagai Pesara Tentera ☮️, {0}, memberikan kata-kata semangat, pengalaman dan memberikan keyakinan terhadap kepercayaan orang kampung. Kesan daripada pengalamannya, tiada yang diundi menerima hukuman!</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>Oleh kerana Pesara Tentera ☮️ memberikan keyakinan kepada orang kampung, tiada yang akan dihukum ke telaga misteri!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1652,8 +1652,8 @@
     <value>Rakan RELA anda (jika ada) adalah: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} bukan lagi rakan menari anda. Mulai sekarang ,{1} menjadi Budak Raver/Hipster, seperti kamu!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1710,17 +1710,17 @@
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Aneh... Kali kedua perbincangan Hipster/Raver, anda menyadari {0} telah tiada! Apa yang berlaku sebenarnya??</value>
   </string>
   
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
 	<value>Elakkan Undian!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
 	<value>Hari ini tiada hukuman setelah semua mendengar kata-kata Pesara Tentera!</value>
   </string>
   

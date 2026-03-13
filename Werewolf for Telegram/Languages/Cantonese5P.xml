@@ -186,10 +186,10 @@
 	<string key="RoleInfoApprenticeSeer">
 		<value>尔系學徒先G,,先G歹匕左或者入左牙⻖教尒就會頂佢個位離做.</value>
 	</string>
-	<string key="RoleInfoCultist">
+	<string key="RoleInfoZombie">
 		<value>尔系牙⻖教魔徒,,每晚尒刀可以拉一个人入教,,到最後所有人刀系教友就巧kai針^_^．.*]]</value>
 	</string>
-	<string key="RoleInfoCultistHunter">
+	<string key="RoleInfoZombieHunter">
 		<value>尔系驅魔人,,每晚尒刀可以去一个人屋企,,如果佢系牙⻖教魔徒,,尒會杀殳左佢.如果佢地離傳尒教,,最遲入教果個教友就會歹匕.</value>
 	</string>
 	<string key="LynchTime">
@@ -246,7 +246,7 @@
 	<string key="DefaultEaten">
 		<value>村man一起身就聞到陣屍臭味,,佢地跟住陣味離行,,結果發現成個豬欄刀系【＜333等伱_{0}】既內臟,,身首異處.\n【{1}】</value>
 	</string>
-	<string key="HunterKilledCultist">
+	<string key="HunterKilledZombie">
 		<value>一陣強烈既臭味响【人帥"--＊沒有罪』{0}】間屋度傳出離.望入去,,尒地見到一條屍瞓左系個黑闇祭壇既前面. . . . 驅魔人又杀殳左一个魔徒．.*]]</value>
 	</string>
 	<string key="NoAttack">
@@ -340,13 +340,13 @@
 	<string key="RemainingPlayersEnd">
 		<value>生還挽家名單、身亻分同隊伍︰</value>
 	</string>
-	<string key="CultistVotedConvert">
+	<string key="ZombieVotedConvert">
 		<value>【{0}】話想感召【{1}】．.*]]</value>
 	</string>
-	<string key="CultConvertCultHunter">
+	<string key="CultConvertZombieHunter">
 		<value>【{0}】走撚左去傳教,,但原來【］］孤獨＊{1}●'】系驅魔人,,傳教失敗仲斷送埋性命．.*]]</value>
 	</string>
-	<string key="CultHunterKilledCultVisit">
+	<string key="ZombieHunterKilledCultVisit">
 		<value>＊【{0}／一直都在_●'[[】諗住離傳尒教,,點知被尒一刀捅歹匕左．.*]]仲有 {1} 個牙⻖教魔徒.</value>
 	</string>
 	<string key="CultConvertYou">
@@ -367,7 +367,7 @@
 	<string key="HunterVisitDead">
 		<value>【{0}】早就歹匕左．.*]]</value>
 	</string>
-	<string key="HunterFindCultist">
+	<string key="HunterFindZombie">
 		<value>尒琴晚入左【{0}】屋企,,見佢系度進行緊dd不知名儀式?**'';;;;;')))尒拎起尒長劍,,一野劈落去,,了結左佢既性命.</value>
 	</string>
 	<string key="HunterFailedToFind">
@@ -379,7 +379,7 @@
 	<string key="WildChildTransform">
 		<value>短命禾重【{0}】歹匕左,,尒變左做犭良.尒班犭良友︰【{1}】</value>
 	</string>
-	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 	<string key="Villager">
 		<value>村man 👱</value>
 	</string>
@@ -425,10 +425,10 @@
 	<string key="ApprenticeSeer">
 		<value>學徒先G 🙇</value>
 	</string>
-	<string key="Cultist">
+	<string key="Zombie">
 		<value>牙⻖教魔徒 👤</value>
 	</string>
-	<string key="CultistHunter">
+	<string key="ZombieHunter">
 		<value>驅魔人 💂</value>
 	</string>
 	<!-- These are for the player list -->
@@ -1165,7 +1165,7 @@
 	<string key="BlacksmithKilled">
 		<value>睇離【{0}】琴晚刀幾吾好彩.被人釘撚左响張工作台上面,,佢既頭、雙手同雙腳,,俾五把新鑄既刀,,釘到實一實.鐵匠間屋成個武器庫咁,,好可能除左兩粒腎之外,,剎仁空手仲拎左dd新挽具返去慢慢挽. . . . 【鐵匠 ⚒】歹匕左 T_T.</value>
 	</string>
-	<string key="CultistKilled">
+	<string key="ZombieKilled">
 		<value>【{0}】歹匕撚左响個黑闇祭壇度,,身上佈滿幾百個窿,,心臟位置仲插住一支蠟蠋臺,,應該系俾人用蠟蠋臺無限穿插至歹匕.又一个被剎仁空手杀殳既受害人,,無分語言、膚色同宗教,,全部刀系剎仁空手既獵物.【牙⻖教魔徒 👤】歹匕左 T_T.</value>
 	</string>
 	<string key="CupidKilled">
@@ -1198,10 +1198,10 @@
 	<string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
 		<value>天一光,,村man就發現左【{0}】條屍散修修咁,,浸左系村個水池入面.睇真dd,,乜原來條頸掛住辟牙⻖用既十字架同大蒜,,隔尼仲有把用離斬妖除魔既黑刀.真系陰鳩公囉,,牙⻖教魔徒又杀殳吾撚到,,仲要輸埋兩粒腎.【驅魔人 💂】歹匕左 T_T.</value>
 	</string>
-	<string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+	<string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
 		<value>吾知系咪拜神拜到腦裝屎,,琴晚【{0}】拎住果牙⻖神像鳩鳩下咁衝左入間犭良屋度,,仲指住其中一隻犭良講「比利卡比利那那,,撲撲利那比比路多」.本來班犭良刀未夠鐘嗌肚餓既,,見有筍里予送上門,,轉個頭就將e條ON9囝咬到血肉模糊.【牙⻖教魔徒 👤】歹匕左 T_T.</value>
 	</string>
-	<string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+	<string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
 		<value>琴晚【{0}】仲諗住捉人返總部,,舉行神聖既性交洗禮,,點撚知捉着個癲亻老,,傳吾撚到教之餘連閪刀屌吾到,,最慘系連條命刀矛撚埋,,剩返條無左兩粒腎既鹹魚趴左响座黑暗祭壇前面.【牙⻖教魔徒 👤】歹匕左 T_T.</value>
 	</string>
 	<string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1223,8 +1223,8 @@
 		<!--{0} = hunter's name, {1} = wolf's name-->
 		<value>正當全村歹匕撚晒,,得返失眠既【{0}】响度戇on999咁挽佢碌炮,,【{1}】靜奚隹奚隹咁潛入左佢屋企,,睇準佢自high到完全失去戒心之際,,一啖咬撚左佢個頭落離,,真系陰鳩公囉,,明明有得射刀射吾撚出【獵人 🎯】歹匕左 T_T</value>
 	</string>
-	<string key="CHKillsCultistEnd">
-		<!--{0} = last cultist's name, {1} = CH's name -->
+	<string key="CHKillsZombieEnd">
+		<!--{0} = last Zombie's name, {1} = CH's name -->
 		<value>清晨時分總系帶住少少既神秘,,有兩個身影忽然响教堂出面閃過,,【{0}】正想拎個綠毛牙⻖神令出離開壇作法,,【{1}】即刻响底褲抽左當年明太祖賜落離既尚方寶劍出離,,大喝一句：「仲吾比莪捉到尒個歹匕臭閪,,仆街拉尒．.*]]」劍光一閃,,剩低既就得翻一地綠色血泊同條咸魚.【牙⻖教魔徒 👤】歹匕左 T_T.
 		</value>
 		<value>最後,,全村歹匕剩兩個人：一个信牙⻖教信到上撚晒腦既牙⻖教徒；同一个打歹匕刀吾會信教既驅魔人.【{0}】好希望將世上唯一既真神介紹比【{1}】,,一講就講左三粒鐘.原本【{1}】見佢系自己以外既最後一个村man,,刀諗住放佢一馬.殊不知【{0}】實在系太撚煩,,竟然無拉拉開口唱「Only You」,,仲諗住唱到佢信為止,,不勝其煩既【{1}】於是拎起佢把劍,,一里予插落佢把口到.「舒服晒.」【牙⻖教魔徒 👤】歹匕左 T_T.</value>
@@ -1497,13 +1497,13 @@
 	</string>
 
 	<!-- NOT IMPLEMENTED YET -->
-	<string key="RoleInfoPacifist">
+	<string key="RoleInfoImam">
 		<value>你系和事亻老，和平理性非暴力系你做人ge宗旨，最憎投票殺人制度，試問呢個世界有咩事唔能夠和平解決呢？你可以向大家發表你嘅精彩演說，說服大家唔好投票殺人一次。</value>
 	</string>
-	<string key="Pacifist">
+	<string key="Imam">
 		<value>和事亻老 ☮️</value>
 	</string>
-	<string key="AboutPacifist">
+	<string key="AboutImam">
 		<value>和事亻老，又名架両，反對邪惡ge殺人投票。你可以向大家發表你嘅精彩演說，說服大家唔好投票殺人一次。</value>
 	</string>
 
@@ -1529,14 +1529,14 @@
 	<string key="AboutThief">
 		<value>偷渡客，為左生存，只好趁夜晚將人地ge身份偷過泥。偷完之後，就會獲得果個人ge身份同能力。而果個人就會因為失去身份，成為偷渡客。到最後，冰個系偷渡客就冰個輸！</value>
 	</string>
-	<string key="AskPacifist">
+	<string key="AskImam">
 		<value>你想唔想今晚搞個和理非非集會，等村民暫時忘記萬惡ge投死人制度，把握時間好好討論一吓，到底點樣先可以解決村民離奇死亡ge問題？</value>
 	</string>
-	<string key="PacifistNoLynch">
-		<!-- {0} - Pacifist's name -->
+	<string key="ImamNoLynch">
+		<!-- {0} - Imam's name -->
 		<value>和事亻老【{0}】企左喺個台到喊晒口咁講，話唔希望大家喺未有充足ge討論之前亂咁投票，傷害無辜，想取消今晚ge投票大會。</value>
 	</string>
-	<string key="PacifistNoLynchNow">
+	<string key="ImamNoLynchNow">
 		<value>大家聽過和事亻老ge一番肺腑之言後，覺得好有道理，所以取消左今日ge投票大會。</value>
 	</string>
 	<string key="WolvesTriedToEatWiseElder">
@@ -1584,8 +1584,8 @@
 		<value>你成為了共濟會員，你ge共濟之友︰【{0}】</value>
 	</string>
 	<string key="ThiefToCult">
-		<!-- 0 - old cultist's name -->
-		<!-- 1 - new cultist's name -->
+		<!-- 0 - old Zombie's name -->
+		<!-- 1 - new Zombie's name -->
 		<value>【{0}】唔再系你geｆｄ子，而【{1}】就系你新ge教友。</value>
 	</string>
 	<string key="ThiefToWolf">
@@ -1638,13 +1638,13 @@
 	</string>
 	
 	<!--  ADDED 2018JUL18 -->
-	<string key="CultistBitten">
-		<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+	<string key="ZombieBitten">
+		<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 		<value>當你地傾緊今晚同邊個傳教嗰陣，先醒起原來【{0}】成晚都唔喺到！到底佢去咗邊？？😱😱😱</value>
 	</string>
 
 	<string key="Peace">
-		<!-- Used for Pacifist's button -->
+		<!-- Used for Imam's button -->
 		<value>護衛人類，挽救地球，看守這宇宙</value>
 		<value>大家嘅笑容由我來守護！</value>
 		<value>降臨吧！和平嘅晚上！</value>
@@ -1655,7 +1655,7 @@
 		<value>依家唔做，等幾時？</value>
 	</string>
 	<string key="LynchPeaceTimeout">
-		<!-- Used in PM if the pacifist uses his ability during lynch phase -->
+		<!-- Used in PM if the Imam uses his ability during lynch phase -->
 		<value>我宣佈︰今晚驚心動魄緊張刺激嘅投票環節，已經唔存在啦！</value>
 	</string>
 

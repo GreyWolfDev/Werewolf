@@ -187,10 +187,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Você é a Médium, você no momento é só um aprendiz no jogo das cartas. Porém se a Cartomante morrer, você assume o lugar dela e vira a nova Cartomante. Você é do time dos memes.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Você é um membro da turpe dos portugueses. Como não fazem mêmes bons, vocês tentam converter os outros pra eles pararem de fazer mêmes bons.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Você é o Carlos Alberto de Nóbrega e odeia os portugueses por eles criarem piadas piores que as sua. Toda noite você pode visitar um jogador, se ele for um português, você desliga ele do mundo do memes.</value>
   </string>
   <string key="LynchTime" >
@@ -235,7 +235,7 @@
   <string key="DefaultEaten" >
     <value>À medida que mais um dia se inicia no mundo dos memes, eles acabam por notar a falta de alguém.  Eles olham o histórico para encontrar {0} desligado(a) a noite pelo bando dos Bichos Piruleta.  PIRUUUUULLLETA {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Parece que {0} foi desligado... Os membros do mundo dos memes decidem então entrar no seu histórico e encontram várias piadas da praça é nossa e um bilhete de ódio a Portugal deixando bem claro o que houve... Um português foi desconectado pelo Carlos Alberto de Nóbrega!</value>
   </string>
   <string key="NoAttack" >
@@ -319,13 +319,13 @@
   <string key="RemainingPlayersEnd">
     <value>Jogadores restantes, papéis e lado:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} quer colocar {1} no lado ruim das piadas.</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} foi enviado(a) para fazer o trabalho sujo e trazer {1} para o lado negro das piadas... Entretanto, ele era o Carlos Alberto de Nóbrega, SURPRISE, ele tinha um interceptor que desconectou o Português do mundo dos memes! {0} está desligado(a)!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} foi ao seu banco de dados na noite passada, pronto(a) para trazer você ao lado negro das piadas....  Mas você tinha um interceptor especial só pra desligar esse tipo de gente. Um português está desligado... {1} restante(s)!</value>
   </string>
   <string key="CultConvertYou">
@@ -346,7 +346,7 @@
   <string key="HunterVisitDead">
     <value>Você tentou punir {0} por ter suspeitas de que ele era um Português. Porém ao chegar no perfil dessa pessoa ela estava desconectada.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Você chega ao banco de dados e percebe que lá ha vários memes e piadas ruins no perfil de {0}. Logo você descobre que {0} é um Português e deve ser desconectado.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -358,7 +358,7 @@
   <string key="WildChildTransform">
     <value>É {0}, parece que teu exemplo foi desconectado e agora é você quem toma conta dos Bicho Piruleta, afinal, você pertence a eles agora. Seu bando é: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>um Curtidor 👱</value>
   </string>
@@ -404,10 +404,10 @@
   <string key="ApprenticeSeer">
     <value>um Médium 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>um Português 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>o Carlos Alberto de Nobrega 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -1135,7 +1135,7 @@
   <string key="BlacksmithKilled">
     <value>Parece que {0}, o Trump, é bem azarado. Vários vírus foram encontrados no seu sistema. O Hater conseguiu de novo!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>De manhã todos encontram o perfil de {0} exterminado nas redes sociais. O Hater conseguiu de novo! A trupe dos Portugueses vai sentir falta de {0}...</value>
   </string>
   <string key="CupidKilled">
@@ -1168,10 +1168,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>A população do mundo dos memes acordou essa manhã só para olhar o Twitter e perceber que, {0}, O Carlos Alberto de Nóbrega, foi desligado. O Hater não perdoou nem quem faz  piadas ruins. Realmente o Hater está louco para dominar esse mundo!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Péssima escolha dos Portugueses ao tentar trazer um Bicho Piruleta pro lado negro das piadas. {0} está desligado, pois os Bichos Piruleta não gostam muito de Portugueses também. PIRUUUULLEETAAA!</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Ontem a noite a trupe dos Portugueses decidiu tentar trazer pro lado negro das piadas a única pessoa mais estranha do que eles, o Hater, e por causa disso, {0} foi desligado ao som de uma bela música clássica. O Hater conseguiu de novo!</value>
   </string>
   <string key="GAGuardedKiller">

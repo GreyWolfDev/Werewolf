@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
   <!-- Huge thanks to: Jorge, Rani, Fenrir, Kath, Poolitzer and everyone else who helped me finishing this language file // developed by @skollwolf-->
     <!---Beginning of the Rolelist: 
-    The Spirit of Christmas = Cultist Hunter
+    The Spirit of Christmas = Zombie Hunter
     Gingerbread Man = Mason
     The Nutcracker = Town Hunter
-    Non-Believer = Cultist
+    Non-Believer = Zombie
     Buddy the Elf = Clumsy
     The Grinch = Tanner
     Krampus = Serial Killer 
@@ -33,7 +33,7 @@
     Gnome = Lycan
     Ice Sculpturist = WolfMan
     Arctic Fox = Thief
-    Christmas Tree Decorator = Pacifist
+    Christmas Tree Decorator = Imam
     Little Girl = Wise Elder
     Street Santa = Oracle
     Christmas Carol singer = Sandman
@@ -271,10 +271,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>You are Santa's Little Helper 👲 (🙇). You are on Team Santa. But if Santa dies, you will become Santa.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>You are a Non-Believer 👻 (👤). Your goal is to turn all other players (except Snowmen and Krampus) into Non-Believers. If at the end of the game, all the living players are Non-Believers, you all win.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>You are the Spirit of Christmas 🎄 (💂) and your job is to find the Non-Believers 👻 (👤). If the Non-Believers try to convert you, their newest member will die. Each night you may pick a player to hunt and if they are Non-Believers, they are going to die.</value>
   </string>
   <string key="LynchTime" >
@@ -332,7 +332,7 @@
     <!-- 1 - victim role -->
     <value>As everyone rises in the morning, they don't hear anything from {0}.  They are searching for {0} and are soon finding his body frozen in the snow. \n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>A noticeable stench is coming from {0}'s house...  the citizens inspect it to find a body lying in front of an xmas sign. A Non-Believer 👻 (👤) has been killed by the Spirit of Christmas 🎄 (💂)!</value>
   </string>
@@ -441,34 +441,34 @@
   <string key="RemainingPlayersEnd">
     <value>Remaining living players, roles, and team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} has voted to turn {1} into a Non-Believer</value>
   </string>
-   <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+   <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} was sent to do your dirty work, and tried to turn {1} into a Non-Believer... however, {1} is the Spirit of Christmas! {0} is dead!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} came to your house last night, ready to turn you into a Non-Believer....  you enlightened them so much with your faith in Christmas that they died of it.  A Non-Believer is dead... {1} remain!</value>
   </string>
   <string key="CultConvertYou">
     <value>The Non-Believers 👻 (👤) have turned you to their order!  You are now a Non-Believer as well.  Every other night, you will have a chance to turn another player into a Non-Believer too.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Non-Believers: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} has joined the Non-Believers 👻 (👤)!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} was sent to do your dirty work, and turn {1} into a Non-Believer... but no one was at home!</value>
   </string>
@@ -479,9 +479,9 @@
     <!-- 0 - target name -->
     <value>You went to visit {0} to check their faith. You see {0}'s ungarnished, forlorn house standing out from far away...</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
-    <value>You go into {0}'s house and find them praying before an altar to some unknown god. You quickly run your sword right through the evil cultist.</value>
+    <value>You go into {0}'s house and find them praying before an altar to some unknown god. You quickly run your sword right through the evil Zombie.</value>
   </string>
   <string key="HunterFailedToFind">
     <!-- 0 - target name -->
@@ -496,7 +496,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} has died! In your rage, you have become a Snowman! Your new teammates are: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>Elf 👱👱‍♀️ (👱)</value>
@@ -543,10 +543,10 @@
   <string key="ApprenticeSeer">
     <value>Santa's Little Helper 👲 (🙇)</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Non-Believer 👻 (👤)</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>The Spirit of Christmas 🎄 (💂)</value>
   </string>
   <!-- These are for the player list -->
@@ -578,7 +578,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Your newest member heads over to {0}'s house to turn them into a Non-Believer, but instead finds the house a complete wreck, ice everywhere and some parts of the evil Snowmen were left behind there as a warning...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -759,12 +759,12 @@
     <value>You tried to collect {0}'s liver for your collection, but you were fought off by Jack Skellington 💀 (👼)! No liver for you tonight...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>The Non-Believers sent {0} to try to convert {1}, but instead a shot rings out and {0}'s body comes flying out of the window! {0} is dead....</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
      <value>The Non-Believers 👻 (👤) sent {0} out to try to turn {1} into one of them, but instead {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....Use /nextgame to get notified when the next game is starting</value>
     <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} plunges the knife deep into {0}'s organs in alphabetical order, cackling the entire time! {0} is dead. D: Use /nextgame to get notified when the next game is starting</value>
@@ -789,7 +789,7 @@
     <value>{0} has died, and you transform into a mason.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>The Prancer 🌟 (🎭) {0} has now become a Non-Believer 👻 (👤), just like you!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1326,7 +1326,7 @@
   <string key="BlacksmithKilled">
     <value>Seems like {0}, The Weatherman 👨‍💼 (⚒), couldn’t have predicted this. His insides were found all over the freshly laid snow. Maybe Krampus didn’t like the forecast.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} was found laying down in the deep snow. Krampus has struck again! Guess it doesn’t care if you believe in Santa or not! {0} was a Non-Believer 👻 (👤).</value>
   </string>
   <string key="CupidKilled">
@@ -1363,12 +1363,12 @@
     <value>The body of {0}, the Spirit of Christmas 🎄 (💂), was found in the middle of town, albeit cut precisely into a hundred pieces. Checking if Krampus was believing on Christmas doesn't seem to be the best idea that {0} had...</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>While it seems that the Snowmen took a break this night, the Non-Believers didn't and so went {0} out to do his job and convert another citizen of the North Pole into a Non-Believer, but that wasn't just a Citizen like everyone else, it was a Snowman. {0} tried to escape as fast as possible, but the breath of the Snowman was faster and so anticipated {0} a cold death.</value>
     <value>The last night the Non-Believers tried to turn someone into one of them, but they didn't recognized that someone is there which hates Christmas even more than them. {0} payed that mistake with the life.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>{0} one of the Non-Believers thought they could get another citizen away from Christmas and the faith in it, but oh no they came into the wrong house and got trapped by Krampus. Next time choose wisely before you try to convert the wrong citizen.</value>
     <value>Last night, the cult tried to convert the one person in the village crazier than they are. Their newest member tried to convert the Serial Killer, and the Serial Killer made a new piece of art in the town square of {0}'s internal organs.</value>
   </string>
@@ -1389,8 +1389,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>As {0}, the last remaining citizen of the North Pole, tried to keep the delivery of the Christmas presents ongoing, {1}, a Snowman, suddenly came around the corner and froze them. The cruel Snowmen successfully destroyed Christmas.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} and {0} go out in daylight. As {1} sees how {0} secretly tries to destroy the Christmas presents for all people all over the world, they pull him away and let {0} watch as the faith on Christmas never can be destroyed. Again has {1} shown that Christmas will always existing. Christmas got saved, but what is that, a new thread is coming in, use /startgame or /startchaos to find out how to stop this new thread.</value>
   </string>
   <!-- Extend time -->
@@ -1656,13 +1656,13 @@
   <string key="AboutSandman">
     <value>You are the Christmas Carol singer! Your voice is so melodic that makes everyone relax so much they can’t resist sleeping like a Christmas trunk for one night, temporarily losing the ability of acting.</value>
   </string>
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>You are the Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️). You can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>the Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️)</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>The Christmas Tree Decorator can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
   </string>
   <string key="RoleInfoWiseElder">
@@ -1688,15 +1688,15 @@ If the Black Pete or the Nutcracker kills you, they will cry in great grief and 
   <string key="AboutThief">
     <value>You are the Arctic Fox! As a little rascal that you are, you can strip a player from its role, this player will be now an Artic Fox themselves.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new arctic fox and continues with the theft!</value>
   </string>
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Hit this button if you want to show your tree to the whole village and let its beauty stop the burning.</value>
   </string>
-  <string key="PacifistNoLynch">
+  <string key="ImamNoLynch">
     <value>The Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️), {0}, points towards the christmas tree in the middle of the village and as you see its glory, no one can burn anyone today.</value>
     <value>As the Christmas Tree is finished, huge thanks to the Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️), {0}, everyone dances in great joy around the tree and decided not to burn anyone today.</value>
     <value>As the Christmas Tree is put up by the Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️), {0}, everyone gathers inside host's house, they are overwhelmed by hype of the party and forget about burning anyone today.</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>Because of the glorious tree, decorated by the Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️), won't be any burning today!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1742,8 +1742,8 @@ If the Black Pete or the Nutcracker kills you, they will cry in great grief and 
     <value>Your teammates (if any) are: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} is no longer your teammate and {1} has now become a Non-Believer, just like you!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1800,12 +1800,12 @@ If the Black Pete or the Nutcracker kills you, they will cry in great grief and 
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
   </string>
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
 	<value>🌲➡️🎄</value>
   	<value>Enchant 🎄!</value>
   	<value>Power ⚡️🎄 on!</value>
@@ -1814,7 +1814,7 @@ If the Black Pete or the Nutcracker kills you, they will cry in great grief and 
   	<value>Organise a parade 💃🕺 around 🎄</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
   	<value>The fire set up for burning people died out since everyone gathered at the Christmas Tree, ignoring the burning vote.</value>
   	<value>"Burning people is no fun, let's dance around the Christmas Tree!" says the Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️) suddenly, so everyone put out the fire for burning.</value>
   	<value>Suddenly, the Christmas Tree Decorator 🧙🏻‍♀️/🧙🏻‍♂️(☮️) puts out the fire and a Chrtistmas Tree stands tall on the remains of the fire, everyone has a fun snowball fight instead of burning.</value>
@@ -1908,7 +1908,7 @@ If the Black Pete or the Nutcracker kills you, they will cry in great grief and 
   <string key="ChemistFrozen">
   <value>You get your cookie trays and milk glasses, but a strong gust of wind blew in from the windows. You rush to close them before Stormella's ❄️👸 (🐺☃️) snow storm gets inside your bakery. Looks like no one will be have the chance to taste your brand new recipe tonight. You sigh, wishing the sun would come up sooner... Good thing you're thawed now, though.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
   <value>As you don your cloak to protect you from the North Pole’s weather, a gust of wind blows in from the doorway. Stormella's ❄️👸 (🐺☃️) snow storm arrived earlier than you expected. Your fellow Non-Believers from around the world call you to schedule your activity of decreasing Christmas’ spirit around the globe, but they end up laughing at your demise. Leaving you home and unable to go out, they promise that they'll make good progress tonight. Now that the snow storm has ceased, you leave the house, cringing in embarrassment.</value>
   </string>
   <string key="CHFrozen">
@@ -2085,7 +2085,7 @@ If the Black Pete or the Nutcracker kills you, they will cry in great grief and 
   <string key="HarlotFellPublic">
   <value>As Mary Claus 💃🏻 (💋) {0} went home after a night of fun and some warm chocolate, they tried to take a shortcut through the local toy factory. They must have been a bit tired from that all-nighter that they didn't see the dozen toy parts laying on the ground until they stepped on one of them and immediately fell to the ground into a fireplace nearby. Maybe they should have taken that night to have some beauty sleep as they previously considered that day!</value>
   </string>
-  <string key="CultistFellPublic">
+  <string key="ZombieFellPublic">
   <value>The non-believers 👻 (👤) tried to burn the toy factory, but as {0} led the group through its entrance, a sharp sword from a brilliant toy knight made its way up his foot! They screamed when they fell into a fireplace and the other non-believers fled in terror...</value>
   </string>
   <string key="ThiefFellPublic">
@@ -2166,7 +2166,7 @@ If the Black Pete or the Nutcracker kills you, they will cry in great grief and 
   <string key="ThiefToSnowWolf">
     <value>{0} is no longer your teammate and {1} has now become the new Stormella ❄ 👸 (🐺 ☃ )</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value>The Non-Believers 👻 (👤 ) are: {0}</value>
   </string>
   <string key="ArsonistTeamEnd">

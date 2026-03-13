@@ -179,10 +179,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Você é a unidade R2 Reserva. Caso o dróide seja destruído, você tomará seu lugar como R2. PIPIPI WAAAAAAAAAAAAAAAAA </value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Você é um membro dos Jedi "Renegados". Sensitivos à Força, frequentemente ex-Jedi, que optaram por negar o lado luminoso da Força e seguir o lado sombrio, vocês acreditam que os Jedi desequilibram a Força. Entre as batalhas, você poderá escolher alguém para converter aos Renegados. Se todos os jogadores restantes ao final do jogo forem Jedi Negros, eles vencem!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >O Lado Sombrio está infiltrado na República atraindo assim cada vez mais pessoas, e você foi incumbido de proteger o Lado Luminoso. Após a batalha você poderá escolher um(a) jogador(a).  Se ele(a) for um Jedi Sombrio, ele(a) morre.  Caso o Lado Sombrio tente te converter, o membro mais recente morre. Você é o Jedi Inquisidor.</value>
   </string>
   <string key="LynchTime" >
@@ -226,7 +226,7 @@
   <string key="DefaultEaten" >
     <value>Após o calor da batalha, todos haviam ficado satisfeitos com o resultado positivo para a República. {0} comemorava com felicidade quando um Sabre de Luz lhe atravessou o peito com crueldade. O Sith responsável estava encapuzado e fugiu rapidamente. {0} cai de joelhos, sem vida. {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Durante uma batalha feroz entre dróides e clones, um Jedi desfere um golpe contra um indivíduo. Este, se esquiva, apanha um blaster do chão e dispara contra o Jedi. Este, sendo mais rápido, reflete o tiro de blaster que volta para o atirador, o atingindo na cabeça e o deixando sem vida no chão. {0} era um Jedi Sombrio, e agora está morto.</value>
   </string>
   <string key="NoAttack" >
@@ -325,13 +325,13 @@
   <string key="RemainingPlayersEnd">
     <value>Jogadores restantes, papéis e lado:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} votou para converter {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} foi enviado(a) para converter {1}... entretanto, ele(a) era o Jedi Inquisidor! {0} está morto(a)!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} foi em seus domínios, pronto(a) para te converter....  mas você o(a) atravessou com seu Sabre de Luz.  Um Jedi Negro está morto... {1} restante(s)!</value>
   </string>
   <string key="CultConvertYou">
@@ -352,7 +352,7 @@
   <string key="HunterVisitDead">
     <value>Você foi averiguar {0}, mas ele(a) já estava morto(a)!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>O corpo de {0} aparece caído pela manhã nos corredores da cidade de Coruscant. Parece que o Jedi Inquisidor encontrou um Jedi Negro!</value>
   </string>
   <string key="HunterFailedToFind">
@@ -364,7 +364,7 @@
   <string key="WildChildTransform">
     <value>{0}, seu Mestre foi assassinado(a)! Tomado pélo ódio e por desejo de vingança, você se torna um Lord Sith! Seus novos companheiros são: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>um Cidadão de Coruscant 👱</value>
   </string>
@@ -410,10 +410,10 @@
   <string key="ApprenticeSeer">
     <value>a unidade R2 Reserva 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>um Jedi Negro 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>o Jedi Inquisidor 💂</value>
   </string>
   <!-- These are for the player list -->

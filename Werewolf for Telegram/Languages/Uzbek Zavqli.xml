@@ -278,11 +278,11 @@
     <value>Sen Bashoratchi Shogirdisan. Ustozingdan ko'p narsani o'rganib olding. Xatto odamlarni rollarini ham ko'ra olasan. Bashoratchi o'lsa, sen uni vazifasini bajarib boshlaysan.</value>
     <value>Sen yoshligingdan bashoratchi bo'lishni orzu qilgansan. Shuning uchu ham unga shogird tushgansan. Agar bashoratchi o'lsa, sen uni o'rniga o'tirasan.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Sen Sektantsan! Sizlarni o'z hudolaring va g'oyalaring bor. Maqsadlarig esa hammani o'z g'oyalaringa bo'y sundurish. Har tunda sen bir odamni o'z sektangga qo'shib olishing mumkin.  Agar tirik qolganlarning hammasi sektant bo'lsa - sizlar yutasizlar!</value>
     <value>Seni Sektang seni kutayabdi! Hamma g'oyaviy kitoblaring va o'z ilohiy hudolaringni haykalchalchalari tayyor. O'z g'oyalaringa hammani bo'ysundir va g'olib bo'lasan!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Qishloqda yangi Sekta paydo bo'di, u axmoq terorchilarlar odamalarni g'oyalarini buzib ularni yo'ldan urishayabdi. Bor yo'qot ularni!  Har tunda bir odamni tanla, agar u sektant bo'lsa, u o'ladi. Agar ular seni o'zlarini qatorlariga qo'shishmoqchi bo'lishsa,ularning azolaridan biri o'ladi...</value>
     <value>Sekta va uni azolarini topib, qirib tashla! Chunki ular g'oyani buzuvchi yovuz insonlar. Dinni niqob qiluvchi yovuzlar. Har tunda bir odamni tanla, agar u sektant bo'lsa, u o'ladi. Agar ular seni o'zlarini qatorlariga qo'shishmoqchi bo'lishsa, ularning azolaridan biri o'ladi...</value>
   </string>
@@ -349,7 +349,7 @@
     <value>Tongda hamma qandaydir yomon hidni sezishdi...  Hid {0} ni parchalanib yotgan tanasiga olib keldi! Kallasi yo'q... \n{1}.</value>
     <value>NomnomNOMnomNOMNOMnom...  {0} ni tirikligicha yeb ketishgandi! \n{1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>{0} ni uyidan chiqayotgan qo'lansa hid sezildi.  Aholi uning uyiga bordi va yerda qon bilan bulg'angan haykalchani ushlagan o'likka ko'zlari tushdi.</value>
     <value>-1 sektantlar uchun!  Sektantlar ovchisi {0}ga aniq o'q uzdi! Yovuz g'oyali insonlardan biri o'lganidan hamma hursand.</value>
     <value>Tongda o'tkazilgan majlisda hamma {0} ni yoqligini sezib qolishdi. Uni uyiga borsa hamma devorlarga har xil yozuvlar yozib tashalgandiOyna oldida esa uni o'ligiga ko'zlari tushdi.Xatto o'layotganda ham yerga:Meni g'oyam eng oliy-deb yozib ketilgandi.</value>
@@ -458,15 +458,15 @@
   <string key="RemainingPlayersEnd">
     <value>Tirik qolgan o'yinchilar, ularning rollari va guruhlari:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>{0} {1} ni bo'ysundirishga ovoz berdi.</value>
     <value>{0} {1} ni sekta tarkibiga qoshishga ovoz berdi ovoz berdi.</value>
     <value>{0} {1} ni kallasiga g'oyalaringni singdirishga ovoz berdi.</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} {1} ning uyiga o'zining isqirt ishini qilishga va bo'ysundirishga kelgandi... Lekin u Sektantlar ovchisi bo'lib chiqdi!  {0} o'ldi!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} tunda sening oldingga, seni bo'ysundirish uchun keldi...  Lekin sen o'z qilichingni olib bo'ynini uzib tashlading!  {0} o'ldi...  Осталось {1}!</value>
   </string>
   <string key="CultConvertYou">
@@ -491,7 +491,7 @@
     <value>Sen {0} ning uyiga ov qilish uchun borganding, lekin u o'lgan ekan!</value>
     <value>Sen {0} ning uyiga kirib borganding, lekin u o'lik tanasi qonga bulg'angan holda yerda yotardi!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Sen {0} ning uyiga borib va uni qandaydir notanish hudoga sig'inayotganini ko'rding...  Sen tezda uning ichiga qilichingni suqib uni o'ldirding!</value>
   </string>
   <string key="HunterFailedToFind">
@@ -552,10 +552,10 @@
   <string key="ApprenticeSeer">
     <value>Bashoratchi shogirdi 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Sektant 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Sektantlar ovchisi 💂</value>
   </string>
   <string key="PlayersAlive">
@@ -899,10 +899,10 @@ agar qotilni himoya qilsa, 100% o'ladi)</value>
     <value>Fool - Axmoq (tinch fuqaro, o'yin boshida unga Bashoratchi roli ko'rsatiladi, lekin to'g'ri javoblar o'rniga taxminiy rollar ko'rsatiladi)</value>
   </string>
   <string key="AboutCult">
-    <value>Cultist - Sektant (o'yinchi, maqsadi bo'rilarni o'ldirib hamma aholini bo'ysundirish)</value>
+    <value>Zombie - Sektant (o'yinchi, maqsadi bo'rilarni o'ldirib hamma aholini bo'ysundirish)</value>
   </string>
   <string key="AboutCH">
-    <value>Cultist Hunter - Kultistlar ovchisi (tinch fuqaro,tunlari o'yinchilarnikiga boradi;
+    <value>Zombie Hunter - Kultistlar ovchisi (tinch fuqaro,tunlari o'yinchilarnikiga boradi;
 Agar u sektantni yoniga borsa uni o'ldiradi;
 Agar sektantlar uni bo'ysundirmoqchi bo'lsa, ularni ohirgi vakilini o'ldiradi)</value>
   </string>
@@ -1285,7 +1285,7 @@ Agar qotildan kimdir habar olsa so'zsiz o'ladi)</value>
   <string key="BlacksmithKilled">
     <value>Mahalliy temirchi-{0}, judayam omadsiz ekan. 5ta o'tkirlangan pichoqlar uni boshi, qo'li, oyog'iga mixlanib ko'rgazmaga qilib osilib ketgan edi. </value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} qotilning pichog'iga qarshi altar shamdoni bilan o'lganucha urishibdi. Ammo qotil shayton kabi o'ljasini ushlab boynidan kesib tashadi.Qizil qon yerga oqdi. {0} sektant edi.</value>
   </string>
   <string key="CupidKilled">
@@ -1323,13 +1323,13 @@ Agar qotildan kimdir habar olsa so'zsiz o'ladi)</value>
     <value>Sektantlar ovchisi {0} mayda parchalarga bo'lib tashlangan tanasi qishloq markazida topildi. Qotilni sektant emasligini tekshirish shart emasdi.</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Bu safar bo'rilar yaxshi ish qilishga qaror qilishdi va {0} jazolashdi.Sektant bo'rilar tomonidan o'ldirildi.</value>
     <value>Aholini bo'ysundirishga ketishda,sektant {0} bo'rilarga bilan toqnashib qoldi...sektantlar bo'rini yomon ko'rgani kabi bo'rilar ham sektantlarni yomon ko'rishadi.Natija ma'lum... </value>
     <value>Aholini bo'ysundirishga ketishda,sektant {0} bo'rilarga bilan toqnashib qoldi! Bo'rilar sekta yoqtirmaydi,lekin sektantlarni yeyishni yoqtirishadi. Ayniqsa semizginalarini.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>Sekta boshligi buyurug'iga kora bo'ysundirilish yuz berdi. Lekin sekta xato qildi: sektant {0} tanasi nimtalab tashlanib, shahar markaziga tashlab ketilgandi! Sektaning muqaddas yozuvlari oldida pichoq topildi.</value>
     <value>Tunda, sektantlar tomidan ketgan jinnini bo'ysundirishga harakat qilishdi ammo... ammo... Qotil shahar markazida ularning qoni va organlaridan Mona Lizani rasmini chizib ketdi. {0} o'ldi.</value>
   </string>
@@ -1349,8 +1349,8 @@ Agar qotildan kimdir habar olsa so'zsiz o'ladi)</value>
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Faqatgina {0} va {1} tirik qoldi. Kavboy {0} biroz e'tiborini yoqotgandi,katta kuch bilan bo'ri uni bo'ynidan tishladi. Kavboy hech narsa qilolmadi va azob qiynoqda jon taslim qildi...</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>Kunduzi {1} va {0} uchrashdi. Yaltiroq hoch osib olgan {0} ni ko'rib {1} qilichini oldi. "ENDI PARAZITLIK QILAOLMAYSIZLAR"deb sektantni bo'ynini kesib tashladi.</value>
   </string>
   <string key="SecondsAdded">
@@ -1575,14 +1575,14 @@ Agar qotildan kimdir habar olsa so'zsiz o'ladi)</value>
   </string>
 
 <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>Siz Pasifistsiz ☮️. "Hamma tinchlikda yashaymiz"- sizning dunyoparvarlik haqidagi nutqizni hamma eshitadi. Siz o'z tinchlik g'oyangizni oldinga sursangiz barcha aholi gapingizga kirib osha tunda hech kimni osmaydi. Lekin bu hususiyatni faqat bir marta ishlata olasiz. Xavf tufayli odamlar yana yovuzlarni izlab ularni osishni boshlashadi.</value>
     <value>Siz Pasifistsiz ☮️. "Barchamiz tirik jonlarmiz. Bo'rilar ham oddiy och hayvonlar. Bir birimizni osishimiz bu yomon ish" - sizning dildan aytilgan tinchlik haqidagi nutqingizni hamma eshitadi va aholi unga quloq solib osha tunda hech kimni osmaydi. Afsus ertasiga sizni gaplaringizni barcha unutib qo'yadi va yana hamma bir birini osishi davom etadi.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>Pasifist ☮️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>Pasifist o'z kuchini ishlatsa osha tunda hech kim osilmaydi. Bu hususiyatni bir marta ishlatadi.</value>
   </string>
 
@@ -1610,15 +1610,15 @@ Agar qotildan kimdir habar olsa so'zsiz o'ladi)</value>
     <value>Oddiy o'g'ri 😈 Siz birinchi tunda biror o'yinchini tanlab uni ro'lini olib qo'yishingiz mumkin. Ro'lini yo'qotgan o'yinchi esa oddiy dehqonga aylanadi.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
   </string>
 
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Nutq so'zlash uchun ushbu knopkani bosing va barchani bu tunda osmaslikka undang!</value>
   </string>
-  <string key="PacifistNoLynch">
-  <!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
     <value>Pasifist ☮️ - {0}, dunyodagi tinchlik haqidagi nutqini so'zladi va barcha uni dildan aytilgan so'zlariga quloq soldi! Bu tunda hech kim osilmaydi</value>
     <value>Pasifist ☮️ - {0}, tinchlik haqidagi nutqini so'zladi va barcha so'zlariga barchani diliga kirib bordi! Bu tunda hech kim osilmaydi</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>Pasifistning ☮️ nutqidan ruhlangan aholi bu tunda hech kimni osmaslikka qaror qilindi!</value>
     <value>Pasifistning ☮️ harakatlari tufayli bu tunda hech kimni osmaslikka qaror qilindi!</value>
   </string>
@@ -1672,8 +1672,8 @@ Agar qotildan kimdir habar olsa so'zsiz o'ladi)</value>
     <value>Sizning jamoangiz (Agar ular bo'lsa): {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} endilikda sizni sherigingiz emas. {1} esa siz kabi Sektaga aylandi!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1733,17 +1733,17 @@ Agar qotildan kimdir habar olsa so'zsiz o'ladi)</value>
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>G'alati... Bu tunda kimni osish muhokama qilayotganlarizda {0} ning yo'qligini tushunib qoldizlar! Qiziq unga nima bo'lgan bo'lishi mumkin??</value>
   </string>
 
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
 	<value>Nutq so'zlash!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
 	<value>Pasifistning dildan so'zlagan nutqi tufayli bugungi osish bosqichi o'tkazib yuboriladi!</value>
 	<value>Pasifistning nutqidan ruhlangan aholi bu tunda hech kimni osmaslikka qaror qildi!</value>
   </string>

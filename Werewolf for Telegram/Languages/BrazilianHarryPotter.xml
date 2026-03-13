@@ -188,10 +188,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Você é Firenze, aprendiz de Adivinhação, e joga por Hogwarts.  Caso o professor de adivinhação morra, você tomará seu lugar como Professor.</value>
 	</string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
   <value >Você é um dos Dementadores. Durante a noite, você poderá escolher alguém para dar o beijo da morte e substituí-lo por um Dementador. Se todos os jogadores restantes ao final do jogo forem substituídos por Dementadores, eles vencem!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Os Dementadores estão em Hogwarts tentando sugar toda a felicidade e espalhar o medo e tristeza, e você, Remo Lupin, deve defender a escola!  Durante a noite você poderá usar o feitiço do patrono para investigar um Bruxo.  Se ele(a) for um Dementador, ele(a) morre.  Caso os dementadores forem atacar você, o Dementador mais fraco irá morrer.</value>
   </string>
 
@@ -235,7 +235,7 @@
   <string key="DefaultEaten" >
     <value>À medida que todos se levantam para fazer suas tarefas diarias, sentem um cheiro horrível.  Eles seguem o cheiro para encontrar {0} esquartejado(a) na floresta.  AVADA KEDAVRA.\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>O dormitório de {0} está bastante frio... Os alunos e professores decidem então entrar lá e sentem um vazio, como se não existisse mais felicidade no mundo... Deixando claro que Remo Lupin conjurou o seu Patrono, enchendo o local de luz e enviando o Dementador de volta para Azkaban. </value>
   </string>
   <string key="NoAttack" >
@@ -319,13 +319,13 @@
   <string key="RemainingPlayersEnd">
     <value>Jogadores restantes, papéis e lado:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} votou para dar o beijo da morte e substituir {1} por um Dementador.</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} foi enviado(a) para dar o beijo da morte e substituir {1} por um Dementador... Entretanto, ele era Remo Lupin, e tinha uma ótima maneira de afastar Dementadores! {0} voltou para Azkaban!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} foi ao seu escritório na noite passada, pronto(a) para te dar o beijo da morte e te substituir....  Mas você tinha um ótimo jeito de se proteger. Um dos Dementadores voltou para Azkaban... {1} restante(s)!</value>
   </string>
   <string key="CultConvertYou">
@@ -346,7 +346,7 @@
   <string key="HunterVisitDead">
     <value>Você foi investigar {0}, mas chegando lá se deparou apenas com os sentimentos de tristeza e solidão!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Você invade o quarto de {0} e sente um ar de tristeza e depressão no lugar. Você sabe muito bem o que fazer nessas ocasiões: invocar o feitiço do Patrono.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -358,7 +358,7 @@
   <string key="WildChildTransform">
     <value>{0} foi morto(a)! Num ataque de fúria, você se torna um Comensal da Morte! Seus novos companheiros são: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Simples Bruxo👱</value>
   </string>
@@ -404,10 +404,10 @@
   <string key="ApprenticeSeer">
     <value>Firenze 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>um Dementador 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Remo Lupin 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -583,12 +583,12 @@
     <value>Você foi jogar um joguinho com {0}. Mas chegando lá, a Lilian J. Potter acabou com sua diversão! Sem brincadeiras essa noite...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Os Dementadores mandam {0} para dar o beijo da morte e substituir {1} por um Dementador. Chegando lá {0} é recebido com um Avada Kedavra bem no peito! {0} está morto(a)...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Os Dementadores mandam {0} para dar o beijo da morte e substituir {1} por um Dementador. Chegando lá {0} descobre que foi uma perda de tempo, ele só sente ódio e fúria, sem ter o que fazer {0} retornou para seu quarto...</value>
     <value>Os Dementadores mandam {0} para dar o beijo da morte e substituir {1} por um Dementador. Chegando lá {0} descobre que foi uma perda de tempo, ele só sente ódio e fúria, sem ter o que fazer {0} retornou para seu quarto...</value>
@@ -1132,7 +1132,7 @@
   <string key="BlacksmithKilled">
     <value>Parece que {0}, a Minerva MacGonagall, é bem azarada. Marcas de feitiços foram encontradas no seu corpo. E diversas varinhas desapareceram, o Gellert Grindelwald fez a festa!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>De manhã todos encontram {0} empalado em um candelabro. O Serial Killer não se importa com religião, todos são brinquedinhos para ele! A Seita vai sentir falta de {0}...</value>
   </string>
   <string key="CupidKilled">
@@ -1165,10 +1165,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Hogwarts acordou essa manhã só para encontrar um corpo torturado e morto no leito do Lago negro. {0}, o Inquisidor, investigou o bruxo errado. Gellert Grindwald utilizou todos os feitiços de tortura que se pode imaginar.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Péssima escolha dos dementadores ao visitar um Comensal que decidiu ficar no seu dormitório durante a noite. {0} retornou para Azkaban. Os comensais parecem conhecer uma boa forma de afastar os dementadores.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>De manhã os bruxos acordam em meio a barulhos, todos vão atras da causa e param próximo ao Salgueiro lutador. Eles polarizam ao ver alguém afastar um Dementador. Os dementadores devem pensar bem em quem visitar, pois, Gellert Grindelwald não se importa com a raça, todos são experimentos para ele! Os dementadores perderam o {0}...</value>
   </string>
   <string key="GAGuardedKiller">

@@ -191,10 +191,10 @@
 	<string key="RoleInfoApprenticeSeer">
 		<value>You are the Management Trainee 🙇. You will eventually become a Department Manager when the time comes.</value>
 	</string>
-	<string key="RoleInfoCultist">
+	<string key="RoleInfoZombie">
 		<value>You are the JAVA Enthusiast 👤! JAVA is the best, so lets the world know. Warning: Haters gonna hate.</value>
 	</string>
-	<string key="RoleInfoCultistHunter">
+	<string key="RoleInfoZombieHunter">
 		<value>You are the JAVA Destroyer 💂. You have a dream that one day no one would use JAVA for coding. You believe JAVA users exist in the company and they are the true cause of company's struggle. You shall check others' computer at lunch, and report if you find one.</value>
 	</string>
 	<string key="LynchTime">
@@ -237,7 +237,7 @@
 	<string key="DefaultEaten">
 		<value>Copies of {0}'s poor works are distributed in everyone's hand. I hope no one would commit these mistakes every again.\n{1}</value>
 	</string>
-	<string key="HunterKilledCultist">
+	<string key="HunterKilledZombie">
 		<value>{0} is a JAVA Enthusiast, using JAVA in all his works, causing lags in our servers! Glad that the JAVA Destroyer has him spotted.</value>
 	</string>
 	<string key="NoAttack">
@@ -323,13 +323,13 @@
 	<string key="RemainingPlayersEnd">
 		<value>Remaining Workers, title, and team:</value>
 	</string>
-	<string key="CultistVotedConvert">
+	<string key="ZombieVotedConvert">
 		<value>{0} wants to share the joy of JAVA with {1}.</value>
 	</string>
-	<string key="CultConvertCultHunter">
+	<string key="CultConvertZombieHunter">
 		<value>{0} was promoting JAVA to {1}, which is a JAVA hater! He was reported and fired!</value>
 	</string>
-	<string key="CultHunterKilledCultVisit">
+	<string key="ZombieHunterKilledCultVisit">
 		<value>{0} wanted you to use JAVA, ridiculous! You reported him for justice! You senses there are {1} more people using JAVA.</value>
 	</string>
 	<string key="CultConvertYou">
@@ -350,7 +350,7 @@
 	<string key="HunterVisitDead">
 		<value>{0} will be fired anyway.</value>
 	</string>
-	<string key="HunterFindCultist">
+	<string key="HunterFindZombie">
 		<value>You were checking {0}'s work, and you saw JAVA codes everywhere. You reported to board and make sure he is fired.</value>
 	</string>
 	<string key="HunterFailedToFind">
@@ -362,7 +362,7 @@
 	<string key="WildChildTransform">
 		<value>You tutor {0} was fired. You are looking for vengence and these people have prepared a plan for you: {1}</value>
 	</string>
-	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 	<string key="Villager">
 		<value>Programmer 👱</value>
 	</string>
@@ -408,10 +408,10 @@
 	<string key="ApprenticeSeer">
 		<value>Management Trainee 🙇</value>
 	</string>
-	<string key="Cultist">
+	<string key="Zombie">
 		<value>JAVA Enthusiast 👤</value>
 	</string>
-	<string key="CultistHunter">
+	<string key="ZombieHunter">
 		<value>JAVA Destroyer 💂</value>
 	</string>
 	<!-- These are for the player list -->
@@ -1143,7 +1143,7 @@
 	<string key="BlacksmithKilled">
 		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe Socialite ⚒ is fired.</value>
 	</string>
-	<string key="CultistKilled">
+	<string key="ZombieKilled">
 		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe JAVA Enthusiast 👤 is fired.</value>
 	</string>
 	<string key="CupidKilled">
@@ -1176,10 +1176,10 @@
 	<string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
 		<value>{0}'s computer was infected by virus. What a careless workers! Of course he is going to be fired by the board.\nThe JAVA Destoryer 💂 is fired.</value>
 	</string>
-	<string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+	<string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
 		<value>{0} was sharing the joy of JAVA to a Senior, but the Seniors took him as a volunteer to be planted...\nThe JAVA Enthusiast 👤 is fired.</value>
 	</string>
-	<string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+	<string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
 		<value>{0} was sharing the joy of JAVA to someone, and then his computer was infected by several virus, deleting all his works from the world.\nThe JAVA Enthusiast 👤 is fired.</value>
 	</string>
 	<string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1200,8 +1200,8 @@
 		<!--{0} = hunter's name, {1} = wolf's name-->
 		<value>{0} thinks all the evils in the company are already gone. He is not aware of {1}'s identity, and shuts down all the protection in his computer, giving the Senior a chance to plant him.</value>
 	</string>
-	<string key="CHKillsCultistEnd">
-		<!--{0} = last cultist's name, {1} = CH's name -->
+	<string key="CHKillsZombieEnd">
+		<!--{0} = last Zombie's name, {1} = CH's name -->
 		<value>In a company with only two people remaining, the JAVA Enthusiast has only one thing to do. {0} starts prmoting JAVA to the last person in the company, hoping he will understand the joy of using JAVA. Sad for him, {1} is the JAVA Destroyer. The ending of the story has already been written...\nThe JAVA Enthusiast 👤 is fired.</value>
 	</string>
 
@@ -1417,13 +1417,13 @@
   </string>
 
 <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value></value>
   </string>
-  <string key="Pacifist">
-    <value>the Pacifist ☮️</value>
+  <string key="Imam">
+    <value>the Imam ☮️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value></value>
   </string>
 

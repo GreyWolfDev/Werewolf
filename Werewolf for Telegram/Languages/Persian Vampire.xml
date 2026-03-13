@@ -209,10 +209,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >تو داوینا کلیر هستی یعنی اگه بانی بنت بمیره تو جانشینش میشی</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >تو یکی از مسافران هستی  هستی، هر شب یه نفرو به انجمن مسافرای خودت دعوت میکنی اگه همه بازیکنای زنده، عضو مسافرا بشن تو میبری</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >تو آلاریک سالتزمن هستی‌، کار تو محافظت از میستیک فالزس هاست و باید با مسافرا مبارزه کنی‌. هر شب میتونی خونه یک نفر بری و ببینی که آیا یکی از مسافرا هست یا نه، اگر خونه ی خوناشاما بری نمیتونی بفهمی که خوناشامه یا میستیک فالزی و زنده می مونی، اما اگر خونه ی مایکل بری کشته میشی، و اگر یکی از مسافرا بیاد که تو رو به گروهش دعوت کنه جدید ترین عضوشون رو میکشی.</value>
   </string>
   <string key="LynchTime" >
@@ -270,7 +270,7 @@
     <!-- 1 - victim role -->
     <value>مثل اینکه دیشب خوناشاما گرسنشون بودو خون یکی از اهالی میستیک فالزو خوردن بنده خدا یه گوشه نشسته بود داشت زخمشو بانداژ میکرد حتما بوی خونشو حس کردن. خدا بیامرزتت {0} میستیک فالزی خوبی بودی 😢😢  {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>اینطور که معلومه شکارچی آلاریک دیشب زده یکی از اعضای مسافرا {0} رو کشته</value>
   </string>
@@ -376,34 +376,34 @@
   <string key="RemainingPlayersEnd">
     <value>بازیکن های باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >نظر {0} اینه که {1} رو تبدیل کنید</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>خب {0} رفت که {1} رو به مسافرا دعوت کنه ولی {1} شکارچی آلاریک بود و کشتش!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>دیشب {0} اومد به مسافرا دعوتت کنه ولی تو زدی کشتیش! {1} باقی مونده</value>
   </string>
   <string key="CultConvertYou">
     <value>تو الان عضو مسافرایی هستی و هر شب با بقیه یارات باید یه نفرو به محفل خودتون دعوت کنین</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>مسافرا بردن: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>الان {0} عضو مسافرا شد</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>خب  {0} رفت {1} رو به مسافرا دعوت کنه ولی خونه نبود</value>
   </string>
@@ -414,7 +414,7 @@
     <!-- 0 - target name -->
     <value>رفتی {0} رو بکشی ولی مرده بود</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>رفتی خونه {0} و دیدی داره عبادت میکنه. اعصابت خورد شد زدی کشتیش</value>
   </string>
@@ -431,7 +431,7 @@
     <!-- 0 - teamate's names -->
     <value>چون {0} الگوت بود و مرده الان تو خوناشامی و یارات عبارت اند از : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>میستیک فالزی 👱</value>
@@ -478,10 +478,10 @@
   <string key="ApprenticeSeer">
     <value>داوینا کلیر 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>مسافر 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>شکارچی آلاریک💂</value>
   </string>
   <!-- These are for the player list -->
@@ -513,7 +513,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>عضو جدید مسافرا رفت خونه {0} که به راه راست هدایتش کنه ولی دید کشته شده</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -702,7 +702,7 @@
     <value>رفتی {0} رو به قتل برسونی و ببریش جهنم ولی لکسی جلوتو گرفت</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>مسافر عزیز یعنی {0} رفت که {1} رو به دینش دعوت کنه ولی {1} کلانتر  وربز بود و با تفنگش زد {0} رو کشت</value>
   </string>
@@ -726,7 +726,7 @@
     <value>خب {0} سایبس بود و مرد. چون اون استریکس بود تو هم استریکس شدی و بقیه استریکس ها عبارت اند از: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value> سایلس، یعنی {0} هم چون یکی از اعضای مسافرا رو به عنوان مدل انتخاب کرده بود الان مسافر شد.</value>
   </string>
 
@@ -1277,7 +1277,7 @@
 - آره😞
 متاسفانه دیشب {0} زک سالواتور  توسط مایکل در اصطبل به قتل رسید!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب مایکل به مسافرا حمله کرد و {0} رو به قتل رسوند!</value>
   </string>
   <string key="CupidKilled">
@@ -1310,10 +1310,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>شکارچی آلاریک{0} مشغول پیداکردن مسافرها بود اما درست زمانی که داشت توی شهر قدم میزد مایکل بهش حمله میکنه و میکشتش!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب {0} رفت که خوناشام ها رو دعوت کنه به مسافرا! ولی خوناشاما بهش حمله کردن و جنازه تکه تکه شدشو توی نقاط مختلف میستیک فالز ول کردن!</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>شب قبل مسافرا ها میخواستن یک عضو جدید رو به مسافر دعوت کنن، {0} مامور شد که یکی رو به مساف دعوت کنه، اما دیگه خبری از {0} نشد! صبح روز بعد اعضای مسافر جنازه {0} رو توی میستیک فالز پیدا میکنند! مایکل  مایکل {0} رو کشته!</value>
   </string>
   
@@ -1333,8 +1333,8 @@
 	    <value> کلانتر  فوربز {0} توی روستا با {1} تنها مونده! {1} میره که به کلانتر حمله کنه و اونو بکشه، اما کلانتر از خواب بلند میشه و متوجه {1} میشه سریع میره سمت تفنگش اما فرصت نمیکنه که تفنگشو دستش بگیره و {1} میگیره و خونشو میخوره! {1} تنها خوناشام بازمانده میستیک فالزه🧛‍♂(🐺)</value>
   </string>
   
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>تنها مسافر بازمانده میستیک فالز {0} بود که زمانی که صبح داشت سمت میدون شهر میرفت، با شکارچی آلاریک {1} روبه رو میشه! شکارچی، همون موقع تفنگشو در میاره که به {0} شلیک کنه ولی {0} فرار میکنه، شکارچی دنبالش میره و توی شهر پیداش میکنه و با چاقو میکشتش!  شکارچی آلاریک برنده این دور بازیه!</value>
   </string>
   
@@ -1557,14 +1557,14 @@
   </string>
 
 <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>
 تو الینا گیلبرت هستی☮️.هر زمان اراده کنی میتونی از ترس اعدام شدن دیمن و استفن با قدرت بیان و حرف های احساسی مردم رو متقاعد کنی که رای ندن در نتیجه کسی اعدام نمیشه😊</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>الینا گیلبرت☮️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>
 تو الینا گیلبرت هستی☮️.هر زمان اراده کنی میتونی از ترس اعدام شدن دیمن و استفن با قدرت بیان و حرف های احساسی مردم رو متقاعد کنی که رای ندن در نتیجه کسی اعدام نمیشه😊</value>
   </string>
@@ -1593,14 +1593,14 @@
   <string key="AboutThief">
     <value>تو کای پارکری😈. شب که میشه میتونی یکیو انتخاب کنی و نقششو بدزدی. کسی که نقششو دزدیدی تبدیل میشه به دزد و  میتونه شبه بعد نقش یه نفره دیگرو بدزده. اگه در پایان بازی دزد باقی بمونی میبازی.</value>
   </string>
-   <string key="AskPacifist">
+   <string key="AskImam">
       <value>این دکمه رو فشار بده ویه سخنرانی در مورد حقوق بشر بکن، یادت باشه وقتی این کار رو بکنی جلوی رای دادن روستا رو میگیری و کسی اعدام نمیشه 😐</value>
     </string>
-    <string key="PacifistNoLynch">
-    <!-- {0} - Pacifist's name -->
+    <string key="ImamNoLynch">
+    <!-- {0} - Imam's name -->
       <value>الینا گیلبرت☮️ عزیز،{0}، یه سخنرانی تاثیر گذار در مورد حقوق بشر ،دوستی ها و اعتماد به هم ، میستیک فالزی ها رو قانع میکنه که امروز رای ندن.😊 </value>
     </string>
-    <string key="PacifistNoLynchNow">
+    <string key="ImamNoLynchNow">
       <value>به خاطر سخنرانی پر احساس و با معنی الینا☮️ ، امروز رای گیری نداریم!</value>
     </string>
     <string key="WolvesTriedToEatWiseElder">
@@ -1648,8 +1648,8 @@
       <value>هم تیمی های شما(درصورت وجود) عبارت اند از:{0}.</value>
     </string>
     <string key="ThiefToCult">
-      <!-- 0 - old cultist's name -->
-      <!-- 1 - new cultist's name -->
+      <!-- 0 - old Zombie's name -->
+      <!-- 1 - new Zombie's name -->
       <value>حاجی {0} دیگه همتیمی شما نیست به جاش {1} فرقه شده دقیقا مثل شماها.</value>
     </string>
     <string key="ThiefToWolf">
@@ -1709,17 +1709,17 @@
     <string key="SecretLynchShowVotersA">
       <value>وقتی حالت رای مخفی روشن است. و تعداد رای ها در اخر رای گیری نشان داده خواهد شد.نام رای دهنده به هر بازیکن نیز نشان داده خواهد شد:{0}</value>
     </string>
-    <string key="CultistBitten">
-    <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <string key="ZombieBitten">
+    <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
       <value>عجبیه .... امشب جمع شدین که یکی رو فرقه کنید اما متوجه شدین که {0} اینجا نیست!یعنی چه اتفاقی براش افتاده؟🤔</value>
     </string>
     
     <string key="Peace">
-    <!-- Used for Pacifist's button -->
+    <!-- Used for Imam's button -->
       <value>صلح!</value>
     </string>
     <string key="LynchPeaceTimeout">
-    <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+    <!-- Used in PM if the Imam uses his ability during lynch phase -->
       <value>به خاطر سخنرانی پر احساس و شور انگیز الینا گیلبرت☮️ ، امروز رای گیری نداریم!</value>
     </string>
     <string key="ThiefStoleYourRoleThief">
@@ -1804,7 +1804,7 @@
   <string key="ChemistTargetEmpty">
 	<value> رفتی که با {0} معجون بخوری اما خونه نبود! </value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value> اعضای مسافرا درحال حاضر: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1855,7 +1855,7 @@
   <string key="ChemistFrozen">
     <value> هنگامی که وسایل خود را برای خوردن نوشیدنی جمع میکردید رینا کروز خنجرش رو توی پهلوت فرو کرد 🐺☃️! از گوشه ی چشم معجون هایت را دیدی که رینا کروز شکونده. بزودی خورشید طلوع میکند و نشانه خنجر ناپدید میشه و دیگر مشکلی نخواهید داشت. </value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value> وقتی که داشتی برای دعوت کردن آماده میشدی رینا کروز خنجرشو به پات زد 🐺☃️! هم تیمی های تو بهت قول دادند که امشب کارشون رو خوب انجام بدن. </value>
   </string>
   <string key="CHFrozen">
@@ -1996,11 +1996,11 @@
   <string key="HunterFellDigger">
 	<value> بعد از یک شب خسته کننده شما به خانه برمیگردید قبل از اینکه وارد خانه شوید کراس بو کنار یک قبر میبینید مثل اینکه شکارچی یعنی {0} توی قبر افتاده</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value> بعد از یک شب خسته کننده در راه خانه صدای فریادی از یک قبر ناتمام خود میشنوید، با عجله به آنجا میروید و {0} را میبینید که در قبر افتاده. آخه کدوم مسافری میخواد یه گورکن رو تبدیل کنه؟</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value> در راه خانه {1} ناگهان {0} تصمیم میگیرد به سراغ یک کلیسا برود. اما در قبرستان داخل یک قبر افتاد. شما صدای فریاد او را قبل از افتادن میشنوید اما برای نجات خود فرار میکند! </value>
   </string>
@@ -2056,7 +2056,7 @@
   <string key="HarlotFellPublic">
 	<value> ویکی داناون {0} در راه خانه ی گورکن بود که درون یک قبر افتاد و مرد. شاید بهتر بود یک شغل دیگه انتخاب میکرد. </value>
   </string>
-  <!--{0}: cultist who died-->
+  <!--{0}: Zombie who died-->
   <string key="CultFellPublic">
 	<value> مسافرا میخواستند کلیسا رو آتیش بزنند، اما {0} که گروه رو هدایت میکرد درون یک قبر افتاد. او فریاد میزد اما بقیه مسافرا برای نجات جان خود فرار کردند. </value>
   </string>

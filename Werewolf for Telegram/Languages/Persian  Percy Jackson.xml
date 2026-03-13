@@ -204,10 +204,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >تو پیشگوی رزرو هستی یعنی اگه پیشگوی اصلی بمیره تو پیشگو میشی</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >توایزد انتقام هستی رئیس انجمن هیولا ها. هر شب میتونی یکیو ب انجمن هیولا ها دعوت کنی.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >تو یکی زویی نایتشید هستی و ماموریت تو شکار هیولا ها و منحل کردن انجمن هیولا های این منطقست.</value>
   </string>
   <string key="LynchTime" >
@@ -265,7 +265,7 @@
     <!-- 1 - victim role -->
     <value>صبح همه پا میشن و میبینن که{0} توسط تیتان ها کشته شده . {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>مثل اینکه زویی دیشب یکی از هیولا های عضو انجمن ت.ا.ی.ف.و.ن رو کشته. {0} مرده</value>
   </string>
@@ -371,34 +371,34 @@
   <string key="RemainingPlayersEnd">
     <value>بازیکن های باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >نظر {0} اینه که {1} رو تبدیل کنید</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>خب {0} رفت که {1} رو به فرقه دعوت کنه ولی {1} شکارچی بود و کشتش!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>دیشب {0} اومد به فرقه دعوتت کنه ولی تو زدی کشتیش! {1} باقی مونده</value>
   </string>
   <string key="CultConvertYou">
     <value>تو الان عضو فرقه هستی و هر شب با بقیه یارات باید یه نفرو به فرقه خودتون دعوت کنین</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>فرقه گرا ها: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>الان {0} عضو فرقه شد</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>خب  {0} رفت {1} رو به فرقه دعوت کنه ولی خونه نبود</value>
   </string>
@@ -409,7 +409,7 @@
     <!-- 0 - target name -->
     <value>رفتی {0} رو بکشی ولی مرده بود</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>یکی از هیولا ها یعنی {0} پیدا کردی و کشتیش.</value>
   </string>
@@ -426,7 +426,7 @@
     <!-- 0 - teamate's names -->
     <value>چون {0} الگوت بود و مرده الان تو تیتانی و یارات عبارت اند از : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>فانی 👱</value>
@@ -473,10 +473,10 @@
   <string key="ApprenticeSeer">
     <value>پیشگوی رزرو 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>هیولا 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>زویی نایتشید 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -508,7 +508,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>یکی از هیولا ها رفت خونه {0} که به انجمن دعوتش کنه ولی مرده بود</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -691,12 +691,12 @@
     <value>رفتی {0} رو به سنگ تبدیل کنی ولی پرومتئوس اونجا بود و منصرف شدی.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>یکی از هیولاها یعنی {0} رفت خونه {1} که دعوتش کنه ولی نمسیس بودو کشتش</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
 	   <value>یکی از هیولا ها یعنی {0} ررفت خونه مدوسا یعنی {1} که به انجمن دعوتش کنه ولی کشته شد</value>
     <value>یکی از هیولا ها یعنی {0} رفت خونه{1} ولی مدوسا بود و به سنگ تبدیلش کرد.</value>
@@ -721,7 +721,7 @@
     <value>همزادت یعنی {0} مرده و تو الان یک دمیگاد شدی دمیگاد های دیگه عبارتند از : {1} </value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>همزادت یعنی {0} عضو انجمن شد.</value>
   </string>
   <string key="DGTransformToCult">
@@ -1282,7 +1282,7 @@
   <string key="BlacksmithKilled">
     <value>هفاستوس یعنی {0} توسط مدوسا به سنگ تبدیل شده.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>مدوسا به انجمن گذشته خود یعنی هیولا ها حمله کرد و {0} رو کشت.</value>
   </string>
   <string key="CupidKilled">
@@ -1315,10 +1315,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>زویی یعنی {0} به سنگ تبدیل شد.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>هیولا ها {0} را فرستاده بودند که کسیو به انجمنشون دعوت  کنه اما تیتان ها کشتنش.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>هیولا ها {0} را فرستاده بودند که کسیو به انجمنشون دعوت  کنه اما مدوسا به سنگ تبدیلش کرد.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1336,8 +1336,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>فقط {0} و {1} باقی موندن و {1} نمسیس یعنی {0} رو میکشه.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>زویی یعنی {1} با اخرین هیولا یعنی {0} رو به رو میشه و میکشتش.</value>
   </string>
   

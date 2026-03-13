@@ -205,10 +205,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Eres Mª Jesús, la torrijas. Si Vicenta abandona el edificio, asumirás sus tareas radiopáticas.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Eres una de las parroquianas del padre Miguel. Entre rosario y rosario por las noches te dedicas a vender sus éxitos en formato cederrón y a invitar a los vecinos a acompañarte a misa de doce. Si al final de la partida, todos sois parroquianas, ganaréis.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Eres Yago. Los negocios capitalistas del padre Miguel y sus parroquianas te sacan de quicio. Cada noche irás en busca de alguien para ver si sale a vender discos. Si es una parroquiana del padre Miguel, la echarás del bloque. Si una de ellas trata de hacerte entrar en su negocio, convencerás a la última de que se una al PCPE.</value>
   </string>
   <string key="LynchTime" >
@@ -266,7 +266,7 @@
     <!-- 1 - victim role -->
     <value>¡RADIO PATIO INFORMA!: con la excusa vaga de no haber pagado la última derrama, los Cuesta obligan a {0} a abandonar el edificio. Hará su vida lejos de la armonía y el sosiego de Desengaño 21\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>El padre Miguel ha aparecido esta mañana por el edificio buscando a Yago. ¡Él ha espantado a su parroquiana {0}!</value>
   </string>
@@ -372,34 +372,34 @@
   <string key="RemainingPlayersEnd">
     <value>Vecinos que aún no se han ido a Mirador de Montepinar:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} ha votado ir a la casa de {1} a venderle cedés del padre Miguel</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>Enviasteis a {0} a vender cedés a casa de {1} mientras os quedabais viendo 13tv, ¡pero era la casa de Yago, que la convenció para que se fuese a Cuenca a plantar  ecohuertos! ¡{0} se ha ido del edificio!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} fue anoche a tu casa a intentar venderte el último cedé recopilatorio del padre Miguel (con grandes éxitos como "Sombra aquí, Sombra allá; confiésate, confiésate" o "Antes santo que sencillo"), pero rápidamente hiciste uso de tu labia caribeña y la convenciste de mudarse a una ecovivienda y afiliarse al PCPE. Has espantado a una parroquiana, quedan {1}.</value>
   </string>
   <string key="CultConvertYou">
     <value>¡Las parroquianas del padre Miguel te han convencido de ir de casa en casa a vender sus cedés! Ahora eres una más. Cada noche tendrás la oportunidad de convencer a otro vecino de entrar en el negocio.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Parroquianas: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>¡{0} se ha unido a la reunión de parroquianas!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>Enviasteis a {0} a venderle el último disco del padre Miguel a {1}, ¡pero no estaba en casa!</value>
   </string>
@@ -410,7 +410,7 @@
     <!-- 0 - target name -->
     <value>Fuiste a casa de {0} a obligarlo a pagar la derrama, ¡pero ya se había ido del edificio!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Vas a casa de {0} y te la encuentras bailando con el walkman a toda pastilla "Antes santo que sencillo", el último single del padre Miguel. Rápidamente, le sueltas un sermón (manda huevos) sobre ecología y comunismo y la convences de ir a Sol a una manifa para echarla del edificio.</value>
   </string>
@@ -427,7 +427,7 @@
     <!-- 0 - teamate's names -->
     <value>Han echado a {0}, tu confidente, del edificio. Llena de ira, decides apoyar a los Cuesta. Tus nuevos aliados son: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>un vecino 👱</value>
@@ -474,10 +474,10 @@
   <string key="ApprenticeSeer">
     <value>Mª Jesús, la torrijas 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>una parroquiana del padre Miguel 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Yago 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -509,7 +509,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>La parroquiana que se incorporó al grupo en la última reunión fue ayer a casa de {0} decidida a venderle cedés del padre Miguel, pero, en lugar de eso, se encontró con una nota de Juan Cuesta en la pared con una breve explicación a sus queridos convecinos de la salida de {0} del edificio.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -694,12 +694,12 @@
     <value>Intentaste echar del edificio a {0}, pero te encuentras con que el Guerra ya se lo ha llevado al ático. Insistes en golpear la puerta una y otra vez, en vano...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Las parroquianas enviaron a {0} a venderle el último hit del padre Miguel a {1}, pero en lugar de eso, la pobre señora se encontró con Yago, que convenció a {0} de mudarse a una ecovivienda. {0} ya no vive con vosotros.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Las parroquianas envían a {0} a venderle el último hit del padre Miguel a {1}, pero {0} tocó en la casa equivocada y dio a parar con Concha, que, irritada, consigue hacer salir a la parroquiana del edificio para siempre. {0} se ha mudado de edificio.</value>
   </string>
@@ -723,7 +723,7 @@
     <value>{0} se ha mudado a Mirador de Montepinar y retomas su papel para la serie. Ahora haces de lesbi. Las otras lesbis son: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>LQSA, {0}, ha retomado el personaje de una parroquiana, ¡a vender discos juntas!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1276,7 +1276,7 @@
   <string key="BlacksmithKilled">
     <value>Parece que ayer a {0}, el hombre calvo que habla rápido y cuyo nombre nadie recuerda, doña Concha le hizo hablar durante horas sobre los diferentes planes de pensiones hasta que este se quedó afónico. {0} ha abandonado el edificio frustrado :(</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Parece que ayer a {0} no le fue nada bien. En un intento por colocarle el último éxito del padre Miguel a la que parecía una entrañable octogenaria, ha quedado espantada por los gritos que esta comenzó a proferirle hasta que decidió huir por patas. {0} era una parroquiana del padre Miguel.</value>
   </string>
   <string key="CupidKilled">
@@ -1312,11 +1312,11 @@
     <value>Desengaño 21 amanece con la incredulidad de {0}. «¡Tienen que detener el capitalismo salvaje y opresor que esa señora engreída está ostentando!». Lección aprendida: no vayas a casa de doña Concha a calentarle la cabeza con campañas de Greenpeace.</value>
   </string>
     <value>Esta mañana Desengaño 21 amanece con la dulce voz caribeña de {0}, que no deja de soltar improperios sobre lo dañina que es doña Concha, que le ha dejado graves secuelas psicológicas tras hablar con ella anoche. Ir a calentarle la cabeza a doña Concha con campañas de Greenpeace no es una buena idea.</value>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Los Cuesta anoche decidieron quedarse en casa a descansar, no había ganas de echar a más vecinos del edificio, pero esto le supuso un mal rato a {0}, una pobre parroquiana del padre Miguel que decidió intentar venderles el último hit a los propietarios del 2º A, que rápidamente la echaron argumentando que la venta ambulante es ilegal y que da una imagen espantosa de la comunidad.</value>
     <value>Las parroquianas del padre Miguel ayer tuvieron la mala idea de tocar en el 2º A, donde estaban los Cuesta cenando. De inmediato, llamaron a la policía para denunciar el flagrante delito de la venta ambulante que {0}, la parroquiana más reciente del séquito del padre Miguel, estaba cometiendo. {0} ha abandonado el edificio.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Las parroquianas del padre Miguel eviaron ayer al miembro más reciente de su grupo de WhatsApp («Antes santas que sencillas») a poner en práctica sus nuevas habilidades de venta ambulante, pero {0} cometió el error de ir a casa de doña Concha, que rápidamente la despechó, lo que ha provocado que salga despavorida del edificio.</value>
     <value>Las parroquianas del padre Miguel eviaron ayer al miembro más reciente de su grupo de WhatsApp («Antes santas que sencillas») a poner en práctica sus nuevas habilidades de venta ambulante, pero {0} cometió el error de ir a casa de doña Concha, que rápidamente la despechó, lo que ha provocado que salga despavorida del edificio.</value>
   </string>
@@ -1337,8 +1337,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{1} sabe que en el edificio solo queda {0}, así que aprovecha mientras {0} está enfrascado trabajando en un caso importantísimo en su casa y se las ingenia para sacar a {0} del edifico con una falsa alarma de incendio.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} y {0} se encuentran a la entrada del edificio tras comprar el pan para desayunar. Sin embargo, {1} hoy se encuentra de mal humor y se desahoga con {0} increpándole que nunca recicle. {1} se ha desahogado a gusto, pero ha conseguido que {0}, la última parroquiana del padre Miguel, salga espantada.</value>
   </string>
   

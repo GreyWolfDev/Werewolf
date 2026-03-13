@@ -19,8 +19,8 @@
 	Relámpago 🐃 (👶) = niño salvaje = Wild Child
 	Señora Claus 🤶🏻 (👁) = Observador = Beholder
 	Ayudante de Santa 👲 (🙇)= Aprendiz de vidente = Apprentice Seer
-  No Creyente 👻 (👤) = Cultista = Cultist
-  Espíritu de la Navidad 🎄 (💂)= Cazador de cultistas = Cultist Hunter
+  No Creyente 👻 (👤) = Zombiea = Zombie
+  Espíritu de la Navidad 🎄 (💂)= Cazador de Zombieas = Zombie Hunter
   Hombrecito de jengibre 🍞 (👷) = Masón = Mason
   Prancer 🌟 (🎭) = doppelgänger = Doppelganger 
 	Reno del amor 💘 (🏹)= Cupido = Cupid	
@@ -38,7 +38,7 @@
   Gnomo 📿(🐺🌝) = Licántropo = Lycan
   Santa callejero 🤹🏻‍♀️🧤(🌀) = Oráculo = Oracle
   Carol cantante de navidad 👩🏼‍🎤 / 👨🏼‍🎤 (💤)= Arenero = Sandman
-  Decorador de árboles de navidad 🧙🏻‍♀️/🧙🏻‍♂️(☮️) = Pacifista = Pacifist
+  Decorador de árboles de navidad 🧙🏻‍♀️/🧙🏻‍♂️(☮️) = Imama = Imam
   Little Girl 👧🏻(📚)= la anciana sabia = Wise Elder
   Zorro del ártico 🦊(😈)= Ladrón = Thief
   **********************************************
@@ -279,10 +279,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>Eres el Ayudante de Santa 👲 (🙇). Estás en Team Santa. Pero si Santa muere, te convertirás en Santa.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Eres No Creyente 👻 (👤). Tu objetivo es convertir a todos los demás jugadores (excepto Hombres de Nieve y Krampus 👹 (🔪)) en No Creyentes. Si al final del juego, todos los jugadores vivos son No Creyentes, todos ganas.</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Eres el Espíritu de la Navidad 🎄 (💂) y tu trabajo es encontrar a los No Creyentes 👻 (👤). Si los No Creyentes intentan convertirte, su nuevo miembro morirá. Cada noche puedes elegir un jugador para cazar y si son No Creyentes, van a morir.</value>
   </string>
   <string key="LynchTime">
@@ -337,7 +337,7 @@
     <!-- 1 - victim role -->
     <value>Todos se levantan por la mañana, y no escuchan nada de {0}. No tardan mucho en encontrar su cuerpo congelado en la nieve. {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Un hedor notable viene de la casa de {0}... Los elfos inspeccionan para encontrar un cuerpo que yace frente a un letrero de Navidad. Un No Creyente 👻 (👤) ha sido asesinado por el Espíritu de Navidad🎄 (💂)!</value>
   </string>
@@ -446,17 +446,17 @@
   <string key="RemainingPlayersEnd">
     <value>Jugadores, roles y equipo vivientes restantes:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} ha votado para convertir a {1} en un No Creyente</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <!-- 0 - Youngest Non-Believer (killed)'s name' -->
     <!-- 1 - Spirit of Christmas' name -->
     <value>{0} fue enviado para hacer su trabajo sucio, e intentó convertir a {1} en un No Creyente... sin embargo, ¡{1} es el Espíritu de Navidad. {0} está muerto!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <!-- 0 - Youngest Non-Believer name -->
     <!-- 1 - Number of Non-Believers left -->
     <value>{0} llegó a tu casa anoche, listo para convertirte en un No Creyente... Los iluminaste tanto con tu fe en la Navidad que murio de eso. El No Creyente está muerto... {1} queda!</value>
@@ -465,15 +465,15 @@
     <value>¡Los No Creyentes 👻 (👤) te han convertido en su orden! Ahora eres un No Creyente también. Cada dos noches, tendrás la oportunidad de convertir a otro jugador en un No Creyente y así podran odiar la navidad para siempre.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>No Creyentes: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>¡{0} se ha unido a los No Creyentes 👻 (👤)!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} fue enviado para hacer su trabajo sucio, y convertir a {1} en un No Creyente... ¡Pero nadie estaba en casa!</value>
   </string>
@@ -484,7 +484,7 @@
     <!-- 0 - target name -->
     <value>Fuiste a cazar a {0}, ¡pero ya está congelado!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Fuiste a visitar a {0} para verificar su fe. Ves la casa descuidada y abandonada de {0} que se destaca desde lejos...</value>
   </string>
@@ -501,7 +501,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} ha muerto! ¡En tu furia, te has convertido en un Hombre de Nieve! Tus nuevos compañeros de equipo son: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>👱👱‍♀️ (👱)</value>
@@ -548,10 +548,10 @@
   <string key="ApprenticeSeer">
     <value>Ayudante de Santa 👲 (🙇)</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>No Creyente 👻 (👤)</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>El Espiritu de la Navidad 🎄 (💂)</value>
   </string>
   <!-- These are for the player list -->
@@ -583,7 +583,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Su miembro más reciente se dirige a la casa de {0} para convertirlo en No Creyente, pero en su lugar encuentra la casa en completa ruina, hielo en todas partes y algunos rastros de los malvados Hombres de Nieve fueron dejados allí como advertencia..</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -798,7 +798,7 @@
     <value>{0} ha muerto, y te transformas en un Hombrecito de jengibre 🍞 (👷).\n Tus compañeros de equipo (si los hay) son: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>¡Prancer 🌟 (🎭) {0} ahora se ha convertido en un No Creyente 👻 (👤), como tú!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1335,7 +1335,7 @@
   <string key="BlacksmithKilled">
     <value>Parece que {0}, El Meteorólogo 👨💼 (⚒), no pudo haber predicho esto. Sus entrañas se encontraron por toda la nieve recién puesta. Tal vez a Krampus 👹 (🔪) no le gustó el pronóstico.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} fue encontrado tumbado en la nieve profunda. ¡Krampus 👹 (🔪) ha atacado de nuevo! ¡Adivina que no le importa si crees en Santa o no! {0} era un No Creyente 👻 (👤).</value>
   </string>
   <string key="CupidKilled">
@@ -1399,7 +1399,7 @@
     <!--{0} = Nutcrackers name, {1} = Name of the Snowman-->
     <value>Como {0}, el último elfo restante del Polo Norte, trató de mantener en curso la entrega de los regalos de Navidad, {1}, un Hombre de Nieve, de repente apareció a la vuelta de la esquina y te congeló. Los crueles Hombres de Nieve destruyeron con éxito la Navidad.</value>
   </string>
-  <string key="CHKillsCultistEnd">
+  <string key="CHKillsZombieEnd">
     <!--{0} = last Non-Believers name, {1} = Spirit of Christmas' name -->
     <value>{1} y {0} salen a la luz del día. {1} ve cómo {0} secretamente intenta destruir los regalos de Navidad para todas las personas de todo el mundo, {1} amarra a {0} para que  mire como la fe en Navidad nunca puede ser destruida. De nuevo, {1} ha demostrado que la Navidad siempre existirá. La Navidad se guardó, pero ¿qué es eso?, viene un nuevo hilo, use /startgame o /startchaos para descubrir más sobre él y cómo detener ese hilo.</value>
   </string>
@@ -1662,13 +1662,13 @@
   <string key="AboutSandman">
     <value>¡Tú eres El cantante de villancicos de Navidad! Su voz es tan melódica que hace que todos se relajen tanto que no puedan resistirse a dormir como una noche de Navidad, perdiendo la capacidad de actuar.</value>
   </string>
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>Usted es el decorador de árboles de Navidad 🧙🏻‍♀️ / 🧙🏻‍♂️ (☮️). Puedes elegir convencer a todos en el polo norte para que no quemen a nadie. Esto sólo puede hacerse una vez.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>El decorador de árboles de Navidad 🧙🏻‍♀️/🧙🏻‍♂️(☮️)</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>El Decorador de árboles de Navidad puede elegir convencer a todos en su pueblo para que no quemen a nadie. Esto sólo puede hacerse una vez.</value>
   </string>
   <string key="RoleInfoWiseElder">
@@ -1694,15 +1694,15 @@
   <string key="AboutThief">
     <value>¡Tú eres el zorro del ártico! Como pequeño bribón que eres, puedes despojar a un jugador de su rol, este jugador ahora será un zorro del ártico. \n Si el modo [Ladrón completo] está activado, tienen un 50% de posibilidades de robar el rol de un jugador cada De noche, si tiene éxito, ese jugador se convertirá en el nuevo zorro ártico y ¡continúa con el robo!</value>
   </string>
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Pulsa este botón si quieres mostrar tu árbol a todo el pueblo y deja que su belleza detenga la quema.</value>
   </string>
-  <string key="PacifistNoLynch">
+  <string key="ImamNoLynch">
     <value>El decorador de árboles de Navidad 🧙🏻‍♀️ / 🧙🏻‍♂️ (☮️), {0}, apunta hacia el árbol de navidad en el centro del pueblo para que vean la belleza que ha creado, como ves su gloria, nadie puede quemar a nadie hoy.</value>
     <value>Cuando el árbol de Navidad está terminado, muchas gracias al decorador de árboles de Navidad 🧙🏻‍♀️ / 🧙🏻‍♂️ (☮️), {0}, todos bailan con gran alegría alrededor del árbol y decidieron no quemar a nadie hoy.</value>
     <value>Cuando el Árbol de Navidad es presentado por el Decorador de Árboles de Navidad 🧙🏻‍♀️ / 🧙🏻‍♂️ (☮️), {0}, todos se reúnen dentro de la casa del anfitrión, se sienten abrumados por la exageración de la fiesta y se olvidan de quemarse nadie hoy.</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>Debido al glorioso árbol decorado, por el fabuloso decorador de árboles de Navidad 🧙🏻‍♀️ / 🧙🏻‍♂️ (☮️), ¡no se quemará hoy!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1749,8 +1749,8 @@
     <value>Tus compañeros (si los hay) son: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} ya no forma parte de tu equipo, y {1} se ha convertido en No Creyente, ¡como tú!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1807,12 +1807,12 @@
   <string key="SecretLynchShowVotersA">
     <value>Cuando los linchamientos secretos estén activados y se muestre el recuento de votos, el nombre del votante por cada jugador votado será del siguiente modo: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
   <value>¡Qué extraño! Mientras discutís a quién convertir esta noche, se dan cuenta de que… ¡{0} no está por aquí! 🤔 ¿Qué le habrá pasado?</value>
   </string>
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
   <value>🌲➡️🎄</value>
     <value>Encantar 🎄!</value>
     <value>Encender ⚡️🎄!</value>
@@ -1821,7 +1821,7 @@
     <value>Organiza un desfile 💃🕺 alrededor de 🎄</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
     <value>Las llamas del fuego se apagaron ya que todos se reunieron en el árbol de Navidad, ignorando la votación.</value>
     <value>"Quemar gente no es divertido, ¡bailemos alrededor del árbol de Navidad!" dice el decorador de árboles de Navidad 🧙🏻‍♀️ / 🧙🏻‍♂️ (☮️) de repente, así que todos apagaron el fuego.</value>
     <value>De repente, el decorador del árbol de Navidad 🧙🏻‍♀️ / 🧙🏻‍♂️ (☮️) apaga el fuego y un árbol de Navidad se alza sobre los restos del fuego, todos tienen una divertida pelea de bolas de nieve en lugar de quemarse.</value>
@@ -1921,7 +1921,7 @@
   <string key="ChemistTargetEmpty">
   <value>Fuiste a invitar {0} pero no estaba en casa, así que regresas a tu casa maldiciendo tu mala suerte.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
   <value>Los No Creyente 👻 (👤) son: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1973,7 +1973,7 @@
   <string key="ChemistFrozen">
     <value>Mientras abres la puerta para salir de casa, ves una extraña figura, vas hacia ella para invitarla a tu casa, pero se trata de el triste hombre de nieve 😭 (🐺☃️), te pregunta si quieres ser su amigo y contestas automáticamente no, esté llora, te congela hasta las rodillas y se va corriendo, vaya noche al parecer no traerás a nadie para caiga en tus trampas.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Ibas por la calle odiando la navidad, camino a la reunión no creyente de todos los días cuando vez un extraño hombre de nieve, y este te pregunta si quieres ser su amigo le gritas que no, que odias la navidad, por lo que se pone a llorar y te congela parcialmente. Hoy no llegaras muy lejos. </value>
   </string>
   <string key="CHFrozen">
@@ -2114,11 +2114,11 @@
   <string key="HunterFellDigger">
   <value>Después de otra noche cansina, caminas de regreso a tu casa con el sol ya saliendo. Justo antes de llegar, notas una espada descasando en el suelo al lado de una tumba sin finalizar. Dentro de ella, encuentras el cuerpo calcinado de {0}. El Espíritu de la Navidad 🎄 (💂) no debió sospechar de ti...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
   <value>Regresas de una noche agotadora, ¡cuando de repente escuchas un grito proveniente de una de tus tumbas sin terminar! Te apuras para ir allí, solo para encontrar a {0}, incinerándose, retorciéndose, hasta su muerte. De todos modos, ¿Qué clase de No Creyente 👻 (👤) intenta convertir al Pastor de almas?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
   <value>En el camino a la casa de {1}, {0} lidera a los No Creyentes 👻 (👤) a través del cementerio, ¡cuando de repente activo una trampa lanzallamas! Todo lo que pueden escuchar es su grito mientras se calcina, tropieza y cae en una tumba abierta, el resto de los No Creyentes 👻 (👤) corren por su vida. Tratando de esquivar las trampas.</value>
   </string>
@@ -2174,8 +2174,8 @@
   <string key="HarlotFellPublic">
   <value>Como {0}, Mary Claus 💃🏻 (💋), salió de casa para una noche de diversión, intentó tomar un atajo por el cementerio local. Debe de haber estado algo mareada, porque no vio la tumba descubierta hasta que cayó después de ver que no había suelo en su siguiente paso. ¡Quizás no debería haber tomado ese trabajo que le ofrecieron ayer!</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
   <value>Los No Creyente 👻 (👤), se encaminaban a congregarse, pero como {0} guió al grupo a través del cementerio, ¡Activo una trampa lanzallamas! Se escucharon gritos cuando cayó en una tumba abierta, y los otros No Creyentes huyeron despavoridos...</value>
   </string>
   <!--{0}: thief-->

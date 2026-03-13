@@ -496,7 +496,7 @@
     <value>Спасибо огромное тебе, хорошего дня и игр. :)</value>
   </string>
   <string key="Villager">
-    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
     <value>Селянин 👱</value>
     <value>Мирный Житель 👱</value>
   </string>
@@ -536,10 +536,10 @@
   <string key="ApprenticeSeer">
     <value>Ученик Провидца 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Сектант 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Охотник на Сектантов 💂</value>
   </string>
   <string key="WildChild">
@@ -599,7 +599,7 @@
   <string key="Lycan">
     <value>Ликан 🐺🌝</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>Пацифист ☮️</value>
   </string>
   <string key="WiseElder">
@@ -684,10 +684,10 @@
   </string>
   <string key="AboutCult">
     <!-- CULT CONVERSION RATES AND WHO'S HOME HERE! ayylmao -->
-    <value>Cultist - Сектант (игрок, цель которого это завербовать всех селян и убить всех волков).</value>
+    <value>Zombie - Сектант (игрок, цель которого это завербовать всех селян и убить всех волков).</value>
   </string>
   <string key="AboutCH">
-    <value>Cultist Hunter - Охотник на Сектантов (селянин, который каждую ночь ходит к игрокам;\nесли такой игрок подойдёт к сектанту, первый убьёт второго;\nесли такого игрока попытаются завербовать сектанты, первый убьёт последнего завербованного сектанта).</value>
+    <value>Zombie Hunter - Охотник на Сектантов (селянин, который каждую ночь ходит к игрокам;\nесли такой игрок подойдёт к сектанту, первый убьёт второго;\nесли такого игрока попытаются завербовать сектанты, первый убьёт последнего завербованного сектанта).</value>
   </string>
   <string key="AboutWC">
     <value>Wild Child - Дикий Ребёнок (селянин, который в начале игры должен выбрать свой «пример для подражания»;\nесли «пример для подражания»» умирает, Дикий Ребёнок становится волком;\nесли Дикий Ребёнок сам не выбирает «пример для подражания», игра выберет рандомного игрока для этой цели).</value>
@@ -749,7 +749,7 @@
   <string key="AboutLycan">
     <value>Ликан это волк, но провидец будет видеть его селянином. </value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>Пацифист может один раз за игру убедить всех селян никого не линчевать.</value>
   </string>
   <string key="AboutWiseElder">
@@ -812,10 +812,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>Странно, я не помню, кто ты.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Странно, я не помню, кто ты. Но так и быть, разрешаю тебе творить чёрные дела ночью!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Странно, я не помню, кто ты. Но так и быть, разрешаю тебе творить чёрные дела ночью!</value>
   </string>
   <string key="RoleInfoWildChild">
@@ -875,7 +875,7 @@
   <string key="RoleInfoLycan">
     <value>Странно, я не помню, кто ты. Но так и быть, разрешаю тебе творить чёрные дела ночью!</value>
   </string>
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <!-- NOT IMPLEMENTED YET -->
     <value>Странно, я не помню, кто ты. Но так и быть, разрешаю тебе творить чёрные дела днём!</value>
   </string>
@@ -1064,11 +1064,11 @@
   <string key="AskTroublemaker">
     <value>Кажется, ты можешь сделать чёрное дело!</value>
   </string>
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Кажется, ты можешь сделать чёрное дело!</value>
   </string>
   <string key="Peace">
-    <!-- Used for Pacifist's button -->
+    <!-- Used for Imam's button -->
     <value>Сделать чёрное дело!</value>
   </string>
   <string key="DiscussWith">
@@ -1118,7 +1118,7 @@
   <string key="DefaultEaten">
     <value>Поутру пациенты почуяли ужасный запах... Он привёл их к разорванному телу {0}! Ужас, где же его голова? \n{1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>-1 для сектантов! Охотник на сектантов сделал чёткий выстрел в {0}! Не стоит проповедовать в медицинском учереждении!</value>
   </string>
   <string key="NoAttack">
@@ -1187,13 +1187,13 @@
   <string key="RemainingPlayersEnd">
     <value>Лекарства помогли и неожиданно все всё вспомнили. Оставшиеся игроки и их роли:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>{0} хочет сделать чёрное дело с {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} пришёл к {1} и теперь мёртв!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} мёртв! А в голове сидит это число: {1}</value>
   </string>
   <string key="CultConvertYou">
@@ -1211,7 +1211,7 @@
   <string key="HunterVisitDead">
     <value>{0} уже мёртв!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Что-то случилось у {0} в палате? Ничего не помню.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -1460,7 +1460,7 @@
   <string key="BlacksmithKilled">
     <value>Похоже, что {0}, местный кузнец, был большим неудачником. 5 недавно выкованных ножей были воткнуты в его руки, ноги и голову, пригвоздив кузнеца к двери в палату.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} до смерти забили подсвечником с алтаря. Любой может стать жертвой маньяка. {0} был(а) сектантом.</value>
   </string>
   <string key="CupidKilled">
@@ -1498,12 +1498,12 @@
     <value>Тело {0}, охотника на секту, было найдено в центре коридора разрезанным на мелкие кусочки. Не стоило проверять, является ли сектантом серийный убийца.</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>На этот раз волки решили поступить верно и наказали {0}. В отличие от больничной еды, культист оказался на редкость вкусным!</value>
     <value>Отправляясь вербовать пациентов, {0} столкнулся носом к носу с волком! Волки не любят секты, зато любят сектантов. Особенно упитанных.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>Радуясь вербовке очередного сектанта, секта совершила ошибку: {0}, сектант, был распотрошён и выброшен в больничный коридор! Священное писание секты было найдено рядом с торчащим ножом.</value>
     <value>Ночью сектанты пытались завербовать психа, большего чем они сами, и серийный убийца нарисовал на стенах картину кровью и органами сектанта. {0} мертв(а).</value>
   </string>
@@ -1524,8 +1524,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Зная, что остался(лась) только {0}, {1} выбрал(а) время, когда {0} будет наиболее уязвим. Всё, что осталось - лишь изуродованное глубокими ранами тело ковбоя.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>При свете дня встретились {1} и {0}. На шее {0} мерцал огромный крест. {1} выхватил(а) меч и в ту же секунду оборвал(а) деятельность секты, паразитирующей на забывчивых пациентах.</value>
   </string>
   <string key="WolvesEatDrunkBlockSecondKill">
@@ -1570,11 +1570,11 @@
   <string key="SandmanNight">
     <value>Когда каждый вернулся в свою палату, то падает без сил. Они настолько изнурены, что не помнят куда и как легли...</value>
   </string>
-  <string key="PacifistNoLynch">
-    <!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+    <!-- {0} - Imam's name -->
     <value>Горячая речь {0} и немного шаловливых рук - и потоп не позволит санитарам проводить сегодня электрошоковую терапию.</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>Санитары заняты откачкой воды и лечить никого не будут.</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1617,8 +1617,8 @@
     <value>О, новое имя появилось в голове: {0}! Он важен! Или нет... не важно!</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>Что-то случилось с {0} и {1}? Ничего не помню.</value>
     <value>Что-то случилось с {1} и {0}? Ничего не помню.</value>
   </string>
@@ -1651,12 +1651,12 @@
     <!-- 1 - Player got lynched -->
     <value>{0} votes went to {1}.</value>
   </string>
-  <string key="CultistBitten">
-    <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+    <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
     <value>Странно, но {0} не оказалось дома! Что бы это могло означать??</value>
   </string>
   <string key="LynchPeaceTimeout">
-    <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+    <!-- Used in PM if the Imam uses his ability during lynch phase -->
     <value>Все санитары очень заняты, никого лечить не будут.</value>
   </string>
   <string key="ThiefStoleYourRoleVillager">
@@ -1722,7 +1722,7 @@
   <string key="ChemistTargetEmpty">
     <value>{0} забыл прийти в палату! Странно.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value>Кажется, нужно посоветоваться с ними: {0}. Или забудем?</value>
   </string>
   <string key="WolfPackList">
@@ -1744,7 +1744,7 @@
   <string key="ChemistFrozen">
     <value>Что-то случилось? Ничего не помню.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Что-то случилось? Ничего не помню.</value>
   </string>
   <string key="CHFrozen">
@@ -1863,7 +1863,7 @@
   <string key="HarlotFellPublic">
     <value>И чего это шалуна {0} потянуло на кладбище?</value>
   </string>
-  <string key="CultistFellPublic">
+  <string key="ZombieFellPublic">
     <value>Никто не спорит, что сектанты странные, — вот и {0} решил остаться на кладбище.</value>
   </string>
   <string key="ThiefFellPublic">

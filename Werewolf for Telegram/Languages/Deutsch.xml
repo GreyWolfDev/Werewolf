@@ -293,10 +293,10 @@
     <value>Du bist der Seher-Lehrling. 🙇\nDu stehst an zweiter Stelle. Aktuell noch ohne Fähigkeit, geduldig auf deinen Einsatz wartend. Du wünschst ihn dir nicht explizit herbei - immerhin wäre das der Wunsch nach dem Tod des aktuellen Sehers - wenn er aber eintritt, dann ist deine Zeit gekommen und du wirst zu einem waschechten Seher.</value>
     <value>Du bist der Seher-Lehrling. 🙇\nDu wolltest schon immer mal Seher sein, doch leider waren deine Noten nicht gut genug, als du dich auf die Stelle beworben hast. Aus Mitleid hast du diese Ersatzposition bekommen, das heißt du kannst jetzt Däumchen drehen und warten, bis dein Vorgänger ins Gras beißt.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>Du bist ein Kultist. 👤\nJede Nacht könnt ihr zusammen einen Spieler zum Kult bekehren. Falls am Ende nur noch Kultisten leben, gewinnt ihr!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>Du bist der Kultistenjäger. 💂\nManchmal treiben sich im Dorf Kultisten herum, die jeden von ihrem Glauben überzeugen wollen. Du wählst jede Nacht einen Spieler aus. Falls der gewählte Spieler ein Kultist ist, stirbt er. Wenn sie dich bekehren wollen, stirbt das neueste Mitglied des Kults.</value>
   </string>
   <string key="LynchTime" >
@@ -379,7 +379,7 @@
     <value>Als jeder aufwacht, bemerken die Dorfbewohner einen schrecklichen Gestank. Sie folgen dem Geruch und finden {0}, auseinandergerissen und mit abgetrenntem Kopf im Schweinestall. 🐺 NOMNOMNOMNOM {1}</value>
     <value>Es wird Morgen und alle versammeln sich. Alle? Nein! {0} fehlt, und ist auch nicht zuhause... Man steht etwas ratlos beisammen, erst dann bemerkt man das abgetrennte Bein 🐺, das aus dem Gebüsch ragt... {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <!-- bezieht sich auf den Kultistenjäger -->
     <value>Ein bemerkbarer Gestank kommt aus dem Haus von {0}... Das Dorf untersucht es und findet einen Körper vor einem dunklen Altar liegend... Ein Kultist 👤, getötet von einem Jäger! 💂</value>
@@ -508,19 +508,19 @@
   <string key="RemainingPlayersEnd">
     <value>Verbleibende lebende Spieler, Rollen und Teams:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} hat gewählt, {1} zu bekehren.</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name -->
+    <!-- 1 - ZombieHunter's name -->
     <value>In dieser Nacht war es die Aufgabe von {0}, eine weitere Person zum Kult bekehren. Das Glück war anscheinend Anderen zuteil, da {1} als Kultjäger 💂 wohl so ziemlich das unglücklichste Ziel darstellte. Das Aufeinandertreffen hatte daher kein neues Kultmitglied zur Folge, sondern führte im Gegenteil zum Tod eures jüngsten Mitglieds, getötet durch das Schwert des erwähnten Kultjägers.</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} klopfte an die Tür deines Hauses, mit der festen Überzeugung, dich in dieser Nacht vom Kult zu überzeugen. Zu seinem Unglück durchschaust du die Masche deines Gegenübers und greifst, mehr aus Reflex als aus Wissen, nach deinem Schwert und beendest damit jenes Leben. Ein Kultist 👤 ist tot... {1} sind noch am Leben!</value>
   </string>
   <string key="CultConvertYou">
@@ -528,18 +528,18 @@
   </string>
   <string key="CultTeam">
     <!-- ??? -->
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Kultisten: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} trat dem Kult bei!</value>
     <value>{0} folgt ab jetzt auch dem Kult!</value>
     <value>Ihr könnt euch über ein neues Mitglied im Kult in Form von {0} freuen.</value>
     <value>Auch wenn es keine große Feier gibt: {0} gehört jetzt zum Kult!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} wurde gesendet, um {1} zu bekehren... aber keiner war zu Hause!</value>
     <value>{0} findet das Haus von {1} verlassen vor, keine Spur einer menschlichen Seele, die bekehrt werden könnte. Offensichtlich verbringt {1} die Nacht gerne auswärts.</value>
@@ -552,7 +552,7 @@
     <value>Du wolltest {0} jagen, allerdings ist {0} schon tot!</value>
     <value>Deine Abneigung richtet sich gegen Kultisten, nicht gegen bereits tote Personen. Was machst du also hier bei {0}?</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Du gehst in das Haus von {0}, findest ihn an einem Altar zu einem unbekannten Gott betend... Schnell schwingst du dein Schwert nach dem bösen Kultisten. 👤</value>
     <value>In der von dir gewohnten Manier beschattest du das gewählte Haus erst, verschaffst dir dann durch die Fenster einen Einblick in die Zimmer und steigst erst dann leise ein. Und tatsächlich: in einer kleinen umfunktionierten Besenkammer findest du {0}, einen dunkel schimmernden Altar anbetend - das muss ein Kultist 👤 sein! Innerhalb von einer Sekunde beendest du das Leben dieser armseligen Seele, während du dich noch fragst, was diese Personen dazu bewegt, einen solch fehlgeleiteten Weg einzuschlagen...</value>
@@ -572,7 +572,7 @@
     <value>{0} starb! In deiner Wut wurdest du ein Werwolf! 🐺 Die anderen Werwölfe sind: {1}</value>
     <value>Die Nachricht, dass {0} tot sein soll, hörst du wie in Trance; du trittst aus deinem Körper und siehst dich förmlich selber, wie auf dem Boden zusammensinkst und dort verharrst. Nach ein paar Sekunden wird deine Trauer vor allem aber durch Wut ersetzt - eine Wut, die nicht gebändigt werden kann. Sie steigt in dir auf und wird immer präsenter: dein Hass auf das Dorf wird unbeschreiblich und du merkst, wie sich etwas in dir verändert - du mutierst. Warte, was? Du mutierst? Du verwandelst dich in einen Werwolf! Einen echten Werwolf 🐺, mit Fell und allem drum und dran. Und mit Rudel: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter -->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter -->
   <string key="Villager">
     <value>ein Dorfbewohner 👱</value>
   </string>
@@ -618,10 +618,10 @@
   <string key="ApprenticeSeer">
     <value>der Seher-Lehrling 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>ein Kultist 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>der Kultjäger 💂</value>
   </string>
   
@@ -660,7 +660,7 @@
   
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Euer neuestes Mitglied lief zum Haus von {0}, um ihn zu bekehren, aber das Haus war vollkommen zerstört, überall Blut, und Fäden eines Wolfsfells 🐺 vor der Tür...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -866,7 +866,7 @@
     <value>Du hast versucht, den Körper von {0} in deine Sammlung aufzunehmen, wurdest aber vom Schutzengel 👼 abgewehrt! Diese Nacht gehst du leider leer aus :/</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Der Kult sendet {0}, um {1} zu konvertieren, doch stattdessen hört man einen Schuss 🎯, kurz bevor der Körper eures jüngsten Mitglieds aus dem Fenster geflogen kommt! {0} ist tot...</value>
   </string>
@@ -896,7 +896,7 @@
     <value>{0} ist gestorben, und du verwandelst dich in einen Freimaurer. 👷 Deine Kameraden sind (falls vorhanden): {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Der Doppelgänger 🎭 {0} ist zum Kultisten geworden, genau wie du!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1457,7 +1457,7 @@
     <value>Am frühen Morgen hört man einen Schrei, der aus der Werkstatt des Schmieds ⚒️️ kommt. Man hat {0} gefunden, der mit fünf seiner eigenen, aus rostfreiem Stahl gefertigten Messern an seine Werkbank genagelt wurde. 🔪 Das ist noch Qualität, die überzeugt!\nDennoch... Diese Messer will wohl niemand mehr benutzen, um Rohkost für die nächste Gartenparty zu schnibbeln.</value>
     <value>Sieht so aus als wäre {0}, der örtliche Schmied ⚒️, diese Nacht vom Pech verfolgt worden. Er hat anscheinend eine Nachtschicht einlegen wollen... Man findet ihn mit durchgeschlitzter Kehle 🔪 in einer Ecke, doch abgesehen davon wirkt die Werkstatt erstaunlich leer... Anscheinend hat der Serienmörder heute nicht nur seine Organsammlung erweitert!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Ihr findet {0}, der mit einem Kerzenleuchter seines eigenen Altars 👤 erstochen wurde (ein wahrhaft kultiges Verbrechen). Dass der Serienmörder 🔪 sich weder um Herkunft, Berufung noch Religion seiner Opfer kümmert, war euch bereits bekannt, aber warum er diese Nacht kein Messer dabei hatte, ist doch äußerst rätselhaft...</value>
   </string>
   <string key="CupidKilled">
@@ -1498,12 +1498,12 @@
     <value>Der Körper von {0}, dem Kultjäger 💂 wurde bis zur Unkenntlichkeit verstümmelt auf dem Altar der Kirche gefunden. Den Serienmörder 🔪 für einen Kultisten zu halten war eindeutig sein letzter Fehler...</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!-- used when Cultists convert the wolves, only if wolves stayed home -->
+    <!-- used when Zombies convert the wolves, only if wolves stayed home -->
     <value>Eigentlich wollten die Wölfe 🐺 letzte Nacht ja fasten (wie vorbildlich!) - aber wer kann schon der Versuchung eines kleinen Mitternachtsnack auf zwei Beinen widerstehen?! Richtig: niemand. Das musste {0} am eigenen Leib erfahren, auch sein Glaube konnte den Kultisten 👤 nicht vor den scharfen Zähnen der Wölfe beschützen...</value>
     <value>Das Leben als Kultist 👤 ist nicht leicht. Nicht nur muss man sich davon erholen, bisher ein Leben lang an das Falsche geglaubt zu haben, nein, es stehen auch noch immer diese Nachtwanderungen auf dem Programm. {0} verirrte sich dabei letzte Nacht in das Haus eines ruhenden Werwolfs 🐺, war aber selbst ebenfalls zu müde, um wegzurennen - am Morgen kann er es nicht mehr, nur noch die Knochen sind von seinen Beinen übrig geblieben. So wie es aussieht, haben Werwölfe kein Interesse daran, sich neuen kultigen Kreisen anzuschließen....</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!-- used when Cultists convert the SK -->
+    <!-- used when Zombies convert the SK -->
     <!-- Strangely their "holy" book was found stabbed with a knife, as if a statement to show whose religion was triumphant.</val> -->
     <value>Was für ein Fehler... Die Kultisten 👤 haben letzte Nacht die einzige Person im Dorf besucht, die noch verrückter ist als sie selbst. Dafür können alle Bewohner heute ein abstraktes Kunstwerk, bestehend aus den zerstückelten Organen des verstorbenen {0}, vor dem Rathaus bestaunen. Vielleicht nicht jedermanns Geschmack... aber der Serienmörder 🔪 hat seinen ganz eigenen Sinn für Ästhetik.</value>
     <value>So kann man sich irren... Der Kult 👤 war letzte Nacht sicherlich schon siegesgewiß, als sie in einem kleinen Häuschen am Rande der Stadt noch Licht brennen sahen. Aber dann kam doch alles anders...\nAm nächsten Tag findet jeder Bewohner einzelne Körperteile vor seinem Haus, bis man schließlich auf dem Marktplatz die Leiche von {0} zusammenpuzzeln kann. Trotzdem, Einige wirken dabei weniger überrascht als Andere. Ob es wohl Zeugen für den Mord 🔪 gibt?</value>
@@ -1530,8 +1530,8 @@
     <value>Aus gutem Grund hat {1} sich den Jäger 🎯 bis zuletzt aufgespart: mit seinem Gewehr ist er schon eine einschüchternde Erscheinung, doch scharfe Werwolfklauen sind schließlich auch eine nicht zu unterschätzende Waffe. Mit seiner gesammelten Erfahrung 🐺 war der arme {0} mit seiner Büchse allerdings chancenlos: mit seinem Tod stirbt der letzte menschliche Bewohner des Dorfes...</value>
     <value>Was ein schlauer Wolf. 🐺 Obwohl {0} die längste Zeit überaus wachsam war, hat jener es doch geschafft, ihn in einem unaufmerksamen Moment zu erwischen. Den letzten Dorfbewohner zu töten war dann keine schwere Aufgabe mehr für {1} und alles was jetzt von {0}, dem Jäger 🎯, noch übrig bleibt, ist sein Kopf, geziert mit zwei langen Kratzern.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>Auch wenn dem Dorf nur noch zwei Personen geblieben sind, freut sich {1} auf die Aussicht, in dieser Nacht dem Kult entgültig den Garaus zu machen, obgleich die letzte andere überlebende Person im Dorf ein Kultist sein mag oder nicht - die Gewissheit zählt. In gewohnter Montur und Manier ist das Vorhaben für den Kultistenjäger 💂 kein Problem, den Job erledigt er immerhin jede Nacht. Und tatsächlich wird er fündig! Ein schimmerndes Kreuz, das sich auf einem Tisch im Eingang des Hauses von {0} befindet, verrät eindeutig, dass hier ein Kultist 👤 hausen muss. Doch fehlt jede Spur des Enttarten. Hinter ein großen Vase vor dem Haus versteckt, wartet {1} auf den erst am Morgen zurückkehrenden Kultisten. Was dieser in der Nacht getrieben hat, lässt {1} zwar erschaudern, kann ihn aber nicht daran hindern, sich von hinten zu nähern und das Dorf um eine weitere Person zu dezimieren.</value>
     <value>{1} und {0} laufen gemeinsam auf das Zentrum des Dorfes zu. Als {0} plötzlich beginnt, von seinem Kult 👤 zu erzählen, zögert der Andere nicht lange und erhebt sein Schwert ein letztes Mal, auf dass die falsche Lehre des Kultes dem Dorf nie wieder schaden könne. Der Kultistenjäger 💂 schwört, das Dorf auch weiterhin vor fremden und unheimlichen Kulturen zu verteidigen - auch wenn er so wohl auf lange Zeit der einzige Bewohner bleiben wird...</value>
   </string>
@@ -1760,17 +1760,17 @@
   <string key="AboutSandman">
     <value>Einmal pro Spiel kannst du als Sandmann 💤 alle Spieler in einen tiefen Schlaf schicken, sodass keine der nachtaktiven Rollen aktiv werden kann.</value>
   </string>
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>Du bist der Pazifist. ☮\nEinmal pro Spiel kannst du das allabendliche Lynchen unterbinden. Alle Spieler gehen nach diesem Tag direkt schlafen, ohne eine Abstimmung. Vielleicht kommt das ja in Mode.</value>
     <value>In dir schwingt noch der Geist von '68: Alle haben ein Recht darauf zu leben! ☮️\nVielleicht bist du aber auch einfach verwirrt, weil Fotos von Werwölfen dich immer an dein größtes Idol erinnern... Wie auch immer, bei der allabendlichen Abstimmung dreht sich dir immer der Magen um, welch Barbaren! Nun, du wirst sie nicht mehr ändern können, nicht in diesem Leben. Aber du bist auch wortgewandt und überzeugend, vielleicht kannst du sie ja zumindest für einen Tag zum Nachdenken bringen und so ein Menschenleben wahren?</value>
-    <!-- <val>You are the Pacifist ☮️. You can choose to convince everyone in your village not to lynch anyone. This can only be done once.</val> -->
+    <!-- <val>You are the Imam ☮️. You can choose to convince everyone in your village not to lynch anyone. This can only be done once.</val> -->
  </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>der Pazifist ☮️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>Du bist der Pazifist. ☮️\nEinmal pro Spiel kannst du das allabendliche Lynchen unterbinden. Alle Spieler gehen nach diesem Tag direkt schlafen, ohne eine Abstimmung.</value>
-    <!-- <val>The Pacifist can choose to convince everyone in your village not to lynch anyone. This can only be done once.</val> -->
+    <!-- <val>The Imam can choose to convince everyone in your village not to lynch anyone. This can only be done once.</val> -->
   </string>
 
   <string key="RoleInfoWiseElder">
@@ -1803,15 +1803,15 @@
 
   <!-- Ab hier hat Robby (@Appfel) alles kaputt gemacht -->
 
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Peace! ☮️\nMöchtest Du heute das Lynchen verhindern oder es Dir lieber für einen schlimmeren Tag aufheben?</value>
   </string>
-  <string key="PacifistNoLynch">
+  <string key="ImamNoLynch">
     <!-- {0} - Name des Pazifisten -->
     <value>Der Pazifist ☮️, {0}, steht langsam auf und erzählt in etwas lullender Stimme etwas vom Frieden und wie toll die Welt wäre wenn es keinen Krieg mehr gäbe. Für Euch klingt das ganze sinnig, ihr wollt auf das Lynchen verzichten! Und etwas müde fühlt Ihr Euch auch.</value>
     <value>Inmitten eurer Diskussionen meldet sich eine Stimme aus dem Pulk, die ihr zuerst nicht zuordnen könnt.\n„Also, ihr wisst ja alle, dass Krieg schlimm ist. Daher bin ich dafür, dass es in diesem Dorf von nun an nur noch friedlich zugeht. Lasst uns deswegen heute Abend niemanden töten, sondern einfach friedfertig ins Bett gehen.“\nNormalerweise würdet ihr auf so einen Schmuh natürlich keinen Fliegenschiss geben. Aber heute... irgendwie hat das was, was {0} ☮️ so sagt! Ihr nickt euch zu: So soll es sein. Heute wird niemand sein Leben lassen müssen.</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>Ihr seid noch immer von der Rede des Pazifisten ☮️ eingelullt, sodass ihr das Lynchen vergesst!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1926,19 +1926,19 @@
     <value>Ist geheimes Lynchen aktiviert und die Anzahl der Stimmen wird angezeigt, dann wird der Name der Wähler eines Gewählten: {0}</value>
   </string>
   
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
     <value>Komisch... Der Zirkel ist zusammen gekommen, um zu wählen, wen ihr heute bekehren wollt. Doch irgendwer fehlt... {0}! Wo der sich wohl rumtreibt?</value>
   </string>
   
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
     <value>Peace!</value>
     <value>Friede den Hütten!</value>
     <value>Friede, Freude, Eierkuchen!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
     <value>Schön die Finger stillhalten. Heute gibt es keine Abstimmung. ☮️</value>
     <value>Die Rede des Pazifisten ☮️ hat euch überzeugt; heute gibt es keine Abstimmung.</value>
   </string>
@@ -2063,7 +2063,7 @@
     <value>💔 Du wurdes versetzt! Dein Date {0} kam nicht und hatte nachts wohl besseres zu tun. Das tut weh! 💔</value>
     <!-- <value>{0} wasn't home! You drag your suitcase back home, cursing your bad luck.</value> -->
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value>Der Kult 👥 besteht aus: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -2127,9 +2127,9 @@
     <value>Liebevoll hast du das Date vorbereitet und nun sitzt ihr euch gegenüber. Ihr seht euch sehr tief in die Augen, die Funken sprühen. Doch als ihr eure Hände berührt, wird dir schlagartig kalt und du erstarst! Ob der Eiswolf 🐺❄️ das mit Absicht oder aus Versehen gemacht hat ist dir nicht bekannt, aber bewegen kannst du dich nicht mehr. Und den Wein kannst du auch nicht servieren. Kopf hoch, es gibt immer noch eine Chance und am Morgen bist du eh wieder aufgetaut. Wie gut, dass du extra die Heizung hochgedreht hast!</value>
     <!-- <value>As you stirred in your sleep, preparing to wake up to get your potions, a strong gust of wind blew in from the windows, causing you to freeze 🐺☃️. From the corner of your eyes, you saw the bottles of your potions frosted over. Looks like they didn't escape the brunt of the freezing spell either. You mentally sighed, wishing the sun came up sooner... Good thing you're thawed now, though</value>-->
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Gerade als du das Haus verlässt, um zum Gemeindehaus zu gehen, merkst du wie die Beine immer schwerer werden. Auch sonst ist dir kalt. Nach kurzer Zeit erstarrst du völlig 🐺❄️ und kannst den Kult nicht unterstützen. Nur gut, dass du noch vor dem Morgengrauen wieder auftaust und dich niemand in der Kluft gesehen hat!</value>
-    <!--<value>As you donned your cloak and prepared to leave your house, a gust of wind blew in from the doorway, causing you to freeze 🐺☃️. Your fellow cultists dropped by soon after to bring you along to cult people, but they ended up laughing at your demise. Leaving you by the doorway, they promised that they'll make good work of tonight. Now that you're unfrozen, you leave the house, cringing in embarrassment. </value>-->
+    <!--<value>As you donned your cloak and prepared to leave your house, a gust of wind blew in from the doorway, causing you to freeze 🐺☃️. Your fellow Zombies dropped by soon after to bring you along to cult people, but they ended up laughing at your demise. Leaving you by the doorway, they promised that they'll make good work of tonight. Now that you're unfrozen, you leave the house, cringing in embarrassment. </value>-->
   </string>
   <string key="CHFrozen">
     <value>Hast du alles? Die Liste mit dem bekannten Kult, die Liste möglicher Kultisten, deinen blauen Helm, dein Schwert, deinen Eiswürf... Moment! Was? Du willst dich umgucken, bist aber wie erstarrt. Es scheint, als würde dieser Nacht der Eiswolf 🐺❄️ seine schützende Hand über die Kultisten breiten. Wie merkwürdig...</value>
@@ -2319,7 +2319,7 @@
   <string key="HarlotFellPublic">
     <value>Als die Hure 💋 {0} von ihrer Nacht zurückkam, nahm sie eine Abkürzung über den Friedhof. Allerdings war sie wohl ein wenig abgelenkt und sah das offene Grab ☠️ nicht, bis sie den Boden unter den Füßen verlor... Vielleicht hätte sie sich lieber doch einen Job für tagsüber suchen sollen!</value>
   </string>
-  <string key="CultistFellPublic">
+  <string key="ZombieFellPublic">
     <value>Die Kultisten wollten die Kirche verbrennen, aber als {0} sie über den Friedhof ☠️ führen wollte, trat der Kultist 👤 in eine Bärenfalle! Nur noch ein verzweifelter Schrei war zu hören, als die anderen Kultisten schon die Flucht ergirffen...</value>
   </string>
   <string key="ThiefFellPublic">

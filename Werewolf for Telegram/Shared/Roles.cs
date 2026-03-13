@@ -59,10 +59,10 @@ namespace Shared
         ApprenticeSeer = 32768,
 
         [Role("👤")]
-        Cultist = 65536,
+        Zombie = 65536,
 
         [Role("💂")]
-        CultistHunter = 131072,
+        ZombieHunter = 131072,
 
         [Role("👷")]
         Mason = 262144,
@@ -104,7 +104,7 @@ namespace Shared
         Lycan = 1073741824,
 
         [Role("☮️")]
-        Pacifist = 2147483648,
+        Imam = 2147483648,
 
         [Role("📚")]
         WiseElder = 4294967296,

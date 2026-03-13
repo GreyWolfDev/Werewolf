@@ -209,10 +209,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >تو ناخدایی! مرمیت من همه ی فنون رو بهت یاد داده و وقتی بمیره، تو جاشو میگیری!</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >تو بدنسازی! هرشب یک نفرو به باشگاه بدنسازی دعوت میکنی! اگه همه ی بازیکنا بدن ساز بشن، تو میبری.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >تو ریقو هستی! بدنسازا کل شهر رو احاطه کردن و خانوما فقط جذب اونا میشن! کار تو اینه که همه ی بدنسازا رو نابود کنی. اگه خونه ی دیوونه یا ماهی ها بمیری نمیتونی نقششو بفهمی! ولی اگه خونه ی پلانکتون بری، صد در صد میمیری!</value>
   </string>
   <string key="LynchTime" >
@@ -270,7 +270,7 @@
     <!-- 1 - victim role -->
     <value>آخه این ماهی کوچولو {0} چیکارتون داشت که دیوونش کردید. یه گوشه داشت کربی پتی میزد بر بدن.خداحافظ {1}. ماهیه خوبی بودی</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>اینطور که معلومه ریقو زده یکی از بدنسازا یعنی {0} رو کشته</value>
   </string>
@@ -376,34 +376,34 @@
   <string key="RemainingPlayersEnd">
     <value>بازیکن های باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value> {0} میگه به {1} قرص بدنسازی بدیم</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>خب {0} رفت {1} رو بیاره باشگاه ولی ریقو بود زد کشتش</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>یکی اومد ببرت باشگاه. اون فرد‌ {0} بود و‌تو کشتیش. {1} تا بدنساز دیگه داریم</value>
   </string>
   <string key="CultConvertYou">
     <value>تو الان عضو کلوپ بدنسازی هستی. هرشب یه نفرو باید بیاری باشگاه و محصولاتتو بهش بفروشی</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>بدن سازای خوش هیکل عبارتند از {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>تبریک میگم! {0} عضو کلوپ شد و همیشه ازتون خرید میکنه</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} رفت تا {1} رو گول بزنه بش قرص بفروشید ولی هرچی زنگ زد کسی باز نکرد</value>
   </string>
@@ -414,7 +414,7 @@
     <!-- 0 - target name -->
     <value>رفتی {0} رو بکشی ولی مرده بود</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>رفتی {0} رو بکشی. دیدی داره دمبل میزنه. اعصابت کیری شد و دمبلو کردی تو کونش.</value>
   </string>
@@ -431,7 +431,7 @@
     <!-- 0 - teamate's names -->
     <value>چون {0} همدت بود و مرد، الان دیوونه شدی و هم تیمی هات عبارتند از {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>ماهی 🐟</value>
@@ -478,10 +478,10 @@
   <string key="ApprenticeSeer">
     <value>ناخدا 🎅</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>بدنساز 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>ریقو 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -513,7 +513,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>دیشب عضو جدید باشگاه یعنی {0} رفت یکی رو ب باشگاه دعوت کنه ولی دیگه برنگشت</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -700,7 +700,7 @@
     <value>رفتی گوشت {0} رو بدزدی ولی خدای دریا با فن جادویی تورو پرتت کردتو لونت</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value> دیشب بدنساز {0} رفت به‌ {1} قرص بدنسازی بده ولی مامور فهمید داره بش جنس تقلبی میفروشه از بیکینی باتم ممنوع الورودش کرد</value>
   </string>
@@ -724,7 +724,7 @@
     <value>{0} همزادت بود و تو‌ الان بجاش‌میری سر ملاقات کراستی ‌بازا، کراستی بازا عبارتند از : {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>همزاد، یعنی {0} هم چون یکی از اعضای فرقه رو به عنوان مدل انتخاب کرده بود الان فرقه گرا شد.</value>
   </string>
 
@@ -1273,7 +1273,7 @@
   <string key="BlacksmithKilled">
     <value>تو هوا حباب هایی قهوه ای دیده میشه! پس از کمی جستوجو جسد مرد حبابی {0} رو پیدا میکنیم که ترکیده شده</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب پلانکتون هوس گوشت بدنساز کرد و به باشگاه بندسازی حمله کرد. {0} مرده</value>
   </string>
   <string key="CupidKilled">
@@ -1306,10 +1306,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>ریقو داشت قدم میزد که یکی از بدنسازا رو بکشه ولی دید که وارد خونه ی پلانکتون شده. پس از کمی گشت و گذار توی خونه یهو احساس میکنه کمرش سنگین شده ولی توجه نمیکنه‌و راه خروجو پیدا میکنه‌و توی راه بوووم. بمب ساعتی پلانکتون میترکه و {0} به آسمون میره</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>بدنساز {0} میره که دیوونه هارو دعوت بده ولی راهی تیمارستان میشه</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>دیشب {0} رفته که یکی رو به باشگاه بیاره ولی فردا روستایی ها میبینن که گوشت بدنسازی به اسم {0} با قیمت هنگفتی به فروش میرسد</value>
   </string>
   
@@ -1329,8 +1329,8 @@
 	    <value>{1} مامور یعنی {0} رو میبینه و بهش حمله ور میشه. اول گوشیشو میخوره و توی یه حرکت سریع اونو دیوونه میکنه. دیوونه برنده ی این مسابقه میشه</value>
   </string>
   
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>تنها بدنساز {0} با پرستیژ خاصی وارد میدون شهر میشه. تمام دخترا دورش جمع میشن. بعد ازاینکه دورش خلوت شد، ریقو {1} با تفنگش اونو هدشات میکنه.
 ریقو برنده ی این مسابقس  </value>
   </string>

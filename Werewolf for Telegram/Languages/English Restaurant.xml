@@ -257,10 +257,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>You are the Sous Chef 🥐(🙇) . Being the second-in-command in the kitchen, you follow the Executive Chef's 🥖(👳) orders and train other chefs to plate dishes to a Michelin 3-star standard. You also have to check all the equipment in the kitchen every day, so you do not actually spend much time talking to the Executive Chef. If the Executive Chef resigns or is assigned another role, you will be promoted as the new Executive Chef 🥖(👳).</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>You are a Vegan Chef 🥑(👤). You were recently hired only because a food critic wrote a review last year about how this professional restaurant lacks options for vegan customers. Having worked in the kitchen for some time, you are also disappointed how little awareness the staff has about the ethical and environmental importance of veganism. You aim to change that by sharing your vegan lunchbox with one staff every day and inspiring them to embrace veganism. You win if everyone in the restaurant turns vegan!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
 	<value>You are the Butcher Chef 🍖(💂). Ever since a new Vegan Chef 🥑(👤) was hired last year to create dishes to please the younger generation, you've suspect that veganism is spreading in the kitchen and your job is at risk. Every day, you can check any staff's lunchbox to see if they eat meat or not. If you find a vegan lunchbox, you will sneak in a piece of meat and make them quit their job in rage. If a Vegan wants you to try their lunchbox, you would sneak some meat into it and return the lunchbox to them!</value>  
   </string>
   <string key="LynchTime">
@@ -322,7 +322,7 @@
     <value>No one is celebrating today as everyone learnt that {0}, one of the most beloved staff has left the restaurant... perhaps to find better opportunities across the street! {1} </value>
     <value>Oh no! {0} has resigned today and left their station in a mess. Someone saw them leave in a hurry so that they can start working across the street at the competitor's restaurant ASAP... {1} </value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 <!-- 0 - victim name -->
     <value>There is an open lunchbox on one of the tables, inside you can see a bed of kale leaves, chickpeas and a half-eaten piece of fish... It is {0}'s vegan lunchbox 🥑(👤)! They must have left the restaurant in rage after finding meat in their lunchbox...</value>
     <value>There is an open lunchbox on one of the tables, inside you can see some half-eaten soba noodles, fresh green edamame... and some thinly-sliced salmon disguised as carrots? It is {0}'s vegan lunchbox 🥑(👤)! They must have left the restaurant in rage after being served meat in their lunchbox...</value>
@@ -443,7 +443,7 @@
   <string key="RemainingPlayersEnd">
     <value>Remaining Chefs and staff, job positions, and teams:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
 <!-- 0 - Voter's name -->
 <!-- 1 - target name -->
     <value>{0} votes to enthuse {1} about the magic of lentil-soaking</value>
@@ -455,14 +455,14 @@
     <value>{0} wants share their spice mix recipe with {1} so that they could cook delicious vegan treats</value>
     <value>{0} votes to share their vegan lunchbox with {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
-<!-- 0 - Yougest Cultist (killed)'s name' -->
-<!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+<!-- 0 - Yougest Zombie (killed)'s name' -->
+<!-- 1 - ZombieHunter's name -->
     <value>Today, it was {0}'s turn to inspire one of the staff to become a vegan. However, they chose {1} out of everyone, who was the Butcher Chef 🍖(💂)! Seems like the Butcher rejected their lunchbox offer and even mixed in a bit of meat into {0}'s lunchbox...Finding they have been given meat for lunch, {0} resigned and left in a great rage.</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-<!-- 0 - Youngest Cultist's name -->
-<!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - Number of Zombies left -->
     <value>During lunchtime, {0}'s tried to impress you with their vegetable tempura bento 🥑(👤), but you refused them and even snuck in a piece of meat into their lunchbox while they were distracted. Hopefully they will get so angry that they resign from the restaurant! Muahaha! There are {1} Vegan Chefs left.</value>
     <value>During lunchtime, {0}'s tried to impress you with their falafel burger 🥑(👤), but you refused them and even snuck in a piece of meat into their lunchbox while they were distracted. Hopefully they will get so angry that they resign from the restaurant! Muahaha! There are {1} Vegans left.</value>
     <value>During lunchtime, {0}'s tried to impress you with their pasta primavera 🥑(👤), but you refused them and even snuck in a piece of meat into their lunchbox while they were distracted. Hopefully they will get so angry that they resign from the restaurant! Muahaha! There are {1} Vegans left.</value>
@@ -472,15 +472,15 @@
     <value>You applied to become a Vegan Chef 🥑(👤) today after you tasted a delicious vegan lunchbox! You will continue to spread veganism in this kitchen by choosing to share your lunchbox with one person per day. You win if everyone in the restaurant turns vegan!</value>
   </string>
   <string key="CultTeam">
-<!-- 0 - Number of cultists -->
+<!-- 0 - Number of Zombies -->
     <value>The other Vegan Chefs 🥑(👤) are: {0}</value>
   </string>
   <string key="CultJoin">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>{0} was very inspired and decided to apply to become a Vegan Chef!</value>
   </string>
   <string key="CultVisitEmpty">
-<!-- 0 - Newest cultist's name -->
+<!-- 0 - Newest Zombie's name -->
 <!-- 1 - target name -->
     <value>{0} tried to share their delicious vegan lunchbox with {1}, but they were nowhere to be found! Were they in the back-alley?</value>
   </string>
@@ -492,7 +492,7 @@
 <!-- 0 - target name -->
     <value>You tried to check {0}'s lunchbox but heard that they didn't have one... because they already resigned!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
 <!-- 0 - target name -->
     <value>You peek into {0}'s lunchbox to find a horrible bed of iceberg lettuce! Where's the meat🥑(👤)? You snuck in a little piece of meat and pray that the {0} will be grateful for what you did.</value>
     <value>You peek into {0}'s lunchbox to find a ginormous chunk of tofu! Where's the meat 🥑(👤)? You snuck in a little piece of meat and pray that the {0} will be grateful for what you did.</value>
@@ -514,7 +514,7 @@
   <string key="WildChildTransform">
 <!-- 0 - role's name -->
 <!-- 0 - teamate's names -->
-<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
     <value>You cannot believe that your mentor, {0} has left the restaurant! Feeling disappointed, you walk across the street to the competitor's restaurant and applied to be their Talent Poacher 🍔(🐺), hoping that you can learn from a few of the chefs that you help recruit through your new job. The other Talent Poachers are: {1}</value>
   </string>
@@ -563,10 +563,10 @@
   <string key="ApprenticeSeer">
     <value>the Sous Chef 🥐(🙇)</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>a Vegan Chef 🥑(👤)</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
 <!-- These are for the player list -->
     <value>the Butcher Chef 🍖(💂)</value>
   </string>
@@ -596,7 +596,7 @@
     <value> The Sashimi Chefs are: {0}. So desu ne!</value>
   </string>
   <string key="CultTargetDead">
-<!-- 0 - Youngest cultists name -->
+<!-- 0 - Youngest Zombies name -->
     <value>You tried to share your delicious vegan lunchbox with {0}, but you learnt that they had left the restaurant.....</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -800,12 +800,12 @@
     <value>You added some chlorine to {0}'s cup of water watched from afar... just as they were about to drink it, they were stopped by the Safety Supervisor ⚠️(👼) who asked them to only drink fluids in the common room! Better luck tomorrow...</value>
   </string>
   <string key="CultConvertHunter">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>The Vegan Chef 🥑(👤) {0} tried to inspire {1} to try their vegan lunchbox, in which they did... but gave a lengthy, critical review about the food in it afterwards 🖋(🎯). {0} feels utterly ashamed that despite 5 years of culinary school, that they were unable to appreciate and critique food the way {1} could. {0} resigned immediately and decided to go back to culinary school...</value>
   </string>
   <string key="CultConvertSerialKiller">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>The Vegan Chef 🥑(👤) {0} tried to share their lunchbox with {1}. What a pleasant surprise when {1} not only accepted their offer, but gave {0} a tasty, 100% vegan nutty bar afterwards! The bar was actually a curse in disguise because after {0} ate it, hives started spreading across their face and they were rushed to hospital immediately ☠️(🔪)!</value>
   </string>
@@ -829,7 +829,7 @@
     <value>Because {0} has left the restaurant, you were assigned to replace them as the new full-time Sashimi Chef 🍣(👷), working next to {1}</value>
   </string>
   <string key="DGToCult">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>The Management Trainee 🙇(🎭) {0} has completed their education and was assigned to be a Vegan Chef just like you!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1183,7 +1183,7 @@
     <value>Dishwasher (Tanner) as a role set to: {0}</value>
   </string>
   <string key="AllowCultQ">
-    <value>Allow Vegan Chef (Cultist) as a role option?\nCurrent: {0}</value>
+    <value>Allow Vegan Chef (Zombie) as a role option?\nCurrent: {0}</value>
   </string>
   <string key="AllowCultA">
     <value>Cult as a role set to: {0}</value>
@@ -1386,7 +1386,7 @@
     <value>The staff were shocked to hear that {0}, the Event Manager 🎂(⚒), was sent to hospital due to an allergic reaction. Were they allergic to the goat's milk from the intriguing dessert served or how did that happen?</value>
     <value>The staff were shocked to hear that {0}, the Event Manager 🎂(⚒), was sent to hospital due to an allergic reaction. Did they ate stale sashimi from the wedding buffet or how did that happen?</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} was rushed to the hospital today after having their lunchbox. The staff are gossiping and saying that the vegan food found 🥑(👤) in their lunchbox was the cause of the allergy, although some believe that one of the spy chefs are responsible...</value>
   </string>
   <string key="CupidKilled">
@@ -1424,11 +1424,11 @@
     <value>The Butcher Chef 🍖(💂) {0} was rushed to the hospital today... their face was covered with a kitchen towel when the paramedics lifted them up because they had an allergic reaction on their face! Some chefs saw that {0} was trying to check the lunchbox of a suspicious chef ☠️(🔪), but as they opened the lunchbox they were sprayed with some weird, acidic substances. This will teach them about messing with other people's food.</value>
   </string>
   <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>{0} the Vegan Chef 🥑(👤) had resigned from their job today with a big smile on their face. Seems they were invited to a better job position across the street while they were trying to inspire someone 🍔(🐺) to try their vegan lunchbox!</value>
   </string>
   <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
     <value>{0} the Vegan Chef 🥑(👤) was rushed to hospital today due to an allergic reaction. Their friends saw that they were trying to inspire someone to try their vegan lunchbox, but was slapped in the face afterwards. Soon, the slapped cheek was puffing up and their face started to spasm ☠️(🔪)... and for the rest I would not go into details...</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1448,8 +1448,8 @@
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>With one more staff to recruit, {1} invites {0} into the back-alley and thought it would be easy since everyone else had either left the restaurant or been recruited to work for the competitor... and it was! {0} revealed themselves to be the Food Critic 🖋(🎯), who felt very disappointed at the restaurant owner for letting all their experienced staff leave just like that. They agree to join the competitor's restaurant as a Guest Chef and the Talent Poachers have successfully dismantled this restaurant!</value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <!-- Extend time -->
     <value>Only {0} and {1} are left in the kitchen. {0} held out their vegan lunchbox 🥑(👤) with shaky hands, hoping that {1} would be inspired to try it and continue the legacy of this restaurant by working with them to plan a whole new vegan menu. Being the Butcher Chef 🍖(💂), not only did {1} refuse to try it, they grabbed a piece of uncooked lamb shank and smacked {0} in the head! {0} broke down into tears and ran away from the restaurant, leaving the {1} and the restaurant team as the victorious "survivors"!</value>
     <value>Only {0} and {1} are left in the kitchen. {0} held out their vegan lunchbox 🥑(👤) with shaky hands, hoping that {1} would be inspired to try it and continue the legacy of this restaurant by working with them to plan a whole new vegan menu. Being the Butcher Chef 🍖(💂), not only did {1} refuse to try it, they grabbed an uncooked tomahawk steak and smacked {0} in the head! {0} broke down into tears and ran away from the restaurant, leaving the {1} and the restaurant team as the victorious "survivors"!</value>
@@ -1513,7 +1513,7 @@
     <value>{0}joined the restaurant in the last 30 seconds.</value>
   </string>
   <string key="AllowCult">
-    <value>Allow Vegan Chef (Cultist)</value>
+    <value>Allow Vegan Chef (Zombie)</value>
   </string>
   <string key="AllowTanner">
     <value>Allow Dishwasher (Tanner)</value>
@@ -1658,13 +1658,13 @@
   <string key="AboutSandman">
     <value>You are the Food Inspector 🔍(💤). Once per season, you can announce an inspection to take place on the next day. Everyone will get a day of paid leave (Yay!) while your team inspects the kitchen.</value>
   </string>
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>You are the Pastry Chef 🍨(☮️), working hard to lead your team to bake delicious desserts and invent new ones. The restaurant owner is very generous and decided that once per season, you can bake a surprise treat for the staff. You can choose to reveal your treats at any evening meeting, which will make everyone very happy and forget about voting out a spy on that evening.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>the Pastry Chef 🍨(☮️)️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>You are the Pastry Chef 🍨(☮️). Once per season, you can bake a surprise treat for the staff and choose to reveal your treats at any evening meeting, which will make everyone very happy and forget about voting out a spy on that evening.</value>
   </string>
   <string key="RoleInfoWiseElder">
@@ -1688,17 +1688,17 @@
   <string key="AboutThief">
     <value>You are the Busser 🍽(😈). On the first day, you can ask a staff to replace you as the Busser with a game of rock-paper-scissors, after which you will take their role if you win while they will become a Line Cook with part-time bussing responsibilities.\nIn [Full Busser] mode, you will have 50% chance of winning and taking their role, in which they will become the new Busser and continue playing rock-paper-scissors with other staff to pass on this mundane job.</value>
   </string>
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Press this button when you are ready to show everyone the secret treats you prepared!</value>
   </string>
-  <string key="PacifistNoLynch">
-<!-- {0} - Pacifist's name -->
-<!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+<!-- {0} - Imam's name -->
+<!-- {0} - Imam's name -->
     <value>Suddenly, a calming scent of vanilla wafts through the room. The Pastry Chef 🍨(☮️)️ {0} has prepared a special treat of coconut pandan panna cottas for everyone for their hard work! The staff dig into their rightfully deserved desserts and soon forgot that they had to vote today!</value>
     <value>Suddenly, a clean scent of lemon wafts through the room. The Pastry Chef 🍨(☮️) {0} has prepared a special treat of lemon meringue tarts for everyone for their hard work! The staff dig into their rightfully deserved desserts and soon forgot that they had to vote today!</value>
     <value>Suddenly, the lights of the room were turned off. The Pastry Chef 🍨(☮️) {0} appears in the middle of the room with their cart as they set their ladle of rum on fire and poured it over the big baked alaska that they have prepared as a special treat for everyone's hard work! The staff dig into their rightfully deserved desserts and soon forgot that they had to vote today!</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>Everyone was too busy enjoying the treats prepared by the Pastry Chef 🍨(☮️) that they skipped the voting!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1746,8 +1746,8 @@
     <value>The other Sashimi Chefs (if any) are: {0}</value>
   </string>
   <string key="ThiefToCult">
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
     <value>{0} lost a game of "rock, paper, scissors" to the Busser 🍽(😈) {1} so that {0} is no longer a Vegan Chef while {1} became one!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1803,16 +1803,16 @@
   <string key="SecretLynchShowVotersA">
     <value>When secret vote is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
     <value>You realized that {0} returned their Vegan Chef uniform and got a new one. Did they transfer to another line?</value>
   </string>
   <string key="Peace">
-<!-- Used for Pacifist's button -->
+<!-- Used for Imam's button -->
     <value>Reveal your Treats!</value>
   </string>
   <string key="LynchPeaceTimeout">
-<!-- Used in PM if the pacifist uses his ability during lynch phase -->
+<!-- Used in PM if the Imam uses his ability during lynch phase -->
     <value>Everyone was too busy enjoying the treats prepared by the Pastry Chef 🍨(☮️) that they forgot to count the votes! No one gets fired in that case...</value>
   </string>
   <string key="ThiefStoleYourRoleThief">
@@ -1918,7 +1918,7 @@
   <string key="ChemistTargetEmpty">
     <value>You left your latest creation at {0}'s station, but very soon a chef came to tell you that {0} is not at their station right now. You wonder where they aren't and take the dish back so as to not waste it.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value>The Vegan Chefs are: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1975,7 +1975,7 @@
     <value>You were very excited to present your newest creation, but were cut short when suddenly, the Sous Chef came to ask you about the 5 deconstructed fritto misto orders that are on hold. That's funny, this dish is supposed to be served during Autumn only... did someone sabotage the orders 🌶(🐺☃️)? Anyways, you scurry to the storage room to pick up some frozen seafood and make the dish from scratch, leaving behind your experimental dish for another day.</value>
     <value>You were very excited to present your newest creation, but were cut short when suddenly, the Sous Chef came to ask you about the 69 wasabi cube orders that are on hold. That's funny, this dish is supposed to be served in Weddings only... did someone sabotage the orders 🌶(🐺☃️)? Anyways, you scurry to the storage room to pick up some wasabi powder and make the dish from scratch, leaving behind your experimental dish for another day.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>You were about to follow the other Vegan Chefs to inspire a chef when the Server came to ask why you when the 40 vegan onsen eggs that Table 42 ordered are ready. You feel utterly confused as you remember already finishing 10 of these eggs for the exact same table... did someone sabotage the orders 🌶(🐺☃️)? Anyways, you scurry to recreate the eggs while the other Vegan Chefs went ahead to share their hearty lunchbox.</value>
     <value>You were about to follow the other Vegan Chefs to inspire a chef when the Server came to ask why you when the 23 macaroni and peas that Table 76 ordered are ready. You feel utterly confused as you remember already finishing 6 of those baked macaronis for the exact same table... did someone sabotage the orders 🌶(🐺☃️)? Anyways, you scurry to recreate the baked dishes while the other Vegan Chefs went ahead to share their hearty lunchbox.</value>
     <value>You were about to follow the other Vegan Chefs to inspire a chef when the Server came to ask why you when the big vegetarian sashimi platter that Table 2, Table 5 and Table 19 ordered are ready. You feel utterly confused as you don't even remember receiving these orders... did someone sabotage the orders 🌶(🐺☃️)? Anyways, you panicked and started to assemble the big platters while the other Vegan Chefs went ahead to share their hearty lunchbox.</value>
@@ -2140,13 +2140,13 @@
     <value>You tried to check {0}'s lunchbox but was very soon caught by them. They were the HR Manager 😠(☠️)! You are in so much trouble. You have no words to explain what you were doing and they decided that you should be fired.</value>
   </string>
   <string key="HunterFellDigger">
-<!--{0}: cultist-->
-<!--{0}: cultist-->
+<!--{0}: Zombie-->
+<!--{0}: Zombie-->
     <value>It was lunchtime and you were about to reheat your lunchbox when you caught {0} taking a peek into it. You suspect that they were one of those pesky spies and confronted them. They were at a loss of words... so busted! You immediately went to tell the restaurant owner that {0} should be fired &gt;:)</value>
   </string>
   <string key="CultFell">
-<!--{0}: cultist who fell, {1}: grave digger-->
-<!--{0}: cultist who fell, {1}: grave digger-->
+<!--{0}: Zombie who fell, {1}: grave digger-->
+<!--{0}: Zombie who fell, {1}: grave digger-->
     <value>Seems {0} tried to visit your office while you were on a toilet break. You came back to find a memo next to your notebook - seems {0} was very interested in that job position in the branch restaurant that you had on the browser of your computer. The memo also said that they would soon submit their resignation letter...</value>
   </string>
   <string key="CultConvertGraveDigger">
@@ -2215,11 +2215,11 @@
     <value>{0} was caught snooping around the HR Manager's 😠(☠️) room, after which the HR Manager accused them of being a spy to the restaurant owner. Of course, they were not given a second chance and were immediately FIRED! {1}</value>
   </string>
   <string key="HarlotFellPublic">
-<!--{0}: cultist who died-->
-<!--{0}: cultist who died-->
+<!--{0}: Zombie who died-->
+<!--{0}: Zombie who died-->
     <value>{0} was caught snooping around the HR Manager's 😠(☠️) room, after which the HR Manager accused them of being a spy to the restaurant owner. Of course, they were not given a second chance and were immediately FIRED! {0} was the Server 🍒(💋) </value>
   </string>
-  <string key="CultistFellPublic">
+  <string key="ZombieFellPublic">
 <!--{0}: thief-->
 <!--{0}: thief-->
     <value>The Vegan Chef 🥑(👤) {0} has resigned in the middle of the day with a big smile on their face. Some heard that they were going to apply for the new Vegan Executive Chef position in one of the branches of this restaurant. Where did they learn about such a position? From the HR Manager 😠(☠️) maybe?</value>

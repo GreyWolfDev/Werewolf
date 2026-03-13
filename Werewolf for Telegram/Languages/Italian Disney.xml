@@ -205,10 +205,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>Acquarius acquaticus acqualitus, sei Anacleto 🙇! Merlino👳 è un pirla, si mette sempre dei casini, non ti lascia in pace, e soprattutto non ti dà mai ascolto! Eppure tu sei un gufo altamente istruito, perciò sai che, se solo lui fosse fuori dai giochi, potresti fare il suo lavoro mille volte meglio. Avrai occasione di dimostrarlo quando (e se) Merlino👳 morirà, visto che erediterai il suo ruolo.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>Sei un Nano 👤 Da quando Biancaneve💂 ha iniziato a darvi la caccia, tu e gli altri Nani 👤  siete stati costretti a trovare un modo per aumentare di numero e non estinguervi... ma la cosa vi è un po' sfuggita di mano: ogni notte entrate di soppiatto nella casa di un povero villico per accorciargli gambe e braccia, in questo modo lui non ha altra scelta se non quella di unirsi alla vostra setta. Se a fine partita i giocatori in vita sono stati convertiti tutti in Nani 👤 , avete vinto.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>Sei Biancaneve💂! Ne hai abbastanza di vivere giorno e notte con sette Nani 👤  sporchi, disordinati e psicopatici, che passano tutto il giorno fuori casa a tentare di nascondere arti mozzati, e si aspettano la tavola pronta quando tornano a casa (zozzi) la sera. La vita ti aveva promesso molto di più, e tu hai deciso di andartelo a prendere! Ogni notte, puoi scegliere un giocatore. Se è un Nano👤  lo ucciderai. Se un Nano👤  prova a convertirti, l'ultimo membro arruolato dalla setta dei Nani 👤  muore e scoprirai quanti ne sono rimasti.</value>
   </string>
   <string key="LynchTime" >
@@ -261,7 +261,7 @@
   <string key="DefaultEaten" >
     <value>Il mattino è giunto, e con lui un fetore che sa di tragedia. Seguendo l'odore, le principesse trovano {0} fatto a pezzi nel fienile, senza testa. IHIHIHIHIHIH\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Un odore rancido proviene dalla casa di {0}... durante l'ispezione viene ritrovato un corpo senza vita, chinato inerme davanti ad una montagna di arti tagliati... un Nano 👤  è stato ucciso da Biancaneve💂!</value>
   </string>
   <string key="NoAttack" >
@@ -349,13 +349,13 @@
   <string key="RemainingPlayersEnd">
     <value>Giocatori rimasti vivi, ruolo e fazione:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value>{0} vota per tagliare gli arti a{1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} è stato inviato a fare il suo sporco lavoro, per tagliare tutti gli arti a {1}... ma era Biancaneve💂! {0} è morto!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} ti ha fatto visita la scorsa notte, pronto a tagliare i tuoi lunghi arti per renderli piccini picciò...  Ma l'hai ucciso con un rapido fendente della tua spada. Un Nano 👤  è morto... {1} rimanenti!</value>
   </string>
   <string key="CultConvertYou">
@@ -376,7 +376,7 @@
   <string key="HunterVisitDead">
     <value>Hai dato la caccia a {0}, ma era già morto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Fai visita alla casa di {0}, lo cogli a cantare Ehi-Ho! Ehi-Ho! Ehi-Ho! e a cercare di infilarsi delle protesi per sembrare di un'altezza adeguata... Ma non ci sei cascata! Sfoderi così la spada per fendere il malvagio Nano 👤 .</value>
   </string>
   <string key="HunterFailedToFind">
@@ -433,10 +433,10 @@
   <string key="ApprenticeSeer">
     <value>Anacleto 🙇 </value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Nano 👤  </value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Biancaneve 💂</value>
   </string>  
  <string key="RanAway">
@@ -1131,7 +1131,7 @@
   <string key="BlacksmithKilled">
     <value>Sembra che {0}, la Fata Madrina ⚒, sia stata estremamente sfortunata. Il corpo di {0} è stato trovato tagliuzzato da forbici da potatura e senza testa. Sembra che la Regina di Cuori 🔪  non abbia apprezzato l'organizzazione dell'ultima festa affidata alla party planner del villaggio incantato.  </value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} è stato trovato con la testa tagliata. La Regina di Cuori 🔪 ha colpito ancora, indipendentemente da colore, tipo di mazzo e altezza{0} era un Nano 👤 .</value>
   </string>
   <string key="CupidKilled">
@@ -1166,11 +1166,11 @@
     <value>Le Principesse si svegliano la mattina, solo per trovare il corpo di {0}, Biancaneve💂, decapitato e tagliato a pezzi in un carro appena fuori il centro del villaggio incantato.. Lezione imparata: non visitare la Regina di Cuori 🔪.</value>
     <value>Il corpo di {0}, Biancaneve💂 è stato trovato nel centro del villaggio incantato, tagliato precisamente in cento pezzi. Controllare se l' altissima Regina di Cuori 🔪  fosse un Nano 👤  non sembra più una buona idea..</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Sembrava una notte tranquilla, visto che le iene avevano deciso di rimanere a casa, ma l'unico sfortunato è stato {0}, un Nano 👤  che ha provato a tagliare le zampe una iena. La testa di {0} è stata trasformata in una buona cena a domicilio!</value>
     <value>I Nani 👤  hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a tagliare gambe, è stato divorato dalla iena che ha visitato. Sfortunatamente per {0}, le iene non hanno interesse a far parte della loro setta di piccoletti.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>L'ultima notte, i Nani 👤  hanno provato a convertire una persona più pazza di loro. Il loro membro più recente ha provato a infilarsi sotto la gonna e tagliare le gambe della Regina di Cuori 🔪 , e la Regina di Cuori ha creato una nuova scultura di arte moderna, nella piazza della città, con la testa di {0}.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1190,8 +1190,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sapendo che solo {0} è rimasto in vita, {1} prova a sbranare {0} quando {0} meno se l'aspetta, riuscendo a coglierlo impreparato. Mangiare l'ultima Principessa sembra una passeggiata per {1}, che banchetta sul corpo ancora fresco di {0}, l'oramai compianta Merida 🎯 .</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} e {0} escono appena spuntano i primi raggi di luce. Vedendo il cappello che {0} indossa e i suoi piccoli arti deformi, la virtuosa e diafana {1} tira fuori la propria spada, terminando una volta per tutte questa setta che ha contaminato il villaggio incantato.</value>
   </string>
   
@@ -1402,13 +1402,13 @@
   <string key="AboutSandman">
     <value>Una volta per partita, Aurora💤 potrà addormentare tutti i giocatori in partita, impedendogli di svolgere qualsiasi ruolo notturno.</value>
   </string>
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>Sei Ariel ☮️. Dopo aver perso la voce, ti sei resa conto del potere delle parole, per cui hai tentato (e fallito) la carriera da motivational coach (sembrava che ai tuoi discorsi cadessero sempre tutti in una sorta di trance....). Hai deciso quindi di tornare al tuo villaggio e diventare un'asceta. Una volta a partita puoi usare la tua voce melodiosa (e le tue skill da motivational coach) per convincere il villaggio incantato a non linciare nessuno per una notte.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>Ariel ☮️</value>
   </string>
-<string key="AboutPacifist">
+<string key="AboutImam">
     <value>Ariel☮️ può convincere tutti a non linciare nessuno. Potrà farlo solo una volta.</value>
   </string>
   <string key="RoleInfoWiseElder">
@@ -1432,14 +1432,14 @@
   <string key="AboutThief">
     <value>Aladdin 😈 ruba il ruolo e lo trasforma in una semplice principessa.\nSe c'è impostato Aladdin per tutta la partita, quel giocatore si trasformerà nel nuovo Aladdin e continuerà a rubare ruoli per tutta la partita.</value>
   </string>  
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Clicca questo bottone quando vuoi tirare fuori l'arricciaspiccia e far il tuo commovente discorso con la tua voce melodiosa e fermare prossimo linciaggio del popolo!</value>
   </string>
-  <string key="PacifistNoLynch">
-  <!-- {0} - Nome del pacifista -->
+  <string key="ImamNoLynch">
+  <!-- {0} - Nome del Imama -->
     <value>Ariel ☮️, {0}, è la migliore delle motivational coach e ha tirato fuori l'arricciaspiccia e sta facendo un profondo discorso riguardo l'amicizia e la fiducia di fronte al villaggio incantato. Commossi dalle sue parole e caduti in trance grazie alla sua voce melodiosa, nessuno verrà linciato oggi!</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>Dato il profondo e melodioso discorso riguardante l'amicizia e la fiducia reciproca di Ariel ☮️, non ci sarà nessun linciaggio oggi!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1486,8 +1486,8 @@
     <value>I tuoi compagni (se presenti) sono: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} non è più un tuo compagno e {1} è ora divenuto un piccolissimo Nano 👤 , esattamente come te!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1544,17 +1544,17 @@
   <string key="SecretLynchShowVotersA">
     <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Strano... Vi siete riuniti per discutere su che arti tagliare oggi, ma {0} non è presente! Che fine avrà fatto?</value>
   </string>
   
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
 	<value>Pace!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
 	<value>Il linciaggio di oggi è stato annullato per merito di Ariel!</value>
   </string>
   
@@ -1651,7 +1651,7 @@
   <string key="ChemistTargetEmpty">
 	<value>{0} Non era a casa! Torni a casa deluso, che sfortuna.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>I Nani 👤  sono attualmente: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1702,7 +1702,7 @@
   <string key="ChemistFrozen">
     <value>Dopo esserti svegliato pronto a preparare una delle tue soluzioni velenose una raffica di vento entra dalla finestra trasformandoti in un pupazzo di neve 🐺☃️. Sei costretto a far compagnia ad Olaf tutta la notte (e a sentirlo cantare...) finché finalmente la mattina l'incantesimo finisce e torni normale. </value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Dopo esserti preparato per andare a tagliare qualche arto a qualcuno esci dalla porta per essere colpito da una raffica di vento che ti trasforma in un pupazzo di neve 🐺☃️. Sei costretto a far compagnia ad Olaf tutta la notte (e a sentirlo cantare...) finché finalmente la mattina l'incantesimo finisce e torni normale. I tuoi compagni nani ti deridono, ma ti assicurano che ci penseranno loro a tagliuzzare arti anche per te.</value>
   </string>
   <string key="CHFrozen">
@@ -1843,11 +1843,11 @@
   <string key="HunterFellDigger">
 	<value>Dopo un'altra lunga e faticosa notte, ritorni alla tua casa mentre il sole sta già sorgendo. Prima di arrivare a casa, noti una spada poggiata sopra una tomba non finita. Dentro la tomba noti il cadavere di {0}. Bianca Neve non avrebbe dovuto sospettare di te...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>Ritorni a casa dopo una faticosa nottata, quando senti un urlo dalle buche non finite! Ti rechi subito sul posto, solo per trovare {0} morto dentro una buca. Da quando i Nani 👤provano a convertire i cercatori d'oro?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>Mentre vai a casa di {1}, {0} suggerisce che sarebbe una buona idea bruciare la chiesa. Ti guidano tramite il cimitero quando improvvisamente una trappola per orsi gli cattura l'anca! Tutto quello che senti è il suo urlo mentre casca nella buca e voi scappate via.</value>
   </string>
@@ -1903,8 +1903,8 @@
   <string key="HarlotFellPublic">
 	<value>Mentre la prostituta {0} tornava a casa dopo una notte di divertimento ha preso la scorciatoia per il cimitero. Data la tarda ora non stava prestando molta attenzione, e cadde in una tomba aperta! Forse doveva accettare quel lavoro di giorno il giorno prima...</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>I satanisti hanno provato a bruciare la setta, ma come {0} guidava il gruppo tramite il cimitero, è stato colto di sorpresa da una trappola per orsi! Mentre urlava dal dolore e provava a levarsi la trappola, è caduto in una tomba aperta. Gli altri satanisti sono fuggiti in preda al panico!</value>
   </string>
   <!--{0}: thief-->

@@ -177,10 +177,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>🙇 Vi estas la divenista ĉeflernanto. Se la divenisto mortos, vi prenos lian oficon kiel divenisto.\n\nPliaj informoj: /aboutAppS (se tio ne aperas esperante, klaku /setlang kaj agordu esperanton)</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>👤 Vi estas sektano. Ĉiunokte, vi povas elekti ludanton por sektanigi. Se ĉiuj la supervivantoj estas sektanoj, ili venkas.\n\nPliaj informoj: /aboutCult (se tio ne aperas esperante, klaku /setlang kaj agordu esperanton)</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>💂 Vi estas la sektoĉasisto. Sektanoj estas en la vilaĝo! Ĉiunokte, vi povas elekti ludanton: se li estas sektano, vi mortigas lin.\n\nPliaj informoj: /aboutCH (se tio ne aperas esperante, klaku /setlang kaj agordu esperanton)</value>
   </string>
   <string key="LynchTime">
@@ -223,7 +223,7 @@
   <string key="DefaultEaten">
     <value>Kiam ĉiuj ellitiĝas, ili flaras teruran fetoron. Ili sekvas la odoron kaj trovas {0} ŝirita en la porkejo, sen la kapo. NOMNOMNOMNOM {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Fortega fetoro venas de la domo de {0}... ene de ĝi, la vilaĝanoj trovas la korpon de {0} apud malhela altaro. La sektoĉasisto mortigis sektanon! 👤</value>
   </string>
   <string key="NoAttack">
@@ -307,13 +307,13 @@
   <string key="RemainingPlayersEnd">
     <value>Restantaj ludantoj, kaj iliaj roloj:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>{0} voĉis por sektanigi {1}.</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>Vi sendis {0} por fari vian filaboron, kaj sektanigi {1}. Tamen, {1} estis la sektoĉasisto! {0} mortis.</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} alvenis ĉe vi lastnokte, kaj volis sektanigi vin, sed tuj mortis, traŝovata de via glavo. Restas {1} sektano(j)!</value>
   </string>
   <string key="CultConvertYou">
@@ -334,7 +334,7 @@
   <string key="HunterVisitDead">
     <value>Vi decidis ĉasi {0}, sed vi alvenis tro malfrue... {0} jam mortis!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Vi iras ĉe {0}, kaj trovas lin antaŭ altaro preĝantan iun strangan dion... Vi rapide eltiras vian glavon kaj mortigas lin.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -346,7 +346,7 @@
   <string key="WildChildTransform">
     <value>{0} mortis! Vi ekkoleras tiom, ke vi iĝas lupo! Viaj novaj teamanoj estas: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Vilaĝano 👱</value>
   </string>
@@ -392,10 +392,10 @@
   <string key="ApprenticeSeer">
     <value>Divenista ĉeflernanto 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Sektano 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Sektoĉasisto 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -973,7 +973,7 @@
   <string key="BlacksmithKilled">
     <value>Ŝajnas, ke {0}, la forĝisto de la vilaĝo, estis ege malbonŝanca. ⚒Lastnokte, kvin tranĉiloj, freŝe faritaj de la armejo, troviĝas ŝovitaj en la manoj, piedoj, kaj kapo de {0}, kaj kejlitaj ĉe la forĝista tablo. Eble la murdisto esperis plilargigi sian armilan specimenon, krom la organan...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} troviĝas ĝismorte vundita per kandelingo ĉe sia altaro. La murdisto trafis denove, sendepende de raso, lingvo aŭ religio! {0} estis sektano 👤</value>
   </string>
   <string key="HarlotFuckKillerPublic">
@@ -1017,11 +1017,11 @@
     <value>La vilaĝanoj vekiĝas matene, kaj trovas la disigitan korpon de 💂{0}, la sektoĉasisto, en ĉareto metita klarvideble ekster la urbodomo. Lernite: ne vizitu la murdiston!</value>
     <value>La korpo de {0}, la sektoĉasisto, troviĝis meze de la vilaĝo, kvankam precize centonigita tranĉile. Eble kontroli ĉu la murdisto estas sektano ne estis bona ideo...</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Kvankam la lupoj volis resti hejme, ŝajnas, ke estis tro malfacila rezisti je puno de {0}, 👤sektano, kiu decidis provoki al si ĝenojn ĉe la lupoj. La kapo de {0} iĝis bonan vespermanĝon rekte liveritan hejmen!</value>
     <value>La sekto trafis neatenditan ĝenon lastnokte. Ĝia lasta aniĝinto malbonŝance vizitis lupon ĝuste je nokto kiam la lupoj decidis resti hejme, kaj la lupo trovis {0} gustumindan. 👤{0} bedaŭris, ke la lupoj ne interesiĝas pri novaj religioj.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>La sekto pensis ke ili havos novan anon kun ili, sed ili malpravis! {0} estis hakita kaj metita en la centra placo ĉi-matene. Strange la "sankta" libro de {0} troviĝis frapita tranĉile, kvazaŭ tio montrus, kies religio estas venkanta.</value>
     <value>Lastnokte, la sekto provis sektanigi la nura homo kiu, el vilaĝanoj, estas pli freneza ol ili. {0} iris ĉe la murdisto, kaj li faris artaĵon per la organojn de {0} kaj eksposiciis ĝin en la centra placo.</value>
   </string>
@@ -1041,8 +1041,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sciante, ke nur {0} restas, {1} elektas ataki ĝuste kiam {0} ne multe atentas. Forigi la lastan vilaĝanon montriĝis senstreĉa por {1}, ĉar la nura restaĵo estas la disigita korpo de {0}, la ĉasisto, garnita de paralelaj survizaĝaj vundoj.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} kaj {0} eliras en la placon. Vidante brilantan krucon ĉe la kolo de {0}, {1} virte elprenas glavon lastfoje, kaj finigas la malbonan kulturon de la sekto, kiu turmentis la vilaĝon.</value>
   </string>
   <string key="SecondsAdded">

@@ -186,10 +186,10 @@
     <value >Sei il Sostituto della scientifica. Quando (e se) il (vero) Agente della scientifica muore, prenderai il suo posto.</value>
     <value >Sei il Sostituto della scientifica. Questo significa che nel campo c'è almeno un Agente della scientifica</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Sei un membro del "Culto della Spina". Ogni notte, puoi scegliere un giocatore da convertire al tuo culto per poi aiutare Michael Myers ad Halloween.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Sei il poliziotto! Provieni dalla città di Michael Myers e sei venuto qua per eliminare i membri del culto stile Terminator. Ah, se un membro del culto della spina prova a convertirti, l'ultimo membro arruolato dal culto muore e scoprirai quanti ne sono rimasti.</value>
   </string>
   <string key="LynchTime" >
@@ -237,7 +237,7 @@
   <string key="DefaultEaten" >
     <value>Il mattino è giunto, e con lui un fetore che sa di tragedia.  Seguendo l'odore, i villici trovano {0} fatto a pezzi nel suo rifugio senza testa. \n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Un odore rancido proviene dalla casa di {0}... durante l'ispezione viene ritrovato un corpo senza vita, chinato inerme davanti ad un altare oscuro... un membro del culto è stato ucciso dal poliziotto!</value>
   </string>
   <string key="NoAttack" >
@@ -321,13 +321,13 @@
   <string key="RemainingPlayersEnd">
     <value>Giocatori rimasti vivi, ruolo e fazione:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value>{0} vota per convertire {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} è stato inviato a fare il suo sporco lavoro, per convertire {1}... ma era il poliziotto e gli ha sparato in un occhio! {0} è morto sul colpo!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} ti ha fatto visita la scorsa notte, pronto a convertirti...  ma l'hai ucciso.Un membro del culto è morto... {1} rimanenti!</value>
   </string>
   <string key="CultConvertYou">
@@ -348,7 +348,7 @@
   <string key="HunterVisitDead">
     <value>Hai perquisito {0}, ma era già morto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Fai visita alla casa di {0}, e lo cogli a pregare chissà quale dio sconosciuto... Sfoderi così la tua Python e gli spari alla nuca.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -405,10 +405,10 @@
   <string key="ApprenticeSeer">
     <value>Il Sostituto della scientifica 🙇 </value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>il Satanista 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Il Poliziotto 💂</value>
   </string>  
  <string key="RanAway">
@@ -1109,7 +1109,7 @@
   <string key="BlacksmithKilled">
     <value>Sembra che {0}, il Guardiano di Crystal Lake abbia incontrato il propretario di Crystal Lake, Jason, che decide di far finire {0} su tutte le sue trappole e i sopravissuti trovarono la sua faccia più mutilata di quella di Jason.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} è stato trovato senza braccia e senza occhi, Jason non fa distinzione di religione... {0} era un Membro del culto 👤.</value>
   </string>
   <string key="CupidKilled">
@@ -1145,11 +1145,11 @@
     <value>{0} ha fatto visita alla casa di Jason che appena sente bussare apre la porta e conficca una lancia nella bocca del povero Poliziotto che viene conficcato in una parete di casa di Jason, che poi col suo machete taglia prima gambe, braccia, ed infine testa che butta nel lago.</value>
     <value>Il corpo di {0}, il Poliziotto, viene ritrovato tagliato esattamente in 100 pezzi sparsi per il campo, sembra non sia stata una buona idea visitare Jason.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Sembrava una notte tranquilla, visto che i cacciatori hanno deciso di rimanere a casa, ma l'unico sfortunato è stato {0}, un membro del culto che ha provato a convertire un cacciatore La testa di {0} è stata usata per giocare a minigolf.</value>
     <value>I membri del culto hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a convertire, è stato legato e affogato. Sfortunatamente per {0}, i cacciatori non hanno interesse a far parte del suo culto.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>I membri del culto pensavano stupidamente di convertire Jason tra loro, ma si sbagliavano! Jason ha scritto nel corpo di {0} queste parole: Fuck u Myers.</value>
     <value>L'ultima notte, i membri del culto hanno provato a convertire una persona più pazza di loro. Il loro membro più recente ha provato a convertire Jason, che ha creato una nuova scultura di arte moderna con gli organi interni di {0}.</value>
   </string>
@@ -1170,8 +1170,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sapendo che solo {0} era rimasto in vita, {1} lancia una granata in casa sua bloccandolo tra le macerie, infine gli spara in testa e se ne va a riscuotere taglie altrove.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} e {0} escono appena spuntarono i primi raggi di luce. Vedendo il tatuaggio di {0}, capisce che ormai è un membro del culto e decide cosi di porre fine una volta per tutte al Culto della Spina, almeno a Crystal Lake. Ora andrà a far visita a Myers per ucciderlo, o almeno provarci!</value>
   </string>
   

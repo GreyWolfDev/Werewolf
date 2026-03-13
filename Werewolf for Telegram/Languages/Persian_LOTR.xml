@@ -209,10 +209,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >تو الروند هستی یعنی اگه گندالف ا بمیره تو پیشگویی میکنیی</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >تو ایزیلدور هستی، هر شب یه نفرو آموزش میدی تا به گروه دون اداین وارد میکنی اگه همه بازیکنای زنده، عضو دون اداین ها بشن تو میبری</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >ایزیلدور توی روستاس! هر شب یه نفرواموزش میده تا به دون اداین ها وارد میکنه. اگه ایزیلدور رو بکشی دون اداین ها متلاشی میشه ولی اگه موفق بشه کسی رو آموزش بده، نفر اولی که آموزش میمیره</value>
   </string>
   <string key="LynchTime" >
@@ -270,7 +270,7 @@
     <!-- 1 - victim role -->
     <value>دیشب ارکا به شایر حمله کردن و در جریان حمله هابیتی به نام {0} کشته شد 😢😢  {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>اینطور که معلومه ترول دیشب زده ایزیلدور {0} رو کشته</value>
   </string>
@@ -376,34 +376,34 @@
   <string key="RemainingPlayersEnd">
     <value>بازیکن های باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >نظر {0} اینه که {1} رو تبدیل کنید</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>خب {0} رفت که {1} رو اموزش بده تا به گروه دون اداین ها بپیونده ولی {1} ترول  بود و کشتش!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>دیشب {0} اومد آموزشت بده ولی تو زدی کشتیش! {1} باقی مونده</value>
   </string>
   <string key="CultConvertYou">
     <value>تو الان به دون اداین پیوستی و هر شب با بقیه یارانت باید یه نفرو آموزش بدین</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>دون اداین ها: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>الان {0} به دون اداین ها ملحق شد</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>خب  {0} رفت {1} رو آموزش بده تا به دون اداین ها بپیونده ولی اونجا نبود</value>
   </string>
@@ -414,7 +414,7 @@
     <!-- 0 - target name -->
     <value>رفتی {0} رو بکشی ولی مرده بود</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>رفتی خونه {0} و دیدی داره تمرین نظامی  میکنه. از پشت بهش حمله کردی و کشتیش</value>
   </string>
@@ -431,7 +431,7 @@
     <!-- 0 - teamate's names -->
     <value>چون {0} الگوت بود و مرده الان تو ارکی و یارات عبارت اند از : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>هابیت👨🏻‍🌾</value>
@@ -478,10 +478,10 @@
   <string key="ApprenticeSeer">
     <value>الروند💎</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>دون اداین🛡</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>ترول👿</value>
   </string>
   <!-- These are for the player list -->
@@ -513,7 +513,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>عضو جدید دون ادین ها رفت خونه {0} تا آموزشش بده ولی دید کشته شده</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -700,7 +700,7 @@
     <value>رفتی {0} با جادوی سیاهت بکشی ولی گلادریل شکستت داد </value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>دون اداین عزیز یعنی {0} رفت که {1} رو به دینش دعوت کنه ولی {1} لگولاس بود و با تیر و کمانش زد {0} رو کشت</value>
   </string>
@@ -724,7 +724,7 @@
     <value>خب چون تو {0}  به عنوان همزاد انتخاب کردی الان مرده مثل اون نومه نوری میشی اینم بقیه نومه نوری ها: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>فردو بگینز  یعنی {0} هم مثل خودت دون اداین شد</value>
   </string>
   <string key="DGTransformToCult">
@@ -1273,7 +1273,7 @@
 - آره😞
 متاسفانه دیشب {0} گیملی  روستا توسط ویچ کینگ ای در اهنگری به قتل رسید!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب ویچ کینگ  به دون اداین ها حمله کرد و {0} رو به قتل رسوند!</value>
   </string>
   <string key="CupidKilled">
@@ -1306,10 +1306,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>ترول{0} مشغول پیداکردن دون اداین ها بود زمانی که داشت توی جنگل دنبال ردی از ایزیلدور میگشت ویچ کینگ بهش حمله میکنه و میکشتش!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب {0} رفت که ارکا رو دعوت کنه تا با دون اداین ها صلح کنن  ولی ارکا بهش حمله کردن و جنازه تکه تکه شدشو توی نقاط مختلف روستا ول کردن!</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>شب قبل دون اداین ها میخواستن یک نفر جدید رو اموزش بدن، {0} مامور شد که یکی آموزش بده، اما دیگه خبری از {0} نشد! صبح روز بعد دون اداین ها جنازه {0} رو توی ارنور جلوی تخت ایزیلدور پیدا میکنن! ویچ کینگ {0} رو کشته!</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1329,8 +1329,8 @@
  اما فرصت نمیکنه که کمانش رو برداره دستش بگیره و {1} میگیره و تیکه تیکش میکنه! {1} تنها ارک بازمانده سرزمینه است👹</value>
   </string>
   
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>تنها دون اداین بازمانده سرزمین میانه{0} بود که زمانی که صبح داشت سمت میدون شهر میرفت، با ترول {1} روبه رو میشه! ترول، به سمت{0} حلمه میکنه با دست هایی بزرگش اون رو میگره به نصف تقسیمش میکنه ترول برنده شد👿!</value>
   </string>
   

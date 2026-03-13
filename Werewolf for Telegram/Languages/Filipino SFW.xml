@@ -4,7 +4,7 @@
 	First Launch-->
 <!-- Changelog August 14, 2016
 	1. Corrected '*PlayerName* WAS *role*' to '*PlayerName* ay *role*'.
-	2. Changed some role names (Villager, Seer, Guardian Angel, Cultist, Wild Child, Doppelganger, Tanner)-->
+	2. Changed some role names (Villager, Seer, Guardian Angel, Zombie, Wild Child, Doppelganger, Tanner)-->
 <!-- Changelog August 15, 2016 by @pierredplatypus
 	1. Corrected several grammar and lexical errors such as 'mukang' to 'mukhang', 'jan' to 'dyan', 'PATAYA' to 'PATAY', 'ilynch' to 'bitayin', 'sakanila' to 'sa kanila', 'pimili' to 'pumili'.
 	2. Changed some role names (Harlot, AppSeer, Gunner)
@@ -240,10 +240,10 @@
   <string key="RoleInfoApprenticeSeer" >
         <value>Ikaw ang OJT ni Madam Auring. Kapag namatay si Madam Auring, mappromote ka bilang bagong Madam Auring. (Galing no?)</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
         <value>Ikaw ang Bibe. Tuwing gabi, pwede ka pumili ng player na irerecruit sa kulto mo. Kapag lahat ng natitirang player sa dulo ay Bibe na lahat panalo sila.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
         <value>May Leader na Bibe sa baranggay na nangrerecruit! Tuwing gabi, pwede ka pumili ng player. Pag bibe na sila, mamamatay sila. Pag sinubukan kang irecruit sa kulto nila, mamamatay ang pinakabago nilang recruit.</value>
   </string>
   <string key="LynchTime" >
@@ -301,7 +301,7 @@
     <!-- 1 - victim role -->
         <value>Nagising ang mga tambay dahil sa masangsang na amoy. Sinundan nila ang amoy, para makita si {0} Nakatali sa kahoy, mukhang shawarma na katawan niya. NOMNOMNOMNOM {1}</value>
   </string>
-<string key="HunterKilledCultist">
+<string key="HunterKilledZombie">
         <!-- 0 - victim name -->
         <value>Nagising ang mga tambay dahil sa masangsang na amoy na galing sa bahay ni {0}... Pumasok sila sa bahay at nakita nila ang katawan niya sa harap ng gawa-gawang altar... Isang kulto ang napatay ng hunter!</value>
   </string>
@@ -407,19 +407,19 @@
   <string key="RemainingPlayersEnd">
     <value>Mga Natirang buhay na players, roles at team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >Gusto ni {0} irecruit si {1} sa kulto.</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>Inutusan niyo si {0} para irecruit si {1} bilang initiation. Kaso, Cult Hunter pala siya! Patay na si {0}!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>Pumunta si {0} sa bahay mo para irecruit ka sana… Pero sinasaksak mo siya ng espada mo. Namatay na ang isang bibe... {1} nalang ang natitira!</value>
     <value>Pumunta si {0} sa bahay mo para irecruit ka sana… Ngunit ginilitan mo siya ng leeg. May roasted duck ka nang uulamin tonight, oh yeah!... {1} nalang ang natitira!</value>
   </string>
@@ -427,16 +427,16 @@
     <value>Naging marupok ka at naanib sa Kulto ng Mahiwagang Bibe. Isa ka na ring bibe ngayon. Tuwing makalawang gabi, may pagkakataon ka na magrecruit ng iba pang player.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Mga kasapi ng Kulto ng Mahiwagang Bibe: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Narecruit na sa kulto ng bibe si {0}!</value>
 	<value>Isa na ring bibe si {0}!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>Inutusan niyo si {0} pumunta sa bahay ni {1} para irecruit siya... Kaso walang tao sa bahay!</value>
   </string>
@@ -447,7 +447,7 @@
     <!-- 0 - target name -->
     <value>Pumunta ka sa bahay ni {0} para ihunt siya, pero patay na pala siya!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Pumunta ka sa bahay ni {0} at nakita mo siyang nagdadasal sa harap ng altar ng Rubber Ducky. Sinaksak mo agad siya ng espada mo para mapatay ang masamang kulto.</value>
   </string>
@@ -464,7 +464,7 @@
     <!-- 0 - teamate's names -->
     <value>Namatay na si {0}! Dahil sa galit at pagkadepress mo naging werewolf ka na rin! Ang mga bago mong kakampi ay si/sina: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Tambay Lang 👱</value>
   </string>
@@ -510,11 +510,11 @@
   <string key="ApprenticeSeer">
     <value>ang OJT ni Madam Auring 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Ang Bibe 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>Ang Cultist Hunter 💂</value>
+  <string key="ZombieHunter">
+    <value>Ang Zombie Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -545,7 +545,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Inutusan niyo ang pinakabagong miyembro para pumunta sa bahay ni {0} upang isanib siya sa Kulto ng Mahiwagang Bibe kaso, pagdating niya ang gulo ng lugar, puro dugo, at may ilang balahibo ng wolf na naiwan sa sahig...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -735,12 +735,12 @@
     <value>Sinubukan mong patayin si {0} para maidagdag siya sa koleksyon mo pero hinarang ka ng baranggay tanod. Wala kang dagdag sa koleksyon ngayon...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Pinadala ng kulto si {0} para ianib sa pananampalataya ng Mahiwagang Bibe si {1}, pero mukang di siya open minded kaya nakita nalang nilang tumalsik ang katawan ni {0} mula sa bintana kasunod ng isang putok ng baril! Patay na si {0}....</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Pinadala ng kulto si {0} para irecruit si {1}, pero bigla nalang tumalsik ang katawang puno ng saksak sa iba’t ibang ni {0} sa bintana. Adik talaga yung Serial Killer! Si {0} ay patay na...</value>
   </string>
@@ -764,7 +764,7 @@
     <value>Namatay na si {0}, isa ka ang mason ngayon! Ang mga teammate mo (kung meron man) ay: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Ang Transformer na si {0} ay isa ng bibe, tulad mo!</value>
   </string>
   <string key="DGTransformToCult">

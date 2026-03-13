@@ -235,12 +235,12 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Kau adalah Murid Penerawang (Apprentice) 🙇. Mun Penerawang yang asli mati, kau betugas gantikenyo.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >BIDIP BIDIP!! 🐚
 	Kau adalah seorang Kutil 👤, Budak Sesat Pemuja Kerang Ajaib. 
 	Pokoknyo kau pengen nguasai dunio dengan ngajak wong desa gabung dengan kau tiap malem, kalo galo-galo serigala mati dan seluruh wong desa sudah kutilan, kau menang jadi Kutil!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >AWAS!! Kau tau ado gerakan dari Budak Sesat Kutilan di desa. Budak-budak itu nak ngajak wong desa untuk gabung nyembah kerang ajaib! BIDIP BIDIP!
 	 Gawe kau adalah nyari Kutil-Kutil itu dari ulu sampe ilir, kalo salah sikok dari budak itu ngajak kau gabung, kau biso bebala dan nebas anggota terbaru budak itu 💂.</value>
   </string>
@@ -351,10 +351,10 @@
     <value>🌤 Piala dan kepala {0} ditemuke di depan gawang!! Skor 2-1, caknyo rombongan Serigala betanding sepak bola semalem. NOMNOMNOMNOM! {1}</value>
     <value>🌤 Tedenger suaro ribut di rumah {0} semalem!! Warga kiro ado Alien Tapir dateng nyerang desa, ternyata {0} la dimakan Serigala. NOMNOMNOMNOM! {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 	<!-- 0 - victim name -->
-    <value>Ado bau aneh tecium dari rumah {0}. Warga merikso rumah {0} dan nemuke altar pemujaan dan kerang raksasa tebelah duo. Cultist Pemuja Kerang Ajaib 👤 la mati.</value>
-    <value>Ado yang mencurigakan di rumah {0}. Warga ngintip dari balik jendelanyo dan nemuke mayat di pucuk altar pemujaan. Cultist Pemuja Kerang Ajaib 👤 la mati.</value>
+    <value>Ado bau aneh tecium dari rumah {0}. Warga merikso rumah {0} dan nemuke altar pemujaan dan kerang raksasa tebelah duo. Zombie Pemuja Kerang Ajaib 👤 la mati.</value>
+    <value>Ado yang mencurigakan di rumah {0}. Warga ngintip dari balik jendelanyo dan nemuke mayat di pucuk altar pemujaan. Zombie Pemuja Kerang Ajaib 👤 la mati.</value>
   </string>
   <string key="NoAttack" >
     <value >🌤 La pagi. Wong-wong seneng katek yang diserang tadi malem.</value>
@@ -478,35 +478,35 @@
   <string key="RemainingPlayersEnd">
     <value>Pemain Tersiso, Peran, dan Team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
 	<!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} milih ngehasut {1}.</value>
   </string>
-  <string key="CultConvertCultHunter">
-	<!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+	<!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} diutus untuk ngehasut {1} .. dengan polosnyo, dem tu dio sadar ternyato {1} Pemburu Pemuja Kerang Ajaib. Nah lajukelah. 💂
 	{0} lah mati!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-	<!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+	<!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value> {0} ke rumah kau semalem bawa formulir pendaftaran dan macem-macem jenis kerang ajaib.. Ketawo licik, kau langsung ngehunus dio tepat di dadonyo. Sikok Pemuja Kerang Ajaib mati.. {1} t’siso!</value>
   </string>
   <string key="CultConvertYou">
     <value>👤 Pemuja Kerang Ajaib berhasil ngajak kau untuk gabung! BIDIP!! BIDIP!! 🐚. Tiap malem, kau pacak ngajak wong lain untuk gabung pulo’. BIDIP!! BIDIP!!</value>
   </string>
   <string key="CultTeam">
-	<!-- 0 - Number of cultists -->
-    <value>👤 Cultist Pemuja Kerang Ajaib: {0}</value>
+	<!-- 0 - Number of Zombies -->
+    <value>👤 Zombie Pemuja Kerang Ajaib: {0}</value>
   </string>
   <string key="CultJoin">
-	<!-- 0 - new cultist's name -->
+	<!-- 0 - new Zombie's name -->
     <value>{0} lah gabung dengan Pemuja Kerang Ajaib! 👤 BIDIP!! BIDIP!! </value>
   </string>
   <string key="CultVisitEmpty">
-	<!-- 0 - Newest cultist's name -->
+	<!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} bawa formulir pendaftaran ke rumah {1}. Sudah ngetuk pintu rumahnyo beberapo jam, kau mutuske untuk ninggalke formulir pendaftaran di bawah pintu rumahnyo.</value>
   </string>
@@ -521,9 +521,9 @@
 	<!-- 0 - target name -->
     <value>💂 Kau pegi ke rumah {0}, tapi dio lah mati duluan.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
 	<!-- 0 - target name -->
-    <value>💂 Kau pegi ke rumah {0}, ado suaro BIDIP BIDIP!! 🐚 Kau terus ngayunke pedang kau ke arahnyo, sikok Cultist Pemuja Kerang Ajaib lah mati. 👤</value>
+    <value>💂 Kau pegi ke rumah {0}, ado suaro BIDIP BIDIP!! 🐚 Kau terus ngayunke pedang kau ke arahnyo, sikok Zombie Pemuja Kerang Ajaib lah mati. 👤</value>
   </string>
   <string key="HunterFailedToFind">
 	<!-- 0 - target name -->
@@ -538,7 +538,7 @@
     <!-- 1 - teamate's names -->
     <value>{0} lah mati! Kau marah laju kau belari ke utan dan jadi Serigala! Tim Serigala kau ado: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Warga Desa 👱</value>
   </string>
@@ -584,11 +584,11 @@
   <string key="ApprenticeSeer">
     <value>Murid Penerawang (Apprentice Seer) 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>Cultist 👤</value>
+  <string key="Zombie">
+    <value>Zombie 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>Cultist Hunter 💂</value>
+  <string key="ZombieHunter">
+    <value>Zombie Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -844,13 +844,13 @@ Serial Killer Beraksi!! 🔪
     <value>Kau ke rumah {0} untuk ngambek ginjal, tapi ado malaikat yang jago, lantaklah! Lah kau lawan tapi masih kalah kuat samo malaikat, kau tuh manusio biaso.</value>
   </string>
   <string key="CultConvertHunter">
-	<!-- 0 - Youngest Cultist's name -->
+	<!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Kutil junior {0} ke rumah {1} bawa formulir pendaftaran, tetapi ado bunyi tembakan dan {0} nyampak ke langit! {0} telah mati....
 	┬─┬ ︵ /(.□. \）</value>
   </string>
   <string key="CultConvertSerialKiller">
-	<!-- 0 - Youngest Cultist's name -->
+	<!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Kutil junior {0} ke rumah {1} bawa formulir pendaftaran, tetapi ado bunyi tembakan dan {0} nyampak ke langit! {0} telah mati.....</value>  </string>
   <string key="GuardKiller">
@@ -870,7 +870,7 @@ Serial Killer Beraksi!! 🔪
     <value> {0} lah mati, kau jadi mason 👷. Tim Mason kau ini nah : {1}</value>
   </string>
   <string key="DGToCult">
-	<!-- 0 - new cultist's name -->
+	<!-- 0 - new Zombie's name -->
     <value>Si doppelganger {0} lah jadi kutil samo cak kau!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1039,7 +1039,7 @@ Serial Killer Beraksi!! 🔪
     <value>Hidup Kutil Pemuja Kerang Ajaib! Hasut wong supayo pengikut kau betambah banyak, jadi kau menang! </value>
   </string>
   <string key="AboutCH">
-    <value>Pemuja Kerang Ajaib sudah menyebar. Tugas Cultist Hunter berburu dan ngebunuh mereka sikok sikok. Kalu ado kutil datang ke kau, dio pasti mati.</value>
+    <value>Pemuja Kerang Ajaib sudah menyebar. Tugas Zombie Hunter berburu dan ngebunuh mereka sikok sikok. Kalu ado kutil datang ke kau, dio pasti mati.</value>
   </string>
   <string key="AboutWC">
     <value> Di awal permainan, pilih panutan hidupmu. Ketika Panutanmu mati, kamu akan jadi serigala. </value>
@@ -1054,7 +1054,7 @@ Serial Killer Beraksi!! 🔪
     <value> Mason adalah warga yang sederhana. Mereka mengetahui siapa mason lainnya dan bekerja dengan baik. </value>
   </string>
   <string key="AboutDG">
-    <value> Doppelganger akan memilih pemain lain dan ketika pemain tersebut mati, dia akan menjadi peran tersebut. Cultist tidak dapat menhasut Doppelganger. Jika peran yang dipilih adalah Wild Child dan panutannya sudah mati, kamu akan menjadi serigala.
+    <value> Doppelganger akan memilih pemain lain dan ketika pemain tersebut mati, dia akan menjadi peran tersebut. Zombie tidak dapat menhasut Doppelganger. Jika peran yang dipilih adalah Wild Child dan panutannya sudah mati, kamu akan menjadi serigala.
     </value>
   </string>
   <string key="AboutCupid">
@@ -1065,7 +1065,7 @@ Serial Killer Beraksi!! 🔪
   </string>
   <string key="AboutHunter">
     <value>Hunter memiliki keinginan untuk membalas dendam sangat tinggi. Pemain yang datang ke rumahmu, tak segan kamu bunuh. Jika warga menggantungmu, kamu dapat membunuh satu orang lagi sebelum mati. Setelah serigala menyerangmu, kamu dapat membunuh 1 serigala saat itu juga. 
-	Cultist yang berusaha datang untuk menghasutmu memiliki kemungkinan 50% gagal. 
+	Zombie yang berusaha datang untuk menghasutmu memiliki kemungkinan 50% gagal. 
     </value>
   </string>
   <string key="AboutSK">
@@ -1234,10 +1234,10 @@ Serial Killer Beraksi!! 🔪
     <value>Pilihan Tanner dalam Peran: {0}</value>
   </string>
   <string key="AllowCultQ">
-    <value>Apakah kamu ingin Cultist dalam pilihan peran?\nPengaturan saat ini: {0}</value>
+    <value>Apakah kamu ingin Zombie dalam pilihan peran?\nPengaturan saat ini: {0}</value>
   </string>
   <string key="AllowCultA">
-    <value>Pilihan Cultist dalam Peran: {0}</value>
+    <value>Pilihan Zombie dalam Peran: {0}</value>
   </string>
   <string key="ThankYou">
     <value>Terima kasih, Selamat bermain :)</value>
@@ -1405,7 +1405,7 @@ Serial Killer Beraksi!! 🔪
   <string key="BlacksmithKilled">
     <value>Astaga, {0} Tukang Besi ⚒ lagi sial ruponyo. Dio mati kelilipan bubuk besi pas melawan serangan dari Serial Killer. Nasib nian, {0} akhirnyo mati.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Warga nemuke bau busuk dari rumah {0}. Dio mati hidungnyo ilang. Serial Killer muncul lagi! {0} adalah Pemuja Kerang 👤.</value>
   </string>
   <string key="CupidKilled">
@@ -1438,16 +1438,16 @@ Serial Killer Beraksi!! 🔪
     <value>NOMNOMNOMNOM! Serigala bekumpul semalem, lagi pesta dan makan {0}, Karena penasaran makan siapo ado ww yang ngecek KTP nyo. Dak taunyo dio tuh Wild Child 👶.</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
-    <value>Sedih nian. Warga nemuke {0} yang dak lain dak bukan Cultist Hunter 💂, jadi korban keji seorang pembunuh malem tadi. Kutil seneng nian caknyo.</value>
-    <value>Mayat {0} Cultist Hunter 💂, ditemuke di tengah lapangan dengan pedang di leher. Caknyo dio salah mencurigai wong, bukan Pemuja Kerang yang dio datengi, tapi Serial Killer!</value>
+    <value>Sedih nian. Warga nemuke {0} yang dak lain dak bukan Zombie Hunter 💂, jadi korban keji seorang pembunuh malem tadi. Kutil seneng nian caknyo.</value>
+    <value>Mayat {0} Zombie Hunter 💂, ditemuke di tengah lapangan dengan pedang di leher. Caknyo dio salah mencurigai wong, bukan Pemuja Kerang yang dio datengi, tapi Serial Killer!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Tadi malem {0} lagi gawe. Dio ke rumah salah sikok warga untuk ngasut supayo gabung ke perkumpulan Pemuja Kerang 👤. Sayang niat, dak taunyo yang dio ganggu tuh serigala, Serigala bunuh {0} dan memakannyo! Serigala gagal diet.</value>
     <value>Semalem, serigala lagi santai di rumah. Tapi, {0} datang tiba-tiba nganggu. Serigala ngomong ke {0}, "Maaf kami makan wong bukan makan kerang."</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Dengan sombong {0}, seorang Pemuja Kerang 👤 ke rumah wong semalam. Pagi ini mayatnyo ditemuke dengan formulir dan kerang di badannyo. Serial Killer dak galak nyembah kerang.</value>
-    <value>Kelompok Pemuja Kerang (cultist) 👤 ngirim anggotanyo untuk pergi ke rumah calon member malem tadi. Dak taunyo, {0} dikirim ke rumah Serial Killer, sokorr.</value>
+    <value>Kelompok Pemuja Kerang (Zombie) 👤 ngirim anggotanyo untuk pergi ke rumah calon member malem tadi. Dak taunyo, {0} dikirim ke rumah Serial Killer, sokorr.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
     <value>Sebagai Guardian Angel 👼,{0} tugasnyo jago warga biar dak mati. Tapi, kekuatan {0} ilang! Pas pulok dio lindungi pembunuh, Serial Killer bahagia caknyo!</value>

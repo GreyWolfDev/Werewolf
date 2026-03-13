@@ -209,10 +209,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >تو ابجی سکینه ای👧،سکینه سقط شه تو جاش سکینه میشه.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >تو قاتل بروسلی🕴هستی جز فرقه سامورایی ها هر شب یکیو دعوت می‌کنین تا به قاتلین بروسلی بپیونده.مواظب باش گیر حشمت نیوفتین. </value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >>تو حشمت خانی ☯👨🏻 از شاگردای مرحوم بروسلی.هر شب میری خونه یکی از اهالی ک ببینی قاتل بروسلیه یا نه ، اگه قاتل بروسلی بود با حرکت معروف بروسلی ضربه اژدها سقطش میکنی.فق مواظب باش خونه اسمال قصاب نری جر واجرت میکنه.</value>
   </string>
   <string key="LynchTime" >
@@ -270,7 +270,7 @@
     <!-- 1 - victim role -->
     <value>خو این بدبخت خاک ت سر شده به شما چیکار داشت سقطش کردین. این جوان ناکام {0} که گور به گور شده {1} </value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>دیشب حشمت یکی قاتلین بروسلی رو جر واجر کرد. {0} ایشالا ت جهنم بپوسی</value>
   </string>
@@ -376,34 +376,34 @@
   <string key="RemainingPlayersEnd">
     <value>خاک تو سر های باقی مونده عبارت اند از:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >نظر {0} اینه که {1} رو به قاتلین بروسلی دعوت کنیم.</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>خب {0} رفت که {1} رو به قاتلین بروسلی دعوت کنه ولی {1} حشمت شاگرد بروسلی بود و جرش داد!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>دیشب {0} اومد تو رو به قاتلین بروسلی دعوت کنه توام به یاد مرحوم استاد با ضربه اژدها سقطش کردی. {1} قاتل بروسلی دیگر مانده</value>
   </string>
   <string key="CultConvertYou">
     <value>تو قاتل بروسلی 🕴 هستی جز فرقه سامورایی ها هر شب یکیو دعوت می‌کنین تا به قاتلین بروسلی بپیونده ، مواظب باش گیر حشمت نیوفتین. </value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>قاتلین بروسلی : {0} </value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>الان {0} هم یکی از قاتلین بروسلیه.</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>دیشب {0} رفت که {1} به انجمن قاتلین بروسلی دعوت کنه ولی اصلا خونه نبود پلشت. </value>
   </string>
@@ -414,7 +414,7 @@
     <!-- 0 - target name -->
     <value>رفتی {0} گور به گور کنی ولی گور به گور شده بود قبلا. </value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>رفتی خونه {0} دیدی یکی از قاتلین بروسلیه، خون جلو چشماتو گرفت با حرکت مخصوص بروسلی ضربه اژدها سقطش کردی.</value>
   </string>
@@ -431,7 +431,7 @@
     <!-- 0 - teamate's names -->
     <value>چون بابات {0} مرد تو الان یکی از لات های روستایی اراذل دیگه عبارت اند از : {1} </value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>اهالی ده 👨🏻</value>
@@ -478,10 +478,10 @@
   <string key="ApprenticeSeer">
     <value>ابجی سکینه 👧</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>قاتل بروسلی🕴</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>حشمت خان ☯👨🏻</value>
   </string>
   <!-- These are for the player list -->
@@ -513,7 +513,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>دیشب رفتین {0} به قاتلین بروسلی دعوت کنین ولی دیدین قبلا سقط شده.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -702,7 +702,7 @@
     <value>رفتی {0} تیکه تیکه کنی ولی کریم انجل هواشو داشت نذاشت. </value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>دیشب {0} رفت که {1} بیاره تو قاتلین بروسلی ولی {1} ممد کانتر بود یه تیر زد تو پیشونیش</value>
   </string>
@@ -726,7 +726,7 @@
     <value>خب گوگولی {0} مرد الان نقشش مال توعه. چون اون مسافر تهرانی بود تو هم مسافر تهرانی شدی و بقیه تهرانی ها عبارت اند از: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>گوگولی مگولی ، یعنی {0} هم چون یکی از قاتلین بروسلی رو به عنوان مدل انتخاب کرده بود الان قاتل بروسلی شد</value>
   </string>
 
@@ -1276,7 +1276,7 @@
 صبح روستایی ها ته مونده صمدو پیدا میکنن
 {0} ایشالا اون دنیا بابا کرم برقصی.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب اسمال قصاب گوشت {0} فیله کرده. قاتل بروسلی به قتل رسید. </value>
   </string>
   <string key="CupidKilled">
@@ -1309,10 +1309,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>حشمت {0} در ب در دنبال قاتلین بروسلی رسیدن به خونه اسمال.اسمال درو باز کرد گفت:جووون. بیا یه قاتل بروسلی دارم رو پایی میزنه.{0} روحت شاد یادت گرامی. </value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب {0} رفت اراذلو به انجمن سامورایی دعوت کنه اراذلم لختش کردن. </value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>دیشب {0} به دنبال یه عضو جدید رفت دم خونه اسمال آقا. صبح فیله قاتل بروسلی تو یخچال قصابی بود. </value>
   </string>
   
@@ -1332,8 +1332,8 @@
 	    <value>ممد کانتر {0} ی گوشه نشسته بود داشت پلی استیشن 5 بازی می‌کرد که {1} از پشت ی چاقو میکنه ت کمرش. {1} تنها لات باقی موندس. </value>
   </string>
   
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>حشمت {0} شلوار خدا بیامرز بروسلی رو میپوشه میره تو میدون شهر. یه نگاه به چپ میکنه یه نگاه به راست. آخرین قاتل بروسلی {1} رو در حال فرار میبینه. با چشمان خون گرفته به سمتش میدوه و با ضربه اژدها کلیه هاشو میاره ت دهنش. </value>
   </string>
   
@@ -1557,14 +1557,14 @@
   </string>
 
 <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>
 تو حاج کاظم 👳‍♂ هستی بزرگ آبادی. اگه اهالی بخوان یکی از روستایی ها رو بیرون کنند تو با سخرانی میتونی نظرشون عوض کنی.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>حاج کاظم 👳‍♂</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>
 تو حاج کاظم 👳‍♂ هستی بزرگ آبادی. اگه اهالی بخوان یکی از روستایی ها رو بیرون کنند تو با سخرانی میتونی نظرشون عوض کنی.</value>
   </string>
@@ -1592,14 +1592,14 @@
   <string key="AboutThief">
     <value>تو آدم فضایی 👽 هستی. از سیاره کوتوله شرقی به جز ناصر. تو به زمین اومدی تا در باره انسان ها تحقیق کنی و برای اینکار نقش یکی از روستایی ها رو ازش میدزدی.</value>
   </string>
-   <string key="AskPacifist">
+   <string key="AskImam">
       <value>حاجی این دوکمه رو بزن تا بری بالا منبر. </value>
     </string>
-    <string key="PacifistNoLynch">
-    <!-- {0} - Pacifist's name -->
+    <string key="ImamNoLynch">
+    <!-- {0} - Imam's name -->
       <value>روستایی داشتن تصمیم میگرفتن کیو با تیپا پرت کنن بیرون که حاج کاظم {0} رف بالا منبر گف : روایت داریم از یکی که نمیدونم کی بود که یه زمانی که نمیدونم کی بود فرموند : امشب نباید کسیو بندازیم بیرون.</value>
     </string>
-    <string key="PacifistNoLynchNow">
+    <string key="ImamNoLynchNow">
       <value>بخاطر بالا منبر رفتن حاجی امروز کسی رو نمیندازیم بیرون. </value>
     </string>
     <string key="WolvesTriedToEatWiseElder">
@@ -1647,8 +1647,8 @@
       <value>هم تیمی های شما(درصورت وجود) عبارت اند از:{0}.</value>
     </string>
     <string key="ThiefToCult">
-      <!-- 0 - old cultist's name -->
-      <!-- 1 - new cultist's name -->
+      <!-- 0 - old Zombie's name -->
+      <!-- 1 - new Zombie's name -->
       <value>لپ گلی {0} دیگه همتیمی شما نیست {1} الان شده قاتل بروسلی درست مثل شما ها</value>
     </string>
     <string key="ThiefToWolf">
@@ -1708,17 +1708,17 @@
     <string key="SecretLynchShowVotersA">
       <value>وقتی حالت رای مخفی روشن است. و تعداد رای ها در اخر رای گیری نشان داده خواهد شد.نام رای دهنده به هر بازیکن نیز نشان داده خواهد شد:{0}</value>
     </string>
-    <string key="CultistBitten">
-    <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+    <string key="ZombieBitten">
+    <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
       <value>اوه مای گاد. امشب جمع شدین یکیو به قاتلین بروسلی دعوت کنین ولی {0} گم و گور شده. ینی چه گهی داره میخوره دقیقا؟ </value>
     </string>
     
     <string key="Peace">
-    <!-- Used for Pacifist's button -->
+    <!-- Used for Imam's button -->
       <value>منبر!</value>
     </string>
     <string key="LynchPeaceTimeout">
-    <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+    <!-- Used in PM if the Imam uses his ability during lynch phase -->
       <value>بخاطر بالا منبر رفتن حاجی امروز کسی رو نمیندازیم بیرون. </value>
     </string>
     <string key="ThiefStoleYourRoleThief">
@@ -1817,7 +1817,7 @@
   <string key="ChemistTargetEmpty">
 	<value>رفتی به {0} سم بدی ولی خونه نبود. </value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>اعضای انجمن سامورایی در حال حاضر : {0} </value>
   </string>
   <string key="SnowWolf">
@@ -1868,7 +1868,7 @@
   <string key="ChemistFrozen">
     <value> دیشب جواتی از پشت خفتت کرد و جیبتو زد، ولی خدا رو شکر سمایی که ساخته بودی ندزدید. </value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value> دیشب که میخواستی بری یه مادر مرده دیگه رو به انجمن سامورایی دعوت کنی جواتی لختت کرد و بیهوش یه گوشه انداختت.</value>
   </string>
   <string key="CHFrozen">
@@ -2009,11 +2009,11 @@
   <string key="HunterFellDigger">
 	<value>صبح که بیدار میشی میبینی جسد حشمت خان {0} افتاده رو سنگ قبر و مغزش پاچیده بیرون. </value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>دیشب داشتی توی قبرستون قدم میزدی که دیدی یکی رو قبر مش عبدالله نشسته، قاتل بروسلی {0} در همون حالت سکته کرده بود.</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value> دیشب وارد قبرستون شدین تا {0} رو به انجمن سامورایی دعوت کنین که یهو {1} شروع کرد به خندیدن و روی یه سنگ قبر نشست و دیگه تکون نخورد، بقیه شما هم از ترس جونتون فرار کردین. </value>
   </string>
@@ -2069,8 +2069,8 @@
   <string key="HarlotFellPublic">
 	<value>کبرا خانوم {0} دیشب رف خونه مرده شور اما صبح جسد پاره پورشو تو قبرستون پیدا کردن. </value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>دیشب قاتلین بروسلی وارد قبرستون شدن اما مورد حمله اجنه قرار گرفتن ، صبح اهالی ده {0} رو میبینن که روی یه سنگ قبر خشکش زده. </value>
   </string>
   <!--{0}: thief-->

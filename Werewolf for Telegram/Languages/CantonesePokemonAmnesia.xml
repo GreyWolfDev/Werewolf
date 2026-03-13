@@ -194,10 +194,10 @@
     <string key="RoleInfoApprenticeSeer" >
         <value>好奇怪，你竟然醒唔起自己嘅小精靈係邊個。</value>
     </string>
-    <string key="RoleInfoCultist" >
+    <string key="RoleInfoZombie" >
         <value>好奇怪，你竟然醒唔起自己嘅小精靈係邊個，不過你記得你嘅小精靈應該係夜晚有啲野搞嘅。</value>
     </string>
-    <string key="RoleInfoCultistHunter" >
+    <string key="RoleInfoZombieHunter" >
         <value>好奇怪，你竟然醒唔起自己嘅小精靈係邊個，不過你記得你嘅小精靈應該係夜晚有啲野搞嘅。</value>
     </string>
     <string key="LynchTime" >
@@ -266,7 +266,7 @@
     <string key="DefaultEaten" >
         <value>哎呀呀，火箭兵團真是沒人性嘅,就連訓練員【{0}】嘅小精靈都唔放過，死都要抓走，訓練員們仲唔拿拿聲將佢哋消滅！【{1}】</value>
     </string>
-    <string key="HunterKilledCultist">
+    <string key="HunterKilledZombie">
         <value>英勇的神秘訓練員決定帶著萬年蟲去搵【{0}】既小精靈，他發現到【{0}】既小精靈竟然正在跪拜神奇海縲！\n萬年蟲一怒之下，使用原始之力，殲滅了呢隻菊石邪魔！</value>
     </string>
     <string key="NoAttack" >
@@ -350,13 +350,13 @@
     <string key="RemainingPlayersEnd">
         <value>仲未失去小精靈嘅訓練員，小精靈同隊伍名單︰</value>
     </string>
-    <string key="CultistVotedConvert">
+    <string key="ZombieVotedConvert">
         <value>【{0}】話想搵【{1}】嘅小精靈！</value>
     </string>
-    <string key="CultConvertCultHunter">
+    <string key="CultConvertZombieHunter">
         <value>【{0}】嘅小精靈去咗【{1}】屋企，點知被【{1}】嘅萬年蟲用原始之力KO咗！</value>
     </string>
-    <string key="CultHunterKilledCultVisit">
+    <string key="ZombieHunterKilledCultVisit">
         <value>【{0}】已經被你嘅萬年蟲殺死咗，一個數字就咁莫名其妙出現在你腦海裡【{1}】，好可惜嘅係，你亦到唔知個數字有乜用。</value>
     </string>
     <string key="CultConvertYou">
@@ -377,7 +377,7 @@
     <string key="HunterVisitDead">
         <value>【{0}】已經失去戰鬥力！</value>
     </string>
-    <string key="HunterFindCultist">
+    <string key="HunterFindZombie">
         <value>到底尋晚【{0}】嘅小精靈屋企發生過啲乜？你好似都唔多記得……</value>
     </string>
     <string key="HunterFailedToFind">
@@ -389,7 +389,7 @@
     <string key="WildChildTransform">
         <value>【{0}】嘅小精靈失去戰鬥力，搞到你個小精靈都受到影響變咗其他小精靈，但係究竟由咩變做咩呢？雖然你唔記得自己嘅小精靈係邊個，但係【{1}】似乎係同你站在同一陣線嘅人。</value>
     </string>
-    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
     <string key="Villager">
         <value>鯉魚王👱</value>
     </string>
@@ -435,10 +435,10 @@
     <string key="ApprenticeSeer">
         <value>尤基納🙇</value>
     </string>
-    <string key="Cultist">
+    <string key="Zombie">
         <value>菊石獸👤</value>
     </string>
-    <string key="CultistHunter">
+    <string key="ZombieHunter">
         <value>萬年蟲💂</value>
     </string>
     <!-- These are for the player list -->
@@ -776,10 +776,10 @@
         <value>【Fool 白痴仔🃏：小呆獸】\nBot會呃你係富迪，但可惜你唔係，當你用不斷念力睇人地咩精靈時，bot會求奇同你講一種類精靈，但依然會有有可能睇中嘅。</value>
     </string>
     <string key="AboutCult">
-        <value>【Cultist 邪教魔徒⚰：菊石獸】\n1. 每晚你會使出化石光線，令其他人變成菊石獸，去追隨你成為螺旋神教教徒。(火箭兵團，耿鬼不能變做菊石獸)\n2. 如果啲人夜晚離開咗間屋，你就不能對佢使用化石光線 ，小心唔好入錯耿鬼、化石盔/萬年蟲屋企，佢會反殺其中一隻菊石獸。\n3. 最後如果每個訓練員都加入到 螺旋神教，成為菊石獸 ，所有教徒就會一齊贏。\n4. 變咗做菊石獸嘅人會失去原來嘅身份。\n5. 百變怪唔會被變造菊石獸；另外耿鬼、萬年蟲，會反射化石光線，立刻殺咗其中一隻菊石獸。\n6. 比卡超、爛泥怪、天然雀、小火龍、喵喵怪、尤基納、果然翁、小呆獸、仙子伊貝、皮皮一定會被變成菊石獸。其他人變做菊石獸嘅機率︰富迪 40%，水箭龜50%，果然翁60%，幸福蛋60%，探探鼠70%，紅唇蛙70%。如果水箭龜拒絕咗你，佢有50% 會殺你。</value>
+        <value>【Zombie 邪教魔徒⚰：菊石獸】\n1. 每晚你會使出化石光線，令其他人變成菊石獸，去追隨你成為螺旋神教教徒。(火箭兵團，耿鬼不能變做菊石獸)\n2. 如果啲人夜晚離開咗間屋，你就不能對佢使用化石光線 ，小心唔好入錯耿鬼、化石盔/萬年蟲屋企，佢會反殺其中一隻菊石獸。\n3. 最後如果每個訓練員都加入到 螺旋神教，成為菊石獸 ，所有教徒就會一齊贏。\n4. 變咗做菊石獸嘅人會失去原來嘅身份。\n5. 百變怪唔會被變造菊石獸；另外耿鬼、萬年蟲，會反射化石光線，立刻殺咗其中一隻菊石獸。\n6. 比卡超、爛泥怪、天然雀、小火龍、喵喵怪、尤基納、果然翁、小呆獸、仙子伊貝、皮皮一定會被變成菊石獸。其他人變做菊石獸嘅機率︰富迪 40%，水箭龜50%，果然翁60%，幸福蛋60%，探探鼠70%，紅唇蛙70%。如果水箭龜拒絕咗你，佢有50% 會殺你。</value>
     </string>
     <string key="AboutCH">
-        <value>【Cultist hunter 邪教殺手✨：萬年蟲】\n你係嚟自遠古嘅萬年蟲，你妒忌點解菊石獸可以封神成教，而你就被人繼續留喺山洞等風化，所以你決心殺盡螺旋神教教眾。\n1.當菊石獸諗住用石化光線變你做菊石獸時，你會佢招技會失效，而且佢地最後變做菊石獸果隻會被你反射技能而殺死。\n2.你每晚要去其他小精靈屋企，如果佢係菊石獸，佢就會被你殺死。\n3. 你同鯉魚王係超Friend嘅老友，你同佢哋係同伴。</value>
+        <value>【Zombie hunter 邪教殺手✨：萬年蟲】\n你係嚟自遠古嘅萬年蟲，你妒忌點解菊石獸可以封神成教，而你就被人繼續留喺山洞等風化，所以你決心殺盡螺旋神教教眾。\n1.當菊石獸諗住用石化光線變你做菊石獸時，你會佢招技會失效，而且佢地最後變做菊石獸果隻會被你反射技能而殺死。\n2.你每晚要去其他小精靈屋企，如果佢係菊石獸，佢就會被你殺死。\n3. 你同鯉魚王係超Friend嘅老友，你同佢哋係同伴。</value>
     </string>
     <string key="AboutWC">
         <value>【Wild child 野仔👶：果然翁】\n你喺一隻外表天然呆，但實情腹黑嘅果然翁。遊戲一開始，你可用踩影特技，選一隻你覺得係最短命嘅小精靈，他死後/被抓之後，你內在邪惡嘅性格會完全覺醒，mega進化成火箭兵團。但是喺隻短命種死之前，你都係屬於普通小精靈嗰一邊。</value>
@@ -1173,7 +1173,7 @@
   <string key="BlacksmithKilled">
     <value>早起的小鳥有蟲吃，早起的堅盾劍怪忙修盾。一如往常，凌晨1點是訓練員剛入睡的時刻，而堅盾劍怪卻都會起身細心檢查自己引以為傲的王者之盾。為咗能在關鍵時刻守護所有鯉魚村訓練員嘅小精靈，佢非常專注地確保王者之盾上的每個細節都完美無瑕，毫無破綻。不過這一切的希望卻被惡名昭彰嘅耿鬼破滅了。只見耿鬼運用着高超職業殺手技巧“暗步”，將自身氣息消除，無聲無色的成功在堅盾劍怪不發現的情況下使出劈瓦，把自己全身的力量聚合在手刀上，徒手劈開盾都來不及開的堅盾劍怪身上。被劈開一半的堅盾劍怪就咁無咗條命啦。【{0}】嘅堅盾劍怪之魂已經入咗亡靈空間，無法返回小精靈世界。</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>一朝早,班訓練員見到鯉魚湖岸邊有堆海螺碎片，碎片旁邊仲有很多斷掉的觸手。現場血跡斑斑，卻冇訓練員認得出是誰的傑作。剛巧路徑此地旅行的国际警察默丹憑著其豐富的破案經驗一眼就看出了【{0}】嘅菊石獸係慘遭最近犯下多宗小精靈謀殺案嘅耿鬼毒手。</value>
   </string>
   <string key="CupidKilled">
@@ -1207,10 +1207,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>早上的時候，一心想剷除螺旋神教的萬年蟲被訓練員發現掛在路邊的燈柱上，死去的萬年蟲已經扁到好似張紙咁。訓練員亦可以清晰見到【{0}】嘅萬年蟲身上有着被耿鬼攻擊而留下的拳印。萬年蟲無法再繼續完成他的使命，螺旋神教又變得更難阻止啦！</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>本來火箭兵團打算留在基地休息一日，點知【{0}】嘅菊石獸自己送上門，打算對火箭兵團的成員使出化石光線。有免費小精靈送上門，火箭兵團當然唔會錯過這個千載難逢的機會。菊石獸還來不及發射化石光線，就被火箭兵團用大師球抓住咗，拎去整糖咯。</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>尋晚班螺旋神教諗住搵個新教徒入教啦，點知搵錯對象，走咗去耿鬼屋企。耿鬼雙眼發亮，一個迅速移動，手刀落下，將菊石獸劈碎咗。訓練員起身之後，見到村口有【{0}】嘅菊石獸死咗而留下的碎片。</value>
   </string>
   <string key="GAGuardedKiller">

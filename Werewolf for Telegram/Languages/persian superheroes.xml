@@ -211,10 +211,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >مثل اینکه تو وانگی. اگه دکتر استرنج بره دیار باقی تو جاشو میگیری!</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >تو رداسکال رئیس کل هایدرا هستی، هر شب به یه نفر رو عضو هایدرا میکنی. اگه همه افراد عضو هایدرا بشن تو میتونی به دنیا حکمرانی کنی و برنده بشی!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >خبر رسیده که رد اسکال پیداش شده و داره بقیه رو عضو هایدرا میکنه، اگه بتونی رد اسکال رو بکشی، کل هایدرا از هم میپاشه ولی اگه بتونه کسی رو عضو کنه، اولین کسی که عضو هایدرا شده میمیره</value>
   </string>
   <string key="LynchTime" >
@@ -271,7 +271,7 @@
     <!-- 1 - victim role -->
     <value>آخه این مامور شیلد وظیفه شناس چه گناهی کرده بود که کشتیدش ! خدابیامرز {0}! {1} </value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>اینطور که معلومه پانیشر بعد از خیس کردن شلورارِ {0} اون رو به مجازات اعمالش رسوند، رد اسکال مرده!</value>
   </string>
@@ -378,34 +378,34 @@
   <string key="RemainingPlayersEnd">
     <value>بازیکن های باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >نظر {0} اینه که {1} رو به هایدرا ملحق کنید</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} رفت پیش {1} که اونو به عضویت هایدرا در بیاره اما از بخت بدش {1} پانیشر بود و همونجا با به تیر مغز {0} رو ترکوند😐</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>دیشب {0} اومد تو رو به عضویت هایدرا در بیاره ولی ی گلوله تو سرش خالی کردی! {1} باقی مونده</value>
   </string>
   <string key="CultConvertYou">
     <value>تو‌ الان یکی از اعضای هایدرایی و میخوای که دنیا رو تصاحب کنی اما قدم اول هلی کریره، تو و بقیه اعضای هایدرا هر شب یکی رو برای ملحق شدن به هایدرا انتخاب می کنین</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>اعضای هایدرا: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>الان {0} عضو هایدرا شد</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>خب  {0} رفت {1} رو به هایدرا دعوت کنه ولی خونه نبود</value>
   </string>
@@ -416,7 +416,7 @@
     <!-- 0 - target name -->
     <value>رفتی {0} رو به سزای اعمالش برسونی ولی از قبل مرده بود</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>رفتی کابین {0} دیدی پوستر رداسکال رو چسبونده به دیوار کابینش. تو هم زدی  زرت کشتیش</value>
   </string>
@@ -433,7 +433,7 @@
     <!-- 0 - teamate's names -->
     <value>بعد از اینکه الگوت {0} مرد خیلی عصبانی شدی و تبدیل به ردهود شدی اینام دارو دستتونه : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>عضو شیلد 👱</value>
@@ -480,10 +480,10 @@
   <string key="ApprenticeSeer">
     <value>دکتر وانگ 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>عضو هایدرا 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>پانیشر 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -515,7 +515,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>عضو جدید هایدرا رفت کابین {0} که به هایدرا دعوتش کنه ولی فقط یه جنازه رو تو کابین دید که به طور وحشیانه ای کشته شده</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -697,7 +697,7 @@
     <value>رفتی که {0} رو نابود کنی ولی کاپیتان اونجا بود و مانعت شد!</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>{0} رفت که {1} رو به هایدرا ملحق کنه ولی رکب خورد و {1} که آیرون من بود {0} رو در حالی که تو خودش ریده بود پوکوند</value>
   </string>
@@ -721,7 +721,7 @@
     <value>همزادت {0} مرده و تو به شکل اون در اومدی!! شاید با این حرکتت حلقه رو گول زدی شاید هم واقعا لیاقتشو داری ولی به هرحال الان تو یه لنترنی و بقیه عبارتند از : {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>میستیک یعنی {0} همزادت بود و الان به هایدرا ملحق شده</value>
   </string>
   <string key="DGTransformToCult">
@@ -1273,7 +1273,7 @@
     <value>پرفسور ایکس {0} جییییز شد 😐
 مامورای شیلد رفتن تو ایکس روومِ هلی کریر ولی با یه مشت خاکستر رو ویلچر پرفسور روبرو شدن، دووم خاکسترش کرده 😩</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دووم دیشب زد به سرش و با هرچی جادو دم دستش بود به پایگاه هایدرا حمله کردو اون {0} بدبخت رو محو کرد 😐!</value>
   </string>
   <string key="CupidKilled">
@@ -1307,10 +1307,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>پانیشر {0} داشت دنبال رد اسکال میگشت ولی شانس باهاش یار نبود و به پست دووم خورد و دووم هم که خار مادر جادوگری رو بله، زد خود پانیشر رو هم بله</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>هایدرایی ها دیشب {0} رو فرستادن که جوکر و دار و دستش رو به سازمان دعوت کنن! ولی اونا بهش حمله کردن و بعد از به قتل رسوندنش، با مایو از سقف آویزونش کردن و یه شکلک خندان رو صورتش کشیدن!</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>{0}از جانب رد اسکال این افتخار رو کسب کرد که بره و یکی رو به فرقه دعوت کنه ولی روز بعد انگار محو شده بود و تو هلی کریر نبود! بدون شک دووم اون رو از سحنه روزگار محو کرده!</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1330,8 +1330,8 @@
 {1} میره ب ایرون من {0} حمله کنه و بکشتش ولی ایرون من هم میره سمت لباسش تا بپوشتش منتها موفق نمیشه و با چاقو از پا در میاد!😞</value>
   </string>
   
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>تنها فرقه گرای بازمانده روستا {0} بود که زمانی که صبح داشت سمت میدون شهر میرفت، با شکارچی {1} روبه رو میشه! شکارچی، همون موقع تفنگشو در میاره که به {0} شلیک کنه ولی {0} فرار میکنه، شکارچی دنبالش میره و توی جنگل پیداش میکنه و با چاقو میکشتش!  شکارچی برنده این دور بازیه!</value>
   </string>
   

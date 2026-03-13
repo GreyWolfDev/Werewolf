@@ -273,11 +273,11 @@
         <value>You are a brand new Doll (🙇). If the (real) Doll dies, you will take their place as the Doll.
         </value>
     </string>
-    <string key="RoleInfoCultist">
+    <string key="RoleInfoZombie">
         <value>You are a corrupted hunter (👤). Your lust for the blood and for the hunt transformed you into a dangerous enemy. It is your goal to corrupt all other hunters (except Beasts or Iosefka) to your group of crazed hunters. You'll win the game if at the end of it, all living players are corrupted.
         </value>
     </string>
-    <string key="RoleInfoCultistHunter">
+    <string key="RoleInfoZombieHunter">
         <value>You are Eileen, the Crow (💂). You are a member of a covenant that hunts down hunters that begin to go insane from bloodlust. If they try to corrupt you, you will kill their most recent member in the fight!
         </value>
     </string>
@@ -340,7 +340,7 @@
         <value>There is a fight somewhere. Everyone follows them, hoping to get there in time, but they fail... When you get there, you see {0} smashed into a pulp, murdered by beasts.\n{1} </value>
 		<value>{0} went alone into the woods, searching for bloodstones. They found the beasts instead! The only thing left after the fight are the remains of {0}.\n{1} </value>
     </string>
-    <string key="HunterKilledCultist">
+    <string key="HunterKilledZombie">
         <!-- 0 - victim name -->
         <value>{0}'s behaviour is erratic and strange. No doubt, they are corrupted!\nNo one seems to know what to do, when suddenly you see a blur made of black feathers.\nEileen, the Crow shows up, Mercy Blades ready. Eileen orders everyone to stand down, and despite her blades' name, she is completely mercyless.\nIn a matter of minutes, only Eileen is alive. All covered in blood, she tells everyone that the danger has passed, and carries {0}'s body away. {0}, a corrupted hunter, is now dead.</value>
 		<value>There's something off about {0}. Eileen, the Crow arrives, and this can only mean one thig: {0} is a Corrupted Hunter!\nEileen cuts off {0}'s head with a swift move of her Mercy blades.\nThe warning is clear: Do not become a corrupted Hunter.</value>
@@ -466,19 +466,19 @@
     <string key="RemainingPlayersEnd">
         <value>Remaining living players, roles, and team:</value>
     </string>
-    <string key="CultistVotedConvert">
+    <string key="ZombieVotedConvert">
         <!-- 0 - Voter's name -->
         <!-- 1 - target name -->
         <value>{0} has voted to corrupt {1}</value>
     </string>
-    <string key="CultConvertCultHunter">
-        <!-- 0 - Yougest Cultist (killed)'s name' -->
-        <!-- 1 - CultHunter's name -->
+    <string key="CultConvertZombieHunter">
+        <!-- 0 - Yougest Zombie (killed)'s name' -->
+        <!-- 1 - ZombieHunter's name -->
         <value>{0} was sent to corrupt {1}... You sent {0} to corrupt Eileen, the Crow?! {0} is dead, what have you done?!</value>
     </string>
-    <string key="CultHunterKilledCultVisit">
-        <!-- 0 - Youngest Cultist's name -->
-        <!-- 1 - Number of cultists left -->
+    <string key="ZombieHunterKilledCultVisit">
+        <!-- 0 - Youngest Zombie's name -->
+        <!-- 1 - Number of Zombies left -->
         <value>{0} came to your house last night, ready to corrupt you... Your Mercy Blades were thirsty anyway...\n A corrupted hunter is dead. {1} remain!
         </value>
     </string>
@@ -487,15 +487,15 @@
         </value>
     </string>
     <string key="CultTeam">
-        <!-- 0 - Number of cultists -->
+        <!-- 0 - Number of Zombies -->
         <value>Corrupted ones: {0}</value>
     </string>
     <string key="CultJoin">
-        <!-- 0 - new cultist's name -->
+        <!-- 0 - new Zombie's name -->
         <value>{0} has been corrupted!</value>
     </string>
     <string key="CultVisitEmpty">
-        <!-- 0 - Newest cultist's name -->
+        <!-- 0 - Newest Zombie's name -->
         <!-- 1 - target name -->
         <value>{0} was sent to do your dirty work, and corrupt {1}... But {0} was anywhere to be found!
         </value>
@@ -509,7 +509,7 @@
         <value>You went to hunt down {0}, but only found a body! {0} is dead, and you wasted your night.
         </value>
     </string>
-    <string key="HunterFindCultist">
+    <string key="HunterFindZombie">
         <!-- 0 - target name -->
         <value>{0} shows sings of clear madness. {0} lost themselves to the blood lust. Telling everyone else to stand down, you fight the crazed hunter and end their life. Everybody seems shocked while you drag {0}'s body away.
         </value>
@@ -530,7 +530,7 @@
         <value>{0} has died! In your rage, you have become a beast! You now will seek revenge alongside your new teammates: {1}
         </value>
     </string>
-    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
     <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
     <string key="Villager">
         <value>a Hunter 👱</value>
@@ -577,10 +577,10 @@
     <string key="ApprenticeSeer">
         <value>the Recent-made Doll 🙇</value>
     </string>
-    <string key="Cultist">
+    <string key="Zombie">
         <value>a Corrupted Hunter 👤</value>
     </string>
-    <string key="CultistHunter">
+    <string key="ZombieHunter">
         <value>Eileen, the Crow 💂</value>
     </string>
     <!-- These are for the player list -->
@@ -618,7 +618,7 @@
     </string>
     <!-- new strings May 6 2016-->
     <string key="CultTargetDead">
-        <!-- 0 - Youngest cultists name -->
+        <!-- 0 - Youngest Zombies name -->
         <value>Your newest hunter heads over to where {0} is, only to find {0}'s remains. Someone got there first! You quickly retreat, better safe than sorry.
         </value>
     </string>
@@ -824,7 +824,7 @@
         </value>
     </string>
     <string key="CultConvertHunter">
-        <!-- 0 - Youngest Cultist's name -->
+        <!-- 0 - Youngest Zombie's name -->
         <!-- 1 - target's name -->
         <value>The crazed hunters sends {0} to try to corrupt {1}, but {0}'s head comes flying out of the window instead! Someone killed {0}.
         </value>
@@ -850,7 +850,7 @@
         </value>
     </string>
     <string key="DGToCult">
-        <!-- 0 - new cultist's name -->
+        <!-- 0 - new Zombie's name -->
         <value>The doppelganger {0} has now become a crazed blood-drunk hunter, just like you!
         </value>
     </string>
@@ -1464,7 +1464,7 @@
         <value>There is a faint trail of blood leading to a house nearby. As the hunters investigate, they find a whole bunch of celestial emissaries.\nValtr and his League of hunters were entirely murdered and experimented on by Iosefka! The hunters quickly dispatch from all of them, but the strongest is {0}. Now with {0} dead, the hunters know that no help will come...
         </value>
     </string>
-    <string key="CultistKilled">
+    <string key="ZombieKilled">
         <value>As the hunters gather, {0} isn't among them. Of course not! Iosefka has made another victim. But that's not all. In front of the Church is {0}'s head in a spike. The eyes leave no doubt that {0} was a crazed and corrupted hunter! Seems like Iosefka does a better job than Eileen...
         </value>
     </string>
@@ -1509,12 +1509,12 @@
         </value>
     </string>
     <string
-        key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+        key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
         <value>A faint smell of bad blood is in the air. The hunters follow it, only to find a corpse with crazed eyes staring at the sky.\n{0} was a corrupted hunter, and had bad luck: the beasts stayed in their lair this night. {0} thought it would be a good idea to corrupt them... Eileen's job becomes easier and easier.</value>
         <value>Ain't this bad luck? Or maybe just silliness? {0}, a corrupted hunter, though it would be a good idea to corrupt a beast! If only they knew...\nOne less on Eileen's list. {0} is dead. (of course)
         </value>
     </string>
-    <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+    <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
         <value>Last night, the crazed-corrupted hunters tried to convert the one person in the village crazier than they are. It seems tht Iosefka enjoyed the visit, since that there is no sign of {0} anymore. Well, no one will ever hear from {0} again. Iosefka sends her regards.
         </value>
     </string>
@@ -1529,7 +1529,7 @@
         <value>The beasts get ready for the night, and didn't expect help to come... In form of a hunter?!\n{0} tries to transform into a beast, but their body isn't strong enough, and {0} dies in the process.</value>
     </string>
     <string key="CultConvertSerialKiller">
-        <!-- 0 - Youngest Cultist's name -->
+        <!-- 0 - Youngest Zombie's name -->
         <!-- 1 - target's name -->
         <value>The covenant of crazed hunters sends {0} to try to corrupt {1}. No one will never hear about {0} again. Iosefka has made another victim with her experiments.
         </value>
@@ -1546,8 +1546,8 @@
         <!--{0} = hunter's name, {1} = wolf's name-->
         <value>Knowing only {0} was left, {1} went to kill {0}. When {1} gets there, they find Gherman taking a nap on their wheelchair, even sleep talking! The Beast had no mercy, and the First and last hunter is now dead.</value>
     </string>
-    <string key="CHKillsCultistEnd">
-        <!--{0} = last cultist's name, {1} = CH's name -->
+    <string key="CHKillsZombieEnd">
+        <!--{0} = last Zombie's name, {1} = CH's name -->
         <value>{1} and {0} walk out in daylight. No use in trying to hide, {0} leaps towards {1}.\nEileen, the Crow smiles behind her crow mask, and ready her blades. It was quick and painless for {0}. Eileen hunted down the last of them. Great job!
         </value>
     </string>

@@ -174,11 +174,11 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >You are the owlet(apprentice seer). If the (real) seer dies, you will take their place as the seer.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >You are a snake(cultist). Every night, you may choose a player to convert to a cultist. If all remaining living players at the end are cultists, they win.</value>
+  <string key="RoleInfoZombie" >
+    <value >You are a snake(Zombie). Every night, you may choose a player to convert to a Zombie. If all remaining living players at the end are Zombies, they win.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value >There is a cultist in the town, trying to convert everyone! Each night, choose a player. If they are a cultist, you capture and kill them.  If the cult tries to convert you, the newest member gets taken out.(Cult Hunter)</value>
+  <string key="RoleInfoZombieHunter" >
+    <value >There is a Zombie in the town, trying to convert everyone! Each night, choose a player. If they are a Zombie, you capture and kill them.  If the cult tries to convert you, the newest member gets taken out.(Cult Hunter)</value>
   </string>
   <string key="LynchTime" >
     <value >
@@ -222,8 +222,8 @@
   <string key="DefaultEaten" >
     <value>As everyone rises in the morning, they smell a terrible stink.  They follow the smell to find *{0}* lying in in the pig pen, torn apart by giant claws. Going through their things, it's clear that: \n*{1}*</value>
   </string>
-  <string key="HunterKilledCultist">
-    <value>A noticeable stench is coming from *{0}'s* house...  the village inspects it to find a dark altar, still faintly glowing with dark power...  a *cultist* has been captured by the hunter!</value>
+  <string key="HunterKilledZombie">
+    <value>A noticeable stench is coming from *{0}'s* house...  the village inspects it to find a dark altar, still faintly glowing with dark power...  a *Zombie* has been captured by the hunter!</value>
   </string>
   <string key="NoAttack" >
     <value >The villagers gather the next morning in the village center, to sighs of relief - it appears there was no attack the previous night, everyone seems accounted for!</value>
@@ -306,17 +306,17 @@
   <string key="RemainingPlayersEnd">
     <value>Remaining living players, roles, and team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} has voted to convert {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} was sent to do your dirty work, and convert {1}... however, they were the cult hunter! {0} is dead!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <value>{0} came to your house last night, ready to convert you....  but you managed to lock them up below your house, taking care of one cultist. {1} remain!</value>
+  <string key="ZombieHunterKilledCultVisit">
+    <value>{0} came to your house last night, ready to convert you....  but you managed to lock them up below your house, taking care of one Zombie. {1} remain!</value>
   </string>
   <string key="CultConvertYou">
-    <value>The cult has converted you to their order!  You are now a Snake (cultist).  Every other night, you will have a chance to convert another player...  When you're not, you're too busy praying to a dark god beyond space.</value>
+    <value>The cult has converted you to their order!  You are now a Snake (Zombie).  Every other night, you will have a chance to convert another player...  When you're not, you're too busy praying to a dark god beyond space.</value>
   </string>
   <string key="CultTeam">
     <value>Snakes: {0}</value>
@@ -328,16 +328,16 @@
     <value>{0} was sent to do your dirty work, and convert {1}... but no one was home!</value>
   </string>
   <string key="CultWins" >
-    <value>All the wolves have died, and the only bunnies left standing have all been converted to cultists... in celebration they open a ritual bringing forth the ender of days /n The *cult* has won!</value>
+    <value>All the wolves have died, and the only bunnies left standing have all been converted to Zombies... in celebration they open a ritual bringing forth the ender of days /n The *cult* has won!</value>
   </string>
   <string key="HunterVisitDead">
     <value>You went to hunt {0}, but they are already dead!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>You go into {0}'s house, and find them praying before an altar to some unknown god. You interrupt their chant by stabbing them through the chest.</value>
   </string>
   <string key="HunterFailedToFind">
-    <value>You go to {0}'s house, but there is no mysterious chanting or wierd altars.  They are not a cultist, so you return home.</value>
+    <value>You go to {0}'s house, but there is no mysterious chanting or wierd altars.  They are not a Zombie, so you return home.</value>
   </string>
   <string key="WildChildToWolves">
     <value>{0}'s role model just died! In their butthurt rage, they have become a werewolf!</value>
@@ -345,7 +345,7 @@
   <string key="WildChildTransform">
     <value>{0} has died! In your butthurt rage, you have become a werewolf! Your new teammates are: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>a Rabbit (Villager) 👱</value>
   </string>
@@ -391,11 +391,11 @@
   <string key="ApprenticeSeer">
     <value>the Owlet (Apprentice Seer) 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>a Snake (Cultist) 👤</value>
+  <string key="Zombie">
+    <value>a Snake (Zombie) 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>the Weasel (Cultist Hunter) 💂</value>
+  <string key="ZombieHunter">
+    <value>the Weasel (Zombie Hunter) 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -684,7 +684,7 @@
   </string>
   <!--New strings 7th of July-->
   <string key="AboutVG">
-    <value>Your role is simple - try to survive. Each day, you will have a chance to lynch the werewolf/Serial Killer/Cultists.Rolenames: Villager/Bunny.</value>
+    <value>Your role is simple - try to survive. Each day, you will have a chance to lynch the werewolf/Serial Killer/Zombies.Rolenames: Villager/Bunny.</value>
   </string>
   <string key="AboutSeer">
     <value>You are the Seer/Owl. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!Rolenames: Seer/owl</value>
@@ -720,10 +720,10 @@
     <value>The fool/derp is told they are the seer.... when they choose to see someone's role at night, they are told a random role.Rolenames: Fool/Derp.</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist/snake, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins. Rolenames: Cult/Snake.</value>
+    <value>As a Zombie/snake, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are Zombie - the cult wins. Rolenames: Cult/Snake.</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die. Rolenames: Cult Hunter/Weasel</value>
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die. Rolenames: Cult Hunter/Weasel</value>
   </string>
   <string key="AboutWC">
     <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf. Rolenames: Wild Child/Lemur</value>

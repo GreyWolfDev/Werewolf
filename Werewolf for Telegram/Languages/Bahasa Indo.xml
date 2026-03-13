@@ -166,7 +166,7 @@
   </string>
   <string key="AskConvert">
     <value>Siapa yang akan kamu hasut bergabung menjadi Pemuja Kerang Kutil Ajaib?</value>
-  <value>Siapa yang akan kamu hasut beergabung ke Sekte Cultist?</value>
+  <value>Siapa yang akan kamu hasut beergabung ke Sekte Zombie?</value>
   </string>
   <string key="DiscussWith">
   <!--Leave the leading spaces here please-->
@@ -220,13 +220,13 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Kamu adalah murid penerawang (Apprentice) 🙇. Jika penerawang (Seer) yang asli mati, kamu bertugas menggantikannya.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >BIDIP BIDIP!! 🐚 Kamu adalah seorang cultist 👤, anggota sekte sesat Pemuja Kerang Kutil Ajaib. Impianmu adalah menguasai dunia dengan mengajak warga desa bergabung denganmu tiap malam hari, jika semua serigala mati dan seluruh warga desa menjadi anggotamu, kamu menang!</value>
-  <value>Kamu adalah anggota Sekte Cultist! Aliran pemujaan sesat di desa yang mengajak penduduk desa untuk bergabung denganmu di malam hari. Jika yang hidup di desa adalah anggota Cultist, maka kalian menang.</value>
+  <string key="RoleInfoZombie" >
+    <value >BIDIP BIDIP!! 🐚 Kamu adalah seorang Zombie 👤, anggota sekte sesat Pemuja Kerang Kutil Ajaib. Impianmu adalah menguasai dunia dengan mengajak warga desa bergabung denganmu tiap malam hari, jika semua serigala mati dan seluruh warga desa menjadi anggotamu, kamu menang!</value>
+  <value>Kamu adalah anggota Sekte Zombie! Aliran pemujaan sesat di desa yang mengajak penduduk desa untuk bergabung denganmu di malam hari. Jika yang hidup di desa adalah anggota Zombie, maka kalian menang.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >BAHAYA!! Kamu curiga ada gerakan dari sebuah pemujaan sesat di desamu. Hati-Hati, mereka akan mengajak warga desa untuk bergabung memuja kerang kutil ajaib! BIDIP BIDIP! Tugasmu adalah memburu mereka hingga akarnya, jika salah satu dari mereka mengajakmu bergabung, kamu bisa membela diri dan membunuh anggota terbaru mereka 💂.</value>
-  <value>Kamu seorang Cultist Hunter 💂 pemburu anggota Sekte Cultist yang menghasut penduduk desa mengikuti aliran mereka. Dengan sebilah pedang, kamu bertugas untuk memburu anggota Cultist hingga tak satupun tersisa.</value>
+  <value>Kamu seorang Zombie Hunter 💂 pemburu anggota Sekte Zombie yang menghasut penduduk desa mengikuti aliran mereka. Dengan sebilah pedang, kamu bertugas untuk memburu anggota Zombie hingga tak satupun tersisa.</value>
   </string>
   <string key="LynchTime" >
   <!-- 0 - number of seconds -->
@@ -291,10 +291,10 @@
   <value>🌤 Pemandangan mengerikan!! Darah dan bagian organ tubuh berserakan di sepanjang jalan.{0} hanya tersisa sendal jepitnya, ╰(◣﹏◢)╯ NOMNOMNOMNOM! {1}</value>
   <value>🌤 Terdengar suara ribut di rumah {0} semalam!! Warga mengira Alien Tapir datang menyerang, ternyata ia dimakan Serigala. ╰(◣﹏◢)╯NOMNOMNOMNOM! {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
   <!-- 0 - victim name -->
-    <value>Bau aneh tercium dari rumah {0}. Warga memeriksa ke dalam rumah dan menemukan altar pemujaan dan kerang raksasa terbelah dua. Salah satu Pemuja Kerang Kutil Ajaib 👤 telah mati oleh Cultist Hunter.</value>
-  <value>Ada yang mencurigakan di rumah {0}. Warga mengintip dari balik jendela dan menemukan sosok mayat di atas altar pemujaan secara misterius. Seorang Cultist Hunter berhasil memburu Cultist Pemuja Kerang Kutil Ajaib 👤 hingga mati.</value>
+    <value>Bau aneh tercium dari rumah {0}. Warga memeriksa ke dalam rumah dan menemukan altar pemujaan dan kerang raksasa terbelah dua. Salah satu Pemuja Kerang Kutil Ajaib 👤 telah mati oleh Zombie Hunter.</value>
+  <value>Ada yang mencurigakan di rumah {0}. Warga mengintip dari balik jendela dan menemukan sosok mayat di atas altar pemujaan secara misterius. Seorang Zombie Hunter berhasil memburu Zombie Pemuja Kerang Kutil Ajaib 👤 hingga mati.</value>
   </string>
   <string key="NoAttack" >
     <value >🌤 Pagi telah tiba, semua bernafas lega. Fyuh,(‾˛‾") tidak ada yang diserang semalam.</value>
@@ -418,34 +418,34 @@
   <string key="RemainingPlayersEnd">
     <value>Pemain Tersisa, Peran, dan Team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
   <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} memilih menghasut {1}.</value>
   </string>
-  <string key="CultConvertCultHunter">
-  <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
-    <value>{0} diutus untuk menghasut {1}. Dengan polosnya, ia baru sadar bahwa ternyata Ia seorang Cultist Hunter. Duh. 💂 {0} telah mati!</value>
+  <string key="CultConvertZombieHunter">
+  <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
+    <value>{0} diutus untuk menghasut {1}. Dengan polosnya, ia baru sadar bahwa ternyata Ia seorang Zombie Hunter. Duh. 💂 {0} telah mati!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-  <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+  <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value> {0} ke rumahmu semalam membawa formulir pendaftaran dan berbagai jenis kerang ajaib. Tanpa berpikir panjang, kamu langsung menghunus pedang tepat di dadanya. Seorang Pemuja Kerang Kutil Ajaib mati. {1} tersisa!</value>
   </string>
   <string key="CultConvertYou">
     <value>👤 Pemuja Kerang Kutil Ajaib berhasil mengajakmu bergabung! (╯°□°）╯ BIDIP!! BIDIP!! 🐚. Kamu sudah terkutili. Setiap malam, kamu bisa mengajak orang lain untuk bergabung.(╯°□°）╯ BIDIP!! BIDIP!!</value>
   </string>
   <string key="CultTeam">
-  <!-- 0 - Number of cultists -->
-    <value>👤 Cultist Pemuja Kerang Kutil Ajaib: {0}</value>
+  <!-- 0 - Number of Zombies -->
+    <value>👤 Zombie Pemuja Kerang Kutil Ajaib: {0}</value>
   </string>
   <string key="CultJoin">
-  <!-- 0 - new cultist's name -->
+  <!-- 0 - new Zombie's name -->
     <value>{0} telah bergabung dengan Pemuja Kerang Kutil Ajaib! 👤 (╯°□°）╯BIDIP!! BIDIP!! </value>
   </string>
   <string key="CultVisitEmpty">
-  <!-- 0 - Newest cultist's name -->
+  <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} membawa formulir pendaftaran ke rumah {1}. Setelah mengetuk pintu rumahnya beberapa jam, kamu memutuskan meninggalkan formulir pendaftaran di bawah pintu.</value>
   </string>
@@ -460,9 +460,9 @@
   <!-- 0 - target name -->
     <value>💂 Kamu mencoba pergi ke rumah {0}, tetapi ia telah mati.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
   <!-- 0 - target name -->
-    <value>💂 Kamu pergi ke rumah {0}. Di sana tercium bau tak sedap dan sebuah kerang raksasa! Lalu, terdengar suara BIDIP BIDIP!! 🐚 Kamu pun mengayunkan pedangmu ke arahnya, seorang Cultist Pemuja Kerang Kutil Ajaib telah mati. 👤</value>
+    <value>💂 Kamu pergi ke rumah {0}. Di sana tercium bau tak sedap dan sebuah kerang raksasa! Lalu, terdengar suara BIDIP BIDIP!! 🐚 Kamu pun mengayunkan pedangmu ke arahnya, seorang Zombie Pemuja Kerang Kutil Ajaib telah mati. 👤</value>
   </string>
   <string key="HunterFailedToFind">
   <!-- 0 - target name -->
@@ -477,7 +477,7 @@
     <!-- 1 - teamate's names -->
     <value>{0} telah mati! Dalam amarahmu kamu berlari ke hutan dan menjadi Serigala! Tim Serigalamu adalah: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Warga Desa 👱</value>
   </string>
@@ -523,11 +523,11 @@
   <string key="ApprenticeSeer">
     <value>Murid Penerawang (Apprentice Seer) 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>Cultist 👤</value>
+  <string key="Zombie">
+    <value>Zombie 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>Cultist Hunter 💂</value>
+  <string key="ZombieHunter">
+    <value>Zombie Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -744,12 +744,12 @@
     <value>Kamu pergi ke rumah {0} untuk melengkapi koleksimu, tetapi kamu malah bertemu dengan sosok hitam besar menjaganya! Sumringah, kamu tetap melawannya meski akhirnya kamu kalah.</value>
   </string>
   <string key="CultConvertHunter">
-  <!-- 0 - Youngest Cultist's name -->
+  <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Pemuja Kerang Kutil Ajaib junior {0} ke rumah {1} membawa formulir pendaftaran, tetapi terdengar suara tembakan dan {0} terlempar keluar jendela! {0} telah mati.</value>
   </string>
   <string key="CultConvertSerialKiller">
-  <!-- 0 - Youngest Cultist's name -->
+  <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Pemuja Kerang Kutil Ajaib junior {0} ke rumah {1}  membawa formulir pendaftaran, tetapi terdengar suara teriakan {0} lalu hening seketika! Beberapa luka tusukan ditemukan di sekujur tubuhnya! {0} telah mati....</value>
   </string>
@@ -773,13 +773,13 @@
     <value> {0} telah mati, dan kamu menjadi seorang mason 👷. Tim Masonmu adalah: {1}</value>
   </string>
   <string key="DGToCult">
-  <!-- 0 - new cultist's name -->
+  <!-- 0 - new Zombie's name -->
     <value>Si doppelganger {0} sekarang menjadi Pemuja Kerang Kutil Ajaib sama sepertimu! Ayo berikan dia foto copy semua formulir pendaftaran!</value>
   </string>
   <string key="DGTransformToCult">
   <!-- 0 - role's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} telah mati, dan kamu menjadi seorang Pemuja Kerang Kutil Ajaib (cultist) 👤. Segera minta formulir pendaftaran ke seniormu, dan selamat bertugas! Tim cultistmu adalah: {1}</value>
+    <value>{0} telah mati, dan kamu menjadi seorang Pemuja Kerang Kutil Ajaib (Zombie) 👤. Segera minta formulir pendaftaran ke seniormu, dan selamat bertugas! Tim Zombiemu adalah: {1}</value>
   </string>
   <string key="DGToWolf">
   <!-- 0 - DG's name -->
@@ -919,10 +919,10 @@
     <value>Fool merasa dirinya Seer (Penerawang). Padahal, semuanya tipu belaka. ┐(ˇ.ˇ")┌ </value>
   </string> 
   <string key="AboutCult">
-    <value>Hidup Pemuja Kerang Kutil Ajaib (Cultist)! Hasut warga agar pengikutmu bertambah banyak, maka kamu menang! </value>
+    <value>Hidup Pemuja Kerang Kutil Ajaib (Zombie)! Hasut warga agar pengikutmu bertambah banyak, maka kamu menang! </value>
   </string>
   <string key="AboutCH">
-    <value>Pemuja Kerang Kutil Ajaib sangat sudah menyebar. Tugas Cultist Hunter berburu dan membunuh mereka satu per satu. Jika ada Cultist datang padamu, dia pasti mati.</value>
+    <value>Pemuja Kerang Kutil Ajaib sangat sudah menyebar. Tugas Zombie Hunter berburu dan membunuh mereka satu per satu. Jika ada Zombie datang padamu, dia pasti mati.</value>
   </string>
   <string key="AboutWC">
     <value>Di awal permainan, pilih panutan hidupmu. Ketika Panutanmu mati, kamu akan jadi serigala. </value>
@@ -937,13 +937,13 @@
     <value>Mason adalah warga yang sederhana. Mereka memiliki kebiasaan berkumpul dan saling berbagi informasi. Mason mengetahui siapa mason lainnya dan bekerja dengan baik. </value>
   </string>
   <string key="AboutDG">
-    <value>Doppelganger akan memilih pemain lain dan ketika pemain tersebut mati, dia akan menjadi peran tersebut. Cultist tidak dapat menhasut Doppelganger. Jika peran yang dipilih adalah Wild Child dan panutannya sudah mati, kamu akan menjadi serigala.</value>
+    <value>Doppelganger akan memilih pemain lain dan ketika pemain tersebut mati, dia akan menjadi peran tersebut. Zombie tidak dapat menhasut Doppelganger. Jika peran yang dipilih adalah Wild Child dan panutannya sudah mati, kamu akan menjadi serigala.</value>
   </string>
   <string key="AboutCupid">
     <value>Lope Lope di udara. Cupid akan memilih 2 pemain jomblo untuk dijadikan pasangan (lovers). Mereka akan saling mengetahui nama pasangannya, tapi tidak tahu peran masing-masing. Jika lovers pilihanmu bertahan hidup, mereka akan menang. ( ≈ˆ3(¯▾ˆ◦)♥ </value>
   </string>
   <string key="AboutHunter">
-    <value>Hunter memiliki keinginan untuk membalas dendam sangat tinggi. Pemain yang datang ke rumahmu, tak segan kamu bunuh. Jika warga menggantungmu, kamu dapat membunuh satu orang lagi sebelum mati. Setelah serigala menyerangmu, kamu dapat membunuh 1 serigala saat itu juga. Cultist yang berusaha datang untuk menghasutmu memiliki kemungkinan 50% gagal. </value>
+    <value>Hunter memiliki keinginan untuk membalas dendam sangat tinggi. Pemain yang datang ke rumahmu, tak segan kamu bunuh. Jika warga menggantungmu, kamu dapat membunuh satu orang lagi sebelum mati. Setelah serigala menyerangmu, kamu dapat membunuh 1 serigala saat itu juga. Zombie yang berusaha datang untuk menghasutmu memiliki kemungkinan 50% gagal. </value>
   </string>
   <string key="AboutSK">
     <value>Serial Killer adalah Pembunuh kelas kakap. Keluar dari penjara tak membuatnya bertobat. Bunuh siapaun yang kamu mau, maka kamu akan menang.</value>
@@ -1111,10 +1111,10 @@
     <value>Pilihan Tanner dalam Peran: {0}</value>
   </string>
   <string key="AllowCultQ">
-    <value>Apakah kamu ingin Cultist dalam pilihan peran?\nPengaturan saat ini: {0}</value>
+    <value>Apakah kamu ingin Zombie dalam pilihan peran?\nPengaturan saat ini: {0}</value>
   </string>
   <string key="AllowCultA">
-    <value>Pilihan Cultist dalam Peran: {0}</value>
+    <value>Pilihan Zombie dalam Peran: {0}</value>
   </string>
   <string key="EnableSecretLynchQ">
     <value>Aktifkan Secret Lynch?\nPengaturan saat ini: {0}</value>
@@ -1269,7 +1269,7 @@
     <value>Tim Serial Killer</value>
   </string>
   <string key="CultTeam" deprecated="true">
-    <value>Tim Pemuja Kerang (Cultist)</value>
+    <value>Tim Pemuja Kerang (Zombie)</value>
   </string>
   <string key="TannerTeam">
     <value>Tim Tanner</value>
@@ -1288,7 +1288,7 @@
     <value>Tim Serial Killer</value>
   </string>
   <string key="CultTeamEnd">
-    <value>Tim Pemuja Kerang (Cultist)</value>
+    <value>Tim Pemuja Kerang (Zombie)</value>
   </string>
   <string key="TannerTeamEnd">
     <value>Tim Tanner</value>
@@ -1307,7 +1307,7 @@
   <string key="BlacksmithKilled">
     <value>Asrataga, {0} seorang Pandai Besi ⚒ sedang sial. Dia mati kelilipan bubuk besi saat pertarungan melawan serangan bertubi-tubi dari Si Serial Killer🔪. Yalord, {0} akhirnya mati.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Warga menemukan bau tak sedap dari rumah {0}. Ia ditemukan tak bernyawa tanpa hidung. Serial Killer🔪 telah beraksi lagi! {0} adalah Pemuja Kerang 👤.</value>
   </string>
   <string key="CupidKilled">
@@ -1342,16 +1342,16 @@
   <value>Serigala 🐺 berkunjung ke rumah {0} yang sedang asik menonton serial TV kesukaannya. Dengan rasa percaya diri {0} berlagak menjadi spiderman 🕸 tokoh kesukaannya, dan melawan.\n\nSerigala tertawa terbahak-bahak sebelum menyantap {0}, Wild Child 👶 tewas.</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
-    <value>Warga desa sedang berkabung. Mereka menemukan {0} seorang Cultist Hunter 💂, menjadi korban keji seorang pembunuh malam tadi. Apalah jadinya warga desa micin ini ketika kehilangan pembasmi Pemuja Kerang? Sedih.</value>
-    <value>Jenazah {0} Cultist Hunter 💂, ditemukan di tengah lapangan dengan pedang tertancap di leher. Sepertinya ia telah salah mencurigai seseorang, bukan Pemuja Kerang yang ia datangi, namun Serial Killer!</value>
+    <value>Warga desa sedang berkabung. Mereka menemukan {0} seorang Zombie Hunter 💂, menjadi korban keji seorang pembunuh malam tadi. Apalah jadinya warga desa micin ini ketika kehilangan pembasmi Pemuja Kerang? Sedih.</value>
+    <value>Jenazah {0} Zombie Hunter 💂, ditemukan di tengah lapangan dengan pedang tertancap di leher. Sepertinya ia telah salah mencurigai seseorang, bukan Pemuja Kerang yang ia datangi, namun Serial Killer!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Tadi malam {0} sedang menjalankan tugasnya. Ia pergi ke salah satu rumah seseorang untuk menghasut mereka agar bergabung ke perkumpulan Pemuja Kerang 👤. Sayang sekali, merasa program dietnya terganggu, Serigala membunuh {0} dan memakannya! Serigala gagal diet.</value>
     <value>Semalam, semua Serigala sepakat berkumpul di rumah untuk bersantai. Namun, kedatangan {0} yang tiba-tiba mengganggu mereka. Serigala berkata kepada {0}, "Maaf kami sedang tidak tertarik pada kerang raksasa."</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Merasa sangat percaya diri {0}, seorang Pemuja Kerang 👤 berkunjung ke rumah seseorang semalam. Pagi ini ia ditemukan tewas tak bernyawa dengan sobekan formulir di sekitar tubuhnya. Serial Killer sepertinya tidak tertarik pada kegiatan pemujaan ini.</value>
-    <value>Kelompok Pemuja Kerang (cultist) 👤 mengirim anggotanya untuk pergi ke rumah seseorang malam tadi. Tanpa mereka tahu, {0} dikirim ke rumah Serial Killer🔪 hanya untuk dijadikan kesenangan keji sang pembunuh.</value>
+    <value>Kelompok Pemuja Kerang (Zombie) 👤 mengirim anggotanya untuk pergi ke rumah seseorang malam tadi. Tanpa mereka tahu, {0} dikirim ke rumah Serial Killer🔪 hanya untuk dijadikan kesenangan keji sang pembunuh.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
     <value>Sebagai Guardian Angel 👼,{0} bertugas untuk menjaga warga dari serangan pembunuh. Namun, kekuatan {0} telah hilang! Tidak! Tanpa membuang waktu, Serial Killer segera membunuhnya!</value>
@@ -1368,9 +1368,9 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Mengetahui hanya tinggal {0} seorang, {1} menunggu si {0} lengah. Mudah bagi {1} si serigala untuk menghabisi si Hunter, yang tersisa tinggal mayat {0} yang dimutilasi oleh Serigala 🐺.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
-    <value>Siang hari, {1} dan {0} berjalan keluar. melihat jimat yang dikenakan di leher {0}, Si {1} langsung mengayunkan pedangnya ke leher pemuja kerang, itulah hukuman pedih dari Cultist Hunter 💂 kepada kutil yang telah mencemari desa.</value>
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>Siang hari, {1} dan {0} berjalan keluar. melihat jimat yang dikenakan di leher {0}, Si {1} langsung mengayunkan pedangnya ke leher pemuja kerang, itulah hukuman pedih dari Zombie Hunter 💂 kepada kutil yang telah mencemari desa.</value>
   </string>
   
   <!-- Extend time -->
@@ -1582,14 +1582,14 @@
   </string>
 
 <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
-    <value>Kamu adalah Pacifist ☮️. Kamu dapat meyakinkan semua orang di desa untuk tidak melakukan eksekusi selama satu kali dalam permainan.</value>
+  <string key="RoleInfoImam">
+    <value>Kamu adalah Imam ☮️. Kamu dapat meyakinkan semua orang di desa untuk tidak melakukan eksekusi selama satu kali dalam permainan.</value>
   </string>
-  <string key="Pacifist">
-    <value>Pacifist ☮️</value>
+  <string key="Imam">
+    <value>Imam ☮️</value>
   </string>
-  <string key="AboutPacifist">
-    <value>Pacifist dapat memilih untuk meyakinkan semua orang di desa untuk tidak mengeksekusi siapa pun. Ini hanya bisa dilakukan satu kali dalam permainan.</value>
+  <string key="AboutImam">
+    <value>Imam dapat memilih untuk meyakinkan semua orang di desa untuk tidak mengeksekusi siapa pun. Ini hanya bisa dilakukan satu kali dalam permainan.</value>
   </string>
 
   <string key="RoleInfoWiseElder">
@@ -1615,15 +1615,15 @@
     <value>Secara default, Thief 😈 dapat mencuri peran pemain pada malam pertama dan mengubah pemain itu menjadi warga desa biasa. \ NJika mode [Full Thief] diaktifkan, mereka mendapat 50% kesempatan untuk mencuri peran pemain setiap malam, jika berhasil , pemain itu akan menjadi pencuri baru dan berlanjut dengan pencurian!</value>
   </string>
 
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Tekan tombol ini ketika kamu ingin menyampaikan pidato perdamaian dan menghentikan warga desa melakukan eksekusi mati di waktu berikutnya!</value>
   </string>
-  <string key="PacifistNoLynch">
-  <!-- {0} - Pacifist's name -->
-    <value>Pacifist ☮️, {0}, sedang berpidato tentang persahabatan dan kepercayaan di depan desa. Karena warga desa terharu dengan pidatonya, tidak akan ada hukuman mati hari ini!</value>
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
+    <value>Imam ☮️, {0}, sedang berpidato tentang persahabatan dan kepercayaan di depan desa. Karena warga desa terharu dengan pidatonya, tidak akan ada hukuman mati hari ini!</value>
   </string>
-  <string key="PacifistNoLynchNow">
-    <value>Karena warga desa terharu dengan pidato Pacifist ☮️ yang sepenuh hati, fase lynch akan dilewati hari ini!</value>
+  <string key="ImamNoLynchNow">
+    <value>Karena warga desa terharu dengan pidato Imam ☮️ yang sepenuh hati, fase lynch akan dilewati hari ini!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
   <!-- 0 - Wise Elder's name -->
@@ -1669,9 +1669,9 @@
     <value>Rekan satu tim kamu (jika ada) adalah: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
-    <value>{0} bukan lagi rekan tim kamu, dan {1} sekarang menjadi cultist sepertimu!</value>
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
+    <value>{0} bukan lagi rekan tim kamu, dan {1} sekarang menjadi Zombie sepertimu!</value>
   </string>
   <string key="ThiefToWolf">
     <!-- 0 - old wolf's name -->
@@ -1727,18 +1727,18 @@
   <string key="SecretLynchShowVotersA">
     <value>Ketika secret lynch diaktifkan dan penghitungan suara ditampilkan, nama pemilih untuk setiap pemain yang dipilih akan: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
   <value>Aneh ... Saat kamu mulai berdiskusi tentang siapa yang akan kalian ajak bergabung malam ini, kamu menyadari bahwa {0} tidak ada di sini! Apa yang terjadi padanya😱??</value>
   </string>
   
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
   <value>Peace!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
-  <value>Lynching hari ini dilewati karena pidato Pacifist mengharukan!</value>
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
+  <value>Lynching hari ini dilewati karena pidato Imam mengharukan!</value>
   </string>
   
   <string key="ThiefStoleYourRoleThief">
@@ -1838,8 +1838,8 @@
   <string key="ChemistTargetEmpty">
   <value>{0} ternyata tidak ada di rumah! Kamu pun membawa ransel berisikan ramuanmu kembali ke rumah. Ahh! Malam yang sial.</value>
   </string>
-  <string key="CultistsList">
-  <value>Anggota Sekte Cultist saat ini: {0}</value>
+  <string key="ZombiesList">
+  <value>Anggota Sekte Zombie saat ini: {0}</value>
   </string>
   <string key="SnowWolf">
   <value>the Snow Wolf 🐺☃️</value>
@@ -1889,7 +1889,7 @@
   <string key="ChemistFrozen">
   <value>Kamu sempat terlelap kemudian bangun untuk meracik ramuanmu, sayangnya cuaca tampak tidak bersahabat. Badanmu menggigil dan terasa kaku. Kamu melihat seluruh botol ramuanmu beku oleh salju. Kamu tidak bisa melakukan apa-apa malam ini selain menunggu matahari terbit.Ohh SnowWolf berulah) ゜o゜(</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Malam ini kamu mengenakan jubah dan bergegas ke rumah salah satu warga untuk menghasutnya mengikuti aliranmu, saat membuka pintu tiupan angin begitu kencang membuatmu beku.Ohh SnowWolf berulah 🐺☃️. </value>
   </string>
   <string key="CHFrozen">
@@ -1980,7 +1980,7 @@
     <value>Player list will be shuffled every time: {0}</value>
   </string>
   <string key="AboutGraveDigger">
-  <value>Grave Digger ☠️ bertugas untuk menggali kuburan untuk setiap jasad penghuni desa yang telah tewas. Karena dia keluar setiap malam, maka Serigala dan Cultist tidak bisa menemukannya terkecuali tidak ada jasad yang ingin dikuburkan sehingga ia berdiam di rumah. Setiap orang yang mengunjungi Grave Digger berpeluang terjatuh ke dalam lubang, tergantung banyaknya lubang yang telah digali. Karena Grave Digger sering keluar rumah untuk menggali, kemungkinan dia akan bertemu Serigala atau Serial Killer di luar dan tewas. Pembunuh berantai juga tidak bisa menargetkan grave digger dan akan terjebak di lubang galian, akibatnya Pembunuh Berantai akan terlukai dan menyebabkan pembunuh berantai menjadi ceroboh dalam memilih target berikutnya.</value>
+  <value>Grave Digger ☠️ bertugas untuk menggali kuburan untuk setiap jasad penghuni desa yang telah tewas. Karena dia keluar setiap malam, maka Serigala dan Zombie tidak bisa menemukannya terkecuali tidak ada jasad yang ingin dikuburkan sehingga ia berdiam di rumah. Setiap orang yang mengunjungi Grave Digger berpeluang terjatuh ke dalam lubang, tergantung banyaknya lubang yang telah digali. Karena Grave Digger sering keluar rumah untuk menggali, kemungkinan dia akan bertemu Serigala atau Serial Killer di luar dan tewas. Pembunuh berantai juga tidak bisa menargetkan grave digger dan akan terjebak di lubang galian, akibatnya Pembunuh Berantai akan terlukai dan menyebabkan pembunuh berantai menjadi ceroboh dalam memilih target berikutnya.</value>
   </string>
   <string key="RoleInfoGraveDigger">
   <value>Kamu adalah Grave Digger ☠️! Setiap malam kamu akan menggali lubang untuk menguburkan jasad penghuni desa yang telah tewas. Galian tersebut mungkin saja belum selesai, sehingga orang bisa saja terjerembab di dalamnya. Kamu selalu berada di luar rumah sehingga seringkali Serigala tidak bisa memangsamu.</value>
@@ -2024,17 +2024,17 @@
   </string>
   <!--{0}: grave digger-->
   <string key="HunterFell">
-  <value>Malam yang melelahkan bagimu untuk mengejar Cultist 👤 di desa, malam ini kamu berjalan lebih jauh dan melewati kuburan penuh galian untuk memeriksa {0}. Tak sengaja kamu menginjak sebuah jebakan yang ternyata lubang yang sangat dalam… kamu terjerembab di dalamnya, dan tertusuk pedangmu sendiri hingga tewas!((o(´∀｀)o))</value>
+  <value>Malam yang melelahkan bagimu untuk mengejar Zombie 👤 di desa, malam ini kamu berjalan lebih jauh dan melewati kuburan penuh galian untuk memeriksa {0}. Tak sengaja kamu menginjak sebuah jebakan yang ternyata lubang yang sangat dalam… kamu terjerembab di dalamnya, dan tertusuk pedangmu sendiri hingga tewas!((o(´∀｀)o))</value>
   </string>
   <!--{0}: cult hunter-->
   <string key="HunterFellDigger">
-  <value>Dalam perjalanan pulang yang melelahkan, kamu melihat salah satu tumpukan jerami lubang jeratanmu telah rusak. Kamu melihat jasad {0} yang tertusuk bukan oleh tombak jebakanmu melainkan pedang miliknya sendiri. Cultist Hunter seharusnya tidak mencurigaimu dan menerima nasib buruk ini((；ﾟェﾟ；))</value>
+  <value>Dalam perjalanan pulang yang melelahkan, kamu melihat salah satu tumpukan jerami lubang jeratanmu telah rusak. Kamu melihat jasad {0} yang tertusuk bukan oleh tombak jebakanmu melainkan pedang miliknya sendiri. Zombie Hunter seharusnya tidak mencurigaimu dan menerima nasib buruk ini((；ﾟェﾟ；))</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
   <value>Kamu baru saja pulang dari malam yang melelahkan, hingga akhirnya melihat mayat {0} dengan jubah yang terpotong oleh tombak besi di lubang jebakan milikmu. Hahhh! Sekte macam apa yang mencoba mengubah seorang penggali kubur?!((；ﾟェﾟ；))</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
   <value>Dalam perjalananmu ke rumah {0}, tiba-tiba {1} saat itu mengajak untuk sekalian membakar sebuah gereja yang ada di desa. Dia memimpin perjalanan melewati kuburan, tiba-tiba ia terperangkap jebakan beruang yang sangat dalam karena mencoba mengajak Grave Digger ikut aliran sesat. Kalian hanya bisa mendengar teriakannya sebelum akhirnya tewas👤((；ﾟェﾟ；))</value>
   </string>
@@ -2090,9 +2090,9 @@
   <string key="HarlotFellPublic">
   <value>Ketika Harlot💋 {0} baru saja pulang ke rumah setelah Skidipapap asik, dia mencoba mengambil jalan pintas melalui kuburan setempat. Dia pasti masih sedikit pusing karena dia tidak melihat kuburan yang terbuka sampai dia tidak menapak di langkah selanjutnya. Si Manis Manja meninggal seketika(⊃‿⊂) </value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
-  <value>Tidak hanya menghasut warga untuk bergabung dengan mereka. Cultist 👤 mencoba membakar gereja desa malam ini, Nackal.. Namun ketika {0} memimpin kelompok itu melalui kuburan, sebuah perangkap beruang menjepit tepat di pergelangan kakinya! Dia menjerit ketika dia jatuh ke kuburan yang terbuka dan Cults lainnya melarikan diri karena ketakutan ( ´థ,_‥థ｀)</value>
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
+  <value>Tidak hanya menghasut warga untuk bergabung dengan mereka. Zombie 👤 mencoba membakar gereja desa malam ini, Nackal.. Namun ketika {0} memimpin kelompok itu melalui kuburan, sebuah perangkap beruang menjepit tepat di pergelangan kakinya! Dia menjerit ketika dia jatuh ke kuburan yang terbuka dan Cults lainnya melarikan diri karena ketakutan ( ´థ,_‥థ｀)</value>
   </string>
   <!--{0}: thief-->
   <string key="ThiefFellPublic">
@@ -2265,7 +2265,7 @@
 	<value>Matikan semua</value>
   </string>
     <string key="CHHuntedYou">
-    <value>Cultist Hunter 💂‍♀️ mengunjungi kamu ketika kamu sedang sembayang di altar. Kamu dibacok crot! crot!, lalu meninggoy</value>
+    <value>Zombie Hunter 💂‍♀️ mengunjungi kamu ketika kamu sedang sembayang di altar. Kamu dibacok crot! crot!, lalu meninggoy</value>
   </string>
     <string key="ExitAnonymousMode">
     <value>Kamu gak bisa menggunakan bot ini dalam mode admin anonim! Silakan keluar dari mode admin anonim (atau mintalah admin yang promote kamu untuk melakukannya) lalu coba lagi!</value>

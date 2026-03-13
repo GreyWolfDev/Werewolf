@@ -218,10 +218,10 @@
     <value>Sei l'apprendista Veggente🙇. Quando (e se) il Veggente muore, erediterai il ruolo di Veggente.</value>
     <value>Sei l'apprendista del Veggente🙇. Questo significa che in partita, c'è almeno un Veggente. Nel caso morisse o venisse convertito, diverrai il Veggente.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>Sei il satanista👤. Ogni notte, puoi scegliere un giocatore da convertire al tuo culto. Se tutti i giocatori rimasti vivi fanno parte della tua setta, voi membri avete vinto.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>Sei il cacciatore di satanisti💂! Ogni notte, puoi scegliere un giocatore. Se è un membro della setta lo ucciderai. Ah, se un satanista prova a convertirti, l'ultimo membro arruolato dalla setta muore e scoprirai quanti ne sono rimasti.</value>
   </string>
   <string key="LynchTime" >
@@ -276,7 +276,7 @@
     <value>Il mattino è giunto, e con lui un fetore che sa di tragedia.  Seguendo l'odore, i villici trovano {0} fatto a pezzi nel fienile, senza testa. NOMNOMNOMNOM\n{1}</value>
     <value>Un'altra notte di terrore è finita. Seguendo una terrificante scia di sangue gli abitanti trovano {0} fatto a pezzi, nel fienile. NOMNOMNOMNOM\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Un odore rancido proviene dalla casa di {0}... durante l'ispezione viene ritrovato un corpo senza vita, chinato inerme davanti ad un altare oscuro... un satanista è stato ucciso dal cacciatore di sette!</value>
     <value>Nell'altare dentro casa di {0} si ritrova un corpo. È il cadavere di {0}, ucciso dalla spada del cacciatore di sette!</value>
   </string>
@@ -367,13 +367,13 @@
   <string key="RemainingPlayersEnd">
     <value>Giocatori rimasti vivi, ruolo e fazione:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value>{0} vota per convertire {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} è stato inviato a fare il suo sporco lavoro, per convertire {1}... ma era il cacciatore di satanisti! {0} è morto!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} ti ha fatto visita la scorsa notte, pronto a convertirti...  ma l'hai ucciso con un rapido fendente della tua spada. Un satanista è morto... {1} rimanenti!</value>
   </string>
   <string key="CultConvertYou">
@@ -394,7 +394,7 @@
   <string key="HunterVisitDead">
     <value>Hai dato la caccia a {0}, ma era già morto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Fai visita alla casa di {0}, e lo cogli a pregare chissà quale dio sconosciuto... Sfoderi così la spada per fendere il malvagio satanista.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -451,10 +451,10 @@
   <string key="ApprenticeSeer">
     <value>l'Apprendista Veggente 🙇 </value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>il Satanista 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>il Cacciatore di Satanisti 💂</value>
   </string>  
  <string key="RanAway">
@@ -1154,7 +1154,7 @@
   <string key="BlacksmithKilled">
     <value>Sembra che {0}, il fabbro di zona, sia stato estremamente sfortunato. Il corpo di {0} è stato trovato affettato con vari coltelli. Analizzando i coltelli conficcati nelle sue mani, piedi e la testa, appartenevano alla sua stessa fucina. Sembra che il serial killer abbia ampliato la sua collezione di armi insieme a quella di organi...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} è stato trovato pugnalato a morte da un candeliere del suo altare. Il serial killer ha colpito ancora, indipendentemente da razza, lingua e religione! {0} era un Satanista👤.</value>
   </string>
   <string key="CupidKilled">
@@ -1190,11 +1190,11 @@
     <value>I villici si svegliano la mattina, solo per trovare il corpo tagliato a pezzi di {0}, il Cacciatore di Satanisti, in un carro appena fuori il centro della città.. Lezione imparata: non visitare il Serial Killer!</value>
     <value>Il corpo di {0}, il Cacciatore di Satanisti, è stato trovato nel centro della città, tagliato precisamente in cento pezzi. Controllare se il Serial Killer fosse un satanista non sembra una buona idea..</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Sembrava una notte tranquilla, visto che i lupi hanno deciso di rimanere a casa, ma l'unico sfortunato è stato {0}, un satanista che ha provato a convertire un lupo. La testa di {0} è stata trasformata in una buona cena a domicilio!</value>
     <value>I satanisti hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a fare proseliti, è stato divorato dal lupo che ha visitato. Sfortunatamente per {0}, i lupi non hanno interesse a far parte della loro setta.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>I satanisti pensavano di convertire un nuovo membro tra di loro, ma si sbagliavano! {0}, un satanista è stato trovato tritato nella piazza centrale! Vicino ad esso, il suo "sacro" libro è stato trovato infilzato da parte a parte da un coltello, come ad indicare quale religione è la dominante.</value>
     <value>L'ultima notte, i satanisti hanno provato a convertire una persona più pazza di loro. Il loro membro più recente ha provato a convertire il Serial Killer, e il Serial Killer ha creato una nuova scultura di arte moderna, nella piazza della città, con gli organi interni di {0}.</value>
   </string>
@@ -1215,8 +1215,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sapendo che solo {0} era rimasto in vita, {1} prova a sbranare {0} quando {0} meno se l'aspettava, riuscendolo a cogliere impreparato. Mangiare l'ultimo contadino sembrò una passeggiata per {1}, che banchettò sul corpo ancora fresco di {0}, l'ex Cacciatore.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} e {0} escono appena spuntarono i primi raggi di luce. Vedendo il Pentacolo che {0} indossava sul collo, il virtuoso {1} tira fuori la propria spada, terminando una volta per tutte queste sette che hanno contaminato il villaggio.</value>
   </string>
   
@@ -1427,14 +1427,14 @@
   <string key="AboutSandman">
     <value>Una volta per partita, Morfeo addormenterà tutti i giocatori in partita, impedendogli di svolgere qualsiasi ruolo notturno.</value>
   </string>
-  <string key="RoleInfoPacifist">
-    <value>Sei il Pacifista ☮️. Puoi scegliere di convincere tutti gli abitanti del villaggio di non linciare nessuno. Questo può essere usato solo una volta.</value>
+  <string key="RoleInfoImam">
+    <value>Sei il Imama ☮️. Puoi scegliere di convincere tutti gli abitanti del villaggio di non linciare nessuno. Questo può essere usato solo una volta.</value>
   </string>
-  <string key="Pacifist">
-    <value>il Pacifista ☮️</value>
+  <string key="Imam">
+    <value>il Imama ☮️</value>
   </string>
-  <string key="AboutPacifist">
-    <value>Il pacifista può convincere tutti a non linciare nessuno. Potrà farlo solo una volta.</value>
+  <string key="AboutImam">
+    <value>Il Imama può convincere tutti a non linciare nessuno. Potrà farlo solo una volta.</value>
   </string>
   <string key="RoleInfoWiseElder">
     <value>Sei il Vecchio Saggio 📚. Puoi sopravvivere a un attacco dei lupi, grazie alla tua saggezza ed esperienza. Se un Artigliere, un Urbano o un Chimico ti ucciderà, si trasformerà in un contadino.</value>
@@ -1457,15 +1457,15 @@
   <string key="AboutThief">
     <value>Il ladro 😈 ruba il ruolo e lo trasforma in un contadino.\nSe c'è impostato il Ladro per tutta la partita, quel giocatore si trasformerà nel nuovo ladro e continuerà a rubare ruoli per tutta la partita.</value>
   </string>  
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Clicca questo bottone quando vuoi fare il tuo commovente discorso e fermare il prossimo linciaggio del popolo!</value>
   </string>
-  <string key="PacifistNoLynch">
-  <!-- {0} - Nome del pacifista -->
-    <value>Il Pacifista ☮️, {0}, sta facendo un profondo discorso riguardo l'amicizia e la fiducia in fronte al villaggio. Commossi dalle sue parole, nessuno verrà linciato oggi!</value>
+  <string key="ImamNoLynch">
+  <!-- {0} - Nome del Imama -->
+    <value>Il Imama ☮️, {0}, sta facendo un profondo discorso riguardo l'amicizia e la fiducia in fronte al villaggio. Commossi dalle sue parole, nessuno verrà linciato oggi!</value>
   </string>
-  <string key="PacifistNoLynchNow">
-    <value>Dato il profondo discorso riguardante l'amicizia e la fiducia reciproca del Pacifista ☮️, non ci sarà nessun linciaggio oggi!</value>
+  <string key="ImamNoLynchNow">
+    <value>Dato il profondo discorso riguardante l'amicizia e la fiducia reciproca del Imama ☮️, non ci sarà nessun linciaggio oggi!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
   <!-- 0 - Nome del vecchio saggio -->
@@ -1511,8 +1511,8 @@
     <value>I tuoi compagni (se presenti) sono: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} non è più un tuo compagno e {1} è ora divenuto un Satanista, esattamente come te!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1569,18 +1569,18 @@
   <string key="SecretLynchShowVotersA">
     <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Strano... Vi siete riuniti per discutere su chi convertire oggi, ma {0} non è presente! Che fine avrà fatto?</value>
   </string>
   
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
 	<value>Pace!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
-	<value>Il linciaggio di oggi è stato annullato per merito del Pacifista!</value>
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
+	<value>Il linciaggio di oggi è stato annullato per merito del Imama!</value>
   </string>
   
   <string key="ThiefStoleYourRoleThief">
@@ -1678,7 +1678,7 @@
   <string key="ChemistTargetEmpty">
 	<value>{0} Non era a casa! Torni a casa deluso, che sfortuna.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>I satanisti sono attualmente: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1729,7 +1729,7 @@
   <string key="ChemistFrozen">
     <value>Dopo esserti svegliato pronto a preparare una delle tue soluzioni velenose una raffica di vento entra dalla finestra congelandoti 🐺☃️. Con la coda dell'occhio vedi che tutte le soluzioni sono state congelate. Non ti resta altro che aspettare la mattina per scongelarti.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Dopo esserti preparato per andare a convertire qualcuno esci dalla porta per essere colpito da una raffica di vento che ti congela 🐺☃️. I tuoi compagni satanisti vedendoti ti deridono ma ti assicurano che ci penseranno loro a convertire qualcuno. </value>
   </string>
   <string key="CHFrozen">
@@ -1870,11 +1870,11 @@
   <string key="HunterFellDigger">
 	<value>Dopo un'altra lunga e faticosa notte, ritorni alla tua casa mentre il sole sta già sorgendo. Prima di arrivare a casa, noti una spada poggiata sopra una tomba non finita. Dentro la tomba noti il cadavere di {0}. Il cacciatore di Satanisti non avrebbe dovuto sospettare di te...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>Ritorni a casa dopo una faticosa nottata, quando senti un urlo dalle tombe non finite! Ti rechi subito sul posto, solo per trovare {0} morto dentro una tomba. Da quando i satanisti provano a convertire i becchini?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>Mentre vai a casa di {1}, {0} suggerisce che sarebbe una buona idea bruciare la chiesa. Lo segui tramite il cimitero quando improvvisamente una trappola per orsi gli cattura l'anca! Tutto quello che senti è il suo urlo mentre finisce dritto dentro una fossa e voi scappate via in preda al terrore.</value>
   </string>
@@ -1930,8 +1930,8 @@
   <string key="HarlotFellPublic">
 	<value>Mentre la prostituta {0} tornava a casa dopo una notte di divertimento ha preso la scorciatoia per il cimitero. Data la tarda ora non stava prestando molta attenzione, e cadde in una tomba aperta! Forse doveva accettare quel lavoro di giorno il giorno prima...</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>I satanisti hanno provato a bruciare la chiesa, ma mentre {0} guidava la setta attraverso il cimitero, venne colto di sorpresa da una trappola per orsi! Mentre urlava dal dolore e si dimenava, è caduto dritto dentro una fossa aperta. Gli altri satanisti sono fuggiti in preda al panico!</value>
   </string>
   <!--{0}: thief-->

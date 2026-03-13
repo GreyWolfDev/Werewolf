@@ -33,7 +33,7 @@ Cucciolo di Lupo: Draco Malfoy🐶
 Stregone: Narcissa Malfoy🔮
 Serial Killer: Gellert Grindelwald🔪
 Satanisti: Dissennatori👤
-Pacifista: Albus Silente☮️
+Imama: Albus Silente☮️
 Ladro: Barty Crouch Jr.😈
 Vecchio Saggio: Nicolas Flamel📚 -->
 <strings> 
@@ -268,11 +268,11 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 <value>Sei Fiorenzo🙇‍♂️, l'apprendista Professore di Divinazione e un combattente di Hogwarts. Se il Professore di Divinazione muore, prenderai la sua sfera di cristallo e il suo posto.</value>
 </string>
 
-<string key="RoleInfoCultist" >
+<string key="RoleInfoZombie" >
 <value>Sei uno dei Dissennatori👤. Durante la notte, puoi baciare qualcuno e trasformarlo in un Dissennatore. Se tutti i giocatori rimasti verranno trasformati in Dissennatori, l'anno finirà!</value>
 </string>
 
-<string key="RoleInfoCultistHunter" >
+<string key="RoleInfoZombieHunter" >
 <value>I Dissennatori sono a Hogwarts e cercano di inalare tutta la felicità e diffondere paura e tristezza, e tu, Remus Lupin💂‍♂️, devi difendere la scuola! Durante la notte puoi usare l'incantesimo patronus per investigare su un mago. Se lui / lei è un Dissennatore verra ucciso. Se i Dissennatori ti attaccano, il Dissennatore più debole morirà.</value>
 </string>
 
@@ -341,7 +341,7 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 <value>Mentre tutti si alzano per svolgere i loro compiti quotidiani, sentono un odore orribile. Seguendo l'odore trovano {0} squartato nella foresta, ucciso da un terribile incantesimo proibito. AVADA KEDAVRA.\n{1}</value>
 </string>
 
-<string key="HunterKilledCultist">
+<string key="HunterKilledZombie">
 <!-- 0 - victim name -->
 <value>La camera da letto di {0} è piuttosto fredda... Studenti e insegnanti decidono quindi di entrare, entrando sentono un vuoto, come se non ci fosse più felicità nel mondo... Poi però arriva Remus Lupin che evoca il suo Patronus, riempiendo il luogo di luce e uccidendo il Dissennatore!</value>
 </string>
@@ -475,21 +475,21 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 <value>Giocatori rimasti vivi, ruolo e fazione:</value>
 </string>
 
-<string key="CultistVotedConvert" >
+<string key="ZombieVotedConvert" >
 <!-- 0 - Voter's name -->
 <!-- 1 - target name -->
 <value>{0} ha votato per baciare la morte e far diventare {1} un Dissennatore.</value>
 </string>
 
-<string key="CultConvertCultHunter">
-<!-- 0 - Yougest Cultist (killed)'s name' -->
-<!-- 1 - CultHunter's name -->
+<string key="CultConvertZombieHunter">
+<!-- 0 - Yougest Zombie (killed)'s name' -->
+<!-- 1 - ZombieHunter's name -->
 <value>{0} è stato inviato per baciare {1} e farlo diventare un Dissennatore... Tuttavia, era Remus Lupin e aveva un ottimo modo per allontanare i Dissennatori!</value>
 </string>
 
-<string key="CultHunterKilledCultVisit">
-<!-- 0 - Youngest Cultist's name -->
-<!-- 1 - Number of cultists left -->
+<string key="ZombieHunterKilledCultVisit">
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - Number of Zombies left -->
 <value>{0} è andato nel tuo ufficio ieri sera, pronto a baciarti e a trasformarti in uno di loro... Ma tu hai un ottimo modo per proteggerti. Uno dei Dissennatori è tornato ad Azkaban... {1} rimanenti!</value>
 </string>
  
@@ -498,17 +498,17 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 </string>
 
 <string key="CultTeam">
-<!-- 0 - Number of cultists -->
+<!-- 0 - Number of Zombies -->
 <value>Dissennatori: {0}</value>
 </string>
 
 <string key="CultJoin">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
 <value>{0} ha ricevuto il bacio della morte ed è stato trasformato in un Dissennatore!</value>
 </string>
   
 <string key="CultVisitEmpty">
-<!-- 0 - Newest cultist's name -->
+<!-- 0 - Newest Zombie's name -->
 <!-- 1 - target name -->
 <value>{0} è stato inviato per baciare e trasformare {1} in un dissennatore... Ma nessuno era nella camera da letto quella notte.</value>
 </string>
@@ -522,7 +522,7 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 <value>Sei andato a investigare su {0}, ma quando sei arrivato hai trovato hai trovato solo un corpo senza vita!</value>
 </string>
 
-<string key="HunterFindCultist">
+<string key="HunterFindZombie">
 <!-- 0 - target name -->
 <value>Entri nella stanza di {0} e senti un'aria di tristezza e depressione. Sai benissimo cosa fare in queste occasioni: invochi l'incantesimo Patronus.</value>
 </string>
@@ -543,7 +543,7 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 <value>{0} è morto! Sei diventato un Mangiamorte! I tuoi nuovi alleati sono: {1}</value>
 </string>
 
-<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
 <string key="Villager">
 <value>uno Studente👱</value>
@@ -605,11 +605,11 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 <value>Fiorenzo🙇</value>
 </string>
 
-<string key="Cultist">
+<string key="Zombie">
 <value>un Dissennatore👤</value>
 </string>
 
-<string key="CultistHunter">
+<string key="ZombieHunter">
 <value>Remus Lupin💂</value>
 </string>
 
@@ -650,7 +650,7 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 
 <!-- new strings May 6 2016-->
 <string key="CultTargetDead">
-<!-- 0 - Youngest cultists name -->
+<!-- 0 - Youngest Zombies name -->
 <value>Il membro più recente dei Dissennatori corre nella stanza di {0} per dargli il bacio della morte e trasformarlo in un Dissennatore, ma trova invece disordine, molto sangue e pezzi... L'obiettivo è stato assassinato!</value>
 </string>
 
@@ -821,7 +821,7 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 </string>
 
 <string key="CultConvertHunter">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
 <value>I Dissennatori ordinano a {0} di baciare e trasformare {1} in un Dissennatore. Arrivando lì {0} viene accolto con un Avada Kedavra al petto! {0} è morto.</value>
 </string>
@@ -855,7 +855,7 @@ Se il Professore di Divinazione o Fiorenzo ti dovessero guardare, puoi o meno es
 </string>
  
 <string key="DGToCult">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
 <value>{0}, Ninfadora Tonks🎭 si è trasformata in un Dissennatore</value>
 </string>
 
@@ -1544,7 +1544,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <value>Al mattino presto Hogwarts udì un grido acuto proveniente dall'ufficio della McGranitt⚒. Trovarono il cadavere di {0} ucciso in modo crudele da Gellert Grindelwald🔪.</value>
 </string>
 
-<string key="CultistKilled">
+<string key="ZombieKilled">
 <value>{0} è stato trovato ucciso. Gellert Grindelwald🔪 ha colpito ancora! {0} era un Dissennatore👤.</value>
 </string>
 
@@ -1588,11 +1588,11 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <value>Il corpo di {0}, Remus Lupin💂‍♂️ è stato trovato nel centro del cortile di Hogwarts, con due bacchette ficcate negli occhi. Controllare se Gellert Grindelwald🔪 fosse un Dissennatore👤 non sembra essere stata una buona idea..</value>
 </string>
 
-<string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+<string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
 <value>I Dissennatori hanno incontrato un problema non previsto questa notte. Il loro membro più recente, mandato a fare proseliti, è stato ucciso dal Mangiamorte che ha visitato. Sfortunatamente per {0}, i Mangiamorte non hanno interesse a diventare Dissennatori.</value>
 </string>
 
-<string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+<string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
 <value>I Dissennatori pensavano di convertire un nuovo membro tra di loro, ma si sbagliavano! {0}, un Dissennatore è stato trovato tritato nella piazza centrale! Gellert Grindelwald evidentemente non ci teneva a diventare un Dissennatore.</value>
 </string>
 
@@ -1615,8 +1615,8 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <value>Sapendo che solo {0} era rimasto in vita, {1} prova a lanciare un Avada Kedavra su {0} quando {0} meno se l'aspettava, riuscendolo a cogliere impreparato. Uccidere l'ultimo studente sembrò una passeggiata per {1}, che festeggiò sul corpo ancora fresco di {0}, Harry Potter🎯.</value>
 </string>
 
-<string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+<string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <value>{1} e {0} stanno correndo insieme a Hogsmeade. Quando {0} inizia improvvisamente a provare a baciarlo, Remus Lupin non esita e lo rispedisce ad Azkaban con il suo patronus.</value>
 </string>
   
@@ -1885,16 +1885,16 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <!-- NOT IMPLEMENTED YET -->
-<string key="RoleInfoPacifist">
+<string key="RoleInfoImam">
 <value>Sei Albus Silente☮️. La tua autorità nel mondo magico è tale che riuscirai a bloccare le votazioni su chi spedire ad Azkaban. Riuscirai a convincere tutti di non votare una sola volta, usa la tua autorità in modo ragionevole.</value>
 </string>
 
-<string key="Pacifist">
+<string key="Imam">
 <value>Albus Silente☮️</value>
 </string>
 
-<string key="AboutPacifist">
-<value>The Pacifist can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
+<string key="AboutImam">
+<value>The Imam can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
 </string>
 
 <string key="RoleInfoWiseElder">
@@ -1925,16 +1925,16 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <value>By default, the Thief😈 can steal a player's role on the first night and turn that player into a villager.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
 </string>
   
-<string key="AskPacifist">
+<string key="AskImam">
 <value>Premi questo pulsante quando vuoi usufruire della tua autorità e fermare le votazioni su chi spedire ad Azkaban!</value>
 </string>
 
-<string key="PacifistNoLynch">
-<!-- {0} - Pacifist's name -->
+<string key="ImamNoLynch">
+<!-- {0} - Imam's name -->
 <value>Albus Silente☮️, {0}, fa un discorso davanti a tutta Hogwarts. Mossi dalle sue parole gli studenti decidono che nessuno verrà spedito ad Azkaban oggi!</value>
 </string>
 
-<string key="PacifistNoLynchNow">
+<string key="ImamNoLynchNow">
 <value>A causa del discorso di Albus Silente ☮️ nessuno verrà spedito ad Azkaban oggi!</value>
 </string>
  
@@ -1986,8 +1986,8 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 </string>
 
 <string key="ThiefToCult">
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
 <value>{0} non è più dei vostri, in compenso {1} è diventato un dissennatore al suo posto, proprio come voi!</value>
 </string>
 
@@ -2058,18 +2058,18 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <value>Quando il voto segreto è impostato e viene mostrata la conta dei voti, il nome dei votanti per ogni giocatore votato sarà:{0}</value>
 </string>
 
-<string key="CultistBitten">
-<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+<string key="ZombieBitten">
+<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 <value>Strano… quando vi riunite per decidere chi baciare vi accorgete che {0} non è più uno dei vostri.</value>
 </string>
   
 <string key="Peace">
-<!-- Used for Pacifist's button -->
+<!-- Used for Imam's button -->
 <value>DISCORSO!</value>
 </string>
 
 <string key="LynchPeaceTimeout">
-<!-- Used in PM if the pacifist uses his ability during lynch phase -->
+<!-- Used in PM if the Imam uses his ability during lynch phase -->
 <value>Rimanendo stupiti dal discorso di Albus Silente☮️ gli studenti decidono di non mandare nessuno ad Azkaban!</value>
 </string>
   
@@ -2191,7 +2191,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <value>{0} non era in stanza! Torni a casa deluso, che sfortuna.</value>
 </string>
 
-<string key="CultistsList">
+<string key="ZombiesList">
 <value>I Dissennatori sono attualmente: {0}</value>
 </string>
 
@@ -2259,7 +2259,7 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <value>Dopo esserti svegliato pronto a preparare una delle tue pozioni velenose ti ritrovi immobilizzato. Con la coda dell'occhio vedi che tutte le pozioni sono state distrutte.</value>
 </string>
 
-<string key="CultistFrozen">
+<string key="ZombieFrozen">
 <value>Dopo esserti preparato per andare a convertire qualche mago ti ritrovi immobilizzato sulla porta. Resti immobile finché non arriva il giorno.</value>
 </string>
 
@@ -2443,12 +2443,12 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <value>Dopo un'altra lunga e faticosa notte, ritorni alla tua tana mentre il sole sta già sorgendo. Camminando sulla ragnatela, vieni punto da qualcosa, è una spada. Dentro al bozzolo c'è il cadavere di {0}. Remus Lupin non avrebbe dovuto sospettare di te...</value>
 </string>
 
-<!--{0}: cultist-->
+<!--{0}: Zombie-->
 <string key="CultFell">
 <value>Ritorni alla tana dopo una faticosa nottata, quando senti un urlo provenire dalle gallerie! Ti rechi subito sul posto, solo per trovare {0} morto stecchito. Da quando i Dissennatori provano a convertire i ragni giganti?</value>
 </string>
 
-<!--{0}: cultist who fell, {1}: grave digger-->
+<!--{0}: Zombie who fell, {1}: grave digger-->
 <string key="CultConvertGraveDigger">
 <value>Mentre vai a casa di {1}, {0} suggerisce che sarebbe una buona passare per la foresta. Ti guidano tramite una grotta, che dovrebbe essere una scorciatoia, quando improvvisamente qualcosa lo immobilizza! Provate a liberarlo ma rischiate di restare intrappolati anche voi, così decidete  di scappare e lasciarlo lì.</value>
 </string>
@@ -2518,8 +2518,8 @@ Se il Professore di Divinazione o Fiorenzo ti guarda, puoi o meno essere identif
 <value>Mentre {0}, Cho Chang, tornava a casa, ha pensato di andare a far visita ad Aragog per fargli due carezze. Data la tarda ora non stava prestando molta attenzione, ed è rimasta vittima di una delle sue ragnatele...</value>
 </string>
 
-<!--{0}: cultist who died-->
-<string key="CultistFellPublic">
+<!--{0}: Zombie who died-->
+<string key="ZombieFellPublic">
 <value>I dissennatori hanno preso una scorciatoia, e sono passati per la grotta di Aragog, ma {0} che guidava il gruppo in quei cunicoli, è stato colto di sorpresa da una ragnatela che lo ha avvolto completamente! Gli altri Dissennatori non hanno potuto fare nulla e sono fuggiti!</value>
 </string>
 

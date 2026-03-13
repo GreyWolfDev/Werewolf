@@ -206,10 +206,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >تو کوردلیا هستی ، یک رفیق دوست داشتنی برای بتریکس ، بعد از مرگ بتریکس، هر شب میتونی یک نفر رو انتخاب کنی و بفهمی نقشش چیه :) </value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >تو جک هستی، هر شب میتونی خون یکی رو بخوری و با اون نگاه دلربات به فرقه ی مرموزی دعوتش کنی ...</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >تو لیندو هستی‌، تو متوجه شدی که جک داره یک کارایی میکنه و برای خودش یک فرقه ای تشکیل داده که معلوم نیست، هدفشون چیه ... به همین دلیل میری که باهاشون مبارزه کنی</value>
   </string>
   <string key="LynchTime" >
@@ -267,7 +267,7 @@
     <!-- 1 - victim role -->
     <value>صبح همه از خواب بلند میشن و متوجه میشن که {0} عزیز روی زمین افتاده، همه ی خون آشام ها خیلی ناراحت شدند که {1} رو از دست دادند!</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>اینطور که معلومه دیشب لیندو زده یکی از اعضای فرقه ی جکی یعنی {0} رو کشته.</value>
   </string>
@@ -373,34 +373,34 @@
   <string key="RemainingPlayersEnd">
     <value>بازیکن های باقی مونده عبارت اند از: </value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >نظر {0} اینه که {1} رو تبدیل کنید</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>خب {0} رفت که {1} رو به فرقه دعوت کنه ولی {1} لیندو بود و کشتش!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>دیشب {0} اومد به فرقه دعوتت کنه ولی تو زدی کشتیش! {1} باقی مونده</value>
   </string>
   <string key="CultConvertYou">
     <value>تو الان عضو فرقه هستی و هر شب با بقیه یارات باید یه نفرو به فرقه خودتون دعوت کنین</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>فرقه گرا ها: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>الان {0} عضو فرقه شد</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>خب  {0} رفت {1} رو به فرقه دعوت کنه ولی خونه نبود</value>
   </string>
@@ -411,7 +411,7 @@
     <!-- 0 - target name -->
     <value>رفتی {0} رو بکشی ولی مرده بود</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>رفتی خونه {0} و دیدی داره عبادت میکنه. اعصابت خورد شد زدی کشتیش</value>
   </string>
@@ -428,7 +428,7 @@
     <!-- 0 - teamate's names -->
    <value>چون {0} الگوت بود و مرده الان تو نستایی و یارات عبارت اند از : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
 <string key="Villager">
     <value>یویی 👱</value>
@@ -475,10 +475,10 @@
   <string key="ApprenticeSeer">
     <value>کوردلیا 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>فرقه گرا 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>لیندو 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -510,7 +510,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>عضو جدید فرقه رفت خونه {0} که به راه راست هدایتش کنه ولی دید کشته شده</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -711,7 +711,7 @@
   </string>
   
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>فرقه گرای عزیز یعنی {0} رفت که {1} رو به دینش دعوت کنه ولی چون موجب شد خواب روکی بهم بریزه  {1} روکی با تفنگش {0} رو کشت</value>
   </string>
@@ -737,7 +737,7 @@
   </string>
 
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>رجی، یعنی {0} هم چون یکی از اعضای فرقه رو به عنوان مدل انتخاب کرده بود الان فرقه گرا شد.</value>
   </string>
   
@@ -1291,7 +1291,7 @@
   <string key="BlacksmithKilled">
  <value>صبح روز بعد اهل عمارت در حال قدم زدن بودند که ناگهان بدن خونی {0} رو پیدا میکنند.... رم دوست داشتنی قربانی حمله کینو شد...!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب قاتل زنجیره ای به یکی از اعضای گروه جک حمله کرد و {0} رو به قتل رسوند!</value>
   </string>
   <string key="CupidKilled">
@@ -1324,10 +1324,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>لیندو {0} مشغول پیداکردن جک و فرقه ی عجیبش بود اما زمانی که داشت توی جنگل دنبال ردی از فرقه میگشت کینو بهش حمله میکنه و میکشتش!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب {0} رفت که یک نستا رو به فرقه دعوت کنه، اما چون موجب شد که خواب نستا بهم بریزه با نستای عزیز با بیرحمی کشتش و جنازش رو از پنجره برای باقی فرقه ها پرت کرد... تا درس عبرتی بشه و دیگه یک نستا رو به فرقه دعوت نکنند...!</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>شب قبل فرقه گرا ها میخواستن یک عضو جدید رو به فرقه دعوت کنن، {0} مامور شد که یکی رو به فرقه دعوت کنه، اما دیگه خبری از {0} نشد! صبح روز بعد اعضای فرقه جنازه {0} رو جلوی در خونه رئیس فرقه پیدا میکنن! کینو، {0} رو کشته!</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1346,8 +1346,8 @@
 	    <value> روکی  {0} توی عمارت با {1} تنها مونده! {1} میره که به روکی حمله کنه و اونو بکشه، اما کلانتر از خواب بلند میشه و متوجه {1} میشه سریع میره سمت تفنگش اما فرصت نمیکنه که تفنگشو دستش بگیره و {1} میگیره و تیکه تیکش میکنه! {1}  نستا تنها بازمانده عمارت هست...🐺</value>
   </string>
   
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>تنها فرقه گرای بازمانده عمارت {0} بود، زمانی که داشت به سمت میدون شهر میرفت، با لیندو {1} روبه رو میشه! لیندو،  سریع تفنگش رو در میاره که به {0} شلیک کنه ولی {0} فرار میکنه، لیندو دنبالش میره و توی جنگل پیداش میکنه و با چاقو میکشتش!  لیندو برنده این دور بازیه!</value>
   </string>
   

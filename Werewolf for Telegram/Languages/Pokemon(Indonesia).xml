@@ -205,10 +205,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Kamu adalah pemilik Kadabra 🙇. jika Alakazam pingsan, Kadabramu akan berevolusi!</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Kamu adalah Mewtwo 👤. setiap hari, kamu bisa memilih trainer dan mencoba untuk mengajaknya untuk menjadi Mewtwo. Jika semua Pokémon adalah Mewtwo. Mewtwo menang.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Kamu adalah Mew 💂! Mew membutuhkanmu untuk membasmi Mewtwo.</value>
   </string>
   <string key="LynchTime" >
@@ -282,7 +282,7 @@
 	<value >Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Articuno! Articuno menggunakan Blizzard. Pokémon {0} pingsan. {1}.</value>
     <value>Team Rocket telah menemukan {0}. Team Rocket mengeluarkan Moltres! Moltres menggunakan Heat Wave. Pokémon {0} pingsan. {1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Mew telah menemukan Mewtwo! Mew melepaskan Mewtwo dari {0}.</value>
   </string>
@@ -388,34 +388,34 @@
   <string key="RemainingPlayersEnd">
     <value>Sisa trainer, Pokémon, dan team yang masih hidup:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} memilih mengajak {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>Mewtwo {0} dikirim untuk mengajak {1} ke dalam tim... Akan tetapi, dia adalah pemilik Mew! {0} kehilangan Mewtwonya!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} datang menemuimu untuk mengajak Pokémonmu menjadi Mewtwo. Mew melepaskan Mewtwo dari {0}!! {1} anggota mewtwo tersisa!</value>
   </string>
   <string key="CultConvertYou">
     <value>Anggota Mewtwo telah datang menemuimu dan mengajak Pokémonmu menjadi Mewtwo. Kamu melepaskan Pokémonmu dan memilih Mewtwo. Ini pekerjaan barumu untuk mengajak trainer ke dalam tim.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Anggota Mewtwo: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} telah bergabung ke dalam tim!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} dan Mewtwo telah mencoba mengajak {1}... tapi tidak ada orang di rumah!</value>
   </string>
@@ -426,7 +426,7 @@
     <!-- 0 - target name -->
     <value>Mew pergi untuk menemui Pokémonnya {0}, tetapi Pokémonnya sudah pingsan!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Mew pergi untuk menemui Pokémonnya {0} dan menemukan kalau dia adalah pemilik Mewtwo! Mew melepaskan Mewtwo dari {0}!</value>
   </string>
@@ -443,7 +443,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} telah kalah dalam battle Pokémon! Kehilangan semua semangat, kamu memilih untuk bergabung ke Team Rocket! Anggota Team Rocket: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Magikarp 👱</value>
   </string>
@@ -489,10 +489,10 @@
   <string key="ApprenticeSeer">
     <value>Kadabra 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Mewtwo 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Mew 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -524,7 +524,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Anggota barumu pergi menemui {0} dan mencoba mengajak dia masuk ke tim dengan Mewtwo. Tetapi kamu menemukan Pokémonnnya dalam keadaan pingsan dan kamu kehilangan semua motivasi untuk mempunya Pokémon lain.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -707,12 +707,12 @@
     <value>Kamu dan Dragonite pergi menemui {0} dan menantang dia untuk battle Pokémon. Mr. Mime keluar entah darimana dan melindunginya, mereka hilang.. Kamu tidak mendapatkan battlemu.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Team Rocket mengirim {0} untuk mengajak {1} ke dalam tim, tetapi {1} marah dan menyuruh Gengar untuk memulai battle Pokémon! {0} kalah bersama dengan Mewtwonya yang sudah pingsan.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Team Rocket mengirim {0} untuk mengajak {1} ke dalam tim, tetapi {1} marah dan menyuruh Dragonite untuk memulai battle Pokémon! {0} kalah bersama dengan Mewtwonya yang sudah pingsan.</value>
   </string>
@@ -736,7 +736,7 @@
     <value>Pikachu {0} telah pingsan, dan Ditto berubah menjadi Pikachu.  Anggota klub Pikachu: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Ditto {0} baru saja berubah menjadi Mewtwo dan bergabung ke dalam tim!</value>
   </string>
   <string key="DGTransformToCult">

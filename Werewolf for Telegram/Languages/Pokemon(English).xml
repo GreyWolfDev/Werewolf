@@ -203,10 +203,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >You own a Kadabra 🙇. When Alakazam fainted, your Kadabra will evolve!</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >You are with the cloning organisation which clones Mewtwo 👤. Every day, you may choose a trainer and try to hire him into the team to clone Mewtwo. If all the remainding Pokémons are all Mewtwo. Your evil org. wins.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >You stumbled into a Mew 💂! Mew needs your help to cleanse all cloned Mewtwo.</value>
   </string>
   <string key="LynchTime" >
@@ -280,7 +280,7 @@ Everyone now has {0} seconds to vote!
 	<value >Team Rocket have found {0}. Team Rocket sent out Articuno! Articuno used Blizzard. {1} fainted.</value>
     <value>Team Rocket have found {0}. Team Rocket sent out Moltres! Moltres used Heat Wave. {1} fainted.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Mew have found out a cloned Mewtwo! Mew released the cloned Mewtwo from {0}.</value>
   </string>
@@ -386,34 +386,34 @@ Everyone now has {0} seconds to vote!
   <string key="RemainingPlayersEnd">
     <value>Remaining living trainers, Pokémons, and team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} has voted to hire {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0}'s Mewtwo was sent to lure {1} into the team... However, he/she own a Mew! {0} lost his Mewtwo and was sacked!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} came to you with a cloned Mewtwo trying to hire you into their evil clone factory. Mew release Mewtwo from {0}!! {1} members of the clone factory remain!</value>
   </string>
   <string key="CultConvertYou">
     <value>Clone factory member has come to you and lure you to join their team with a cloned Mewtwo. You abandoned your Pokémon and choose the Mewtwo. It's now your job to lure more trainers into the team.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Clone factory members: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} has joined the team!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} and Mewtwo was sent to lure {1}... but no one was home!</value>
   </string>
@@ -424,7 +424,7 @@ Everyone now has {0} seconds to vote!
     <!-- 0 - target name -->
     <value>Mew went to look for {0}'s Pokémon, but they are already fainted!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Mew went to look for {0} and found out that he/she owned a cloned Mewtwo! Mew release Mewtwo from {0}!</value>
   </string>
@@ -441,7 +441,7 @@ Everyone now has {0} seconds to vote!
     <!-- 0 - teamate's names -->
     <value>{0} has lost a Pokémon Battle! Losing all hope, you chose to join Team Rocket! Your new teammates are: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Magikarp 👱</value>
   </string>
@@ -487,10 +487,10 @@ Everyone now has {0} seconds to vote!
   <string key="ApprenticeSeer">
     <value>Kadabra 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Mewtwo 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Mew 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -522,7 +522,7 @@ Everyone now has {0} seconds to vote!
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Your newest member heads over to {0} and try to lure them into the team with Mewtwo. But you found out their Pokémon have just fainted and lose all motivation to have another Pokémon.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -705,12 +705,12 @@ Everyone now has {0} seconds to vote!
     <value>You and Dragonite head over to {0} and challenge him to a Pokémon battle. Mr. Mime came out of nowhere and cast Barrier, they are gone.. You didn't get your battle.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Team Rocket sends {0} to try to lure {1} into the team, but instead {1} was angry and ask Gengar to initiate a Pokémon battle! {0} lost with his/her Mewtwo fainted.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Team Rocket sends {0} to try to lure {1} into the team, but instead {1} was angry and ask Dragonite to initiate a Pokémon battle! {0} lost with his/her Mewtwo fainted.</value>
   </string>
@@ -734,7 +734,7 @@ Everyone now has {0} seconds to vote!
     <value>{0}'s Pikachu has fainted, and Ditto transform into Pikachu.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0}'s Ditto has now transform into Mewtwo and joined the team!</value>
   </string>
   <string key="DGTransformToCult">
@@ -881,10 +881,10 @@ Everyone now has {0} seconds to vote!
     <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist, it is your goal to convert all other trainers (except wolves) to your cult. If at the end of the game, all living trainers are cultist - the cult wins</value>
+    <value>As a Zombie, it is your goal to convert all other trainers (except wolves) to your cult. If at the end of the game, all living trainers are Zombie - the cult wins</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die.</value>
   </string>
   <string key="AboutWC">
     <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>

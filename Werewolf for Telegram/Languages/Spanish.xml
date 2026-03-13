@@ -205,11 +205,11 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Eres la aprendiz de vidente. Si la (verdadera) vidente muere, ocuparás su puesto como vidente.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >Eres un cultista. Cada noche puedes elegir a otro jugador para convertirlo en cultista. Si al final de la partida todos los jugadores vivos sois cultistas, ganáis.</value>
+  <string key="RoleInfoZombie" >
+    <value >Eres un Zombiea. Cada noche puedes elegir a otro jugador para convertirlo en Zombiea. Si al final de la partida todos los jugadores vivos sois Zombieas, ganáis.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value >Eres la cazadora de cultistas. Cada noche, elige un jugador; si es un cultista, ese jugador muere. Si el culto trata de convertirte, el último miembro que se unió al culto muere.</value>
+  <string key="RoleInfoZombieHunter" >
+    <value >Eres la cazadora de Zombieas. Cada noche, elige un jugador; si es un Zombiea, ese jugador muere. Si el culto trata de convertirte, el último miembro que se unió al culto muere.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
@@ -265,9 +265,9 @@
     <!-- 1 - victim role -->
     <value>Al levantarse todo el mundo, un olor terrible inunda la aldea. Siguen el rastro hasta encontrar a {0} descuartizado en la porqueriza, sin cabeza...  ¡ÑAMÑAMÑAM! {1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
-    <value>Un gran hedor viene de la casa de {0}. Los aldeanos la inspeccionan hasta encontrar un cuerpo yaciente frente a un altar oscuro. ¡Un cultista ha sido asesinado por la cazadora!</value>
+    <value>Un gran hedor viene de la casa de {0}. Los aldeanos la inspeccionan hasta encontrar un cuerpo yaciente frente a un altar oscuro. ¡Un Zombiea ha sido asesinado por la cazadora!</value>
   </string>
   <string key="NoAttack" >
     <value >Los aldeanos se reúnen por la mañana en el centro del pueblo, suspirando de alivio. Parece que esta noche no ha habido ningún ataque.</value>
@@ -371,51 +371,51 @@
   <string key="RemainingPlayersEnd">
     <value>Jugadores restantes, roles y equipos:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} ha votado convertir a {1}.</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
-    <value>Enviaron a {0} para hacer el trabajo sucio y convertir a {1}...; sin embargo, ¡era la cazadora de cultistas! ¡{0} ha muerto!</value>
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
+    <value>Enviaron a {0} para hacer el trabajo sucio y convertir a {1}...; sin embargo, ¡era la cazadora de Zombieas! ¡{0} ha muerto!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
-    <value>{0} vino a tu casa esta noche para que te unieras a su causa…, pero enterraste tu espada en su pecho. Un cultista ha muerto… ¡Queda(n) {1}!</value>
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{0} vino a tu casa esta noche para que te unieras a su causa…, pero enterraste tu espada en su pecho. Un Zombiea ha muerto… ¡Queda(n) {1}!</value>
   </string>
   <string key="CultConvertYou">
-    <value>¡El culto te ha convertido a su secta! Ahora eres un cultista. Cada noche tendrás ocasión de convertir a otra persona.</value>
+    <value>¡El culto te ha convertido a su secta! Ahora eres un Zombiea. Cada noche tendrás ocasión de convertir a otra persona.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
-    <value>Cultistas: {0}</value>
+    <!-- 0 - Number of Zombies -->
+    <value>Zombieas: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>¡{0} se ha unido al culto!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} fue enviado a hacer tu trabajo sucio y convertir a {1}..., ¡pero no había nadie en casa!</value>
   </string>
   <string key="CultWins" >
-    <value >Todos las amenazas al culto han sido eliminadas y los únicos aldeanos en pie han sido transformados en cultistas. ¡El culto ha ganado! ¡AMÉN, HERMANA!</value>
+    <value >Todos las amenazas al culto han sido eliminadas y los únicos aldeanos en pie han sido transformados en Zombieas. ¡El culto ha ganado! ¡AMÉN, HERMANA!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
     <value>¡Fuiste a cazar a {0}, pero ya estaba muerto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Vas a la casa de {0} y te lo encuentras orando frente al altar de un dios desconocido… Rápidamente, introduces tu espada en su pecho y le das muerte en el acto.</value>
   </string>
   <string key="HunterFailedToFind">
     <!-- 0 - target name -->
-    <value>Vas a casa de {0}, pero no hay ningún cántico misterioso. No es un cultista, por lo que te vuelves a casa.</value>
+    <value>Vas a casa de {0}, pero no hay ningún cántico misterioso. No es un Zombiea, por lo que te vuelves a casa.</value>
   </string>
   <string key="WildChildToWolves"> 
     <!-- 0 - Werechild's name -->
@@ -426,7 +426,7 @@
     <!-- 0 - teamate's names -->
     <value>¡{0} ha muerto! En un ataque de rabia, ¡te has convertido en hombre lobo! Tus nuevos compañeros son: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>un aldeano 👱</value>
   </string>
@@ -472,11 +472,11 @@
   <string key="ApprenticeSeer">
     <value>la aprendiz de vidente 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>un cultista 👤</value>
+  <string key="Zombie">
+    <value>un Zombiea 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>la cazadora de cultistas 💂</value>
+  <string key="ZombieHunter">
+    <value>la cazadora de Zombieas 💂</value>
   </string>
 <!-- These are for the player list -->
   <string key="RanAway">
@@ -507,7 +507,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>El miembro más reciente del culto fue a convertir a {0} a su casa, pero en su lugar encontró la casa destrozada, sangre por todas partes y pelo de hombre lobo en la entrada.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -528,7 +528,7 @@
   </string>
   <string key="HarlotDiscoverCult">
     <!-- 0 - target's name -->
-    <value>Te escabulliste anoche a la casa de {0} para pasar un buen rato, pero cuando te fuiste, notaste algo extraño: un extraño altar escondido en un cuarto con un brillo extraño… [{0} es un cultista].</value>
+    <value>Te escabulliste anoche a la casa de {0} para pasar un buen rato, pero cuando te fuiste, notaste algo extraño: un extraño altar escondido en un cuarto con un brillo extraño… [{0} es un Zombiea].</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -689,12 +689,12 @@
     <value>Quisiste incorporar el cuerpo de {0} para tu colección, ¡pero el ángel de la guarda lo protegió! No ha habido muertes esta noche.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>El culto envía a {0} para intentar convertir a {1}, pero en vez de eso, suena un disparo y ¡el cuerpo de {0} sale volando por la ventana! {0} ha muerto.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>El culto envía a {0} para intentar convertir a {1}, pero en vez de eso, el cuerpo de {0} sale volando por la ventana, ¡con cuchillos clavados por todo el cuerpo! ¡QUÉ PSICÓPATA! {0} ha muerto.</value>
 	<value>{0} se cuela en casa de {1}, abre la puerta, ¡¡y es recibido por un loco con un cuchillo!! {1} hunde el cuchillo en cada uno de los órganos internos de {0} por orden alfabético, ¡carcajeando todo el tiempo! {0} ha muerto.</value>
@@ -719,13 +719,13 @@
     <value>{0} ha muerto y tú te conviertes en masón. Tus compañeros de equipo (si los hay) son: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
-    <value>El doppelgänger (doble) {0} se ha convertido en cultista, ¡igual que tú!</value>
+    <!-- 0 - new Zombie's name -->
+    <value>El doppelgänger (doble) {0} se ha convertido en Zombiea, ¡igual que tú!</value>
   </string>
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} ha muerto y tú te conviertes en cultista. Tus compañeros de equipo (si los hay) son: {1}</value>
+    <value>{0} ha muerto y tú te conviertes en Zombiea. Tus compañeros de equipo (si los hay) son: {1}</value>
   </string>
   <string key="DGToWolf">
     <!-- 0 - DG's name -->
@@ -862,10 +862,10 @@
     <value>Al necio se le dice que es la vidente. Cuando elija a alguien para adivinar su rol, se le dirá uno al azar.</value>
   </string>
   <string key="AboutCult">
-    <value>Como cultista, tu objetivo es convertir a todos los demás jugadores (excepto a los hombres lobo) a tu culto. Si al final de la partida todos los jugadores vivos son cultistas, el culto gana.</value>
+    <value>Como Zombiea, tu objetivo es convertir a todos los demás jugadores (excepto a los hombres lobo) a tu culto. Si al final de la partida todos los jugadores vivos son Zombieas, el culto gana.</value>
   </string>
   <string key="AboutCH">
-    <value>Tu trabajo es acabar con el Culto. Si un cultista te ataca, su miembro más reciente morirá. Cada noche escogerás a que jugador vas a «cazar»; si es cultista, morirá.</value>
+    <value>Tu trabajo es acabar con el Culto. Si un Zombiea te ataca, su miembro más reciente morirá. Cada noche escogerás a que jugador vas a «cazar»; si es Zombiea, morirá.</value>
   </string>
   <string key="AboutWC">
     <value>Al principio del juego, elegirás a alguien para ser tu «modelo a seguir». Si lo matan, te convertirás en hombre lobo.</value>
@@ -897,7 +897,7 @@
     <value>
       Jugador vengativo y de gatillo fácil. Como cazador, formas tu propio equipo. Y cuando alguien venga a visitarte, puede que se encuentren la muerte, ya que la paranoia puede contigo y disparas. Si son los hombres lobo los que atacan, tienes una oportunidad de llevarte a uno por delante. Además, si te matan, tendrás la oportunidad de disparar a alguien mientras mueres.
       Nota: Para los ataques de los hombres lobo, la probabilidad empieza en un 30%. Si solo hay un lobo, el cazador tiene un 30% de probabilidad de matarlo (y sobrevivir). Por cada hombre lobo adicional, suma un 20% (2 hombres lobo = 50%, 3 = 70%, etc). Ten en cuenta que si hay varios hombres lobo, aunque mates a uno, te superan en número y morirás.
-      Si los cultistas intentan convertirte, tienen un 50% de probabilidad de fallar. Si fallan, ¡tú tendrás un 50% de probabilidad de matar a uno!
+      Si los Zombieas intentan convertirte, tienen un 50% de probabilidad de fallar. Si fallan, ¡tú tendrás un 50% de probabilidad de matar a uno!
     </value>
   </string>
   <string key="AboutSK">
@@ -1272,8 +1272,8 @@
   <string key="BlacksmithKilled">
     <value>Parece que {0}, el herrero del pueblo, ha tenido muy mala suerte durante la noche, ya que se lo ha encontrado en su mesa de herrería junto con 5 cuchillos, sacados de su armería clavados en manos, pies y cabeza. Tal vez la asesina tenía la esperanza de ampliar su colección de armas y órganos con el corazón, hígado y estómago de {0}.</value>
   </string>
-  <string key="CultistKilled">
-    <value>{0} fue apuñalado hasta la muerte con un candelabro al lado de su altar. ¡La asesina en serie ha atacado de nuevo, sin importar la raza, el idioma o la religión! {0} era un cultista.</value>
+  <string key="ZombieKilled">
+    <value>{0} fue apuñalado hasta la muerte con un candelabro al lado de su altar. ¡La asesina en serie ha atacado de nuevo, sin importar la raza, el idioma o la religión! {0} era un Zombiea.</value>
   </string>
   <string key="CupidKilled">
     <value>A la mañana siguiente, los aldeanos se levantaron destrozados al encontrar a Cupido, {0}, dividido en dos. Curiosamente, le faltaba el corazón.</value>
@@ -1305,15 +1305,15 @@
     <value>¡ÑAMÑAMÑAM! Anoche se oyó  el ruido de los dientes de los lobos contra la carne de un tierno niño salvaje, {0}. ¡Dejaron únicamente su pequeño esqueleto! El pueblo se pregunta si los lobos sintieron alguna culpa mientras destripaban al pobre niño indefenso.</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
-    <value>Los aldeanos se despertaron por la mañana y se encontraron los restos del cuerpo de {0}, el cazador de cultistas, cortados en pedazos en un carro al lado del ayuntamiento. Lección aprendida: ¡no hay que visitar a la asesina en serie!</value>
-    <value>El cuerpo de {0}, el cazador de cultistas, fue encontrado en el centro de la ciudad cortado en un centenar de piezas. Comprobar si la asesina en serie era un cultista no parece ser una buena idea.</value>
+    <value>Los aldeanos se despertaron por la mañana y se encontraron los restos del cuerpo de {0}, el cazador de Zombieas, cortados en pedazos en un carro al lado del ayuntamiento. Lección aprendida: ¡no hay que visitar a la asesina en serie!</value>
+    <value>El cuerpo de {0}, el cazador de Zombieas, fue encontrado en el centro de la ciudad cortado en un centenar de piezas. Comprobar si la asesina en serie era un Zombiea no parece ser una buena idea.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
-    <value>Aunque parecía que los hombres lobo habían decidido quedarse en casa, un cultista decidió visitarlos, siendo demasiado difícil de resistir para los hombres lobo. ¡La cabeza de {0} se convirtió en una deliciosa cena!</value>
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>Aunque parecía que los hombres lobo habían decidido quedarse en casa, un Zombiea decidió visitarlos, siendo demasiado difícil de resistir para los hombres lobo. ¡La cabeza de {0} se convirtió en una deliciosa cena!</value>
     <value>El culto se encontró con problemas inesperados anoche. Su miembro más reciente, {0}, tuvo la desgracia de visitar a un hombre lobo, justo la noche que los hombres lobo habían decidido quedarse en casa. Desafortunadamente para el culto, los hombres lobo no tienen ningún interés en unirse al nuevo movimiento religioso y era una oportunidad que no podían dejar pasar. {0} ha muerto.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
-    <value>El culto pensaba que tendría un nuevo miembro en sus filas, pero ¡nada más lejos de la realidad! {0}, un cultista, fue descuartizado y sus restos fueron esparcidos por todo el pueblo. El libro «santo» estaba colocado junto a un cuchillo, como muestra clara de que la religión es la que manda.</value>
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
+    <value>El culto pensaba que tendría un nuevo miembro en sus filas, pero ¡nada más lejos de la realidad! {0}, un Zombiea, fue descuartizado y sus restos fueron esparcidos por todo el pueblo. El libro «santo» estaba colocado junto a un cuchillo, como muestra clara de que la religión es la que manda.</value>
     <value>Anoche, el culto trató de convertir al aldeano más loco del pueblo. Su miembro más reciente, {0}, trató de convertir a la asesina en serie, y esta hizo una nueva obra de arte en la plaza del pueblo, exhibiendo todos los órganos internos al pueblo.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1333,9 +1333,9 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{1} sabe que en el pueblo solo queda {0}, así que aprovecha mientras {0} está enfrascado trabajando en un nuevo arco en su casa y se mete en en su casa para despedazar el cuerpo de {0}.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
-    <value>{1} y {0} se encuentran en la plaza del pueblo. Sin embargo, {1} hoy no tiene ganas de sermones y antes de que {0} saque su libro sagrado, se abalanza sobre él y lo mata. {0} era el último cultista en pie.</value>
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>{1} y {0} se encuentran en la plaza del pueblo. Sin embargo, {1} hoy no tiene ganas de sermones y antes de que {0} saque su libro sagrado, se abalanza sobre él y lo mata. {0} era el último Zombiea en pie.</value>
   </string>
   
   <!-- Extend time -->
@@ -1439,7 +1439,7 @@
     <value>Todas</value>
   </string>
     <string key="RandomModeQ">
-    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan cultistas, necio o veterano.\nActualmente:{0}</value>
+    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan Zombieas, necio o veterano.\nActualmente:{0}</value>
   </string>
   <string key="RandomModeA">
     <value>Modo aleatorio: {0}</value>
@@ -1551,14 +1551,14 @@
   </string>
 
 <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
-    <value>Eres el pacifista ☮️. Tienes el poder de persuadir a tu vecinos para que nadie linche. Solo podrás hacerlo una vez.</value>
+  <string key="RoleInfoImam">
+    <value>Eres el Imama ☮️. Tienes el poder de persuadir a tu vecinos para que nadie linche. Solo podrás hacerlo una vez.</value>
   </string>
-  <string key="Pacifist">
-    <value>el pacifista ☮️</value>
+  <string key="Imam">
+    <value>el Imama ☮️</value>
   </string>
-  <string key="AboutPacifist">
-    <value>El pacifista puede persuadir a sus vecinos para que nadie linche. Solo podrá hacerlo una vez.</value>
+  <string key="AboutImam">
+    <value>El Imama puede persuadir a sus vecinos para que nadie linche. Solo podrá hacerlo una vez.</value>
   </string>
 
   <string key="RoleInfoWiseElder">
@@ -1584,15 +1584,15 @@
     <value>Por defecto, el ladrón 😈 puede robar el rol del jugador que elija durante la primera noche y convertirlo en un simple aldeano.\nSi el modo «Ladrón completo» está activado, cada noche tendrá un 50% de posibilidades de robar roles. Si lo consigue, el jugador afectado, se convertirá en el nuevo ladrón y continuará confundiendo a la aldea.</value>
   </string>
     
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>¿Quieres evitar que se linche esta noche?</value>
   </string>
-  <string key="PacifistNoLynch">
-  <!-- {0} - Pacifist's name -->
-    <value>El pacifista ☮️, {0}, está dando un emotivo discurso de paz, amor y amistad en la plaza del pueblo. Conmovido por su retórica, el pueblo decide no linchar a nadie esta noche.</value>
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
+    <value>El Imama ☮️, {0}, está dando un emotivo discurso de paz, amor y amistad en la plaza del pueblo. Conmovido por su retórica, el pueblo decide no linchar a nadie esta noche.</value>
   </string>
-  <string key="PacifistNoLynchNow">
-    <value>A causa del enternecedor discurso del pacifista ☮️, no habrá linchamientos por hoy.</value>
+  <string key="ImamNoLynchNow">
+    <value>A causa del enternecedor discurso del Imama ☮️, no habrá linchamientos por hoy.</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
   <!-- 0 - Wise Elder's name -->
@@ -1638,9 +1638,9 @@
     <value>Tus compañeros (si los hay) son: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
-    <value>{0} ya no forma parte de tu equipo, y {1} se ha convertido en cultista, ¡como tú!</value>
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
+    <value>{0} ya no forma parte de tu equipo, y {1} se ha convertido en Zombiea, ¡como tú!</value>
   </string>
   <string key="ThiefToWolf">
     <!-- 0 - old wolf's name -->
@@ -1696,18 +1696,18 @@
   <string key="SecretLynchShowVotersA">
     <value>Cuando los linchamientos secretos estén activados y se muestre el recuento de votos, el nombre del votante por cada jugador votado será del siguiente modo: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>¡Qué extraño! Mientras discutís a quién convertir esta noche, os dais cuenta de que… ¡{0} no está por aquí! 🤔 ¿Qué le habrá pasado?</value>
   </string>
   
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
 	<value>¡Haya paz!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
-	<value>Hoy no habrá linchamientos gracias al emotivo discurso del pacifista!</value>
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
+	<value>Hoy no habrá linchamientos gracias al emotivo discurso del Imama!</value>
   </string>
   
   <string key="ThiefStoleYourRoleThief">
@@ -1805,7 +1805,7 @@
   <string key="ChemistTargetEmpty">
 	<value>{0} no estaba en casa, así que regresas a tu laboratorio maldiciendo tu mala suerte.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>Los miembros del culto son: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1856,7 +1856,7 @@
   <string key="ChemistFrozen">
     <value>Mientras abres la puerta para salir de casa, una corriente de viento te rodea, lo que provoca que te quedes inmóvil por el frío 🐺☃️. Tus ojos se quedan fijos en las dos pociones de tu bolsillo. Parece que no podrás apostar esta noche.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Mientras abres la puerta para salir de casa, una corriente de viento te rodea, lo que provoca que te quedes inmóvil por el frío 🐺☃️. Tus compañeros del culto terminan riéndose al ver la situación en la que has acabado.</value>
   </string>
   <string key="CHFrozen">
@@ -1991,17 +1991,17 @@
   </string>
   <!--{0}: grave digger-->
   <string key="HunterFell">
-  <value>¡Otra noche sin ser capaz de matar a uno de esos sangrientos cultistas! Frustrado, caminas sobre una tumba, sin notar la trampa de osos hasta que se atora alrededor de tu tobillo. Gritas y forcejeas, pero es muy tarde. Caes de espaldas en una tumba que {0} dejó abierta, y lo último que escuchas es tu cuello rompiéndose antes de que todo se ponga negro.</value>
+  <value>¡Otra noche sin ser capaz de matar a uno de esos sangrientos Zombieas! Frustrado, caminas sobre una tumba, sin notar la trampa de osos hasta que se atora alrededor de tu tobillo. Gritas y forcejeas, pero es muy tarde. Caes de espaldas en una tumba que {0} dejó abierta, y lo último que escuchas es tu cuello rompiéndose antes de que todo se ponga negro.</value>
   </string>
   <!--{0}: cult hunter-->
   <string key="HunterFellDigger">
-  <value>Después de otra noche cansina, caminas de regreso a tu casa con el sol ya saliendo. Justo antes de llegar, notas una espada descasando en el suelo al lado de una tumba sin finalizar. Dentro de ella, encuentras el cuerpo muerto de {0}. La cazadora de cultistas no debió sospechar de tí...</value>
+  <value>Después de otra noche cansina, caminas de regreso a tu casa con el sol ya saliendo. Justo antes de llegar, notas una espada descasando en el suelo al lado de una tumba sin finalizar. Dentro de ella, encuentras el cuerpo muerto de {0}. La cazadora de Zombieas no debió sospechar de tí...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
   <value>Regresas de una noche cansadora, ¡cuando de repente escúchas un grito proveniete de una de tus tumbas sin terminar! Te apuras para ir allí, solo para encontrar a {0}, descansado muerto sobre ella. De todos modos, ¿qué clase de culto intenta convertir al sepulturero?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
   <value>En el camino a la casa de {1}, {0} decide que sería una buena idea quemar la iglesia. {0} lidera al culto a través del cementerio, ¡cuando de repente una trampa para osos atrapa su tobillo! Todo lo que pueden escuchar es su grito después de caer en una tumba, y el resto del culto corre por su vida.</value>
   </string>
@@ -2057,9 +2057,9 @@
   <string key="HarlotFellPublic">
   <value>Como {0}, la ramera, salió de casa para una noche de diversión, intentó tomar un atajo por el cementerio local. Debe de de haber esrado algo mareada, porque no vió la tumba descubierta hasta que cayó después de ver que no había suelo en su siguiente paso. ¡Quizás no debería haber tomado ese trabajo que le ofrecieron ayer!</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
-  <value>El culto intentó quemar la iglesia, pero como {0} guió al grupo a través del cementerió, ¡una trampa de osos atrápó su tobillo! Se escucharon gritos cuando cayó en una tumba abierta, y los otros cultistas huyeron despavoridos...</value>
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
+  <value>El culto intentó quemar la iglesia, pero como {0} guió al grupo a través del cementerió, ¡una trampa de osos atrápó su tobillo! Se escucharon gritos cuando cayó en una tumba abierta, y los otros Zombieas huyeron despavoridos...</value>
   </string>
   <!--{0}: thief-->
   <string key="ThiefFellPublic">
@@ -2234,6 +2234,6 @@
   <value>Desactivar todo</value>
   </string>
   <string key="CHHuntedYou">
-    <value>La cazadora de cultistas 💂‍♀️ te ha visitado mientras estabas rezando en el altar. Has sido atravesado con una espada y ahora estás muerto.</value>
+    <value>La cazadora de Zombieas 💂‍♀️ te ha visitado mientras estabas rezando en el altar. Has sido atravesado con una espada y ahora estás muerto.</value>
   </string>
 </strings>

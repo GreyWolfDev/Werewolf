@@ -186,10 +186,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>Ets el segon vent 💨💨. Si el vent mor, ocuparàs el seu lloc com a primer vent.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>Ets kanalla 👤. Cada diada pots triar un jugador per convertir-lo en kanalla. Si tots els jugadors vius al final del tram de diades són kanalla, guanyen.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>Ets cap de troncs 🌴, i intentes evitar que la kanalla de la colla converteixi a tothom! Cada diada pots triar un trempi per posar-lo al tronc. Si és kanalla, es converteix en tronc, peta i se'n va de la diada amb ambulància (es queda sense tram). Si la kanalla intenta convertir-te, el membre més recent de la kanalla és el que es queda sense tram.</value>
   </string>
   <string key="LynchTime" >
@@ -244,7 +244,7 @@
     <!-- 1 - victim role -->
     <value>Quan tots els trempis es lleven, senten una pudor horrible. Segueixen l'olor i troben {0} llepat a la zona de motxilles. MLEM, MLEM, MELEM! (https://www.youtube.com/watch?v=OtiKq69xPV8)\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Uns forts crits provenen de la casa de {0}... les avellanes la inspeccionen i hi troben a la persona en qüestió magullada al llit. El cap de troncs 🌴 ha posat a una persona de kanalla👤 de terces i aquesta ha petat i s'ha hagut d'anar de la diada en ambulància. Queda out de tot el tram de diades!</value>
   </string>
@@ -346,34 +346,34 @@
   <string key="RemainingPlayersEnd">
     <value>Jugadors vius restants, rols i equip:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} ha votat convertir {1}.</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} havia de fer la feina bruta, i parlar amb {1}... però era el cap de troncs! Així que el cap de troncs l'ha posat a terces, {0} ha petat i s'ha hagut d'anar en ambulància. Una persona de kanalla queda out de tot el tram de diades!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} ha vingut cap a tu aquesta diada, amb la intenció de que formis part del pom... però l'has obligat a anar al tronc del castell i ha petat. Una persona de kanalla ha quedat fora del tram de diades... restants: {1}!</value>
   </string>
   <string key="CultConvertYou">
     <value>T'han convertit a la secta kanalla! Ara ets kanalla. Cada diada, tindràs l'oportunitat de convertir un altre trempi.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Kanalla: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} s'ha unit a la secta kanalla!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} havia de fer la feina bruta, i convertir a {1}... però no ha vingut a la diada!</value>
   </string>
@@ -384,7 +384,7 @@
     <!-- 0 - target name -->
     <value>Has intentat deixar KO a {0}, però ja estava expulsat del tram de diades!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Has anat a deixar KO a {0} quan estava fent un pom elevat en mig de la discoteca. Ràpidament has fet que s'et begui sobre el pom provocant que un membre de la kanalla acabés enterrat entre les motxilles.</value>
   </string>
@@ -401,7 +401,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} ha estat expulsat del tram de diades! Ple de ràbia i orfe, t'has convertit en veterà/na! Altres veterans i veteranes: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>Avellana 🌰</value>
@@ -448,10 +448,10 @@
   <string key="ApprenticeSeer">
     <value>Segon vent 💨💨</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Kanalla 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Cap de Troncs 🌴</value>
   </string>
   <!-- These are for the player list -->
@@ -483,7 +483,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>El membre més recent de la kanalla mira de convertir {0} anant a parlar amb ell/a entre rondes, però es troba una autèntica ruïna, baba pertot arreu i pèls de veterà/na al costat de les aigües...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -615,12 +615,12 @@
     <value>Has intentat afegir el cos de {0} a la teva col·lecció, però el contrafort t'ho ha impedit! Aquesta nit no pots destrossar a ningú...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>La Kanalla envia a {0} per intentar convertir {1}, però a través de la porta se senten glops de {0}. Per una escletxa, la Kanalla veu el cos de {0} KO als labavos! {0} ha quedat KO per la boirina...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>La Kanalla envia {0} per intentar convertir {1}, de cop tothom comença a posar-se a la soca i obliguen a {0} a posar-s'hi també. Quan acaba la ronda la Kanalla es troba el cos de {0} magullat en un racó, QUE S'HA DE CUIDAR LA SOCA FOLRETIS! {0} es queda liciat pel que queda de tram de diades.</value>
     <value>{0} va amb decisió a convertir {1}, però de cop {1} li demana que faci l'escaleta i al pujar-s'hi a sobre li destrossa l'esquena. {0} ha hagut d'anar a l'ambulància i ràpid se l'emporten a l'hospital. Minuts després ens informa que haurà de deixar els castells per una temporada. 😮</value>
@@ -645,7 +645,7 @@
     <value>{0} no pot anar a diades, i tu ocupes la seva posició de cordó obert. Els teus companys que també fan de cordó obert (si n'hi ha) són: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>L'alumne de secundària {0} un dia fa un taller amb Trempats i entra a la colla. És molt àgil i ràpidament entra a la secta Kanalla, com tu!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1167,7 +1167,7 @@
   <string key="BlacksmithKilled">
     <value>Sembla que {0}, membre de Comi Seguretat, ha tingut molt mala sort. Resulta que a la diada, mentre vigilava la porta d'entrada al local, una persona li va venir per redere i va pujar-s'hi a sobre intentant fer un pilar. Resultat: esquena rebentada i fi del tram de diades per ell/a. Aquests folretis... Quan aprendran a no fer mal?</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Han trobat el cos de {0} rebentat al costat de la soca. El folreti ha tornat a fer mal a algú, {0} era kanalla pero el folreti li ha demanat si podia fer l'escaleta i... Adéu diades.</value>
   </string>
   <string key="CupidKilled">
@@ -1205,12 +1205,12 @@
     <value>El cos de {0}, el cap de troncs, ha estat destrossat durant la passada diada. No sembla bona idea comprovar si un folreti pot fer de terces...</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Tot i que semblava que els vetarans/es havien decidit ser bons per una vegada, era difícil resistir-se a castigar {0}, un de kanalla que havia decidit cercar problemes amb els veterans i veteranes intnetant-los convertir a la secta.</value>
     <value>A aquesta diada, la kanalla s'ha trobat problemes inesperats. El seu membre més nou ha tingut la mala sort d'anar a buscar a un veterà/na durant l'única animació que els veterans i veteranes havien decidit no llepar a ningú.. Malauradament per a {0}, els veterans/es no tenen gens d'interès a unir-se a la kanalla.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>La kanalla pensava que tindria un nou membre entre les seves files, però s'equivocava! {0}, un sectari de kanalla, ha aparegut aquest matí destrossat a la guten! Sembla que als folretis no els hi agrada que els vulguin canviar de posició.</value>
     <value>A la passada animació, la kanalla ha intentat convertir l'única persona de la colla més boja que els seus membres. El seu membre més nou ha intentat convertir un folreti, i aquest ha fet una nova obra d'art amb l'esquena de {0}.</value>
   </string>
@@ -1233,8 +1233,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sabent que només resta {0}, {1} ha triat un moment en que {0} estava casi buida. Eliminar l'última avellana ha estat fàcil per a {1}.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} i {0} caminen durant el dia. L'honrat {1} treu el fempinya per posar la kanalla com a terça, posant fi a la rebuscada kanalla que ha contaminat la colla.</value>
   </string>
 
@@ -1448,13 +1448,13 @@
   </string>
 
   <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>Ets Comi Amabilitat ☮️. Pots triar si vols convèncer a tothom de la vila perquè no es faci un toc de castells a ningú. Només pots fer-ho una vegada.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>Comi Amabilitat ☮️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>La Comi Amabilitat ☮️ pot triar si vol convèncer tothom de la vila perquè no es faci un toc de castells a ningú. Només pot fer-ho una vegada.</value>
   </string>
 
@@ -1481,14 +1481,14 @@
     <value>Per defecte, la comi material 😈 pot robar el rol d'un jugador durant la primera diada, i convertir-lo en una avellana.\nSi s'activa el mode [Comi material complet], té un 50% de probabilitat de robar el rol d'un trempi durant cada diada. Si té èxit, aquell trempi serà la nova comi material i continuarà els robatoris!</value>
   </string>
 
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Vols fer que no es pugui fer un toc de castells a ningú a aquesta diada?</value>
   </string>
-  <string key="PacifistNoLynch">
-    <!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+    <!-- {0} - Imam's name -->
     <value>La Comi Amabilitat, {0}, fa una profunda xerrada sobre l'amistat i la confiança davant de tota la colla. Emocionats i emocionades per la seva xerrada, decideixen que avui no es farà un toc de castells a ningú!</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>A causa de l'emotiva xerrada de la comi amabilitat, avui s'ometrà el toc de castells!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1531,8 +1531,8 @@
     <value>Els teus companys (si n'hi ha) són: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} ja no és el teu company, i {1} ara és kanalla, com tu!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1585,17 +1585,17 @@
   <string key="SecretLynchShowVotersA">
     <value>Nom dels votants al recompte de vots del toc de castells secret: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
     <value>Que estrany... En el moment en què comenceu a discutir qui convertir en aquesta diada, us adoneu que {0} no hi és! Què li ha passat?</value>
   </string>
 
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
     <value>Pau!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
     <value>S'ha omès el toc de castells d'avui perquè la Comi Amabilitat ha fet una xerrada emotiva!</value>
   </string>
 
@@ -1695,7 +1695,7 @@
   <string key="ChemistTargetEmpty">
     <value>A {0} no l'has trobat enlloc! Trist/a te'n tonrnes a casa a fumar-te el bo tot sol.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value>Els sectaris ara són: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1746,7 +1746,7 @@
   <string key="ChemistFrozen">
     <value>Quan estaves acabant de liar-te els dos porros, ha vingut l'habitual de Dresden 💚 i t'ha enxixat. Està clar que no els malgastareu, però aquest cop no podràs deixar KO a ningú.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Tot just quan anaves a intentar embaucar a algú perquè fes un pom elevat, ha vingut l'habitual de Dresden 💚. La resta de la Kanalla et troba a faltar per fer un pom a terra amb un nou trempi. Per les històries d'Instagram veuen que ho estàs donant tot a Dresden, aixì que assumeixen que avui no seràs d'ajut.</value>
   </string>
   <string key="CHFrozen">
@@ -1887,11 +1887,11 @@
   <string key="HunterFellDigger">
     <value>Després d'una altra diada màgica, estàs anant a la discoteca quan veus una ampolla de boirina a terra. Ràpidament llences a {0} a la brossa, no vols més gent KO a diades.</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
     <value>Retornes d'una altra diada màgica, quan de sobte sents un crit des de la llunyania! T'afanyes a anar-hi, i hi trobes a {0} amb el turmell regirat. Però quina mena de secta kanalla intenta convertir na Comi Sanitat?</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
     <value>Buscant a {1}, {0} decideix de sobte que seria bona idea fer un salt mortal. Al fer-lo, caus malament i et regires el turmell! Tot i així, no acabes tenint res, ibuprofeno i al carrer. Podràs continuar fent castells.</value>
   </string>
@@ -1947,8 +1947,8 @@
   <string key="HarlotFellPublic">
     <value>Quan el Pescanova {0} havia acabat de pescar, anava tant encisat amb la vida que no ha vist un potat i s'ha trencat el coxxxis. Sort de Comi Sanitat que l'hi ha pogut aplicar els primers auxilis. Potser hauria d'anar tant encantat per la vida!</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
     <value>El membre de Kanalla {0} ha intentat fer un pom elevat, però s'ha caigut cual fruita i s'ha trencat el bulb raquidi. Mentre la resta de la secta sortia corrents, Comi Sanitat ha anat a socorre'l.</value>
   </string>
   <!--{0}: thief-->

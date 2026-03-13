@@ -178,10 +178,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>Hindi mo maalala kung sino at ano ka. Bakit kaya?</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>Hindi mo maalala kung sino at ano ka. Ang alam mo lang may dapat kang ginagawa pag gabi!</value>
   </string>
   <string key="LynchTime" >
@@ -226,7 +226,7 @@
   <string key="DefaultEaten" >
     <value>Nagising ang mga tambay dahil sa masangsang na amoy. Sinundan nila ang amoy, para makita si {0}. Patay na. {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Nagising ang mga tambay dahil sa masangsang na amoy na galing sa bahay ni {0}... Pumasok sila sa bahay at nakita nila ang katawan niya sa harap ng gawa-gawang altar... Isang kulto ang napatay ng hunter!</value>
   </string>
   <string key="NoAttack" >
@@ -310,13 +310,13 @@
   <string key="RemainingPlayersEnd">
     <value>Bigla nalang naalala ng mga survivors ang lahat! Ang mga role nila ay:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value>Si {0} ay bumoto para may gawing kababalaghan kay {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>Pumunta si {0} sa bahay ni {1} patay na siya ngayon!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>Patay na si {0}! Nakatatak sa isip mo ang {1}</value>
   </string>
   <string key="CultConvertYou">
@@ -337,7 +337,7 @@
   <string key="HunterVisitDead">
     <value>Patay na si {0}!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>May nangyari ba sa bahay ni {0} kagabi? Hindi mo maalala...</value>
   </string>
   <string key="HunterFailedToFind">
@@ -349,7 +349,7 @@
   <string key="WildChildTransform">
     <value>Patay na si {0}! Nagbago ang role mo. Ano na kaya? Di mo man maalala kung sino ka, may naaalala kang isang mahalagang tao. Si {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>isang Villager 👱</value>
   </string>
@@ -395,11 +395,11 @@
   <string key="ApprenticeSeer">
     <value>ang Apprentice Seer 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>isang Cultist 👤</value>
+  <string key="Zombie">
+    <value>isang Zombie 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>ang Cultist Hunter 💂</value>
+  <string key="ZombieHunter">
+    <value>ang Zombie Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -443,7 +443,7 @@
     <value>@{1}, may player na {0} din ang pangalan ang nakasali na. Palitan ang pangalan upang makasali.</value>
   </string>
   <string key="HarlotDiscoverCult">
-    <value>Di mo man maalala kung sino ka, alam mo na si {0} ay isang Cultist 👤!</value>
+    <value>Di mo man maalala kung sino ka, alam mo na si {0} ay isang Zombie 👤!</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -714,7 +714,7 @@
   <string key="AboutHarlot">
     <!-- hunter! ayylmao -->
 	<value>
-	The Harlot will be given the chance to visit another player each night. They will notice something happened, even if they don't remember what. The harlot dies if they visit a wolf or the Serial Killer, so visiting is a good way to find safe players, even if it's as a sacrifice! The harlot will also die if they visit a house attacked by the wolves or if the Serial Killer chooses to kill them! When visiting a cultist, the harlot has a 50% chance of finding out their role!
+	The Harlot will be given the chance to visit another player each night. They will notice something happened, even if they don't remember what. The harlot dies if they visit a wolf or the Serial Killer, so visiting is a good way to find safe players, even if it's as a sacrifice! The harlot will also die if they visit a house attacked by the wolves or if the Serial Killer chooses to kill them! When visiting a Zombie, the harlot has a 50% chance of finding out their role!
 	
 	NIGHT ACTIONS, every night!</value>
   </string>
@@ -770,13 +770,13 @@
   <string key="AboutCult">
   <!-- CULT CONVERSION RATES AND WHO'S HOME HERE! ayylmao -->
     <value>
-	Every night, all cultists in the cult vote to decide who to convert. The cult wins when every single alive player is a cultist. It's not that simple to convert players, though!
+	Every night, all Zombies in the cult vote to decide who to convert. The cult wins when every single alive player is a Zombie. It's not that simple to convert players, though!
 	
 	NIGHT ACTIONS, every night!</value>
   </string>
   <string key="AboutCH">
     <value>
-	The Cultist Hunter has a single job: kill all cultists. Every night, they get to visit a player, who won't feel anything... unless they are a cultist, in which case, the Cultist Hunter will kill them! If the cult chooses to convert the CH, their newest member dies.
+	The Zombie Hunter has a single job: kill all Zombies. Every night, they get to visit a player, who won't feel anything... unless they are a Zombie, in which case, the Zombie Hunter will kill them! If the cult chooses to convert the CH, their newest member dies.
 	
 	NIGHT ACTIONS, every night!</value>
   </string>
@@ -806,7 +806,7 @@
   </string>
   <string key="AboutDG">
     <value>
-      The Doppelgänger chooses a player during the first night of the game. Once they die, the Doppelgänger will become what they were! Unless the player was converted to the cult, the Doppelgänger will become what they were at the time of death! When becoming a Wild Child, the Doppelgänger will inherit their role model. The Doppelgänger cannot be converted to a cultist until they change roles, and will not be able to win (except as a lover) unless they've changed roles!
+      The Doppelgänger chooses a player during the first night of the game. Once they die, the Doppelgänger will become what they were! Unless the player was converted to the cult, the Doppelgänger will become what they were at the time of death! When becoming a Wild Child, the Doppelgänger will inherit their role model. The Doppelgänger cannot be converted to a Zombie until they change roles, and will not be able to win (except as a lover) unless they've changed roles!
       
 	  FIRST NIGHT ACTION, then none until their role changes!
     </value>
@@ -820,7 +820,7 @@
   </string>
   <string key="AboutHunter">
     <value>
-      The Hunter is just like a villager... Until someone visits them, or they die! Anyone who visits the Hunter's house will find themselves dead (other than the cult - there's a 50% chance the cult will convert the Hunter, and then a 50% chance a cultist will be killed if the conversion fails), unless they go there to attack the Hunter. The Serial Killer will be able to kill the Hunter, and a pack of wolves will also be able to do that... However, the Hunter won't go down without a fight! When they're killed - be it by lynching or a murder, but not a wolf attack - the Hunter will be given a choice to shoot and kill someone out of the players alive!
+      The Hunter is just like a villager... Until someone visits them, or they die! Anyone who visits the Hunter's house will find themselves dead (other than the cult - there's a 50% chance the cult will convert the Hunter, and then a 50% chance a Zombie will be killed if the conversion fails), unless they go there to attack the Hunter. The Serial Killer will be able to kill the Hunter, and a pack of wolves will also be able to do that... However, the Hunter won't go down without a fight! When they're killed - be it by lynching or a murder, but not a wolf attack - the Hunter will be given a choice to shoot and kill someone out of the players alive!
 	  Wolf attacks work differently, though! If a sole wolf attacks the hunter, there's a 30% chance they'll be able to kill the wolf and survive. Otherwise, the Hunter will be killed by the wolves, but may be able to take one down (instead of choosing a player to kill) as they go! For two wolves, the chance of killing one of them is 50%. For three, it's 70%; for four, 90%, and for packs with five wolves or more, the Hunter will definitely be able to kill one of them as they die!
 	  
 	  NO ACTIONS, until they die!

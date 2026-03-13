@@ -211,11 +211,11 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >You are the rogue Computer Science student (apprentice seer 🙇). Someday, if the resident hacktivist (seer) is gone, you must take over to help your fellow residents intercept the goody-two-shoes before they start evicting everyone.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >You are a Money Lending Member (MLM) (Cultist 👤). Sometimes businesses just need that little more "oomph". Knowing how desperate the estate is for "easy money", the MLM is who they go to, for money, only to be sucked into a pit of no return. (tl;dr: you're just a bloody ah long (loanshark) with a fancy title.)</value>
+  <string key="RoleInfoZombie" >
+    <value >You are a Money Lending Member (MLM) (Zombie 👤). Sometimes businesses just need that little more "oomph". Knowing how desperate the estate is for "easy money", the MLM is who they go to, for money, only to be sucked into a pit of no return. (tl;dr: you're just a bloody ah long (loanshark) with a fancy title.)</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value >You are the fake CPIB officer (Cultist Hunter 💂). Scaring the MLM is an extremely effective way to earn money. Only the MLM gets frightened with your antics, though; the makcik, hacktivist, among others know better than to fall for your fake CPIB badge.</value>
+  <string key="RoleInfoZombieHunter" >
+    <value >You are the fake CPIB officer (Zombie Hunter 💂). Scaring the MLM is an extremely effective way to earn money. Only the MLM gets frightened with your antics, though; the makcik, hacktivist, among others know better than to fall for your fake CPIB badge.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
@@ -282,9 +282,9 @@
     <value>As everyone rises in the morning, they see an eviction notice pasted on {0}'s house.\n{1}</value>
     <value>OH NO! {0}'s house is now empty! All that remains is an eviction notice! the illegal business which {0} used to run has ceased! \n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
-    <value>A noticeable stench of rotten pig is coming from the trash bin near {0}'s house! A Money Lending Member (cultist) has been "busted" by the fake CPIB officer (cultist hunter), and his pigs' heads disposed in the trash! Ah Long say Ah Long lah! Simi money-lending member? (Don't say you are a money-lending member when you are just a loanshark!)</value>
+    <value>A noticeable stench of rotten pig is coming from the trash bin near {0}'s house! A Money Lending Member (Zombie) has been "busted" by the fake CPIB officer (Zombie hunter), and his pigs' heads disposed in the trash! Ah Long say Ah Long lah! Simi money-lending member? (Don't say you are a money-lending member when you are just a loanshark!)</value>
     <value>Morning comes, and it seems that an MLM, {0}, has left the HDB estate in shame! The "CPIB" has performed a raid and all the neighbours now know the one responsible for the pigs' heads and random blood trails. Ah Long say Ah Long lah! Simi money-lending member? (Don't say you are a money-lending member when you are just a loanshark!)</value>
   </string>
   <string key="NoAttack" >
@@ -403,35 +403,35 @@
   <string key="RemainingPlayersEnd">
     <value>Remaining players in the flat, roles, and team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} has voted to renegotiate with and recruit {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} was provided a pig's head, the negotiation forms, and went to recruit {1}, but they were the fake CPIB agent! RUN! Gosh, we lost {0} to the "CPIB"!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} came to your house last night, ready to recruit you, but you managed to catch the slowest-running MLM and scare {0}'s wits; {1} remain! Clearly that ah long (loanshark) was too new!</value>
   </string>
   <string key="CultConvertYou">
-    <value>The Money Lending Members (MLM) (cultists) have recruited you, because you could not repay their debts! Once per night, you will be sent to hang a pig's head demanding for repayment... or a "job offer" with you! (Just your luck you are now an ah long (loanshark) with a pretty name, that's all!)</value>
+    <value>The Money Lending Members (MLM) (Zombies) have recruited you, because you could not repay their debts! Once per night, you will be sent to hang a pig's head demanding for repayment... or a "job offer" with you! (Just your luck you are now an ah long (loanshark) with a pretty name, that's all!)</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
-    <value>Cultists: {0}</value>
+    <!-- 0 - Number of Zombies -->
+    <value>Zombies: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} has become a Money Lending Member!</value>
     <value>{0} has turned over to being a Money Lending Member!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} was sent to do your dirty work, and recruit {1}... but no one was home! All you could do was to hang a "notice".</value>
   </string>
@@ -443,7 +443,7 @@
     <!-- 0 - target name -->
     <value>On a lead, you wanted to "bust" {0}, but the flat seemed empty: were they already evicted?</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>You go into {0}'s house and find them drying their pigs' heads and counting dirty cash. You quickly put on your "CPIB badge" and cleanse the house of all its valuables. The MLM feared the "CPIB" so much that the MLM went on the run the next morning. After all, he's really just an ah long (loanshark), don't keng (pretend) to be a financial institute!</value>
   </string>
@@ -460,7 +460,7 @@
     <!-- 1 - teamate's names -->
     <value>{0}, your foster parents, are gone! To survive, you sign up on Careers@Gov to be an HDB agent (wolf)! Your new teammates are: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>a Sad Resident (a Villager) 👱</value>
@@ -507,11 +507,11 @@
   <string key="ApprenticeSeer">
     <value>the Rogue Computer Science Student (the Apprentice Seer) 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>a Money-Lending Member (MLM) (a Cultist) 👤</value>
+  <string key="Zombie">
+    <value>a Money-Lending Member (MLM) (a Zombie) 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>the Fake CPIB Officer (the Cultist Hunter) 💂</value>
+  <string key="ZombieHunter">
+    <value>the Fake CPIB Officer (the Zombie Hunter) 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -543,7 +543,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Your newest MLM heads over to {0}'s house to recruit them, but instead finds a ghostly house, scaring your wits. Maybe the HDB agents (wolves) beat you to it... eh? Or perhaps the owner was just enjoying a crass joke.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -709,7 +709,7 @@
     <value>Dying, {0} falls to the ground.... but not without exposing the dirty secrets of {1}, who the residents than chased out as well! {2}</value>
   </string>
   <string key="CultConvertSerialKiller">
-  	<!-- 0 - Youngest Cultist's name -->
+  	<!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by the Pontianak!!! {1} frightens {0} so badly {0} swore to leave the HDB estate with immediate effect! D:</value>
  	<value>The MLM sends {0} to try to recruit {1}, but the Pontianak scared {0}! {0} dropped his pig's head, ran for his sanity, and moved out the next morning!</value>
@@ -735,7 +735,7 @@
     <value>You tried to scare {0}, but the 啰哩啰嗦 (Long-winded) auntie droned on and on... even after you had long drifted away. One-on-one is fine, but two humans to a ghost wasn't quite what you expected.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>The cult sends {0} to try to recruit {1}, but TNP reported of the MLM the next morning and {0} left due to shame.</value>
   </string>
@@ -759,7 +759,7 @@
     <value>{0} has disappeared from the estate, and you copy all her gossipy behaviour. Your new gossip auntie friend(s) (if any) is/are: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>The imitator {0} has learnt how to spray O$P$ and pretend to be a proper financial institute, joining the ranks of the MLM, just like you!</value>
   </string>
   <string key="DGTransformToCult">
@@ -908,7 +908,7 @@
     <value>While there are hacktivists, there are also stupid script kiddies...\n \nOverconfidence is always in huge supply, and in the Script Kiddie (Fool)🃏 there is aplenty. Just because he has watched some self-hack videos and read articles by someone who has attended DEFCON, he thinks he can hack, when really, he's just pushing traffic onto 127.0.0.1. WHAT A FOOL!</value>
   </string>
   <string key="AboutCult">
-    <value>Ah, I know what you are thinking about... those buggers hanging pigs' heads while claiming they come from some financial institution.\n \nThere are people who are Money-Lending Members (MLM) (Cultist) 👤! Well, the residents have illegal enterprises that will never get bank loans, so perhaps it's a great income opportunity to speak to them regarding "easy credit".</value>
+    <value>Ah, I know what you are thinking about... those buggers hanging pigs' heads while claiming they come from some financial institution.\n \nThere are people who are Money-Lending Members (MLM) (Zombie) 👤! Well, the residents have illegal enterprises that will never get bank loans, so perhaps it's a great income opportunity to speak to them regarding "easy credit".</value>
   </string>
   <string key="AboutCH">
     <value>"The rise in sex scams on WeChat hints that your illegal enterprise, perhaps, should be scamming the scammer"\n \nThe fake Corrupt Practices Investigation Bureau (CPIB) Officer (Cult Hunter) 💂 revels in scaring his fellow residents! He does not really have the tools to catch anyone with syndicates, but a pig's head is a dead giveaway. For some fun, visiting them means a MLM gets so frightened he gladly pays up! If the HDB agents ever catch you... you may well be hit by double charges!</value>
@@ -1306,7 +1306,7 @@
   <string key="BlacksmithKilled">
     <value>{0}'s superstitions have come true. She predicted last night the Pontianak would eventually find her, and she was right. The Superstitious Auntie has been scared out of her wits, and has decided to pack her bags.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>The Pontianak has claimed a new victim! {0} tried to go around hanging pigs' heads and spraying O$P$, only to be spooked by the Pontianak!</value>
   </string>
   <string key="CupidKilled">
@@ -1340,10 +1340,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>The fakery of the Fake Corrupt Practices Investigation Bureau Officer, {0}, was exposed. Visiting an apparition last night was so traumatising he had got his just desserts for scaring people with the law. Never visit the Pontianak, especially at night!</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>The HDB agents were doing some OT and admin work at home when {0}, the newest Money-Lending Member, foolishly hung a pig's head at the HDB agents' homes. The arrest and eviction that followed was faster than lightning could strike.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>A pig's head would have scared a human, but {0} learnt it would not scare the Pontianak. The tables have turned, and {0} cut all ties with the Money-Lending Members and quietly disappeared, in the dark of the night.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1362,8 +1362,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Knowing only {0} was left, {1} chose an opportune time to evict {0}, where she had no access to her tapes! The HDB agent stands alone, in full control of the estate!</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} and {0} were the only ones left eating breakfast at the hawker centre, where {1} busted {0}'s illegal money-lending scheme! All that is left is the fake Corrupt Practices and Investigation Bureau officer!</value>
   </string>
   

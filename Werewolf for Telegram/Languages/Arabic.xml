@@ -209,10 +209,10 @@ Last update: 26-5-2020
   <string key="RoleInfoApprenticeSeer" >
     <value>أنت تلميذ العراف 🙇‍♂. إن مات العراف (الحقيقي)، فستحل مكانه كالعراف.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>أنت طائفي 👤. كل ليلة، يمكنك اختيار لاعب لتحويله إلى طائفي. إذا كان جميع اللاعبين الأحياء المتبقين في النهاية طائفيين، يفوزون.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>أنت صائد الطائفيين 💂‍♂، تحاول إيقاف الطائفة من تحويل جميع من في البلدة! كل ليلة، إختر لاعبًا. إن كان طائفي فسيموت. إذا حاولت الطائفة تحويلك، فإن أحدث عضو في الطائفة سيموت.</value>
   </string>
   <string key="LynchTime" >
@@ -270,7 +270,7 @@ Last update: 26-5-2020
     <!-- 1 - victim role -->
     <value>بينما يستيقظ الجميع في الصباح، يشمون رائحةً مريعة. فيتبعون الرائحة ليعثروا على {0} ممزقٌ إلى أشلاء في الحظيرة ورأسه مفقود. نمـ•نمـ•نمـ•نمـ•نمـ\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>رائحة نتنة قوية تأتي من منزل {0}... يذهب أهل القرية ليتحققوا منها فيجدوا جثة ملقية أمام مذبحٍ مظلم. لقد قُتل طائفي بواسطة صائد الطائفيين!</value>
   </string>
@@ -376,34 +376,34 @@ Last update: 26-5-2020
   <string key="RemainingPlayersEnd">
     <value>اللاعبين المتبقين الأحياء والأدوار والفرق:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>صوت {0} لتحويل{1}</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>ذهب {0} ليقوم بعملكم القذر ويحول {1}... ومع ذلك، لقد كان صائد الطائفيين! {0} ماتت!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>أتى {0} إلى منزلك ليلة الأمس، جاهزًا لتحويلك.... لكنك استللت سيفك وشطرته لنصفين. مات طائفي... تبقى {1}!</value>
   </string>
   <string key="CultConvertYou">
     <value>لقد حولتك الطائفة إلى منهجهم! أنت الآن طائفي. كل ليلة، ستكون لديك فرصة لتحويل لاعبٍ آخر.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>الطائفيين: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>إنضم {0} للطائفة!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>ذهب {0} ليقوم بعملكم القذر، ويحول {1}... لكن لم يكن هناك أحدٌ بالمنزل!</value>
   </string>
@@ -414,7 +414,7 @@ Last update: 26-5-2020
     <!-- 0 - target name -->
     <value>ذهبت لتصطاد {0}، لكنه كان قد مات مسبقًا!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>ذهبت لمنزل {0} ووجدته يقوم بطقوسٍ غريبة. استللت سيفك بسرعة وشطرت ذلك الطائفي الشرير لنصفين.</value>
   </string>
@@ -431,7 +431,7 @@ Last update: 26-5-2020
     <!-- 0 - teamate's names -->
     <value>مات {0}! وأثناء غضبك العارم، أصبحت ذئبًا! رفاقك الجدد هم: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>فلاح 👱</value>
@@ -478,10 +478,10 @@ Last update: 26-5-2020
   <string key="ApprenticeSeer">
     <value>تلميذ العراف 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>طائفي 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>صائد الطائفيين 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -513,7 +513,7 @@ Last update: 26-5-2020
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>أحدث عضو يتجه لمنزل {0} ليقوم بتحويله، لكن بدلًا من ذلك، يجد المنزل غارقًا في الفوضى، والدماء في كل مكان، وقطع من فرو ذئب متناثرة على المدخل...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -695,12 +695,12 @@ Last update: 26-5-2020
     <value>حاولت ضم جسد {0} إلى مجموعتك، لكن الملاك الحارس قام بصدك! لا ضحية لك الليلة...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>الطائفة أرسلت {0} ليحاول تحويل {1}، لكن بدلًا من ذلك يدوي صوت طلقةٍ نارية وجسد {0} يأتي محلقًا من النافذة! {0} مات....</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>الطائفة أرسلت {0} ليحاول تحويل {1}، لكن بدلًا من ذلك جسد {0} يأتي محلقًا من النافذة، والسكاكين قد اخترقت كل جُزءٍ من جسده! يا له من مختل! {0} ميت....</value>
     <value>يتسلل {0} إلى منزل {1}، وحالما يفتح الباب، يلقي عليه التحية مجنونٌ يحمل سكينًا!!! يغرس {1} السكين عميقًا في أعضاء {0} بترتيبٍ أبجدي، وهو يغرغر طوال الوقت! {0} مات :D</value>
@@ -725,7 +725,7 @@ Last update: 26-5-2020
     <value>مات {0}، وأنت تتحول إلى بناء. رفاقك (إذا كان هناك) هم: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>المتحول {0} قد أصبح الآن طائفي، مثلك تمامًا!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1286,7 +1286,7 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   <string key="BlacksmithKilled">
     <value>يبدو أنه {0} الحداد، يبدو أنه كان غير محظوظٍ للغاية. خمس سكاكين جديدة من مستودع {0} وجدت ليلة الأمس مغروسةً على يديه وقدميه ورأسه وهو مثبت على طاولة الحدادة. ربما كان السفاح يأمل أن ينمي من مجموعة أسلحته بجانب مجموعة الأعضاء البشرية...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>عُثر على {0} مطعون حتى الموت بواسطة شمعدان خاصٌ بالمذبح. السفاح ضرب مجددًا، لا مبالٍ بالعرق أو اللغة أو الدين! {0} كان طائفي.</value>
   </string>
   <string key="CupidKilled">
@@ -1324,12 +1324,12 @@ https://teespring.com/stores/werewolf-for-telegram</value>
     <value>جثة {0}، صائد الطائفيين، عُثر عليها في وسط البلدة، ولو أنها مقطعة بدقة إلى مائة قطعة. لا يبدو أن التحقق مما إذا كان السفاح طائفي فكرةً جيدة...</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>بينما كان يبدو أن الذئاب قررت البقاء جيدةً لمرة، إلا أنها عاقبت {0}، طائفي قرر افتعال المشاكل مع الذئاب، لتبرهن صعوبة مقاومة ذلك. رأس {0} تحول لعشاءٍ ممتاز، تم توصيله لعتبة منزل الذئاب!</value>
     <value>الطائفة علقت في مشكلةٍ غير متوقعة الليلة الماضية. أحدث عضوٍ فيهم كان سيء الحظ لزيارته ذئبًا في الليلة التي قررت فيها الذئاب البقاء في المنزل، والذئب وجد {0} لذيذًا نوعًا ما. لسوء حظ {0}، الذئاب ليس لديها اهتمام في الإنضمام لحركة طائفةٍ جديدة.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>الطائفة ظنوا أنهم سيكسبون عضوً جديدً في صفوفهم، لكنهم كانوا مخطئين! {0}، طائفي فُرم لقطع ووُضع في ميدان البلدة في الصباح! وخلافًا للعادة كتاب "الطائفة" خاصته عُثر عليه مطعونًا بسكين، كما لو أنه تصريحٌ ليبين أي عقيدةٍ هي المنتصرة.</value>
     <value>الليلة الماضية، الطائفة حاولت تحويل الوحيد في القرية الأكثر جنونًا منهم. أحدث عضو حاول تحويل السفاح، والسفاح صنع قطعةً فنيةً جديدة في ميدان البلدة مكونةً من أعضاء {0} الداخلية.</value>
   </string>
@@ -1353,8 +1353,8 @@ https://teespring.com/stores/werewolf-for-telegram</value>
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>بمعرفة أن {0} هو آخر من تبقى، يستغل {1} الوقت الذي يكون فيه حذر {0} في أدنى مستوياته. فيقصي {1} آخر قروي بدون أدنى جهد، ولم يتبقى سوى جثة مشوهه تخص {0}، الصياد، وعليها خدوشٌ متوازية في الوجه.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>يتمشى {0} و {1} تحت ضوء الشمس. وبرؤية وميض قلادة حول عنق {0}، الزكي {1} يستل سيفه للمرة الأخيرة، ليضع حدًا لتعاليم الطائفة المحرفة التي لوثت القرية.</value>
   </string>
 
@@ -1568,13 +1568,13 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   </string>
 
 <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>أنت المسالم ☮. يمكنك إختيار إقناع جميع من في قريتك بعدم إعدام أي أحد. يمكن إستعمال هذا مرةً واحدة فقط.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>المسالم ☮️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>المسالم ☮ يمكنه إختيار إقناع جميع من في القرية بعدم إعدام أي أحد. يمكن إستعمال هذا مرةً واحدة فقط.</value>
   </string>
 
@@ -1601,14 +1601,14 @@ https://teespring.com/stores/werewolf-for-telegram</value>
     <value>إفتراضيًا، اللص 😈 يمكنه سرقة دور لاعبٍ في الليلة الإولى ويُحول ذلك اللاعب إلى فلاح.\nإذا كان وضع [اللص الكامل] مفعل، فلديه فرصة بنسبة 50% لسرقة دور لاعبٍ كل ليلة، إن نجح، فذلك اللاعب سيصبح اللص الجديد ويستمر بالسرقة!</value>
   </string>
   
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>إضغط هذا الزر عندما تود إلقاء خطابك النابع من القلب وتوقف القرية عن الإعدام ذلك اليوم!</value>
   </string>
-  <string key="PacifistNoLynch">
-  <!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
     <value>المسالم ☮، {0}، يلقي خطابًا نابعًا من القلب عن الصداقة والثقة أمام القرية. وبسبب خطابه الذي أثار المشاعر، لن يكون هناك إعدام اليوم!</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>بسبب خطاب المسالم ☮ النابع من القلب، سيتم اليوم تخطي مرحلة الإعدام!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1655,8 +1655,8 @@ https://teespring.com/stores/werewolf-for-telegram</value>
     <value>رفاقك (إذا كان هنا) هم: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>لم يعد {0} رفيقك بعد الآن وقد أصبح {1} الآن طائفي، مثلك تمامًا!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1713,17 +1713,17 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>ياللغرابة... حالما بدأتم تتناقشون عمن ستحولون الليلة، أدركتم أن {0} غير موجود! ماذا حدث له يا ترى؟؟</value>
   </string>
   
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
 	<value>سلام!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
 	<value>الإعدام اليوم تم إلغائه بسبب خطاب المسالم النابع من القلب!</value>
   </string>
   
@@ -1823,7 +1823,7 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   <string key="ChemistTargetEmpty">
 	<value>لم يكن {0} بالمنزل! لذا أخذت حقيبتك وعدت لمنزلك، وأنت تلعن حظك السيء.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>أعضاء الطائفة حاليًا هم: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1874,7 +1874,7 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   <string key="ChemistFrozen">
     <value>بينما بدأت تستيقظ من نومك، لكي تنهض وتحضر جرعاتك، هبت عاصفة ثلجية قزية من النافذة، مما أدت لتجمدك 🐺☃. وعبر الجليد الذي يجمدك رأيت قارورات جرعك متجمدة. يبدو أنها أيضًا لم تنجو من وطأة تعويذة التجميد. تنهدت عقليًا، وتمنيت أن تشرق الشمس بسرعة... مع ذلك، من الجيد أن الجليد ذاب عنك الآن</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>بينما إرتديت عبائتك وتحضرت لمغادرة منزلك، هبت عاصفة ثلجية من الباب مما أدت لتجمدك 🐺☃. وبعد لحظات أتى الطائفيون ليجلبوك، لكن إنتهى بهم المطاف يضحكون عليك. وبينما تركوك على باب المنزل، وعدوك أنهم سيقومون بعملٍ جيدٍ الليلة. وبما أنك لم تعد مجمدًا الآن، غادرت المنزل، وأنت تشعر بالخزي والإحراج.</value>
   </string>
   <string key="CHFrozen">
@@ -2015,11 +2015,11 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   <string key="HunterFellDigger">
 	<value>بعد ليلةٍ مرهقة، تعود للمنزل عند بدء شروق الشمس. وقبل أن تصل، تلاحظ وجود سيفٌ مرميٌ على الأرض بجانب قبرٍ غير مكتمل. بداخل ذلك القبر تجد جثة {0} ميتًا. ما كان ينبغي على صائد الطائفيين أن يشك بك...</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>عدت من ليلةٍ شاقةٍ أخرى، وفجأةً سمعت صرخة من أحد قبورك الغير منتهية! فأسرعت إلى هناك، فعثرت على {0} ميتًا في داخل قبرٍ غير منتهي. ما نوع الطائفة التي تحاول تحويل حفار قبورٍ، بأي حال؟</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>في طريقكم لمنزل {1}، فجأةً قرر {0} أنه سيكون من الجيد إحراق المعبد أيضًا. فقادكم خلال المقبرة وفجأةً علق فخ دببة بكاحله! وكل ما استطعتم سماعه هو صرخته قبل أن يسقط داخل قبر وأنتم فررتم لتنجو بحياتكم.</value>
   </string>
@@ -2075,8 +2075,8 @@ https://teespring.com/stores/werewolf-for-telegram</value>
   <string key="HarlotFellPublic">
 	<value>بينما كانت الزوارة {0} عائدةً للمنزل بعد قضاء ليلةٍ من المرح، حاولت سلك طريقًا مختصر خلال المقبرة. لا بد أنها كانت تشعر ببعض الدوخة والذي جعلها لا ترى القبر المفتوح حتى شعرت بأنه لا يوجد أرض تحت قدمها عندما خطت. ربما كان ينبغي عليها القبول بتلك الوظيفة النهارية التي عُرضت عليها في الأمس.</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>حاولت الطائفة حرق دار العبادة، لكن بينما كان {0} يقودهم خلال المقبرة، علق فخ دببة حول كاحله! صرخ صرخةً مدوية أثناء سقوطه في القبر المفتوح وفر بقية الطائفييين مذعورين...</value>
   </string>
   <!--{0}: thief-->

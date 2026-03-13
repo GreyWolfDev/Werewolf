@@ -183,10 +183,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >You are the Tech Assistant (Apprentice Seer) 🙇. You never "extract information" by yourself, but if the Technician is nowhere to be found, you will be hired to do their job as well!</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >Welcome to the Church of Happyology (Cultist) 👤! You only wants everyone, mafia or not, chill and worship your deity. Now go convert those poor sad people out there!</value>
+  <string key="RoleInfoZombie" >
+    <value >Welcome to the Church of Happyology (Zombie) 👤! You only wants everyone, mafia or not, chill and worship your deity. Now go convert those poor sad people out there!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >You are the IRS Officer (Cult Hunter) 💂. You're informed that the Church of Happyology are embezzling tax from the City. Go arrest those creepy religious member!</value>
   </string>
   <string key="LynchTime" >
@@ -242,7 +242,7 @@
     <value>The Newspaper just come in! Police Raid at {0}'s house, owner was arrested! {1}</value>
 	<value>The Newspaper just come in! {0} was arrested last night on allegations of arson, murder, vandalism, and jaywalking! {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>The Newspaper just come in! A member of the Church of Happyology 👤, {0}, was arrested by federal officers. It seems they are embezzling money from the City.</value>
 	<value>The Newspaper just come in! {0} was arrested by the FBI! They say an informant from IRS notified them of "too much happiness in one room". Was it a code?</value>
   </string>
@@ -333,13 +333,13 @@
   <string key="RemainingPlayersEnd">
     <value>Remaining living players, roles, and team:</value>
   </string> 
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} has voted to convert {1} to the Church of Happyology.</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} was sent to {1}'s house to convert and offer them "tax evasion" plan. However, they were IRS Agent! {0} was arrested for tax embezzlement.</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} was arrested for trying to offer you a "tax evasion" plan. Your informant says that {1} church member remain.</value>
   </string>
   <string key="CultConvertYou">
@@ -360,7 +360,7 @@
   <string key="HunterVisitDead">
     <value>You try to arrest {0}, but they are already jailed!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>You go to {0} in the middle of the night, just to find their Church of Happyology membership card. You arrest them immediately. </value>
   </string>
   <string key="HunterFailedToFind">
@@ -372,7 +372,7 @@
   <string key="WildChildTransform">
     <value>{0} has disappeared. Determined to get revenge, you persuade the police chief into employing you. Your new teammates are: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>a Mafia Soldier 👱</value>
   </string>
@@ -418,10 +418,10 @@
   <string key="ApprenticeSeer">
     <value>the Tech Assistant 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>a Happyology Member 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>the IRS Agent 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -749,7 +749,7 @@
     <value>You know who's the real fool? *glares menacingly*\n \nNot you, but that gossiper! They think they are a great source of info, and goes around town gossiping about anybody. They even acts like our Technician. However, their sources can't really be trusted and they just accuse anybody randomly!</value>
   </string>
   <string key="AboutCult">
-    <value>Ah, I know what you are thinking about... *smiles mischievously*\n \nAs for me, I'm thinking of those Church of Happyology (Cultist) 👤! They say they only want everyone, mafia or not, chill and worship their deity. I say they are embezzling our city's treasury and our Family's wealth.\n \nI actually see one of them visiting someone every other night, recruiting everybody they meet to their little club. The city will be surely gone if everybody follow their lead.</value>
+    <value>Ah, I know what you are thinking about... *smiles mischievously*\n \nAs for me, I'm thinking of those Church of Happyology (Zombie) 👤! They say they only want everyone, mafia or not, chill and worship their deity. I say they are embezzling our city's treasury and our Family's wealth.\n \nI actually see one of them visiting someone every other night, recruiting everybody they meet to their little club. The city will be surely gone if everybody follow their lead.</value>
   </string>
   <string key="AboutCH">
     <value>That bloke huh? They are on our payroll, too... *squints unexpectedly*\n \nThe local IRS Officer (Cult Hunter) 💂 is tasked to battle tax embezzlement by the Feds. The godfather informed them that the Church of Happyology are embezzling tax from the City, so the Agent is in good standing with us... for now.</value>

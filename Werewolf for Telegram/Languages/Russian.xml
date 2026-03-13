@@ -561,10 +561,10 @@
   <string key="ApprenticeSeer">
     <value>Ученик Провидца 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Сектант 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Охотник на Сектантов 💂</value>
   </string>
   <string key="WildChild">
@@ -624,7 +624,7 @@
   <string key="Lycan">
     <value>Ликан 🐺🌝</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>Пацифист ☮️</value>
   </string>
   <string key="WiseElder">
@@ -710,10 +710,10 @@
     <value>Apprentice Seer — Ученик Провидца (селянин, который после смерти Провидца становится новым Провидцем).</value>
   </string>
   <string key="AboutCult">
-    <value>Cultist — Сектант (игрок, цель которого — это завербовать всех селян и убить всех волков).</value>
+    <value>Zombie — Сектант (игрок, цель которого — это завербовать всех селян и убить всех волков).</value>
   </string>
   <string key="AboutCH">
-    <value>Cultist Hunter — Охотник на Сектантов (селянин, который каждую ночь ходит к игрокам;\nесли такой игрок подойдёт к сектанту, первый убьёт второго;\nесли такого игрока попытаются завербовать сектанты, первый убьёт последнего завербованного сектанта).</value>
+    <value>Zombie Hunter — Охотник на Сектантов (селянин, который каждую ночь ходит к игрокам;\nесли такой игрок подойдёт к сектанту, первый убьёт второго;\nесли такого игрока попытаются завербовать сектанты, первый убьёт последнего завербованного сектанта).</value>
   </string>
   <string key="AboutWC">
     <value>Wild Child — Дикий Ребёнок (селянин, который в начале игры должен выбрать свой «пример для подражания»;\nесли «пример для подражания»» умирает, Дикий Ребёнок становится волком;\nесли Дикий Ребёнок не выбирает «пример для подражания», игра выберет рандомного игрока для этой цели).</value>
@@ -775,7 +775,7 @@
   <string key="AboutLycan">
     <value>Ликан — волк, которого Провидец видит как селянина.</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>Пацифист может один раз за игру убедить всех не голосовать этим вечером.</value>
   </string>
   <string key="AboutWiseElder">
@@ -860,11 +860,11 @@
   <string key="RoleInfoApprenticeSeer">
     <value>Сейчас ты обычный селянин. Однако, если провидец умрет, ты встанешь на его место.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Ты сектант! Твоя задача — каждую ночь вербовать по 1 человеку к себе в секту. Если все оставшиеся в живых окажутся сектантами — вы выиграете!</value>
     <value>Твоя секта ждёт тебя! Завербуй к себе всех, и вы выиграете!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>В селе появилась новая секта, уничтожь её! Выбирай каждую ночь человека, и, если он завербован, он умрёт. А если сектанты захотят завербовать тебя — умрёт их новейший член…</value>
     <value>Вычисли и расправься с сектой и её членами! Выбирай каждую ночь игрока, и, если он завербован, он умрёт. А если они захотят завербовать тебя — умрёт их новейший член…</value>
   </string>
@@ -925,7 +925,7 @@
   <string key="RoleInfoLycan">
     <value>Ты Ликан! Ты волк, но провидец видит тебя как обычного жителя. :)</value>
   </string>
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>Ты пацифист. Один раз за игру вы можете пристыдить всех жителей, и они не будут голосовать этим днём. В остальном вы обычный селянин.</value>
   </string>
   <string key="RoleInfoWiseElder">
@@ -1144,7 +1144,7 @@
   <string key="AskTroublemaker">
     <value>Паниковать?</value>
   </string>
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Начать пропаганду мира во всём мире и укоризненно смотреть на селян?</value>
   </string>
   <string key="Peace">
@@ -1212,7 +1212,7 @@
     <value>Поутру селяне почуяли ужасный запах… Он привёл их к разорванному телу {0}! Ужас, где же его голова?\n{1}.</value>
     <value>НомномНОМномНОМНОМном… {0} съели заживо!\n{1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Заметное зловоние исходит из дома {0}. Жители вошли в дом и обнаружили там лежащее у алтаря тело.</value>
     <value>-1 для сектантов! Охотник на сектантов сделал чёткий выстрел в {0}!</value>
   </string>
@@ -1289,13 +1289,13 @@
   <string key="RemainingPlayersEnd">
     <value>Оставшиеся игроки, их роли и команды:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>{0} проголосовал(а), чтобы завербовать {1}.</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} был отправлен делать твою грязную работёнку и вербовать {1}… Но это был Охотник на Сектантов! {0} мёртв!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} пришёл ночью в твой дом, готовый тебя завербовать… Но ты всадил меч ему в шею! {0} мёртв… Осталось {1}!</value>
   </string>
   <string key="CultConvertYou">
@@ -1314,7 +1314,7 @@
   <string key="HunterVisitDead">
     <value>Ты отправился охотиться на {0}, но он оказался мёртвым!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Ты отправился в дом {0} и нашёл его молящимся у алтаря какому-то неизвестному богу… Ты быстро всадил свой меч в сектанта и убил его!</value>
   </string>
   <string key="HunterFailedToFind">
@@ -1555,7 +1555,7 @@
   <string key="BlacksmithKilled">
     <value>Похоже, что {0}, местный кузнец, был большим неудачником. 5 недавно выкованных ножей были воткнуты в его руки, ноги и голову, пригвоздив кузнеца к вывеске.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} был забит до смерти подсвечником с алтаря. Любой может стать жертвой маньяка. {0} был сектантом.</value>
   </string>
   <string key="CupidKilled">
@@ -1593,13 +1593,13 @@
     <value>Тело {0}, охотника на секту, было найдено в центре села разрезанным на мелкие кусочки. Не стоило проверять, является ли сектантом серийный убийца.</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>На этот раз волки решили поступить верно и наказали {0}. Культист был съеден волками.</value>
     <value>Отправляясь вербовать селян, {0} столкнулся нос к носу с волком!</value>
     <value>Отправляясь вербовать селян, {0} столкнулся нос к носу с волком! Волки не любят секты, зато любят сектантов. Особенно упитанных.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>Радуясь вербовке очередного сектанта, секта совершила ошибку: {0}, сектант, был распотрошён и выставлен на главной площади! Священное писание секты было найдено рядом с торчащим ножом.</value>
     <value>Ночью сектанты пытались завербовать психа большего, чем они сами, и серийный убийца нарисовал на площади картину кровью и органами сектанта. {0} мёртв.</value>
   </string>
@@ -1619,8 +1619,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Зная, что остался только {0}, {1} выбрал время, когда {0} будет наиболее уязвим. Всё, что осталось, — изуродованное тело ковбоя с глубокими ранами.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>При свете дня встретились {1} и {0}. Увидев странно мерцающий крест, висящий на шее {0}, {1} достал меч и оборвал деятельность секты, паразитировавшей на селянах.</value>
   </string>
   <string key="WolvesEatDrunkBlockSecondKill">
@@ -1664,10 +1664,10 @@
   <string key="SandmanNight">
     <value>Когда все разошлись по домам, они едва добрались до своих постелей. Все уснули так крепко, что даже не помнят, как уснули…</value>
   </string>
-  <string key="PacifistNoLynch">
+  <string key="ImamNoLynch">
     <value>Горячая речь про мир во всём мире и укоризненный взгляд {0} стыдят всех селян. Сегодня голосования не будет.</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>Голосование отменяется, все разошлись по домам.</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1709,8 +1709,8 @@
     <value>Твоя команда (если существует): {0}.</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>Странно, {0} больше не сектант, а {1} пришел на собрание секты.</value>
   </string>
   <string key="ThiefToWolf">
@@ -1741,7 +1741,7 @@
     <!-- 1 - Player got lynched -->
     <value>{0} голос(ов) против {1}.</value>
   </string>
-  <string key="CultistBitten">
+  <string key="ZombieBitten">
     <value>Странно, но {0} не пришел на собрание секты!</value>
   </string>
   <string key="LynchPeaceTimeout">
@@ -1811,7 +1811,7 @@
   <string key="ChemistTargetEmpty">
     <value>Странно, {0} нет дома! Придётся возвращаться. Надеюсь, компот не прокиснет.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value>Сектанты: {0}.</value>
   </string>
   <string key="WolfPackList">
@@ -1832,7 +1832,7 @@
   <string key="ChemistFrozen">
     <value>Так холодно, что компот замёрз! Придётся сидеть дома.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Как же холодно! Боги не желают, чтоб сегодня кого-то вербовали.</value>
   </string>
   <string key="CHFrozen">
@@ -1917,11 +1917,11 @@
     <value>После очередной трудовой ночи в свежей могиле оказался {0}. Ну и болван этот охотник на секту.</value>
   </string>
   <string key="CultFell">
-    <!--{0}: cultist-->
+    <!--{0}: Zombie-->
     <value>Не успела закончится ночь, как опять кто-то истошно вопил на кладбище. Это сектант {0} зачем-то неудачно спрыгнул в могилу.</value>
   </string>
   <string key="CultConvertGraveDigger">
-    <!--{0}: cultist who fell, {1}: grave digger-->
+    <!--{0}: Zombie who fell, {1}: grave digger-->
     <value>Вы решили завербовать {1}, но {0} решил зачем-то покопаться в песочнице. На пути туда {0} поскользнулся и упал в какую-то яму, сломав себе шею.</value>
   </string>
   <string key="ChemistFell">
@@ -1976,8 +1976,8 @@
     <!--{0}: harlot-->
     <value>И чего это шалуна {0} потянуло на кладбище?</value>
   </string>
-  <string key="CultistFellPublic">
-    <!--{0}: cultist who died-->
+  <string key="ZombieFellPublic">
+    <!--{0}: Zombie who died-->
     <value>Никто не спорит, что сектанты странные, — вот и {0} решил остаться на кладбище.</value>
   </string>
   <string key="ThiefFellPublic">

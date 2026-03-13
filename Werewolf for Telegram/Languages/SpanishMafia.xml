@@ -206,11 +206,11 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Eres el Sádico (Aprendiz de vidente) 🙇. Nunca "extraes información" por ti mismo, pero si el experto no aparece por ningún lado, ¡te contratarán a ti para hacer su trabajo!</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >¡Bienvenido a la Iglesia de la Contentología (Cultista) 👤! Sólo deseas que todo el mundo, mafiosos o no, se calmen y adoren a tu deidad. ¡Ahora ve a convertir a esa pobre y triste gente!</value>
+  <string key="RoleInfoZombie" >
+    <value >¡Bienvenido a la Iglesia de la Contentología (Zombiea) 👤! Sólo deseas que todo el mundo, mafiosos o no, se calmen y adoren a tu deidad. ¡Ahora ve a convertir a esa pobre y triste gente!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value >Eres un Inspector de Hacienda (Cazador de Cultistas) 💂. Te han informado de que la Iglesia de la Contentología está evadiendo impuestos. ¡Ve a arrestar a esos siniestros miembros religiosos!</value>
+  <string key="RoleInfoZombieHunter" >
+    <value >Eres un Inspector de Hacienda (Cazador de Zombieas) 💂. Te han informado de que la Iglesia de la Contentología está evadiendo impuestos. ¡Ve a arrestar a esos siniestros miembros religiosos!</value>
   </string>
   <string key="LynchTime" >
 	<!-- 0 - number of seconds -->
@@ -269,7 +269,7 @@
     <value>¡Extra, extra! La policía ha hecho una redada en casa de {0}, ¡el dueño ha sido arrestado! {1}</value>
   </string>
    <!-- 0 - victim name -->
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>¡Extra, extra! Un miembro de la Iglesia de la Contentología 👤, {0}, ha sido arrestado por los federales. Podría estar implicado en un asunto de evasión de impuestos.</value>
   </string>
   <string key="NoAttack" >
@@ -374,34 +374,34 @@
   <string key="RemainingPlayersEnd">
     <value >Jugadores restantes, roles, y equipos:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} ha votado convertir a {1} a la Iglesia de la Contentología.</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} ha sido enviado a casa de {1} para convertirlo ofreciéndole un plan de "evasión de impuestos". Pero, ¡resulta que era el inspector de hacienda! {0} ha sido arrestado por fraude.</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} ha sido arrestado por ofrecerte un plan de "evasión de impuestos". Tu soplón te informa de que quedan {1} miembros. </value>
   </string>
   <string key="CultConvertYou">
     <value>¡Te damos la bienvenida a la Iglesia de la Contentología! Olvídate de mafias, esta iglesia te ayudará. Cada noche, tendrás la oportunidad de ofrecer membresía a otros jugadores.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Compañeros de la Iglesia: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>¡Das la bienvenida a {0} a la Iglesia!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} fue a casa de {1}, ¡pero no había nadie!</value>
   </string>
@@ -412,7 +412,7 @@
     <!-- 0 - target name -->
     <value>Intentas arrestar a {0}, ¡pero ya ha sido encarcelado!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Vas a casa de {0} en medio de la noche, y te encuentras con su carnet de miembro de la Iglesia de la Contentología. Lo arrestas de inmediato. </value>
   </string>
@@ -429,7 +429,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} ha desaparecido. Dispuesto a vengarse, convences al jefe de policía para que te contrate. Tus nuevos compañeros son: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>un/a Mafioso/a 👱</value>
   </string>
@@ -475,10 +475,10 @@
   <string key="ApprenticeSeer">
     <value>el/la Sádico/a 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>un/a Miembro de la Contentología 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>el/la Inspector/a de hacienda 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -510,7 +510,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>{0} quiere convertir a un nuevo miembro, pero se encuentra con una redada de policía en su casa... </value>
   </string>
   <string key="GuardBlockedWolf">
@@ -695,12 +695,12 @@
     <value>Trataste de añadir a {0} a tu colección, pero por el camino ves al Gorila y su arsenal móvil. Apresuradamente te retiras por hoy.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>¡La Iglesia de la Contentología envió a {0} a casa de {1}! Desafortunadamente, cuando sonó el timbre, ¡una trampa se tragó a {0}! {0} ha desaparecido...</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>¡La Iglesia de la Contentología envió a {0} a la casa de {1}! {1} parecía buena gente ¡hasta que empujó a {0} a la cámara frigorífica! {0} ha desaparecido...</value>
   </string>
@@ -724,7 +724,7 @@
     <value>¡{0} no se encuentra en la ciudad! Comienzas a falsificar el DNI para que te reconozcan como Capo. Tus amigos Capos (si los hay) son: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>¡El Impostor se presenta en una reunión con la Iglesia de la Contentología! ¡{0} es un miembro de la Iglesia!</value>
   </string>
   <string key="DGTransformToCult">
@@ -874,10 +874,10 @@
     <value>¡Cotilla! Crees que eres una fuente invaluable de información, y vas por la ciudad cotilleando sobre todos. Sin embargo, tus fuentes no son de confianza ¡y acusas a cualquiera aleatoriamente!</value>
   </string>
   <string key="AboutCult">
-    <value>¡Bienvenido a la Iglesia de la Contentología (Cultista) 👤! Sólo deseas que todo el mundo, mafiosos o no, se calmen y adoren a tu deidad. ¡Ahora ve a convertir a esa pobre y triste gente!</value>
+    <value>¡Bienvenido a la Iglesia de la Contentología (Zombiea) 👤! Sólo deseas que todo el mundo, mafiosos o no, se calmen y adoren a tu deidad. ¡Ahora ve a convertir a esa pobre y triste gente!</value>
   </string>
   <string key="AboutCH">
-    <value>Eres un Inspector de Hacienda (Cazador de Cultistas) 💂. Te han informado de que la Iglesia de la Contentología está evadiendo impuestos. ¡Ve a arrestar a esos siniestros miembros religiosos!</value>
+    <value>Eres un Inspector de Hacienda (Cazador de Zombieas) 💂. Te han informado de que la Iglesia de la Contentología está evadiendo impuestos. ¡Ve a arrestar a esos siniestros miembros religiosos!</value>
   </string>
   <string key="AboutWC">
     <value>Eres el Idealista (Niño Salvaje) 👶. Nunca pierdes la esperanza en la naturaleza humana, aunque muera tu progenitor. De hecho, si eso pasa, ¡te unirás a las fuerzas de la policía para erradicar el mal!</value>

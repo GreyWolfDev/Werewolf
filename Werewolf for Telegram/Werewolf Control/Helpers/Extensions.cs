@@ -80,9 +80,9 @@ namespace Werewolf_Control.Helpers
         //            return 2 + (allRoles.Any(x => x == IRole.Seer) ? 4 : 0); //only good if seer is present!
         //        case IRole.ApprenticeSeer:
         //            return 6;
-        //        case IRole.Cultist:
+        //        case IRole.Zombie:
         //            return 12 + allRoles.Count(x => x == IRole.Villager);
-        //        case IRole.CultistHunter:
+        //        case IRole.ZombieHunter:
         //            return 7;
         //        case IRole.Mason:
         //            return 3 + (allRoles.Count(x => x == IRole.Mason)); //strength in numbers

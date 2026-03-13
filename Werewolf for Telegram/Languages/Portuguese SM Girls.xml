@@ -151,10 +151,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>Você é Joy 🙇, e compete no time das Heteros. Você ainda não tem permissão para guiar as Heteros contra a perda da voz... Ainda. Se Luna morrer, você poderá observar alguém depois. Saiba mais: /aboutAppS</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Você é Integrante da Seita 👤. Durante a noite, você poderá escolher alguém para converter à Seita. Se todos os jogadores restantes ao final do jogo forem Integrantes, a Seita vence! Saiba mais: /aboutCult</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>A Seita está tentando converter todo mundo, e você, Agente da Inquisição 💂, deve proteger a Aldeia!  Durante a noite você poderá escolher alguém para inquirir. Se for da Seita, a pessoa morre. Caso a Seita tente te converter, o membro mais recente morre. Mas cuidado: se você tentar inquirir um Serial Killer, quem morre é você! Saiba mais: /aboutCH</value>
   </string>
   <string key="LynchTime">
@@ -201,7 +201,7 @@
   <string key="DefaultEaten">
     <value>MUAHMUAHMUAH, Os Rookies encontram o dormitório de {0} totalmente vazio. Tudo indica que ela foi sabotada. {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Um aldeão olha para a casa de {0} e vê fumaça saindo pela janela. Chamando o resto da aldeia para prevenir um incêndio, entram e encontram o corpo de {0}, com marcas de tortura, rodeado por velas acesas caídas no chão. Um Integrante da Seita morreu!</value>
   </string>
   <string key="NoAttack">
@@ -282,13 +282,13 @@
   <string key="RemainingPlayersEnd">
     <value>Rookies restantes, papéis e lado:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>{0} votou para converter {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>A Seita enviou {0} para fazer o trabalho sujo e converter {1}... Mas seu integrante nunca voltou, porque {1} era Agente da Inquisição, e tinha uma câmara de tortura especial pra Seita!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} foi à sua casa para te converter... Mas você tinha uma câmara de tortura só pra esse tipo de gente. Um Integrante da Seita morreu! Ainda falta {1}.</value>
   </string>
   <string key="CultConvertYou">
@@ -306,7 +306,7 @@
   <string key="HunterVisitDead">
     <value>Quando você chegou na casa de {0}, notou que seu corpo já estava sem vida. Você chegou tarde.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Quando você chega na casa de {0}, ouve alguém rezando em uma outra língua. Entendendo que {0} faz parte da Seita, você acaba com sua vida!</value>
   </string>
   <string key="HunterFailedToFind">
@@ -363,10 +363,10 @@
   <string key="ApprenticeSeer">
     <value>Joy 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Integrante da Seita 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Agente da Inquisição 💂</value>
   </string>
   <string key="RanAway">
@@ -694,7 +694,7 @@ Atacar um Maçom significa se livrar de quem está gerenciando a Aldeia. Por um 
 Um Casal ❤️ continua com seus papéis originais, mas o amor muda tudo. Se um dos dois morrer, o outro não aguenta a dor de perder sua alma gêmea e morre junto. O lado bom é que se, no final do jogo, uma pessoa do Casal estiver no time vitorioso, a outra também ganha junto, independente do seu time. O Casal pode escolher pra que time vai jogar: o time de uma das pessoas, o time da outra, ou o próprio Casal (alguns grupos não autorizam jogar pelo Casal). Jogando pelo Casal, o objetivo final é serem os únicos sobreviventes da Aldeia. Quando isso acontece, o Casal ganha, todos os outros perdem, e o jogo acaba com um final especial!</value>
   </string>
   <string key="AboutHunter">
-    <value>Uma Sentinela passa a noite de vigília, e não vai ser pega desprevenida por qualquer um. Além de poder se defender de Lobisomens e Cultistas, uma Sentinela pode vingar a própria morte atirando em alguém. Quando morrer por qualquer motivo que não seja o ataque de um Lobisomem, uma Sentinela tem a opção de escolher uma pessoa dentre todos os jogadores vivos para matar, e assim levar junto consigo.\n\nQuando uma Sentinela for atacada por um único Lobisomem, tem 30% de chance de matar o Lobisomem e, assim, sobreviver. Já quando for atacada por mais de um Lobisomem, a Sentinela com certeza morrerá, mas terá a chance de levar um dos Lobisomens consigo. Se forem dois Lobisomens, a chance é de 50%; se forem três, 70%; se forem 4, 90%; e, se forem mais do que quatro, um dos Lobisomens com certeza morrerá. Se a Sentinela morrer por causa do ataque de um Lobisomem, ela não poderá escolher uma pessoa para matar. Ao invés disso, o bot escolhe um dos Lobisomens para morrer.\n\nSe um Integrante da Seita tentar converter uma Sentinela, tem uma chance de 25% dela estar de mau humor e matar o Integrante da Seita.\n\nChances de conversão para a Seita 👥: 50%\n\nTime: Aldeia</value>
+    <value>Uma Sentinela passa a noite de vigília, e não vai ser pega desprevenida por qualquer um. Além de poder se defender de Lobisomens e Zombieas, uma Sentinela pode vingar a própria morte atirando em alguém. Quando morrer por qualquer motivo que não seja o ataque de um Lobisomem, uma Sentinela tem a opção de escolher uma pessoa dentre todos os jogadores vivos para matar, e assim levar junto consigo.\n\nQuando uma Sentinela for atacada por um único Lobisomem, tem 30% de chance de matar o Lobisomem e, assim, sobreviver. Já quando for atacada por mais de um Lobisomem, a Sentinela com certeza morrerá, mas terá a chance de levar um dos Lobisomens consigo. Se forem dois Lobisomens, a chance é de 50%; se forem três, 70%; se forem 4, 90%; e, se forem mais do que quatro, um dos Lobisomens com certeza morrerá. Se a Sentinela morrer por causa do ataque de um Lobisomem, ela não poderá escolher uma pessoa para matar. Ao invés disso, o bot escolhe um dos Lobisomens para morrer.\n\nSe um Integrante da Seita tentar converter uma Sentinela, tem uma chance de 25% dela estar de mau humor e matar o Integrante da Seita.\n\nChances de conversão para a Seita 👥: 50%\n\nTime: Aldeia</value>
   </string>
   <string key="AboutSK">
     <value>Um Serial Killer é a pessoa mais perigosa da Aldeia. Seu único objetivo é matar todos da Aldeia, e, depois de escolher uma vítima, o único jeito dela sobreviver é sendo protegida por um Anjo da Guarda. Não tem ninguém que um Serial Killer não consiga pegar de surpresa, e ninguém que consiga se esconder pra se salvar. Além disso, se alguém fizer a tolice de visitar a casa de um Serial Killer, a pessoa morrerá. A única exceção é quando uma alcateia ataca um Serial Killer. Nesse caso, os Lobisomens tem 20% de chance de pegar o Serial Killer desprevenido e vencer a luta. Perigoso como um Serial Killer é, ao menos ele não tem aliados, e, como todo mundo, pode ser morto durante o dia.\n\nChances de conversão para a Seita 👥: 0% e mata o Integrante mais novo.\n\nTime: Serial Killer</value>
@@ -1027,7 +1027,7 @@ Atual: {0}</value>
   <string key="BlacksmithKilled">
     <value>{0} e BoA descobriram que o pó anti-sapatão não repele todas as sabotadoras. {0} é encontrada desolada por ter perdido sua voz depois de ter sido infectada por BoA.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Parece que Serial Killers não gostam de religião, visto que {0} está com uma vela no lugar de sua orelha direta e em cima de um candelabro, sangrando... A Seita perdeu um membro.</value>
   </string>
   <string key="CupidKilled">
@@ -1078,7 +1078,7 @@ Atual: {0}</value>
   <string key="WolfKillsHunterEnd">
     <value>Apenas {0} e {1} não desafinaram, e {0}, sabendo que sua voz corria perigo, tentou dormir por algumas horas antes da vigília noturna... Mas {1} não tinha mais motivos para se esconder, e atacou {0} antes mesmo do sol se pôr. A única coisa que sobrou de {0} foram choros e uma garganta inflamada...</value>
   </string>
-  <string key="CHKillsCultistEnd">
+  <string key="CHKillsZombieEnd">
     <value>Vendo um símbolo estranho rodeando o pescoço de {0}, {1} já se dá conta que {0} faz parte da Seita. Então, {1} tira sua espada pela última vez e a crava no peito de {0}. Agora a aldeia está salva da contaminação da Seita.</value>
   </string>
   <string key="SecondsAdded">

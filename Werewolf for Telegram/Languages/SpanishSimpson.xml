@@ -206,10 +206,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Eres Martin Prince 🙇‍♂️. Si Lisa Simpson es expulsada de la ciudad, ocuparás su puesto como genio del colegio.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Eres un miembro de la secta del lider 👤. Cada noche puedes elegir a otro jugador para convertirlo en un sectario. Si al final de la partida todos los jugadores vivos sois sectarios tomareis Springfield.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Eres Clancy Wiggum 💂‍♂️, ¡Hay un sectario en el pueblo que está tratando de convertir a todos a su secta! Cada noche, elige un jugador; si es un sectario, ese jugador muere. Si un sectario trata de convertirte, el último miembro que se unió a la secta es expulsado de la ciudad.</value>
   </string>
   <string key="LynchTime" >
@@ -266,7 +266,7 @@
     <!-- 1 - victim role -->
     <value>Al levantarse todo el mundo, un silencio terrible inunda Sprinfield. Los ciudadanos exploran las casas hasta encontrar la de {0} vacia. ¡Un Springfieldiano ha sido expulsado! {1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Un gran silencio viene de la casa de {0}. Los ciudadanos la inspeccionan hasta encontrar una foto del lider frente a un altar oscuro. ¡Un sectario ha sido expulsado por Clancy Wiggums.</value>
   </string>
@@ -372,34 +372,34 @@
   <string key="RemainingPlayersEnd">
     <value>Ciudadanos restantes, roles y equipos:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} ha votado convertir a {1}.</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} fue enviado para hacer tu trabajo sucio y convertir a {1}...; sin embargo, ¡era Clancy Wiggums ¡{0} ha sido expulsado de la ciudad!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} vino a tu casa esta noche para que te unieras a su causa…, pero enterraste tu cuchillo en su pecho. Un sectario ha muerto… ¡Queda(n) {1}!</value>
   </string>
   <string key="CultConvertYou">
     <value>¡Los sectarios te han convertido a la secta del lider! Ahora eres un sectario 👤. Cada noche tendrás ocasión de convertir a otro ciudadano.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Sectarios: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>¡{0} se ha unido a la Secta!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} fue enviado a hacer tu trabajo sucio y convertir a {1}..., ¡pero no había nadie en casa!</value>
   </string>
@@ -410,7 +410,7 @@
     <!-- 0 - target name -->
     <value>¡Fuiste a mirar en la casa de {0}, pero ya ha sido expulsado de la ciudad.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Vas a la casa de {0} y te lo encuentras orando frente al altar del lider… Rápidamente, lo llevas a fuera de casa para expulsarlo de la ciudad. [{0} era un sectario].</value>
   </string>
@@ -427,7 +427,7 @@
     <!-- 0 - teamate's names -->
     <value>¡{0} ha sido expulsado! En un ataque de rabia, ¡han decidido unirte al Sr. Burns! Tus nuevos aliados son: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>un Springfieldiano 👱‍♂️</value>
   </string>
@@ -473,10 +473,10 @@
   <string key="ApprenticeSeer">
     <value>Martin Prince 🙇‍♂️</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Un sectario 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Clancy Wiggum 💂‍♂️</value>
   </string>
 <!-- These are for the player list -->
@@ -508,7 +508,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>El miembro más reciente de la secta fue a convertir a {0} a su casa, pero parece ser que alguien llego antes que el.</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -690,12 +690,12 @@
     <value>Quisiste incorporar el cuerpo de {0} para tu colección, ¡pero el Maude Flanders lo protegió! No ha habido muertes esta noche.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Los Sectarios envían a {0} para intentar convertir a {1}, pero en vez de eso, suena un grito y ¡{0} sale saltando por la ventana! {0} ha huido corriendo de la ciudad.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Los Sectarios envían a {0} para intentar convertir a {1}, pero en vez de eso, el cuerpo de {0} sale volando por la ventana, ¡con cuchillos clavados por todo el cuerpo! ¡QUÉ PSICÓPATA! {0} ha muerto.</value>
 	<value>{0} se cuela en casa de {1}, abre la puerta, ¡¡y es recibido por un loco con un cuchillo!! {1} hunde el cuchillo en cada uno de los órganos internos de {0} por orden alfabético, ¡carcajeando todo el tiempo! {0} ha muerto.</value>
@@ -720,7 +720,7 @@
     <value>{0} ha sido expulsado y tú te conviertes en un Magio. Tus compañeros de equipo (si los hay) son: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Hugo Simpson (doble) {0} se ha convertido en sectario, ¡igual que tú!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1273,7 +1273,7 @@
   <string key="BlacksmithKilled">
     <value>Parece que {0}, Ned Flanders, ha tenido muy mala suerte durante la noche, ya que se lo ha encontrado en su mesa de herrería junto con 5 cuchillos, sacados de su armería clavados en manos, pies y cabeza. Tal vez Bob Patiño tenía la esperanza de ampliar su colección de armas y órganos con el corazón, hígado y estómago de {0}.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} fue apuñalado hasta la muerte con un candelabro al lado de su altar. ¡Bob Patiño ha atacado de nuevo, sin importar la raza, el idioma o la religión! {0} era un sectario.</value>
   </string>
   <string key="CupidKilled">
@@ -1309,11 +1309,11 @@
     <value>Los ciudadanos se despertaron por la mañana y se encontraron los restos del cuerpo de {0}, Clancy Wiggum, cortados en pedazos en un carro al lado del ayuntamiento. Lección aprendida: ¡no hay que visitar a Bob Patiño.</value>
     <value>El cuerpo de {0}, Clancy Wiggum, fue encontrado en el centro de la ciudad cortado en un centenar de piezas. Comprobar si Bob Patiño era un sectario no parece ser una buena idea.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Aunque parecía que los aliados del Sr.Burns habían decidido quedarse en casa, un sectario decidió visitarlos, siendo demasiado difícil de resistir para ellos.¡{0} Ha sido expulsado de la ciudad!</value>
     <value>Los Sectarios se encontraron con problemas inesperados anoche. Su miembro más reciente, {0}, tuvo la desgracia de visitar a un aliado del Sr.Burns, justo la noche que habían decidido quedarse en casa. Desafortunadamente para la secta, los aliados de Burns no tienen ningún interés en unirse al nuevo movimiento religioso y era una oportunidad que no podían dejar pasar. {0} ha sido expulsado de la ciudad.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Los Sectarios pensaban que tendrían un nuevo miembro en sus filas, pero, ¡estaban equivocados! {0}, un sectario, fue descuartizado y sus restos fueron esparcidos por todo el pueblo! Extrañamente, el libro «santo» estaba junto a un cuchillo, como muestra clara de qué religión es la que manda.</value>
     <value>Anoche, la secta trató de convertir al ciudadano más loco del pueblo. Su miembro más reciente, {0}, trató de convertir a Bob Patiño, y este hizo una nueva obra de arte en la plaza de Jeremias Springfield, exhibiendo todos los órganos internos al los ciudadanos</value>
   </string>
@@ -1334,8 +1334,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{1} sabe que en Springfield solo queda {0}, así que aprovecha mientras {0} está enfrascado trabajando en arreglar su rostro y se mete en en su casa para expulsarle de la ciudad a {0}.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} y {0} se encuentran en la plaza de Jeremias Springfield. Sin embargo, {1} hoy no tiene ganas de sermones y antes de que {0} saque su libro del lider, se abalanza sobre él, lo incapacita y lo expulsa de la ciudad {0} era el último sectario en pie.</value>
   </string>
   
@@ -1440,7 +1440,7 @@
     <value>Todas</value>
   </string>
     <string key="RandomModeQ">
-    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan cultistas, necio o veterano.\nActualmente:{0}</value>
+    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan Zombieas, necio o veterano.\nActualmente:{0}</value>
   </string>
   <string key="RandomModeA">
     <value>Modo aleatorio: {0}</value>
@@ -1550,13 +1550,13 @@
   </string>
 
 <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>Eres Maggie Simpson ☮. Tienes el poder de ser adorable y hacer que todos se olviden de echar a un ciudadano. Pero solo podrás hacerlo una vez.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>Maggie Simpson ☮</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>Maggie Simpson ☮ puede persuadir a sus vecinos para que nadie sea expulsado de Springfield. Pero solo podrá hacerlo una vez.</value>
   </string>
 
@@ -1583,14 +1583,14 @@
     <value>Por defecto, el Gato 😈 puede robar el rol del jugador que elija durante la primera noche y convertirlo en un Springfieldeano.\nSi el modo «Ladrón completo» está activado, cada noche tendrá un 50% de posibilidades de robar roles. Si lo consigue, el jugador afectado, se convertirá en el nuevo Gato y continuará confundiendo a la aldea.</value>
   </string>
     
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>¿Quieres evitar que se eche a alguien de Springfield?</value>
   </string>
-  <string key="PacifistNoLynch">
-  <!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
     <value>Maggie Simpson ☮, {0}, se ha puesto el traje princesa y esta siendo la sensacion entre los vecinos, Springfield olvida votar y no se echa a nadie este dia.</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>A causa del enternecedor espectaculo de Maggie Simpson ☮, nadie sera expulsado por hoy.</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1637,8 +1637,8 @@
     <value>Tus compañeros (si los hay) son: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} ya no forma parte de tu equipo, y {1} se ha convertido en Sectario, ¡como tú!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1695,17 +1695,17 @@
   <string key="SecretLynchShowVotersA">
     <value>Cuando las votaciones secretas estén activadas y se muestre el recuento de votos, el nombre del votante por cada jugador votado será del siguiente modo: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>¡Qué extraño! Mientras discutís a quién convertir esta noche, os dais cuenta de que… ¡{0} no está por aquí! 🤔 ¿Qué le habrá pasado?</value>
   </string>
   
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
 	<value>¡Ser Adorable!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
 	<value>Hoy no habrá votaciones gracias al tierno espectaculo de Maggie Simpson!</value>
   </string>
   

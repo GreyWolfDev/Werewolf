@@ -300,11 +300,11 @@
     <value>Du bisch dr Seher-Lehrling. 🙇
 	Du wolldesch scho emmer Seher werda, aber daene Schulnota warad oefach zu schlechd dazu... Drom bisch als Kompromiss am Seher saen Lehrling gworda, des hoeßd, wenn er schdirbt, wirsch du dr neie Seher.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Du bisch an Kultist. 👤
 	Äll Nacht kosch du oen Schbialer zo daem Kult bekehra. Wenn bloß no Kultisten lebad, no hend ihr gwonna!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Du bisch dr Kultistenjäger. 💂
 	Do geits so a Gruppe, die sich dr Kult nennt, die mo di granadamäßig nerva duad. Äll Nacht kosch du oen Schbialer auswähla. Wenn der an Kultist isch, no isch er danoch dod. Wenn se di bekehra wellad, no ischs neieschde Mitglied vom Kult dod.</value>
   </string>
@@ -399,7 +399,7 @@
     <value>Mo jeder aufwacht, bemerkad die Dorfbewohner an schrecklicha Gschdank. Ma folgt dem Geruch ond fendet {0}, ausnandergrissa ond ohne Kopf em Schdall 🐺. NOMNOMNOMNOM {1}</value>
     <value>S wird Morga ond älle versammlad sich. Älle? Noe! {0} fehlt, ond dahoem isch er ao ed... Man schdohd planlos rom, erst no bemerkt ma des abgetrennte Bein 🐺 em Gebüsch... {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <!-- bezieht sich auf den Kultistenjäger -->
     <value>A bmerkbora Gschdank kemmt us dem Haus vom {0}... S Dorf ondersuachts ond fendet a Leiche vor em donkle Altar liegand... A Kultist 👤, tötet vomma Jäger 💂!</value>
@@ -516,34 +516,34 @@
   <string key="RemainingPlayersEnd">
     <value>Wer no übrig isch, und wa mit denne los isch:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} will {1} bekehra.</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Youngest Cultist (killed)'s name -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Youngest Zombie (killed)'s name -->
+    <!-- 1 - ZombieHunter's name -->
     <value>Heit Nachd musst {0} a neies Mitglied zom Kult bekehra. Des Glück war wohl ed ganz auf eirer Seite, weil {1} als Kultjäger 💂 wohl so ziemlich das unglücklichste Ziel darstellte. Drom geits jetzt laedr koe neues Mitglied, sondern zom Tod von eierm neuschda Mitglied, {0}, der jetzt vom Kultjägr vrschdocha worra isch.</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} war heit Nachd bei dir ond war sich sicher, er ked di heit Nachd zom Kult bekehra. Zom Glück merksch du was der vorhot ond nemmsch sofort dae Messer ond schdichsch an ab. An Kultist 👤 isch dod... {1} lebad no!</value>
   </string>
   <string key="CultConvertYou">
     <value>Dr Besuch vomma Kultisten hot di total durchnanderbrochd; dir isch klar worra, dass bloß dr Kult a richdiga Religion isch, ond dass du ao an Kultist 👤 sae mussch. Äll Nachd derfsch du dir mit de andere Kultisten oen aus, der dann der nächschde en eierm Kult werra soll.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Kultisten: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} isch jetzt em Kult!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} isch gschickt worra zom {1} bekehra... aber koener war dahoem!</value>
   </string>
@@ -554,7 +554,7 @@
     <!-- 0 - target name -->
     <value>Du wolldesch {0} jaga, aber {0} isch scho dod!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Du gosch ens Haus von {0}, ond siehsch, wie er amma komischa Altar bedda duad... Schnell nemmsch du dae Messer ond verschdichsch den baeßa Kultisten 👤.</value>
   </string>
@@ -571,7 +571,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} isch gschdorba! Jetz bisch du so wütend, dass du an Werwolf wirsch 🐺! Daene befellde Kollegah send: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter -->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter -->
   <string key="Villager">
     <value>an Dorfbewohner 👱</value>
   </string>
@@ -617,10 +617,10 @@
   <string key="ApprenticeSeer">
     <value>dr Seher-Lehrling 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>an Kultist 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>dr Kultjäger 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -653,7 +653,7 @@
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
     <!-- Nicht implementiert? * -->
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Eier neischdes Mitglied isch zu {0} ganga, zom da Kult vergrößra, aber des Haus war dodal he, vill Bluad, ond Fäda von amma Wolfasfell 🐺 vor dr Dier...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -849,7 +849,7 @@
     <value>Du wolldesch zwar {0}'s Leber en dae Sammlung aufnemma, do war bloß laedr der Schutzengel 👼, der di abgwehrd hot! Heit Nacht hosch hald Pech ghed - 'S Leba isch koe Schlotzer :/</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Dr Kult schickd {0} zom {1} konvertiera, aber s isch es ganz so glaofa, wie ihr des denkd häddad: Ma herd an Schuss 🎯, Kurz drauf kommt dr Körpr von {0} ausam Fenschdr gfloga! {0} isch dod...</value>
   </string>
@@ -875,7 +875,7 @@
     <value>{0} isch gschdorba ond du vrwandelsch di in an Freimaurer 👷. Daene Kamrada send (wenns oene geit): {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Dr Doppelgänger 🎭 {0} isch zom Kultisten worra, grad wie du selber!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1432,7 +1432,7 @@
     <value>Friah am Morga herd ma an Schrei, der mo aus dr Werkschdad vom Schmied ⚒ komma muss. Ma guckd dapferd noch ond fendet {0}, der mit fünf von saene aegene, aus roschdfreiem Schdahl gferdigde Messer an sae Werkbank nagelt worra isch. 🔪 Des isch Qualität!\nOenaweg, dui Messer will koner meh nemma zom Rohkoschd schnibbla. Dodamit hot dr Serienmörder oen ombrocht!</value>
     <value>Sieht so aus wie wenn {0}, dr Schmied ⚒ vom Dorf, heit Nachd koe Glück ghet hätt... R hot wohl a Nachdschichd macha wella :/ Ma fendet an mit durchgschniddener Kehle 🔪 en ra Ecke, aber abgseha dodavo siehd sae Werkschdadd dodal leer aus... Siehd so aus wie wenn dr Serienmörder heit Nachd ed bloß sae Organsammlong erweiderd hätt!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Ihr fendat {0}, der mitam Kerzaleichder von saem oigena Altar 👤 erschdocha worra sae muss. Dass am Serienmörder 🔪 Herkunft, Beruf ond Religion von saene Opfer grad egal send, hen ihr zwar scho gwisst, aber worom er dui Nachd koe Messer dabeighet hot, des vrschdohd doch koener...</value>
   </string>
   <string key="CupidKilled">
@@ -1473,13 +1473,13 @@
     <value>Dr Körper von {0}, am Kultjäger 💂 isch dodal verschdümmeld aufam Altar von dr Kirch gfonda worra. Da Serienmörder 🔪 fer an Kultist zom halda war ganz klar saen letschder Fehler...</value>
   </string>
   <string key="CultConvertWolfPublic">
-	<!-- used when Cultists convert the wolves, only if wolves stayed home -->
+	<!-- used when Zombies convert the wolves, only if wolves stayed home -->
 	<!-- <value>The cult ran into unexpected trouble last night. Their newest member had the misfortune of visiting a wolf on the night the wolves decided to stay home, and the wolf found {0} quite delicious. Unfortunately for {0}, wolves have no interest in joining the new religious movement.</value> -->
     <value>Aegendlich hend d Wölfe 🐺 letzsch Nachd jo gar koen ogreifa wella - abr wer ko scho wiederschdanda, wenn d Lieferong frei Haus kommd?! Richtig: koner. Des hot {0} am oegna Leib gschbürd, ao saen Glaube hot den Kultisten 👤 ed vor de Zähne von de Wölfe bschütza kenna...</value>
   </string>
   <string key="CultConvertKillerPublic">
-	<!-- used when Cultists convert the SK -->
-    <!-- <value>The cult thought they would have a new member in their ranks, but they were wrong! {0}, a cultist, was minced to pieces and placed at the town square in the morning! Strangely their "holy" book was found stabbed with a knife, as if a statement to show whose religion was triumphant.</value> -->
+	<!-- used when Zombies convert the SK -->
+    <!-- <value>The cult thought they would have a new member in their ranks, but they were wrong! {0}, a Zombie, was minced to pieces and placed at the town square in the morning! Strangely their "holy" book was found stabbed with a knife, as if a statement to show whose religion was triumphant.</value> -->
     <value>Was ferran Fehler... Dr Kult 👤 hot letzsch Nachd d oiziga Person em ganza Dorf bsuachd, die no vrruckdr ischt, als dr Kult selber. Dodafür hend älle Bewohner heit a komischs Kunschdwerk, des aus {0}'s henige Organe beschdohd, voram Rathaus oglotza. Velleichd jetz ed dr Gschmack von jedem... aber am Serienmörder 🔪 gfällds.</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1501,8 +1501,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Em Wissa, dass bloß no {0} übrig war, suachd {1} dui Zeit aus, mo {0}'s Schutz am niedrigschda isch. Da letzschda Dorfbewohner zom töta, war no koe Ding meh fer {1} ond älles was jetzt von {0}, am Jäger, no übrig isch, isch saen Kopf, mit zwoe Beißkratzer.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} ond {0} laofad zamma aufs Zentrum vom Dorf zu. Mo {0} plötzlich ofengt, {1} von saem Kult zom vrzehla, zögert der ed lang ond schwingt sae Schwert zom letzschda Mol, so dass der falsche Kult am Dorf nie wieder schada ko.</value>
   </string>
   
@@ -1716,13 +1716,13 @@
     <value>Oemol em Schbiel ko dr Sandmann älle so tief schlofa lassa, dass neamrd saene nächtliche Tätigkeita nochganga ko.</value>
   </string>
 
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>Du bisch dr Pazifist ☮️. Du kosch dir oemol em Schbiel aussucha, älle vom Frieda zom überzeuga, so dass se koen lynchad. Lang heba duad die Überzeugung aber ed...</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>dr Pazifist ☮️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>Dr Pazifist ko oemol em Schbiel s ganze Dorf vom Frieda überzeuga so dass se neamerd lynchad. Des hebt abr bloß oen Dag.</value>
   </string>
 
@@ -1749,14 +1749,14 @@
     <value>Normalerweise ko dr Dieb en dr erschda Nacht a Rolle von ma Schbieler klaua ond den zu ma Dorfbewohner macha.\nWenn abr dr [Full Thief] Modus aegschalda isch, no ko dr Dieb äll Nachd zu 50% a Rolle klaua. Wenn's klappt, wird der Schbieler dr neue Dieb ond klaot weiter!</value>
   </string>
   
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Drugg do druff wenn du s Dorf dazu brenga willsch, neamerd zom lyncha.</value>
   </string>
-  <string key="PacifistNoLynch">
-  <!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
     <value>Dr Paifist ☮️, {0}, schdelld sich auf ond fängt irgenda Geschwafel o, von Liebe ond Freundschaft ond so Zuigs. Wirklich interessiera duads koen, abr Lyncha wellad er heid ao nemme.</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>Wäga am Pazifist ☮️ saem Gelaber wellad ihr heit gar neamerd meh lyncha ond gangad hoem.</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1799,8 +1799,8 @@
     <value>Daene Teampartner send (wenn's oene geit): {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} isch nemme em Kult, abr dodafür isch {1} jetzd an Kultist, grad so wie du!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1857,17 +1857,17 @@
   <string key="SecretLynchShowVotersA">
     <value>D genaua Ozeige wer wen gwählt hot isch fers geheime Lyncha mit aegschaldeder Schdimmalischde auf {0} gsetzt.</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>Komisch... grad wo ihr ofangad zom diskutiera, wen ihr heit konvertiera wellad, merkad ihr, dass {0} gar ed do isch! Was isch mit dem bloß bassiert?</value>
   </string>
   
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
 	<value>Peace!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
     <value>Dr Pazifist hot entschieda, dass heit doch koener glyncht werra soll!</value>
   </string>
   

@@ -174,10 +174,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>👇😀❗ 🚫️</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>👇😀❗ 🌙️</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>👇😀❗ 🌙️</value>
   </string>
   <string key="LynchTime" >
@@ -222,7 +222,7 @@
   <string key="DefaultEaten" >
     <value>🐺🍝 {0}❗️ {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>💂🗡 {0}❗️ 👤💀❗️</value>
   </string>
   <string key="NoAttack" >
@@ -306,13 +306,13 @@
   <string key="RemainingPlayersEnd">
     <value>👥</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value>{0} 🖐 {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} 👉 {1}❗️ {0} 💀❗️</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} 👉👇❗️ 🤔 {1}❗️</value>
   </string>
   <string key="CultConvertYou">
@@ -333,7 +333,7 @@
   <string key="HunterVisitDead">
     <value>👇👉 {0}❗️</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>👇👉 {0}❗️️</value>
   </string>
   <string key="HunterFailedToFind">
@@ -345,7 +345,7 @@
   <string key="WildChildTransform">
     <value>{0} 💀❗ ️👇🤔 {1}❗</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>👱</value>
   </string>
@@ -391,10 +391,10 @@
   <string key="ApprenticeSeer">
     <value>🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value> 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>💂</value>
   </string>
   <!-- These are for the player list -->
@@ -718,10 +718,10 @@
     <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+    <value>As a Zombie, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are Zombie - the cult wins</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die.</value>
   </string>
   <string key="AboutWC">
     <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
@@ -1104,7 +1104,7 @@
   <string key="BlacksmithKilled">
     <value>{0}, ⚒ ☠. 🔪🔪🔪🔪🔪➡⚒</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} 🔎☠🔪. {0} 👉👤.</value>
   </string>
   <string key="CupidKilled">
@@ -1137,10 +1137,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>👱👱👱🔎 {0}, 💂👈🔪. ⚠️, ⛔🚶👨🔪❕</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>🐺🐺🚫☠➡👨, {0}, 👈👤, 🚶➡🐺, 🐺☠👉👤. 👤💀.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>👤👤💭👈👨🔜👤, ⚠️🚫❕ {0}, 👈👤, 👈🔪. 😇📕👈🔪...</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1160,8 +1160,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>{1} 💭 {0} 🙂, {1} 🍝 {0}, {0} 🚫🎯. {1} 🏆❕</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} ➕ {0} 🚶🚶, {1} 👀 {0} ➡👤, {1} 💂☠{0}❕ {1} 🏆❕</value>
   </string>
 
@@ -1377,14 +1377,14 @@
     <value> Once per game, the sandman can make all players sleep so deeply that nobody can use their night actions</value>
   </string>
 
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>👇😀❗ ☀️️</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>☮️</value>
   </string>
-  <string key="AboutPacifist">
-    <value>The Pacifist can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
+  <string key="AboutImam">
+    <value>The Imam can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
   </string>
 
   <string key="RoleInfoWiseElder">
@@ -1410,14 +1410,14 @@
     <value>By default, the Thief 😈 can steal a player's role on the first night and turn that player into a villager.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
   </string>
 
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>👇🙋‍♂❓</value>
   </string>
-  <string key="PacifistNoLynch">
-  <!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
     <value>👱💭👱💬👱, {0} 🗣🗣🗣☮️. 👱😄👱❌🖐</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>☮️☮️☮️❗️ 👱😄👱❌🖐❗️</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1464,8 +1464,8 @@
     <value>🤔 {0}❗</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>🤔 {0}, {1}❗</value>
   </string>
   <string key="ThiefToWolf">
@@ -1522,17 +1522,17 @@
   <string key="SecretLynchShowVotersA">
     <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 	<value>🤔 {0}❗️</value>
   </string>
 
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
 	<value>🙋‍♂</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
 	<value>☮️❗️ ❌✊❗️</value>
   </string>
 
@@ -1631,7 +1631,7 @@
   <string key="ChemistTargetEmpty">
 	<value>🤔 {0}❗️</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>🤔 {0}❗️</value>
   </string>
   <string key="SnowWolf">
@@ -1682,7 +1682,7 @@
   <string key="ChemistFrozen">
     <value>❓➡👇❗️</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>❓➡👇❗️</value>
   </string>
   <string key="CHFrozen">
@@ -1823,11 +1823,11 @@
   <string key="HunterFellDigger">
 	<value>🤔 {0}❗️</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>🤔 {0}❗️</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>🤔 {1}❗️ {0} 💀❗️</value>
   </string>
@@ -1883,8 +1883,8 @@
   <string key="HarlotFellPublic">
 	<value>{0} 💋➡️☠️❗️ 💀❗️</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>{0} 👤➡️☠️❗️ 💀❗️</value>
   </string>
   <!--{0}: thief-->

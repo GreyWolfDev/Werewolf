@@ -209,10 +209,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >You are an Illusion🙇.  You are very different than other Illusions. You were decided to take Dark Seer's place if the (real) Dark Seer dies.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >You are Enigma👤.  Mother of Eidolon, every night you may choose a player to convert to be another Enigma. If all remaining living players at the end is Enigma, they win.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Bounty Hunter💂 loves to collect bounty from Enigma.  Your job is simple, get gold from all Enigma then be rich.  If the enigma tries to convert you, the newest Enigma will die.</value>
   </string>
   <string key="LynchTime" >
@@ -274,7 +274,7 @@
     <value>As everyone rises in the morning, they smell a terrible stink.  They follow the smell to find {0} shredded apart in the river, head missing.  NOMNOMNOMNOM {1}</value>
     <value>Azeroth feels more creepy than before, creep found {0}'s head in front of Roshan's place. NOMNOMNOMNOM {1} </value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Today, Bounty Hunter💂 got their salary. {0} the Eidolon has been killed by the Bounty Hunter💂!</value>
   </string>
@@ -380,34 +380,34 @@
   <string key="RemainingPlayersEnd">
     <value>Remaining living players, roles, and team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} has voted to convert {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} was sent to do your dirty work, and convert {1}... however, they were Bounty Hunter! {0} is dead!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} came to your house last night, ready to convert you....  but you shoved your blade right through him.  Enigma is dead... {1} remain!</value>
   </string>
   <string key="CultConvertYou">
     <value>The Enigma has converted you to their order!  You are now an Enigma.  Every other night, you will have a chance to convert another creep.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Enigmas: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} has joined the eidolon and became Enigma!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} was sent to do your dirty work, and convert {1}... but no one was home!</value>
   </string>
@@ -418,9 +418,9 @@
     <!-- 0 - target name -->
     <value>You went to hunt {0}, but they are already dead!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
-    <value>You go into {0}'s house, and find them praying before an altar to some unknown god...  You quickly slide your sword right through the evil cultist.</value>
+    <value>You go into {0}'s house, and find them praying before an altar to some unknown god...  You quickly slide your sword right through the evil Zombie.</value>
   </string>
   <!-- 0 - target name -->
   <string key="HunterFailedToFind">
@@ -435,7 +435,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} has died! In your rage, you have become a Lycan! Your new teammates are: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Creep 👱</value>
   </string>
@@ -481,10 +481,10 @@
   <string key="ApprenticeSeer">
     <value>Illusion 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Eidolon 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Bounty Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -516,7 +516,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Your newest Enigma heads over to {0}'s house to convert them, but instead finds the house a complete wreck, blood everywhere, and bits of Lycan fur snagged on the doorway...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -700,12 +700,12 @@
     <value>You tried to hook {0}'s body for your dinner, but you were fought off by Omniknight's Guardian Angel! No kill for you tonight....</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>The Eidolons sends {0} to try to convert {1}, boom a stormhammer and {0}'s body comes flying out of the window! {0} is dead....</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>The Eidolons sends {0} to try to convert {1}, but a hook suddenly comes to {0}'s body. They are flying out of the window, hook and blade brings their body in! WHAT A BASTARD! {0} is dead....</value>
   </string>
@@ -729,7 +729,7 @@
     <value>{0} has died, and you transform into a meepo.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Rubick {0} has now become an Enigma, just like you!</value>
   </string>
   <string key="DGTransformToCult">

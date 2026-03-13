@@ -169,10 +169,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Você é a Jean Grey, e joga com os heróis.  Caso o verdadeiro Telepata morra, você tomará sua posição de diretor do Instituto Xavier.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Você é um agente da Hydra.  Durante a noite, você poderá escolher alguém para recrutar à Hydra. Se todos os jogadores restantes ao final do jogo forem da Hydra, ela vence!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >A Hydra vaga pela cidade recrutando novos membros para sua causa maligna, e você, o Capitão América, deve proteger a cidade!  Durante a noite você poderá escolher alguém para interrogar.  Se ele(a) for da Hydra, ele(a) morre.  Caso a Hydra tente te recrutar, o membro mais recente morre.</value>
   </string>
   <string key="LynchTime" >
@@ -217,7 +217,7 @@
   <string key="DefaultEaten" >
     <value>Enquanto os heróis se preparam para a próxima batalha, recebem a triste notícia de que {0} foi uma vítima dos Cavaleiros do Apocalipse. "TUM! SOC! POW!" {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>{0} estava na base secreta da Hydra, quando de repente um objeto metálico quebra as vidraças e o gosto de sangue e vibranium sobe pela sua garganta, um membro da Hydra foi morto pelo Capitão América!</value>
   </string>
   <string key="NoAttack" >
@@ -301,13 +301,13 @@
   <string key="RemainingPlayersEnd">
     <value>Jogadores restantes, papéis e lado:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} deseja ter {1} na Hydra...</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} foi enviado(a) para fazer o trabalho sujo e recrutar {1}... Entretanto, ele era o Capitão América, rapidamente ele lança seu escudo na direção de {0}, que agora está morto(a)! "Nunca desonrarei o nome da Vespa!"</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} foi à sua casa na noite passada, preparado(a) para te recrutar... Mas você atento nota o símbolo da serpente de três cabeças e mata o membro da Hydra! {1} restante(s)!</value>
   </string>
   <string key="CultConvertYou">
@@ -328,7 +328,7 @@
   <string key="HunterVisitDead">
     <value>Você foi interrogar {0}, mas chegando lá só encontra seu corpo sem vida!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Você invade a casa de {0} e vê símbolos da Hydra em todos os lugares... Você sabe o que fazer! Sob torturas, ele se confessa, e você sabe muito bem como expurgar os pecados desse tipo: com a morte!</value>
   </string>
   <string key="HunterFailedToFind">
@@ -340,7 +340,7 @@
   <string key="WildChildTransform">
     <value>{0} foi morto(a)! Num ataque de fúria, você se torna o incrível Hulk! Porém a voz do Apocalipse ecoa em sua mente, você está sob o controle do Apocalipse agora, se tornando um de seus Cavaleiros! Seus novos companheiros são: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Héroi 👱</value>
   </string>
@@ -386,10 +386,10 @@
   <string key="ApprenticeSeer">
     <value>Jean Grey 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>um membro da Hydra 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Capitão América 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -1063,7 +1063,7 @@
   <string key="BlacksmithKilled">
     <value>Parece que {0}, o Magneto já não faz mais parte da elite dos mutantes. Balas não metálicas foram encontradas perto de seu cadáver. E diversas armas desapareceram, o Justiceiro aplicou sua punição.</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>De manhã todos encontram {0} com uma caveira desenhada com sangue na testa. O Justiceiro apoia somente a sua causa, ninguém é impune para ele! A Hydra sentirá a falta de {0}...</value>
   </string>
   <string key="CupidKilled">
@@ -1096,10 +1096,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>A Cidade acordou essa manhã só para encontrar um corpo enrolado na bandeira americana no meio da cidade. {0}, o Capitão América, visitou a pessoa errada. O Justiceiro utilizou o escudo de vibranium para multilar seu corpo, assim dando fim ao herói patriota.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Péssima escolha da Hydra ao visitar um Cavaleiro que descansava em seu lar após fazer algumas vítimas. {0} está morto, mais uma vítima dos Cavaleiros, que só se preocupam com a causa do Apocalipse.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Ontem a noite a Hydra decidiu visitar o pior idealista, o Justiceiro, cansado de ouvir as palavras de {0}, o justiceiro resolve silenciá-lo(a) de uma vez por todas.</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1117,8 +1117,8 @@
   <!--{0} = hunter's name, {1} = wolf's name-->
    <value>O Cavaleiro avista {0} em meio aos escombros da última batalha, {1} vê que {0} já não tem mais flechas, se tornando um alvo fácil. Eliminar o último herói da cidade vai ser prazeroso para {1}, tudo o que sobra são os restos do corpo mutilado de {0}, o Gavião Arqueiro, enforcado com a corda do seu próprio arco.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-  <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+  <!--{0} = last Zombie's name, {1} = CH's name -->
    <value>{1} e {0} caminham em direção ao outro. Avistando uma caveira com tentáculos no ombro de {0}, o justo {1} lança seu escudo pela última vez, colocando um fim a causa maléfica da Hydra que contaminava a cidade.</value>
   </string>
 <!-- Extend time -->

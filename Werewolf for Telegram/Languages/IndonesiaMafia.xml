@@ -184,11 +184,11 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Kamu adalah Pemilik Rumah Jagal (Apprentice Seer) 🙇. Bukan tugasmu untuk "mencari tahu", tetapi jika diperlukan, maka kamu akan menggantikan tugas sang Penyiksa!</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >Selamat datang di Persekutuan Hedon (Cultist) 👤! Kamu ingin semua orang bersenang-senang, tidak peduli mereka adalah mafia atau bukan, semua harus bersenang-senang. Pergilah dan jadikan seluruh kota tempat bermain yang asyik!</value>
+  <string key="RoleInfoZombie" >
+    <value >Selamat datang di Persekutuan Hedon (Zombie) 👤! Kamu ingin semua orang bersenang-senang, tidak peduli mereka adalah mafia atau bukan, semua harus bersenang-senang. Pergilah dan jadikan seluruh kota tempat bermain yang asyik!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value >Kamu adalah Petugas Pajak (Cultist Hunter) 💂. Kamu dapat laporan bahwa para anggota Persekutuan Hedon sering telat membayar pajak. Tangkaplah dan bawa mereka ke kantor pajak!</value>
+  <string key="RoleInfoZombieHunter" >
+    <value >Kamu adalah Petugas Pajak (Zombie Hunter) 💂. Kamu dapat laporan bahwa para anggota Persekutuan Hedon sering telat membayar pajak. Tangkaplah dan bawa mereka ke kantor pajak!</value>
   </string>
   <string key="LynchTime" >
     <value >
@@ -243,7 +243,7 @@
     <value>Liputan Fairview! Dikabarkan telah terjadi penyerbuan terhadap rumah {0}, sang pemilik rumah telah diamankan oleh kesatuan Polisi. {1}</value>
 	<value>Fairview MataAngin! Telah terjadi penangkapan semalam pada kediaman {0}. Menurut saksi mata, penangkapan tersebut didasarkan atas hilangnya ribuan fedora di Fairview! {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Warta Utama! Anggota dari Persekutuan Hedon (Cult), {0}, telah ditangkap! Berdasarkan laporan dari Petugas Pajak, anggota tersebut kedapatan terlalu banyak bersenang-senang dengan uang pajak yang belum dibayar!</value>
 	<value>Menit Fairview! {0} telah ditangkap semalam oleh Petugas Pajak! Ditemukan rambut palsu, jaket dan kacamata hitam, paspor palsu, serta tiket pertandingan Tennis di Bali. </value>
   </string>
@@ -336,13 +336,13 @@
   <string key="RemainingPlayersEnd">
     <value>Pemain yang masih hidup beserta peran dan timnya:</value>
   </string> 
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} memilih untuk mengundang {1} ke dalam Persekutuan Hedon.</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} telah pergi ke rumah {1} untuk mengajaknya hedon. Ternyata, eh ternyata dia adalah seorang Petugas Pajak. {0} diseret kekantor dirjen pajak untuk membuat NPWP.</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} diseret ke kantor pajak karena hedonisme. Menurut informasi yang kamu terima, anggota Persekutuan Hedon tersisa: {1} orang </value>
   </string>
   <string key="CultConvertYou">
@@ -363,7 +363,7 @@
   <string key="HunterVisitDead">
     <value>Kamu mencoba menyeret {0} ke dirjen pajak, tapi ternyata dia sudah ditangkap!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Kamu berkunjung ke rumah {0} di tengah malam, namun ternyata dia adalah salah satu anggota Persekutuan Hedon. Kamu segera membopong dia ke dirjen pajak. </value>
   </string>
   <string key="HunterFailedToFind">
@@ -375,7 +375,7 @@
   <string key="WildChildTransform">
     <value>{0} telah pergi. Berbekal dengan prinsip yang diberikan oleh mereka, kamu beranjak dari tempat dudukmu untuk mendaftar kepada kesatuan Polisi. Kini kolegamu adalah: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Seorang Mafia (Villager) 👱</value>
   </string>
@@ -421,11 +421,11 @@
   <string key="ApprenticeSeer">
     <value>Pemilik Rumah Jagal (Apprentice Seer) 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>Anggota Persekutuan Hedon (Cultist) 👤</value>
+  <string key="Zombie">
+    <value>Anggota Persekutuan Hedon (Zombie) 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>Tukang Pajak (Cultist Hunter) 💂</value>
+  <string key="ZombieHunter">
+    <value>Tukang Pajak (Zombie Hunter) 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -747,10 +747,10 @@
     <value>Dasar tukang gosip! Kamu kira kamu adalah fakta?! Padahal kamu hanya gosip sana gosip sini. Hanya saja, sumber info A1 milik mu tidak dapat di percaya sepenuhnya!</value>
   </string>
   <string key="AboutCult">
-    <value>Selamat datang di Persekutuan Hedon (Cultist) 👤! Kamu ingin semua orang bersenang-senang, tidak peduli mereka adalah mafia atau bukan, semua harus bersenang-senang. Pergilah dan jadikanlah semua orang senang!</value>
+    <value>Selamat datang di Persekutuan Hedon (Zombie) 👤! Kamu ingin semua orang bersenang-senang, tidak peduli mereka adalah mafia atau bukan, semua harus bersenang-senang. Pergilah dan jadikanlah semua orang senang!</value>
   </string>
   <string key="AboutCH">
-    <value>Kamu adalah Petugas Pajak (Cultist Hunter) 💂. Kamu mendapati bahwa para anggota di Persekutuan Hedon itu sering telat membayar pajak. Tangkaplah dan bawa mereka ke kantor pajak</value>
+    <value>Kamu adalah Petugas Pajak (Zombie Hunter) 💂. Kamu mendapati bahwa para anggota di Persekutuan Hedon itu sering telat membayar pajak. Tangkaplah dan bawa mereka ke kantor pajak</value>
   </string>
   <string key="AboutWC">
     <value>Kamu adalah "seorang" Idealis (Wild Child) 👶. Kamu memiliki nilai yang kamu junjung tinggi, hasil didikan oleh orang yang mengasuhmu dari kecil. Maka ketika para warga mengusir pengasuhmu, semangat keadilan bangkit dalam dirimu dan mendorong kamu untuk mengangkat senjata dan lencana untuk bergabung dengan kesatuan polisi!</value>
@@ -1127,8 +1127,8 @@
   <string key="BlacksmithKilled">
 	<value>Berita Utama! {0} sang Pengawas (Blacksmith) telah ditemukan menghilang dari kediamannya. Setelah penyidikan lebih lanjut ditemukan gayung misterius diantara perkakas bekas milik {0}. Tampaknya si Tukang Ciduk telah beraksi kembali!</value>
   </string>
-  <string key="CultistKilled">
-	<value>Apa Berita Fairview! {0}, seorang anggota Persekutuan Hedon (Cultist) telah dinyatakan hilang secara misterius. Semalam terdengar sebuah keributan dari kediaman milik {0}, dan setelah dilakukan penyelidikan, ditemukan sebuah gayung bekas serta surat hutang piutang milik {0}.</value>
+  <string key="ZombieKilled">
+	<value>Apa Berita Fairview! {0}, seorang anggota Persekutuan Hedon (Zombie) telah dinyatakan hilang secara misterius. Semalam terdengar sebuah keributan dari kediaman milik {0}, dan setelah dilakukan penyelidikan, ditemukan sebuah gayung bekas serta surat hutang piutang milik {0}.</value>
   </string>
   <string key="CupidKilled">
 	<value>Berita Utama! Sebuah gayung misterius ditemukan di rumah seorang Petugas Catatan Sipil (Cupid). Anehnya sang pemilik rumah, {0}, tidak ditemukan dimanapun.</value>
@@ -1158,13 +1158,13 @@
 	<value>Kata Fairview! Sebuah penyerbuan terjadi di kota Fairview semalam. Polisi telah menangkap {0} meskipun dia adalah seorang Idealis (Wild Child). Kesatuan Polisi menolak untuk memberikan keterangan lebih lanjut.</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
-	<value>Koran Tunai! Penyelidikan seorang Petugas Pajak (Cultist Hunter), tentang isu adanya penimbunan suplai gayung misterius, berujung naas. {0} kini tidak lagi diketahui kabarnya dan ditemukan menghilang dari Fairview.</value>
+	<value>Koran Tunai! Penyelidikan seorang Petugas Pajak (Zombie Hunter), tentang isu adanya penimbunan suplai gayung misterius, berujung naas. {0} kini tidak lagi diketahui kabarnya dan ditemukan menghilang dari Fairview.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
-	<value>Fairview Pos! Seorang anggota Persekutuan Hedon (Cultist) bernama {0} dikabarkan menghampiri seorang seorang polisi untuk diajak berfoya-foya. Namun karena {0} masih memiliki hutang, maka dia ditahan untuk pembayaran lebih lanjut.</value>
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
+	<value>Fairview Pos! Seorang anggota Persekutuan Hedon (Zombie) bernama {0} dikabarkan menghampiri seorang seorang polisi untuk diajak berfoya-foya. Namun karena {0} masih memiliki hutang, maka dia ditahan untuk pembayaran lebih lanjut.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
-	<value>Suara Faiview! Seorang anggota Persekutuan Hedon (Cultist) bernama {0} dinyatakan menghilang dari Fairview setelah menghampiri seorang kolektor gayung untuk mengajak berhura-hura.</value>
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
+	<value>Suara Faiview! Seorang anggota Persekutuan Hedon (Zombie) bernama {0} dinyatakan menghilang dari Fairview setelah menghampiri seorang kolektor gayung untuk mengajak berhura-hura.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
 	<value>Fairview Payungan! Dicari seorang Penjaga Gerbang (Guardian Angel) bernama {0}. Terkahir kali terlihat berdiri di depan gerbang terbuat dari gayung.</value>

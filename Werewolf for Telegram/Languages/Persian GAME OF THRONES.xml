@@ -220,10 +220,10 @@ THE KING IN THE NORTH</value>
   <string key="RoleInfoApprenticeSeer">
     <value>تو برن استارک (🙇) هستی و کلاغ سه چشم در حال آموزش به تو هست.اما اگر اون بمیره تو کلاغ سه چشم میشی.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>تو شاه شب وایت واکر ها(👤) ها هستی در گذشته تو قبلا کشته شدی و حالا به زندگی برگشتی که همه ی افراد رو مثل خودت وایت واکر کنی.تنها راه برد تو اینه که همه ی افراد مثل تو وایت واکر بشن!</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>تو بنجن استارک(💂)هستی از وقتی که به اونطرف دیوار رفتی کار تو پیدا کردن وایت واکر ها و کشتن اونا هست!</value>
   </string>
   <string key="LynchTime">
@@ -294,7 +294,7 @@ HOLD THE DOOR!</value>
 مردم بالای سر جنازه {0} حاضر میشن و بعد از خداحافظی با اون جنازه رو میسوزونن!{1}
 </value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 <!-- 0 - victim name -->
     <value>بنجن استارک دیشب با شمشیر والریان به خونه {0} رفت و یکی از وایت واکر ها کم شد!</value>
   </string>
@@ -417,19 +417,19 @@ FIRE AND BLOOD❗️
   <string key="RemainingPlayersEnd">
     <value>بازیکنان باقی مانده،نقش ها و تیم ها:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
 <!-- 0 - Voter's name -->
 <!-- 1 - target name -->
     <value>{0} میخواد که {1} تبدیل بشه🙋</value>
   </string>
-  <string key="CultConvertCultHunter">
-<!-- 0 - Yougest Cultist (killed)'s name' -->
-<!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+<!-- 0 - Yougest Zombie (killed)'s name' -->
+<!-- 1 - ZombieHunter's name -->
     <value>{0} خواست تا بنجن استارک💂رو تبدیل کنه اما {1} اونو سوزوند و نابود شد.</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-<!-- 0 - Youngest Cultist's name -->
-<!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - Number of Zombies left -->
     <value>دیروز میان طوفان{0}رو دیدی که میومد تا تبدیلت کنه اما تو اونو سوزوندی و اون از بین رفت🚫☠️
 {1}نفر باقی مونده</value>
   </string>
@@ -438,16 +438,16 @@ FIRE AND BLOOD❗️
 تو الان یه وایت واکر👤هستی</value>
   </string>
   <string key="CultTeam">
-<!-- 0 - Number of cultists -->
-<!-- 0 - Number of cultists -->
+<!-- 0 - Number of Zombies -->
+<!-- 0 - Number of Zombies -->
     <value>وایت وایکر های دیگه: {0} </value>
   </string>
   <string key="CultJoin">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>{0} به وایت واکر تبدیل شد❗️</value>
   </string>
   <string key="CultVisitEmpty">
-<!-- 0 - Newest cultist's name -->
+<!-- 0 - Newest Zombie's name -->
 <!-- 1 - target name -->
     <value>{0} به خونه {1} رفت که اونو تبدیل کنه اما اون خونه نبود❗️</value>
   </string>
@@ -459,7 +459,7 @@ FIRE AND BLOOD❗️
 <!-- 0 - target name -->
     <value>تو خواستی {0} رو بکشی اما اون مرده بود🚶</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
 <!-- 0 - target name -->
     <value>تو به خونه {0} رفتی و متوجه بدن سرد اون شدی و فهمیدی اون یه وایت واکر هست پس اون رو کشتی☠️🚫</value>
   </string>
@@ -474,7 +474,7 @@ FIRE AND BLOOD❗️
   <string key="WildChildTransform">
 <!-- 0 - role's name -->
 <!-- 0 - teamate's names -->
-<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
     <value>حالا که دشمنت {0} مرده تو به لنیستر ها میپیوندی.
 لنیستری ها عبارتند از: {1}</value>
@@ -524,10 +524,10 @@ FIRE AND BLOOD❗️
   <string key="ApprenticeSeer">
     <value>برن استارک🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>وایت واکر 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
 <!-- These are for the player list -->
     <value>بنجن استارک💂</value>
   </string>
@@ -560,7 +560,7 @@ HIS WATCH IS NOW END</value>
     <value>همراهانت در دیوار عبارت اند از: {0} </value>
   </string>
   <string key="CultTargetDead">
-<!-- 0 - Youngest cultists name -->
+<!-- 0 - Youngest Zombies name -->
     <value>یکی از وایت واکر ها رفت خونه {0} که اونو هم تبدیل کنه ولی خونه ای تاریک و پر از خون دید و جسد {0}سوخته شده بود پس کاری از دستش بر نمیومد!</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -744,12 +744,12 @@ HOLD THE DOOR!</value>
 HOLD THE DOOR!</value>
   </string>
   <string key="CultConvertHunter">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>وایت واکر ها میخواستن جان اسنو رو که {1} بود رو تبدیل کنن، واسه همین اونا {0} رو بیرای اینکار فرستادن اما جان اسنو شمشیرش رو که از جنس استیل والریانی بود در آوارد و {0} رو نابود کرد.</value>
   </string>
   <string key="CultConvertSerialKiller">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>یکی از وایت واکر ها که {0} بود از دیوار عبور کرد و وارد وینترفل شد تا رمزی بولتون که {1} رو تبدیل کنه اما رمزی اونجا براش یک آتیش آماده کرده بود و وایت واکر در آتیش پودر شد!</value>
     <value>یکی از وایت واکر ها که {0} بود از دیوار عبور کرد و وارد وینترفل شد تا  رمزی بولتون که {1} رو تبدیل کنه اما رمزی اونجا براش یک آتیش آماده کرده بود و وایت واکر در آتیش پودر شد!</value>
@@ -774,7 +774,7 @@ HOLD THE DOOR!</value>
     <value>{0} مرد و تو حالا چهره ی اون رو گرفتی و تبدیل به یک نایت واچ شدی!یارات عبارتند از{1}</value>
   </string>
   <string key="DGToCult">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>جاکان هگار {0} مثل تو الان یک وایت واکر هست!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1318,7 +1318,7 @@ HOLD THE DOOR!</value>
     <value>رمزی بولتون🔪 سر {0} رو از بدنش جدا کرد.
 {0} گندری (⚒)بود...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>رمزی بولتون به {0} یکی از وایت واکر(👤) ها بود حمله کرد و اون رو کشت!</value>
   </string>
   <string key="CupidKilled">
@@ -1382,8 +1382,8 @@ THE NORTH REMEMBERS!</value>
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>جان اسنو(🎯){0} و آخرین لنیستر(🐺){1}باقی موندن جان زمانی که میخواد شمیرشو در بیاره،{1} تیری رو به قلب اون میزنه و اون رو میکشه!</value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <!-- Extend time -->
     <value>بنجن استارک(💂) {1}آخرین وایت واکر(👤) {0} رو آتیش میزنه! </value>
   </string>
@@ -1596,14 +1596,14 @@ THE NORTH REMEMBERS!</value>
   </string>
 
 <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>
 تو  صلح گرا هستی☮️. تو نمیتونی رای بدی ولی در عوض میتونی با فداکاری خودت ضربه تفنگدار یا شکارچی رو مهار کنی.تو خودتو فدا میکنی تا صلح رو در روستا جاری کنی.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>صلح گرا☮️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>
 تو  صلح گرا هستی☮️. تو نمیتونی رای بدی ولی در عوض میتونی با فداکاری خودت ضربه تفنگدار یا شکارچی رو مهار کنی.تو خودتو فدا میکنی تا صلح رو در روستا جاری کنی.</value>
   </string>

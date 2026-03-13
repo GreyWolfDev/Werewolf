@@ -178,10 +178,10 @@ translate to Bahasa Melayu by Skyzkillerz-->
   <string key="RoleInfoApprenticeSeer" >
     <value >Ini pelik... kamu kelihatan tidak ingat siapa diri kamu sebenarnya!</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Ini pelik... kamu kelihatan tidak ingat siapa diri kamu sebenarnya, hanya suatu perkara kamu perlukan pada malam hari!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Ini pelik... kamu kelihatan tidak ingat siapa diri kamu sebenarnya, hanya suatu perkara kamu perlukan pada malam hari!</value>
   </string>
   <string key="LynchTime" >
@@ -226,7 +226,7 @@ translate to Bahasa Melayu by Skyzkillerz-->
   <string key="DefaultEaten" >
     <value >Apabila semua orang bangun pada waktu pagi, mereka terbau busuk yang sangat dahsyat. Mereka mengikuti bau untuk mencari {0} dicincang selain dalam kandang khinzir, kepalanya turut hilang. Selepas menyiasat rumah yang kosong untuk mengetahui sesuatu mengenai pelakunya, penduduk kampung akhirnya menyedari bahawa {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>A bau ketara datang dari {0} 's rumah ... penduduk kampung memeriksa untuk mencari badan yang terbaring di hadapan sebuah kawasan gelap ... pengamal ajaran sesat telah dibunuh oleh pemburu!</value>
   </string>
   <string key="NoAttack" >
@@ -310,13 +310,13 @@ translate to Bahasa Melayu by Skyzkillerz-->
   <string key="RemainingPlayersEnd">
     <value> Tiba-tiba, semua yang masih tinggal ingat semuanya! Nama mereka, peranan , dan pasukan mereka berada:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} telah mengundi melakukan sesuatu {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} pergi kerumah {1} telah mati!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} telah mati! Terdapat nombor dalam kepala kamu... {1}</value>
   </string>
   <string key="CultConvertYou">
@@ -337,7 +337,7 @@ translate to Bahasa Melayu by Skyzkillerz-->
   <string key="HunterVisitDead">
     <value>{0} telah mati!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Sesuatu berlaku dirumah {0} semalam? Kamu tidak ingat...</value>
   </string>
   <string key="HunterFailedToFind">
@@ -349,7 +349,7 @@ translate to Bahasa Melayu by Skyzkillerz-->
   <string key="WildChildTransform">
     <value>{0} telah mati! Peranan anda telah berubah, dari apa kepa apda? Kamu mungkin tak ingat sesiapa dirimu tetapi kamu ingat seorang yang penting: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Penduduk Kampung 👱</value>
   </string>
@@ -395,10 +395,10 @@ translate to Bahasa Melayu by Skyzkillerz-->
   <string key="ApprenticeSeer">
     <value>Anak murid Peramal 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Pengikut Ajaran Sesat 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Pemburu Pengikut Ajaran sesat 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -1198,7 +1198,7 @@ translate to Bahasa Melayu by Skyzkillerz-->
   <string key="BlacksmithKilled">
     <value>Nampak seperti {0}, penduduk tukang besi,mempunyai nasib malang. Lima pisau, masih segar dari {0}'s peralatan, dijumpai dekat tangan,kaki, kepala dan, di pinkan dekat meja pembuat barangan kraf. Mungkin pembunuh bersiri berharap dapat kembang koleksi senjati selain daripada koleksi organ…</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} di jumpai ditikam sampai mati dengan batang lilin dekat altar. Pembunuh bersiri melalkukan lagi, tanpa mengira agama, bahasa atau bangsa! {0} adalah pengamal Ajaran Sesat</value>
   </string>
   <string key="CupidKilled">
@@ -1231,15 +1231,15 @@ translate to Bahasa Melayu by Skyzkillerz-->
     <value>NOMNOMNOMNOM! Serigala kedengaran malam tadi, makan seorang anak, {0}, hanya meninggalkan rangka dikurangkan saiz! Kampung ini tertanya-tanya jika serigala tidak mempunyai perasan selain kanak-kanak itu tidak bersenjata.</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
-    <value>Penduduk kampung bangun pagi ini, menjumpai sebagai tubuh {0}, Cultist Hunter diletakkan di luar Town Hall. Pengajaran: Jangan melawat pembunuh upahan!</value>
-    <value>Jasad {0}, Cultist Hunter, ditemui ditengah bandar, was found in the middle of town, walaupun di potong dengan tepat dalam 100 bahagian. Menyemak Pembunuh Bersiri nampaknya bukan idea yang bijak… </value>
+    <value>Penduduk kampung bangun pagi ini, menjumpai sebagai tubuh {0}, Zombie Hunter diletakkan di luar Town Hall. Pengajaran: Jangan melawat pembunuh upahan!</value>
+    <value>Jasad {0}, Zombie Hunter, ditemui ditengah bandar, was found in the middle of town, walaupun di potong dengan tepat dalam 100 bahagian. Menyemak Pembunuh Bersiri nampaknya bukan idea yang bijak… </value>
   </string>
- <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
-    <value>Walaupun nampak macam serigala mahu menjadi baik, menghukum {0}, seorang cultist yang cuba mencari masalah dengan serigala, membuktikan sukar untuk dihalang. Kepala {0} di jadikan makan malam dan dihantar ke rumah serigala.</value>
+ <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>Walaupun nampak macam serigala mahu menjadi baik, menghukum {0}, seorang Zombie yang cuba mencari masalah dengan serigala, membuktikan sukar untuk dihalang. Kepala {0} di jadikan makan malam dan dihantar ke rumah serigala.</value>
     <value>Kultus mengalami masalah semalam. Terdapat seorang ahli baru bernasib malang melawat serigala dan bermalam, serigala merasakan{0} sangat sedap. Sayangnya untuk {0}, serigala tidak berminat menyertai kultus.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
-    <value>Puak cult ingatkan mereka akan dapat ahli baru mereka silap! {0}, seorang cultist, dicincang dan diletakkan di kota pagi ini! Anehnya buku mereka ditetak dengan pisau, sebagai menunjukkan puak mana lebih berkuasa.</value>
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
+    <value>Puak cult ingatkan mereka akan dapat ahli baru mereka silap! {0}, seorang Zombie, dicincang dan diletakkan di kota pagi ini! Anehnya buku mereka ditetak dengan pisau, sebagai menunjukkan puak mana lebih berkuasa.</value>
     <value>Semalam, ahli cult cuba untuk ajak Pembunuh Bersiri menyertai mereka. Pembunuh bersiri menghiasa bandar dengan hasil seni organ dalaman {0}.</value>
   </string>
   <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
@@ -1259,8 +1259,8 @@ translate to Bahasa Melayu by Skyzkillerz-->
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Mengetahui hanya {0} tinggal, {1} memilih waktu yang tepat {0} tidak bersedia. Menyingkar penduduk terakhir membuktikan tidak berdaya {1}, untuk semua yang tinggal  {0}, pemburu tinggal garis di muka.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} dan {0} keluar waktu siang.Ternampak simbol dipakai oleh {0} , yang betul {1} keluarkan pedang untuk kali terakhir menghapuskan ajaran sesat yang mendominasi kampung.</value>
   </string>
   

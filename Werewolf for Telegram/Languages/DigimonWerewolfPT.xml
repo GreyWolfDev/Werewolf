@@ -185,10 +185,10 @@
 	<string key="RoleInfoApprenticeSeer" >
 		<value >Você é Wizardmon 🙇.  Caso Wisemon morra, você irá digievoluir, e tomar seu lugar.</value>
 	</string>
-	<string key="RoleInfoCultist" >
+	<string key="RoleInfoZombie" >
 		<value >Oh não! Myotismon jogou a Semente das Trevas em todos os digimons, e você teve a sua semente ativada. Agora você é um Escravo de Myotismon 👤.  Durante a noite, você poderá escolher alguém para ter a sua semente ativada.   Se todos os jogadores restantes ao final do jogo forem Escravos das Trevas, Myotismon triunfará!</value>
 	</string>
-	<string key="RoleInfoCultistHunter" >
+	<string key="RoleInfoZombieHunter" >
 		<value >Você é Knightmon. É provável que Myotismon esteja transformando algumas pessoas em seus Escravos. E você, deve proteger a Vila!  Durante a noite você poderá escolher alguém para purificar.  Se ele for Escravo de Myotismon, será morto.  Caso os Escravos de Myotismon tentem ativar a semente impregnada em você, falhará, e o Escravo mais recente morrerá.</value>
 	</string>
 	<string key="LynchTime" >
@@ -235,7 +235,7 @@
 	<string key="DefaultEaten" >
 		<value>Um digimon foi visto sendo devorado por um Weregarurumon, mas ninguém soube identificar qual Weregarurumon, já que era noite. {0} está morto. NOMNOMNOMNOM {1}</value>
 	</string>
-	<string key="HunterKilledCultist">
+	<string key="HunterKilledZombie">
 		<value>Knightmon cumpriu o seu trabalho ontem a noite. Ele purificou um dos escravos de Myotismon. {0} voltou pra Cidade dos Princípios...</value>
 	</string>
 	<string key="NoAttack" >
@@ -323,13 +323,13 @@
 	<string key="RemainingPlayersEnd">
 		<value>Digimons restantes, papéis e lado:</value>
 	</string>
-	<string key="CultistVotedConvert" >
+	<string key="ZombieVotedConvert" >
 		<value >{0} votou para converter {1}</value>
 	</string>
-	<string key="CultConvertCultHunter">
+	<string key="CultConvertZombieHunter">
 		<value>{0} foi enviado para ativar a Semente das Trevas impregnada em você. {1}... Entretanto, ele era Knightmon! {0} foi purificado!</value>
 	</string>
-	<string key="CultHunterKilledCultVisit">
+	<string key="ZombieHunterKilledCultVisit">
 		<value>{0} foi à sua casa na noite passada, pronto para ativar a Semente das Trevas impregnada em você...  Mas você é Knightmon, logo o purificou. Um Escravo voltou para a Cidade dos Princípios... {1} restante(s)!</value>
 	</string>
 	<string key="CultConvertYou">
@@ -350,7 +350,7 @@
 	<string key="HunterVisitDead">
 		<value>Você foi purificar {0}, mas chegando lá, Weregarurumon estava atacando a vitima! Você preferiu não interferir, já que não é a sua função.</value>
 	</string>
-	<string key="HunterFindCultist">
+	<string key="HunterFindZombie">
 		<value>Você invade a casa de {0} e vê a podridão de sua casa. Nas paredes tinham marcas e simbolos de Myotismon... Você purifica o Escravo!</value>
 	</string>
 	<string key="HunterFailedToFind">
@@ -362,7 +362,7 @@
 	<string key="WildChildTransform">
 		<value>{0} foi morto! Ele era a pessoa que você mais admirava. Você se descontrola com a fúria, e digievolui para Weregarurumon de uma só vez. Então, impressionados com o seu talento, você é infectado com a Engrenagem Negra. Seus novos companheiros são: {1}</value>
 	</string>
-	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+	<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 	<string key="Villager">
 		<value>Burgamon 👱</value>
 	</string>
@@ -408,10 +408,10 @@
 	<string key="ApprenticeSeer">
 		<value>Wizardmon 🙇</value>
 	</string>
-	<string key="Cultist">
+	<string key="Zombie">
 		<value>Escravo de Myotismon 👤</value>
 	</string>
-	<string key="CultistHunter">
+	<string key="ZombieHunter">
 		<value>Knightmon 💂</value>
 	</string>
 	<!-- These are for the player list -->
@@ -1130,7 +1130,7 @@
   <string key="BlacksmithKilled">
     <value>Parece que o Volcamon {0} foi torturado por Piedmon durante a noite. A ferraria está toda destruida!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} foi torturado por Piedmon. {0} era um Escravo de Myotismon.</value>
   </string>
   <string key="CupidKilled">
@@ -1163,10 +1163,10 @@
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Knightmon {0} foi morto ao visitar Piedmon. Lissão aprendida: Não visitar Piedmon, o cruel psicopata...</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>O Escravo de Myotismon foi devorado por um Weregarurumon infectado durante a noite. {0} está morto.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>O Escravo de Myotismon foi assassinado por Piedmon durante a noite. {0} está morto.</value>
   </string>
   <string key="GAGuardedKiller">

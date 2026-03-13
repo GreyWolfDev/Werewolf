@@ -24,7 +24,7 @@
   05/19
     v4.2 更新
     增加 GuardKiller Add desc by @Fong0000 @Tamhk
-    優化 CHKillsCultistEnd Optimized by @Blueyukina
+    優化 CHKillsZombieEnd Optimized by @Blueyukina
   2007/01/03
     增加 獵人/狼 1對1死法 Added Hunter/ww 1vs1 finale
     增加 邪教獵人/邪教 1對1死法 Added CH/Cult 1vs1 finale
@@ -262,10 +262,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>你是學徒. 若真的先知死去, 你就得繼承他們的使命.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>你是邪教徒. 每晚, 你可以向任何一個玩家嘗試施洗宣教, 讓他們成為你的一份子. 如果所有玩家都追隨了主, 你就得勝.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>村裡出現了邪教活動, 所有人的思想自由都受威脅! 你是邪教獵人, 而你的任務是每晚密訪一個村民家, 如果他是邪教徒, 他就會死. 如果有人試圖對你宣教受洗, 最新加入的那位邪教徒將會死於非命.</value>
   </string>
   <string key="LynchTime" >
@@ -320,7 +320,7 @@
     <!-- 1 - victim role -->
     <value>正當太陽升起, 一陣臭味溢出. 跟著氣味而走, 赫然發現 {0} 的身軀 — 血跡斑斑, 身首異處. 這回糟了!\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>一陣惡臭從{0}的家傳出來. 村民們一打開門, 赫見一具屍體, 靜靜地躺在一個祭壇上. 想必是邪教獵人的毒手吧!\n{0} 是邪教徒.</value>
   </string>
@@ -443,35 +443,35 @@
   <string key="RemainingPlayersEnd">
     <value>餘下的玩家、角色與所屬團隊：</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} 希望為 {1} 受洗</value>
     <value>{0} 想對 {1} 宣教</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} 被派往將 {1} 受洗宣教... 但他是邪教獵人.\n{0} 已死.</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} 昨晚來到你的家, 打算為你施洗...而你不動用你懷中的劍刺穿他的身軀. 一名邪教徒就此死去——還有 {1} 個邪教徒呢.</value>
   </string>
   <string key="CultConvertYou">
     <value>邪教已把你受洗, 你現在也是邪教徒呢. 每晚, 你也有機會展開你的宣教工作, 選擇一個玩家來讓他受洗.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>邪教徒：{0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} 已信奉邪教!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} 被派往將 {1} 受洗, 但摸了門釘.</value>
     <value>{0} 被派往將 {1} 受洗, 但 {1} 家沒人應門.</value>
@@ -484,7 +484,7 @@
     <value>你想獵捕 {0} , 但你眼前只看到他冰冷的屍體.</value>
     <value>你帶著懷疑 {0} 是邪教徒的而準備獵捕的心情前往他家, 但你發現他的屍體已經被狼咬的東缺一塊西缺一塊了.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>你潛入了 {0} 的家, 看到他正在一尊未知的像前祈禱. 你的劍如箭般插進他的背, 穿過他的心 — 你已把一名邪教徒殲滅.</value>
   </string>
@@ -501,7 +501,7 @@
     <!-- 0 - teamate's names -->
     <value>你的偶像 {0} 死了! 憤怒之下, 你成為了狼人! 你的新隊友(如果有的話)是：{1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>村民👱</value>
@@ -548,10 +548,10 @@
   <string key="ApprenticeSeer">
     <value>先知的學徒🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>邪教徒👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>邪教獵人💂</value>
   </string>
   <!-- These are for the player list -->
@@ -583,7 +583,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>你們中最新的信徒出發去 {0} 的家試圖去給他施洗, 最後你們卻發現屋內到處都是殘破的碎片, 血跡, 門邊還留下了幾撮動物的毛...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -776,12 +776,12 @@
     <value>你試圖去蒐集 {0} 的身軀來進一步完成你的收藏, 但是你被守護天使給擋下來了, 今晚看來是浪費時間了...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>邪教徒派出了 {0} 去施洗 {1}, 但是只聽見一聲槍響, {0} 的身軀最後從窗戶中飛出來...\n{0} 死了!</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>邪教徒派出了 {0} 去受洗 {1}, 結果 {0} 從窗戶中被扔飛出來, 全身被刀子劃過無數道的痕跡, 甚至都快認不出是誰了, 這有病的傢伙!\n{0} 已死.</value>
     <value>{0} 偷偷潛入了 {1} 的家, 打開了門, 歡迎他的卻是一個瘋子拿著一把鋒利匕首!!! {1} 用匕首以寫字的方式劃入 {0} 內臟, 全程還笑得非常的開心!\n{0} 已死...</value>
@@ -811,7 +811,7 @@
     <value>{0} 已死, 你變成磚瓦工了. 你的隊友(如果有的話)是: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>模仿者 {0} 變成邪教徒了, 就跟你一樣.</value>
   </string>
   <string key="DGTransformToCult">
@@ -1365,7 +1365,7 @@
   <string key="BlacksmithKilled">
     <value>難以辨識的屍體, 應該是小鎮的鐵匠 {0} 吧! 他肯定是非常的不幸! 五把鐵匠才打造出來的新刀子, 此時卻是穿過鐵匠四肢與頭部把鐵匠給釘在了工作台上. 昨晚殺人魔肯定是想要順便在他的內臟收藏旁邊增添一組武器收藏吧...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} 被發現在被燭台給刺穿而死在聖桌上. 殺人魔再度行動了, 不管是什麼種族, 語言, 宗教都可能成為他的目標! {0} 是邪教徒!</value>
   </string>
   <string key="CupidKilled">
@@ -1401,11 +1401,11 @@
     <value>村民早上醒來只見鎮公所前邪教獵人 {0} 的屍體變成數截的放在公所前的一個推車內. 教訓: 千萬別去拜訪殺人魔的家!</value>
     <value>邪教獵人 {0} 被整齊的切割成數百塊大小一致的屍塊陳列在市中心廣場上. 去試探殺人魔是否為邪教徒顯然不是個好主意...</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>本來今晚狼人本來不打算出門狩獵乖乖在家, 一個倒楣的邪教徒 {0} 試圖去說服狼人入教, 當獵物自己送上了狼人的門前, 狼人們可不會知道什麼叫做拒絕, 喜滋滋的將門前的獵物變成的今晚的大餐...真是不請自來的美味啊!</value>
     <value>邪教徒昨晚遇到了意料之外麻煩, 他們的新成員 {0} 很不幸地去拜訪了一個決定留在家中的狼人, 狼人發現上門的傢伙皮白肉嫩非常的美味可開心了! 至於什麼真主阿里, 狼人是一點興趣都沒有...</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>邪教徒們本以為他們即再添一位新成員, 但他們錯了, {0} 被切成肉泥般棄置在中心廣場, 一把刀還插在他們的"聖"書上, 似乎在宣告著誰的信仰才是勝利?</value>
     <value>昨晚, 邪教徒試圖去洗腦小鎮內比他們都還要瘋的傢伙, 他們的新成員 {0} 被派去向殺人魔宣教, 殺人魔又多了一個掛在中心廣場的器官藝術品.</value>
   </string>
@@ -1424,8 +1424,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>知道只剩下 {0} 的 {1} 靜靜的等待 {0} 戒心放到最低, 獵殺最後一民村名的行動顯然對 {1} 一點也不費心, 最後留在地上的是那具殘破的屍體, 數道平行的爪痕張揚的印在獵人那不甘心的臉上.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <!-- Optimized by @Blueyukina -->
     <value>{1} 與 {0} 在太陽下來到了鎮上廣場. 看到 {0} 頸上的十字架反射的詭異光芒, {1} 抽出了他的匕首揮出了最後一刀, 將污染扭曲這村子心靈的邪教給畫下了句點。</value>
   </string>
@@ -1646,13 +1646,13 @@
   </string>
 
 <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>無法投票, 但可以犧牲自己來抵擋來自槍手或獵人一擊.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>和事佬 ☮️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>無法投票, 但可以犧牲自己來抵擋來自槍手或獵人一擊.</value>
   </string>
 
@@ -1751,14 +1751,14 @@
   <string key="ShowIDsA">
     <value>{0} IDs</value>
   </string>
-<string key="AskPacifist">
+<string key="AskImam">
     <value>點擊這裡，開始你的關於和平與愛的演講，以停止公投</value>
   </string>
-  <string key="PacifistNoLynch">
-  <!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
     <value>和事佬 {0}, 開始了他關於和平、愛、友誼和原諒的演講，殘暴的村民們感動得洗心革面。不再殺戮，不再殺戮，世界和平！於是乎，今天沒有人會被處決！ </value>
    </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>因為和事佬的靈魂演說（誤），今天沒有人被處決。 </value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1805,8 +1805,8 @@
     <value>你的隊友(如果有的話) ： {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} 不再是你的隊友 而且{1}現在變成了一個 👤邪教徒</value>
   </string>
   <string key="ThiefToWolf">
@@ -1863,17 +1863,17 @@
   <string key="SecretLynchShowVotersA">
     <value>秘密處決允許時 且 投票計數開啟時, 投票者姓名將: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
 <value>奇怪，當你們覺得今晚讓誰入會時，邪教徒 {0} 好像不在家。 </value>
   </string>
   
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
 <value>呼喚和平!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
 <value>今日的處決被取消了，因為和事佬的靈魂演講（霧）</value>
   </string>
   
@@ -1883,7 +1883,7 @@
   <string key="ThiefStoleYourRoleVillager">
     <value>你的身份被偷了！現在你是普通村民。 </value>
   </string>
-      <string key="CultistsList">
+      <string key="ZombiesList">
 	<value>目前邪教會成員: {0}</value>
 	</string>
 	
@@ -2032,7 +2032,7 @@
   <string key="ChemistFrozen">
     <value>氣溫驟降，加熱器也壞了，你不能合成你的藥了。 </value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>當你開始準備邪教入會儀式事宜時，一陣風，把你凍住了。 </value>
   </string>
   <string key="CHFrozen">
@@ -2180,11 +2180,11 @@
   <string key="HunterFellDigger">
 <value>當你疲憊地回到家時，卻突然聽到從你未填完的坑中的一聲大叫。你連忙過去...卻發現{0}正躺在你新挖的墓穴中，很可惜，{0}是異端審判官</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 <value>當你疲憊地回到家時，卻突然聽到從你未填完的坑中的一聲大叫。你連忙過去...卻發現{0}正躺在你新挖的墓穴中，幸好，{0}是👤邪教徒</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 <value>當你們正走近{0}家時，準備施洗{0}時，{1}突然腳下一空，跌入了一個未完工的墓穴中，{1}也失去了意識...</value>
   </string>
@@ -2241,8 +2241,8 @@
   <string key="HarlotFellPublic">
 <value>偵探{0}從村里消失了...不過，有人發現，在公墓裡出現了一座新墳墓，而且，墓碑上除了昨天死去的人的名字，還有倉促刻下幾個字：妓女亦安息在此</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 <value>{0}從村里消失了...不過，有人發現，在公墓裡出現了一座新墳墓，而且，墓碑上除了昨天死去的人的名字，還有倉促刻下幾個字：👤邪教徒{0}亦安息在此</value>
   </string>
   <!--{0}: thief-->

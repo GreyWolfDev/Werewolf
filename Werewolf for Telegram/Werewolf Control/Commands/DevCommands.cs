@@ -378,9 +378,9 @@ namespace Werewolf_Control
         //            case IRole.Wolf:
         //            case IRole.Faithful: //never start a game with faithfuls.
         //                break;
-        //            case IRole.CultistHunter:
+        //            case IRole.ZombieHunter:
         //            case IRole.Preacher:
-        //            case IRole.Cultist:
+        //            case IRole.Zombie:
         //                if (allowCult != false && playerCount > 10)
         //                    rolesToAssign.Add(role);
         //                break;
@@ -410,10 +410,10 @@ namespace Werewolf_Control
         //    //same as it was before....
 
 
-        //    if (rolesToAssign.Any(x => x == IRole.CultistHunter || x == IRole.Preacher))
+        //    if (rolesToAssign.Any(x => x == IRole.ZombieHunter || x == IRole.Preacher))
         //    {
-        //        rolesToAssign.Add(IRole.Cultist);
-        //        rolesToAssign.Add(IRole.Cultist);
+        //        rolesToAssign.Add(IRole.Zombie);
+        //        rolesToAssign.Add(IRole.Zombie);
         //    }
         //    //now fill rest of the slots with villagers (for large games)
         //    for (int i = 0; i < playerCount / 4; i++)
@@ -449,7 +449,7 @@ namespace Werewolf_Control
         //    List<IRole> rolesToAssign = new List<IRole>();
         //    int villageStrength = 0, enemyStrength = 0;
         //    var attempts = 0;
-        //    var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
+        //    var nonVgRoles = new[] { IRole.Zombie, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub };
         //    while (!balanced)
         //    {
         //        attempts++;

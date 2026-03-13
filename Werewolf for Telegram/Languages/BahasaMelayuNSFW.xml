@@ -205,11 +205,11 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >You are the apprentice seer.  If the (real) seer dies, you will take their place as the seer.</value>
   </string>
-  <string key="RoleInfoCultist" >
-    <value >You are a cultist.  Every night, you may choose a player to convert to a cultist. If all remaining living players at the end are cultists, they win.</value>
+  <string key="RoleInfoZombie" >
+    <value >You are a Zombie.  Every night, you may choose a player to convert to a Zombie. If all remaining living players at the end are Zombies, they win.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
-    <value >You are the Cultist Hunter, trying to stop the cult in town from converting everyone!  Each night, choose a player.  If they are a cultist, they die.  If the cult tries to convert you, the cult's newest member dies.</value>
+  <string key="RoleInfoZombieHunter" >
+    <value >You are the Zombie Hunter, trying to stop the cult in town from converting everyone!  Each night, choose a player.  If they are a Zombie, they die.  If the cult tries to convert you, the cult's newest member dies.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
@@ -266,9 +266,9 @@
     <!-- 1 - victim role -->
     <value>As everyone rises in the morning, they smell a terrible stink.  They follow the smell to find {0} shredded apart in the pig pen, head missing.  NOMNOMNOMNOM {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
-    <value>A noticeable stench is coming from {0}'s house...  the village inspects it to find a body lying in front of a dark altar. A cultist has been killed by the cult hunter!</value>
+    <value>A noticeable stench is coming from {0}'s house...  the village inspects it to find a body lying in front of a dark altar. A Zombie has been killed by the cult hunter!</value>
   </string>
   <string key="NoAttack" >
     <value >The villagers gather the next morning in the village center, to sighs of relief - it appears there was no attack the previous night.</value>
@@ -372,51 +372,51 @@
   <string key="RemainingPlayersEnd">
     <value>Remaining living players, roles, and team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} has voted to convert {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} was sent to do your dirty work, and convert {1}... however, they were the cult hunter! {0} is dead!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
-    <value>{0} came to your house last night, ready to convert you....  but you shoved your sword right through him.  A cultist is dead... {1} remain!</value>
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{0} came to your house last night, ready to convert you....  but you shoved your sword right through him.  A Zombie is dead... {1} remain!</value>
   </string>
   <string key="CultConvertYou">
-    <value>The cult has converted you to their order!  You are now a cultist.  Every other night, you will have a chance to convert another player.</value>
+    <value>The cult has converted you to their order!  You are now a Zombie.  Every other night, you will have a chance to convert another player.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
-    <value>Cultists: {0}</value>
+    <!-- 0 - Number of Zombies -->
+    <value>Zombies: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} has joined the cult!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} was sent to do your dirty work, and convert {1}... but no one was home. You make your way to the mamak and ask for 2 kosong before going home</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >All the wolves have died, and the only people left standing have all been converted to cultists..  The cult has won! HOOGA HOOGA HOOGA</value>
+    <value >All the wolves have died, and the only people left standing have all been converted to Zombies..  The cult has won! HOOGA HOOGA HOOGA</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
     <value>You went to hunt {0}, but they are already dead!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
-    <value>You go into {0}'s house and find them praying before an altar to some unknown god. You quickly run your sword right through the evil cultist.</value>
+    <value>You go into {0}'s house and find them praying before an altar to some unknown god. You quickly run your sword right through the evil Zombie.</value>
   </string>
   <!-- 0 - target name -->
   <string key="HunterFailedToFind">
-    <value>You go to {0}'s house, but there is no mysterious chanting. You return home, convinced that {0} is not a cultist.</value>
+    <value>You go to {0}'s house, but there is no mysterious chanting. You return home, convinced that {0} is not a Zombie.</value>
   </string>
   <string key="WildChildToWolves">
     <!-- 0 - Werechild's name -->
@@ -427,7 +427,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} has died! In your rage, you have become a werewolf! Your new teammates are: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>a Villager 👱</value>
   </string>
@@ -473,11 +473,11 @@
   <string key="ApprenticeSeer">
     <value>the Apprentice Seer 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>a Cultist 👤</value>
+  <string key="Zombie">
+    <value>a Zombie 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>the Cultist Hunter 💂</value>
+  <string key="ZombieHunter">
+    <value>the Zombie Hunter 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -508,7 +508,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Your newest member heads over to {0}'s house to convert them, but instead finds the house a complete wreck, blood everywhere, and bits of wolf fur snagged on the doorway...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -692,12 +692,12 @@
     <value>You tried to collect {0}'s body for your collection, but you were fought off by the guardian angel! No kill for you tonight...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>The cult sends {0} to try to convert {1}, but instead a shot rings out and {0}'s body comes flying out of the window! {0} is dead....</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>The cult sends {0} to try to convert {1}, but instead a {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....</value>
   </string>
@@ -721,13 +721,13 @@
     <value>{0} has died, and you transform into a mason.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
-    <value>The doppelganger {0} has now become a cultist, just like you!</value>
+    <!-- 0 - new Zombie's name -->
+    <value>The doppelganger {0} has now become a Zombie, just like you!</value>
   </string>
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} has died, and you transform into a cultist.  Your teammates (if any) are: {1}</value>
+    <value>{0} has died, and you transform into a Zombie.  Your teammates (if any) are: {1}</value>
   </string>
   <string key="DGToWolf">
     <!-- 0 - DG's name -->
@@ -868,10 +868,10 @@
     <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
   </string>
   <string key="AboutCult">
-    <value>As a cultist, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are cultist - the cult wins</value>
+    <value>As a Zombie, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are Zombie - the cult wins</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a cultist, they will die.</value>
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die.</value>
   </string>
   <string key="AboutWC">
     <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>

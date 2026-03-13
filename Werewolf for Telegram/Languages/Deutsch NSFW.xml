@@ -277,12 +277,12 @@
 	<value>Du bist der Seher-Lehrling 🙇. Du hast die Gabe, aber leider kann es immer nur einen Seher geben. Solange dein Meister lebt gibt es für dich nichts wichtiges zu tun, stattdessen sortierst du Kartenspiele, polierst Kristallkugeln und verrichtest andere niedere Dienste.</value>
 	<value>Du bist der Seher-Lehrling 🙇. Du bist erst an der Reihe, wenn dein Meister stirbt. Vielleicht stolpert er ja mal über eine versehentlich auf der Treppe liegende Kristallkugel?</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Du bist ein Kultist 👤. Jede Nacht kannst du einen Spieler von deinem Glauben überzeugen. Falls am Ende nur noch Kultisten leben, gewinnen sie!</value>
 	<value>Du bist ein Kultist 👤. Der Kult ist ein bisschen wie die Werwölfe, nur nicht so tödlich. Jede Nacht kann der Kult versuchen, einen Mitspieler zum Kult zu bekehren. Ihr gewinnt, wenn ihr alle erfolgreich missioniert.</value>
 	<value>Als Waise hat dich der Kult 👤 aufgenommen, und seitdem bedeutet er dir alles. In der festen Überzeugung, ihrem Objekt damit etwas Gutes zu tun, versuchen die Kultisten jede Nacht, einen Mitspieler zum Kult zu bekehren. Ein Ende findet das erst, wenn alle zum Kult bekehrt sind. Oder wenn der Kult ausstirbt ...</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Du bist der Kultistenjäger 💂. Es gibt einen Kultisten, welcher jeden von seinem Glauben überzeugen will. Du wählst jede Nacht einen Spieler aus. Falls der gewählte Spieler schon ein Kultist ist, stirbt er. Wenn sie dich überzeugen wollen, stirbt das neueste Mitglied.</value>
 	<value>Du hast gar nichts für die obskuren Gestalten übrig, die sich seit einiger Zeit hier im Dorf herumtreiben und versuchen, jeden von ihrem Glauben zu überzeugen. Als Kultistenjäger 💂 kannst du jede Nacht einen Mitspieler aushorchen und tötest ihn, falls er ein Kultist ist. Sollte der Kult versuchen dich zu bekehren bist du nicht nur immun dagegen, sondern sorgst auch für den Tod ihres neuesten Mitglieds.</value>
   </string>
@@ -342,7 +342,7 @@
 	<value>Am nächsten Morgen fehlt {0} und ist auch nicht zuhause zu finden. Nur einige blutige Haarbüschel kleben an der Hintertür, und im Wald findet man schließlich die Reste, die nicht gefressen 🐺 wurden.\n{1}</value>
 	<value>Schon wieder wird jemand vermisst, als das Dorf aufwacht. Die Bewohner finden {0} im Bett, fein säuberlich filetiert, die schönsten Fleischstücke fehlend 🐺.\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Ein bemerkbarer Gestank kommt aus {0}s Haus ... Das Dorf besichtigt es und findet einen Körper vor einem dunklen Altar liegend ... Ein Kultist 👤 getötet von einem Jäger 🎯!</value>
   </string>
   <string key="NoAttack">
@@ -446,13 +446,13 @@
   <string key="RemainingPlayersEnd">
     <value>Verbleibende lebende Spieler, Rollen und Teams:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>{0} hat gewählt {1} zu bekehren.</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} wurde ausgesandt, um {1} zu bekehren ... dieser war jedoch der Kultjäger 💂! {0} ist tot!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} kam in dein Haus, um dich zu bekehren ... Aber du hast dein Schwert direkt durch ihn hindurchgestoßen. Ein Kultist 👤 ist tot ... {1} leben noch!</value>
   </string>
   <string key="CultConvertYou">
@@ -473,7 +473,7 @@
   <string key="HunterVisitDead">
     <value>Du wolltest {0} jagen, allerdings ist {0} schon tot!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Du gehst in {0}s Haus, findest ihn an einem Altar zu einem unbekannten Gott betend ... Schnell schwingst du dein Schwert durch den bösen Kultisten 👤.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -485,7 +485,7 @@
   <string key="WildChildTransform">
     <value>{0} starb! In deiner Wut wurdest du zum Werwolf 🐺! Die anderen Werwölfe sind: {1}</value>
   </string>
-    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>ein Dorfbewohner 👱</value>
@@ -532,10 +532,10 @@
   <string key="ApprenticeSeer">
     <value>der Seher-Lehrling 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>ein Kultist 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>der Kultjäger 💂</value>
   </string>
   <string key="PlayersAlive">
@@ -1217,7 +1217,7 @@
   <string key="BlacksmithKilled">
     <value>Es sieht so aus, als hätte {0}, der ansässige Schmied ⚒ , letzte Nacht viel Pech gehabt. Fünf Messer, frisch geschmiedet von {0}s Hammer, wurden in seinen Händen, Füßen und seinem Kopf gefunden, außerdem fand man ihn an die Werkbank des Handwerkers geheftet vor. Vielleicht hatte der Serienmörder 🔪 gehofft seine Waffensammlung neben seinen Organen noch erweitern zu können...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} wurde vor seinem mit Kerzen erhellen Altar erstochen aufgefunden. Der Serienmörder 🔪 hat wieder zugeschlagen, unabhängig von Rasse, Sprache oder Religion! {0} war ein Kultist 👤</value>
   </string>
   <string key="CupidKilled">
@@ -1273,7 +1273,7 @@
   <string key="WolfKillsHunterEnd">
     <value>Mit dem Wissen, dass nur noch {0} übrig geblieben sein kann, wählt {1} den Moment in dem {0}s Aufmerksamkeit am geringsten ist. Die Beseitigung des letzten Dorfbewohner erwies sich für {1} als mühelos, übrig bleibt nur eine angeknabberte 🐺 Leiche von {0}, dem Jäger 🎯.</value>
   </string>
-  <string key="CHKillsCultistEnd">
+  <string key="CHKillsZombieEnd">
     <value>{1} und {0} laufen draußen bei schönstem Sonnenschein. Plötzlich sieht {1} ein schimmerndes Kreuz 👤 auf {0}s Hals, er/sie zieht sein/ihr Schwert ein letztes Mal um den verdrehten Erkenntnissen des Kults, die das Dorf verunreinigt haben, ein Ende zu setzen.</value>
   </string>
   <string key="SecondsAdded">
@@ -1482,13 +1482,13 @@
     <value>Einmalig pro Spiel kann der Sandmann alle Spieler so tief schlafen lassen, dass in dieser Nacht niemand eine Fähigkeit verwenden kann.</value>
   </string>
 
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>Du bist der Pazifist ☮️. Du kannst entschließen, euer ganzes Dorf davon überzeugen, niemanden zu lynchen. Dies ist nur ein Mal möglich.</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>der Pazifist ☮️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>Der Pazifist kann einmalig das ganze Dorf davon überzeugen, niemanden zu lynchen.</value>
   </string>
 
@@ -1515,14 +1515,14 @@
     <value>Im normalen Modus stiehlt der Dieb 😈 in der ersten Nacht einem anderen Spieler die Rolle und lässt ihn als armen Dorfbewohner zurück.\nIst der erweiterte Dieb aktiviert, hat er jede Nacht eine Chance von 50 %, jemandem die Rolle abzunehmen. Sofern erfolgreich wird das Opfer aus Verzweiflung selbst zum Dieb und versucht, eine neue Rolle zu finden.</value>
   </string>
   
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Möchtest du heute die Abstimmung des Lynchmobs verhindern?</value>
   </string>
-  <string key="PacifistNoLynch">
+  <string key="ImamNoLynch">
   <!-- {0} - Name des Pazifisten -->
     <value>Der Pazifist ☮️, {0}, hält vor dem versammelten Dorf eine schwülstige Rede über Freundschaft und Vertrauen. Ergriffen von dieser Rede entscheidet das Dorf, heute niemanden zu töten!</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>Wegen der bewegenden Rede des Pazifisten ☮️ gibt es heute keine Abstimmung!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1630,7 +1630,7 @@
   
   <!-- updated by @demorpheus 2018/08/28 -->
   
-  <string key="CultistBitten">
+  <string key="ZombieBitten">
   <!-- {0} - Kultist, der vom Rudelführer gebissen wurde -->
 	<value>Seltsam ... als ihr beratschlagt, wen ihr heute bekehren wollt, bemerkt ihr, dass {0} nicht dabei ist. Was ist mit ihm passiert?!</value>
   </string>
@@ -1749,7 +1749,7 @@
   <string key="ChemistTargetEmpty">
 	<value>{0} war nicht zu Hause! Du schleppst dein Zeug wieder zurück und verfluchst dein Pech.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
 	<value>Aktuelle Kult-Anhänger: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1800,7 +1800,7 @@
   <string key="ChemistFrozen">
     <value>Als du aufstehen wolltest, um mit deinen Tränken mal wieder irgendwas anzustellen, wurdest du von einem eiskalten Windstoß erfasst und bis auf die Knochen eingefroren 🐺☃️. Aus dem Augenwinkel kannst du erkennen, dass auch alle deine Tränke gefroren sind. Die Nacht war noch lang, aber nun bist du zum Glück wieder aufgetaut.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Gerade nachdem du dir deinen Mantel übergeworfen hast blies ein eiskalter Wind durchs Haus und ließ dich einfrieren 🐺☃️. Deine Mitkultisten, die dich zur nächtlichen Versammlung abholen wollten, machten deine Lage auch nicht besser ... offensichtlich sehr amüsiert von deinem Anblick ließen sie dich einfach stehen und machten sich alleine auf den Weg.</value>
   </string>
   <string key="CHFrozen">
@@ -1944,11 +1944,11 @@
   <string key="HunterFellDigger">
 	<value>Eine anstrengende Nacht liegt hinter dir, als du dich bei Sonnenaufgang auf den Heimweg machst. Neben einem deiner Gräber bemerkst du ein silbernes Schwert, dass dir unbekannt vorkommt. Du schaust nach und findest {0} 💂 tot im Grab liegen - dich zu verdächtigen war wirklich eine dumme Idee.</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
 	<value>Auf dem Heimweg nach einer weiteren anstrengenden Nacht vernimmst du Schreie aus einem offenen Grab. Du siehst nach und findest {0} 👤 sterbend in der Grube liegen. Gut so.</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
 	<value>Auf dem Weg zu {1} entscheidet ihr spontan, die Kirche niederzubrennen. {0} führt euch über den stockfinsteren Friedhof, als ihr plötzlich Schreie in der Nähe hört. Voller Panik rennt ihr in alle Richtungen davon und bemerkt erst, als ihr euch nach und nach wieder trefft, dass {0} fehlt. Ihr sucht zuhause, in eurem Versammlungsraum und an allen möglichen anderen Orten, bevor ihr euch bei Sonnenaufgang wieder auf den Friedhof traut. Dort stellt ihr fest, dass die Schreie wohl {0} bei Sturz in ein offenes Grab ausgestoßen hat ...</value>
   </string>
@@ -2004,8 +2004,8 @@
   <string key="HarlotFellPublic">
 	<value>Die Hure {0} 💋 nahm heute Nacht nach ihrer Arbeit eine Abkürzung über den Friedhof. Noch etwas aufgedreht übersah sie eine Bärenfalle und stürzte in ein offenes Grab ...</value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
 	<value>Der Kult versuchte heute Nacht mal wieder, die Kirche niederzubrennen. {0} fühlte sich am Mutigsten und führte die Gruppe zügigen Schrittes an, übersah in der Dunkelheit aber eine Bärenfalle ... vom Schrei verschreckt flohen die anderen Hals über Kopf, ohne zu beachten, dass {0} tödlich verletzt in ein Grab gestürzt war. Nächstenliebe wird im Kult nicht gepredigt.</value>
   </string>
   <!--{0}: thief-->

@@ -218,10 +218,10 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
     <value>Sei Shikadai! 🙇  Hai tutte le carte in regola per poter seguire, un giorno, la strada di tuo padre. Se Shikamaru dovesse morire in missione o per mano dei Nukenin, prenderai immediatamente il suo posto. Non deluderlo!</value>
     <value>Sei Shikadai! 🙇 Ciò significa che, da qualche parte, tuo padre Shikamaru è in missione. Nel caso morisse o venisse convertito, prenderai il suo posto e seguirai la sua strada.</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>Sei Hidan!👤 Devoto a Jashin, il Dio della morte, odi tutti quelli che non hanno il tuo stesso credo. Non sei propriamente un Nukenin, tuttavia vaghi di villaggio in villaggio per reclutare più adepti possibili per il sommo Jashin. Ogni notte, puoi fare visita ad uno Shinobi per convertirlo al jashinismo. Se tutti gli Shinobi rimasti vivi fanno parte della tua setta, voi, seguaci di Jashin, avete vinto! Fai attenzione: c'è qualcuno che sta cercando quelli come te...</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Sei Asuma! 💂 Calmo e inflessibile, il tuo compito è quello di stanare e uccidere i jashinisti prima che compiano i loro rituali e convertano altri Shinobi. Perciò ogni notte, silenzioso e cauto, sceglierai la casa di un Ninja a cui far visita. Se è un jashinista lo ucciderai. Se non lo è, tornerai semplicemente a casa. Se un jashinista prova a convertirti, l'ultimo membro arruolato dalla setta muore e scoprirai quanti ne sono rimasti.</value>
   </string>
   <string key="LynchTime">
@@ -275,7 +275,7 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
     <value>Il mattino è giunto e con lui una notizia terribile appena arrivata nell'ufficio dell'Hokage. Durante una missione, {0} viene colto di sorpresa e trucidato senza pietà. Il Villaggio della Foglia compiange l'eroe caduto in battaglia. \n{1}</value>
     <value>La notte è appena trascorsa. Gli Shinobi si svegliano con una brutta sensazione nel petto. Uscendo dalle loro case trovano diverse scie di sangue che portano tutte in un un'unica direzione: le porte del villaggio. Con tristezza ed orrore, trovano il cadavere di {0} brutalmente ucciso mentre proteggeva Konoha.\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Delle impronte insanguinate costeggiano le mura del villaggio. Durante l'ispezione viene trovato il ciondolo di {0} accanto ad un cumulo di terra ricoperto di pietre. A quanto pare era un jashinista, fatto a pezzi e successivamente sotterrato vivo. Il misterioso Shinobi cacciatore di jashinisti ha colpito ancora...</value>
   </string>
   <string key="NoAttack">
@@ -363,13 +363,13 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
   <string key="RemainingPlayersEnd">
     <value>Shinobi rimasti vivi, ruolo e Team:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <value>{0} vota per convertire {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} voleva rendere onore a Jashin ed è andato da {1} per convertirlo al suo credo... ma era Asuma, il cacciatore di jashinisti! {0} è morto!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} ti ha incontrato durante una missione e ha provato a convertirti...  ma sei riuscito ad ucciderlo evitando per un soffio la morte! Un jashinista è morto... Ne rimangono altri {1}!</value>
   </string>
   <string key="CultConvertYou">
@@ -391,7 +391,7 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
   <string key="HunterVisitDead">
     <value>Hai dato la caccia a {0}, ma era già morto!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Durante la missione ti ritrovi in una radura. Noti che {0} è sdraiato sopra ad uno strano simbolo creato con il sangue, al centro del petto è conficcato un paletto e il suo sguardo è di pura estasi. Sicuro del fatto che sia un jashinista, ti prepari ad attaccare.</value>
   </string>
   <string key="HunterFailedToFind">
@@ -448,10 +448,10 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
   <string key="ApprenticeSeer">
     <value>Shikadai 🙇 </value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Hidan 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Asuma 💂</value>
   </string>
   <string key="RanAway">
@@ -1154,7 +1154,7 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
   <string key="BlacksmithKilled">
     <value>Sembra che {0}, per gli amici Ten Ten, sia stata estremamente sfortunata. Il corpo di {0} è stato trovato trafitto da spade, kunai e shuriken. Analizzando le armi conficcate nelle sue mani, nei piedi e nella testa, gli Anbu scoprirono che quelle armi provenivano dal suo stesso negozio. Sembra che qualcuno si sia divertito ad uccidere in modo diverso, una volta tanto!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{0} è stato trovato trafitto e sbudellato sopra al simbolo di Jashin. A quanto pare il rituale non ha funzionato... Zabuza ha colpito ancora, alla faccia dell'immortalità! {0} era un jashinista 👤.</value>
   </string>
   <string key="CupidKilled">
@@ -1192,12 +1192,12 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
     <value>Il corpo di {0} è stato trovato ai margini della foresta, tagliato con precisione da un'arma molto grande e affilata. Asuma, secondo alcune fonti, aveva deciso di controllare se Zabuza fosse un fedele servitore di Jashin... Pessima idea!</value>
   </string>
   <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Sembrava una notte tranquilla, dato che i Nukenin avevano deciso di non attaccare e preparare insieme una strategia ottimale per invadere Konoha, tuttavia l'unico sfortunato è stato {0}, un jashinista che ha provato a convertire uno dei Nukenin. La testa di {0} è stata usata come fermacarte, mentre il corpo è stato smembrato e sotterrato in più punti. Addio, servo di Jashin!</value>
     <value>I jashinisti hanno incontrato un problema non previsto, questa notte. Il loro membro più recente, mandato a fare proseliti, ha voluto provare a convertire un Nukenin e ha fatto una brutta fine! Sfortunatamente per {0}, i Nukenin non hanno interesse nel loro stupido culto...</value>
   </string>
   <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
     <value>I jashinisti pensavano di convertire e far entrare nella setta un nuovo Shinobi, ma si sbagliavano! {0}, uno dei discepoli di Jashin-Sama, è stato trovato tritato nella foresta! Vicino ad esso, il suo ciondolo giaceva spezzato sotto il taglio di una potente spada... a Zabuza i religiosi non sono mai piaciuti!</value>
     <value>L'ultima notte, i jashinisti hanno provato a convertire il Ninja sbagliato. Il loro membro più recente ha provato a convertire nientemeno che Zabuza che, con sommo piacere, ha trasformato il corpo di {0} in cibo per corvi.</value>
   </string>
@@ -1218,8 +1218,8 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sapendo che solo {0} era rimasto in vita, {1} prova a uccidere {0} quando {0} meno se l'aspettava, riuscendo a colpirlo in pieno. Dare il colpo di grazia ora era molto più semplice per {1} che, soddisfatto, pose fine alla sofferenza di {0}, l'ex Secondo Hokage Tobirama.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <!-- Extend time -->
     <value>{1} e {0} escono appena spuntarono i primi raggi di luce. Vedendo il ciondolo che {0} indossava sul collo, il virtuoso {1} utilizza le lame di Chakra sul jashinista, ponendo finalmente la fine al culto di Jashin. Soddisfatto per il lavoro compiuto, Asuma sorrise guardando i volti di pietra degli Hokage e contemplò l'alba in compagnia di una sigaretta.</value>
   </string>
@@ -1429,13 +1429,13 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
   <string key="AboutSandman">
     <value>Un ramen cucinato a dovere richiede un buon sonno ristoratore per affrontare le missioni più impegnative! Soltanto per una volta, Teuchi offrirà a tutti ramen a volontà, impedendo agli Shinobi di poter svolgere qualsiasi attività notturna per la grande abbuffata.</value>
   </string>
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>Sei Naruto ☮️! Imprevedibile, determinato e con un sogno da realizzare... grazie al tuo grande senso di lealtà e giustizia, le persone tendono a fidarsi. Con le tue parole riesci a toccare nel profondo il cuore di ogni Shinobi. Grazie a questa tua capacità, puoi convincere ogni Ninja del villaggio a non linciare nessuno. Il tuo discorso può essere fatto soltanto una volta!</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>Naruto ☮️</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>Naruto, con la sua forza di volontà e la capacità di non arrendersi mai, può convincere tutti a non linciare nessuno. Può tenere il suo discorso soltanto una volta!</value>
   </string>
   <string key="RoleInfoWiseElder">
@@ -1459,15 +1459,15 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
   <string key="AboutThief">
     <value>Suigetsu 😈 si diverte a rubare il ruolo a uno Shinobi che, sfortunatamente, sarà costretto a ritornare un misero Genin della Foglia.\nSe c'è impostato Suigetsu per tutta la missione, il Ninja scelto si trasformerà nel nuovo Suigetsu e continuerà a rubare ruoli per tutta la missione.</value>
   </string>
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Clicca questo bottone quando vuoi fare il tuo commovente discorso e convincere tutti a non linciare!</value>
   </string>
-  <string key="PacifistNoLynch">
-<!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+<!-- {0} - Imam's name -->
     <value>Gli Shinobi stanno nuovamente discutendo su chi dovrà essere linciato. Un pugno si alza nel cielo e una voce squillante sovrasta le altre: «Mi chiamo Naruto Uzumaki ☮️, DATTEBAYO!» {0} sale sul tavolo, facendo cadere alcune cianfrusaglie. Prende un profondo respiro e ricomincia a parlare: «Ascoltate! Io sarò il futuro Hokage, perciò vi dico che nessuno di voi può pensare di linciare qualcuno, è chiaro?! Konoha è la nostra casa e dobbiamo proteggerla senza uccidere nessuno! Siamo Shinobi, DATTEBAYO! Dobbiamo restare uniti e combattere con tutte le nostre forze! Perciò ora finitela di discutere e prepariamoci a difendere il Villaggio! Io dico le cose così come stanno e non cambio idea! Anche questo fa parte del mio credo Ninja!» Tutti gli Shinobi, attorno a lui, erano ammutoliti. Colpiti nel profondo dalle sue parole, decidono che per oggi nessuno verrà linciato.
 </value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>Dato che il profondo discorso fatto da Naruto ☮️ ha toccato i cuori di molti, è stato deciso che non ci sarà nessun linciaggio oggi!</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1513,8 +1513,8 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
     <value>I tuoi compagni (se presenti) sono: {0}</value>
   </string>
   <string key="ThiefToCult">
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
     <value>{0} non è più un tuo compagno e {1} è ora divenuto un jashinista, esattamente come te. Jashin sia lodato!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1570,16 +1570,16 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
   <string key="SecretLynchShowVotersA">
     <value>Quando il linciaggio segreto è attivo e il numero di voti è mostrato, il nome dei votanti sarà: {0}</value>
   </string>
-  <string key="CultistBitten">
-<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
     <value>Strano... Vi siete riuniti per discutere chi avreste convertito oggi, ma {0} non è presente! Che fine avrà fatto?</value>
   </string>
   <string key="Peace">
-<!-- Used for Pacifist's button -->
+<!-- Used for Imam's button -->
     <value>DATTEBAYO!</value>
   </string>
   <string key="LynchPeaceTimeout">
-<!-- Used in PM if the pacifist uses his ability during lynch phase -->
+<!-- Used in PM if the Imam uses his ability during lynch phase -->
     <value>Il linciaggio di oggi è stato annullato per merito di Naruto!</value>
   </string>
   <string key="ThiefStoleYourRoleThief">
@@ -1676,7 +1676,7 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
   <string key="ChemistTargetEmpty">
     <value>Non hai trovato {0}! Torni a casa delusa, che sfortuna!</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value>I jashinisti sono attualmente: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1728,7 +1728,7 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
   <string key="ChemistFrozen">
     <value>Dopo esserti svegliata, pronta per preparare rimedi e intrugli velenosi, una raffica di vento entra dalla finestra e vieni circondata da specchi di ghiaccio che ti impediscono di fuggire🐺☃️! Soltanto la mattina la tecnica svanisce ma tu ora sei troppo stanca per metterti a lavorare...</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Dopo esserti preparato per convertire qualcuno al sommo Jashin, esci dalla porta per essere subito colpito da tormenta di neve che ti costringe a restare chiuso in casa 🐺☃️. Quegli ingrati dei tuoi compagni jashinisti, vedendoti, ti deridono... ma ti assicurano che ci penseranno loro a convertire qualcuno!</value>
   </string>
   <string key="CHFrozen">
@@ -1867,11 +1867,11 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
     <value>Hai sprecato un'altra notte a girovagare in cerca di jashinisti... nulla! Dove si sono cacciati? Frustrato, ti incammini verso il Villaggio della Foglia imboccando un sentiero sconosciuto. Mentre passi accanto a quello che sembra un rifugio segreto, incappi in una trappola. Urli e ti dimeni, ma è troppo tardi. Cadi all'indietro e finisci in una fossa profonda, un'altra delle trappole di {0}. Il suono del tuo collo rompersi è l'ultima cosa che senti prima che tutto, intorno a te, diventi nero.</value>
   </string>
   <string key="HunterFellDigger">
-<!--{0}: cultist-->
+<!--{0}: Zombie-->
     <value>Dopo un'altra lunga e laboriosa notte, riassesti il tuo rifugio segreto prima di incamminarti verso casa. Appena uscito, noti che alcune delle tue trappole hanno funzionato. In una fossa profonda trovi il corpo di {0}. Asuma non avrebbe dovuto ficcare il naso da queste parti...</value>
   </string>
   <string key="CultFell">
-<!--{0}: cultist who fell, {1}: grave digger-->
+<!--{0}: Zombie who fell, {1}: grave digger-->
     <value>Stai tornando a casa dopo una faticosa nottata, quando senti un urlo provenire poco lontano dal tuo rifugio! Ti rechi subito sul posto, solo per trovare {0} morto grazie a una delle tue trappole. Che ci faceva un jashinista da queste parti?</value>
   </string>
   <string key="CultConvertGraveDigger">
@@ -1927,10 +1927,10 @@ Hai tradito il Villaggio e sei appena diventato un Nukenin, pronto a scatenare l
     <value>Le trappole di Kabuto non falliscono mai! {0} ha curiosato troppo e ha trovato il rifugio segreto di Kabuto. È cascato in un tranello mortale e ci ha rimesso la vita! {1}</value>
   </string>
   <string key="HarlotFellPublic">
-<!--{0}: cultist who died-->
+<!--{0}: Zombie who died-->
     <value>Mentre {0} tornava a casa dopo l'ennesimo due di picche, ha scelto di prendere un sentiero alternativo nella foresta. La strada era parzialmente illuminata dai raggi lunari, tuttavia non ha impedito a Mei di finire in una delle trappole di Kabuto e morire! Forse avrebbe dovuto rinunciare a cercare a tutti i costi un marito...</value>
   </string>
-  <string key="CultistFellPublic">
+  <string key="ZombieFellPublic">
 <!--{0}: thief-->
     <value>I jashinisti si sono davvero divertiti durante l'ultimo sacrificio dedicato a Jashin! Mentre guidava il gruppo attraverso la foresta, {0} è stato colto di sorpresa da una trappola! Mentre imprecava e gridava come un folle, è caduto in una fossa piena di acido corrosivo! Gli altri jashinisti, invece di aiutarlo, sono fuggiti a gambe levate!</value>
   </string>

@@ -176,10 +176,10 @@ Last update: 24/03/2017 by @CrapKnight -->
   <string key="RoleInfoApprenticeSeer" >
     <value >That's strange... you can't seem to remember what you are!</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >That's strange... you can't seem to remember what you are, only that you should do something during the night!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >That's strange... you can't seem to remember what you are, only that you should do something during the night!</value>
   </string>
   <string key="LynchTime" >
@@ -224,7 +224,7 @@ Last update: 24/03/2017 by @CrapKnight -->
   <string key="DefaultEaten" >
     <value>As everyone rises in the morning, they smell a terrible stink.  They follow the smell to find *{0}* lying in in the pig pen, torn apart by giant claws. Going through their things, it's clear that: \n*{1}*</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>A noticeable stench is coming from *{0}'s* house...  the village inspects it to find a dark altar, still faintly glowing with dark power...  a *snake* has been captured by the mongoose!</value>
   </string>
   <string key="NoAttack" >
@@ -308,13 +308,13 @@ Last update: 24/03/2017 by @CrapKnight -->
   <string key="RemainingPlayersEnd">
     <value>Suddenly, the survivors remembered everything! Their names, roles and teams were:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} has voted to do something to {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} went to {1}'s house and is now dead!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} is dead! There's a number in your head... {1}</value>
   </string>
   <string key="CultConvertYou">
@@ -335,7 +335,7 @@ Last update: 24/03/2017 by @CrapKnight -->
   <string key="HunterVisitDead">
     <value>{0} is already dead, such a disappointing night...</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Did something happen at {0}'s house last night? You can't seem to remember...</value>
   </string>
   <string key="HunterFailedToFind">
@@ -347,7 +347,7 @@ Last update: 24/03/2017 by @CrapKnight -->
   <string key="WildChildTransform">
     <value>{0} is dead! Your role changed, but from what, and to what? You may not remember what you are, but you do remember someone important: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>a Rabbit (Villager) 👱</value>
   </string>
@@ -393,11 +393,11 @@ Last update: 24/03/2017 by @CrapKnight -->
   <string key="ApprenticeSeer">
     <value>the Owlet (Apprentice Seer) 🙇</value>
   </string>
-  <string key="Cultist">
-    <value>a Snake (Cultist) 👤</value>
+  <string key="Zombie">
+    <value>a Snake (Zombie) 👤</value>
   </string>
-  <string key="CultistHunter">
-    <value>the mongoose (Cultist Hunter) 💂</value>
+  <string key="ZombieHunter">
+    <value>the mongoose (Zombie Hunter) 💂</value>
   </string>
   <!-- These are for the player list -->
   <string key="RanAway">
@@ -707,7 +707,7 @@ Last update: 24/03/2017 by @CrapKnight -->
   <string key="AboutHarlot">
     <!-- hunter! ayylmao -->
 	<value>
-	The Harlot will be given the chance to visit another player each night. They will notice something happened, even if they don't remember what. The harlot dies if they visit a wolf or the Serial Killer, so visiting is a good way to find safe players, even if it's as a sacrifice! The harlot will also die if they visit a house attacked by the wolves or if the Serial Killer chooses to kill them! When visiting a cultist, the harlot has a 50% chance of finding out their role!
+	The Harlot will be given the chance to visit another player each night. They will notice something happened, even if they don't remember what. The harlot dies if they visit a wolf or the Serial Killer, so visiting is a good way to find safe players, even if it's as a sacrifice! The harlot will also die if they visit a house attacked by the wolves or if the Serial Killer chooses to kill them! When visiting a Zombie, the harlot has a 50% chance of finding out their role!
 	
 	NIGHT ACTIONS, every night!</value>
   </string>
@@ -763,13 +763,13 @@ Last update: 24/03/2017 by @CrapKnight -->
   <string key="AboutCult">
   <!-- CULT CONVERSION RATES AND WHO'S HOME HERE! ayylmao -->
     <value>
-	Every night, all cultists in the cult vote to decide who to convert. The cult wins when every single alive player is a cultist. It's not that simple to convert players, though!
+	Every night, all Zombies in the cult vote to decide who to convert. The cult wins when every single alive player is a Zombie. It's not that simple to convert players, though!
 	
 	NIGHT ACTIONS, every night!</value>
   </string>
   <string key="AboutCH">
     <value>
-	The Cultist Hunter has a single job: kill all cultists. Every night, they get to visit a player, who won't feel anything... unless they are a cultist, in which case, the Cultist Hunter will kill them! If the cult chooses to convert the CH, their newest member dies.
+	The Zombie Hunter has a single job: kill all Zombies. Every night, they get to visit a player, who won't feel anything... unless they are a Zombie, in which case, the Zombie Hunter will kill them! If the cult chooses to convert the CH, their newest member dies.
 	
 	NIGHT ACTIONS, every night!</value>
   </string>
@@ -799,7 +799,7 @@ Last update: 24/03/2017 by @CrapKnight -->
   </string>
   <string key="AboutDG">
     <value>
-      The Doppelgänger chooses a player during the first night of the game. Once they die, the Doppelgänger will become what they were! Unless the player was converted to the cult, the Doppelgänger will become what they were at the time of death! When becoming a Wild Child, the Doppelgänger will inherit their role model. The Doppelgänger cannot be converted to a cultist until they change roles, and will not be able to win (except as a lover) unless they've changed roles!
+      The Doppelgänger chooses a player during the first night of the game. Once they die, the Doppelgänger will become what they were! Unless the player was converted to the cult, the Doppelgänger will become what they were at the time of death! When becoming a Wild Child, the Doppelgänger will inherit their role model. The Doppelgänger cannot be converted to a Zombie until they change roles, and will not be able to win (except as a lover) unless they've changed roles!
       
 	  FIRST NIGHT ACTION, then none until their role changes!
     </value>
@@ -813,7 +813,7 @@ Last update: 24/03/2017 by @CrapKnight -->
   </string>
   <string key="AboutHunter">
     <value>
-      The Hunter is just like a villager... Until someone visits them, or they die! Anyone who visits the Hunter's house will find themselves dead (other than the cult - there's a 50% chance the cult will convert the Hunter, and then a 50% chance a cultist will be killed if the conversion fails), unless they go there to attack the Hunter. The Serial Killer will be able to kill the Hunter, and a pack of wolves will also be able to do that... However, the Hunter won't go down without a fight! When they're killed - be it by lynching or a murder, but not a wolf attack - the Hunter will be given a choice to shoot and kill someone out of the players alive!
+      The Hunter is just like a villager... Until someone visits them, or they die! Anyone who visits the Hunter's house will find themselves dead (other than the cult - there's a 50% chance the cult will convert the Hunter, and then a 50% chance a Zombie will be killed if the conversion fails), unless they go there to attack the Hunter. The Serial Killer will be able to kill the Hunter, and a pack of wolves will also be able to do that... However, the Hunter won't go down without a fight! When they're killed - be it by lynching or a murder, but not a wolf attack - the Hunter will be given a choice to shoot and kill someone out of the players alive!
 	  Wolf attacks work differently, though! If a sole wolf attacks the hunter, there's a 30% chance they'll be able to kill the wolf and survive. Otherwise, the Hunter will be killed by the wolves, but may be able to take one down (instead of choosing a player to kill) as they go! For two wolves, the chance of killing one of them is 50%. For three, it's 70%; for four, 90%, and for packs with five wolves or more, the Hunter will definitely be able to kill one of them as they die!
 	  
 	  NO ACTIONS, until they die!
@@ -1193,7 +1193,7 @@ Last update: 24/03/2017 by @CrapKnight -->
   <string key="BlacksmithKilled">
     <value>Seems like {0}, the resident bull, must have been extremely unlucky. Toys and weapons, fresh from {0}'s armory, were found plunged into his hands, feet and head, and pinned to the craftsman's table last night. Maybe the wasp was hoping to expand his weapon collection alongside his organ one...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>{{0} was found tied up by their tentacle altar.. The wasp has struck again, regardless of race, language or religion! {0} was a Snake.</value>
   </string>
   <string key="CupidKilled">
@@ -1226,14 +1226,14 @@ Last update: 24/03/2017 by @CrapKnight -->
     <value>NOMNOMNOMNOM! The wolves were heard last night, eating up a tender lemur, {0}, leaving behind only a bits and pieces of wolf fur! The village wondered if the wolves felt any guilt climbing up all the way up there just to get at the lemur.</value>
   </string>
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
-    <value>The furries wake up in the morning, only to find the severed body parts of {0} the mongoose, Down in the basement where he'd tie up tentacle cultists, but himself tied up and dead.. long after struggling with his restraints, Lesson learnt: the wasp is not a snake </value>
+    <value>The furries wake up in the morning, only to find the severed body parts of {0} the mongoose, Down in the basement where he'd tie up tentacle Zombies, but himself tied up and dead.. long after struggling with his restraints, Lesson learnt: the wasp is not a snake </value>
     <value>The body of {0}, the mongoose, was found in the middle of town, albeit stung at a hundred places. Checking if the wasp was a snake does not seem to be a good idea...</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>While it seemed that the wolves decided to stay good for once, punishing {0}, a snake that decided to court trouble with the wolves, proved too difficult to resist. {0}'s head was converted to a fine supper, home delivered!</value>
     <value>The snake ran into unexpected trouble last night. Their newest member had the misfortune of visiting a wolf on the night the wolves decided to stay home, and the wolf found {0} quite delicious. Unfortunately for {0}, wolves have no interest in tentacles.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>The snakes thought they would have a new member in their ranks, but they were wrong! {0}, a snake, was minced to pieces and placed at the town square in the morning! Strangely their "holy" tentacle altar was found covered in wasp poispn, as if a statement to show whose religion was triumphant.</value>
     <value>Last night, the snake tried to convert the one person in the village crazier than they are. Their newest member tried to convert the wasp, and the wasp made a new piece of tentacle art in the town square of what was remaining of the snake {0}</value>
   </string>
@@ -1254,8 +1254,8 @@ Last update: 24/03/2017 by @CrapKnight -->
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Knowing only {0} was left, {1} chose a time where {0}'s guard was at their lowest. Eliminating the final villager proved to be effortless for {1}, for all there remains is a mutiliated body of {0}, the bear, adorned with parallel slashes to the face.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} and {0} walk out in daylight. Seeing weird tentacles trying to sneak out from {0}'s cloak, the righteous mongoose {1} goes in for the final kill, putting an end to the twisted learnings of the snakes that had contaminated the village.</value>
   </string>
   

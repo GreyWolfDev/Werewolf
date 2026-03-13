@@ -211,10 +211,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Ngana penerusnya abu pantoa nan susupo.  Kalo abu pantoa yang asli mati, ngana yang bateruskan pantoa deng susuponya.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Ngoni anggota MLM topeko.  Tiap malam nga pe kerja baprospek orang biar bisa dapat kapal pesiar. Kalo semua yang tasisa hidup berhasil nga prospek ikut nga pe MLM, fix sudah ngoni samua yang menang.</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Ngana mantan anggota MLM yang insaf dan mau menghentikan praktik MLM, ngana pe kerja berusaha menghentikan para abu prospek MLM biar gagal dorang nae kapal pesiar. Tiap malam ngana bisa bapilih orang, Kalo dia abu MLM, nga paka tundunya. Tapi kalo abu MLM baprospek ngana, ngana bisa tutup telinga dan bapaka tundu anggota abu MLM yang baru.</value>
   </string>
   <string key="LynchTime" >
@@ -299,7 +299,7 @@
   {0} mati nandasa dengan baju bertuliskan "SAYA TIDAK MAU CURHAT", NOMNOMNOMNOM!
   {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>Bau bangkai tercium dari rumah {0}
    Warga memeriksa ke dalam rumah dan menemukan altar pemujaan kerang ajaib dan poster level MLM bergambar kapal pesiar. Seorang anggota abu MLM 👤 namatemo.</value>
@@ -410,35 +410,35 @@
   <string key="RemainingPlayersEnd">
     <value>Pemain Tersisa, Peran, dan Team:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} memilih baprospek {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} diutus untuk baprospek {1} .. dengan polosnya, dia baru sadar bahwa ternyata dia mantan abu MLM yang insaf. Adohh. 💂
   {0} namatemo dipaka ditundu!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} ke rumahmu semalam membawa brosur pendaftaran dan konga-konga surga telinga untuk naik kapal pesiar.. Merasa ditipu-tipu sama prospek MLM, ngana malah paka {1} pas ditundunya.</value>
   </string>
   <string key="CultConvertYou">
     <value>👤 Anggota Abu MLM berhasil baprospek ngana bergabung! BIDIP!! BIDIP!! 🐚. Setiap malam, ngana juga bisa baprospek orang lain untuk bergabung ngoni pe MLM. Impian naik kapal pesiar semakin besar</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
-    <value>Cultists abu prospek MLM: {0}</value>
+    <!-- 0 - Number of Zombies -->
+    <value>Zombies abu prospek MLM: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} telah bergabung ikut MLM!!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} membawa brosur pendaftaran dan iming2 naik kapal pesiar ke rumah {1}. Setelah mengetuk pintu rumahnya beberapa jam, ngana cekewa batunggu dan meninggalkan brosur pendaftaran MLM di bawah pintu.</value>
   </string>
@@ -449,7 +449,7 @@
     <!-- 0 - target name -->
     <value>Ngana pigi ke rumah {0}, tetapi dia so namatemo duluan.</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Ngana pigi ke rumah {0}, terdengar suara konga2 mo baprospek. Komio pun bakeluarkan jurus kutik tundu ke arahnya, anggota abu MLM namatemo.</value>
   </string>
@@ -466,7 +466,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} so namatemo! Ngana emosi curiga dan lari2 te jelas ke hutan dan menjadi Serigala! Tim Serigalamu adalah: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>Warga Desa 👱</value>
   </string>
@@ -512,10 +512,10 @@
   <string key="ApprenticeSeer">
     <value>Muridnya Abu Pantoa nan susupo 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Abu Prospek MLM 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Pemburu anggota MLM 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -547,7 +547,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Anggota barumu menuju rumah {0} dengan pede mo baprospek,
       Tetapi pas so sampe ternyata yang mo diprospek so dinodai tundunya sama serigala. Terpaksa cari orang lain yang bisa di konga akan</value>
   </string>
@@ -738,12 +738,12 @@
     <value>Ngana pi ke rumah {0} untuk bapalak karena telama lagi harus babayar kosan, tetapi komiu malah ketemu dengan preman pasar yang insaf! Komiu yang nongiri malah banamango baserang tundunya preman pasar insaf tapi ternyata malah komiu kalah pulang tebawa uang.</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Anggota MLM junior {0} pi ke rumah {1} babawa brosur pendaftaran, tetapi tadengar suara peleton dan {0} tabolengkar keluar jendela! {0} so namatemo.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Anggota MLM junior {0} pi ke rumah {1}  babawa brosur pendaftaran, tetapi tadengar suara teriakan {0} lalu hening dan terdengar bunyi kentut! {0} so namatemo.</value>
   </string>
@@ -767,7 +767,7 @@
     <value>{0} so namatemo, dan komiu jadi anggota Moci Poci 👷. Ko pe geng Moci Poci yaitu: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Abu KW {0} sekarang so jadi anggota MLM macam ngana!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1127,10 +1127,10 @@
     <value>Pilihan Tanner dalam Peran: {0}</value>
   </string>
   <string key="AllowCultQ">
-    <value>Boleh kasi ada Cultist dalam pilihan peran?\nPengaturan saat ini: {0}</value>
+    <value>Boleh kasi ada Zombie dalam pilihan peran?\nPengaturan saat ini: {0}</value>
   </string>
   <string key="AllowCultA">
-    <value>Pilihan Cultist dalam Peran: {0}</value>
+    <value>Pilihan Zombie dalam Peran: {0}</value>
   </string>
   <string key="ThankYou">
     <value>Terima kasih leh, Selamat bermain :)</value>

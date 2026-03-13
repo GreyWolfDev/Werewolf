@@ -205,10 +205,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>Tum Paigambar ke Chhatra ho.  Agar asli Paigambar marte hai, tab tum uski jagah loge</value>
   </string>
-  <string key="RoleInfoCultist">
-    <value>Tum Saampradaayik (Cultist) ho.  Har raat, tum kisi ek kjhiladi ko saampradaayik banane ka chayan kar sakte ho. Agar sabhi players ant me saampradaayik ban jate hai to wo jeet jayenge budbak.</value>
+  <string key="RoleInfoZombie">
+    <value>Tum Saampradaayik (Zombie) ho.  Har raat, tum kisi ek kjhiladi ko saampradaayik banane ka chayan kar sakte ho. Agar sabhi players ant me saampradaayik ban jate hai to wo jeet jayenge budbak.</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>Tum Saampradaayik Shikari ho, jo panth (Cult) ko gao ke sabhi hutiyon ko pariwartit hone se bachate ho!  Har raat, tum ek khiladi ko chun sakte ho.  Ahar wo saampradaayikhai to wo marenge bancho. Agar Panth (cult) tumhe marna chahenge to unka sabse naya sadasya marege bhusdi.</value>
   </string>
   <string key="LynchTime">
@@ -266,9 +266,9 @@
     <!-- 1 - victim role -->
     <value>Jaise hi sab subah uthe, unko ek bekar badbu aai. Badbu ke piche gaye toh {0} mila jise chithde ud chuke the, aur sar gayab tha.  NOMNOMNOMNOM {1}.</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
-    <value>Badi gandi badbu aa rhi hai {0} ke ghar se...  gao wale dekhne gaye toh ek laash dikhi vedi pe...  Ek saampradaayik (Cultist) ko shikari ne maar diya!!</value>
+    <value>Badi gandi badbu aa rhi hai {0} ke ghar se...  gao wale dekhne gaye toh ek laash dikhi vedi pe...  Ek saampradaayik (Zombie) ko shikari ne maar diya!!</value>
   </string>
   <string key="NoAttack">
     <value>Sab subah ekathhta hote hai, Lagta hai ki raat ko kuch nahi hua.</value>
@@ -372,51 +372,51 @@
   <string key="RemainingPlayersEnd">
     <value>Bache hue zinda khiladi, kirdar aur team:</value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value >{0} ne {1} ko pariwartan karne ka chayan kiya.</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} ko tumhara ganda kaam karne ke liye bheja gaya hai, aur {1} ko badalne gaye... magar, vo saampradaayik shikhari (Cult Hunter) nikla! {0} mar gaya!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
-    <value>{{0} tumhare ghar aaya tumhe maarne....  magar tumne ek talwar ghusa di uske sar me.  ek saampradaayik (Cultist) mar chuka hai... {1} bacha hai!</value>
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{{0} tumhare ghar aaya tumhe maarne....  magar tumne ek talwar ghusa di uske sar me.  ek saampradaayik (Zombie) mar chuka hai... {1} bacha hai!</value>
   </string>
   <string key="CultConvertYou">
-    <value>Panth (Cult) ne tumhe badal diya hai!  tum ab ek saampradaayik (Cultist) ho.  Har doosri raat, tumhe mauka milega doosre khiladi ko apne panth me lene ke liye.</value>
+    <value>Panth (Cult) ne tumhe badal diya hai!  tum ab ek saampradaayik (Zombie) ho.  Har doosri raat, tumhe mauka milega doosre khiladi ko apne panth me lene ke liye.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Saampradaayik: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} ne Panth (Cult) join kar liya hai/</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} ko tumhara ganda kaam karne ke liye bheja gaya, aur {1} ko badalne gaye wo... magar koi ghar pe nai tha!</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value>Sab bhediye mar gaye, aur jo khiladi bache the unko saampradaayik (Cultist) bana diya gaya hai... Panth jeet gaya!</value>
+    <value>Sab bhediye mar gaye, aur jo khiladi bache the unko saampradaayik (Zombie) bana diya gaya hai... Panth jeet gaya!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
     <value>Tum {0} ko maarne gaye, magar vo pehle hi mar chuka tha!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
-    <value>Tum {0} ke ghar jaate ho, aur tumne dekha wo koi anjaane bhagwaan se prarthna kar rha tha...  Tumne jaldi se apni talwar uske seene me daag di. Ek saampradaayik (Cultist) maara gaya!</value>
+    <value>Tum {0} ke ghar jaate ho, aur tumne dekha wo koi anjaane bhagwaan se prarthna kar rha tha...  Tumne jaldi se apni talwar uske seene me daag di. Ek saampradaayik (Zombie) maara gaya!</value>
   </string>
   <string key="HunterFailedToFind">
     <!-- 0 - target name -->
-    <value>Tum {0} ke ghar jaate ho, magar vaha kuch ajeebo-garib nai ho rha tha.  Vo saampradaayik (Cultist) nahi the, toh tum ghar laut gaye.</value>
+    <value>Tum {0} ke ghar jaate ho, magar vaha kuch ajeebo-garib nai ho rha tha.  Vo saampradaayik (Zombie) nahi the, toh tum ghar laut gaye.</value>
   </string>
   <string key="WildChildToWolves">
     <!-- 0 - Werechild's name -->
@@ -427,7 +427,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} mar gaye! Gusse me, woh bhediye ban gaye! Tumhare naye saathi hai: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>Gao wala 👱</value>
@@ -474,10 +474,10 @@
   <string key="ApprenticeSeer">
     <value>Chhatra (Apprentice Seer) 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>Sampradaayik 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>Saampradaayik Shikari 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -509,7 +509,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>Tumhara naya gand dost jab {0} ke ghar gaya unko badalne, tab uski gand fat gayi jab usne purje, khun aur bhediye ke kuchh baal wahan dikhe. Aur uski gand fatne ke baad wapas aagaya. </value>
   </string>
   <string key="GuardBlockedWolf">
@@ -691,12 +691,12 @@
     <value>Tumne {0} ki shareer ko apne collection me rakhna chaha, lekin devdoot ne tumhari gaand faad daali! Aaj raat kisi ki hatya nahi hui...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Panth ne {0} ko bheja gaya {1} ko badalne ke liye, lekin ek goli chalne ki awaaz aati hai aur {0} ki laash khidki se udte hua bahar girti hai! {0} mar gaya....</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Panth ne {0} ko bheja gaya {1} ko badalne ke liye, lekin iske wipreet {0} ka sahreer khidki se udta hua bahar girta hai, uske shareer ke har hisse me chaaku chubhone ke nishaan the! KAISA LUND HAI! {0} mar gaya....</value>
     <value>{0} {1} ke ghar me jhaankta hai, dheere se darwaza kholta hai, aur achanak hi ek pagal randwa chhuri se uska swagat karta hai!!! {1} {0} ke shareer ke har organ me chhuri chubhota hai warnmala kram (alphabetical order) me, pura samay barbad karte hue! {0} mar gaya D:</value>
@@ -721,7 +721,7 @@
     <value>{0} mar gaya, aur tum mazdoor me badal gaye.  Tumhare teammates (agar koi hai) to: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>Judwa {0} ab tumhari tarah ek saampradaayik ban gaya hai!</value>
   </string>
   <string key="DGTransformToCult">

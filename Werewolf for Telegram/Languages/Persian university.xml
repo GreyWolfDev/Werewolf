@@ -204,10 +204,10 @@
   <string key="RoleInfoApprenticeSeer">
     <value>تو خبره هستی ، همان کسی که نزدیک فارغ التحصیل شدنه و منتظره  کارآموزی دوستش ( کارآموزی بایگانی ) تمام بشه تا جای او را بگیره . فعلا یک دانشجوی ساده هستی و آرزو می کنی هر چه زودتر کارآموزیش تموم بشه تا از بلاتکلیفی دربیاری و جاشو بگیری .</value>
   </string>
-  <string key="RoleInfoCultist">
+  <string key="RoleInfoZombie">
     <value>تو انگل دانشگاهی ! هر شب با دوستات بساط میکنی تا  یه نفر دیگه رو به گروهت دعوت کنی ... اگه همه ی دانشجوها معتاد بشن دانشگاه تعطیل میشه و تو میبری !</value>
   </string>
-  <string key="RoleInfoCultistHunter">
+  <string key="RoleInfoZombieHunter">
     <value>تو انگل شناس ( دانشجوی ارشد انگل شناسی ) هستی . وظیفه اصلی تو مبارزه با انگل های دانشگاه هست تا بقیه دانشجو ها را از معتاد شدن دور کنی و محیطی عاری از معتادین فراهم کنی . هر شب می تونی بری از یکی از اعضا دانشگاه تست اعتیاد بگیری . در صورتی که معتاد بود فوری اخراجش می کنی اما اگر معتاد نبود یا طرف استاد بود زنده می مونی . در صورتی که انگل ها تو را بخوان معتاد کنن ، جدیدترین معتاد دانشگاه را می کشی . یادت باشه اگر بری از رئیس دانشگاه تست بگیری ، بخاطر توهینی که بهش کردی ، فوری اخراج میشی .</value>
   </string>
   <string key="LynchTime">
@@ -264,7 +264,7 @@
 <!-- 1 - victim role -->
     <value>آخه این عضو دانشگاه بدبخت به شما چیکار داشت که اخراجش کردین آشغالا ! یه گوشه نشسته بود داشت کتابشو می خوند . در آرامش باشی {0} عضو دانشگاه خوبی بودی 😢😢 {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
 <!-- 0 - victim name -->
     <value>اینطور که معلومه انگل شناس دیشب یکی از انگل های دانشگاه یعنی {0}‌ رو شناسایی و فوری اخراجش کرده !!!</value>
   </string>
@@ -373,34 +373,34 @@
   <string key="RemainingPlayersEnd">
     <value>اعضای باقی مونده عبارت اند از : </value>
   </string>
-  <string key="CultistVotedConvert">
+  <string key="ZombieVotedConvert">
 <!-- 0 - Voter's name -->
 <!-- 1 - target name -->
     <value>نظر {0} اینه که {1} رو معتاد کنید</value>
   </string>
-  <string key="CultConvertCultHunter">
-<!-- 0 - Yougest Cultist (killed)'s name' -->
-<!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+<!-- 0 - Yougest Zombie (killed)'s name' -->
+<!-- 1 - ZombieHunter's name -->
     <value>خب {0} رفت که {1} رو به دسته انگل های دانشگاه دعوت کنه ولی {1} انگل شناس بود ... فوری اخراج شد !! ☹️</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-<!-- 0 - Youngest Cultist's name -->
-<!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - Number of Zombies left -->
     <value>دیشب {0} اومد معتادت کنه ولی تو راپورتش رو دادی و از دانشگاه اخراجش کردی ! {1}  معتاد باقی مونده</value>
   </string>
   <string key="CultConvertYou">
     <value>تو الان انگل دانشگاه هستی ! و هر شب میتونی یکی دیگه رو هم مثل خودت معتاد و بدبخت کنی</value>
   </string>
   <string key="CultTeam">
-<!-- 0 - Number of cultists -->
+<!-- 0 - Number of Zombies -->
     <value>معتاد ها: {0}</value>
   </string>
   <string key="CultJoin">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>تونستی {0} معتاد کنی</value>
   </string>
   <string key="CultVisitEmpty">
-<!-- 0 - Newest cultist's name -->
+<!-- 0 - Newest Zombie's name -->
 <!-- 1 - target name -->
     <value>خب {0} به اتاق {1} رفت تا اونو هم مثل خودتون معتاد کنه،  اما نتونست {1} رو توی اتاقش پیدا کنه!</value>
   </string>
@@ -411,7 +411,7 @@
 <!-- 0 - target name -->
     <value>رفتی {0} رو اخراج کنی ولی دیدی پرونده زیر بغل داره  از دانشگاه میره. </value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
 <!-- 0 - target name -->
 <!-- 0 - target name -->
     <value>رفتی اتاق {0} و دیدی داره مواد میکشه ... تو هم اعصابت خورد شد ، فوری اخراجش کردی !</value>
@@ -428,7 +428,7 @@
 <!-- 0 - teamate's names -->
     <value>چون تونستی به درستی حدس بزنی {0} بالاخره از دانشگاه اخراج میشه الان تبدیل به استاد شدی . باقی استادا عبارتند از : {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
 <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>مشروط 👱(👱)</value>
@@ -475,10 +475,10 @@
   <string key="ApprenticeSeer">
     <value>خبره 🙆‍♂️(🙇)</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>انگل 🚬(👤)</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
 <!-- These are for the player list -->
     <value>انگل شناس💂(💂)</value>
   </string>
@@ -510,7 +510,7 @@
     <value>  بسیجی های دیگه عبارتند از: {0}</value>
   </string>
   <string key="CultTargetDead">
-<!-- 0 - Youngest cultists name -->
+<!-- 0 - Youngest Zombies name -->
     <value>عضو جدید انگل های دانشگاه رفت به اتاق {0} که معتادش کنه ولی دید که پرونده زیر بغل داره با اشک از دانشگاه میره ... نکن این کارو خب 😐😂
 </value>
   </string>
@@ -695,7 +695,7 @@
     <value>رفتی {0} رو اخراج کنی ولی مدافع حقوق دانشجویان نذاشت!</value>
   </string>
   <string key="CultConvertHunter">
-<!-- 0 - Youngest Cultist's name -->
+<!-- 0 - Youngest Zombie's name -->
 <!-- 1 - target's name -->
     <value>معتاد عزیزمون {0} رفت که {1} هم مثل خودش معتاد کنه منتها {1} آمارش رو گرفت و به دانشگاه لوش داد . {0} اخراج شد</value>
   </string>
@@ -719,7 +719,7 @@
     <value>آخ جون ... بلاخره {0} اخراج شد و تونستی جایگاهش رو تصاحب کنی . چون اون بسیجی بود تو هم بسیجی شدی . بقیه بسیجی ها عبارت اند از : {1}</value>
   </string>
   <string key="DGToCult">
-<!-- 0 - new cultist's name -->
+<!-- 0 - new Zombie's name -->
     <value>به به ... خفت گیر ( {0} ) چون می خواست جایگاه یکی از انگل ها رو تصاحب کنه ، الان مثل شما معتاد شده . خوشا به سعادتون فضانوردان عزیز 😁</value>
   </string>
   <string key="DGTransformToCult">
@@ -1252,7 +1252,7 @@
   <string key="BlacksmithKilled">
     <value>متاسفانه دیشب رئیس شورای دانشجویی {0} توسط رئیس دانشگاه اخراج شد !</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>دیشب رئیس دانشگاه یکی از انگل های دانشگاه یعنی {0} رو از دانشگاه اخراج کرد !!!</value>
   </string>
   <string key="CupidKilled">
@@ -1287,11 +1287,11 @@
     <value>انگل شناس {0} مشغول تحقیق روی دانشجوهای مختلف بود تا اینکه رئیس دانشگاه متوجه میشه که داره اون رو بررسی میکنه .  اینکارش توهین تلقی میشی و توسط رئیس اخراج میشه</value>
   </string>
   <string key="CultConvertWolfPublic">
-<!--used when Cultists convert the wolves, only if wolves stayed home-->
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>دیشب {0} رفت که استادا رو معتاد کنه منتها استادا پوسترش رو توی کل دانشگاه پخش کردند و با خفت اخراجش کردند تا درس عبرتی بشه برای آیندگان !</value>
   </string>
   <string key="CultConvertKillerPublic">
-<!--used when Cultists convert the SK-->
+<!--used when Zombies convert the SK-->
     <value>انگل ها شب قبل {0} مامور کردند تا عضو به توافق رسیده را معتاد کنن منتها دیگه خبری ازش نشد . تا اینکه امروز باقی اعضا متوجه میشن که {0} بدلیل مصرف زیاد مواد مخدر و دعوت رئیس دانشگاه به معتاد شدن از دانشگاه اخراج شده !!!</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1311,8 +1311,8 @@
 <!--{0} = hunter's name, {1} = wolf's name-->
     <value>آمارگیر {0} توی دانشگاه با {1} تنها مونده ! {1} میره که آمارگیر رو اخراج کنه اما آمارگیر سریع متوجهش میشه ... تا می خواد بره پرونده رسوایی اخلاقی {1} روی میز وزیر بزاره ... استاد عزیز به سرعت نور اخراجش میکنه !!!</value>
   </string>
-  <string key="CHKillsCultistEnd">
-<!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
 <!-- Extend time -->
     <value>تنها انگل دانشگاه {0} داشت برای خودش کنار منقل مواد میکشید که ناگهان دانشجوی انگل شناسی {1} اون رو از دانشگاه اخراج کرد ... !</value>
   </string>
@@ -1523,14 +1523,14 @@
 <!-- NOT IMPLEMENTED YET -->
     <value>شعبده باز 🤹‍♂️ تنها یکبار در روز می تونه از جادوش استفاده کنه و یه شب همه را به کما ببره تا هیچکس همون شب نتونه کاری انجام بده . </value>
   </string>
-  <string key="RoleInfoPacifist">
+  <string key="RoleInfoImam">
     <value>
 تو حقوقدان هستی 👨🏻‍⚖️ هر موقع که عشقت کشید می تونی با قدرت بیان و دفاع خوب ، اعضای دانشگاه رو متقاعد کنی که رای ندن ... در نتیجه کسی از دانشگاه اخراج نمیشه . هواست باشه بیخودی سخنرانی نکنی چون ممکنه زود از دانشگاه اخراج بشی 😐😂</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>حقوقدان 👨🏻‍⚖️( ☮️ )</value>
   </string>
-  <string key="AboutPacifist">
+  <string key="AboutImam">
     <value>
 حقوقدان 👨🏻‍⚖️ میتونه با قدرت بیان و دفاع خوب ، اعضای دانشگاه رو از یک شب رای دادن منصرف کنه ... در نتیجه کسی از دانشگاه اخراج نمیشه در اون شب . </value>
   </string>
@@ -1557,14 +1557,14 @@
     <value>جیب بر 😈 
 اگه حالت جیب بری ( دزد ) برای هرشب فعال باشه ، جیب بر 50 درصد شانس داره که کارت دانشجویی متعلق به دانشجو های دانشگاه رو بدزده . اگه بره کارت یکی از دانشجو ها رو با موفقیت بدزده ، نقش هاشون جا به جا میشه ... اون شخص هم مجبور میشه ، هر شب به جای جیب بر قبلی به سرقت کارت دانشجوهای دیگه بپردازه تا همینجوری سرقت کارت ها ادامه پیدا کنه . ولی اگه حالت دزد هرشب فعال نباشه کسی که کارتش دزدیده میشه تبدیل به مشروط میشه و چرخه جیب بری ادامه پیدا نمیکنه .</value>
   </string>
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>این دکمه رو فشار بده و یه سخنرانی در مورد حقوق دانشجوها انجام بده . یادت باشه وقتی این کار رو بکنی ، جلوی رای دادن اعضای دانشگاه رو می گیری و کسی اعدام نمیشه همچنین یک قدم به سمت اخراج شدن پیش میری . خواهشاً ، درست و بجا استفاده کن 😐</value>
   </string>
-  <string key="PacifistNoLynch">
-<!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+<!-- {0} - Imam's name -->
     <value>حقوقدان 👨🏻‍⚖️ عزیز ، {0} ، یه سخنرانی تاثیر گذار در مورد حقوق دانشجو ها ، بخشیدن ها و اعتماد به هم میکنه . اعضای دانشگاه قانع میشن  که امروز رای ندن و کسی اعدام نشه 😎</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>به خاطر سخنرانی پر احساس ، شور انگیز و منطقی حقوقدان عزیزمون 👨🏻‍⚖️️ امروز رای گیری نداریم !
 </value>
   </string>
@@ -1612,8 +1612,8 @@
     <value>هم تیمی های شما(درصورت وجود) عبارت اند از:{0}.</value>
   </string>
   <string key="ThiefToCult">
-<!-- 0 - old cultist's name -->
-<!-- 1 - new cultist's name -->
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
     <value>آخ {0} دیگه همتیمی شما نیست به جاش {1} یه انگل شده درست مثل شماها .‌ هواستون باشه لوتون نده 😐</value>
   </string>
   <string key="ThiefToWolf">
@@ -1670,16 +1670,16 @@
   <string key="SecretLynchShowVotersA">
     <value>وقتی حالت رای مخفی روشن است ، تعداد رای ها در اخر رای گیری نشان داده خواهد شد . نام رای دهندگان به هر عضو نشان داده خواهد شد : {0}</value>
   </string>
-  <string key="CultistBitten">
-<!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
     <value>عجیبه .... امشب جمع شدین که تصمیم بگیرید کیو معتاد کنید اما متوجه شدین که {0} اینجا نیست ! یعنی چه اتفاقی براش افتاده ؟ 🤔</value>
   </string>
   <string key="Peace">
-<!-- Used for Pacifist's button -->
+<!-- Used for Imam's button -->
     <value>سخنرانی</value>
   </string>
   <string key="LynchPeaceTimeout">
-<!-- Used in PM if the pacifist uses his ability during lynch phase -->
+<!-- Used in PM if the Imam uses his ability during lynch phase -->
     <value>به خاطر سخنرانی بسیار تأثیرگذار و عمیق حقوقدان 👨🏻‍⚖️ امروز رای گیری نداریم !</value>
   </string>
   <string key="ThiefStoleYourRoleThief">
@@ -1773,7 +1773,7 @@
   <string key="ChemistTargetEmpty">
     <value>رفتی که با {0} شرطبندی کنی اما توی اتاقش نبود !</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value> انگل های دانشگاه درحال حاضر : {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1824,7 +1824,7 @@
   <string key="ChemistFrozen">
     <value>هنگامی که وسایل خودتو رو برای خوردن نوشیدنی جمع میکردی ... متوجه هیپنوتیزم شدن توسط دکتر میشی👨‍⚕! از گوشه ی چشم نوشیدنی هاتو می بینی که ناگهان بدنت شل تر میشه و به خواب میری . بزودی خورشید طلوع میکنه و دیگه مشکلی نداری</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>وقتی که داشتی برای دعوت کردن آماده میشدی دکتر را می بینی که داره هیپنوتیزمت می کنه 👨‍⚕! هم تیمی هات بهت قول دادند که امشب کارشون رو خوب انجام بدن .</value>
   </string>
   <string key="CHFrozen">
@@ -1966,11 +1966,11 @@
     <value>بعد از یک شب خسته کننده قبل از اینکه وارد اتاقتان شوید تستری رو داخل باغچه جدید دانشگاه می بینی ... مثل اینکه دانشجوی انگل شناس یعنی {0} قبلا بخاطر افتادن توی چاله و چوله های باغچه دانشگاه اخراج شده !</value>
   </string>
   <string key="CultFell">
-<!--{0}: cultist-->
+<!--{0}: Zombie-->
     <value>صدای فریادی را از درون باغچه های جدید دانشگاه می شنوی ، با عجله به آنجا میری و {0} را می بینی که در چاله و چوله ها باغچه افتاده . آخه کدوم انگلی میخواد یه باغچه بان رو معتاد کنه ؟!</value>
   </string>
   <string key="CultConvertGraveDigger">
-<!--{0}: cultist who fell, {1}: grave digger-->
+<!--{0}: Zombie who fell, {1}: grave digger-->
     <value>در راه اتاق {1} ناگهان {0} تصمیم می گیره به مسجد دانشگاه بره اما در چاله و چوله های باغچه جدید دانشگاه می افته . صدای فریاد او رو قبل از افتادن می شنوید اما برای نجات خود فرار می کنید !</value>
   </string>
   <string key="ChemistFell">
@@ -2024,8 +2024,8 @@
  <!--{0}: harlot-->
     <value>دانشجوی اهل دل {0} ناکام از دانشگاه اخراج شد 😐 ظاهرا دیشب درون چاله و چوله های باغچه ی جدید دانشگاه می افته . یادت گرامی ای {0} 😰 </value>
   </string>
-  <string key="CultistFellPublic">
-<!--{0}: cultist who died-->
+  <string key="ZombieFellPublic">
+<!--{0}: Zombie who died-->
     <value> انگل ها قصد داشتند مسجد دانشگاه را آتیش بزنن اما {0} که گروه رو هدایت میکرد درون چاله و چوله های باغچه جدید دانشگاه افتاد و اخراج شد .‌ بقیه انگل ها برای فرار از اخراج شدن و افتادن تو گور ، فرار کردند .</value>
   </string>
   <string key="ThiefFellPublic">

@@ -186,10 +186,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value>Bueeeeno bueeeno bueeno, així que Montse i...Meritxell! Sí, la Meritxell! 🙇. Com que segueixes les passes de la Montse, en el moment que ella sigui expulsada ocuparàs el seu lloc [Aprenent de vident].</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value>Ets un estudiant de l’Institut del Teatre 👤. Cada nit pots reclutar més joves perquè s’uneixin al mundillo de les arts. Si tots els habitants al final de la partida acabeu sent estudiants, guanyeu [Sectari].</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value>Ets el Pol Requena, i vols evitar que s’expandeixi el nombre de membres d’estudiants de l’Institut del Teatre 💂. Cada nit pots triat un habitant i, si és un estudiant, serà expulsat. Si els estudiants intenten convertir-te, el seu membre més recent serà expulsat [Caçador de sectaris].</value>
   </string>
   <string key="LynchTime" >
@@ -244,7 +244,7 @@
     <!-- 1 - victim role -->
     <value>Quan els habitants es lleven, veuen que no hi ha {0} amb ells. Vaja, un pixapí menys!\n{1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
     <value>En Pol, fart de que cada cop hi hagi més competència a les classes de teatre, ha aconseguit expulsar a {0}!</value>
   </string>
@@ -346,34 +346,34 @@
   <string key="RemainingPlayersEnd">
     <value>Pixapins presents, rols i equip:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
     <value>{0} ha votat reclutar a {1}.</value>
   </string>
-  <string key="CultConvertCultHunter">
-    <!-- 0 - Yougest Cultist (killed)'s name' -->
-    <!-- 1 - CultHunter's name -->
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
     <value>{0} havia de fer la feina bruta, i reclutar a {1}... però era el Pol Requena! {0} ha deixat l'Institut del Teatre!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
-    <!-- 0 - Youngest Cultist's name -->
-    <!-- 1 - Number of cultists left -->
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
     <value>{0} ha vingut al teu pis aquesta nit, amb la intenció de reclutar-te per ser estudiant de l'Institut del Teatre... però has aconseguit que deixi els estudis. Un estudiant ha fugit. Restants: {1}!</value>
   </string>
   <string key="CultConvertYou">
     <value>T'han convertit en estudiant de l'Institut del Teatre! Cada nit, tindràs l'oportunitat de reclutar un altre pixapí, per poder fer una obra de teatre plegats.</value>
   </string>
   <string key="CultTeam">
-    <!-- 0 - Number of cultists -->
+    <!-- 0 - Number of Zombies -->
     <value>Sectaris: {0}</value>
   </string>
   <string key="CultJoin">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>{0} s'ha unit a l'Institut del Teatre!</value>
   </string>
   <string key="CultVisitEmpty">
-    <!-- 0 - Newest cultist's name -->
+    <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
     <value>{0} havia de fer la feina bruta, i reclutar a {1}... però al pis no hi havia ningú!</value>
   </string>
@@ -384,7 +384,7 @@
     <!-- 0 - target name -->
     <value>Has intentat caçar a {0}, però ja havia fugit!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <!-- 0 - target name -->
     <value>Has anat al pis de {0} i estava assajant una obra de teatre. Ràpidament li has menjat al cap a l'estúpid estudiant perquè no segueixi a l'Institut del Teatre i deixi els estudis.</value>
   </string>
@@ -401,7 +401,7 @@
     <!-- 0 - teamate's names -->
     <value>{0} ha sigut expulsat! Enrabiat, t'has passat al clan del Lopes! Gent del clan: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
   <string key="Villager">
     <value>un pixapí 👱</value>
@@ -448,10 +448,10 @@
   <string key="ApprenticeSeer">
     <value>la Meritxell 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>un estudiant de l'Institut del Teatre 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>el Pol Requena 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -483,7 +483,7 @@
   </string>
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
-    <!-- 0 - Youngest cultists name -->
+    <!-- 0 - Youngest Zombies name -->
     <value>L'estudiant més recent mira de reclutar a {0}, però es troba un pis sense mobles, i una carta de desnonament a la porta...</value>
   </string>
   <string key="GuardBlockedWolf">
@@ -615,12 +615,12 @@
     <value>Has intentat afegir el cos de {0} a la teva col·lecció, però la consciència nacional del Lopes t'ho ha impedit! Aquesta nit no pots matar ningú...</value>
   </string>
   <string key="CultConvertHunter">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Els estudiants de l'Institut del Teatre envien a {0} per intentar reclutar a {1}, però se sent un tret d'escopeta al sostre i {0} fuig corrent, morint de por.</value>
   </string>
   <string key="CultConvertSerialKiller">
-    <!-- 0 - Youngest Cultist's name -->
+    <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
     <value>Els estudiants de l'Institut del Teatre envien a {0} per intentar reclutar a {1}, però el cos de {0} surt volant per la finestra, ple de ganivets pertot arreu! QUINA NENA MÉS PSICÒPATA! {0} ha mort...i no menjarà flam de pastisseria.</value>
     <value>{0} es cola al pis de {1}, obre la porta i es troba immediatament amb el fantasma de la filla dels Ducs de Casavella! {1} clava el ganivet en els òrgans de {0} seguint l'ordre alfabètic, rient com una boja! {0} ha mort...i no menjarà flam de pastisseria. 😮</value>
@@ -645,7 +645,7 @@
     <value>{0} ha sigut expulsat, i tu et transformes en un veí. Els teus companys (si n'hi ha) són: {1}</value>
   </string>
   <string key="DGToCult">
-    <!-- 0 - new cultist's name -->
+    <!-- 0 - new Zombie's name -->
     <value>En Daniel i Gomes {0} s'han convertit en estudiants de l'Institut del Teatre, com tu!</value>
   </string>
   <string key="DGTransformToCult">
@@ -1166,7 +1166,7 @@
   <string key="BlacksmithKilled">
     <value>Sembla que {0}, l'agent Padilla, ha tingut molt mala sort. Resulta que la nit passada, cinc ganivets nous de trinca, de l'armeria {0}, se li han clavat a les mans, als peus i al cap, i l'han clavat a la seva taula de treball. Potser el fantasma de la filla dels Ducs de Casavella volia expandir la seva col·lecció d'armes, a més de la d'òrgans...</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>Han trobat el cos de {0} apunyalat fins a la mort amb una calavera falsa, al costat del seu guió de Romeu i Julieta. El fantasma de la filla dels Ducs de Casavella ha tornat a atacar! {0} era un estudiant de l'Institut del Teatre.</value>
   </string>
   <string key="CupidKilled">
@@ -1204,12 +1204,12 @@
     <value>El cos de {0}, el Pol Requna, ha aparegut destrossat, però tallat en exactament cent trossos. Això d'anar a caçar estudiants i topar-te amb el fantasma de la filla dels Ducs de Casavella sembla perillós...</value>
   </string>
   <string key="CultConvertWolfPublic">
-    <!--used when Cultists convert the wolves, only if wolves stayed home-->
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Tot i que aquesta nit el Lopes i companyia han decidit quedar-se dormint, els ha visitat {0}, un estudiant que volia reclutar a més membres. Però quan ha vist com roncaven el Lopes i els altres, {0} s'ha espantat i ha fugit corrents de l'Eixample!</value>
     <value>Aquesta nit, els estudiants s'ha trobat problemes inesperats. El seu membre més nou ha tingut la mala sort de visitar al Lopes i companyia per matricular-los a classes de teatre, però roncaven tan fort que {0} s'ha espantat i ha fugit corrents de l'Eixample.</value>
   </string>
   <string key="CultConvertKillerPublic">
-    <!--used when Cultists convert the SK-->
+    <!--used when Zombies convert the SK-->
     <value>Els estudiants de l'Institut del Teatre pensaven que tindrien un nou membre a classe, però s'equivocaven! {0}, un estudiant, ha sigut assassinat pel fantasma de la filla dels Ducs de Casavella.</value>
     <value>La nit passada, els estudiants de l'Institut del Teatre han intentat convertir el fantasma de la filla dels Ducs de Casavella, però no han pogut vèncer i {0} ha mort.</value>
   </string>
@@ -1232,8 +1232,8 @@
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sabent que només resta {0}, {1} ha triat un moment en què la guàrdia de {0} era baixa. Eliminar l'últim pixapí ha estat fàcil per a {1}! Quan menys s'ho esperava {0}, la Carbonell, estava a fora el carrer, sense poder tastar el flam de pastisseria.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} i {0} caminen durant el dia. Veient un guió de Romeu i Julieta de {0}, en Pol {1} treu posa fi al reclutament d'estudiants de l'Institut del Teatre i elimina la seva competència per convertir-se en el millor actor de de la classe.</value>
   </string>
 
@@ -1447,14 +1447,14 @@
   </string>
 
   <!-- NOT IMPLEMENTED YET -->
-  <string key="RoleInfoPacifist">
-    <value>Ets l’Oriol Lopes, un hippie, revolucionari, comunista, ecologista, anticapitalista, a favor del moviment feminista i pacifista ☮. Vamos, un perroflauta vell. Com que no desitges el mal, pots fer que no es pugui expulsar a ningú durant una nit [Pacifista].</value>
+  <string key="RoleInfoImam">
+    <value>Ets l’Oriol Lopes, un hippie, revolucionari, comunista, ecologista, anticapitalista, a favor del moviment feminista i Imama ☮. Vamos, un perroflauta vell. Com que no desitges el mal, pots fer que no es pugui expulsar a ningú durant una nit [Imama].</value>
   </string>
-  <string key="Pacifist">
+  <string key="Imam">
     <value>l'Oriol Lopes ☮️</value>
   </string>
-  <string key="AboutPacifist">
-    <value>Ets l’Oriol Lopes, un hippie, revolucionari, comunista, ecologista, anticapitalista, a favor del moviment feminista i pacifista ☮. Vamos, un perroflauta vell. Com que no desitges el mal, pots fer que no es pugui expulsar a ningú durant una nit [Pacifista].</value>
+  <string key="AboutImam">
+    <value>Ets l’Oriol Lopes, un hippie, revolucionari, comunista, ecologista, anticapitalista, a favor del moviment feminista i Imama ☮. Vamos, un perroflauta vell. Com que no desitges el mal, pots fer que no es pugui expulsar a ningú durant una nit [Imama].</value>
   </string>
 
   <string key="RoleInfoWiseElder">
@@ -1480,14 +1480,14 @@
     <value>Ets el Quim Monzó, lladre de llibres 😈! Pots robar a un habitant durant la primera nit, i convertir-lo en pixapí! En el mode Lladre Complet, tens un 50% de probabilitat de robar el rol d'un jugador durant cada nit. Si tens èxit, aquell jugador serà el nou lladre i continuarà els robatoris [Lladre].</value>
   </string>
 
-  <string key="AskPacifist">
+  <string key="AskImam">
     <value>Vols fer una xerrada perquè ningú sigui expulsat aquesta nit?</value>
   </string>
-  <string key="PacifistNoLynch">
-    <!-- {0} - Pacifist's name -->
+  <string key="ImamNoLynch">
+    <!-- {0} - Imam's name -->
     <value>L'Oriol Lopes, {0}, fa una profunda xerrada dient que tot és de tots i que ens podríem menjar el flam de pastisseria junts. Per evitar discussions, es decideix no expulsar a ningú.</value>
   </string>
-  <string key="PacifistNoLynchNow">
+  <string key="ImamNoLynchNow">
     <value>A causa de la profunda xerrada de l'Oriol Lopes, avui no s'expulsarà a ningú.</value>
   </string>
   <string key="WolvesTriedToEatWiseElder">
@@ -1530,8 +1530,8 @@
     <value>Els teus companys (si n'hi ha) són: {0}</value>
   </string>
   <string key="ThiefToCult">
-    <!-- 0 - old cultist's name -->
-    <!-- 1 - new cultist's name -->
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
     <value>{0} ja no és el teu company, i {1} ara és un estudiant de l'Institut del Teatre, com tu!</value>
   </string>
   <string key="ThiefToWolf">
@@ -1584,17 +1584,17 @@
   <string key="SecretLynchShowVotersA">
     <value>Nom dels votants al recompte de vots del linxament secret: {0}</value>
   </string>
-  <string key="CultistBitten">
-  <!-- {0} - Cultist that was bitten by the Alpha Wolf -->
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
     <value>Que estrany... En el moment en què comenceu a discutir qui convertir aquesta nit, us adoneu que {0} no hi és! Què li ha passat?</value>
   </string>
   
   <string key="Peace">
-  <!-- Used for Pacifist's button -->
+  <!-- Used for Imam's button -->
     <value>Flam per tothom!</value>
   </string>
   <string key="LynchPeaceTimeout">
-  <!-- Used in PM if the pacifist uses his ability during lynch phase -->
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
     <value>S'han omès els vots d'avui perquè l'Oriol Lopes ha fet una xerrava emotiva!</value>
   </string>
   
@@ -1694,7 +1694,7 @@
   <string key="ChemistTargetEmpty">
     <value>{0} no era al pis! Arrossegues la teva maleta cap al CAP, pensant en la teva propera visita.</value>
   </string>
-  <string key="CultistsList">
+  <string key="ZombiesList">
     <value>Els estudiants de l'Institut del Teatre ara són: {0}</value>
   </string>
   <string key="SnowWolf">
@@ -1745,7 +1745,7 @@
   <string key="ChemistFrozen">
     <value>Mentre estaves al CAP, ha vingut una doctora amb una substància que no has pogut rebutjar: cocaïna 🐺☃️. T'has quedat sense poder sortir del CAP, però sort que l'efecte passa ràpid.</value>
   </string>
-  <string key="CultistFrozen">
+  <string key="ZombieFrozen">
     <value>Just quan et dirigies a reclutar estudiants, t'has fotut una ralla de cocaïna per estar més actiu i t'ha fet mandra anar a buscar nova gent 🐺☃️.</value>
   </string>
   <string key="CHFrozen">
@@ -1886,11 +1886,11 @@
   <string key="HunterFellDigger">
     <value>Després d'una altra nit cansada, te'n tornes al pis per dormir. Quan et dirigeixes a casa teva, et trobes al Pol Requena, {0}, tancat fora el carrer i sense poder tornar a entrar a l'edifici.</value>
   </string>
-  <!--{0}: cultist-->
+  <!--{0}: Zombie-->
   <string key="CultFell">
     <value>Tornes cap a casa teva a dormir, però quan vas a tancar la porta et trobes a un estudiant de l'Institut del Teatre, {0}, intentant matricular-te a classes de teatre, però l'aconsegueixes expulsar. Aparta, que vaig amb presses!</value>
   </string>
-  <!--{0}: cultist who fell, {1}: grave digger-->
+  <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
     <value>De camí al portal on hi ha {1}, {0} decideix de sobte que seria bona idea cremar l'institut. Et porta per l'Eixample quan, de sobte, un parany li envolta el peu! L'únic que sents és el seu crit mentre cau a una claveguera i corres cames ajudeu-me.</value>
   </string>
@@ -1946,8 +1946,8 @@
   <string key="HarlotFellPublic">
     <value>Quan l'Ariadna {0} se'n tornava a casa després d'una nit de diversió, ha agafat una drecera a través del cementiri de la vila. Encara devia tenir una mica de mareig postdiversió, perquè no ha vist que s'ha deixat les claus del portal i no pot entrar. Potser s'hauria d'haver quedat a casa acabant el Workbook! </value>
   </string>
-  <!--{0}: cultist who died-->
-  <string key="CultistFellPublic">
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
     <value>Un estudiant de l'Institut del Teatre, {0}, es dirigia cap a classe, però sembla que el portal estava tancat i no ha pogut fer-hi res... ha quedat expulsat!</value>
   </string>
   <!--{0}: thief-->

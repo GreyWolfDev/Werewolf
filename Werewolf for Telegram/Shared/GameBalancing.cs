@@ -40,8 +40,8 @@ namespace Shared
 
             var balanced = false;
             var attempts = 0;
-            var nonVgRoles = new[] { IRole.Cultist, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.Lycan, IRole.Thief, IRole.SnowWolf, IRole.Arsonist };
-            var revealedVgRoles = new[] { IRole.Blacksmith, IRole.Mayor, IRole.Pacifist, IRole.Gunner, IRole.Sandman, IRole.Troublemaker };
+            var nonVgRoles = new[] { IRole.Zombie, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.Lycan, IRole.Thief, IRole.SnowWolf, IRole.Arsonist };
+            var revealedVgRoles = new[] { IRole.Blacksmith, IRole.Mayor, IRole.Imam, IRole.Gunner, IRole.Sandman, IRole.Troublemaker, IRole.Hijabi };
             
 
             do
@@ -73,12 +73,12 @@ namespace Shared
                 }
 
                 //cult without CH -> add CH (unless the group REALLY doesn't want it...)
-                if (rolesToAssign.Contains(IRole.Cultist) && !rolesToAssign.Contains(IRole.CultistHunter)
-                    && !disabledRoles.Contains(IRole.CultistHunter))
+                if (rolesToAssign.Contains(IRole.Zombie) && !rolesToAssign.Contains(IRole.ZombieHunter)
+                    && !disabledRoles.Contains(IRole.ZombieHunter))
                 {
                     //just pick a vg, and turn them to CH
                     var vg = rolesToAssign.FindIndex(x => !nonVgRoles.Contains(x));
-                    rolesToAssign[vg] = IRole.CultistHunter;
+                    rolesToAssign[vg] = IRole.ZombieHunter;
                 }
 
                 //appseer without seer -> seer
@@ -122,7 +122,7 @@ namespace Shared
                         balanced = false;
 
                     // unbalanced if there's more than one role that can cause 2 lynches in between a baddie act per 4 players
-                    var onlyWolfBaddies = !rolesToAssign.Any(x => new[] { IRole.Arsonist, IRole.SerialKiller, IRole.Cultist }.Contains(x));
+                    var onlyWolfBaddies = !rolesToAssign.Any(x => new[] { IRole.Arsonist, IRole.SerialKiller, IRole.Zombie }.Contains(x));
                     var killStoppingRoleCount = rolesToAssign.Count(x => x == IRole.Troublemaker || x == IRole.Sandman || (onlyWolfBaddies && x == IRole.Blacksmith));
                     if (killStoppingRoleCount * 4 > rolesToAssign.Count)
                         balanced = false;
@@ -181,8 +181,8 @@ namespace Shared
                     case IRole.AlphaWolf:
                     case IRole.SnowWolf:
                         break;
-                    case IRole.CultistHunter:
-                    case IRole.Cultist:
+                    case IRole.ZombieHunter:
+                    case IRole.Zombie:
                         if (playerCount > 10)
                             rolesToAssign.Add(role);
                         break;
@@ -201,10 +201,10 @@ namespace Shared
             //same as it was before....
 
 
-            if (rolesToAssign.Any(x => x == IRole.CultistHunter))
+            if (rolesToAssign.Any(x => x == IRole.ZombieHunter))
             {
-                rolesToAssign.Add(IRole.Cultist);
-                rolesToAssign.Add(IRole.Cultist);
+                rolesToAssign.Add(IRole.Zombie);
+                rolesToAssign.Add(IRole.Zombie);
             }
             //now fill rest of the slots with villagers (for large games)
             for (int i = 0; i < playerCount / 4; i++)
@@ -249,10 +249,10 @@ namespace Shared
                     return 1 + (allRoles.Any(x => x == IRole.Seer) ? 4 : 0) + (allRoles.Any(x => x == IRole.Fool) ? 1 : 0); //only good if seer is present!
                 case IRole.ApprenticeSeer:
                     return 6;
-                case IRole.Cultist:
+                case IRole.Zombie:
                     return 10 + allRoles.Count(x => !nonConvertibleRoles.Contains(x));
-                case IRole.CultistHunter:
-                    return allRoles.Count(x => x == IRole.Cultist) == 0 ? 1 : 7;
+                case IRole.ZombieHunter:
+                    return allRoles.Count(x => x == IRole.Zombie) == 0 ? 1 : 7;
                 case IRole.Mason:
                     return allRoles.Count(x => x == IRole.Mason) <= 1 ? 1 : allRoles.Count(x => x == IRole.Mason) + 3; //strength in numbers
                 case IRole.Doppelgänger:
@@ -283,7 +283,7 @@ namespace Shared
                     return 1;
                 case IRole.Augur:
                     return 5;
-                case IRole.Pacifist:
+                case IRole.Imam:
                     return 3;
                 case IRole.WiseElder:
                     return 3;

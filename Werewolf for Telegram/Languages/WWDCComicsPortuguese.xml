@@ -179,10 +179,10 @@
   <string key="RoleInfoApprenticeSeer" >
     <value >Você é um jovem prodigio, e joga por Gotham. Caso Oraculo morra, você tomará seu lugar como Oraculo.</value>
   </string>
-  <string key="RoleInfoCultist" >
+  <string key="RoleInfoZombie" >
     <value >Você é um membro dos Lanternas Amarelos.  Durante a noite, você poderá escolher alguém para converter aos Lanternas Amarelos. Se todos os jogadores restantes ao final do jogo forem dos Lanternas, vocês vencem!</value>
   </string>
-  <string key="RoleInfoCultistHunter" >
+  <string key="RoleInfoZombieHunter" >
     <value >Os Lanternas Amarelos está em Gotham tentando converter todo mundo, e você, o Hal Jordan, deve proteger Gotham!  Durante a noite você poderá escolher alguém para inquirir.  Se ele(a) for dos Lanternas Amarelos, ele(a) morre.  Caso eles tentem te converter, o membro mais recente morre.</value>
   </string>
   <string key="LynchTime" >
@@ -227,7 +227,7 @@
   <string key="DefaultEaten" >
     <value>À medida que todos se levantam durante a manhã, sentem um cheiro horrível.  Eles seguem o cheiro para encontrar {0} esquartejado(a) no chiqueiro.  HAHAHAHAHA {1}</value>
   </string>
-  <string key="HunterKilledCultist">
+  <string key="HunterKilledZombie">
     <value>Um enorme fedor esta sendo exalado pela casa de {0}... Os cidadãos decidem então entrar lá e encontram um corpo, seus dentes espalhados no chão e agulhas embaixo das unhas deixam bem claro que houve... Um membro dos Lanternas Amarelos foi torturado e morto por Hal Jordan!</value>
   </string>
   <string key="NoAttack" >
@@ -311,13 +311,13 @@
   <string key="RemainingPlayersEnd">
     <value>Jogadores restantes, papéis e lado:</value>
   </string>
-  <string key="CultistVotedConvert" >
+  <string key="ZombieVotedConvert" >
     <value >{0} votou para converter {1}</value>
   </string>
-  <string key="CultConvertCultHunter">
+  <string key="CultConvertZombieHunter">
     <value>{0} foi enviado(a) para fazer o trabalho sujo e converter {1}... Entretanto, ele era o Hal Jordan, e tinha uma câmara de tortura especial para os Lanternas Amarelos! {0} está morto(a)!</value>
   </string>
-  <string key="CultHunterKilledCultVisit">
+  <string key="ZombieHunterKilledCultVisit">
     <value>{0} foi à sua casa na noite passada, pronto(a) para te converter....  Mas você tinha uma câmara de tortura só pra esse tipo de gente. Um membro dos Lanternas Amarelos está morto... {1} restante(s)!</value>
   </string>
   <string key="CultConvertYou">
@@ -338,7 +338,7 @@
   <string key="HunterVisitDead">
     <value>Você foi inquirir {0}, mas chegando lá só encontrou seu corpo sem vida!</value>
   </string>
-  <string key="HunterFindCultist">
+  <string key="HunterFindZombie">
     <value>Você invade a casa de {0} e vê as marcas dos Lanternas Amarelos nas paredes, você sabe o que fazer... Depois das torturas, ele se confessa, e você sabe muito bem como expurgar os pecados desse tipo: Com a morte!</value>
   </string>
   <string key="HunterFailedToFind">
@@ -350,7 +350,7 @@
   <string key="WildChildTransform">
     <value>{0} foi morto(a)! Num ataque de fúria, você se torna um membro da Liga! Seus novos companheiros são: {1}</value>
   </string>
-  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Cultist, CultistHunter-->
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
   <string key="Villager">
     <value>um Cidadão de Gotham 👱</value>
   </string>
@@ -397,10 +397,10 @@
   <string key="ApprenticeSeer">
     <value>o Garoto Prodigio 🙇</value>
   </string>
-  <string key="Cultist">
+  <string key="Zombie">
     <value>um Lanterna Amarelo 👤</value>
   </string>
-  <string key="CultistHunter">
+  <string key="ZombieHunter">
     <value>o Hal Jordan 💂</value>
   </string>
   <!-- These are for the player list -->
@@ -1131,7 +1131,7 @@ Talvez você ainda tenha algumas habilidades com suas armas. Quem sabe? Talvez e
   <string key="BlacksmithKilled">
     <value>Parece que {0}, o Asa Noturna, é bem azarado. Cinco tiros marcavam o seu peito. E diversas armas desapareceram, o Deathstroke fez a festa!</value>
   </string>
-  <string key="CultistKilled">
+  <string key="ZombieKilled">
     <value>De manhã todos encontram {0} empalado no topo de um prédio. O Deathstroke não se importa com a cor da lanterna, todos são amadores para ele! Os Lanternas Amarelos vão sentir falta de {0}...</value>
   </string>
   <string key="CupidKilled">
@@ -1164,10 +1164,10 @@ Talvez você ainda tenha algumas habilidades com suas armas. Quem sabe? Talvez e
   <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
     <value>Gotham acordou essa manhã só para encontrar um corpo torturado e morto na praça. {0}, o Hal Jordan, visitou a pessoa errada. O Deathstroke utilizou todas as ferramentas de tortura para o Lanterna Verde.</value>
   </string>
-  <string key="CultConvertWolfPublic"> <!--used when Cultists convert the wolves, only if wolves stayed home-->
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
     <value>Péssima escolha dos Lanternas Amarelos ao visitar um membro da Liga das Sombras que decidiu ficar em casa durante a noite. {0} está morto, foi convertido em uma bela decoração para o templo da Liga das Sombras.</value>
   </string>
-  <string key="CultConvertKillerPublic"> <!--used when Cultists convert the SK-->
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
     <value>Ontem a noite os Lanternas Amarelos decidiram visitar a única pessoa mais estranha do que eles, o Deathstroke, e por causa disso, os órgãos de {0} serviram para a criação de uma nova obra de arte.</value>
   </string>
   <string key="GAGuardedKiller">
@@ -1186,8 +1186,8 @@ Talvez você ainda tenha algumas habilidades com suas armas. Quem sabe? Talvez e
     <!--{0} = hunter's name, {1} = wolf's name-->
     <value>Sabendo que só restava {0}, {1} parte para a morte de {0}. Era o fim de {0}, o Arqueiro Verde.</value>
   </string>
-  <string key="CHKillsCultistEnd">
-    <!--{0} = last cultist's name, {1} = CH's name -->
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
     <value>{1} e {0} se encontraram ao amanhecer. Todos estavam mortos, então {1}, o Hal Jordan conseguiu identificar {0} como um membro dos Lanternas Amarelos, o tiro certeiro de {1} fez com que Gotham se livrasse imediamatamente do medo ao extremo.</value>
   </string>
 </strings>
