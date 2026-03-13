@@ -2257,6 +2257,9 @@ namespace Werewolf_Node
                             break;
                     }
                     break;
+                case TransformationMethod.ImamConvert:
+                    // Notifications handled directly where Transform is called
+                    break;
                 case TransformationMethod.ThiefStolen:
                     Send(GetLocaleString((ThiefFull == true ? "ThiefStoleYourRoleThief" : "ThiefStoleYourRoleVillager")), p.Id);
                     break;
@@ -2311,6 +2314,7 @@ namespace Werewolf_Node
             AlphaBitten,
             ThiefSteal,
             ThiefStolen,
+            ImamConvert,
             KillElder,
         }
 
@@ -3544,6 +3548,25 @@ namespace Werewolf_Node
                         KillPlayer(gd, KillMthd.Spotted, killer: sk, diedByVisitingKiller: true);
                         Send(GetLocaleString("SerialKillerSpotted", gd.GetName()), sk.Id);
                         SendGif(GetLocaleString("SerialKillerSpottedYou"), GetRandomImage(SKKilled), gd.Id);
+                    }
+                }
+            }
+
+            #endregion
+            #region Imam Night
+
+            var imam = Players.FirstOrDefault(x => x.PlayerRole == IRole.Imam && !x.IsDead);
+            if (imam != null && !imam.Frozen && imam.Choice != -1)
+            {
+                var target = Players.FirstOrDefault(x => x.Id == imam.Choice);
+                if (VisitPlayer(imam, target) == VisitResult.Success)
+                {
+                    if (target?.PlayerRole == IRole.SerialKiller)
+                    {
+                        Transform(target, IRole.Villager, TransformationMethod.ImamConvert);
+                        Send(GetLocaleString("ImamConvertedKiller", target.GetName()), imam.Id);
+                        Send(GetLocaleString("ImamConvertedYou"), target.Id);
+                        SendWithQueue(GetLocaleString("ImamConvertedKillerPublic", target.GetName()));
                     }
                 }
             }
@@ -5255,6 +5278,11 @@ namespace Werewolf_Node
                             qtype = QuestionType.Thief;
                         }
                         else player.Choice = -1;
+                        break;
+                    case IRole.Imam:
+                        targets = targetBase.ToList();
+                        msg = GetLocaleString("AskVisitImam");
+                        qtype = QuestionType.VisitImam;
                         break;
                     case IRole.Chemist:
                         if (player.HasUsedAbility)
