@@ -86,7 +86,7 @@ echo Restoring NuGet packages...
 nuget.exe restore "Werewolf for Telegram\WerewolfForTelegram.sln" -PackagesDirectory "Werewolf for Telegram\packages"
 
 echo Compiling project...
-"%MSBUILD_PATH%" "Werewolf for Telegram\WerewolfForTelegram.sln" /p:Configuration=Release /t:Build /m
+"%MSBUILD_PATH%" "Werewolf for Telegram\WerewolfForTelegram.sln" /p:Configuration=Release /t:Build /m /p:RestorePackagesConfig=true
 
 :: 7. Setup Directory Structure
 echo.
