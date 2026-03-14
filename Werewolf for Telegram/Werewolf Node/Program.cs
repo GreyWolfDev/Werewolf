@@ -86,7 +86,17 @@ namespace Werewolf_Node
                     sw.WriteLine("--------------------------------------------------------");
                 }
             };
-            English = XDocument.Load(Path.Combine(LanguageDirectory, Program.MasterLanguage));
+            try
+            {
+                English = XDocument.Load(Path.Combine(LanguageDirectory, Program.MasterLanguage));
+            }
+            catch (System.Xml.XmlException)
+            {
+                string content = File.ReadAllText(Path.Combine(LanguageDirectory, Program.MasterLanguage));
+                content = content.Replace(" < ", " &lt; ");
+                content = content.Replace(" > ", " &gt; ");
+                English = XDocument.Parse(content);
+            }
 
             LoadLanguages();
             SetTimer();

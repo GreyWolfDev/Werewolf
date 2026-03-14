@@ -20,7 +20,18 @@ namespace Werewolf_Node.Helpers
 
         public LangFile(string path)
         {
-            Doc = XDocument.Load(path);
+            try
+            {
+                Doc = XDocument.Load(path);
+            }
+            catch (System.Xml.XmlException)
+            {
+                // Fallback to reading file and replacing invalid characters before parsing
+                string content = File.ReadAllText(path);
+                content = content.Replace(" < ", " &lt; "); // replace unescaped less-than
+                content = content.Replace(" > ", " &gt; "); // replace unescaped greater-than
+                Doc = XDocument.Parse(content);
+            }
             Name = Doc.Descendants("language").First().Attribute("name")?.Value;
             Base = Doc.Descendants("language").First().Attribute("base")?.Value;
             Variant = Doc.Descendants("language").First().Attribute("variant")?.Value;
