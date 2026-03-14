@@ -41,7 +41,7 @@ namespace Shared
             var balanced = false;
             var attempts = 0;
             var nonVgRoles = new[] { IRole.Zombie, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.Lycan, IRole.Thief, IRole.SnowWolf, IRole.Arsonist };
-            var revealedVgRoles = new[] { IRole.Blacksmith, IRole.Mayor, IRole.Imam, IRole.Gunner, IRole.Sandman, IRole.Troublemaker, IRole.Hijabi };
+            var revealedVgRoles = new[] { IRole.Blacksmith, IRole.Mayor, IRole.Imam, IRole.Gunner, IRole.Sandman, IRole.Troublemaker };
             
 
             do
