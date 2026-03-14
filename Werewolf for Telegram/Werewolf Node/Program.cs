@@ -46,11 +46,19 @@ namespace Werewolf_Node
         internal static int DupGamesKilled = 0;
         internal static int TotalPlayers = 0;
         internal static string APIToken;
-#if DEBUG
-        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\..\Languages"));
-#else
-        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
-#endif
+
+        internal static string LanguageDirectory
+        {
+            get
+            {
+                var dir1 = Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\..\Languages"));
+                if (Directory.Exists(dir1)) return dir1;
+                var dir2 = Path.GetFullPath(Path.Combine(RootDirectory, @"..\Languages"));
+                if (Directory.Exists(dir2)) return dir2;
+                return Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
+            }
+        }
+
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\TempLanguageFiles"));
         internal static Dictionary<string, LangFile> Languages { get; } = new Dictionary<string, LangFile>();
         internal static XDocument English;

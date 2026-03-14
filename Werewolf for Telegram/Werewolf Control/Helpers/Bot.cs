@@ -54,11 +54,18 @@ namespace Werewolf_Control.Helpers
         internal static string LogDirectory = Path.Combine(RootDirectory, "..\\Logs\\");
         internal delegate void ChatCommandMethod(Update u, string[] args);
         internal static List<Command> Commands = new List<Command>();
-#if DEBUG
-        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\..\Languages"));
-#else
-        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
-#endif
+        internal static string LanguageDirectory
+        {
+            get
+            {
+                var dir1 = Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\..\Languages"));
+                if (Directory.Exists(dir1)) return dir1;
+                var dir2 = Path.GetFullPath(Path.Combine(RootDirectory, @"..\Languages"));
+                if (Directory.Exists(dir2)) return dir2;
+                return Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
+            }
+        }
+
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\TempLanguageFiles"));
         public static void Initialize(string updateid = null)
         {
