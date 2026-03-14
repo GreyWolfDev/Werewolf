@@ -83,10 +83,10 @@ if "%MSBUILD_PATH%"=="" (
 
 echo MSBuild found: "%MSBUILD_PATH%"
 echo Restoring NuGet packages...
-nuget.exe restore "Werewolf for Telegram\WerewolfForTelegram.sln"
+nuget.exe restore "Werewolf for Telegram\WerewolfForTelegram.sln" -PackagesDirectory "Werewolf for Telegram\packages"
 
 echo Compiling project...
-"%MSBUILD_PATH%" "Werewolf for Telegram\WerewolfForTelegram.sln" /p:Configuration=Release /t:Build
+"%MSBUILD_PATH%" "Werewolf for Telegram\WerewolfForTelegram.sln" /p:Configuration=Release /t:Build /m
 
 :: 7. Setup Directory Structure
 echo.
