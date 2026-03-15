@@ -163,6 +163,10 @@ namespace Werewolf_Node
             foreach (var file in Directory.GetFiles(LanguageDirectory, "*.xml"))
             {
                 var langFile = new LangFile(file);
+                if (langFile.Doc == null)
+                {
+                    continue; // Skip invalid language files
+                }
                 var key = Path.GetFileNameWithoutExtension(file);
                 if (Languages.ContainsKey(key)) Languages[key] = langFile;
                 else Languages.Add(key, langFile);
