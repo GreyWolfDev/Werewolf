@@ -373,14 +373,14 @@ namespace Werewolf_Control.Handler
                                 if (command != null)
                                 {
                                     Bot.MessagesProcessed++;
-#if RELEASE2
-                                    Send($"Bot 2 is retiring.  Please switch to @werewolfbot", update.Message.Chat.Id);
-                                    if (update.Message.Chat.Type != ChatType.Private)
-                                    {
-                                        Thread.Sleep(1000);
-                                        Bot.Api.LeaveChat(update.Message.Chat.Id);
-                                    }
-#endif
+//#if RELEASE2
+//                                    Send($"Bot 2 is retiring.  Please switch to @werewolfbot", update.Message.Chat.Id);
+//                                    if (update.Message.Chat.Type != ChatType.Private)
+//                                    {
+//                                        Thread.Sleep(1000);
+//                                        Bot.Api.LeaveChatAsync(chatId: update.Message.Chat.Id);
+//                                    }
+//#endif
                                     if (command.AllowAnonymousAdmins ?
                                         isAnonymousSender && !isAnonymousAdmin :
                                         isAnonymousSender) // Anonymous admin, or channel
