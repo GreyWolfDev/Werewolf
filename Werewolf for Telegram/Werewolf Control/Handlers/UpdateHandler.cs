@@ -218,6 +218,7 @@ namespace Werewolf_Control.Handler
 
         internal static void HandleUpdate(Update update)
         {
+            System.Diagnostics.Debugger.Launch();
             {
                 if (update.Message == null || update.Message.From.Id == 777000 /*Channel Post*/) return;
 
@@ -239,11 +240,11 @@ namespace Werewolf_Control.Handler
                 }
 
 
-#if !DEBUG
-                //ignore previous messages
-                if ((update.Message?.Date ?? DateTime.MinValue) < DateTime.Now.AddSeconds(-10))
-                    return; //toss it
-#endif
+//#if !DEBUG
+//                //ignore previous messages
+//                if ((update.Message?.Date ?? DateTime.MinValue) < DateTime.Now.AddSeconds(-10))
+//                    return; //toss it
+//#endif
 
                 var id = update.Message.Chat.Id;
 
@@ -312,9 +313,9 @@ namespace Werewolf_Control.Handler
                 //Settings.Main.LogText += update?.Message?.Text + Environment.NewLine;
                 bool block = new[] { Settings.SupportChatId, Settings.PersianSupportChatId, Settings.TranslationChatId }.Contains(id);
 
-#if !DEBUG
+//#if !DEBUG
                 try
-#endif
+//#endif
                 {
                     Group grp;
                     switch (update.Message.Type)
@@ -626,7 +627,7 @@ namespace Werewolf_Control.Handler
                             //throw new ArgumentOutOfRangeException();
                     }
                 }
-#if !DEBUG
+//#if !DEBUG
                 catch (AggregateException e)
                 {
                     var ex = e.InnerExceptions[0];
@@ -644,7 +645,7 @@ namespace Werewolf_Control.Handler
                     Send(ex.Message, id);
                     Send($"Error at chatId <code>{id.ToString()}</code>: {ex.Message}\n{update.Message?.Text}", Settings.ErrorGroup);
                 }
-#endif
+//#endif
             }
         }
 
