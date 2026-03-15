@@ -247,20 +247,20 @@ namespace Werewolf_Control.Handler
 
                 var id = update.Message.Chat.Id;
 
-#if DEBUG
-                if (!new[] { -1001341772435 /*alphatest*/, -1001094155678 /*staff*/, -1001098399855 /*errorlog*/,
-                    -1001077134233 /*developer team chat*/, -1001135292560 /*para test chat*/}.Contains(id))
-                {
-                    try
-                    {
-                        Bot.Api.LeaveChatAsync(chatId: update.Message.Chat.Id).Wait();
-                    }
-                    catch
-                    {
-                        //ignored
-                    }
-                }
-#endif
+//#if DEBUG
+//                if (!new[] { -1001341772435 /*alphatest*/, -1001094155678 /*staff*/, -1001098399855 /*errorlog*/,
+//                    -1001077134233 /*developer team chat*/, -1001135292560 /*para test chat*/}.Contains(id))
+//                {
+//                    try
+//                    {
+//                        Bot.Api.LeaveChatAsync(chatId: update.Message.Chat.Id).Wait();
+//                    }
+//                    catch
+//                    {
+//                        //ignored
+//                    }
+//                }
+//#endif
 
                 //let's make sure it is a bot command, as we shouldn't see anything else....
                 //if (update.Message.Type != MessageType.ServiceMessage &&
