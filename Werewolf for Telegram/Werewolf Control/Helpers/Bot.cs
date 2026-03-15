@@ -95,7 +95,7 @@ namespace Werewolf_Control.Helpers
             }
             catch (System.Xml.XmlException)
             {
-                string content = File.ReadAllText(Path.Combine(LanguageDirectory, Program.MasterLanguage));
+                string content = System.IO.File.ReadAllText(Path.Combine(LanguageDirectory, Program.MasterLanguage));
                 content = content.Replace(" < ", " &lt; ");
                 content = content.Replace(" > ", " &gt; ");
                 English = XDocument.Parse(content);

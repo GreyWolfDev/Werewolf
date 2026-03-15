@@ -29,7 +29,7 @@ namespace Werewolf_Node.Helpers
                 try
                 {
                     // Fallback to reading file and replacing invalid characters before parsing
-                    string content = File.ReadAllText(path);
+                    string content = System.IO.File.ReadAllText(path);
                     content = content.Replace(" < ", " &lt; "); // replace unescaped less-than
                     content = content.Replace(" > ", " &gt; "); // replace unescaped greater-than
                     Doc = XDocument.Parse(content);
@@ -45,7 +45,7 @@ namespace Werewolf_Node.Helpers
             Variant = Doc?.Descendants("language").FirstOrDefault()?.Attribute("variant")?.Value;
             FilePath = path;
             FileName = Path.GetFileNameWithoutExtension(path);
-            LatestUpdate = File.GetLastWriteTimeUtc(path);
+            LatestUpdate = System.IO.File.GetLastWriteTimeUtc(path);
         }
     }
 }
