@@ -423,7 +423,10 @@ namespace Werewolf_Control
             foreach (var dir in Directory.GetDirectories(baseDirectory, "*Node*"))
             {
                 //get the node exe in this directory
-                var file = Directory.GetFiles(dir, "Werewolf Node.exe").First();
+                var fileInfo = Directory.GetFiles(dir, "Werewolf Node.exe").FirstOrDefault();
+                if (string.IsNullOrEmpty(fileInfo)) continue;
+
+                var file = fileInfo;
                 Version fvi = Version.Parse(FileVersionInfo.GetVersionInfo(file).FileVersion);
                 if (fvi > currentChoice.Version)
                 {
@@ -433,7 +436,14 @@ namespace Werewolf_Control
             }
 
             //now we have the most recent version, launch one
-            Process.Start(currentChoice.Path);
+            if (!string.IsNullOrEmpty(currentChoice.Path))
+            {
+                Process.Start(new ProcessStartInfo()
+                {
+                    FileName = currentChoice.Path,
+                    WorkingDirectory = Path.GetDirectoryName(currentChoice.Path)
+                });
+            }
         }
     }
 

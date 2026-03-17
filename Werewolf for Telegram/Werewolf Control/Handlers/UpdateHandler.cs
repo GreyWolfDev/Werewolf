@@ -218,6 +218,7 @@ namespace Werewolf_Control.Handler
 
         internal static void HandleUpdate(Update update)
         {
+            System.Diagnostics.Debugger.Launch();
             {
                 if (update.Message == null || update.Message.From.Id == 777000 /*Channel Post*/) return;
 
@@ -239,28 +240,28 @@ namespace Werewolf_Control.Handler
                 }
 
 
-#if !DEBUG
-                //ignore previous messages
-                if ((update.Message?.Date ?? DateTime.MinValue) < DateTime.Now.AddSeconds(-10))
-                    return; //toss it
-#endif
+//#if !DEBUG
+//                //ignore previous messages
+//                if ((update.Message?.Date ?? DateTime.MinValue) < DateTime.Now.AddSeconds(-10))
+//                    return; //toss it
+//#endif
 
                 var id = update.Message.Chat.Id;
 
-#if DEBUG
-                if (!new[] { -1001341772435 /*alphatest*/, -1001094155678 /*staff*/, -1001098399855 /*errorlog*/,
-                    -1001077134233 /*developer team chat*/, -1001135292560 /*para test chat*/}.Contains(id))
-                {
-                    try
-                    {
-                        Bot.Api.LeaveChatAsync(chatId: update.Message.Chat.Id).Wait();
-                    }
-                    catch
-                    {
-                        //ignored
-                    }
-                }
-#endif
+//#if DEBUG
+//                if (!new[] { -1001341772435 /*alphatest*/, -1001094155678 /*staff*/, -1001098399855 /*errorlog*/,
+//                    -1001077134233 /*developer team chat*/, -1001135292560 /*para test chat*/}.Contains(id))
+//                {
+//                    try
+//                    {
+//                        Bot.Api.LeaveChatAsync(chatId: update.Message.Chat.Id).Wait();
+//                    }
+//                    catch
+//                    {
+//                        //ignored
+//                    }
+//                }
+//#endif
 
                 //let's make sure it is a bot command, as we shouldn't see anything else....
                 //if (update.Message.Type != MessageType.ServiceMessage &&
@@ -312,9 +313,9 @@ namespace Werewolf_Control.Handler
                 //Settings.Main.LogText += update?.Message?.Text + Environment.NewLine;
                 bool block = new[] { Settings.SupportChatId, Settings.PersianSupportChatId, Settings.TranslationChatId }.Contains(id);
 
-#if !DEBUG
+//#if !DEBUG
                 try
-#endif
+//#endif
                 {
                     Group grp;
                     switch (update.Message.Type)
@@ -373,14 +374,14 @@ namespace Werewolf_Control.Handler
                                 if (command != null)
                                 {
                                     Bot.MessagesProcessed++;
-#if RELEASE2
-                                    Send($"Bot 2 is retiring.  Please switch to @werewolfbot", update.Message.Chat.Id);
-                                    if (update.Message.Chat.Type != ChatType.Private)
-                                    {
-                                        Thread.Sleep(1000);
-                                        Bot.Api.LeaveChat(update.Message.Chat.Id);
-                                    }
-#endif
+//#if RELEASE2
+//                                    Send($"Bot 2 is retiring.  Please switch to @werewolfbot", update.Message.Chat.Id);
+//                                    if (update.Message.Chat.Type != ChatType.Private)
+//                                    {
+//                                        Thread.Sleep(1000);
+//                                        Bot.Api.LeaveChatAsync(chatId: update.Message.Chat.Id);
+//                                    }
+//#endif
                                     if (command.AllowAnonymousAdmins ?
                                         isAnonymousSender && !isAnonymousAdmin :
                                         isAnonymousSender) // Anonymous admin, or channel
@@ -626,7 +627,7 @@ namespace Werewolf_Control.Handler
                             //throw new ArgumentOutOfRangeException();
                     }
                 }
-#if !DEBUG
+//#if !DEBUG
                 catch (AggregateException e)
                 {
                     var ex = e.InnerExceptions[0];
@@ -644,7 +645,7 @@ namespace Werewolf_Control.Handler
                     Send(ex.Message, id);
                     Send($"Error at chatId <code>{id.ToString()}</code>: {ex.Message}\n{update.Message?.Text}", Settings.ErrorGroup);
                 }
-#endif
+//#endif
             }
         }
 

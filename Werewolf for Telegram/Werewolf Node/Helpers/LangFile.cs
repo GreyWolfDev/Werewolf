@@ -20,13 +20,32 @@ namespace Werewolf_Node.Helpers
 
         public LangFile(string path)
         {
-            Doc = XDocument.Load(path);
-            Name = Doc.Descendants("language").First().Attribute("name")?.Value;
-            Base = Doc.Descendants("language").First().Attribute("base")?.Value;
-            Variant = Doc.Descendants("language").First().Attribute("variant")?.Value;
+            try
+            {
+                Doc = XDocument.Load(path);
+            }
+            catch (System.Xml.XmlException)
+            {
+                try
+                {
+                    // Fallback to reading file and replacing invalid characters before parsing
+                    string content = System.IO.File.ReadAllText(path);
+                    content = content.Replace(" < ", " &lt; "); // replace unescaped less-than
+                    content = content.Replace(" > ", " &gt; "); // replace unescaped greater-than
+                    Doc = XDocument.Parse(content);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to load language file {path}: {ex.Message}");
+                    Doc = null;
+                }
+            }
+            Name = Doc?.Descendants("language").FirstOrDefault()?.Attribute("name")?.Value;
+            Base = Doc?.Descendants("language").FirstOrDefault()?.Attribute("base")?.Value;
+            Variant = Doc?.Descendants("language").FirstOrDefault()?.Attribute("variant")?.Value;
             FilePath = path;
             FileName = Path.GetFileNameWithoutExtension(path);
-            LatestUpdate = File.GetLastWriteTimeUtc(path);
+            LatestUpdate = System.IO.File.GetLastWriteTimeUtc(path);
         }
     }
 }

@@ -46,11 +46,19 @@ namespace Werewolf_Node
         internal static int DupGamesKilled = 0;
         internal static int TotalPlayers = 0;
         internal static string APIToken;
-#if DEBUG
-        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\..\Languages"));
-#else
-        internal static string LanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
-#endif
+
+        internal static string LanguageDirectory
+        {
+            get
+            {
+                var dir1 = Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\..\Languages"));
+                if (Directory.Exists(dir1)) return dir1;
+                var dir2 = Path.GetFullPath(Path.Combine(RootDirectory, @"..\Languages"));
+                if (Directory.Exists(dir2)) return dir2;
+                return Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\Languages"));
+            }
+        }
+
         internal static string TempLanguageDirectory => Path.GetFullPath(Path.Combine(RootDirectory, @"..\..\TempLanguageFiles"));
         internal static Dictionary<string, LangFile> Languages { get; } = new Dictionary<string, LangFile>();
         internal static XDocument English;
@@ -78,7 +86,17 @@ namespace Werewolf_Node
                     sw.WriteLine("--------------------------------------------------------");
                 }
             };
-            English = XDocument.Load(Path.Combine(LanguageDirectory, Program.MasterLanguage));
+            try
+            {
+                English = XDocument.Load(Path.Combine(LanguageDirectory, Program.MasterLanguage));
+            }
+            catch (System.Xml.XmlException)
+            {
+                string content = System.IO.File.ReadAllText(Path.Combine(LanguageDirectory, Program.MasterLanguage));
+                content = content.Replace(" < ", " &lt; ");
+                content = content.Replace(" > ", " &gt; ");
+                English = XDocument.Parse(content);
+            }
 
             LoadLanguages();
             SetTimer();
@@ -145,6 +163,10 @@ namespace Werewolf_Node
             foreach (var file in Directory.GetFiles(LanguageDirectory, "*.xml"))
             {
                 var langFile = new LangFile(file);
+                if (langFile.Doc == null)
+                {
+                    continue; // Skip invalid language files
+                }
                 var key = Path.GetFileNameWithoutExtension(file);
                 if (Languages.ContainsKey(key)) Languages[key] = langFile;
                 else Languages.Add(key, langFile);
