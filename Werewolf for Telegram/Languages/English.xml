@@ -179,7 +179,7 @@
     <value>You are the gunner 🔫. You have two bullets. During the day, you may choose to shoot another player. Everyone will hear the shots, and know you are the gunner (not a wolf).</value>
   </string>
   <string key="RoleInfoHarlot">
-    <value>You slut! You are the Harlot 💋. During the night, you may choose to visit another player, to verify that they are not a wolf. However--if you visit a wolf, or visit someone killed by the wolf, you will die. If you do go to visit though, and the wolf tries to kill you at your home, you will survive.</value>
+    <value>Wanderer: Can visit a player each night to verify they are not a wolf. Survives if attacked at home while visiting.</value>
   </string>
   <string key="RoleInfoTraitor">
     <value>Traitor 🖕! For now, you are a villager, but once all the wolves die, you will become a werewolf. If the seer looks to you, you may or may not be identified as a wolf.</value>
@@ -311,31 +311,31 @@
   </string>
   <string key="HarlotEaten" >
     <!-- 0 - player name -->
-    <value >The harlot chose the wrong night to stay home. {0} has been eaten by the wolves!</value>
+    <value>The wanderer chose the wrong night to stay home. {0} has been eaten by the wolves!</value>
   </string>
   <string key="HarlotNotHome" >
     <!-- 0 - player name -->
-    <value >Odd... {0} was not home! No dinner for you...</value>
+    <value>Odd... {0} was not home! No tea for you...</value>
   </string>
   <string key="HarlotFuckWolf" >
     <!-- 0 - player name -->
-    <value >You slip into {0}'s house for a little fun, only to be confronted by a wolf. You are dead.</value>
+    <value>You slip into {0}'s house for a late night chat, only to be confronted by a wolf. You are dead.</value>
   </string>
   <string key="HarlotFuckedWolfPublic" >
     <!-- 0 - player name -->
-    <value >{0} slipped into the wrong house last night! {0}'s slutty remains are found pinned to the church doors with an iron rod...  how sad :(</value>
+    <value>{0} slipped into the wrong house last night! {0}'s remains are found pinned to the church doors with an iron rod... how sad :(</value>
   </string>
   <string key="HarlotFuckedVictimPublic" >
     <!-- 0 - harlot name -->
     <!-- 1 - victim name -->
-    <value >{0} slips into {1}'s house, ready to have a little fun to ease off the stress. Instead, {0} finds a werewolf eating {1}! The werewolf quickly turns on {0} and jumps... {0} is dead.</value>
+    <value>{0} slips into {1}'s house, ready to have some tea to ease off the stress. Instead, {0} finds a werewolf eating {1}! The werewolf quickly turns on {0} and jumps... {0} is dead.</value>
   </string>
   <string key="HarlotVisitNonWolf" >
     <!-- 0 - target name -->
-    <value >You see {0} is not a wolf, as you got fucked good and hard all night long!</value>
+    <value>You see {0} is not a wolf, as you both enjoyed a nice cup of tea all night long!</value>
   </string>
   <string key="HarlotVisitYou" >
-    <value >It was a bit dark, so you couldn't see well enough, but in the middle of the night you wake up to the harlot riding you. Both of you finish up, then they slip back out silently...</value>
+    <value>It was a bit dark, so you couldn't see well enough, but in the middle of the night you wake up to the wanderer visiting you. Both of you enjoy some tea, then they slip back out silently...</value>
   </string>
   <string key="DetectiveCaught" >
     <!-- 0 - detective name -->
@@ -349,7 +349,7 @@
   <string key="HarlotShot" >
     <!-- 0 - gunner's name -->
     <!-- 1 - Harlot's name -->
-    <value >Looks like {0} came back positive after a night with the Harlot! The gunner got revenge. {1} is dead.</value>
+    <value>Looks like {0} came back positive after a night of tea with the Wanderer! The gunner got revenge. {1} is dead.</value>
   </string>
   <string key="DefaultShot" >
     <!-- 0 - Gunner's name -->
@@ -436,7 +436,7 @@
     <value>the Drunk 🍻</value>
   </string>
   <string key="Harlot">
-    <value>the Harlot 💋</value>
+    <value>the Wanderer 🏕</value>
   </string>
   <string key="Seer">
     <value>the Seer 👳</value>
@@ -530,7 +530,7 @@
   </string>
   <string key="HarlotDiscoverCult">
     <!-- 0 - target's name -->
-    <value>You slipped into {0}'s house for a bit of fun... but as you are leaving, you happen to notice a strange altar, poorly hidden off in a side room, with a strange glowing coming from it...</value>
+    <value>You slipped into {0}'s house for a bit of tea... but as you are leaving, you happen to notice a strange altar, poorly hidden off in a side room, with a strange glowing coming from it...</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -706,7 +706,7 @@
   </string>
   <string key="HarlotFuckKiller">
     <!-- 0 - target's name -->
-    <value>You slip into {0}'s house, and start having a little fun. All seems great until {0} pulls out a knife and starts stabbing you, laughing like a maniac! You have died....</value>
+    <value>You slip into {0}'s house, and start having some tea. All seems great until {0} pulls out a knife and starts stabbing you, laughing like a maniac! You have died....</value>
   </string>
   <string key="HarlotFuckKillerPublic">
     <value>The village sees {0}'s body, lying dead in the public square with countless stab wounds. {0} is dead.</value>
@@ -841,7 +841,7 @@
     <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill!\nNote: If you attack the cursed, they will become a wolf like yourself! Hooray friends!\nIf you attack the drunk, you yourself will become drunk, and will be unable to do the next attack as you sleep off your hangover! (Usually, this means you can't attack the following night, but if the Wolf Cub was killed and the Drunk was your first choice, you won't be able to kill the second player, and you will still be able to attack the following night.) </value>
   </string>
   <string key="AboutHarlot">
-    <value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
+    <value>As the wanderer you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
   </string>
   <string key="AboutDrunk">
     <value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next kill, as they are drunk off your insanely high BAC.</value>
@@ -1270,7 +1270,7 @@
   <string key="HarlotFuckedKilledPublic">
     <!-- used when Harlot visit's SK's victim, and dies -->
     <!--{0} = Harlot name, {1} = SK's victim name-->
-    <value>{0} slips into {1}'s house, ready for a night of passion, only to find a mysterious stranger surgically removing {1}'s innards! The serial killer decides to satisfy {0} before adding a slutty heart to their collection!</value>
+    <value>{0} slipped into {1}'s house for some tea, only to be confronted by the serial killer who had just murdered {1}! {0} fought valiantly, but ended up dead too...</value>
   </string>
 
 
@@ -1877,7 +1877,7 @@
     <value>{0} is no longer your teammate and {1} has now become the new snow wolf!</value>
   </string>
   <string key="HarlotFrozen">
-    <value>As you opened the door to leave your house, a gust of wind blew towards you, causing you to freeze in your tracks 🐺☃️. You stand frozen in the doorway, silently cursing this weird form of bondage. Ah well, thank goodness you're thawed now. </value>
+    <value>As you opened the door to leave your house, a gust of wind blew towards you, causing you to freeze in your tracks 🐺☃️. You stand frozen in the doorway, silently cursing this weird weather. Ah well, thank goodness you're thawed now.</value>
   </string>
   <string key="ChemistFrozen">
     <value>As you stirred in your sleep, preparing to wake up to get your potions, a strong gust of wind blew in from the windows, causing you to freeze 🐺☃️. From the corner of your eyes, you saw the bottles of your potions frosted over. Looks like they didn't escape the brunt of the freezing spell either. You mentally sighed, wishing the sun came up sooner... Good thing you're thawed now, though</value>
@@ -2041,11 +2041,11 @@
   </string>
   <!--{0}: grave digger-->
   <string key="HarlotFell">
-	<value>You put your favorite lipstick on and head to {0}'s house to have a little fun. Sadly, you don't get far enough, as you step into a bear trap and fall into a grave on the way... Talk about occupational risk!</value>
+	<value>You put your coat on and head to {0}'s house to have some tea. Sadly, you don't get far enough, as you step into a bear trap and fall into a grave on the way... Talk about occupational risk!</value>
   </string>
   <!--{0}: harlot-->
   <string key="HarlotFellDigger">
-	<value>Apparently fate doesn't want you to have fun... Not only that you have to dig graves all night, you even find {0}, the harlot, dead in one of your unfinished graves. No fun for you tonight!</value>
+	<value>Apparently fate doesn't want you to have a good night... Not only that you have to dig graves all night, you even find {0}, the wanderer, dead in one of your unfinished graves. No fun for you tonight!</value>
   </string>
   <!--{0}: grave digger-->
   <string key="HarlotVisitDigger">
@@ -2081,7 +2081,7 @@
   </string>
   <!--{0}: harlot-->
   <string key="HarlotFellPublic">
-	<value>As the harlot {0} went home after a night of fun they tried to take a shortcut through the local graveyard. They must have been still a bit dizzy that they didn't see the uncovered grave until they felt no grounds under her next step. Maybe they should have taken that daytime job they got offered yesterday!</value>
+	<value>As the wanderer {0} went home after a night of tea they tried to take a shortcut through the local graveyard. They must have been still a bit dizzy that they didn't see the uncovered grave until they felt no grounds under her next step. Maybe they should have taken that daytime job they got offered yesterday!</value>
   </string>
   <!--{0}: Zombie who died-->
   <string key="ZombieFellPublic">
@@ -2222,7 +2222,7 @@
     <value>Arsonist Team</value>
   </string>
   <string key="HarlotVisitNotHome">
-	<value>You went to have a little fun with {0}, but their house is empty!</value>
+	<value>You went to have some tea with {0}, but their house is empty!</value>
   </string>
 
   <string key="Validate">
