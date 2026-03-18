@@ -1849,11 +1849,6 @@ namespace Werewolf_Control.Handler
                                 GetLocaleString("ThankYou", language));
                             break;
                         case "togglerole":
-                            if (DateTime.UtcNow > new DateTime(2026, 03, 12, 12, 00, 00, DateTimeKind.Utc))
-                            {
-                                Bot.ReplyToCallback(query, "Custom role selection is currently disabled for the event, see @GreyWolfDev", edit: false, showAlert: true);
-                                return;
-                            }
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();
@@ -1889,11 +1884,6 @@ namespace Werewolf_Control.Handler
                             Bot.Edit(query, GetLocaleString("RoleConfigInfo", language), GetRoleConfigMenu(groupid, language));
                             break;
                         case "validateroles":
-                            if (DateTime.UtcNow > new DateTime(2026, 03, 12, 12, 00, 00, DateTimeKind.Utc))
-                            {
-                                Bot.ReplyToCallback(query, "Custom role selection is currently disabled for the event, see @GreyWolfDev", edit: false, showAlert: true);
-                                return;
-                            }
                             if (grp != null && !UpdateHelper.IsGroupAdmin(query.From.Id, grp.GroupId) && !UpdateHelper.IsGlobalAdmin(query.From.Id))
                             {
                                 Bot.Api.EditMessageReplyMarkupAsync(chatId: query.Message.Chat.Id, messageId: query.Message.MessageId).Wait();

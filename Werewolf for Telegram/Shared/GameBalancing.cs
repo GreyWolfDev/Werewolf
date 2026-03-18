@@ -33,68 +33,10 @@ namespace Shared
 
         public static List<IRole> Balance(IRole roleflags, int playerCount, bool chaos, bool burningOverkill, out List<IRole> possibleRoles, bool validationMode = false)
         {
-            List<IRole> rolesToAssign = new List<IRole>();
+            List<IRole> rolesToAssign;
             List<IRole> disabledRoles = roleflags.HasFlag(IRole.VALID) || validationMode
                 ? roleflags.GetUniqueRoles().ToList()
                 : new List<IRole>();
-
-            // WEREWOLF 10 YEARS ANNIVERSARY: RE-RELEASE ROLES STEP BY STEP
-            DateTime now = DateTime.UtcNow;
-            DateTime eventStart = new DateTime(2026, 03, 12, 14, 00, 00, DateTimeKind.Utc);
-
-            if (now >= eventStart)
-            {
-                disabledRoles.Clear(); // ignore custom role selection for the time of the event
-                disabledRoles.AddRange(new[] { IRole.Doppelgänger, IRole.Cupid, IRole.Hunter, IRole.SerialKiller,
-                                               IRole.Sorcerer, IRole.AlphaWolf, IRole.WolfCub, IRole.Blacksmith, IRole.ClumsyGuy, IRole.Mayor, IRole.Prince,
-                                               IRole.Lycan, IRole.Pacifist, IRole.WiseElder, IRole.Oracle, IRole.Sandman, IRole.WolfMan, IRole.Thief,
-                                               IRole.Troublemaker, IRole.Chemist, IRole.SnowWolf,
-                                               IRole.GraveDigger, IRole.Augur, IRole.Arsonist });
-
-                if (now >= eventStart.AddDays(1))
-                {
-                    disabledRoles.Remove(IRole.Doppelgänger);
-                    disabledRoles.Remove(IRole.Cupid);
-                    disabledRoles.Remove(IRole.Hunter);
-                    disabledRoles.Remove(IRole.SerialKiller);
-                }
-
-                if (now >= eventStart.AddDays(2))
-                {
-                    disabledRoles.Remove(IRole.Sorcerer);
-                    disabledRoles.Remove(IRole.AlphaWolf); 
-                    disabledRoles.Remove(IRole.WolfCub); 
-                    disabledRoles.Remove(IRole.Blacksmith); 
-                    disabledRoles.Remove(IRole.ClumsyGuy);
-                    disabledRoles.Remove(IRole.Mayor);
-                    disabledRoles.Remove(IRole.Prince);
-                }
-
-                if (now >= eventStart.AddDays(3))
-                {
-                    disabledRoles.Remove(IRole.Lycan); 
-                    disabledRoles.Remove(IRole.Pacifist); 
-                    disabledRoles.Remove(IRole.WiseElder); 
-                    disabledRoles.Remove(IRole.Oracle); 
-                    disabledRoles.Remove(IRole.Sandman);
-                    disabledRoles.Remove(IRole.WolfMan);
-                    disabledRoles.Remove(IRole.Thief);
-                }
-
-                if (now >= eventStart.AddDays(4))
-                {
-                    disabledRoles.Remove(IRole.Troublemaker); 
-                    disabledRoles.Remove(IRole.Chemist);
-                    disabledRoles.Remove(IRole.SnowWolf);
-                }
-
-                if (now >= eventStart.AddDays(5))
-                {
-                    disabledRoles.Remove(IRole.GraveDigger); 
-                    disabledRoles.Remove(IRole.Augur);
-                    disabledRoles.Remove(IRole.Arsonist);
-                }
-            }
 
             var balanced = false;
             var attempts = 0;
@@ -107,11 +49,7 @@ namespace Shared
                 attempts++;
                 if (attempts >= 500)
                 {
-                    // During the event, we'll just accept the imbalance because it's not always possible to create balanced games according to current rules without all roles
-                    possibleRoles = new List<IRole>(rolesToAssign);
-                    return rolesToAssign;
-                    
-                    // throw new IndexOutOfRangeException("Unable to create a balanced game.  Please try again.\nPlayer count: " + playerCount);
+                    throw new IndexOutOfRangeException("Unable to create a balanced game.  Please try again.\nPlayer count: " + playerCount);
                 }
 
 
