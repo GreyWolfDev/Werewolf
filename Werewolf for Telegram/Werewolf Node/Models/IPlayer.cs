@@ -107,6 +107,8 @@ namespace Werewolf_Node.Models
         /// Currently only used for augur
         /// </summary>
         public List<IRole> SawRoles { get; set; } = new List<IRole>();
+        public bool IsActionTracked { get; set; } = false;
+        public int BarVisits { get; set; } = 0;
 
         public string Language { get; set; } = "English";
         public bool Won { get; set; } = false;
@@ -141,6 +143,7 @@ namespace Werewolf_Node.Models
         public int AlphaConvertCount { get; set; } = 0;
         public int GAGuardWolfCount { get; set; } = 0;
         public int MayorLynchAfterRevealCount { get; set; } = 0;
+        public int VisitingSameNightCount { get; set; } = 0;
         public int BeingVisitedSameNightCount { get; set; } = 0;
         public int ChemistVisitSurviveCount { get; set; } = 0;
         public bool BusyNight { get; set; } = false;
@@ -156,6 +159,8 @@ namespace Werewolf_Node.Models
         public bool HasSeenImpossible { get; set; } = false;
         public bool InMiddleOfTrouble { get; set; } = false;
         public bool JustPromotedFromTraitor { get; set; } = false;
+        public int ConsecutiveNoBarVisitors { get; set; } = 0;
+        public HashSet<long> FoodWastedOnPlayers { get; set; } = new HashSet<long>();
 
         public int DonationLevel { get; set; } = 0;
         public bool Founder { get; set; } = false;

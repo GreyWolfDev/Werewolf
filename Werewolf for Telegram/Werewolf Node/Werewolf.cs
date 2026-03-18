@@ -1480,10 +1480,8 @@ namespace Werewolf_Node
                 //force roles for testing
                 IRole[] requiredRoles = new IRole[]
                 {
-                    IRole.Cursed,
-                    IRole.WildChild,
-                    IRole.Traitor,
-                    IRole.Wolf
+                    IRole.Barkeep,
+                    IRole.Arsonist
                 };
                 int requiredCount = requiredRoles.Length;
 
@@ -1578,6 +1576,8 @@ namespace Werewolf_Node
                 case IRole.Spumpkin:
                 case IRole.Augur:
                 case IRole.GraveDigger:
+                case IRole.Chef:
+                case IRole.Barkeep:
                     p.Team = ITeam.Village;
                     break;
                 case IRole.Doppelgänger:
@@ -2312,6 +2312,7 @@ namespace Werewolf_Node
             ThiefSteal,
             ThiefStolen,
             KillElder,
+            VisitBarTooOften,
         }
 
         /// <summary>
@@ -2323,7 +2324,8 @@ namespace Werewolf_Node
         private VisitResult VisitPlayer(IPlayer visitor, IPlayer visited)
         {
             if (visited == null) return VisitResult.TargetNull;
-            // increment visit count
+            // increment visit counts
+            visitor.VisitingSameNightCount++;
             visited.BeingVisitedSameNightCount++;
             // If someone's dead, they're dead.
             if (visited.IsDead && !visited.Burning && (ThiefFull || visitor.PlayerRole != IRole.Thief)) return VisitResult.AlreadyDead;
@@ -2867,6 +2869,15 @@ namespace Werewolf_Node
                 AddAchievement(bs, AchievementsReworked.WastedSilver);
             }
 
+            // check chef
+            var chef = Players.FirstOrDefault(x => x.PlayerRole == IRole.Chef && !x.IsDead && x.Choice != -1);
+            if (chef != null)
+            {
+                var target = Players.FirstOrDefault(x => x.Id == chef.Choice && !x.IsDead);
+                if (target != null)
+                    target.IsActionTracked = true;
+            }
+
             //check gunner
             var gunner = Players.FirstOrDefault(x => x.PlayerRole == IRole.Gunner & !x.IsDead && x.Choice != 0 && x.Choice != -1);
             if (gunner != null)
@@ -2984,6 +2995,7 @@ namespace Werewolf_Node
                 p.Votes = 0;
                 p.DiedLastNight = false;
                 p.KilledLastNight = 0;
+                p.VisitingSameNightCount = 0;
                 p.BeingVisitedSameNightCount = 0;
                 if (p.Bitten)
                 { // p.Bitten may also still be true if the bitten player was wc or dg and turned ww by rm death the same day - in that case, do nothing
@@ -3078,6 +3090,7 @@ namespace Werewolf_Node
              * Cultist Hunter
              * Cult
              * Chemist
+             * Barkeep
              * Harlot
              * Seer
              * Sorcerer
@@ -3085,6 +3098,7 @@ namespace Werewolf_Node
              * Oracle
              * Augur
              * Guardian Angel
+             * Chef
              * Thief
              */
 
@@ -3166,6 +3180,12 @@ namespace Werewolf_Node
                                         Send(GetLocaleString("GraveDiggerFrozen"), target.Id);
                                         target.DugGravesLastNight = 0;
                                     }
+                                    break;
+                                case IRole.Chef:
+                                    Send(GetLocaleString("ChefFrozen"), target.Id);
+                                    break;
+                                case IRole.Barkeep:
+                                    Send(GetLocaleString("BarkeepFrozen"), target.Id);
                                     break;
                                 case IRole.Arsonist:
                                     // Arsonist can act despite being frozen.
@@ -3840,6 +3860,68 @@ namespace Werewolf_Node
             }
             #endregion
 
+            #region Barkeep Night
+            var barkeep = Players.FirstOrDefault(x => x.PlayerRole == IRole.Barkeep && (!x.IsDead || x.Burning)); // if the bar is on flames, people do visit it (and die)
+            if (barkeep != null && !barkeep.Frozen)
+            {
+                var goToBarChance = 1000.0 / (Players.Count + 5); // in percent, i.e. 50 means the chance is 1 in 2. This is true at 15 players.
+                var barGoers = Players.Where(x => !x.IsDead && x.PlayerRole == IRole.Villager && Program.R.Next(100) < goToBarChance).ToList();
+
+                if (barGoers.Count == 0)
+                {
+                    Send(GetLocaleString("BarOpenEmpty"), barkeep.Id);
+
+                    barkeep.ConsecutiveNoBarVisitors++;
+                    if (Players.Count >= 10 && barkeep.ConsecutiveNoBarVisitors >= 3)
+                        AddAchievement(barkeep, AchievementsReworked.GoingOutOfBusiness);
+                }
+                else
+                {
+                    barkeep.ConsecutiveNoBarVisitors = 0;
+
+                    if (barGoers.Count >= 3)
+                        AddAchievement(barkeep, AchievementsReworked.LiquidBusiness);
+
+                    List<string> newDrunks = new List<string>();
+
+                    foreach (var barGoer in barGoers)
+                    {
+                        switch (VisitPlayer(barGoer, barkeep))
+                        {
+                            // should always be success, unless the arsonist set the bar on fire that night, in which case the visitors die.
+                            case VisitResult.Success:
+                                barGoer.BarVisits++;
+                                if (barGoer.BarVisits >= Settings.BarVisitsTillDrunk)
+                                {
+                                    Transform(barGoer, IRole.Drunk, TransformationMethod.VisitBarTooOften);
+                                    Send(GetLocaleString("VillagerVisitBarTurns", barkeep.GetName()), barGoer.Id);
+                                    newDrunks.Add(barGoer.GetName());
+                                }
+                                else
+                                    Send(GetLocaleString("VillagerVisitBar", barGoer.BarVisits), barGoer.Id);
+                                break;
+
+                            case VisitResult.VisitorDied:
+                                if (barGoer.DiedByVisitingVictim && barGoer.KilledByRole == IRole.Arsonist)
+                                {
+                                    AddAchievement(barGoer, AchievementsReworked.GoingDownWithMyBeer);
+                                    SendGif(GetLocaleString("VillagerVisitBurningBar"), GetRandomImage(BurnToDeath), barGoer.Id);
+                                }
+                                break;
+                        }
+                    }
+
+                    string barkeepMsg = GetLocaleString("BarOpenFull", barGoers.Count);
+                    if (newDrunks.Any())
+                        barkeepMsg += "\n" + GetLocaleString("BarNewDrunks", string.Join(", ", newDrunks));
+
+                    if (!barkeep.IsDead) // if barkeep died tonight, don't bother telling them what happened in their bar.
+                        Send(barkeepMsg, barkeep.Id);
+                }
+            }
+
+            #endregion
+
             #region Harlot Night
 
             //let the harlot know
@@ -4129,6 +4211,15 @@ namespace Werewolf_Node
 
             CheckRoleChanges();
 
+            // we determine the OLD chef here, so even if thief steals, the previous chef takes priority
+            // i.e. technically, by role order: Thief is last.
+            var chef = Players.FirstOrDefault(x => x.PlayerRole == IRole.Chef & !x.IsDead);
+            var chefTarget = Players.FirstOrDefault(x => x.Id == chef?.Choice);
+            // Special cases: a grave digger digging graves, and an arsonist sparking do not *visit* anyone,
+            // but still leave their house!
+            bool chefTargetLeft = (chefTarget?.PlayerRole == IRole.GraveDigger && chefTarget?.DugGravesLastNight > 0) ||
+                                  (chefTarget?.PlayerRole == IRole.Arsonist && chefTarget?.Choice == -2);
+
             #region Thief Night
             var thief = Players.FirstOrDefault(x => x.PlayerRole == IRole.Thief && !x.IsDead);
             if (thief != null)
@@ -4187,6 +4278,52 @@ namespace Werewolf_Node
                             break;
                     }
                 }
+            }
+            #endregion
+
+            #region Chef Night (By role order: Thief is last! If stolen, old chef still takes priority!)
+            if (chef != null && !chef.Frozen)
+            {
+                var target = Players.FirstOrDefault(x => x.IsActionTracked && !x.IsDead);
+                if (target != null)
+                {
+                    bool leftHouse = chefTargetLeft || target.VisitingSameNightCount > 0;
+                    int visitors = target.BeingVisitedSameNightCount;
+
+                    string actionTracked;
+                    if (leftHouse)
+                    {
+                        if (visitors > 1)
+                            actionTracked = GetLocaleString("ActionTrackNotHomeVisitedByMul", target.GetName(), visitors);
+                        else if (visitors == 1)
+                            actionTracked = GetLocaleString("ActionTrackNotHomeVisitedByOne", target.GetName());
+                        else
+                            actionTracked = GetLocaleString("ActionTrackNotHomeNotVisited", target.GetName());
+                    }
+                    else
+                    {
+                        if (visitors > 1)
+                            actionTracked = GetLocaleString("ActionTrackHomeVisitedByMul", target.GetName(), visitors);
+                        else if (visitors == 1)
+                            actionTracked = GetLocaleString("ActionTrackHomeVisitedByOne", target.GetName());
+                        else
+                        {
+                            actionTracked = GetLocaleString("ActionTrackHomeNotVisited", target.GetName());
+
+                            chef.FoodWastedOnPlayers.Add(target.Id);
+                            if (chef.FoodWastedOnPlayers.Count >= 3)
+                                AddAchievement(chef, AchievementsReworked.FoodWaste);
+                        }
+                    }
+                    Send(actionTracked, chef.Id);
+
+                    if (visitors >= 3)
+                        AddAchievement(chef, AchievementsReworked.TrafficControl);
+
+                    if (target.DiedLastNight)
+                        AddAchievement(chef, AchievementsReworked.DefinitelyDead);
+                }
+
             }
             #endregion
 
@@ -4315,6 +4452,10 @@ namespace Werewolf_Node
                                 case IRole.WolfCub:
                                 case IRole.Wolf:
                                     msg = GetLocaleString("WolfVisitBurn", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
+                                    break;
+                                case IRole.Villager:
+                                    // only way a villager can "visit" someone is by going to the bar.
+                                    msg = GetLocaleString("BarVisitorBurn", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
                                     break;
                                 default:
                                     msg = GetLocaleString("DefaultVisitBurn", p.GetName(), $"{p.GetName()} {GetLocaleString("Was")} {GetDescription(p.PlayerRole)}");
@@ -4456,9 +4597,11 @@ namespace Werewolf_Node
                 {
                     Send(GetLocaleString("PlayerBitten"), p.Id);
                 }
+                p.VisitingSameNightCount = 0;
                 p.BeingVisitedSameNightCount = 0;
                 p.HasShotHunterAttackerThisNight = false;
                 p.JustPromotedFromTraitor = false;
+                p.IsActionTracked = false;
             }
 
         }
@@ -5142,6 +5285,21 @@ namespace Werewolf_Node
                     }
                 }.ToList();
                 SendMenu(choices, troublemaker, GetLocaleString("AskTroublemaker"), QuestionType.Trouble);
+            }
+
+            var chef = Players.FirstOrDefault(x => x.PlayerRole == IRole.Chef && !x.IsDead);
+            if (chef != null)
+            {
+                chef.Choice = 0;
+                var options = Players.Where(x => !x.IsDead && x.Id != chef.Id).ToList();
+                if (options.Any())
+                {
+                    if (ShufflePlayerList)
+                        options.Shuffle();
+                    var choices = options.Select(x => new[] { InlineKeyboardButton.WithCallbackData(x.Name, $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.ScatterRice}|{x.Id}") }).ToList();
+                    choices.Add(new[] { InlineKeyboardButton.WithCallbackData(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.ScatterRice}|-1") });
+                    SendMenu(choices, chef, GetLocaleString("AskChef"), QuestionType.ScatterRice);
+                }
             }
         }
 
@@ -5913,6 +6071,8 @@ namespace Werewolf_Node
                             newAch2.Set(AchievementsReworked.AmIHallucinating);
                         if (!ach2.HasFlag(AchievementsReworked.InTheMiddleOfTheTrouble) && player.InMiddleOfTrouble)
                             newAch2.Set(AchievementsReworked.InTheMiddleOfTheTrouble);
+                        if (!ach2.HasFlag(AchievementsReworked.AlcoholicsAnonymous) && player.PlayerRole == IRole.Drunk && Players.Count(x => x.PlayerRole == IRole.Drunk) >= 3)
+                            newAch2.Set(AchievementsReworked.AlcoholicsAnonymous);
 
                         //now save
                         p.NewAchievements = ach2.Or(newAch2).ToByteArray();

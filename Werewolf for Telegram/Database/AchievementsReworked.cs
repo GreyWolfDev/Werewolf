@@ -134,7 +134,7 @@ namespace Database
         President = 59,
         [Display(Name = "I Helped!"), Description("As a wolf cub, the alive pack has 2 successful eat attempts after you die")]
         IHelped = 60,
-        [Display(Name = "It Was a Busy Night!"), Description("During the same night, got visited by 3 or more different visiting roles")]
+        [Display(Name = "It Was a Busy Night!"), Description("During the same night, got visited by 3 or more different visitors")]
         ItWasABusyNight = 61,
         [Display(Name = "Strongest Alpha"), Description("As the alpha wolf, successfully infect the serial killer!")]
         StrongestAlpha = 62,
@@ -218,6 +218,20 @@ namespace Database
         InTheMiddleOfTheTrouble = 101,
         [Display(Name = "Am I hallucinating?!"), Description("As the fool, see a role which the seer can never see")]
         AmIHallucinating = 102,
+        [Display(Name = "Going Down with my Beer"), Description("As a villager, die by visiting the bar the night it is set on fire.")]
+        GoingDownWithMyBeer = 103,
+        [Display(Name = "Alcoholics Anonymous"), Description("Be one of 3 or more drunks at the end of the game.")]
+        AlcoholicsAnonymous = 104,
+        [Display(Name = "Liquid Business"), Description("As the barkeep, have your bar visited by 3 or more villagers in one night.")]
+        LiquidBusiness = 105,
+        [Display(Name = "Traffic Control"), Description("As the chef, find out that a person was visited by 3 people in one night!")]
+        TrafficControl = 106,
+        [Display(Name = "Definitely Dead"), Description("As the chef, track a person who is murdered that night.")]
+        DefinitelyDead = 107,
+        [Display(Name = "Going Out Of Business"), Description("As the barkeep in a game of 10 players or more, have no visitors in your bar for 3 nights in a row!")]
+        GoingOutOfBusiness = 108,
+        [Display(Name = "Food Waste"), Description("As the chef, track 3 or more different people who did not leave their house and did not have visitors.")]
+        FoodWaste = 109,
     } // MAX VALUE: 9223372036854775807
       // Good luck reaching this XD
       
