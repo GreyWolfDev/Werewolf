@@ -152,7 +152,8 @@ namespace Werewolf_Control
             reply = "/aboutGraveDigger - " + GetLocaleString("GraveDigger", lang) + "\n";
             reply += "/aboutArsonist - " + GetLocaleString("Arsonist", lang) + "\n";
             reply += "/aboutAugur - " + GetLocaleString("Augur", lang) + "\n";
-            reply += "/aboutActionTracker - " + GetLocaleString("ActionTracker", lang) + "\n";
+            reply += "/aboutChef - " + GetLocaleString("Chef", lang) + "\n";
+            reply += "/aboutBarkeep - " + GetLocaleString("Barkeep", lang) + "\n";
             Send(reply, update.Message.From.Id);
         }
     }
