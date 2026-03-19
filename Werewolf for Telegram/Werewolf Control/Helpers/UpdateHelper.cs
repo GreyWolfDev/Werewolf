@@ -22,7 +22,8 @@ namespace Werewolf_Control.Helpers
             295152997,  //Ludwig
             106665913,  //Jeff
             1430807001, //reny2
-            1006461736, //User
+            1006461736, //Mustafa
+            2141546640, //Engineer
         };
 
         internal static long[] LangAdmins =
