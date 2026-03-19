@@ -25,7 +25,7 @@ namespace Shared
         [Role("👳")]
         Seer = 16,
 
-        [Role("🖕")]
+        [Role("🥸")]
         Traitor = 32,
 
         [Role("👼")]
