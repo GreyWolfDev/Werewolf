@@ -152,7 +152,7 @@
     <value>Who is your role model?</value>
   </string>
   <string key="AskConvert">
-    <value>Who do you want to convert to your order?</value>
+    <value>Who do you want to infect?</value>
   </string>
   <string key="DiscussWith">
     <!--Leave the leading spaces here please-->
@@ -206,10 +206,10 @@
     <value >You are the apprentice seer 🙇. If the (real) seer dies, you will take their place as the seer.</value>
   </string>
   <string key="RoleInfoZombie" >
-    <value >You are a Zombie 👤. Every night, you may choose a player to convert to a Zombie. If all remaining living players at the end are Zombies, they win.</value>
+    <value >You are a Zombie 🧟. Every night, you may choose a player to infect to a Zombie. If all remaining living players at the end are Zombies, they win.</value>
   </string>
   <string key="RoleInfoZombieHunter" >
-    <value >You are the Zombie Hunter 💂, trying to stop the cult in town from converting everyone! Each night, choose a player. If they are a Zombie, they die. If the cult tries to convert you, the cult's newest member dies.</value>
+    <value >You are the Zombie Hunter 💂, trying to stop the zombies in town from infecting everyone! Each night, choose a player. If they are a zombie, they die. If the zombies try to bite and infect you, the newest zombie dies.</value>
   </string>
   <string key="LynchTime" >
     <!-- 0 - number of seconds -->
@@ -268,7 +268,7 @@
   </string>
   <string key="HunterKilledZombie">
     <!-- 0 - victim name -->
-    <value>A noticeable stench is coming from {0}'s house... the village inspects it to find a body lying in front of a dark altar. A Zombie has been killed by the cult hunter!</value>
+    <value>A noticeable stench is coming from {0}'s house... the village inspects it to find a body lying in the street. A Zombie has been killed by the Zombie hunter!</value>
   </string>
   <string key="NoAttack" >
     <value >The villagers gather the next morning in the village center, to sighs of relief - it appears there was no attack the previous night.</value>
@@ -375,20 +375,20 @@
   <string key="ZombieVotedConvert" >
     <!-- 0 - Voter's name -->
     <!-- 1 - target name -->
-    <value >{0} has voted to convert {1}</value>
+    <value >{0} has voted to infect {1}</value>
   </string>
   <string key="CultConvertZombieHunter">
     <!-- 0 - Yougest Zombie (killed)'s name' -->
     <!-- 1 - ZombieHunter's name -->
-    <value>{0} was sent to do your dirty work, and convert {1}... however, they were the cult hunter! {0} is dead!</value>
+    <value>{0} crept up to infect {1}... big mistake. {1} was the Zombie Hunter! {0} is dead!</value>
   </string>
   <string key="ZombieHunterKilledCultVisit">
     <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - Number of Zombies left -->
-    <value>{0} came to your house last night, ready to convert you.... but you shoved your sword right through them. A Zombie is dead... {1} remain!</value>
+    <value>{0} came to your house last night, hungry for your brain.... but you shoved your sword right through them. A Zombie is dead... {1} remain!</value>
   </string>
   <string key="CultConvertYou">
-    <value>The cult has converted you to their order! You are now a Zombie. Every other night, you will have a chance to convert another player.</value>
+    <value>The zombies have gotten to you! You are now a Zombie. Every other night, you will have a chance to infect another player.</value>
   </string>
   <string key="CultTeam">
     <!-- 0 - Number of Zombies -->
@@ -396,15 +396,15 @@
   </string>
   <string key="CultJoin">
     <!-- 0 - new Zombie's name -->
-    <value>{0} has joined the cult!</value>
+    <value>{0} has turned into a zombie!</value>
   </string>
   <string key="CultVisitEmpty">
     <!-- 0 - Newest Zombie's name -->
     <!-- 1 - target name -->
-    <value>{0} was sent to do your dirty work, and convert {1}... but no one was home!</value>
+    <value>{0} dragged themselves through the dark, starving for {1}... but the house was empty!</value>
   </string>
   <string key="CultWins" isgif="true">
-    <value >All the wolves have died, and the only people left standing have all been converted to Zombies.. The cult has won!</value>
+    <value >All the wolves have died, and the only people left standing are all Zombies.. The Zombies have won!</value>
   </string>
   <string key="HunterVisitDead">
     <!-- 0 - target name -->
@@ -510,7 +510,7 @@
   <!-- new strings May 6 2016-->
   <string key="CultTargetDead">
     <!-- 0 - Youngest Zombies name -->
-    <value>Your newest member heads over to {0}'s house to convert them, but instead finds the house a complete wreck, blood everywhere, and bits of wolf fur snagged on the doorway...</value>
+    <value>Your newest zombie drags themselves over to {0}'s house, starving for a meal, but instead finds the house a complete wreck, blood everywhere, and bits of wolf fur snagged on the doorway...</value>
   </string>
   <string key="GuardBlockedWolf">
     <!-- 0 - target's name -->
@@ -520,7 +520,7 @@
   <string key="CultUnableToConvert">
     <!-- 0 - newest  -->
     <!-- 1 - target's name -->
-    <value>You send {0} to try to convert {1}, however their belief was too strong, and you were unable to convert them :(</value>
+    <value>You send {0} to take a bite out of {1}, however {1} was too strong, and you were unable to infect them :(</value>
   </string>
   <!-- new string May 12 2016-->
   <string key="NameExists">
@@ -530,7 +530,7 @@
   </string>
   <string key="HarlotDiscoverCult">
     <!-- 0 - target's name -->
-    <value>You slipped into {0}'s house for a bit of tea... but as you are leaving, you happen to notice a strange altar, poorly hidden off in a side room, with a strange glowing coming from it...</value>
+    <value>You slipped into {0}'s house for a bit of tea... but as you are leaving,you happen to notice a strange smell, poorly hidden off in a side room, with a strange growling coming from it...</value>
   </string>
   <!-- new string May 13 2016-->
   <string key="Was">
@@ -693,12 +693,12 @@
   <string key="CultConvertHunter">
     <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
-    <value>The cult sends {0} to try to convert {1}, but instead a shot rings out and {0}'s body comes flying out of the window! {0} is dead....</value>
+    <value>{0} drags themselves to {1}'s door, starving for a meal, but instead a shot rings out and {0}'s body comes flying out of the window! {0} is dead....</value>
   </string>
   <string key="CultConvertSerialKiller">
     <!-- 0 - Youngest Zombie's name -->
     <!-- 1 - target's name -->
-    <value>The cult sends {0} to try to convert {1}, but instead {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....</value>
+    <value>{0} drags themselves to {1}'s door, starving for a meal, but instead {0}'s body comes flying out of the window, knives pushed into every part of their body! WHAT A PSYCHO! {0} is dead....</value>
     <value>{0} sneaks over to {1}'s house, pops open the door, and is immediately greeted by a crazed maniac with a knife!!! {1} plunges the knife deep into {0}'s organs in alphabetical order, cackling the entire time! {0} is dead D:</value>
   </string>
   <string key="GuardKiller">
@@ -727,7 +727,7 @@
   <string key="DGTransformToCult">
     <!-- 0 - role's name -->
     <!-- 1 - teammates's name -->
-    <value>{0} has died, and you transform into a Zombie. Your teammates (if any) are: {1}</value>
+    <value>{0} has fallen... but death is not the end. The infection takes hold, and you rise again as a Zombie. Your fellow undead (if any) shamble beside you: {1}</value>
   </string>
   <string key="DGToWolf">
     <!-- 0 - DG's name -->
@@ -784,7 +784,7 @@
     <value>In the middle of the town square, everyone finds the body of {0}, multiple shots to the body. Looks like they tried to sneak up on the Hunter! Well, {1}.</value>
   </string>
   <string key="CultAttempt">
-    <value>A hooded figure tried to convert you to their cult, but your faith was too strong.</value>
+    <value>Something tried to take a bite out of you last night, but you were too strong and fought it off.</value>
   </string>
   <string key="AlreadyOnWaitList">
     <!-- 0 - target's name -->
@@ -868,10 +868,10 @@
     <value>The fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
   </string>
   <string key="AboutCult">
-    <value>As a Zombie, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are Zombie - the cult wins</value>
+    <value>As a Zombie, you hunger for one thing — to infect every living soul in the village (except the wolves). If at the end of the game, all living players are Zombies - the undead win.</value>
   </string>
   <string key="AboutCH">
-    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die.</value>
+    <value>Your job is to hunt the zombies. If the zombies attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die.</value>
   </string>
   <string key="AboutWC">
     <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
@@ -888,8 +888,8 @@
   <string key="AboutDG">
     <value>
       Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
-      Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
-      The cult cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
+      Note: If the player was infected and turned into a Zombie, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
+      The zombies cannot infect the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
     </value>
   </string>
   <string key="AboutCupid">
@@ -902,7 +902,7 @@
     <value>
       A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
       Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
-      If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+      If the zombies tries to infect you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
     </value>
   </string>
   <string key="AboutSK">
@@ -1075,10 +1075,10 @@
     <value>Tanner as a role set to: {0}</value>
   </string>
   <string key="AllowCultQ">
-    <value>Allow cult as a role option?\nCurrent: {0}</value>
+    <value>Allow Zombie as a role option?\nCurrent: {0}</value>
   </string>
   <string key="AllowCultA">
-    <value>Cult as a role set to: {0}</value>
+    <value>Zombie as a role set to: {0}</value>
   </string>
   <string key="EnableSecretLynchQ">
     <value>Enable Secret Lynch?\nCurrent: {0}</value>
@@ -1239,7 +1239,7 @@
     <value>SK Team</value>
   </string>
   <string key="CultTeam" deprecated="true">
-    <value>Cult Team</value>
+    <value>Zombies</value>
   </string>
   <string key="TannerTeam" deprecated="true">
     <value>Tanner Team</value>
@@ -1258,13 +1258,13 @@
     <value>SK Team</value>
   </string>
   <string key="CultTeamEnd">
-    <value>Cult Team</value>
+    <value>Zombies</value>
   </string>
   <string key="TannerTeamEnd">
     <value>Tanner Team</value>
   </string>
   <string key="CultConvertWolf">
-    <value>The cult sends {0} to try to convert {1}, but instead {0}'s Head comes flying out of the Window... Wonder why they thought it was inedible! {0} is dead...</value>
+    <value>{0} drags themselves to {1}'s door, starving for a meal, but instead {0}'s head comes flying out of the window... Wonder why they thought it was inedible! {0} is dead..</value>
   </string>
 
   <string key="HarlotFuckedKilledPublic">
@@ -1320,13 +1320,13 @@
   </string>
   <string key="CultConvertWolfPublic">
     <!--used when Zombies convert the wolves, only if wolves stayed home-->
-    <value>While it seemed that the wolves decided to stay good for once, punishing {0}, a Zombie that decided to court trouble with the wolves, proved too difficult to resist. {0}'s head was converted to a fine supper, delivered to the wolves' doorsteps!</value>
-    <value>The cult ran into unexpected trouble last night. Their newest member had the misfortune of visiting a wolf on the night the wolves decided to stay home, and the wolf found {0} quite delicious. Unfortunately for {0}, wolves have no interest in joining the new religious movement.</value>
+    <value>While it seemed that the wolves decided to stay good for once, punishing {0}, a Zombie that decided to drag themselves to the wolves' door, proved too difficult to resist. {0}'s head was converted to a fine supper, delivered to the wolves' doorsteps!</value>
+    <value>The zombies ran into unexpected trouble last night. Their newest zombie had the misfortune of dragging themselves to a wolf's door on the night the wolves decided to stay home, and the wolf found {0} quite delicious. Unfortunately for {0}, wolves are immune to the infection.</value>
   </string>
   <string key="CultConvertKillerPublic">
     <!--used when Zombies convert the SK-->
-    <value>The cult thought they would have a new member in their ranks, but they were wrong! {0}, a Zombie, was minced to pieces and placed at the town square in the morning! Strangely their "holy" book was found stabbed with a knife, as if a statement to show whose religion was triumphant.</value>
-    <value>Last night, the cult tried to convert the one person in the village crazier than they are. Their newest member tried to convert the Serial Killer, and the Serial Killer made a new piece of art in the town square of {0}'s internal organs.</value>
+    <value>The zombies thought they would have a new victim in their ranks, but they were wrong! {0}, a Zombie, was minced to pieces and placed at the town square in the morning! Strangely their rotting flesh was found stabbed with a knife, as if a statement to show who would survive the infection.</value>
+    <value>Last night, the zombies tried to infect the one person in the village crazier than they are. Their newest zombie tried to take a bite out of the Serial Killer, and the Serial Killer made a new piece of art in the town square out of {0}'s internal organs.</value>
   </string>
   <string key="GAGuardedKiller">
     <!-- used when GA guards SK -->
@@ -1350,7 +1350,7 @@
   </string>
   <string key="CHKillsZombieEnd">
     <!--{0} = last Zombie's name, {1} = CH's name -->
-    <value>{1} and {0} walk out in daylight. Seeing a shimmering cross worn around {0}'s neck, the righteous {1} draws their sword for the final time, putting an end to the twisted learnings of the cult that have contaminated the village.</value>
+    <value>{1} and {0} walk out in daylight. Noticing the rotting flesh and hollow eyes of {0}, the righteous {1} draws their sword for the final time, putting an end to the infection that has plagued the village.</value>
   </string>
 
   <!-- Extend time -->
@@ -1412,7 +1412,7 @@
     <value>{0}joined the game in the last 30 seconds.</value>
   </string>
   <string key="AllowCult">
-    <value>Allow Cult</value>
+    <value>Allow Zombies</value>
   </string>
   <string key="AllowTanner">
     <value>Allow Tanner</value>
@@ -1450,7 +1450,7 @@
     <value>All</value>
   </string>
   <string key="RandomModeQ">
-    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Cult / Fool / Tanner will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Zombies / Fool / Tanner will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
   </string>
   <string key="RandomModeA">
     <value>Enabling of random mode set to: {0}</value>
@@ -1723,7 +1723,7 @@
   </string>
   <string key="ZombieBitten">
   <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
-	<value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
+	<value>Strange... The second you start shambling towards your next victim with your zombie fellows, you realize that {0} isn't here! What has happened to them??</value>
   </string>
   
   <string key="Peace">
@@ -1832,7 +1832,7 @@
 	<value>{0} wasn't home! You drag your suitcase back home, cursing your bad luck.</value>
   </string>
   <string key="ZombiesList">
-	<value>The cult members are currently: {0}</value>
+	<value>The zombies are currently: {0}</value>
   </string>
   <string key="SnowWolf">
 	<value>the Snow Wolf 🐺☃️</value>
@@ -1883,7 +1883,7 @@
     <value>As you stirred in your sleep, preparing to wake up to get your potions, a strong gust of wind blew in from the windows, causing you to freeze 🐺☃️. From the corner of your eyes, you saw the bottles of your potions frosted over. Looks like they didn't escape the brunt of the freezing spell either. You mentally sighed, wishing the sun came up sooner... Good thing you're thawed now, though</value>
   </string>
   <string key="ZombieFrozen">
-    <value>As you donned your cloak and prepared to leave your house, a gust of wind blew in from the doorway, causing you to freeze 🐺☃️. Your fellow Zombies dropped by soon after to bring you along to cult people, but they ended up laughing at your demise. Leaving you by the doorway, they promised that they'll make good work of tonight. Now that you're unfrozen, you leave the house, cringing in embarrassment. </value>
+    <value>As you donned your cloak and prepared to leave your house, a gust of wind blew in from the doorway, causing you to freeze 🧟☃️. Your fellow Zombies shambled over soon after to bring you along to infect people, but could only stare blankly at your frozen state. Leaving you by the doorway, they groaned and shambled off into the night. Now that you're unfrozen, you shamble out of the house, groaning in embarrassment. </value>
   </string>
   <string key="CHFrozen">
     <value>As you grabbed your sword, a gust of wind blew in from the window, causing you to freeze, back still arched 🐺☃️. You mentally groaned, your limbs aching from being in this position until now... </value>
@@ -1973,7 +1973,7 @@
     <value>Player list will be shuffled every time: {0}</value>
   </string>
   <string key="AboutGraveDigger">
-	<value>You are the Grave Digger ☠️. Every night, you dig the graves for all the people who died since the last time you did (yes, even werewolves deserve a proper burial). Since you are out all night, wolves and the cult can't find you, unless you actually have nothing to do (i.e. no one died), in that case you'll just stay home. Everyone who visits you has a chance of falling into your newly dug graves, depending on how many graves you dug. Also, the chance is halved for everyone who is on the village team with you. But since you are out at night, the wolves or the serial killer might spot and kill you, and the more graves you have to dig, the more likely it is. Also, apparently the serial killer can find you whether you're at home or not, but they might at least stumble in one of your graves and hurt their leg, causing them to maybe lose control over who is their victim the next night...</value>
+	<value>You are the Grave Digger ☠️. Every night, you dig the graves for all the people who died since the last time you did (yes, even werewolves deserve a proper burial). Since you are out all night, wolves and zombies can't find you, unless you actually have nothing to do (i.e. no one died), in that case you'll just stay home. Everyone who visits you has a chance of falling into your newly dug graves, depending on how many graves you dug. Also, the chance is halved for everyone who is on the village team with you. But since you are out at night, the wolves or the serial killer might spot and kill you, and the more graves you have to dig, the more likely it is. Also, apparently the serial killer can find you whether you're at home or not, but they might at least stumble in one of your graves and hurt their leg, causing them to maybe lose control over who is their victim the next night...</value>
   </string>
   <string key="RoleInfoGraveDigger">
 	<value>You are the Grave Digger ☠️. It is your responsibility to get rid of the villages' dead bodies. You dig a grave for everyone who was killed since last night. However, you usually get too tired to finish the grave, so it remains uncovered. Some visitors might fall in and die... At least, the wolves can't eat you since you are out all night.</value>
@@ -2025,11 +2025,11 @@
   </string>
   <!--{0}: Zombie-->
   <string key="CultFell">
-	<value>You return from another tiring night, when suddenly you hear a scream from one of your unfinished graves! You hurry there, just to find {0} lying dead in an unfinished grave. What kind of cult tries to convert a grave digger, anyway?</value>
+	<value>You return from another tiring night, when suddenly you hear a groan from one of your unfinished graves! You hurry there, just to find {0} lying dead in an unfinished grave. Serves them right for trying to infect someone who digs graves for a living.</value>
   </string>
   <!--{0}: Zombie who fell, {1}: grave digger-->
   <string key="CultConvertGraveDigger">
-	<value>On your way to {1}'s house, {0} suddenly decides that it would be a good idea to burn down the church as well. They lead you through the graveyard when suddenly a bear trap snaps around their ankle! All you can hear is their scream before they fall into a grave and you run for your lives.</value>
+	<value>On your way to {1}'s house, {0} catches a smell of something and gets too hungry to stay on track. They drag you through the graveyard when suddenly a bear trap snaps around their ankle! All you can hear is their groan before they fall into a grave and you shamble away into the night.</value>
   </string>
   <!--{0}: grave digger-->
   <string key="ChemistFell">
@@ -2085,7 +2085,7 @@
   </string>
   <!--{0}: Zombie who died-->
   <string key="ZombieFellPublic">
-	<value>The cults tried to burn the church, but as {0} led the group through the graveyard, a bear trap snapped around their ankle! They screamed when they fell into an open grave and the other Zombies fled in terror...</value>
+	<value>The zombies got too hungry and went off track, but as {0} led the group through the graveyard, a bear trap snapped around their ankle! They groaned when they fell into an open grave and the other zombies fled in terror...</value>
   </string>
   <!--{0}: thief-->
   <string key="ThiefFellPublic">
