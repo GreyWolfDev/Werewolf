@@ -109,7 +109,7 @@ namespace Werewolf_Control.Helpers
                 result += "\n";
 
             }
-            Bot.Api.SendTextMessageAsync(chatId: id, text: result, parseMode: ParseMode.Markdown);
+            Bot.Api.SendTextMessageAsync(chatId: id, text: result, parseMode: ParseMode.Markdown, messageThreadId: messageThreadId);
             var sortedfiles = Directory.GetFiles(Bot.LanguageDirectory).Select(x => new LangFile(x)).Where(x => x.Base == (choice ?? x.Base)).OrderBy(x => x.LatestUpdate);
             result = $"*Validation complete*\nErrors: {errors.Count(x => x.Level == ErrorLevel.Error)}\nMissing strings: {errors.Count(x => x.Level == ErrorLevel.MissingString)}";
             result += $"\nMost recently updated file: {sortedfiles.Last().FileName}.xml ({sortedfiles.Last().LatestUpdate.ToString("MMM dd")})\nLeast recently updated file: {sortedfiles.First().FileName}.xml ({sortedfiles.First().LatestUpdate.ToString("MMM dd")})";

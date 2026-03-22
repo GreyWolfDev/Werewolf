@@ -19,5 +19,6 @@ namespace Werewolf_Control.Models
         public bool InGroupOnly { get; set; }
         public bool LangAdminOnly { get; set; }
         public bool AllowAnonymousAdmins { get; set; }
+        public bool AllowOutsideConfiguredTopic { get; set; }
     }
 }
