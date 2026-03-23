@@ -222,7 +222,7 @@ namespace Werewolf_Control
                                   $"\nFor role information, use /rolelist." +
                                   $"\nIf you want to set your default language, use /setlang." +
                                   $"\nBe sure to stop by <a href=\"https://telegram.me/greywolfsupport\">Werewolf Support</a> for any questions, and subscribe to @greywolfdev for updates from the developer." +
-                                  $"\nMore infomation can be found <a href=\"https://www.tgwerewolf.com/?referrer=start\">here</a>!";
+                                  $"\nMore information can be found <a href=\"https://www.tgwerewolf.com/?referrer=start\">here</a>!";
                         Bot.Send(msg, u.Message.Chat.Id);
                         return;
                     }

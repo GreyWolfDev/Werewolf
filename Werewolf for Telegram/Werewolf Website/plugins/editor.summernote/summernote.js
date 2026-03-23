@@ -6536,7 +6536,7 @@
           if (!$.isFunction(buttonInfo)) { continue; }
 
           var $button = $(buttonInfo(langInfo, options));
-          $button.attr('data-name', groupButtons[i]);  // set button's alias, becuase to get button element from $toolbar
+          $button.attr('data-name', groupButtons[i]);  // set button's alias, because to get button element from $toolbar
           $group.append($button);
         }
         $toolbar.append($group);
