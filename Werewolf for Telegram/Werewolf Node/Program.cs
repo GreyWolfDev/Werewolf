@@ -1,16 +1,18 @@
-﻿using System;
+﻿using Database;
+using Microsoft.Win32;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Dynamic;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Xml.Linq;
-using Microsoft.Win32;
-using Newtonsoft.Json;
 using TcpFramework;
 using Telegram.Bot;
 using Telegram.Bot.Types;
@@ -427,6 +429,8 @@ namespace Werewolf_Node
             Client.DataReceived += ClientOnDataReceived;
             Client.DelimiterDataReceived += ClientOnDelimiterDataReceived;
             //connection lost, let's try to reconnect
+            bool hasLoggedRefusedMessage = false;
+
             while (Client.TcpClient == null || !Client.TcpClient.Connected)
             {
                 try
@@ -435,15 +439,34 @@ namespace Werewolf_Node
                     var regInfo = new ClientRegistrationInfo { ClientId = ClientId };
                     var json = JsonConvert.SerializeObject(regInfo);
                     Client.WriteLine(json);
+
+                    Console.WriteLine($"Connected to {Settings.ServerIP}:{Settings.Port}");
                 }
                 catch (Exception ex)
                 {
-                    while (ex.InnerException != null)
-                        ex = ex.InnerException;
-                    Console.WriteLine($"Error in reconnect: {ex.Message}\n{ex.StackTrace}\n");
+                    // Dig to root exception
+                    Exception root = ex;
+                    while (root.InnerException != null)
+                        root = root.InnerException;
+
+                    if (root is SocketException sockEx && sockEx.SocketErrorCode == SocketError.ConnectionRefused)
+                    {
+                        if (!hasLoggedRefusedMessage)
+                        {
+                            Console.WriteLine($"Waiting for connection at {Settings.ServerIP}:{Settings.Port}... (connection refused — control process might not be started yet)");
+                            hasLoggedRefusedMessage = true;
+                        }
+                    }
+                    else
+                    {
+                        // Print full error if it's not a connection refused case
+                        Console.WriteLine($"Error in reconnect: {root.Message}\n{root.StackTrace}\n");
+                    }
                 }
+
                 Thread.Sleep(100);
             }
+
         }
 
         public static void KeepAlive()
