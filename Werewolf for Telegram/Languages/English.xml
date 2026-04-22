@@ -133,6 +133,10 @@
     <!-- 0 - bullet count -->
     <value>Who do you want to shoot? {0} bullet(s) remain.</value>
   </string>
+  <string key="AskThrowKnife">
+    <!-- 0 - knife count -->
+    <value>Who do you want to throw a knife at? {0} knife(s) remain.</value>
+  </string>
   <string key="AskVisit">
     <value>Who do you want to visit?</value>
   </string>
@@ -177,6 +181,9 @@
   </string>
   <string key="RoleInfoGunner">
     <value>You are the gunner 🔫. You have two bullets. During the day, you may choose to shoot another player. Everyone will hear the shots, and know you are the gunner (not a wolf).</value>
+  </string>
+  <string key="RoleInfoHijabiGirl">
+    <value>You are the Hijabi Girl 🧕. You have 5 knives. During the day, you may choose to throw a knife at another player. However, if you hit a Villager, you will lose your remaining knives out of guilt!</value>
   </string>
   <string key="RoleInfoHarlot">
     <value>Wanderer: Can visit a player each night to verify they are not a wolf. Survives if attacked at home while visiting.</value>
@@ -248,6 +255,10 @@
   <string key="GunnerEaten" >
     <!-- 0 - victim name -->
     <value >As everyone comes out of their houses, they find pieces of a shotgun strewn about... then legs... then fingers... then the body of {0}, floating in the fountain in the town square, dead from a werewolf attack. You have lost your gunner 🔫.</value>
+  </string>
+  <string key="HijabiGirlEaten" >
+    <!-- 0 - victim name -->
+    <value >The village wakes up to find a pile of discarded knives. Nearby is the body of {0}, the Hijabi Girl 🧕, who was torn apart by wolves last night.</value>
   </string>
   <string key="SeerEaten" >
     <!-- 0 - victim name -->
@@ -357,6 +368,12 @@
     <!-- 2 - Target's revealed name ( Target was a role) -->
     <value >Suddenly, a shot rings out. The village turns to see {0} standing over {1}'s body, a gun still aimed at the head. {2}</value>
   </string>
+  <string key="DefaultThrownKnife" >
+    <!-- 0 - HijabiGirl's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value >Suddenly, a knife flies through the air! The village turns to see {0} standing confidently after throwing a knife directly into {1}'s heart. {2}</value>
+  </string>
   <string key="WolfWins" isgif="true" >
     <value >The werewolf has won!</value>
   </string>
@@ -458,6 +475,9 @@
   </string>
   <string key="Gunner">
     <value>the Gunner 🔫</value>
+  </string>
+  <string key="HijabiGirl">
+    <value>the Hijabi Girl 🧕</value>
   </string>
   <string key="Tanner">
     <value>the Tanner 👺</value>
@@ -860,6 +880,9 @@
   </string>
   <string key="AboutGunner">
     <value>A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!</value>
+  </string>
+  <string key="AboutHijabiGirl">
+    <value>Ready to throw some knives? As the Hijabi Girl, you are given 5 knives at the beginning of the game. Each day, you will have the chance to throw a knife at another player. Once you do, everyone will know you are the Hijabi Girl! Be careful though, if you hit a Villager, you will lose your remaining knives out of guilt!</value>
   </string>
   <string key="AboutTanner">
     <value>The Tanners goal is simple: Get Lynched. If the Tanner gets lynched, they win, period. Everyone else loses.</value>
@@ -1296,6 +1319,9 @@
   <string key="GunnerKilled">
     <value>Looks like {0} was caught napping last night! A gunshot was heard last night, but all there was was the remains of a gunner, with a bullet hole to the head and a stab to the torso. Clearly the serial killer has won.</value>
   </string>
+  <string key="HijabiGirlKilled">
+    <value>Looks like {0} was caught napping last night! The Serial Killer overpowered her and used her own knives against her.</value>
+  </string>
   <string key="MayorKilled">
     <value>Assassination! {0} the mayor was found pinned with a knife on the table while working overnight at the mayor office! Clearly it's the serial killer exacting revenge for the asylum robbing them of years of their life!</value>
   </string>
@@ -1635,6 +1661,11 @@
   <!-- {0} - Gunner's Name -->
   <!-- {1} - Wise Elder's Name -->
     <value>The Gunner 🔫, {0} shot the Wise Elder 📚, {1}. {0} sobbed mournfully, regretting their mistake, and decided to scrap their gun, becoming a simple Villager👱 with a field to plow.</value>
+  </string>
+  <string key="HijabiGirlShotWiseElder">
+  <!-- {0} - HijabiGirl's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>The Hijabi Girl 🧕, {0} threw a knife at the Wise Elder 📚, {1}. {0} sobbed mournfully, regretting her mistake, and threw away her remaining knives out of guilt, becoming a simple Villager👱.</value>
   </string>
   
   <string key="ThiefStealFailed">

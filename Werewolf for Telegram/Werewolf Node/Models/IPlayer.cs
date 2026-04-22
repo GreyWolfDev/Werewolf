@@ -68,6 +68,11 @@ namespace Werewolf_Node.Models
         public int Bullet { get; set; } = 2;
 
         /// <summary>
+        /// For the HijabiGirl only
+        /// </summary>
+        public int Knives { get; set; } = 5;
+
+        /// <summary>
         /// Werewolf gets drunk after killing the drunk, so sits out one turn
         /// </summary>
         public bool Drunk { get; set; } = false;

@@ -1575,6 +1575,7 @@ namespace Werewolf_Node
                 case IRole.Chemist:
                 case IRole.Detective:
                 case IRole.Gunner:
+                case IRole.HijabiGirl:
                 case IRole.Spumpkin:
                 case IRole.Augur:
                 case IRole.GraveDigger:
@@ -1936,6 +1937,8 @@ namespace Werewolf_Node
                 {
                     Transform(p, rm.PlayerRole, TransformationMethod.Doppelgänger,
                         newRoleModel: rm.RoleModel, bullet: new[] { IRole.Spumpkin, IRole.Gunner }.Contains(rm.PlayerRole) ? (int?)2 : null, hasUsedAbility: false, roleModel: rm);
+                    if (rm.PlayerRole == IRole.HijabiGirl)
+                        p.Knives = 5;
                 }
             }
         }
@@ -2902,6 +2905,43 @@ namespace Werewolf_Node
                 }
             }
 
+            //check hijabi girl
+            var hijabiGirl = Players.FirstOrDefault(x => x.PlayerRole == IRole.HijabiGirl & !x.IsDead && x.Choice != 0 && x.Choice != -1);
+            if (hijabiGirl != null)
+            {
+                var check = Players.FirstOrDefault(x => x.Id == hijabiGirl.Choice);
+                if (check != null)
+                {
+                    //throw knife
+                    hijabiGirl.Knives--;
+                    hijabiGirl.HasUsedAbility = true;
+                    bool isEnemy = new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Zombie, IRole.SerialKiller, IRole.Lycan, IRole.SnowWolf, IRole.Arsonist, IRole.Sorcerer, IRole.Traitor, IRole.Thief }.Contains(check.PlayerRole);
+
+                    if (isEnemy)
+                    {
+                        hijabiGirl.BulletHitBaddies++; // reuse stat for achievements if wanted
+                    }
+                    else if (check.Team == ITeam.Village)
+                    {
+                        // Stabs a villager, she loses her knives
+                        hijabiGirl.Knives = 0;
+                    }
+
+                    switch (check.PlayerRole)
+                    {
+                        case IRole.WiseElder:
+                            SendWithQueue(GetLocaleString("DefaultThrownKnife", hijabiGirl.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
+                            SendWithQueue(GetLocaleString("HijabiGirlShotWiseElder", hijabiGirl.GetName(), check.GetName()));
+                            Transform(hijabiGirl, IRole.Villager, TransformationMethod.KillElder, bullet: 0);
+                            break;
+                        default:
+                            SendWithQueue(GetLocaleString("DefaultThrownKnife", hijabiGirl.GetName(), check.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{check.GetName()} {GetLocaleString("Was")} {GetDescription(check.PlayerRole)}"));
+                            break;
+                    }
+                    KillPlayer(check, KillMthd.Shoot, killer: hijabiGirl, isNight: false);
+                }
+            }
+
             //check spumpkin
             var spumpkin = Players.FirstOrDefault(x => x.PlayerRole == IRole.Spumpkin & !x.IsDead && x.Choice != 0 && x.Choice != -1);
             if (spumpkin != null)
@@ -3760,6 +3800,7 @@ namespace Werewolf_Node
                                 case IRole.Doppelgänger:
                                 case IRole.Thief:
                                 case IRole.Spumpkin:
+                                case IRole.HijabiGirl:
                                     ConvertToCult(target, voteCult, 0);
                                     break;
                                 case IRole.Oracle:
@@ -4253,6 +4294,7 @@ namespace Werewolf_Node
                                 case IRole.Drunk:
                                 case IRole.Fool:
                                 case IRole.Gunner:
+                                case IRole.HijabiGirl:
                                 case IRole.Harlot:
                                 case IRole.Mason:
                                 case IRole.Seer:
@@ -4279,6 +4321,7 @@ namespace Werewolf_Node
                                 case IRole.Drunk:
                                 case IRole.GuardianAngel:
                                 case IRole.Gunner:
+                                case IRole.HijabiGirl:
                                 case IRole.Mayor:
                                 case IRole.Prince:
                                 case IRole.Seer:
@@ -4408,6 +4451,10 @@ namespace Werewolf_Node
                                 case IRole.Chemist:
                                     if (p.KilledByRole == IRole.SerialKiller)
                                         msg = GetLocaleString("ChemistSKPublic", p.GetName());
+                                    break;
+                                case IRole.HijabiGirl:
+                                    if (p.KilledByRole == IRole.SerialKiller)
+                                        msg = GetLocaleString("HijabiGirlKilled", p.GetName());
                                     break;
                                 case IRole.SnowWolf:
                                     if (p.KilledByRole == IRole.SerialKiller)
@@ -4580,7 +4627,7 @@ namespace Werewolf_Node
                     if (alivePlayers.Any(x => x.PlayerRole == IRole.SerialKiller))
                         return DoGameEnd(ITeam.SerialKiller);
                     //check for Arso
-                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Arsonist) && !alivePlayers.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0))
+                    if (alivePlayers.Any(x => x.PlayerRole == IRole.Arsonist) && !alivePlayers.Any(x => (x.PlayerRole == IRole.Gunner && x.Bullet > 0) || (x.PlayerRole == IRole.HijabiGirl && x.Knives > 0)))
                         return DoGameEnd(ITeam.Arsonist);
                     //check for cult
                     if (alivePlayers.Any(x => x.PlayerRole == IRole.Zombie))
@@ -4632,7 +4679,7 @@ namespace Werewolf_Node
             //do the wolves outnumber the others?
             if (alivePlayers.Count(x => WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf) >= alivePlayers.Count(x => !WolfRoles.Contains(x.PlayerRole) && x.PlayerRole != IRole.SnowWolf))
             {
-                if (alivePlayers.Any(x => x.PlayerRole == IRole.Gunner && x.Bullet > 0))
+                if (alivePlayers.Any(x => (x.PlayerRole == IRole.Gunner && x.Bullet > 0) || (x.PlayerRole == IRole.HijabiGirl && x.Knives > 0)))
                 {
                     var wolves = alivePlayers.Where(x => WolfRoles.Contains(x.PlayerRole) || x.PlayerRole == IRole.SnowWolf);
                     var others = alivePlayers.Where(x => !WolfRoles.Contains(x.PlayerRole) && x.PlayerRole != IRole.SnowWolf);
@@ -5132,6 +5179,25 @@ namespace Werewolf_Node
                         var choices = options.Select(x => new[] { InlineKeyboardButton.WithCallbackData(x.Name, $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Shoot}|{x.Id}") }).ToList();
                         choices.Add(new[] { InlineKeyboardButton.WithCallbackData(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.Shoot}|-1") });
                         SendMenu(choices, gunner, GetLocaleString("AskShoot", gunner.Bullet), QuestionType.Shoot);
+                    }
+                }
+            }
+
+            var hijabiGirl = Players.FirstOrDefault(x => x.PlayerRole == IRole.HijabiGirl & !x.IsDead);
+
+            if (hijabiGirl != null)
+            {
+                hijabiGirl.Choice = 0;
+                if (hijabiGirl.Knives > 0)
+                {
+                    var options = Players.Where(x => !x.IsDead && x.Id != hijabiGirl.Id).ToList();
+                    if (options.Any())
+                    {
+                        if (ShufflePlayerList)
+                            options.Shuffle();
+                        var choices = options.Select(x => new[] { InlineKeyboardButton.WithCallbackData(x.Name, $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.ThrowKnife}|{x.Id}") }).ToList();
+                        choices.Add(new[] { InlineKeyboardButton.WithCallbackData(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.ThrowKnife}|-1") });
+                        SendMenu(choices, hijabiGirl, GetLocaleString("AskThrowKnife", hijabiGirl.Knives), QuestionType.ThrowKnife);
                     }
                 }
             }
