@@ -155,7 +155,9 @@ namespace Werewolf_Node.Models
         Freeze,
         Douse,
         VisitImam,
-        ThrowKnife
+        ThrowKnife,
+        AuroraTouch,
+        AuroraRevive
     }
 
 

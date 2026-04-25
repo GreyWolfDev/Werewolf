@@ -111,6 +111,8 @@ namespace Werewolf_Control.Models
         Freeze,
         Douse,
         VisitImam,
-        ThrowKnife
+        ThrowKnife,
+        AuroraTouch,
+        AuroraRevive
     }
 }

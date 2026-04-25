@@ -144,6 +144,9 @@ namespace Shared
 
         [Role("🧕")]
         HijabiGirl = 17592186044416,
+
+        [Role("🌌")]
+        Aurora = 35184372088832,
     }
 
     public class RoleAttribute : Attribute

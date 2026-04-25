@@ -1579,6 +1579,7 @@ namespace Werewolf_Node
                 case IRole.Spumpkin:
                 case IRole.Augur:
                 case IRole.GraveDigger:
+                case IRole.Aurora:
                     p.Team = ITeam.Village;
                     break;
                 case IRole.Doppelgänger:
@@ -2990,7 +2991,11 @@ namespace Werewolf_Node
                 var check = Players.FirstOrDefault(x => x.Id == detect.Choice);
                 if (check != null)
                 {
-                    Send(GetLocaleString("DetectiveSnoop", check.GetName(), GetDescription(check.PlayerRole)), detect.Id);
+                    IRole fakeRole = check.PlayerRole;
+                    if (fakeRole == IRole.Aurora)
+                        fakeRole = IRole.Villager;
+
+                    Send(GetLocaleString("DetectiveSnoop", check.GetName(), GetDescription(fakeRole)), detect.Id);
 
                     //if snooped non-bad-roles:
                     if (!new[] { IRole.Wolf, IRole.AlphaWolf, IRole.WolfCub, IRole.Lycan, IRole.Zombie, IRole.SerialKiller, IRole.SnowWolf, IRole.Arsonist }.Contains(check.PlayerRole))
@@ -3853,6 +3858,33 @@ namespace Werewolf_Node
             }
             #endregion
 
+            #region Aurora Night
+            var aurora = Players.FirstOrDefault(x => x.PlayerRole == IRole.Aurora && !x.IsDead);
+            if (aurora != null && !aurora.Frozen)
+            {
+                var target = Players.FirstOrDefault(x => x.Id == aurora.Choice);
+                switch (VisitPlayer(aurora, target))
+                {
+                    case VisitResult.Success:
+                        var nonVgRoles = new[] { IRole.Zombie, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.Lycan, IRole.Thief, IRole.SnowWolf, IRole.Arsonist, IRole.Doppelgänger, IRole.Traitor };
+                        if (nonVgRoles.Contains(target.PlayerRole))
+                        {
+                            KillPlayer(target, KillMthd.VisitWolf, killer: aurora, killedByRole: IRole.Aurora);
+                            SendWithQueue(GetLocaleString("AuroraTouchedBad", target.GetName(), !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{target.GetName()} {GetLocaleString("Was")} {GetDescription(target.PlayerRole)}"));
+                        }
+                        else
+                        {
+                            KillPlayer(aurora, KillMthd.VisitVictim, killer: aurora, killedByRole: IRole.Aurora);
+                            SendWithQueue(GetLocaleString("AuroraTouchedGood", !DbGroup.HasFlag(GroupConfig.ShowRolesDeath) ? "" : $"{aurora.GetName()} {GetLocaleString("Was")} {GetDescription(aurora.PlayerRole)}"));
+                        }
+                        break;
+                    case VisitResult.VisitorDied:
+                        // Do nothing, already killed by SK or similar
+                        break;
+                }
+            }
+            #endregion
+
             #region Chemist Night
             var chemist = Players.FirstOrDefault(x => x.PlayerRole == IRole.Chemist & !x.IsDead);
             if (chemist != null && !chemist.Frozen)
@@ -4012,6 +4044,7 @@ namespace Werewolf_Node
                                 target.Trustworthy = true;
                                 break;
                             case IRole.Lycan: //sneaky wuff
+                            case IRole.Aurora: //appears as villager
                                 role = IRole.Villager;
                                 break;
                         }
@@ -4053,6 +4086,11 @@ namespace Werewolf_Node
                 if (target != null)
                 {
                     var possibleRoles = Players.Where(x => !x.IsDead && x.Id != fool.Id && x.PlayerRole != IRole.Seer).Select(x => x.PlayerRole).ToList();
+                    for(int i = 0; i < possibleRoles.Count; i++)
+                    {
+                        if(possibleRoles[i] == IRole.Aurora)
+                            possibleRoles[i] = IRole.Villager;
+                    }
                     possibleRoles.Shuffle();
                     possibleRoles.Shuffle();
                     if (possibleRoles.Any())
@@ -4088,7 +4126,8 @@ namespace Werewolf_Node
                 var target = Players.FirstOrDefault(x => x.Id == oracle.Choice);
                 if (target != null)
                 {
-                    var possibleRoles = Players.Where(x => !x.IsDead && x.Id != oracle.Id && x.PlayerRole != target.PlayerRole).Select(x => x.PlayerRole).ToList();
+                    var possibleRoles = Players.Where(x => !x.IsDead && x.Id != oracle.Id && x.PlayerRole != target.PlayerRole && x.PlayerRole != IRole.Aurora).Select(x => x.PlayerRole).ToList();
+                    // Oracles should not see Aurora role directly.
                     possibleRoles.Shuffle();
                     possibleRoles.Shuffle();
                     if (possibleRoles.Any())
@@ -4492,7 +4531,12 @@ namespace Werewolf_Node
                 }
 
                 foreach (var h in hunterFinalShot)
-                    HunterFinalShot(h.Key, h.Value);
+                {
+                    if (h.Key.PlayerRole == IRole.Aurora)
+                        AuroraRevive(h.Key);
+                    else
+                        HunterFinalShot(h.Key, h.Value);
+                }
 
                 var bloodyVictims = Players.Where(x => x.TimeDied > nightStart && x.IsDead);
 
@@ -5511,6 +5555,54 @@ namespace Werewolf_Node
                 p.Choice = -1;
         }
 
+        public void AuroraRevive(IPlayer aurora)
+        {
+            CheckRoleChanges();
+
+            var nonVgRoles = new[] { IRole.Zombie, IRole.SerialKiller, IRole.Tanner, IRole.Wolf, IRole.AlphaWolf, IRole.Sorcerer, IRole.WolfCub, IRole.Lycan, IRole.Thief, IRole.SnowWolf, IRole.Arsonist, IRole.Doppelgänger, IRole.Traitor };
+            var possibleTargets = Players.Where(x => x.IsDead && !nonVgRoles.Contains(x.PlayerRole)).ToList();
+            if (possibleTargets.Count == 0)
+                return;
+
+            var auroraChoices = new List<InlineKeyboardButton[]>();
+            if (ShufflePlayerList)
+                possibleTargets.Shuffle();
+            auroraChoices.AddRange(possibleTargets.Select(x => new[] { InlineKeyboardButton.WithCallbackData(x.Name, $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.AuroraRevive}|{x.Id}") }));
+            auroraChoices.Add(new[] { InlineKeyboardButton.WithCallbackData(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.AuroraRevive}|-1") });
+
+            SendMenu(auroraChoices, aurora, GetLocaleString("AskAuroraRevive"), QuestionType.AuroraRevive);
+
+            aurora.Choice = 0;
+            //aurora gets 30 seconds to choose
+            for (int i = 0; i < 30; i++)
+            {
+                if (aurora.Choice != 0)
+                {
+                    i = 30;
+                }
+                Thread.Sleep(1000);
+            }
+
+            if (aurora.Choice == 0)
+            {
+                Program.Bot.EditMessageTextAsync(chatId: aurora.Id, messageId: aurora.CurrentQuestion.MessageId, text: GetLocaleString("TimesUp"));
+                // Pick a random target
+                var fallbackId = possibleTargets[Program.R.Next(possibleTargets.Count)].Id;
+                aurora.Choice = fallbackId;
+            }
+
+            if (aurora.Choice != -1 && aurora.Choice != 0)
+            {
+                var revived = Players.FirstOrDefault(x => x.Id == aurora.Choice);
+                if (revived != null)
+                {
+                    revived.IsDead = false;
+                    revived.TimeDied = DateTime.MaxValue;
+                    SendWithQueue(GetLocaleString("AuroraRevivedPlayer", aurora.GetName(), revived.GetName()));
+                }
+            }
+        }
+
         public void HunterFinalShot(IPlayer hunter, KillMthd method, bool delay = false)
         {
             CheckRoleChanges();
@@ -5716,6 +5808,13 @@ namespace Werewolf_Node
                     break;
                 case IRole.Hunter:
                     if (killMethod.HasValue && hunterFinalShot) HunterFinalShot(p, killMethod.Value, delay: isNight);
+                    break;
+                case IRole.Aurora:
+                    if (killMethod.HasValue && hunterFinalShot)
+                    {
+                        if (isNight) p.FinalShotDelay = killMethod.Value;
+                        else AuroraRevive(p);
+                    }
                     break;
             }
         }

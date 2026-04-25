@@ -308,6 +308,8 @@ namespace Shared
                     return 8;
                 case IRole.Spumpkin:
                     return 2;
+                case IRole.Aurora:
+                    return 5;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }

@@ -20,6 +20,14 @@ namespace Werewolf_Node.Helpers
             { "BlackDeathWinner", "Congratulations, {0}, YOU survived the {1} alone! Happy April Fool's!" },
             { "BlackDeathKilledAll", "Everybody in the village was killed by the {0} and only corpses are lying around! Happy April Fool's!" },
             { "BlackDeathLovers", "Congratulations, {0} and {1}, you are so madly in love that you even managed to survive the {2} together! Happy April Fool's!" },
+            { "AboutAurora", "Aurora 🌌 can remain invisible; no one knows her role. She helps the villagers, and when she touches a wolf, it dies immediately. However, if she touches a good player, she sacrifices herself to let them live." },
+            { "RoleInfoAurora", "You are Aurora 🌌. You help the village by trying to touch the bad guys! If you touch a bad player, they die and you survive! However, if you accidentally touch a good player, you will sacrifice yourself to let them live. If you die, you can bring one good dead player back to life." },
+            { "Aurora", "Aurora 🌌" },
+            { "AskAurora", "Who do you want to touch tonight?" },
+            { "AuroraTouchedBad", "Aurora 🌌 touched {0} last night, and they died! {1}" },
+            { "AuroraTouchedGood", "Aurora 🌌 touched someone who was not a bad guy, and died! {0}" },
+            { "AskAuroraRevive", "You have died! Who do you want to bring back to life? You have 30 seconds to choose!" },
+            { "AuroraRevivedPlayer", "The power of Aurora 🌌 has revived {1}! They are back in the game!" },
         };
     }
 }
