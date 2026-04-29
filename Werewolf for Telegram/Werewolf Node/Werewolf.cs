@@ -6175,6 +6175,7 @@ namespace Werewolf_Node
                     {
                         refresh = new RefreshDate
                         {
+                            Lock = "X",
                             Date = DateTime.Now.Date
                         };
                         db.RefreshDate.Add(refresh);
