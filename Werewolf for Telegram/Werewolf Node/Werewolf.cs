@@ -4803,9 +4803,7 @@ namespace Werewolf_Node
                             AddAchievement(w, AchievementsReworked.ForbiddenLove);
                         if (IsDateAnywhere(14, 02, 2020))
                             AddAchievement(w, AchievementsReworked.TodaysSpecial);
-                        w.Won = true;
-                        var p = GetDBGamePlayer(w, db);
-                        p.Won = true;
+                        MarkPlayerWon(w, db);
                     }
                 }
                 else
@@ -4820,17 +4818,14 @@ namespace Werewolf_Node
                         if (team == ITeam.Tanner && !w.DiedLastNight)
                             continue;
 
-                        w.Won = true;
-                        var p = GetDBGamePlayer(w, db);
-                        p.Won = true;
+                        MarkPlayerWon(w, db);
                         if (w.InLove)
                         {
                             //find lover
                             var lover = Players.FirstOrDefault(x => x.Id == w.LoverId);
                             if (lover != null)
                             {
-                                lover.Won = true;
-                                GetDBGamePlayer(lover, db).Won = true;
+                                MarkPlayerWon(lover, db);
                             }
                         }
                     }
@@ -5085,6 +5080,17 @@ namespace Werewolf_Node
                 Program.RemoveGame(this);
                 return true;
             }
+        }
+
+        private void MarkPlayerWon(IPlayer player, WWContext db)
+        {
+            if (player == null) return;
+
+            player.Won = true;
+
+            var dbGamePlayer = GetDBGamePlayer(player, db);
+            if (dbGamePlayer != null)
+                dbGamePlayer.Won = true;
         }
 
 
