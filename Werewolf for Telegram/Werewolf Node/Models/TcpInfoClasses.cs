@@ -35,6 +35,7 @@ namespace Werewolf_Node.Models
         public string JType { get; set; } = "PlayerJoinInfo";
         public User User { get; set; }
         public string GameId { get; set; }
+        public bool IsDummy { get; set; }
     }
 
     public class GameStartInfo

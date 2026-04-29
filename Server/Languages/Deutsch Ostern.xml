@@ -1,0 +1,2410 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Version 18.04.2022 🦠 -->
+  <!-- CREDITS CREDITS CREDITS CREDITS Hauptarbeit von Poolitzer und Robby 😘(t.me/Appfel), mit Hilfe von Luca, Mrs, der berühmten Paula und Ludwig (Prinzip) CREDITS CREDITS CREDITS-->
+
+<strings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <language name="Deutsch Ostern" base="Deutsch" variant="Ostern" owner="" code="de" isDefault="false"/>
+    <string key="NotInGame" deprecated="true">
+      <value>Offensichtlich bist du nicht dabei, Eier zu bemalen...</value>
+    </string>
+    <string key="PlayerStartedGame" isgif="true">
+      <!-- 0 - Player name -->
+      <value>Ein neues Eier-Bemalen und Emos-Feuern wurde von {0} gestartet! Drück auf Join, um mitzuarbeiten!</value>
+      <value>{0} möchte, dass wieder Eier bemalt werden und Emos gefeuert werden! Drück auf Join, um mitzuarbeiten!</value>
+      <value>{0} hat sich das erste Ei geschnappt und ist fleißig am Bemalen. Hilf ihm, gegen die Emos anzumalen und drücke auf Join!</value>
+    </string>
+    <string key="PlayerStartedChaosGame" isgif="true">
+      <!-- 0 - Player name -->
+      <value>Ein neues Chaos-Eier-Bemalen und Emos-Feuern wurde von {0} gestartet! Trete bei, um mitzuarbeiten! Aber vorsicht, rohe Eier sind empfindlich!</value>
+      <value>Chaos bricht in der Fabrik aus - {0} hat sich ein Ei geschnappt, aber niemand weiß, ob er ein Emo oder ein loyaler Eierbemaler ist! Tritt bei und find es heraus!</value>
+    </string>
+    <string key="NoJoinGameRunning" deprecated="true">
+      <value>Du kannst gerade nicht mitarbeiten, das Bemalen läuft bereits. Aber mit /nextgame erinnere ich dich das nächste Mal so früh wie möglich!</value>
+    </string>
+    <string key="AlreadyJoined" deprecated="true">
+      <value>Du bist schon am Arbeiten. 🤦‍♀️</value>
+    </string>
+    <string key="MinuteLeftToJoin">
+      <value>Nur noch 1 Minute, um mitzumalen.</value>
+    </string>
+    <string key="SecondsLeftToJoin">
+      <!-- 0 - remaining seconds (number) -->
+      <value>Nur noch {0} Sekunden, um mitzumalen. Jetzt aber schnell!</value>
+    </string>
+    <string key="NotEnoughPlayers">
+      <value>Es gibt nicht genügend Arbeiter, das Malen wird abgebrochen! \nDie Fabrik bleibt geschlossen und so wird das nichts mit Ostern... Such doch ein paar mehr Mitarbeiter.</value>
+    </string>
+    <string key="StartingGameWait">
+      <value>Das Bemalen startet. Bitte warten, während ich die Jobs zuweise und die Datenbank aktualisiere.</value>
+    </string>
+    <string key="BannedForExploit" deprecated="true">
+      <!-- 0 - Player name -->
+      <value>{0} ist gebannt für den Versuch eines Exploits (keine Namen beginnend mit /).</value>
+    </string>
+    <string key="ChangeNameToJoin">
+      <!-- 0 - Player name -->
+      <value>/extend \n{0}, bitte ändere deinen Namen, um mitarbeiten zu können. Wenn Du nicht sicher bist, was falsch ist frage einen Osterhasen.</value>
+    </string>
+    <string key="PlayerLimitReached">
+      <value>Entschuldigung, die maximale Arbeiteranzahl wurde erreicht! Die Schicht beginnt sofort.</value>
+    </string>
+    <string key="PlayerJoined">
+      <!-- 0 - Player name -->
+      <!-- 1 - current players -->
+      <!-- 2 - Minimum players -->
+      <!-- 3 - Maximum players -->
+      <value>{0} macht beim Bemalen mit. {1} Arbeiter, mindestens {2} und maximal {3} Arbeiter sind nötig.</value>
+      <value>{0} malt jetzt mit. Bereits {1} Arbeiter, mindestens werden {2} Arbeiter benötigt. Bei {3} Bemalern fängt die Schicht sofort an!</value>
+    </string>
+    <string key="PMTheBot">
+      <!-- 0 - Player name -->
+      <!-- 1 - bot username -->
+      <value>{0}, tippe auf auf den "Start Me!"-Knopf oder auf {1} und dann auf "Starten", damit ich dir deinen Job verraten kann. Vorher kannst du der Schicht nicht beitreten.</value>
+    </string>
+    <string key="DeadFlee">
+      <!-- im Code auskommentiert -->
+      <value>Du kannst nicht kündigen, DU WURDEST GEFEURT! Zum Arbeitsamt mit dir, verdammt nochmal!</value>
+    </string>
+    <string key="Flee">
+      <!-- 0 - Player name -->
+      <value>{0} hat gekündigt!</value>
+    </string>
+    <string key="PlayerRoleWas">
+      <!-- 0 - Player name -->
+      <!-- 1 - Player role -->
+      <value>{0} war {1}</value>
+    </string>
+    <string key="CountPlayersRemain">
+      <!-- 0 - Number of players -->
+      <value>{0} Maler verbleibend.</value>
+    </string>
+    <string key="DidntAsk" deprecated="true">
+      <value>Du wurdest nicht aufgefordert, etwas zu schreiben!</value>
+    </string>
+    <string key="NotPlaying">
+      <value>Du scheinst nicht am Malen zu sein...</value>
+    </string>
+    <string key="NoPlayerName">
+      <value>Ich kann keinen Maler mit diesem Namen finden!</value>
+    </string>
+    <string key="AnswerNonValid" deprecated="true">
+      <value>Die Antwort ist nicht gültig!</value>
+    </string>
+    <string key="WolfVotedKill">
+      <!-- 0 - wolf teammate name -->
+      <!-- 1 - Victim name -->
+      <value>{0} will {1} schwarze Eier untermogeln.</value>
+    </string>
+    <string key="PlayerVotedLynch">
+      <!-- 0 - Voter name -->
+      <!-- 1 - Target name -->
+      <value>{0} möchte {1} gefeuert sehen!</value>
+    </string>
+    <string key="IdleKill">
+      <!-- 0 - player name -->
+      <!-- 1 - player was role -->
+      <value>Komisch. Ihr habt {0} schon zweimal in Folge nicht bei der abendlichen Mitarbeiterversammlung gesehen... Wirklich merkwürdig, aber nicht zu ändern. {1}</value>
+    </string>
+    <string key="TraitorTurnWolf">
+      <value>Du Trittbrettfahrer!!! Du bist jetzt ein Emo 🐺!</value>
+    </string>
+    <string key="ChoiceAccepted">
+      <value>Wahl akzeptiert</value>
+    </string>
+    <string key="BeholderSeer">
+      <!-- 0 - seer name -->
+      <value>\n{0} ist der Wachmann 👮‍♂️ (👳).</value>
+    </string>
+    <string key="ApprenticeNowSeer">
+      <!-- 0 - <seer name> (dead) or "the seer" (converted) -->
+      <value>Komisch, {0} kann seinen Job nicht mehr ausführen - was da wohl passiert ist? Als sein Auszubildener trittst du jedoch die Nachfolge an und bist nun der neue Wachmann 👮‍♂️ (👳).</value>
+    </string>
+    <string key="BeholderNewSeer">
+      <!-- 0 - apprentice name -->
+      <!-- 1 - <seer name> (dead) or "the seer" (converted) -->
+      <value>Da {1} erblindet ist, nimmt sein überaus eifriger Azubi 🙇 {0} dessen Platz als Wachmann ein. So ein Glück!</value>
+    </string>
+    <string key="SeerSees">
+      <!-- 0 - player name -->
+      <!-- 1 - player role -->
+      <value>Die Kameras verrieten dir, dass {0} {1} ist!</value>
+    </string>
+    <string key="AskLynch">
+      <value>Wähle, wem heute noch gekündigt werden soll...</value>
+    </string>
+    <string key="AskDetect">
+      <value>Wen willst du kontollieren?</value>
+      <value>Wem willst du heute hinterherspionieren?</value>
+      <value>Über wen möchtest du einen Backgroundcheck anstellen?</value>
+      <value>Wer kommt Dir schon die ganze Zeit so komisch vor, dass du jetzt wissen musst was der anstellt?</value>
+    </string>
+    <string key="AskShoot">
+      <!-- 0 - bullet count -->
+      <value>Wen willst du heute feuern? Aber Achtung: dir bleiben nur noch {0} Gefallen beim Chef!</value>
+      </string>
+    <string key="AskVisit">
+      <value>Wem willst du über die Schulter schauen?</value>
+      <value>Wer darf sich heute über deinen Besuch freuen?</value>
+    </string>
+    <string key="AskSee">
+      <value>Wessen Arbeitsplatz willst du sehen?</value>
+      <value>Wen willst du über die Kameras beobachten?</value>
+    </string>
+    <string key="AskGuard">
+      <value>Wessen Eier willst du beschützen?</value>
+      <value>Über wen willst du heute beim Arbeiten wachen?</value>
+    </string>
+    <string key="AskEat">
+      <value>Wem willst du deine Eier untermogeln?</value>
+      <value>Wer soll wie ein Emo aussehen?</value>
+    </string>
+    <string key="AskHunt">
+      <value>Wen verdächtigst du heute, gemobbt zu haben?</value>
+      <value>Wer ist wohl ein Mobber?</value>
+    </string>
+    <string key="AskRoleModel">
+      <value>Wessen Muster sind dein Vorbild?</value>
+      <value>Wer malt so schöne Muster, dass er schon lange dein Vorbild ist?</value>
+      </string>
+    <string key="AskConvert">
+      <value>Wer soll heute mit dir mobben?</value>
+      <value>Wer hat das Zeug zum Mobben und sollte zu deiner Gang gehören?</value>
+      <value>Wen möchtest du diesen Arbeitstag vom Mobben überzeugen?</value>
+    </string>
+    <string key="DiscussWith">
+      <!--Leave the leading space here please-->
+      <!-- 0 - teammate names -->
+      <value> Besprich dich mit {0}</value>
+      <value> Sprich darüber mit {0}</value>
+      <value>Eine Diskussion mit {0} wird sich sicher als hilfreich herausstellen!</value>
+    </string>
+    <string key="And">
+      <!--this is paired with "DiscussWith". again, leave the spaces!-->
+      <value> und </value>
+    </string>
+    <string key="RoleInfoCursed">
+      <value>Du bist das Lamm. 🐑 (😾)\nAktuell bist du zwar ein ganz normaler Maler, aber wenn die Emos dir schwarze Eier unterschmuggeln, entdeckst du die Schönheit dieser Farbe und malst ab dann schwarze Eier...</value>
+      <value>Du bist ein lamm 🐑. (😾)\nDu bist zwar eigentlich ein Maler, aber seid du hier angekommen bist, hast du das Gefühl, nicht dazuzugehören. Langsam hast du das Eierbemalen wirklich satt, aber du traust dich auch nicht, alleine gegen den Strom zu schwimmen. Aber du hast von diesen Emos gehört, die die Eier schwarz statt bunt anmalen... Wenn du bloß wüsstest, wo du so viel schwarze Farbe herbekommen kannst! Deshalb bist du immer wachsam und wirst dich dem ersten Emo, der dir seine Eier unterschieben will, anschließen.</value>
+    </string>
+    <string key="RoleInfoDetective">
+      <value>Du bist der Personalleiter. 🕵\nWährend des Arbeitens hast du die Möglichkeit, in den Personalakten den Job eines Mitarbeiters zu erfahren. Aber sei auf der Hut! Deine Schnüffeleien könnte die Emos auf dich aufmerksam machen - und dann stehst du auf ihrer Blacklist. (40% Wahrscheinlichkeit)</value>
+      <value>Du bist der Personalleiter. 🕵\nMit deiner riesigen Lupe spazierst du während des Malens neben dem Fließband und steckst deine Nase in alle Dinge, die dich nichts angehen. Pass nur auf, dass die Emos dich nicht dabei erwischen! (40% Wahrscheinlichkeit)</value>
+    </string>
+    <string key="RoleInfoDrunk">
+      <value>Na wen haben wir denn da? Wieder die ganze Nacht gesoffen? 🍻 Reiß Dich gefälligst zusammen und hör auf, wild Farben auf Eier zu schmeißen! Sieht ja aus wie Sau!</value>
+      <value>Du saufender Mistkerl! Als der Betrunkene 🍻 bist du immer noch ein normaler Arbeiter. ABER: Wenn die Emos dir ihre schwarzen Eier unterschmuggeln wollen, können sie nicht an deinem Eierlikör vorbei, ohne zu probieren - und bekanntlich macht Alkohol ja lustig. Für einen Tag vergessen sie ihre Schwarzmalerei, weil sind sie dann so betrunken sind, dass sie Farbe auf ihre schwarzen Eier schmeißen: Sie können dann bis zur übernächsten Nacht mit niemanden reden und müssen ihre Eier neu malen! P.S.: Du wirst natürlich trotzdem gefeuert. Trinken während des Dienstes, pah, wo ist denn sowas erlaubt?!</value>
+      <!-- <value>Glückwunsch! Du bist der Betrunkene. 🍻</value>
+      <value>Glückwunsch! Du bist der altbekannte Säufer. 🍻</value> -->
+      </string>
+    <string key="RoleInfoGuardianAngel">
+      <value>Du bist der Schutzengel. 👼\nJeden Arbeitstag kannst du einen Maler beschützen, sodass ihm niemand dunkle Eier unterschieben kann. Wenn du jedoch einen Emo oder den Weihnachtsmann wählst, schieben sie dir mit einer Wahrscheinlichkeit von 50% Geschenke oder schwarze Eier unter, und dann wirst du natürlich gefeuert.</value>
+    </string>	
+    <string key="RoleInfoGunner">
+      <value>Du bist eine einflussreiche Person. 🔫\nDir schuldet der Chef genau zwei Gefallen. Während des Tages kannst du den Chef "überzeugen", dass er einen Maler zu feuern hat - genauer gesagt, du bereitest das Kündigungsschreiben schon vor und wenn wir genau sind, hast du auch seine Unterschrift schon gefälscht. Wie du damit durchkommst, bleibt dein Geheimnis - wer weiß, was du gegen den Chef in der Hand hast?! So effektiv diese Vorgehensweise auch ist; der Freundschaftsdienst ist aber so offensichtlich, dass jeder weiß, dass du dahintersteckst. Alle wissen dann, wer du du bist, und der Gefallen ist natürlich auch weg.</value>
+      </string>
+    <string key="RoleInfoHarlot">
+      <value>Du bist der "Hase" 💋 der Hasen. Beim Arbeiten kannst du einen Spieler besuchen, um festzustellen, ob dieser ein Maler ist. Falls du einem Emo oder den, der Eier untergeschoben bekommt, besuchst, wirst du gefeuert. Wenn du jedoch jemanden besuchst und die Emos versuchen, deinem Arbeitsplatz ohne dich Eier unterzuschieben, passiert dir nichts.</value>
+    </string>
+    <string key="RoleInfoTraitor">
+      <value>Du bist ein anonymer Emo 🥸. Wenn der letzte Schwarzmaler 🐺 den Pinsel abgelegt hat, machst Du weiter und malst Eier schwarz an.</value>
+    </string>
+    <string key="RoleInfoWolf">
+      <value>Du bist ein Schwarzmaler. 🐺\nJede Nacht darfst du dir ein Opfer aussuchen, dem du deine schwarzen Eier unterjubelst. Das findet die Fabrikleitung nicht so lustig und feuert die dann.</value>
+      <value>Du bist ein Schwarzmaler. 🐺\nDu hast ein flauschiges schwarzes Fell (Du hast dich immer gefragt, ob du nicht doch adoptiert wurdest) und liebst es die anderen zu ärgern, indem Du alle Eier schwarz anmalst. Bemalt ist bemalt! Am Tag siehst Du noch nett aus, aber nachts malst Du im Team andere Mitmaler an, die darauf meist gefeuert werden. Ohne Lammbraten.</value>
+      <value>Na du flauschiger Schwarzmaler Du? 🐺 Ich könnte hier große Worte verlieren, aber wir wissen ja beide, dass du nur mit schwarzer Farbe um Dich werfen magst. Solange Du niemanden tötest und keinen größeren Schaden anrichtest, soll es mir Recht sein!</value>
+    </string>
+    <string key="RoleInfoSeer" >
+      <value>Du bist der Wachmann 👮‍♂️ (aka Seher 👳).\nDu überwachst die Produktion in der Fabrik und kannst von einem Mitarbeiter die genaue Arbeit begutachten . So erfährst du, ob er gefeuert werden sollte oder nicht.</value>
+      <!-- <value>Du bist der Seher. 👳\nDu hast eine Affinität zu übergrossen Filzhüten und schwarzen Katzen und besitzt die magische Gabe, andere Leute zu durchschauen. Weil du bereits als Kind den Tod deiner Eltern in den Resten deines Kartoffelbreis vorausgesehen hast, meiden dich die meisten Leute. Denjenigen, die an dich glauben, stellst du deine Fähigkeiten aber gerne zur Verfügung.</value>
+      <value>Na, anscheinend hat sich dieser teure Wahrsagekurs ja doch gelohnt, du hast Talent! Es scheint so, als hätte tatsächlich ein wenig meiner Genialität auf dich abgefärbt, als ich dich geschaffen habe. Du darfst dich ab jetzt als Seher 👳 bezeichnen - wessen Schicksal willst du heute erfragen?</value> -->
+    </string>
+    <string key="RoleInfoVillager" >
+      <value>Du bist ein bescheidener Eiermaler 👱, dazu verdammt, den ganzen Tag Eier bunt anzumalen. Jeden. Einzelnen. Tag.</value>
+      <value>Ich kenne viele gute Beschreibungen für Rollen. Du bist aber nur Eiermaler 👱, da gebe ich mir doch keine Mühe!</value>
+      <value>Wow. Du bist der neue Eiermaler 👱. Du machst hier den wichtigsten Job, glaube mir! Sehen aber die Kollegen wohl nicht so. Aber mal unter uns, wer hört schon auf die?</value>
+      <!-- <value>Du bist ein Dorfbewohner 👱 - dein Leben ist zwar nicht besonders aufregend, aber dafür ist dein Schlaganfallrisiko auch besonders gering. Gegen Werwolfattacken bist du aber, natürlich, wehrlos...</value>
+      <value>Als Dorfbewohner 👱 mag dein Leben vielleicht erst einmal nicht so rosig aussehen - dafür hast du immer eine ruhige Nacht und kannst dich tagsüber in Ruhe auf die Abstimmung vorbereiten, um das Böse auszutreiben.</value>
+      <value>Du bist ein einfacher Dorfbewohner 👱, der ein Faible für Porzellankitsch und Katzen hat. Werwölfe kannst du dafür nicht besonders gut leiden.</value>
+      <value>Du bist Got- ahh nee, doch nur Dorfbewohner 👱, 'tschuldigung, aber zumindest gehst du gern in die Kirche.</value>
+      <value>Du bist ein Dorfbewohner 👱, und am liebsten hast du es, wenn alle friedlich zusammensitzen - deshalb kochst du auch immer für deine Freunde! Pflichbewusst wie du bist, würdest du natürlich auch nie eine Abstimmung verpassen, um dein Dorf vor dem Bösen zu retten.</value>
+      <value>Du bist ein Dorfbewohner. 👱\nDein Leben ist ziemlich langweilig, also spielst du Computerspiele bis spät in die Nacht und trinkst dabei leidenschaftlich gerne Grapefruitsaft.</value> -->
+    </string>
+    <string key="RoleInfoTanner" >
+      <value>Du bist der spielsüchtige Sohn vom Chef. 👦 (aka Gerber 👺)\nWenn dich alle beim Chef anschwärzen, gewinnst Du, ansonsten gewinnst Du vielleicht in deinen Videospielen, aber in der Fabrik hast Du dann nicht weitergeholfen.</value>
+      <!-- <value>Du bist der Gerber. 👺\nNormalerweise sind die Bewohner des Dorfes ja normale Menschen, die ihr Leben schätzen. Mal tagaktiv, mal nachtaktiv und flauschig; aber alle wollen sie am Leben bleiben. Und dann gibt es da dich: du willst sterben. Aber nicht irgendwie, sondern durch das Urteil der anderen Dorfbewohner bei allabendlichen Abstimmung. Und warum? Weil du dann das Spiel gewinnst. Das ergibt zwar keinen Sinn, so ist das aber.</value> -->
+    </string>
+    <string key="RoleInfoWildChild" >
+      <value>Du bist ein wildes süßes Häschen 🐰. (aka wildes Kind 👶)\nDu stehst voll auf einen Mitarbeiter und wenn dieser gefeuert wird, wirst Du richtig sauer und malst alle Eier schwarz an (wirst Schwarzmaler 🐺).</value>
+      <!--<value>Du bist ein wildes Kind. 👶\nAn sich hast du dich daran gewöhnt, alleine in der Welt unterwegs zu sein. Aber irgendwie hast du das Bedürfnis nach Führung, einer Person, der du blind folgen kannst. Dieses Vorbild darfst du dir nun unter den anderen Spielern des Dorfes aussuchen. Du steigerst dich aber so in Vergötterung deines Vorbilds hinein, dass es für dich fast unmöglich scheint, ohne diese Person weiterzuleben. Im Fall des Falles, dass das tatsächlich eintritt und sie stirbt (Gott bewahre!), dann wird das Auswirkungen auf dich haben: du wirst so wütend, dass du zu einem waschechten Werwolf mutierst!</value>
+    -->
+    </string>
+    <string key="RoleInfoBeholder" >
+      <value>Du bist der Leiter der Sicherheitsfirma. 👁\nNatürlich kennst Du den Wachmann 👮‍♂️ (aka Seher 👳‍♂️). Bedenke aber, dass sich immer wieder Leute als Wachmänner ausgeben und das auch noch echt glauben...</value>
+    </string>
+    <string key="RoleInfoApprenticeSeer" >
+      <value>Du bist der Azubi des Wachmanns. 🙇\nDu stehst an zweiter Stelle. Aktuell noch ohne Fähigkeit, geduldig auf deinen Einsatz wartend. Du wünschst ihn dir nicht explizit herbei - immerhin wäre das der Wunsch nach der Arbeitslosigkeit des aktuellen Wachmanns - wenn er aber eintritt, dann ist deine Zeit gekommen und du wirst zu einem waschechten Wachmann.</value>
+      <value>Du bist der Sti... äh Azubi vom Wachmann. 🙇\nDu wolltest schon immer Wachmann sein, doch leider waren deine Noten nicht gut genug, als du dich auf die Stelle beworben hast. Aus Mitleid darfst Du jetzt erstmal ne 3-jährige Ausbilung machen, bis dein Vorgänger ins Gras beißt. Dann fragt niemand mehr nach Abschluss!</value>
+    </string>
+    <string key="RoleInfoZombie" >
+      <value>Du bist ein Mobber. 👤\nJeden gott-verdammten Tag mobbst du und dein erbämliches Team jemanden. Es gibt welche, die dem Stand halten können und manche sind so schwach, dass sie mit euch mobben. Erbämlich...</value>
+    </string>
+    <string key="RoleInfoZombieHunter" >
+      <value>Du bist der/die Gleichberechtigungsbeauftragte. 💂\nZuerst musst Du Deine Rolle 3-mal fehlerfrei aufsagen!\nUnd nun zu Deiner Aufgabe: Laut Meldungen wird in der Eierfabrik hartes Mobbing betrieben! Du musst das unterbinden und hast die Erlaubnis, Mobber selbst zu feuern.</value>
+    </string>
+    <string key="LynchTime" >
+      <!-- 0 - number of seconds -->
+      <value>Der Arbeitstag ist vorrüber und die Maler versammeln sich, um zu entscheiden, wen sie heute rauschmeißen wollen...\nJeder hat {0} Sekunden, um seine Stimme abzugeben.</value>
+      <value>Es wird Zeit für die abendliche Mitarbeiterversammlung und alle versammeln sich, um denjenigen zu bestimmen, den sie heute beim Chef anschwärzen wollen...\nJeder hat {0} Sekunden, um sich zu entscheiden!</value>
+    </string>
+    <string key="DayTime" >
+      <!-- 0 - number of seconds -->
+      <value>Es ist Feierabend. Die Maler haben nun {0} Sekunden, um zu diskutieren, wer verdächtig ist.</value>
+      <value>Das Malen ist endlich vorbei... Alle versammeln sich, um die Gefeuerten zu zählen (Was für ein Betrieb...) - nun habt ihr {0} Sekunden, um die Unproduktiven zu finden!</value>
+      </string>
+    <string key="NightTime" >
+      <!-- 0 - number of seconds -->
+      <value>Es ist Morgens, 8:00. Alle Maler fangen an, zu malen. Anders beschäftigte (oder sich beschäftigende) Mitarbeiter haben {0} Sekunden für deren Aktionen!</value>
+      <value>Schneller als gedacht beginnt ein neuer Arbeitstag, alle Malen fleißig... doch einige tun auch nur so. Die Faulen unter euch haben {0} Sekunden, um sich andersweitig zu Beschäftigen!</value>
+    </string>
+    <string key="LynchKill" >
+      <!-- 0 - player name -->
+      <!-- 1 - player role -->
+      <value>Die Arbeiter stimmten erfolgreich ab. {0} wurde des Schwarz-Arbeitens/Eier-Schwarz-anmalens verdächtigt und das dem Chef gemeldet. {1}</value>
+      <value>Die Maler sind sich einig, gemeinsam schwärzen sie {0} beim Boss an. {1}</value>
+    </string>
+    <string key="LynchTie" >
+      <value>Uneinig darüber, wer angeschwärzt werden soll, kehren die Arbeiter frustriert in ihre Stammkneipe ein...</value>
+      <value>Es entsteht eine angespannte Stille, in der sich alle misstrauisch anschauen - dennoch ist auch jeder erleichtert, für heute seine Arbeitsstelle behalten zu dürfen. Langsam löst sich die Versammlung auf und ein neuer Arbeitstag dämmert...</value>
+    </string>
+    <string key="NoLynchVotes" >
+      <value>Irgendwas ist verdächtig, niemand hat eine Stimme abgegeben! Es gibt keine Arbeitslosen...</value>
+      <value>Brot 🍞 kann schimmeln! Was könnt Ihr eigentlich? Anschwärzen auf jeden Fall nicht, jeder behält seinen Job</value>
+      <!-- <value>Es erschien heute niemand zur Wahl! Heute Abend gibt es keine Toten.</value>
+      <value>Bei der Abstimmung machte sich niemand die Mühe, die Hand zu heben. Wie wollt ihr denn so das Böse aus dem Dorf vertreiben?!</value> -->
+    </string>
+    <string key="DetectiveEaten" >
+      <!-- 0 - victim name -->
+      <value>Merkwürdig... Am Abend taucht {0} nicht zur Besprechung auf. Zuerst ist man ja gar nicht so unglücklich, bei dem ganzen Qualm, den der mit seiner Pfeife immer produziert, auch kein Wunder... Aber eigentlich hatte er immer gute Ideen, also wird schließlich doch in seinem Büro nachgeguckt - aber alles, was sie finden, ist seine Lupe 🕵, eine Menge Zettel... und schwarze Eier 🐺.</value>
+      </string>
+    <string key="GuardianEaten" >
+      <!-- 0 - victim name -->
+      <value>Als der Morgen hereinbricht, sehen die Dorfbewohner zu ihrem Entsetzen {0}, den Schutzengel 👼, aufgespießt und halb verspeist 🐺 am Kreuz der Kirche hängen.</value>
+      <value>Der Morgen bricht an, und überall im Dorf liegen Federn herum... zuerst glaubt man an einen Fuchs, der sich in den Hühnerstall geschlichen hat, doch stattdessen findet man dort {0}, den Schutzengel 👼. Das können nur die Werwölfe 🐺 gewesen sein...</value>
+      <value>Ein neuer Tag bricht an. Doch was sehen die armen Dorfbewohner? {0}, der von Gott gesandte Engel 👼, liegt tot auf dem Dorfplatz. Ein schrecklicher Anblick, denn ein Werwolf 🐺 hat ihm beide Flügel ausgerissen!</value>
+      <value>Es wird Tag... zu ihrem Bestürzen finden die Dorfbewohner {0}, den Schutzengel 👼, in einer Blutlache vor der Kirche - die gute Seele ist den Wölfen 🐺 zum Opfer gefallen...</value>
+      <value>Der Tag bricht an, und verspricht, ein guter zu werden: sogar Schnee können die Dorfbewohner aus ihren Fenstern erblicken. Doch, halt... Schnee?! Schnell finden sie heraus, dass es in Wahrheit Federn sind... von einer bösen Vorahnung beschlichen pilgern sie zum Dorfzentrum, um dort {0} auf dem Pflaster zu finden, auf dem Pflaster aufgeschlagen - die Flügel von den Werwölfen zerfetzt... 🐺 Trauert um den Schutzengel 👼!</value>
+      <value>Als ihr euch zu eurer allabendlichen Mitarbeiterversammlung trefft, fehlt jemand. Ihr müsst euch nur kurz umgucken, um sofort festzustellen, dass es der allseits beliebte Rafael ist: Die Emos 🐺 haben {0} 👼 einfach schwarze Eier untergemogelt und er wurde gefeuert.</value>
+	</string>
+	<string key="GunnerEaten" >
+		<!-- 0 - victim name -->
+		<value>Da ist wohl jemand in Ungnade gefallen... Und ihr wart euch alle sicher, dass der einflussreiche Typ 🔫 als letzter gefeuert werden würde, ja, vermutlich niemals - jeder wusste, dass sogar der Chef höchstpersönlich ihm noch Gefallen schuldete! Aber dessen Zorn über die Schwarzmaler scheint größer, {0} kann nur noch das Weite suchen und reißt mit.</value>
+	</string>
+	<string key="SeerEaten" >
+  	  <!-- 0 - victim name -->
+  	  <value>Der Arbeitstag neigt sich dem Ende zu. Plötzlich hört ihr ein lautes Türenrumsen, {0} stürmt durch die Eingangshalle nach drußen, ihm fliegen schwarze Eier hinterher. Ein Werk der Schwarzmaler, ganz klar 🐺. Der Wachmann 👮‍♂️ (👳) ist gefeuert.</value>
+  	  </string>
+  	<string key="DrunkEaten" >
+	  <!-- 0 - victim name -->
+	  <value>Jeder schmeißt sein Malzeug hin, als der Geruch von brennenden Eiern, Tischen und Farbe erschnüffelbar wird... Die Kantine brennt!!! Nachdem das Feuer gelöscht wurde, findet man die verbrannten Überreste von beschwärzten Eiern.🐺  Natürlich wird der Betrunkenen {0} 🍻 dafür Verantwortlich gemacht und gefeuert!</value>
+	  <value>Die allgegenwärtige Schnapsflasche von {0}, dem Betrunkenen 🍻, wurde nach der Arbeit in der Kantine nahe den Arbeitsräumen gefunden. Er selber fehlt. Das passende Kündigungsschreiben findet ihr später. Es ist gezeichnet durch einen Klecks schwarzer Farbe 🐺...</value>
+	</string>
+  	<string key="FoolEaten" >
+	  <!-- 0 - victim name -->
+	  <value>Als der Mond über der Fabrik aufsteigt, finden die Arbeiter neben dem Kündigungsschreiben von {0} (und schwarzen Eiern 🐺) auch ein SPIEL UND SPAß-Überwachungssystem, aber mit ein paar ... Kaputten Kameras??? DER BRIAN🃏!</value>
+	  <value>Ein neuer Feierabend ist in Sichtweite, doch irgendetwas stimmt nicht... das fröhliche Lachen von {0} fehlt! Besorgt macht ihr euch auf die Suche - und seht sehr viele schwarze Eier 🐺 - Brian 🃏 wurde von dem Chef gefeuert...</value>
+	</string>
+  	<string key="DefaultEaten" >
+	  <!-- 0 - victim name -->
+	  <!-- 1 - victim role -->
+	  <value>Als fast jeder sein Arbeitspensum geschafft hat, bemerken die Dorfbewohner eine schrecklich schwarze Farbspur. Sie folgen ihr und finden {0} 's Arbeitszeugnis 🐺. Er ist wohl völlig überstürzt aufgebrochen... {1}</value>
+	  <value>Es wird Feierabend und alle versammeln sich. Alle? Nein! Irgendwer fehlt... Dann fällt es euch ein: {0} fehlt ... Man steht etwas ratlos beisammen, erst dann bemerkt man das auseinandergerissene Schreiben des Chefs neben einem Haufen schwarzer Eier 🐺, er wurde gefeuert! {1}</value>
+  	</string>
+  	<string key="HunterKilledZombie">
+	  <!-- 0 - victim name -->
+	  <!-- bezieht sich auf den Kultistenjäger -->
+	  <value>Während des Feierabend fällt sofort auf, dass {0} fehlt... Er ist nicht wirklich positiv zum Betriebsklima beigetragen... Ein Mobber 👤 wurde gefeuert von dem Ordnungshelfer 💂!</value>
+  	</string>
+  	<string key="NoAttack" >
+	  <value>Am nächsten Abend sammeln sich die Arbeiter im Hof, Gott sei Dank - es scheint über den Tag keine schwarzen Eier gegeben zu haben.</value>
+	  <value>Ihr kommt alle so müde zusammen, wie ihr am Morgen auseinander gegangen seid. Anscheinend wurden keinem schwarze Eier untergejubelt - richtig langweilig. Keiner wird gefeuert.</value>
+  	</string>
+  	<string key="CursedBitten" >
+		<value>Dir wurden schwarze Eier an deinen Platz gelegt. Aber anstatt sie dem Chef zu zeigen, nimmst du sie mit. Nun bist du ein Schwarzmaler!</value>
+      </string>
+	<string key="WolfTeam">
+		<!-- 0 - teammate names -->
+		<value>Die anderen Schwarzmaler sind: {0}</value>
+	</string>
+	<string key="CursedBittenToWolves" >
+	<!-- 0 - victim name -->
+	<value>{0} wurde gebissen... aber er war verflucht 😾 und ist nun ein Werwolf wie du selbst! Glückwunsch zum neuen Teamkollegen!</value>
+	<value>Granatig! Da hat heute aber jemand Glück im Lott- ach falsche Rolle. Heute nicht Lottofee. {0} war der Verfluchte 😾, wurde gebissen und ist nun genauso flauschig wie du.</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true">
+	<value>Du wurdest gefeuert. Viel Spaß unter der Brücke, wenn du dein Haus zur Tilgung der Schulden verkaufen musst...</value>
+	<value>Rate mal, wer gefeuert wurde: Du!</value>
+  </string>
+    <string key="WolvesEatDrunk" >
+      <!-- 0 - victim name -->
+      <!-- <value>Oh nein! {0} war betrunken 🍻! Nun bist du betrunken, du kannst kommende Nacht niemanden angreifen...</value>
+      <value>Während du noch genüsslich an {0} kaust, wird dir auf einmal ganz schwindelig und du beschließt, nächste Nacht erst einmal deinen Rausch 🍻 auszuschlafen, anstatt dir dein nächstes Opfer zu suchen.</value> -->
+      <value>Oh nein! {0} war betrunken 🍻! Jetzt musst du erstmal alle Eier, die er farbig gemacht hat, wieder schwarz machen und kannst natürlich morgen keinem die Unterjubeln.</value>
+    </string>
+    <string key="GuardWolf" >
+      <value>Du hast versucht einen Emo 🐺 zu beschützen! Der hat dich mit schwarzer Farbe bemalt und du wurdest gefeuert.</value>
+    </string>
+    <string key="GuardSaved" >
+      <!-- 0 - saved player name -->
+      <value>Du hast {0} den Arbeitsplatz gerettet!</value>
+    </string>
+    <string key="GuardNoAttack" >
+      <!-- 0 - player name -->
+      <value>{0} wurde nicht angesprochen, du hattest nichts zu tun.</value>
+    </string>
+    <string key="GuardEmptyHouse">
+      <!-- 0 - player name -->
+      <value>Du wolltest {0} beschützen, es war aber niemand am Arbeitsplatz! Sind wir hier auf der Arbeit oder im Wanderzirkus?</value></string>
+    <string key="GuardSavedYou" >
+      <value>Der Rafael 👼 wachte letzte Tag über dich und vertrieb die Emos!</value></string>
+    <string key="HarlotEaten" >
+      <!-- 0 - player name -->
+      <value>Der Hase 💋 entschied sich an dem falschen Tag, einfach weiterzumalen. {0} wurde von den Emos 🐺 angeschwärzt und gefeuert!</value>
+    </string>
+    <string key="HarlotNotHome" >
+      <!-- 0 - player name -->
+      <value>Seltsam... {0} war nicht am Arbeitsplatz 💋! Sind wir hier auf der Arbeit oder im Wanderzirkus? Kein Ort für dich, Eier hinzulegen...</value>
+    </string>
+    <string key="HarlotFuckWolf" >
+      <!-- 0 - player name -->
+      <value>Du gehst zum Arbeitsplatz von {0}, um ein bisschen Spaß zu haben, nur um einem Emo 🐺 zu begegnen. Jetzt bist du gefeuert und hast schwarze Farbe im Gesicht.</value>
+    </string>
+    <string key="HarlotFuckedWolfPublic" >
+      <!-- 0 - player name -->
+      <value>{0} ging zum falschen Arbeitsplatz 🐺 letzten Tag 💋! Sie wurde öffentlich durch den Chef gefeuert und ist so schwarz wie Ebenholz!</value>
+    </string>
+    <string key="HarlotFuckedVictimPublic" >
+      <!-- 0 - harlot name -->
+      <!-- 1 - victim name -->
+      <value>{0} wollte nur ein bisschen mit {1} über Muster reden 💋, aber mitten drin werden die Beiden plötzlich von den Emos 🐺 überrascht... zwei auf einen Streich werden entlassen!</value>
+    </string>
+    <string key="HarlotVisitNonWolf" >
+      <!-- 0 - target name -->
+      <value>Du siehst, dass {0} nichts Böses im Schilde führt, da ihr den ganzen Tag zusammen gemalt habt! 💋</value>
+    </string>
+    <string key="HarlotVisitYou" >
+      <value>Heute kam ein Hase 💋 zu dir, um dir tolle Muster zu zeigen...</value>
+    </string>
+    <string key="DetectiveCaught" >
+      <!-- 0 - detective name -->
+      <value>Du erwischt {0} beim Schnüffeln! {0} ist der Verwalter 🕵</value></string>
+    <string key="DetectiveSnoop" >
+      <!-- 0 - target name -->
+      <!-- 1 - target role -->
+      <value>Deine Backgroundcheck zufolge ist {0} {1}.</value>
+    </string>
+    <string key="HarlotShot" >
+      <!-- 0 - gunner's name -->
+      <!-- 1 - Harlot's name -->
+      <value>Es sieht aus, als hätte sich {0} am Tag bei dem Hasen ein echt schlechtes Muster zeigen lassen! Beschämt ob der schlechten Qualität nutzt er seinen Einfluss, um {1} feuern zu lassen 💋.</value>
+    </string>
+    <string key="DefaultShot" >
+      <!-- 0 - Gunner's name -->
+      <!-- 1 - target name -->
+      <!-- 2 - Target's revealed name (Target was a role) -->
+      <value>Da sowas hier nicht so häufig passiert, ist die gesamte Belegschaft in heller Aufregung, als man, kurz bevor die abendliche Sitzung einberufen wird, einen lauten Ausrufs des Chefs hört. Während {1} mit hängendem Kopf die Fabrik verlässt, steht {0} mit schmierigen Grinsen daneben. {2}.</value>
+    </string>
+    <string key="WolfWins" isgif="true">
+      <value>Der Emo hat gewonnen!</value>
+      <value>Waaas? Bemalt ist bemalt! Ein Emo 🐺 gewinnt \n📽: https://www.youtube.com/watch?v=k6XXf6nX3VY \nDanke an Ralph Ruthe. Ohne Dich wäre das hier alles doof!</value>
+    </string>
+    <string key="WolvesWin" isgif="true">
+      <value>Die Emos haben gewonnen!</value>
+      <value>Waaas? Bemalt ist bemalt! Die Emos 🐺gewinnen und schauen gemeinsam ein Video: \n📽: https://www.youtube.com/watch?v=k6XXf6nX3VY \nDanke an Ralph Ruthe. Ohne Dich wäre das hier alles doof!</value>
+    </string>
+    <string key="VillageWins" isgif="true">
+      <value>Die Belegschaft hat gewonnen! Alle Emos (und andere, nicht so nette Gesellen) wurden gefeuert...</value>
+    </string>
+    <string key="TannerWins" isgif="true">
+      <value>Oh nein! Der spielsüchtige Sohn 👦 des Chefs wurde gefeuert und verkauft die Firma an dubiose chinesische Investoren 👺! Er gewinnt das Spiel, ihr Dummerchen.</value>
+    </string>
+    <string key="RemainingPlayersEnd">
+      <value>Verbleibende lebende Maler, Rollen und Teams:</value>
+    </string>
+    <string key="ZombieVotedConvert" >
+      <!-- 0 - Voter's name -->
+      <!-- 1 - target name -->
+      <value>{0} hat gewählt, {1} zu einem Mobber zu machen.</value>
+      <value>{0} will {1} mobben. Nett ist das nicht!</value>
+    </string>
+    <string key="CultConvertZombieHunter">
+      <!-- 0 - Yougest Zombie (killed)'s name -->
+      <!-- 1 - ZombieHunter's name -->
+      <value>In diesem Tag war es die Aufgabe von {0}, eine weitere Person zu einem Mobber zu machen. Das Glück war anscheinend Anderen zuteil, da {1} als Glecihberechtigungsbeauftragte 💂 wohl so ziemlich das unglücklichste Ziel darstellte. Das Aufeinandertreffen hatte daher kein neues Kultmitglied zur Folge, sondern führte im Gegenteil zum Feuern eures jüngsten Mitglieds.</value>
+    </string>
+    <string key="ZombieHunterKilledCultVisit">
+      <!-- 0 - Youngest Zombie's name -->
+      <!-- 1 - Number of Zombies left -->
+      <value>{0} kommt zu deinem Arbeitsplatz, mit der festen Überzeugung, dich vom Mobbing zu überzeugen. Zu seinem Unglück durchschaust du die Masche deines Gegenübers und greifst, mehr aus Reflex als aus Wissen, nach deinem Telefon und lässt euren Chef mithören. Ein Mobber 👤 ist weg... {1} sind noch da!</value>
+      <value>{0} versucht dich zu mobben. Doch du erinnerst dich an den Kurs "Umgang mit Mobbing" und reagierst so suverän, dass {0} nicht mehr mobben möchte. Leider will er auch nicht mehr mitarbeiten. Er verrät Dir aber noch, dass es noch {1} Mobber 👤 gibt.</value>
+    </string>
+    <string key="CultConvertYou">
+      <value>Der Besuch eines Mobbers hat dich in deinem Glauben zutiefst erschüttert; dir wird klar, dass nur dessen Art die einzig Richtige sein kann und dass es dein Schicksal ist, ebenso ein Mobber 👤 zu sein. Jede Nacht suchst du dir mit deinen Mitmobbern einen Spieler aus, den einer von euch dann zu Überzeugen versucht, auch mitzumachen.</value>
+    </string>
+    <string key="CultTeam">
+      <!-- 0 - Number of Zombies -->
+      <value>Mobber: {0}</value>
+    </string>
+    <string key="CultJoin">
+      <!-- 0 - new Zombie's name -->
+      <value>{0} trat dem Mobbingteam bei!</value>
+    </string>
+    <string key="CultVisitEmpty">
+      <!-- 0 - Newest Zombie's name -->
+      <!-- 1 - target name -->
+      <value>{0} wurde gesendet, um {1} zu überzeugen... aber keiner war am Malen!</value>
+    </string>
+    <string key="CultWins" isgif="true">
+      <value>Die Maler sind gefeuert, alle anderen Arbeitenden wurden zu Mobber bekehrt.. Der Mobbingzirkel hat gewonnen!</value>
+    </string>
+    <string key="HunterVisitDead">
+      <!-- 0 - target name -->
+      <value>Deine Abneigung richtet sich gegen Mobber, nicht gegen bereits gefeuerte Personen. Was machst du also hier bei {0}?</value>
+    </string>
+    <string key="HunterFindZombie">
+      <!-- 0 - target name -->
+      <value>Um deinem Gleichstellungsauftrag nachzukommen, gehst du zum Arbeitsplatz von {0}, um nachzuschauen, ob er jemanden mobbt. Zu deinem großen Vergnügen tut er das, was Augenblicklich zu einem Anruf beim Boss und dem Feuern von {0} führt.</value>
+    </string>
+    <string key="HunterFailedToFind">
+      <!-- 0 - target name -->
+      <value>Du gehst zum Arbeitsplatz von {0}, aber du hörst kein Mobbing. {0} ist kein Mobber, du kehrst wieder zum Malen zurück.</value></string>
+    <string key="WildChildToWolves">
+      <!-- 0 - Werechild's name -->
+      <value>Das Vorbild von {0} wurde gefeuert! In seiner Wut (und Trauer) wurde das wilde Kind 👶/Häschen 🐰 ein Schwarzmaler und malt jetzt mit euch.</value>
+    </string>
+    <string key="WildChildTransform">
+      <!-- 0 - role's name -->
+      <!-- 1 - teamate's names -->
+      <value>{0} wurde gefeuert! In deiner Wut wurdest du zu einem Emos 🐺! Die anderen Emos sind: {1}</value></string>
+    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter -->
+    <string key="Villager">
+      <value>ein Maler 👱</value>
+    </string>
+    <string key="Drunk">
+      <value>der Betrunkene 🍻</value>
+    </string>
+    <string key="Harlot">
+      <value>der Hase 💋</value>
+    </string>
+    <string key="Seer">
+      <value>der Wachmann 👮‍♂️ (👳)</value>
+    </string>
+    <string key="Traitor">
+      <value>der Trittbrettfahrer 🥸</value>
+    </string>
+    <string key="GuardianAngel">
+      <value>der Schutzhase 👼</value>
+    </string>
+    <string key="Detective">
+      <value>der Verwalter 🕵</value>
+    </string>
+    <string key="Wolf">
+      <value>ein Schwarzmaler 🐺</value>
+    </string>
+    <string key="Cursed">
+      <value>das Lamm 🐑 (😾)</value>
+    </string>
+    <string key="Gunner">
+      <value>die einflussreiche Person 🔫</value>
+    </string>
+    <string key="Tanner">
+      <value>der spielsüchtige Sohn des Chefs 👦 (aka Gerber 👺)</value>
+    </string>
+    <string key="Fool">
+      <value>Brian 🃏</value>
+    </string>
+    <string key="WildChild">
+      <value>das wilde Häschen 🐰 (aka wildes Kind 👶)</value>
+    </string>
+    <string key="Beholder">
+      <value>der Leiter der Sicherheitsfirma 👁</value>
+    </string>
+    <string key="ApprenticeSeer">
+      <value>der Sti... äh Auszubildene des Wachmanns 🙇</value>
+    </string>
+    <string key="Zombie">
+      <value>ein Mobber 👤</value>
+    </string>
+    <string key="ZombieHunter">
+      <value>der Gleichstellungsbeauftragte 💂</value>
+    </string>
+
+    <!-- These are for the player list -->
+    <string key="PlayersAlive">
+      <value>Lebende Spieler</value>
+    </string>
+    <string key="RanAway">
+      <value>Hat gekündigt</value>
+    </string>
+    <string key="Dead">
+      <value>🔥 Gefeuert</value>
+    </string>
+    <string key="Alive">
+      <value>🙂 Angestellt</value>
+    </string>
+
+    <!-- Freimaurer oeder Eier-Freikünstler -->
+    <string key="Mason">
+      <value>ein Eier-Freikünstler 👷</value>
+    </string>
+    <string key="RoleInfoMason">
+      <!-- <value>Du bist ein Eier-Freikünstler 👷. Die Leute glauben zwar, du wärst Maurer von Beruf, aber das ist alles nur Teil deiner Tarnung. Wenn du nicht gerade über deinen Büchern sitzt und Verschwörungstheorien ausarbeitest, übst du auch gerne mittelalterlichen Schwertkampf und spielst historische Schlachten nach - wenn du tatsächlich Gleichgesinnte findest, natürlich auch liebend gern gemeinsam. So weißt du, wer die anderen Freimaurer sind und erfährst genauso, wenn einer von ihnen abtrünnig wird.</value> -->
+      <value>Du hast es geschafft! Du bist Eier-Freikünstler 👷.\nDu bemalst keine Eier, nein! DU stellst Fabergé-Eier her. Lass die nicht fallen.</value>
+    </string>
+    <string key="MasonEaten">
+      <!-- 0 - dead man's name -->
+      <value> Am nächsten Abend fällt euch auf, dass {0} fehlt 😞. Er war ein waschechter Eier-Freikünstler 👷.</value>
+    </string>
+    <string key="MasonTeam">
+      <!-- combined with RoleInfoMason -->
+      <!-- leave the space! -->
+      <value> Jetzt kommt das allerbeste: Du bist nicht alleine, Du hast Kollegen, die mit Dir Fabergé-Eier herstellen: {0}</value>
+      <!-- <value> Du mauerst anscheinend so überzeugend, dass sich ein paar Weitere inzwischen auch deiner Hingabe widmen: {0}</value> -->
+    </string>
+
+    <!-- new strings May 6 2016-->
+    <string key="CultTargetDead">
+      <!-- 0 - Youngest Zombies name -->
+      <!-- Vorlage
+		<value>Euer neuestes Mitglied lief zum Haus von {0}, um ihn zu bekehren, aber das Haus war vollkommen zerstört, überall Blut, und Fäden eines Wolfsfells 🐺 vor der Tür...</value>
+    -->
+    <value>Um Gottes Willen 🤦‍♂️! Der neueste Mobber lief nicht wirklich zu {0}, der auch schon Besuch von einem Schwarz-Maler 🐺 hat, oder? Lange Rede, kurzer Sinn: der Schwarz-Maler 🐺 hat {0} so lange gemobbt, bis dieser gekündigt hat!</value>
+    </string>
+    <string key="GuardBlockedWolf">
+      <!-- 0 - target's name -->
+      <value>Okay, Ihr macht Euch also auf den Weg {0} anzuschwärzen, 3 Kilo schwarze Eier im Gepäck. Problem ist nur, dass Rafael 👼 was dagegen hatte, er schrie euch an und ihr seid unverrichteter Dinge zurück gelaufen. Ihr hättet ihn doch schwarz anmalen können...</value>
+      <!-- <value>Die Horde lief zum Haus von {0}, um ihn zu essen, aber ihr bemerkt eine große helle Gestalt, bis zu den Zähnen bewaffnet. Der Schutzengel 👼 wehrte euch alle ab und ihr kehrt besiegt zurück.</value> -->
+    </string>
+
+    <!-- new strings May 9 2016-->
+    <string key="CultUnableToConvert">
+      <!-- 0 - newest -->
+      <!-- 1 - target's name -->
+      <value>{0} wollte unbedingt {1} mobben. Nur ist {1} ziemlich stark und hat nur gekontert, {0} sei ein jämmerliches Würstchen. Tja 🤷‍♂️</value>
+      <!-- <value>{0} wurde losgeschickt, um {1} zu bekehren, aber leider war der Glaube von {1} zu stark und konnte deshalb nicht überzeugt werden :(</value> -->
+    </string>
+
+    <!-- new string May 12 2016-->
+    <string key="NameExists">
+      <!-- 0 - target's name -->
+      <!-- 1 - name -->
+      <value>/extend \n@{1}, ein Mitarbeiter mit dem Namen {0} arbeitet bereits für uns! Tut mir Leid. Sei so nett und ändere Deinen Namen. Wir warten</value>
+    </string>
+    <string key="HarlotDiscoverCult">
+      <!-- 0 - target's name -->
+      <value>Du gehst zu {0}, um etwas mit ihm zu malen... doch als du gerade gehen wolltest, konntest du einen kurzen Blick in einen Nebenraum erhaschen und siehst eine Wand voller Zeitungsausschnitte und Beleidigungen, wie sie nur ein Mobber 👤 haben kann.</value>
+    </string>
+
+    <!-- new string May 13 2016-->
+    <string key="Was">
+      <value>war</value>
+    </string>
+    <string key="GenericDeathNoReveal">
+      <!-- 0 - Dead's name -->
+      <value>Es wird Abend, aber {0} hat nicht ausgestempelt. Eine Überprüfung ergab, dass {0} nicht mehr mitarbeitet. Was da wohl passiert ist?</value>
+      <value>Es ist Abend und alle gehen nach Hause 🏠. Alle? Nein! {0} wurde nicht mehr gesehen. Wo der wohl steckt?</value>
+      <!-- <value>Das Dorf wachte auf und versammelte sich am Dorfplatz ... doch {0} kam nicht. Beim Untersuchen der Häuser fanden sie die Leiche von {0}.</value>
+      <value>Als die Dorfbewohner am nächsten Morgen aufwachten, fanden sie die Leiche von {0}, welcher aus ungeklärten Umständen verstarb...</value> -->
+    </string>
+    <string key="MasonConverted">
+      <!-- 0 - mason's name -->
+      <value>Alarm 🚨 \n{0} kam heute Abend nicht mit in die Kneipe zum Eier-Freikünstler-Stammtisch. Und ein Fabergé-Ei fehlt auch</value>
+    </string>
+
+    <!-- new string May 16 2016-->
+    <string key="FleeDisabled">
+      <value>So nicht! Du hast einen Vertrag bis Ostern unterschrieben, wegrennen gilt nicht!</value>
+      <!-- <value>Das Fliehen während eines laufenden Spiels wurde vom Gruppenadmin deaktiviert!</value> -->
+    </string>
+    <string key="IsDead">
+      <!-- used when gunner shoots a player -->
+      <value>wurde von einem einflussreichen Typen 🔫 gefeuert</value>
+    </string>
+
+    <!-- MORE STRINGS May 16, 2016 -->
+    <string key="AdminAdded" deprecated="true">
+      <!-- 0 - new admins's name -->
+      <value>{0} ist jetzt ein Osterhase. Benutze /config, um Spieleinstellungen zu verändern. Aber Sprache ist tabu, Ostern ist das ganze Jahr!</value>
+    </string>
+    <string key="AlreadyInGame">
+      <!-- 0 - target's name -->
+      <value>Ääääh... Du bist bereits angestellt und teilen kannst du dich nicht. ({0})</value>
+    </string>
+    <string key="MultipleGames" deprecated="true">
+      <value>In dieser Gruppe hat bereits jemand eine Schicht gestartet, eine reicht! (Überflüssige Schichten wurden abgebrochen und für nächstes Jahr reserviert)</value>
+      <!-- <value>Die Gruppe startete mehrere Spiele zugleich... Überflüssige Spiele werden entfernt.</value> -->
+    </string>
+    <string key="GroupQueue" deprecated="true">
+      <!-- 0 - position -->
+      <!-- 1 - total number of games in the queue -->
+      <value>Die Gruppe hängt in der Warteschlange beim Oberosterhasen: "einen Moment bitte, der nächste freie Slot ist für Sie reserviert 🎶 Sie sind an Position {0} von {1}"</value>
+      <!-- <value>Die Gruppe ist momentan in der Warteschlange. Position: {0} / {1}</value> -->
+    </string>
+    <string key="MaintBreak" deprecated="true">
+      <!-- 0 - number of games -->
+      <value>Aufgrund von Wartungsarbeiten müssen wir eine kurze Pause einlegen.\nEs muss noch auf {0} Spiele gewartet werden...\n	\nSiehe @greywolfdev für mehr Informationen :)</value>
+    </string>
+    <string key="MaxGames" deprecated="true">
+      <!-- 0 - max amount of concurrent games -->
+      <!-- 1 - position in the queue (last one, obviously) -->
+      <value>Sorry, das Maximum an gleichzeitig laufenden Spielen wurde erreicht. Leider können keine weiteren Spiele gestartet werden ({0}).  \nPosition in der Warteschlange: {1} / {1}</value>
+    </string>
+    <string key="SkipQueue" deprecated="true">
+      <!-- 0 - group's name -->
+      <value>{0} ist eine bevorzugte Gruppe und hat deshalb die Warteschlange übersprungen!</value>
+    </string>
+    <string key="NoGame">
+      <value>Ein unverbindlicher Tipp: erstmal eine Schicht mit /startgame starten, dann den Vertrag unterschreiben. Und wenn Ihr richtig krass drauf seid ist /startchaos was für Euch!</value>
+    </string>
+    <string key="GroupAdminOnly">
+      <value>Nur Osterhasen mit dem Hinweis Admin können diesen Befehl ausführen.</value>
+    </string>
+    <string key="ShuttingDown" deprecated="true">
+      <value>Nach diesem Spiel wird der Bot aufgrund von Wartungsarbeiten pausiert.</value>
+    </string>
+    <string key="ShuttingDownUpdate" deprecated="true">
+      <value>Nach diesem Spiel wird der Bot wegen eines automatischen Updates kurz pausiert.</value>
+    </string>
+    <string key="NullIdAdmin" deprecated="true">
+      <value>UserID war null. Sicher, dass du die Nachricht als Antwort gesendet hast?</value>
+    </string>
+    <string key="AlreadyAdmin" deprecated="true">
+      <!-- 0 - admin's name -->
+      <value>{0} ist bereits ein Admin!</value>
+    </string>
+    <string key="NotAdmin" deprecated="true">
+      <!-- 0 - player's name -->
+      <value>{0} ist kein Admin!</value>
+    </string>
+    <string key="AdminRemoved" deprecated="true">
+      <!-- 0 - former admin's name -->
+      <value>{0} wurde von der Adminliste entfernt.</value>
+    </string>
+    <string key="LanguageSet" deprecated="true">
+      <!-- 0 - new language's name -->
+      <value>Die Sprache wurde geändert zu: {0}</value>
+    </string>
+    <!-- new strings, don't know when they were added :P -->
+    <string key="NoSeer">
+      <value>Und nun die schlechte Nachricht: es gibt keinen Wachmann!</value>
+      <value>Ein Blick in die Mitarbeiterdatenbank fördert schreckliches zu Tage: es gibt keinen Wachmann. Die Fabrik ist verloren, jetzt kann nur ein Weihnachtswunder helfen, schaue NICHT in den Kalender!</value>
+    </string>
+    <string key="TimesUp">
+      <!-- <value>Die Zeit ist um!</value>
+      <value>Die Zeit ist vorbei...</value> -->
+      <value>Du hast den ganzen Tag Katzenbilder angeschaut und Deine Entscheidung vergessen</value>
+    </string>
+
+    <!-- new strings june 10 2016 -->
+    <string key="RoleInfoCupid">
+      <value>Du bist ein niedliches Küken 🐣 (aka Armor 🏹).\n Du hüpfst zu zwei Malern, wegen deiner Niedlichkeit verlieben sie sich ineinander und nehmen dich als Haustier auf. Fast, gäb es keine Allergien... Naja :( \nWähle zwei Arbeiter aus, die sich unsterblich ineinander verlieben. Falls einer der Verliebten gekündigt wird, kündigt auch der andere. Die Frage ist: willst du das verantworten?</value>
+      <!-- <value>Du bist Amor 🏹.\nMit deinen stylischen Flügelschuhen düst du durch den Himmel und feuerst Pfeile auf unschuldige Passanten, welche sich Hals über Kopf ineinander verlieben und auf offener Straße übereinander herfallen. Insbesondere hast du ein ausgeprägtes Talent dafür, problematische Beziehungskonstellationen herbeizuführen.</value>
+      <value>Manche mögen deine Waffenwahl ein wenig komisch finden, die Waffennarren im Ort spötteln sogar immer wieder - du machst ihnen jedoch unermüdlich klar, dass du als Amor 🏹 keinen Schaden mit deiner Waffe anrichtest, sondern eigentlich darauf bedacht bist, das Leben der Menschen zu verschönern. Dass dabei auch mal Missgeschicke passieren... nunja. Du versteckst deine Schadenfreude hinter einem Schulterzucken und murmelst etwas über Trefferquote.\nAlso, woraus wartest du? Schnapp dir Pfeil und Bogen und verbreite ein bisschen Liebe!</value>
+      <value>Du bist Amor 🏹 und hast schon im alten Rom dein Unwesen getrieben. In der Wahl deiner Waffen bist du weiter unbeirrt: Pfeil und Bogen helfen dir, aus Fremden plötzlich Liebende zu machen. Nicht immer geht das gut, aber du hast über die Jahrhunderte schon so manch tragische Geschichte erlebt und bist Kummer gewohnt.</value> -->
+    </string>
+    <string key="RoleInfoDoppelganger">
+      <value>Du bist ein Goldhase 🎭 und wir bekommen Ärger mit Lindt.\nDu bist immer und überall zu sehen.\nUnd nun bekommst Du eine spezielle Aufgabe: suche Dir einen Namen aus und wenn der jenige gefeuert wird nimmst Du seine Stelle ein. Besser Du nimmst das ernst, sonst verlierst Du</value><!-- Robby ist "witzig" -->
+    </string>
+    <string key="RoleInfoHunter">
+      <value>Du bist der Hausmeister 🎯.\nDu bist echt schwer zu kündigen. Wenn du von dem Rest der Belegschaft verdächtigt wirst, kannst du jemand anderen mit in die Arbeitslosigkeit reißen. Falls du schwarze Eier bei dir findest, hast du die Chance einen Emo 🐺 gleich mitzunehmen, kannst dir dafür aber keinen der Emos aussuchen.</value>
+    </string>
+    <string key="RoleInfoSerialKiller">
+      <value>Sehr lustig! Ich lach nicht, aber lustig ist das schon!\nDu bist der Weihnachtsmann 🎅 und rennst mit einem Messer 🔪 in der Gegend rum. (aka Serienkiller 🔪)\nDu willst Ostern zerstören, wenn das die Kinder wüssten, die Dich anhimmeln! Ich habe übrigens gehört, dass Du immer auf "Skip" drückst...</value>
+      <value>Was macht denn ein Weihnachtsmann 🎅 (aka Serienkiller 🔪) in einer Ostereierfabrik?\nSag mir jetzt bitte nicht, dass Du vorhast, bei einem Mitarbeiter die Eier durch Geschenke 🎁 zu ersetzen nur um Ostern kaputt zu machen.\nJedes Jahr freuen sich Kinder auf Dich und dann so eine linke Tour! Pfui!</value>
+      <!-- <value>Du bist der Serienmörder 🔪.\nNachdem du vor Kurzem aus dem Irrenhaus entflohen bist, willst du jetzt so viele Personen wie möglich umbringen. Jede Nacht kannst du den Körper eines Spielers zu deiner Sammlung hinzufügen.</value>
+      <value>Du bist der Serienmörder 🔪.\nAls du ein Kind warst, hast du im Garten tote Tiere gesammelt. Heute sammelst du Lebern, legst sie ein und stellst sie in deinem Regal aus. Andere Leute mögen das eklig finden, aber dir gefällts.</value>
+      <value>Du bist der Serienmörder 🔪.\nSeit einer schiefgelaufenen Hirn-OP überkommt dich nachts immer das Bedürfnis mit dem großen Küchenmesser auf die Strasse zu laufen und den nächstbesten Dorfbewohner aufzuschlitzen, um dich an seinem Blut zu laben. Dass du dabei die Leber mitgehen lässt, ist wohl auf deine kleptomanische Neigung zurückzuführen.</value> -->
+    </string>
+    <string key="CupidChosen">
+      <!-- 0 - lover's name -->
+      <value>Du und {0}, der zufällig neben dir stand, wurdest von einem kleinem süßen Küken besucht ❤! Die Erinnerungen an {0} sowie an das Küken werden nie in deinem Herzen verblassen. Euer Ziel ist, dass ihr beide den Arbeitsalltag übersteht. Falls einer von euch stirbt, wird der andere aus Kummer nicht mehr weiterarbeiten können... Dafür gewinnst du aber auch mit deinem Arbeitspartner und seinem Team :3</value>
+      <!--<value>Du hast dich unsterblich in {0} verliebt. ❤ Nichts und niemand kann euch trennen! Falls einer von euch stirbt, wird der andere aus Liebeskummer Selbstmord begehen. Aber, keine Sorge, das Leben hat auch positivere Seiten zu bieten: egal ob am Leben oder nicht, du gewinnst mit deinem eigenen Team oder dem deines Partners :3</value>
+      <value>Amors Pfeil trifft dich! Du bist wahnsinning in {0} verliebt ❤\nFalls diese Person stirbt, stirbst du ebenfalls. Falls ihr es beide bis zum Ende schafft, werdet ihr beide gewinnen - oder auch weiterhin als Mitglied eures jeweiligen Teams.</value>-->
+    </string>
+    <string key="HunterLynchedChoice">
+      <value>Das Dorf hat gewählt, dich zu verdächtigen! Dies ist deine letzte Chance, wähle jemanden, den du mit dir nimmst, während du in die Arbeitslosigkeit gleitest!</value>
+      <value>Das Dorf hat sich dafür entschieden, dich zu verdächtigen! Dies ist deine letzte Chance, um eine dir unliebsame Person mit in die Hartz-4-Wohnung zu reißen. Eigentlich wären sie ja alle geeignete Kandidaten, so gehässig, wie sie sich dir gegenüber immer verhalten haben - aber die Zeit drängt!</value>
+    </string>
+    <string key="HunterNoChoiceLynched">
+      <value>{0} ist der Hausmeister🎯. Eigentlich kann er aufgrund einer Vertragsklausel nur zusammen mit einer zweiten Person gefeuert werden. Das hat er aber glatt vergessen...</value>
+    </string>
+    <string key="HunterSkipChoiceLynched">
+      <value>{0} ist der Hausmeister🎯. Eigentlich kann er aufgrund einer Vertragsklausel nur zusammen mit einer zweiten Person gefeuert werden. Völlig im klaren seiner Rechten, verzichtet er drauf. Was für ein Mensch.</value>
+    </string>
+    <string key="HunterKilledFinalLynched">
+      <!-- 0 - hunter's name -->
+      <!-- 1 - target's name -->
+      <!-- 2 - target's role -->
+      <value>{0} ist der Hausmeister 🎯. Aufgrund einer Vertragsklausel kann er nur zusammen mit einer zweiten Person gefeuert werden. Er wählt {1} {2}</value>
+    </string>
+    <string key="HunterShotChoice">
+      <!-- Default HunterKill-Message, von Narius im Code auszubessern -->
+      <!-- originally just meant for the gunner shooting the hunter, through the lacking implementation of "!= killed by wolf" now also used for the serial killer killing the hunter -->
+      <!-- <!value>Der Schütze hat dich getötet! In deinen letzten Momenten hast du die Gelegenheit, jemanden zu erschießen... beeil dich!</value> -->
+      <value>Du wurdest gefeuert! In deinen letzten Momenten hast du die Gelegenheit, jemanden mit in die Arbeitslosigkeit zu nehmen... beeil dich!</value></string>
+    <string key="HunterNoChoiceShot">
+      <!-- 0 - target's name -->
+      <!-- Default HunterKill-Message, von Narius im Code auszubessern -->
+      <!-- originally just meant for the gunner shooting the hunter, through the lacking implementation of "!= killed by wolf" now also used for the serial killer killing the hunter -->
+      <value>Die schwarzen Eier bei {0} waren wohl zu viel; so viel, dass er sich nicht einmal auf seinen Vertragsklausel 🎯(Der Hausmeister darf nur zusammen mit einer zweiten Person gefeuert werden) berufen konnte...</value>
+    </string>
+    <string key="HunterSkipChoiceShot">
+      <!-- 0 - hunter's name -->
+      <value>Während {0} am Ausgang steht, die letzten Blicke über seine jahrelange Arbeitsstelle schweifen lässt, kann er sich nicht entscheiden, wenn er aufgrund seiner Vertragsklausel mitnehmen soll... 🎯 und akzepziert sein Schicksal...</value>
+    </string>
+    <string key="HunterKilledFinalShot">
+      <!-- 0 - hunter -->
+      <!-- 1 - target's name -->
+      <!-- 2 - target's role -->
+      <value>Schon längst gefeuert - und auf den letzten Treppenstufen nach draußen - fällt {0} sein Vertrag ein 🎯. Er zeigt auf {1}. {2}</value>
+    </string>
+    <string key="HunterShotWolfMulti">
+      <!-- 0 - dead wolf's name -->
+      <value>Die Schwarmaler 🐺 haben zwar den letzte Tag über den Hausmeister 🎯 anschwärzen können, aber dieser war in der Lage, jemanden mit sich in die Arbeitslosigkeit zu reißen! Mit ihm geht der Emo {0}.</value>
+    </string>
+    <string key="HunterShotWolf">
+      <!-- 0 - dead wolf's name -->
+      <!-- !!! Mal den Punkt dahin gemacht, funktioniert es jetzt? -->
+      <value>Die Schwarzmaler haben versucht, ihre Eier beim Hausmeister 🎯 abzulagern. Stattdessen wurde der Emo 🐺 {0} gefeuert! .</value>
+    </string>
+    <string key="SerialKillerKilledWolf">
+      <value>Die Emos haben versucht ihre Eier heimlich wegzugeben, trafen stattdessen den Weihnachtsmann 🔪! Der Emo 🐺 {0} wurde im Gerangel gefeuert!</value>
+    </string>
+    <string key="DefaultKilled">
+      <!-- 0 - target's name -->
+      <!-- 1 - target's role -->
+      <value>{0} schien es erst so, als hätte er einen ruhigen Tag verbracht, aber er lag falsch. Die Arbeiter treffen sich am nächsten Abend, um {0} gefeuert vorzufinden, umgeben von Geschenken... Der Weihnachtsmann 🔪 hat wieder zugeschlagen - {1}.</value>
+    </string>
+    <string key="GuardBlockedKiller">
+      <!-- 0 - target's name -->
+      <value>Du hast versucht, den Arbeitstag von {0} mit deinen Geschenken zu vermiesen, wurdest aber von Rafael 👼 abgewehrt! Diesmal hat es nicht geklappt :/</value>
+    </string>
+    <string key="CultConvertHunter">
+      <!-- 0 - Youngest Zombie's name -->
+      <!-- 1 - target's name -->
+      <value>Das Mobbingteam sendet {0}, um {1} zu überzeugen, doch stattdessen hört man einen wütenden Schrei 🎯, kurz bevor euer jüngstes Mitglied aus der Firma geworfen wird! {0} ist gefeuert...</value>
+    </string>
+    <string key="CultConvertSerialKiller">
+      <value>{0} schleicht zu der Arbeitstätte von {1}, platzt herein, und wird direkt von einem Wahnsinnigen mit einem Haufen an Geschenken 🔪 begrüßt!!! {1} wirft sie unter irrem Lachen auf {0}, der blickt unweigerlich der Arbeitslosigkeit entgegen...</value>
+      <!--<value>Der Kult sendet {0} aus, um {1} zu konvertieren, doch stattdessen fliegt der Körper von {0} aus dem Fenster, mit Messern 🔪 in jedem Teil seines Körpers! WAS FÜR EIN PSYCHO! {0} ist tot...</value>-->
+    </string>
+    <string key="GuardKiller">
+      <value>Du hast versucht den Weihnachtsmann 🔪 zu schützen, doch er hat dich einfach unter einem Berg an Geschenken 🔪 begraben! Du bist gefeuert...</value>
+    </string> <!-- Ein Easter Egg! Hier habe ich um 03:25 Uhr (nachts 🌃) aufgehört. Sende mir diesen Satz per privater Nachricht: "Ostern ist nur mit Emos so richtig toll!" - Appfel (http://t.me/Appfel) -->
+    <string key="HarlotFuckKiller">
+      <!-- 0 - target's name -->
+      <value>Du gehst zu {0}, um mit ihm an einem neuen Muster zu arbeiten. Alles scheint gut zu gehen, bis {0} unter seinem Bart ein Geschenk hervorholt und selber wegläuft 🔪, dabei wahnsinnig lachend! Du bist arbeitslos...</value>
+    </string>
+    <string key="HarlotFuckKillerPublic">
+      <!-- 0 - harlot's name -->
+      <value> Beim Feierabendbier bemerkt ihr, dass {0}, der Hase 💋, fehlt. Ihr erinnert euch an einige eckige Pakete auf ihrem Arbeitstisch 🔪...</value>
+      <!-- <value>Als die Sonne aufgeht, versammeln sich alle Dorfbewohner auf dem Dorfplatz. Entgeistert starren sie auf den Anblick, der sich ihnen bietet: eine Leiche, zu viele Stichwunden 🔪, um sie zählen zu können. Erst dann fällt ihnen auf, dass {0}, die Hure 💋, fehlt... Wen sie wohl diese Nacht besucht hat?</value> -->
+    </string>
+    <string key="DGToMason">
+      <!-- 0 - target's name -->
+      <value>Der Goldhase 🎭 {0} ist jetzt ein Eier-Freikünstler, genau wie du!</value>
+    </string>
+    <string key="DGTransformToMason">
+      <!-- 0 - dead mason's name -->
+      <!-- 1 - mason collegues's name -->
+      <value>{0} ist gestorben, und du verwandelst dich in einen Eier-Freikünstler 👷. Deine Kameraden sind (falls vorhanden): {1}</value>
+    </string>
+    <string key="DGToCult">
+      <!-- 0 - new Zombie's name -->
+      <value>Der Goldhase 🎭 {0} ist zum Mobber geworden, genau wie du!</value>
+    </string>
+    <string key="DGTransformToCult">
+      <!-- 0 - role's name -->
+      <!-- 1 - teammates's name -->
+      <value>{0} ist nicht mehr länger in der Firma tätig, und du verwandelst dich in einen Mobber 👤. Das Team besteht aus (falls vorhanden): {1}</value>
+    </string>
+    <string key="DGToWolf">
+      <!-- 0 - DG's name -->
+      <value>Der Goldhase 🎭 {0} ist jetzt ein Emo, genau wie du (Ha)!</value>
+    </string>
+    <string key="DGTransformToWolf">
+      <!-- 0 - target's name -->
+      <!-- 1 - teammates's name -->
+      <value>{0} ist gefeuert worden, und du verwandelst dich in einen Emo 🐺. Deine Mit-Emos sind (falls vorhanden): {1}</value>
+    </string>
+    <string key="SerialKillerWins" isgif="true">
+      <value>Die einzig angestellte Person, die verbleibt, ist der Weihnachtsmann! Er hat gewonnen!</value>
+      <value>Einzig und allein der Weihnachtsmann verbleibt als "Maler". Zustände wie am Nordpol hier. Das bedeutet aber auch, dass er gewonnen hat!</value>
+    </string>
+    <string key="AskKill">
+      <value>Wem willst du heute den Tag mit Geschenken versauen?</value>
+      <value>Wen möchtest du heute unter Geschenken begraben?</value>
+      <value>Wer muss anstatt schöner Eier hässliche Geschenke sehen?</value>
+      <!--<value>Wen bringst du heute Nacht um die Ecke?</value>
+      <value>Wen willst du heute aufschlitzen?</value>-->
+    </string>
+    <string key="LoverDied">
+      <!-- 0 - dead's name -->
+      <!-- 1 - lover's name -->
+      <!-- 2 - lover's role -->
+
+      <value>Das nenne ich Liebe ❤️, bis dass der Tod sie scheidet 💔. Als {0} gekündigt wurde, hat auch {1} die Kündigung eingereicht und zusammen haben die beiden die Fabrik verlassen. Später haben beide geheiratet und sich wie die Kar­ni­ckel vermehrt. 👴 {0} und 👵 {1} sitzen jetzt häufig auf der Terasse, beim Sonnenuntergang 🌄 umgeben von 500 Kindern.\nÜbrigens: {2}</value>
+    </string>
+    <string key="AskDoppelganger">
+      <value>Klingel mal wen mit deinem Glöckchen an, desen Rolle wirst Du, wenn diese Person gekündigt wird.</value>
+      <value>Da unten stehen Namen. Wen wählst Du? Du musst dessen Arbeit fortführen, sollte es zur Kündigung der Person kommen. Überlege gut, aber nicht zu lange.</value>
+      <!-- <value>Wer möchtest du werden, wenn diejenige Person stirbt?</value>
+      <value>Die Frage der Fragen: wessen Doppelgänger möchtest du sein?</value> -->
+    </string>
+    <string key="AskCupid1">
+      <value>Wer sollen die Liebenden 💞💗 sein? Wähle den ersten Mitarbeiter:</value>
+      <!-- <value>Wen möchtest du verlieben? ❤ Wähle den ersten Spieler:</value>
+      <value>Wen soll dein erster Pfeil treffen? ❤</value>
+      <value>Wer soll sich Hals über Kopf verlieben? ❤</value> -->
+    </string>
+    <string key="AskCupid2">
+      <value>Interessante Wahl 🤔 Und der zweite Mitarbeiter?</value>
+      <!-- <value>Wer sollen die Liebenden ❤ sein? Wähle den zweiten Spieler:</value>
+      <value>Wen möchtest du verlieben? ❤ Wähle den zweiten Spieler:</value>
+      <value>Und an wen richtet sich dein zweiter Pfeil? ❤</value>
+      <value>Alleine bringt die Liebe nichts... Wähle einen Partner für den ersten Verliebten! ❤</value> -->
+    </string>
+    <string key="Hunter">
+      <value>der Hausmeister 🎯</value>
+    </string>
+    <string key="Cupid">
+      <value>das süße Küken 🐣/🏹</value>
+    </string>
+    <string key="SerialKiller">
+      <value>der Weihnachtsmann 🎅/🔪</value>
+    </string>
+    <string key="Doppelgänger">
+      <value>der Goldhase 🎭</value>
+    </string>
+    <string key="NewWCRoleModel">
+      <!-- 0 - target's name -->
+      <value>Du bist das wilde Häschen 🐰/Kind 👶. Dein Vorbild ist {0}.</value>
+    </string>
+    <string key="LoversWin" isgif="true">
+      <value>Wahre Liebe hält am längsten! Die Liebenden haben gewonnen!</value>
+      <value>Die letzten beiden Angestellten sind die Liebenden. Sie fallen sich erleichtert in die Arme und genießen für einen Moment nur die Stille, bevor sie durch die verlassene Fabrik nach Hause schlendern.</value>
+      <value>Wäh! Liebe. Naja, trotzdem gewonnen, Gratulation 😐</value>
+      <!--<value>Die Liebe hat gewonnen! Es muss schön sein, endlich nicht mehr in Schrecken zu leben – sich auf offener Straße zu küssen, eine gemeinsame Zukunft planen zu können, aber vor allem: am Leben zu sein.</value>-->
+    </string>
+    <string key="HunterKilledVisiter">
+      <!-- 0 - target's name -->
+      <!-- 1 - role -->
+      <value>Inmitten des allabendlichen Besprechungsraum findet ihr das Kündigungsschreiben für {0}. Ihr alle wisst, dass der Hausmeister 🎯 seine Finger im Spiel hatte, aber Beweisen könnt ihrs nicht. {1}</value>
+    </string>
+    <string key="CultAttempt">
+      <value>Eine verschleierte Gestalt versuchte, dich zu seinem Mobbingteam 👤 zu bekehren, doch dein Geist war zu stark. Weiter so 👍</value>
+    </string>
+    <string key="AlreadyOnWaitList">
+      <!-- 0 - target's name -->
+      <value>Du bist schon auf der Warteliste für Ostern in {0}.</value>
+    </string>
+    <string key="AddedToWaitList">
+      <!-- 0 - target's name -->
+      <value>Du wurdest zur Warteliste für Ostern in {0} hinzugefügt. Ich werde dir privat eine Nachricht schreiben, sobald das nächste Spiel startet oder Ostern ist, wenn meine Programmierer mir das bis dahin erlauben.\nDu kannst dich ja mal im Shop umsehen, während du wartest. https://teespring.com/stores/werewolf-for-telegram</value>
+    </string>
+    <string key="NotifyNewGame">
+      <!-- 0 - target's name -->
+      <value>Eine neue Schicht startet in {0}. Du willst mitmachen, ist doch klar!</value>
+    </string>
+    <string key="SerialKillerWinsOverpower">
+      <!-- 0 - SK's name -->
+      <!-- 1 - target's name -->
+      <value>Der Weihnachtsmann 🎅 {0} hat es geschafft! Mit seinem Messer 🔪 fuchtelt er so lange vor {1} rum, bis dieser alle seine Eier auf den Boden wirft und aus der Fabrik flüchtet. 😭 Ostern ist damit versaut 😭, überall liegen billige Geschenke 🎁</value>
+      <!-- <!value>Der Morgen bricht an und die verbleibenden beiden Dorfbewohner gehen nach draußen zum Dorfplatz. {0} wirft einen Blick auf {1} und er muss auf einmal grinsen, zieht sein Messer 🔪 und ermordet {1}.</value>
+      <value>Am Morgen stehen sich die beiden verbliebenen Dorfbewohner in der Mitte des Dorfes gegenüber, als {0} auf einmal anfängt, breit zu grinsen. Man sieht noch kurz die Klinge eines Messers 🔪 aufblitzen, dann bohrt sie sich jedoch bereits in das Herz von {1}.</value> -->
+    </string>
+    <string key="NoWinner" isgif="true">
+      <value>Alle wurden gefeuert. Nur stille Maschienen und Fließbänder 💀 stehen überall herum. Niemand gewinnt die Runde und Ostern ist auch noch dahin...</value>
+      <!--<value>Im Dorf kehrt absolute Stille ein - ein äußerst seltener Anblick. Überall Blut, reglose Körper 💀 und andere Spuren des Wahnsinns. Niemand gewinnt dieses Spiel.</value>-->
+    </string>
+    <string key="SKHunterEnd">
+      <!-- 0 - SK's name -->
+      <!-- 1 - Hunter's name -->
+      <value>Damit gewinnt {0}, der Weihnachtsmann 🎅, mit seinem Messer 🔪 und billigen Geschenken 🎁 da... Moment, ich höre gerade dass {1}, der Hausmeister 👨‍🔧/🎯 eingreift und den Weihnachtsmann zur Strecke bringt! So eine selbstlose Tat! Leider gewinnt trotzdem niemend und zu allem Überfluss ist Ostern dieses Jahr im Eimer! So ein Kampf auf den letzten Metern für eigentlich nichts...</value>
+      <!-- <value>Als die Sonne aufgeht, spazieren die beiden letzten Überlebenden in Richtung Dorf. Plötzlich nimmt {0} ein Messer 🔪 heraus und springt auf {1}. Gerade als das Messer sich tief in sein Herz rammt, greift der Jäger nach seinem Gewehr 🎯 und schießt {0} mit einem gezielten Schuss in den Kopf. Beide sind tot, und das Dorf hat jetzt keine Bewohner mehr. Es gibt keinen Gewinner...</value> -->
+    </string>
+    <string key="RoleModelChosen">
+      <!-- 0 - target's name -->
+      <value>Du hast vergessen zu wählen, daher habe ich jetzt {0} für dich ausgewählt.</value>
+      <value>Häschen! Nichts als Flausen im Kopf! Deine Glucke hat beschlossen, dass {0} ein gutes Vorbild für dich wäre.</value>
+    </string>
+    <string key="Won">
+      <value>Gewonnen 🎉</value>
+    </string>
+    <string key="Lost">
+      <value>Verloren 😢</value>
+    </string>
+    <string key="IdleCount">
+      <!-- 0 - player's name -->
+      <!-- 1 - idle count -->
+      <value>Innerhalb der letzten 24 Stunden hat es {0} {1} Mal nicht für nötig erachtet abzustimmen. Es gibt gute Mitarbeiter, {0} gehört nicht dazu...</value>
+      <!-- <value>Das war das {1}. Mal, dass {0} innerhalb der letzten 24 Stunden wegen Nicht-Abstimmens getötet wurde.</value> -->
+    </string>
+
+    <!-- Wir waren doch oben kreativ genug, oder? -->
+    <!--New strings 7th of July-->
+    <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+    For example in Mafia, AboutMason would be: Caporegime 👷\nYou are a caporegime blah blah-->
+
+		<!-- Wir waren nicht kreativ genug... -->
+    <string key="AboutVG">
+      <value>Du bist ein bescheidener Eiermaler 👱, dazu verdammt, den ganzen Tag Eier bunt anzumalen. Jeden. Einzelnen. Tag.</value>
+      <value>Ich kenne viele gute Beschreibungen für Rollen. Du bist aber nur Eiermaler 👱, da gebe ich mir doch keine Mühe!</value>
+      <value>Wow. Du bist der neue Eiermaler 👱. Du machst hier den wichtigsten Job, glaube mir! Sehen aber die Kollegen wohl nicht so. Aber mal unter uns, wer hört schon auf die?</value>
+    </string>
+    <string key="AboutSeer">
+      <value>Du bist der Wachmann 👮‍♂️ (aka Seher 👳).\nDu überwachst die Produktion in der Fabrik und kannst von einem Mitarbeiter die genaue Arbeit begutachten und. So erfährst du, ob er gefeuert werden sollte oder nicht.</value>
+    </string>
+    <string key="AboutWw">
+      <value>Du bist ein Schwarzmaler. 🐺\nJede Nacht darfst du dir ein Opfer aussuchen, dem du deine schwarzen Eier unterjubelst. Das findet die Fabrikleitung nicht so lustig und feuert die dann.</value>
+      <value>Du bist ein Schwarzmaler. 🐺\nDu hast ein flauschiges schwarzes Fell (Du hast dich immer gefragt, ob du nicht doch adoptiert wurdest) und liebst es die anderen zu ärgern, indem Du alle Eier schwarz anmalst. Bemalt ist bemalt! Am Tag siehst Du noch nett aus, aber nachts malst Du im Team andere Mitmaler an, die darauf meist gefeuert werden. Ohne Lammbraten.</value>
+      <value>Na du flauschiger Schwarzmaler Du? 🐺 Ich könnte hier große Worte verlieren, aber wir wissen ja beide, dass du nur mit schwarzer Farbe um Dich werfen magst. Solange Du niemanden tötest und keinen größeren Schaden anrichtest, soll es mir Recht sein!</value>
+    </string>
+    <string key="AboutHarlot">
+      <value>Du bist der "Hase" 💋 der Hasen. Beim Arbeiten kannst du einen Spieler besuchen, um festzustellen, ob dieser ein Maler ist. Falls du einem Emo oder den, der Eier untergeschoben bekommt, besuchst, wirst du gefeuert. Wenn du jedoch jemanden besuchst und die Emos versuchen, deinem Arbeitsplatz ohne dich Eier unterzuschieben, passiert dir nichts.</value>
+    </string>
+    <string key="AboutDrunk">
+      <value>Na wen haben wir denn da? Wieder die ganze Nacht gesoffen? 🍻 Reiß Dich gefälligst zusammen und hör auf, wild Farben auf Eier zu schmeißen! Sieht ja aus wie Sau!</value>
+      <value>Du saufender Mistkerl! Als der Betrunkene 🍻 bist du immer noch ein normaler Arbeiter. ABER: Wenn die Emos dir ihre schwarzen Eier unterschmuggeln wollen, können sie nicht an deinem Eierlikör vorbei, ohne zu probieren - und bekanntlich macht Alkohol ja lustig. Für einen Tag vergessen sie ihre Schwarzmalerei, weil sind sie dann so betrunken sind, dass sie Farbe auf ihre schwarzen Eier schmeißen: Sie können dann bis zur übernächsten Nacht mit niemanden reden und müssen ihre Eier neu malen! P.S.: Du wirst natürlich trotzdem gefeuert. Trinken während des Dienstes, pah, wo ist denn sowas erlaubt?!</value>
+    </string>
+    <string key="AboutCursed">
+      <value>Du bist das Lamm. 🐑 (😾)\nAktuell bist du zwar ein ganz normaler Maler, aber wenn die Emos dir schwarze Eier unterschmuggeln, entdeckst du die Schönheit dieser Farbe und malst ab dann schwarze Eier...</value>
+      <value>Du bist der Neue. 😾\nDu bist zwar eigentlich ein Maler, aber seid dun hier angekommen bist, hast du das Gefühl, nicht dazuzugehören. Langsam hast du das Eierbemalen wirklich satt, aber du traust dich auch nicht, alleine gegen den Strom zu schwimmen. Aber du hast von diesen Emos gehört, die die Eier schwarz statt bunt anmalen... Wenn du bloß wüsstest, wo du so viel schwarze Farbe herbekommen kannst! Deshalb bist du immer wachsam und wirst dich dem ersten Emo, der dir seine Eier unterschieben will, anschließen.</value>
+    </string>
+				  <!-- Robbypin -->
+    <string key="AboutTraitor">
+      <value>Du Verräter! 🥸\nDu bist zwar anfangs ein Dorfbewohner, aber das kann sich jederzeit ändern: eigentlich kannst du die Dummköpfe nämlich gar nicht leiden. Wenn alle Wölfe tot sind, schlüpfst du in dein Wolfskostüm und ziehst dann an ihrer Stelle um die Häuser, um dich an den Dorfbewohnern zu rächen! Du bist zwar sehr gut darin, deinen Hass zu verstecken, aber der Seher kommt dir manchmal doch auf die Schliche - er kann dich zwar als Dorfbewohner sehen, aber auch als Wolf...</value>
+    </string>
+    <string key="AboutGA">
+      <value>Du bist ein von Gott gesandter Engel 👼, dazu berufen, die bösen Kreaturen aufzuhalten! Jede Nacht kannst du über einen Bewohner wachen, um ihn vor dem Bösen zu schützen - aber gib Acht, nicht jeder will beschützt werden... der Serienmörder hat es gar nicht gerne, und auch der Wolf wird dich nur mit 50%iger Wahrscheinlichkeit am Leben lassen... Dafür schläfst du nachts etwas ruhiger, wenn Kultisten um dein Haus ziehen: durch deine gottgegebenen Kräfte hast du die Chance, sie abzuwehren!</value>
+    </string>
+    <string key="AboutDetective">
+      <value>No shit Sherlock, du bist tatsächlich der Detektiv! 🕵\nJeden Tag hast du die Möglichkeit, einem beliebigen Bewohner hinterher zu spionieren, um am Ende des Tages Gewissheit zu haben. Aber nimm dich in Acht, wenn du schnüffelst, werden vielleicht die Wölfe auf dich aufmerksam! (40% Wahrscheinlichkeit)\nWenn Kultisten durch das Dorf wandeln, kannst du dich mit deiner Lupe etwas sicherer fühlen, denn die Reflektion verschreckt sie manchmal!</value>
+    </string>
+    <string key="AboutGunner">
+      <value>Du bist der Schütze 🔫 - und hast leider auch etwas zu viele Actionfilme gesehen. Gehe vorsichtig mit deiner Waffe um, denn wen du hier erschießt, der ist auch wirklich tot! Als kleine Vorsichtsmaßnahme hast du deshalb auch nur zwei Kugeln. Während des Tages kannst du einen Spieler aussuchen - nicht vergessen, das Zielwasser zu trinken! - und wirst diesen dann bei Anbruch der Dämmerung, genau vor der Abstimmung, zur Strecke bringen. Aber aufgepasst; wenn du abziehst, hört das ganze Dorf den Schuss: jeder weiß dann also, dass du der Schütze bist</value>
+    </string>
+    <string key="AboutTanner">
+      <value>Du bist der Gerber. 👺\nDu bist ein Außenseiter und im Dorf nicht besonders beliebt, aber das ist gut: dein einziges Ziel ist es nämlich, alle glauben zu lassen, dass du ein Werwolf bist. Wenn du gelyncht wirst, gewinnst du - und alle anderen gucken dumm aus der Wäsche ;)</value>
+    </string>
+    <string key="AboutFool">
+      <value>Du bist der Narr. 🃏\nZwar liebenswürdig, aber auch gefährlich, auf deine eigene Weise: weil du es nicht besser weißt, behauptest du, der Seher zu sein - dabei sind die Rollen, die dir angezeigt werden, komplett zufällig! Vielleicht hättest du damals bei Professor Trelawney doch besser aufpassen sollen...\nEtwas hast du dem Seher aber voraus: du siehst den Verräter auch als solchen - während ein richtiger Wahrsager sich bei diesem nur zwischen Wolf und Dorfbewohner irren kann! Die einzelnen Wölfe kannst du aber leider nicht voneinander unterscheiden... :/</value>
+    </string>
+    <string key="AboutCult">
+      <value>Du bist ein Kultist 👤 - fashiontechninsch vielleicht nicht ganz auf der Höhe, trotzdem - oder vielleicht gerade deshalb? - bist du relativ erfolgreich: jede Nacht kannst du einen Spieler aussuchen, den du zu deinem Kult bekehren willst; und das ist auch dein Lebensmotto: das ganze Dorf zu bekehren. Wenn am Ende nur noch Kultisten überleben, gewinnt ihr! Aber nicht immer hast du Glück - manche Bewohner sind schwerer zu bekehren als Andere...</value>
+    </string>
+    <string key="AboutCH">
+      <value>Du bist der Kultjäger 💂, und, selbsternannter Fashionbeauftragter: schwarz ist so out! (Deshalb hasst du auch die Kultisten so.) Jede Nacht kannst du einen deiner Mitbürger besuchen, um ihren Kultstatus zu überprüfen - sollte er dazu gehören, benutze dein Schwert! Natürlich bist du auch gefeit gegen Angriffe aus dem Kult: sollten die Fashionvictims tatsächlich versuchen, dich zu attakieren, stirbt ihr neustes Mitglied.</value>
+    </string>
+    <string key="AboutWC">
+      <value>Du bist das wilde Kind! 👶\nJung und unerfahren, dafür aber rotzfrech. Trotzdem sitzt dein Herz am rechten Fleck und du hast auch ein Vorbild, das du anfangs auswählst und heimlich bewunderst - sollte dein Vorbild sterben, rennst du von zuhause fort und wirst ein Werwolf, um den Tod deiner Ikone zu rächen!</value>
+    </string>
+    <string key="AboutAppS">
+      <value>Du bist der Seher-Lehrling! 🙇\nNoch führst du ein einfaches Leben, ohne Verpflichtungen, aber das wird sich ändern, sobald der - echte - Seher stirbt: dann nimmst du seinen Platz ein, mit den gleichen Rechten und Fähigkeiten wie dein Meister!</value>
+    </string>
+    <string key="AboutBH">
+      <value>Du bist der Beobachter! 👁\nUnd nein, an deiner Profession ist nichts Untugendhaftes: du weißt lediglich, wer - und ob - es einen (richtigen) Seher gibt: mit dem Narren gibst du dich erst gar nicht ab!</value>
+    </string>
+    <string key="AboutMason">
+      <value>Nach einem beschwerlichen Leben voller Arbeit hast du das Gefühl, etwas verändern zu wollen und, nach dem Sinn des Lebens suchend, entschließt du dich, ein Freimaurer 👷 zu werden. Dabei stehen für dich vor allem die Ideale Freiheit, Gleichheit und Brüderlichkeit im Mittelpunkt. Da du eine Loge gründest, um dich mit Gleichgesinnten auszutauschen, kennst du auch alle anderen Freimaurer im Spiel. Ansonsten erfüllst du auch weiterhin deine Pflichten als Dorfbewohner und erscheinst jeden Abend zum Lynchen. Durch eure regelmäßigen Treffen erfährst du auch, wenn einer der Euren vom Kult verführt wurde und diesem beitrat.</value>
+    </string>
+    <string key="AboutDG">
+      <value>Du bist der Doppelgänger 🎭 - schon deine Ahnen verstanden sich gut darin, in die Rollen anderer zu schlüpfen: sie waren berühmte Schauspieler, Geheimagenten und Identitätsfälscher. In so einem kleinen Dorf ist es natürlich schwieriger, nicht aufzufallen - deshalb nimmst du die Identität dessen, den du bei deinem Einzug ins Dorf wählst, auch erst nach dessen Tod an. Du schlüpfst vollständig in die Rolle dessen, den du kopierst: hast die gleichen Fähigkeiten, musst allerdings auch mit den Entscheidungen dessen leben: kopierst du das wilde Kind, übernimmst du dessen Vorbild - und wenn dieses schon tot ist, wirst du direkt zum Wolf.\n\nSollten Kultisten im Dorf verkehren, haben sie keine Möglichkeit, den Doppelgänger zu bekehren, bevor er sich nicht verwandelt hat. Außerdem verliert der Kult ein Mitglied, sollte der vom Doppelgänger Kopierte Kultist gewesen sein: der Doppelgänger nimmt dann die urprüngliche Rolle des Toten ein.\n\nAls Doppelgänger ist es dir ganz wichtig, dass das Dorf erkennt, wie gut du deine Profession beherrscht: solange du dich nicht verwandelt hast, kannst du das Spiel auch nicht gewinnen! Wenn das Spiel vorbei ist, und du noch du bist... verlierst du.</value>
+    </string>
+    <string key="AboutCupid">
+      <value>Es knistert, aber gewaltig! Dabei hast du deinen Job als Elektriker doch eigentlich an den Nagel gehangen - deine neue Berufskleidung ist zwar etwas seltsam, aber wer möchte nicht gern von Luft und Liebe leben? Also: deine Berufung als Amor 🏹 ist es, zwei Pfeile abzuschießen: die beiden Bewohner, die von ihnen getroffen werden, werden sich unsterblich ineinander verlieben, unfähig, ohne den jeweils anderen zu überleben: sollte einer von beiden sterben, wird sich der Andere aus Kummer das Leben nehmen... Je nachdem, wie geschickt dein Händchen ist, kann daraus ein großes Hochzeitsfest oder ein Killerpärchen entstehen!\n\nWichtig: die Liebenden wissen zwar voneinander, bekommen die Rollen des jeweils Anderen jedoch nicht mitgeteilt. Sie gewinnen, wenn mindestens einer von ihnen im gewinnenden Team ist - sollten die Beiden es schaffen, als die letzten Beiden am Leben zu sein, gewinnen sie als Paar (Herzchen-Emoji hier evtl?)</value>
+    </string>
+    <string key="AboutHunter">
+      <value>Im Dorf nur als Jäger 🎯 bekannt.\nDu bist ein nachtragender, mürrischer Kauz, der am liebsten für sich bleibt: die Gesellschaft von anderen kannst du nicht so gut leiden - die sind sowieso alle nur neidisch auf deine Trophäen! Wie auch immer; ohne dein Gewehr gehst du sowieso nicht aus dem Haus. Und überhaupt. Das muss überall mit hin. Beim Duschen ist es, zugegebenermaßen, immer etwas hinderlich - aber du hast genügend schlechte Filme gesehen, um zu wissen, was alles hinter dem Vorhang dadrin auf dich warten kann... aber hier musst du dich ja vor allem gegen Wölfe wappnen: vorsichtshalber schläfst du deshalb immer nur mit einer geladenen Waffe (man erkennt dich im Dorf immer am Abdruck im Gesicht). Wenn die Wölfe dich angreifen, hast du so die Möglichkeit, einen letzten Schuss abzufeuern, bevor du stirbst! (30%-Chance bei einem Wolf, +20% für jeden weiteren) Sollte der Wolf allein sein, überlebst du somit, ansonsten stirbst du zwar, reißt aber einen aus dem verfluchten Pack mit dir!\n\nLeider bist du im Dorf nicht sonderlich beliebt. So kann es kommen, dass du auch am Tag nicht sicher lebst - aber das weißt du ja schon (und hast zum Glück ja auch vorgesorgt, für alle Fälle): wenn dich der Schütze tötet, oder du beim Lynchen stirbt, kannst du dich an einem Spieler deiner Wahl rächen.\n\nUnd überhaupt: wenn irgendwer an deiner Tür steht (Versicherungsvertreter, Postbote, Zeugen Jehovas) bist du ja sowieso schon misstrauisch - aber wenn nachts verschleierte Gestalten um dein Haus schleichen, kann es gut sein, dass deine Paranoia mit dir durchgeht: wenn ein Kultist versucht, dich zu konvertieren, lässt du ihn in der Hälfte der Fälle mit einem Fingerzeig auf deine Waffe wieder laufen, in der anderen Hälfte der Fälle bist du schon am Morgen mit dem falschen Fuß aufgestanden und kannst nicht anders, als ihn zu erschießen.</value>
+    </string>
+    <string key="AboutSK">
+      <value>Meine Güte, das Irrenhaus war vielleicht ein Witz, und die Sicherungsvorkehrungen... dir als Serienmörder 🔪 nicht einmal im Ansatz würdig. Aber jetzt bist du ja zum Glück wieder frei - und hier, in diesem Dorf voller Hinterwäldler wird dich wohl kaum jemand finden... Hinter deinem charmanten Grinsen versteckst du deine wahre Natur: du willst sie einfach nur tot sehen. Alle. Du bist ein Ein-Mann-Team, dein eigener Gefährte: du kannst nur alleine gewinnen (oder mit deinem Partner, sollte es tatsächlich jemand schaffen, dir dein verloren gegangenes Herz zurückzuschenken...) - dafür kannst du aber auch jeden unbehelligt umbringen (natürlich nur, wenn du tagsüber nicht der Dorfabstimmung zum Opfer fällst). Eigentlich sollten die dir ja aber sowieso dankbar sein, immerhin hilfst du ihnen, diese Werwolf-Plage in den Griff zu kriegen: wenn die Wölfe dich angreifen, suchst du dir einen x-beliebigen von ihnen aus und tötest ihn (es sei denn, du bist gerade zu beschäftigt mit deinem eigenen Opfer - mit dem Alter überlebst du solche Attacken nur noch in 80% der Fälle). Überhaupt, nächtliche Besucher sind dir ja lästig, egal welches Ansinnen sie haben... du willst schließlich die Zeit ungestört mit deinem neusten Opfer verbringen! Wer sich also des Nachts an deine Tür verirrt, wird Teil der Show... und stirbt.</value>
+    </string>
+    <string key="AboutPara">
+      <value>Para ist nur ein verrückter Entwickler, der es lustig findet, schwarze Eier bunt zu übermalen. Ich meine hallo? Wer macht sowas?</value>
+    </string>
+    <string key="EndTime">
+      <value>Schichtdauer: {0}</value>
+    </string>
+
+    <!--New strings, July the 8th -->
+    <string key="Day">
+      <!--0 - Day -->
+      <value>Arbeitstag {0}</value>
+    </string>
+    <string key="NodeShutsDown">
+      <value>Na toll! Die Fabrik ist abgebrannt!</value>
+      <!-- <value>Irgendetwas muss schief gelaufen sein... dieser Knotenpunkt hat sich abgeschaltet :/</value> -->
+    </string>
+    <string key="SentPrivate">
+      <value>Ich habe Dir privat eine Nachricht gesendet! 😏</value>
+    </string>
+    <string key="StartPM" deprecated="true">
+      <value>Tu mir einen Gefallen und folge den Anweisungen.\n1. Öffne mich:@werewolfbot\n2. Drücke auf Starten um mich als Bot zu starten\n3. Komme zurück und mache es nochmal\n4. Springe wie ein Hase dreimal hoch</value>
+    </string>
+    <string key="PMTrue" deprecated="true">
+      <value>Vielen Dank, jetzt kann ich dir schreiben!</value>
+    </string>
+    <string key="MustReplySmite" deprecated="true">
+      <value>Du musst auf den User antworten, den du aus dem Spiel nehmen willst!</value>
+    </string>
+    <string key="WhatToDo">
+      <value>Was hast du denn vor? Sprache ist und bleibt tabu, ich sehe das!</value>
+    </string>
+    <string key="JoinFromGroup">
+      <value>Unverbindlicher Vorschlag: trete in einem Gruppenchat bei! Willst Du alleine eine Fabrik betreiben?</value>
+      <!-- <value>Du musst in einem Gruppenchat beitreten ;)</value> -->
+    </string>
+    <string key="StartFromGroup">
+      <value>Unverbindlicher Vorschlag: starte in einem Gruppenchat eine Schicht! Willst Du alleine eine Fabrik betreiben?</value>
+      <!-- <value>Du kannst ein Spiel nur in einer Gruppe starten.</value> -->
+    </string>
+    <string key="PingInfo">
+      <value>Pong! Telegram hat solange gebraucht, um das Ei 🥚 zurückzuschicken: {0}\nund es kommen {1} Nachrichten pro Sekunde. Hoffentlich sind die gekocht!</value>
+      <!-- <value>Reaktionszeit von Telegram: {0}\nNachrichten pro Sekunde: {1}</value> -->
+    </string>
+    <string key="WhatLang">
+      <value>Welche Sprache?\nAktuell: {0}</value>
+    </string>
+    <string key="WhatVariant">
+      <value>Welche Variante?\nAktuell: {0}</value>
+    </string>
+    <string key="LangSet">
+      <value>Die Sprache ist nun {0}</value>
+    </string>
+    <string key="GetLang">
+      <!-- <value>Welche Sprachversion willst du haben?</value> -->
+      <value>Howdy! Ein fleißiger Grammarnazi am Werk? Da will ich dich nicht aufhalten: wähle die Sprache aus, die du gerne haben möchtest.</value>
+      <value>Die Bibliothek der Sprachdateien wächst und wächst, aber wenn du mir verrätst, nach welcher Sprache du suchst, kann ich dir sicherlich behilflich sein! Gezeichnet, der Ostergott</value>
+    </string>
+    <string key="NoNodes">
+      <value>Momentan sind keine Knotenpunkt verfügbar, probier es in ein paar Sekunden nochmal :/</value>
+    </string>
+    <string key="GroupCommandOnly">
+      <value>Lass mich Dir einen Vorschlag unterbreiten: versuche den Befehl mal in einer Gruppe!</value>
+      <!-- <value>Du musst dieses Kommando in einer Gruppe ausführen.</value> -->
+    </string>
+    <string key="NotGlobalAdmin">
+      <value>Du bist doch gar kein globaler Osterhase 🤨</value>
+    </string>
+    <string key="NotPara">
+      <value>Du. Bist. NICHT Para! Es kann nur einen para geben (außer er vermehrt sich wie die Kannikel)</value>
+    </string>
+    <string key="Yes">
+      <value>Ja 👍</value>
+    </string>
+    <string key="No">
+      <value>Nein 👎</value>
+    </string>
+    <string key="Allow">
+      <value>Erlauben ✅</value>
+    </string>
+    <string key="Disallow">
+      <value>Verbieten ❌</value>
+    </string>
+    <string key="Show">
+      <value>Anzeigen 🖥</value>
+    </string>
+    <string key="Hide">
+      <value>Verstecken 🙈</value>
+    </string>
+
+    <!-- Game Mode Choices-->
+    <string key="NormalOnly">
+      <value>Nur Normal. LAAAANGWEILIG!!!!</value>
+    </string>
+    <string key="ChaosOnly">
+      <value>Nur Chaos, du musst es wissen...</value>
+    </string>
+    <string key="PlayerChoice">
+      <value>Beides (Fabrik-Mitarbeiter entscheiden)</value>
+    </string>
+
+    <!-- Show Roles on End Game -->
+    <string key="ShowNone">
+      <value>Keine Rollen anzeigen</value>
+    </string>
+    <string key="ShowLiving">
+      <value>Nur die Rollen der noch Angestellten</value>
+    </string>
+    <string key="ShowAll">
+      <value>Zeige alle Rollen</value>
+    </string>
+    <string key="Cancel">
+      <value>🚫 Abbrechen</value>
+    </string>
+    <string key="AllowFleeQ">
+  <!-- note, there is NO space after {0}. This is on purpose -->
+      <value>Soll es den Mitarbeitern erlaubt sein, während einer Schicht zu fliehen?\nBeachte: Mitarbeiter können trotzdem während der Bewerbungsphase fliehen.\nAktuell: {0}</value>
+    </string>
+    <string key="AllowFleeA">
+      <!-- note, there is NO space after {0}. This is on purpose -->
+      <value>Neue Einstellung fürs Fliehen: {0}</value>
+    </string>
+    <string key="MaxPlayersQ">
+      <value>Wie viele Mitarbeiter sollen maximal in der Ostereierfabrik arbeiten?\nAktuell: {0}</value>
+    </string>
+    <string key="MaxPlayersA">
+      <value>Die maximale Mitarbeiteranzahl ist nun {0}.</value>
+    </string>
+    <string key="ShowRolesDeathQ">
+      <value>Sollen Rollen nach der Kündigung eines Mitarbeiters angezeigt werden?\nAktuell: {0}</value>
+    </string>
+    <string key="ShowRolesDeathA">
+      <value>Rollen werden nach der Kündigung angezeigt: {0}</value>
+    </string>
+      <!-- Hier hat Robby aufgehört, ab hier wird es so langweilig wie der 15. Tag Ostern hintereinander -->
+    <string key="GameModeQ">
+      <value>In welchem Modus wollt ihr spielen?\nAktuell: {0}</value>
+    </string>
+    <string key="GameModeA">
+      <value>Neue Einstellung für den Spielmodus: {0}</value>
+    </string>
+    <string key="ShowRolesEndQ">
+      <value>Wie willst du die Rollenverteilung am Ende darstellen?\nAktuell: {0}</value>
+    </string>
+    <string key="ShowRolesEndA">
+      <value>Rollenverteilung am Ende wie folgt: {0}</value>
+    </string>
+    <string key="SetDayTimeQ">
+      <value>Lege die Basiszeit (in Sekunden) für den Tag fest. Dies kann allerdings immer noch anhand der Spielerzahl angepasst werden. \nStandardeinstellung: {0}\nAktuell: {1}</value>
+    </string>
+    <string key="SetDayTimeA">
+      <value>Basiszeit für den Tag beträgt nun {0} Sekunden.</value>
+    </string>
+    <string key="SetNightTimeQ">
+      <value>Bestimme nun die Zeit (in Sekunden) für die Nacht. Standardeinstellung: {0}\nAktuell: {1}</value>
+    </string>
+    <string key="SetNightTimeA">
+      <value>Die Nacht dauert nun {0} Sekunden.</value>
+    </string>
+    <string key="SetLynchTimeQ">
+      <value>Wähle nun aus, wie lange die Spieler zum Lynchen Zeit haben sollen (in Sekunden). Standardeinstellung: {0}\nAktuell: {1}</value>
+    </string>
+    <string key="SetLynchTimeA">
+      <value>Zeit zum Lynchen beträgt nun {0} Sekunden.</value>
+    </string>
+    <string key="AllowFoolQ">
+      <value>Willst du den Narr als Rolle zulassen?\nAktuell: {0}</value>
+    </string>
+    <string key="AllowFoolA">
+      <value>Neue Einstellung für den Narren: {0}</value>
+    </string>
+    <string key="AllowTannerQ">
+      <value>Willst du den Gerber als Rolle zulassen?\nAktuell: {0}</value>
+    </string>
+    <string key="AllowTannerA">
+      <value>Neue Einstellung für den Gerber: {0}</value>
+    </string>
+    <string key="AllowCultQ">
+      <value>Willst du das mobbingteam zulassen?\nAktuell: {0}</value>
+    </string>
+    <string key="AllowCultA">
+      <value>Neue Einstellung für den Mobbingzirkel: {0}</value>
+    </string>
+    <string key="EnableSecretLynchQ">
+      <value>Willst du das geheime Lynchen aktivieren?\nMomentan: {0}</value>
+    </string>
+    <string key="EnableSecretLynchA">
+      <value>Neue Einstellung des geheimen Lnychens: {0}</value>
+    </string>
+    <string key="ThankYou">
+      <value>Vielen Dank, viel Spaß mit dem Bot :)</value>
+    </string>
+    <string key="WhatLangGroup">
+      <value>Gruppen welcher Sprache willst du finden?</value>
+    </string>
+    <string key="HereIsList">
+      <value>Hier ist ein Schichtplan der Gruppen für {0}:</value>
+    </string>
+    <string key="Members">
+      <value>Mitglieder</value>
+    </string>
+    <string key="StartMe">
+      <value>Du musst mich starten, damit ich dir schreiben kann :)</value>
+    </string>
+    <string key="PlayerNoPM">
+      <value>{0} hat den Bot nicht gestartet und wurde deswegen aus dem Spiel entfernt!</value>
+    </string>
+    <string key="LatestList">
+      <value>Hier ist der letze Schichtplan.</value>
+    </string>
+    <string key="UnableToGetList">
+      <value>Letzter Schichtplan konnte nicht abgerufen werden.</value>
+    </string>
+    <string key="YouJoined">
+      <!-- 0 - Group Name -->
+      <value>Du bist einer Arbeitsrunde in der Gruppe {0} beigetreten.</value>
+    </string>
+    <string key="Ping2">
+      <value>Sendezeit der Pingnachricht: {0}</value>
+    </string>
+
+    <!-- Update 4.0-->
+    <string key="RoleInfoMayor">
+      <value>Du bist der Abteilungsleiter. 🎖\nSobald du dich zu erkennen gibst, zählt deine Stimme bei der allabendlichen Abstimmung doppelt (für irgendwas muss das dicke Auto ja gut sein...). Dein Herz schlägt zwar nicht besonders schnell, aber für deine Abteilung.</value>
+    </string>
+    <string key="RoleInfoPrince">
+      <value>Du bist der Vize-Chef! 👑\nWenn du grade niemanden feuerst, ist dir ziemlich langweilig und so mischst du dich täglich unter deine Untergebenen. Sollten deine Maler dich in einer Geistesverwirrung des Schwarzmalens verdächtigen, zeigst du ihnen deine ICH BOSS-DU NICHTS Tasse, und entgehst so der Arbeitslosigkeit. Einmalig. Wenn sie dich nochmal verdächtigen, wird es dir zu bunt und du gehst einfach...</value>
+    </string>
+    <string key="RoleInfoClumsyGuy">
+      <value>Du hast einen Sprachfehler. 🤕\nDu meinst es zwar nur gut... aber das hilft eben auch nicht immer. Irgendwie hast du einfach Pech, und in der Hälfte der Fälle versteht niemand, wen du Verdächtigst... Trotzdem bist du ein richtiger Maler.</value>
+    </string>
+    <string key="RoleInfoSorcerer">
+      <value>Du bist ein Stalker 🔮. Und zwar einer von der richtig miesen Sorte. Du willst unbedingt alles über den Wachmann herausfinden, das geht während der Arbeit nur so schlecht. Bei ihm Zuhause hast du nämlich schon überall Kameras installiert... Daher möchtest du unbedingt, dass er gefeuert wird. Dir ist dafür jedes Mittel recht: Die Emos wissen zwar nichts von ihrem Glück, aber du bist ein Verbündeter und gewinnst mit ihnen. Du erkennst Sie (und den Wachmann) sogar, wenn du zu ihren Arbeitsplätzen hinstalkst...</value>
+    </string>
+    <string key="RoleInfoBlacksmith">
+      <value>Du bist der Färbemaschinentechniker. ⚒️\nDu hast von deinen Wartungsarbeiten immer noch ein bisschen Farbe übrig, den du einmal nutzen kannst, um jedes einzelne Ei richtig bunt zu machen. Wenn du dich dafür entscheidest, dies zu tun, wird keiner gefeuert. Es gibt ja keine schwarzen Eier, die jemand haben kann...</value>
+    </string>
+    <string key="RoleInfoAlphaWolf">
+      <value>Du bist der Oberemo 🐺⚡️. Du trägst nicht nur das schwärzste Schwarz von allen, deine Eier sind auch besonders schwarz. Wenn du sie jemandem unterjubelst, könnte er sie so schön finden (20 % Wahrscheinlichkeit), dass er auch schwarze EIer malt!</value>
+    </string>
+    <string key="RoleInfoWolfCub">
+      <value>Hey, du bist der depressive Neuling (aka Wolfswelpe 🐶).\nUnd du bist depressiv, so depressiv, dass du Dich direkt den Schwarzmalern zugehörig fühlst und mit Ihnen alles schwarz anmelen willst.\nSolltest du das Unternehmen verlassen werden die anderen Schwarzmaler 🐺 zwei Angestellten schwarze Eier unterjubeln!</value>
+  	</string>
+    <string key="PrinceLynched">
+      <value>Ihr habt also entschieden, {0} soll das Unternehmen noch heute verlassen. Dass Ihr da den Vize-Chef 👑 rausschmeißt, habt Ihr aber bedacht? Dieser lässt sich nicht von Euch armseligen Gurken feuern und entkommt nochmal knapp. Solltet Ihr ihn aber nochmal rauswählen, wird er die Firma für immer verlassen!</value>
+      <!--> <value>Kurz bevor das Dorf {0} lyncht, hört man die verurteile Person rufen: "Wartet! Ich bin der Prinz 👑. Dieser königliche Ring mit dem Siegel meines Geschlechts beweist es. Ich bin jede Nacht von Dienern umgeben, folglich kann ich also nicht dem Bösen angehören." Von der eigenen Torheit überrascht, ziehen sich die Bewohner des Dorfes kleinlaut in ihre Gemächer zurück, ohne auf ihr Lynchopfer zu bestehen.</value> -->
+    </string>
+    <string key="SorcererOther">
+      <value>	Du stalkst zu {0} herüber. Sofort bist du dir sicher: er ist kein Wachmann oder Schwarzmaler. Die hättest du nämlich erkannt.</value> <!-- Ich weiß 🙄, aber ich will auch mal zum Ende kommen --> 
+    </string>
+    <string key="MayorReveal">
+      <!-- und ihr euch von seinen guten Absichten überzeugen konntet, -->
+      <value>Auf einmal zeigt Euch {0} eine Bescheinigung 🎖 {0} ist wohl der Abteilungsleiter und darf nun mit doppelter Macht über Kündigungen mitentscheiden. Mit {0} würde ich es mir ja jetzt nicht mehr verscherzen...</value>
+      <!--<value>Als wäre es ihm gerade erst wieder eingefallen, drängelt sich auf einmal {0} ins Rampenlicht, schwafelt etwas von Verantwortung und hält dabei irgendeine Urkunde in die Höhe. Lesen kann es zwar niemand, aber ihr erkennt das Siegel darauf: dies muss der Bürgermeister 🎖 sein. Dadurch, dass seine Autorität nun bestätigt ist, zählt seine Stimme bei der abendlichen Abstimmung ab jetzt doppelt.</value>
+      <value>Na, das ist ja mal 'ne Überraschung. Die Bürokratie ist doch nicht tot? Scheint so. {0} tritt vor, bricht eine Rede über den maroden Zustand des örtlichen Tierheims vom Zaun und... irgendwann wird euch klar, dass das euer Bürgermeister 🎖 sein muss.</value>-->
+    </string>
+    <string key="AskMayor">
+      <value>Wenn du verkünden willst, dass du der Leiter bist, klick einfach auf den Button. Wann immer du willst. Keinen Stress, du bist ja schließlich der Boss.</value>
+      <value>Wenn du verkünden willst, dass du der Leiter 🎖 bist, klick einfach auf den Button. Wann immer du willst. Keinen Stress, wir sind hier schließlich auf der arbeit und nicht auf der Flucht!</value>
+    </string>
+    <string key="Reveal">
+      <value>Zeige deine Bescheinigung 🎖!</value>
+    </string>
+    <string key="SpreadDust">
+      <value>Willst du heute die Eier richtig bunt machen und damit die Emos für den nächste Tag außer Gefecht setzen?</value>
+      <value>Hier ein magischer Schlüssel 🔑. Damit könntest Du jetzt die Farben aller Schwarzmaler wegsperren 🔐. Aber schnell, wenn Du erwischt wirst wirst Du eingetunkt</value>
+    </string>
+    <string key="BlacksmithSpreadSilver">
+      <value>Während der Rest der Belegschaft immer noch die Geschehnisse des Tages diskutiert, bemerken sie plötzlich {0}, der Farbe über jedes einzelne Ei wirft und dabei so glücklich wie ein kleines Kind aussieht. ⚒️\nDie Schwarzmaler müssen wieder von vorne anfangen, und morgen wird es wegen ihnen keinen Arbeitslosen geben.</value>
+    </string>
+    <string key="Mayor">
+      <value>der Abteilungsleiter 🎖</value>
+    </string>
+    <string key="Prince">
+      <value>der Vize-Chef 👑</value>
+    </string>
+    <string key="Sorcerer">
+      <value>der Stalker 🔮</value>
+    </string>
+    <string key="ClumsyGuy">
+      <value>der Stotterer 🤕</value>
+    </string>
+    <string key="Blacksmith">
+      <value>der Färbemaschinentechniker ⚒️</value>
+    </string>
+    <string key="AlphaWolf">
+      <value>der Oberemo 🐺⚡️</value>
+    </string>
+    <string key="WolfCub">
+      <value>der depressive Neuling 🐶</value>
+    </string>
+    <string key="PlayerBittenWolves">
+      <!-- 0 - victim -->
+      <!-- 1 - Oberemo -->
+      <value>Ihr wollt gerade {0} 6 schwarze Eier unterjubeln, sein sicherer Tod in der Firma. Doch da fängt auf einmal {1} 🐺⚡️ an zu reden. {0} ist so schwach, dass er auch zum Emo wird, er müsse sich nur noch zu Hause umziehen</value>
+      <!-- <value>Gerade als ihr {0} angreift, schreitet auf einmal {1} 🐺⚡️ ein. Der faselt irgendetwas davon, dass er den Schwächling ins Rudel aufnehmen will, anstatt ihn zu fressen: das Opfer wird sich in der kommenden Nacht verwandeln und dann genauso pelzig sein wie du. Aber eigentlich hattest du doch Hunger...</value>
+      <value>So soll es also sein, ihr zieht los, um euer Opfer zu erlegen. Du leckst dir die Lippen, doch - was ist das?! Fast hättest du dir die Zunge abgebissen, bei diesem Anblick: Als {1} 🐺⚡️ seine Zähne in den Körper von {0} bohrt, passiert genau das Gegenteil von dem, was du erwartet hast: anstatt dass das Feuer in den Augen erlischt, flackert es wahrlich auf. Ihr verlasst das Haus klammheimlich wieder, mit dem Wissen, dass euer Opfer sich infiziert hat und ab der nächsten Nacht genauso zum Werwolf werden wird wie ihr...</value> -->
+    </string>
+    <string key="PlayerBitten">
+      <value>Siehst Du die schwarzen Eier? Du findest die auf einmal ganz toll, du spürst eine Veränderung und 🐺⚡️ hat Dich auch überredet. Gehe nach hause und zieh Dich schwarz an, ab morgen malst Du mit Eier schwarz</value>
+      <!-- <value>Die Wölfe wollten dich fressen, aber der Rudelführer 🐺⚡️ hat dich ausgewählt! Anstatt tot zu sein, lebst du weiter und wirst dich in 	der nächsten Nacht in einen Wolf verwandeln. Ist das nicht aufregend?!</value>
+      <value>Eigentlich wärst du ja jetzt tot, aber der Rudelführer 🐺⚡️ ist gerade noch rechtzeitig eingeschritten: irgendwas muss er in dir gesehen haben. Anstatt ins Gras zu beißen, ist dein letzter Tag als Normalsterblicher angebrochen, bevor du dich morgen in einen Werwolf verwandelst...</value> -->
+    </string>
+    <string key="BittenTurned">
+      <value>Oh. Was ist das? Ist das... ein schwarzes Ei? Nein, oder? Diese Farbe... Muss. Auch. Schwarz. Malen. MUSS 🐺</value>
+      <value>Sieh mal einer an. haben es die Emos 🐺 doch glatt geschafft, ausgerechnet dir ein schwarzes Ei runterjubeln. Ha, jetzt weißt du, wer genauso depressiv wie du íst!</value>
+    </string>
+      <!-- ABout auslassen!!!!!!!!!!!!!!!!!! jaja, mache ich doch schon-->
+    <string key="AboutMayor">
+      <value>Dr Bürgermeister 🎖 verbringst du dein Leben getarnt als einfacher Dorfbewohner, bis zu dich dazu entscheidest, deine wahre Profession öffentlich zu verkünden. Von diesem Moment an zählt deine Stimme beim Lynchen doppelt so viel wie eine normale Stimme.</value>
+    </string>
+    <string key="AboutPrince">
+      <value>Der Prinz 👑 ist ein schillernder Dorfbewohner. (Oder auch nicht. Eigentlich wohnt er ja in einem Palast, aber... das Aristokratenleben ist wohl auch nicht mehr, was es mal war.) Sollte das Dorf sich blind gegen ihn auflehnen, enthüllt er, bevor sie ihn in den Tod schicken, seinen königlichen Ring, der seine Abstammung beweist: seine Rolle ist dann zwar jedem bekannt, aber er überlebt. Einmalig. Sollte sich das Volk immer noch gegen seine absolutistische Herrschaft wehren, endet ein zweiter Lynchversuch für ihn tödlich.</value>
+    </string>
+    <string key="AboutSorcerer">
+      <value>Erinnert ihr euch an den Seher? Sein böser Zwillingsbruder, der Zauberer 🔮, ist kürzlich in die Gegend gezogen, um ihm das Leben schwer zu machen: er verbündet sich mit den Wölfen, auch wenn diese anfangs nichts von seiner Existenz wissen. Nachts kann er seine Fähigkeiten nutzen, um die Rolle eines Spielers ausfindig zu machen. Da er es ein bisschen mit den Augen hat, erkennt er allerdings nur Wölfe (am Flauschefell!) oder seinen Bruder: den würde er auch auf dem Sterbebett noch erkennen.</value>
+    </string>
+    <string key="AboutClumsy">
+      <value>Der Unglücksrabe 🤕... hat nicht jeder so einen Freund? Er ist ja eigentlich ganz liebenswürdig, aber dennoch verspürt man irgendwie ständig das Bedürfnis, ihm zu sagen, dass... nunja. Wie verpackt man denn höflich, dass er eigentlich mehr Unheil anrichtet, als dass er hilft? Irgendwie schafft er es nämlich in der Hälfte der Fälle nicht, sich wirklich klar auszudrücken, wer gehängt werden sollte. Und da Lippenlesen auch nicht zu euren Stärken gehört... nunja. Manchmal trifft es dann eben den Falschen. Vielleicht sogar dich.</value>
+    </string>
+    <string key="AboutAlphaWolf">
+      <value>Der Rudelführer 🐺⚡️, soso. Lange munkelte man nur, dass es ihn wirklich gibt, aber inzwischen sind alle Zweifel verflogen: das Biest aller Biester lebt. Von ihm geht die schreckliche Seuche aus, die rechtschaffende Bürger in Werwölfe verwandeln kann: solange er am Leben ist, besteht die 20%ige Chance, dass ein Opfer sich mit dem Virus infiziert, anstatt zu sterben. Es verwandelt sich dann in der kommenden Nacht in einen Werwolf.</value>
+    </string>
+    <string key="AboutWolfCub">
+      <value>So ein niedliches kleines Wölfchen! 🐶 Und so flauschig... man muss dich einfach gernhaben *-* Und diese süßen Kulleraugen...\nÄhm, ja. Wo waren wir stehen geblieben? Genau. Alle lieben dich so sehr, dass sie deinen Tod nicht so einfach hinnehmen werden: solltest du sterben, werden sie deinen viel zu frühen Tod mit zwei Opfern in der nächsten Nacht rächen!</value>
+    </string>
+		<!--About ende -->
+    <!-- new strings 06 nov -->
+    <string key="DGTransformToAlpha">
+      <!-- 0 - target's name -->
+      <!-- 1 - teammates's name -->
+      <value>{0} wurde gefeuert. Du wirst der neue Oberemo! 🐺⚡️ Na, ab ins Geschäft und neue schwarze Sachen kaufen. Deine Mit-Emos (falls vorhanden) sind: {1}</value>
+    </string>
+    <string key="DGTransformToWolfCub">
+      <!-- 0 - target's name -->
+      <!-- 1 - teammates's name -->
+      <value>{0} wurde gefeuert. Jetzt bist du der niedliche depressive Junge 🐶 Andere Emos (falls vorhanden) sind: {1}</value>
+    </string>
+    <string key="VillageTeamEnd">
+      <value>Team Mitarbeiter</value>
+    </string>
+    <string key="NeutralTeamEnd">
+      <value>Team Verlierer</value>
+    </string>
+    <string key="WolfTeamEnd">
+      <value>Team Emos</value>
+    </string>
+    <string key="SerialKillerTeamEnd">
+      <value>Team Forever alone</value>
+    </string>
+    <string key="CultTeamEnd">
+      <value>Team Fashionvictim</value>
+    </string>
+    <string key="TannerTeamEnd">
+      <value>Team Gerbera</value>
+    </string>
+    <string key="CultConvertWolf">
+      <value>Ihr habt in letzter Zeit viel über {1} gesammelt und {1} soll ihn mal so richtig mobben. Tja 🤷🏿‍♂️ Schwarzmaler 🐺 lassen sich aber nicht so leicht mobben und zu allem Überfluss erfährt der 
+ von {0}s schwarzen Eiern und spricht die Kündigung aus. Typische lose-lose-Situation.</value>
+      <!-- <value>Ihr entsendet in dieser Nacht {0}, um {1} für euren Glauben zu gewinnen, in der Hoffnung, dass dies eine einfache Aufgabe ist, der selbst euer neuestes Mitglied gewachsen ist, doch stattdessen müsst ihr am nächsten Morgen mit ansehen, wie das Dorf die Leiche von {0} entdeckt, die so zerfleischt in einem Gebüsch liegt, dass für euch sofort klar ist, was passiert sein muss. Ihr solltet euch in Zukunft wohl besser von den Wölfen 🐺 fernhalten...</value> -->
+    </string>
+    <string key="HarlotFuckedKilledPublic">
+      <value>Die Warnungen vor ungeschütztem Sex hängen ja nun wirklich in der ganzen Fabrik aus! {0} der "Hase" 😏🐇 hielt sich nicht dran und hat nun nicht nur STD von {1} sondern auch ein Geschenk 🎁 vom Weihnachtsmann 🎅🔪.</value>
+      <!-- <value>{0} schlüpft in das Haus von {1}, bereit für eine Nacht voller Hingabe 💋, nur um eine im Gegenlicht des Kerzenlichts furchteinflößend anmutende Gestalt zu entdecken, die auf dem Bett kniet und beschäftigt wirkt. Erst auf dem zweiten Blick wird klar, dass diese Person gerade die Innereien von {1} durchwühlt! Durch ein Geräusch auf {0} aufmerksam gemacht, entscheidet sich der Serienmörder 🔪, heute zwei Lebern seiner Sammlung hinzuzufügen.</value> -->
+    </string>
+
+    <!-- New Death Strings 05 Nov -->
+    <string key="ApprenticeSeerEaten">
+      <value>Die Emos 🐺 haben einer weiteren Person ihre Eier untergejubelt. Dabei war er mit seinem Spielzeug-Überwachungs-Kasten immer so niedlich :( Der Azubi 🙇 {0} ist gefeuert worden.</value>
+    </string>
+    <string key="BlacksmithKilled">
+      <value>Bestürzt guckt ihr euch um. Ja, es stimmt: {0}, der Farbmaschienenmechaniker ⚒, wurde gefeuert. Ganz klar das Werk von jemanden, der Farbe nicht scheut: Der Weihnachtsmann hat zugeschenkt 🔪.</value>
+    </string>
+    <string key="ZombieKilled">
+      <value>Eigentlich freut man sich ja nicht, wenn ein Kollege den Arbeitsplatz verlässt. Aber bei {0} ist das ein anderer Fall: Sein Mobbing 👤 war echt grässlich. Eigentlich gut, dass der Weihnachtsmann 🔪 sich mit seinem messerscharfen Geschenken drum gekümmert hat...</value>
+    </string>
+    <string key="CupidKilled">
+      
+      <value>Bestürzung macht sich breit, als ein süßes Küken 🐣/🏹 an euch vorbei nach draußen hüpft. Es zieht an seinem kleinen Füßchen Geschenkpapier 🔪 nach sich... {0} wurde gefeuert!</value>
+      <!--<value>Schon als sie aufwachen, fühlen sich alle Dorfbewohner irgendwie lieblos. Zuerst hält man es für Einbildung, doch dann findet man Amor 🏹, von Kopf bis Fuß aufgeschlitzt, vor der Kirche... Aus irgendeinem Grund fehlt {0} auch das Herz. 🔪</value>-->
+    </string>
+    <string key="DrunkKilled">
+      <value>Nachdem ihr euch von euren Arbeitsplätzen erhebt, fällt euch sofort auf, dass etwas nicht stimmt: {0} läuft nicht wie sonst Freudeschreiend seinem Feierabendbier 🍻 entgegen. An sienem Platz steht nur eine nicht ausgetrunkene Schnapsflasche und ein kleines Geschenk 🔪.</value>
+      <!--<value>Hand aufs Herz: eigentlich würde natürlich keiner von euch um diese Tageszeit schon mit dem Trinken anfangen. Aber einer Einladung muss man auch Folge leisten. Dass euch bei {0} niemand öffnet, wundert keinen, vermutlich ist der Trunkenbold schon - oder noch? - zu besoffen, um euer Klopfen zu hören. Drinnen seht ihr jedoch, wie falsch ihr damit lagt... Der Betrunkene 🍻 liegt reglos am Boden, in seinen feinsten Sonntagsklamotten. Daneben... kein schöner Anblick: eine ramponierte Leber, die wohl selbst dem Serienmörder 🔪 nicht gemundet hat. </value>
+      <value>Die Dorfbewohner hatten gehofft, mit {0} mal wieder so richtig schön einen saufen gehen zu können, doch alles was sie im Haus des Dauerbetrunkenen 🍻 fanden, waren ein zerbrochenes Messer und eine steinharte Leber, die offensichtlich durch jahrelangen Alkoholkonsum nicht einmal mehr dem Serienmörder 🔪 mundete...</value>-->
+    </string>
+    <string key="GuardianAngelKilled">
+      <value>Merkwürdig. Rafael 👼 mochte doch sonst immer so Geschenke 🔪 und Weihnachten. Naja, offensichtlich verträgt sich das nicht mit seinem Arbeitsplatz: {0} wurde gefeuert.</value>
+      <!--<value>Üblicherweise hätte {0} den Serienmörder 🔪 ohne Probleme abwehren können, jedoch verließ ihn seine Kraft in dieser Nacht plötzlich... Ob das wohl daran lag, dass er so egoistisch für sich selbst kämpfte? Was für ein Jammer... Der Schutzengel 👼 ist tot.</value>
+      <value>An einem normalen Tag wäre {0} definitiv in der Lage gewesen, dem Serienmörder 🔪 die Stirn zu bieten. Es gleicht Ironie, dass der Schein des Schutzengels 👼 erlosch, während er über einen anderen wachte...</value>-->
+    </string>
+    <string key="GunnerKilled">
+      <value>Da schwand wohl der Einfluss vom einflussreichen Typen mit der Wasserpistole 🔫 im Angesicht des Weihnachtsmanns 🎅🔪. Das heutige Geschenk 🎁🎁 für {0}: eine eingefrorene Wasserpistole und die Kündigung!</value>
+      <!-- <value>Anscheinend hat da jemand ein kleines Schläfchen gehalten... welch fataler Fehler. Man hört zwar einen Schuss 🔫, doch am nächsten Morgen findet man nur den Körper von {0}, dem die Kugel im Kopf steckt - und komischerweise fehlt ihm ebenso der rechte Zeigefinger... Wie es aussieht, wollte der Serienmörder 🔪 dem Schützen noch eine letzte Lektion erteilen!</value> -->
+    </string>
+    <string key="MayorKilled">
+      <value>Der Weihnachtsmann 🎅🔪 schreckt wohl nicht mal vorm Abteilungsleiter 🎖 {0} zurück! Eiskalt ❄️!</value>
+      <!-- <value>Ein hinterhältiger Anschlag! {0} liegt ermordet auf seinem Schreibtisch... Vielleicht wollte der Serienmörder 🔪 sich für all die Jahre im Waisenhaus rächen, vielleicht hasst er aber auch einfach nur Politiker 🎖 und ihre Wahlversprechen. Das wird man wohl nie herausfinden.</value> -->
+    </string>
+    <string key="PrinceKilled">
+      <value>Der Weihnachtsmann 🎅🔪 schreckt wohl nicht mal vorm Vize-Chef 👑 zurück und so bekam auch {0} ein Geschenk! 🎁</value>
+      <!-- <value>Lautes Glockengeläut weckt die Dorfbewohner früh am Morgen auf. Während die Meisten sich noch verschlafen die Augen reiben, macht sich die königliche Palastwache bereits auf die Suche nach dem verschwundenen Prinzen 👑 {0}. Trotz angestrengter Suche wird er nicht gefunden, aber das Gerücht geht um, dass ein Serienmörder 🔪 sein Unwesen treibt...</value>
+      <value>Die königlichen Wachen sind letzte Nacht offensichtlich eingeschlafen. Man findet {0}, den Prinzen 👑, überall im Schloss verteilt, in gleichmäßig großen Stücken. Nur ein Körperteil fehlt: seine royale Leber... 🔪</value> -->
+    </string>
+    <string key="SeerKilled">
+      <value>Es wird langsam düster, alle wollen zur Abendversammlung. Aber wo ist {0}? Sachdienliche Hinweise nimmt der Wachmann {0} entge... verdammt! Der Weihnachtsmann 🎅🔪 hat noch jemanden aus der Firma geworfen!</value>
+      <!-- Wie viele Rollen tötet der denn noch???? Nen Haufen. Gleich... <value>Das Dorf erwacht, um einen grauenerregenden Fund zu machen: {0} liegt, von Kopf bis Fuß aufgeschnitten 🔪, nebst seinen herausgetrennten Organen in seinem Wohnzimmer, ein Deck Tarotkarten 👳 noch in der Hand. Seltsamerweise fehlt der Kopf, als wollte sich der Serienmörder über den Verlust einer der klügsten Köpfe lustig machen...</value> -->
+    </string>
+    <string key="SorcererEaten">
+      <value>War den Emos und Schwarzmalern klar, dass der Stalker 🔮 {0} zu Ihnen steht? Bzw. jetzt stand, sie haben ihn rausgeekelt</value>
+      <!-- <value>Früh am Morgen erklingt plötzlich ein seltener Ton: klagendes Geheul! 🐺 Ein unverzeihliches Missgeschick ist geschehen: die Wölfe haben ihren eigenen Verbündeten gefressen. {0}, der Zauberer 🔮, ist tot.</value>
+      <value>Verzweifelte Schreie haben vergangene Nacht so manchem Bürger den Schlaf geraubt... Immer wieder hörte man "Ich bin euer Verbündeter! Ich gehöre zu euch!" Als sich am nächsten Morgen endlich der erste Bürger hinaustraut, findet er nur abgenagten Knochen und einen zerschmetterten lilafarbenen Kristall... Nach einigem Überlegen erkennt man in den Scherben den heißgeliebten Talisman von {0}. Hunger schlägt Freundschaft... 🐺 Der Zauberer 🔮 musste das auf die harte Tour lernen.</value> -->
+    </string>
+    <string key="WildChildEaten">
+      <value>Oh nein. Das wilde Häschen 🐰 (aka WildChild) 👶 hüpft an euch vorbei, in Richtung Arbeitslosigkeit. Wenigstens hat {0} ein billiges China-Geschenk 🔪 dabei...</value>
+      <!--<value>NOMNOMNOMNOM! Diese Nacht gab es für die Wölfe besonders zartes Kinderfleisch 👶 von {0}. Es muss ihnen wohl gut geschmeckt haben, denn übrig blieb nur ein Miniaturskelett. Ob Werwölfe 🐺 wohl Schuldgefühle haben können...?</value>-->
+    </string>
+    <string key="SerialKillerKilledCH">
+      <!-- used when CH visits SK -->
+      <value>Dass der Weihnachtsmann 🎅🔪 einzelne Rentiere bevorzugt, ist ja bekannt. Aber dass er den Gleichstellungsbeauftragten 💂 {0} wegen ein paar Fragen zu diesem Thema gleich in die Arbeitslosigkeit stürzen muss, ist dann doch irgendwie harsch.</value>
+      <!--<value>Als das Dorf erwacht, findet man {0}, den Kultjäger 💂 zerstückelt in einer Kiste vor dem Rathaus. Es scheint keine besonders gute Idee, nachts den Serienmörder 🔪 zu besuchen und ihn über seine Spiritualität auszufragen...</value>
+      <value>Der Körper von {0}, dem Kultjäger 💂 wurde bis zur Unkenntlichkeit verstümmelt auf dem Altar der Kirche gefunden. Den Serienmörder für einen Kultisten zu halten war eindeutig sein letzter Fehler...</value>-->
+    </string>
+    <string key="CultConvertWolfPublic">
+      <!-- used when Zombies convert the wolves, only if wolves stayed home -->
+      <value>Da will man als Emo 🐺 einmal seine schwarzen Eier behalten... Aber wenn man von {0} schon wegen Mobbing 👤 angesprochen wird, wie soll man da wiederstehen?</value>
+      <!--<value>Eigentlich wollten die Wölfe  letzte Nacht ja fasten (wie vorbildlich!) - aber wer kann schon der Versuchung einerskleinen Mitternachtsnack auf zwei Beinen widerstehen?! Richtig: niemand. Das musste {0} am eigenen Leib erfahren, auch sein Glaube konnte den Kultisten 👤 nicht vor den scharfen Zähnen der Wölfe beschützen...</value>
+      <value>Das Leben als Kultist 👤 ist nicht leicht. Nicht nur muss man sich davon erholen, bisher ein Leben lang an das Falsche geglaubt zu haben, nein, es stehen auch noch immer diese Nachtwanderungen auf dem Programm. {0} verirrte sich dabei letzte Nacht in das Haus eines ruhenden Werwolfs 🐺, war aber selbst ebenfalls zu müde, um wegzurennen - am Morgen kann er es nicht mehr, nur noch die Knochen sind von seinen Beinen übrig geblieben. So wie es aussieht, haben Werwölfe kein Interesse daran, sich neuen kultigen Kreisen anzuschließen....</value>-->
+    </string>
+    <string key="CultConvertKillerPublic">
+      <!-- used when Zombies convert the SK -->
+      <value>Hmmm... Dass der Mobber 👤 jetzt fehlt, ist ja nicht so schlimm. Aber der Weihnachtsmann 🎅🔪 scheint noch sein Unwesen zu treiben. {0} wurde mit Geschenken überhäuft und gefeuert!</value>
+      <!-- Strangely their "holy" book was found stabbed with a knife, as if a statement to show whose religion was triumphant.</value>
+      Hast du das gesucht? Nö, stand schon da. <value>Was für ein Fehler... Die Kultisten 👤 haben letzte Nacht die einzige Person im Dorf besucht, die noch verrückter ist als sie selbst. Dafür können alle Bewohner heute ein abstraktes Kunstwerk, bestehend aus den zerstückelten Organen des verstorbenen {0}, vor dem Rathaus bestaunen. Vielleicht nicht jedermanns Geschmack... aber der Serienmörder 🔪 hat seinen ganz eigenen Sinn für Ästhetik.</value>
+      <value>So kann man sich irren... Der Kult 👤 war letzte Nacht sicherlich schon siegesgewiß, als sie in einem kleinen Häuschen am Rande der Stadt noch Licht brennen sahen. Aber dann kam doch alles anders...\nAm nächsten Tag findet jeder Bewohner einzelne Körperteile vor seinem Haus, bis man schließlich auf dem Marktplatz die Leiche von {0} zusammenpuzzeln kann. Trotzdem, Einige wirken dabei weniger überrascht als Andere. Ob es wohl Zeugen für den Mord 🔪 gibt?</value>-->
+    </string>
+    <string key="GAGuardedKiller">
+      <value>"Wo ist eigentlich Rafael 👼?" fragt ihr euch. Was fast so merkwürdig wie die Angewohnheit von euch, {0} nicht bei seinem Namen zu nennen, ist, dass an dem Platz von {0} ein kleines rotes Geschenk steht 🔪</value>
+      <!-- <!value>It was supposed to be a night where {0} would save the village from the killers, but {0}'s halo was extinguished and wings sliced by the serial killer! Left was a note, "I could protect myself better than you can."</value>
+      <value>Eigentlich sollte {0} das Dorf in dieser Nacht vor dem Bösen bewahren, stattdessen wurden jedoch seine Flügel 👼 gestutzt! Neben seiner Leiche findet man einen Zettel mit der Aufschrift: "Ich konnte mich eben besser verteidigen... 🔪"</value>-->
+    </string>
+    <string key="GAGuardedWolf">
+      <value>Da wollte {0} (Deckname Rafael 👼) nur dafür sorgen, dass keine shcwarzen Eier irgendwo landen, wo sie nicht hinsollen... Nur blöd, wenn man direkt zur Quelle geht 🐺. {0} wurde gefeuert!</value>
+      <!--
+      <value>Euer Schutzengel 👼, {0}, hat gestern Nacht versucht, einen Wolf 🐺 zu beschützen. Am Morgen findet ihr nur die Flügel, aufgehängt am Ziffernblatt der Uhr - irgendwie ein verstörender Anblick...</value>
+      <value>Wer würde sich schon über kostenlosen Lieferservice - ob bestellt oder nicht - beschweren? Wohl kaum jemand. Die Wölfe 🐺 ließen sich durch den göttlichen Boten allerdings nicht gnädig stimmen, im Gegenteil, sie sahen {0} viel mehr als hervorragendes Nachtmahl an. Heute Morgen findet man nur noch die Knochen des Schutzengels 👼, fein säuberlich eingewickelt in sein heiliges Gewand, das aus irgendeinem Grund nicht blutbefleckt ist...</value>-->
+    </string>
+
+    <!--DEC 26: 1vs1 finales-->
+    <string key="HunterKillsWolfEnd">
+      <!--{0} = hunter's name, {1} = wolf's name-->
+      <value>Damit gewinnt der Schwarzmaler 🐺 {1} auch die... eine Wende im Verlauf! Der Hausmeister 🎯 {0} haut {1} so einen auf den Deckel, dass dieser zu Boden sinkt. Der Hausmeister 🎯 {0} bleibt als einziger übrig und fegt nochmal schnell durch. Ostern ist gerettet</value>
+      <!-- <value>{1} sah sich schon als glücklichen Gewinner, hatte aber nicht mit damit gerechnet, dass {0}, der komische alte Kauz, seine Drohungen tatsächlich wahr machen würde: die Reporterin des überregionalen Käseblatts findet am nächsten Morgen den Jäger 🎯, der stolz als einziger Überlebender neben dem getöteten Wolf 🐺 steht. Er hat sich außerdem gerade selbst zum Bürgermeister gewählt und will das Dorf nun in Eigenregie führen.</value>
+      <value>Im Wissen, dass nur noch {0} übrig war, versuchte {1} diesen aufzufressen, aber gegen militärisches Training und die jahrelange Paranoia des Jägers 🎯 kam der Werwolf 🐺 nicht im Geringsten an. Mit zwei präzisen Schüssen ist sein Leben verwirkt, und die letzte Person, die jetzt noch übrig ist ist, sichert dem Dorf den Sieg. Ein Hoch auf den Jäger!</value> -->
+    </string>
+    <string key="WolfKillsHunterEnd">
+      <!--{0} = hunter's name, {1} = wolf's name-->
+      <value>Damit gewinnt der Schwarzmaler 🐺 {1} auch dieses Spiel! Zuerst nimmt er dem Hausmeister 🎯 {0} den Besen ab und bewirft ihn anschließend mit rohen, völlig schwarzen Farb-Eiern. Das Spiel ist geschlagen, Ostern wird dieses Jahr ein schwarzes Fest</value>
+      <!-- <value>Aus gutem Grund hat {1} sich den Jäger 🎯 bis zuletzt aufgespart: mit seinem Gewehr ist er schon eine einschüchternde Erscheinung, doch scharfe Werwolfklauen sind schließlich auch eine nicht zu unterschätzende Waffe. Mit seiner gesammelten Erfahrung 🐺 war der arme {0} mit seiner Büchse allerdings chancenlos: mit seinem Tod stirbt der letzte menschliche Bewohner des Dorfes...</value>
+      <value>Was ein schlauer Wolf. 🐺 Obwohl {0} die längste Zeit überaus wachsam war, hat jener es doch geschafft, ihn in einem unaufmerksamen Moment zu erwischen. Den letzten Dorfbewohner zu töten war dann keine schwere Aufgabe mehr für {1} und alles was jetzt von {0}, dem Jäger 🎯, noch übrig bleibt, ist sein Kopf, geziert mit zwei langen Kratzern.</value> -->
+    </string>
+    <string key="CHKillsZombieEnd">
+      <!--{0} = last Zombie's name, {1} = CH's name -->
+      <value>{0} reibt sich die Hände. Nur noch {1} ist angestellt. Wenn man jetzt noch schnell über Mobbing 👤 redet, könnte man gewinnen - Dumm nur, dass {1} ausgerechnet die Gleichstellungsbeauftragte 💂 ist. Sie (und die Gleichberechtigung) haben gewonnen!</value>
+      <!--<value>Auch wenn dem Dorf nur noch zwei Personen geblieben sind, freut sich {1} auf die Aussicht, in dieser Nacht dem Kult entgültig den Garaus zu machen, obgleich die letzte andere überlebende Person im Dorf ein Kultist sein mag oder nicht - die Gewissheit zählt. In gewohnter Montur und Manier ist das Vorhaben für den Kultistenjäger 💂 kein Problem, den Job erledigt er immerhin jede Nacht. Und tatsächlich wird er fündig! Ein schimmerndes Kreuz, das sich auf einem Tisch im Eingang des Hauses von {0} befindet, verrät eindeutig, dass hier ein Kultist 👤 hausen muss. Doch fehlt jede Spur des Enttarten. Hinter ein großen Vase vor dem Haus versteckt, wartet {1} auf den erst am Morgen zurückkehrenden Kultisten. Was dieser in der Nacht getrieben hat, lässt {1} zwar erschaudern, kann ihn aber nicht daran hindern, sich von hinten zu nähern und das Dorf um eine weitere Person zu dezimieren.</value>
+      <value>{1} und {0} laufen gemeinsam auf das Zentrum des Dorfes zu. Als {0} plötzlich beginnt, von seinem Kult 👤 zu erzählen, zögert der Andere nicht lange und erhebt sein Schwert ein letztes Mal, auf dass die falsche Lehre des Kultes dem Dorf nie wieder schaden könne. Der Kultistenjäger 💂 schwört, das Dorf auch weiterhin vor fremden und unheimlichen Kulturen zu verteidigen - auch wenn er so wohl auf lange Zeit der einzige Bewohner bleiben wird...</value>-->
+    </string>
+
+    <!-- Extend time -->
+    <string key="SecondsAdded">
+      <!-- 0 - Seconds added by /extend command -->
+      <!-- 1 - Total seconds remaining -->
+      <value>Die Zeit, um mitzumalen, wurde um {0} Sekunden erhöht.\nJetzt habt ihr noch {1} Minuten, um mitzumischen!</value>
+      <value>Der Bus 🚌 hat heute {0} Sekunden Verspätung.\nDaher startet der Arbeitstag erst in {1} Minuten, genug Zeit also, um Farben anzumischen!</value>
+    </string>
+    <string key="SecondsRemoved">
+      <!-- 0 - Seconds removed by /extend command -->
+      <!-- 1 - Total seconds remaining -->
+      <value>Die Zeit, um mitzumalen, wurde um {0} Sekunden verringert.\n{1} verbleiben, um der Schicht beizutreten!</value>
+      <value>Der Busfahrer fuhr wie ein gesengter Hamster 🐹, so dass der Arbeitstag {0} Sekunden früher, in {1} Minuten starten kann.</value>
+    </string>
+    <string key="CantExtend">
+      <value>Nur Osterhasen können die Zeit mehr als einmal pro Schicht erhöhen.</value>
+    </string>  
+    <string key="AllowExtendQ">
+      <!--{0} = "Allow" / "Disallow" string-->
+      <value>Dürfen Spieler die Zeit, um MITZUMALEN, erhöhen?\nAktuell: {0}\nBeachte: Admins können die Zeit immer erhöhen</value>
+    </string>
+    <string key="AllowExtendA">
+      <!--{0} = "Allow" / "Disallow" string-->
+      <value>Spieler dürfen die Zeit erhöhen.\nNeue Einstellung: {0}</value>
+    </string>
+    <string key="MaxExtendQ">
+      <value>Wie viele Sekunden darf der /extend-Befehl bei einem Aufruf maximal hinzufügen?\nStandard: {0}\nAktuell: {1}</value>
+    </string>
+    <string key="MaxExtendA">
+      <value>Die maximale /extend-Zeit liegt jetzt bei {0} Sekunden.</value>
+    </string>
+    <string key="WolvesEatDrunkBlockSecondKill">
+      <value>Oh nein! {0} war der Betrunkene! 🍺 Jetzt bist du betrunken und kannst diese Nacht nicht mehr angreifen... {1} kommt also mit dem Leben davon.\nDa ihr es nicht mehr gewohnt seid, lange aufzubleiben und mit euren "Freunden" ein paar Biere zu bechern, wird das übrigens auch morgen nichts. Tja, manchmal zahlt sich das nächtliche Herumstreunen eben doch nicht aus...</value>
+    </string>
+    <string key="JoinButton">
+      <value>Join</value>
+    </string>
+    <string key="NotMember">
+      <value>Du kannst dem Spiel leider nicht beitreten, da du kein Mitglied der Gruppe {0} zu sein scheinst… Trat erstmal der Gruppe bei und versuche es dann noch einmal ;)</value>
+    </string>
+    <string key="JoinByButton">
+      <value>Typisch! Befehle vergraben und Jahre später wieder ausgraben. Leider wurde aber die Möglichkeit vom Grinch gestohlen. Aber alles halb so wild! Wenn du da ⬇️ hinklickst kannst du auch mitspielen.</value>
+      <value>Aha, ein aufmerksamer Hase, der noch Textbefehle aus der Jugend kennt und nichts mit diesen neumodischen Knöpfen anfangen kann. Naja, versuche es trotzdem mal, ist echt einfach! Einfach da ⬇️ tippen</value>
+    </string>
+    <string key="PlayerVoteCounts">
+      <value>{0}/{1} Spieler haben gewählt.</value>
+    </string>
+    <string key="NoAutoJoin">
+      <value>{0}, bitte denke daran, dass du ebenfalls über den Join-Button joinen musst um Geschenke zu bekommen :).</value>
+      <value>Danke, dass du das Spiel gestartet hast, {0}! Vergiss aber nicht, auch noch selbst zu joinen um Geschenke zu bekommen ;)</value>
+    </string>
+    <string key="GroupNotFound">
+      <value>Gruppe konnte nicht gefunden werden. Führe diesen Befehl entweder in der entsprechenden Gruppe aus, oder füge die Gruppen-ID, den Link oder den Benutzernamen an.</value>
+    </string>
+    <string key="DeletedFromWaitList">
+      <value>Du wurdest von dem Schichtplan für {0} entfernt.</value>
+    </string>
+    <string key="HaveJoined">
+      <!-- {0} = list of people who have joined -->
+      <value>Neu auf dem Schichtplan für euch: {0}</value>
+    </string>
+    <string key="AllowCult">
+      <value>Kult erlauben</value>
+    </string>
+    <string key="AllowTanner">
+      <value>Gerber erlauben</value>
+    </string>
+    <string key="AllowFool">
+      <value>Narr erlauben</value>
+    </string>
+    <string key="EnableSecretLynch">
+      <value>Geheimes Lynchen</value>
+    </string>
+    <string key="RandomMode">
+      <value>Zufallsmodus</value>
+    </string>
+    <string key="AllowExtend">
+      <value>Extend zulassenen</value>
+    </string>
+    <string key="ShowRolesDeath">
+      <value>Rollen nach dem Tod</value>
+    </string>
+    <string key="AllowFlee">
+      <value>Fliehen erlauben</value>
+    </string>
+    <string key="ShowIDs">
+      <value>Spieler-IDs</value>
+    </string>
+    <string key="ShowIDsQ">
+      <value>Sollen die IDs von Spielern angezeigt werden, wenn sie dem Spiel beitreten?\nDies ist vor allem in großen Gruppen hilfreich, da du so Störenfriede bestrafen kannst, auch wenn sie keine Beiträge (mehr) von ihnen vorhanden sind.\nAktuell: {0}</value>
+    </string>
+    <string key="ShowIDsA">
+      <value>Einstellung für Spieler-IDs: {0}</value>
+    </string>
+    <string key="All">
+      <!-- used when searching for groups in all the variants -->
+      <value>Alle</value>
+    </string>
+    <string key="RandomModeQ">
+      <value>Möchtest du den Zufallsmodus aktivieren?\nIm Zufallsmodus wird bei jedem Spielstart zufällig ausgewählt, ob ihr im Chaos-Modus spielt, das geheime Lynchen eingestellt ist und ob die Rollen nach dem Tod angezeigt werden. Außerdem wird auch zufällig entschieden, ob Kult, Narr und der Gerber im Spiel erlaubt sind oder nicht.\nAktuell: {0}</value>
+    </string>
+    <string key="RandomModeA">
+      <value>Zufallsmodus aktiviert: {0}</value>
+    </string>
+	<string key="AllowNSFW">
+      <value>NSFW Gif Packs</value>
+    </string>
+    <string key="AllowNSFWQ">
+      <value>Dürfen Spieler mit NSFW gif packs spielen?\nAktuell:{0}</value>
+    </string>
+    <string key="AllowNSFWA">
+      <value>Neue Einstellung: {0} von NSFW Gifs</value>
+    </string>
+  <string key="TannerEnd">
+    <!-- {0} - Tanner name -->
+    <value>Am Ende steht der Sohn des Chefs 👦 (👺) fast alleine in der großen Halle. Er hat alle rausgeekelt und wurde selbst nicht gefeuert. In seiner Wut steckt er seinen Gameboy 🎮 in die Eiermaschine. Diese macht kurz Lärm und explodiert. {0} hat sein Ziel damit nicht erreicht... Er wird nun gefeuert und verliert trotzdem.</value>
+		<!-- <value>As the sun starts to shine on the village, {0} wakes to the sound of silence. Realising there was no one left, {0} walks and walks, until they stand alone in the middle of the village. Looking at the sight of the corpses strewn all across the village, {0} sighs. Their lifelong dream of being chosen to be lynched by the villagers is as dead as the villagers are. They reach out and touch the rope, that had taken many lives, tenderly, before slipping it around their neck and letting themselves hang freely, with a sad smile on their face.</value>
+    <value>{0} wakes up at dawn, alone. {0} sees how abject a failure they has been, not being able to get the village to satisfy their masochistic desires of being lynched to death. {0} grabs a rope and hangs himself, realising no one can accomplish their dream, since there is no one left.</value>-->
+  </string> 
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} guckt sich um. Alle sind gefeuert. Selbst die Emos, die über die letzen Tage fast sowas wie seine Freunde wurden... Aber nur fast. Beschwingt verlässt {0} die Fabrik und geht nach Hause, um seine Kameras beim Wachmann anzuschmeißen \0/</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Welche Variante? \nAktuell: {0}\nGlückwunsch! Du hast schon mehr als 500 Arbeitsrunden hinter dir und kannst daher dieser Gruppe beitreten: </value>
+  </string>
+  <string key="Skip">
+	<value>Skip</value>
+  </string>
+  <!-- Update 4th April 2021 -->
+  <string key="Sandman">
+	<value>der Betriebsrat 💤</value>
+  </string>
+  <string key="AboutSandman">
+	<value>Der Betriebsrat 💤 kann einmal pro Spiel einen Ruhetag einklagen und dann bleibt die Fabrik für einen Tag geschlossen.</value>
+  </string>
+  <string key="RoleInfoSandman">
+	<value>Du wurdest zum Betriebsrat 💤 gewählt.\nEinmal pro Spiel kannst du für alle Arbeiter einen Ruhetag durchsetzen, sodass am nächsten Tag niemand seine Aktion (Pro oder Contra Ostern) ausführen kann.\n(Zur Erinnerung: Tag und Nacht sind bei Ostern vertauscht. Also Rollen wie Schwarzmaler, Wachmann, (Schutz-)Hase werden inaktiv)</value>
+  </string>
+  <string key="AskSandman">
+	<value>Möchtest du nun einen Ruhetag für morgen durchsetzen?</value>
+	<value>Du kannst etwas, was die Bundesregierung nie schaffen wird: sehr kurzfristig einen Ruhetag durchsetzen. Und zwar bereits für morgen. Willst du das direkt mal versuchen?</value>
+  </string>
+  <string key="SandmanSleepAll">
+	<value>+++EILMELDUNG+++\nDer Betriebstrat 💤 {0} hat für euch einen Feiertag erwirkt, ihr habt alle morgen frei! Macht was Schönes mit der Familie oder so, aber Eier bemalen müsst ihr nicht!\n+++EILMELDUNG+++\n(Zur Erinnerung: Tag und Nacht sind bei Ostern vertauscht. Also Rollen wie Schwarzmaler, Wachmann, (Schutz-)Hase werden inaktiv)</value>
+	<value>+++EILMELDUNG+++\nDie Bundesregierung 🇩🇪 - oh! Entschuldigung! Das haben die nicht hinbekommen. Das war der Betriebsrat, also: Der Betriebsrat 💤 {0} hat einen Ruhetag für morgen erwirkt. Ihr müsst morgen nicht zur Arbeit erscheinen und könnt zu Hause die Eier ausblasen oder was anderes blasen, zum Beispiel Pusteblümchen. Genießt es!\n+++EILMELDUNG+++\n(Zur Erinnerung: Tag und Nacht sind bei Ostern vertauscht. Also Rollen wie Schwarzmaler, Wachmann, (Schutz-)Hase werden inaktiv)</value>
+  </string>
+  <string key="SandmanNight">
+	<value>Heute ist Feiertag (💤). Die Sonne ☀️ scheint, es ist richtig frühlingshaft 🌷🌼🌺🌸 und ihr entspannt alle so richtig, für neue Kraft. 💮</value>
+  </string>
+  <string key="RoleInfoOracle">
+	<value>Du bist der kleine Bruder 🌀\nDu bist klein, du bist nett, du schaust zu deinem großen Bruder auf und so schaust auch du jeden Tag, was in der Fabrik los ist und bist dabei stundenlang an den Bildschirm deines Spielzeugcomputers gefesselt, bei dem die Verkabelung etwas kaputt ist. Immerhin: du siehst zwar nicht, was jemand ist, aber dafür, was jemand ganz eindeutig nicht ist. Aber jemand anderes ist diese Rolle.</value>
+  </string>
+  <string key="Oracle">
+	<value>der kleine Bruder vom Wachmann 🌀</value>
+  </string>
+  <string key="AboutOracle">
+	<value>Als kleiner Bruder vom Wachmann 🌀 erfährst du jeden Tag über einen Arbeiter eine sich noch im Spiel befindliche Rolle, welche dieser Arbeiter __NICHT__ ist.</value>
+  </string>
+  <string key="AboutBlacksmith">
+	<value>Als Färbemaschinentechniker ⚒️ hast du immer etwas magische Farbe dabei, die auch das schwärzeste Ei richtig bunt macht, sodass die Emos niemandem schwarze Eier unterschieben können.</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+	<value>Du bist Metal-Fan 👱🌚 und liebst harte Musik, lange Haare und kleidest dich schwarz ⬛, bis etwas dunkleres erfunden wird. Dennoch bist du ein Osterhase, auch wenn der Wachmann dich als Emo einschätzt!</value>
+  </string>
+  <string key="WolfMan">
+	<value>der Metal-Fan 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+	<value>Als Metal-Fan 👱🌚 kleidest du dich so schwarz ⬛, dass der Wachmann dich als Emo sieht, wenn er seine Nonitore beobachtet. Vielleicht solltest du deinen Kleidungsstil doch überdenken?</value>
+  </string>
+  <string key="RoleInfoLycan">
+	<value>Du bist ein bunter Schwarzmaler! 🐺🌝\nDu gehörst zwar zu den Schwarzmalern, bist aber so farbenfroh bekleidet, dass es schon echt komisch ist! Das verwirrt auch den Wachmann, der dich regelmäßig als fröhlichen Arbeiter sieht, sttat deinen dunklen Gedanken auf die Spur zu kommen.</value>
+  </string>
+  <string key="Lycan">
+	<value>der bunte Schwarzmaler 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+	<value>Der bunte Schwarzmaler 🐺🌝 ist eigentlich Schwarzmaler und auch er malt ständig schwarze Eier, aber da er sich echt farbenfroh kleidet, denkt der Wachmann, einen netten Arbeiter zu sehen.</value>
+  </string>
+  <string key="RoleInfoImam">
+	<value>WHAT IS LOVE? BABY DON'T HURT ME, DONT'T HURT ME! NO MORE!!!!\nDu bist DJ ☮️ und voll in deinem Element! Du legst in der Nacht auf und machst die Party des Jahres! Mit bunten Lichtern und so! Am Morgen sind dann alle müde und verkatert, sodass niemand gefeuert wird. Im Grunde voll friedlich.</value>
+ </string>
+  <string key="Imam">
+	<value>der DJ ☮️</value>
+  </string>
+  <string key="AboutImam">
+	<value>EVERYBOOOOODY! ROCK YOUR BOOOODY! Als DJ ☮️ machst du tagsüber eine Party! Und alle tanzen mit und vergessen darum, dass sie eigentlich jemanden feuern wollten. Das geht auch noch, während der Abstimmung, wofür bibt es Bluetooth Boxen?</value>
+  </string>
+  <string key="AskImam">
+	<value>PARTY TIME! ☮️\nMöchtest Du heute Nacht eine Party machen? Dann wird am Morgen niemand gefeuert. Oder möchtest du noch Musik raussuchen und später die Party des Jahres machen? Ja, Nein, Jein? Aber warte nicht bis 2096.</value>
+  </string>
+  <string key="ImamNoLynch">
+	<!-- {0} - Name des Pazifisten -->
+	<value>Ihr bekommt eine Nachricht: der DJ ☮️, {0}, legt heute Abend auf und das soll die Party des Jahrhunderts werden! Na da darf auf jeden Fall niemand fehlen. Denkt nur dran, vorher noch die Abstimmung zu machen, wer das Unternehmen verlassen soll.</value>
+  </string>
+  <string key="ImamNoLynchNow">
+	<value>DON'T STOP ME NOW, BECAUSE I'M HAVING A GOOD TIME! Oh ja, das ist echt eine mega Party! Da hat der DJ ☮️ nicht zu viel versprochen! Aber irgendwas war noch...</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+	<value>Du bist ein sehr aufmerksamer Hase 📚 und prüfst deine Eier häufiger, sodass dir auffällt, wenn deine Eier ausgetauscht wurden. Mit einem Joker kannst du dich einmal aus der Kündigung wegen schwarzer Eier am Abend rausreden. Beim zweiten Mal wirst du dann aber doch gefeuert, weil es schon komisch ist, ständig schwarze Eier zu haben, oder?</value>
+  </string>
+  <string key="WiseElder">
+	<value>der aufmerksame Hase 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+	<value>Als aufmerksamer Hase 📚 weißt du Bescheid! Du weißt, als einziger, dass schwarze Eier den Leuten untergejubelt werden. so schaust du Abends und Morgens, ob deine Eier ausgetauscht wurden und kannst somit einmal einen Joker ziehen und so deiner Kündigung entkommen. Beim zweiten Mal weißt du zwar Bescheid, aber wirst trotzdem gefeuert. Voll ungerecht! Übrigens: da du aufmerksam bist, kannst du der einflussreichen Person und dem Hausmeister Ihre Arbeit wegnehmen und diese werden dann als normale Maler Eier bemalen, bis sie gefeuert werden.</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Name des Dorfältesten -->
+	<value>Ihr nehmt eure Austauscheier und rennt zum Arbeitsplatz von {0} und versteckt eure Eier. Doch dann seht ihr unheimlich viele Bücher 📚 auf dem Tisch. Da merkt ihr, dass {0} der aufmerksame Hase 📚 ist. Aber zu spät. {0} wird eure Aktion aufdecken und wird nicht gefeuert werden. Aber wenn ihr das nochmal machen solltet, dann sollte auch das nichts mehr bringen. Aber heute geht ihr leer aus.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+	<value>Du schlürfst zum Arbeitsplatz und schaust in deine schlauen Bücher 📚.\nAber was ist denn das? 😮 Schwarze Eier? Die wurden dir doch untergejubelt? Schnell, deinen Joker und du entlkommst diesem Trick der Schwarzmaler. Aber pass besser auf, wenn das nochmal passiert, wirst du gefeuert!</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Name des Jägers -->
+  <!-- {1} - Name des Dorfältesten -->
+	<value>Der Hausmeister 🎯 {0} weiß bescheid! Er wird gefeuert, aber dann soll auch {1} mit raus fliegen, da dieser schon längst Eier schwarz anmalt. Das habt ihr alle gesehen! Aber was ist das? Auf dem Tisch von {1} liegen Bücher 📚 und eine Brille 👓. Da wird euch klar, dass {1} nur ein aufmerksamer Hase 📚 war! Ihr seid so enttäuscht von {0}, dass ihr ihn nicht als Hausmeister, sondern als Standard-Maler 👱 in Erinnerung behalten werdet.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Name des Schützen -->
+  <!-- {1} - Name des Dorfältesten -->
+	<value>Die einflussreiche Person 🔫, {0}, weiß längst Bescheid. {1} ist ein Schwarzmaler und ärgert schon die ganze Belegschaft! Somit wird {1} die Fabrik verlassen müssen. Aber kaum ist {1} aus der Fabrik raus, da bemerkt ihr alle die Bücher 📚 und die Brille 👓 von dem, wie ihr jetzt wisst, aufmerksamen Hasen 📚.\nAb sofort kann {0} ja gerne Maler 👱 sein, aber niemand wird mehr auf ihn hören und so hat er eine Stimme, wie jeder sonst!</value>
+  </string>
+  <string key="RoleInfoThief">
+	<value>Du bist der Dieb. 😈\nAm ersten Tag wählst du einen Arbeiter, dessen Rolle du stiehlst. Du erhälst dann seine Aufgaben und das Equipment und dieser Arbeiter wird zum normalen Maler 👱.</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+	<value>Du bist der Dieb. 😈\nJeden Tag hast du eine 50%-ige Chance, die Aufgabe eines Mitarbeiters zu klauen. Warst du erfolgreich, so übernimmt du Aufgaben und Equipment, während der Mitarbeiter deinem sehr schlechten Beispiel folgen wird und Leute beklauen wird.</value>
+  </string>
+  <string key="Thief">
+	<value>der Dieb 😈</value>
+  </string>
+  <string key="AboutThief">
+	<value>Du bist der Dieb. 😈 Hier gibt es 2 verschiedene Spielmodi: \n[Einmal-Psychopath] Du klaust jemandem am ersten Tag die Rolle und das Equipment und lässt den beklauten als normalen Maler 👱 zurück. Ab sofort übernimmst du alle die Aufgaben.\n[Ständiger Dieb] Du klaust Leuten die Rollen, außer die wollen nicht. In 50% der Fällen wirst du Erfolg haben und neben der Rolle das Equipment klauen, sodass du die Aufgaben des Beklauten komplett übernehmen kannst. Der Beklaute wird dann deinem sehr schlechten Beispiel folgen und an deiner Stelle Leute beklauen. Wer am Ende Dieb ist, wird verlieren und damit das ganze Osterfest versauen. Klauen? Das ist nicht nett!</value>
+  </string>
+
+  <string key="ThiefStealFailed">
+  <!-- {0} - Name des Ziels des Diebes -->
+	<value>Brot kann schimmeln. Was kannst Du eigentlich? {0} das Equipment klauen auf jeden Fall nicht.</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - Name des Ziels des Diebes -->
+	<value>Äh, was? Du willst echt die Aufgabe und alle Arbeitsmittel von {0} klauen, der längst gefeuert ist? Das wird aber nicht klappen...</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - neue Rolle (Dieb oder Dorfbewohner) -->
+	<value>Der Dieb hat dich beklaut und alle Arbeitsmittel mitgenommen. Während der Dieb jetzt deine Aufgabe übernimmt, wirst du als {0} deine Rache planen.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - Name Dieb Ziel -->
+  <!-- {1} - neue Rolle -->
+	<value>Das war doch erfolgreich! Du hast {0} erfolgreich die Arbeitsmittel geklaut und gehst neuen Aufgaben nach:</value>
+  </string>
+  <string key="ThiefToMason">
+  <!-- 0 - Name alter Freimaurer -->
+  <!-- 1 - Name neuer Freimaurer -->
+	<value>Eben war noch {0} dein starker Partner, nun aber wird {1} dir helfen, hochwertige Eier zu bauen. Das wird ein Spaß, sobald er eingearbeitet ist.</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - Namen der Freimaurer Kollegen -->
+	<value>Deine Kollegen in der Fertigung hochwertiger Eier (falls es denn welche neben dir gibt) sind: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+  <!-- 0 - Name alter Kultist -->
+  <!-- 1 - Name neuer Kultist -->
+	<value>{0} hat ein Aussteigerprogramm besucht und will nicht weiter mobben. Er hat im Aussteigerprogramm {1} kennengelernt, dem irgendwie gefällt, was ihr macht und sich euch anschließt. Ich finde das eine klassische Win-Lose-Situation.</value>
+  </string>
+  <string key="ThiefToWolf">
+  <!-- 0 - old wolf's name -->
+  <!-- 1 - new wolf's name -->
+	<value>{0} hat 5 schwarze Eier an die Wand geworfen und ist raus gerannt. Der wird euch kaum mehr unterstützen. {1} wird sicher kein adäquater Ersatz! Aber man nimmt, was man bekommt.</value>
+  </string>
+  <!-- Du hast ein Osterei gefunden! Ich gratuliere! Mache es aber nicht kaputt! Das ist hier sogar noch lustiger, weil Ostern!-->
+  <string key="ThiefTransformNewTeammates">
+  <!-- 0 - Namen Team-Kammeraden -->
+	<value>Solltest Du Kollegen in deiner neuen Rolle haben, werde ich sie Dir jetzt hier auflisten: {0}. Wenn da nichts war bist du alleine. Allein allein, allein allein.</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Name Dieb -->
+	<value>Als {0} keine Lust mehr hatte, Aufgaben zu klauen, hat er damit aufgehört. Ich weiß es doch auch nicht, singt halt Osterlieder oder so!</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - Name Ziel -->
+	<value>So soll es sein, du wirst versuchen {0} zu beklauen! Ob das von Erfolg gekrönt ist, weißt du in spätestens 2 Minuten. Lies zwischenzeitlich ein gutes Buch.</value>
+  </string>
+  <string key="AskThief">
+	<value>Nun, von wem würdest Du gerne die Aufgabe und Arbeitsmittel stehlen?</value>
+  </string>
+
+  <string key="Troublemaker">
+	<value>die Nervensäge 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>Die Nervensäge 🤯 kann ganz schön auf die Nerven gehen. Da passiert es schonmal, dass zwei Arbeiter gefeuert werden, was nie in eurem Sinne war.</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>Du bist die Nervensäge 🤯.\nDu gehst rum und willst eigentlich nur nett sein, aber tatsächlich nervst du alle Arbeiter. Darum passiert es, dass diese Arbeiter dann zwei Arbeiter rauswerfen wollen. Du bist nett, aber halt auch nervig...</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>Willst du heute Nacht durch die Fabrik laufen? Denk daran, dass du mit deiner netten und fröhlichen Art auch etwas sehr nerven kannst!</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>{0} 🤯 geht durch die Fabrik. Eigentlich ist {0} ja echt nett und lebensoffen! Aber euch nervt es, weil so kaum Eier bemalt werden. Mein Tipp: Tasse in die Küche tragen, heiße Schokolade holen, Sahne drauf machen, weiter arbeiten, die Ostertage planen, Geschenke für Tante Hedwig auszusuchen und daran denken, nur einen Arbeiter zu feuern!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>Wusstet ihr, dass Hasen sich nur sechs Sachen merken können? So bekommt Tante Hedwig genügend Geschenke, aber die Nervensäge 🤯 sorgte dafür, dass ihr vergessen habt, dass ihr nicht 2 Arbeiter feuern wolltet und so passiert es: ihr feuert 2 Arbeiter. AAAAAAAAAAAHHHHHHH!</value>
+  </string>
+
+  <string key="Chemist">
+	<value>der Lebensmitteltechniker 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>Der Lebensmitteltechniker 👨‍🔬 experimentiert sehr viel mit neuen Eiern. Dabei sind 50% der Neuschöpfungen super lecker und 50% sind leider giftig. Jeden ungeraden Tag (Tag 1, Tag 3, Tag 5,...) erfindet der Lebensmitteltechniker neue Eierkreationen, die er dann an den geraden Tagen (Tag 2, Tag 4, Tag 6,...) mit einem anderen Mitarbeiter testet. Meist ist ein Ei leider leicht giftig und führt zu einem so langen Arbeiztsausfall, dass wir von einer Kündigung sprechen können. Mal trifft es den Lebensmitteltechneiker, mal sein "Versuchskaninchen".</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>Du bist der Lebensmitteltechniker! 👨‍🔬\nDu entwickelst neue Ostereier. Dabei sind 50% der Neuschöpfungen super lecker und 50% sind leider giftig. An ungeraden Tagen entwickelst du neue Kreationen, an geraden Tagen dann gehst du zu einem Mitarbeiter und ihr probiert die Neukreationen, wovon einer von euch mit neuen Ideen weiter arbeiten wird, aber einer wird durch die leicht giftige Variante so krank, dass er als gekündigt gilt.</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>Nun! Was könnte so ein Ei beinhalten? Du bist ja wie der Verrückte Eismacher. Hier mit Bier experimentieren, da mit Pistazien. Oder doch gleich einmal Tomate-Mozarrella-Basilikum zusammen? Auch Pizzageschmack klingt lecker. Viel Vergnügen beim experimentieren.</value>
+	<value>Du kochst über vor Ideen? Na, dann los! Was immer dir einfällt kannst du ja mal entwickeln, probiert wird später.</value>
+  </string>
+  <string key="AskChemist">
+	<value>Wer ist der Glückliche, der mit dir deine neuesten Kreationen probieren darf?</value>
+	<value>Vanille-Mozarella? Nutella mit KoTZe (Kokos-Trauben-Zetschge+w)? Currywurst? Schokolade? Da hast du dir ja echt einige Sachen überlegt! Wer darf die nun mit dir probieren?</value>
+  </string>
+  <string key="ChemistTargetDead">
+	<value>Am Arbeitsplatz von {0} war niemand. Hm, was ist denn da los? Oha, jetzt siehst du es: {0} arbeitet gar nicht mehr hier. Nun, dann halt keine Verkostung!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>Du hattest Besuch von {0}, dem Lebensmitteltechniker dieser Firma. 👨‍🔬 Er fragt, ob du seiner Eier probieren möchtest, aber du denkst nur an Weihnachten und da passen Eier nicht. Also beschenkst du ihn, was zur Kündigung führen wird.</value>
+  </string>
+  <string key="ChemistSK">
+	<value>Du willst gerade mit {0} deine neueste Kreation probieren, als dir die vielen Geschenke auffallen, schnell! Das ist der Weihnachtsmann 🎅/🔪! Du willst rennen, aber das eine Geschenk sieht echt verlockend aus. Wenn das mal nicht zur Kündigung führt!</value>
+  </string>
+  <string key="ChemistSKPublic">
+  	<value>Was ist denn das bitte? Der Lebensmitteltechniker 👨‍🔬 {0} hat wohl Weihnachtsgeschenke des Weihnachtsmannes 🎅/🔪 angenommen. So jemand kann natürlich nicht für euch arbeiten, macht {0} jetzt auch nicht mehr!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>Du hattest Besuch vom Lebensmitteltechniker 👨‍🔬 und ihr habt seine Eier probiert. Noch in der Nacht bekommst du sehr starke Bauchschmerzen. Die Kreation war wohl leicht giftig. Du wirst es überleben, aber fällst so lange aus, dass du genauso gut gekündigt werden kannst! Gute Besserung!</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>Du besuchst {0} und ihr probiert, ein Ei jeder. Während deines echt lecker schmeckt (merke dir mal das Rezept!) hatte {0} wohl nicht so viel Glück! Er wurde etwas grün um die Nase 🤢 und wird nun sehr lange ausfallen! Du kannst ja zumindest mal eine Karte schreiben!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Opfer des Lebensmitteltechnikers -->
+  <!-- {1} - Wird durch „(Opfer) war (Rolle)“ ersetzt -->
+	<value>Der Lebensmitteltechniker 👨‍🔬 war mehr als kreativ! Ihr erfahrt die neueste Kreation: Nutella-Erdbeere. Leider hatte {0} kein Glück und hat mit saurem Salz eine leicht giftige Sorte erwischt. Da {0} nun lange ausfallen wird, zählt er als gekündigt.\n{1}</value>
+	<value>Der Lebensmitteltechniker 👨‍🔬 war mehr als kreativ! Ihr erfahrt die neueste Kreation: Nussmix. Leider hatte {0} kein Glück und hat mit Wasserstoff-Helium eine leicht giftige Sorte erwischt. Da {0} nun lange ausfallen wird, zählt er als gekündigt.\n{1}</value>
+	<value>Der Lebensmitteltechniker 👨‍🔬 war mehr als kreativ! Ihr erfahrt die neueste Kreation: Macadamia mit Salz. Leider hatte {0} kein Glück und hat mit saurem Salz eine leicht giftige Sorte erwischt. Da {0} nun lange ausfallen wird, zählt er als gekündigt.\n{1}</value>
+	<value>Der Lebensmitteltechniker 👨‍🔬 war mehr als kreativ! Ihr erfahrt die neueste Kreation: Currywurst. Überraschend, dass das schmeckt! Leider hatte {0} kein Glück und hat mit altem Käse eine leicht giftige Sorte erwischt. Da {0} nun lange ausfallen wird, zählt er als gekündigt.\n{1}</value>
+	<value>Der Lebensmitteltechniker 👨‍🔬 war mehr als kreativ! Ihr erfahrt die neueste Kreation: Mozarella mit Basilikum. Leider hatte {0} kein Glück und hat mit Sushi eine leicht giftige Sorte erwischt. Da {0} nun lange ausfallen wird, zählt er als gekündigt.\n{1}</value>
+	<value>Der Lebensmitteltechniker 👨‍🔬 war mehr als kreativ! Ihr erfahrt die neueste Kreation: Maggi Würze. Leider hatte {0} kein Glück und hat mit Bienen-Wachs eine leicht giftige Sorte erwischt. Da {0} nun lange ausfallen wird, zählt er als gekündigt.\n{1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>Du hattest Besuch vom Lebensmitteltechniker 👨‍🔬 {0} und es waren auch echt interessante Sorten dabei. Bei einigen Sorten warst du dir unsicher und hast am Ende wohl eine echt leckere Sorte probiert. Leider war der Lebensmitteltechniker da mehr von sich überzeugt und erwischte eine leicht giftige Sorte. Er wird nun sehr lange ausfallen, du kennst nur eine gute und eine leicht giftige Sorte und das war es jetzt mit den Experimenten, da der Lebensmitteltechniker direkt gekündigt wurde, trotz langer Krankheit.</value>
+  </string>
+  <string key="ChemistFail">
+	<value>Ei Ei Ei Ei Ei! Das war wohl eher nicht so eine gute Sorte, die du da probiert hast! Während {0} eine leckere neue Sorte erwischt hat, wirst du ab sofort zu Hause ans Bett gefesselt sein. Und gekündigt wirst du wohl auch noch! Naja, wer nicht probiert...</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>Der Lebensmitteltechniker 👨‍🔬 hatte sich echt Mühe gegeben und neueste Kreationen probiert. {0}, also der Lebensmitteltechniker 👨‍🔬, ging früher nach Hause und wird wohl auch nie wieder kommen. Naja, seien wir ehrlich, Stinkesocken klingt irgendwie auch nicht bekömlich!</value>
+	<value>Der Lebensmitteltechniker 👨‍🔬 hatte sich echt Mühe gegeben und neueste Kreationen probiert. {0}, also der Lebensmitteltechniker 👨‍🔬, ging früher nach Hause und wird wohl auch nie wieder kommen. Naja, seien wir ehrlich, alter Fisch klingt irgendwie auch nicht bekömlich!</value>
+	<value>Der Lebensmitteltechniker 👨‍🔬 hatte sich echt Mühe gegeben und neueste Kreationen probiert. {0}, also der Lebensmitteltechniker 👨‍🔬, ging früher nach Hause und wird wohl auch nie wieder kommen. Naja, seien wir ehrlich, rohes Huhn klingt irgendwie auch nicht bekömlich!</value>
+	<value>Der Lebensmitteltechniker 👨‍🔬 hatte sich echt Mühe gegeben und neueste Kreationen probiert. {0}, also der Lebensmitteltechniker 👨‍🔬, ging früher nach Hause und wird wohl auch nie wieder kommen. Naja, seien wir ehrlich, Brechnuss klingt irgendwie auch nicht bekömlich!</value>
+	<value>Der Lebensmitteltechniker 👨‍🔬 hatte sich echt Mühe gegeben und neueste Kreationen probiert. {0}, also der Lebensmitteltechniker 👨‍🔬, ging früher nach Hause und wird wohl auch nie wieder kommen. Naja, seien wir ehrlich, Herbstzeitlose klingt irgendwie auch nicht bekömlich! Und passt auch nicht zu Ostern!</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>Du rennst hoch motiviert zu {0}, der aber nicht am Arbeitsplatz war. Du wartest noch, aber {0} kam nicht mehr. Dann halt mal keine Verkostung!</value>
+  </string>
+
+
+  <string key="ZombiesList">
+	<value>Das Mobbing-Team 👥 besteht aktuell aus: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>der Eismacher 🐺❄️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Du hast da was falsch verstanden! Es geht um Ei, nicht um Eis. Du als Eismacher 🐺❄️ aber wirst ständig Leuten Eis anbieten. Das führt nicht selten zu einem Brain-Freeze, was den nicht so Glücklichen unfähig macht, seinen Aufgaben nachzukommen. Damit spielst du auch noch den Schwarzmalern in die Karten.</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>Der Eismacher 🐺❄️ hat vieles falsch verstanden! Es geht hier um Ei, nicht Eis. Mit seinem Eis, das er Leuten schenkt, will er nicht mal Freude verbreiten, sondern die Schwarzmaler unterstützen. Denn das Eis führt zu Brain-Freeze, sodass die Beschenkten ihre Aufgaben nicht mehr verfolgen. Aber man gewöhnt sich dran und so werden einige der Beschenkten am nächsten Tag keinen Brain-Freeze erleben.</value>
+  </string>
+  <string key="AskFreeze">
+	<value>Wen willst du heute beschenken und somit einfrieren?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>Die Schwarzmaler 🐺🐺 bestehen aus: {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>Die Schwarzmaler 🐺🐺 bestehen aus: {0}\nOh, und natürlich {1}, dem Eismacher 🐺❄️.</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>Nachdem {0} gefeuert wurde, nimmst du seinen Platz ein und wirst nicht nur Emo, sondern Ober-Emo. 🐺⚡️ Du bist jetzt im Schwarzmaler-Team 🐺🐺 mit {1} und dem Eismacher 🐺❄️ {2}.</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>Nachdem {0} gefeuert wurde, nimmst du seinen Platz ein und wirst der depressive Neuling. 🐶 Du bist jetzt im Schwarzmaler-Team 🐺🐺 mit {1} und dem Eismacher 🐺❄️ {2}.</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>Nachdem {0} gefeuert wurde, nimmst du seinen Platz ein und wirst ein Emo. 🐺 Du bist jetzt im Schwarzmaler-Team 🐺🐺 mit {1} und dem Eismacher 🐺❄️ {2}.</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>Nachdem {0} gefeuert wurde, nimmst du seinen Platz ein und wirst der bunte Schwarzmaler. 🐺🌝 Du bist jetzt im Schwarzmaler-Team 🐺🐺 mit {1} und dem Eismacher 🐺❄️ {2}.</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+  	<value>Nachdem {0} gefeuert wurde, nimmst du seinen Platz ein und wirst der bunte Eismacher. 🐺❄️ Du bist jetzt im Schwarzmaler-Team 🐺🐺 mit diesen "Freunden": {1}.</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Gerade war {0} noch der Goldhase, nun wird er zum neuen Eismacher! 🐺❄️ Klingt lecker!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>Nachdem {0} gefeuert wurde, kommt plötzlich dein Einsatz und du wirst zum Emo! 🐺 Du bist jetzt im Team 🐺🐺 mit {1} und dem Eismacher 🐺❄️ {2}.</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>Der Eismacher {0} hat zum heutigen Tage gekündigt. Ohne Eismacher ist aber auch doof, umso besser, dass {1} der neue Eismacher 🐺❄️ sein wird.</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Du willst zu jemandem hüpfen, aber plötzlich stellt sich ein großer Eisbecher in deinen Weg 🐺❄️ und du kannst nicht anders, als alles aufzuessen, obwohl du weißt, dass das zum Brain-Freeze führen wird und du den ganzen Tag dran essen wirst.</value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Das ist auch selten! Während du deine neuen Ostereier vorstellst, stellt der Eismacher 🐺❄️ dir einen Eisbecher neuer Eis-Kreationen entgegen. Die Gefahr ignorierend greifst du zu und isst auf. Dabei vergesst ihr völlig, die neuen Ei-Kreationen zu verkosten.</value>
+  </string>
+  <string key="ZombieFrozen">
+    <value>Hochmotiviert, das Mobbing auf die Spitze zu treiben, siehst du einen großen Eisbecher 🐺❄️ an deinem Platz. Mit Nüssen und Nuss-Nougat-Sauce? Da greifst du zu, die Gefahr des Brain-Freeze ignorierend. So gut gelaunt hast du keine Lust auf Mobbing, aber hast auch keine Zeit, es ist ein echt großer Eisbecher!</value>
+  </string>
+  <string key="CHFrozen">
+    <value>Den Mobber (m) ist das Handwerk zu legen, da sind wir uns wohl einig. An deinem Platz jedoch findest du einen großen Eisbecher vor 🐺❄️. Dann müssen die Mitarbeiter*innen (m/w/x) wohl ohne dich auskommen. Schlagsahne ist da einfach zu stark.</value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+	<value>Nanu! Ein Eisbecher 🐺❄️ hat dich voll erwischt. So richtig nett mit Früchten garniert versperrt er dir jede Sicht, sodass du keine Informationen über irgendwen hast. Dafür leckeres Eis, ist doch auch was, oder?</value>
+  </string>
+  <string key="GAFrozen">
+    <value>An deinem Arbeitsplatz wirst du sehr überrascht. Eisbecher 🐺❄️ vs. Schutzhasentätigkeit 1:0. Sieht aber auch echt lecker aus so mit Kürbiskernöl.</value>
+  </string>
+  <string key="SKFrozen">
+	<value>Die Geschenke 🎁 müssen warten, denn heute wurdest du beschenkt. Ein großer Eisbecher 🐺❄️ mit heißen Früchten. Das geht auch an Weihnachten, aber schmeckt schon sehr lecker! Nur dein Hirn tut plötzlich weh.</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Bereit zu klauen und die besten Rollen anzunehmen, fällt dir der Eisbecher am Arbeitsplatz auf. 🐺❄️ Mit den bunten Streuseln macht der schon echt was her, da muss das Klauen mal warten. Aua, Brainfreeze!</value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>Oha! Ein sehr großer Eisbecher 🐺❄️ mit überraschenden Kreationen trohnt auf deinem Arbeitsplatz. Bevor der schmilzt wirst du dich persönlich drum kümmern. Aber was ist das? Ein Brain-Freeze wird dich heute außer Gefecht setzen. Dafür war es lecker, man muss Prioritäten setzen.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>Deine Eisbecher kommen nicht so gut an und gerade als du {0} mit dem Eisbecher überraschen möchtest, kommt der Schutzhase 👼 vorbei. Er zwingt dich, den Becher selbst zu essen und mitzunehmen. Du erleidest einen Brain-Freeze und hast niemanden mit Eis "beglückt! Machmal hat man Pech und manchmal hat man kein Glück!</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Du platzierst deinen Eisbecher 🐺❄️ gezielt bei {0}. Er wird dem hübsch dekorierten Becher nicht widerstehen können und wird sicher heut mal nicht Eier anmalen, schon gar nicht bunt!</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>Der Eismacher {0} 🐺❄️ wollte mal wieder seinen gefürchtet leckeren Eisbecher platzieren, aber das gefiel dem Weihnachtsmann 🎅/🔪 nicht so wirklich.\nDer Weihnachtsmann 🎅/🔪 sorgt für eine fristlose Kündigung des Eismachers 🐺❄️ {0}.</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>Nun, da der letzte Schwarzmaler gekündigt wurde, musst du wohl übernehmen. Statt Eis wirst nun du die schwarzen Eier verstecken 🐺. Ob das mehr Freude bringen wird?</value>
+  </string>
+  <string key="SnowFrozeHunter">
+	<!-- 0 - Snow Wolf's name -->
+	<value>Der Eismacher 🐺❄️ {0} hat sich verkalkuliert und wollte den Hausmeister 🎯 mit einem großen Eisbecher einfrieren. Das gefiel dem Hausmeister aber gar nicht und er zwingt {0} selbst den Becher Eis zu essen. Kaum hat der Eismacher 🐺❄️ selbst einen Brainfreeze erlieten, nimmt der Hausmeister 🎯 ihn und sperrt ihn in eine Tiefkühltruhe ein. Mein Tipp: {0} feuern, die Tiefkühtruhe nie berühren und immer für Strom sorgen.</value>
+  </string>
+  <string key="DGTransformToLycan">
+	<!-- 0 - target's name -->
+	<!-- 1 - teammates's name -->
+	<value>{0} wurde fristlos gekündigt, du wirst nun der neue bunte Schwarzmaler 🐺🌝. Das verwirrt den Wachmann, aber du wirst deinen sehr bunten Kleidungsstil nicht überdenken. Sollte es mehr Emos geben, sprich dich mal mit {1} ab.</value>
+  </string>
+  <string key="NegSeerSees">
+	<!-- 0 - target's name -->
+	<!-- 1 - role that they are not -->
+	<value>Du solltest vielleicht mal die Kabel prüfen, weißt aber, dass {0} NICHT {1} ist!</value>
+	<value>Das ist Spielzeug, keine ernstzunehmende Technik. Aber immerhin weißt du jetzt, dass {0} NICHT {1} sein kann!</value>
+  </string>
+  <string key="AllowThiefQ">
+	<value>Willst du den Dieb 😈 als Rolle zulassen?\nAktuell: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+	<value>So soll es sein! Neue Einstellung für den Dieb 😈: {0}</value>
+  </string>
+
+  <string key="ThiefFullQ">
+	<value>Soll der Dieb 😈 jede Nacht aktiv sein?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+	<value>Aktuelle Einstellung für den Dieb😈: {0}, jede Nacht aktiv zu sein</value>
+  </string>
+  <string key="AllowThief">
+	<value>Dieb 😈 erlauben</value>
+  </string>
+  <string key="ThiefFull">
+	<value>Dieb-Häufigkeit</value>
+  </string>
+
+  <string key="SecretLynchResultFull">
+ <!-- 0 - Falls "SecretLynchResultEach" oder "SecretLynchResultNumber" aktiv sind die Liste -->
+	<value>Das Ergebnis der heutigen Abstimmung: \n{0}</value>
+  </string>
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Anzahl der Stimmen -->
+  <!-- 1 - Gelynchter Spieler -->
+  <!-- 2 - Liste, wer {1} gewählt hat -->
+	<value>{0} Stimme(n) für {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Anzahl der Stimmen -->
+  <!-- 1 - Gelynchter Spieler -->
+	<value>{0} Stimme(n) für {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+	<value>Geheim: Anzahl der Stimmen anzeigen</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+	<value>Sollen die Anzahl der Stimmen bei geheimen Lynchen angezeigt werden?\nAktuell: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+	<value>Wenn geheimes Lynchen aktiviert ist, wird am Ende der Wahl: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+	<value>Geheim: Wählende</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+	<value>Sollen die Namen der Wähler angezeigt werden? Diese Einstellung greift nur bei Geheimen Lynchen und wenn die Anzahl der Stimmen angezeigt wird\nAktuell: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+	<value>Ist geheimes Lynchen aktiviert und die Anzahl der Stimmen wird angezeigt, dann wird der Name der Wähler eines Gewählten: {0}</value>
+  </string>
+
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
+	<value>Komisch... Ihr seid zusammen gekommen, um zu wählen, wen ihr heute mobben wollt. Doch irgendwer fehlt... {0}! Wo der sich wohl rumtreibt?</value>
+  </string>
+
+  <string key="Peace">
+  <!-- Used for Imam's button -->
+	<value>PARTY!</value>
+	<value>PARTY HARD!</value>
+	<value>PARTY ALS GÄBE ES KEIN MORGEN!</value>
+	<value>Einladung verschicken!</value>
+	<value>Andi B. Scheuer</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
+	<value>Plötzlich läuft Musik in der ganzen Halle ☮️! Alle stehen auf und tanzen. Sei kein Kollegenschwein und tanze mit, gefeuert wird heute sowieso nicht mehr!</value>
+  </string>
+
+  <string key="ThiefStoleYourRoleThief">
+    <value>Dir wurde die Rolle gestohlen! Du bist nun der neue Dieb 😈 und kannst nächste Nacht jemandem seine Arbeitsmittel klauen.</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Dir wurde deine Rolle gestohlen! 😈  Du bist jetzt ein einfacher Maler 👱 und trägst dazu bei, dass alle Eier bis Ostern bemalt werden!</value>
+  </string>
+
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Oh, wie nett! Der Weihnachtsmann 🎅/🔪 war da und brachte Geschenke mit. Aber solltest du dich nicht auf Eier konzentrieren</value>
+  </string>
+
+  <string key="ThiefTeamEnd">
+	<value>Team Dieb</value>
+  </string>
+
+  <string key="StealKiller">
+    <value>Weihnachten klauen? Bist du denn der Grinch 🟩? Fest steht, dass der Weihnachtsmann 🎅/🔪 sich nicht beklauen lies und stattdessen dich anschwärzt. Pack am besten schonmal deine Sachen zusammen!</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used in public when Thief steals SK -->
+    <value>Der Dieb 😈, {0}, wollte wohl den Weihnachtsmann 🎅/🔪 beklauen. Das wollt ihr jetzt nicht mehr dulden und werdet {0} kündigen.</value>
+  </string>
+  <string key="BeholderSeerStolen">
+	<value>Der Dieb 😈 hat dem Wachmann das Passwort abgenommen! Während {0} nun sicher einen super Überblick über die Monitore behält, wird {1} sich wohl mehr auf das Eier anmalen konzentrieren.</value>
+  </string>
+
+  <string key="Lang">
+    <value>Sprache wechseln</value>
+  </string>
+  <string key="Mode">
+    <value>Spielmodus</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Spielerlimit</value>
+  </string>
+  <string key="EndRoles">
+    <value>Rollenanzeige am Ende</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Maximale Extend-Zeit</value>
+  </string>
+  <string key="DayTimer">
+    <value>Dauer der Nacht</value>
+  </string>
+  <string key="NightTimer">
+    <value>Dauer des Tages</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Dauer des Wählens am Feierabend</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Rolleneinstellungen</value>
+  </string>
+  <string key="Mechanics">
+	<value>Spielmechaniken</value>
+  </string>
+  <string key="GroupSettings">
+	<value>Gruppeneinstellungen</value>
+  </string>
+  <string key="Timers">
+	<value>Zeiteinstellungen</value>
+  </string>
+  <string key="Done">
+	<value>Fertig!</value>
+  </string>
+  <string key="Back">
+	<value>Zurück</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Spielerliste mischen</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Die Spielerliste jedes mal neu mischen? Aktuell: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>Die Spielerliste wird jedes mal neu gemischt: {0}</value>
+  </string>
+
+  <string key="AboutGraveDigger">
+	<value>Du bist das Alien 👽/☠️. Jeden Tag sammelst du die Gefeuerten mit deinem UFO 🛸 ein und wirst sie untersuchen, um Erkenntnisse über diese Welt zu erlangen. Nur hintergehen sollte man dich besser nicht, sonst kann dein Chip sehr ungünsig wirken.</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>Der erste Mann auf dem Mond war Neil A. Liest man das rückwärts... Ja, es ist nicht vom Mond, aber das Alien 👽/☠️ ist trotzdem von einem ganz anderen Planeten mit seinem UFO 🛸 hergekommen. Es holt sich die gefeuerten Arbeiter, um diese zu untersuchen und Erkenntnisse draus zu gewinnen. Doof nur, wenn es hintergangen werden soll. Denn dann wird das Alien 👽/☠️ dem Angreifer einen Chip einpflanzen, sodass dieser sich selbst kündigen wird. Wow!</value>
+  </string>
+  <string key="GraveDigger">
+	<value>das Alien 👽/☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>Da niemand neu gefeuert wurde hast du aktuell nichts zu tun. Flieg doch mal zur Ark-Galaxis, da soll es einen neuen KingBurger geben.</value>
+    <value>Da niemand neu gefeuert wurde hast du aktuell nichts zu tun. Flieg doch mal zur Bloah-Galaxis, da soll es einen neuen CFK (Cosmic F. Kennedy) geben.</value>
+  </string>
+  <string key="DigGraves">
+	<value>Du schwebst mit deinem UFO 🛸 und sammelst {0} ein. Hoffentlich hast du das nötige Werkzeug an Bord, um wirklich alles über diese Spezies zu erfahren.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>Als du gerade die neuen Kündigungen in der Fabrik in Erfahrung bringen willst, um diese Seelen einzusammeln und zu sezieren, siehst du einen echt großen Eisbecher ❄️ mit Sirup. Du probierst diese ungewohnte Speise, als du einen BrainFreeze erlebst. Heute wirst du nicht mehr UFO 🛸 fliegen können.</value>
+  </string>
+  <string key="GraveDiggerNotHome">
+	<value>Die Emos wollen zum Büro von {0}, aber das Büro ist leer. Alles was ihr seht, ist ein ungewohnter Schlüssel. Scheint von einem UFO 🛸 zu sein! Ihr habt wohl das Büro des Aliens 👽/☠️ gefunden.</value>
+  </string>
+  <string key="WolfFellWolves">
+	<value>Die ganzen Schwarzmaler laufen zum Büro von {0}, dafür müsst ihr über den Hof. Plötzlich grelles Licht und {1} hebt vom Boden ab. Kurz später ist er im UFO 🛸. Den seht ihr nie wieder lebendig! Kündigung durch Tod, wäre meine Diagnose. Und das Alien 👽/☠️ in Ruhe lassen.</value>
+  </string>
+  <string key="WolfFell">
+	<value>Du willst gerade einparken, als der Radar anzeigt, dass {0} hochgezogen wird. Du hast wohl einen der Schwarzmaler 🐺 auf dem Weg zu deinem geheimen Büro erwischt. Würde ich mal aufschneiden und genauer untersuchen.</value>
+  </string>
+  <string key="KillerStumbled">
+	<value>Du hast {0} ein Geschenk gegeben. Voll nett. Auf dem Rückweg fällt dir ein grelles Licht auf, dem du gerade noch ausweichen kannst! Leider fallen alle anderen Geschenke runter und sind nun nutzlos...</value>
+  </string>
+  <string key="KillerRandomKill">
+	<value>Auf dem Weg zu {0}s Arbeitsplatz fällt dir auf, dass du nur nutzlose Geschenke hast 👽/☠️. Du entscheidest dich, einfach schnell zum nächsten Arbeitsplatz zu schauen, in diesem Fall wäre das {1}. Du legst dein Geschenk ab und verschwindest wieder.</value>
+  </string>
+  <string key="GuardBlockedRandomKiller">
+	<value>Du möchtest gerade {0} ein Geschenk unterjubeln, als dich der Schutzhase 👼 sieht und dich zurück jagt. Ich glaube, er kennt deine Dienstnummer nicht, immerhin.</value>
+  </string>
+  <string key="HunterFell">
+	<value>Das Mobbing wird wohl weiter gehen, fest steht nur, dass {0} niemanden mobbt. Doch was ist denn das? Auf dem Rückweg wird alles hell und du schwebst. Du kannst fliegen? Fast, das UFO 🛸 hat dich erwischt! Das Alien 👽/☠️ mag wohl keine Gleichberechtigung! Der Laser ist das letzte, was du siehst, bevor du stirbst. Besonders traurig, in der Firma wird man denken, du wärst nur gefeuert und wärst im Ruhestand.</value>
+  </string>
+  <string key="HunterFellDigger">
+	<value>Plötzlich liegt {0} auf deinem Seziertisch im UFO 🛸. Ein Namensschild verrät dir, das ist der Gleichstellungsbeauftragte 💂‍♀️. Ist Sexismus und Mobbing hier nicht normal? Interessiert nutzt du diese Gabe und schaust dir den Körper genauer an.</value>
+  </string>
+  <string key="CultFell">
+	<value>Plötzlich liegt {0} auf deinem Seziertisch im UFO 🛸. Das blöde Grinsen verrät dir, dass du einen Mobber 👤 erwischt hast, der wohl dich mobben wollte. Was ist das Tolle am Mobbing? interessiert fängst du deine Arbeit an.</value>
+  </string>
+  <string key="CultConvertGraveDigger">
+	<value>Auf dem Weg zum Büro von {1} wird es urplötzlich sehr hell und {0} schwebt immer höher. Was wollt ihr denn beim Alien 👽/☠️? Schnell rennt ihr los, um nicht auch noch im UFO 🛸 zu landen.</value>
+  </string>
+  <string key="ChemistFell">
+	<value>Auf dem Weg zu {0} wirst du plötzlich von einem Lichtstrahl 🛸 erwischt und dir wird klar, dass das Alien 👽/☠️ eine denkbare schlechte Wahl zum Eierprobieren ist! Leider kommt diese Einsicht zu spät. Du kannst überleben, aber deiner Tätigkeit als Lebensmittelkontrolleur wirst du in dieser Fabrik nicht mehr nachkommen können.</value>
+  </string>
+  <string key="ChemistFellDigger">
+	<value>Plötzlich liegt {0} auf deinem Seziertisch im UFO 🛸. Die interessant riechenden Eier verraten dir, dass das der Lebensmittelkontrolleur 👨‍🔬 sein muss. Wie ist man so kreativ? Das wird Mittelpunkt deiner Forschung an {0} werden.</value>
+  </string>
+  <string key="HarlotFell">
+	<value>Als Hase 💋 machst du dich auf den Weg, um mehr über {0} in Erfahrung zu bringen. Dabei merkst du, dass du den Alien 👽/☠️ erwischt hast, der dich ins UFO 👽/☠️ lockt.</value>
+  </string>
+  <string key="HarlotFellDigger">
+	<value>Na, das ist doch was! {0}, der Hase 💋 wollte deine Profession sehen, was du verhindern konntest und stattdessen den Hasen 💋 in dein UFO locken konntest.</value>
+  </string>
+  <string key="HarlotVisitDigger">
+	<value>Du willst wissen, was {0} macht. Aber was ist das? Ein UFO Schlüssel? Was sollst du denn über ein Alien 👽/☠️ in Erfahrung bringen können. Geh lieber wieder an die Arbeit!</value>
+  </string>
+  <string key="GAFell">
+	<value>Irgendwie scheint {0} was gegen dich zu haben. Liegt es daran, dass {0} ein Alien 👽/☠️ ist? Auf jeden Fall fühlt sich der kalte Tisch unangenehm an!</value>
+  </string>
+  <string key="GAFellDigger">
+	<value>Plötzlich liegt {0} auf deinem Seziertisch im UFO 🛸. Als Schutzhasen 👼 ist man besonders interessant für deine Arbeit.</value>
+  </string>
+  <string key="ThiefFell">
+	<value>Du schleichst dich zu {0}, um alles zu klauen, was die Arbeit ausmacht, aber kommst mit der modernen Technik des Aliens 👽/☠️ nicht klar. Zu allem Überfluss folgt noch die Kündigung.</value>
+  </string>
+  <string key="ThiefFellDigger">
+	<value>{0} wollte dich gerade eben bestehlen 😈, was aber an deiner neuen Technik gescheitert ist. Du bewirkst noch die fristlose Kündigung und wirst sicher bald noch mehr interessante Fabrikarbeiter bei dir begrüßen dürfen.</value>
+  </string>
+  <string key="ArsonistFell">
+	<value>Was war denn bitte das für ein Plan? Warum willst du den Alien 👽/☠️ anschwärzen? Statt ihn anzuschwärzen, wirst nun du gekündigt.</value>
+  </string>
+  <string key="ArsonistFellDigger">
+	<value>Sachen gibt es! Du findest heraus, dass {0}, der Einunddreißiger ⚖️/🔥 ist und drehst direkt den Spieß um. Bevor er dich anschwärzen kann, schwärzt du schnell ihn an und rettest damit auch deinen Bund (oder wie das heißt).</value>
+  </string>
+  <string key="DefaultFellPublic">
+	<value>Ihr vermisst {0} gerade, da fällt euch der komische Gestank auf, riecht irgendwie verbrannt. So als wäre ein UFO 🛸 unterwegs und ein Alien 👽/☠️ unter euch.\n{1}</value>
+  </string>
+  <string key="HarlotFellPublic">
+	<value>Ihr vermisst den Hasen 💋 {0} gerade, da fällt euch der komische Gestank auf, riecht irgendwie verbrannt. So als wäre ein UFO 🛸 unterwegs und ein Alien 👽/☠️ unter euch.</value>
+  </string>
+  <string key="ZombieFellPublic">
+	<value>Ihr vermisst {0} gerade, da fällt euch der komische Gestank auf, riecht irgendwie verbrannt. So als wäre ein UFO 🛸 unterwegs und ein Alien 👽/☠️ unter euch. Aber das gute ist, dass {0} Mobbing betrieb 👤, auch wenn wohl das Mobbing nicht mit ihm die Firma verließ.</value>
+  </string>
+  <string key="ThiefFellPublic">
+	<value>Endlich wird {0} es aufgeben und nicht mehr Leute beklauen 😈. Den Alien 👽/☠️ beklaut man aber auch einfach nicht!</value>
+  </string>
+  <string key="WolfFellPublic">
+	<value>Die Schwarzmaler verloren wohl {0} an das Alien 👽/☠️, was ein unschönes Ende der beruflichen Laufbahn.\n{1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>Du werkelst am UFO 🛸, als der Weihnachtsmann 🎅/🔪 dich überrascht. Scheinbar hast du noch nicht verstanden, dass Geschenke hier nicht passen und nun wirst du gefeuert. Hoffentlich ist es immerhin ein schönes Geschenk!</value>
+  </string>
+  <string key="SerialKillerSpotted">
+	<value>Du läufst gerade mit vielen Geschenken durch die Firma, als du {0}, das Alien 👽/☠️, bemerkst. Mehr Beschenkte, mehr Chaos, alleine heute 2 Beschenkte.</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>Du werkelst am UFO 🛸, als du Schwarzmaler 🐺 dir ein sehr schwarzes Ei unterjubelt und verschwindet. Du denkst, Hauptsache ein bemaltes Ei und gehst damit auch noch solz zum Chef!</value>
+  </string>
+  <string key="WolvesSpotted">
+	<value>Ihr wollt alle gemeinsam {0} das eine oder andere schwarze Ei unterjubeln. Dabei erwischt ihr aber das Alien 👽/☠️ was das Ei dankend annimmt und geht. Na gut, Hauptsache die schwarzen Eier werden verteilt.</value>
+  </string>
+  <string key="WolvesSpottedDiggerPublic">
+	<value>Ihr vermisst {0} gerade, als ihr das UFO 🛸 im Hof bemerkt. Wenn das UFO da steht, ist wohl das Alien 👽/☠️ nicht mehr Teil der Belegschaft! Die Schwarzmaler 🐺 haben wohl wieder Erfolg gehabt.</value>
+  </string>
+  <string key="KillerSpottedDiggerPublic">
+	<value>{0} fehlt euch jetzt doch. Da merkt ihr die Weihnachtsgeschenke in der Hand. Das Alien 👽/☠️ {0} ist wohl auf den Weihnachtsmann 🎅/🔪 reingefallen.</value>
+  </string>
+
+
+
+  <string key="AllowArsonist">
+	<value>31er/Einunddreißiger</value>
+  </string>
+  <string key="AllowArsonistQ">
+	<value>Einunddreißiger erlauben? Momentan: {0}</value>
+  </string>
+  <string key="AllowArsonistA">
+	<value>Einunddreißiger sind nun {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Maßenkarambolage</value>
+  </string>
+  <string key="BurningOverkillQ">
+	<value>Einen Einunddreißiger und einen Weihnachtsmann im selben Spiel erlauben? Könnte zu einem ganz schönen Durcheinander führen.\nAktuell: {0}</value>
+  </string>
+  <string key="BurningOverkillA">
+	<value>Ein Einunddreißiger und ein Weihnachtsmann im selben Spiel sind nun {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>Du bist der Einunddreißiger 🔥, kurz 31er. Dein Lebensinhalt besteht darin, Leute anzuschwärzen und so eine Maßenkündigung herbeizuführen. Dafür untersuchst du jeden Tag einen Mitarbeiter genau, bis du einen Kündigungsgrund findest. Jeder hat Leichen im Keller. Und wenn du eine Liste mit Namen hast, rennst du zum Chef und alle auf der Liste werden gekündigt. Nennt man auch Snitchen, du Snitch. Versteck dich besser, du bist nicht sehr beliebt!</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>Paragraph 31 Betäubungsmittelgesetz! Der Einunddreißiger⚖️/🔥, kurz 31er, sorgt für Maßenkündigungen. Nachdem er täglich einen Mitarbeiter auf seine Liste nimmt rennt er zum Chef, welcher notgedrungen alle auf der Liste kündigen wird. So gehasst kannst er nur gewinnen, wenn er ganz alleine angestellt bleibt!</value>
+  </string>
+  <string key="Arsonist">
+	<value>der 31er ⚖️/🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>Wen willst du heute genauer untersuchen? Oder doch snitchen?</value>
+  </string>
+  <string key ="ArsonistVisitKiller">
+	<value>Der 31er ⚖️/🔥 {0} hat versucht, den Weihnachtsmann 🎅/🔪 zu untersuchen, was die Elfen sahen und so wurde der 31er verraten und endlich gekündigt.</value>
+  </string>
+  <string key="Spark">
+	<value>Snitchen</value>
+  </string>
+  <string key="Doused">
+	<value>Du suchst {0} in allen Büchern, Akten und im Intranet. Und tatsächlich wirst du fündig! {0} locht sich immer ein und schläft dann erstmal eine Stunde.</value>
+	<value>Du suchst {0} in allen Büchern, Akten und im Intranet. Und tatsächlich wirst du fündig! {0} bezahlt in der Süßigkeitenkiste nie, was er entnimmt.</value>
+	<value>Du suchst {0} in allen Büchern, Akten und im Intranet. Und tatsächlich wirst du fündig! {0} lügt ständig, selbst bei Kleinigkeiten.</value>
+	<value>Du suchst {0} in allen Büchern, Akten und im Intranet. Und tatsächlich wirst du fündig! {0} malt sehr unordentlich.</value>
+	<value>Du suchst {0} in allen Büchern, Akten und im Intranet. Und tatsächlich wirst du fündig! {0} zerbricht täglich mindestens zehn Eier.</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>Der 31er ⚖️/🔥 ist zum Chef gerannt und wollte dich kündigen lassen, aber der Schutzhase 👼 konnte den Chef überzeugen, dass deine Vergehen nicht ernst sind und du eigentlich super Arbeit leistest.</value>
+  </string>
+  <string key="GuardSavedFromFire">
+	<value>Du konntest den Chef überreden, dass {0}, angezeigt vom 31er ⚖️/🔥, eigentlich wirklich gute Arbeit leistet und seine Anstellung retten. Gute Arbeit!</value>
+  </string>
+  <string key="CleanDoused">
+	<value>Da du {0} nicht besonders schützen musstest, hast du im Personalcomputer geschaut und hast einige Delikte von {0} entdeckt, die du löschen konntest. Das sollte dem 31er ⚖️/🔥 die Argumente klauen.</value>
+  </string>
+  <string key="Burning">
+	<value>Es ist Feierabend und ihr merkt eine lange Liste an Kündigungen. Das darf doch nicht wahr sein! Der 31er ⚖️/🔥 hat zugeschlagen und Argumente gegen einige gefunden!\nBereits gekündigt:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>Die Fabrik sieht eher zerstört aus, alle Maschinen stehen still. Nur der 31er ⚖️/🔥 grinst blöde und trägt den Sieg davon. Aber Ostern wird das nicht retten!</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>Jeder hat Leichen im Keller und deine sind wohl jetzt öffentlich, was zu deiner fristlosen Kündigung geführt hat! Blöder 31er ⚖️/🔥</value>
+  </string>
+
+
+  <string key="Augur">
+	<value>der Nerd 🤓/🦅</value>
+  </string>
+  <string key="AugurSees">
+	<value>Du hackst dich in den Computer und plötzlich eine Fehlermeldung: "Die gesuchte Vakanz {0} ist unbesetzt."</value>
+	<value>Du hackst dich in den Computer und plötzlich eine Fehlermeldung: "Die gesuchte Stelle {0} ist aktuell in dieser Fabrik nicht besetzt."</value>
+  </string>
+  <string key="AboutAugur">
+	<value>Du bist der Nerd 🤓/🦅. Du hackst dich in den Computer, um herauszufinden, wlche Stellen unbesetzt sind. Besonders angenehm, der Computer wird dir nie dieselbe Vakanz mehr als einmal nennen. Kannst dich ja mal bewerben.</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>Du bist der Nerd 🤓/🦅. Du hackst dich in den Computer, um herauszufinden, wlche Stellen unbesetzt sind. Besonders angenehm, der Computer wird dir nie dieselbe Vakanz mehr als einmal nennen. Kannst dich ja mal bewerben.</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>Der Computer spuckt keine neue Vakanz aus, du kennst wohl alle freuíen Stellen in der Fabrik.</value>
+  </string>
+  <string key="WolvesVisitBurn">
+	<value>Alle Schwarzmaler wollen {0} ein schwarzes Ei unterschieben. Doch ihr stellt euch sehr ungeschickt an und so fällt {1} mit zu den Leuten, die durch Petzen vom 31er ⚖️/🔥 gekündigt werden.</value>	  
+  </string>
+  <string key="DefaultVisitBurn">
+	<value>{0} hätte mal am eigenen Arbeitsplatz bleiben sollen, aber so hat {0} den 31er ⚖️/🔥 erwischt. Dieser sorgt direkt für eine Kündigung mehr!\n{1}</value>
+  </string>
+  <string key="WolfVisitBurn">
+	<value>Die Schwarzmaler wollten mal wieder die schwarze Macht verteilen, doch dabei sind sie in den Kündigungswahn des 31ers ⚖️/🔥 geraten und {0} wurde mit gekündigt.\n{1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+	<value>Zwar kennt ihr noch nicht den Lebensmitteltechniker 🧑‍🔬, aber der aufmerksame Hase gab ihm einen ordentlichen Schlag auf den Kopf! So verschwand die besondere Kreativität für Eiersorten und der Lebensmitteltechniker 🧑‍🔬 wird als normaler Maler weiter arbeiten.</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value>Zum Feierabend stehen sich plötzlich die letzten Mitarbeiter der Fabrik, {0} und {1} gegenüber. Da holt {0} einen Zettel voller vernichtender Argumente gegen {1} heraus, dem nichts bleibt, als vor dem 31er ⚖️/🔥 zu kaputulieren.</value>
+  </string>
+  <string key="ArsonistTeamEnd">
+    <value>Team Gesetzesverdreher</value>
+  </string>
+
+
+  <string key="HarlotVisitNotHome">
+	<value>Du nimmst noch schnell 5 Eier und hüpfst zu {0}. Aber komisch, du triffst {0} weder am Arbeitsplatz, noch in der Teeküche, an. Wer nicht will hat schon. Du hüpfst zurück an deinen eigenen Arbeitsplatz.</value>
+  </string>
+
+  <string key="Validate">
+  <!-- Used for the button in the role selection menu -->
+	<value>‼ Bestätigen ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Used for the button in the role selection menu -->
+	<value>✅ Bestätigt ✅</value>
+  </string>
+
+
+  <string key="RoleConfigValid">
+	<value>Die Rollen-Konfiguration wurde bestätigt, wurde aktiviert und wird nun verwendet!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>Ich denke, das wird nicht klappen! Die Rollen-Konfiguration ist ungültigt. Bitte wähle mehr Rollen aus, damit der Bot ein ausgeglichenes Spiel generieren kann! Du siehst auch gerne Wasser beim brennen zu, oder?</value>
+  </string>
+
+
+  <string key="GroupIdleCount">
+  <!-- {0} - Idle count in the last 24 hours in the current group -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+	<value>Davon alleine {0} in dieser kleinen Gruppe! Das bringt Ostern in Gefahr und Weihnachten gleich mit!</value>
+  </string>
+
+
+  <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>Uffpasse! Oh, sorry, falsche Sprache! Ich meine, aufpassen. Du bist ab sofort Goldhase 🎭 auf wen immer du sein willst. Aber nur, wenn {0} gekündigt wirst, nimmst du dir deinen großen Koffer und wirst ihn fachmännisch ersetzen.</value>
+  </string>
+
+  <string key="RoleConfigInfo">
+  <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+	<value>Welche Stellenbeschreibungen (oder Rolle, ist leichter) darf ich verwenden?\n\nAnleitung:\n\n✅ = Rolle aktiv\n❌ = Rolle inaktiv\n\nNachdem du die Rollen gewählt hast, würde ich dich bitten, den Button zum Bestätigen zu nutzen, den du unten links findest. Dadurch wird deine Auswahl übernommen. Wenn du es vergisst, werde ich die Auswahl komplett ignorieren und alle Rollen verwenden!\n\nWenn zu viele Rollen deaktiviert sind, kann der Bot kein ausbalanciertes Spiel erstellen. Dann wird die Bestätigung fehlschlagen! Sollte das passieren, aktiviere mehr Rollen und versuche es nochmal. Erst wenn der Knopf mit ✅ Bestätigt ✅ beschriftet ist, hat es geklappt, die Rollen sind bestätigt und die Rollenwahl wird verwendet!</value>
+  </string>
+
+  <string key="EnableAllRoles">
+	<value>✅ Aktiviere alle Stellen</value>
+  </string>
+  <string key="DisableAllRoles">
+	<value>❌ Deaktiviere alle Stellen</value>
+  </string>
+
+
+  <string key="CHHuntedYou">
+    <value>Der Gleichstellungsbeauftragte 💂‍♀️ kam zu dir und hat etwas über das Gendersternchen erzählt. Das klang auch echt interessant, aber nicht für dich! Du meintest zu ihm, er könne dir den Buckel runtergendern. Anschließend hast du der Häsin von nebenan zugepfiffen und einige nicht jugendfreie Beleidigungen zugeworfen. So jemanden können und werden wir nicht bei uns dulden. Daher bist du gefeuert! Und du solltest dein Geschlechterbild überdenken!</value>
+    <value>Der Gleichstellungsbeauftragte 💂‍♀️ hat Beschwerden über dich erhalten. Du würdest Leute häufig mobben, hauptsächlich wegen Äußerlichkeiten. Du hast ihm auch nicht den Eindruck vermittelt, dass du diese Beschwerden ernst nehmen würdest, weshalb ihm nur noch die fristlose Kündigung blieb. Du bist raus!</value>
+  </string>
+
+
+  <string key="ExitAnonymousMode">
+    <value>Wir sprechen uns hier alle beim Vornamen an, anonym passiert eigentlich gar nichts. Aus diesem Grund bitte ich dich, den Anonymous Mode zu beenden oder den Admin, der dich anonymisiert hat, um Hilfe zu bitten. Versuche es danach gerne nochmal.</value>
+    <value>Hallo! Ich heiße Langohr. Wie heißt du? Nun, anonym willst du bleiben? Das geht leider nicht. Aus diesem Grund bitte ich dich, den Anonymous Mode zu beenden oder den Admin, der dich anonymisiert hat, um Hilfe zu bitten. Versuche es danach gerne nochmal.</value>
+  </string>
+  
+  <string key="AskArsonistNoDoused">
+    <value>Nun, dann mal ran an die Arbeit! Bisher sind dir alle eher unbekannt. Über wen möchtest du zuerst etwas erfahren?</value>
+  </string>
+  
+  <string key="AlreadyDousedList">
+    <value>\nBisher hast du Informationen über folgende Mitarbeiter gesammelt: {0}</value>
+  </string>
+  
+  <string key="DoppelgangerEnd">
+    <value>Nun ja, das lief so semi-optimal. Da sind wir uns wohl einig? {0} ist tatsächlich der letzte Hase. Alle wurden gekündigt. Es war aber auch sehr narzistisch, dass {0} sich selbst als Vorbild genommen hat. Nun, ein Goldhase alleine ist etwas sinnlos, daher wird das nun zur Niederlage führen, da bitte ich um Verständnis! Das nächste Mal vielleicht doch anders klauen, um solches Theater zu verhindern?\n{0} hat als Dieb den Doppelgänger beklaut und wurde Doppelgänger auf sich selbst.</value>
+  </string>
+
+</strings>

@@ -34,6 +34,7 @@
         Freeze,
         Douse,
         VisitImam,
+        ThrowKnife,
         AuroraTouch,
         AuroraRevive
     }

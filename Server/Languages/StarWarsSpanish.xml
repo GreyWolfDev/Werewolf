@@ -1,0 +1,911 @@
+<?xml  version="1.0" encoding="utf-8"?>
+<!--Este modo fue hecho para disfrutar de Star Wars.
+   Hecho por @gorushi @MCM6496 -->
+<strings><language name="Star Wars (Español)" base="Español" variant="Star Wars" code="es" isDefault="true" /><string key="NotInGame">
+    <value>El entrenamiento Padawan aún no ha comenzado. Inicie un entrenamiento normal con /startgame o un entrenamiento caótico con /startchaos</value>
+  </string><string key="PlayerStartedGame">
+    <value>{0} ha iniciado un nuevo entrenamiento joven padawan. Utiliza join para entrar en el templo jedi... y dejarte llevar por la fuerza.</value>
+    <value>Un nuevo entrenamiento jedi fue iniciado por {0}! ¡Utiliza join para entrar al templo de Coruscant!</value>
+  </string><string key="PlayerStartedChaosGame">
+    <value>{0} ha iniciado un nuevo entrenamiento jedi  caótico . Utiliza join para entrar al templo... y tratar de controlar la fuerza.</value>
+    <value>¡Un nuevo entrenamiento jedi  caótico fue iniciado por {0}! ¡Utiliza join para entrar en el templo!</value>
+  </string><string key="NoJoinGameRunning">
+    <value>¡No, usted no pudo entrar! Las puertas del templo se han cerrado. Use /nextgame para recibir un mensaje en privado cuando se inicie una nueva partida.</value>
+  </string><string key="AlreadyJoined">
+    <value>¡Usted ya entró en el templo!</value>
+  </string><string key="MinuteLeftToJoin">
+    <value>1 minuto restante para entrar, utiliza join para unirte ¡Prisa joven Padawan!</value>
+  </string><string key="SecondsLeftToJoin">
+    <value>{0} segundos restantes para entrar, utiliza join ¡Rápido!</value>
+  </string><string key="NotEnoughPlayers">
+    <value>Pocos Jedis entraron al templo, ninguno tenia gran contacto con la fuerza ¡Cancelando la partida!</value>
+  </string><string key="StartingGameWait">
+    <value>El entrenamiento está comenzando, por favor espere mientras analizo los midiclorianos .</value>
+  </string><string key="BannedForExploit">
+    <value>{0} está expulsado por intentar explorar el lado oscuro! (no se permiten nombres iniciados por /)</value>
+  </string><string key="ChangeNameToJoin">
+    <value>{0}, el Analizador de midiclorianos no le reconoce, por favor cambie su nombre para participar de la selección.</value>
+  </string><string key="PlayerLimitReached">
+    <value>Lo siento mucho, ¡El número máximo de padawans ha sido alcanzado!</value>
+  </string><string key="PlayerJoined">
+    <value>{0} se subió en el Templo de Coruscant. {1} Padawans entraron, {2} mínimo, {3} máximo</value>
+  </string><string key="PMTheBot">
+    <value>\n{0} por favor, contacta con el sistema ({1}) diciendo start, ya que aún no estás inscrito. Para que yo pueda contactar contigo, debes ponerte en contacto conmigo tú primero.</value>
+  </string><string key="DeadFlee">
+    <value>¡Usted no puede huir! USTED ESTÁ MUERTO/A! Aléjate del lado oscuro ...</value>
+  </string><string key="Flee">
+    <value>¡{0} ha huido del templo!</value>
+  </string><string key="PlayerRoleWas">
+    <value>{0} era {1}</value>
+  </string><string key="CountPlayersRemain">
+    <value>{0} Padawans en el Templo.</value>
+  </string><string key="DidntAsk">
+    <value>¡Eh, no te he preguntado nada todavía!</value>
+  </string><string key="NotPlaying">
+    <value>Parece que no llegó a tiempo...
+</value>
+  </string><string key="NoPlayerName">
+    <value>No he podido encontrar a un padawan con ese nombre.
+</value>
+  </string><string key="AnswerNonValid">
+    <value>¡Esa respuesta no es válida!</value>
+  </string><string key="WolfVotedKill">
+    <value>{0} votó para ejecutar la orden 66 a {1}</value>
+  </string><string key="PlayerVotedLynch">
+    <value>{0} votó para expulsar a {1} del Templo</value>
+  </string><string key="IdleKill">
+    <value>{0} no ha votado por 2 noches seguidas. Los Jedi juzgaron esto como cosa del lado oscuro y fue expulsado del Templo.\n{1}</value>
+  </string><string key="TraitorTurnWolf">
+    <value>¡Tú, traidor! Ahora usted es un Soldado Clon...</value>
+  </string><string key="ChoiceAccepted">
+    <value>Opción aceptada</value>
+  </string><string key="BeholderSeer">
+    <value>\nO el Maestro Yoda, capaz de ver a traves de la fuerza es {0}</value>
+  </string><string key="ApprenticeNowSeer">
+    <value>{0} era el Maestro Yoda. Como su aprendiz, usted continua con su camino en la fuerza y obtiene el poder de ver a través de la fuerza.</value>
+  </string><string key="BeholderNewSeer">
+    <value>{0} era Luke Skywalker, ahora toma el lugar de {1} como nuevo Maestro Jedi.</value>
+  </string><string key="SeerSees">
+    <value>¡Gracias a la fuerza ves que {0} es {1}!</value>
+  </string><string key="AskLynch">
+    <value>¿A quién te gustaría expulsar del Templo?</value>
+  </string><string key="AskDetect">
+    <value>¿A quién te gustaría sentir su fuerza?</value>
+  </string><string key="AskShoot">
+    <value>¿A quién te gustaría lanzar un Sectumsempra? {0} hechizo/s restantes</value>
+  </string><string key="AskVisit">
+    <value>¿A quién te gustaría visitar esta noche?</value>
+  </string><string key="AskSee">
+    <value>¿A quién te gustaría ver?</value>
+  </string><string key="AskGuard">
+    <value>¿A quién te gustaría proteger?</value>
+  </string><string key="AskEat">
+    <value>¿A quién te gustaría ejecutar la orden 66?</value>
+  </string><string key="AskHunt">
+    <value>¿A quién Te gustaría investigar con la fuerza?</value>
+  </string><string key="AskRoleModel">
+    <value>¿Quién será tu ejemplo a seguir?</value>
+  </string><string key="AskConvert">
+    <value>¿A quién te gustaría hacerle sentir el poder de Kylo  y convertirlo en un Caballero de Ren?</value>
+  </string><string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <value>Recuerde discutir con {0}</value>
+  </string><string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value>y</value>
+  </string><string key="RoleInfoCursed">
+    <value>Como el padawan oscuro, eres un padawan normal… hasta que te capturan los soldados clon. Una vez que lo hacen, caerás al lado oscuro y te convertirás en un uno de ellos! Así que eres libre para cazar Jedis en la noche</value>
+  </string><string key="RoleInfoDetective">
+    <value>Usted es Mace Window, Maestro del Templo. Durante el día, tendrás la oportunidad de investigar a otro jugador en busca de los traidores a los Jedi.
+            Utiliza tu habilidad con cuidado de no caer en el lado oscuro porque hay una probabilidad de que los soldados clon le detecten.(40%)</value>
+  </string><string key="RoleInfoDrunk">
+    <value>¡Enhorabuena, eres Jar Jar Binks! ¡Personaje intrascendente e irritante! Eres igual que un padawan. ¡PERO! Si los soldados clon te matan, acabaran irritados, y no van a tener ganas de atacar a nadie la noche siguiente.</value>
+  </string><string key="RoleInfoGuardianAngel">
+    <value>Usted es el Maestro Obi Wan Kenobi, ¡Para todos eres como el ángel de la guarda! Cada noche, puedes elegir un jugador para protegerlo, aunque eso signifique perder tu vida.
+            Utiliza la fuerza, medita antes de tomar una decisión ya que si eliges a un soldado clon, usted puede tener un destino peor que la muerte.</value>
+  </string><string key="RoleInfoGunner">
+    <value>Usted es Boba Fett. Usted tiene 2 disparos de bláster para ayudar al Templo.
+            Durante el día, puedes disparar a alguien pero.. ¡Ten cuidado! Todo el mundo oirá el sonido del bláster y sabrán que eres Boba Fett.</value>
+  </string><string key="RoleInfoHarlot">
+    <value>¡Reina de Naboo! Usted es Padme Amidala. Con sus contactos en el senado galáctico podrás visitar cada noche a otro jugador para ver su identidad. Si no son soldados clones te revelarán su personaje, pero si das con un soldado clon o alguien que está siendo atacado por ellos, te ejecutarán.</value>
+  </string><string key="RoleInfoTraitor">
+    <value>¡Usted es Anakin Skywalker! Por ahora, usted es un padawan en conflicto con la fuerza.
+            Pero si sobrevives el tiempo suficiente para que todos los soldados clon mueran, te convertirás al lado oscuro, dispuesto a matar a tus ex compañeros Jedi por la noche!
+            Si el Maestro Yoda o Luke Skywalker te perciben, ellos pueden sentir o no tu poder en el lado oscuro.</value>
+  </string><string key="RoleInfoWolf">
+    <value>¡Se ha ejecutado la orden 66! Los Jedi ahora son tu enemigo, cada día, tienes que intentar hacer creer a los jedi que estas de su parte. Sin embargo, cada noche, tú y los demás soldados elegiréis un jedi que asesinar.</value>
+  </string><string key="RoleInfoSeer">
+    <value>El Maestro Yoda ser tu. Gracias a tu gran poder con la fuerza,cada noche, puedes elegir un jugador y saber su verdadera intención.
+      Las armas no ganan batallas. Tu mente, poderosa ella es. </value>
+  </string><string key="RoleInfoVillager">
+    <value>¡Se ha ejecutado la orden 66! Tu función es simple joven Padwan: tratar de sobrevivir en el templo jedi. Una vez al día puedes votar a alguien para expulsarlo del Templo, usa tu voto con sabiduría.</value>
+  </string><string key="RoleInfoTanner">
+    <value>Usted es un Cazarrecompensas, ¡Su equipo es usted mismo! Si eres expulsado del Templo, ganas automáticamente, solo. ¡Sé egoísta!</value>
+  </string><string key="RoleInfoWildChild">
+    <value>¡Usted es el Senador Palpatine! Elige a alguien para que sea tu modelo - si él/ella muere o es expulsado del Templo, la ira te dominará y te convertiras al lado oscuro junto a los soldados clon</value>
+  </string><string key="RoleInfoBeholder">
+    <value>Usted es Jabba el Hutt, Se te revelará mediante tus contactos en Tatooine la identidad del maestro Yoda.(y no C3PO). ¡Utiliza esto para ayudar a los Jedi!</value>
+  </string><string key="RoleInfoApprenticeSeer">
+    <value>Usted es Luke Skywalker, por ahora, eres un padawan normal. Sin embargo, si el Maestro Yoda muere, te convertirás en el nuevo Maestro más poderoso del lado luminoso y podrás elegir a un jugador y saber su rol.</value>
+  </string><string key="RoleInfoZombie">
+    <value>Como un Caballero de Ren, tu objetivo es convertir a todos los otros jugadores (excepto los soldados clon) a su orden de culto a Darth Vader. Si al final del juego, todos los jugadores de la partida vivos son Caballeros de Ren – La Primera Orden gana.</value>
+  </string><string key="RoleInfoZombieHunter">
+    <value>Los Caballeros de Ren estan intentando dominar la galaxia y usted, Rey, ¡Debe defenderla! Durante la noche podrás usarla fuerza para investigar a alguien. Si es un Caballero de Ren, él/ella muere.  Si los caballeros de Ren tratan de convertirte, el último miembro que se unió a la orden de los caballeros de Ren muere..</value>
+  </string><string key="LynchTime">
+    <value>La noche se acerca y los Jedi se reúnen para decidir quién será expulsado del templo por estar cerca del lado oscuro... ¡Todo el mundo tiene ahora {0} segundos para votar!</value>
+  </string><string key="DayTime">
+    <value>Amanece en Coruscant. Usted tiene ahora {0} segundos para hacer sus acusaciones/defensas/discutir.</value>
+  </string><string key="NightTime">
+    <value>Cayó la noche. Todos van a dormir bastante cansados después de un día muy largo. ¡Usted tiene {0} segundos para utilizar tus acciones!</value>
+  </string><string key="LynchKill">
+    <value>Los Jedi votaron, en medio de dudas y sospechas. {0} fue expulsado del Templo {1}</value>
+  </string><string key="LynchTie">
+    <value>Incapaz de llegar a una decisión final sobre quién expulsar del Templo, los Jedi inquietos regresan a sus dormitorios, frustrados...</value>
+  </string><string key="NoLynchVotes">
+    <value>¡Algo anda mal en la fuerza, nadie votó! Nadie será expulsado hoy...</value>
+  </string><string key="DetectiveEaten">
+    <value>Los Jedi y sus Padawans se reúnen en la mañana, pero nadie puede encontrar a {0} entre ellos. Ellos corren hacia la sala del consejo Jedi y lo encuentran en el suelo, con rastros de quemaduras. ¡{0} era el Maestro Mace Window!</value>
+  </string><string key="GuardianEaten">
+    <value>La mañana llega y, para la sorpresa de todos, en el suelo del templo encontrais el sable laser de {0}, Maestro Obi Wan Kenobi, Ahora es uno con la fuerza.</value>
+  </string><string key="GunnerEaten">
+    <value>Todos salen de sus habitaciones y luego encuentran un blaster partido en el suelo... luego piernas... entonces dedos... y flotando en el lago del templo, el cuerpo de {0}. Han matado a Bobba Fett.</value>
+  </string><string key="SeerEaten">
+    <value>Los Jedi y sus padawans amanecen con la noticia de {0} muerto en la parte superior de una mesa en la sala del consejo. El Maestro Yoda ahora es uno con la Fuerza.</value>
+  </string><string key="DrunkEaten">
+    <value>Todos se despiertan con un fuerte olor de carne en llamas... ¡La habitación de Jar Jar Binks está ardiendo! Después de apagar el fuego, los restos de {0} se encuentran, tostados...
+</value>
+  </string><string key="FoolEaten">
+    <value>A medida que el sol se levanta sobre Coruscant, los padawan encuentran a {0} acostado encima de una mesa usada, ¿¿¿¿CON UNA TÚNICA JEDI???? JAJAJAJAJA QUE FAIL, {0} era C3PO</value>
+  </string><string key="DefaultEaten">
+    <value>A medida que todos se levantan para hacer sus tareas diarias, sienten un olor horrible. Ellos siguen el olor para encontrar {0} descuartizado/a en el patio del templo. La orden 66 ha sido ejecutada.\n{1}</value>
+  </string><string key="HunterKilledZombie">
+    <value>Un gran grito viene de la habitación de {0}. Los padawans la inspeccionan hasta encontrar un cuerpo yaciente frente a un altar con la insignia de los caballeros de Ren. ¡Un caballero de ren ha sido asesinado por Darth Maul</value>
+  </string><string key="NoAttack">
+    <value>Los Jedi y sus padawans se reunen en la sala central del Templo, no hay perturbaciones en la fuerza. Parece que esta noche no ha habido ningún ataque.</value>
+  </string><string key="CursedBitten">
+    <value>Has sido capturado por los soldado clon. ¡Como estabas coqueteando con el lado oscuro, te has cambiado de bando y te has convertido en uno de ellos!</value>
+  </string><string key="WolfTeam">
+    <value>Tu/s compañero/s Soldados Clon son: {0}</value>
+  </string><string key="CursedBittenToWolves">
+    <value>{0} ha sido atacado... pero no veia claro el camino de la fuerza y ¡Se convirtió al lado oscuro! ¡Enhorabuena por su nuevo compañero!</value>
+  </string><string key="WolvesEatYou">
+    <value>¡Ah no! Los Soldados Clon te atacaron. LA ORDEN 66 HA SIDO EJECUTADA</value>
+  </string><string key="WolvesEatDrunk">
+    <value>¡Ah no! {0} era Jar Jar Binks, ha sido tan irritante oirlo que no tienes fuerzas para atacar esta noche</value>
+  </string><string key="GuardWolf">
+    <value>¡Usted intentó proteger a un Soldado Clon! ¡El Soldado te sorprendió con su bláster!</value>
+  </string><string key="GuardSaved">
+    <value>¡Has salvado la vida de {0}!</value>
+  </string><string key="GuardNoAttack">
+    <value>{0} no fue atacado, entonces usted no hizo nada muy útil. Esta vez.</value>
+  </string><string key="GuardEmptyHouse">
+    <value>Usted fue a proteger a {0}, pero él no estaba en su habitación!</value>
+  </string><string key="GuardSavedYou">
+    <value>El Maestro Obi wan  estaba cuidando de ti la noche pasada y ¡Te defendió de los Soldados Clon! ¡Qué bendición!</value>
+  </string><string key="HarlotEaten">
+    <value>Padme Amidala escogió un pésimo día para descansar y quedarse en el dormitorio. {0} ¡Fue atacada por los Soldados Clon!</value>
+  </string><string key="HarlotNotHome">
+    <value>¡Extraño... {0} no estaba en el dormitorio! No te la llevarás esta noche...</value>
+  </string><string key="HarlotFuckWolf">
+    <value>Usted fue a la habitación de {0} para descubrir algunas verdades, pero descubrió demasiado tarde que él era un Soldado Clon. ¡Un disparo de bláster bastó para acabar contigo!</value>
+  </string><string key="HarlotFuckedWolfPublic">
+    <value>¡{0} fue a visitar la persona equivocada la noche pasada! {0} fue encontrada clavado cruelmente en la puerta de la Sala del Consejo... que triste :(</value>
+  </string><string key="HarlotFuckedVictimPublic">
+    <value>{0} fue a visitar la habitación de {1}, lista para dialogar y descubrir verdades. Sin embargo, ella encontró un Soldado Clon matando a {1}! El Soldado se gira rápidamente con su bláster hacia {0} y... {0} está muerta.</value>
+  </string><string key="HarlotVisitNonWolf">
+    <value>Usted percibe que {0} no es un Soldado Clon, ¡Ya que sus contactos con el Senado le ayudaron a revelar la verdad!</value>
+  </string><string key="HarlotVisitYou">
+    <value>En medio de la noche Padme Amidala entra en tu habitación y te propone un tema de conversación interesante. Estabas muy soñoliento para no revelar ciertos aspectos sobre tu identidad, pero ella era tan inteligente que no pudiste rechazar a responder algunas preguntas. Así, después de saber quién eres realmente, Padme vuelve a irse por donde vino.</value>
+  </string><string key="DetectiveCaught">
+    <value>¡Usted ha notado {0} un gran poder en la fuerza por ahí! ¡{0} es Mace Window, investigando!</value>
+  </string><string key="DetectiveSnoop">
+    <value>Su investigación en la fuerza probó que {0} es {1}</value>
+  </string><string key="HarlotShot">
+    <value>¡Parece que {0} no le gustó ser visitado por Padme Amidala! Darth Maul no medió palabra. {1} está muerta.</value>
+  </string><string key="DefaultShot">
+    <value>De repente, un sable sale volando. Los padawans corrieron para ver {0} de pie sobre el cuerpo de {1}, con el sable todavia apuntando hacia la cabeza. {2}. </value>
+  </string><string key="WolfWins" >
+    <value>¡El Soldado Clon ha ganado!</value>
+  </string><string key="WolvesWin">
+    <value>¡Los Soldados Clon han ganado!</value>
+  </string><string key="VillageWins">
+    <value>¡Los Jedi y sus padawan  vencieron! El lado oscuro ha sido derrotado...</value>
+  </string><string key="TannerWins" >
+    <value>¡Oh no! ¡Han expulsado al Cazarrecompensas del Templo! Él ha ganado la partida.</value>
+  </string><string key="RemainingPlayersEnd">
+    <value>Jugadores restantes, roles y facción:</value>
+  </string><string key="ZombieVotedConvert">
+    <value>{0}  ha votado para revelarle la historia del gran Lord Sith Darth Vader y reemplazar a {1} por un caballero de Ren.</value>
+  </string><string key="CultConvertZombieHunter">
+    <value>{0} fue enviado para revelar la historia del gran Lord Sith Darth Vader y reemplazar {1} por un caballero de Ren... Sin embargo, ¡Ella era Rey, y tenía un gran manejo de la fuerza, sobradamente para derrotar a un caballero de Ren! Has sido derrotado, Rey te ha matado. </value>
+  </string><string key="ZombieHunterKilledCultVisit">
+    <value>{0} fue a tu cabaña en Ahch-To la noche pasada, listo para dar revelate la historia del gran Lord Sith Darth Vader y hacerte caer en la orden de Ren... Pero tenías una gran uso de la fuerza y lo derrotaste sin que opusiera resitencia. Uno de los caballeros de Ren ha sido derrotado... {1} restante (s)!</value>
+  </string><string key="CultConvertYou">
+    <value>Has sido visitado por un Caballero de la Orden de Ren y te han convencido para ser uno de ellos. Durante la noche, puedes intentar perturbar la fuerza de un padawan y convertirlo a tu causa..</value>
+  </string><string key="CultTeam">
+    <value>Caballeros Ren: {0}</value>
+  </string><string key="CultJoin">
+    <value>{0} ¡Recibió la visita de un Caballero de Ren y fue convertido para la Orden!</value>
+  </string><string key="CultVisitEmpty">
+    <value>{0} fue enviado para convertir a la orden a {1}... Pero él no estaba en su sala de meditación.</value>
+  </string><string key="CultWins" >
+    <value>Todos los Jedi murieron y los únicos sobrevivientes son los Caballeros de Ren ... ¡La Orden de Ren venció!</value>
+  </string><string key="HunterVisitDead">
+    <value>Usted fue a investigar a {0}, ¡Pero al llegar allí encontró en la fuerza sentimientos de tristeza y soledad!</value>
+  </string><string key="HunterFindZombie">
+    <value>Vas a la habitación de {0} y te lo encuentras meditando frente al simbolo de la Orden de Ren… Rápidamente, introduces tu sable en el pecho y le das muerte en el acto..</value>
+  </string><string key="HunterFailedToFind">
+    <value>Usted entra en la habitación de {0} pero no se ve ningún símbolo de la Orden de Ren. {0} no forma parte de los Caballeros... Todavía...</value>
+  </string><string key="WildChildToWolves">
+    <value>El gran ejemplo a seguir de {0} acaba de morir. ¡En ataque de furia, se ha convertido al lado oscuro!</value>
+  </string><string key="WildChildTransform">
+    <value>¡{0} ha muerto! ¡En un ataque de furia, usted se convierteal lado oscuro! Sus nuevos compañeros son: {1}</value>
+  </string><!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter--><string key="Villager">
+    <value>Simple Padawan👱</value>
+  </string><string key="Drunk">
+    <value>Jar Jar Binks 🍻</value>
+  </string><string key="Harlot">
+    <value>Padme Amidala 💋</value>
+  </string><string key="Seer">
+    <value>Maestro Yoda 👳</value>
+  </string><string key="Traitor">
+    <value>Anakin Skywalker 🥸</value>
+  </string><string key="GuardianAngel">
+    <value>Obi Wan Kenobi 👼</value>
+  </string><string key="Detective">
+    <value>Maestro Window 🕵</value>
+  </string><string key="Wolf">
+    <value>Soldado Clon 🐺</value>
+  </string><string key="Cursed">
+    <value>Padawan Oscuro 😾</value>
+  </string><string key="Gunner">
+    <value>Bobba Fett 🔫</value>
+  </string><string key="Tanner">
+    <value>Cazarrecompensas 👺</value>
+  </string><string key="Fool">
+    <value>C3PO 🃏</value>
+  </string><string key="WildChild">
+    <value>Senador Palpatine 👶</value>
+  </string><string key="Beholder">
+    <value>Jabba the Hut 👁</value>
+  </string><string key="ApprenticeSeer">
+    <value>Luke Skywalker 🙇</value>
+  </string><string key="Zombie">
+    <value>un Caballero de Ren 👤</value>
+  </string><string key="ZombieHunter">
+    <value>Rey 💂</value>
+  </string><!-- These are for the player list --><string key="RanAway">
+    <value>🏃</value>
+  </string><string key="Dead">
+    <value>💀</value>
+  </string><string key="Alive">
+    <value>🙂</value>
+  </string><string key="PlayersAlive">
+    <value>Jugadores vivos</value>
+  </string><!-- New strings 4 MAY 2016--><string key="Mason">
+    <value>Generales Rebeldes 👷</value>
+  </string><string key="RoleInfoMason">
+    <value>Usted es un piloto del Halcón Milenario, Han Solo o Chewbacca, el trabajo de un Piloto del Halcón Milenario es simple: automáticamente sabes quiénes son los otros pilotos. De lo contrario, eres un simple padawan.</value>
+  </string><string key="MasonEaten">
+    <value>A medida que todos se levantan durante la mañana, el cuerpo de {0} se encuentra cerca de la Sala de meditar, con su bláster sobre el pecho. Uno de los pilotos del Halcón Milenario ha muerto.</value>
+  </string><string key="MasonTeam">
+    <value>Los pilotos del Halcón Milenario son: {0}</value>
+  </string><!-- new strings May 6 2016--><string key="CultTargetDead">
+    <value>El miembro más reciente de los Caballeros de Ren corre a la habitación de {0} para convertirlo a su causa, pero encuentra en cambio desorden, mucha sangre y pedazos... ¡Su objetivo ha sido asesinado!</value>
+  </string><string key="GuardBlockedWolf">
+    <value>Los Soldados Clon se dirigen a la sala de meditación de {0}, para el ataque, pero allí se encuentran con una presencia fuerte y rodeada por luz, armada con un sable láser. Obi wan Kenobi sale en defensa del objetivo y, tras una lucha repleta de efectos de luz, vuelven derrotados a casa.</value>
+  </string><!-- new strings May 9 2016--><string key="CultUnableToConvert">
+    <value>{0} ha sido enviado/a para dar el golpe de gracia y convertir a {1} a la orden, pero su control de la fuerza era demasiado firme. :(</value>
+  </string><!-- new string May 12 2016--><string key="NameExists">
+    <value>@{1} un padawan con el nombre {0} ya se ha unido a la batalla. Por favor cambie su nombre para poder entrar en el Templo.</value>
+  </string><string key="HarlotDiscoverCult">
+    <value>Usted fue la habitación de {0} para conseguir información, pero al llegar usted sintió una sensación de vacío...</value>
+  </string><!-- new string May 13 2016--><string key="Was">
+    <value> era </value>
+  </string><string key="GenericDeathNoReveal">
+    <value>A medida que todos se levantan y salen de sus habitaciones durante la mañana, perciben la ausencia de {0}... Cuando revisan su habitación, encuentran su cuerpo sin vida.</value>
+  </string><string key="MasonConverted">
+    <value>Qué extraño.... {0} no apareció en la Sala de meditación esta mañana... </value>
+  </string><!-- new string May 16 2016--><string key="FleeDisabled">
+    <value>Usted intenta desertar, pero debería saber que eso no es en el Templo Jedi. ¡Con los Soldados clon por aquí, las salidas están cerradas para que NADIE huya! ¡Buena suerte con eso!</value>
+  </string><string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>¡Ha muerto!</value>
+  </string><!-- MORE STRINGS May 16, 2016 --><string key="AdminAdded">
+    <value>{0} se ha agregado a la lista de administradores. Ahora puede utilizar /config para cambiar la configuración del juego.</value>
+  </string><string key="AlreadyInGame">
+    <value>¡Ya estás en una Partida! ({0})</value>
+  </string><string key="MultipleGames">
+    <value>Múltiples partidaas se iniciaron al mismo tiempo. Cerrando las sobrantes.</value>
+  </string><string key="GroupQueue">
+    <value>Su grupo está en la cola. Posición: {0} de {1}</value>
+  </string><string key="MaintBreak">
+    <value>Lo siento, estoy a punto de iniciar una pequeña pausa para el mantenimiento, no se puede iniciar un juego ahora.\n Esperando {0} las partidas terminen...\n Vea en @greywolfdev para más información (en inglés)</value>
+  </string><string key="MaxGames">
+    <value>Lo sentimos, se ha alcanzado el número máximo de partidas simultáneas ({0}).\n Posición en la cola: {1} / {1}</value>
+  </string><string key="SkipQueue">
+    <value>{0} es un grupo preferencial y saltó la cola!</value>
+  </string><string key="NoGame">
+    <value>No se ha abierto el Templo Jedi todavía. Inicie un nuevo juego normal con /startgame o caótico con /startchaos</value>
+  </string><string key="GroupAdminOnly">
+    <value>Sólo un Director puede usar este comando.</value>
+  </string><string key="ShuttingDown">
+    <value>Después de esta partida, estoy apagando el bot brevemente para el mantenimiento.</value>
+  </string><string key="ShuttingDownUpdate">
+    <value>Después de esta partida, estoy apagando el bot brevemente para una actualización (automatizada).</value>
+  </string><string key="NullIdAdmin">
+    <value>ID del Padawan o Jedi no fue encontrado. Asegúrese de que ha enviado el comando como respuesta.</value>
+  </string><string key="AlreadyAdmin">
+    <value>¡{0} ya es un Director!</value>
+  </string><string key="NotAdmin">
+    <value>¡{0} no es un Director!</value>
+  </string><string key="AdminRemoved">
+    <value>{0} fue removido de la lista de directores.</value>
+  </string><string key="LanguageSet">
+    <value>Idioma cambiado a {0}</value>
+  </string><string key="NoSeer">
+    <value>¡El Maestro Yoda no esta presente en el Templo!</value>
+  </string><string key="TimesUp">
+    <value>¡Tiempo agotado!</value>
+  </string><!-- new strings june 10 2016 --><string key="RoleInfoCupid">
+    <value>Controlas todo a tu antojo. Como Snoke, elegirás a dos jugadores al inicio del juego. ¡Estos dos jugadores conectarán su destino mediante la fuerza! Si uno de ellos muere, el otro morirá, si ambos son los dos últimos vivos, ganarán.</value>
+  </string><string key="RoleInfoDoppelganger">
+    <value>Usted es Lando Calrissian, agente doble, cambias de bando a tu antojo, puedes elegir a un jugador al principio del juego.Si ese jugador muere, asumes el papel de él en el Templo.</value>
+  </string><string key="RoleInfoHunter">
+    <value>Un asesino que sabe usar el lado oscuro de la fuerza, traicionado por todos, vengativo jugador. Como Darth Maul, tratas de mantenerte a ti mismo. Sin embargo, cuando otros vienen a visitarte, pueden encontrarse muertos, mientras su ira se apodera de ti y los asesina. Si los soldados clon te atacan, tienes la oportunidad de tomar uno de ellos contigo. De lo contrario, si mueres, tendrás la oportunidad de asesinar a alguien en el ultimo momento.</value>
+  </string><string key="RoleInfoSerialKiller">
+    <value>Como el General Grievos eres un jugador solitario, en tu propio equipo. Sólo puedes ganar si es el último jugador vivo. Como General Grievous, puedes matar a CUALQUIERA. Si los solados clon intentan atacarte, matarás a uno de ellos (al azar) y vivirás..</value>
+  </string><string key="CupidChosen">
+    <value>¡¡La fuerza es intensa en tí!! Has sido conectado a otra persona por Snoke. No puedes dejar de hablar con {0} ,está siempre presente. Tu objetivo ahora es la supervivencia de los dos. Si uno de vosotros muere o es expulsado del templo Jedi, el otro lo va a acompañar, para que siempre estéis conectados.</value>
+    <value>¡¡La fuerza es intensa en tí!! Has sido conectado a otra persona por Snoke. No puedes dejar de hablar con {0} ,está siempre presente. Tu objetivo ahora es la supervivencia de los dos. Si uno de vosotros muere o es expulsado del templo Jedi, el otro lo va a acompañar, para que siempre estéis conectados.</value>
+  </string><string key="HunterLynchedChoice">
+    <value>¡Los Jedi decidieron expulsarte del Templo! ¡Es tu última oportunidad para dar uso a tu sable láser!</value>
+  </string><string key="HunterNoChoiceLynched">
+    <value>{0} trata de alcanzar su sable láser mientras es juzgado, pero la fuerza le falla  y antes de llegar al sable, es expulsado del Templo...</value>
+  </string><string key="HunterSkipChoiceLynched">
+    <value>{0} Agarra su sable, y apunta a la multitud... Sus ojos tratan de decidir a quién va a llevar con él. Pero él acepta su fin, solo...</value>
+  </string><string key="HunterKilledFinalLynched">
+    <value>A su salid del Templo, {0} saca sable láser y, ¡Rápido como una cobra, lo lanza a {1}! &quot;MUERE!...&quot; dice Darth Maul a {1}, el {2}, que cae sin vida en el suelo.</value>
+  </string><string key="HunterShotChoice">
+    <value>¡Usted fue herido mortalmente! Con tu último suspiro, puedes llevar a alguien contigo... ¡Escoje rápido!</value>
+  </string><string key="HunterNoChoiceShot">
+    <value>{0} recibió una herida profunda, tanto que él no consiguió ni siquiera sacar su sable láser, cayendo muerto en el suelo...</value>
+  </string><string key="HunterSkipChoiceShot">
+    <value>{0}, como si la sangre saliendo de su barriga no fuera nada, decide no mover su sable, aceptando su destino...</value>
+  </string><string key="HunterKilledFinalShot">
+    <value>{0} cae al suelo, cortado en dos... Pero antes de morir, él lanza su sable laser y da un golpe mortal a {1}, cayendo con fuerza en el suelo, con un profundo corte. {2}</value>
+  </string><string key="HunterShotWolfMulti">
+    <value>¡AAAAH! ¡AAAH! ¡El templo Jedi oye sonidos de agonía por la noche! Los soldados clon atacaron a la persona equivocada, Darth Maul no se marchó solo, se llevó a un soldado clon {0}, junto a él.</value>
+  </string><string key="HunterShotWolf">
+    <value>¡El soldado clon intentó atacar a la persona equivocada la noche pasada! ¡Darth Maul se sabe proteger muy bien y dejó un pequeño regalo a los Jedi, el cuerpo de {0}!</value>
+  </string><string key="SerialKillerKilledWolf">
+    <value>¡Los soldados clon intentaron atacar a la persona equivocada la noche pasada! {0} se encuentra sin partes de sus armaduras y varios de sus miembros, que están esparcidos por la habitación, ¡Casi se puede sentir pena por ese soldado clon! El general Grievous ganó un nuevo asesinato para su colección.</value>
+  </string><string key="DefaultKilled">
+    <value>Parece una noche normal, pero ¿Donde está {0}? Los Padawans se reúnen en la sala de meditación de {0}, y encuentran su cuerpo en el suelo lleno de quemaduras y no encuentran su sable laser... El General Grievous se ha divertido esta noche... {1}</value>
+  </string><string key="GuardBlockedKiller">
+    <value>Fuiste a divertirte un poco con {0}. ¡Pero llegando allí, Obi Wan Kenobi acabó con tu diversión! Sin bromas esa noche</value>
+  </string><string key="CultConvertHunter">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>Los caballeros de Ren mandan a {0} para revelar la historia del gran Lord Sith Darth Vader y sustituir {1} por un caballero de Ren. Llegando allí {0} es recibido con ¡Un golpe de sable laser que atraviesa su pecho! {0} está muerto...</value>
+  </string><string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>Los caballeros de Ren mandan a {0} para revelar la historia del gran Lord Sith Darth Vader y sustituir {1} por un caballero de Ren. Al llegar allí descubre que fue una pérdida de tiempo, sólo siente odio y furia, sin tener nada que hacer {0} regresó a su cuarto...</value>
+    <value>Los caballeros de Ren mandan a {0} para revelar la historia del gran Lord Sith Darth Vader y sustituir {1} por un caballero de Ren. Al llegar allí descubre que fue una pérdida de tiempo, sólo siente odio y furia, sin tener nada que hacer {0} regresó a su cuarto...</value>
+  </string><string key="GuardKiller">
+    <value>Usted intentó proteger al padawan equivocado. El General Grievous te reta a un singular combate. El resultado del combate es que tu mueres al final y tu sable laser ahora forma parte de su colección...</value>
+  </string><string key="HarlotFuckKiller">
+    <value>>Visitaste la habitación  de {0} para intentar ver qué personaje era realmente. Pero esa noche sólo {0} va a charlar contigo, mientras él disparaba con su blaster a tu cuerpo. Has muerto, pero si te sirve de consuelo, serviste bien al senado galáctico...</value>
+  </string><string key="HarlotFuckKillerPublic">
+    <value>{0} visitó la habitación equivocada, lo que era para ser una noche tranquila se convirtió en una noche aterradora, el general Grievous se divirtió mucho esta noche.</value>
+  </string><string key="DGToMason">
+    <value>{0},Lando Calrissian, ahora se ha convertido en un nuevo piloto del Halcón Milenario, ¡Así como tú!</value>
+  </string><string key="DGTransformToMason">
+    <value>{0}  murió, y ahora es un miembro de los pilotos del Halcón Milenario. Sus compañeros (si los hay) son: {1}</value>
+  </string><string key="DGToCult">
+    <value>{0}, Lando Calrissian fue sustituido por un caballero de Ren.</value>
+  </string><string key="DGTransformToCult">
+    <value>{0}muerto, acepta que te uniste a los caballeros de Ren. Sus nuevos compañeros (si los hay) son: {1}</value>
+  </string><string key="DGToWolf">
+    <value>Lando Calrrisian {0} se convirtió en un soldado clon, ¡Uno más para el ejército!</value>
+  </string><string key="DGTransformToWolf">
+    <value>¡¡¡{0} murió y te has convertido en un Soldado Clon!!! Tu nuevo clan es: {1}</value>
+  </string><string key="SerialKillerWins">
+    <value>¡El único sobreviviente fue el general Grievous! Se ha divertido mucho asesinando Jedis, porque no hay diversión mejor que vencer, y ¡Aumentar su colección de sables laser!</value>
+  </string><string key="AskKill">
+    <value>¿A quién quieres matar esta noche?</value>
+  </string><string key="LoverDied">
+    <value>{0} da su último suspiro mirando en el fondo de los ojos de su conectado con la fuerza, {1}, que sostiene su cuerpo de rodillas. {1} no puede soportar el dolor, y con su arma se suicida... Ellos estarán juntos incluso en siendo uno con la fuerza. {2}</value>
+  </string><string key="AskDoppelganger">
+    <value>¿En que bando quieres unirte?</value>
+  </string><string key="AskCupid1">
+    <value>¿Quién serán los conectados? Elige el primer conectado.</value>
+  </string><string key="AskCupid2">
+    <value>¿Quién serán los conectados? Elige el segundo conectado.</value>
+  </string><string key="Hunter">
+    <value>Darth Maul  🎯</value>
+  </string><string key="Cupid">
+    <value>Snoke 🏹</value>
+  </string><string key="SerialKiller">
+    <value>General Grievous 🔪</value>
+  </string><string key="Doppelgänger">
+    <value>Lando Calrrisian 🎭</value>
+  </string><string key="NewWCRoleModel">
+    <value>Usted se convirtió en Senador Palapatine. Tu ejemplo a seguir es {0}</value>
+  </string><string key="LoversWin">
+    <value>¡Los conectados vencieron! Su conexión en el fuerza era mas fuerte que los demás</value>
+  </string><string key="HunterKilledVisiter">
+    <value>Cuando despiertan, encuentran a {0} muerto en medio de la sala común en el templo Jedi, totalmente demacrado debido al uso de la ira y del lado oscuro de la fuerza sobre su cuerpo. ¡Parece que alguien visitó a Darth Maul y le salió mal! {1}</value>
+  </string><string key="CultAttempt">
+    <value>En medio de la noche te sientes una tristeza, un vacío, como si la fuerza se desbaneciera. Te conectas con la fuerza, y estás protegido.</value>
+  </string><string key="AlreadyOnWaitList">
+    <value>Ya está en la lista de espera para {0}</value>
+  </string><string key="AddedToWaitList">
+    <value>Se añadió a la lista de espera para {0}. Le enviaré un mensaje cuando se abra el Templo.</value>
+  </string><string key="NotifyNewGame">
+    <value>El Templo se va a cerrar en {0}</value>
+  </string><string key="SerialKillerWinsOverpower">
+    <value>La mañana llega al templo Jedi y sólo dos personas quedaron en pie. {0} mira a {1}, una sonrisa siniestra en su cara, él corta el brazo que sostiene su arma y lanza un ataque, jugando con la vida de {1}, hasta que decide cortar la cabeza de {1}, que ahora está muerto.</value>
+  </string><string key="NoWinner" >
+    <value>Todos en el Templo de Coruscant murieron... Nadie ganó esa Batalla... A no ser, tal vez los Jawa aprovechen algo.</value>
+  </string><string key="SKHunterEnd">
+    <value>El sol nace en el horizonte, {0} y {1} son los únicos sobrevivientes. {0} se acerca sonriente a {1}, y le recuerda las traiciones que ha sufrido durante su vida. {1} rápidamente saca sus sables laser y lanza un ataque mortal en {0}. {0}, con su último suspiro, lanza su sable y mata a{1}. Ambos murieron, el día acaba y no hubo ningún ganador para contar historia..</value>
+  </string><string key="RoleModelChosen">
+    <value>Usted no decidió a tiempo, entonces La Fuerza eligió por usted: {0}</value>
+  </string><string key="Won">
+    <value>Ganó</value>
+  </string><string key="Lost">
+    <value>Perdió</value>
+  </string><string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>El Padawan {0} no votó y fue muerto por eso {1} veces en las últimas 24 horas.</value>
+  </string><!--Novas Strings, feitas dia 07/06/2016. Traduzidas dia 09/06/2016--><string key="AboutVG">
+    <value>¡Se ha ejecutado la orden 66! Tu función es simple joven Padwan: tratar de sobrevivir en el templo jedi. Una vez al día puedes votar a alguien para expulsarlo del Templo, usa tu voto con sabiduría.</value>
+  </string><string key="AboutSeer">
+    <value>El Maestro Yoda ser tu. Gracias a tu gran poder con la fuerza,cada noche, puedes elegir un jugador y saber su verdadera intención.
+      Las armas no ganan batallas. Tu mente, poderosa ella es.</value>
+  </string><string key="AboutWw">
+    <value>¡Se ha ejecutado la orden 66! Los Jedi ahora son tu enemigo, cada día, tienes que intentar hacer creer a los jedi que estas de su parte. Sin embargo, cada noche, tú y los demás soldados elegiréis un jedi que asesinar.</value>
+  </string><string key="AboutHarlot">
+    <value>¡Reina de Naboo! Usted es Padme Amidala. Con sus contactos en el senado galáctico podrás visitar cada noche a otro jugador para ver su identidad. Si no son soldados clones te revelarán su personaje, pero si das con un soldado clon o alguien que está siendo atacado por ellos, te ejecutarán.</value>
+  </string><string key="AboutDrunk">
+    <value>¡Personaje intrascendente e irritante! Como Jar Jar Binks, eres igual que un padawan. ¡PERO! Si los soldados clon te matan, se desactivará la muerte al soldado clon la próxima vez, gracias a tu intrascendencia.</value>
+  </string><string key="AboutCursed">
+    <value>Como el padawan oscuro, eres un padawan normal… hasta que te capturan los soldados clon. Una vez que lo hacen, caerás al lado oscuro y te convertirás en un uno de ellos! Así que eres libre para cazar Jedis en la noche</value>
+  </string><string key="AboutTraitor">
+    <value>Eres Anakin Skywalker. Si sobrevives el tiempo suficiente para que todos los soldados clon mueran, te convertirás al lado oscuro, dispuesto a matar a tus ex compañeros Jedi por la noche!
+            Si el Maestro Yoda o Luke Skywalker lo perciben, usted puede o no ser identificado por ellos.</value>
+  </string><string key="AboutGA">
+    <value>Usted es el Maestro Obi Wan Kenobi, ¡Para todos eres como el ángel de la guarda! Cada noche, puedes elegir un jugador para protegerlo, aunque eso signifique perder tu vida.
+            Utiliza la fuerza, medita antes de tomar una decisión ya que si eliges a un soldado clon, usted puede tener un destino peor que la muerte.</value>
+  </string><string key="AboutDetective">
+    <value>Usted es Mace Window, Maestro del Templo. Durante el día, tendrás la oportunidad de investigar a otro jugador en busca de los traidores a los Jedi.
+            Utiliza tu habilidad con cuidado de no caer en el lado oscuro porque hay una probabilidad de que los soldados clon le detecten.(40%)</value>
+  </string><string key="AboutGunner">
+    <value>Como Boba Fett, se le dan 2 disparos de blaster al principio del juego. Cada día, tendrás la oportunidad de disparar a otro jugador. ¡Una vez que lo hagas, cada uno sabrá que eres Boba Fett! Ten cuidado, sin embargo, sólo tienes 2 disparos!.</value>
+  </string><string key="AboutTanner">
+    <value>El objetivo del Cazarrecompensas es simple: conseguir matar a todos. Si el Cazarrecompensas es linchado, gana y todo el mundo pierde.¡Sé egoísta!</value>
+  </string><string key="AboutFool">
+    <value>C3PO.. Crees ser el maestro Yoda y poder elegir a un jugador y saber su rol pero.. cuando eliges ver el rol de alguien por la noche, se te revela un rol al azar.</value>
+  </string><string key="AboutCult">
+    <value>Como un Caballero de Ren, tu objetivo es convertir a todos los otros jugadores (excepto los soldados clon) a su orden de culto a Darth Vader. Si al final del juego, todos los jugadores de la partida vivos son Caballeros de Ren – La Primera Orden gana.</value>
+  </string><string key="AboutCH">
+    <value>Los Caballeros de Ren estan intentando dominar la galaxia y usted, Rey, ¡Debe defenderla! Durante la noche podrás usarla fuerza para investigar a alguien. Si es un Caballero de Ren, él/ella muere.  Si los caballeros de Ren tratan de convertirte, el último miembro que se unió a la orden de los caballeros de Ren muere.</value>
+  </string><string key="AboutWC">
+    <value>¡Usted es el Senador Palpatine! Al principio del juego, elegirás a alguien para ser tu “modelo”. Si muere, te convertirás al lado oscuro y asesinarás junto a los soldados clon.</value>
+  </string><string key="AboutAppS">
+    <value>Luke Skywalker: Por ahora, eres un padawan normal. Sin embargo, si el Maestro Yoda muere, te convertirás en el nuevo Maestro más poderoso del lado luminoso y podrás elegir a un jugador y saber su rol.</value>
+  </string><string key="AboutBH">
+    <value>Usted es Jabba el Hutt,Se te revelará mediante tus contactos en Tatooine la identidad del maestro Yoda (y no la del falso Jedi C3PO)</value>
+  </string><string key="AboutMason">
+    <value>Eres Han Solo o Chewbacca, el trabajo de un Piloto del Halcón Milenario es simple: automáticamente sabes quiénes son los otros pilotos. De lo contrario, eres un simple padawan.</value>
+  </string><string key="AboutDG">
+    <value>Lando Calrissian. Cambias de bando a tu antojo, puedes elegir a un jugador al principio del juego. Si ese jugador muere, te convertirás en lo que era.</value>
+  </string><string key="AboutCupid">
+    <value>Controlas todo a tu antojo. Como Snoke, elegirás a dos jugadores al inicio del juego. ¡Estos dos jugadores conectarán su destino mediante la fuerza! Si uno de ellos muere, el otro morirá, si ambos son los dos últimos vivos, ganarán.</value>
+  </string><string key="AboutHunter">
+    <value>Un asesino que sabe usar el lado oscuro de la fuerza, traicionado por todos, vengativo jugador. Como Darth Maul, tratas de mantenerte a ti mismo. Sin embargo, cuando otros vienen a visitarte, pueden encontrarse muertos, mientras su ira se apodera de ti y los asesina. Si los soldados clon te atacan, tienes la oportunidad de tomar uno de ellos contigo. De lo contrario, si mueres, tendrás la oportunidad de asesinar a alguien contigo.</value>
+  </string><string key="AboutSK">
+    <value>Como el General Grievos eres un jugador solitario, en tu propio equipo. Sólo puedes ganar si es el último jugador vivo. Como General Grievous, puedes matar a CUALQUIERA. Si los solados clon intentan atacarte, matarás a uno de ellos (al azar) y vivirás.</value>
+  </string><string key="AboutPara">
+    <value>Es un desarrollador de este juego, y le gusta a ladrar a la gente. Tal vez se haya quedado mucho tiempo con los lobos... Juntarse con los hombres lobo no es una idea muy buena, ¿verdad?</value>
+  </string><string key="EndTime">
+    <value>Duración del juego: {0}</value>
+  </string><!--New strings, July the 8th --><string key="Day">
+    <!--0 - Day -->
+    <value>{0}º dia</value>
+  </string><string key="NodeShutsDown">
+    <value>Alguna cosa ha fallado, y este modo quedó apagado :/</value>
+  </string><string key="SentPrivate">
+    <value>Te he enviado un Mensaje Privado</value>
+  </string><string key="StartPM">
+    <value>Por Favor envíeme un mensaje privado para permitirme enviarte mensajes: @werewolfbot</value>
+  </string><string key="PMTrue">
+    <value>¡Gracias por activarme! Ahora puedo enviar mensajes exclusivos.</value>
+  </string><string key="MustReplySmite">
+    <value>Usted necesita utilizar el comando smite como respuesta al usuario que quiere expulsar</value>
+  </string><string key="WhatToDo">
+    <value>¿Qué quiere hacer usted?</value>
+  </string><string key="JoinFromGroup">
+    <value>¡Usted necesita estar en un grupo para unirse a una partida en él!</value>
+  </string><string key="StartFromGroup">
+    <value>¡Usted necesita comenzar una partida dentro de un grupo!</value>
+  </string><string key="PingInfo">
+    <value>Tiempo de procesamiento de mensajes: {0}\nMensajes por segundo: {1}</value>
+  </string><string key="WhatLang">
+    <value>¿Qué idioma?\nActual: {0}</value>
+  </string><string key="WhatVariant">
+    <value>¿Cual variante?\nActual: {0}</value>
+  </string><string key="LangSet">
+    <value>Idioma definido como {0}</value>
+  </string><string key="GetLang">
+    <value>¿Tomar el archivo de qué idioma?</value>
+  </string><string key="NoNodes">
+    <value>No hay nodos conectados en el momento, por favor inténtelo de nuevo dentro de unos segundos</value>
+  </string><string key="GroupCommandOnly">
+    <value>Necesita activar este comando en un grupo</value>
+  </string><string key="NotGlobalAdmin">
+    <value>Usted no es un administrador global...</value>
+  </string><string key="NotPara">
+    <value>¡Fuera de aquí! Usted no es Para.</value>
+  </string><string key="Yes">
+    <value>Si</value>
+  </string><string key="No">
+    <value>No</value>
+  </string><string key="Allow">
+    <value>Permitir</value>
+  </string><string key="Disallow">
+    <value>No permitir</value>
+  </string><string key="Show">
+    <value>Mostrar</value>
+  </string><string key="Hide">
+    <value>Esconder</value>
+  </string><!-- Game Mode Choices--><string key="NormalOnly">
+    <value>Solamente Normal</value>
+  </string><string key="ChaosOnly">
+    <value>Solamente Caos</value>
+  </string><string key="PlayerChoice">
+    <value>Escoja un jugador</value>
+  </string><!-- Show Roles on End Game --><string key="ShowNone">
+    <value>No mostrar ninguno</value>
+  </string><string key="ShowLiving">
+    <value>Mostrar sólo los papeles de jugadores vivos</value>
+  </string><string key="ShowAll">
+    <value>Mostrar los papeles de todos los jugadores</value>
+  </string><string key="Cancel">
+    <value>Cancelar</value>
+  </string><string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose # editem isso quando der pra traduzir o "not"# -->
+    <value>¿Quieres permitir fugas después del inicio de un partido?\n¡Cuenta que jugadores siempre pueden huir antes del inicio del juego!\nActual: Players can {0}flee</value>
+  </string><string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose  # editem isso quando der pra traduzir o "not" # -->
+    <value>{0} se permitirá a jugadores dejar la partida después de comenzarla</value>
+  </string><string key="MaxPlayersQ">
+    <value>¿Cual cantidad de jugadores te gustaría definir como máxima?\nActual: {0}</value>
+  </string><string key="MaxPlayersA">
+    <value>Número máximo de jugadores definido como {0}</value>
+  </string><string key="ShowRolesDeathQ">
+    <value>¿Mostrar los roles de los jugadores cuando mueren?\nActual: {0}</value>
+  </string><!-- # editem isso quando der pra traduzir o shown/hidden # --><string key="ShowRolesDeathA">
+    <value>Los papeles de los jugadores serán {0} cuando mueran.</value>
+  </string><string key="GameModeQ">
+    <value>¿Qué modo de juego estará activo en el grupo?\nActual: {0}</value>
+  </string><string key="GameModeA">
+    <value>Modo de juego definido como {0}</value>
+  </string><string key="ShowRolesEndQ">
+    <value>¿Cómo quieres que los papeles de jugadores sean revelados al final del juego?\nActual: {0}</value>
+  </string><string key="ShowRolesEndA">
+    <value>Revelación de los papeles definida como: {0}</value>
+  </string><string key="SetDayTimeQ">
+    <value>Seleccione la duración base (en segundos) del día. Todavía se modificará de acuerdo con el número de jugadores.\nO el tiempo mínimo agregado de acuerdo con los jugadores es de 60 segundos. Configuración predeterminada: {0}\nActual: {1}</value>
+  </string><string key="SetDayTimeA">
+    <value>Duración base del día establecida en {0} segundos</value>
+  </string><string key="SetNightTimeQ">
+    <value>Seleccione la duración (en segundos) de la noche. Configuración predeterminada: {0}\nActual:{1}</value>
+  </string><string key="SetNightTimeA">
+    <value>Duración de la noche establecida en {0} segundos</value>
+  </string><string key="SetLynchTimeQ">
+    <value>Seleccione la duración (en segundos) de la votación. Configuración predeterminada: {0}\nAtual:{1}</value>
+  </string><string key="SetLynchTimeA">
+    <value>Duración de votación definida como {0} segundos</value>
+  </string><string key="AllowFoolQ">
+    <value>¿Permitir al tonto como un papel posible?\nActual: {0}</value>
+  </string><string key="AllowFoolA">
+    <value>Posibilidad del  tonto es definida como: {0}</value>
+  </string><string key="AllowTannerQ">
+    <value>¿Permitir al veterano?\nActual: {0}</value>
+  </string><string key="AllowTannerA">
+    <value>Existencia del veterano definida como: {0}</value>
+  </string><string key="AllowCultQ">
+    <value>¿Permitir a los Caballeros de Ren?\nActual: {0}</value>
+  </string><string key="AllowCultA">
+    <value>Existencia de Caballeros de Ren definida como: {0}</value>
+  </string><string key="ThankYou">
+    <value>¡Gracias y tenga un buen juego!</value>
+  </string><string key="WhatLangGroup">
+    <value>¿Quieres buscar un grupo jugando en qué idioma?</value>
+  </string><string key="HereIsList">
+    <value>Aquí están los grupos jugando en {0}:</value>
+  </string><string key="Members">
+    <value>Miembros:</value>
+  </string><string key="StartMe">
+    <value>Por favor mandeme start en privado para poder enviar mensajes.</value>
+  </string><string key="PlayerNoPM">
+    <value>{0} no inició el bot, y fue removido (a) del juego!</value>
+  </string><string key="LatestList">
+    <value>Aquí está la lista más reciente de padawnas</value>
+  </string><string key="UnableToGetList">
+    <value>No he sido capaz de obtener la lista de jugadores, ¿estás seguro de que el juego ya ha comenzado?</value>
+  </string><string key="YouJoined">
+    <value>Se ha unido a una partida en {0}</value>
+  </string><string key="Ping2">
+    <value>Tiempo hasta el envío del mensaje de ping: {0}</value>
+  </string><!-- Update 4.0--><string key="RoleInfoMayor">
+    <value>Como Canciller, eres un padawan humilde, hasta que te revelas. Entonces cambia el recuento de votos para asesinar (lo que significa que tu voto es dos veces más poderoso que el de los demás). Usa ese poder sabiamente para ayudar a los Jedi.</value>
+  </string><string key="RoleInfoPrince">
+    <value>La Pricesa Leia Organa es un papel clave en la estrategia del equipo de los Jedi. Una vez que la princesa es linchada, su papel como princesa se revela, y sobreviven. Sin embargo, esto sólo puede ocurrir una vez: si los jugadores insisten en lincharte, morirá.</value>
+  </string><string key="RoleInfoClumsyGuy">
+    <value>Eres el Ewok. Tal vez no deberías haber tomado tanta agua de Endor para desayunar. No puedes ver una maldita cosa. ¿Puedes incluso votar por la persona que quieres? (Tienes 50% de probabilidades de votar por alguien aleatorio.)</value>
+  </string><string key="RoleInfoSorcerer">
+    <value>¿Recuerdas al buen viejo Maestro Yoda? Bueno, ahora, tiene su contraparte estar en el equipo de los soldados clon. Darth Plagueis es el Maestro Yoda pero en el bando sith. Sólo pueden ver si alguien es soldado clon o Maestro Yoda, y ellos ganan con los soldados clon.</value>
+  </string><string key="RoleInfoBlacksmith">
+    <value>Eres R2D2. El fiel ayudante de los Jedis. Tienes mecanismos para distraer a los soldados clon, y así prevenir su ataque durante una noche. Durante el día, podrás elegir si quieres distraerlos por el templo Jedi. Aparte de eso, eres como un simple padawan.</value>
+  </string><string key="RoleInfoAlphaWolf">
+    <value>Eres Darth Nihilus, el lord sith más poderoso cuerpo a cuerpo, la pesadilla de los Jedi. Tu poder es la causa de que los midiclorianos influyan en un padawan o jedi para convertirlo al lado oscuro, conviertes a los padawans en soldados clon. Cada noche, podrás elegir un padawan para atacarlo y matarlo, pero mientras estés vivo, existe un 20% de probabilidad de que se convierta en un soldado clon.</value>
+  </string><string key="RoleInfoWolfCub">
+    <value>Eres Starkiller, adorado por tu maestro, Darth Vader y protegido por los soldados clon. Podrás elegir un personaje para atacar y matar todas las noches. Si te matan, tus protectores al ver tu cuerpo en el suelo, vengarán tu muerte, atacando a dos personajes la noche siguiente.</value>
+  </string><string key="PrinceLynched">
+    <value>El templo Jedi se está preparando para expulsar a {0}, gritando, &quot;¡Esperen! Soy la princesa Leia Organa. Este identificador en mi mano, lo demuestra. No puedo ser expulsada del tempo.&quot; Los padawans y maestros Jedi se sienten tontos, todos en en el templo regresan a sus habitaciones.</value>
+  </string><string key="SorcererOther">
+    <value>Usted intenta percibir a {0}, pero no puede descifrar bien lo que es. Todo lo que sabe es que él no es el Maestro Yoda ni un soldado clon...</value>
+  </string><string key="MayorReveal">
+    <value>{0} da un paso adelante y muestra el sello oficial del senado, declarando que es el canciller. De ahora en adelante, los votos de {0} para expulsar a alguien del templo serán contados dos veces.</value>
+  </string><string key="AskMayor">
+    <value>Presione en &quot;Revelar&quot; cuando este listo para revelarse como Canciller del Senado.</value>
+  </string><string key="Reveal">
+    <value>Revelar</value>
+  </string><string key="SpreadDust">
+    <value>¿Quieres usar tus herramientas, impidiendo a los soldados clon de atacar esta noche?</value>
+  </string><string key="BlacksmithSpreadSilver">
+    <value>Mientras los Jedis y padawans discute sobre lo que está pasando, {0} Se dedica a usar sus herramientas , que protegeran al templo del ataque de soldados clon por una noche. &quot;¡Siempre he querido hacer eso!&quot;.</value>
+  </string><string key="Mayor">
+    <value>Canciller del Senado 🎖</value>
+  </string><string key="Prince">
+    <value>Princesa Leia 👑</value>
+  </string><string key="Sorcerer">
+    <value>Darth Plagueis 🔮</value>
+  </string><string key="ClumsyGuy">
+    <value>Ewok 🤕</value>
+  </string><string key="Blacksmith">
+    <value>R2D2 ⚒</value>
+  </string><string key="AlphaWolf">
+    <value>Darth Nihilus ⚡️</value>
+  </string><string key="WolfCub">
+    <value>Starkiller 🐶</value>
+  </string><string key="PlayerBittenWolves">
+  <value>Los soldados clon empezaron a atacar a {0}, pero, de repente, {1}, Darth Nihilus, hace que todos paren. Él deja petrificados a todos y les dice que {0} debería unirse a su ejército en lugar de morir, entonces todos regresan a sus habitaciones, dejando a su víctima torturada detrás. {0} se convertirá en un soldado clon mañana a la noche.</value>
+  </string><string key="PlayerBitten">
+    <value>Usted fue atacado por los soldados clon, pero Darth Nihilus te escogió. En vez de ser asesinado, formarás parte de su ejército... ¡Y te unirás a los soldados clon mañana por la noche!</value>
+  </string><string key="BittenTurned">
+    <value>El sol se pone, y usted comienza a sentir una perturbación en la fuerza ... ¡Ahora eres un Soldado Clon!</value>
+  </string><string key="AboutMayor">
+    <value>Como Canciller, eres un padawan humilde, hasta que te revelas. Entonces cambia el recuento de votos para asesinar (lo que significa que tu voto es dos veces más poderoso que el de los demás). Usa ese poder sabiamente para ayudar a los Jedi.</value>
+  </string><string key="AboutPrince">
+    <value>La Pricesa Leia Organa es un papel clave en la estrategia del equipo de los Jedi. Una vez que la princesa es linchada, su papel como princesa se revela, y sobreviven. Sin embargo, esto sólo puede ocurrir una vez: si los jugadores insisten en lincharte, morirán.</value>
+  </string><string key="AboutSorcerer">
+    <value>¿Recuerdas al buen viejo Maestro Yoda? Bueno, ahora, tiene su contraparte estar en el equipo de los soldados clon. Darth Plagueis es el Maestro Yoda pero en el bando sith. Sólo pueden ver si alguien es soldado clon o Maestro Yoda, y ellos ganan con los soldados clon.</value>
+  </string><string key="AboutClumsy">
+    <value>Eres el Ewok. Tal vez no deberías haber tomado tanto alcohol para desayunar. No puedes ver una maldita cosa. ¿Puedes incluso votar por la persona que quieres? (Tienes 50% de probabilidades de votar por alguien aleatorio.)</value>
+  </string><string key="AboutBlacksmith">
+    <value>Eres R2D2. El fiel ayudante de los Jedis. Tienes mecanismos para distraer a los soldados clon, y así prevenir su ataque durante una noche. Durante el día, podrás elegir si quieres distraerlos por el templo Jedi. Aparte de eso, eres como un simple padawan.</value>
+  </string><string key="AboutAlphaWolf">
+    <value>Eres Darth Nihilus, el lord sith más poderoso cuerpo a cuerpo, la pesadilla de los Jedi. Tu poder es la causa de que los midiclorianos influyan en un padawan o jedi para convertirlo al lado oscuro, conviertes a los padawans en soldados clon. Cada noche, podrás elegir un padawan para atacarlo y matarlo, pero mientras estés vivo, existe un 20% de probabilidad de que se convierta en un soldado clon.</value>
+  </string><string key="AboutWolfCub">
+    <value>Eres Starkiller, adorado por tu maestro, Darth Vader y protegido por los soldados clon. Podrás elegir un personaje para atacar y matar todas las noches. Si te matan, tus protectores al ver tu cuerpo en el suelo, vengarán tu muerte, atacando a dos personajes la noche siguiente.</value>
+  </string><string key="HarlotFuckedKilledPublic">
+    <value>{0} va al dormitorio de {1} para descubrir información, pero allí encuentra a General Grievous aplicando disfrutando de una tortura, lo último que vio venir fue un sable verde hacia su dirección. Padme Amidala está muerta.</value>
+  </string><!-- new strings 06 nov--><string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} acaba de morir, y te has convertido en Darth Nihilus. Sus compañeros (si los hay) son: {1}</value>
+  </string><string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} acaba de morir, y te has transformado en Starkiller, Aprendiz de Sith.  Sus compañeros (si los hay) son: {1}</value>
+  </string><string key="VillageTeam">
+    <value>Tiempo del Templo Jedi</value>
+  </string><string key="NeutralTeam">
+    <value>Tiempo Neutral</value>
+  </string><string key="WolfTeam">
+    <value>Tiempo de los Mortífagos</value>
+  </string><string key="SerialKillerTeam">
+    <value>Tiempo de General Grievous</value>
+  </string><string key="CultTeam">
+    <value>Tiempo de los Caballeros de Ren</value>
+  </string><string key="TannerTeam">
+    <value>Tiempo del Cazarrecompensas</value>
+  </string>
+  - <string key="VillageTeamEnd">
+    <value>Tiempo del Templo Jedi</value>
+  </string>
+- <string key="NeutralTeamEnd">
+    <value>Tiempo Neutral</value>
+  </string>
+- <string key="WolfTeamEnd">
+    <value>Tiempo de los Soldados Clon</value>
+  </string>
+- <string key="SerialKillerTeamEnd">
+    <value>Tiempo de General Grievous</value>
+  </string>
+- <string key="CultTeamEnd">
+    <value>Tiempo de los Caballeros de Ren</value>
+  </string>
+- <string key="TannerTeamEnd">
+    <value>Tiempo del Cazarrecompensas</value>
+  </string><string key="CultConvertWolf">
+    <value>Los caballeros de Ren envían a {0} para que se una a la orden  {1} pero, no se une  {0} regresó a su lugar de descanso...</value>
+  </string><string key="ApprenticeSeerEaten">
+    <value>El templo Jedi despierta y encuentra el cuerpo de Luke Skywalker hecho pedazos, es un día triste en el templo... ¡{0} murió</value>
+  </string><string key="BlacksmithKilled">
+    <value>Parece que {0}, R2D2, tuvo mucha mala suerte. Se encontraron solo pedazos de lo que era. ¡El general Grievous tuvo su fiesta!</value>
+  </string><string key="ZombieKilled">
+    <value>Por la mañana todos encuentran la armadura de {0}. Al general Grievous no le importa detalles como la raza, ¡Todos los Jedi son posibles sables para añadir a su colección! Los soldados clon perdieron a {0}...</value>
+  </string><string key="CupidKilled">
+    <value>>Los padawans y los maestros encuentran el cuerpo de {0} partido en dos, Snoke está muerto. Es extraño el hecho de muera habiendo hablado tan poco de su personaje, claramente una obra macabra más de El general Grievous.</value>
+  </string><string key="DrunkKilled">
+    <value> Jar Jar Binks {0}, tenía su bilis removida y depositada en un triste plato. Obviamente una muerte más que el general Grievous debe haber adorado, y todos nosotros un poquito, ¿no?.</value>
+  </string><string key="GuardianAngelKilled">
+    <value>{0} se encuentra solo su túnica y se ha hecho uno con la fuerza. El maestro Obi Wan Kenobi está muerto, y la noche ahora es más sombría.</value>
+  </string><string key="GunnerKilled">
+    <value>En medio de la noche escuchan un ruido en el dormitorio de {0}, ¡Boba Fett! Usted no puede dormir después de encontrar su cabeza separada de su cuerpo, y su blaster tirado a su lado, una víctima más del general Grievous.</value>
+  </string><string key="MayorKilled">
+    <value>¡Ha habido un terrible asesinato! {0}, ¡El canciller supremo del senado fue encontrado cerca de la puerta del templo! El general Grievous finalmente logró eliminar a la cabeza más visible de la República galáctica.</value>
+  </string><string key="PrinceKilled">
+    <value>Los gritos son escuchados por todo el templo Jedi antes de la salida del sol. Los maestros y los padawans están en todo lugar investigando la muerte de {0}, La princesa Leia. Y ninguna pista fue encontrada todavía, además un trozo de la capa en la mano de Leia, para hacernos saber que fue el &quot;General Grievous&quot; su asesino.</value>
+  </string><string key="SeerKilled">
+    <value>El templo Jedi se despierta para ver el cuerpo de {0}, El maestro Yoda, muerto. El general Grievous ha vuelto a atacar.</value>
+  </string><string key="SorcererEaten">
+    <value>L>Los gritos y la rabia de Darth Nihilus pueden ser escuchados y sentidos por todo el templo. Parece que un error fue cometido y los soldados clon mataron a un aliado. Darth Plagueis, {0}, está muerto.</value>
+  </string><string key="WildChildEaten">
+    <value>¡Muere! No hay nadie que pueda parar a los soldados clon. {0}, el senador Palpatine, murió, los soldados le mataron y al hacerlo, se dieron cuenta de que era un Lord Sith probablemente lo hicieron siguiendo una orden de un sith más poderoso ¡Qué sorpresa!</value>
+  </string><string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+    <value>El templo Jedi se despertó esta mañana sólo para encontrar un cuerpo desmembrado y sin vida.{0}, Rey, investigó a la persona equivocada. El general Grievous utilizó todos los métodos de tortura que se pueden imaginar.</value>
+  </string><string key="CultConvertWolfPublic">
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>Pésima elección de los caballeros de Ren al visitar un soldado clon que decidió quedarse en su dormitorio durante la noche. {0} fue expulsado del templo Jedi. Los padawan parecen conocer una buena forma de apartar a los caballeros de Ren</value>
+  </string><string key="CultConvertKillerPublic">
+    <!--used when Zombies convert the SK-->
+    <value>Por la mañana los padawans y sus maestros se despiertan en medio de ruidos, todos van tras los sonidos y paran cerca de la entrada al templo. Ellos divisan a alguien apartar a un caballero de Ren. Los caballeros de Ren deben pensar bien en quién visitar, pues, al general Grievous no le importa el bando, ¡Todos son víctimas para él! Los caballeros de Ren perdieron a {0}...</value>
+  </string><string key="GAGuardedKiller">
+    <value>{0}  se encontró frente a una persona equivocada durante la noche. Se encontraron marcas extrañas en las paredes del pasillo que llevaba a uno de los dormitorios, y la investigación de los padawans y maestros concluyó que alguien destruyó al Maestro Obi Wan Kenobi. Un mensaje sonó en el templo jedi &quot;Fue el general Grievous&quot; todos supieron que el despiadado general había sido el culpable.</value>
+  </string><string key="GAGuardedWolf">
+    <value>{0} , el maestro Obi Wan Kenobi, fue a proteger un soldado clon anoche. El templo Jedi se despertó y sólo encontró el cuerpo de {0} con ¡¡Marcas de disparos de blaster!! A los soldados clon no les gustan los jedi protectores.</value>
+  </string><string key="HunterKillsWolfEnd">
+    <value>Sólo {0} y {1} sobrevivieron, y {1} Darth Maul, quería cambiar eso... En medio de la noche, se dirigió al dormitorio de {0}, sin pensar que no sería fácil matar a Darth Maul. Lo que restó de {1} fue un pedazo de su brazo con el blaster aún en su mano. ¡El último soldado clon murió</value>
+  </string><string key="WolfKillsHunterEnd">
+    <value>Sólo {0} y {1} sobrevivieron, y {1} quería cambiar eso... En medio de la noche, se dirige al dormitorio de {0}, que todavía estaba durmiendo. Lo que restó de {0} fue sólo su mano, sosteniendo su icónico sable laser.</value>
+  </string><string key="CHKillsZombieEnd">
+    <value>Al llegar cerca de {0} y sentir un perturbamiento en la fuerza, {1} ya se da cuenta que {0} fue sustituido por un caballero de Ren. Entonces, {1} toma su sable laser por última vez cogiendo impulso contra {0}. Ahora el templo Jedi está a salvo de la invasión de los caballeros de Ren.</value>
+  </string><string key="SecondsAdded">
+    <value>El tiempo para unirse se ha ampliado en {0} segundos! Ahora quedan {1} segundos para unirse a la partida!</value>
+  </string><string key="SecondsRemoved">
+    <value>Tiempo para unirse al juego reducido en {0} segundos.
+{1} para unirse a la partida restante.</value>
+  </string><string key="CantExtend">
+    <value>¡Sólo los administradores pueden extender el tiempo más de una vez!</value>
+  </string><string key="AllowExtendQ">
+    <value>¿Los jugadores pueden extender el tiempo?
+   Actual: {0} extender
+   Nota: Los administradores siempre pueden extender.</value>
+  </string><string key="AllowExtendA">
+    <value>{0} a los jugadores extender el tiempo para unirse a la partida</value>
+  </string><string key="MaxExtendQ">
+    <value>Seleccione el número máximo de segundos para agregar al comando /extend. Estándar: {0}
+   Actual: {1}</value>
+  </string><string key="MaxExtendA">
+    <value>El tiempo máximo para extender el juego se ha cambiado a {0} segundos.</value>
+  </string><string key="WolvesEatDrunkBlockSecondKill">
+    <value>¡Pésima elección! ¡{0} era Slughorn! Ahora usted no puede atacar {1}!</value>
+  </string><string key="JoinButton">
+    <value>Unirse a la partida</value>
+  </string><string key="NotMember">
+    <value>Usted no puede entrar a la partida, ya que no está en el grupo {0}.</value>
+  </string><string key="JoinByButton">
+    <value>Por favor, utilice el botón para entrar en la salida en lugar del comando join.</value>
+  </string><string key="PlayerVoteCounts">
+    <value>{0} jugadores votaron, {1} total.</value>
+  </string><string key="EnableSecretLynchQ">
+    <value>¿Activar el linchamiento secreto?\nActual: {0}</value>
+  </string><string key="EnableSecretLynchA">
+    <value>Linchamento secreto definido como: {0}</value>
+  </string><string key="NoAutoJoin">
+    <value>{0}, recuerde que usted también debe entrar en el juego por el botón.</value>
+  </string><string key="GroupNotFound">
+    <value>No se pudo encontrar el grupo. Ejecute este comando en el grupo del que desea salir de la lista de espera, o añada el enlace, id o username del grupo delante del comando.</value>
+  </string><string key="DeletedFromWaitList">
+    <value>Ha salido de la lista de espera del grupo {0}.</value>
+    <!-- {0} = list of people who have joined -->
+    <value>{0} entró en la partida en los últimos 30 segundos.</value>
+  </string><string key="AllowCult">
+    <value>Permitir Caballeros de REn</value>
+  </string><string key="AllowTanner">
+    <value>Perimitir Cazarrecompensas</value>
+  </string><string key="AllowFool">
+    <value>Permitir C3PO</value>
+  </string><string key="EnableSecretLynch">
+    <value>Habilitar el linchamiento secreto</value>
+  </string><string key="RandomMode">
+    <value>Habilitar Modo Aleatorio</value>
+  </string><string key="AllowExtend">
+    <value>Permitir Extender tiempo</value>
+  </string><string key="ShowRolesDeath">
+    <value>Mostrar roles al morir.</value>
+  </string><string key="AllowFlee">
+    <value>Perimitir Huir</value>
+  </string><string key="HaveJoined">
+    <value>{0} entraron en los últimos 30 segundos.</value>
+  </string><!--New InlineStats Strings 30/12--><string key="AchievementsUnlocked">
+    <value>¡Logros realizados!</value>
+  </string><string key="GamesWon">
+    <value>Partidas ganadas</value>
+  </string><string key="GamesLost">
+    <value>Partidas perdidas</value>
+  </string><string key="GamesSurvived">
+    <value>Partidas Sobrevividas</value>
+  </string><string key="TotalGames">
+    <value>Total de partidas</value>
+  </string><string key="TimesKilled">
+    <value>Veces ha asesinado a</value>
+  </string><string key="TimesKilledBy">
+    <value>Veces que recibió un disparo de bláster por</value>
+  </string>
+    <string key="ShowIDs">
+    <value>Mostrar IDs durante el join.</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>¿Mostrar los IDs de los jugadores conforme se vayan uniendo?\nActualmente: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Todas</value>
+  </string>
+    <string key="RandomModeQ">
+    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan Zombieas, necio o veterano.\nActualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modo aleatorio: {0}</value>
+  </string>
+    <string key="AllowNSFW">
+    <value>Permitir packs de GIFs NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>¿Permitir que los jugadores tengan packs de GIFs NSFW?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} GIFs NSFW</value>
+  </string>
+  
+    <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Con el albor del nuevo día, {0} se despierta en medio de un gran silencio. Dándose cuenta de que no queda nadie, {0} empieza a caminar en soledad por todo Templo Entonces, {0} suspira al ver los cuerpos sin vida de sus compañeros; Solo le queda salir de alli y dirigirse a su bar preferido.</value>
+    <value>{0} se levanta solo con el alba. La impotencia recorre las venas de {0} al darse cuenta de que su misión de cazarecompensas ha fracasado estrepitosamente; así que {0} huye del templo en la primera nave que encuentra.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>Los místicos ojos de {0} se abren, pero en lugar del típico bullicio del Templo, se encuentra con un silencio sepulcral. Se queda mirando al monótono techo y deja que la realidad se funda en él. Todo el mundo está muerto. Sus Soldados clon no volverán jamás. Con gran angustia en su negro corazón, {0} se pone en pie y mete sus pertenencias en una vieja baliza; después se aleja hasta el final del templo. ¡Ay!, tiempo es ya de empezar una nueva vida con otros Soldados clon que le requieran. {0} se aleja del templo y adentra en lo profundo del espacio.</value>
+    <value>A pesar de los esfuerzos de {0}, su vida ya carece de emoción y gracia. Aun con la victoria de los soldados clon, no queda nadie con quien saborear el éxito ni Jedi de quien mofarse. Así las cosas, {0} intenta percibir la fuerz, donde silenciosamente desaparecen sus anhelos en una neblina espesa. Se dispone, pues, a buscar nuevos soldados clon, aliados que la ayuden a llenar su oscura vida y sacia su sed de causar males a la humanidad.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>¿Qué variante?\nActualmente: {0}\nComo has jugado 500 juegos, puedes acceder también a: </value>
+  </string>
+  <string key="Skip">
+  <value>Omitir</value>
+  </string>
+
+</strings>

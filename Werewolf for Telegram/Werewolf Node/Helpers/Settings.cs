@@ -45,7 +45,7 @@ namespace Werewolf_Node
         internal static List<string> CultWins = new List<string> { "CgACAgQAAyEFAATkOdz5AAOPabc_CGCveKeDLiSFT5OXz6SG9csAAuACAAJnDx1Tf7xojI-Ax186BA" };
         internal static List<string> SerialKillerWins = new List<string> { "CgACAgQAAyEFAATkOdz5AAOSabc_JU3TAks2tWBFhXBvK4Bn19EAAmoBAAIW7LRQlRcTQ7V4WQM6BA" };
         internal static List<string> LoversWin = new List<string> { "CgACAgQAAyEFAATkOdz5AAODabc-mO2YN-S0Xc6wAAHR_8um_Na6AALvAgACZdgNUwogz0dG00ZDOgQ" };
-        internal static List<string> SKKilled = new List<string> { "CgACAgUAAxkBAAIDjWm64DdxGhiYgNzibPuVHcInVgnXAAIJHQAC1tHYVYNLnh1k287VOgQ" };
+        internal static List<string> SKKilled = new List<string> { "CgACAgQAAxkBAAIu8WnwrnYs_8jYSvNRvOhMmqGEZAZ7AAJGCAAC0ytNUyWUBL0oCT0MOwQ" };
         public static List<string> ArsonistWins = new List<string> { "CgACAgQAAyEFAATkOdz5AAOeabc_gcqfnH36DkC1gk9m4cQWSgQAApQBAAIVoLVQ_3pxo5vu2Mw6BA" };
         public static List<string> BurnToDeath = new List<string> { "CgACAgQAAxkBAAFE6Blpt0F1OShQAtU997JtUr_lGJKkTAACqwADa589U-4JhzY72lIaOgQ" };
 

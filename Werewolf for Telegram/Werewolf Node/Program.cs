@@ -213,7 +213,7 @@ namespace Werewolf_Node
                             case "PlayerJoinInfo":
                                 var pji = JsonConvert.DeserializeObject<PlayerJoinInfo>(msg);
                                 game = Games.FirstOrDefault(x => x.Guid == pji.GameId);
-                                game?.AddPlayer(pji.User);
+                                game?.AddPlayer(pji.User, pji.IsDummy);
                                 break;
                             case "GameStartInfo":
                                 var gsi = JsonConvert.DeserializeObject<GameStartInfo>(msg);
@@ -404,6 +404,10 @@ namespace Werewolf_Node
 
         internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null, bool notify = false, bool preview = false)
         {
+#if DEBUG
+            if (id <= -1000 && id > -1000000)
+                return null;
+#endif
             //MessagesSent++;
             //message = message.FormatHTML();
             //message = message.Replace("`",@"\`");

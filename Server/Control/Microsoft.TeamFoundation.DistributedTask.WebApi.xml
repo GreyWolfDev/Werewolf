@@ -1,0 +1,2055 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.TeamFoundation.DistributedTask.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.AddAgentAsync(System.Int32,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgent,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="agent"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteAgentAsync(System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="agentId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentAsync(System.Int32,System.Int32,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Collections.Generic.IEnumerable{System.String},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="agentId"></param>
+            <param name="includeCapabilities"></param>
+            <param name="includeAssignedRequest"></param>
+            <param name="propertyFilters"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentsAsync(System.Int32,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="agentName"></param>
+            <param name="includeCapabilities"></param>
+            <param name="includeAssignedRequest"></param>
+            <param name="propertyFilters"></param>
+            <param name="demands"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.ReplaceAgentAsync(System.Int32,System.Int32,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgent,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="agentId"></param>
+            <param name="agent"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateAgentAsync(System.Int32,System.Int32,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgent,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="agentId"></param>
+            <param name="agent"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAzureSubscriptionsAsync(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.QueryEndpointAsync(Microsoft.TeamFoundation.DistributedTask.WebApi.TaskDefinitionEndpoint,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Proxy for a GET request defined by an 'endpoint'. The request is authorized using a service connection. The response is filtered using an XPath/Json based selector.
+            </summary>
+            <param name="endpoint">Describes the URL to fetch.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetTaskHubLicenseDetailsAsync(System.String,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="hubName"></param>
+            <param name="includeEnterpriseUsersCount"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateTaskHubLicenseDetailsAsync(System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHubLicenseDetails,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="hubName"></param>
+            <param name="taskHubLicenseDetails"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetTaskIconAsync(System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="taskId"></param>
+            <param name="versionString"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteAgentRequestAsync(System.Int32,System.Int64,System.Guid,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.TaskResult},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="requestId"></param>
+            <param name="lockToken"></param>
+            <param name="result"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentRequestAsync(System.Int32,System.Int64,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="requestId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentRequestsForAgentAsync(System.Int32,System.Int32,System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="agentId"></param>
+            <param name="completedRequestCount"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentRequestsForAgentsAsync(System.Int32,System.Collections.Generic.IEnumerable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="agentIds"></param>
+            <param name="completedRequestCount"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentRequestsForPlanAsync(System.Int32,System.Guid,System.Nullable{System.Guid},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="planId"></param>
+            <param name="jobId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.QueueAgentRequestAsync(System.Int32,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentJobRequest,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="request"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateAgentRequestAsync(System.Int32,System.Int64,System.Guid,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentJobRequest,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="requestId"></param>
+            <param name="lockToken"></param>
+            <param name="request"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GenerateDeploymentMachineGroupAccessTokenAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="machineGroupId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GenerateDeploymentMachineGroupAccessTokenAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="machineGroupId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.AddDeploymentMachineGroupAsync(System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.DeploymentMachineGroup,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="machineGroup"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.AddDeploymentMachineGroupAsync(System.Guid,Microsoft.TeamFoundation.DistributedTask.WebApi.DeploymentMachineGroup,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="machineGroup"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteDeploymentMachineGroupAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="machineGroupId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteDeploymentMachineGroupAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="machineGroupId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetDeploymentMachineGroupAsync(System.String,System.Int32,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.MachineGroupActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="machineGroupId"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetDeploymentMachineGroupAsync(System.Guid,System.Int32,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.MachineGroupActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="machineGroupId"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetDeploymentMachineGroupsAsync(System.String,System.String,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.MachineGroupActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="machineGroupName"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetDeploymentMachineGroupsAsync(System.Guid,System.String,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.MachineGroupActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="machineGroupName"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateDeploymentMachineGroupAsync(System.String,System.Int32,Microsoft.TeamFoundation.DistributedTask.WebApi.DeploymentMachineGroup,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="machineGroupId"></param>
+            <param name="machineGroup"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateDeploymentMachineGroupAsync(System.Guid,System.Int32,Microsoft.TeamFoundation.DistributedTask.WebApi.DeploymentMachineGroup,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="machineGroupId"></param>
+            <param name="machineGroup"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetDeploymentMachinesAsync(System.String,System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="machineGroupId"></param>
+            <param name="tagFilters"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetDeploymentMachinesAsync(System.Guid,System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="machineGroupId"></param>
+            <param name="tagFilters"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateDeploymentMachinesAsync(System.String,System.Int32,System.Collections.Generic.IEnumerable{Microsoft.TeamFoundation.DistributedTask.WebApi.DeploymentMachine},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="machineGroupId"></param>
+            <param name="deploymentMachines"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateDeploymentMachinesAsync(System.Guid,System.Int32,System.Collections.Generic.IEnumerable{Microsoft.TeamFoundation.DistributedTask.WebApi.DeploymentMachine},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="machineGroupId"></param>
+            <param name="deploymentMachines"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteMessageAsync(System.Int32,System.Int64,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="messageId"></param>
+            <param name="sessionId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetMessageAsync(System.Int32,System.Guid,System.Nullable{System.Int64},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="sessionId"></param>
+            <param name="lastMessageId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.RefreshAgentAsync(System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="agentId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.RefreshAgentsAsync(System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.SendMessageAsync(System.Int32,System.Int64,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentMessage,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="requestId"></param>
+            <param name="message"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetPackageAsync(System.String,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="packageType"></param>
+            <param name="platform"></param>
+            <param name="version"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetPackagesAsync(System.String,System.String,System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="packageType"></param>
+            <param name="platform"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentPoolRolesAsync(System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.AddAgentPoolAsync(Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPool,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="pool"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteAgentPoolAsync(System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentPoolAsync(System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPoolActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="properties"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentPoolsAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPoolType},System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPoolActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolName"></param>
+            <param name="properties"></param>
+            <param name="poolType"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateAgentPoolAsync(System.Int32,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPool,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="pool"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentQueueRolesAsync(System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="queueId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.AddAgentQueueAsync(Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentQueue,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="queue"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.AddAgentQueueAsync(System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentQueue,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="queue"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.AddAgentQueueAsync(System.Guid,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentQueue,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="queue"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.CreateTeamProjectAsync(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.CreateTeamProjectAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.CreateTeamProjectAsync(System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteAgentQueueAsync(System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="queueId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteAgentQueueAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="queueId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteAgentQueueAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="queueId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentQueueAsync(System.String,System.Int32,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentQueueActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="queueId"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentQueueAsync(System.Guid,System.Int32,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentQueueActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="queueId"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentQueueAsync(System.Int32,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentQueueActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="queueId"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentQueuesAsync(System.String,System.String,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentQueueActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="queueName"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentQueuesAsync(System.Guid,System.String,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentQueueActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="queueName"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetAgentQueuesAsync(System.String,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentQueueActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="queueName"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.ExecuteServiceEndpointRequestAsync(System.String,System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpointRequest,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="endpointId"></param>
+            <param name="serviceEndpointRequest"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.ExecuteServiceEndpointRequestAsync(System.Guid,System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpointRequest,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="endpointId"></param>
+            <param name="serviceEndpointRequest"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.QueryServiceEndpointAsync(System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.DataSourceBinding,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Proxy for a GET request defined by an service endpoint. The request is authorized using a data source in service endpoint. The response is filtered using an XPath/Json based selector.
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="binding">Describes the data source to fetch.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.QueryServiceEndpointAsync(System.Guid,Microsoft.TeamFoundation.DistributedTask.WebApi.DataSourceBinding,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Proxy for a GET request defined by an service endpoint. The request is authorized using a data source in service endpoint. The response is filtered using an XPath/Json based selector.
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="binding">Describes the data source to fetch.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.CreateServiceEndpointAsync(System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="endpoint"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.CreateServiceEndpointAsync(System.Guid,Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="endpoint"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteServiceEndpointAsync(System.String,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="endpointId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteServiceEndpointAsync(System.Guid,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="endpointId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetServiceEndpointDetailsAsync(System.String,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="endpointId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetServiceEndpointDetailsAsync(System.Guid,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="endpointId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetServiceEndpointsAsync(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Guid},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="type"></param>
+            <param name="authSchemes"></param>
+            <param name="endpointIds"></param>
+            <param name="includeFailed"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetServiceEndpointsAsync(System.Guid,System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Guid},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="type"></param>
+            <param name="authSchemes"></param>
+            <param name="endpointIds"></param>
+            <param name="includeFailed"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateServiceEndpointAsync(System.String,System.Guid,Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="endpointId"></param>
+            <param name="endpoint"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateServiceEndpointAsync(System.Guid,System.Guid,Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="endpointId"></param>
+            <param name="endpoint"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetServiceEndpointTypesAsync(System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="type"></param>
+            <param name="scheme"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.CreateAgentSessionAsync(System.Int32,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSession,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="session"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteAgentSessionAsync(System.Int32,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="sessionId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.AddTaskGroupAsync(System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskGroup,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="taskGroup"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.AddTaskGroupAsync(System.Guid,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskGroup,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="taskGroup"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteTaskGroupAsync(System.String,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="taskGroupId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteTaskGroupAsync(System.Guid,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="taskGroupId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetTaskGroupsAsync(System.String,System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="taskGroupId"></param>
+            <param name="expanded"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetTaskGroupsAsync(System.Guid,System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="taskGroupId"></param>
+            <param name="expanded"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateTaskGroupAsync(System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskGroup,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="taskGroup"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateTaskGroupAsync(System.Guid,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskGroup,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="taskGroup"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteTaskDefinitionAsync(System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="taskId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetTaskContentZipAsync(System.Guid,System.String,System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="taskId"></param>
+            <param name="versionString"></param>
+            <param name="visibility"></param>
+            <param name="scopeLocal"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetTaskDefinitionAsync(System.Guid,System.String,System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="taskId"></param>
+            <param name="versionString"></param>
+            <param name="visibility"></param>
+            <param name="scopeLocal"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetTaskDefinitionsAsync(System.Nullable{System.Guid},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="taskId"></param>
+            <param name="visibility"></param>
+            <param name="scopeLocal"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateAgentUserCapabilitiesAsync(System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.String},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="poolId"></param>
+            <param name="agentId"></param>
+            <param name="userCapabilities"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.AddVariableGroupAsync(System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroup,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="group"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.AddVariableGroupAsync(System.Guid,Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroup,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="group"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteVariableGroupAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="groupId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.DeleteVariableGroupAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="groupId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetVariableGroupAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="groupId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetVariableGroupAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="groupId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetVariableGroupsAsync(System.String,System.String,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroupActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="groupName"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetVariableGroupsAsync(System.Guid,System.String,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroupActionFilter},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="groupName"></param>
+            <param name="actionFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetVariableGroupsByIdAsync(System.String,System.Collections.Generic.IEnumerable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="groupIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetVariableGroupsByIdAsync(System.Guid,System.Collections.Generic.IEnumerable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="groupIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateVariableGroupAsync(System.String,System.Int32,Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroup,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="groupId"></param>
+            <param name="group"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.UpdateVariableGroupAsync(System.Guid,System.Int32,Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroup,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="groupId"></param>
+            <param name="group"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.CreateAadOAuthRequestAsync(System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="tenantId"></param>
+            <param name="redirectUri"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentHttpClientBase.GetVstsAadTenantIdAsync(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.GetPlanAttachmentsAsync(System.Guid,System.String,System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="type"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.CreateAttachmentAsync(System.Guid,System.String,System.Guid,System.Guid,System.Guid,System.String,System.String,System.IO.Stream,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="timelineId"></param>
+            <param name="recordId"></param>
+            <param name="type"></param>
+            <param name="name"></param>
+            <param name="uploadStream">Stream to upload</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.GetAttachmentAsync(System.Guid,System.String,System.Guid,System.Guid,System.Guid,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="timelineId"></param>
+            <param name="recordId"></param>
+            <param name="type"></param>
+            <param name="name"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.GetAttachmentContentAsync(System.Guid,System.String,System.Guid,System.Guid,System.Guid,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="timelineId"></param>
+            <param name="recordId"></param>
+            <param name="type"></param>
+            <param name="name"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.GetAttachmentsAsync(System.Guid,System.String,System.Guid,System.Guid,System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="timelineId"></param>
+            <param name="recordId"></param>
+            <param name="type"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.AppendTimelineRecordFeedAsync(System.Guid,System.String,System.Guid,System.Guid,System.Guid,Microsoft.VisualStudio.Services.WebApi.VssJsonCollectionWrapper{System.Collections.Generic.IEnumerable{System.String}},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="timelineId"></param>
+            <param name="recordId"></param>
+            <param name="lines"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.AppendLogContentAsync(System.Guid,System.String,System.Guid,System.Int32,System.IO.Stream,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="logId"></param>
+            <param name="uploadStream">Stream to upload</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.CreateLogAsync(System.Guid,System.String,System.Guid,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskLog,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="log"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.GetLogAsync(System.Guid,System.String,System.Guid,System.Int32,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="logId"></param>
+            <param name="startLine"></param>
+            <param name="endLine"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.GetLogsAsync(System.Guid,System.String,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.GetQueuedPlanGroupsAsync(System.Guid,System.String,System.Nullable{Microsoft.TeamFoundation.DistributedTask.WebApi.PlanGroupStatusFilter},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="statusFilter"></param>
+            <param name="count"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.GetPlanAsync(System.Guid,System.String,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.GetRecordsAsync(System.Guid,System.String,System.Guid,System.Guid,System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="timelineId"></param>
+            <param name="changeId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.UpdateRecordsAsync(System.Guid,System.String,System.Guid,System.Guid,Microsoft.VisualStudio.Services.WebApi.VssJsonCollectionWrapper{System.Collections.Generic.IEnumerable{Microsoft.TeamFoundation.DistributedTask.WebApi.TimelineRecord}},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="timelineId"></param>
+            <param name="records"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.CreateTimelineAsync(System.Guid,System.String,System.Guid,Microsoft.TeamFoundation.DistributedTask.WebApi.Timeline,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="timeline"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.DeleteTimelineAsync(System.Guid,System.String,System.Guid,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="timelineId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.GetTimelineAsync(System.Guid,System.String,System.Guid,System.Guid,System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="timelineId"></param>
+            <param name="changeId"></param>
+            <param name="includeRecords"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskHttpClientBase.GetTimelinesAsync(System.Guid,System.String,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="scopeIdentifier">The project GUID to scope the request</param>
+            <param name="hubName">The name of the server hub: "build" for the Build server or "rm" for the Release Management server</param>
+            <param name="planId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.DistributedTask.WebApi.JobEnvironment">
+            <summary>
+            Represents the context of variables and vectors for a job request.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.JobEnvironment.#ctor">
+            <summary>
+            Initializes a new <c>JobEnvironment</c> with empty collections of repositories, vectors, 
+            and variables.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.JobEnvironment.SystemConnection">
+            <summary>
+            Gets or sets the endpoint used for communicating back to the calling service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.JobEnvironment.MaskHints">
+            <summary>
+            Gets the collection of mask hints
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.JobEnvironment.Endpoints">
+            <summary>
+            Gets the collection of endpoints associated with the current context.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.JobEnvironment.Options">
+            <summary>
+            Gets the collection of options associated with the current context.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.JobEnvironment.Variables">
+            <summary>
+            Gets the collection of variables associated with the current context.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.JobEnvironment.Clone">
+            <summary>
+            Creates a deep copy of the job environment.
+            </summary>
+            <returns>A deep copy of the job environment</returns>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.DistributedTask.WebApi.JobOption">
+            <summary>
+            Represents an option that may affect the way an agent runs the job.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.JobOption.#ctor">
+            <summary>
+            Initializes a new <c>JobOption</c> with an empty collection of data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.JobOption.Id">
+            <summary>
+            Gets the id of the option.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.JobOption.Data">
+            <summary>
+            Gets the data associated with the option.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.JobOption.Clone">
+            <summary>
+            Creates a deep copy of the job option.
+            </summary>
+            <returns>A deep copy of the job option</returns>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEndpoint.Id">
+            <summary>
+            Gets or sets the id of the endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEndpoint.Name">
+            <summary>
+            Gets or sets the friendly name of the endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEndpoint.Type">
+            <summary>
+             Gets or sets the type of the endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEndpoint.Authorization">
+            <summary>
+             Gets or sets the Authorization (name of the secret) of the endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEndpoint.Url">
+            <summary>
+            Gets or sets the url of the endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEndpoint.Data">
+            <summary>
+            Gets the set of capabilities supported by this host.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEnvironment">
+            <summary>
+            Represents the context of variables and vectors for a job request.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEnvironment.#ctor">
+            <summary>
+            Initializes a new <c>JobEnvironment</c> with empty collections of repositories, vectors, 
+            and variables.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEnvironment.MaskHints">
+            <summary>
+            Gets the collection of mask hints
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEnvironment.Variables">
+            <summary>
+            Gets the collection of variables associated with the current context.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEnvironment.Endpoints">
+            <summary>
+            Gets the collection of endpoints associated with the current context.
+            </summary>
+            <remarks>This is being deprecated and should not be used</remarks>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEnvironment.Secrets">
+            <summary>
+            Gets the data associated with the current request.
+            </summary>
+            <returns></returns>
+            <remarks>This is being deprecated and should not be used</remarks>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEnvironment.Options">
+            <summary>
+            Gets the collection of options associated with the current context.
+            </summary>
+            <remarks>This is being deprecated and should not be used</remarks>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.Legacy.JobEnvironment.Clone">
+            <summary>
+            Creates a deep copy of the job environment.
+            </summary>
+            <returns>A deep copy of the job environment</returns>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.DistributedTask.WebApi.PackageMetadata">
+            <summary>
+            Represents a downloadable package.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.PackageMetadata.Type">
+            <summary>
+            The type of package (e.g. "agent")
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.PackageMetadata.Platform">
+            <summary>
+            The platform (win7, linux, etc.)
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.PackageMetadata.CreatedOn">
+            <summary>
+            The date the package was created
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.PackageMetadata.Version">
+            <summary>
+            The package version.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.PackageMetadata.DownloadUrl">
+            <summary>
+            A direct link to download the package.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.PackageMetadata.HashValue">
+            <summary>
+            MD5 hash as a base64 string
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.PackageMetadata.InfoUrl">
+            <summary>
+            A link to documentation
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.PackageMetadata.Filename">
+            <summary>
+            The UI uses this to display instructions, i.e. "unzip MyAgent.zip"
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.PlanEnvironment.MaskHints">
+            <summary>
+            Gets the collection of mask hints
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.PlanEnvironment.Options">
+            <summary>
+            Gets the collection of options associated with the current context.
+            </summary>
+            <remarks>This is being deprecated and should not be used</remarks>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.PlanEnvironment.Variables">
+            <summary>
+            Gets the collection of variables associated with the current context.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint">
+            <summary>
+            Represents an endpoint which may be used by an orchestration job.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint.#ctor">
+            <summary>
+            Constructs an <c>ServiceEndpoint</c> instance with empty values.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint.Id">
+            <summary>
+            Gets or sets the identifier of this endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint.Name">
+            <summary>
+            Gets or sets the friendly name of the endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint.Type">
+            <summary>
+             Gets or sets the type of the endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint.Url">
+            <summary>
+            Gets or sets the url of the endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint.CreatedBy">
+            <summary>
+            The Gets or sets Identity reference for the user who created the Service endpoint
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint.Description">
+            <summary>
+            Gets or Sets description of endpoint
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint.Authorization">
+            <summary>
+            Gets or sets the authorization data for talking to the endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint.Data">
+            <summary>
+            Gets the custom data associated with this endpoint.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint.IsReady">
+            <summary>
+            EndPoint state indictor
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint.OperationStatus">
+            <summary>
+            Error message during creation/deletion of endpoint
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpoint.Clone">
+            <summary>
+            Performs a deep clone of the <c>ServiceEndpoint</c> instance.
+            </summary>
+            <returns>A new <c>ServiceEndpoint</c> instance identical to the current instance</returns>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpointTypes.Azure">
+            <summary>
+            Azure endpoint
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpointTypes.Chef">
+            <summary>
+            Chef endpoint
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpointTypes.ExternalTfs" -->
+        <member name="F:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpointTypes.Generic">
+            <summary>
+            Generic endpoint
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpointTypes.GitHub">
+            <summary>
+            GitHub endpoint
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpointTypes.SSH">
+            <summary>
+            SSH endpoint
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpointTypes.Subversion">
+            <summary>
+            Subversion endpoint
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpointTypes.Jenkins">
+            <summary>
+            Subversion endpoint
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpointTypes.ExternalGit">
+            <summary>
+            External Git repository
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.DistributedTask.WebApi.ServiceEndpointTypes.AzureRM">
+            <summary>
+            Azure RM endpoint
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgent.MaxParallelism">
+            <summary>
+            Gets or sets the maximum job parallelism allowed on this host.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgent.CreatedOn">
+            <summary>
+            Gets the date on which this agent was created.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgent.StatusChangedOn">
+            <summary>
+            Gets the date on which the last connectivity status change occurred.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgent.AssignedRequest">
+            <summary>
+            Gets the request which is currently assigned to this agent.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgent.Authorization">
+            <summary>
+            Gets or sets the authorization information for this agent.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgent.SystemCapabilities">
+            <summary>
+            Gets the set of capabilities supported by this host.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgent.UserCapabilities">
+            <summary>
+            Gets the set of capabilities supported by this host.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgent.Properties">
+            <summary>
+            Gets or sets a collection of properties which may be used to extend the storage fields available
+            for a given machine instance.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentAuthorization">
+            <summary>
+            Provides data necessary for authorizing the agent using OAuth 2.0 authentication flows.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentAuthorization.#ctor">
+            <summary>
+            Initializes a new <c>TaskAgentAuthorization</c> instance with default values.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentAuthorization.AuthorizationUrl">
+            <summary>
+            Gets or sets the endpoint used to obtain access tokens from the configured token service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentAuthorization.ClientId">
+            <summary>
+            Gets or sets the client identifier for this agent.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentAuthorization.PublicKey">
+            <summary>
+            Gets or sets the public key used to verify the identity of this agent.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentAuthorization.Clone">
+            <summary>
+            Creates a deep copy of the authorization data.
+            </summary>
+            <returns>A new <c>TaskAgentAuthorization</c> instance copied from the current instance</returns>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentMessage">
+            <summary>
+            Provides a contract for receiving messages from the task orchestrator.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentMessage.#ctor">
+            <summary>
+            Initializes an empty <c>TaskAgentMessage</c> instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentMessage.MessageId">
+            <summary>
+            Gets or sets the message identifier.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentMessage.MessageType">
+            <summary>
+            Gets or sets the message type, describing the data contract found in <c>TaskAgentMessage.Body</c>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentMessage.IV">
+            <summary>
+            Gets or sets the intialization vector used to encrypt this message.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentMessage.Body">
+            <summary>
+            Gets or sets the body of the message. If the <c>IV</c> property is provided the body will need to be
+            decrypted using the <c>TaskAgentSession.EncryptionKey</c> value in addition to the <c>IV</c>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPool.Size">
+            <summary>
+            Gets the current size of the pool.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPool.CreatedOn">
+            <summary>
+            Gets the date/time of the pool creation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPool.AutoProvision">
+            <summary>
+            Gets or sets a value indicating whether or not a queue should be automatically provisioned for
+            each project collection or not.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPool.CreatedBy">
+            <summary>
+            Gets the identity who created this pool. The creator of the pool is automatically added into the 
+            administrators group for the pool on creation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPool.GroupScopeId">
+            <summary>
+            Gets the scope identifier for groups/roles which are owned by this pool.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPool.Provisioned">
+            <summary>
+            Gets a value indicating whether or not roles have been provisioned for this pool.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPool.AdministratorsGroup">
+            <summary>
+            Gets the administrators group for this agent pool.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPool.ServiceAccountsGroup">
+            <summary>
+            Gets the service accounts group for this agent pool.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPool.Properties">
+            <summary>
+            Gets or sets a collection of properties which may be used to extend the storage fields available
+            for a given machine instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPoolReference.IsHosted">
+            <summary>
+            Gets or sets a value indicating whether or not this pool is managed by the service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPoolReference.PoolType">
+            <summary>
+            Gets or sets the type of the pool
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPublicKey">
+            <summary>
+            Represents the public key portion of an RSA asymmetric key.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPublicKey.#ctor">
+            <summary>
+            Initializes a new <c>TaskAgentPublicKey</c> instance with empty exponent and modulus values.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPublicKey.#ctor(System.Byte[],System.Byte[])">
+            <summary>
+            Initializes a new <c>TaskAgentPublicKey</c> instance with the specified exponent and modulus values.
+            </summary>
+            <param name="exponent">The exponent value of the key</param>
+            <param name="modulus">The modulus value of the key</param>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPublicKey.Exponent">
+            <summary>
+            Gets or sets the exponent for the public key.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentPublicKey.Modulus">
+            <summary>
+            Gets or sets the modulus for the public key.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentReference.Id">
+            <summary>
+            Gets the identifier of the agent.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentReference.Name">
+            <summary>
+            Gets the name of the agent.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentReference.Version">
+            <summary>
+            Gets the version of the agent.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentReference.Enabled">
+            <summary>
+            Gets or sets a value indicating whether or not this agent should be enabled for job execution.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentReference.Status">
+            <summary>
+            Gets the current connectivity status of the agent.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentReference.Links">
+            <summary>
+            Gets the reference links collection for this agent.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSession">
+            <summary>
+            Represents a session for performing message exchanges from an agent.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSession.#ctor(System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentReference)">
+            <summary>
+            Initializes a new <c>TaskAgentSession</c> instance with the specified owner name and agent.
+            </summary>
+            <param name="ownerName">The name of the owner for this session. This should typically be the agent machine</param>
+            <param name="agent">The target agent for the session</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSession.#ctor(System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentReference,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Initializes a new <c>TaskAgentSession</c> isntance with the specified owner name, agent, and capabilities.
+            </summary>
+            <param name="ownerName">The name of the owner for this session. This should typically be the agent machine</param>
+            <param name="agent">The target agent for the session</param>
+            <param name="systemCapabilities">A collection of capabilities to publish on session creation</param>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSession.SessionId">
+            <summary>
+            Gets the unique identifier for this session.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSession.EncryptionKey">
+            <summary>
+            Gets the key used to encrypt message traffic for this session.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSession.OwnerName">
+            <summary>
+            Gets or sets the owner name of this session. Generally this will be the machine of origination.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSession.Agent">
+            <summary>
+            Gets or sets the agent which is the target of the session.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSession.SystemCapabilities">
+            <summary>
+            Gets the collection of system capabilities used for this session.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSessionKey">
+            <summary>
+            Represents a symmetric key used for message-level encryption for communication sent to an agent.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSessionKey.Encrypted">
+            <summary>
+            Gets or sets a value indicating whether or not the key value is encrypted. If this value is true, the 
+            <see cref="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSessionKey.Value"/> property should be decrypted using the <c>RSA</c> key exchanged with the server during
+            registration.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskAgentSessionKey.Value">
+            <summary>
+            Gets or sets the symmetric key value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskDefinitionEndpoint.Scope">
+            <summary>
+            The scope as understood by Connected Services.
+            Essentialy, a project-id for now.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskDefinitionEndpoint.Url">
+            <summary>
+            URL to GET.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskDefinitionEndpoint.Selector">
+            <summary>
+            An XPath/Json based selector to filter response returned by fetching
+            the endpoint <c>Url</c>. An XPath based selector must be prefixed with
+            the string "xpath:". A Json based selector must be prefixed with "jsonpath:".
+            <example>
+            The following selector defines an XPath for extracting nodes named 'ServiceName'.
+            <code>
+            endpoint.Selector = "xpath://ServiceName";
+            </code>
+            </example>
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskDefinitionEndpoint.KeySelector">
+            <summary>
+            An Json based keyselector to filter response returned by fetching
+            the endpoint <c>Url</c>.A Json based keyselector must be prefixed with "jsonpath:".
+            KeySelector can be used to specify the filter to get the keys for the values specified with Selector.
+            <example>
+            The following keyselector defines an Json for extracting nodes named 'ServiceName'.
+            <code>
+            endpoint.KeySelector = "jsonpath://ServiceName";
+            </code>
+            </example>
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskDefinitionEndpoint.ConnectionId">
+            <summary>
+            An ID that identifies a service connection to be used for authenticating
+            endpoint requests.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskDefinitionEndpoint.TaskId">
+            <summary>
+            TaskId that this endpoint belongs to.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskExecution.ExecTask">
+            <summary>
+            The utility task to run.  Specifying this means that this task definition is simply a meta task to call another task.
+            This is useful for tasks that call utility tasks like powershell and commandline
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskExecution.PlatformInstructions">
+            <summary>
+            If a task is going to run code, then this provides the type/script etc... information by platform.
+            For example, it might look like.
+                net45: {
+                    typeName: "Microsoft.TeamFoundation.Automation.Tasks.PowerShellTask",
+                    assemblyName: "Microsoft.TeamFoundation.Automation.Tasks.PowerShell.dll"
+                }
+                net20: {
+                    typeName: "Microsoft.TeamFoundation.Automation.Tasks.PowerShellTask",
+                    assemblyName: "Microsoft.TeamFoundation.Automation.Tasks.PowerShell.dll"
+                }
+                java: {
+                    jar: "powershelltask.tasks.automation.teamfoundation.microsoft.com",
+                }
+                node: {
+                    script: "powershellhost.js",
+                }
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskOrchestrationContainer.Data">
+            <summary>
+            Get additional specifications for this container.
+            </summary>
+            <remarks>
+            This provides an extensibility for consumers of DT SDK to pass additional data
+            to Orchestrations. Each Orchestration is free to interpret this data as appropriate.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskPackageMetadata.Type">
+            <summary>
+            Gets the name of the package.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskPackageMetadata.Version">
+            <summary>
+            Gets the version of the package.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskPackageMetadata.Url">
+            <summary>
+            Gets the url of the package.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskVersionSpec.Major">
+            <summary>
+            Gets or sets the major version component.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskVersionSpec.Minor">
+            <summary>
+            Gets or sets the minor version component.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskVersionSpec.Patch">
+            <summary>
+            Gets or sets the patch version component.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskVersionSpec.IsTest">
+            <summary>
+            Gets or sets a value locking the semantic version to test.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskVersionSpec.ToString">
+            <summary>
+            Provides a string representation of the version specification.
+            </summary>
+            <returns>A printable string representation of a version specification</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskVersionSpec.op_Explicit(System.String)~Microsoft.TeamFoundation.DistributedTask.WebApi.TaskVersionSpec">
+            <summary>
+            Provides an explicit conversion constructor for converting from a <c>String</c>.
+            </summary>
+            <param name="version">The version specification string</param>
+            <returns>A version specification object</returns>
+            <exception cref="T:System.ArgumentException">When the provided version string is not valid</exception>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.TaskVersionSpec.Match(System.Collections.Generic.IList{Microsoft.TeamFoundation.DistributedTask.WebApi.TaskVersion})">
+            <summary>
+            Finds the closest version match for the current specification. If no match can be found then a null
+            value is returned.
+            </summary>
+            <param name="versions">The list of versions available for matching</param>
+            <returns>The version which matches the specification if found; otherwise, null</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.VariableUtility.ExpandVariables(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Replaces variables by recursively cloning tokens in a JObject or JArray by 
+            Walks tokens and uses ExpandVariables(string, vars) to resolve all string tokens
+            </summary>
+            <param name="token">root token must be a JObject or JArray</param>
+            <param name="replacementDictionary">key value variables to replace in the $(xxx) format</param>
+            <returns>root token of cloned tree</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.VariableUtility.ExpandVariables(Newtonsoft.Json.Linq.JToken,System.Collections.Generic.IList{System.Collections.Generic.IDictionary{System.String,System.String}})">
+            <summary>
+            Replaces multiple variable sets by recursively cloning tokens in a JObject or JArray.
+            Walks tokens and uses ExpandVariables(string, vars) for each set of variables on all string tokens
+            </summary>
+            <param name="token">root token must be a JObject or JArray</param>
+            <param name="replacementsList">list of replacement key value pairs in the $(xxx) format</param>
+            <returns>root token of cloned tree</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.VariableUtility.ExpandVariables(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            An overload method for ExpandVariables
+            Expand variables in the input provided using the dictionary and the machine's environment variables
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.VariableUtility.ExpandVariables(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)">
+            <summary>
+            Replaces variable references of the form $(variable) with the corresponding replacement value. Values 
+            populated into the environment directly are used first. If no value is found in the automation environment
+            then the machine environment variables will be used as a fall back.
+            </summary>
+            <param name="input">The value which should be analyzed for environment variables and updated accordingly</param>
+            <param name="useMachineVariables">Use the machine's environment variables when it is true</param>
+            <returns>A new value with all variables expanded to their current value based on the environment</returns>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroupUtility">
+            <summary>
+            Utility class to perform operations on Variable groups.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroupUtility.CloneVariableGroups(System.Collections.Generic.IList{Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroup})">
+            <summary>
+            Get list of cloned variable groups
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroupUtility.ClearSecrets(System.Collections.Generic.IList{Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroup})">
+            <summary>
+            Replace secret values in group variables with null
+            </summary>
+            <param name="variableGroups">Variable groups to be cleared for secret variables</param>
+            <returns>List of cleared variable groups</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroupUtility.ClearSecrets(System.Collections.Generic.IDictionary{System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.VariableValue})">
+            <summary>
+            Replace all secrets in variables with null
+            </summary>
+            <param name="variables">Variable set</param>
+            <returns>Dictionary of variables</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroupUtility.HasSecretWithValue(System.Collections.Generic.IList{Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroup})">
+            <summary>
+            Check if any variable group has variable with secret value
+            </summary>
+            <param name="variableGroups">Variable groups to check if contains any secret variable with value.</param>
+            <returns>Result</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroupUtility.HasSecretWithValue(System.Collections.Generic.IDictionary{System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.VariableValue})">
+            <summary>
+            Check if Variables has any secret value
+            </summary>
+            <param name="variables">Variable set to check for any secret value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroupUtility.HasSecret(System.Collections.Generic.IList{Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroup})">
+            <summary>
+            Check if any secret variable exists in variable group
+            </summary>
+            <param name="variableGroups">Variable groups to check if contains any secret variable</param>
+            <returns>Result</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.DistributedTask.WebApi.VariableGroupUtility.HasSecret(System.Collections.Generic.IDictionary{System.String,Microsoft.TeamFoundation.DistributedTask.WebApi.VariableValue})">
+            <summary>
+            Check if variable set contains any secret variable
+            </summary>
+            <param name="variables">Variable set to be checked for secret variable</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -115,6 +115,7 @@ namespace Werewolf_Node.Models
 
         public string Language { get; set; } = "English";
         public bool Won { get; set; } = false;
+        public bool IsDummy { get; set; } = false;
 
         public long Id;
         [JsonConverter(typeof(StringEnumConverter))]

@@ -1,0 +1,2326 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="Tiếng Việt" base="Tiếng Việt" variant="Normal" owner="VozBa Con Sói" code="vi" isDefault="true"/>
+  <string key="NotInGame" deprecated="true">
+    <value>Bạn chưa vào game...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} {0} đã bắt đầu trò chơi! cùng vào chơi cho vui...và cho người ta xiên mình nào :P</value>
+    <value>{0} Đã bắt đầu ván mới! Vào chơi để cùng bị chén nào!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} đã bắt đầu trò chơi! Cùng vào chơi cho vui...và cho người ta xiên mình nào :P</value>
+    <value>{0} đã bắt đầu ván chaos game mới! Vào chơi để cùng bị chén nào!</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>Game đã bật.</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Bạn đã vào game!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>còn 1 phút để vào game</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value> còn {0} giây để vào game</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Không đủ người chơi, đang dừng game!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Đang mở ván mới, đợi bot chia vai và cập nhật dữ liệu tí nha.</value>
+  </string>
+  <string key="BannedForExploit" deprecated="true">
+    <!-- 0 - Player name -->
+    <value>{0} bị cấm vì lạm dụng lỗi game (không đặt tên bắt đầu với /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, đổi tên mới cho vào</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Hết slot rồi bạn ei!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} đã vào game. {1} người chơi, ít nhất là {2}, {3} là tối đa</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} Mời cao thủ bấm vào nút Start hoặc bấm {1} để triệu hồi em, xong rồi em sẽ PM vai cho nha. Không bấm là không có slot nha.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Chết rồi mà cứ đòi chạy tùm lum! Thứ gì đâu áaaaaaa!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} chuồn cmn rồi!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} từng là {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>Còn lại {0}.</value>
+  </string>
+  <string key="DidntAsk" deprecated="true">
+    <value>Uầy! Đã hỏi tí nào đâu!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Không chơi nữa hả...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Không có tên này đâu!</value>
+  </string>
+  <string key="AnswerNonValid" deprecated="true">
+    <value>Đáp án không hợp lệ!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} kêu thịt {1} kìa.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} đã vote xiên {1}.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} không vote 2 đêm liền rồi. Đã tiễn {0} ra chuồng gà. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Thứ phản bội!!! Giờ thành sói rồi đó, vừa chưa...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Đã xác nhận.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nTiên tri 👳 là {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>Hồi nãy {0} là tiên tri mà hẹo rồi. Tới bạn đó tiên tri tập sự 👳.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} là Tiên tri tập sự, và giờ đã thành Tiên tri 👳 kế nhiệm cho {1} .</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Tiên tri soi được {0} là {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Xiên ai nào?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Bốc phốt ai?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Bắn ai đây thí chủ? Còn {0} viên đạn.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Qua nhà ai đây?</value>
+  </string>
+  <string key="AskSee">
+    <value>Bạn muốn soi ai?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Đôi tay lực điền che chở mảnh đời ai?</value>
+  </string>
+  <string key="AskEat">
+    <value>Thịt ai nào?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Săn ai nào?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Ai sẽ là thần tượng của bạn?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Giáo chủ muốn lừa ai theo mình ạ?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Bàn với {0} cái nha</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> và </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>CURSED/Kẻ bị nguyền rủa
+As the cursed, you are a normal villager... until the wolves bite you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD
+Bạn là Kẻ Bị Nguyền Rủa, bạn là một dân làng bình thường nhưng nếu bị sói cắn thì bạn cắn lại nó. Và bạn trở thành sói, và đi săn người vào mỗi đêm.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>DETECTIVE/ Thám tử Shinichi Kudo
+You old sleuth.. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!
+Bạn là thần thám tử Conan huyền thoại..Mỗi ngày bạn sẽ có cơ hội điều tra một người chơi. Hãy sử dụng chức năng này  cẩn thận bởi vì có 40% bạn sẽ bị sói phát hiện..</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Bạn là Bợm nhậu (The Drunk) 🍻! (không thèm làm ma sói mà lên hẳn ma men cmnl. Oách đấy...)</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>GUARDIAN ANGEL/ Thiên thần hộ vệ 👼. Bạn là thiên thần hộ vệ! Mỗi đêm bạn có thể chọn một người chơi để bảo vệ, hãy cẩn thận bởi vì nếu bạn chọn bảo vệ sói thì có 50% là bạn sẽ bị giết, và nếu bạn bảo vệ kẻ giết người hang loạt thì bạn sẽ bị giết</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>GUNNER/ Xạ thủ 🔫. Bạn là xạ thủ có 1 cây súng và 2 viên đạn bạc vào đầu ván đấu. Mỗi ngày bạn có cơ hội bắn 1 người chơi. Khi bạn bắn 1 người chơi thì tất cả sẽ biết bạn là xạ thủ! Cẩn thận nhé, bạn chỉ có 2 viên đạn mà thôi.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>YHARLOT/ Cave💋
+As the harlot, you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf or serial killer, you will be killed. If you visit the player the wolves or serial killer have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home).
+Cô Cave yêu nghề, bạn có cơ hội “ghé thăm” người chơi khác vào mỗi đêm. Nếu người chơi bạn ghé thăm không phải sói thì bạn sẽ biết ngay-bởi vì bạn còn sống. Nếu bạn ghé thăm sói và kẻ sát nhân thì bạn sẽ bị giết. Nếu bạn ghé thăm nhầm người chơi mà sói hoặc kẻ sát nhân định giết thì bạn cũng bị giết cùng. Nhưng nếu bạn đang ghé thăm 1 người chơi mà sói chọn giết bạn thì bạn sẽ sống vì bạn không ở nhà</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>TRAITOR/ kẻ phản bội 🥸! You are a traitorous bastard. If you survive long enough for all the wolves to die, you will become a werewolf, ready to kill your former teammates in the night!
+Kẻ phản bội hiểm độc, nếu kẻ phản bội sống đủ lâu tới khi toàn bộ sói chết đi, hắn sẽ trở thành sói, quay lại săn lùng chính đồng loại của mình.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>WEREWOLF/ Sói 🐺!! You get to have fun! Each day, you will attempt to deceive your fellow players. However, each night, you will get to pick a player to kill! Note: If you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!
+Ban ngày cố tỏ ra là dân làng hiền lành, buổi tối đến sói đi săn và chọn 1 người chơi để giết. Nếu sói tấn công kẻ say rượu thì sói sẽ bị say và không thể tấn công đêm tiếp theo. Nếu sói tấn công kẻ bị Nguyền rủa thì kẻ bị nguyền sẽ hóa sói. Yayyy.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >SEER/Tiên Tri 👳. You are the Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!
+Bạn là tiên tri, mỗi đêm bạn có thể chọn 1 người chơi để biết chức năng của họ là gì. Hãy dùng chức năng một cách khôn ngoan, nếu bạn lộ ra sói sẽ tìm cách giết bạn.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >VILLAGER/ Dân làng 👱, You are simply a lowly villager. You have no special abilities. Your only goal is to help your team find the others.
+Bần nông hèn mọn, không có chức năng gì và chỉ có thể chiến đấu bằng phiếu vote để giết sói trước khi bị ăn thịt.
+.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >You are the tanner 👺. If you get lynched, you win automatically!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >You are a wild child 👶! Pick a player to be your 'role model' - if they die, you become a werewolf.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >You are the beholder 👁, you will be told who the (real) seer is - that is your only function.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >You are the apprentice seer 🙇. If the (real) seer dies, you will take their place as the seer.</value>
+  </string>
+  <string key="RoleInfoZombie" >
+    <value >You are a Zombie 👤. Every night, you may choose a player to convert to a Zombie. If all remaining living players at the end are Zombies, they win.</value>
+  </string>
+  <string key="RoleInfoZombieHunter" >
+    <value >You are the Zombie Hunter 💂, trying to stop the cult in town from converting everyone! Each night, choose a player. If they are a Zombie, they die. If the cult tries to convert you, the cult's newest member dies.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+      Trời chập tối, dân làng tụ lại bàn xem sẽ xiên ai...
+      Mỗi người còn {0} giây để vote!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value >Ngày lên. Mọi người có {0} giây để bốc phốt nhau, để biện hộ hoặc nếu rảnh thì chém gió .</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value >Đêm xuống. Người dân đều đã ngủ hết . Những người chơi đêm, các bạn có {0} để tung chiêu!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value >Dân làng đã bỏ phiếu xong, sau khi nhận đủ ngàn lời cay đắng, tấm thân vàng ngọc của {0} đã bị xiên cái bụp. {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Không biết lấy ai để mà xiên, đám đông xách đuýt về nhà, nộ khí xung thiên....</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Thật là đáng ngờ, không ai vote cả, tối nay chẳng quay được ai...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value >Dân làng tụ họp vào sáng nhưng không thấy {0}. Họ tìm đến nhà thì thấy  {0} đã chẳng còn đủ lòng cho một tô cháo.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value >Sáng ra, mọi người đều rụng rời, bị đóng trên cây thánh giá ở nóc nha thờ là {0}, Thần Hộ Mệnh. 👼.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value >Khi mọi người vừa ra ngoài, họ thấy các phần của cây súng ngắn vương vãi khắp nơi... rồi chân... rồi ngón tay... và rồi cả cơ thể của {0}, nổi lên giữa đài phun của quảng trường thị trấn, bị thịt bởi ma sói. Bạn vừa mất đi slot xạ thủ. 🔫.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value >Khi dân làng thức giấc, họ phát hiện các phần cơ thể của {0} quấn quanh bàn cầu cơ và bộ bài Tarot. Tiên tri 👳 đã hẹo .</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value >Mọi người phát giác thấy mùi xăng và cồn... Quán bia đang bốc cháy hừng hực!!!! Sau khi dập lửa, người ta tìm thấy từng phần còn xót lại của {0}...</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value >Khi mặt trời lên cao, dân làng thấy {0} đang ngồi cành bên bàn cầu cơ, nhưng thay vì bói bằng bài Tarot, hắn bói bằng bài ảo thuật!!! WHAT A FOOL!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Khi mọi người thức giấc lúc sáng, họ phát hiện một mùi hôi vcl. Lần theo mùi thì họ phát hiện các phần của {0} trong chuồng lợn. NOMNOMNOMNOM \n{1}</value>
+  </string>
+  <string key="HunterKilledZombie">
+    <!-- 0 - victim name -->
+    <value>Một mùi hăng khó chịu phát ra từ nhà của {0} mọi người tìm đến thì thấy một thi thể dưới bàn thờ u ám, tên tà giáo vừa bị thợ săn kết liễu</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Sáng hôm sau, mọi người tụ họp lại, cảm thấy thật nhẹ nhõm - đêm qua chả ai bị thịt.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Bạn đã bị sói thịt. Vì dính phải quả lời nguyền từ ai kia, giờ bạn bạn lại thành sói rồi đó! </value>
+  </string>
+  <string key="WolfTeam" deprecated="true">
+    <!-- 0 - teammate names -->
+    <value>(Những) Đối trọng của sói: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >{0} đã bị cắn nhưng do bị nguyền nên giờ thành sói rồi! Chào mừng friend mới đi!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >Ôi không! Bạn trám dạ dày cho sói rồi. Mlem Mlem Mlem Mlem</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value >Trời má! {0} là bợm rượu! Bạn say bà nó rồi, đêm mai bạn không thể cắn ai....</value>
+  </string>
+  <string key="GuardWolf" >
+    <value > Chúc mừng,bạn vừa cứu được sói đó, và giờ thì trời cứu bạn.</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >Bạn vừa mới cứu {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >Có ai đấm {0} dâu, bạn không phải xoắn lên thế.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>Bạn tới để bảo kê cho {0}, nhưng mà có ai ở nhà đâu!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Hôm qua Thần Hộ Mệnh mới độ bạn đó, Thần đấm bọn kia nhấp nhô từng nhịp luôn!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value >Kỹ nữ ở nhà nhầm đêm rồi. {0} đã bị sói thịt!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value >Kì ghê??? {0} Không có nhà! Chả có ai cho mình đu đưa cả</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value >Bạn định đến nhà {0} đóng vài cảnh phim hành động 2 người, nhưng đời không như mơ, sói đã sẵn chờ, bạn hẹo.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value >{0} vô nhầm nhà tối qua! Vài phần cơ thể của {0} bị ghim ở chỗ nhà thờ, buồn ghê :( </value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value >{0} mò đến nhà {1}, chuẩn bị giao lưu để xả stress thì lại thấy sói đang ăn {1}! Sói vồ lấy {0} ngay, {0} khỏi kịp mở mồm kêu cứu luôn.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value >Bạn soi được {0} không phải sói, 2 đứa xập xình cả đêm!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >Trời tối quá nên bạn không thấy gì rõ, nhưng khi bạn giật mình giữa đêm thì rau đang quấn lấy bạn như sam, cứ thế làm thêm vài hiệp lẻ, tờ mờ sáng cả hai lặng lẽ xa nhau...</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value >Bạn thấy {0} đang đứng rình! à thì ra là dăm ba bọn Cô nan!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value >Bạn đã biết được {0} là {1} thông qua nghiệp vụ rình của mình.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value >Có vẻ như {0} came back positive after a night with the Harlot! The gunner got revenge. {1} is dead.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value >Bỗng nhiên, nghe đùng một tiếng, dân làng thò đầu ra hóng thì thấy {0} đang đứng trước xác {1}, đang chuẩn bị làm thêm pha highlight headshot {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value >Sói xin cái win nhá, ngại ghê hihi!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value >Ma Sói đã thắng</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value >Dăm ba cái bọn sói! Sao chịu được nhiệt với dân làng...</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value >Rồi xong! Bạn xiên kẻ chán đời rồi. Thay mặt đảng và nhà nước truy phong Chán Đời tốp 1 sever..</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Những người chơi, đội chơi, và các vai trò còn lại:</value>
+  </string>
+  <string key="ZombieVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} đã vote cải đạo {1}</value>
+  </string>
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
+    <value>{0} đã được sai đi truyền đạo cho {1}... nhưng đó lại là thợ săn nên vỡ mồm! {0} hẹo!</value>
+  </string>
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{0} đã đến nhà bạn tối qua, đọc kinh để cải đạo cho bạn.... nhưng bạn tụng kinh trả lại:"Nam mô AK47 điểm xạ đại từ đại bi hoằng pháp an dân hộ quốc" và cứ thế mà bóp cò. Và giờ giáo hội còn lại {1}.</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Tà đạo đã nhồi sọ bạn thành công! Chào mừng người anh em thiện lành đến với cộng đồng lây nhanh nhất game. Mỗi đêm bạn sẽ có cơ hội cải đạo thêm một người chơi khác.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of Zombies -->
+    <value>Tà giáo: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new Zombie's name -->
+    <value>{0} đã sa vào ma đạo!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest Zombie's name -->
+    <!-- 1 - target name -->
+    <value>{0} đã được cử tới nhà dụ dỗ {1}... nhưng không có ai ở nhà!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >Sói thì đã chết hết, và đứa dân làng cuối cùng cũng đã theo đạo rồi. Tôi đã lừa anh em bao giờ chưa, theo tà giáo chỉ có nước win thôi hỡi các anh em winner thiện lành!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Bạn ra ngoài săn {0}, nhưng không kịp nữa rồi!</value>
+  </string>
+  <string key="HunterFindZombie">
+    <!-- 0 - target name -->
+    <value>Bạn ghé sang nhà thăm {0}, và bạn thấy người ấy đang cầu nguyện trước một vị thần mà bạn chưa từng gặp trong danh sách tôn giáo nhân loại...  bạn xiên thanh kiếm của mình qua người chủ nhà thay cho tiếng Hello.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>Bạn đến nhà {0} nhưng không hề có bài kinh nào lạ cả. Chẳng ai theo tà giáo nên bạn đành xách đuýt quay về, bị thuyết phục rằng {0} không theo tà giáo.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>Hình mẫu của {0} vừa hẹo! Trong cơn cuồng nộ, hóa phát thành sói luôn!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} hẹo rồi! trong cơn giận, bạn đã biến thành sói! Đồng đội mới nè: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>Dân làng 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Bợm nhậu 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Cave 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Tiên Tri 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Kẻ Phản Bội 🥸</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Thiên Thần Hộ Vệ 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Thám Tử 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>Ma Sói 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Kẻ Bị Nguyền 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Xạ Thủ 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Kẻ Chán Đời 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Thằng Ngáo 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Đứa Trẻ Hoang Dã 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Người Chứng Kiến 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Tiên Tri Tập Sự 🙇</value>
+  </string>
+  <string key="Zombie">
+    <value>Kẻ Tà Giáo 👤</value>
+  </string>
+  <string key="ZombieHunter">
+    <value>Thợ Săn Tà Giáo 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>Đã chạy mất</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Nín thở</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Còn thở</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Những người chơi còn sống</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Thợ Xây 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>MASON/ Thợ Xây 👷. The Masons are a simple role - they know who each other are. If one of the masons is converted by the cult, the other masons will know.
+Thợ xây sẽ biết thợ xây khác là ai, nếu 1 thợ xây bị giáo phái thu phục thì những thợ xây còn lại sẽ biết điều đó.
+
+.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Khi mọi người thức giấc, họ phát hiện thi thể {0} đập vào đống đá gần đó , một người phụ hồ chân chính đã ra đi!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  Team thợ xây gồm: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest Zombies name -->
+    <value>Đệ tử mới nhất của bạn đã đến nhà {0} để truyền đạo, nhưng lại phát hiện thấy ngôi nhà tan hoang, máu me tè le và còn có cả lông sói dính ở cửa...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>Nguyên đàn hướng tới nhà {0} định chén, nhưng đi quên coi ngày, gặp ngay lực lượng Thiên thần Hộ Mệnh, xa xa còn có bóng dáng đoàn thủy quân lục chiến Huê Kì, tất cả đều vũ trang tận răng. Hôm đó mọi người đấm nhau vui như Tết, tay bắt mặt bầm, tiếng súng đều như beat của Alan Walker, đàn sói hôm đó được bữa toang nặng, tuyệt chủng mãi về sau..</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Bạn cử {0} đến để cải đạo {1}, tuy nhiên, đức tin của y lại quá lớn nên chẳng thể bị lung lay :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, Đã có người chơi đặt tên là {0}. Xin người hãy đổi tên đi người ơi.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Bạn mò đến nhà {0} để hưởng lạc... nhưng lúc bạn rời đi thì tình cờ nhìn thấy được một bàn thờ lạ ở trong phòng riêng của chủ nhà, nơi đó đang le lói thứ ánh sáng khác thường...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>từng là</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Mọi người thức dậy và để ý thấy thiếu {0}... Họ tìm quanh nhà và thấy được những phần còn xót lại của {0}.</value>
+    <value>Khi mặt trời ló dạng, mọi người tập hợp lại để tìm các phần của {0}, người đã hẹo một cách bí ẩn vào tối qua...</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Lạ thay... {0} đã không có mặt trong cuộc họp thị trưởng sáng nay... O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Đang trong game ai cho chuồn!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>đã chết</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} đã được thêm và danh sách admin. Sử dụng /config để thay đổi cài đặt nhóm.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>Bạn đang trong game rồi! ({0})</value>
+  </string>
+  <string key="MultipleGames" deprecated="true">
+    <value>Nhóm của bạn đã bật chế độ đa trò chơi... Đồ sát nhiệt lên nào.</value>
+  </string>
+  <string key="GroupQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Nhóm của bạn đang trong hàng đợi. Vị trí: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak" deprecated="true">
+    <!-- 0 - target's name -->
+    <value> Bữa nay mình bảo trì nha, có người không vô được game kìa, hehe.\nđang đóng {0}...\nTruy cập @greywolfdev để biết thêm chi tiết.</value>
+  </string>
+  <string key="MaxGames" deprecated="true">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Xin lỗi, số lượng game đồng thời đã đạt tối đa ({0}). \nVỊ trí trong hàng đợi: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} được ưu tiên húp trước, đã nhảy qua hang đợi!</value>
+  </string>
+  <string key="NoGame">
+    <value>Không có game nào đang chạy. Bắt đầu game mới bằng cách bấm /startgame hoặc bật một chaos game bằng lệnh /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Chỉ có một số admin mới bật được lệnh này.</value>
+  </string>
+  <string key="ShuttingDown" deprecated="true">
+    <value>Xong ván này cho em xin đi bảo trì nhá, đuối quá rồi :(.</value>
+  </string>
+  <string key="ShuttingDownUpdate" deprecated="true">
+    <value>Xong ván này em dừng một tẹo để game nó tự update nhá (automated).</value>
+  </string>
+  <string key="NullIdAdmin" deprecated="true">
+    <value>ID người dùng vô giá trị.  Bạn vẫn dùng nó tiếp chứ?</value>
+  </string>
+  <string key="AlreadyAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} đã là admin!</value>
+  </string>
+  <string key="NotAdmin" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} không phải là admin!</value>
+  </string>
+  <string key="AdminRemoved" deprecated="true">
+    <!-- 0 - target's name -->
+    <value>{0} đã bị lọc khỏi danh sách admin.</value>
+  </string>
+  <string key="LanguageSet" deprecated="true">
+    <!-- 0 - language's name -->
+    <value>Đã chuyển ngôn ngữ thành {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>Không có Tiên Tri!</value>
+  </string>
+  <string key="TimesUp">
+    <value>Hết giờ!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>CUPID/ Thần Tình Ái 🏹. Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :( Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together.
+Vị Thần của tình yêu, moaz. Vào đầu game bạn sẽ chọn ra 2 người chơi, 2 người chơi đó sẽ yêu nhau điên dại! Nếu một trong hai người chết, người còn lại sẽ chết vì buồn rầu( 2 người này sẽ biết nhau là ai, nhưng không biết chức năng của người còn lại. Nếu 2 người yêu nhau còn sống đến cuối cùng thì họ thắng, bất kể họ đang ở vai trò nào và có đối địch hay không.) Nếu 2 người yêu nhau có chức năng đối địch ( sói và dân làng) khi một team thắng ( sói), người yêu của sói cũng thắng luôn. Chỉ cần 1 người ở team thắng thì cả 2 người này đều thắng.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>DOPPELGÄNGER/ Kẻ Biến Hình 🎭. Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were. Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model. The cult cannot convert the Doppelgänger (but can after the doppelgänger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
+Tổ tiên của bạn có khả năng biến thành người khác nhưng … bạn không có,bạn có thể chọn một người chơi vào đầu game. Nếu người chơi bạn chọn chết thì bạn sẽ trở thành chức năng của người đó. Nếu người chơi đó sau này bị giáo phái thu phục thì bạn sẽ mang chức năng ban đầu của họ. Ví dụ: nếu họ là Đứa Trẻ Hoang Dã và thần tượng của họ chết, bạn sẽ trở thành sói. Giáo phái không thể thu phục Kẻ Biến Hình ( nhưng có thể sau khi bạn đổi chức năng). Kẻ biến hình KHÔNG THỂ THẮNG nếu chưa biến đổi thành một chức năng khác.Đến cuối game mà bạn vẫn là kẻ biến hình thì bạn thua.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>HUNTER/ Thợ Săn 🎯. A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die. Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed. If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+Một thợ săn dày dặn và hoang tưởng. Bạn giữ kín vai trò của mình. Nếu người chơi khác ghé thăm bạn thì họ có thể bị bắn chết, bởi vì bạn bị hoang tưởng và bắn họ. Nếu sói tấn công bạn thì bạn có khả năng sẽ kéo được 1 con sói chết cùng (30%).Nếu chỉ có 1 sói tấn công thì bạn có 30 % giết sói và sống sót . Với mỗi con sói trong bầy tấn công bạn thì bạn có thêm 20 % kéo được 1 sói chết cùng (2 sói là 50%, 3 sói là 70%) nhưng khi có nhiều hơn 1 sói tấn công bạn chắc chắn sẽ chết. Khi giáo phái cố chiêu mộ bạn, họ chỉ có 50% khả năng thành công- nếu họ thất bại thì bạn có 50% giết 1 môn đồ của giáo phái.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>SERIAL KILLER/ Kẻ Sát Nhân 🔪. That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, there is a 20% chance that you get eaten, but in 80% of cases you will kill one of them (random), and live.
+Trốn thoát viện tâm thần, kẻ giết người điên loạn lại bắt đầu cơn cuồng sát khát máu của hắn. Một mình một phe, kẻ giết người hàng loạt chỉ thắng khi chỉ còn duy nhất hắn sống sót, (trừ cặp đôi tình nhân). Kẻ sát nhân có thể giết bất kì ai-sói, thợ săn, xạ thủ…..Nếu sói tấn công bạn, bạn có 20% bị ăn thịt, nhưng có 80 % là bạn sẽ giết 1 sói và sống sót.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Bạn đã trúng tiếng sét ái tình. Những kí ức về {0} sẽ mãi trong tim bạn đến thiên thu vạn kiếp. Nếu một trong hai có hẹo thì người kia cũng nguyện sẽ chuyển khẩu lên thiên đường ngay và luôn. Còn nếu một trong hai thắng thì sẽ mặc định là của chồng công vợ, cả 2 cùng win.</value>
+    <value>Mũi tên của Cupid vừa bắn trúng bạn rồi! Giờ bạn đã điên đảo vì {0}! Nếu người ta hẹo thì bạn cũng chẳng thiết sống nữa. Nếu người ta thắng thì bạn cũng sẽ win theo.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Dân làng đã quyết định treo cổ bạn! Đây là cơ hội cuối rồi, hãy bắn ai đó đi!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} vơ vội khẩu súng khi mà cái thòng lọng chực siết lại, nhưng đã không kịp, cổ của thợ săn đã gãy răng rắc...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} quơ nò súng về phía đám đông... nhưng không biết phải bắn ai. Thợ săn chấp nhận số phận và đón lấy cái chết...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Khi thòng lọng sắp siết lại, {0} rút khẩu súng lục ra, nhắm mục tiêu, và bắn vỡ mồm {1}! {1} chết và hiện nguyên hình là  {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Bạn bị ám hại!  Trong giây phút cuối đời, bạn vẫn còn cơ hội để bắn một ai đó... nổ súng đi!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>Sát thương bạn gây cho  {0} là quá lớn, đến nỗi đối phương còn không cầm nổi vũ khí, và gục chết trong vũng máu...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>{0} nằm đó, hấp hối, không thể quyết định sẽ bắn ai. Thợ săn đã chấp nhận số phận.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Cái chết cận kề, {0} ngã ra mặt đất.... nhưng vẫn kịp tay vớ được khẩu lục của mình và tặng cho {1} viên kẹo đồng vào giữa trán, thì ra đó là {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>Bầy sói đã tấn công Thợ Săn tối qua, nhưng Thợ Săn cũng đã kéo theo được một con sói chết chung! {0} đã hẹo.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>Sói đã tấn công Thợ Săn tối qua, nhưng bị Thợ Săn tát lại cho vêu mồm, sói 🐺 {0} đã bị hạ gục bằng súng trường!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Bầy sói định ra ngoài kiếm bữa ăn vặt buổi tối, nhưng thế quái nào lại vơ nhầm Sát Thủ! {0} đã hẹo trong trận chiến!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Cứ ngỡ đó là buổi tối max nhọ cho {0} và mọi thứ không thể tệ hơn nữa rồi rồi, nhưng ÉOOOOOO.Sáng hôm sau, dân làng phát hiện thấy {0} bị xẻ từ đầu đến chân, quái lạ là còn bị mất lá gan... Không nghi ngờ gì nữa, Sát thủ lại ra tay rồi.Role của nạn nhân {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Bạn đang định xiên {0} để bổ sung cho bộ sưu tập Xuân Hè của mình, nhưng bạn lại chạm trán phải Thiên Thần Hộ Vệ! Tối nay thất thu rồi...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>Giáo hội cử {0} đến để khai sáng cho {1}, nhưng vừa định mở mồm thì tiếng shotgun vang lên và xác của {0} như hòa vào không trung, bay xuyên qua cửa sổ! {0} hẹo....</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>Giáo hộ cử {0} đi khai sáng cho {1}, nhưng rốt cuộc thì xác của {0} lại bay xuyên qua cửa sổ, Từ một giáo đồ thanh tú ngời ngời giờ đã biến thành đồ vắt dao và lãnh trọn bộ sưu tập hung khí của tên Sát thủ! {0} hẹo....</value>
+    <value>{0} lén lút mò qua nhà {1}, hé nhẹ cánh cửa và.......... "Chào em! Anh đứng ở đây từ chiều..." Giọng tên Sát thủ trìu mến cất lên :))). Cứ thế {1} đâm lúc cáng vào từng bộ phận của {0} theo thứ tự chữ cái!{0} bay màu</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Bạn vừa mới bảo vệ một....Sát Thủ, và bạn được trả trả ơn bằng 89 nhát dao chan chứa tình yêu thương! Bạn đen lắm bạn Bảo Vệ ạ. Bạn đen lắm....</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Bạn mò đên nhà {0}, và tiến hành đá bóng sân nhỏ cỏ đen. Mọi thứ đều tuyệt vời cho đến khi {0} đổi thứ khác để đâm bạn, và còn cười như điên! Bạn hẹo, đúng là sinh nghề tử nghiệp mà....</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Dân làng phát hiện thi thể {0} ở quảng trường thì trấn với vô số vết đâm. {0} toang.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>Kẻ Biến Hình {0} giờ đã biến thành Thợ Xây giống bạn rồi đó!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} đã hẹo, và giờ bạn đã biến thành Thợ Xây, đồng đội thợ xây (nếu có) của bạn gồm: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new Zombie's name -->
+    <value>Kẻ Biến Hình {0} đã biến thành Kẻ Tà Giáo giống bạn rồi đó!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} đã hẹo, và giờ bạn đã biến thành Kẻ Tà Giáo, anh em Tà Giáo (nếu có) của bạn gồm:: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Kẻ Biến Hình {0} đã biến thành Sói giống bạn rồi đó!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} đã hẹo, và giờ bạn đã biến thành Sói, anh em Sói (nếu có) của bạn gồm: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>Người duy nhất còn sống sót là Kẻ Sát Nhân! Sát Nhân đã thắng!</value>
+  </string>
+  <string key="AskKill">
+    <value>Tối nay cho ai lên bàn thờ nào?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Chứng kiến {0} đã chết, {1} lòng đau như cắt, nước mắt đầm đìa. Nguyện chết chùm cho vẹn nghĩa phu thê và lập tức nốc vào một lượt 10 viên thuốc giun quả núi luôn cất sẵn trong người, nghẹn thở mà chết. Và chúng ta đã mất một {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Bạn muốn biến thành ai khi họ hẹo?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Bạn muốn se duyên cho ai? Chọn người đầu tiên</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Bạn muoopn se duyên cho ai? Chọn người còn lại</value>
+  </string>
+  <string key="Hunter">
+    <value>Thợ Săn 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Thần Tình Ái 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Kẻ Sát Nhân 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Kẻ Biến Hình 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Bạn đã trở thành Đứa Trẻ Hoang Dã. Thần tượng của bạn là {0}.</value>
+  </string>
+  <string key="LoversWin" isgif="true">
+    <value>True love là có thật kìa! Đôi chim chuột.... à không, đôi tình nhân đã thắng!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>Ở giữa quảng trường, mọi người tìm thấy thi thể của {0} với nhiều vết bắn. Có vẻ như có người muốn đột nhập vào nhà của Thợ Săn, {1}.</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Một kẻ lạ mặt trong chiếc áo trùm đầu đã cố để truyền đạo cho bạn, nhưng vô ích vì đức tin của bạn quá mạnh.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Bạn đã có tên trong danh sách chờ {0}.</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Bạn đã được thêm vào danh sách chờ {0}. Bot sẽ PM cho bạn khi nào trò chơi bắt đầu.\nTrong khi chờ đợi thì mời bạn tham quan cửa hàng tại: https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>Vãn mới bắt đầu trong {0}.</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Sáng ra, 2 người dân làng còn lại tiến ra quảng trường. {0} chợt trông thấy {1}, cười kiểu như Joker, rút con dao ra và ngay lập tức xiên {1}.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Mọi nhân vật trong làng đều đã hẹo... chỉ còn mỗi xác thôi. Ván này không ai thắng cả, trừ bọn kền kền...</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Mặt trời lên, {0} và {1} đi vào làng. {0} rút dao ra và nhảy bổ vào {1} ghim con dao vào người mục tiêu. {1} liền rút súng bắn trả ngay vào mặt {0} khi {0} vừa tiếp đất, Cả 2 đều ngỏm, cả làng chẳng còn ai, chẳng ai thắng round này...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Bạn đã không thể đưa ra quyết định nên quản trò đã quyết định thay bạn: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Thắng</value>
+  </string>
+  <string key="Lost">
+    <value>Thua</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Người chơi {0} đã bị xiên do không vote {1} lần trong 24h qua.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+  -->
+  <string key="AboutVG">
+    <value>Your role is simple - try to survive. Each day, you will have a chance to lynch the werewolf.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>SEER/Tiên Tri
+You are the Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the seer, the wolves will try to kill you!
+Bạn là tiên tri, mỗi đêm bạn có thể chọn 1 người chơi để biết chức năng của họ là gì. Hãy dùng chức năng một cách khôn ngoan, nếu bạn lộ ra sói sẽ tìm cách giết bạn.</value>
+  </string>
+  <string key="AboutWw">
+    <value>WEREWOLF/ Sói
+You get to have fun! Each day, you will attempt to deceive your fellow players. However, each night, you will get to pick a player to kill! Note: If you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!
+Ban ngày cố tỏ ra là dân làng hiền lành, buổi tối đến sói đi săn và chọn 1 người chơi để giết. Nếu sói tấn công kẻ say rượu thì sói sẽ bị say và không thể tấn công đêm tiếp theo. Nếu sói tấn công kẻ bị Nguyền rủa thì kẻ bị nguyền sẽ hóa sói. Yayyy.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>HARLOT/ Cave: As the harlot, you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf or serial killer, you will be killed. If you visit the player the wolves or serial killer have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home).
+Cô Cave yêu nghề, bạn có cơ hội “ghé thăm” người chơi khác vào mỗi đêm. Nếu người chơi bạn ghé thăm không phải sói thì bạn sẽ biết ngay-bởi vì bạn còn sống. Nếu bạn ghé thăm sói và kẻ sát nhân thì bạn sẽ bị giết. Nếu bạn ghé thăm nhầm người chơi mà sói hoặc kẻ sát nhân định giết thì bạn cũng bị giết cùng. Nhưng nếu bạn đang ghé thăm 1 người chơi mà sói chọn giết bạn thì bạn sẽ sống vì bạn không ở nhà.</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>DRUNK/ Bợm Nhậu: Dù bạn có say rượu thì bạn vẫn là dân làng. NHƯNG, nếu có sói nào thịt bạn thì nó sẽ không thể tấn công ở lượt kế tiếp(vì say sml rồi).</value>
+  </string>
+  <string key="AboutCursed">
+    <value>CURSED/Kẻ bị nguyền rủa
+As the cursed, you are a normal villager... until the wolves bite you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD
+Bạn là Kẻ Bị Nguyền Rủa, bạn là một dân làng bình thường nhưng nếu bị sói cắn thì bạn cắn lại nó. Và bạn trở thành sói, và đi săn người vào mỗi đêm.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>YTRAITOR/ kẻ phản bội
+You are a traitorous bastard. If you survive long enough for all the wolves to die, you will become a werewolf, ready to kill your former teammates in the night!
+
+Kẻ phản bội hiểm độc, nếu kẻ phản bội sống đủ lâu tới khi toàn bộ sói chết đi, hắn sẽ trở thành sói, quay lại săn lùng chính đồng loại của mình.</value>
+  </string>
+  <string key="AboutGA">
+    <value>GUARDIAN ANGEL/ thiên thần hộ vệ
+You are the Guardian Angel! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a wolf, there is a 50% chance you will be killed, and if you watch over the serial killer, you will be killed.
+
+Bạn là thiên thần hộ vệ! Mỗi đêm bạn có thể chọn một người chơi để bảo vệ, hãy cẩn thận bởi vì nếu bạn chọn bảo vệ sói thì có 50% là bạn sẽ bị giết, và nếu bạn bảo vệ kẻ giết người hang loạt thì bạn sẽ bị giết.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>YDETECTIVE/ Thám tử Shinichi Kudo
+You old sleuth.. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!
+Bạn là thần thám tử Conan huyền thoại..Mỗi ngày bạn sẽ có cơ hội điều tra một người chơi. Hãy sử dụng chức năng này  cẩn thận bởi vì có 40% bạn sẽ bị sói phát hiện.</value>
+  </string>
+  <string key="AboutGunner">
+    <value>GUNNER/ Xạ thủ
+A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!
+Bạn là xạ thủ có 1 cây súng và 2 viên đạn bạc vào đầu ván đấu. Mỗi ngày bạn có cơ hội bắn 1 người chơi. Khi bạn bắn 1 người chơi thì tất cả sẽ biết bạn là xạ thủ! Cẩn thận nhé, bạn chỉ có 2 viên đạn mà thôi.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>TANNER/KẺ CHÁN ĐỜI
+The Tanners goal is simple: Get Lynched. If the Tanner gets lynched, he wins, period. Everyone else loses.
+ Tanner thắng khi bị dân làng bỏ phiếu giết nên mục đích của hắn là để mọi người bỏ phiếu giết mình.</value>
+  </string>
+  <string key="AboutFool">
+    <value>THE FOOL/ THẰNG NGÁO ĐÁ
+Tưởng rằng mình là Tiên Tri.... Khi Ngáo Đá soi ai, thì thay vì chức năng thât, hắn sẽ thấy một chức năng ngẫu nhiên được gán cho người đó. (Chơi đồ nên nó thế đấy các bạn ạ)</value>
+  </string>
+  <string key="AboutCult">
+    <value>Zombie/Thành viên giáo phái
+As a Zombie, it is your goal to convert all other players (except wolves and serial killer) to your cult. If at the end of the game, all living players are Zombie - the cult wins
+Là một thành viên của Giáo Phái MIMOSA, mục tiêu của bạn là biến đổi tất cả thành viên khác thành môn đồ của giáo phái của bạn( trừ sói và kẻ giết người hàng loạt). Nếu tất cả người chơi còn sống là thành viên của giáo phái thì giáo phái thắng.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Zombie HUNTER/ Thợ Săn giáo phái
+Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die.
+Chức năng của bạn là săn lùng và tiêu diệt giáo phái. Nếu giáo phái tấn công hoặc cố chuyển đổi bạn, thành viên mới nhất của giáo phái sẽ chết. Mỗi đêm bạn được quyền chọn săn 1 người chơi-nếu người đó là môn đồ của giáo phái thì bạn sẽ giết chết họ.</value>
+  </string>
+  <string key="AboutWC">
+    <value>WILD CHILD/ Đứa trẻ hoang dã
+At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.
+
+Vào đầu game bạn chọn 1 người làm “thần tượng” của bạn, nếu thần tượng của bạn chết thì bạn hóa thành sói.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>APPRENTICE SEER/ Tiên Tri Tập Sự
+For now, you are a normal villager. However, if the seer dies, you will become the new seer.
+Bạn là Tiên Tri Tập Sự, nếu Tiên Tri chết bạn sẽ trở thành Tiên Tri nhưng bình thường bạn chỉ là dân làng bình thường.</value>
+  </string>
+  <string key="AboutBH">
+    <value>BEHOLDER/ Người chứng kiến
+As the Beholder, your role is simple - you will always know who the Seer is.
+Là Người Chứng Kiến  ,khả năng của bạn đó là bạn sẽ luôn biết được nhà Tiên Tri là ai (Tiên Tri Auth chứ ko phải Thằng Ngáo).</value>
+  </string>
+  <string key="AboutMason">
+    <value>MASON/ thợ xây
+The Masons are a simple role - they know who each other are. If one of the masons is converted by the cult, the other masons will know.
+Thợ xây sẽ biết thợ xây khác là ai, nếu 1 thợ xây bị giáo phái thu phục thì những thợ xây còn lại sẽ biết điều đó.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      DOPPELGÄNGER/ kẻ biến hình
+Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were. Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model. The cult cannot convert the Doppelgänger (but can after the doppelgänger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
+Tổ tiên của bạn có khả năng biến thành người khác nhưng … bạn không có,bạn có thể chọn một người chơi vào đầu game. Nếu người chơi bạn chọn chết thì bạn sẽ trở thành chức năng của người đó. Nếu người chơi đó sau này bị giáo phái thu phục thì bạn sẽ mang chức năng ban đầu của họ. Ví dụ: nếu họ là Đứa Trẻ Hoang Dã và thần tượng của họ chết, bạn sẽ trở thành sói. Giáo phái không thể thu phục Kẻ Biến Hình ( nhưng có thể sau khi bạn đổi chức năng). Kẻ biến hình KHÔNG THỂ THẮNG nếu chưa biến đổi thành một chức năng khác.Đến cuối game mà bạn vẫn là kẻ biến hình thì bạn thua.</value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      CUPID/ Thần tình ái
+Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :( Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together.
+Vị Thần của tình yêu, moaz. Vào đầu game bạn sẽ chọn ra 2 người chơi, 2 người chơi đó sẽ yêu nhau điên dại! Nếu một trong hai người chết, người còn lại sẽ chết vì buồn rầu( 2 người này sẽ biết nhau là ai, nhưng không biết chức năng của người còn lại. Nếu 2 người yêu nhau còn sống đến cuối cùng thì họ thắng, bất kể họ đang ở vai trò nào và có đối địch hay không.) Nếu 2 người yêu nhau có chức năng đối địch ( sói và dân làng) khi một team thắng ( sói), người yêu của sói cũng thắng luôn. Chỉ cần 1 người ở team thắng thì cả 2 người này đều thắng.</value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      HUNTER/ Thợ Săn
+A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die. Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed. If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+Một thợ săn dày dặn và hoang tưởng. Bạn giữ kín vai trò của mình. Nếu người chơi khác ghé thăm bạn thì họ có thể bị bắn chết, bởi vì bạn bị hoang tưởng và bắn họ. Nếu sói tấn công bạn thì bạn có khả năng sẽ kéo được 1 con sói chết cùng (30%).Nếu chỉ có 1 sói tấn công thì bạn có 30 % giết sói và sống sót . Với mỗi con sói trong bầy tấn công bạn thì bạn có thêm 20 % kéo được 1 sói chết cùng (2 sói là 50%, 3 sói là 70%) nhưng khi có nhiều hơn 1 sói tấn công bạn chắc chắn sẽ chết. Khi giáo phái cố chiêu mộ bạn, họ chỉ có 50% khả năng thành công- nếu họ thất bại thì bạn có 50% giết 1 môn đồ của giáo phái.</value>
+  </string>
+  <string key="AboutSK">
+    <value>SERIAL KILLER/ Kẻ sát nhân
+That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, there is a 20% chance that you get eaten, but in 80% of cases you will kill one of them (random), and live.
+
+Trốn thoát viện tâm thần, kẻ giết người điên loạn lại bắt đầu cơn cuồng sát khát máu của hắn. Một mình một phe, kẻ giết người hàng loạt chỉ thắng khi chỉ còn duy nhất hắn sống sót, (trừ cặp đôi tình nhân). Kẻ sát nhân có thể giết bất kì ai-sói, thợ săn, xạ thủ…..Nếu sói tấn công bạn, bạn có 20% bị ăn thịt, nhưng có 80 % là bạn sẽ giết 1 sói và sống sót.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people. Maybe he's been messing with werewolves too long.... Messing with werewolves is a very bad idea. (Ông này hình như là developer của Bot game này thì phải :D:D)</value>
+  </string>
+  <string key="EndTime">
+    <value>Game kéo dài: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Ngày {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Đã có lỗi xảy ra, node này đã đóng :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Bot đã PM cho bạn rồi đó!</value>
+  </string>
+  <string key="StartPM" deprecated="true">
+    <value>Xin hãy pm cho Bot để Bot có thể PM lại cho bạn : @werewolfbot</value>
+  </string>
+  <string key="PMTrue" deprecated="true">
+    <value>CẢm ơn bạn đã khởi động Bot! Giờ thì Bot PM cho bạn được rồi.</value>
+  </string>
+  <string key="MustReplySmite" deprecated="true">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Bạn muốn làm gì?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Bạn chỉ có thể tham gia game từ trong group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Bạn chỉ có thể bắt đầu game từ trong group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>THông báo Ping: {0}\nTin nhắn/giây: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Ngôn ngữ?\nhiện tại là: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Các biến hiện tại là?\nCurrent: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Đưa về ngôn ngữ {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Tải file ngôn ngữ nào?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Hiện tại không có node nào online, xin đợi trong giây lát</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Bạn phải khởi chạy lệnh này trong nhóm</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Bạn không phải admin toàn cầu...</value>
+  </string>
+  <string key="NotPara">
+    <value>Bạn méo phải Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Phải</value>
+  </string>
+  <string key="No">
+    <value>Không</value>
+  </string>
+  <string key="Allow">
+    <value>Cho phép</value>
+  </string>
+  <string key="Disallow">
+    <value>Không cho phép</value>
+  </string>
+  <string key="Show">
+    <value>Hiện</value>
+  </string>
+  <string key="Hide">
+    <value>Ẩn</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Chỉ chế độ Thường</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Chỉ chế độ Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Lựa chọn của người chơi</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Không hiện</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Chỉ hiện player(s) còn sống</value>
+  </string>
+  <string key="ShowAll">
+    <value>Hiện tất cả players</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Hủy</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Bạn có cho phép người chơi rời game khi đã bắt đầu?\nGhi chú: Người chơi vẫn có thể rời game trong giai đoạn Tìm người chơi\nhiện tại: {0} rời game</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} Đã rời trận khi game bắt đầu</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Bạn muốn giới hạn tối đa bao nhiêu người chơi?\nHiện tại: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Số người chơi tối đa là {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>hiện hay ẩn các chức năng khi player chết?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Các chức năng sẽ {0} khi chết.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Bạn chon chế độ chơi nào cho group?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Đã bật sang chế độ {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Bạn muốn các Chức năng được hiện như thế nào ở cuối game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Chức năng ở cuối game được hiện theo: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Chọn thời gian (tính bằng giây) cho ban ngày. Tùy chọn này vẫn có thể thay đổi dựa trên số lượng người chơi.\nMặc định: {0}\nHiện tại: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Thời gian ban ngày là: {0} giây</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Chọn thời gian (tính bằng giây) cho ban đêm. \nMặc định: {0}\nHiện tại: {1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Thời gian ban đêm là: {0} giây</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Chọn thời gian (tính bằng giây) cho bỏ phiếu treo cổ. \nMặc định: {0}\nHiện tại: {1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Thời gian bỏ phiếu treo cổ là: {0} giây</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Có bật chức năng The Fool không?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Chức năng The Fool hiện có: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Có bật chức năng Tanner không?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Chức năng Tanner hiện có: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Có bật chức năng Cult không?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Chức năng Cult hiện có {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Có bật chế độ treo cổ bí mật không?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>{0} Treo cổ bí mật </value>
+  </string>
+  <string key="ThankYou">
+    <value>Xin cảm ơn! Chúc bạn một ngày tốt lành :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Bạn muốn group chơi theo ngôn ngữ nào?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Đây là nhóm cần tìm {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Thành viên</value>
+  </string>
+  <string key="StartMe">
+    <value>Hãy khởi động Bot để Bot PM cho bạn</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} đã không thể khởi động Bot và đã bị loại khỏi game!</value>
+  </string>
+  <string key="LatestList">
+    <value>Danh sách mới nhất</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Không tìm thấy danh sách mới nhất</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Bạn đã vào được game vào lúc {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
+  </string>
+
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>MAYOR/ Thị Trưởng 🎖. As mayor, you are a lowly villager, until you reveal yourself. Then you are given twice the vote count for lynching (meaning that your vote is twice as powerful as everyone else's). Use that power wisely to help the Village Team.
+Là thị trưởng, bạn là dân làng bình thường, nhưng khi bạn lộ ra than phận thì khi đó phiếu vote của bạn có gấp đôi hiệu quả-2 phiếu. Hãy dung 2 phiếu vote cẩn thận nhé.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>PRINCE/Vương Tử 👑, The prince is a key role in the Village Team's strategy. Once the prince gets lynched, their role as Prince is revealed, and they survive. However, this can only happen once: if the village insists on lynching them, they will die.
+Hoàng Tử giả vờ sống như một dân làng bình thường nhưng nếu bị dân làng bỏ phiếu để giết thì Hoàng tử sẽ hiển lộ thân phận và thoát chết, nhưng chỉ thoát chết được 1 lần duy nhất.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>CLUMSY GUY/ Vụng Về 🤕: You are the Clumsy Guy. Maybe you should not have had so much alcohol for breakfast. You can't see a damn thing. Can you even vote for the person you want to? (You have a 50% chance to vote for someone random.)
+Bạn là  Vụng Về. Bạn uống quá nhiều rượu vào bữa sáng và giờ bạn không thể nhìn thấy gì để vote cả. Có 50% phiếu Vote của bạn bị chuyển mục tiêu vote sang người khác một cách ngẫu nhiên..</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>SORCERER/phùy thủy 🔮, Do you remember the good old seer? Well now, it has its Wolf Team counterpart. The sorcerer is the Wuff's Seer. They can only see if someone is Wolf or Seer, and they win with the Wolves.
+
+Bạn là Phùy Thủy( tiên tri của bầy sói-đối nghịch với chức năng  tiên tri của phe người). Chức năng của phù thủy đó là nhìn ra ai là sói hay là tiên tri, phùy thủy thắng khi sói thắng.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>BLACKSMITH/Thợ rèn ⚒: You are the Blacksmith. Through the years, no blades nor swords gave you as much satisfaction as the Silver Blades the elves ordered. You might have some silverdust left. Who knows ? It might prevent Wolves from eating tonight 🤔
+Bạn là  Thợ Rèn. Qua nhiều năm rèn đúc, không có thanh gươm nào có thể khiến bạn thấy tự hào như thanh gươm bạc mà các Yêu Tinh đã nhờ bạn rèn. Bạn vẫn còn giữ lại một số bụi bạc, biết đâu chúng có thể ngăn cản lũ Sói ăn người tối nay..</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>ALPHA WOLF/ SÓI ĐẦU ĐÀN ⚡️; You are the Alpha Wolf, the origin of the curse, the bane of banes. Every night, there's 20% chance that you will bite your pack's meal, and they will join your ranks instead of dying!
+Bạn là Sói Đầu Đàn ,kẻ bị nguyền đầu tiên, khởi nguyên của lời nguyền sói trên vùng đất này. Mỗi đêm khi đi săn có 20 % bạn sẽ cắn nạn nhân của mình và khiến họ trở thành sói thay vì phải chết.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>WOLF CUB/Sói con 🐶; What a cuuuute little wuff. tickles tickles -cough cough- As i was saying, you are the Wolf Cub and you drops the mic -I just can't resist that. I think if anyone killed you, I'd give the wuffs two victims. You're too cute to die. I wouldn't be able to tickle you anymore-
+Sói con nhỏ nhắn siêu dễ thương,gruh gruh…..Bạn là sói con và là tình yêu của bầy sói vì bạn quá dễ thương, nếu bạn chết bầy sói sẽ giận giữ và trả thù bằng cách giết 2 người đêm đó.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Khi dân làng chuẩn bị xiên {0}, y kêu lên “Lạy các bố!! Em bên Hoàng Gia đây ạ.Đây,nhẫn hoàng tộc đây, hàng auth đấy. Đêm nào tôi cũng ở trong nhà cùng với tùy tùng thì theo phe ác làm sao được.” Dân làng rỉ tai nhau cởi trói thả vị vương tử ra vì chẳng ai muốn trải nghiệm quả combo tru di cửu tộc.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Bạn cố soi {0}, nhưng không thể nhận ra đó là ai.  Đó không phải là sói hay tiên tri, nhưng mà...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} Bước dõng dạc ra giữa đám đông, chìa sổ hộ nghèo... à không, chìa huy hiệu thị trưởng ra và để mọi người biết thân phận của mình, vote của {0} giờ có giá trị gấp đôi.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Bấm "Lộ Diện" bất cứ khi nào bạn sẵn sàng để lộ bản thân là Thị Trưởng.</value>
+  </string>
+  <string key="Reveal">
+    <value>Lộ Diện</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Bữa nay rắc bạc ko ấy ơi?, Tắt điện bọn sói tối nay hong?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Khi tất cả đang đứng tranh luận, họ bất chợt nhận ra {0} đang đi vòng quanh rải bạc lên khắp mặt đất. Tậm thời thì bây giờ dân làng sẽ không lo bị sói tấn công. (Sói không thể tấn công tối nay.)</value>
+  </string>
+  <string key="Mayor">
+    <value>Thị Trưởng 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Vương Tử 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Phù Thủy 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Kẻ Vụng Về 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Thợ Rèn ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Sói Đầu Đàn ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Sói Con 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Trong khi đàn sói bao vây {0}, {1} đứng ra ngăn cản, Là con sói đầu đàn. {1} ra lệnh cho đàn sói chào đón {0} .  Đêm sau {0} sẽ thành sói.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Bạn bị đàn sói tấn công, Nhưng sói đầu đàn đã chọn bạn. Thay vì phải chết, bạn sẽ trở thành 1 chú sói!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Màn đêm buông xuống, bạn nhận ra kẻ đứng trước gương không còn là mình nữa. Chúc mừng. Bạn là 1 con sói!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Là Thị Trưởng, bạn cũng mang chức năng dân thường cho đến khi bạn hé lộ thân phận. Khi đó bạn sẽ được vote gấp đôi dân thường. Hãy dùng quyền năng một cách thông thái để giúp phe Dân Làng chiến thắng nhé.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Vương Tử là chức năng cực kì quan trọng trong chiến thuật của đội. Khi Vương tử bị vote xiên thì chức năng của họ sẽ được kích hoạt, và họ sẽ sống. Tuy nhiên khả năng này chỉ dùng 1 lần, nếu vẫn để bị xiên thì Vương Tử sẽ hẹo.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Bạn còn nhớ Tiên Tri không? Bây giờ thì Tiên Tri đã có đối trọng thuộc phe sói rồi đó. Phù Thủy là Tiên Tri phe sối. Chức năng này chỉ soi được Sói và Tiên Tri, nếu Sói thắng thì Phù Thủy cũng thắng.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Bạn là Kẻ Vụng Về, lúc sáng thì bạn đã uống rượu thay cơm rồi nên giờ bạn chẳng còn biết trời trăng mây nước gì sất. Không biết là bạn còn biết đường mà vote không nữa? (Sẽ có 50% khả năng là lượt vote sẽ không theo ý bạn)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>
+      BLACKSMITH/Thợ rèn
+You are the Blacksmith. Through the years, no blades nor swords gave you as much satisfaction as the Silver Blades the elves ordered. You might have some silverdust left. Who knows ? It might prevent Wolves from eating tonight 🤔
+Bạn là  Thợ Rèn. Qua nhiều năm rèn đúc, không có thanh gươm nào có thể khiến bạn thấy tự hào như thanh gươm bạc mà các Yêu Tinh đã nhờ bạn rèn. Bạn vẫn còn giữ lại một số bụi bạc, biết đâu chúng có thể ngăn cản lũ Sói ăn người tối nay.
+ 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>
+      ALPHA WOLF/ SÓI ĐẦU ĐÀN
+
+You are the Alpha Wolf, the origin of the curse, the bane of banes. Every night, there's 20% chance that you will bite your pack's meal, and they will join your ranks instead of dying!
+Bạn là Sói Đầu Đàn ,kẻ bị nguyền đầu tiên, khởi nguyên của lời nguyền sói trên vùng đất này. Mỗi đêm khi đi săn có 20 % bạn sẽ cắn nạn nhân của mình và khiến họ trở thành sói thay vì phải chết.
+
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>WOLF CUB/Sói con
+What a cuuuute little wuff. tickles tickles -cough cough- As i was saying, you are the Wolf Cub and you drops the mic -I just can't resist that. I think if anyone killed you, I'd give the wuffs two victims. You're too cute to die. I wouldn't be able to tickle you anymore-
+Sói con nhỏ nhắn siêu dễ thương,gruh gruh…..Bạn là sói con và là tình yêu của bầy sói vì bạn quá dễ thương, nếu bạn chết bầy sói sẽ giận giữ và trả thù bằng cách giết 2 người đêm đó.
+</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} đã chết, và bạn được chọn để trở thành Alpha wolf. Những con sói trong bầy là: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} đã chết, bạn trở thành Wolf Cub. Những con sói trong bầy (if any) là: {1}</value>
+  </string>
+
+  <string key="VillageTeam" deprecated="true">
+    <value>Team Dân Làng</value>
+  </string>
+  <string key="NeutralTeam" deprecated="true">
+    <value>Team Bên Thứ Ba</value>
+  </string>
+  <string key="SerialKillerTeam" deprecated="true">
+    <value>Team Sát Thủ</value>
+  </string>
+  <string key="CultTeam" deprecated="true">
+    <value>Team Tà Giáo</value>
+  </string>
+  <string key="TannerTeam" deprecated="true">
+    <value>Team Chán Đời</value>
+  </string>
+
+  <string key="VillageTeamEnd">
+    <value>Team Dân Làng</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Team Bên Thứ Ba</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Team Sói</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Team Sát Thủ</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Team Tà Giáo</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Team Chán Đời</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>Phe giáo phái cử {0} đến truyền đạo cho {1}, Nhưng thật buồn, đầu {0}bị đá văng ra khỏi cửa sổ...  {0} đã chết...</value>
+  </string>
+
+  <string key="HarlotFuckedKilledPublic">
+    <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} Lả lướt bước vào nhà của {1}, Đã sẵn sàng cho 1 đêm mặn nồng, {0} kinh hoàng nhìn thấy ruột  của {1} đã bị moi ra! Tên giết người hàng loạt quyết định sẽ thoả mãn {0} trước khi chặt xác ả thành trăm mảnh!</value>
+  </string>
+
+
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Dân làng buồn bã nhận ra {0} đã chết tức tưởi trong nhà, trên tay vẫn cầm đồng xu và bảng Ouja. Nhà tiên tri (Seer) đã chết.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Có vẻ như Thợ Rèn {0}, đã cực kì là nhọ. Năm con dao, lấy từ chính rương đồ của {0}, đã cắm lần lượt lên tay, chân và đầu của người này. Hình như là Sát Thủ đang muốn mở rộng bố sưu tập vũ khí của mình (và cả bộ sưu tập bộ phận cơ thể nữa)...</value>
+  </string>
+  <string key="ZombieKilled">
+    <value>{0} đã bị đâm tới chết bằng chình cây đèn cầy trên bàn thờ tà giáo. Sát Thủ lại ra tay, bất chấp giống loài, ngôn ngữ hay tôn giáo! {0} là một giáo đồ Tà Giáo.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Sáng hôm sau, dân làng đã tan nát cõi lòng khi nhìn thấy {0}, hay Thần Tình Ái, đã đầu lìa khỏi cổ. Quái lạ hơn là thi thể đã bị lấy mất trái tim...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Dân làng đang muốn tìm gặp {0} để đòi lại mấy chai Martell của họ, nhưng tất cả những gì họ thấy tại nhà {0} là một con dao bị gãy và một lá gan cũng toang không kém. Sau bao năm làm bạn với "sinh tố lúa mạch" đã khiến cho lá gan của Bợm Nhậu nát đến mức Sát Thủ thấy nó còn chê...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>Thường thì {0} sẽ đễ dàng đối đầu với một tên Sát Thủ , nhưng bữa nay Thiên Thần Hộ Vệ ra đường mà quên đem đũa phép theo. Và thế là {0} ra khỏi game luôn.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Hình như {0} đã ngủ gật tối qua! Có tiếng súng phát ra, nhưng ở hiện trường chỉ có những phần còn sót lại của Xạ Thủ , với một viên đạn vào giữa đầu và một vết đâm ở phần trên cơ thể.  Rõ ràng là lần này Sát Thủ đã lùa được Xạ Thủ.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Có thích khách! {0} ngài Thị Trưởng đã bị đâm khi đang làm việc vào khuya đêm qua! Rõ ràng đây là hành động trả thù của Sát Thủ cho những năm tháng cuộc đời bị nhốt trong trại tâm thần !</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Tờ mờ sáng, tiếng chuông réo khắp thị trấn, binh lính túa ra mọi nẻo đường truy tìm tung tích của Vương Tử {0}. Không chút manh mối, nhưng mọi người nghi ngờ rằng chính Sát Thủ lại hành động...</value>
+    <value>Lính gác của {0} đã ngủ gật đêm qua. Những phần "long thể" của {0} đã bị treo ở khắp các nơi của cung điện. Dòng máu hoáng gia cũng không thể làm chùn tay kẻ Sát Thủ.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Khi dân lần thức dậy thì thấy thi thể mục rữa của Tiên Tri {0}, bị đâm khắp người. DÙ vậy thì bộ não vẫn được tách ra cẩn thận, như một thông điệp rằng dân làng làng đã mất đi bộ não ưu việt nhất, chính là {0}, Tiên Tri.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Những tiếng hú đầy xót thương của bầy sói đang vang khắp ngôi làng. Đó là một sai lầm tai hai. Bầy sói đã giết nhầm đồng đội mình. Phù Thủy {0} đã hẹo.</value>
+    <value>"Là tao nè các con giời, bóp đồng đội vừa thôi các mẹ ạ!!!!! " Phù Thủy thanh minh trong tuyệt vọng . Sáng hôm sau dân làng nhìn thấy thi thể của Phù Thủy bên cạnh quả câu tiên tri đã vỡ nát. Trước khi chết, Phù Thủy {0} đã kịp để lại cho đồng đội đôi lời tâm sự sau cùng: "Anh em như cái đầu bòiii !!!!"...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>NOMNOMNOMNOM! Đêm qua lũ sói đã mò đến và thịt Đứa Trẻ Hoang Dã, {0}, chỉ còn lại vỏn vẹn bộ xương bé nhỏ! Dân Làng từ hỏi là đến con nít mà cũng ăn thì tụi này có còn là người nữa không cơ chứ??? (À mà tụi nó giờ là ma sói mà!)</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+    <value>Dân làng thức dậy và phát hiện thấy từng phần thi thể của {0}, Thợ Săn Giáo Phái, đặt trong từng chiếc giỏ ở giữa thị trấn. Bài học là: Đừng check nhà Sát thủ hàng loạt!</value>
+    <value>Thi thể của {0}, the Thợ Săn Giáo Phái, bị đặt giữa thị trấn, bị cắt ra thành trăm mảnh. Kiểm tra Sát Thủ có theo Tà Giáo không quả là một ý tưởng tồi...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>Có vẻ như bọn sói hôm nay định ở nhà một bữa, thì lại bắt gặp {0}, một thành viên tà giáo tìm tới hang và bắt đầu nói đạo lý: "Có làm thì mới có ăn...." .Cảm động và giác ngộ trước triết lí sâu sắc, bấy sói quyết lấy đầu {0} và tự chế biến thành bữa tối cho đúng tinh thần có làm thì mới có ăn.</value>
+    <value>Đêm qua anh em Tà Giáo đã gặp chút rắc rối. Thành viên mới nhất của họ đã tìm tới hang sói, đúng ngay đêm sói nó ở nhà,và khỏi phải nói thì {0} đã trở thành bữa tối tuyệt vời cho sói.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Zombies convert the SK-->
+    <value>TTà Giáo tưởng rằng sẽ có thêm một thành viên nữa gia nhập, nhưng nhầm cmn to rồi! {0}, một Tà Giáo sĩ, đã bị thái ra từng phần và vứt ra quảng trường thì trấn! Cuốn "Tà Giáo kinh" của họ đã bj đâm xuyên bởi một con dao, đây như một lời khẳng định của Sát thủ rằng đức tin của ai mới là tối thượng..</value>
+    <value>Đem qua, tà Giáo đã cố để truyền đạo cho một "dân làng" còn điên hơn cả họ. Thành viên mới nhất của hội đã cố để thuyết phục Sát Thủ hàng loạt vô team, và Sát Thủ đã có được một tác phẩm nghệ thuật mới ở quảng trường, tạo ra từ nội tạng của {0}.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- used when GA guards SK -->
+    <value>Đáng ra thì đó là một đêm mà Thiên Thần Hộ Vệ {0} sẽ đi cứu dân làng khỏi tay Sát Thủ , nhưng hào quang của {0} đã tắt và cánh thì bị xẻ bởi tên sát nhân! Chỉ kịp để lại một câu "Đến cả tôi cũng nát đuýt rồi đây này!"</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <!-- used when GA guards a wolf -->
+    <value>{0} đã bảo vệ nhầm sói tối qua. Khi dân làng thức giấc thì thấy cánh của {0} bị treo trên cây thánh giá ở nhà thờ . Rõ là hôm qua lũ sói đã có dịp thưởng thức món Thiên Thần tái chanh rồi, ăn no nê, chúng xách đuýt đi về.</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>
+      Biết rằng chỉ còn lại {0}, {1} định thịt cả {0}, nhưng một đệ tử chân truyền của Trần Dần như {0} thì đâu phải dạng vừa! Chỉ với vài đường Thần Quyền môn, Thợ Săn đã khiến sói ước rằng mình chưa từng được sinh ra. Để hạ màn, Thợ Săn tung chiêu cuối "Tao Có Súng Nè Mày" và... đùng, một lỗ đạn to trên ngực, kết liễu cuộc đời chú sói ngu ngơ!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Biết rằng chỉ còn lại {0}, {1} canh đến lúc {0} mất cảnh giác nhất. Tiêu diệt dân làng cuối cùng thật dễ dàng cho {1}.</value>
+  </string>
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>{1} và {0} đang cùng nhau rải bước dưới ánh nắng trong lành. Bất chợt phát giác thấy cái thập tự lấp lánh {0} đeo quanh cổ, {1}, một người lỗi lạc, ngay lập tức quyết định rút kiếm ra thêm một lần cuối để chấm dứt thứ tà giáo đã làm ô nhiễm ngôi làng bấy lâu.</value>
+  </string>
+
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Join time extended by {0} seconds!\n{1} left to Join</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Join time decreased by {0} seconds!\n{1} left to Join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only group admins can extend the time more than once!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Thật đáng tiếc! {0} chính là kẻ say xỉn! Giờ thì sói đã bị say, đêm nay không thể sát hại được ai nữa :() {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>You can't join this game because you don't seem to be a member of {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Please don't use the commands to join. Use this button instead.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} người chơi đã vote, {1} tổng cộng.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, please remember that you will have to join with the button as well.</value>
+  </string>
+  <string key="GroupNotFound">
+    <!--This string might need rewording from some native speaker-->
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>You have been deleted from the wait list for {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0}joined the game in the last 30 seconds.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Cho phép chức năng Tà Giáo</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Cho phép chức năng Kẻ Chán Đời</value>
+  </string>
+  <string key="AllowFool">
+    <value>Cho phép chức năng Thằng Ngáo</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Bật treo cổ bí mật</value>
+  </string>
+  <string key="RandomMode">
+    <value>Bật Chế Độ Ngẫu Nhiên</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Cho phép Tự gia hạn thời gian đếm ngược</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Hiện Chức Năng khi chết</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Cho phép rời game</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>All</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Cult / Fool / Tanner will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Allow NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Ánh mặt trời đã ló rạng, tiếng gà trống cúc cu cạnh cửa sổ. Dường như nhận ra mọi người đã biến mất, {0} đi và đi, cho tới khi vô thức dừng lại ở đúng căn nhà giữa làng. Nhìn thấy xác bạn bè ngổn ngang trên đường, {0} thở dài. Như vậy là cái giấc mơ được dân làng tử hình cũng đã đi cùng với lũ người đó rồi. Với tay cố chạm tới sợi dây thừng, chính sợi dây đã lấy đi sinh mạng của những người vô tội, {0}, Trước khi thả người trôi tự do cùng sợi, nở một nụ cười buồn bã trên khuôn mặt.</value>
+    <value>{0} tỉnh dậy vào bình minh. {0} Nhận thấy bản thân quá thảm hại khi không thể lừa người dân giết , {0} với lấy sợi dây thừng và tự treo cổ, chỉ bằng cách này, {0} mới có thể ra đi.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} thức giấc, nhưng kì lạ thật, thay vì nghe được những âm thanh nhộn nhịp của làng, {0} chỉ cảm nhận đưọc sự yên lặng khác thường. {0} không chớp mắt, nhìn lên trần nhà, để yên cho thực tại tràn vào. Mọi người chết cả rồi. sói cũng chết cả rồi. Với nỗi thất vọng không tả xiết, {0} đứng dậy, lau chùi nhà cửa, thắp nén nhang cho gia tiên và ra ngoài. Bầu trời hôm nay mới thật đẹp làm sao, nhưng tại sao mắt ta lại ướt thế này?. {0} nuối tiếc mình và sói đã gần chạm tới chiến thắng như thế nào. Có lẽ, đây là lúc cho hắn bắt đầu một cuộc sống mới,có lẽ là với một đàn sói khác. {0} lặng lẽ bước đi, cho tới khi bóng của mình biến mất ở đường chân trời.</value>
+    <value>Sau tất cả nỗ lực của {0}, Những con sói trong đàn của {0} nằm ở góc cửa một cách vô sức sống. Hừm, dù cho mình và đàn sói đã chiến thắng đi chăng nữa, cũng chẳng còn tên dân làng nào để mình hả hê cả. {0} đi chậm về hướng lò sưởi, cầm chổi thần và lặng lẽ bay. Mờ trong đám sương, {0} nheo mắt tìm kiếm một bầy sói mới, đồng minh mới, và có lẽ, 1 nạn nhân mới.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: </value>
+  </string>
+  <string key="Skip">
+    <value>Skip</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} đã chết. Bạn đã bị đồng hoá thành Lyncan. Đồng đội của bạn (if any) là: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Bạn nhân ra rằng {0} KHÔNG PHẢI là {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Bạn có muốn bỏ thuốc ngủ cả làng đêm nay?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Trong khi dân làng vẫn bàn luận sôi nổi, {0} rón rén đi đến giếng làng cùng với gói thuốc ngủ. Đêm nay, sẽ không có ai thức nổi để thực hiện chức năng</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Nở nụ cười gian ác, hắn lấy ra từ trong túi áo một gói bột màu trắng. Như vậy là đêm nay sẽ không ai có thể thức được...</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Cho phép Kẻ Trộm là một lựa chọn chức năng?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Chức năng Kẻ Trộm được dùng mỗi đêm?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Thief will play every night: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Cho phép chức năng Kẻ Trộm</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>You are the WolfMan 👱🌚! Do phần lớn thời gian bạn ở trong rừng và bị ám mùi sói, the Seer sẽ cảm thấy khó xử và cho rằng bạn là sói! Oh no....</value>
+  </string>
+  <string key="WolfMan">
+    <value>WOLF MAN/Người giống sói 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Bạn chỉ là 1 tên nông dân vô dung, tuy nhiên, do phần lớn thời gian bạn ở trong rừng và bị ám mùi sói, the Seer sẽ cảm thấy khó xử và cho rằng bạn là sói! Oh no........</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>LYCAN/ Bán Sói 🐺🌝! Chúc mừng. Bạn phe sói, nhưng Seer sẽ chỉ soi được bạn là nông dân :)</value>
+  </string>
+  <string key="Lycan">
+    <value>the Lycan 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>The lycan là sói, nhưng trong mắt the seer sẽ là dân làng</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>ORACLE/ Thánh nữ 🌀. Hàng đêm, bạn sẽ được nhìn một người trong làng, nhưng bạn sẽ chỉ biết được họ KHÔNG phải là gì. vai bạn nhìn được sẽ là vai của một người khác CÒN SỐNG, vì vậy nên hãy để ý là vai gì nhé :)</value>
+  </string>
+  <string key="Oracle">
+    <value>the Oracle 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Bạn là Oracle 🌀. Hàng đêm, bạn sẽ được nhìn một người trong làng, nhưng bạn sẽ chỉ biết được họ KHÔNG phải là gì. vai bạn nhìn được sẽ là vai của một người khác CÒN SỐNG, vì vậy nên hãy để ý là vai gì nhé :)</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>SANDMAN/ Người Ru Ngủ 💤. Mỗi game, bạn sẽ có 1 lần chuốc thuốc mê cả làng để không ai sử dụng được chức năng.</value>
+  </string>
+  <string key="Sandman">
+    <value>the Sandman 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Bạn chính là sandman 💤. Mỗi game, bạn sẽ có 1 lần chuốc thuốc mê cả làng để không ai sử dụng được chức năng.</value>
+  </string>
+
+  <string key="RoleInfoImam">
+    <value>Imam/ Người Thuyết Giáo ☮️. Bạn có thể thuyết phục cả làng không sát sinh vào buổi sáng. Chỉ có thể sử dụng 1 lần.</value>
+  </string>
+  <string key="Imam">
+    <value>the Imam ☮️</value>
+  </string>
+  <string key="AboutImam">
+    <value>The Imam có thể thuyết phục cả làng không sát sinh vào buổi sáng. Chỉ có thể sử dụng 1 lần.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>Bạn là WISE ELDER/Già Làng 📚. Bạn có thể sống sót qua 2 đợt tấn công của bầy sói. Nếu bạn bị Hunter hay Gunner bắn chết, Họ sẽ mất hết chức năng và trở thành thường dân.</value>
+  </string>
+  <string key="WiseElder">
+    <value>the Wise Elder 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>The Wise Elder 📚 có thể sống sót qua 2 đợt tấn công của bầy sói. Nếu bạn bị Hunter hay Gunner bắn chết, Họ sẽ mất hết chức năng và trở thành thường dân.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>Bạn là the Thief/ Kẻ Trộm 😈! Bạn có thể cướp chức năng của người chơi khác. Người bị cướp sẽ trở thành thường dân!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>You are the Thief 😈! Bởi vì [Full Thief] mode đã được kích hoạt, Bạn có 50% cơ hội cướp chức năng của người khác MỖI ĐÊM, nếu thành công, người đó sẽ trở thành trộm nghiệp dư và có thể trộm giống bạn!</value>
+  </string>
+  <string key="Thief">
+    <value>the Thief 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Mặc định thì Kẻ Trộm 😈 có thể đánh cắp chức năng của một người chơi vào đêm đầu tiên và biến người đó thành Dân Làng.\nNếu chế độ [Full Thief] được bật, thì Kẻ Trộm sẽ có 50% khả năng trộm được chức năng của một người chơi mỗi đêm, nếu đánh cắp được chức năng của một người chơi thì người chơi đó sẽ lại trở thành trộm và đi trộm của người khác !</value>
+  </string>
+
+  <string key="AskImam">
+    <value>Bấm nút để trì hoãn việc sát sinh của cả làng!</value>
+  </string>
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
+    <value>Người Thuyết Giáo ☮️, {0}, đang có một bài diễn thuyết đầy xúc động về tình bạn và lòng tin trước sự lắng nghe của cả làng. Bị lay động bởi bài thuyết giảng, dân làng sẽ không xiên ai tối nay!</value>
+  </string>
+  <string key="ImamNoLynchNow">
+    <value>Nhờ có bài diễn văn xúc động của ☮️, dân làng đã bỏ qua một buổi hành hình!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Bạn định đột nhập vào nhà {0} nhưng thật không may đó lại là Già Làng 📚! {0} chặn được đòn tấn công của bạn, ít ra thì Già Lang cũng không nhận ra bạn.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Sói đến thịt ban và bạn đã ko kịp hóa Già Làng 📚 ! Bạn chặn được cuộc tấn công, nhưng bạn lại không biết mặt kẻ tấn công.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Thợ Săn 🎯, {0} đã bắn Già Làng 📚, {1}. {0} vô cùng hối hận, và căm ghét năng lực thợ săn của mình. Thợ Săn ước phải chi mình chỉ là một Dân Làng bình thường 👱.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Xạ Thủ 🔫, {0} đã bắn Già Làng 📚, {1}. {0} vô cùng hối hận, quyết định rửa tay gác súng, biến thành Dân Làng👱 hàng ngày chăn rau... à không trồng rau và nuôi cá.</value>
+  </string>
+
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Bạn định trộm chức năng của {0}, nhưng bạn đã fail sml...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Bạn định trộm chức năng của {0}, nhưng {0} đã chuyển hộ khẩu lên thiên đường rồi...</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+  <!-- {0} - The new role -->
+    <value>Chức năng của bạn đã bị trộm! Giờ bạn là {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Bạn đã trộm được chức năng của {0}!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} không còn là phụ hồ giống bạn nữa và giờ thì {1} mới là đồng nghiệp phụ hồ của bạn!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Anh em team Thợ Xây (nếu có) gồm: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
+    <value>{0} không còn trong Tà Giáo giống bạn nữa và giờ thì {1} mới là anh em Tà Giáo thiện lành của bạn!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} không còn là Sói giống bạn nữa và giờ thì {1} mới là đồng loại Sói của bạn!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates" deprecated="true">
+    <!-- 0 - teammates's name -->
+    <value>Anh em team Sói (nếu có ) gồm: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>{0} lượn lờ quanh làng thì nhận ra chẳng còn cái gì cho mình trộm ở cái xứ Vũ Đại này nữa cả. Thế là Trộm khăn gói rời làng đi sang nơi khác lập nghiệp, trau dồi thêm nghiệp vụ đào tường khoét vách..</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Giờ thì {0} đã lọt vào tầm nhắm của bạn.</value>
+  </string>
+  <string key="AskThief">
+    <value>Bạn muốn trộm chức năng của ai?</value>
+  </string>
+
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} người đã vote xiên {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Kết quả bầu chọn cho giải thưởng Giàn Thiêu Vàng nè:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>Đã có {0} phiếu dành cho {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Bí mật: Kết quả bầu chọn</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Khi bật chế độ xiên bí mật, Có hiện kết quả bầu chọn vào lúc xiên không?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Khi bật chế độ xiên bí mật, kết quả bầu chọn sẽ {0} vào lúc xiên: </value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Bí mật: Người vote</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Khi xiên bí mật được bật lên và kết quả vote được hiện thì có hiện ai đã bầu cho người nào không?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Khi xiên bí mật được bật lên và kết quả vote được hiện, thì tên người vote sẽ: {0}</value>
+  </string>
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
+	<value>Kì lạ...vào cái lúc mà bạn định bàn xem sẽ truyền giáo cho ai tối nay thì bạn nhận ra {0} không có ở đó! Chuyện gì đã xảy ra rồi??</value>
+  </string>
+
+  <string key="Peace">
+  <!-- Used for Imam's button -->
+	<value>Hòa Bình!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
+	<value>Bữa nay không xiên ai cả vì Người Thuyết Giáo đã có những pha nói đạo lý đi vào lòng người!</value>
+  </string>
+
+  <string key="ThiefStoleYourRoleThief">
+    <value>Chức năng của bạn đã bị trộm! Giờ bạn là Kẻ Trộm 😈 mới và đêm sau là được cấp giấy phép hành nghề!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Chức năng của bạn đã bị trộm mất! Giờ bạn trở thành Dân Làng👱, kiếp này coi như bỏ.</value>
+  </string>
+
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Cốc cốc!Sát Thủ đã tới nhà thăm bạn!</value>
+	<value>Sát Thủ đã phục kích bạn, trói bạn vào ghế và sau đó đâm bạn mỏi tay!</value>
+  </string>
+
+  <string key="ThiefTeamEnd">
+	<value>Team Ăn Trộm</value>
+  </string>
+
+  <string key="StealKiller">
+    <value>Bạn định kiếm chác một vài cái chức năng....nhưng lại vớ ngay Sát Thủ!Hắn vừa thấy bạn lảo đảo quanh nhà hắn, và một lát sau bạn bị hắn xiên ngay...</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>Kẻ Trộm, {0}, cố để trộm chức năng của Sát Thủ! Nhưng nào có dễ ăn: {0} bị đâm bấy người và bị lấy mất lá gan...</value>
+  </string>
+  <string key="BeholderSeerStolen">
+	<value>Trộm đã húp được chức năng của Tiên Tri! {0} giờ đã thành Tiên tri, còn {1} giờ là.....Trần Dần!</value>
+  </string>
+
+  <!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+	<value>TROUBLEMAKER/ kẻ gây rối 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>The troublemaker is on the verge of puberty! Once per game, at day, you can choose to make trouble, that will annoy all the villagers and they will lynch twice that day.
+Kẻ gây rối đang dậy thì nên rất bất ổn và khó chịu, chức năng này cho phép bạn đề nghị dân làng bỏ phiếu giết 2 lần vào ban ngày.</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>Bạn là Kẻ gây Rối 🤯. Là trẻ trâu của khu phố, bạn đang trong thời kì dậy thì. Một bữa nào đó mà tự nhiên bạn thấy khó ở, bạn sẽ đi bơm đểu, khích dân làng bỏ phiếu 2 lần.</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>Nay bạn có muốn gây rối không?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>{0}, Kẻ Gây Rối 🤯 lại chạy rông và la hét nữa rồi! Bữa nay vote 2 lần đó!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>Cũng nhờ Kẻ Gây Rối mà nay cả làng được bữa vote 2 lần, mong ngày mai có ai cho nó uống thuốc đúng giờ và dừng thả lang nó nữa.</value>
+  </string>
+  <string key="Chemist">
+	<value>CHEMIST/ Nhà Hóa Học 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>The chemist is a crazy villager, who loves to brew potions. At night, you brew two potions - a poisonous one and a neutral one. Every other night, you can choose to visit a player to have a drink with - the player will randomly choose one of the potions and you will drink the other one! One of you two will die for sure, but be careful - at a chance of 50% it's yourself who doesn't survive!
+Nhà Hóa Học là một dân làng điên khùng và rất thích pha chế các loại thuốc. Vào đêm nhà Hóa Học sẽ pha chế 2 bình thuốc- 1 bình thuốc độc và một bình thuốc không độc. Mỗi đêm khác nhà Hóa Học có thể chọn viếng thăm 1 người chơi và uống rượu cùng nhau, người chơi được nhà Hóa Học viếng thăm sẽ chọn ngẫu nhiên một lọ thuốc và nhà Hóa Học sẽ uống lọ còn lại. Người nào uống phải bình thuốc độc sẽ ngỏm củ tỏi. Hãy cẩn thận vì bạn cũng có 50% ngỏm củ tỏi.</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>CHEMIST/ Nhà Hóa Học 👨‍🔬! Nhà Hóa Học là một dân làng điên khùng và rất thích pha chế các loại thuốc. Vào đêm nhà Hóa Học sẽ pha chế 2 bình thuốc- 1 bình thuốc độc và một bình thuốc không độc. Mỗi đêm khác nhà Hóa Học có thể chọn viếng thăm 1 người chơi và uống rượu cùng nhau, người chơi được nhà Hóa Học viếng thăm sẽ chọn ngẫu nhiên một lọ thuốc và nhà Hóa Học sẽ uống lọ còn lại. Người nào uống phải bình thuốc độc sẽ ngỏm củ tỏi. Hãy cẩn thận vì bạn cũng có 50% ngỏm củ tỏi.</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>Khi tất cả dân làng đã đi ngủ, bạn vẫn cặm cụi trong phòng thí nghiệm của mình, bào chế 2 lọ thuốc cho đêm mai. Nhớ chú ý coi chừng lũ sói nhé!</value>
+  </string>
+  <string key="AskChemist">
+	<value>Tối nay bạn muốn đánh cược với ai đây?</value>
+  </string>
+  <string key="ChemistTargetDead">
+	<value>Bạn đã đến nhà của {0} và thử thuốc với đối phương. Bạn đã sống nhăn răng còn chủ nhà thì hẹo!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>Nhà Hóa Học 👨‍🔬 đã đến thăm bạn đó {0}! Hắn rủ bạn chơi thuốc, bạn từ chối cái hắn rút cây dao ra rồi tiếp tục mời bạn, bạn im lặng rồi nhẹ nhàng kéo ra khẩu AK47 và rồi gửi hết 30 viên lên người nhà bác học đáng mến. 🤷‍♂️</value>
+  </string>
+  <string key="ChemistSK">
+	<value>Bạn đến mời {0} chơi đồ bạn mới chế xong, nhưng đó lại là Sát Thủ, mà sát thủ không chơi đồ, họ chơi dao! 🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<value>The chemist 👨‍🔬 {0} cố ép Sát Thủ cùng mình cá cược tối nay. Nhưng Sát Thủ không có hứng... {0} được phát hiện đã bị đâm, với 2 lọ thuốc còn nguyên trong cặp!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>Nhà Hóa Học 👨‍🔬 đến nhà bạn, ép bạn chọn một trong 2 lọ thuốc và bạn đã đớp phải lọ có độc. Goodbye bây bi...</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>Bạn đến chỗ {0} và ép họ cược với bạn! họ đã chọn phải lọ độc còn bạn thì về nhà an toàn, Tự hào về khả năng cờ bạc của minh. Đêm đó bạn gáy khét nhất xóm!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+	<value>Nhà hóa Học 👨‍🔬 đã đến nhà {0} tối nay và chủ nhà đã chọn phải lọ độc! Trong khi thì Nhà Hóa Học sống nhăn răng thì {0} hẹo. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>Nhà Hóa Học 👨‍🔬 đến nhà {0}, ép chủ nhà thử thuốc. Sau một thoáng chần chừ thì bạn đã chọn lọ không độc! Trời độ bạn nhé!</value>
+  </string>
+  <string key="ChemistFail">
+	<value>Bạn đến nhà {0} và cược chọn thuốc với họ! Tuy nhiên thì họ chọn được lọ lành! Thế là bạn phải húp lọ độc và hẹo ngay. Phải chi hồi đó đừng học hóa thì có phải có ích cho đời hơn không...</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>Nhà Hóa Học 👨‍🔬 {0} đã hẹo! Rõ ràng là {0} lại thách ai xong rồi tự bóp mình nữa chứ gì. Mong các bạn đừng bao giờ mua phải thuốc ở chỗ nó...</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>{0} không có ở nhà! Bạn đành xách cặp ra về.</value>
+  </string>
+  <string key="ZombiesList">
+	<value>Thành viên tà giáo hiện còn: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>SNOW WOLF/ Sói bạc 🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>SNOW WOLF/ Sói bạc 🐺☃️. The snow wolf is a strong wolf who belongs to the wolf pack but doesn't go eating with the others at night. Instead, every night, you choose a player to freeze. A frozen player cannot perform any night actions that night. However, you cannot freeze the same player two nights in a row!
+Sói bạc là một con sói mạnh mẽ thuộc phe sói nhưng không ra ngoài đi săn với bầy vào ban đêm. Thay vào đó mỗi đêm sói bạc sẽ được chọn để đóng băng 1 người chơi. Người chơi bị đóng bang không thể thực hiện chức năng của họ vào ban đêm. Tuy nhiên bạn không thể đóng băng 1 người chơi 2 đêm liên tiếp.
+</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>Sói Bạc 🐺☃️ là giống sói sống tự nhiên ở những dãy núi tuyết quanh làng. Nhờ vậy, chúng đã luyện thành khả năng điều khiển băng tuyết. Và đã sống cô độc từ khá lâu, Sói Bạc thích đi săn một mình . Thay vì đi theo đàn vào ban đêm, chúng chọn những nạn nhân cô lập để đóng băng, khiến họ không thể dùng chức năng của mình. Tuy nhiên , vẫn sẽ còn những dư lượng phép của Sói Bạc tồn trong người họ, giúp họ tạo được kháng thể cho một đêm tiếp theo. </value>
+  </string>
+  <string key="AskFreeze">
+	<value>Bạn muốn đóng băng ai tối nay?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>Đàn sói bao gồm {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>Bầy sói bao gồm {0} và Sói Bạc-SNOW WOLF {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} đã chết, giờ bạn trở thành Sói Đầu Đàn-ALPHA WOLF. Đồng đội của bạn là: {1} và Sói Bạc-SNOW WOLF {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} đã chết, bạn đã biến thành Sói Con-WOLF CUB. Đồng đội của bạn là: {1} Và Sói Bạc-SNOW WOLF {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} đã chết, bạn đã trở thành Sói-Werewolf. Đồng đội của bạn là: {1} và Sói Bạc-SNOW WOLF {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} đã chết, bạn biến thành Bán Sói-Lycan.Đồng đội của bạn là: {1} và Sói Bạc-SNOW WOLF {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} đã chết,bạn biến thành Sói Bạc-SNOW WOLF. Đồng đội của bạn là (if any) : {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>The doppelganger-kẻ biến hình {0} đã trở thành Sói Bạc-snow wolf!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} đã chết! Trong cơn giận giữ, bạn đã trở thành sói-werewolf! Những đồng đội của bạn là: {1} và Sói Bạc-Snow Wolf {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} không còn là đồng đội của bạn {1} đã trở thành Sói Bạc-Snow Wolf!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Bạn vừa mở cửa chuẩn bị bước ra ngoài căn nhà của mình đi kiếm trai cho đỡ vã thì một cơn gió độc thổi thẳng vào mặt bạn, bạn đã bị nghiệp quật đông cứng tại chỗ 🐺☃️. Bạn đứng bất động tại cửa nhà, chửi thề thằng nào chơi mất dạy.Haizzz, Ít ra thì băng cũng sẽ tan nhanh thôi. </value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Bạn đang nằm trên giường chuẩn bị dậy để chế thuốc, một cơn gió lạnh thổi qua cửa sổ đã làm bạn bị đông cứng dái 🐺☃️. Bạn nhìn thấy các bình thuốc của mình bị đông cứng trên bàn- Bùa đóng băng đã làm đóng băng chúng. Bạn thở dài trong lòng,mong ngóng mặt trời nhanh mọc... Dù sao băng cũng sẽ nhanh tan thôi</value>
+  </string>
+  <string key="ZombieFrozen">
+    <value>khi bạn vừa khoác áo choàng và chuẩn bị bước ra khỏi cửa, một cơn gió lạnh thổi thẳng vào mặt bạn,đóng băng bạn 🐺☃️. Các thành viên khác của giáo phái ghé thăm bạn để rủ bạn đi chiêu mộ thành viên mới và cười vào mặt bạn khi thấy bạn bị đóng băng. Họ bỏ lại bạn, hứa hẹn sẽ thay bạn làm phần việc đêm nay. Giờ khi bạn đã thoát khỏi đóng băng, bạn rời nhà và run rẩy vì xấu hổ. </value>
+  </string>
+  <string key="CHFrozen">
+    <value>Khi bạn vừa cầm thanh kiếm của mình, một cơn gió lạnh thổi qua cửa sổ, đóng băng bạn tại chỗ,  🐺☃️. Bạn gầm lên giận giữ trong lòng,xương sườn đau đớn vì bị đóng băng trong một tư thế quá lâu... </value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>BẠn đang chuẩn bị dùng pháp thuật trong nhà mình thì một luồng gió lạnh ập đến và đóng băng bạn tại chỗ  🐺☃️. Dù dóng băng không có hại đến tính mạng của bạn nhưng bạn lạnh buốt hết cả não. Dù sao bạn không lo lắng lắm bởi bạn biết ngày mai khi mặt trời mọc bùa phép này sẽ biến mất và bạn sẽ ổn. </value>
+  </string>
+  <string key="GAFrozen">
+    <value>Khi bạn vừa vỗ cánh để xuất hiện,  một cơn gió lạnh thổi qua cửa sổ, đóng băng bạn tại chỗ,  🐺☃️. Bạn run rẩy vì cười khi nghĩ đến việc mình trông giống như đồ trang trí treo trên cây thông noel. Rất may bùa phép đã giải trừ ngay khi mặt trời mọc. </value>
+  </string>
+  <string key="SKFrozen">
+    <value> khi bạn đang xem xét bộ sưu tập gan người của mình lần cuối trước khi đi giết người tiếp,  một cơn gió lạnh thổi qua cửa sổ, đóng băng bạn tại chỗ bên cạnh bộ sưu tập của bạn,  🐺☃️. 🐺☃️. Khi bùa phép biến mất vào buổi sáng khi mặt trời mọc, bạn ghiến răng giận giữ chửi Sói Bạc-SnowWolf, thề sẽ trả thù bằng món giả cầy sớm thôi và moi gan Sói Bạc-SnowWolf. </value>
+  </string>
+  <string key="ThiefFrozen">
+    <value> Bạn rình rập quanh làng để tìm mục tiêu trộm cắp thì một cơn gió lạnh thổi qua và đóng băng bạn tại chỗ 🐺☃️. Thật may mắn là trời rất tối nên những người đi ngang qua không nhận ra bạn là ai.Vào lúc mặt trời mọc bạn đã hết bị đông cứng và run rẩy bò về nhà mình trước khi bị ai đó nhìn thấy. </value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value> Bạn tỉnh lại vào ban đêm và thấy lạnh buốt đến tận xương, bạn nhận ra mình bị đóng băng và không thể cử động chút nào! Có vẻ Sói Bạc-SnowWolf  🐺☃️ đã dùng phép thuật lên bạn. Bạn quay lại giấc ngủ, éo quan tâm bởi vì bạn đã đi tè lúc nãy rồi.....</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value> bạn đến để đóng băng {0} ,nhưng bạn gặp phải một thực thể thần thánh cao lớn và trang bị vũ khí tới tận răng. Thiên thần hộ vệ(The Guardian Angel) đánh bạn ra bã, bạn bỏ chạy về nhà.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value> Bạn đã đóng băng {0}tại nhà của hắn! Tối nay hắn không thể thực hiện khả năng đặc biệt của hắn .</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>Sói Bạc(SnowWolf) {0} định đóng băng ai đó tối qua, nhưng chọn nhầm kẻ giết người hàng loạt( serial killer)! Kẻ giết người phát hiện vị khách không mời và đâm một cách điên cuồng {0}!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value> Tất cả thành viên của bầy sói đã chết, không còn ai đi săn ban đêm và mang thức ăn về cho bạn, bạn bị buộc phải đi săn như một con sói(werewolf) bình thường để không chết đói!!</value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>Sói bạc (snow wolf) {0} đã cố đóng băng thợ săn tối qua nhưng thợ săn rất tỉnh và đẹp trai nên đã hạ gục được con sói với khẩu súng của anh ấy!</value>
+  </string>
+    <string key="Lang">
+    <value>Change Language</value>
+  </string>
+  <string key="Mode">
+    <value>Change Game Mode</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Set Max Players</value>
+  </string>
+  <string key="EndRoles">
+    <value>Show Roles At Game End</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Set Max Extend Time</value>
+  </string>
+  <string key="DayTimer">
+    <value>Set Day Timer</value>
+  </string>
+  <string key="NightTimer">
+    <value>Set Night Timer</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Set Lynch Timer</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Role Configuration</value>
+  </string>
+  <string key="Mechanics">
+	<value>Game Mechanics</value>
+  </string>
+  <string key="GroupSettings">
+	<value>Group Settings</value>
+  </string>
+  <string key="Timers">
+	<value>Game Timers</value>
+  </string>
+  <string key="Done">
+	<value>Done!</value>
+  </string>
+  <string key="Back">
+	<value>Back</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Shuffle Player List</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Shuffle player list every time? Current: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>Player list will be shuffled every time: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+	<value>Bạn là Người đào mộ (Grave Digger ☠️). Mỗi đêm người đào mộ sẽ ra ngoài chôn cất tất cả những người đã chết vào đêm trước đó (cả sói cũng xứng đáng được chôn).Khi ra ngoài đào mộ bạn có khả năng bị sói và kẻ giết người nhìn thấy và giết chết . Và vì bạn ra ngoài cả đêm nên sói và giáo phái không thể tìm bạn ở nhà của bạn, trừ khi bạn không có việc gì làm ( hôm trước không có ai chết nên không có người để chôn ), trong trường hợp đó bạn sẽ ở nhà. Tất cả những ai ghé thăm bạn có nguy cơ ngã xuống nấm mộ bạn đã đào sẵn-tùy vào số mộ bạn đã đào. Càng đào nhiều mộ và ra ngoài nhiều thì bạn càng có khả năng gặp phải sói hoặc kẻ giết người. Có khả năng kẻ giết người sẽ rơi xuống hố bạn đã đào và bị thương ở chân dẫn đến mất kiểm soát mục tiêu hắn định giết vào đêm sau....</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>Bạn là Người Đào Mộ (Grave Digger ☠️). Trách nhiệm của bạn là chôn những người đã chết vào hôm trước. Nhưng bạn thường rất mệt nên các ngôi mộ thường là chưa bị lấp đất. Một số người đi lang thang vào buổi tối có thể bị vấp ngã rơi xuống mộ chưa lấp và....chết ngỏm... Dù sao, Sói không thể chọn tấn công bạn vì bạn không ở nhà vào ban đêm.</value>
+  </string>
+  <string key="GraveDigger">
+	<value>the Grave Digger ☠️(Người đào mộ)</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>Người chết đã được chôn cất tử tế. Mọi nghĩa vụ đã được hoàn thành, bạn đi ngủ trong yên giấc.</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+	<value>Vào đêm muộn bạn đào mộ chôn cất {0}. Cầu cho họ được siêu thoát và yên nghỉ {0}.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>Bạn vừa rời nhà chuẩn bị đi đào mộ chôn cất những kẻ xấu số, một luồng gió lạnh ập đến và dóng băng bạn. Không thể động đậy, bạn đợi cho tới lúc mặt trời lên. Những người đã chết đành phải phơi thây thêm 1 đêm nữa rồi...:(..</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+	<value>Bầy sói đến nhà {0}, và nhận ra rằng không có ai ở nhà ngoài một ngọn nến nhỏ đung đưa trên một nấm mộ đào sẵn...</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+	<value>Bầy sói đi đến nhà {0} để săn, nhưng trên đường đi đến đó, {1} rơi vào một cái hố được đào sẵn, đít bị xuyên thủng bởi một ngọn chông bạc dưới hố-một cái chết bách nhục!</value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+	<value>Bạn đang muốn lấp đi ngôi mộ đã đào cả đêm thì bạ nhận ra mùi hôi hám khác hẳn với mùi của xác chết... Con sói {0} ngã xuống mộ và đã chết sấp mặt!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+	<value>Bạn moi tấm gan của {0}ra khỏi cơ thể đang nguội dần của hắn, nhưng khi trở về bạn bị rơi xuống một nấm mộ  dở chưa lấp. Có lẽ bạn bị nghiệp quật, giờ thì một chân bạn đã bị trật mắt cá.</value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+	<value>Bạn muốn tới nhà của {0} để ra tay,nhưng cái chân trượt mắt cá làm bạn không thể lết đi xa được. Nên bạn chọn ra tay với mục tiêu gần nhất {1}, giết họ và trở về nhà thật nhanh.</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+	<value>bạn tới nhà của {0}, nhưng thiên thần hộ vệ( guardian angel) đang ở đó để bảo vệ họ! Bạn cố ra tay tấn công nhưng bị đánh bại một cách nhục nhã ...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+	<value>Một đêm đi săn như thường lệ, bạn bị trượt chân và ngã xuống một ngôi mộ do {0} đào sẵn và gẫy cổ chết...</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+	<value>Một đêm mệt mỏi, bạn bước về nhà và mặt trời đã mọc lên từ từ. Nhưng trước khi bước vào nhà bạn nhận ra một thanh kiếm rơi trên mặt đát bên cạnh một nấm mồ chưa lấp.Bên trong hố bạn thấy xác chết của{0}....</value>
+  </string>
+  <!--{0}: Zombie-->
+  <string key="CultFell">
+	<value> bạn trở về nhà sau một ngày mệt mỏi, bạn nghe thấy tiếng kêu từ một ngôi mộ đào dở của bặn và tìm thấy {0} ngã chết sml trong hố,Giáo phái kiểu gì mà đi chiêu mộ một kẻ đào mộ cơ chứ?</value>
+  </string>
+  <!--{0}: Zombie who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+	<value>Bạn đi tới nhà của {1}, {0} muốn đốt cháy cả nhà thờ cho vui .{0} tiến tới nhà thờ và lúc đi qua nghĩa địa thì bị ngã xuống một ngôi mộ chưa lấp,bặn bỏ chạy khi phát hiện {0}đã chết sml.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+	<value>bạn đi đến nhà của {0}Ư, bạn cố nhớ xem lọ thuốc nào là thuốc độc nên mất tập trung và vấp ngã xuống một ngôi mộ chưa lấp,một ngọn giáo xuyên qua tim bạn...bạn đã chết</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+	<value>“mình có thể uống một cốc rượu lúc này”, bạn suy nghĩ. Và bạn tình cờ nhìn sang  ngôi mộ bên cạnh, điều ước của bạn đã được lắng nghe, một chai rượu nằm trong đó bên cạnh xác chết của {0} .muhaha. Bạn sợ tụt cả …...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+	<value>Bạn trang điểm kỹ càng và chuẩn bị đi tới nhà {0} để tìm chút niềm vui trong đêm dài. Buồn thay bạn không đi được xa và trượt ngã rơi xuống một ngôi mộ chưa lấp….it ra bạn chết khi đang xinh đẹp.</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+	<value>Có vẻ như định mệnh không muốn bạn được vui vẻ... Đào mộ cả đêm nhưng khi về nhà, bạn tìm thấy {0} -cô Cave quất lâm tự ngã chết bên trong một ngôi mộ bạn đào dở, không có niềm vui đêm này cho bạn rồi.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+	<value>Bạn tiến tới nhà {0} để dụ dỗ, cẩn thận tránh né tất cả những ngôi mộ đào dở, nhưng khi bạn tới nơi thì {0} không có nhà. Có vẻ hắn ta đã đi ra ngoài đào mộ đêm nay rồi.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+	<value>Bạn quá đen lại còn lắm lông… Bạn muốn đi bảo vệ cho {0} đêm nay nhưng bạn bị rơi vào một ngôi mộ đang đào dở và chết bởi cái bẫy gấu người đào mộ đặt dưới đó, tại sao một người đào mộ lại đặt bẫy ở các ngôi mộ hắn đào???</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+	<value>Bạn đi về nhà và nhận ra có ai đó rơi xuống một ngôi mộ bạn đã đào.. bạn tìm thấy {0} -thiên thần hộ vệ(the guardian angel) ngã chết bên trong. Bẫy gấu bạn đặt đã bóp đồng đội quá đau….</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+	<value>Bạn rình mò quanh nghĩa địa tìm cách ăn trộm năng lực của {0} nhưng bạn quá tập trung vào việc không bị phát hiện và rơi vào bẫy gấu của người đào mộ!! Bạn ngã xuống ngôi mộ bên cạnh và gẫy cổ chết.</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+	<value>Thật là tốt khi bạn đã có những biện pháp an toàn phòng hờ ( bẫy gấu) quanh các ngôi mộ của bạn…{0} cố trộm năng lực của bạn tối qua và đạp phải bẫy gấu rồi ngã chết. Bây giờ thì có thể dân làng sẽ tin rằng bẫy gấu của bạn là thực sự cần thiết.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+	<value>Bạn nên nhìn đường cẩn thận hơn khi cố đốt nhà người khác. Bạn dẵm phải bẫy gấu và ngã xuống một ngôi mộ-ngọn giáo bạc xuyên qua cổ họng và bạn nhận được những gì xứng đáng-đồ bệnh hoạn.</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key="ArsonistFellDigger">
+	<value>Từ trong một ngôi mộ bạn nhận ra mùi dầu hỏa, bạn tiến tới và nhận ra kẻ phóng hỏa(ARSONIST){0} chết bên trong, bạn cũng không quan tâm lắm, ít ra nhà bạn chưa bị đốt...</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+	<value>Một ngôi mộ chôn 2 người tối nay. Có vẻ như là  {0} muốn viếng thăm người đào mộ tối nay và ngã xuống dưới một ngôi mộ chưa vùi lấp và chết {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+	<value>Cô Cave {0} trở về nhà sau một đêm”làm việc” vất vả và cố đi tắt qua nghĩa địa để về nhanh hơn. Có vẻ cô ấy vẫn còn đang phê nên không chú ý và bước vào một ngôi mộ chưa lấp….. Kiếp sau kiếm một công việc ban ngày nhé…!!</value>
+  </string>
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
+	<value>Các thành viên của giáo phái cố đốt nhà thờ, nhưung {0} ngã xuống dưới một ngôi mộ chưa lấp và gẫy cổ chết! Các thành viên còn lại của giáo phái la hét hoảng loạn và bỏ chạy khỏi hiện trường….</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+	<value>Có lẽ kẻ trộm {0} định trộm của người chết chăng? Hoặc đơn giản là nhân quả.Mọi người tìm thấy tên trộm bị bẫy gấu gập gẫy chân và ngã gẫy cổ dưới một ngôi mộ chưa lấp.Đáng đời quân trộm cắp.</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+	<value>Bầy sói ra ngoài đi săn {0} ngửi thấy con mồi và vô tình dẫm phải bẫy gấu và bị kẹp đứt rời chân. QUá bất ngờ, {0} rơi xuống một huyệt mộ  bên cạnh và bị một ngọn giáo dưới hố xiên thủng đầu. May mắn của dân làng khi người đào mộ áp dụng các biện pháp an toàn cho ngôi mộ của anh ta{1}. </value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>Bạn đang ra ngoài làm điếu cần thì thằng giết người hàng loạt tìm thấy bạn và đâm chết bạn, vcl...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+	<value>Bạn đi về nhà nhưng bị người đào mộ {0} nhìn thấy con dao bạn cầm trên tay.  Bạn quyết định giết luôn người đào mộ {0} để diệt khẩu..</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>Bạn đang ra ngoài đi vệ sinh thì bị một con sói phát hiện, bạn sợ vãi shit ra quần và bị cắn chết…..</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+	<value>Đàn sói chạy ngang qua nghĩa địa và phát hiện {0} người đào mộ, trước cả khi người đào mộ kịp kêu lên, một con sói nhảy lên và cắn {0} gẫy cổ.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+	<value>{0} Không có mặt tại buổi họp mặt của dân làng. Mọi người đi tìm và tìm thấy {0} ngã chết trong nghĩa địa, bị sói cắn nát đầu với cái xẻng vẫn cầm trên tay. Ban đêm thật nguy hiểm để ra ngoài.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+	<value>{0} không tới hợp hôm nay… bạn đi tìm người đó và thấy {0} ngã trong vũng máu với cái xẻng cầm trên tay, {0} bị đâm chết.</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Allow Arsonist</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistQ">
+	<value>Allow arsonist? Current: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistA">
+	<value>Arsonist is now set to {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Burning Overkill</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillQ">
+	<value>Allow Arsonist and Serial Killer to be in same game? Might be deadly! 😈 Current: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillA">
+	<value>Arsonist and Serial Killer in same game are now {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>Bạn là kẻ phóng hỏa (arsonist) . Giống kẻ giết người, mục tiêu của bạn là giết tất cả mọi người. Mỗi đêm bạn có thể tưới dầu hỏa vào nhà của một người chơi khác. Khi một hoặc nhiều căn nhà đã bị bạn tưới dầu hỏa, bạn có thể chọn đốt những căn nhà đó và giết tất cả những ai ở bên trong, cả chủ nhà và khách của họ. Bạn sẽ thắng nếu bạn là người duy nhất còn sống.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>Bạn là kẻ phóng hỏa(the Arsonist 🔥). Mỗi đêm bạn tưới dầu hỏa vào nhà một người chơi hoặc đốt một căn nhà đã bị tưới dầu hỏa trước đó, bạn thắng khi bạn là người duy nhất còn sống.</value>
+  </string>
+  <string key="Arsonist">
+	<value>the Arsonist 🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>Bạn muốn tưới dầu hỏa một căn nhà hay là muốn đốt những căn nhà đã bị tưới dầu hỏa trước đó?</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key ="ArsonistVisitKiller">
+	<value>Kẻ Phóng hỏa (The arsonist ){0} muốn tưới dầu hỏa căn nhà của kẻ giết người hàng loạt(the serial killer)…{0} chết mất xác..</value>
+  </string>
+  <string key="Spark">
+	<value>Spark</value>
+  </string>
+  <!--{0}: person whose house was doused-->
+  <string key="Doused">
+	<value>Bạn đã tưới dầu hỏa vào nhà của {0} !!căn nhà này có thể bị bạn đốt cháy một cách dễ dàng, ước ao đốt chết người rạo rực trong bạn.</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>Một ngọn lửa đã bùng lên trong căn nhà của bạn, nhưng ở hiền gặp lành- Thiên thần hộ vệ (the guardian angel) xuất hiện và dập tắt ngọn lửa cứu sống bạn. Bạn hết sức biết ơn và nhìn họ bay đi trong ánh nắng mặt trời bằng đôi cánh trắng muốt.....</value>
+  </string>
+  <!--{0}: saved person-->
+  <string key="GuardSavedFromFire">
+	<value>Bạn cũng bị bất ngờ bởi ngọn lửa khi bạn tới nhà của {0}, nhưng bạn vẫn làm hết sức mình và cứu sống {0}. Bạn là một thiên thần hộ vệ tốt bụng...</value>
+  </string>
+  <!--{0}: person whose house was cleaned-->
+  <string key="CleanDoused">
+	<value>Bạn không gặp phải kẻ ác nào ở nhà của {0} đêm nay, nên bạn quan sát và nhận ra nhà của {0} đã bị tưới dầu hỏa!! Bạn đã dọn nhà cho {0}, giờ đây căn nhà không còn dầu hỏa nữa....</value>
+  </string>
+  <!--{0}: list of people who died in the flames-->
+  <string key="Burning">
+	<value>Dân làng thức dậy vì ngửi thấy mùi thịt nướng Gogi Hàn xẻng!! khi đám cháy bị dập tắt người ở bên trong đã chết. Hôm nay có những người sau đây chết:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>  Người duy nhất còn sống là Kẻ Phóng Hỏa(arsonist), cả làng bốc cháy thành tro tàn. Kẻ Phóng Hỏa(arsonist) cười vui sướng và nghĩ tới việc di chuyển tới một thành phố đông đúc để tiếp tục cuộc chơi bệnh hoạn của hắn…...…......</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>Bạn không nên tiết kiệm tiền mua thiết bị phòng cháy chữa cháy, bây giờ nhà bạn cháy thành tro và bạn chết ngạt bên trong…...</value>
+  </string>
+  <string key="Augur">
+	<value>AUGUR(Nhà Chiêm Tinh)🦅</value>
+  </string>
+  <!--{0}: role that is not part of the village-->
+  <string key="AugurSees">
+	<value>Khi bạn nhìn lên bầu trời, bầy chim bay một cách hoảng sợ. Điều đó ám chỉ rằng {0} không xuất hiện trong ván đấu này!..</value>
+	<value>Bầy chim cho bạn biết rằng {0} không có trong làng lúc này</value>
+  </string>
+  <string key="AboutAugur">
+	<value>Mỗi buổi sáng  Nhà Chiêm Tinh(the Augur 🦅) quan sát các loài chim và suy luận ra một vai trò không có trong ván đấu vào lúc đó. Các loài chim cũng sẽ không bao giờ nhắc đến 1 vai trò 2 lần vậy nên hãy biết cách tận dụng thông tin đó.</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>Bạn là Nhà Chiêm Tinh(the Augur 🦅). Bạn có năng lực nhìn thấy xem chức năng nào không có trong ván đấu. Và một năng lực sẽ không xuất hiện 2 lần.Hãy thận trọng</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>Không có con chim nào trên trời hôm nay, bạn đã xem hết tất cả những chức năng không có trong ván đấu lần này....</value>
+  </string>
+  <!--{0}: chosen victim, {1}: wolf who died in flames-->
+  <string key="WolvesVisitBurn">
+	<value>Bầy sói tấn công nhà của {0}, nhưng bất ngờ lửa bùng lên. Bạn cố chạy thoát nhưng {1} đã thành chó thui bẩy món.</value>	  
+  </string>
+  <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+  <string key="DefaultVisitBurn">
+	<value>{0} Nên ở trong nhà đêm qua..{0} ghé qua một ngôi nhà đúng lúc hỏa hoạn xảy ra và bị chết cháy  {1}</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+  <string key="WolfVisitBurn">
+	<value>Bầy sói cố ăn thịt một nạn nhân tối qua, nhưng đã tấn công căn nhà bị  Kẻ Phóng Hỏa đốt!! {0} chết cháy trong ngọn lửa... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+	<value>Dù bạn không biết nhà hóa học là ai nhưng bạn chắc rằng anh ta hoặc cô ta sẽ không bao giờ chế thuốc nữa. Nhà Hóa Học nhận ra sai lầm của mình và trở thành một dân làng bình thường.</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value>Chỉ còn lại {0} và {1}… đột nhiên {0} cười man rợ ,lấy ra một mồi lửa và thiêu sống {1} tại chỗ….</value>
+  </string>
+  <string key="ArsonistTeamEnd">
+    <value>(đội của Kẻ phóng Hỏa )Arsonist Team</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+	<value>Bạn đến nhà của {0} để bán dâm,nhưng chủ nhân không có nhà.</value>
+  </string>
+
+  <string key="Validate">
+  <!-- Used for the button in the role selection menu -->
+	<value>‼ Validate ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Used for the button in the role selection menu -->
+	<value>✅ Valid ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>The role configuration is valid! It's enabled and will be used now!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>The role configuration is invalid! Please try turning on more roles to allow the bot to create balanced games!</value>
+  </string>
+  
+  <string key="GroupIdleCount">
+  <!-- {0} - Idle count in the last 24 hours in the current group -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+	<value>{0} of those kills were in this group.</value>
+  </string>
+  
+  <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>Bạn đã trở thành Kẻ  biến hình(the doppelgänger). BẠn sẽ trở thành chức năng của {0} sau khi {0} chết.</value>
+  </string>
+  <string key="RoleConfigInfo">
+  <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+	<value>Which roles would you like to use in the game?\n\nConfiguration Tutorial:\n\n✅ = Role enabled\n❌ = Role disabled\n\nAfter selecting the roles, you need to use the VALIDATE button in the bottom left corner to validate and enable your role selection! If you don't validate your selection, it will be ignored and all roles will be used!\n\nIf you disable too many roles, the bot will be unable to create a balanced game and the validation will fail! In that case, just enable more roles and validate again.\n\nIf the validation succeeded, the bottom left button says ✅ Valid ✅ and your role configuration will be used!</value>
+  </string>
+  <string key="EnableAllRoles">
+	<value>Enable All</value>
+  </string>
+  <string key="DisableAllRoles">
+	<value>Disable All</value>
+  </string>
+  <string key="CHHuntedYou">
+    <value>Thợ săn giáo Phái(The Zombie Hunter 💂‍♀‍) ghé thăm đúng lúc bạn đang cầu nguyện. Bạn bị thợ săn giáo phái xiên chết ngay lập tức.</value>
+  </string>
+</strings>

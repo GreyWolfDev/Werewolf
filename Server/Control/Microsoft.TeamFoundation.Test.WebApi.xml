@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.TeamFoundation.Test.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.RunFilter">
+            <summary>
+            This class is used to provide the filters used for discovery
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.RunFilter.SourceFilter">
+            <summary>
+            filter for the test case sources (test containers)
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.RunFilter.TestCaseFilter">
+            <summary>
+            filter for the test cases
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice">
+            <summary>
+            Represents the Slice of work that needs to be executed by Automation Test Agent.
+            Data is categorized as below
+              Slice related information e.g. Identity/Type etc
+              Agent related information: Currently none.
+              TestRun related information e.g. TcmRunId/ProjectName/TestContainers etc
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice.Type">
+            <summary>
+            The type of slice being worked on
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice.Id">
+            <summary>
+            Id of Slice Sent to ExecutionHost
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice.LastPhaseResults">
+            <summary>
+            Results from the previous slice in jason format. 
+            e.g. Results from DiscoverySlice can be used by ExecutionSlice.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice.TestRunInformation">
+            <summary>
+            TestRunInformation should capture any information related to the TestRun 
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice.Results">
+            <summary>
+            Results of the slice
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice.Status">
+            <summary>
+            Status of the slice
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice.Messages">
+            <summary>
+            Important messages related to the execution of the slice.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice.TestConfigId">
+            <summary>
+            config Id of Executing Slice
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice.TestConfigurationsMapping">
+            <summary>
+            Test Configurations mapping
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice.Requirements">
+            <summary>
+            List of requirements on the slice that should be met for it to be assigned
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestRunInformation">
+            <summary>
+            Captures the Automation TestRun related information needed by TestAgent to execute
+            the TestRun slice.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestRunInformation.TestDropPath">
+            <summary>
+            Location of Test containers on Test agent machine.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestRunInformation.RunSettings">
+            <summary>
+            RunSettings Xml 
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.Message">
+            <summary>
+            Slices can send back information via the Message structure
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.MessageType">
+            <summary>
+            The enumeration of supported Message types
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.AutomatedTestRunSliceType">
+            <summary>
+            the slice type being worked on
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.AutomatedTestRunSliceStatus">
+            <summary>
+            Current Slice Status
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.ShallowReference">
+            <summary>
+            An abstracted reference to some other resource. This class is used to provide the build
+            data contracts with a uniform way to reference other resources in a way that provides easy
+            traversal through links.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.ShallowReference.Id">
+            <summary>
+            Id of the resource
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.ShallowReference.Url">
+            <summary>
+            Full http link to the resource
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.ShallowReference.Name">
+            <summary>
+            Name of the resource
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestAgentsQuery.TestRunId">
+            <summary>
+            TestRun for which agents needs to be queried.
+            TODO::Discuss if this needs to be shallow reference.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestExecutionServiceCommand">
+            <summary>
+            The type is used as part of Command resource rest api. When Agent does a GetCommand this is what Agent gets.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestExecutionServiceCommand.MessageId">
+            <summary>
+            The message id.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestExecutionServiceCommand.MessageType">
+            <summary>
+            The message type
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestExecutionServiceCommand.Body">
+            <summary>
+            Json string of TestExecutionCommandMessage.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestExecutionCommandMessage">
+            <summary>
+            The body of TestExecutionServiceCommand is json string of this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestExecutionCommandMessage.Command">
+            <summary>
+            The command for the agent.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestExecutionCommand">
+            <summary>
+            Enum that denotes the command service sends to agent.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestMetadata">
+            <summary>
+            Testcase metadata passed from agent to server for slicing 
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestMetadata.SlicedTestData">
+            <summary>
+            SlicedTestData
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.TestMetadata.Traits">
+            <summary>
+            List of traits supported by testmethod
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.SlicedTestData">
+            <summary>
+            Sliced Data passed from server to agent post slicing
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.SlicedTestData.FullyQualifiedName">
+            <summary>
+            Fully qualified Name of Testcase
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.SlicedTestData.Source">
+            <summary>
+            TestContainer of TestCase
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.SlicedTestData.ExecutorUri">
+            <summary>
+            ExecutorUri of Executor of testcase
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.ITestHttpClient.CreateAgentAsync(Microsoft.TeamFoundation.Test.WebApi.TestAgent)">
+            <summary>
+            Sends REST based msg to Server for creating new entry of Test Agent.
+            This API can be consumed in Registration Process.
+            </summary>
+            <param name="testAgent">TestAgent object</param>
+            <returns>TestAgent Object</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.ITestHttpClient.GetAgentAsync(System.Int32)">
+            <summary>
+            Sends REST based msg to Server for getting TestAgent object based on TestAgentId
+            This API can be consumed in Query process
+            </summary>
+            <param name="id">TestAgent Id</param>
+            <returns>Test Agent object</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.ITestHttpClient.DeleteAgentAsync(System.Int32)">
+            <summary>
+            Sends REST based msg to Server for deleting an existing entry of Test Agent
+            This API can be consume in UnRegisteration process
+            </summary>
+            <param name="id">TestAgent Id</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.ITestHttpClient.GetSliceAsync(System.Int32)">
+            <summary>
+            Sends a Rest based request to the server asking for a test task.
+            </summary>
+            <param name="testAgentId">the unique ID of the agent</param>
+            <returns>
+            returns a task which holds a new test task in the result.
+            </returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.ITestHttpClient.UpdateSliceAsync(Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice)">
+            <summary>
+            Sends a Rest based request to the server for updating slice results
+            </summary>
+            <param name="sliceUpdatePackage">The update slice result.</param>
+            <returns>Returns a task for the rest call.</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.ITestHttpClient.GetCommandAsync(System.Int32,System.Nullable{System.Int64},System.Threading.CancellationToken)">
+            <summary>
+            Gets test message that is in queue after lastCommandId.
+            </summary>
+            <param name="testAgentId">The test agent which calls this api.</param>
+            <param name="lastCommandId">The last command Id which agent has already read.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Microsoft.TeamFoundation.Test.WebApi.ITestHttpClient.UpdateTestRunAsync(Microsoft.TeamFoundation.Test.WebApi.DistributedTestRun,System.String,System.Object,System.Threading.CancellationToken)" -->
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.ITestHttpClient.HttpClient">
+            <summary>
+            Handle to HttpClient
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.TestHttpClient.#cctor">
+            <summary>
+            Creates the dictionary for all the exceptions that need to be serialized
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.TestHttpClient.CreateAgentAsync(Microsoft.TeamFoundation.Test.WebApi.TestAgent)">
+            <summary>
+            Sends REST based msg to Server for creating new entry of Test Agent.
+            This API can be consumed in Registration Process.
+            </summary>
+            <param name="testAgent">TestAgent object</param>
+            <returns>TestAgent Object</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.TestHttpClient.GetAgentAsync(System.Int32)">
+            <summary>
+            Sends REST based msg to Server for getting TestAgent object based on TestAgentId
+            This API can be consumed in Query process
+            </summary>
+            <param name="id">TestAgent Id</param>
+            <returns>Test Agent object</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.TestHttpClient.DeleteAgentAsync(System.Int32)">
+            <summary>
+            Sends REST based msg to Server for deleting an existing entry of Test Agent
+            This API can be consume in UnRegisteration process
+            </summary>
+            <param name="id">TestAgent Id</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.TestHttpClient.GetSliceAsync(System.Int32)">
+            <summary>
+            Sends a Rest based request to the server asking for a AutomatedTestRunSlice
+            </summary>
+            <param name="testAgentId">the unique ID of the agent</param>
+            <returns>
+            returns a AotmatedTestRunSlice which agent can process.
+            </returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.TestHttpClient.UpdateSliceAsync(Microsoft.TeamFoundation.Test.WebApi.TestAutomationRunSlice)">
+            <summary>
+            Sends a Rest based request to the server for updating slice results
+            </summary>
+            <param name="sliceUpdatePackage">The update slice result.</param>
+            <returns>Returns a task for the rest call.</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.TestHttpClient.GetCommandAsync(System.Int32,System.Nullable{System.Int64},System.Threading.CancellationToken)">
+            <summary>
+            Gets test command that is in queue after lastCommandId.
+            </summary>
+            <param name="testAgentId">The test agent which calls this api.</param>
+            <param name="lastCommandId">The last command Id which agent has already read.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Test.WebApi.TestHttpClient.UpdateTestRunAsync(Microsoft.TeamFoundation.Test.WebApi.DistributedTestRun,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] http://(tfsserver):8080/tfs/DefaultCollection/_apis/test/DistributedTestRuns/ Request: Json of TestRun
+            </summary>
+            <param name="distributedTestRun"></param>
+            <param name="project"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestExecutionServiceException">
+            <summary>
+            Base TestExecutionServiceException.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestExecutionAccessDeniedException">
+            <summary>
+            Thrown by the test execution service when the user attempts to
+            read or modify an object without the appopriate permissions.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestExecutionObjectAlreadyExistsException">
+            <summary>
+            Thrown when trying to register an agent which is already registered
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestExecutionServiceInvalidOperationException">
+            <summary>
+            Thrown when trying to register an agent which is already registered
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestExecutionObjectNotFoundException">
+            <summary>
+            Thrown when trying to register an agent which is already registered
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestExecutionRunResourceNotFoundException">
+            <summary>
+            Thrown when trying to access a message queue which doesnt exists
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Test.WebApi.TestEnvironmentAlreadyExistsException">
+            <summary>
+            Thrown when trying to access a message queue which doesnt exists
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Test.WebApi.TestExecutionServiceResourceIds.TestExecutionServiceArea">
+            <summary>
+            Service area for all TestExecutionService REST endpoints
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.DistributedTestRun.EnvironmentUri">
+            <summary>
+            DTA Environment Uri
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Test.WebApi.DistributedTestRun.TestRunId">
+            <summary>
+            Test Run Id
+            </summary>
+        </member>
+    </members>
+</doc>

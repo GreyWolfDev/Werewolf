@@ -1,0 +1,2253 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- نمط ون بيس بواسطة صلاح"شادو" (@SlHlS)!
+آخر تحديث: 31/3/2020 -->
+<strings>
+  <language name="Arabic (One Piece)" base="عربي" variant="ون بيس" owner="SlHlS"/>
+  <string key="NotInGame">
+    <value>لا يبدو أنك ضمن أي لعبة حاليًا...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>قام {0} ببدأ لعبة! إضغط إنضمام لتدخل في المغامرة الشيقة للسعي نحو الكنز الأعظم في العالم، ون بيس... ومن المحتمل أنك ستموت :P</value>
+    <value>بدأت لعبة جديدة بواسطة {0}! إضغط "إنضمام" لتدخل في مغامرة إلى نهاية العالم!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>بدأ{0} لعبة فوضوية! إضغط "إنضمام" لتدخل في المغامرة الشيقة للسعي نحو الكنز الأعظم في العالم، ون بيس... ومن المحتمل أنك ستموت :P</value>
+    <value>بدأت لعبة فوضوية جديدة بواسطة {0}! إضغط "إنضمام" لتدخل في مغامرة شيقة إلى أقاصي العالم!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>لا يمكنك الإنضمام الآن! فاللعبة جارية.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>لقد انضممت مسبقًا!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>تبقت دقيقة واحدة للإنضمام</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>تبقى {0} ثانية للإنضمام</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>عدد اللاعبين غير كافي، جاري إلغاء اللعبة!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>جاري بدأ اللعبة، رجاءًا إنتظروا حتى أوزع الأدوار وأحدث قاعدة البيانات.</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>المستخدم {0} محظور لمحاولة الإستغلال (غير مسموح بالأسماء التي تبدأ بـ /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>يا {0}، رجاءًا غيّر إسمك كي تنضم</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>المعذرة، لقد وصل الحد الأقصى للاعبين!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>انضم {0} للعبة. {1} اللاعبين، {2} الحد الأدنى، {3} الحد الأقصى</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>يا {0} من فضلك إضغط الزر الذي في الأسفل أو {1} وابدأني، كي أستطيع إرسال دورك بالخاص.  قد لا تنضم للعبة حتى تقوم بذلك.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>لا يمكنك الهرب! صرتَ طعامًا ومحتجزًا داخل خزانة دايفي جونز! أتظن أنه بوسعك الهرب من الجحيم؟ تبًا، عد إلى رشدك وعد للداخل!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>فرَّ {0} مفزوعًا!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>إن {0} كان {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>اللاعبين المتبقين {0} .</value>
+  </string>
+  <string key="DidntAsk">
+    <value>هيي أنا لم أسألك أي شيء بعد!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>لا يبدو أنك تلعب...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>لا يمكنني العثور على لاعب بذلك الإسم!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>هذه الإجابة غير صالحة!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>صوت {0} لأسر وإعدام {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>صوت {0} لإطعام {1} لخزانة دايفي جونز.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>لم يصوت {0} لليلتين متتاليتين. قوة الأموما اعتبرت هذه جريمة شنيعة، وفجأة {0} يسقط عميقًا عميقًا، إلى داخل خزانة دايفي جونز. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>أيها القرصان الوضيع والخائن!!! أنت الآن حليف للبحرية تعهدت بالقضاء على رفاقك ززززز...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>تم قبول الإختيار.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nاكتشفت أن محبوبتك روبن هي {0}. وقد أقسمت على حمايتها في شتى بقاع الأرض من القراصنة والبحرية، بينما تتجسس على اللاعبين بغية كشف أي تهديدات تجاه مجتمع القراصنة.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>عثرتِ على {0} وجثتها مجمدة على سطح السفينة! أقسمتِ الآن على الإنتقام لروبن وأخذ دورها بغية كشف أي تهديد تجاه مجتمع القراصنة. أوه، أيضا أنت المحبوبة الجديدة لسانجي، الطباخ المنحرف.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>تلاحظ {0} متجهمة تنظر لجثة {1} المتجمدة المستلقية على سطح السفينة، وفي الحال تقرر تغيير محبوبتك لـ{0} كي لا ينفطر قلبك. إن {0} الآن محبوبتك الجديدة.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>أنت ترى أن {0} هو {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>من الذي تريد أن يتم اطعامه لخزانة دايفي جونز؟</value>
+  </string>
+  <string key="AskDetect">
+    <value>من الذي تريد التجسس عليه باستعمال نظارتك الجاسوسية الخاااااارقة؟</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>g {0} طلقة(طلقات) متبقية للقضاء على خصم. من الخصم الذي تريد القضاء عليه باستخدام هجمتك نجم طائر النار (هي نو توري بوشي) </value>
+  </string>
+  <string key="AskVisit">
+    <value>من الذي تريد سرقته؟</value>
+  </string>
+  <string key="AskSee">
+    <value>من الذي تريد اختلاس النظر عليه؟</value>
+  </string>
+  <string key="AskGuard">
+    <value>أي حياة (ربما تموت) تريد أن تنقذ؟</value>
+  </string>
+  <string key="AskEat">
+    <value>من الذي تريد القبض عليه وإعدامه؟</value>
+  </string>
+  <string key="AskHunt">
+    <value>سيفك الكاتانا البراق “وادو ايتشيمونجي” متلهف للإنقضاض على فريسته. من الذي تريد قطعه باستخدام الضربة القوية ‘سان بيا كو رو كو جيو باوند هو’؟</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>من هو القرصان الذي تظن أنه اختطفك؟</value>
+  </string>
+  <string key="AskConvert">
+    <value>من الذي تريد غسل دماغه لينضم لفريق اليونكو؟</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>تأكد من أن تتناقش مع {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> و </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>كـ جانغو 😾 أنت الآن قرصان في هذا الوقت. لكن ان اختارت البحرية أسرك وإعدامك، سوف تناشدهم ليسمحوا لك بالإنضمام لهم كجندي من البحرية (وبالطبع، ستنومهم مغناطيسيًا كي لتجعلهم يوافقوا). تحتاج المساعدة؟ > /aboutCursed</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>أنت أعظم سايبورغ في العالم، فراااانكي🕵. أثناء اليوم، يمكنك استعمال نظارتك التجسسية الخاااااارقة لكشف أدوارهم. على أي حال - بفعل ذلك، من المحتمل أن يكشف دورك للبحرية! (بنسبة 40%). تحتاج المساعدة؟ > /aboutDetective</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>كـ ملك الروح، العظمي بروك 🍻، أنت تعرض حرفيًا قلبك وروحك لمجتمع القراصنة! (وحقًا، الجميع يعلم بذلك...). تحتاج المساعدة؟ > /aboutDrunk</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>أنت طبيب السفينة الوحيد، تشوبر 👼. كل ليلة، يمكنك اختيار لاعب لإنقاذ حياته. ومع ذلك، اذا اخترت إنقاذ البحرية، هناك احتمال بنسبة 50% أنهم سيأسرونك ويعدمونك. تحتاج المساعدة؟ > /aboutGA</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>أنت سيد القناصين، سوغيكينغ (يوسوب) 🔫. لديك أفضل كابوتو (مقلاع) على الإطلاق، لكن لديك طلقتين فقط يمكنك استخدامها للقضاء على عدو. أثناء اليوم، يمكنك إطلاق النار على لاعب آخر. الجميع سيسمع الطلقة، ويعلم أنك الإسطوري سوغيكينغ (وليس من البحرية). تحتاج المساعدة؟ > /aboutGunner</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>نامي 💋، أيتها القطة السارقة! أنت اللصة المخادعة، ودائما ما تملأين جيوبك بالسرقة من رفاقكِ القراصنة. أثناء الليل، يمكنك زيارة سفينة قرصان آخر، لمحاولة سرقة كنوزهم (ولتؤكدي أنهم ليسوا من البحرية) لكن إن زُرتِ أحد البحرية، أو شخصًا تأسره البخرية، فسيتم أسركِ أيضًا. لكن برغم ذلك إن ذهبت للسرقة، وحاولت البخرية أسركِ في سفينتك، فستنجين. تحتاج مساعدة؟ > /aboutHarlot</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>حاليًا، ك شيتشيبوكاي 🥸، أ قرصان، لمن عندما يباد جميع جنود البحرية، فستصبح جندي من البحرية، وستحاول القضاء على رفاقك القراصنة. إذا قامت العرافة المتلصصة (روبن) بالتلصص عليك، فربما تتعرف عليك على أنك من البحرية. تحتاج مساعدة؟ > /aboutTraitor</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>أنت جندي من البحرية 🐺!! مبغضي القراصنة. العدالة (絶対的正義) يجب أن تطبق! إختر أي قرصان لتأسره كل ليلة! تحتاج مساعدة؟ > /aboutWW</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >أنت روبن 👳، مستخدمة فاكهة زهرة-زهرة. كل ليلة، يمكنك تنفيذ أوجوس فلور على أي قرصان لتكشف هويته الحقيقية. تحتاج مساعدة؟ > /aboutSeer</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >أنت قرصانٌ تافه بلا إسم 👱، مكتوب عليك قضاء حياتك تنظف سطح السفينة والقيام بالأعمال الوضيعة لقبطان سفينتك. تحتاج مساعدة؟ > لا مساعدة لأجلك</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >أنت شيراهوشي 👺، البوسيدون. إن تم إطعامك لخزانة دايفي جونز، فستفوز تلقائيًا! لا أحد يجرؤ على رمي بوسيدون لدايفي جونز، داه! حيث ستقوم ملوك البحر بإبادة البحار الأربعة والخط العظيم والخط الأحمر. تحتاج مساعدة؟ > /aboutTanner</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >كوبي المسكين 👶,ط، تم اختطافك من قبل قرصان!!! اوه كلا! عندما يأسر القرصان الذي اختطفك أو يقتل. فستنضم للبحرية وتقسم على تقديم كل أولئك القراصنة الملاعين للعدالة! تحتاج مساعدة؟ > /aboutWC</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >أنت سانجي 👁، الطباخ المنحرف -- سوف تراقب باستمرار محبوبتك، والذي يصادف أنها روبن. سيتم إخبارك من هي روبن (الحقيقية) - هذه وظيفتك الوحيدة. الأنر منوط لك بكيف ستحمي محبوبتك من رفاقك القراصنة والبحرية. تحتاج مساعدة؟ > /aboutBH</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >أنت فيفي 🙇، العرافة المتدربة، بديلة روبن (الحقيقية). إذا ماتت روبن (الحقيقية)، فستتمكني من أكل فاكهة زهرة-زهرة وتكتسبين مهارة اوجوس فلور. تحتاج مساعدة؟ > /aboutAppS</value>
+  </string>
+  <string key="RoleInfoZombie" >
+    <value >أنت من فريق اليونكو العظيم 👤. كل ليلة، يمكنك إختيار لاعب لكي تغسل دماغه لينضم لفريق اليونكو. إذا كان جميع اللاعبين الأحياء المتبقين في النهاية جزءٌ من فريق اليونكو، فستفوز. تحتاج مساعدة؟ د > /aboutCult</value>
+  </string>
+  <string key="RoleInfoZombieHunter" >
+    <value >أنت ملك القراصنة المستقبلي خاصتنا مونكي دي لوفي 💂، تحاول القضاء على كل قرصان من فريق اليونكو كي تمنعهم من غسل دماغ الآخرين! كل ليلة، إختر لاعبًا. إن كان من فريق اليونكو فسيموت. إن حاول فريق اليونكو غسل دماغك، أحدث عضو في الفريق سيموت من من عضب ضربتك غومو غمو نو كونغ غان. تحتاج مساعدة؟ > /aboutCH</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+الغسق يدنو، والقراصنة اجتمعوا ليقرروا من سيتم اطعامه لخزانة دايفي جونز هذه الأمسية...
+الجميع لديه {0} ثانية للتصويت!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value >لقد حل النهار. جميعكم لديكم {0} ثانية لتوجيه أصابع الإتهام والدفاع عن أنفسكم، أو البقاء هادئين وتغنو أغنية البينك ساكي لتطمئن قلوبكم، لأنكم لا تعرفون متى ستستهدفكم البحرية.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value >لقد حل الليل. يتجه الجميع إلى سفنهم مرهقين بعد يومٍ شاق. لاعبي الليل: لديكم {0} ثانية استعملوا قدراتكم!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value >اتخذ القراصنة قرارهم، وسط الشكوك والظنون قرروا تقديم{0} كقربان لخزانة دايفي جونز. يمشي {0} على اللوح الخشبي و بلوب~ ويغرق في أعماق البحر. {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >غير قادرين على اتخاذ قرار عمن سيتم تقديمه كقربان لدايفي جونز، يعود القراصنة لسفنهم لقضاء الليلة، محبطين....</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >هناك أمرٌ مريب، لم يصوت أحد!  هل أنتم واثقين بعدم تواجد البحرية؟ اوه حسنًا، لا طعام لدايفي جونز. </value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value >فرانكي~الخاااااارق 🕵 يطلق شعاع ليزر على البحرية.. =======0 لكن البحرية تتفوق عليه و {0} غير قادر مقاومتهم جميعًا. القرصان الخارق ذو الـ 94,000,000 بيلي أُسر وأُعدم.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value >البحرية عثرت على تشوبر الظريف 👼! هل تظن أنهم سيدعون محب القطن ذو الـ100 بيلي يذهب؟ كلا! البحرية لا تكترث بمقدار المكافأة! ذو الـ100 بيلي {0} أُسر وأُعدم.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value >يستيقظ الجميع على أصوات طلقات نارية وصراخ من سطح السفينة. عندما يهرعون لرؤية ما يجري، القناص الخبير سوغي كينغ 🔫 مفقود ويلاحظوا سفينة للبحرية في الأفق – ومعهم {0}، سوغي كينغ مأسور، على الأرجح سيرسلونه إلى المنفى في السجن السري، وهو مكان أسوأ من الإمبل داون. واختفت سفينة البحرية في الهواء. لا يمكنم ملاحقة عزيزكم القناص بعد الآن وإن {0}، ذو الـ200 مليون بيلي القناص الخارق لم يعد له وجود! </value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value >بينما يخرج الجميع من مقصوراتهم، يعثرون على {0} (روبن 👳‍♂) مجمدة! ويدركون أن هذا من فعل البحرية اللعناء! ومهما حاول القراصنة إنقاذها فلا ينفع. جميلتكم ذو الـ 130 مليون بيلي لم بعد لها وجود!</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value >يستيقظ الجميع من حلم عن بروك 🍻، ملك الروح وهو يغني أغنية دمار الروح في الأفق، ما عدا..... أنه لم يعد حلمًا. مغني الروك خاصتكم ذو الـ83 مليون بيلي أسرته البحرية! وأثناء أسره، {0} أطلق معزوفة مشتعلة جعلت البحرية غير قادرة على أسر أي قرصان الليلة التالية!</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value >بينما تشرق الشمس على سطح السفينة، يعثر القراصنة على باغي المهرج محروق بشدة 🃏 {0} (أولئك البحرية الهمجيين!!)، وكان بحوزته خريطة مزيفة لكنز الكابتن جون/ جثة {0}، روبن المزيفة 🃏 محروقة حتى النخاع (أولئك البحرية الوحشيين)، لكن قناعها مخلوع (كمل لو أننا لم نميز أنها لم تكن روبن الحقيقية) يا له من أحمق! Poor buggy, sibei sad</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>يطل الصباح ويأتي طائر الأخبار ليلقي بصحفيةٍ على سطح السفينة. أخبارٌ عاجلة!!! {0} أسرته البحرية! القرصان المشهور ما زال غير قادر على الهرب منه البحرية. {1} </value>
+  </string>
+  <string key="HunterKilledZombie">
+    <!-- 0 - victim name -->
+    <value>سفينة قريبة أحيطت بالنيران السوداء من جميع جهاتها – عندما يحاول القراصنة إلقاء نظرةٍ أقرب يلاحظون أنها أحد سفن اليونكو 👤 -- {0} (يالدهشة?!?)... أحد اليونكو دمره ملك القراصنة المستقبلي خاصتنا مونكي دي لوفي 💂!</value>
+  </string>
+  <string key="NoAttack" >
+    <value >في الصباح التالي يجتمع القراصنة حول رصيف السفن، يتنفسون الصعداء - يبدو أن البحرية لم تهاجم الليلة الماضية.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >بينما كنت تتجول في أنحاء الخط العظيم، تظهر سفينة بحرية! قررت الهرب لكن... رأيت الكابتن ”القفص الأسود“ هينا، افتتنت بجمالها وتخليت عن فمرة العرب وانضممت للبحرية بدلًا عن ذلك.</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>زملاؤك في البحرية: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >افتتن {0} بهينا وقرر الإنضمام للبحرية! تهانينا على رفيقكم الجديد!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >اوه كلا! عثرت عليك البحرية وأسرتك وأرسلتك إلى أظلم سجنٍ في العالم (وهو أسوأ من الإمبل داون حتى – ولا يعرف موقعه سوى البحرية). سايونارااا!</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value >تبًا! كان {0} ثاني أفضل سياف في سفينة قراصنة قبعة القش! ظننتم أنه بإمكانكم القضاء عليه بأنفسكم، أليس كذلك؟ للأسف، بروك ضحى بنفسه كي يوفر المزيد من الوقت لقراصنة قبعة القش ولا يمكنكم العثور على سفينتهم الآن. يبدو أن عليكم الإبخار ليلةً أخرى كي تلحقوا بأولئك القراصنة....</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >حاولت إنقاذ جندي بحرية حاقد! لقد أسرتك البحرية.</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >لقد أنقذت حياة {0} (كالمعتاد)! أنت أفضل طبيب على الإطلاق! (بالطبع، تشوبر يحمر خجلًا)</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >لم يعاني{0} من أي إصابات حرجة وهو بأمانٍ تام، لذا أنت لم تقم بأي شيء يذكر.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>ذهبت لتعالج {0}، لكنه لم يكن على متن السفينة!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >كان تشوبر الطبيب القرصان يقصي الليلة بمعالجتك الجروح المميتة التي تعرضت لها من البخرية. فلتشكره! </value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value >اوه كلا، اختارت نامي سرقة السفينة الخطأ. {0} أسرت من قبل البحرية!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value >ياللغرابة... لم يكن {0} في السفينة! من الظاهر أن تلك المعلومة التي تلقيتها عن ذلك القرصان لم تكن صحيحة...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value >تسللتِ إلى سفينة {0} لتحصلي على بعض المتعة بسرقة بعض الكنوز القيمة، لكنك واجهتي نائب أدميرال في البحرية. لقد تم أسركِ.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value >تسسللت {0} للسفينة الخطأ الليلة الماضية! الجواهر التي كانت ترتديها القطة السارقة عثر عليها مثبتة على رصيف السفن الذي في المدينة كتحذير لجميع القراصنة... ولم يعثر على نامي في أي مكان!! ياللتعاسة :(</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value >تسللت {0} لسفينة{1}، مستعدة لتمرح بسرقة الكنوز المحرمة. بالمقابل، {0} تجد نائب أدميرال في البحرية يقاتل {1}! نائب الأدميرال يلتفت بسرعة نحو {0} ويكبل نامي بالقيود... {0} صارت ميتة تقريبًا.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value >وجدتِ أن {0} ليس من البحرية، حيث رأيته يتجول ثملًا بينما يغني بينك ساكي طوال الليل! سرقت بضعة ملايين بيلي بهدوء وتسللت عائدةً لسفينتك! أيتها القطة الشقية!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >كان الجو مظلمًا نوعًا ما لذا لم تتمكن من الرؤية جيدًا، لكن في، منتصف الليل استيقظت لترى شخصًا يسرق كنزك. لقد رآك بوضوح وأشار عليك بعدم افتعال أي ضجة، لأنه كان يحمل عصا الطقس المخيفة وقد رأيت سحبٌ من البرق فوقك تمامًا... عدت بهدوء للنوم بدون أي ضجيج... شششش </value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value >لقد وجدت {0} يتجسس! لا بد أن يكون الجاسوس الخااااارق فرانكي!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value >أثناء تجسسك اكتشفت أن {0} هو {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value >طلبت {1} عصا طقسٍ جديدة من {0}. وبينما اوسوب يناول نامي عصا الطقس، يبدو غريبًا. لم تظن نامي أبدًا أن الدايل القوية النفاثة لعصا الطقس الجديدة قد تتعطل. الصدمة المميتة من الدايل النفاثة القديمة ترسل نامي محلقةً لتسقط في البحر. بووهوو، حبيبتنا القطة السارقة لم يعثر عليها بأي مكان :(</value> 
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value >هي نو توري بوشي! شوهدت عنقاء ضخمة في السماء. {0} أطلق النار على{1}، بدون تردد! أوسوب.لا.يخطئ،هدفه....أبدًا. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value >فاز جندي البحرية!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value >فازت البحرية!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value >فاز القراصنة!</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value >أوه كلا! ضحيتم بالبوسيدون! جميع ملوك البحر أطلقوا العنان لغضبهم وأغرقوا جميع الجزر في الخط العظيم، وكذلك الخط الأحمر أيضًا.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>اللاعبين الأحياء المتبقين، الأدوار، والفرق:</value>
+  </string>
+  <string key="ZombieVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >صوت {0} لتجنيد {1} في فريق اليونكو حيث أنه قرصان قوي وجدير بلقبنا.</value>
+  </string>
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
+    <value>أُرسل {0} لتجنيد {1} في فريق اليونكو... برغم ذلك، يتضح أن ذلك الشخص ليس سوى... ملك القراصنة المستقبلي! لا أحد يجرؤ على معارضة ملك القراصنة (حتى لو كان في المستقبل). مات {0}!</value>
+  </string>
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>أتى {0} لسفينتك الليلة الماضية، جاهزًا لتجنيدك في اليونكو.... لكنهم لا يعلمون بأن هدفك هو ان تصبح ملك القراصنة، وليس مجرد يونكو. لقد هدد بأخذ حياة رفاقك إن لم تنضم لهم، لذا لم تتردد بالإطاحة به لحماية رفاقك. تبقى{1}!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>لقد ضمك اليونكو لهم! أنت الآن أحد اليونكو، أقوى قرصان في البحر. كل ليلة، أنت وفريقك يمكنكم تجنيد المزيد من القراصنة الأقوياء في اليونكو.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of Zombies -->
+    <value>Yonkou - Members: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new Zombie's name -->
+    <value>انضم {0} لليونكو!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest Zombie's name -->
+    <!-- 1 - target name -->
+    <value>ذهب {0} لضم {1}... لكن لم يعثر على سفينته!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >لقد مات كل البحرية، والأشخاص المتبقين قد انضموا لليونكو.. فاز اليونكو!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>ذهبت لقتال {0}، لكنه كان ميتًا!</value>
+  </string>
+  <string key="HunterFindZombie">
+    <!-- 0 - target name -->
+    <value>ذهبت لسفينة {0} ووجدته يخطط لقتل رفاقك. لذا تحولت بسرعة للغير الرابع ونفذت ضربة غومو غومو نو كونغ غان لإزالة أي تهديد لرفاقك.</value>
+  </string>
+  <!-- 0 - target name -->
+  <string key="HunterFailedToFind">
+    <value>ذهبت لسفينة {0}، لكن يبدو أنه قرصان ودود. والأهم من ذلك، لاحظت أنه يقيم حفلة!!! لذا أقمت صداقةً معه واستمتعت باللحم المطهو اللذيذ واقتنعت بنسبةٍ كبيرة بأنك أنت و {0} أصبحتم رفاقً شرفيين.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>مات مختطف {0}! ومن شدة الفرحة بهذه الأخبار السعيدة (ياااي، لا انتظرت طويلًا هذه الحرية)، أسرع {0} للإنضمام للبحرية لكي يقضي على أولئك القراصنة الجرذان!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>مات {0}! وبتذوقك طعم الحرية التي افتقدتها طويلًا، انضممت فورًا للبحرية وأقسمت بالإطاحة بكل القراصنة! رفاقك الجدد هم: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
+  <string key="Villager">
+    <value>قرصان 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>بروك، ملك الروح 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>نامي، القطة السارقة 💋</value>
+  </string>
+  <string key="Seer">
+    <value>روبن، العرافة المخادعة 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>شيتشيبوكاي 🥸</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>تشوبر، الطبيب القرصان 👼</value>
+  </string>
+  <string key="Detective">
+    <value>فرانكي، الجاسوس الخااااارق 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>البحرية 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>جانغو المنوم المغناطيسي 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>سوغيكينغ (أوسوب)، القناص البارع 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>شيراهوشي، البوسيدون 👺</value>
+  </string>
+  <string key="Fool">
+    <value>باغي، الأحمق 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>كوبي، الفتى الوحشي 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>سانجي، الطباخ المنحرف 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>فيفي، تلميذة العرافة🙇</value>
+  </string>
+  <string key="Zombie">
+    <value>فريق اليونكو 👤</value>
+  </string>
+  <string key="ZombieHunter">
+    <value>مونكي دي لوفي، ملك القراصنة المستقبلي 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>سبح هاربًا</value>
+  </string>
+  <string key="Dead">
+    <value>💀 محتجز داخل خزانة دايفي جونز</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 يبحر في الخط العظيم</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>اللاعبين الأحياء</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>الأعمال الباروكية 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>أنت عميل متخفي للأعمال الباروكية 👷 (منظمة قراصنة). وبالطبع، إذا كان هناك عملاء آخرين فستميزهم فورًا. ما عظا ذلك، أنت مجرد قرصان عادي. تحتاج مساعدة؟ > /aboutMason</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>عندما يستيقظ الجميع، يعثرون على جثة{0} تطفو فوق سطح البحر، والماء حولها لونه أحمر (يا إلهي هل تلك دماء؟!؟). أحد عملاء الأعمال الباروكية قد مات!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  عملاء الأعمال الباروكية هم: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest Zombies name -->
+    <value>أحدث عضو فيكم توجه لسفينة {0} ليضمه لليونكو، لكن بدلًا من ذلك يجد السفينة تعمها الفوضى والدماء متناثرة في كل مكان وقطع من زي البحرية مبعثرة في الأنحاء...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>اتجه أسطول البحرية لسفينة {0} لكي يأسره، لكنهم يجدون لعبة صغيرة ظريفة وناعمة (أو هل هي كذلك؟). اوه مهلًا، فجأةً تتحول اللعبة الناعمة إلى وحش عملاق وبغضب هائج يُدمر أسطولكم بالكامل. ووبعد تلقيكم لمعلومة من موظف البحرية، تكتشفون أن ذلك الوحش الذي يهاجم سفنكم هو تشوبر وأنه ليس لديكم أدنى فرصةلمجابهته، لأنه استخدم كرة الرامبل. تشوبر، الملاك المنقذ يصد كل البحرية، لذا عدتم مهزومين.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>أرسلتم {0} لمحاولة غسل دماغ {1} لتجعلوه يؤمن بأفكاركم، ولكن الهاكي خاصته (قوة الإرادة) كان قويًا جدًا، ولم تتمكنوا من غسل دماغه :( GG….</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>يا @{1}، لاعب بالإسم {0} قد انضم بالفعل.  من فضلك غير إسمك كي تنضم.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>تسللتِ لسفينة {0} كي ترضي هوسكِ وتستمتعي بسرقة الأشياء... لكن بينما تدخلين السفينة، تسمعين صوتًا مخيف لتابعٍ يحضر عشاء البيغ مام ( تضحيةٌ بشرية - اللعنة ما هذا، لأنهليس هناك حلوى). وبعد ذلك بوقتٍ قصير تسمعين ضِحكةً مدوية ”مامامامّاماماما“ من على بعد. لذا تقررين عدم العبث مع يونكو بدون تعزيزات. وتنسحبين بهدوء من السفينة.</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>كان</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>يستيقظ الجميع في الصباح، ويلاحظون عدم وجود {0}... يتحققون من سفينته ليجدوا بقايا جثة {0} هناك.</value>
+    <value>بينما يجتمع القراصنة عند شروق الشمس، يعثرون على بقايا جثة {0}، والذي مات بطريقةٍ ما الليلة الماضية...</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>يا للغرابة.... لم يأتي {0} لإجتماع الأعمال الباروكية هذا الصباح... O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>السباحة بعيدًا أثناء اللعبة تم تعطيله من قِبل مشرفي المجموعة! من المستحيل لك السباحة بعيدًا وسط كل ملوك البحر المخيفة تلك!!!!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>قُتل بواسطة قرصانٍ أفضل وأقوى!</value>
+  </string>
+
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>أنت بالفعل منضمٌ في لعبة! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Your group has managed to start multiple games...  Killing extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Your group is currently in the queue.  Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>لا يوجد لعبة جارية، إبدأ لعبة بإستعمال /startgame أو إبدأ لعبة فوضوية بإستعمال /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>فقط مشرف المجموعة يمكنه تنفيذ هذا الأمر.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId was null.  Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is already an admin!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} is not an admin!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>{0} removed from admin list.</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>لا يوجد عرافة!</value>
+  </string>
+  <string key="TimesUp">
+    <value>إنتهى الوقت!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>أنت أحد قراصنة الجيل الأسوأ، ترافلغار دي. ووتر لاو 🏹. باستخدام فاكهتك اوبي اوبي نو مي، أنت قادرٌ على تنفيذ عملية نقل الشخصية (لكن لمرةٍ واحدة فقط) وتبديل قلبي قرصانين والقلوب المبادلة ستنتمي لهم للأبد، حيث أنك لا تخطط لتبديلهم لما كانوا عليه من قبل. إن مات أحدهم، سيموت الآخر من الأسى لأن قلبه الحقيقي قد مات.. تحتاج مساعدة؟ > /aboutCupid</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>أنت بينثام المعروف بـ مستر 2 بون كوري 🎭، عميلٌ سابق للأعمال الباروكية. بقدرة ماني ماني نو مي (فاكهة الشيطان التقليد) يمكنك التحول لأي هيئةٍ تريدها. لكنفي هذه اللعبة، يمكنك تقليد شخصٌ واحد. إختر لاعب، وعندما يموت ذلك اللاعب أو يأسر فستستولي على دوره.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>أنت صائد القراصنة زورو 🎯 بعد انضمامك لقراصنة قبعة القش قررت اصطياد الأشخاص السيئين فقط (بناءًا على حكمك). أنت لا تنام جيدًا ولا تذهب لسريرك بدون سيوفك أبدًا. إن مُت يمكنك اختيار شخص ما لقتله. إن أُسرت لديك فرصة لقتل أحد جنود البحرية، لكنك لن تتمكن من اختيار لاعب لقتله.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>أنت اللحية السوداء مارشال دي. تيتش 🔪. أنت متعطش للقوة وطماع، وهدفك هو أن تصبح أقوى قرصان على وجه الأرض. هوايتك هي جمع جميع فواكة الشيطان -- لذا أنت لا تتردد في قتل الأشخاص في أقرب فرصة. كل ليلة، ستزور لاعبًا واحد لتقتله وتضم فاكهة الشيطان خاصته لمجموعتك.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>لقد ضُربت من قبل لاو. ذكرى {0} لن تتلاشى من قلبك أبدًا، لأن كلٌ من قلبيكما قد تبدلا. هدفك هو أن ينجو كلاكما. إن مات أحدكما فسيموت الآخر من الأسى لأنه فقد قلبه للأبد.</value>
+	<value>لاو قد ضربكما بقدرته ”人格移植手術 جينكاكو ايشوكو شوجوتسو“ والمعروفة أيضًا بعملية نقل الشخصية (وتبديل قلوبكم)! جسدك وقلبك الآن مترابطان مع {0}! إن مات فستموت أنت أيضًا. إن نجوتما حتى النهاية فسيفوز كلاكما.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>لقد اختار القراصنة إطعامك لخزانة دايفي جونز! أعني كيف يمكنهم ذلك، صحيح؟ هذه فرصتك الأخيرة، فلتقطع شخصًا ما بينما تسقط ولتضع بصمتك كأفضل سيافٍ في العالم بينما تلفظ أنفاسك الأخيرة!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>يتحسس {0} الكاتانا خاصته بينما يتم دفعه لدايفي جونز، لكنه يلاحظ أن سيوف الكاتانا خاصته بحوزة قرصان محتال الذي كان يطمح للحصول على نصال الـ او وازامونو. زورو ينظر لسيوفه للمرة الأخيرة بينما يتجه لموته، سيذهب لاصطياد دايفي جونز الآن..... صائد القراصنة خاصتكم لم يعد له وجود!</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>يستل {0} سيوفه الثلاثة (سانتوريو) ويلقي نظرةً على القراصنة... ولا يمكنه إتخاذ القرار على من سيطلق هجمته. لذا يسقط نحو خزانة دايفي جونز عن طيب خاطر، وبدون أي ندم، لأنه قد حظي بأفضل طاقم قراصنة ومغامرات على الإطلاق...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>بينما تقترب خزانة دايفي جونز أكثر فأكثر، {0} يستل سيوفه الكاتانا، ويصوب، ويقطع {1} ليسقطه أرضًا! {1} يسقط جنبًا إلى جنب مع  {0}.  {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>تم مهاجمتك بوحشية غدرًا! في لحظاتك الأخيرة، لديك الفرصة لقطع أحدٌ ما... فلتتخذ القرار بسرعة!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>لم يتحمل {0} الصدمة لأنها كانت قوية، لدرجة أنه لم يتمكن حتى من الوصول لسلاحه، بينما يقع قي بركةٍ من الدماء...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>بينما يقع {0}، ينظر بجدية باحثًا عن رفاقه في الطاقم ليودعهم الوداع الأخير قبل أن ينطلق لمغامرةٍ جديدة في خزانة دايفي جونز، لا يمكنه إتخاذ القرار على من سيطلق هجمته الأخيرة... ولذا يقفز طواعية للأسفل.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>يموت {0} ويسقط نحو البحر.... لكن ليس بدون أن يستل الكاتانا خاصته، ويطلق هجمةً على {1}، والذي يتلقى قطعةً تقسمه إلى نصفين متساويين. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>الليلة الماضية حاولت البحرية أسر صائد القراصنة، لكنه تمكن من الإطاحة بأحدهم بينما يتم نفيه للسجن العنيف الذي لم يهرب منه أحدٌ قط! مات {0} (جندي بحرية متفاني سابق)</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>الليلة الماضية حاولت البحرية مهاجمة صائد القراصنة، لكن السياف المحترف كان قادرًا عل الإطاحة بجندي البحرية {0} بكل سهولة!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>كانت البحرية فقط تتطلع للمرح بالقبض على قرصان ذو مكافأةٍ بسيطة، لكن بدلًا من ذلك واجهوا قرصان مجنون متوحش، ألا وهو اللحية السوداء! قُتل {0} أثناء القتال!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>بدت ليلةً هادئة لـ{0}، لكنه كان مخطئًا.  يجتمع القراصنة في الصباح ليجدوا جثة {0} مظلمة، والتي يبدو أنه ابتلعها الظلام....  اللحية السوداء ضرب مجددًا! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>حاولت أخذ فاكهة الشيطان الخاصة بـ{0} كي تضمها لمجموعتك، لكن تم صدك من قبل الملاك الحارس! لا ضحية لك الليلة...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>اليونكو أرسلّ {0} لمحاولة ضم {1}، لكن بدلًا من ذلك جثة {0} تأتي محلقةً من على السفينة، وهي مقطوعة قطعة واحدة ميتقيمة والدماء تغكيها بالكامل! مات {0}....</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>اليونكو أرسلّ {0} لمحاولة ضم {1}، لكن بدلًا من ذلك جثة {0} المظلمة تأتي في علبة كتحذير! كم يمكن أن يصبح اللحية السوداء متوحشًا! مات {0}....</value>
+	<value>يتسلل {0} لسفينة {1}، وعند فتحه للباب يجد فورًا مختلٌ مجنون يُحيط به الظلام!!! أُهرب، لأن هذه هي المخيفة ”يامي-يامي نو مي“ (فاكهة الشيطان الظلام)، لكن لا يمكنك الهرب!!!!! يومئ {1} بيده و{0} تسحبه جاذبية الظلام ليختفي للأبد. حيث أن اللحية السوداء كالمختل يظل يثرثر طوال الوقت- زيهاهاهاهاهاها! مات {0} :D</value>
+  </string>
+  <string key="GuardKiller">
+    <value>حاولت مساعدة أسوأ قرصان على الإطلاق - اللحية السوداء، لكن باستخدام جاذبيته وتقنيته السرية إستطاع أخذ فاكهتك إنسان إنسان. لكنه إنسانٌ بالفعل؟! أو شيطانٌ يحاول أن يصير إنسانًا؟ برغم ذلك، بعد فقدانك لفاكهتك لم تعد قادرًا عل الحراك...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>تسللتِ لسفينة {0}، وبدأتِ بحفلة سرقةٍ صغيرةٍ لنفسك. بدى كل شيءٍ جيدًا حتى سمعتِ {0} ضحكةً شريرة ”زيهاهاهاهاها، أتجرؤين على سرقة اللحية السوداء! لديك الشجاعة يا إمرأة“! لكنه كان حوارًا قصيرًا، لأنه كان بالفعل قد قتلكِ باستخدام يامي-يامي نو مي.. لقد مُتِ....</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>يجد القرويون جثة {0} مرميةً في الميدان العام جراء طعناتٍ عديدة. {0} مات.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>بون كوري، المنتحل {0} انضم الآن للأعمال الباروكية (فلنمرح مجددًا)!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>مات {0}، وتم دعوتك للإنضمام للأعمال الباروكية كعميلٍ سري. زملاؤك (إذا كان هناك) هم: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new Zombie's name -->
+    <value>بون كوري، {0} انضم لفريق اليونكو (ماذا تقول؟!)!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>مات {0}، وانضممت لفريق اليونكو للحماية. زملاؤك (إذا كان هناك) هم: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>بون كوري {0} انضم للبحرية، مثلك تمامًا!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>مات {0}، وذهبت وانضممت للبحرية. زملاؤك (إذا كان هناك) هم: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>الشخص الوحيد المتبقي واقفًا هو اللحية السوداء! لقد فاز وأتت نهاية العالم!</value>
+  </string>
+  <string key="AskKill">
+    <value>من الذي تريد قتله الليلة؟</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>بينما يلفظ {0} أنفاسه الأخيرة، يسرع {1} ليسقط باكيًا لأن قلبه قد توقف. لا يمكنه تحمل فقدان قلبه المحبوب، لذا يذهب ليسقط في البحر. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>من تريد أن تُصبح إن مات أو أُسر؟</value>
+  </string>
+  <string key="AskCupid1">
+    <value>من الذي تريد تبديل قلبه؟ إختر اللاعب الأول</value>
+  </string>
+  <string key="AskCupid2">
+    <value>القرصان الثاني الذي ستبدل قلبه؟ إختر اللاعب الثاني</value>
+  </string>
+  <string key="Hunter">
+    <value>زورو، صائد القراصنة 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>ترافلغار دي. ووتر لاو 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>مارشال دي. تيتش، اللحية السوداء 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value> بون كوري، مستر 2 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>أنت كوبي، القرصان اليافع الجامح. من تظن أنه اختطفك؟ {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>كل ذلك الجهد للنجاة بالقلوب المبدلة قد آتى أُكله أخيرًا! الثنائي العَرَضيّ فاز!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>في الشارع قرب رصيف السفن، يعثر الجميع على جثة {0}، ويعلوها طعنات وقطعات عديدة. يبدو أنه حاول التسلل على صائد القراصنة! يا للغباء! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>شخصٌ مقنع حاول ضمك لفريق اليونك ، لكن هاكيك (قوة إرادتك) كان قويًا جدًا بحيث لم يستطع التعامل معه</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>أنت بالفعل في قائمة الإنتظار لـ {0}.</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>تم إضافتك إلى قائمة الإنتظار لـ {0}. سأرسل لك رسالة لأخطرك عندما تبدأ لعبة. /nبينما تنتظر لما لا تتفقد المتجر؟
+https://teespring.com/stores/werewolf-for-telegram</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>بدأت لعبة جديدة في {0}.</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>يُطل الصباح، والقرصانين المتبقيين يمشون إلى رصيف السفن في البلدة. {0} ينظر إلى {1}، ويعلو وجهه إبتسامةً عريضة، والظلام يحيط يديه، ويسحب {1} إلى داخل ظلامه.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>لقد مات كل من على متن السفينة...  لم يتبقى شيءٌ سوى الجثث.  لم يفز أحدٌ هذه الجولة، ما عدا العقبان...</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>بينما تُشرق الشمس، يمشي {0} و{1} إلى رصيف السفن. يكشف {0} قوة فاكهة الظلام يامي-يامي نو مي، ويحاول سحب {1} إلى داخل الظلام. لكن {1} يستل الكاتانا خاصته ويطلق هجمة ”سانبياكوروكوجو باوند هو“ على وجه {0} وينما يسقط {0} يسحب {1} إلى داخل الظلام. كلاهما مات، سفينة القراصنة فارغة، لا يوجد فائز...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>لقد فشلت في الإختيار، لذا قوات الأكوما قد اختارت بدلًا عنك: {0}</value>
+  </string>
+  <string key="Won">
+    <value>فاز</value>
+  </string>
+  <string key="Lost">
+    <value>خسر</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>حُكم على اللاعب {0} بأن يُطعَّم لدايفي جونز، لعدم التصويت لـ{1} مرات خلال الـ24 ساعة الماضية.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Your role is simple - try to survive. Each day, you will have a chance to sacrifice the marines to Davy Jones Locker.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>You are the Sneaky Seer. In this role, each night, you may choose a player, and have their role revealed to you. Admit to your role wisely: If you reveal you are the sneaky seer, the marines will try to capture you!</value>
+  </string>
+  <string key="AboutWw">
+    <value>You get to have fun! Each day, you will attempt to decieve your fellow players. However, each night, you will get to pick a player to kill! Note:if you attack the drunk, you yourself will become drunk, and will be unable to attack the next night as you sleep off your hangover! If you attack the cursed, they will become a wolf like yourself! Hooray friends!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>As the harlot (you slut...) you will be given the chance to 'visit' another player each night. If they are not the wolf, you will be told so (because you live!). If you visit a wolf, you will be killed. If you visit the player the wolves have chosen to kill, you will be killed as well. However - If you are visiting a player, and the wolves choose to kill you, you will survive (you weren't home)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>You drunken bastard! As the drunk, you are still just a villager. BUT! If the wolves kill you, they will become disabled for the next night, as they are drunk off your insanely high BAC.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>As the cursed, you are a normal villager... until the wolves kill you. Once they do, you will become a wolf as well! Free to hunt in the night..... XD</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>You are a traitorous bastard. If you survive long enough for all the wolves to die, you will become a werewolf, ready to kill your former teammates in the night!</value>
+  </string>
+  <string key="AboutGA">
+    <value>You are the Guardian Angel! Each night, you may choose a player to watch over. Be careful however - if you choose to watch over a wolf, there is a 50% chance you will be killed.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>You old sleuth. Each day, you will have the chance to investigate another player. Use this carefully however, for these is a 40% chance the werewolves will detect you!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>A bit trigger happy are we? As the gunner, you are given 2 silver bullets at the beginning of the game. Each day, you will have the chance to shoot another player. Once you do, everyone will know you are the gunner! Be careful though, you only have 2 bullets!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>The Tanners goal is simple: Get Lynched. If the Tanner gets lynched, he wins, period. Everyone else loses.</value>
+  </string>
+  <string key="AboutFool">
+    <value>he fool is told they are the seer.... when they choose to see someone's role at night, they are told a random role.</value>
+  </string>
+  <string key="AboutCult">
+    <value>As a Zombie, it is your goal to convert all other players (except wolves) to your cult. If at the end of the game, all living players are Zombie - the cult wins</value>
+  </string>
+  <string key="AboutCH">
+    <value>Your job is to hunt the Cult. If the cult attacks you, their newest member will die. Each night you may pick a player to 'hunt' - if they are a Zombie, they will die.</value>
+  </string>
+  <string key="AboutWC">
+    <value>At the beginning of the game, you will choose someone to be your 'role model'. If they die, you become a werewolf.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>For now, you are a normal villager. However, if the seer dies, you will become the new seer</value>
+  </string>
+  <string key="AboutBH">
+    <value>You will be told who the seer is (the real one, not the fool)</value>
+  </string>
+  <string key="AboutMason">
+    <value>A mason's job is simple - they automatically know who the other masons are. Otherwise, they are a simple villager.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      Your ancestors had the ability to metamorph into others... while you don't have their full abilities, you can pick a player at the start of the game. If that player dies, you will become what they were.
+      Note: If the player was converted to cult, you will take on their original role. All other normal rules apply: If they were Wild Child and their role model died, you will become a wolf. Otherwise, you will inherit their role model.
+      The cult cannot convert the Doppelgänger (but can after the doppelganger switches roles). Also - the Doppelgänger can NOT win unless they have transformed. If at the end of the game, the Doppelgänger is still the same, they lose (exception: lover)
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Love is in the air. As Cupid, you will choose two players at the start of the game. These two players will become madly in love! If one of them dies, the other will die of sorrow :(
+      Note: Lovers will know who each other are, but not be told their roles. If the lovers are the last two alive, they win, regardless of teams. If the lovers are on different teams (villager + wolf), and one team wins (wolf), the lover (villager) wins as well. TL;DR if both lovers are alive at the end, and at least one of them was on the winning team, they both win together
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      A trigger happy, vindictive player. As the hunter, you try to keep to yourself. However, when others come to visit you, they may find themselves dead, as your paranoia takes hold and you shoot. If the wolves attack you, you have a chance to take one of them with you. Otherwise, if you die, you will get a chance to shoot someone as you die.
+      Note: For wolf attacks, the chance starts at 30%. If there is one wolf, the hunter has a 30% chance to kill the wolf (and survive). For each additional wolf, add 20% (2 wolves = 50%, 3 = 70%, etc). However - if there are multiple wolves, while you may kill one of them, you will still be outnumbered and killed.
+      If the cult tries to convert you, they have a 50% chance to fail. If they fail, you have a 50% chance to kill one of them!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>That asylum was silly anyways. What a joke. You are free now however, back to business as usual - killing! The serial killer is a lone player, on their own team. They can win only if they are the last player alive (exception: lovers). As the serial killer, you can kill ANYONE - wolves, hunters, gunners, guardian angels, whatever. If the wolves try to attack you, you will kill one of them (random), and live.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people. Maybe he's been messing with marines too long....Messing with marines is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>طول اللعبة: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>اليوم {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occured, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>أرسلتُ لك رسالة بالخاص</value>
+  </string>
+  <string key="StartPM">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>You must reply to the user you want to smite</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>يجب أن تبدأ اللعبة من داخل مجموعة!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nMessages per second: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>أي لغة؟\nالحالي: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>أي نوع؟\nالحالي: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>تم وضع اللغة لـ {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>أي ملف لغة تريد الحصول عليه؟</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>يجب عليك تنفيذ هذا الأمر في مجموعة</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>أنت لست مشرفًا شاملًا...</value>
+  </string>
+  <string key="NotPara">
+    <value>أنت لست بارا!</value>
+  </string>
+  <string key="Yes">
+    <value>نعم</value>
+  </string>
+  <string key="No">
+    <value>لا</value>
+  </string>
+  <string key="Allow">
+    <value>سماح</value>
+  </string>
+  <string key="Disallow">
+    <value>منع</value>
+  </string>
+  <string key="Show">
+    <value>إظهار</value>
+  </string>
+  <string key="Hide">
+    <value>إخفاء</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>عادية فقط</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>فوضوية فقط</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>إختيار اللاعب</value>
+  </string>
+
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>لا تعرض أحدًا</value>
+  </string>
+  <string key="ShowLiving">
+    <value>عرض اللاعبين الأحياء فقط</value>
+  </string>
+  <string key="ShowAll">
+    <value>عرض كل اللاعبين</value>
+  </string>
+
+
+  <string key="Cancel">
+    <value>إلغاء</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>تم وضع العدد الأقصى للاعبين لـ {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>إظهار أو إخفاء الأدوار عند الموت؟\nالحالي: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be?\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>تم وضع ظهور الأدوار في النهاية لـ: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>إختر وقت النهار (بالثواني). هذا ما زال سيتغير بناءًا على عدد اللاعبين. \nالوقت الأدنى المضاف بناءًا على عدد اللاعبين هو 60 ثانية. الوضع الإفتراضي: {0}.\nالحالي: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>تم وضع وقت النهار لـ {0} ثانية</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>اختر وقت الليل (بالثواني). الوضع الإفتراضي: : {0}\nالحالي:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>تم وضع وقت الليل لـ {0} ثانية</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>إختر الوقت (بالثواني) للتصويت للقربان. الوضع الأساسي: {0}\nالحالي:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>وقت التصويت للإعدام تم وضعه لـ {0} ثانية</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>السماح لباغي/روبن المزيفة كدور؟/nالحالي: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>باغي/روبن المزيفة كدور تم وضعه لـ: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>السماح لشييراهوشي كدور؟/nالحالي: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>شيراهوشي كدور تم وضعه لـ: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>السماح لفريق اليونكو كدور؟/nالحالي: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>فريق اليونكو كدور تم وضعه لـ: {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>شكرًا لك، طاب يومك :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>ما هي لغة المجموعة التي تريد العثور عليها كي تلعب فيها؟</value>
+  </string>
+  <string key="HereIsList">
+    <value>ها هي المجموعات لـ {0}:</value>
+  </string>
+  <string key="Members">
+    <value>الأعضاء</value>
+  </string>
+  <string key="StartMe">
+    <value>من فضلك إبدأني كي أستطيع مراسلتك على الخاص</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>فشل {0} في بدء البوت، وأزيل من اللعبة!</value>
+  </string>
+  <string key="LatestList">
+    <value>ها هي القائمة الأخيرة</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>غير قادر على جلب القائمة الأخيرة</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>إنضممت بنجاح للعبة في {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>وقت إرسال الرسائل: {0}</value>
+  </string>
+
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>أنت العمدة🏅. تصويتك أثناء الإعدام سيحسب كتصويتين، بعد أن تكشف عن هويتك. أنت في فريق القرويين.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>أنت الأمير 👑 متخفي، هربت من حياة الدلال المملة لتقضي أيامك مع هؤلاء الفلاحين. إن حاولوا إعدامك فسيدركوا خطأهم، ولن يتم إعدام أي أحد.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>أنت الأخرق 🤕: عندما تحاول التصويت سيكون هناك إحتمال بنسبة 50% أنك ستصوت لشخصٍ غير الذي قصدته. برغم ذلك أنت ما تزال في فريق القرويين.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>أنت الساحر 🔮، تتحالف مع مخلوقات الليل بدلًا من القرويين. خلال الليل ستستعمل قوتك لتعثر على الذئاب والعراف. تفوز فقط إذا فازت الذئاب. لذلك فلتستمتع بالمساعدة في القضاء على هؤلاء القرويين البائسين.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>أنت الحداد ⚒: صانع المعادن في القرية. لديك كميةٌ قليلة من الفضة، كافيةً لتمنع الذئاب نن الهجوم لليلةٍ واحدة. أثناء النهار، يمكن أن تختار نثرها ونشرها في أنحاء القرية. وفي ما خلا ذلك، أنت مجرد قروي.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>أنت الذئب الألفا⚡️؛ مصدر الكارثة. عضتك هي سبب تحويل البشر إلى ذئاب. كل ليلة، ستختار مهاجمة وقتل بشري، لكن طالما أنت حيّ فإن لدى ضحيتك فرصة بنسبة 20% للتحول إلى ذئب.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>أنت جرو الذئب 🐶؛ يحبك قطيع الذئاب حتى الجنون. كبقية الذئاب، ستختار مهاجمة وقتل قرويٍ كل ليلة. إن صادف وتم قتلك، قطيع الذئاب خاصتك سيستشيطون غضبًا ويهاجموا شخصين في الليلة التالية. لكنك ستظل ميتًا على الرغم من ذلك.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>بينما يبدأ القرويين بإعدام {0}، يصرخ قائلًا لهم ”تمهلوا! أنا الأمير. هذا هو الخاتم الملكي وختم الملك عليه يثبت أني الأمير. أنا محاطٌ كل ليلةٍ بالخدم. لذا لا يمكن أن أكون شريرًا.“ يذهب القرويين ليأووا إلى فراشهم وهم خجلين ويشعرون بالحماقة.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>تحاول النظر لـ{0}، لكن لا يمكنك معرفة ما هو بالضبط.  لكنه ليس العراف أو ذئبًا على أي حال...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>يخطو {0} للأمام ويقدم الختم الرسمي للعمادة، وينصب نفسه العمدة. من الآن فصاعدًا، تصويت {0} للإعدام سيحسب كتصويتين.</value>
+  </string>
+  <string key="AskMayor">
+    <value>إضغط "كشف" حينما تكون مستعدًا لتعلن عن أنك العمدة.</value>
+  </string>
+  <string key="Reveal">
+    <value>كشف</value>
+  </string>
+  <string key="SpreadDust">
+    <value>هل تود نثر الفضة اليوم، كي تمنع الذئاب من الهجوم الليلة؟</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>بينما كان القرويون يتناقشون حول الأحداث، فجأةً يلاحظون {0} يتجول وينثر الفضة في أنحاء الأرض. حاليًا، على الأقل، ستكون القرية آمنة من هجوم الذئاب. (لن تهاجم الذئاب الليلة فهي عاجزة)</value>
+  </string>
+  <string key="Mayor">
+    <value>العمدة 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>الأمير 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>الساحر 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>الأخرق 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>الحداد ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>الذئب الألفا ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>جرو الذئب 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>بينما تهاجم الذئاب {0}، يتقدم {1} ويوقف الجميع، بكونه الذئب الألفا. {1} يخبر القطيع أنه ينبغي على {0} أن ينضم للقطيع بدلًا من الموت، لذا يتركه القطيع لتسري به العدوى.  سيصبح ذئبًا ليلة الغد.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>هاجمتك الذئاب، لكن الذئب الألفا إختارك. وبدلًا من أن تُقتل، أُصبت بالعدوى... وسوف تصبح ذئبًا ليلة الغد!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>بينما يحل الليل، تشعر بوخزةٍ غريبة، وتشعر بحكةٍ في جسدك بينما تبدأ بالتحول... أنت الآن ذئب!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>As mayor, you are a lowly villager, until you reveal yourself. Then you are given twice the vote count for lynching (meaning that your vote is twice as powerful as everyone else's). Use that power wisely to help the Village Team.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>The prince is a key role in the Village Team's strategy. Once the prince gets lynched, their role as Prince is revealed, and they survive. However, this can only happen once: if the village insists on lynching them, they will die.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Do you remember the good old seer? Well now, it has its Wolf Team counterpart. The sorcerer is the Wuff's Seer. They can only see if someone is Wolf or Seer, and they win with the Wolves.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>You are the Clumsy Guy. Maybe you should not have had so much alcohol for breakfast. You can't see a damn thing. Can you even vote for the person you want to? (You have a 50% chance to vote for someone random.)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>
+      You are the BlackSmith. Through the years, no blades nor swords gave you as much satisfaction as the Silver Blades the elves ordered.\nYou might have some silverdust left. Who knows ? It might *prevent Wolves from eating tonight* 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>
+      You are the Alpha Wolf, the origin of the curse, the bane of banes. Every night, there's 20% chance that you will bite your pack's meal, and they will join your ranks instead of dying!
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>What a cuuuute little wuff. _tickles tickles_ -cough cough- As i was saying, you are the Wolf Cub and you _drops the mic_ -I just can't resist that. I think if anyone killed you, I'd give the wuffs two victims. You're too cute to die. I wouldn't be able to tickle you anymore-</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>مات {0}، وأنت تحولت إلى الذئب الألفا. رفاقك (أذا كان هناك) هم: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>مات {0}، وأنت تحولت إلى جرو الذئب. رفاقك (أذا كان هناك) هم: {1}</value>
+  </string>
+
+  <string key="VillageTeam" deprecated="true">
+    <value>فريق القرية</value>
+  </string>
+  <string key="NeutralTeam" deprecated="true">
+    <value>الفريق المحايد</value>
+  </string>
+  <string key="SerialKillerTeam" deprecated="true">
+    <value>فريق السفاح</value>
+  </string>
+  <string key="CultTeam" deprecated="true">
+    <value>فريق الطائفة</value>
+  </string>
+  <string key="TannerTeam" deprecated="true">
+    <value>فريق الدباغ</value>
+  </string>
+
+  <string key="VillageTeamEnd">
+    <value>فريق القرية</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>الفريق المحايد</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>فريق الذئاب</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>فريق السفاح</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>فريق الطائفة</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>فريق الدباغ</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>أرسلت الطائفة {0} ليحاول تحويل {1}، لكن بدلًا من ذلك يأتي رأس {0} محلقًا من النافذة... أتساءل لماذا ظن أنه غير قابلٍ للأكل! {0} مات...</value>
+  </string>
+
+  <string key="HarlotFuckedKilledPublic">
+    <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>تتسلل {0} إلى منزل {1} مستعدةً لليلةٍ من المرح، لكنها فقط تعثر على غريبٍ يجري عملية جراحية لإزالة أحشاء {1}! السفاح يقرر أن يرضي {0} قبل أن يضيف قلبها إلى مجموعته!</value>
+  </string>
+
+
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>يستيقظ القرويين فيعثروا على {0} مرميًا على لوح أويجا مستعمل بينما كان يمارس قراءة الطالع، ورأسه مفقود. مات تلميذ العراف.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>يبدو أنه {0} الحداد، يبدو أنه كان غير محظوظٍ للغاية. خمس سكاكين جديدة من مستودع {0} وجدت ليلة الأمس مغروسةً على يديه وقدميه ورأسه وهو مثبت على طاولة الحدادة. ربما كان السفاح يأمل أن ينمي من مجموعة أسلحته بجانب مجموعة الأعضاء البشرية...</value>
+  </string>
+  <string key="ZombieKilled">
+    <value>عُثر على {0} مطعون حتى الموت بواسطة شمعدان خاصٌ بالمذبح. السفاح ضرب مجددًا، لا مبالٍ بالعرق أو اللغة أو الدين! {0} كان طائفي.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>يطل الصباح التالي، والقرويون كانوا مفطوري القلب بعد أن عثروا على {0} والمعروف أيضًا بملاك الحب مبتور من الرأس إلى القدم. وخلافًا للعادة القلب كان مفقود...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>كان يأمل القرويين أن يقابلوا {0} ليطروا عليه، لكن كل ما عثروا عليه في منزل {0} هو سكينٌ مكسورة وكبد. كل سنوات الشرب تلك أدت إلى كبدٍ سيءٍ لا تأنس له العين حتى أنه على الأرجح لم يرق للسفاح...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>لتمكن {0} في العادة من صد السفاح، لكن كانت من سخرية القدر أن هالة الملاك الحارس إنطفأت. {0} مات.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>يبدو أن {0} قُبض عليه ليلة الأمس أثناء غفوته! سُمع دوي طلقةٍ نارية الليلة الماضية، لكن كل ما كان هناك هو بقايا المدفعي، وثقب رصاصةٍ على رأسه وطعنةٌ في جذعه. من الواضح أن السفاح فاز.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>إغتيال! العمدة {0} عُثر عليه مثبت على الطاولة بسكين بينما كان يعمل أثناء الليل في مكتب العمدة! يبدو أن السفاح ينفذ انتقامه لسنوات حياته التي سُلبت منه أثناء وضعه في مستشفى الأمراض العقلية!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>تضج القرية بصوت قرع الأجراس قبل شروق الشمس، والحراس المدججين بالأسلحة يجوبون الشوارع يحققون في أمر إختفاء الأمير {0}. لم يعثر على أي أدلة، لكن اشتبه أن هناك سفاحٌ طليق...</value>
+    <value>يبدو أن حراس {0} أخذوا غفوة ليلة الأمس. البقايا الملكية لـ{0}، عُثر عليها معلقةً في أماكن شتى من القصر، لقد سقط ضحيةً للسكين. لا يوجد كميةٌ من الدماء الملكية يمكنها ردع نصل السفاح.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>يستيقظ القرويين ليعثروا على جثة {0} متعفنة، مبتورةٌ من الرأس إلى أخمص القدمين، والطعنات في كل مكان. وخلافًا للعادة تم استخراج الدماغ بعناية، كما لو كان ذلك تحذيرٌ مسبق بأن القرية فقدت أعظم عقولها. {0} كان العراف.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>أصوات عواءٍ حزين يدوي في جميع أنحاء القرية. لقد اُقترف خطأٌ فادح. الذئاب قتلت أحد رفاقها. الساحر {0} مات.</value>
+    <value>صرخات بكاء "أنا حليفكم!" سُمعت ليلة الأمس. وفي الصباح التالي عثر القرويون على جسدٍ منهوش وكراتٍ صوفية، تنتمي لـ{0}، الساحر. الجوع يفوق الرفاقية...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>نمـ•نمـ•نمـ•نمـ•نمـ! ليلة الأمس سُمعت الذئاب تأكل طفلً مسعور غض، {0}، ولم تخلف وراءها سوى هيكلٍ عظمي صغير! تساءل القرويون ما إذا كانت الذئاب شعرت بالذنب لتمزيقها طفل أعزل إلى أشلاء.</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+    <value>يستيقظ القرويين في الصباح، فقط ليعثروا جسد {0}، صائد الطائفيين، مقطع لأشلاء، في داخل عربة أمام دار البلدية. تم تعلم الدرس: لا تزر السفاح!</value>
+    <value>جثة {0}، صائد الطائفيين، عُثر عليها في وسط البلدة، ولو أنها مقطعة بدقة إلى مائة قطعة. لا يبدو أن التحقق مما إذا كان السفاح طائفي فكرةً جيدة...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>بينما كان يبدو أن الذئاب قررت البقاء جيدةً لمرة، إلا أنها عاقبت {0}، طائفي قرر افتعال المشاكل مع الذئاب، لتبرهن صعوبة مقاومة ذلك. رأس {0} تحول لعشاءٍ ممتاز، تم توصيله لعتبة منزل الذئاب!</value>
+    <value>الطائفة علقت في مشكلةٍ غير متوقعة الليلة الماضية. أحدث عضوٍ فيهم كان سيء الحظ لزيارته ذئبًا في الليلة التي قررت فيها الذئاب البقاء في المنزل، والذئب وجد {0} لذيذًا نوعًا ما. لسوء حظ {0}، الذئاب ليس لديها اهتمام في الإنضمام لحركة طائفةٍ جديدة.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Zombies convert the SK-->
+    <value>الطائفة ظنوا أنهم سيكسبون عضوً جديدً في صفوفهم، لكنهم كانوا مخطئين! {0}، طائفي فُرم لقطع ووُضع في ميدان البلدة في الصباح! وخلافًا للعادة كتاب "الطائفة" خاصته عُثر عليه مطعونًا بسكين، كما لو أنه تصريحٌ ليبين أي عقيدةٍ هي المنتصرة.</value>
+    <value>الليلة الماضية، الطائفة حاولت تحويل الوحيد في القرية الأكثر جنونًا منهم. أحدث عضو حاول تحويل السفاح، والسفاح صنع قطعةً فنيةً جديدة في ميدان البلدة مكونةً من أعضاء {0} الداخلية.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- used when GA guards SK -->
+    <value>كان من المفترض أن تكون ليلةً حيث يقوم فيها {0} بحماية القرية من القاتلين، لكن هالة {0} خمدت وأجنحته شُرحت بواسطة السفاح! ولم يترك سوى ملاحظة، "أستطيع حماية نفسي أكثر مما قد تفعل أنت."</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <!-- used when GA guards a wolf -->
+    <value>الليلة الماضية حاول {0} حراسة ذئب. يستيقظ كل من في البلدة ليعثر على {0} معلقٌ على جدار المعبد. من الواضح أن الذئاب حصل على وجبة إضافية أُرسلت إليهم مجانًا إلى منازلهم.</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>
+      بمعرفة أن {0} هو آخر من تبقى، يحاول {1} أن يأكل {0}، لكن تدريبات {0} العسكرية وارتيابه يُبرهن صعوبة التعامل معه! كل ما تبقى هو فطيسة تحتوي على طلقتين في الجذع والشخص الوحيد الصامد: الصياد المنتصر للقرية!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>بمعرفة أن {0} هو آخر من تبقى، يستغل {1} الوقت الذي يكون فيه حذر {0} في أدنى مستوياته. فيقصي {1} آخر قروي بدون أدنى جهد، ولم يتبقى سوى جثة مشوهه تخص {0}، الصياد، وعليها خدوشٌ متوازية في الوجه.</value>
+  </string>
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>يتمشى {0} و {1} تحت ضوء الشمس. وبرؤية وميض قلادة حول عنق {0}، الزكي {1} يستل سيفه للمرة الأخيرة، ليضع حدًا لتعاليم الطائفة المحرفة التي لوثت القرية.</value>
+  </string>
+
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>وقت الإنضمام تم تمديده لـ{0} ثانية!\nتبقى {1} للإنضمام</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Join time decreased by {0} seconds!\n{1} left to Join</value>
+  </string>
+  <string key="CantExtend">
+    <value>Only group admins can extend the time more than once!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh no! {0} was a drunk! Now you are drunk, and can't attack {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>إنضمام</value>
+  </string>
+  <string key="NotMember">
+    <value>You can't join this game because you don't seem to be a member of {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Please don't use the commands to join. Use this button instead.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} players have voted, {1} total.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, please remember that you will have to join with the button as well.</value>
+  </string>
+  <string key="GroupNotFound">
+    <!--This string might need rewording from some native speaker-->
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>You have been deleted from the wait list for {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>إنضم {0}للعبة في آخر 30 ثانية.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Allow Cult</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Allow Tanner</value>
+  </string>
+  <string key="AllowFool">
+    <value>Allow Fool</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Lynch</value>
+  </string>
+  <string key="RandomMode">
+    <value>Enable Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Allow Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Show Roles on Death</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Allow Fleeing</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>الكل</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Cult / Fool / Tanner will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Allow NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>As the sun starts to shine on the village, {0} wakes to the sound of silence. Realising there was no one left, {0} walks and walks, until they stand alone in the middle of the village. Looking at the sight of the corpses strewn all across the village, {0} sighs. Their lifelong dream of being chosen to be lynched by the villagers is as dead as the villagers are. They reach out and touch the rope, that had taken many lives, tenderly, before slipping it around their neck and letting themselves hang freely, with a sad smile on their face.</value>
+    <value>{0} wakes up at dawn, alone. {0} sees how abject a failure they has been, not being able to get the village to satisfy their masochistic desires of being lynched to death. {0} grabs a rope and hangs himself, realising no one can accomplish their dream, since there is no one left.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} opens their eyes, but instead of hearing the usual bustle of the village, they are met with silence. They stare at the dreary ceiling, letting reality slowly sink in. Everyone was dead. The wolves were dead. With a pang in their heart, {0} gets up, and packs their things, before walking to the edge of the village. A tear slips from their eye, as {0} recalls how close they and their wolves were to victory. Alas, it was time to start a new life, with a new pack. {0} slips into the darkness of the forest, away from the quiet village.</value>
+    <value>For all of {0}'s efforts, {0}'s wolf friends lay motionless and lifeless. Even if the wolves have been brought victory, there is no one to savour the success with, neither are there any living villagers to mock at. {0} peers into the crystal ball, and silently disappears, in a cloud of fog, in search of new wolves, new allies, and new treachery to commit new crimes against humanity.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: </value>
+  </string>
+  <string key="Skip">
+    <value>تخطي</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>مات {0}، وأنت تتحول إلى مستذئب. رفاقك (إذا كان هناك) هم: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>أنت ترى أن {0} ليس {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>هل تود أن تجعل الجميع يخلدون للنوم الليلة؟</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>بينما كان أهل البلدة يتناقشون، يعود {0} لمنزلة ويبدأ بعزف لحنٍ عذب. الليلة، سينام الجميع بعمق، ولن يستطيع أحدٌ استعمال قدراته الليلية</value>
+  </string>
+  <string key="SandmanNight">
+    <value>بينما يتجه الجميع لمنازلهم، بالكاد يصلون لأسرتهك من الإعياء. جميعهم يخلدون للنوم بعمق، حتى أنهم لا يتذكرون ذهابهم للنوم...</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Allow thief as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Thief can be used every night?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Thief will play every night: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Allow Thief</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>أنت رجل الغاب 👱‍♂🌚! بما أنك تقضي معظم وقتك في الغابة حيث الذئاب الحقيقية موجودة، فسيرتبك العراف ويظنك ذئبًا! أوه كلا....</value>
+  </string>
+  <string key="WolfMan">
+    <value>رجل الغاب 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>You are a lowly villager, but since you spend most of your time in the woods where there are real wolves, the Seer will get confused and think you are a werewolf! Oh no....</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>أنت المستذئب 🐺🌝! أنت ذئب، لكن العراف سيرتبك ويراك كفلاح :)</value>
+  </string>
+  <string key="Lycan">
+    <value>المستذئب 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>The lycan is a wolf, but will appear to be a villager to the seer</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>أنت الكاهن 🌀. كل ليلة يمكنك إختيار النظر لشخصٍ ما، لكنك فقط سترى ما لا يكون ذلك الشخص. سيتم إعطائك دور شخصٍ آخر في اللعبة وما يزال حيًا، لذا إنتبه لأي دورٍ يُذمر، فذلك يعني أنه ما يزال حيًا :)</value>
+  </string>
+  <string key="Oracle">
+    <value>الكاهن 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>The oracle will be told what role someone is NOT, choosing from roles that are still alive in the game</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>أنت المنوم 💤. مرةً في اللعبة، يمكنك إستخدام سحرك لتجعل الجميع يخلدون في نومٍ عميق، ولن يكونوا قادرين على إستعمال دورهم في الليل.</value>
+  </string>
+  <string key="Sandman">
+    <value>المنوم 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value> Once per game, the sandman can make all players sleep so deeply that nobody can use their night actions</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoImam">
+    <value>أنت المسالم ☮. يمكنك إختيار إقناع جميع من في قريتك بعدم إعدام أي أحد. يمكن إستعمال هذا مرةً واحدة فقط.</value>
+  </string>
+  <string key="Imam">
+    <value>المسالم ☮️</value>
+  </string>
+  <string key="AboutImam">
+    <value>The Imam can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>أنت الشيخ الحكيم 📚. يمكنك النجاة من هجوم الذئاب للمرة الأولى - المرة الثانية يمكنهم أكلك. إن قتلك الصياد أو المدفعي بإستعمال قدراتهم، فسيفقدون قوتهم بسبب الأسى وسيتحولون لفلاحين عاديين.</value>
+  </string>
+  <string key="WiseElder">
+    <value>الشيخ الحكيم 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>The Wise Elder 📚 can survive a werewolf attack once - the second time they can eat you up. If the Gunner or Hunter kill you with their abilities, they will lose their powers out of sorrow and will be converted to a normal villager.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>أنت اللص 😈! يمكنك سرقة دور لاعب في الليلة الإولى وسيتحول ذلك اللاعب إلى فلاح!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>You are the Thief 😈! Since the [Full Thief] mode is turned on, you get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  <string key="Thief">
+    <value>اللص 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>By default, the Thief 😈 can steal a player's role on the first night and turn that player into a villager.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  
+  <string key="AskImam">
+    <value>إضغط هذا الزر عندما تود إلقاء خطابك النابع من القلب وتوقف القرية عن الإعدام ذلك اليوم!</value>
+  </string>
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
+    <value>المسالم ☮، {0}، يلقي خطابًا نابعًا من القلب عن الصداقة والثقة أمام القرية. وبسبب خطابه الذي أثار المشاعر، لن يكون هناك إعدام اليوم!</value>
+  </string>
+  <string key="ImamNoLynchNow">
+    <value>بسبب خطاب المسالم ☮ النابع من القلب، سيتم اليوم تخطي مرحلة الإعدام!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>حاولتم إقتحام منزل {0} لكن للأسف لقد كان الشيخ الحكيم 📚! أحبط {0} الهجوم بنجاح، ومن حسن الحظ لم يتعرف على أيٌ منكم.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>حاولت الذئاب أكلك، لكنك لم تصبح الشيخ الحكيم 📚 بكون قتلك سهلًا بواسطة دخيل! لقد أحبط الهجوم بنجاح، لكن للأسف لم تتعرف على أيٍ من المهاجمين.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>الصياد 🎯، {0} أطلق النار على الشيخ الحكيم 📚، {1}. فشهق {0} بشكلٍ حزين، وندم على خطأة وأقسم أن لا يستعمل قدراته كـ صياد أبدًا، لقد مات كـ فلاح 👱‍♂ بسيط.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>المدفعي 🔫، {0} أطلق النار على الشيخ الحكيم 📚، {1}. فشهق {0} بشكلٍ حزين، وندم على خطأة، وقرر التخلص من سلاحه، ليصبح فلاح 👱‍♂ مع حقلٍ يحرثه.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>You tried to steal the role from {0}, but unfortunately you failed...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>You tried to steal the role from {0}, but {0} is already dead...</value>
+  </string>
+  <string key="ThiefStoleYourRole" deprecated="true">
+  <!-- {0} - The new role -->
+    <value>سُرق دورك! أنت الآن {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>سرقت دور {0} بنجاح!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} is no longer your teammate and {1} has now become a mason, just like you!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>رفاقك (إذا كان هنا) هم: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
+    <value>{0} is no longer your teammate and {1} has now become a Zombie, just like you!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} is no longer your teammate and {1} has now become a wolf, just like you!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates" deprecated="true">
+    <!-- 0 - teammates's name -->
+    <value>رفاقك (إذا كان هنا) هم: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>As {0} wanders around the village, they found out that there are no more fun roles available for them to steal. They quickly left this poor village and search for another village to restart their illustrious career.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>هدف سرقتك الآن هو {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>من الذي تود سرقة دوره؟</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} votes went to {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>The lynch result for today:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} votes went to {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Votes Count</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>When secret lynch is turned on, show the vote count at the end of the lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>When secret lynch is turned on, the vote count at the end of the lynch will: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Voters</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>When secret lynch is turned on and the vote count is showing, show the voter's name for every voted player?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
+  </string>
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
+	<value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Imam's button -->
+	<value>سلام!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
+	<value>الإعدام اليوم تم إلغائه بسبب خطاب المسالم النابع من القلب!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>Your role got stolen! You are now the new thief 😈 and can steal a role the next night!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>سُرق دورك! أنت الآن فلاح 👱‍♂، تحرث حقولك طوال اليوم.</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>طرق طرق، لقد زارك السفاح المحلي!</value>
+	<value>باغتك السفاح، وقيدك، ثم طعنك في قلبك!</value>
+  </string>
+  
+  <string key="ThiefTeamEnd">
+	<value>فريق اللص</value>
+  </string>
+  
+  <string key="StealKiller">
+    <value>You tried to steal a role... but your target was the serial killer! They saw you around their house, and not a minute later, you were stabbed...</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>The Thief, {0}, tried to steal the role from the serial killer! This didn't work out so well: {0} got stabbed multiple times and now their liver is missing...</value>
+  </string>
+  <string key="BeholderSeerStolen">
+	<value>The thief has stolen the seer's role! {0} is now the seer, and {1} does no longer have seeing abilities!</value>
+  </string>
+  
+  <!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+	<value>المشاغب 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>The Troublemaker is the raging teenager in town. When they start yelling, the whole village gets out of control. To gain silence, they will lynch twice that day!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>أنت المشاغب 🤯. كالمراهق في القرية، أنت على شفير البلوغ. في أحد الأيام، عندما تشعر بالإزعاج من كل شيءٍ خصوصًا، يمكنك أن تسبب شغبٌ هائل والقرية ستُعدم مرتين في ذلك اليوم.</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>Do you want to cause trouble today?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>المشاغب {0}، يفتعل المشاكل! ركض في الأنحاء وصرخ ليتم إرضاءه! ستُعدمون مرتين اليوم!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>بسبب المشاغب، ستُعدمون مرتين اليوم! على أمل أن يكون الوضع آمنًا غدًا.</value>
+  </string>
+  <string key="Chemist">
+	<value>الكيميائي 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>The chemist is a quite crazy person who likes to brew potions and mess up with them. They mix two potions and force other people to choose one to drink, while the chemist will drink the other. However, while one potion is just tasting like rosebuds, the other one is going to kill you instantly. Good luck when they visit you!</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>أنت الكيميائي 👨‍🔬! عشقك للجرعات المسممة كبير وهوايتك هي المقامرة بحياتك... قليلًا فقط! أنت تصنع جرعتين، أحدهما مسممة والأخرى عادية وكلتاهما يبدوان كبعض. كل ثاني ليلة يمكنك إختيار لاعب وترغمه على الشرب معك، فربما يكون محظوظًا وينجو. على أي حال، إذا شرب مضيفك الشراب الجيد، فستأخذ أنت المسمم وتموت. حظًا موفقًا!</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>بينما يذهب القرويون الآخرين للنوم، أنت تظل في مختبرك، تصنع الجرع لـ الليلة القادمة. مع هذا تأكد أن لا تمسكك الذئاب!</value>
+  </string>
+  <string key="AskChemist">
+	<value>من سيكون مضيفًا جيدًا ورفيق قمارٍ الليلة؟</value>
+  </string>
+  <string key="ChemistTargetDead">
+	<value>You went to {0}'s house to have a drink with them, however, as you arrive there, they are already dead!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>زارك الكيميائي 👨‍🔬 {0}! وسحب سكينًا ليرغمك على الشرب، لكنك بدلًا من الشرب، سحبت سكينك. وعلى ما يبدو، سكينك كانت أقوى 🤷‍♂</value>
+  </string>
+  <string key="ChemistSK">
+	<value>ذهبت إلى {0} لتدعه يختار جرعة، ومع ذلك، لقد كان السفاح وطعنك! 🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<value>الكيميائي 👨‍🔬 {0} حاول الليلة إرغام السفاح على لعبة. لكن يبدو أن القاتل ليس ممن يلعبون الألعاب... عُثر على {0}، مطعونًا، وجرعتين ما تزالا في حقيبته!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>زارك الكيميائي 👨‍🔬، وأرغمك على إختيار جرعة لتشربها وأنت اخترت المسممة. يا لها من طريقة مؤسفة لمغادرة هذا العالم...</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>زُرت {0} وجعلته يختار جرعةً ليشربها! وهو إختار المسممة وأنت عدت للمنزل، راضيًا عن قدراتك في المقامرة. هذه ليست لعبة فرص!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+	<value>الكيميائي 👨‍🔬 زار {0} الليلة واختار الجرعة المسممة! بينما ما يزال الكيميائي المجنون حي، {0} مات. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>زارك الكيميائي 👨‍🔬 {0}، وأرغمك على إختيار جرعة. بعد لحظةٍ من التردد، إختر الجيدة! يا لحظك!</value>
+  </string>
+  <string key="ChemistFail">
+	<value>زُرت {0} وجعلته يختار جرعة! وبرغم ذلك إختار الجيدة! ونتيحةً لذلك، شربت المسممة ومت. ربما كان ينبغي عليك القيام بعملٍ أفضل...</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>الكيميائي 👨‍🔬 {0} عُثر عليه ميتًا! في الظاهر أن {0} كان حظه سيئًا وشرب الجرعة المسممة أثناء زيارته الليلية! فلتفرحوا لأنكم لم تشتروا أدويتكم منه أبدًا...</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>{0} wasn't home! You drag your suitcase back home, cursing your bad luck.</value>
+  </string>
+  <string key="ZombiesList">
+	<value>The cult members are currently: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>الذئب الثلجي 🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>أنت الذئب الثلجي 🐺☃. كل ليلة، بدلًا من إتباع قطيعك لإفتراس أحدهم، تتسلل بمفردك لتجمد شخصًا ليس من قطيعك. الشخص المجمد لن يكون قادرًا على إستخدام قدرته الليلية، هذا إذا كان لديه. برغم ذلك، ضحيتك سيمتلك بعض الآثار من قدرتك الليلة التالية ولا يمكن تجميده مرتين على التوالي.</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>The Snow Wolf 🐺☃️ is a wolf that was native to the snowcapped mountains near the village. As such, they have mastered the art of controlling ice and snow. Having lived alone for a long time, the Snow Wolf prefers to operate alone. Instead of hunting with their pack at night, they can pick a separate victim to freeze, which causes them to be unable to use their night actions. However, they will still have some residue of the Snow Wolf's magic the next night, causing them to be immune to the Snow Wolf for one night. </value>
+  </string>
+  <string key="AskFreeze">
+	<value>من الذي تود تجميده الليلة؟</value>
+  </string>
+  <string key="WolfPackList">
+    <value>قطيع الذئاب يتكون من {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>قطيع الذئاب يتكون من {0} والذئب الثلجي {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} has died, and you transform into an Alpha wolf. Your teammates are: {1} and the Snow Wolf {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} has died, and you transform into the Wolf Cub. Your teammates are: {1} and the Snow Wolf {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} has died, and you transform into a Werewolf. Your teammates are: {1} and the Snow Wolf {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} has died, and you transform into the Lycan. Your teammates are: {1} and the Snow Wolf {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} has died, and you transform into the Snow Wolf. Your teammates (if any) are: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>The doppelganger {0} has now become the new snow wolf!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} has died! In your rage, you have become a werewolf! Your new teammates are: {1} and the Snow Wolf {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} is no longer your teammate and {1} has now become the new snow wolf!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>As you opened the door to leave your house, a gust of wind blew towards you, causing you to freeze in your tracks 🐺☃️. You stand frozen in the doorway, silently cursing this weird form of bondage. Ah well, thank goodness you're thawed now. </value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>As you stirred in your sleep, preparing to wake up to get your potions, a strong gust of wind blew in from the windows, causing you to freeze 🐺☃️. From the corner of your eyes, you saw the bottles of your potions frosted over. Looks like they didn't escape the brunt of the freezing spell either. You mentally sighed, wishing the sun came up sooner... Good thing you're thawed now, though</value>
+  </string>
+  <string key="ZombieFrozen">
+    <value>As you donned your cloak and prepared to leave your house, a gust of wind blew in from the doorway, causing you to freeze 🐺☃️. Your fellow Zombies dropped by soon after to bring you along to cult people, but they ended up laughing at your demise. Leaving you by the doorway, they promised that they'll make good work of tonight. Now that you're unfrozen, you leave the house, cringing in embarrassment. </value>
+  </string>
+  <string key="CHFrozen">
+    <value>As you grabbed your sword, a gust of wind blew in from the window, causing you to freeze, back still arched 🐺☃️. You mentally groaned, your limbs aching from being in this position until now... </value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>As you sat at your table, ready to use your psychic powers, a gust of wind blew in from the window, causing you to freeze 🐺☃️. While being bound usually isn't a problem, the freezing spell also gave you a serious case of brain freeze. You weren't worried though, knowing that the sun rising is one of the constants of this world and that you'll be thawed now. </value>
+  </string>
+  <string key="GAFrozen">
+    <value>As you willed your wings to appear, a gust of wind blew in from the windows, causing you to freeze 🐺☃️. You inwardly cringed as you suddenly imagine yourself as an ornament on a Christmas tree. Thankfully, this is now over since the sun has risen. </value>
+  </string>
+  <string key="SKFrozen">
+    <value>As you admired your liver collection one last time before leaving your house, a gust of wind blew in from the windows, frosting the glass jars... freezing you 🐺☃️. As you unfroze this morning, you gritted your teeth in annoyance at the Snow Wolf's spell, swearing to make them suffer as much as possible when you take their liver. </value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>As you sulked around the village, you felt a strong gust of wind. You stood frozen in your tracks, literally unable to move 🐺☃️. Luckily, it was dark enough for you to not be recognised by anyone who passed you that night. When you were completely thawed by dawn, you scampered back to your home before anyone could see you. </value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>While you were sleeping last night, you suddenly felt really cold. Waking up to check, you realised that you couldn't move at all! Looks like the Snow Wolf 🐺☃️ has cast a freezing spell on you. You go back to sleep, unconcerned, since it didn't affect you at all... apart from making you feel cold.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>You head to {0}'s house to freeze them, but you are met by a tall dark figure, armed to the teeth. The Guardian Angel fights you off, and you head back defeated.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>You went to {0}'s house and froze them! Tonight, they won't be able to use their night actions (if any).</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>The snow wolf {0} attempted to freeze someone last night, but accidentally visited the serial killer! The murderer noticed the unwanted visitor and stabbed {0}!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>As all the other wolves have died, you are the last part of the pack that is left! In order to gain some fresh villager meat, you decide to become a normal werewolf from now on, who goes eating rather than freezing at night!</value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>The snow wolf {0} tried to freeze the hunter last night, but the hunter was able to catch them and take them down with their rifle!</value>
+  </string>
+    <string key="Lang">
+    <value>تغيير اللغة</value>
+  </string>
+  <string key="Mode">
+    <value>Change Game Mode</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Set Max Players</value>
+  </string>
+  <string key="EndRoles">
+    <value>Show Roles At Game End</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Set Max Extend Time</value>
+  </string>
+  <string key="DayTimer">
+    <value>Set Day Timer</value>
+  </string>
+  <string key="NightTimer">
+    <value>Set Night Timer</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Set Lynch Timer</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Role Configuration</value>
+  </string>
+  <string key="Mechanics">
+	<value>Game Mechanics</value>
+  </string>
+  <string key="GroupSettings">
+	<value>إعدادات المجموعة</value>
+  </string>
+  <string key="Timers">
+	<value>Game Timers</value>
+  </string>
+  <string key="Done">
+	<value>تم!</value>
+  </string>
+  <string key="Back">
+	<value>عودة</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Shuffle Player List</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Shuffle player list every time? Current: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>Player list will be shuffled every time: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+	<value>You are the Grave Digger ☠️. Every night, you dig the graves for all the people who died since the last time you did (yes, even werewolves deserve a proper burial). Since you are out all night, wolves and the cult can't find you, unless you actually have nothing to do (i.e. no one died), in that case you'll just stay home. Everyone who visits you has a chance of falling into your newly dug graves, depending on how many graves you dug. Also, the chance is halved for everyone who is on the village team with you. But since you are out at night, the wolves or the serial killer might spot and kill you, and the more graves you have to dig, the more likely it is. Also, apparently the serial killer can find you whether you're at home or not, but they might at least stumble in one of your graves and hurt their leg, causing them to maybe lose control over who is their victim the next night...</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>أنت حفار القبور ☠. هو التخلص من جثث الأموات في القرية. تحفر قبرًا لكل من يموت منذ. الليلة الماضية. برغم ذلك، أنت في العادة تتعب ولا تتمكن من إنهاء القبر، لذا يبقى مفتوح. بعض، الزائرين قد ربما يسقطون في أحد القبور ويموتون... على الأقل، لا تستطيع الذئاب أكلك لانك تظل خارجًا طوال الليل.</value>
+  </string>
+  <string key="GraveDigger">
+	<value>حفار القبور ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>الأموات مدفونين والأحياء ليسوا كذلك. كل شيءٍ كما ينبغي أن يكون، ويمكنك أن تحظى بنومٍ هانئ في الليل.</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+	<value>حتى وقتٍ متأخرٍ في الليل، حفرت قبورًا لـ {0}. عسى ان ترتاح أرواحهم وترقد أجسادهم في سلام.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>بينما تركت منزلك لتذهب لدفن من توفوا، هبت عصفة ريحٍ من الظلال، مما سببت بتجمدك. غير قادرٍ على الحركة، إنتظرت سطوع الشمس كي تذيب الجليد الذي يجمدك. يحب على الأموات أن يظلوا بدون راحةٍ لليلةٍ أخرى...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+	<value>يتجه القطيع لمنزل {0}، لكن يكتشفون أنه ليس في المنزل. كل ما عثرتم عليه هو شمعةٌ وحيدة تضيئ فوق قبر...</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+	<value>يتجه القطيع لمنزل {0}، لكن في الطريق إلى هناك، فجأةً يعلق {1} في فخ دببة، ويسقط في قبرٍ مفتوح ويخترقه رمحٌ فضي!</value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+	<value>حينما أردت أن تغلق القبر الذي حفرته طوال الليل، تلاحظ رائحة عفنة، مختلفة عن الرائحة المعتادة للجثث الميتة... الذئب {0} وقع في قبر ومات!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+	<value>إقتلعت الكبد من جثة {0}، لكن في طريق عودتك إنحنيت كثيرًا في قبرٍ مفتوح وتعثرت إلى داخله. ربما ما كان ينبغي عليك البحث عن كبد الجثة... الآن قدمك تؤلمك كثيرًا.</value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+	<value>في طريقك إلى منزل {0} شعرت بألمٍ حاد يجري في قدمك. فقررت الذهاب لأقرب منزل، والذي يبدو أنه منزل {1}، فقتلته وعدت مسرعًا للمنزل.</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+	<value>تصل لمنزل {0}، فقط لتجد الملاك الحارس يقف أمام المنزل! تحاول مقاتلته، لكنك لا تملك أي فرصةٍ ضده. الليلة كانت حقًا ليلةً سيئة بالنسبة لك...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+	<value>ليلة أخرى لا يمكنك فيها ذبح أحد أولئك الطائفيين اللعناء! فتمشي محبطًا خلال المقبرة ولم تلحظ فخ الدببة الذي علق حول كاحلك. صرخت للنجدة وكافحت للنجاة، لكن قد فات الأوان. وقعت للخلف داخل قبرٍ تركه {0} مفتوحًا وصوت كسر عنقك هو آخر شيءٍ سمعتَه قبل أن يصبح كل شيءٍ مظلمًا.</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+	<value>بعد ليلةٍ مرهقة، تعود للمنزل عند بدء شروق الشمس. وقبل أن تصل، تلاحظ وجود سيفٌ مرميٌ على الأرض بجانب قبرٍ غير مكتمل. بداخل ذلك القبر تجد جثة {0} ميتًا. ما كان ينبغي على صائد الطائفيين أن يشك بك...</value>
+  </string>
+  <!--{0}: Zombie-->
+  <string key="CultFell">
+	<value>You return from another tiring night, when suddenly you hear a scream from one of your unfinished graves! You hurry there, just to find {0} lying dead in an unfinished grave. What kind of cult tries to convert a grave digger, anyway?</value>
+  </string>
+  <!--{0}: Zombie who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+	<value>On your way to {1}'s house, {0} suddenly decides that it would be a good idea to burn down the church as well. They lead you through the graveyard when suddenly a bear trap snaps around their ankle! All you can hear is their scream before they fall into a grave and you run for your lives.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+	<value>بينما كنت في طريقك لمنزل {0}، حاولت ان تتذكر مجددًا أيٌ من المشروبات هو المسمم وتعثرت، ووقعت في قبرٍ مفتوح حيث اخترق رمحٌ فضي قلبك. وقبل أن تصدر أي صوت، مُتّ فورًا.</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+	<value>"أود زجاجة شراب"، فكرت في عقلك. شعورٌ غريب جعلك تتطلع نحو القبر الذي بجانبك، وكأن القدر سمع رغبتك، زجاجة شراب موجودةٌ في الداخل! مع الأسف هناك أيضًا جثة {0} ميتًا... فجأةً، فقدت شهيتك بالكامل.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+	<value>أعددتِ نفسكِ واتجهتِ لمنزل {0} لتحظي ببعض المرح، ومع الأسف، لم تبتعدي بما فيه الكفاية، حيث خطوتِ على فخ دبب  ووقعتي داخل قبرٍ في طريقك... هذه هي المخاطر المهنية!</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+	<value>يبدو أن القدر لا يريد منك أن تمرح... ليس فقط أنك مضطرٌ لحفر القبور طوال الليل، أنت حتى عثرت على {0}، الزوارة، ميتةً في أحد قبورك الغير منتهية. لا مرح لأجلك الليلة!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+	<value>تجولتِ لمنزل {0}، وبحذر تجنبتِ جميع القبور المفتوحة، لكن عندما وصلتِ، كان منزله فارغًا... من الظاهر أن {0} ما زال في الخارج يحفر القبور طوال الليل مجددًا!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+	<value>الحظ بالتأكيد لم يخدمك الليلة... أنت أردت فقط السهر على حماية {0}، لكن بدلًا من ذلك وقعت داخل قبرٍ مفتوح بعد أن علقت في فخ دببة ومت! لما على حفار القبور حتى أن يؤمن مجرد قبور؟</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+	<value>في طريق عودتك للمنزل. لاحظت ريشًا ملقى على الأرض... لم تضطر للبحث طويلًا حتى عثرت على {0}، الملاك الحارس، ميتًا داخل أحد قبورك! أحيانًا "معايير الحماية" خاصتك تنطلق على الأشخاص الخطأ.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+	<value>تسللت خلال المقبرة في طريقك لسرقة دور {0}، لكنك كنت مركزًا على عدم إصدار أي ضوضاء ولم تلحظ فخ الدببة الذي علق حول كاحلك! وليس كافيًا أن تسللك فشل، أنت حتى وقعت في القبر الذي بجانبك وكسرت عنقك!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+	<value>من الجيد أنك تضع بعض معايير الحماية حول قبورك... حاول {0} سرقة دورك الليلة الماضية، لكنه علق في فخ الدببة خاصتك وسقط في أحد القبور! ربما الآن القرية ستصدق أن فخاخك ضروريةٌ في الواقع.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+	<value>ينبغي عليك مراقبة خطواتك عندما تذهب لغمر منزل أحدهم المرة القادمة... لقد خطوت على فخ دببة، ووقعت داخل قبر واخترق رمحٌ فضي قلبك! نلت ما تستحقه، أيها المهووس بإشعال الحرائق.</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key="ArsonistFellDigger">
+	<value>تلاحظ في احد قبورك راىحو كايروسين. فتتنبه وتسرع إلى هناك لتعثر على {0}، مضرم الحرائق، مستلقيًا ميتًا في داخل القبر. على الأقل منزلك ظل نظيفًا...</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+	<value>الليلة أحد القبور في المقبرة إحتوى على العديد من الأشخاص... يبدو أن {0} حاول زيارة حفار القبور وسقط في قبرٍ ومات! {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+	<value>بينما كانت الزوارة {0} عائدةً للمنزل بعد قضاء ليلةٍ من المرح، حاولت سلك طريقًا مختصر خلال المقبرة. لا بد أنها كانت تشعر ببعض الدوخة والذي جعلها لا ترى القبر المفتوح حتى شعرت بأنه لا يوجد أرض تحت قدمها عندما خطت. ربما كان ينبغي عليها القبول القبول بتلك الوظيفة النهارية التي عُرضت عليها في الأمس.</value>
+  </string>
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
+	<value>حاولت الطائفة حرق المعبد، لكن بينما كان {0} يقودهم خلال المقبرة، علق فخ دببة حول كاحله! صرخ صرخةً مدوية أثناء سقوطه في القبر المفتوح وفر بقية الطائفييين مذعورين...</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+	<value>ربما {0} اللص كان يحاول السرقة من الموتى. ربما كان القدر. كل ما نعلمه أنه كان يتربص حول المقبرة حينما علق الفخ بقدمه. وأثناء سقوطه إلى داخل القبر، تساءل ما إذا كان ينبغي عليه أن يجلب شريك في الجريمة لمرافقته في هذا العمل. لن يسرق {0} مجددًا بلا ريب!</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+	<value>مفاجأة، يسقط {0} إلى داخل القبر، حيث يصطدم رأسه برمحٍ من الفضة. لحسن الحظ حفار القبور يُبقي قبورة مُؤَمَّنة!{1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>كنت فقط تحاول القيام بعملك، وفجأةً قاتلٌ مجنون يجدك ويطعنك! يا للأسف...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+	<value>بينما تمر بقرب المقبرة والدماء تغطي سكينك، تلاحظ وجود {0}، حفار القبور. وباتباع غريزتك، قررت أنه سيكون لديك اليوم ضحيتان...</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>كنت فقط تحاول القيام بعملك، وفجأةً ينقض عليك ذئبٌ من الخلف ويقتلك!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+	<value>يعبر القطيع من المقبرة، وفجأةً يلاحظون {0}، حفار القبور. وقبل أن يقوم بأي ردة فعل، ينقض عليه أحدكم من الخلف ويقتله بعضةٍ واحدة.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+	<value>لم يأتي {0} إلى إجتماع البلدة. هل تأخر في النوم مجددًا؟ بينما تذهبون للبحث عنه تجدونه ميتًا في المقبرة وما يزال يحمل الرفش في يديه. يبدو أن الذئاب باغتته أثناء الليل...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+	<value>يبدو أن {0} مفقودٌ اليوم... هل يا تُرى تأخر في النوم؟ تذهبون للبحث عنه فتجدونه ميتًا في المقبرة، وما يزال ممسكًا للرفش خاصته. يبدو أنه مات جراء طعناتٍ عديدة...</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Allow Arsonist</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistQ">
+	<value>Allow arsonist? Current: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistA">
+	<value>Arsonist is now set to {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Burning Overkill</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillQ">
+	<value>Allow Arsonist and Serial Killer to be in same game? Might be deadly! 😈 Current: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillA">
+	<value>Arsonist and Serial Killer in same game are now {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>أنت مضرم الحرائق 🔥. كالسفاح، أنت وحدك في فريقك. كل ليلة، يمكنك غمر منزل هدف واحد بالكايروسين. بهد أن تغمر منزلًا أو أكثر يمكنك إختيار إشعال بدلًا من ذلك، وستحرق جميع المنازل المغمورة وتقتل جميع الأشخاص الذي بداخلها، من ضمنهم الزوار المحتملين. تفوز فقط إذا كنت الوحيد المتبقي.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>أنت مضرم الحرائق 🔥. كل ليلة، يمكنك إما غمر منزل بالكايروسين أو إشعال، إحراق كل المنازل المغمورة مسبقًا. يمكنك فقط الفوز إذا كنت الناجي الوحيد.</value>
+  </string>
+  <string key="Arsonist">
+	<value>مضرم الحرائق 🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>هل تود غمر منزلٍ آخر أو تود رؤية جميع المنازل المغمورة تحترق؟</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key ="ArsonistVisitKiller">
+	<value>مضرم الحرائق {0} حاول غمر منزل السفاح بالكايروسين... لكنه لم ينجو من ذلك.</value>
+  </string>
+  <string key="Spark">
+	<value>🔥إشعال🔥</value>
+  </string>
+  <!--{0}: person whose house was doused-->
+  <string key="Doused">
+	<value>لقد غمرت منزل {0} بالكايروسين بنجاح!</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>إندلعت النار في منزلك، لكن لحسن حظك الملاك الحارس كان موجودًا وأخمدها على الفور! كان ليكون إطفائي بارع، لولا أنه مشغولٌ بحماية الناس...</value>
+  </string>
+  <!--{0}: saved person-->
+  <string key="GuardSavedFromFire">
+	<value>لم تتوقع ان النار ستندلع في منزل {0} عندما ذهبت لزيارته، لكنك أنقذته بغض النظر! لن يجرؤ أحدٌ هلى مناداتك بحامي سيء...</value>
+  </string>
+  <!--{0}: person whose house was cleaned-->
+  <string key="CleanDoused">
+	<value>لم تضطر لصد أي عدوٍ في منزل {0} الليلة، لذا كان لديك الوقت لتفقد الأرجاء ولاحظت أن المنزل مغمور بالكايروسين! وبما أنه لم يكن لديك شيءٌ أفضل لتقوم به، قمت بتنظيف المنزل لأجله...</value>
+  </string>
+  <!--{0}: list of people who died in the flames-->
+  <string key="Burning">
+	<value>تستيقظ القرية على رائحة اللهب... إنها تحترق! تحاولون إخماد النيران مع بعض، لكنكم تفشلون في إنقاذ الأشخاص الذين كانت منازلهم مغمورة بالكايروسين بشكلٍ غامض. اليوم أنتم في حداد على الأشخاص التاليين:/n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>الشخص الوحيد المتبقي هو مضرم الحرائق، يقف على ركام من الرماد. فاز مضرم الحرائق...</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>كان يجدر بك الإحتفاظ بطفاية حريق! الآن إحترق منزلك ومُتّ في داخله...</value>
+  </string>
+  <string key="Augur">
+	<value>المنجم 🦅</value>
+  </string>
+  <!--{0}: role that is not part of the village-->
+  <string key="AugurSees">
+	<value>بينما تحدق في السماء، ترى الطيور تحلق بنمط غير معتاد. هذا يعني فقط أن {0} ليس في القرية.</value>
+	<value>تُخبرك الطيور أن{0} ليس جزءًا من القرية حاليًا.</value>
+  </string>
+  <string key="AboutAugur">
+	<value>أنت المنجم 🦅. تراقب الطيور كل صباح وتستدل من طريقة تحليقهم على أن دور معين ليس موجود في اللعبة حاليًا، ولن ترى حتى أحدهم مرتين!</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>أنت المنجم 🦅. لديك القدرة على رؤية الأشياء، لكن بشكلٍ مختلف عن العراف أو الكاهن. أنت الوحيد الذي يمكنه رؤية الأدوار الغير موجودة في القرية، ولن ترى حتى أحدهم مرتين!</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>لا يوجد طيور في السماء اليوم على الإطلاق. هذا على الأرجح يعني أنك قد رأيت جميع الأدوار التي ليست في القرية بالفعل...</value>
+  </string>
+  <!--{0}: chosen victim, {1}: wolf who died in flames-->
+  <string key="WolvesVisitBurn">
+	<value>يتجه القطيع لمنزل {0}، وفجأةً تلاحظون وجود دخان. تحاولون الهرب، لكن لقد فات على {1} الذي مات وسط النيران.</value>	  
+  </string>
+  <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+  <string key="DefaultVisitBurn">
+	<value>كان يجدر بـ{0} البقاء في المنزل الليلة... لقد زتر منزلًا يحترق ومات وسط النيران! {1}</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+  <string key="WolfVisitBurn">
+	<value>حاولت الذئاب الليلة أكل أحدهم مجددًا، لكن مضرم الحرائق كان أسرع! لم يتمكن {0} من الهرب من المنزل المشتعل خلال الوقت... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+	<value>برغم انك ما تزال لا تعلم كن هو الكيميائي إلا أنك تأكدت من أنه لن يرتكب خطأً فادحًا كهذا مجددًا. الكيميائي تخلى عن عمله وأصبح فلاحًا بسيط!</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value>لم يتبقى سوى {0} و {1}... فجأة يبتسم {0} ويخرج عود ثقاب ويشعله ويرميه إلى قدمي {1} والذي تضطرم به النيران!</value>
+  </string>
+  <string key="ArsonistTeamEnd">
+    <value>فريق مضرم الحرائق</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+	<value>ذهبت لتمرح مع {0}، لكن منزله كان فارغًا!</value>
+  </string>
+
+  <string key="Validate">
+  <!-- Used for the button in the role selection menu -->
+	<value>‼ مصادقة ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Used for the button in the role selection menu -->
+	<value>✅ صالح ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>تشكيلة الأدوار صالحة! تم تفعيلها وستُستعمل منذ الآن!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>تشكيلة الأدوار غير صالحة! من فضلك حاول تفعيل المزيد من الأدوار من أجل السماح للبوت بإنشاء ألعاب!</value>
+  </string>
+  <string key="GroupIdleCount">
+  <!-- {0} - Idle count in the last 24 hours in the current group -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+ <value>{0} of those kills were in this group.</value>
+  </string>
+    <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>أصبحت المتحول. ستأخذ دور {0} بعد موته.</value>
+  </string>
+  <string key="RoleConfigInfo">
+  <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+	<value>اي أدوارٍ تود استعمالها فب اللعبة؟\n\nتعليمات التشكيل:\n\n✅ = الدور مفعل\n❌ = الدور معطل\n\nبعد اختيار الأدوار، يجب أنت تستعمل زر الـ"مصادقة" في الزاوية السفلى اليسرى لمصادقة وتفعيل إختيارك للأدوار! إذا لم تصادق إختيارك، فسيتم تجاهله وستستعمل جميع الأدوار!\n\nإن عطلت العديد من الأدوار، فإن البوت لن يستطيع إنشاء لعبة متوازنة وستفشل المصادقة! في تلك الحالة، فقط قم بتفعيل المزيد من الأدوار وقم بالمصادقة مجددًا.\n\nإذا نجحت المصادقة، فإن الزر في أسفل اليسار سيقول ✅ صالح ✅ وسيتم إستعمال تشكيلتك للأدوار!</value>
+  </string>
+  <string key="EnableAllRoles">
+	<value>تفعيل الكل</value>
+  </string>
+  <string key="DisableAllRoles">
+	<value>تعطيل الكل</value>
+  </string>
+  <string key="CHHuntedYou">
+    <value>مونكي دي لوفي 💂 زارك ورآك تتحدث مع البيغ مام عبر الدن دن موشي. لذا قام بالتحول للغير فورث وسلم عليك بضربة كونغ غان، أنت الآن ميت.</value>
+  </string>
+</strings>

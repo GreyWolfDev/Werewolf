@@ -1,0 +1,1897 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- maintained and contributed by @Olfi01 and @Olgabrezel // version 20.10.2018 -->
+<!-- VILL SCHBASS BEIM SCHBIALA! EIER LUDWIG OND FLORIAN! -->
+<!-- Ja! Und @Appfel (Robby) darf wieder reparieren 😒 -->
+<strings>
+  <language name="Schwäbisch" base="Deutsch" variant="Schwäbisch" owner=""/>
+  <string key="NotInGame">
+    <!-- Nicht implementiert? * -->
+    <value>S siehd so aus, wie wenn du grad en koem Schbial denna wärsch...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} hot a Schbiel ogfanga! Mit am Join Knopf kosch mitmacha... ond wahrscheinlich verrecka :P</value>
+    <value>A neis Schbiel isch von {0} gschdarded worda! Mit am Join Knopf kosch gfressa werda!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} hot a neis Chaos-Schbiel ogfanga! Mit am Join Knopf kosch mitmacha... ond wahrscheinlich verrecka :P</value>
+    <value>A neis Chaos-Schbiel isch von {0} gschdarded worda! Mit am Join Knopf kosch gfressa werda!</value>
+    <value>{0} schreit äbbes... ond sofort isch Chaos im Dorf :O Mit am Join Knopf kosch mitmacha! </value>
+    <value>Wa isch ao do los, koe Ordnung meh em Dorf?! Mit am Join Knopf kosch rausfenda, wer an dem Chaos schuld isch! Ond her jo auf, {0} ohzomglotza, alloe gwennsch koe Schlacht.</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Du kosch grad ed mitmacha! D Leit schbialad scho.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Du bisch scho dabei!</value>
+    <value>Du bisch doch scho dabei, du Seggel!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Bloß no oe Minudd zom joina.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>Bloß no {0} Sekonda zom joina! Jetzt aber schnell!</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Isch gar neamerd do? Auf jedn Fall ed gnuag, S Schbial wird abbrocha...</value>
+    <value>Leider isch koe Mensch do, des Schbial wird abbrocha :/</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Des Schbial fängd o! Bidde gugga, I schreib eich, wa ihr fer Rolla hend!</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>Da {0} han I gebannt fer da Versuch von ma Exploit (keine Namen beginnend mit /).</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, bitte änder dein Noma zom mitmacha.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Duad mr echd loed, aber des Schbial isch voll... Du kosch nemme mitmacha!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} macht bei dem Schbial mit! {1} Schbialer, mendeschdens {2}, höchschdens {3}.</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0}, tipp do onda auf auf "Start Me!" oder auf {1} ond danoch auf "Starten", damit I dir dei Rolle verrata ko. Vorher kosch du ed mitmacha! Wenn de fertig bisch, probierschs nommol!</value>
+  </string>
+  <string key="DeadFlee">
+    <!-- im Code auskommentiert -->
+    <value>Du kosch nemme abhaoa, DU BISCH DOD! Zrick ens Grab mit dir, sakradi!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} hot Hosa voll ond isch abghaoa!</value>
+    <value>{0} isch abghaoa wie a Woechoe!</value>
+    <value>{0} isch weggrannt und überlässt eich alle eierm Schicksal!</value>
+    <value>{0} isch in da Wald ganga ond nemme zrickkomma. Komisch...</value>
+    <value>{0} isch wie die Sau aus am Dorf grannt, und seitdem nemme gseha worda...</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} isch {1} gwesa.</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} Schbialer send übrig.</value>
+  </string>
+  <string key="DidntAsk">
+    <!-- Nicht implementiert? (Wobei die hier meine ich alle den Privatchat mit dem Bot betreffen, und das noch aus den Zeiten von vor dem Bot-Update sind. Also, inzwischen nicht mehr relevant.) -->
+    <value>Du wurdest nicht aufgefordert, etwas zu schreiben!</value>
+  </string>
+  <string key="NotPlaying">
+    <!-- Nicht implementiert? -->
+    <value>Du scheinst nicht in einem Spiel zu sein...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Ich kann keinen Spieler mit diesem Namen finden!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <!-- Nicht implementiert? -->
+    <value>Die Antwort ist nicht gültig!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} will {1} auffressa.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} hot {1} ausgwählt!</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} hot jetzt zwoe Nächt hentranander ed abgschdemmt. Des isch aber bled... Obwohl ma sofort a Leiche findet, verschdoht neamerd, wie der Tod passiert isch... {1}</value>
+    <value>Komisch. Ihr hend {0} jetzd scho zwoe Mal hentranander ed bei dr abendlicha Abschdemmung geseha... Echt komisch, aber so isch halt. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Du Verräter!! Du bisch jetz an Werwolf 🐺!</value>
+    <value>Die Werwölfe send älle dod! Du bisch jetz ihr letschda Hoffnung 🐺. Breng du des besser no!</value>
+    <value>Ha koe Wonder, dass di koener mog, du Verräter... Glei derfsch du dir dei erschdes Opfer 🐺 aussucha!</value>
+    <value>Bis jetz warsch ja ganz guad - fer dei tolla Laeschdong wirsch du jetz zom Werwolf. Viel Spaß! 🐺</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Isch oke, dae Auswahl isch ognomma!</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\n{0} isch dr Seher 👳.</value>
+    <value>\n{0} isch dr oizig richtige Seher 👳.</value>
+    <value>\nBloß {0} isch an Seher 👳...</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - <seer name> (dead) or "the seer" (converted) -->
+    <value>Komisch, {0} ko jetz nemme schaffa - wa do wohl passiert isch? Jetz trittsch du en saene Fuaßschdapfa ond bisch jetz dr neie Seher 👳.</value>
+    <value>Daen Moeschder, {0}, isch dod. Du bisch saen Nochfolger ond ab jetz dr neie Seher 👳.</value>
+    <value>Dae Lehrlingsleba isch vorbei, Faulpelz! Dein Maeschder, {0}, lebt nemme ond jetz musch du zaega, wa de glernt hosch 👳. Du bisch jetz neier Seher.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - <seer name> (dead) or "the seer" (converted) -->
+    <value>Weil {1} dod isch, nemmt sein Lehrling 🙇 {0} saen Platz als Seher ae. </value>
+    <value>komischerweise isch {1} von dr Bildfläche verschwonda... Aber {0} war saen Lehrling 🙇 ond wird ab jetz dr neie Seher sei.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Du siehsch, dass {0} {1} isch!</value>
+    <value>Daene Karta sagad, dass {0} {1} isch!</value>
+    <value>Eire Ahna hend dir verrata, dass {0} {1} isch!</value>
+    <value>Durch an kurza Blick en dae Glaskugel woesch du, dass {0} {1} sei muss! </value>
+    <value>Es offenbart sich dir, dass {0} {1} isch...</value>
+  </string>
+  <string key="AskLynch">
+    <value>Wen willsch heit lyncha?</value>
+    <value>Mit wem willsch heit abrechna?</value>
+    <value>Wer soll heit glynchd werda?</value>
+    <value>Wähl aus, wer heit vom Dorf glynchd werda soll...</value>
+  </string>
+  <string key="AskDetect">
+    <value>Wen willsch heit beobachda?</value>
+    <value>Wem willsch heit henderherschbioniera?</value>
+    <value>Wem saene Spura willsch heit verfolga?</value>
+    <value>Wer kommt dir grad arg verdächtig vor?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>Wen willsch verschiaßa? {0} Kugla hosch no.</value>
+    <value>Wer isch heit dae Zielscheibe? Du hosch no {0} Kugla!</value>
+    <value>Wer isch heit auf daener Abschusslischde? {0} Kugla hosch no.</value>
+  </string>
+  <string key="AskVisit">
+    <value>Wen willsch heit nachd bsuacha?</value>
+    <value>Wer derf sich heit nacht über daen Bsuach freua?</value>
+    <value>Mit wem willsch d Nacht verbringa?</value>
+    <value>Wem willsch heit a Freude macha?</value>
+    <value>In wem saem Bett willsch du heit nachd schlofa?</value>
+  </string>
+  <string key="AskSee">
+    <value>Wem sae Karte willsch seha?</value>
+    <value>Om wen willsch die Ahna heit om Rat froga?</value>
+    <value>Wen willsch über dae Glaskugel beobachda?</value>
+    <value>Fer wen willsch heit daene Seherkarta befroga?</value>
+    <value>Wem sae Schicksal willsch heit erfroga?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Wen willsch heit beschütza?</value>
+    <value>Über wen willsch heit nachd wacha?</value>
+    <value>Vor wem saem Haus wachsch heit?</value>
+    <value>Wer isch heit undr deim Schutz?</value>
+    <value>Wen willsch du vor denne Böse retta?</value>
+  </string>
+  <string key="AskEat">
+    <value>Wen willsch fressa?</value>
+    <value>Von wem willsch heit a kleins Stück probiera?</value>
+    <value>Wer isch dae heitigs Fressa?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Wen willscht heit jaga?</value>
+    <value>Wen verdächdigsch du heit?</value>
+    <value>Wer kennt denn an Kultist sae?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Wer isch au dae Vorbild?</value>
+    <value>Zu wem schauscht du hoimlich uff?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Wen willsch du zu deim Kult dohanne bekehra?</value>
+    <value>Wer soll dir heit folga?</value>
+    <value>Wen möchtsch du diase Nacht von deim Glauba dohanne überzeuga?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value> Sprich dich do mit {0} ab</value>
+    <value> Schwätz dodrüber mit {0}</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith". again, leave the spaces!-->
+    <value> ond </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Du bisch dr Verfluchte. 😾
+	Du bisch zwar grad no a Dorfb'wohnra, sobald wia si dia Wölfa abr dodafür ontscheida, di zu töta, wirsch du selbscht zua em Werwolf, statt dass du stirbsch.</value>
+    <value>Du bisch dr Verfluchte. 😾
+	Du bisch zwar oigetlich a Dorfb'wohnra, abr leida kosch dia andra it wirklich. Du ernährsch di bloß vo roham Floisch und wenn a Wolf di beißa duat, wirsch du selbr oinr!</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Du bisch a Detektiv. 🕵
+	Während dem Dog hasch dia Möglichkoit, dia Rolle vom e Spialr zum orfahra. Wenn du di dodafiar entschoidesch, kennt doi Rolla denne Wölfa verrate werda. (Des isch a Wahrschoinlichkoit von 40%)</value>
+    <value>Du bisch a Detektiv. 🕵
+	Mit doinr riasiga Lupe dohanne spaziersch du de ganze Dog durch des Dorf und stecksch doi Riachkolba in ells, wos di nix agoaht. Du hesch zwar ausser denne Flöhe vom Bello und dera Affäre von dem Herr Müller no nix guates gfunda, abr du hoffsch, irgndwann emol ebbes richtig Großes rauszumfinda. Pass bloß uff, dass dia Wölfa di it erwischa. (Mit 're Wahrschoinlichkoit von 40%)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Mensch, hasch du a Glück! Du bisch dr Betrunkene. 🍻</value>
+    <value>Des isch ja subber! Du bisch dr en dr Kneippe lebende Betrunkene. 🍻</value>
+    <value>Proscht! Du verbringsch doi ganza Dog (und au dia Nacht... wo sollsch au sonscht na?) in dera Dorfknoip, do kennt ma di scho, du bisch dr Betrunkene. 🍻</value>
+    <value>Du b'soffner Grasdaggel! Als a Betrunkner 🍻 bisch du immr no a ganz normaler Dorfb'wohnra. OBER: Wenn dia Wölfa di tötn dun, sin se in dera nägschte Nocht no so btrunka, dass au koi Aspirin mehr helfe duat: sie kennet dann niamanda ongreifa!</value>
+    <value>Tach! Du bisch loidr orbeitsloas, konnsch koi Mieta zohla und verbringsch deswege d ganza Nacht im Pub dohanne und säufsch, bisch also der Betrunkene. Proschd Mahlzeid! 🍻</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Du bisch dr Schutzengel. 👼
+	Jede Nocht kasch oina von denne Spialr b'schütza. Wenn du abr a Wolf wählsch, wirsch mit 're Wahrschoinlichkoit von 50% sterba.</value>
+    <value>Du bisch dr Schutzengel. 👼
+	Odr zumindescht nennet dia Leit di so, woil oigentlich hasch du koi b'sondere Fähigkoita. Du hasch bloß a schalldichta Party-Kellra, in dem du di jede Nocht mit irgendwem dohanne oisperrsch... abr wenns ebbes bringa duat? (A gonza Nocht mit am Wolf odr am Seriakillr isch holt a bissl wia Russisch Roulett.)</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Du bisch dr Schütze. 🔫
+	Du hasch exakt zwoi Kugla als Munition. Während dem Dog hasch dia Möglichkoit, an ondre Spialr zum erschiaßa; dr Schuss isch abr so laud, dass ihn jedr höre konn. Olle wisset dann, dass du dr Schütze bisch.</value>
+    <value>Du bisch dr Schütze. 🔫
+	Irgend so an Seggel hot dir a Waffe mit zwoe Kugla in dia Hand druckd. Du hosch zwar koin Plan, wia sie funktioniera duat, abr du wolltescht scho immr mal in der Gegend rumballra. Du versuchsch abr bitte wenigschtens, net daene Kumbels zum töta...</value>
+    <value>Du bisch dr Schütze. 🔫
+	Für a echta Waffe hot's Geld loider ed geroicht, also rennsch du mit dei're Wasserpischtole durch dia Stroßa und mach älle dia nass, dia wo dir verächtig orscheinad. Warum dia dann gloi ins Graß beißa, des kosch du au ed so recht erklära...</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Du bisch d Hure 💋 in dem Dorf. In dr Nacht kosch du zu oem Schbialer ganga, zom feschtstellen, ob der nett isch. Wenn der aber baeß isch, bisch dod ond wenn der ogriffa wird, ao.</value>
+    <value>Du bisch d Hure 💋 in dem Dorf. Seit daen Ex di aus eirer gmeinsama Wohnung gschmissa hot, verbringsch du äll Nacht in amma andra Bett. Aegentlich freuat sich älle wenn du kommsch, aber wenn du ebber baeß besuachsch, no kommsch do nemme läbend zrick :/</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Du bisch an Verräder! 🥸 Du bisch zwar emmoment an Dorfbewohner, aber wenn älle Wölfe dod send, no wirsch du zu oem. Wenn dr Seher di überprüft, sieht er entwedr an Dorfbewohner oder an Wolf.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Du bisch an Werwolf. 🐺
+	Äll Nacht derfsch du dir a Opfer aussuacha.</value>
+    <value>Du bisch an Werwolf. 🐺
+	Du hasch zwar a flauschigs Fell, aber wenn der Mond aufgeht, no kosch du dei wilda Seite nemme zrickhalda ond ziehsch mit daem Rudel los, Dorfbewohner fressa.</value>
+  </string>
+  <string key="RoleInfoSeer">
+    <value>Du bisch dr Seher. 👳
+	Du kosch en jeder Nacht oen Schbialer überprüfa.</value>
+    <value>Du bisch dr Seher. 👳
+	Du mogsch granadamäßige Filzhiad ond schwarze Katza ond du kosch andre Leit durchschaoa.</value>
+  </string>
+  <string key="RoleInfoVillager">
+    <value>Du bisch an Dorfbewohner 👱 der wo nix ko, verdammt zom baura ond gfressa zom werda.</value>
+    <value>Du bisch an Dorfbewohner 👱 - dae Läba ist zwar ed arg toll, aber du hosch no nie an Schlagonfall ghet.</value>
+    <value>Als Dorfbewohner 👱 isch dae Läba vielleicht ed so schbannend - dodafür hosch du ällaweil a ruhiga Nacht ond kosch chilla so vill de willsch.</value>
+    <value>Du bisch an oefacher Dorfbewohner 👱 ond du mogsch Porzellankitsch ond Katza. Werwölfe mogsch aber ed so gern...</value>
+    <value>Du bisch dr allmächti- ne, nadirlich edda, du bisch an Dorfbewohner 👱, tschuldige, aber zumindeschd gohsch gern end Kirch.</value>
+    <value>Du bisch an Dorfbewohner 👱, ond mogschs, wenn älle zammahockad - drom verpassch du ao koe Abstimmung, zom dae Dorf vorm Bösa retta.</value>
+    <value>Du bisch an Dorfbewohner. 👱
+	Dae Läba isch saulangweilig, drom daddelsch du am Computer bis dir d Aoga zufallad ond trinksch dodabei saumäßig gern Äpfelschorle.</value>
+  </string>
+  <string key="RoleInfoTanner">
+    <value>Du bisch dr Gerber. 👺
+	Wenn du glynchd wirsch, no hosch gwonna!</value>
+  </string>
+  <string key="RoleInfoWildChild">
+    <value>Du bisch des wilde Kind. 👶
+	Such dr an Schbialer aus, der mo dae 'Vorbild' sae soll - sobald der schdirbd, wirsch du zomma Werwolf.</value>
+  </string>
+  <string key="RoleInfoBeholder">
+    <value>Du bisch dr Beobachter. 👁
+	Du siehsch glei, wer dr Seher isch.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer">
+    <value>Du bisch dr Seher-Lehrling. 🙇
+	Wenn dr richtige Seher verreckt, wirsch du dr neie.</value>
+    <value>Du bisch dr Seher-Lehrling. 🙇
+	Du wolldesch scho emmer Seher werda, aber daene Schulnota warad oefach zu schlechd dazu... Drom bisch als Kompromiss am Seher saen Lehrling gworda, des hoeßd, wenn er schdirbt, wirsch du dr neie Seher.</value>
+  </string>
+  <string key="RoleInfoZombie">
+    <value>Du bisch an Kultist. 👤
+	Äll Nacht kosch du oen Schbialer zo daem Kult bekehra. Wenn bloß no Kultisten lebad, no hend ihr gwonna!</value>
+  </string>
+  <string key="RoleInfoZombieHunter">
+    <value>Du bisch dr Kultistenjäger. 💂
+	Do geits so a Gruppe, die sich dr Kult nennt, die mo di granadamäßig nerva duad. Äll Nacht kosch du oen Schbialer auswähla. Wenn der an Kultist isch, no isch er danoch dod. Wenn se di bekehra wellad, no ischs neieschde Mitglied vom Kult dod.</value>
+  </string>
+  <string key="LynchTime">
+    <!-- 0 - number of seconds -->
+    <value> 
+      S wird fei langsam schbät!
+      Ihr kennat ab jetzt {0} Sekonda lang abschdimma, wer heit vom Dorf glynchd werra soll.
+    </value>
+    <value>
+      Langsam wirds dunkl ond älle treffad sich, zom entscheida, wer heit schdirbt...
+      Ihr hend ab jetz {0} Sekonda zom abschdimma!
+    </value>
+    <value>
+      Bevor ihr älle ens Bett gangad, treffad ihr eich nommal zom auswähla, wen ihr dod han wellad... Ihr hend {0} Sekonda ab jetz!
+    </value>
+    <value>
+	  Weil ihr nochher no Würschdla grilla wellad, soddad ihr jetz ofanga mit eirer allabendlicha Versammlung.
+      Ihr hend {0} Sekonda Zeit ab jetz zom ebber wähla, der mo heit no verrecka muaß...
+    </value>
+  </string>
+  <string key="DayTime">
+    <!-- 0 - number of seconds -->
+    <value>Jetz ischs Dag. Ihr hend {0} Sekonda ab jetz, um zu diskutiera, wer nochher schderba soll.</value>
+    <value>D Nacht isch endlich rom... Älle versammlad sich zom zähla, wie ville Leit dod send - ihr hend {0} Sekunden ab jetz zom rausfenda, wer schuldig isch!</value>
+    <value>Raus aus dr Heia, ihr hend ed ewig Zeit, weil sich jo emmerno s Böse em Dorf romtreibt - beeilad eich, ao die {0} Sekonda, die ihr ab jetz zom diskutiera hend, kennad schnell rom sae!</value>
+  </string>
+  <string key="NightTime">
+    <!-- 0 - number of seconds -->
+    <value>S isch Nacht worra. Älle Schbialer schlofad ae. Schloflose Schbialer hend {0} Sekonda zom do, wa se do wellat!</value>
+    <value>Schneller als ihr denkt häddad, wirds zappaduschder, älle Schbialer schlofad ae... aber a baar dend ao bloß so. Wer ed eischlofa ko, der hot jetz {0} Sekonda zom saene nächtliche Tätigkaida auszomführa!</value>
+    <value>S wird Nacht em Dorf. Älle gangad schlofa, außer de Nachtflatterer... {0} Sekonda bleibad denne, zom ihre Rolla gerecht werda!</value>
+  </string>
+  <string key="LynchKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Des Dorf hot abgschdimmd, {0} am Galga zom hänga. {1}</value>
+    <value>Des Dorf isch sich einig, zamma versäifad se {0}. {1}</value>
+    <value>Zamma ich des Dorf zom Entschluss komma, {0} auf am Dorfplatz zom verbrenna. {1}</value>
+    <value>Mit vill Hirnschmalz han sich die Dorfbewohner entschieda, da Kopf von {0} mit der dorfeigana Guillotine abzomtrenna. {1}</value>
+    <value>Noch ra langa demokratischa Abschdemmung fällt des heitige Todesurtoel. Die Dorfbewohner schmeißad {0} die Klippa nonder, ond ma hert bloß an dompfa Aufschlag, wo dr Körper an denne Felsa zerschellt... {1}</value>
+  </string>
+  <string key="LynchTie">
+    <value>Weil ma sich oeinig war, wer glynchd werra sodd, kehrad die Dorfbewohner oglücklich end Häuser zrück...</value>
+    <value>Do wirds ganz schdill, älle glotzad sich misstrauisch ah - oinaweg send ao älle erleichtert, fer heit überläbt zom han. Dui Versammlung isch zu Ende ond s ganze Dorf goht hoem.</value>
+    <value>Dr Henker hot heit nix zom do ghet ond oenaweg starra sich älle no misstrauisch o; erst do, mos zom regna ofängt, sauad älle hoem ond gangad schlofa.</value>
+    <value>Weil koe Entscheidung gfällt worra isch, brengad die Dorfbewohner an dem Abend neamerd om. Langsam löst sich die Versammlung auf, denn die Nacht bricht an...</value>
+  </string>
+  <string key="NoLynchVotes">
+    <value>Irgendäbbes isch verdächtig, weil koener hot a Schdimme abgeba! Es geit koene Tote...</value>
+    <value>Heit isch koener zur Wahl komma! Heit Abend geits koene Tote.</value>
+    <value>Bei dr Abschdimmung hot koener sich d Mühe gmacht, sae Hand hochzomheba. Wie wellat ihr so gwenna?!</value>
+  </string>
+  <string key="DetectiveEaten">
+    <!-- 0 - victim name -->
+    <value>Des Dorf versammelt sich am Morga, aber {0} isch ed do. Älle gangad zu saem Haus ond treffad a Leiche 🐺, mit arra Lupe in dr Hand 🕵, o.</value>
+    <value>Komisch... Am Morga taucht {0} ed zur Beschbrechong auf. Zerschd isch ma gar ed so oglücklich, weil sae Zigarett emmer so qualmt... Aber eigentlich war {0} ganz gscheid, also suchd ma n no doch - aber älles, was ma fendet, isch sae Lupe 🕵, vill Bluad... ond grausige Pfotaschbpura 🐺.</value>
+    <value>An neier Morga fängt o ond wie an jedem Tag trifft sich dr Dorfscheriff mit am Detektiv auf a Tässle Kaffee. Er wondert sich, dass {0} ed aufmacht, aber d Hausdier isch zom Glück offa. Drenna siehts aus, wie wenn a Bomb eigschlaga hätt: dr Detektiv leit als bludiga Leiche auf am Boda 🕵, dodal von de Wölfe 🐺 zerfleischt!</value>
+  </string>
+  <string key="GuardianEaten">
+    <!-- 0 - victim name -->
+    <value>Wo der Morga ofängt, do sehat die Dorfbewohner schrecklicherweise {0}, da Schutzengel 👼, aufgschpiaßt ond halba aufgfressa 🐺 am Kreiz von dr Dorfkirch.</value>
+    <value>Dr neie Morga hot ogfanga, ond em ganza Dorf liegad Fedra rom... Zerscht moed ma, an Fuchs wär en da Hühnerschdall gschlicha, aber dann fendet ma {0}, da Schutzengel 👼. Des müssad d Werwölfe 🐺 gewea sei...</value>
+    <value>An neier Dag bricht o. Aber was müssad die Dorfbewohner schlemms seha? {0}, dr vom Allmächtiga Gott em Himml gsandte Engel 👼, leit dod aufm Dorfplatz. Sieht schlemm aus, weil an Werwolf 🐺 hot boide Flügel ausgrissa!</value>
+    <value>S wird Dag... Zom Entsetza vom Ganza Dorf fendet ma {0}, da Schutzengel 👼, en ra Blutlache vor dr Kirch - des muss des neischde Opfer von de Werwölfe 🐺 sei...</value>
+    <value>Dr Dag fängt o, ond s sieht so aus, wie wenns an guader werra däd: sogar Schnee kennad Leit aus de Fenschdr seha. Moment... Schnee?! Schnell merkt ma, dass des koen Schnee isch, sondern Fedra... Weil se so a komischs Gfühl hend, gangad se zom Dorfzentrum, bloß zom do {0} zom fenda, aufm Pflaschdr aufgschlaga, mit ausgrissene Flügl... 🐺 Eier Schutzengel 👼 isch gfressa worra!</value>
+  </string>
+  <string key="GunnerEaten">
+    <!-- 0 - victim name -->
+    <value>Mo älle morgads aufschdandad, entdeckad die Dorfbewohner Teile von ra Flinte... No Beine... No Finger... on na da Körper von {0}, am Schütza 🔫, em Dorf verdoeld - tötet vomma Werwolf 🐺.</value>
+  </string>
+  <string key="SeerEaten">
+    <!-- 0 - victim name -->
+    <value>D Sonn goht auf. S ganze Dorf wacht auf, bloß zom a Leiche 🐺 vom {0} mit ma Ouija-Brett ond zwischa Seher-Karta verdoeld zom fenda. Dr Seher 👳 isch dod.</value>
+    <value>No bevors wirklich hell isch, merkt ma, dass ebbes ed schdemmt... no hert ma entsetzte Rufe ond Schluchza 🐺. Traurad om {0}, weil dr Seher 👳 isch dod!</value>
+    <value>An neier Dag fängt o. Ma beginnt heit mit ma Flohmarkt auf am Dorfplatz. Aber heit fehlt der Schdand mit de Glaskugla... Ma wondert sich ond guckt no bei {0} noch. Älles sieht normal aus... aber no fendet ma Scherba von dr berühmta Glaskugl, ond a Blutschbur mit Fell 🐺, die mo ens Schlofzemmer führt... Do fendet ma die blutige Leiche vom Seher 👳.</value>
+  </string>
+  <string key="DrunkEaten">
+    <!-- 0 - victim name -->
+    <value>Beim Aufschdanda riechad älle brennenda Alkohol ond Holz... En dr Kneippe brennts!! Mos Feier glöscht worra isch, fendet ma {0}, da Betrunkenen 🍻, von Wölfen zerfloeschd.</value>
+    <value>Die Schnapsflasch von {0}, am Betrunkenen 🍻, fendet ma am nächschda Morga em Busch bei dr Taverne. Die Leiche die en dr Nähe leit, tötet vomma Werwolf, fendet ma ao bald.</value>
+  </string>
+  <string key="FoolEaten">
+    <!-- 0 - victim name -->
+    <value>Mo d Sonn aufgoht, fendet ma {0} obissa 🐺 neben ma Ouija-Brett, aber mit ma Deck aus... Schbialkarda??? JA SO AN NARR 🃏!</value>
+    <value>An neier Dag fängt o, aber irgendäbbes schdemmd edda... S fröhliche Lacha von {0} fähld! Ihr machad eich bsorgt aufd Suche - ond sehad a komischa Gschdald, die mo a großa Murmel en dr Hand hot - dr Narr 🃏 isch von de Wölfe 🐺 gfressa worra...</value>
+    <value>Dr Dag bricht o ond dr Dorfscheriff goht sae Ronde. Er wondert sich, weils em Haus von {0} so furchbar schdill isch... Zerschd siehd älles guad aus, ao d Schbialkardasammlong isch no do. Falscher Alarm? Em Schlofzemmer merkt dr Dorfscheriff aber, was los isch, dr Narr 🃏 isch von de Wölfe 🐺 verrissa worra!</value>
+  </string>
+  <string key="DefaultEaten">
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Mo jeder aufwacht, bemerkad die Dorfbewohner an schrecklicha Gschdank. Ma folgt dem Geruch ond fendet {0}, ausnandergrissa ond ohne Kopf em Schdall 🐺. NOMNOMNOMNOM {1}</value>
+    <value>S wird Morga ond älle versammlad sich. Älle? Noe! {0} fehlt, ond dahoem isch er ao ed... Man schdohd planlos rom, erst no bemerkt ma des abgetrennte Bein 🐺 em Gebüsch... {1}</value>
+  </string>
+  <string key="HunterKilledZombie">
+    <!-- 0 - victim name -->
+    <!-- bezieht sich auf den Kultistenjäger -->
+    <value>A bmerkbora Gschdank kemmt us dem Haus vom {0}... S Dorf ondersuachts ond fendet a Leiche vor em donkle Altar liegand... A Kultist 👤, tötet vomma Jäger 💂!</value>
+  </string>
+  <string key="NoAttack">
+    <value>Am nägschda Dag sammlad sich d Dorfbewohner em Dorfzentrum, dr Herrgott sei g'lobt - s hat letsch Nacht koene Dode gebba...</value>
+    <value>S siehd so aus wie wenn der Psychiatr ebbes brocht hett: heit Nacht isch elles ruhig gwesa, ond neamerd isch ombrocht worra. Jetz hanner frei - dui Grubbasitzong fällt aus! (S geit aber emmer no böse, ihr hend no ed gwonna!)</value>
+  </string>
+  <string key="CursedBitten">
+    <value>Du bisch von de Wölfe bissa worra. Als en Verfluchter bisch du jetzat an Wolf 🐺 gworra!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Dia andre Werwölfe send: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves">
+    <!-- 0 - victim name -->
+    <value>{0} isch bissa worra... abr {0} war verflucht 😾 ond isch jetz an Werwolf wie du selbscht! A Äpfelschorle uff da neia Teamkollega!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true">
+    <value>Sakramentzefix! Die Wölfe hendt di gfressa. LÄÄÄGGGER!</value>
+    <value>Wie des wohl isch, sae Leba zom verliera, wo ma doch no so viel vorhot? Du woeschs jetz jedafalls... du bisch von de Wölfe gfressa worra!</value>
+  </string>
+  <string key="WolvesEatDrunk">
+    <!-- 0 - victim name -->
+    <value>Jesses Maria! {0} isch dr Betrunkene g'wesa 🍻! Jetz bisch du voll voll, du kohsch nägsch Nacht koen ogreifa...</value>
+    <value>Während du no an {0} kaosch, wird dir uff oemol ganz schlechd ond du schlofsch nägsch Nacht erst ammol deinen Rausch 🍻 aus, schdadd auf d Jagd zom ganga.</value>
+  </string>
+  <string key="GuardWolf">
+    <value>Du hosch vorsuacht, an Werwolf 🐺 zom bschütza! Dr Wolf hot di gfressa. Ondank isch dr Welta Lohn...</value>
+    <value>Du Dummbeidl! Daen Schützling war an Werwolf 🐺. Zom 'Dank' hot er di als Nachtmahl g'fressa.</value>
+  </string>
+  <string key="GuardSaved">
+    <!-- 0 - saved player name -->
+    <value>Du hosch {0} 's Leba g'rettet!</value>
+  </string>
+  <string key="GuardNoAttack">
+    <!-- 0 - player name -->
+    <value>{0} isch et ogriffa worra, du hosch nix zom do ghet.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>Du wolltesch {0} bschütza, 's war halt koener dahoem! Des macht dir jo aber nix, du hosch oenaweg d ganza Nacht Wache vor saem Haus ghalda.</value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>Dr Schutzengel 👼 hot letsch Nacht auf di ufpasst ond älle Ogreifr vrtrieba!</value>
+  </string>
+  <string key="HarlotEaten">
+    <!-- 0 - player name -->
+    <value>D Hure 💋 hot sich zom falscha Zeitponkt entschiada, heit Nacht bei sich selbr zom schlofa. {0} isch von de Wölfe 🐺 gfressa worra!</value>
+    <value>An a paar Dag sott ma sich oefach koen Urlaub nemma... dodavo ked {0}, di Hure 💋, wohl a Liad singa - aber se kos nemme! - Ed bloß di Leiche zaegt, dass sui em falscha Haus 🐺 gescht Nacht war...</value>
+    <value>Isch des Karma? Eier Hure 💋 wollt heit niamand beglücka - die Rache dodafür lesst ed auf sich warda. {0} hot de Wölfe 🐺 heit Nacht richdig guad gschmeckd..</value>
+  </string>
+  <string key="HarlotNotHome">
+    <!-- 0 - player name -->
+    <value>Des isch komisch... {0} war et dahoem 💋! Geits koe Essa fir di...</value>
+  </string>
+  <string key="HarlotFuckWolf">
+    <!-- 0 - player name -->
+    <value>Jetz bisch du ens Haus von {0} naegschlicha zom a kloes bissle Spaß han, bloß zom an Werwolf 🐺 treffa. Jetzt bisch du dod!.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic">
+    <!-- 0 - player name -->
+    <value>{0} isch ens falsche Haus 🐺 letsch Nacht naeganga 💋! Dodabei hot se doch bloß a bissle Schbass han wella... Hajo, s Leba isch koen Schlotzer :(</value>
+    <value>Eier Hure 💋 wollt a bissle Schbass han, aber den hätt se mit ma andra han solla. Jetz war se halt an Snäck ferd Wölfe 🐺. Ob {0} denne wohl gschmeckd hot?</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic">
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>Wie schad... {0}, d Hure 💋 isch grad beim {1} okomma, ond no isch an Wolf ens Zemmer komma... Am nächschda Morga send boede dod.</value>
+    <value>{0} wolld doch bloß mit {1} a schena Nacht erleba 💋! Midda en dr Nachd send plötzlich d Wölfe zu denne Boide komma... Zwoe uff oemol!!</value>
+  </string>
+  <string key="HarlotVisitNonWolf">
+    <!-- 0 - target name -->
+    <value>Du merksch, dass {0} nix gmachd han ko, weil ihr d ganza Nachd zamma warad! 💋</value>
+    <value>Noch derra Nachd bisch du ganz sicher: {0} isch ed baes... Gut gmachd 💋!</value>
+  </string>
+  <string key="HarlotVisitYou">
+    <value>S war laedr z dongel zom was seha, aber mittlad en dr Nachd hochd plötzlich ebber auf dir drauf 💋 ! Ihr boede werrad fertig, dann isch dui Gschdald wieder ganga...</value>
+  </string>
+  <string key="DetectiveCaught">
+    <!-- 0 - detective name -->
+    <value>Du hosch ebbes gseha! {0} hot hier gschnüfflt! {0} ist der Detektiv 🕵!</value>
+  </string>
+  <string key="DetectiveSnoop">
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>Dae Schnüffelei hot ergeba, dass {0} {1} isch.</value>
+  </string>
+  <string key="HarlotShot">
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value>Sieht so aus, wie wenn sich {0} bei dr Hure äbbes gholt hätt! Mo er vom Dorfarzt zrickkommt, schämt r sich ganz schee ond zielt emma obeachteta Moment auf {1}: dr Schütze 🔫 hot sae Rache. {1} isch dod 💋.</value>
+  </string>
+  <string key="DefaultShot">
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name (Target was a role) -->
+    <value>Plötzlich hert ma an Schuss! Was isch ao do los? Ihr sehad {0}, da Schützen 🔫, überm dr Leiche von {1} schdanda, die Pischdole emmerno an saem Kopf - {2}</value>
+    <value>Weil hier aegentlich koener schießa duad, wondrad sich älle mo ma an Schuss hert, kurz vorm Obend. Älle rennad no ond ma siehd {0}, da Schützen 🔫, neba dr Leiche von {1} schdanda, sae Knarre leit daneba - {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true">
+    <value>Dr Werwolf hot gwonna!</value>
+  </string>
+  <string key="WolvesWin" isgif="true">
+    <value>Dui Werwölfe hend gwonna!</value>
+  </string>
+  <string key="VillageWins" isgif="true">
+    <value>Eier Dorf hot gwonna! Älle die mo eich schada kedat, send dod...</value>
+  </string>
+  <string key="TannerWins" isgif="true">
+    <value>Ihr dabbige Dorfleit! Hend ihr doch glatt da Gerbr glynchd! Der hot gwonna! XD</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Wer no übrig isch, und wa mit denne los isch:</value>
+  </string>
+  <string key="ZombieVotedConvert">
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value>{0} will {1} bekehra.</value>
+  </string>
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Youngest Zombie (killed)'s name -->
+    <!-- 1 - ZombieHunter's name -->
+    <value>Heit Nachd musst {0} a neies Mitglied zom Kult bekehra. Des Glück war wohl ed ganz auf eirer Seite, weil {1} als Kultjäger 💂 wohl so ziemlich das unglücklichste Ziel darstellte. Drom geits jetzt laedr koe neues Mitglied, sondern zom Tod von eierm neuschda Mitglied, {0}, der jetzt vom Kultjägr vrschdocha worra isch.</value>
+  </string>
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{0} war heit Nachd bei dir ond war sich sicher, er ked di heit Nachd zom Kult bekehra. Zom Glück merksch du was der vorhot ond nemmsch sofort dae Messer ond schdichsch an ab. An Kultist 👤 isch dod... {1} lebad no!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Dr Besuch vomma Kultisten hot di total durchnanderbrochd; dir isch klar worra, dass bloß dr Kult a richdiga Religion isch, ond dass du ao an Kultist 👤 sae mussch. Äll Nachd derfsch du dir mit de andere Kultisten oen aus, der dann der nächschde en eierm Kult werra soll.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of Zombies -->
+    <value>Kultisten: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new Zombie's name -->
+    <value>{0} isch jetzt em Kult!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest Zombie's name -->
+    <!-- 1 - target name -->
+    <value>{0} isch gschickt worra zom {1} bekehra... aber koener war dahoem!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value>Die baeße send gschdorba, älle andre send zu Kultisten bekehrt worra... Dr Kult hot gwonna!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Du wolldesch {0} jaga, aber {0} isch scho dod!</value>
+  </string>
+  <string key="HunterFindZombie">
+    <!-- 0 - target name -->
+    <value>Du gosch ens Haus von {0}, ond siehsch, wie er amma komischa Altar bedda duad... Schnell nemmsch du dae Messer ond verschdichsch den baeßa Kultisten 👤.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>Du gohsch ens Haus von {0}, aber do isch nix komisches. {0} isch koen Kultist, du gosch wieder hoem.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>Des Vorbild von {0} isch gschdorba 👶! En dr Wut isch {0} an Werwolf worra!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} isch gschdorba! Jetz bisch du so wütend, dass du an Werwolf wirsch 🐺! Daene befellde Kollegah send: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter -->
+  <string key="Villager">
+    <value>an Dorfbewohner 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>dr Betrunkene 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>die Hure 💋</value>
+  </string>
+  <string key="Seer">
+    <value>dr Seher 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>dr Verräter 🥸</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>dr Schutzengel 👼</value>
+  </string>
+  <string key="Detective">
+    <value>dr Detektiv 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>an Werwolf 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>dr Verfluchte 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>dr Schütze 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>dr Gerber 👺</value>
+  </string>
+  <string key="Fool">
+    <value>dr Narr 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>'s wilde Kind 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>dr Beobachter 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>dr Seher-Lehrling 🙇</value>
+  </string>
+  <string key="Zombie">
+    <value>an Kultist 👤</value>
+  </string>
+  <string key="ZombieHunter">
+    <value>dr Kultjäger 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="PlayersAlive">
+    <value>Lebende Spialr</value>
+  </string>
+  <string key="RanAway">
+    <value>Davohgloffa</value>
+  </string>
+  <string key="Dead">
+    <value>💀Dod</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 am Leba</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>an Freimaurer 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Du bisch an Freimaurer 👷. Dia Leit glaubad zwar, du wärsch Maurer vom Beruf her, aber des isch älles bloß an Doel von daener Tarnong. Wenn du et grad über daene Büchr sitzsch ond Vorschwörungstheoriea zammaschbennsch, übsch du ao gern amol mittelalterliche Schwertkämpf ond spielsch hischdorische Schlachda noch - ao liabend gern zamma. So woesch du, wer dia andre Freimaurer send ond erfährsch ao, wenn oener von denne zom Kult bekehrt wird.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Mo d Sonn aufgoht, ko ma da Körpr von {0} bluadig auf em Felsa liaga seha. Dr Dode hot a Freimaurerabzaecha 👷 en dr Hand.</value>
+  </string>
+  <string key="MasonTeam">
+    <value> Pass bloß uff, dass du daene neie Freind ed ausversäha vrdächdigsch. Nommol, hier ischd Mitgliederlischde: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- Nicht implementiert? * -->
+    <!-- 0 - Youngest Zombies name -->
+    <value>Eier neischdes Mitglied isch zu {0} ganga, zom da Kult vergrößra, aber des Haus war dodal he, vill Bluad, ond Fäda von amma Wolfasfell 🐺 vor dr Dier...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>Eier Horde isch zu {0} ghetzd, 'S Obendessa wär ferdig, aber no sehad ihr an großa hella Schoe, des machd eich Angschd! Dr Schutzengel 👼 hot eich älle abgwehrt ond ihr gangad hongrig zruck.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest -->
+    <!-- 1 - target's name -->
+    <value>{0} isch losgschickd worra, zom {1} bekehra, aber laedr war dr Glauba von {1} z'schdark ond so kommd {0}, ohne äbbes gmachd zom han, wieder hoem. :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name --><!--   Ich habe diesen String absichtlich hochdeutsch gelassen, da es seehr wichtig ist, dass jeder ihn verstehen kann.   -->
+    <value>@{1}, ein Spieler mit dem Namen {0} ist bereits beigetreten. Bitte ändere deinen Namen, um beizutreten.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Du bisch ens Haus von {0} ganga ond hosch vill Schbass ghed... Abr grad wo du ganga willsch, siehsch du emma Nebaraom em Donkla an komischa hella Altar 👤 ...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>war</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>S Dorf wachd auf ond triffd sich am Dorfplatz ... Bloß {0} isch ed do. Wo ma sae Haus ondersuchd fendet ma die Leiche von {0}.</value>
+    <value>Mo d Dorfbewohner am nägschda Morga aufwachad, fendad se {0}. Dod. Er isch aus oklärde Omschdtend verschdorba...</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Komisch... {0} war heit ed bei dr Versammlung von de Freimaurer 👤... 0.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>Während amma laofenda Schbiel kosch du ed oefach abhaoa! Des hot dr Gruppaadmin deaktiviert!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>isch dod</value>
+  </string>
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} ist jetzt ein Gruppenadmin. Benutze /config, um Spieleinstellungen zu verändern.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>{0}, Du bist bereits in einem Spiel!</value>
+  </string>
+  <string key="MultipleGames">
+    <!-- Nicht implementiert? -->
+    <value>Die Gruppe startete mehrere Spiele zugleich... Überflüssige Spiele werden entfernt.</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Die Gruppe ist momentan in der Warteschlange. Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>Aufgrund von Wartungsarbeiten müssen wir eine kurze Pause einlegen.\nEs muss noch auf {0} Spiele gewartet werden...
+	\nSiehe @greywolfdev für mehr Informationen :)</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Sorry, das Maximum an gleichzeitig laufenden Spielen wurde erreicht. Leider können keine weiteren Spiele gestartet werden ({0}).  \nPosition in der Warteschlange: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>{0} ist eine bevorzugte Gruppe und hat deshalb die Warteschlange übersprungen!</value>
+  </string>
+  <string key="NoGame">
+    <value>Koener hot a Schbiel gschdarded! Wenn ihr schbiela wellad, tippad auf /startgame fer a normales, oder auf /startchaos fer a Chaos-Schbiel!.</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Nur Gruppenadmins können diesen Befehl ausführen.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Nach diesem Spiel wird der Bot aufgrund von Wartungsarbeiten pausiert.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Nach diesem Spiel wird der Bot wegen eines automatischen Updates kurz pausiert.</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserID war null. Sicher, dass du die Nachricht als Antwort gesendet hast?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} ist bereits ein Admin!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>{0} ist kein Admin!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>{0} wurde von der Adminliste entfernt.</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Die Sprache wurde geändert zu: {0}</value>
+  </string>
+	<!--   Bitte die unübersetzten Strings ab Z. 600 bis hierhin unübersetzt lassen! Gruß, Ludwig :)   -->
+  <string key="NoSeer">
+    <value>Laedr geit's koen Seher.</value>
+  </string>
+  <string key="TimesUp">
+    <value>Dia Zeit isch om!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Du bisch Amor 🏹. Mit Windla ond ma Boga ond zwoe Pfeile bwaffnet, fliagsch du nondr zur Erde. Wähl zwoe Spialr aus, di mo sich saumäßig ennenondr vorliaba sollad. Wenn oener von denne Vorliabte sterba duat, brengt si dr andre wegem Liabeskommer au om.</value>
+    <value>Du bisch dr Amor. Mit denne stylische Flügelschuh fliagsch dorch da Hemmel ond feuersch Pfeile auf oschuldige Passanta, die sich no dodal ennenandr vrliabad ond uf offner Stroß übranander herfallad. Wenn du wissdesch wie oft des Problemla geit...</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Du bisch dr Doppelgänger 🎭. Ma saed, daene Vorfahra sendt Gestaltwandler gwesa ond konndad sich en älles verwandla wa se woldad. Du hasch wenigschdens a baar von denne ihre Fähigkeita geerbt. Wähl en Spialr, ond sobald der schderba duat, wirsch du zu saener Rolle.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Du bisch dr Jäger 🎯. Du schläfsch ed so guat ond würdsch nie ohne dae Gwehr ens Bett ganga. Wenn du stirbsch, kosch no ebber andres vrschießa, der mo no nadierlich ao schdirbd. Wenn du gfressa wirsch, hosch die Chance, no an Werwolf en den Tod mitzunehma, des isch no abr raenes Glück.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Du bisch dr Serienmörder 🔪. Nochdem du vor kurzem aus dr Klapsmühle gfloha bisch, wellsch jetzad so viale Persona wia möglich ombringa. Jede Nacht kosch da Körper von oem Schbialer daener Sammlong hinzufüga.</value>
+    <value>Du bisch dr Serienmörder 🔪. Als du a Kend warsch, hosch du em Garda dide Viacher gsammelt. Heit sammelsch Lebra, legsch se ae ond stellsch se en darm Regal aus. Andre Leit fendets womeglich eklig, abr dir machds Schbass.</value>
+    <value>Du bisch dr Serienmörder 🔪. Seid arra fehlgschlagna Hirn-OP übrkommd di emmer nachts s Bedürfnis, mit ma großa Küchemessr aufd Stroß zom laufa ond da nächschdbesta Typsi aufzomschlitza, zom sae Blut saufa. Dass du dabai emmer d Leber metnemmsch, liagt wohl an daener Kleptomanie.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Du wurdesch von dr Liebe ❤ troffa. Dia Erinnrung an {0} wird nemme aus daem Herz verblassa. Euer Zial isch, dass ihr boede überleba dend. Wenn aber oener von eich schdirbd, no ko dr andre au nemme leba... Aber zom Glück gewinnsch du jetzt au mit daem Partner saem Team :3</value>
+    <value>Du hosch di granadamäßig en {0} vrliebt ❤. Nix ond neamerd ko eich trenna! Eddamol dr Dod: Wenn oenr von eich schdirbd, no wird dr andre sich grad amol selber ombringa. Aber, koe Sorg, Des hot ao äbbes guads: egal ob lebend odr dod, du gwennsch emmer mit {0} mit :3</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>S Dorf hot gwählt, di zom lyncha! Des isch dae ledschda Chance, wähl ebber, den mo du vrschießa duasch, während du selber verrecksch!</value>
+    <value>S Dorf hot sich dafür entschieda, di zom lyncha! Des isch dae ledschda Chance, ebber de mo du ed leida kosch mit en da Tod zom reißa. Eigendlich dädsch jo gern älle verschießa, die mo di gwählt hend, so baeß, wie dui send - aber du hosch halt nemme arg viel Zeit!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} greifd noch saener Knarre 🎯, während d Schlinge om saen Hals sich zuziahd, aber {0} war z'langsam ond fällt mit amma lauta Knacka von saem Nacka en da Dod...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} greifd noch saener Knarre 🎯, guckd älle Leid o... ond ko sich ed entscheida, wen er vrschießa soll. Er nemmd, sae draurigs Schicksal akzeptierend, saen ledschda Atemzug...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Während {0} scho d Lufd ausgoht, schnabbd r sich sae Knarre 🎯, lädt se, zielt, druckt ab ond trifft {1}! {1} fälld om, dod. {2}</value>
+    <value>Obwohl r aenglich gar koe Zeit meh hot, glotzd {0} nommol älle o. Jedem laofd a Gänsehaud übr da Rücksa. Schließlich schdarrd er oe ganz beschdimmda Person o: 'R nemmd sae Gwehr 🎯 und vrschießd {1}, nickd zfrieda weil r jetzd ao schderba ko ond nemmt äbafalls saen ledschda Atemzug. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <!-- originally just meant for the gunner shooting the hunter, through the lacking implementation of "!= killed by wolf" now also used for the serial killer killing the hunter -->
+    <value>Du bisch tötet worra! Während de em schderba liegsch, kosch no ebber vrschießa... Dapferd jetz!</value>
+    <value>Ma hot di tötet! Bevor du da Löffl komplett abgibsch, kosch du aber oen, den mo de grad ed so leida kosch, mit en da Tod nemma. Wen de do jetzad nemmsch - zufällig oder an ganz beschdimmda, der dir eh aufd Nerva gohd - isch dae Gschiachd. Oes isch abr fei sicher: Arg vill Zeit hosch nemme!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <!-- originally just meant for the gunner shooting the hunter, through the lacking implementation of "!= killed by wolf" now also used for the serial killer killing the hunter -->
+    <value>Dr Ogriff auf {0} war zvill; so vill, dass r eddamol noch saem Gwehr 🎯 greifa konnt, als er scho em Bluadsee glega isch...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>Während {0} am Boda leit ond saene ledschde Atemzüge nemmd, ko r sich ed entscheida, wen r vrschießa soll... 🎯 ond indem r sae Schicksal akzepziert, schaeded r von de läbende...</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Schlemm vrletzd ond dabei, saene ledschde Atemzüge zom nema, fällt {0} auf da Boda... aber ed ohne noch saener Pischdol 🎯 zom greifa ond {1} zom vrschießa, der direkt zwischa de Auga troffa wird. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>Dr Kultischdt 👤 {0} schleichd zom Haus von {1}, schdeigt nae - ond wird direkt vomma Wahnsinniga mit amma Messer 🔪 begrüßt!!! En alphabetischer Reihafolge schdichd {1} mit saem Messr d Organe von {0} ab - {0} isch jetz dod...</value>
+    <value>Dr Kult 👤 schickd {0} zom {1} konvertiera, abr schdattdessa dass boede zrickkommad, flieagd dr Körper von {0} ausam Fenschdr, mit Messer 🔪 in jedem oenzelna Organ! WAS FERRAN PSYCHO! {0} isch dod...</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - dead wolf's name -->
+    <value>D Wölfe 🐺 hend zwar letsch Nachd da Jäger 🎯 tötet, aber der hot ao no an Wolf vrschießa kenna! {0} isch ebafalls dod..</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - dead wolf's name -->
+    <value>Dr Wolf 🐺 hot letsch Nachd da Jäger 🎯 fressa wella, der war abr schneller ond vrschießd da Wolf {0} bevor r gfressa worra ko!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>D Wölfe wolldad Obndessa essa, aber se hend an vrruckda Mörder troffa 🔪! Dr Werwolf 🐺 {0} isch em Kampf gschdorba!</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>{0} hot zwar gmoend ghet, er ked ammole richdig ausschlofa, aber des hot ed gschdemmd. S Dorf versammeld sich am nächschda Morga, bloß zom {0} fenda, vom Kopf bis and Zeha halbierd, aber aus irgendamma Grond war sae Leber ed do... Dr Serienmörder 🔪 hot wiedr zugschlaga - {1}.</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Du wolldesch zwar {0}'s Leber en dae Sammlung aufnemma, do war bloß laedr der Schutzengel 👼, der di abgwehrd hot! Heit Nacht hosch hald Pech ghed - 'S Leba isch koe Schlotzer :/</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>Dr Kult schickd {0} zom {1} konvertiera, aber s isch es ganz so glaofa, wie ihr des denkd häddad: Ma herd an Schuss 🎯, Kurz drauf kommt dr Körpr von {0} ausam Fenschdr gfloga! {0} isch dod...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Du hosch vrsuachd, da Serienkiller 🔪 zom bschütza, abr der isch rauskomma ond hot di 148 Mol gschdocha! Du bisch dod...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Du bisch in {0}'s Haus naegschlicha ond hosch ogfanga, a bissale Schbass zom han. Älles siehd guad aus, bis {0} a Messer ausam Nachdkäschdle ziehd ond auf di aeschdichd 🔪, wobei er lachd wie an bleder! Du bisch gschdorba...</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <!-- 0 - harlot's name -->
+    <value>Am näggschda Morga fendat ihr da Körper von {0}, s hübsche Gsichd siehd schrecklich ausschrecklich entschdelld aus, weil s 148 Messerschdiche erleida mussde... 🔪 Ond ihr sehad a kloes, aegritztes Herz onder {0}'s Bruschd. Was des wohl hoeßa soll? 💋</value>
+    <value>Mo d Sonn aufgohd, versammlad sich älle Dorfbewohner aufam Dorfplatz. Entgeischderd glotzad se auf da Oblick, den se do sehad: a Leiche, zu ville Schdichwonda 🔪 zom se zähla kenna (Es send 148!). Zutiefschd bedaurad ihr, dass {0}, d Hure, d Radiesla jetzd von onda zähla ko...</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>Dr Doppelgänger 🎭 {0} isch jetzad an Freimaurer, grad wie du selber!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} isch gschdorba ond du vrwandelsch di in an Freimaurer 👷. Daene Kamrada send (wenns oene geit): {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new Zombie's name -->
+    <value>Dr Doppelgänger 🎭 {0} isch zom Kultisten worra, grad wie du selber!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} isch gschddorba ond du vrwandelsch di in an Kultisten 👤. Daene Briadr ond Schweschdra send (wenns oene geit): {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Dr Doppelgänger 🎭 {0} isch jetzad an Wolf, grad wie du selber!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} isch gschdorba ond du vrwandelsch di in an Wolf 🐺. Daene Kollega send (wenns oene geit): {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>D oeziga Person die mo no am Leba isch, isch dr Serienmörder! Der hot gwonna!</value>
+  </string>
+  <string key="AskKill">
+    <value>Wen mechtsch heit Nachd töta?</value>
+    <value>Wen mechtsch heit Nachd abmurksa?</value>
+    <value>Wer soll heit Nachd dro glaoba missa?</value>
+    <value>Wen brengsch heit Nachd omd Ecke?</value>
+    <value>Wen willsch heit Nachd aufschlitza?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Mit am letschda Atemhauch von {0} rennt {1} her ond fälld em brella auf saene Knie. {1} ko den Tod ed vrtraga, weil {0} ond {1} sich ewige Liebe ❤ gschwora hend und drom vrschießt {1} sich selbr mit dr nägschtbeschda Knarre. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Wer mechtsch werra, wenn dui Person schdirbt?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Wer sollad die Schätzla ❤ sei? Wähl ammol oen:</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Wer sollad die Schätzla ❤ sei? Wähl ammol da andra:</value>
+  </string>
+  <string key="Hunter">
+    <value>dr Jäger 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Amor 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>dr Serienmörder 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>dr Doppelgänger 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Du bisch des wilde Kind 👶. Dae Vorbild isch {0}.</value>
+  </string>
+  <string key="LoversWin" isgif="true">
+    <value>Wahra Liebe hält dr immer! Die Liebende hend gwonna!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>Midda em Zentrum von eierm Dörfle fendad ihr da Körper von {0}, von Schüsse durchlöcherd. Sieht so aus, wie wenn {0} versucht hätt, sich an da Jäger 🎯 ozomschleicha! Satz mit X: Des war wohl nix - {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>A komisch verschleierda Gschdald wolld, dass du bei saem Kult 👤 mitmachsch, aber daen Gaeschd war zu schdark.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Du hosch di doch sch auf dr Wartelischde eitraga für {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Du hosch di auf dr Wartelischde für {0} eitraga. I schreib dir äbbes, sobald do a neies Schbiel schdarda duad!</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>A neis Schbiel fängd o in {0}! Dapferd, ed z'schbät komma!</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Am Morga schdandad {0} ond {1} wüdend aufam Dorfplatz ond beschuldigad sich gegaseitig, der Mörder zom sae. Tja, {1} hot Rechd, aber des hilfd am ao nemme vill. Ma sieht no, wie {0}'s Messer 🔪 en dr Sonne aufblitzd, kurz drauf schdeckds scho em Herza von {1}.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>'S kompledde Dorf isch vrreckd... D' Leicha 💀 liegad überall rom. Des Schbiel gwinnt gar koener...</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Mo'd Sonn uffgohd, schbazierad die boide, die mo jetzt no am Leba send, zamma end Midde vom Dorf. Do gohts no aber ab: Plötzlich nemmt {0} a Messer 🔪 aus dr Kiddldasch ond schbrengt damit auf {1}. Grade mo des Messer sich tief en sae Herz naebohrt, schnappt sich dr Jägr sae G'wehr 🎯 ond schießt {0} gezielt en da Kopf. Boide send dod - Des Dorf hot jetzad koine Bewohner meh. Do geits koin Gwenner...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>Du hosch zwar vrgessa, ebber zom wähla, aber dein liebr Bot hot für di ausgsuachd: {0}</value>
+  </string>
+  <string key="Won">
+    <value>SIEGER! :D</value>
+  </string>
+  <string key="Lost">
+    <value>Vrlierer :(</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>Des war jetzad 's {1}. Mol, dass {0} innerhalb von de letzschde 24 Schdonda tötet worra isch, wegam Ed-Mitmacha bei dr Abschdimmung.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be: Caporegime 👷\nYou are a caporegime blah blah-->
+  <string key="AboutVG">
+    <value>Als Dorfbewohner 👱 mag dein Leben vielleicht erst einmal nicht so rosig aussehen - dafür hast du immer eine ruhige Nacht und kannst dich tagsüber in Ruhe auf die Abstimmung vorbereiten, um das Böse auszutreiben.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Du bist der Seher. 👳
+	Nachts kannst du die Rolle eines Spielers in Erfahrung bringen - ob du dafür eine Glaskugel nutzt, Tarotkarten oder die Sache einfach auswürfelst, interessiert ehrlich gesagt im Dorf niemanden... Aber Achtung; gehe weise mit deinem Wissen um. Als Seher bist du natürlich ein interessantes Angriffsziel - dann nutzt du mit deinem Wissen niemandem mehr!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Du bist ein Gestaltwandler - also gewissermaßen. Während des Tages als normaler Bewohner des Dorfes um deine Deckung bemüht, bist du in der Nacht ein Werwolf 🐺 und kannst einen Spieler auswählen, den du töten willst. Aber Obacht! Wenn du dich für den Betrunkenen entscheidest, hast du zwar genug Disziplin, um zum täglichen Lynchen zu erscheinen, bist aber nicht mehr in der Lage, in der nächsten Nacht auf die Jagd zu gehen. Die Hure kannst du nur töten, wenn du ihren Dienstplan kennst und weißt, wann sie sich entscheidet, die Nacht zuhause zu verbringen. Wenn sie jedoch in der Nacht unterwegs ist, dann findest du nur ein leeres Haus vor und kehrst frustriert von deiner vergeblichen Jagd zurück. Wenn du versuchst, den Verfluchten zu fressen, verwandelt dieser sich auch in einen Werwolf und begleitet dich von nun an bei deinen Abenteuern - geh dem Jäger jedoch lieber aus dem Weg. Er ist geübt im Umgang mit seiner Waffe und kann sie im letzten Moment auf dich richten und dich mit in den Tod reißen. Wenn du der einzige Werwolf bist, und er es schafft, noch einen Schuss auf dich abzufeuern, dann stirbst du nicht nur, der Jäger überlebt es auch noch knapp. Dein größter Fehler wäre es, zu versuchen, den Serienmörder zu fressen. Du bist sowohl seinem Wahnsinn, als auch seinen Waffen nicht gewachsen und schaffst es in 80% der Fälle nicht, ihn zu verletzen und stirbst selber durch einen geschickten Gegenangriff seinerseits.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Du bist die Hure 💋 des Dorfes - was würden denn deine Eltern jetzt sagen?! Aber wie auch immer, Gott möge dir verzeihen. Du darfst jede Nacht einen deiner Mitbürger besuchen - nimm dich jedoch in Acht vor den anderen Wesen der Nacht! Wenn du einen Wolf besuchst, wirst du das nicht überleben... genauso verhält es sich, wenn dein Freier von einem Wolf heimgesucht wird. Ihr sterbt dann beide und werdet vielleicht fälschlicherweise als Romeo und Julia beerdigt (willst du das?). Aber, Kopf hoch: wenn die Wölfe dich erwählen, passiert dir nichts - du bist schließlich nicht zuhause! Dem Verrückten mit dem Messer entkommst du so aber leider trotzdem nicht - dieser verfluchte Serienkiller weiß irgendwie trotzdem, wo du bist.
+	Übrigens; halte die Augen offen... es könnten sich auch Kultisten im Dorf rumtreiben! Du bist zwar nicht die Hellste, aber manchmal kannst du ihre Absichten doch erkennen, und wirst nicht konvertiert - natürlich nur, wenn du in der Nacht überhaupt zuhause bist...</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Prost! 🍻
+	Dein Leben ist einfach: du hast zwar kein Zuhause mehr (und dein Chef hat dir auch gekündigt), aber wer braucht schon solch einen Luxus, solange das Licht in der Dorfkneipe noch brennt?! Genau. Im Dorf bist du trotzdem recht beliebt - jeder weiß, dass es auch einen Wolf eine ganze Nacht ausknockt, wenn er deinen Blutcocktail trinkt!</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Als Verfluchter 😾 hast du nicht die offizielle Erlaubnis zu fluchen, nein, viel mehr hängt das Verflucht-Sein mit deinem Schicksal zusammen: du bist zwar ein Dorfbewohner, aber wenn dich in der Nacht ein Wolf beißt, verwandelst du dich ebenfalls in eine blutrünstige Bestie ;)</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Du Verräter! 🥸
+	Du bist zwar anfangs ein Dorfbewohner, aber das kann sich jederzeit ändern: eigentlich kannst du die Dummköpfe nämlich gar nicht leiden. Wenn alle Wölfe tot sind, schlüpfst du in dein Wolfskostüm und ziehst dann an ihrer Stelle um die Häuser, um dich an den Dorfbewohnern zu rächen! Du bist zwar sehr gut darin, deinen Hass zu verstecken, aber der Seher kommt dir manchmal doch auf die Schliche - er kann dich zwar als Dorfbewohner sehen, aber auch als Wolf...</value>
+  </string>
+  <string key="AboutGA">
+    <value>Du bist ein von Gott gesandter Engel 👼, dazu berufen, die bösen Kreaturen aufzuhalten! Jede Nacht kannst du über einen Bewohner wachen, um ihn vor dem Bösen zu schützen - aber gib Acht, nicht jeder will beschützt werden... der Serienmörder hat es gar nicht gerne, und auch der Wolf wird dich nur mit 50%iger Wahrscheinlichkeit am Leben lassen... Dafür schläfst du nachts etwas ruhiger, wenn Kultisten um dein Haus ziehen: durch deine gottgegebenen Kräfte hast du die Chance, sie abzuwehren!</value>
+  </string>
+  <string key="AboutDetective">
+    <value>No shit Sherlock, du bist tatsächlich der Detektiv! 🕵
+	Jeden Tag hast du die Möglichkeit, einem beliebigen Bewohner hinterher zu spionieren, um am Ende des Tages Gewissheit zu haben. Aber nimm dich in Acht, wenn du schnüffelst, werden vielleicht die Wölfe auf dich aufmerksam! (40% Wahrscheinlichkeit)
+	Wenn Kultisten durch das Dorf wandeln, kannst du dich mit deiner Lupe etwas sicherer fühlen, denn die Reflektion verschreckt sie manchmal!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Du bist der Schütze 🔫 - und hast leider auch etwas zu viele Actionfilme gesehen. Gehe vorsichtig mit deiner Waffe um, denn wen du hier erschießt, der ist auch wirklich tot! Als kleine Vorsichtsmaßnahme hast du deshalb auch nur zwei Kugeln. Während des Tages kannst du einen Spieler aussuchen - nicht vergessen, das Zielwasser zu trinken! - und wirst diesen dann bei Anbruch der Dämmerung, genau vor der Abstimmung, zur Strecke bringen. Aber aufgepasst; wenn du abziehst, hört das ganze Dorf den Schuss: jeder weiß dann also, dass du der Schütze bist</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Du bist der Gerber. 👺
+	Du bist ein Außenseiter und im Dorf nicht besonders beliebt, aber das ist gut: dein einziges Ziel ist es nämlich, alle glauben zu lassen, dass du ein Werwolf bist. Wenn du gelyncht wirst, gewinnst du - und alle anderen gucken dumm aus der Wäsche ;)</value>
+  </string>
+  <string key="AboutFool">
+    <value>Du bist der Narr. 🃏
+	Zwar liebenswürdig, aber auch gefährlich, auf deine eigene Weise: weil du es nicht besser weißt, behauptest du, der Seher zu sein - dabei sind die Rollen, die dir angezeigt werden, komplett zufällig! Vielleicht hättest du damals bei Professor Trelawney doch besser aufpassen sollen...
+	Etwas hast du dem Seher aber voraus: du siehst den Verräter auch als solchen - während ein richtiger Wahrsager sich bei diesem nur zwischen Wolf und Dorfbewohner irren kann! Die einzelnen Wölfe kannst du aber leider nicht voneinander unterscheiden... :/</value>
+  </string>
+  <string key="AboutCult">
+    <value>Du bist ein Kultist 👤 - fashiontechninsch vielleicht nicht ganz auf der Höhe, trotzdem - oder vielleicht gerade deshalb? - bist du relativ erfolgreich: jede Nacht kannst du einen Spieler aussuchen, den du zu deinem Kult bekehren willst; und das ist auch dein Lebensmotto: das ganze Dorf zu bekehren. Wenn am Ende nur noch Kultisten überleben, gewinnt ihr! Aber nicht immer hast du Glück - manche Bewohner sind schwerer zu bekehren als Andere...</value>
+  </string>
+  <string key="AboutCH">
+    <value>Du bist der Kultjäger 💂, und, selbsternannter Fashionbeauftragter: schwarz ist so out! (Deshalb hasst du auch die Kultisten so.) Jede Nacht kannst du einen deiner Mitbürger besuchen, um ihren Kultstatus zu überprüfen - sollte er dazu gehören, benutze dein Schwert! Natürlich bist du auch gefeit gegen Angriffe aus dem Kult: sollten die Fashionvictims tatsächlich versuchen, dich zu attakieren, stirbt ihr neustes Mitglied.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Du bist das wilde Kind! 👶
+	Jung und unerfahren, dafür aber rotzfrech. Trotzdem sitzt dein Herz am rechten Fleck und du hast auch ein Vorbild, das du anfangs auswählst und heimlich bewunderst - sollte dein Vorbild sterben, rennst du von zuhause fort und wirst ein Werwolf, um den Tod deiner Ikone zu rächen!</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Du bist der Seher-Lehrling! 🙇
+	Noch führst du ein einfaches Leben, ohne Verpflichtungen, aber das wird sich ändern, sobald der - echte - Seher stirbt: dann nimmst du seinen Platz ein, mit den gleichen Rechten und Fähigkeiten wie dein Meister!</value>
+  </string>
+  <string key="AboutBH">
+    <value>Du bist der Beobachter! 👁
+	Und nein, an deiner Profession ist nichts Untugendhaftes: du weißt lediglich, wer - und ob - es einen (richtigen) Seher gibt: mit dem Narren gibst du dich erst gar nicht ab!</value>
+  </string>
+  <string key="AboutMason">
+    <value>Nach einem beschwerlichen Leben voller Arbeit hast du das Gefühl, etwas verändern zu wollen und, nach dem Sinn des Lebens suchend, entschließt du dich, ein Freimaurer 👷 zu werden. Dabei stehen für dich vor allem die Ideale Freiheit, Gleichheit und Brüderlichkeit im Mittelpunkt. Da du eine Loge gründest, um dich mit Gleichgesinnten auszutauschen, kennst du auch alle anderen Freimaurer im Spiel. Ansonsten erfüllst du auch weiterhin deine Pflichten als Dorfbewohner und erscheinst jeden Abend zum Lynchen. Durch eure regelmäßigen Treffen erfährst du auch, wenn einer der Euren vom Kult verführt wurde und diesem beitrat.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Du bist der Doppelgänger 🎭 - schon deine Ahnen verstanden sich gut darin, in die Rollen anderer zu schlüpfen: sie waren berühmte Schauspieler, Geheimagenten und Identitätsfälscher. In so einem kleinen Dorf ist es natürlich schwieriger, nicht aufzufallen - deshalb nimmst du die Identität dessen, den du bei deinem Einzug ins Dorf wählst, auch erst nach dessen Tod an. Du schlüpfst vollständig in die Rolle dessen, den du kopierst: hast die gleichen Fähigkeiten, musst allerdings auch mit den Entscheidungen dessen leben: kopierst du das wilde Kind, übernimmst du dessen Vorbild - und wenn dieses schon tot ist, wirst du direkt zum Wolf.
+	\nSollten Kultisten im Dorf verkehren, haben sie keine Möglichkeit, den Doppelgänger zu bekehren, bevor er sich nicht verwandelt hat. Außerdem verliert der Kult ein Mitglied, sollte der vom Doppelgänger Kopierte Kultist gewesen sein: der Doppelgänger nimmt dann die urprüngliche Rolle des Toten ein.
+	\nAls Doppelgänger ist es dir ganz wichtig, dass das Dorf erkennt, wie gut du deine Profession beherrscht: solange du dich nicht verwandelt hast, kannst du das Spiel auch nicht gewinnen! Wenn das Spiel vorbei ist, und du noch du bist... verlierst du.</value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      Es knistert, aber gewaltig! Dabei hast du deinen Job als Elektriker doch eigentlich an den Nagel gehangen - deine neue Berufskleidung ist zwar etwas seltsam, aber wer möchte nicht gern von Luft und Liebe leben? Also: deine Berufung als Amor 🏹 ist es, zwei Pfeile abzuschießen: die beiden Bewohner, die von ihnen getroffen werden, werden sich unsterblich ineinander verlieben, unfähig, ohne den jeweils anderen zu überleben: sollte einer von beiden sterben, wird sich der Andere aus Kummer das Leben nehmen... Je nachdem, wie geschickt dein Händchen ist, kann daraus ein großes Hochzeitsfest oder ein Killerpärchen entstehen!
+	  Wichtig: die Liebenden wissen zwar voneinander, bekommen die Rollen des jeweils Anderen jedoch nicht mitgeteilt. Sie gewinnen, wenn mindestens einer von ihnen im gewinnenden Team ist - sollten die Beiden es schaffen, als die letzten Beiden am Leben zu sein, gewinnen sie als Paar (Herzchen-Emoji hier evtl?)
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+	Im Dorf nur als Jäger 🎯 bekannt.
+	Du bist ein nachtragender, mürrischer Kauz, der am liebsten für sich bleibt: die Gesellschaft von anderen kannst du nicht so gut leiden - die sind sowieso alle nur neidisch auf deine Trophäen! Wie auch immer; ohne dein Gewehr gehst du sowieso nicht aus dem Haus. Und überhaupt. Das muss überall mit hin. Beim Duschen ist es, zugegebenermaßen, immer etwas hinderlich - aber du hast genügend schlechte Filme gesehen, um zu wissen, was alles hinter dadrin auf dich warten kann... aber hier musst du dich ja vor allem gegen Wölfe wappnen: vorsichtshalber schläfst du deshalb immer nur mit einer geladenen Waffe (man erkennt dich im Dorf immer am Abdruck im Gesicht). Wenn die Wölfe dich angreifen, hast du so die Möglichkeit, einen letzten Schuss abzufeuern, bevor du stirbst! (30%-Chance bei einem Wolf, +20% für jeden weiteren) Sollte der Wolf allein sein, überlebst du somit, ansonsten stirbst du zwar, reißt aber einen aus dem verfluchten Pack mit dir!
+	\nLeider bist du im Dorf nicht sonderlich beliebt. So kann es kommen, dass du auch am Tag nicht sicher lebst - aber das weißt du ja schon (und hast zum Glück ja auch vorgesorgt, für alle Fälle): wenn dich der Schütze tötet, oder du beim Lynchen stirbt, kannst du dich an einem Spieler deiner Wahl rächen.
+	\nUnd überhaupt: wenn irgendwer an deiner Tür steht (Versicherungsvertreter, Postbote, Zeugen Jehovas) bist du ja sowieso schon misstrauisch - aber wenn nachts verschleierte Gestalten um dein Haus schleichen, kann es gut sein, dass deine Paranoia mit dir durchgeht: wenn ein Kultist versucht, dich zu konvertieren, lässt du ihn in der Hälfte der Fälle mit einem Fingerzeig auf deine Waffe wieder laufen, in der anderen Hälfte der Fälle bist du schon am Morgen mit dem falschen Fuß aufgestanden und kannst nicht anders, als ihn zu erschießen.
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Meine Güte, das Irrenhaus war vielleicht ein Witz, und die Sicherungsvorkehrungen... dir als Serienmörder 🔪 nicht einmal im Ansatz würdig. Aber jetzt bist du ja zum Glück wieder frei - und hier, in diesem Dorf voller Hinterwäldler wird dich wohl kaum jemand finden... Hinter deinem charmanten Grinsen versteckst du deine wahre Natur: du willst sie einfach nur tot sehen. Alle. Du bist ein Ein-Mann-Team, dein eigener Gefährte: du kannst nur alleine gewinnen (oder mit deinem Partner, sollte es tatsächlich jemand schaffen, dir dein verloren gegangenes Herz zurückzuschenken...) - dafür kannst du aber auch jeden unbehelligt umbringen (natürlich nur, wenn du tagsüber nicht der Dorfabstimmung zum Opfer fällst). Eigentlich sollten die dir ja aber sowieso dankbar sein, immerhin hilfst du ihnen, diese Werwolf-Pflage in den Griff zu kriegen: wenn die Wölfe dich angreifen, suchst du dir einen x-beliebigen von ihnen aus und tötest ihn (es sei denn, du bist gerade zu beschäftigt mit deinem eigenen Opfer - mit dem Alter überlebst du solche Attacken nur noch in der 20% der Fälle). Überhaupt, nächtliche Besucher sind dir ja lästig, egal welches Ansinnen sie haben... du willst schließlich die Zeit ungestört mit deinem neusten Opfer verbringen! Wer sich also des nachts an deine Tür verirrt, wird Teil der Show... und stirbt.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para ist nur ein verrückter Entwickler, der gerne die Leute anbellt. Vielleicht hat er sich auch einfach ein wenig zu oft mit Werwölfen angelegt... Man sollte sich wirklich nicht mit Werwölfen anlegen.</value>
+  </string>
+  <string key="EndTime">
+    <value>'S Schbial hot dauerd: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Dag {0}</value>
+  </string>
+  <string key="NodeShutsDown"><!-- BLEIBT HOCHDEUTSCH! Gruß, Ludwig :) -->
+    <value>Irgendetwas muss schief gelaufen sein... dieser Knotenpunkt hat sich abgeschaltet :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Ich han dir privat äbbes gschickt :) Guck ammole do.</value>
+  </string>
+  <string key="StartPM"><!-- WÜRDE ICH EBENFALLS UNÜBERSETZT LASSEN! Gruß, Ludwig :) (abgesehen davon, dass dieser String wohl eh nie verwendet wird) -->
+    <value>Bitte klick mich an, damit ich dir schreiben kann: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Dannge, jetzt ko i mit dir schreiba!</value>
+  </string>
+  <string key="MustReplySmite"><!-- ABSOLUTER MÜLL, Smite by reply geht gar nicht. -->
+    <value>Du musst auf den User antworten, den du aus dem Spiel nehmen willst!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Wa willsch macha?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Du mussch den Befehl en arra Gruppe benutza! Wenn de en koera drennabisch, probier mol /grouplist aus. :)</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Du mussch den Befehl en arra Gruppe benutza! Wenn de en koera drennabisch, probier mol /grouplist aus. :)</value>
+  </string>
+  <string key="PingInfo">
+    <value>Do hosch:\n\nReaktionszeit von Telegram: {0}\nNachrichten pro Sekunde: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Was für a Sprache?\nEm Momoent: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Was für a Variante?\nEm Moment: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Die Sprache isch jetzad: {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Was für a Sprachversion willsch dir ronderlada?</value>
+  </string>
+  <string key="NoNodes"><!-- BLEIBT HOCHDEUTSCH! Gruß, Ludwig :) -->
+    <value>Momentan sind keine Knotenpunkt verfügbar, probier es in ein paar Sekunden nochmal :/</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Du mussch den Befehl en arra Gruppe benutza! Wenn de en koera drennabisch, probier mol /grouplist aus. :)</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Ha, sag amol, du bisch doch koen globaler Admin!</value>
+  </string>
+  <string key="NotPara">
+    <value>Ha, sag amol, du bisch doch überhaupt gar ed Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Jo</value>
+  </string>
+  <string key="No">
+    <value>Noe</value>
+  </string>
+  <string key="Allow">
+    <value>erlaubt</value>
+  </string>
+  <string key="Disallow">
+    <value>vrbodda</value>
+  </string>
+  <string key="Show">
+    <value>Ozeiga</value>
+  </string>
+  <string key="Hide">
+    <value>Verschdecka</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Bloß Normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Bloß Chaos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Boedes (Schbialer entscheidad)</value>
+  </string>
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Koine Rolla ozeiga</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Bloß die Rolla von de Lebende</value>
+  </string>
+  <string key="ShowAll">
+    <value>Zeig älle Rolla</value>
+  </string>
+  <string key="Cancel">
+    <value>Abbrecha</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}. This is on purpose -->
+    <value>Sollad Schbialer während amma Schbial flieha kenna?\nAufbassa: Schbialer kennad so odr so während dr Beitrittsphase flieha.\nEm Moment: {0}</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}. This is on purpose -->
+    <value>Schbialer ischs jetz {0}während amma Schbial zom flieha</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Wie ville Schbialer derfad höchschdens emma Schbiel beitreta?\nEm Moment: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Maximala Schbialerohzahl auf {0}gsetzt</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Sollad Rolla noch am Tod vomma Schbialer ozeigt werra?\nEm Moment: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Die Rolla werrad noch am Tod {0} ozeigt.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>En was fer ma Modus wellad ihr schbiala?\nEm Moment: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Schbialmodus auf {0} feschdglegt.</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Wie sollad Rolla am Ende ozeigt werra?\nEm Moment: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>D' Rolla werrad am Ende so ozeigt: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Leg feschd, wie lang an Dag daura soll (en Sekonda). Des ko allerdings emmerno opasst werra (je noch Ozahl von de Mitspieler). \nMinimaldauer dodafür isch 60 Sekonda. Schdandardwert: {0}\nEm Moment: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Basiszeit für da Dag isch jetzad aegschdelld auf {0} Sekonda.</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Leg feschd, wie lang a Nachd daura soll (en Sekonda). Schdandardwert: {0}\nEm Moment: {1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>D Nachd dauert jetzd {0} Sekonda.</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Leg feschd, wie lang die Zeit sae soll, in der ma lyncha ko (en Sekonda). Schdandardwert: {0}\nEm Moment: {1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Zeit zom Lyncha isch jetzd {0} Sekonda.</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Willsch du da Narr als Rolle erlauba?\nEm Moment: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Dr Narr isch jetzd {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Willsch du da Gerber als Rolle erlauba?\nEm Moment: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>dr Gerber isch jetzd {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Willsch du da Kult em Schbial erlauba?\nEm Moment: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>dr Kult isch jetzd {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Willsch du geheimes Lyncha oschalda?\nEm Moment: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>'s geheime Lyncha isch jetzd {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Dannge, vill Schbass mit dem Bot :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>Gruppa en welchr Schbroch soll i dir ozeiga?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Do hosch a Lischde mit de Gruppa en {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Mitglieder</value>
+  </string>
+  <string key="StartMe">
+    <value>Du mussch mi schdarda, damit i dir schreiba ko :)</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} hot da Bot ed gschdarded ond isch deswega ausam Schbial entfernt worra!</value>
+  </string>
+  <string key="LatestList">
+    <value>Hier ischd letzschda Lischde.</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Letzschda Lischde konnt ed abgrufa werra.</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>Du schbielsch jetzad bei amma Schbial en dr Gruppe {0} mit.</value>
+  </string>
+  <string key="Ping2">
+    <value>Zeit zom die Pingnachricht vrschicka: {0}</value>
+  </string>
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Du bisch dr Bürgermeister. 🎖
+  Sobald du di öffendlich zeigsch, zählt dae Schdimme bei dr Abstimmung, wer glynchd werra soll, doppelt. Dae Herz schlaet zwar ed arg schnell, aber ferd Dorfbewohner.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Du bisch dr Prinz! 👑
+	Dae Leba em Palaschd isch dodal langweilig, drom mischesch du di jeden Dag onter daene Untertana. Wenn des Dorf di lyncha will, no zaegsch du denne dae Krone ond sie werrad di vrschona. Oemol. Wenn du danoch nommol glynchd wirsch, no bisch au du dod.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Du bisch dr Unglücksrabe. 🤕
+  Du moeschs zwar bloß guad... aber des hilfd halt ao ed emmer. Des Schicksal moeds ed arg guad mit dir, ond in dr Hälfte von de Fälle kriegsch du an Krampf ond schdemmsch komplett zufällig ab... Trotzdem ghersch du nadierlich zom Dorfteam.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Du bisch dr Zauberer 🔮, du machsch aber lieber donkla Magie. Nachts kosch du wie dr Seher oe Person ogucka, zom so Wölfe oder da Seher fenda (andere Rolla siehsch laeder ed genao): S Werwolfsrudel woiß zwar nix von saem Glück, aber du bisch ihr Verbündeter ond gwinnsch mit denne.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Du bisch dr Schmied. ⚒
+	Du hosch von daene Aufträge ällaweil no a bissle Silberschdaob übrig, den du oemol em Schbial benutza kosch, zom d Wölfe abwehra. Du kosch di am Dag entscheida, ob de den Schdaob vrdoela willsch: 's ganze Dorf kriegt des mit ond hot no hoffendlich a ruhigera Nachd.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Du bischt dr Rudelführer 🐺⚡️, d Wiege vom ganza Übel: Daen Biss verbraeded den Virus, der Menscha in Werwölfe verwandla ko. Solang du lebsch, hosch du a 20% Chance, dass euer Opfer, schdadd zom schderba, infiziert ond in dr nächschda Nachd zom Wolf wird!</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Du bisch dr Wolfswelpe 🐶; älle andre Wölfe liebad di. Du bisch aegendlich an Wolf wie älle andere ond machsch ao ganz normal mit, wenn eier Rudel s Opfer von dr Nachd wähla duad. Fr da Fall dass du ombrochd wirsch, regad sich älle andere Wölfe saumäßig auf ond reißad en dr nächschda Nachd glei zwoe Opfer schdadd bloß oem. Du bisch no aber nadierlich oenaweg dod. ¯\_(ツ)_/¯</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Kurz bevor dr Henker sae Beil gega {0} hochhebt, schreit die Person: "Uffbassa! I ben dr Prinz 👑. Der Ring dohanna mit am Siegel vom König beweist des. Äll Nachd werd i von maene Dienr beschützd, i ko also ganz sicher koen Werwolf no nie ed gwesa sae!" S ganze Dorf vrschrickd dodal ond gohd wordlos zrück hoem, ohne dass se ebber töta dend.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Du vrsuachsch rauszomfenda, wa {0} fr a Rolle hot, koschs abr ed ganz genao seha. Zwoe Sacha kosch aber ausschließa: Seher ond Wolf. Die hättsch nämlich genao erkannd.</value>
+  </string>
+  <string key="MayorReveal">
+    <value>Wie wenn er bis jetzt gar ed drodachd hätt, drängelt sich uff oemol {0} ens Zentrum, schwätzt irgend an Käs von Vrandwordung ond häld dabei a vom Rega durchnässda Urkunde noch oba. Lesen kos zwar koner meh, abr ihr erkennad des Siegel dodrauf: des muss eier Bürgermeister 🎖 sae. Weil eich älle sae Autorität jetz klar isch, zähld ab soford sae Schdimme bei dr Abschdimmung obends dobbeld.</value>
+    <value>Ha, des geits jo gar ed! D Bürokratie isch doch ed dod? Siehd so aus. {0} gohd verre, fängd mit arra Rede o, wobei er eich davo übrzeuga will, dass Äpfelschorle vill besser schmeckd als Grapefruitsaft... irgendwann hot no ao dr letschde blickd, dass des eier Bürgermeister 🎖 sei muss.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Wenn du am Dorf zaega willsch, dass du dr Bürgermeister bisch, klick oifach auf des Knöpfle do onda, wo "Zaeg di!" druffschdohd. Wann emmer du willsch.</value>
+  </string>
+  <string key="Reveal">
+    <value>Zaeg di!</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Willsch du heit daen Silberschdaob vrdoela ond dodamit d Wölfe ferd näggschda Nachd vom Fressa abhalda?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Während dr Reschd vom Dorf emmerno diskutiert, wa do grad so abgohd, sehad se uff oemol {0}, der Silberschdaob em Dorf vrdoeld. ⚒
+	Älle schnaufad tief durch (ond nießad no sofort wega dem Schdaob): d Wölfe werrad heit Nachd ganz sicher koen fresa, ond ihr kennad älle amol gscheid durchschlofa.</value>
+  </string>
+  <string key="Mayor">
+    <value>dr Bürgermeister 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>dr Prinz 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>dr Zauberer 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>dr Unglücksrabe 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>dr Schmied ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>dr Rudelführer 🐺⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>dr Wolfswelpe 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <!-- 0 - victim -->
+    <!-- 1 - Alpha Wolf -->
+    <value>Grad mo ihr {0} ogreifa wellad, schdohd uff oemol {1} 🐺⚡️ auf'd Henderbaene. Der faselt irgendebbes dodavo, dass er den Schwächling do lieber ens Rudel aufnemma will, als an zom fressa: {0} wird sich nächschda Nachd vrwandla ond no grad so pelzig sae wie du selber! Tja, Obendessa geits heit Nachd koes...</value>
+    <value>So solls also sae, ihr gangad los zom eier Opfer fressa. Du hosch scho an Sauhonger, aber - was isch do los?! Grad mo ihr ofanga wellad zom fressa, sehad ihr, wie {1} 🐺⚡️ saene Zähne en da Nacka von {0} bohrt - ond plötzlich bassiert genao s Gegadoel von dem, was du erwarded hosch: schdadd dass es Feier en {0}'s Aoga ausgohd, flackerds ersch richdig auf. Haemlich gangad ihr wieder aus am Haus naus, mit am Wissa, dass {0} ab nächschd Nachd an Werwolf sae wird, grad so wie ihr...</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>D Wölfe heddad di aegendlich fressa wella, abr dr Rudelführer 🐺⚡️ hot di ausgwähld! Schdadd dod zom sae, lebsch weider ond wirsch en dr nächschda Nachd zomma Wolf werra! Isch des ed aufregend?!</value>
+    <value>Aenglich wärsch du jo jetzad dod, abr dr Rudelführer 🐺⚡️ isch grad no rechzeidig dazwischagana: irgendebbes musser en dir gseha han. Schdadd dass du d' Radiesla bloß no von onda zähla deffsch, wirsch du di ab morga selber en an Werwolf vrwandla...</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Swird Nachd, ond du merksch, wie überall auf daem Körber Fell ofängt zom wachsa... ond jetzad bischt an Werwolf! 🐺</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Als Bürgermeister 🎖 verbringst du dein Leben getarnt als einfacher Dorfbewohner, bis zu dich dazu entscheidest, deine wahre Profession öffentlich zu verkünden. Von diesem Moment an zählt deine Stimme beim Lynchen doppelt so viel wie eine normale Stimme.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Der Prinz 👑 ist ein schillernder Dorfbewohner. (Oder auch nicht. Eigentlich wohnt er ja in einem Palast, aber... das Aristokratenleben ist wohl auch nicht mehr, was es mal war.) Sollte das Dorf sich blind gegen ihn auflehnen, enthüllt er, bevor sie ihn in den Tod schicken, seinen königlichen Ring, der seine Abstammung beweist: seine Rolle ist dann zwar jedem bekannt, aber er überlebt. Einmalig. Sollte sich das Volk immer noch gegen seine absolutistische Herrschaft wehren, endet ein zweiter Lynchversuch für ihn tödlich.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Erinnert ihr euch an den Seher? Sein böser Zwillingsbruder, der Zauberer 🔮, ist kürzlich in die Gegend gezogen, um ihm das Leben schwer zu machen: er verbündet sich mit den Wölfen, auch wenn diese anfangs nichts von seiner Existenz wissen. Nachts kann er seine Fähigkeiten nutzen, um die Rolle eines Spielers ausfindig zu machen. Da er es ein bisschen mit den Augen hat, erkennt er allerdings nur Wölfe (am Flauschefell!) oder seinen Bruder: den würde er auch auf dem Sterbebett noch erkennen.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Der Unglücksrabe 🤕... hat nicht jeder so einen Freund? Er ist ja eigentlich ganz liebenswürdig, aber dennoch verspürt man irgendwie ständig das Bedürfnis, ihm zu sagen, dass... nunja. Wie verpackt man denn höflich, dass er eigentlich mehr Unheil anrichtet, als dass er hilft? Irgendwie schafft er es nämlich in der Hälfte der Fälle nicht, sich wirklich klar auszudrücken, wer gehängt werden sollte. Und da Lippenlesen auch nicht zu euren Stärken gehört... nunja. Manchmal trifft es dann eben den Falschen. Vielleicht sogar dich.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Du bist der Schmied. ⚒
+	In all den Jahren hat dich keine Klinge und kein Schwert so zufriedengestellt, wie die Silberklinge, die du für die Elfen geschmiedet hast. Du könntest sogar noch etwas Silberstaub übrig haben, wer weiß? Es kursiert das Gerücht, dass wenn man diesen verstreut, man Werwölfe in der darauffolgenden Nacht vom Jagen abhalten kann... 🤔</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Der Rudelführer 🐺⚡️, soso. Lange munkelte man nur, dass es ihn wirklich gibt, aber inzwischen sind alle Zweifel verflogen: das Biest aller Biester lebt. Von ihm geht die schreckliche Seuche aus, die rechtschaffende Bürger in Werwölfe verwandeln kann: solange er am Leben ist, besteht die 20%ige Chance, dass ein Opfer sich mit dem Virus infiziert, anstatt zu sterben. Es verwandelt sich dann in der kommenden Nacht in einen Werwolf.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>So ein niedliches kleines Wölfchen! 🐶 Und so flauschig... man muss dich einfach gernhaben *-* Und diese süßen Kulleraugen...
+	Ähm, ja. Wo waren wir stehen geblieben? Genau. Alle lieben dich so sehr, dass sie deinen Tod nicht so einfach hinnehmen werden: solltest du sterben, werden sie deinen viel zu frühen Tod mit zwei Opfern in der nächsten Nacht rächen!</value>
+  </string>
+  <!-- new strings 06 nov -->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} isch gschdorba ond du verwandelsch di en da neia Rudelführer 🐺⚡️! Daene pelzige Kollega (wenns oene geit) send: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} isch gschdorba ond du verwandelsch di en da Wolfswelpen. 🐶 Dae Rudel ab soford (wenns oes geit) isch: {1}</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Team Dorfdeppa</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Team Vrlierer</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Team Pelzhaut</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Team Vrruckd</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Team kultig</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Team Gerber</value>
+  </string>
+  <string key="CultConvertWolf">
+	<value>Dr Kult hot {0} losgschickt zom {1} bekehra, aber schdattdessa kommt {0}'s Kopf ausam Fenschdr gfloga! Abtrennd!</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <value>{0} gohd ens Haus von {1} nae 💋 ond fraed sich scho, a dodal dolla Nachd zom erleba - bloß zom en dem Haus a Gschdald fenda, die auf am Bedd romgruaschdeld. Erschd als {0} genaoer noguckd, blickd se, dass dui Person grad en de Ennereia von {1} romwühlt! Wega amma vrräderischa Geräusch wird dr Serienmörder 🔪 auf {0} aufmerksam ond saed zu sich selber: "No schdech e heit hald zwoe ab!"</value>
+  </string>
+  <!-- New Death Strings 05 Nov -->
+  <string key="ApprenticeSeerEaten">
+    <value>Mos Dorf aufwacht, fendet ma {0}'s Kopf neba amma schlechd bauda Ouija-Bredd liega. Siehd so aus, wie wenn er beim Wahrsaga üba übrraschd worra wär! 🐺 Dr Seherlehrling 🙇 isch dod.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Friah am Morga herd ma an Schrei, der mo aus dr Werkschdad vom Schmied ⚒ komma muss. Ma guckd dapferd noch ond fendet {0}, der mit fünf von saene aegene, aus roschdfreiem Schdahl gferdigde Messer an sae Werkbank nagelt worra isch. 🔪 Des isch Qualität!\nOenaweg, dui Messer will koner meh nemma zom Rohkoschd schnibbla. Dodamit hot dr Serienmörder oen ombrocht!</value>
+    <value>Sieht so aus wie wenn {0}, dr Schmied ⚒ vom Dorf, heit Nachd koe Glück ghet hätt... R hot wohl a Nachdschichd macha wella :/ Ma fendet an mit durchgschniddener Kehle 🔪 en ra Ecke, aber abgseha dodavo siehd sae Werkschdadd dodal leer aus... Siehd so aus wie wenn dr Serienmörder heit Nachd ed bloß sae Organsammlong erweiderd hätt!</value>
+  </string>
+  <string key="ZombieKilled">
+    <value>Ihr fendat {0}, der mitam Kerzaleichder von saem oigena Altar 👤 erschdocha worra sae muss. Dass am Serienmörder 🔪 Herkunft, Beruf ond Religion von saene Opfer grad egal send, hen ihr zwar scho gwisst, aber worom er dui Nachd koe Messer dabeighet hot, des vrschdohd doch koener...</value>
+  </string>
+  <string key="CupidKilled">
+    <value>D Liebe isch dod... Oder wenigschdens ihr Schdellvrtretr uff dr Erde 🏹: obwohl {0} saen Boga no en dr Hand hot, hot der am nix gega da schdarka Serienmörder 🔪 gholfa. Komisch: Des Herz isch am sauber raustrennt worra... Vielleicht war des jo des was dem Vrruckda d ganza Zeit gfehld hot?!</value>
+    <value>Scho mo se aufwachad, fühlad sich älle Dorfbewohner dodal lieblos. Zerschd moenad se, des sei bloß Aebildung, aber no fendet ma Amor 🏹, vom Kopf bis and Fiaß aufgschlitzt, vor dr Kirch... Aus irgendma Grond fehlt {0} ao s Herz. 🔪</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Hand aufs Herz: natürlich däd koener von eich om dui Zeit scho ofanga zom saufa. Aber wemma schommol aeglada wird... Dass {0} d'Dier ed aufmachd, wondert koin, der Säufer isch wahrschaenlich scho - oder no? - z'bsoffa zom eier Geklopfe hera. Drenna sehad ihr no aber, wie falsch des isch: Dr Betrunkene 🍻 liegt am Boda. Dodaneba... des siehd ed arg schee aus... a Leber, die wohl eddamol am Serienmörder 🔪 gschmeckt hot. </value>
+    <value>S ganze Dorf hot nadierlich ghoffd, dass ma mit {0} mol wieder richdig saufa ko, aber älles was ma em Haus von dem Betrunkenen 🍻 gfonda hot, war a kaputts Messer ond a schdoeharda Leber, die wega dem dauernda Alkoholkonsum warschaenlich eddamol am Serienmörder 🔪 gschmeckt hot...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>Normalerweise hätt {0} da Serienmörder 🔪 jo dodal oefach abwehra kenna, aber heit nachd hot r laeder Migräne ghed ond war deswega es ganz bei dr Sach... Ob des wohl dodro glega hot, dass der so egoistisch fer sich selber kämpft hot? Wie schad... Dr Schutzengel 👼 isch dod.</value>
+    <value>Amma normala Dag wär {0} ganz sicher schdark gnuag gwesa, gega da Serienmörder 🔪 ozomkomma. Faschd scho Ironie vom Schicksal, dr Haeligaschoe vom Schutzengel 👼 isch erloscha...</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Siehd so aus, wie wenn do ebber gschlofa hedd... schlemmer Fehler! Ma herd zwar an Schuss 🔫, aber am näggschda Morga vendet ma bloß {0}'s Körber, dem d' Kugel em Kopf schdecka duad - ond aus irgendma Grond fehld am ao rd rechde Zeigefenger... Dr Serienmörder 🔪 wolld da Schütza wohl no a letschda Lektion lehra!</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Wa frn Oschlag! {0} leit ermordet auf saem Schreibdisch... Vielleicht hot sich dr Serienmörder 🔪 fr sae vrsauda Jugend rächa wella, velleicht ko er ao oefach Politiker 🎖 ed leida. Des wird ma wohl nie rausfenda...</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Laude Glocka tonad heit scho früh am Morga. D Meischde reibad sich no vrschlofa d' Aoga, während sich d Palaschdwach scho lang auf Suach noch am Prinz 👑 {0} machd. Obwohl ma s ganze Dorf durchkämma duad, bleibt r vrscholla, aber 's Gerücht gohd om, dr Serienmörder 🔪 sei des gwesa...</value>
+    <value>D königliche Wacha send letzch Nachdt wohl aegschlofa. Ma fendet {0}, da Prinz 👑, em ganza Schloss vrdoeld, en lauder gleich große Doel. Bloß oe Körperdoel fehld: sae königlicha Leber... 🔪</value>
+  </string>
+  <string key="SeerKilled">
+    <value>S Dorf wacht auf, zom äbbes schreckliches rausfenda: {0} leit, vom Kopf bis and Fiaß aufgschnidda 🔪, en saem Wohnzimmer, a Deck Tarotkarta 👳 no en dr Hand. Witzigrweise fehld dr Kopf, wie wenn dr Serienmörder sich über da Vrluschd von soma gscheida Kopf witzig macha will...</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Früh morgnads herd ma plötzlich an komischa Ton: d' Wölfe heulad! 🐺 An schlimmer Fehler isch bassierd: d Wölfe hend ihrn oegna Vrbündeda gfressa. {0}, dr Zauberer, 🔮 isch dod.</value>
+    <value>Laude Schreie hend heit Nachd koen wirklich schlofa lassa... Dauernd hot ma a "I ben eier Fraend! I gher zu eich!" ghert. Mo am nächschda Morga dr erschde mutige Bürger aus saem Haus nausgohd, findet r bloß Knocha ond an heniga lilana Krischdall...Soford erkennd s Dorf, dass des {0}'s Talisman war. Hunger isch wohl wichdigr als wie Freundschafd... 🐺 Dr Zauberer 🔮 hot des aufd harda Tour lerna missa.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>NOMNOMNOMNOM! Heid nachd hots ganz zartes Kinderfloesch 👶 von {0} gebba. Muss wohl gschmeckt han, übrig isch bloß a Miniskelett. Ob Werwölfe 🐺 wohl Schuld empfinda kennad...?</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+	<!-- used when CH visits SK -->
+    <value>Mos Dorf aufwacht, fendet ma {0}, da Kultjäger 💂 zerschdücklt en ra Kischde vorm Rathaus. War wohl koe guada Idee, nachts zom Serienmörder 🔪 zom ganga ond an noch saener Spiritualität zom froga...</value>
+    <value>Dr Körper von {0}, am Kultjäger 💂 isch dodal verschdümmeld aufam Altar von dr Kirch gfonda worra. Da Serienmörder 🔪 fer an Kultist zom halda war ganz klar saen letschder Fehler...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+	<!-- used when Zombies convert the wolves, only if wolves stayed home -->
+	<!-- <value>The cult ran into unexpected trouble last night. Their newest member had the misfortune of visiting a wolf on the night the wolves decided to stay home, and the wolf found {0} quite delicious. Unfortunately for {0}, wolves have no interest in joining the new religious movement.</value> -->
+    <value>Aegendlich hend d Wölfe 🐺 letzsch Nachd jo gar koen ogreifa wella - abr wer ko scho wiederschdanda, wenn d Lieferong frei Haus kommd?! Richtig: koner. Des hot {0} am oegna Leib gschbürd, ao saen Glaube hot den Kultisten 👤 ed vor de Zähne von de Wölfe bschütza kenna...</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+	<!-- used when Zombies convert the SK -->
+    <!-- <value>The cult thought they would have a new member in their ranks, but they were wrong! {0}, a Zombie, was minced to pieces and placed at the town square in the morning! Strangely their "holy" book was found stabbed with a knife, as if a statement to show whose religion was triumphant.</value> -->
+    <value>Was ferran Fehler... Dr Kult 👤 hot letzsch Nachd d oiziga Person em ganza Dorf bsuachd, die no vrruckdr ischt, als dr Kult selber. Dodafür hend älle Bewohner heit a komischs Kunschdwerk, des aus {0}'s henige Organe beschdohd, voram Rathaus oglotza. Velleichd jetz ed dr Gschmack von jedem... aber am Serienmörder 🔪 gfällds.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- <value>It was supposed to be a night where {0} would save the village from the killers, but {0}'s halo was extinguished and wings sliced by the serial killer! Left was a note, "I could protect myself better than you can."</value> -->
+    <value>Aenglich wolld {0} s Dorf heit Nachd jo voram Bösa bewahra, schdaddessa send saene Flügel 👼 gschdutzt worra! Neba saener Leiche fendet ma an Zeddl mit dr Aufschrift: "I han mi halt besser vrteidigt... 🔪"</value>
+  </string>
+  <string key="GAGuardedWolf">
+  <!-- Clearly the wolves had an extra meal god-sent, free-of-charge, to their homes. -->
+    <value>Eier Schutzengel 👼, {0}, hot geschd Nachd vrsuachd, an Wolf 🐺 zom bschütza. Em morgnads fendat ihr bloß d Flügel, aufghängt am Ziffrablatt von dr Uhr - siehd irgendwie komisch aus...</value>
+  </string>
+  
+   <!--DEC 26: 1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Em Wissa, dass bloß no {0} übrig war, vrsuachd {1}, {0} zom fressa, abr {0}'s militärischs Training ond sae Heidaangschd hot dr Wolf ed überwinda kenna! Älles wa no zom do isch, wird ao do: Zwoe Schüsse auf da Wolf! D letzschda Person, die mo no übrig isch: dr glorreich siegende Jäger fers Dorf!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Em Wissa, dass bloß no {0} übrig war, suachd {1} dui Zeit aus, mo {0}'s Schutz am niedrigschda isch. Da letzschda Dorfbewohner zom töta, war no koe Ding meh fer {1} ond älles was jetzt von {0}, am Jäger, no übrig isch, isch saen Kopf, mit zwoe Beißkratzer.</value>
+  </string>
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>{1} ond {0} laofad zamma aufs Zentrum vom Dorf zu. Mo {0} plötzlich ofengt, {1} von saem Kult zom vrzehla, zögert der ed lang ond schwingt sae Schwert zom letzschda Mol, so dass der falsche Kult am Dorf nie wieder schada ko.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>D Zeit zom joina isch om {0} Sekonden erhöht worra!\n{1} insgesamt no übrig!</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>D Zeit zom joina isch om {0} Sekonden vrringert worra!\n{1} insgesamt no übrig!</value>
+  </string>
+  <string key="CantExtend">
+    <value>Bloß Gruppaadmins kennad d Zeit meh wie oemal em Schbial erhöha!</value>
+  </string>  
+  
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Derfad Schbialer d Zeit zom beitreten erhöha?\nEm Moment: {0}.\nAufbassa: Admins kennad d Zeit so odr so erhöha!</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Dass Schbialer d Zeit erhöhad, isch jetzd {0}</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Wähl wie ville Sekonda höchschdens uff oemol mit /extend hinzugfügt werra könnad!\nNormal: {0}\nEm Moment:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>D maximala /extend-Zeit isch jetzad {0} Sekonda</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh noe! {0} war b'soffa! Jetzt bisch du voll ond kosch {1} nemme ogreifa...</value>
+  </string>
+  
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  
+  <string key="NotMember">
+    <value>Du kosch bloß en {0} schbiela wenn de au denna bisch!</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Bidde ed mid Befehle am Schbial beitreta sondern mit dem Knopf do.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} Leit han gwählt, {1} lebad no.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>Bidde drodenga dass du ao mit dem Knopf do am Schbiel beitreta mussch, {0}!</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Tschuldigung, die Grubbe kenn I edda! Benutz den Befehl en derra Gruppe drenna oder schreib Id, Benutzername oder Link von dr Grubbe hender da Befehl.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Du bisch von dr Wardelischd fr {0} entfernt worra.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0} schbielad seid de letschde 30 Sekonda ao mit.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Kult erlaoba</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Gerbr erlaoba</value>
+  </string>
+  <string key="AllowFool">
+    <value>Narr erlaoba</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Geheimes Lyncha aktiviera</value>
+  </string>
+  <string key="RandomMode">
+    <value>Zufallsmodus aktiviera</value>
+  </string>
+  <string key="AllowExtend">
+    <value>/extend erlaoba</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Rolla beim Schderba ozeiga</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Flieha erlaoba</value>
+  </string>
+  <string key="ShowIDs">
+    <value>IDs beim joina ozeiga</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>IDs von de Leit ozeiga die ma Schbiel beitreddad?\nEm Moment: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>IDs {0}</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Älle</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Zufallsmodus aktiviera?\Wenn der o isch werdad Chaos, Geheimes Lyncha, Rolla beim Tod ozeiga ond Kult / Narr / Gerbr zufällig ausgwählt wenn äbber a Schbial schdarda duad.\Em Moment:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Aktivierong vom Zufallsmodus isch jetzd : {0}</value>
+  </string>
+  <string key="AllowNSFW">
+    <value>NSFW GIF Packs erlauba</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Derfad NSFW GIF packs in derra Gruppe ozeigt werra?\nEm Moment: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW GIFs</value>
+  </string>
+  
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Mo'd Sonn uffgoht, wacht {0} auf, abr er hert gar nix... Moner ausam Haus nausgoht merkt er, dass o gar neamerd meh isch! Er seifzt. Sein Traum, amol vom Dorf g'hängt zom worra, hot ed klabbt. Er goht zum Galga no, ond mit ra oenzelna Träne die sae Gsicht rondrfließt hängt r saen Kopf end Schlinge. Jetzt isch ao er, {0}, dr letschte em Dorf, dod.</value>
+    <value>{0} wacht beim Sonnaaufgang auf, abr ganz aloe! Er merkt was fr an Fehlschlag er noglegt hot, dass er sich ed vom Dorf lyncha lassa konnte. {0} schnappt sich a Soel ond hängt sich selber no, weil er merkt dass des jetzt eh nix meh wird, so dass es Dorf jetzt endgültig a Gaeschdrschadt isch.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} macht'd Aoga auf, abr schdadd am nerviga romgedröhne von de Dorfbewohner herd er heid bloß Schdille. Er guckt and Decke nauf ond merkt langsam, was los isch: Älle send dod. D Wölfe send dod! {0} hot in dem Dorf nix meh vrlora... Er packt sae Zeig ond goht en da Wald, auf dr Suche noch ma neua Wolfsrudel wo er dr Zauberer sei ko.</value>
+    <value>Obwohl sich {0} echt Mühe gebba hot, hot ers ed gschafft: Jetzt merkt er, dass gar koen Wolf meh do isch! {0} packt sae Krischdallkugel ae ond macht sich auf da Weg, auf dr Suche noch ma neia Wolfsrudl.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Wa fr a Variante?\nEm Moment: {0}\nDu hosch meh wie 500 Schbial gschbialt, also derfsch du ao hier joina: </value>
+  </string>
+  <string key="Skip">
+    <value>Nix do</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} isch gschdorba ond du wirsch zum Lycan. Daene Teampartner send (wenn's oene geit): {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Du siehsch dass {0} AUF KOEN FALL {1} isch!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Willsch du älle Schbieler heit Nachd schlofa lassa?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Während s Dorf sich ogregt onderhält, goht {0} zu saem Haus zruck ond fängt o a scheena ruhiga Melodie zum summa. Heit Nacht werdad älle ganz fescht schlofa ond niemand wird irgendwas do kenna. 💤</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Mo endlich älle en ihre Häuser gangad kommad se schier nemme rechdzeitig ens Bett, so müde send se. Heit Nacht wird a Ruah em Dorf sae, drom älle tief schlofad.</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Da Dieb erlauba?\nEm Moment: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Dieb g'setzt zu: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Ko dr Dieb äll Nachd schbiela?\nEm Moment: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Dieb schbield äll Nachd: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Dieb erlauba</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Dieb äll Nachd</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Du bisch jo aegndlich an ganz normalr Dorfbewohner, abr wega daem Mordsgranadabart denkd dr Seher dass du an Wolf bisch... Oh noe!</value>
+  </string>
+  <string key="WolfMan">
+    <value>dr Wolfsmensch 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+   <value>Du bisch jo aegndlich an ganz normalr Dorfbewohner, abr wega daem Mordsgranadabart denkd dr Seher dass du an Wolf bisch... Oh noe!</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Du bisch dr Lykan 🐺🌝!  Du bisch an Wolf, abr du brengsch da Seher durchanand so dass der denkt du wärsch an normaler Dorfbewohner 🙂</value>
+  </string>
+  <string key="Lycan">
+    <value>dr Lykan 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Dr Lykan isch an Wolf abr dr Seher wird denka er wär an Dorfbewohner.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Du bischs Orakel. Du kosch äll Nachd äbber ogucka, siehsch aber bloß a Rolle die der ED isch. Die Rolle isch abr emmr oena von ma andera Schbieler, der no am Läba isch.</value>
+  </string>
+  <string key="Oracle">
+    <value>s Orakel 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>S Orakel sieht äll Nacht was an Schbialer ED isch, aus de Rolla von de andere lebendige Schbialer.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Du bisch dr Sandmann. Oemol em Schbiel kosch du dagsiabr älle mit daem scheena Lied vrzaubra ond no schlafad die tief ond feschd ond kennad en dr nächschda Nacht nix macha.</value>
+  </string>
+  <string key="Sandman">
+    <value>dr Sandmann 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Oemol em Schbiel ko dr Sandmann älle so tief schlofa lassa, dass neamrd saene nächtliche Tätigkeita nochganga ko.</value>
+  </string>
+
+  <string key="RoleInfoImam">
+    <value>Du bisch dr Pazifist ☮️. Du kosch dir oemol em Schbiel aussucha, älle vom Frieda zom überzeuga, so dass se koen lynchad. Lang heba duad die Überzeugung aber ed...</value>
+  </string>
+  <string key="Imam">
+    <value>dr Pazifist ☮️</value>
+  </string>
+  <string key="AboutImam">
+    <value>Dr Pazifist ko oemol em Schbiel s ganze Dorf vom Frieda überzeuga so dass se neamerd lynchad. Des hebt abr bloß oen Dag.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>Du bisch dr Dorfälteste 📚. Du bisch an erfahrener Mo ond kosch a Werwolfsattacke oemolig überleba. Beim zwoita Mol wirsch abr gfressa. Wenn dr Schütze oder Jäger auf di schießad, ärgrad se sich do drüber so arg, dass se ihr Kraft vrlierad ond normale Dorfbewohner werrad.</value>
+  </string>
+  <string key="WiseElder">
+    <value>dr Dorfälteste 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+     <value>Du bisch dr Dorfälteste ð. Du bisch an erfahrener Mo ond kosch a Werwolfsattacke oemolig überleba. Beim zwoita Mol wirsch abr gfressa. Wenn dr Schütze oder Jäger auf di schießad, ärgrad se sich do drüber so arg, dass se ihr Kraft vrlierad ond normale Dorfbewohner werrad.</value>
+  </string>
+  <!-- EIN OSTEREI!!!!!!!!! Hole dir eine Schokolade als Belohnung -->
+  <string key="RoleInfoThief">
+    <value>Du Dieb 😈! Du kosch en dr erscha Nacht amma Schbialer sae Rolle klaoa, ond der wird no an normaler Dorfbewohner.</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Du Dieb 😈! Weil dr [Full Thief] Modus aegschalda isch, kosch du äll Nachd zu 50% amma Schbieler sae Rolle klaoa! Der Schbialer wird no dr neue Dieb.</value>
+  </string>
+  <string key="Thief">
+    <value>dr Dieb 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Normalerweise ko dr Dieb en dr erschda Nacht a Rolle von ma Schbieler klaua ond den zu ma Dorfbewohner macha.\nWenn abr dr [Full Thief] Modus aegschalda isch, no ko dr Dieb äll Nachd zu 50% a Rolle klaua. Wenn's klappt, wird der Schbieler dr neue Dieb ond klaot weiter!</value>
+  </string>
+  
+  <string key="AskImam">
+    <value>Drugg do druff wenn du s Dorf dazu brenga willsch, neamerd zom lyncha.</value>
+  </string>
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
+    <value>Dr Paifist ☮️, {0}, schdelld sich auf ond fängt irgenda Geschwafel o, von Liebe ond Freundschaft ond so Zuigs. Wirklich interessiera duads koen, abr Lyncha wellad er heid ao nemme.</value>
+  </string>
+  <string key="ImamNoLynchNow">
+    <value>Wäga am Pazifist ☮️ saem Gelaber wellad ihr heit gar neamerd meh lyncha ond gangad hoem.</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Du wolldesch zwar ens Haus von {0} naekomma, aber der hot so a Granada Erfahrung 📚 dass des nix worra isch. {0} hot die Attacke überlebt... negschtmol schaffd er des nemme!</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>D Wölfe han zwar vrsuachd, di zom fressa, abr vom di-fressa-lassa bisch du ed Dorfältester 📚 worra! Du hosch den Ogriff überlebt... Abr pass auf, nommol kriegsch du des ao ed no!</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Dr Jäger 🎯, {0}, hot da Dorfältesten 📚, {1}, vrschossa! {0} bereut saen Fehler ond vrbrennt mit letschder Kraft ond Schuldgefühle saen Jägerschein. Er isch als normaler Dorfbewohner 👱 gschdorba.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Dr Schütze 🔫, {0} hot da Dorfältesten 👱, {1}, vrschossa! {0} bereut saen Fehler ond schmeißt aus Schuldgefühle sae Knarre ens Feuer. Ab jetzd isch er an normaler Dorfbewohner 👱 der saene Felder beackert.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Du hosch vrsuachd, d Rolle von {0} zom klaoa, aber des hot laeder ed klappt.</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Du hosch vrsuachd, d Rolle von {0} zom klaoa, abr {0} isch scho dod!</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Du hosch erfolgreich d Rolle von {0} klaut!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} gherd nemme zu eich Freimaurer, abr {1} isch jetzd oener, grad so wie du!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Daene Teampartner send (wenn's oene geit): {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
+    <value>{0} isch nemme em Kult, abr dodafür isch {1} jetzd an Kultist, grad so wie du!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} ghert nemme zom Wolfsrudel, abr {1} isch jetzad an Wolf, grad so wie du!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Daene Teampartner send (wenn's oene geit): {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>Mo {0} em Dorf romlauft, merkt er, dass do überhaupt koene Rolla meh send die mo er klaua ked. Er packt saene Siebasacha ond laoft ausam Dorf raus los, zom an andra Ort fenda, wo er sae Schbiel weitertreiba ko.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Du vrsuachsch jetzad, d Rolle von {0} zom klaua.</value>
+  </string>
+  <string key="AskThief">
+    <value>Wem sae Rolle willsch du klaoa?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} Leit han {1} gwählt: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>S heutige Lynchergebnis:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} Leit han {1} gwählt.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Geheim: Schdimmazahl</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Soll beim geheime Lynchmodus a Lischd ozeigt werda, wer wie viele Schdemma kriegt hot?\nEm Moment: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>D Lischde von dr Schdimmaozahl fers geheime Lyncha isch aegschdelld auf: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Geheim: Schdimma</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Soll beim geheima Lyncha mit aegschaldeder Schdimmalischde ao ozeigt werra, wer wen gwählt hor?\nEm Moment: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>D genaua Ozeige wer wen gwählt hot isch fers geheime Lyncha mit aegschaldeder Schdimmalischde auf {0} gsetzt.</value>
+  </string>
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
+	<value>Komisch... grad wo ihr ofangad zom diskutiera, wen ihr heit konvertiera wellad, merkad ihr, dass {0} gar ed do isch! Was isch mit dem bloß bassiert?</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Imam's button -->
+	<value>Peace!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
+    <value>Dr Pazifist hot entschieda, dass heit doch koener glyncht werra soll!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>Dae Rolle isch klaut worra! Du bisch jetzd dr neue Dieb ð ond kosch nexschd Nachd a Rolle klaua!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Dae Rolle isch klaut worra! Du bisch jetzd an Dorfbewohner ð±, ond kosch da ganza Dag auf daene Felder ackra.</value>
+  </string>
+ 
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Klopf, klopf! Wer do? Oh, dr Seriamörder! Jetzt bisch halt dod.</value>
+	<value>Dr Seriamörder hot di heit Nachd besuachd ond ens Herz gschdocha!</value>
+  </string>
+  
+  <string key="ThiefTeamEnd">
+	<value>Dieb Team</value>
+  </string>
+  
+  <string key="StealKiller">
+    <value>Du wolldesch a Rolle klaua... abr ausgerechnet vom Serienmörder! Der hot ed lang zögert ond di oefach aufgschlitzt.</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>Dr Dieb, {0}, wolld ad Rolle vom Serienmörder klaua! Des war ed so schlau: {0} leit aufam Dorfplatz rom, von Kopf bis Fuaß aufgschlitzt...</value>
+  </string>
+</strings>

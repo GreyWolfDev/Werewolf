@@ -1,0 +1,1448 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.TeamFoundation.WorkItemTracking.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetAccountMyWorkDataAsync(System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.QueryOption},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] INTERNAL ONLY: USED BY ACCOUNT MY WORK PAGE. This returns Doing, Done, Follows and activity work items details.
+            </summary>
+            <param name="queryOption"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetRecentActivityDataAsync(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.CreateAttachmentAsync(System.IO.Stream,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Creates an attachment.
+            </summary>
+            <param name="uploadStream">Stream to upload</param>
+            <param name="fileName"></param>
+            <param name="uploadType"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetAttachmentContentAsync(System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns an attachment
+            </summary>
+            <param name="id"></param>
+            <param name="fileName"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetAttachmentZipAsync(System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns an attachment
+            </summary>
+            <param name="id"></param>
+            <param name="fileName"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetRootNodesAsync(System.String,System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="depth"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetRootNodesAsync(System.Guid,System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="depth"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.CreateOrUpdateClassificationNodeAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemClassificationNode,System.String,Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.TreeStructureGroup,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="postedNode"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="structureGroup"></param>
+            <param name="path"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.CreateOrUpdateClassificationNodeAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemClassificationNode,System.Guid,Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.TreeStructureGroup,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="postedNode"></param>
+            <param name="project">Project ID</param>
+            <param name="structureGroup"></param>
+            <param name="path"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.DeleteClassificationNodeAsync(System.String,Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.TreeStructureGroup,System.String,System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="structureGroup"></param>
+            <param name="path"></param>
+            <param name="reclassifyId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.DeleteClassificationNodeAsync(System.Guid,Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.TreeStructureGroup,System.String,System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="structureGroup"></param>
+            <param name="path"></param>
+            <param name="reclassifyId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetClassificationNodeAsync(System.String,Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.TreeStructureGroup,System.String,System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="structureGroup"></param>
+            <param name="path"></param>
+            <param name="depth"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetClassificationNodeAsync(System.Guid,Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.TreeStructureGroup,System.String,System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="structureGroup"></param>
+            <param name="path"></param>
+            <param name="depth"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.UpdateClassificationNodeAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemClassificationNode,System.String,Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.TreeStructureGroup,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="postedNode"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="structureGroup"></param>
+            <param name="path"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.UpdateClassificationNodeAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemClassificationNode,System.Guid,Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.TreeStructureGroup,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="postedNode"></param>
+            <param name="project">Project ID</param>
+            <param name="structureGroup"></param>
+            <param name="path"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetCommentAsync(System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns comment for a work item at the specified revision
+            </summary>
+            <param name="id"></param>
+            <param name="revision"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetCommentsAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.CommentSortOrder},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns specified number of comments for a work item from the specified revision
+            </summary>
+            <param name="id">Work item id</param>
+            <param name="fromRevision">Revision from which comments are to be fetched</param>
+            <param name="top">The number of comments to return</param>
+            <param name="order">Ascending or descending by revision id</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetFieldAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets information on a specific field.
+            </summary>
+            <param name="fieldNameOrRefName">Field simple name or reference name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetFieldAsync(System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets information on a specific field.
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="fieldNameOrRefName">Field simple name or reference name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetFieldAsync(System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets information on a specific field.
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="fieldNameOrRefName">Field simple name or reference name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetFieldsAsync(System.String,System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.GetFieldsExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns information for all fields.
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="expand">Use ExtensionFields to include extension fields, otherwise exclude them. Unless the feature flag for this parameter is enabled, extension fields are always included.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetFieldsAsync(System.Guid,System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.GetFieldsExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns information for all fields.
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="expand">Use ExtensionFields to include extension fields, otherwise exclude them. Unless the feature flag for this parameter is enabled, extension fields are always included.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetFieldsAsync(System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.GetFieldsExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns information for all fields.
+            </summary>
+            <param name="expand">Use ExtensionFields to include extension fields, otherwise exclude them. Unless the feature flag for this parameter is enabled, extension fields are always included.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.CreateQueryAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.QueryHierarchyItem,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Creates a query, or moves a query.
+            </summary>
+            <param name="postedQuery">The query to create.</param>
+            <param name="project">Project ID or project name</param>
+            <param name="query">The parent path for the query to create.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.CreateQueryAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.QueryHierarchyItem,System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Creates a query, or moves a query.
+            </summary>
+            <param name="postedQuery">The query to create.</param>
+            <param name="project">Project ID</param>
+            <param name="query">The parent path for the query to create.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.DeleteQueryAsync(System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="query"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.DeleteQueryAsync(System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="query"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetQueriesAsync(System.String,System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.QueryExpand},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Retrieves all queries the user has access to in the current project
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="expand"></param>
+            <param name="depth"></param>
+            <param name="includeDeleted"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetQueriesAsync(System.Guid,System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.QueryExpand},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Retrieves all queries the user has access to in the current project
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="expand"></param>
+            <param name="depth"></param>
+            <param name="includeDeleted"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetQueryAsync(System.String,System.String,System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.QueryExpand},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Retrieves a single query by project and either id or path
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="query"></param>
+            <param name="expand"></param>
+            <param name="depth"></param>
+            <param name="includeDeleted"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetQueryAsync(System.Guid,System.String,System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.QueryExpand},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Retrieves a single query by project and either id or path
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="query"></param>
+            <param name="expand"></param>
+            <param name="depth"></param>
+            <param name="includeDeleted"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.UpdateQueryAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.QueryHierarchyItem,System.String,System.String,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="queryUpdate"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="query"></param>
+            <param name="undeleteDescendants"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.UpdateQueryAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.QueryHierarchyItem,System.Guid,System.String,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="queryUpdate"></param>
+            <param name="project">Project ID</param>
+            <param name="query"></param>
+            <param name="undeleteDescendants"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.DestroyWorkItemAsync(System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="id"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.DestroyWorkItemAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="id"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.DestroyWorkItemAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="id"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetDeletedWorkItemAsync(System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="id"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetDeletedWorkItemAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="id"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetDeletedWorkItemAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="id"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetDeletedWorkItemsAsync(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetDeletedWorkItemsAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetDeletedWorkItemsAsync(System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetDeletedWorkItemsAsync(System.String,System.Collections.Generic.IEnumerable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="ids"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetDeletedWorkItemsAsync(System.Guid,System.Collections.Generic.IEnumerable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="ids"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetDeletedWorkItemsAsync(System.Collections.Generic.IEnumerable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="ids"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.RestoreWorkItemAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemDeleteUpdate,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="payload"></param>
+            <param name="id"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.RestoreWorkItemAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemDeleteUpdate,System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="payload"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="id"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.RestoreWorkItemAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemDeleteUpdate,System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="payload"></param>
+            <param name="project">Project ID</param>
+            <param name="id"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetRevisionAsync(System.Int32,System.Int32,System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a fully hydrated work item for the requested revision
+            </summary>
+            <param name="id"></param>
+            <param name="revisionNumber"></param>
+            <param name="expand"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetRevisionsAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns the list of fully hydrated work item revisions, paged.
+            </summary>
+            <param name="id"></param>
+            <param name="top"></param>
+            <param name="skip"></param>
+            <param name="expand"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.EvaluateRulesOnFieldAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.FieldsToEvaluate,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Validates the fields values.
+            </summary>
+            <param name="ruleEngineInput"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.CreateTemplateAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemTemplate,Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Creates a template
+            </summary>
+            <param name="template">Template contents</param>
+            <param name="teamContext">The team context for the operation</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetTemplatesAsync(Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets template
+            </summary>
+            <param name="teamContext">The team context for the operation</param>
+            <param name="workitemtypename">Optional, When specified returns templates for given Work item type.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.DeleteTemplateAsync(Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Deletes the template with given id
+            </summary>
+            <param name="teamContext">The team context for the operation</param>
+            <param name="templateId">Template id</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetTemplateAsync(Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets the template with specified id
+            </summary>
+            <param name="teamContext">The team context for the operation</param>
+            <param name="templateId">Template Id</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.ReplaceTemplateAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemTemplate,Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Replace template contents
+            </summary>
+            <param name="templateContent">Template contents to replace with</param>
+            <param name="teamContext">The team context for the operation</param>
+            <param name="templateId">Template id</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetUpdateAsync(System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a single update for a work item
+            </summary>
+            <param name="id"></param>
+            <param name="updateNumber"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetUpdatesAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a the deltas between work item revisions
+            </summary>
+            <param name="id"></param>
+            <param name="top"></param>
+            <param name="skip"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.QueryByWiqlAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.Wiql,System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets the results of the query.
+            </summary>
+            <param name="wiql">The query containing the wiql.</param>
+            <param name="timePrecision"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.QueryByWiqlAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.Wiql,Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext,System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets the results of the query.
+            </summary>
+            <param name="wiql">The query containing the wiql.</param>
+            <param name="teamContext">The team context for the operation</param>
+            <param name="timePrecision"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.QueryByWiqlAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.Wiql,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets the results of the query.
+            </summary>
+            <param name="wiql">The query containing the wiql.</param>
+            <param name="project">Project ID or project name</param>
+            <param name="timePrecision"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.QueryByWiqlAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.Wiql,System.Guid,System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets the results of the query.
+            </summary>
+            <param name="wiql">The query containing the wiql.</param>
+            <param name="project">Project ID</param>
+            <param name="timePrecision"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.QueryByIdAsync(Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext,System.Guid,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets the results of the query by id.
+            </summary>
+            <param name="teamContext">The team context for the operation</param>
+            <param name="id">The query id.</param>
+            <param name="timePrecision"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.QueryByIdAsync(System.String,System.Guid,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets the results of the query by id.
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="id">The query id.</param>
+            <param name="timePrecision"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.QueryByIdAsync(System.Guid,System.Guid,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets the results of the query by id.
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="id">The query id.</param>
+            <param name="timePrecision"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.QueryByIdAsync(System.Guid,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets the results of the query by id.
+            </summary>
+            <param name="id">The query id.</param>
+            <param name="timePrecision"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetReportingLinksAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Nullable{System.DateTime},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item links
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item links of all work item types.</param>
+            <param name="continuationToken">Specifies the continuationToken to start the batch from. Omit this parameter to get the first batch of links.</param>
+            <param name="startDateTime">Date/time to use as a starting point for link changes. Only link changes that occurred after that date/time will be returned. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetReportingLinksAsync(System.Guid,System.Collections.Generic.IEnumerable{System.String},System.String,System.Nullable{System.DateTime},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item links
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item links of all work item types.</param>
+            <param name="continuationToken">Specifies the continuationToken to start the batch from. Omit this parameter to get the first batch of links.</param>
+            <param name="startDateTime">Date/time to use as a starting point for link changes. Only link changes that occurred after that date/time will be returned. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetReportingLinksAsync(System.Collections.Generic.IEnumerable{System.String},System.String,System.Nullable{System.DateTime},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item links
+            </summary>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item links of all work item types.</param>
+            <param name="continuationToken">Specifies the continuationToken to start the batch from. Omit this parameter to get the first batch of links.</param>
+            <param name="startDateTime">Date/time to use as a starting point for link changes. Only link changes that occurred after that date/time will be returned. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetRelationTypeAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets the work item relation types.
+            </summary>
+            <param name="relation"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetRelationTypesAsync(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.ReadReportingRevisionsGetAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String,System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingRevisionsExpand},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions with the option of including deleted items
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="fields">A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.</param>
+            <param name="continuationToken">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="includeIdentityRef">Return an identity reference instead of a string value for identity fields.</param>
+            <param name="includeDeleted">Specify if the deleted item should be returned.</param>
+            <param name="includeTagRef">Specify if the tag objects should be returned for System.Tags field.</param>
+            <param name="includeLatestOnly">Return only the latest revisions of work items, skipping all historical revisions</param>
+            <param name="expand">Return all the fields in work item revisions, including long text fields which are not returned by default</param>
+            <param name="includeDiscussionChangesOnly">Return only the those revisions of work items, where only history field was changed</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.ReadReportingRevisionsGetAsync(System.Guid,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String,System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingRevisionsExpand},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions with the option of including deleted items
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="fields">A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.</param>
+            <param name="continuationToken">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="includeIdentityRef">Return an identity reference instead of a string value for identity fields.</param>
+            <param name="includeDeleted">Specify if the deleted item should be returned.</param>
+            <param name="includeTagRef">Specify if the tag objects should be returned for System.Tags field.</param>
+            <param name="includeLatestOnly">Return only the latest revisions of work items, skipping all historical revisions</param>
+            <param name="expand">Return all the fields in work item revisions, including long text fields which are not returned by default</param>
+            <param name="includeDiscussionChangesOnly">Return only the those revisions of work items, where only history field was changed</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.ReadReportingRevisionsGetAsync(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String,System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingRevisionsExpand},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions with the option of including deleted items
+            </summary>
+            <param name="fields">A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.</param>
+            <param name="continuationToken">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="includeIdentityRef">Return an identity reference instead of a string value for identity fields.</param>
+            <param name="includeDeleted">Specify if the deleted item should be returned.</param>
+            <param name="includeTagRef">Specify if the tag objects should be returned for System.Tags field.</param>
+            <param name="includeLatestOnly">Return only the latest revisions of work items, skipping all historical revisions</param>
+            <param name="expand">Return all the fields in work item revisions, including long text fields which are not returned by default</param>
+            <param name="includeDiscussionChangesOnly">Return only the those revisions of work items, where only history field was changed</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.ReadReportingRevisionsPostAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingWorkItemRevisionsFilter,System.String,System.Nullable{System.DateTime},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingRevisionsExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions
+            </summary>
+            <param name="filter">An object that contains request settings: field filter, type filter, identity format</param>
+            <param name="continuationToken">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="expand"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.ReadReportingRevisionsPostAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingWorkItemRevisionsFilter,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingRevisionsExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions
+            </summary>
+            <param name="filter">An object that contains request settings: field filter, type filter, identity format</param>
+            <param name="project">Project ID or project name</param>
+            <param name="continuationToken">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="expand"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.ReadReportingRevisionsPostAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingWorkItemRevisionsFilter,System.Guid,System.String,System.Nullable{System.DateTime},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingRevisionsExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions
+            </summary>
+            <param name="filter">An object that contains request settings: field filter, type filter, identity format</param>
+            <param name="project">Project ID</param>
+            <param name="continuationToken">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="expand"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.DeleteWorkItemAsync(System.Int32,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="id"></param>
+            <param name="destroy"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemAsync(System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.DateTime},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a single work item
+            </summary>
+            <param name="id"></param>
+            <param name="fields"></param>
+            <param name="asOf"></param>
+            <param name="expand"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemsAsync(System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.DateTime},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemExpand},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemErrorPolicy},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a list of work items
+            </summary>
+            <param name="ids"></param>
+            <param name="fields"></param>
+            <param name="asOf"></param>
+            <param name="expand"></param>
+            <param name="errorPolicy"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.UpdateWorkItemAsync(Microsoft.VisualStudio.Services.WebApi.Patch.Json.JsonPatchDocument,System.Int32,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="document"></param>
+            <param name="id"></param>
+            <param name="validateOnly"></param>
+            <param name="bypassRules"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.CreateWorkItemAsync(Microsoft.VisualStudio.Services.WebApi.Patch.Json.JsonPatchDocument,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="document"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="type"></param>
+            <param name="validateOnly"></param>
+            <param name="bypassRules"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.CreateWorkItemAsync(Microsoft.VisualStudio.Services.WebApi.Patch.Json.JsonPatchDocument,System.Guid,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="document"></param>
+            <param name="project">Project ID</param>
+            <param name="type"></param>
+            <param name="validateOnly"></param>
+            <param name="bypassRules"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTemplateAsync(System.String,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a single work item from a template
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="type"></param>
+            <param name="fields"></param>
+            <param name="asOf"></param>
+            <param name="expand"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTemplateAsync(System.Guid,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a single work item from a template
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="type"></param>
+            <param name="fields"></param>
+            <param name="asOf"></param>
+            <param name="expand"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemStateColorsAsync(System.String[],System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] INTERNAL ONLY: It will be used for My account work experience. Get the work item type state color for multiple projects
+            </summary>
+            <param name="projectNames"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTypeCategoriesAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTypeCategoriesAsync(System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTypeCategoryAsync(System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a the deltas between work item revisions
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="category"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTypeCategoryAsync(System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a the deltas between work item revisions
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="category"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTypeColorsAsync(System.String[],System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] INTERNAL ONLY: It will be used for My account work experience. Get the wit type color for multiple projects
+            </summary>
+            <param name="projectNames"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTypeAsync(System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a the deltas between work item revisions
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="type"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTypeAsync(System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a the deltas between work item revisions
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="type"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTypesAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTypesAsync(System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetDependentFieldsAsync(System.String,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns the dependent fields for the corresponding workitem type and fieldname
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="type"></param>
+            <param name="field"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetDependentFieldsAsync(System.Guid,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns the dependent fields for the corresponding workitem type and fieldname
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="type"></param>
+            <param name="field"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTypeStatesAsync(System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns the state names and colors for a work item type
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="type"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.GetWorkItemTypeStatesAsync(System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns the state names and colors for a work item type
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="type"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.ExportWorkItemTypeDefinitionAsync(System.String,System.String,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Export work item type
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="type"></param>
+            <param name="exportGlobalLists"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.ExportWorkItemTypeDefinitionAsync(System.Guid,System.String,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Export work item type
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="type"></param>
+            <param name="exportGlobalLists"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.ExportWorkItemTypeDefinitionAsync(System.String,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Export work item type
+            </summary>
+            <param name="type"></param>
+            <param name="exportGlobalLists"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.UpdateWorkItemTypeDefinitionAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemTypeTemplateUpdateModel,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Add/updates a work item type
+            </summary>
+            <param name="updateModel"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.UpdateWorkItemTypeDefinitionAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemTypeTemplateUpdateModel,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Add/updates a work item type
+            </summary>
+            <param name="updateModel"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientBase.UpdateWorkItemTypeDefinitionAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemTypeTemplateUpdateModel,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Add/updates a work item type
+            </summary>
+            <param name="updateModel"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WitBatchResponse.ParseBody``1(System.Net.Http.Formatting.MediaTypeFormatter)">
+            <summary>
+            Parses the body content of batch response with given data type.
+            </summary>
+            <typeparam name="T">Data type to parse response body</typeparam>
+            <param name="formatter">Body content formatter. Default is <see cref="T:Microsoft.VisualStudio.Services.WebApi.VssJsonMediaTypeFormatter"/></param>
+            <returns>Parse body object in given type. Returns null if body content is empty.</returns>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingWorkItemRevisionsFilter.Fields">
+            <summary>
+            A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingWorkItemRevisionsFilter.Types">
+            <summary>
+            A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingWorkItemRevisionsFilter.IncludeIdentityRef">
+            <summary>
+            Return an identity reference instead of a string value for identity fields.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingWorkItemRevisionsFilter.IncludeDeleted">
+            <summary>
+            Include deleted work item in the result.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingWorkItemRevisionsFilter.IncludeTagRef">
+            <summary>
+            Include tag reference instead of string value for System.Tags field
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingWorkItemRevisionsFilter.IncludeLatestOnly">
+            <summary>
+            Include only the latest version of a work item, skipping over
+            all previous revisions of the work item.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountMyWorkResult.WorkItemDetails">
+            <summary>
+            WorkItem Details
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountMyWorkResult.QuerySizeLimitExceeded">
+            <summary>
+            True, when length of WorkItemDetails is same as the limit
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountRecentActivityWorkItemModel">
+            <summary>
+            Represents Work Item Recent Activity
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountRecentActivityWorkItemModel.Id">
+            <summary>
+            Work Item Id
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountRecentActivityWorkItemModel.AssignedTo">
+            <summary>
+            Assigned To
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountRecentActivityWorkItemModel.WorkItemType">
+            <summary>
+            Type of Work Item
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountRecentActivityWorkItemModel.Title">
+            <summary>
+            Title of the work item
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountRecentActivityWorkItemModel.State">
+            <summary>
+            State of the work item
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountRecentActivityWorkItemModel.ChangedDate">
+            <summary>
+            Last changed date of the work item
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountRecentActivityWorkItemModel.TeamProject">
+            <summary>
+            Team project the work item belongs to
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountRecentActivityWorkItemModel.ActivityDate">
+            <summary>
+            Date of the last Activity by the user
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountRecentActivityWorkItemModel.ActivityType">
+            <summary>
+            Type of the activity
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.AccountRecentActivityWorkItemModel.IdentityId">
+            <summary>
+            TeamFoundationId of the user this activity belongs to
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemRecentActivityType">
+            <summary>
+            Type of the activity
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemStateColor">
+            <summary>
+            Work item type state name and color pair
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemStateColor.Name">
+            <summary>
+            Work item type state name
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemStateColor.Color">
+            <summary>
+            Color value
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ProjectWorkItemStateColors">
+            <summary>
+            Project work item type state colors
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ProjectWorkItemStateColors.ProjectName">
+            <summary>
+            Project name
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ProjectWorkItemStateColors.workItemTypeStateColors">
+            <summary>
+            State colors for all work item type in a project
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemTypeStateColors">
+            <summary>
+            State colors for a work item type
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemTypeStateColors.WorkItemTypeName">
+            <summary>
+            Work item type name
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.WorkItemTypeStateColors.StateColors">
+            <summary>
+            Work item type state colors
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WitConstants.WorkItemTrackingWebConstants">
+            <summary>
+            General constants specific to the WorkItemTracking Web Layer
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WitConstants.WorkItemTrackingWebConstants.RestAreaId">
+            <summary>
+            The first fragment of reporting rest URIs
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WitConstants.WorkItemTrackingRestResources">
+            <summary>
+            Used for Area variables, Controller names and Route names
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WitConstants.WorkItemTrackingLocationIds">
+            <summary>
+            Web API Route location IDs for versioned routes
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WitConstants.QueryParameters">
+            <summary>
+            Query parameter names used in Http Request messages
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClient.LastResponseStatusCode">
+            <summary>
+            <see cref="T:System.Net.HttpStatusCode"/> of the last response
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClient.GetQueriesBatchAsync(System.Collections.Generic.IEnumerable{System.Guid},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Retrieves a single query by project and either id or path
+            </summary>
+            <param name="ids">Query ids</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.GetHistoryAsync(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns history of all revision for a given work item ID
+            </summary>
+            <param name="id"></param>
+            <param name="top"></param>
+            <param name="skip"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.GetHistoryByIdAsync(System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns the history value of particular revision
+            </summary>
+            <param name="id"></param>
+            <param name="revisionNumber"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.ReadReportingRevisionsGetAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="fields">A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.</param>
+            <param name="watermark">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="includeIdentityRef">Return an identity reference instead of a string value for identity fields.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.ReadReportingRevisionsGetAsync(System.Guid,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="fields">A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.</param>
+            <param name="watermark">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="includeIdentityRef">Return an identity reference instead of a string value for identity fields.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.ReadReportingRevisionsGetAsync(System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions with the option of including deleted items
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="includeDeleted">Specify if the deleted item should be returned.</param>
+            <param name="fields">A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.</param>
+            <param name="watermark">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="includeIdentityRef">Return an identity reference instead of a string value for identity fields.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.ReadReportingRevisionsGetAsync(System.Guid,System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions with the option of including deleted items
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="includeDeleted">Specify if the deleted item should be returned.</param>
+            <param name="fields">A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.</param>
+            <param name="watermark">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="includeIdentityRef">Return an identity reference instead of a string value for identity fields.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.ReadReportingRevisionsGetAsync(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions
+            </summary>
+            <param name="fields">A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.</param>
+            <param name="watermark">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="includeIdentityRef">Return an identity reference instead of a string value for identity fields.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.ReadReportingRevisionsGetAsync(System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions with the option of including deleted items
+            </summary>
+            <param name="includeDeleted">Specify if the deleted item should be returned.</param>
+            <param name="fields">A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.</param>
+            <param name="watermark">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="includeIdentityRef">Return an identity reference instead of a string value for identity fields.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.ReadReportingRevisionsGetAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String,System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingRevisionsExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions with the option of including deleted items
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="fields">A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.</param>
+            <param name="continuationToken">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="includeIdentityRef">Return an identity reference instead of a string value for identity fields.</param>
+            <param name="includeDeleted">Specify if the deleted item should be returned.</param>
+            <param name="includeTagRef">Specify if the tag objects should be returned for System.Tags field.</param>
+            <param name="includeLatestOnly">Return only the latest revisions of work items, skipping all historical revisions</param>
+            <param name="expand">Return all the fields in work item revisions, including long text fields which are not returned by default</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.ReadReportingRevisionsGetAsync(System.Guid,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String,System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingRevisionsExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions with the option of including deleted items
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="fields">A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.</param>
+            <param name="continuationToken">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="includeIdentityRef">Return an identity reference instead of a string value for identity fields.</param>
+            <param name="includeDeleted">Specify if the deleted item should be returned.</param>
+            <param name="includeTagRef">Specify if the tag objects should be returned for System.Tags field.</param>
+            <param name="includeLatestOnly">Return only the latest revisions of work items, skipping all historical revisions</param>
+            <param name="expand">Return all the fields in work item revisions, including long text fields which are not returned by default</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.ReadReportingRevisionsGetAsync(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String,System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingRevisionsExpand},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions with the option of including deleted items
+            </summary>
+            <param name="fields">A list of fields to return in work item revisions. Omit this parameter to get all reportable fields.</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item revisions of all work item types.</param>
+            <param name="continuationToken">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="includeIdentityRef">Return an identity reference instead of a string value for identity fields.</param>
+            <param name="includeDeleted">Specify if the deleted item should be returned.</param>
+            <param name="includeTagRef">Specify if the tag objects should be returned for System.Tags field.</param>
+            <param name="includeLatestOnly">Return only the latest revisions of work items, skipping all historical revisions</param>
+            <param name="expand">Return all the fields in work item revisions, including long text fields which are not returned by default</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.ReadReportingRevisionsPostAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingWorkItemRevisionsFilter,System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions
+            </summary>
+            <param name="filter">An object that contains request settings: field filter, type filter, identity format</param>
+            <param name="watermark">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.ReadReportingRevisionsPostAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingWorkItemRevisionsFilter,System.String,System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions
+            </summary>
+            <param name="filter">An object that contains request settings: field filter, type filter, identity format</param>
+            <param name="project">Project ID or project name</param>
+            <param name="watermark">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.ReadReportingRevisionsPostAsync(Microsoft.TeamFoundation.WorkItemTracking.WebApi.Models.ReportingWorkItemRevisionsFilter,System.Guid,System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item revisions
+            </summary>
+            <param name="filter">An object that contains request settings: field filter, type filter, identity format</param>
+            <param name="project">Project ID</param>
+            <param name="watermark">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of revisions.</param>
+            <param name="startDateTime">Date/time to use as a starting point for revisions, all revisions will occur after this date/time. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.GetReportingLinksAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},System.Nullable{System.DateTime},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item links
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item links of all work item types.</param>
+            <param name="watermark">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of links.</param>
+            <param name="startDateTime">Date/time to use as a starting point for link changes. Only link changes that occurred after that date/time will be returned. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.GetReportingLinksAsync(System.Guid,System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},System.Nullable{System.DateTime},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item links
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item links of all work item types.</param>
+            <param name="watermark">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of links.</param>
+            <param name="startDateTime">Date/time to use as a starting point for link changes. Only link changes that occurred after that date/time will be returned. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.WorkItemTracking.WebApi.WorkItemTrackingHttpClientCompatBase.GetReportingLinksAsync(System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},System.Nullable{System.DateTime},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a batch of work item links
+            </summary>
+            <param name="types">A list of types to filter the results to specific work item types. Omit this parameter to get work item links of all work item types.</param>
+            <param name="watermark">Specifies the watermark to start the batch from. Omit this parameter to get the first batch of links.</param>
+            <param name="startDateTime">Date/time to use as a starting point for link changes. Only link changes that occurred after that date/time will be returned. Cannot be used in conjunction with 'watermark' parameter.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+    </members>
+</doc>

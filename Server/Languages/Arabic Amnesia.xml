@@ -1,0 +1,2173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- نمط فقدان الذاكرة بواسطة صلاح"شادو" (@SlHlS)!
+آخر تحديث: 06/04/2020 -->
+<strings>
+  <language name="Arabic Amnesia" base="عربي" variant="أمنيسيا" owner="SlHlS" code="ar" isDefault="false"/>
+  <string key="NotInGame">
+    <value>هل نسيت؟ أنت لست ضمن أي لعبة حاليًا!</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <value>بدأ {0} لعبة! إنضم لتحظى بمرحٍ كثير لدرجة أنك سوف تنسَ من تكون!</value>
+    <value>بدأت لعبة جديدة بواسطة {0}! إنضم لتأكلك ذئابٌ فاقدةٌ للذاكرة!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <value>بدأ {0} لعبة فوضوية! إنضم لتشارك في الفوضى!</value>
+    <value>بدأت لعبة فوضوية جديدة بواسطة {0}! إنضم لتقتل مصادفة!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>نسيت أن تنضم قبل أن تبدأ اللعبة! إستعمل /nextgame وسأعلمك عندما تبدأ لعبة جديدة كي لا تنساها مجددًا!</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>لقد انضممت مسبقًا، ألا تتذكر؟</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>تبقت دقيقة واحدة للإنضمام، لا تنسوا ذلك!</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>تبقى {0} ثانية للإنضمام</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>نسي الجميع هذه المجموعة... لم نصل لـ5 لاعبين، جاري إلغاء اللعبة!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>جاري بدء اللعبة، رجاءًا إنتظروا بينما أوزع الأدوار وأحدث قاعدة البيانات.\nشيءٌ غريبٌ يحدث في القرية! لسببٍ غير معروف، يبدو أنه لا أحد يستطيع أن يتذكر من يكون... (الأدوار لن تُكشف للاعبين!) هذه الأدوار من المحتمل أن تكون معينة في هذه اللعبة:</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>{0} is banned for attempting an exploit (no names starting with /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, did you forget to change your name? Please do that, otherwise you can't join!</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sorry, max player limit has been reached! Remember to try again on the /nextgame!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} forgot who they are! {1} amnesiacs, {2} minimum, {3} max</value>
+  </string>
+  <string key="PMTheBot">
+    <value>يا {0}، لقد نسيت مراسلة البوت في الخاص أولًا! إضغط الزر في الأسفل أو هذا: {1}، ثم إضغط إبدأ. إن لم تفعل، فسينسى البوت أنك أردت اللعب...</value>
+  </string>
+  <string key="DeadFlee">
+    <value>هل نسيت حتى أنك ميت؟ الأموات لا يفرون...</value>
+  </string>
+  <string key="Flee">
+    <value>نسي {0} عائلته وأصدقائه في القرية وفر مفزوعًا!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>نسي {0}، لكنه كان {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>الفاقدي للذاكرة المتبقين {0}.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>You don't even know who you are but you already want to do something? Take a breath! I didn't ask you anything yet!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Did you forget? You can't do that unless you're playing!</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Looks like I've forgotten who you're talking about... I can't find a player by that name!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>Did you forget how to play too? This answer is not valid!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>صوت {0} للقيام بشيءٍ لـ{1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>صوت {0} لإعدام {1}</value>
+  </string>
+  <string key="IdleKill">
+    <value>نسيّ {0} أن يصوت لليلتين على التوالي. نسيان هذه اللعبة أمرٌ سيءٌ للغاية لدرجة أن {0} نسيّ أيضًا كيف يتنفس، ومات. {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>تغير دورك، لكن مماذا، وإلى ماذا؟</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>قُبل الإختيار</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nقد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>بدأت تنسى إسمًا... ماذا كان، {1}؟ مهلًا... بماذا كنت تفكر، مجددًا؟ ومن بين الأسماء في عقلك، يظهر واحدًا جديدًا: {0}!</value>
+  </string>
+  <string key="SeerSees">
+    <value>قد لا تتذكر من تكون تمامًا، لكن على الأقل تعلم هذا: {0} هو {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>من الذي تود إعدامه؟</value>
+  </string>
+  <string key="AskDetect">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟ ولماذا الرقم 2 عالقٌ في ذهنك؟</value>
+  </string>
+  <string key="AskShoot">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟ ولماذا الرقم {0} عالقٌ في ذهنك؟</value>
+  </string>
+  <string key="AskVisit">
+    <value></value>
+  </string>
+  <string key="AskSee">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  <string key="AskGuard">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  <string key="AskEat">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  <string key="AskHunt">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  <string key="AskConvert">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  تأكد من التناقش مع {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> و </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء النهار!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء النهار!</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="RoleInfoZombie" >
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="RoleInfoZombieHunter" >
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="LynchTime" >
+    <value>
+      يدنو الغسق، وتجتمع القرية لتقرر من ينبغي أن... ينسى التنفس هذه المرة.
+      الجميع لديهم {0} ثانية للتصويت!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value>لقد حل النهار، لديكم جميعًا {0} ثانية لتحاولوا معرفة أدواركم... وأيضًا إذا تمكنتم من، معرفة أدوار البقية!</value>
+  </string>
+  <string key="NightTime" >
+    <value>حلّ الليل. يخلد الجميع لأسرتهم، على أمل أن يستيقظوا وقد عادت كل ذكرياتهم. لاعبي الليل: لديكم {0} ثانية لإستعمال قدراتكم!</value>
+  </string>
+  <string key="LynchKill" >
+    <value>جمع القرويين أصواتهم، على أمل أنهم اتخذوا القرار الأفضل بالرغم من شحة المعلومات. {0} مات. {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>غير قادرين على إتخاذ قرارٍ مناسب عمن سيعدمون، يعود الرعاع إلى منازلهم لقضاء الليلة، محبطين...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>يبدو أن الجميع نسوا التصويت! لن يعدم أي أحدٍ الليلة...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value>يجتمع القرويين في الصباح، لكن لا يرون {0} يتجولوا حتى منزله، فقط ليعثروا على جثةٍ مبقورة. أثناء البحث عن المجرم يعثرون شارتان قديمتان وصدأتان ملقاتان على الأرض... لماذا هناك شارتين؟ ربما أنه حتى المالك السابق كان يحاول التذكر...</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value>يطل الصباح، و، يرتعب الجميع، هناك جثةٌ مهشمةٌ بالكامل بالقرب من باب المعبد، والجناحان مائلة بإتجاهات غير طبيعية. لكن ما زال يمكن تمييز الوجه، وبرغم ذلك: {0} مات.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value>بينما يخرج الجميع من منازلهم، يعثرون على قطع بندقية مبعثرة... ثم أقدام... ثم أصابع... ثم جثة {0}، تطفو على النافورة في ميدان البلدة، ميتًا من هجوم الذئاب. لقد فقدتم المدفعي خاصتكم.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value>يستيقظ القرويين في الصباح، ليجدوا بقايا أحشاء {0} ملقية على لوح الأويجا وبطاقات قراءة الطالع. مات العراف</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value>يستيقظ الجميع على رائحة الدماء والكحول... لقد دمرت الحانة! وبعد تنظيف الدماء، يعثرون على بقايا {0} ممزقة إلى أشلاء.</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value>بينما تشرق الشمس على القرية، يعثر القرويين على جثة {0} مستلقية على لوح الأويجا، لكن مع مجموعة... بطاقات لعب كان يظنها بطاقات قراءة الطالع؟ يا له من أحمق!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>بينما يستيقظ الجميع في الصباح، يشمون رائحةً مريعة. فيتبعون الرائحة ليعثروا على {0} ممزقٌ إلى أشلاء في الحظيرة ورأسه مفقود. نم نم نم نم نم\n{1}</value>
+  </string>
+  <string key="HunterKilledZombie">
+    <!-- 0 - victim name -->
+    <value>رائحة نتنة قوية تأتي من منزل {0}... يذهب أهل القرية ليتحققوا منها فيجدوا جثة ملقية أمام مذبحٍ مظلم. لقد قُتل طائفي بواسطة صائد الطائفيين!</value>
+  </string>
+  <string key="NoAttack" >
+    <value>يجتمع القرويين في الصباح التالي في مركز القرية، يتنفسون الصعداء - يبدو أنه لم يكن هناك أي هجومٍ الليلة الماضية.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>تغير دورك، لكن مماذا، وإلى ماذا؟</value>
+  </string>
+  <string key="WolfTeam">
+    <value>قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value>من بين الأسماء التي تخطر ببالك، يظهر إسمٌ جديد: {0}!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value>أوه كلا! أكلتك الذئاب. نمـ•نمـ•نمـ•نمـ•نمـ</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>حاولت حراسة ذئب! فأكلك الذئب...</value>
+  </string>
+  <string key="GuardSaved" >
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>لم يكن {0} بالمنزل!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>هل حدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="HarlotEaten" >
+    <value>الزوارة نسيت أن تخرج لتمرح الليلة، يا له من خطأً فادح... {0} أكلته الذئاب!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value>لم يكن {0} بالمنزل!</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value>كان {0} ذئبًا! لقد أكلك...</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value>الليلة الماضية ذهبت {0} للمنزل الخطأ! لقد عُثر على بقاياها أمام بوابة المعبد...</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value>تسللت {0} لمنزل {1}، مستعدةً لتحظى ببعض المرح كي يخففوا من إرهاقهم. بدلًا من ذلك، {0} تعثر على ذئب يأكل {1}! الذئب يستدير بسرعةٍ نحو {0} وينقض عليها... {0} ماتت.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكرين...</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>هل حدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value>قد لا تتذكر من تكون بالضبط، لكن على الأقل تعلم هذا: {0} هو المحقق 🕵!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value>قد لا تتذكر من تكون بالضبط، لكن على الأقل تعلم هذا: {0} هو {1}!</value>
+  </string>
+  <string key="HarlotShot" >
+    <value>فجأةً، يدوي صوت طلقٍ ناري. يهرع القرويين لمكان الصوت فيروا {0} واقفًا بجوار جثة {1}، وما يزال مصوبًا بندقيته إلى رأسه. {1} كان الزوارة 💋</value>
+  </string>
+  <string key="DefaultShot" >
+    <value>فجأةً، يدوي صوت طلقٍ ناري. يهرع القرويين لمكان الصوت فيروا {0} واقفًا بجوار جثة {1}، وما يزال مصوبًا بندقيته إلى رأسه. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value>فاز الذئب!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value>فازت الذئاب!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value>فاز القرويون! لقد هلك جميع أعدائهم...</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value>أوه كلا! لقد أعدمتم الدباغ! لم تتوقعوا ذلك، هاه؟</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>فجأةً، الناجون تذكروا كل شيء! أسمائهم وأدوارهم وفرقهم كانت كالآتي:</value>
+  </string>
+  <string key="ZombieVotedConvert" >
+    <value>صوت {0} للقيام بشيءٍ لـ{1}</value>
+  </string>
+  <string key="CultConvertZombieHunter">
+    <value>ذهب {0} لمنزل {1} فمات!</value>
+  </string>
+  <string key="ZombieHunterKilledCultVisit">
+    <value>مات {0}! هناك رقمٌ في بالك... {1}</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>تغير دورك، لكن مماذا، وإلى ماذا؟</value>
+  </string>
+  <string key="CultTeam">
+    <value>قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>من بين الأسماء التي تخطر ببالك، يظهر إسمٌ جديد: {0}!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>ذهب {0} لمنزل {1}، لكنه لم يكن موجودًا!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value>قد لا يتذكرون من يكونون، لكن الناس الوحيدين المتبقين هم طائفيين... فازت الطائفة!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>إن {0} كان ميتًا مسبقًا!</value>
+  </string>
+  <string key="HunterFindZombie">
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>من بين الأسماء التي تخطر ببالك، يظهر إسمٌ جديد: {0}!</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
+  <string key="Villager">
+    <value>قروي 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>السكير 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>الزوارة 💋</value>
+  </string>
+  <string key="Seer">
+    <value>العراف 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>الخائن 🥸</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>الملاك الحارس 👼</value>
+  </string>
+  <string key="Detective">
+    <value>المحقق 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>ذئب 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>الملعون 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>المدفعي 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>الدباغ 👺</value>
+  </string>
+  <string key="Fool">
+    <value>الأحمق 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>الطفل المسعور 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>الناظر 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>تلميذ العراف 🙇</value>
+  </string>
+  <string key="Zombie">
+    <value>طائفي 👤</value>
+  </string>
+  <string key="ZombieHunter">
+    <value>صائد الطائفيين 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>هرب</value>
+  </string>
+  <string key="Dead">
+    <value>💀 ميت</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 حي</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>فاقدي الذاكرة الأحياء</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>بناء 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="MasonEaten">
+    <value>بينما يستيقظ الجميع، يعثرون على جثة {0} مدفونةٌ تحت كومةٍ من الحجارة، والدماء متناثرةٌ في كل مكان. مات أحد بنائيكم!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>إن {0} كان ميتًا مسبقًا!</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>ذهب {0} لمنزل {1}، لكن لا تذكر ما حدث هناك...</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, a player with the name {0} has already joined. Please change your name to join.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>قد لا تتذكر من تكون بالضبط، لكن على الأقل تعلم هذا: {0} هو طائفي 👤!</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>كان</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>يستيقظ الجميع في الصباح، ويلاحظوا عدم وجود {0} في الأنحاء... يتحققون من منزله ليجدوا بقايا {0}.</value>
+    <value>بينما اجتمع القرويون عند شروق الشمس، وجدوا بقايا {0}، الذي مات بطريقةٍ ما الليلة الماضية...</value>
+  </string>
+  <string key="MasonConverted">
+    <value>بدأت تنسى إسمًا... ماذا كان، {0}؟ مهلًا... بماذا كنت تفكر، مجددًا؟</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>لا يمكنك نسيان كل شيءٍ والفرار بينما كل شيءٍ يحاول قتلك! الفرار أثناء اللعبة معطل بواسطة مشرفي المجموعة!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>مات</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>{0} added to admin list. Use /config to change group settings.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Have you forgotten? You're already in a game! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Your group has managed to start multiple games... Killing extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <value>Your group is currently in the queue. Don't worry, it won't be forgotten! Position: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @greywolfdev for more information</value>
+  </string>
+  <string key="MaxGames">
+    <value>Sorry, max concurrent games has been reached ({0}).  \nPosition in queue: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>هل نسيت؟ لا يوجد لعبة جارية، إبدأ لعبة جديدة بإستعمال /startgame أو إبدأ لعبة فوضوية بإستعمال /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>أنت لست مشرف في هذه المجموعة، أتتذكر؟ هذا يعني أنه لا يمكنك تنفيذ هذا الأمر!</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>After this game, I am shutting down for maintenance.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>After this game, I am shutting down momentarily for an update (automated).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId was null. Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} is already an admin, remember?</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0} is not an admin, remember?</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} removed from admin list.</value>
+  </string>
+  <!-- HERE! EDIT HERE! is this message used when setting to or from amnesia? ayylmao-->
+  <string key="LanguageSet">
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+	<value> </value>
+  </string>
+  <string key="TimesUp">
+	<value>أنسيت الإجابة؟ إنتهى الوقت!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="CupidChosen">
+    <value>قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {0}</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>قررت القرية شنقك! والخوف من الموت جعلك تسترد بعض الذكريات، وأنت تعلم ما ستفعل... هذه فرصتك الأخيرة، إختر شخصًا لتطلق النار عليه بينما تسقط ميتًا!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>يتحسس {0} مسدسه بينما يشتد عليه حبل المشنقة، لكن لا يمكنه الوصول إليه خلال الوقت، ويسقط ليلقى حتفه مع صوتٍ عالي لطقطقة عنقه...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>يسحب {0} مسدسه بسرعة ويتطلع إلى الحشد... ولا يمكنه أن يقرر على من سيطلق. لذا يسقط ليلاقي حتفه، متقبلًا لمصيره...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>بينما يشتد حبل المشنقة حول عنق {0}، يسحب مسدسه، ويلقمه، ويصوب، ويضغط الزناد، ليطلق على {1} ليطرحه أرضًا تحته! {1} يسقط ميتًا.  {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>أُصبت بجروحٍ فتاكة! والخوف من الموت جعلك تسترد بعض الذكريات، وأنت تعلم ما ستفعل... هذه فرصتك الأخيرة، إختر شخصًا لتطلق النار عليه بينما تسقط ميتًا!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>جروح {0} كانت فتاكةً جدًا، فتاكة لدرجة أنه لم يستطع الوصول إلى سلاحه، بينما يسقط في بركةٍ من الدماء...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>بينما يسقط {0}، ليلفظ أنفاسه الأخيرة، لا يمكنه أن يقرر على من سيطلق... فيتقبل مصيره.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>بينما {0} مصابٌ بجروحٍ غائرة، يسقط على الأرض.... لكن ليس بدون ان يسحب مسدسه، ويطلق النار على{1}، والذي يتلقى رصاصةً بين عينيه. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>ذهب {0} لمنزل {1} فمات!</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>ليلة أمس هاجمت الذئاب الصياد، لكن واجهتهم مقاومة... برغم موت الصياد، إلا أن {0} مات أيضًا!</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>حاول الذئب مهاجمة الصياد ليلة الأمس، لكن الصياد كان قادرًا على القضاء على الذئب {0} ببندقيته!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>حاولت الذئاب الحصول على وجبةٍ خفيفة في آخر الليل، لكن بدلًا من ذلك حصلوا على تحيةٍ من قاتلٍ مجنون! قُتل {0} في المعركة!</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>كانت تبدو ليلةً هادئة لـ{0}، لكنه كان مخطئًا. إجتمع القرويون في الصباح ليعثروا على {0} مبتورٌ من رأسه إلى قدميه، لكن بغرابة الكبد مفقود... السفاح ضرب مجددًا! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>ذهب {0} لمنزل {1} فمات!</value>
+  </string>
+  <string key="GuardKiller">
+    <value>ذهبت لمنزل السفاح! فقتلت.</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>كان {0} السفاح! فقتلت.</value>
+  </string>
+    <string key="HarlotFuckKillerPublic">
+    <value>يجد القرويون جثة {0} مرميةً في الميدان العام جراء طعناتٍ عديدة. {0} مات.</value>
+  </string>
+
+  <string key="DGToMason">
+    <value>من بين الأسماء التي تخطر ببالك، يظهر إسمٌ جديد: {0}!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>من بين الأسماء التي تخطر ببالك، يظهر إسمٌ جديد: {0}!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>من بين الأسماء التي تخطر ببالك، يظهر إسمٌ جديد: {0}!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>الشخص الوحيد المتبقي هو السفاح! لقد فاز!</value>
+  </string>
+  <string key="AskKill">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  <string key="LoverDied">
+    <value>بينما يموت {0} ويلفظ أنفاسه الأخيرة، يسرع {1} ويسقط باكيًا. لا يمكنه تحمل فقد أحبائه، ويطلق النار على نفسه بأقرب مسدسٍ يستطيع العثور عليه. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  <string key="AskCupid1">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  <string key="AskCupid2">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدٌ آخر، لكن من يجب أن تختار؟</value>
+  </string>
+  <string key="Hunter">
+    <value>الصياد 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>ملاك الحب 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>السفاح 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>المتحول 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>تغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>الحب الحقيقي يدوم للأبد! فاز الأحباء!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>في وسط ميدان البلدة، عثر الجميع على جثة {0}، وطلقاتٍ عديدة قد اخترقت جسده. يبدو أنه حاول التسلل إلى عند الصياد! عجبًا، {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>هل حدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Did you forget? You are already on the wait list for {0}!</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>You have been added to the wait list for {0}. Don't worry, I won't forget to PM you when the next game is starting!</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>A new game is starting in {0}! Don't forget to join!</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>يطل الصباح، والقرويان المتبقيان يذهبان إلى ميدان البلدة. {0} ينظر إلى {1}، وتعلو وجهه إبتسامةٌ عريضة، ويخرج سكينًا، ويقضي على {1}</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>مات جميع من في القرية... لم يتبقى شيءٌ سوى الجثث. لا أحد بفوز هذه الجولة، ما عدا النسور...</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>بينما تشرق الشمس، يمشي {0} و {1} إلى القرية. {0} يُخرج سكينه وينقض على {1}. لكن {1} يسحب مسدسًا ويطلق النار على وجه {0} وبينما يسقط {0}، يغرس السكين عميقًا في جسد {1}. مات كلاهما، القرية فارغة، لا يوجد فائز...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <value>نسيت الإختيار، لذا قام المشغل بالإختيار بدلًا عنك: {0}</value>
+  </string>
+  <string key="Won">
+    <value>فاز</value>
+  </string>
+  <string key="Lost">
+    <value>خسر</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>اللاعب {0} نسي التصويت وقُتل بسبب ذلك {1} مرة خلال الـ24 ساعةً الماضية.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>
+	Every player is a villager, able to vote every day to try and lynch the village's enemies (or their own...), but some people are nothing other than villagers! In that case, they won't have any actions for the whole game (other than the lynch vote), and their deaths will only make a difference as another number.
+	
+	NO ACTIONS, ever!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>
+	The Seer may choose a player every night, and will find out their role once morning comes. Careful when revealing what you've found out to others, though: lots of people in the villager want a Seer dead... Trust no one, not even yourself: you may be the fool! (/aboutfool) When looking at the Traitor, there's a 50% chance of seeing them as either a villager or a wolf.
+	
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutWw">
+    <value>
+	 Every night, all wolves in the pack vote to decide who to attack. Not all players should be attacked, though!
+	 The newest wolf in a pack will be killed if the Serial Killer is attacked, and may be killed if the target is the Hunter (30% chance for a sole wolf to die - and not be able to kill the Hunter! - and an additional 20% chance for the newest wolf to die for each additional wolf in the pack!)
+	 All wolves will get drunk if they attack the Village Drunk, and won't be able to do any actions the next night!
+	 <!--EDIT HERE HERE what are roles that won't be home? ayylmao-->The Harlot probably won't be home, so the night will be wasted if you try to attack them!
+	 Good news, though: if you attack the cursed, they will become a wolf along with you! If you kill a Wild Child's rolemodel, they will also become a wolf!
+	 \nIf you attack the drunk, you yourself will become drunk, and will be unable to do the next attack as you sleep off your hangover! (Usually, this means you can't attack the following night, but if the Wolf Cub was killed and the Drunk was your first choice, you won't be able to kill the second player, and you will still be able to attack the following night.)
+	 
+	 NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutHarlot">
+    <!-- hunter! ayylmao -->
+	<value>
+	The Harlot will be given the chance to visit another player each night. They will notice something happened, even if they don't remember what. The harlot dies if they visit a wolf or the Serial Killer, so visiting is a good way to find safe players, even if it's as a sacrifice! The harlot will also die if they visit a house attacked by the wolves or if the Serial Killer chooses to kill them! When visiting a Zombie, the harlot has a 50% chance of finding out their role!
+	
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>
+	The Drunk is just like a villager... Except when they're killed by wolves! Then the wolves will become drunk too, and unable to attack next time!
+	
+	NO ACTIONS, ever!</value>
+  </string>
+  <string key="AboutCursed">
+    <value>
+	The Cursed is just like a villager... Until they're attacked by the wolves! Then they become a wolf as well, and join the pack!
+	
+	NO ACTIONS, until their role changes!</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>
+	The Traitor is just like a villager... Until all wolves die! Then they take over the mantle and become a werewolf, ready to attack the villagers! When the Seer looks at the Traitor, there's a 50% chance of the traitor appearing as either a villager or a wolf.
+	
+	NO ACTIONS, until their role changes!</value>
+  </string>
+  <string key="AboutGA">
+    <value><!--what's the chance for SK to kill GA? 50% wolf ayylmao-->
+	The Guardian Angel can choose one player each night to protect from attacks, either from wolves or the Serial Killer. However, if they choose to protect one of those they should protect from, they may be killed!
+	
+	NIGHT ACTIONS, every night!
+	</value>
+  </string>
+  <string key="AboutDetective">
+    <value>
+	Every day, the Detective can choose a player to investigate, and will find out what their role is. There is a 40% chance the werewolves will see the Detective investigating someone, though!
+	
+	DAY ACTIONS, every day!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>
+	During the day, the Gunner will be given the chance to shoot (and kill!) another player. The whole village will know who did it, so they will (probably) not lynch the Gunner, knowing they're on the villagers' side! There are only two bullets on their gun, though...
+	
+	DAY ACTIONS, but it can only be used twice!</value>
+</string>
+  <string key="AboutTanner">
+    <value>
+	The Tanner is just like a villager... But if they're lynched, they win the game!
+	
+	NO ACTIONS, ever!</value>
+  </string>
+  <string key="AboutFool">
+    <value>
+	The Fool has no way of knowing they aren't actually the Seer... When choosing a player to find out their role, they will instead get told a random role out of all roles of alive players.
+	
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutCult">
+  <!-- CULT CONVERSION RATES AND WHO'S HOME HERE! ayylmao -->
+    <value>
+	Every night, all Zombies in the cult vote to decide who to convert. The cult wins when every single alive player is a Zombie. It's not that simple to convert players, though!
+	
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutCH">
+    <value>
+	The Zombie Hunter has a single job: kill all Zombies. Every night, they get to visit a player, who won't feel anything... unless they are a Zombie, in which case, the Zombie Hunter will kill them! If the cult chooses to convert the CH, their newest member dies.
+	
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutWC">
+    <value>
+	The Wild Child chooses a player as their rolemodel during the first night of the game. Once their role model dies, the Wild Child becomes a werewolf!
+	
+	FIRST NIGHT ACTION, then none until their role changes!</value>
+  </string>
+  <string key="AboutAppS">
+    <value>
+	The Apprentice Seer is just like a villager... Until the Seer dies, in which case, they will become the new Seer!
+	
+	NO ACTIONS, until their role changes!</value>
+  </string>
+  <string key="AboutBH">
+    <value>
+	The Beholder is just like a villager, but, if there's a Seer in the game, they will be told their name. If the Seer dies and the Apprentice Seer and/or the Doppelgänger become Seer, the Beholder will also be told!
+	
+	NO ACTIONS, but they do get information!</value>
+  </string>
+  <string key="AboutMason">
+    <value>
+	A mason is just like a villager, except they will always know who the other masons are! If a mason is converted to the cult, all other masons will be told!
+	
+	NO ACTIONS, but they do get information!</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      The Doppelgänger chooses a player during the first night of the game. Once they die, the Doppelgänger will become what they were! Unless the player was converted to the cult, the Doppelgänger will become what they were at the time of death! When becoming a Wild Child, the Doppelgänger will inherit their role model. The Doppelgänger cannot be converted to a Zombie until they change roles, and will not be able to win (except as a lover) unless they've changed roles!
+      
+	  FIRST NIGHT ACTION, then none until their role changes!
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      The Cupid will choose two players at the start of the game and make them fall in love with each other. If one of them dies, the other will die of sorrow... If one of them is on the winning team at the end of the game, both will be winners! If the only players left standing are the Lovers, they will be the winners! The Cupid can choose themselves as one of the Lovers.
+	  
+	  FIRST NIGHT ACTIONS, then none!
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      The Hunter is just like a villager... Until someone visits them, or they die! Anyone who visits the Hunter's house will find themselves dead (other than the cult - there's a 50% chance the cult will convert the Hunter, and then a 50% chance a Zombie will be killed if the conversion fails), unless they go there to attack the Hunter. The Serial Killer will be able to kill the Hunter, and a pack of wolves will also be able to do that... However, the Hunter won't go down without a fight! When they're killed - be it by lynching or a murder, but not a wolf attack - the Hunter will be given a choice to shoot and kill someone out of the players alive!
+	  Wolf attacks work differently, though! If a sole wolf attacks the hunter, there's a 30% chance they'll be able to kill the wolf and survive. Otherwise, the Hunter will be killed by the wolves, but may be able to take one down (instead of choosing a player to kill) as they go! For two wolves, the chance of killing one of them is 50%. For three, it's 70%; for four, 90%, and for packs with five wolves or more, the Hunter will definitely be able to kill one of them as they die!
+	  
+	  NO ACTIONS, until they die!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>
+	The Serial Killer can choose a player every night to attack and kill. They win if they're the last one alive! There's no one that can't be killed by the Serial Killer, and visiting their house isn't a good idea, since everyone who tries will die... Serial Killers can only be killed by being lynched or shot (by the Gunner or the Hunter).
+	
+	NIGHT ACTIONS, every night!</value>
+  </string>
+  <string key="AboutPara">
+    <value>
+	إن بارا مطور سخيف يحب النباح على الناس. ربما كان يتسكع مع الذئاب لفترةٍ طويلة.... التسكع مع الذئاب فكرةٌ سيئةٌ للغاية.
+	
+	أفعال طوال الوقت... بارا مشغول!</value>
+  </string>
+  <string key="EndTime">
+    <value>مدة االلعبة: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>اليوم {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>An error has occurred, and this node has shut down :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>أرسلت لك رسالةً على الخاص🤔</value>
+  </string>
+  <string key="StartPM">
+    <value>Please send me a pm so I can PM you: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Thanks for starting me! I can PM you now.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Did you forget? You must reply to the user you want to smite!</value>
+  </string>
+  <string key="WhatToDo">
+    <value>What would you like to do?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>You must join a game from within a group chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>You must start a game from within a group chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Time to receive ping message: {0}\nMessages per second: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>كلااا! لا تُغير اللغة من الأمنيسيا! إن كنت حقًا تود أن تفطر قلبي، ما هي اللغة التي تودها الآن؟\nالحالية: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>أستقوم حقًا بتغيير الأمنيسيا؟ يا لك من لئييييم... أي نمطٍ توده؟\nالحالي: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>تم وضع اللغة لـ {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>أي ملف لغةٍ تود؟ لن أدعك تحصل عليه إن لم يكن بداعي تحسين الأمنيسيا... (فقط أمزح، فلتمضي قدمًا!)</value>
+  </string>
+  <string key="NoNodes">
+    <value>There are no nodes online right now, please try again in a few seconds</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Did you forget? You must run this command in a group!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>أنت لست مشرفًا شاملًا...</value>
+  </string>
+  <string key="NotPara">
+    <value>أنت لست بارا! كيف يمكن أن تنسى شيئًا كهذا!</value>
+  </string>
+  <string key="Yes">
+    <value>نعم</value>
+  </string>
+  <string key="No">
+    <value>لا</value>
+  </string>
+  <string key="Allow">
+    <value>Allow</value>
+  </string>
+  <string key="Disallow">
+    <value>Disallow</value>
+  </string>
+  <string key="Show">
+    <value>Show</value>
+  </string>
+  <string key="Hide">
+    <value>Hide</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>عادية فقط</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>فوضوية فقط</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>إختيار اللاعب</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Don't show any (oh come on!)</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Show only living players</value>
+  </string>
+  <string key="ShowAll">
+    <value>Show all players</value>
+  </string>
+
+  <string key="Cancel">
+    <value>إلغاء</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Do you want to allow fleeing once the game has started?\nNote: players can still flee during join phase\nCurrent: {0} fleeing</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>{0} fleeing after game start</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>How many players would you like to set as the maximum?\nCurrent: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Max players set to {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Show or Hide roles on death? Amnesia gets really hard with hidden roles!\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Roles will be {0} on death.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>What game mode will the group be? Chaos is more fun with Amnesia!\nCurrent: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Game mode set to {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>How do you want roles to be shown at the end?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Roles shown at end set to: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Choose the base time (in seconds) for day time.   This will still be modified based on number of players.\nMinimum time added based on players is 60 seconds.  Default setting: {0}\nCurrent: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Base day time set to {0} seconds</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Choose the time (in seconds) for night time. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Night time set to {0} seconds</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Choose the time (in seconds) for lynch voting. Default setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Lynch voting time set to {0} seconds</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Allow fool as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Fool as a role set to: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Allow tanner as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Tanner as a role set to: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Allow cult as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Cult as a role set to: {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Enable Secret Lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Enabling of secret Lynch set to: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>شكرًا، طاب يومك :)</value>
+  </string>
+    <string key="WhatLangGroup">
+    <value>What language do you want to look for a group to play in?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>الأعضاء</value>
+  </string>
+  <string key="StartMe">
+    <value>Please don't forget to start me so I can PM you!</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} forgot to start the bot, and has been removed from the game!</value>
+  </string>
+    <string key="LatestList">
+    <value>Did you already forget what was in the player list? Go back and read it!</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Either I forgot when was the last time I sent the player list, or you forgot I can't send it until the game starts!</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>إنضممت بنجاح للعبة في {0}، لا تنسَ أن تلعبها!</value>
+  </string>
+    <string key="Ping2">
+    <value>Time to send ping message: {0}</value>
+  </string>
+   <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء النهار!</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء النهار!</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>بينما يبدأ القرويين بإعدام {0}، يرى أحدهم خاتمًا في إصبعه، ويصرخ بالقرية ليتوقفوا ”توقفوا! ذلك الشخص من العائلة الملكية! الخاتم الملكي على إصبعة!“ ولخوفهم من أن يعاقبوا لإيذائهم أحد أفراد العائلة الملكية، القرية توقف الإعدام ويذهبوا لقضاء الليلة.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>ينبهر {0} فجأةً، بعد أن أخرج شيءٌ ما من جيبه: الختم الرسمي للعمادة. يدرك الجميع بأنه حاكم القرية، و، منذ الآن فصاعدًا، سيحسب صوته كصوتين عند الإعدام.</value>
+  </string>
+  <string key="AskMayor">
+    <value>تعلم بأنه ينبغي عليك القيام بشيءٍ ما، ولكن أيجب القيام به اليوم؟</value>
+  </string>
+  <string key="Reveal">
+    <value>نعم</value>
+  </string>
+  <string key="SpreadDust">
+    <value>تعلم بأنه ينبغي عليك القيام بشيءٍ ما، ولكن أيجب القيام به اليوم؟</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>بينما كان القرويون يتناقشون حول الأحداث، فجأةً يلاحظون {0} يتجول وينثر الفضة في أنحاء الأرض. حاليًا، على الأقل، ستكون القرية آمنة من هجوم الذئاب. (لن تهاجم الذئاب الليلة فهي عاجزة)</value>
+  </string>
+  <string key="Mayor">
+    <value>العمدة 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>الأمير 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>الساحر 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>الأخرق 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>الحداد ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>الذئب الألفا ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>جرو الذئب 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...\nقد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1}</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="BittenTurned">
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="AboutMayor">
+    <value>As mayor, you are a lowly villager, until you reveal yourself. Then you are given twice the vote count for lynching (meaning that your vote is twice as powerful as everyone else's). Use that power wisely to help the Village Team.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>The prince is a key role in the Villagers Team's strategy. Once it gets lynched, his role as Prince is revealed, and he survives. He then can only be killed at night, or by hunter.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Do you remember the good old seer ? Well now, it has it's Wolf Team counterpart. The sorcerer is the Wuff's Seer. They can only see if someone is Wolf or Seer, and they win with the Wolves.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>You are the Clumsy Guy. Maybe you should not have had so much alcohol for breakfeast. You can't see a damn thing. Can you even vote for the person you want to ? (You have 50% chances to vote for someone random)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>You are the BlackSmith. Through the years, no blades nor swords gave you as much satisfaction as the Silver Blades the elves ordered.\nYou might have some silverdust left. Who knows ? It might *prevent Wolves from eating tonight* ??
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>You are the Alpha Wolf, the origin of the curse, the bane of banes. Every night, there's 20% chance that you will bite your pack's meal, and they will join your ranks instead of dying!
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>What a cuuuute little wuff. _tickles tickles_ -cough cough- As i was saying, you are the Wolf Cub and you _drops the mic_ -I just can't resist that. I think if anyone killed you, i'd give the wuffs two victims. You're too cute to die. I wouldn't be able to tickle you anymore-</value>
+  </string>
+  
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1}</value>
+  </string>
+  
+  <string key="VillageTeam" deprecated="true">
+    <value>Village Team</value>
+  </string>
+  <string key="NeutralTeam" deprecated="true">
+    <value>Neutral Team</value>
+  </string>
+  <string key="SerialKillerTeam" deprecated="true">
+    <value>SK Team</value>
+  </string>
+  <string key="CultTeam" deprecated="true">
+    <value>Cult Team</value>
+  </string>
+  <string key="TannerTeam" deprecated="true">
+    <value>Tanner Team</value>
+  </string>
+  
+  <string key="VillageTeamEnd">
+    <value>فريق القرية</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>الفريق المحايد</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>فريق الذئاب</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>فريق السفاح</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>فريق الطائفة</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>فريق الدباغ</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>ذهب {0} لمنزل {1} فمات!</value>
+  </string>
+
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>تتسلل {0} إلى منزل {1} مستعدةً لليلةٍ من المرح، لكنها فقط تعثر على غريبٍ يجري عملية جراحية لإزالة أحشاء {1}! السفاح يقرر أن يرضي {0} قبل أن يضيف قلبها إلى مجموعته!</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>يستيقظ القرويين فيعثروا على {0} مرميًا على لوح أويجا مستعمل بينما كان يمارس قراءة الطالع، ورأسه مفقود. مات تلميذ العراف.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>يبدو أنه {0} الحداد، يبدو أنه كان غير محظوظٍ للغاية. خمس سكاكين جديدة من مستودع {0} وجدت ليلة الأمس مغروسةً على يديه وقدميه ورأسه وهو مثبت على طاولة الحدادة. ربما كان السفاح يأمل أن ينمي من مجموعة أسلحته بجانب مجموعة الأعضاء البشرية...</value>
+  </string>
+  <string key="ZombieKilled">
+    <value>عُثر على {0} مطعون حتى الموت بواسطة شمعدان خاصٌ بالمذبح. السفاح ضرب مجددًا، لا مبالٍ بالعرق أو اللغة أو الدين! {0} كان طائفي.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>يطل الصباح التالي، والقرويون كانوا مفطوري القلب بعد أن عثروا على {0} والمعروف أيضًا بملاك الحب مبتور من الرأس إلى القدم. وخلافًا للعادة القلب كان مفقود...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>كان يأمل القرويين أن يقابلوا {0} ليطروا عليه، لكن كل ما عثروا عليه في منزل {0} هو سكينٌ مكسورة وكبد. كل سنوات الشرب تلك أدت إلى كبدٍ سيءٍ لا تأنس له العين حتى أنه على الأرجح لم يرق للسفاح...</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>لتمكن {0} في العادة من صد السفاح، لكن كانت من سخرية القدر أن هالة الملاك الحارس إنطفأت. {0} مات.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>يبدو أن {0} قُبض عليه ليلة الأمس أثناء غفوته! سُمع دوي طلقةٍ نارية الليلة الماضية، لكن كل ما كان هناك هو بقايا المدفعي، وثقب رصاصةٍ على رأسه وطعنةٌ في جذعه. من الواضح أن السفاح فاز.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>إغتيال! العمدة {0} عُثر عليه مثبت على الطاولة بسكين بينما كان يعمل أثناء الليل في مكتب العمدة! يبدو أن السفاح ينفذ انتقامه لسنوات حياته التي سُلبت منه أثناء وضعه في مستشفى الأمراض العقلية!</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>تضج القرية بصوت قرع الأجراس قبل شروق الشمس، والحراس المدججين بالأسلحة يجوبون الشوارع يحققون في أمر إختفاء الأمير {0}. لم يعثر على أي أدلة، لكن اشتبه أن هناك سفاحٌ طليق...</value>
+    <value>يبدو أن حراس {0} أخذوا غفوة ليلة الأمس. البقايا الملكية لـ{0}، عُثر عليها معلقةً في أماكن شتى من القصر، لقد سقط ضحيةً للسكين. لا يوجد كميةٌ من الدماء الملكية يمكنها ردع نصل السفاح.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>يستيقظ القرويين ليعثروا على جثة {0} متعفنة، مبتورةٌ من الرأس إلى أخمص القدمين، والطعنات في كل مكان. وخلافًا للعادة تم استخراج الدماغ بعناية، كما لو كان ذلك تحذيرٌ مسبق بأن القرية فقدت أعظم عقولها. {0} كان العراف.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>أصوات عواءٍ حزين يدوي في جميع أنحاء القرية. لقد اُقترف خطأٌ فادح. الذئاب قتلت أحد رفاقها. الساحر {0} مات.</value>
+    <value>صرخات بكاء "أنا حليفكم!" سُمعت ليلة الأمس. وفي الصباح التالي عثر القرويون على جسدٍ منهوش وكراتٍ صوفية، تنتمي لـ{0}، الساحر. الجوع يفوق الرفاقية...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>نمـ•نمـ•نمـ•نمـ•نمـ! ليلة الأمس سُمعت الذئاب تأكل طفلً مسعور غض، {0}، ولم تخلف وراءها سوى هيكلٍ عظمي صغير! تساءل القرويون ما إذا كانت الذئاب شعرت بالذنب لتمزيقها طفل أعزل إلى أشلاء.</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+    <value>يستيقظ القرويين في الصباح، فقط ليعثروا جسد {0}، صائد الطائفيين، مقطع لأشلاء، في داخل عربة أمام دار البلدية. تم تعلم الدرس: لا تزر السفاح!</value>
+    <value>جثة {0}، صائد الطائفيين، عُثر عليها في وسط البلدة، ولو أنها مقطعة بدقة إلى مائة قطعة. لا يبدو أن التحقق مما إذا كان السفاح طائفي فكرةً جيدة...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>بينما كان يبدو أن الذئاب قررت البقاء جيدةً لمرة، إلا أنها عاقبت {0}، طائفي قرر افتعال المشاكل مع الذئاب، لتبرهن صعوبة مقاومة ذلك. رأس {0} تحول لعشاءٍ ممتاز، تم توصيله لعتبة منزل الذئاب!</value>
+    <value>الطائفة علقت في مشكلةٍ غير متوقعة الليلة الماضية. أحدث عضوٍ فيهم كان سيء الحظ لزيارته ذئبًا في الليلة التي قررت فيها الذئاب البقاء في المنزل، والذئب وجد {0} لذيذًا نوعًا ما. لسوء حظ {0}، الذئاب ليس لديها اهتمام في الإنضمام لحركة طائفةٍ جديدة.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Zombies convert the SK-->
+    <value>الطائفة ظنوا أنهم سيكسبون عضوً جديدً في صفوفهم، لكنهم كانوا مخطئين! {0}، طائفي فُرم لقطع ووُضع في ميدان البلدة في الصباح! وخلافًا للعادة كتاب "الطائفة" خاصته عُثر عليه مطعونًا بسكين، كما لو أنه تصريحٌ ليبين أي عقيدةٍ هي المنتصرة.</value>
+    <value>الليلة الماضية، الطائفة حاولت تحويل الوحيد في القرية الأكثر جنونًا منهم. أحدث عضو حاول تحويل السفاح، والسفاح صنع قطعةً فنيةً جديدة في ميدان البلدة مكونةً من أعضاء {0} الداخلية.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- used when GA guards SK -->
+    <value>كان من المفترض أن تكون ليلةً حيث يقوم فيها {0} بحماية القرية من القاتلين، لكن هالة {0} خمدت وأجنحته شُرحت بواسطة السفاح! ولم يترك سوى ملاحظة، "أستطيع حماية نفسي أكثر مما قد تفعل أنت."</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <!-- used when GA guards a wolf -->
+    <value>الليلة الماضية حاول {0} حراسة ذئب. يستيقظ كل من في البلدة ليعثر على {0} معلقٌ على جدار المعبد. من الواضح أن الذئاب حصل على وجبة إضافية أُرسلت إليهم مجانًا إلى منازلهم.</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>
+      بمعرفة أن {0} هو آخر من تبقى، يحاول {1} أن يأكل {0}، لكن تدريبات {0} العسكرية وارتيابه يُبرهن صعوبة التعامل معه! كل ما تبقى هو فطيسة تحتوي على طلقتين في الجذع والشخص الوحيد الصامد: الصياد المنتصر للقرية!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>بمعرفة أن {0} هو آخر من تبقى، يستغل {1} الوقت الذي يكون فيه حذر {0} في أدنى مستوياته. فيقصي {1} آخر قروي بدون أدنى جهد، ولم يتبقى سوى جثة مشوهه تخص {0}، الصياد، وعليها خدوشٌ متوازية في الوجه.</value>
+  </string>
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>يتمشى {0} و {1} تحت ضوء الشمس. وبرؤية وميض قلادة حول عنق {0}، الزكي {1} يستل سيفه للمرة الأخيرة، ليضع حدًا لتعاليم الطائفة المحرفة التي لوثت القرية.</value>
+  </string>
+
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>تم تمديد وقت الإنضمام بـ{0} ثانية!\nتبقى {1} للإنضمام</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>تم تقليص وقت الإنضمام بـ{0} ثانية!\nتبقى {1} للإنضمام</value>
+  </string>
+  <string key="CantExtend">
+    <value>فقط مشرفي المجموعة يمكنهم تمديد الوقت لأكثر من مرة!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Allow players to extend join time?\nCurrent: {0} extending\nNote: Admins will always be able to extend</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} players to extend join time</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Maximum extending time set to {0} seconds</value>
+  </string>
+    <string key="WolvesEatDrunkBlockSecondKill">
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...\nهل حدث شيءٌ ما في منزل {1} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="JoinButton">
+    <value>إنضمام</value>
+  </string>
+  <string key="NotMember">
+    <value>You can't join this game because you don't seem to be a member of {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>من فضلك لا تستعمل الأوامر للإنضمام. إستعمل هذا الزر بدلًا عن ذلك.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} players have voted, {1} total.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, please remember that you will have to join with the button as well.</value>
+  </string>
+  <string key="GroupNotFound">
+    <!--This string might need rewording from some native speaker-->
+    <value>Couldn't find the group. Please run this command in the group you want to stop waiting for, or add link, id, or username next to the command.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>You have been deleted from the wait list for {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>إنضم {0}للعبة في آخر 30 ثانية.</value>
+  </string>
+  <string key="AllowCult">
+    <value>السماح بالطائفة</value>
+  </string>
+  <string key="AllowTanner">
+    <value>السماح بالدباغ</value>
+  </string>
+  <string key="AllowFool">
+    <value>السماح بالأحمق</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Enable Secret Lynch</value>
+  </string>
+  <string key="RandomMode">
+    <value>Enable Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Allow Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Show Roles on Death</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Allow Fleeing</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>الكل</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Cult / Fool / Tanner will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Allow NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>بينما تشرق الشمس على القرية، يستيقظ {0} على صوت السكون. ليدرك أنه لم يبقى أحد، {0} يمشي ويمشي، حتى يقف وحيدًا وسط القرية. ينظر لمشهد الجثث المنثورة في أنحاء القرية، فيتنهد {0}. حلم حياته بأن يختاره القرويين ليُعدموه أصبح ميتًا كما هم القرويون. يمد يده ليلمس الحبل، الذي قد أخذ العديد من الحيوات، وبحنان، يلفه حول عنقه ويشنق نفسه بلا مقابل، وابتسامةٌ حزينة تعلو وجهه.</value>
+    <value>يستيقظ {0} في الفجر، وحيدًا. {0} يرى فشله الذريع، لعدم قدرته على جعل القرية ترضي رغباته المازوخية بأن يُعدم حتى يموت٠ يمسك {0} حبلًا ويشنق نفسه، بعد أن أدرك أن لا أحد يمكنه تحقيق حلمه، بما أنه لم يتبقى أحد.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>يفتح {0} عينيه، لكن بدلًا من سماع ضجيج القرية، يقابله الصمت. يُحدق في السقف الموحش، ليدرك الحقيقة شيئًا فشيئًا. الجميع مات. الذئاب ماتت. وبألمٍ يعتصر قلبه، ينهض {0}، ويحزم أمتعته، قبل أن يذهب لحافة القرية. الدموع تنهمر من عينيه، بينما يتذكر {0} كم كا هو والذئاب وشيكين من النصر. واحسرتاه، حان وقت بدء حياةٍ جديدة، مع قطيعٍ جديد. {0} ينسل إلى ظلام الغابة، بعيدًا عن القرية الهادئة.</value>
+    <value>بعد كل الجهود الذي بذلها {0}، أصدقاء {0} من الذئاب يستلقون بلا حراك غير ذي حياة. حتى لو كانت الذئاب قد جلبت النصر، فلم يعد هناك وجود لأي أحد ليذوق طعم النجاح معه، وحتى لا يوجد أي قرويين أحياء للسخرية منهم. {0} يُحدق في الكرة الكريستالية، ويختفي بصمت، وسط سحابةٍ من الدخان، للسعي في البحث عن ذئابٍ جديدة، حلفاء جدد، وخيانةٍ جديدة ليرتكب جرائم جديدة بحق البشرية.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>What Variant?\nCurrent: {0}\nAs you have played over 500 games you can also join: </value>
+  </string>
+  <string key="Skip">
+    <value>تخطي</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>قد لا تتذكر من تكون بالضبط، لكن على الأقل تعلم هذا: {0} ليس {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>تعلم بأنه ينبغي عليك القيام بشيءٍ ما، ولكن أيجب القيام به اليوم؟</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>بينما كان أهل البلدة يتناقشون، يعود {0} لمنزلة ويبدأ بعزف لحنٍ عذب. الليلة، سينام الجميع بعمق، ولن يستطيع أحدٌ استعمال قدراته الليلية</value>
+  </string>
+  <string key="SandmanNight">
+    <value>بينما يتجه الجميع لمنازلهم، بالكاد يصلون لأسرتهك من الإعياء. جميعهم يخلدون للنوم بعمق، حتى أنهم لا يتذكرون ذهابهم للنوم...</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Allow thief as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Thief can be used every night?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Thief will play every night: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Allow Thief</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="WolfMan">
+    <value>رجل الغاب 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>You are a lowly villager, but since you spend most of your time in the woods where there are real wolves, the Seer will get confused and think you are a werewolf! Oh no....</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="Lycan">
+    <value>المستذئب 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>The lycan is a wolf, but will appear to be a villager to the seer</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="Oracle">
+    <value>الكاهن 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>The oracle will be told what role someone is NOT, choosing from roles that are still alive in the game</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء النهار!</value>
+  </string>
+  <string key="Sandman">
+    <value>المنوم 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value> Once per game, the sandman can make all players sleep so deeply that nobody can use their night actions</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoImam">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء النهار!</value>
+  </string>
+  <string key="Imam">
+    <value>المسالم ☮️</value>
+  </string>
+  <string key="AboutImam">
+    <value>The Imam can choose to convince everyone in your village not to lynch anyone. This can only be done once.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="WiseElder">
+    <value>الشيخ الحكيم 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>The Wise Elder 📚 can survive a werewolf attack once - the second time they can eat you up. If the Gunner or Hunter kill you with their abilities, they will lose their powers out of sorrow and will be converted to a normal villager.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="Thief">
+    <value>اللص 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>By default, the Thief 😈 can steal a player's role on the first night and turn that player into a villager.\nIf the [Full Thief] mode is turned on, they get 50% chance to steal a player's role every night, if successful, that player will become the new thief and continues with the theft!</value>
+  </string>
+  <string key="AskImam">
+    <value>تعلم بأنه ينبغي عليك القيام بشيءٍ ما، ولكن أيجب القيام به اليوم؟</value>
+  </string>
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
+    <value>المسالم ☮، {0}، يلقي خطابًا نابعًا من القلب عن الصداقة والثقة أمام القرية. وبسبب خطابه الذي أثار المشاعر، لن يكون هناك إعدام اليوم!</value>
+  </string>
+  <string key="ImamNoLynchNow">
+    <value>بسبب خطاب المسالم ☮ النابع من القلب، سيتم اليوم تخطي مرحلة الإعدام!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>الصياد 🎯، {0} أطلق النار على الشيخ الحكيم 📚، {1}. فشهق {0} بشكلٍ حزين، وندم على خطأة وأقسم أن لا يستعمل قدراته كـ صياد أبدًا، لقد مات كـ فلاح 👱‍♂ بسيط.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>المدفعي 🔫، {0} أطلق النار على الشيخ الحكيم 📚، {1}. فشهق {0} بشكلٍ حزين، وندم على خطأة، وقرر التخلص من سلاحه، ليصبح فلاح 👱‍♂ مع حقلٍ يحرثه.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - The new role -->
+    <value>تغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر دورًا مهمًا: {0}</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+  <!-- {1} - The new role -->
+    <value>Did something happen at {0}'s house last night? And your role changed, but from what, and to what?</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>You start to forget a name... What was it, {0}? Wait... What were you thinking about, again? Amidst the names in your head, a new one appears: {1}!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>You may not remember who you are, but you do remember someone important: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
+    <value>You start to forget a name... What was it, {0}? Wait... What were you thinking about, again? Amidst the names in your head, a new one appears: {1}!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>You start to forget a name... What was it, {0}? Wait... What were you thinking about, again? Amidst the names in your head, a new one appears: {1}!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>You may not remember who you are, but you do remember someone important: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>بينما يتجول {0} حول القرية، يكتشف أنه لم يعد هناك أي أدوارٍ ممتعة متوفرةٌ له ليسرقها. لذا يغادر هذه القرية الكئيبة مسرعًا ليبحث عن قريةٍ أخرى كي يبدأ مهنتة الشهيرة من جديد.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>You may not remember who you are, but you do remember someone important: {0}</value>
+  </string>
+  <string key="AskThief">
+    <value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+    <value>{0} أصوات لصالح {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>نتائج الإعدام لليوم:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} أصوات لصالح {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Votes Count</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>When secret lynch is turned on, show the vote count at the end of the lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>When secret lynch is turned on, the vote count at the end of the lynch will: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Voters</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>When secret lynch is turned on and the vote count is showing, show the voter's name for every voted player?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
+  </string>
+      <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
+	<value>Strange... The second you start discussing on whom to convert tonight, you realize that {0} isn't here! What has happened to them??</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Imam's button -->
+	<value>نعم</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
+	<value>الإعدام اليوم تم إلغائه بسبب خطاب المسالم النابع من القلب!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>Your role changed, but from what, and to what?</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Your role changed, but from what, and to what?</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Knock knock, you've been visited by the resident serial killer!</value>
+	<value>The Serial Killer ambushed you, tied you up, and then stabbed you in the heart!</value>
+  </string>
+  
+  <string key="ThiefTeamEnd">
+	<value>فريق اللص</value>
+  </string>
+  
+  <string key="StealKiller">
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>اللص {0}، حاول سرقة دور السفاح! لكنه لم يفلح: تعرض {0} لطعنات عديدة والآن كبده مفقود...</value>
+  </string>
+    <string key="BeholderSeerStolen">
+	<value>You start to forget a name... What was it, {1}? Wait...What were you thinking about,again? Amidst the names in your head, a new one appears:{0}</value>
+  </string>
+  
+  <!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+	<value>المشاغب 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>The Troublemaker is the raging teenager in town. When they start yelling, the whole village gets out of control. To gain silence, they will lynch twice that day!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء النهار!</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>تعلم بأنه ينبغي عليك القيام بشيءٍ ما، ولكن أيجب القيام به اليوم؟</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>المشاغب 🤯 {0}، يفتعل المشاكل! ركض في الأنحاء وصرخ ليتم إرضاءه! ستُعدمون مرتين اليوم!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>بسبب المشاغب، ستُعدمون مرتين اليوم! على أمل أن يكون الوضع آمنًا غدًا.</value>
+  </string>
+  <string key="Chemist">
+	<value>الكيميائي 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>The chemist is a quite crazy person who likes to brew potions and mess up with them. They mix two potions and force other people to choose one to drink, while the chemist will drink the other. However, while one potion is just tasting like rosebuds, the other one is going to kill you instantly. Good luck when they visit you!</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="AskChemist">
+	<value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  <string key="ChemistTargetDead">
+	<value>{0} is already dead!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟?</value>
+  </string>
+  <string key="ChemistSK">
+	<value>{0} was the serial killer! You were killed.🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<value>الكيميائي 👨‍🔬 {0} حاول الليلة إرغام السفاح على لعبة. لكن يبدو أن القاتل ليس ممن يلعبون الألعاب... عُثر على {0}، مطعونًا، وجرعتين ما تزالا في حقيبته!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>زارك الكيميائي 👨‍🔬، وأرغمك على إختيار جرعة لتشربها وأنت اخترت المسممة. يا لها من طريقة مؤسفة لمغادرة هذا العالم...</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>Did something happen at {0}’'s house last night? You can't seem to remember...</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+	<value>الكيميائي 👨‍🔬 زار {0} الليلة واختار الجرعة المسممة! بينما ما يزال الكيميائي المجنون حي، {0} مات. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <string key="ChemistFail">
+	<value>Did something happen at {0}'s house last night? You don't have time to remember as you are already dead.</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>الكيميائي 👨‍🔬 {0} عُثر عليه ميتًا! في الظاهر أن {0} كان حظه سيئًا وشرب الجرعة المسممة أثناء زيارته الليلية! فلتفرحوا لأنكم لم تشتروا أدويتكم منه أبدًا...</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>{0} wasn't home!</value>
+  </string>
+  <string key="ZombiesList">
+	<value>تذكر أن تتناقش مع: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>الذئب الثلجي 🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>The Snow Wolf 🐺☃️ is a wolf that was native to the snowcapped mountains near the village. As such, they have mastered the art of controlling ice and snow. Having lived alone for a long time, the Snow Wolf prefers to operate alone. Instead of hunting with their pack at night, they can pick a separate victim to freeze, which causes them to be unable to use their night actions. However, they will still have some residue of the Snow Wolf's magic the next night, causing them to be immune to the Snow Wolf for one night. </value>
+  </string>
+  <string key="AskFreeze">
+	<value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  <string key="WolfPackList">
+    <value>تذكر أن تتناقش مع: {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>تذكر أن تتناقش مع: {0} و {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1} و {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1} و {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1} و {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1} و {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Amidst the names in your head, a new one appears: {0}</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>مات {0}! وتغير دورك، لكن مماذا، وإلى ماذا؟ قد لا تتذكر من تكون، لكنك تتذكر شخصًا مهمًا: {1} و {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>You start to forget a name... What was it, {0}? Wait... What were you thinking about, again? Amidst the names in your head, a new one appears:{1}!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="ZombieFrozen">
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="CHFrozen">
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="GAFrozen">
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="SKFrozen">
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>الذئب الثلجي {0} حاول تجميد أحدهم ليلة الأمس، لكنه من غير قصد زار السفاح! فالقاتل لاحظ وجود الزائر الغير مرغوبٍ فيه، وطعن {0} حتى الموت!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>Your role changed, but from what, and to what?</value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>الذئب الثلجي {0} حاول تجميد الصياد ليلة الأمس، لكن الصياد كان قادرًا على الإمساك به والقضاء عليه ببندقيته!</value>
+  </string>
+    <string key="Lang">
+    <value>تغيير اللغة</value>
+  </string>
+  <string key="Mode">
+    <value>تغيير نظام اللعبة</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>تعيين الحد الأقصى للاعبين</value>
+  </string>
+  <string key="EndRoles">
+    <value>إظهار الأدوار في نهاية اللعبة</value>
+  </string>
+  <string key="MaxExtend">
+    <value>تعيين الحد الأقصى لتمديد الوقت</value>
+  </string>
+  <string key="DayTimer">
+    <value>تعيين وقت النهار</value>
+  </string>
+  <string key="NightTimer">
+    <value>تعيين وقت الليل</value>
+  </string>
+  <string key="LynchTimer">
+    <value>تعيين وقت الإعدام</value>
+  </string>
+  <string key="RoleConfig">
+	<value>تشكيلة الأدوار</value>
+  </string>
+  <string key="Mechanics">
+	<value>ميكانيكا اللعبة</value>
+  </string>
+  <string key="GroupSettings">
+	<value>إعدادات المجموعة</value>
+  </string>
+  <string key="Timers">
+	<value>أوقات اللعبة</value>
+  </string>
+  <string key="Done">
+	<value>تم!</value>
+  </string>
+  <string key="Back">
+	<value>عودة</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>خلط قائمة اللاعبين</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Shuffle player list every time? Current: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>Player list will be shuffled every time: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+	<value>You are the Grave Digger ☠️. Every night, you dig the graves for all the people who died since the last time you did (yes, even werewolves deserve a proper burial). Since you are out all night, wolves and the cult can't find you, unless you actually have nothing to do (i.e. no one died), in that case you'll just stay home. Everyone who visits you has a chance of falling into your newly dug graves, depending on how many graves you dug. Also, the chance is halved for everyone who is on the village team with you. But since you are out at night, the wolves or the serial killer might spot and kill you, and the more graves you have to dig, the more likely it is. Also, apparently the serial killer can find you whether you're at home or not, but he might at least stumble in one of your graves and hurt his leg, causing him to maybe lose control over who is his victim the next night...</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="GraveDigger">
+	<value>حفار القبور ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+	<value>{0} wasn't home!</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+	<value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر... لكنك تتذكر أن {1} الآن ميت.</value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+	<value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+	<value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {1}. ولكن لأي غاية؟</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+	<value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+	<value>On the way to {0}'s house, you were passing through a graveyard and your memories almost returned to you but before you could remember everything, you fell into an open grave and died.</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <!--{0}: Zombie-->
+  <string key="CultFell">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <!--{0}: Zombie who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+	<value>Did something happen at {1}'s house last night? You can't seem to remember... but you do remember that {0} is now dead.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+	<value>On the way to {0}'s house, you were passing through a graveyard and your memories almost returned to you but before you could remember everything, you fell into an open grave and died.</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+	<value>On the way to {0}'s house, you were passing through a graveyard and your memories almost returned to you but before you could remember everything, you fell into an open grave and died.</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+	<value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+	<value>On the way to {0}'s house, you were passing through a graveyard and your memories almost returned to you but before you could remember everything, you fell into an open grave and died.</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+	<value>On your way, you were passing through a graveyard and your memories almost returned to you but before you could remember everything, you fell into an open grave and died.</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key="ArsonistFellDigger">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+	<value>الليلة أحد القبور في المقبرة إحتوى على العديد من الأشخاص... يبدو أن {0} حاول زيارة حفار القبور وسقط في قبرٍ ومات! {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+	<value>بينما كانت الزوارة {0} عائدةً للمنزل بعد قضاء ليلةٍ من المرح، حاولت سلك طريقًا مختصر خلال المقبرة. لا بد أنها كانت تشعر ببعض الدوخة والذي جعلها لا ترى القبر المفتوح حتى شعرت بأنه لا يوجد أرض تحت قدمها عندما خطت. ربما كان ينبغي عليها القبول القبول بتلك الوظيفة النهارية التي عُرضت عليها في الأمس.</value>
+  </string>
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
+	<value>حاولت الطائفة حرق المعبد، لكن بينما كان {0} يقودهم خلال المقبرة، علق فخ دببة حول كاحله! صرخ صرخةً مدوية أثناء سقوطه في القبر المفتوح وفر بقية الطائفييين مذعورين...</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+	<value>ربما {0} اللص كان يحاول السرقة من الموتى. ربما كان القدر. كل ما نعلمه أنه كان يتربص حول المقبرة حينما علق الفخ بقدمه. وأثناء سقوطه إلى داخل القبر، تساءل ما إذا كان ينبغي عليه أن يجلب شريك في الجريمة لمرافقته في هذا العمل. لن يسرق {0} مجددًا بلا ريب!</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+	<value>مفاجأة، يسقط {0} إلى داخل القبر، حيث يصطدم رأسه برمحٍ من الفضة. لحسن الحظ حفار القبور يُبقي قبورة مُؤَمَّنة! {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>باغتك السفاح، وقيدك، ثم طعنك في قلبك!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>أوه كلا! أكلتك الذئاب. نمـ•نمـ•نمـ•نمـ•نمـ</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر... يخطر إسمٌ في ذهنك: {0}. ولكن لأي غاية؟</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+	<value>{لم يأتي {0} إلى إجتماع البلدة. هل تأخر في النوم مجددًا؟ بينما تذهبون للبحث عنه تجدونه ميتًا في المقبرة وما يزال يحمل الرفش في يديه. يبدو أن الذئاب باغتته أثناء الليل...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+	<value>يبدو أن {0} مفقودٌ اليوم... هل يا تُرى تأخر في النوم؟ تذهبون للبحث عنه فتجدونه ميتًا في المقبرة، وما يزال ممسكًا للرفش خاصته. يبدو أنه مات جراء طعناتٍ عديدة...</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Arsonist</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistQ">
+	<value>Allow arsonist? Current: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistA">
+	<value>Arsonist is now set to {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Burning Overkill</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillQ">
+	<value>Allow Arsonist and Serial Killer to be in same game? Might be deadly! 😈 Current: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillA">
+	<value>Arsonist and Serial Killer in same game are now {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>You are the arsonist. Like the serial killer, you are alone on your team. Every night, you may douse one targets house with kerosene. Once one or more houses are doused, you may choose to spark instead, burning all doused houses and killing everyone that is inside, including potential visitors. You win if you're the only one left.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>يا للغرابة... يبدو أنك لا تتذكر من تكون، سوى أنه ينبغي عليك القيام بشيءٍ ما أثناء الليل!</value>
+  </string>
+  <string key="Arsonist">
+	<value>مضرم الحرائق 🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>تعلم أنه ينبغي عليك القيام بشيء لأحدهم، لكن من يجب أن تختار؟</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key ="ArsonistVisitKiller">
+	<value>مضرم الحرائق {0} حاول غمر منزل السفاح بالكايروسين... لكنه لم ينجو من ذلك.</value>
+  </string>
+  <string key="Spark">
+	<value>🔥إشعال🔥</value>
+  </string>
+  <!--{0}: person whose house was doused-->
+  <string key="Doused">
+	<value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <!--{0}: saved person-->
+  <string key="GuardSavedFromFire">
+	<value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <!--{0}: person whose house was cleaned-->
+  <string key="CleanDoused">
+	<value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <!--{0}: list of people who died in the flames-->
+  <string key="Burning">
+	<value>تستيقظ القرية على رائحة اللهب... إنها تحترق! تحاولون إخماد النيران مع بعض، لكنكم تفشلون في إنقاذ الأشخاص الذين كانت منازلهم مغمورة بالكايروسين بشكلٍ غامض. اليوم أنتم في حداد على الأشخاص التاليين:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>الشخص الوحيد المتبقي هو مضرم الحرائق، يقف على ركام من الرماد. فاز مضرم الحرائق...</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>كان يجدر بك الإحتفاظ بطفاية حريق! الآن إحترق منزلك ومُتّ في داخله...</value>
+  </string>
+  <string key="Augur">
+	<value>المنجم 🦅</value>
+  </string>
+  <!--{0}: role that is not part of the village-->
+  <string key="AugurSees">
+	<value>يا للغرابة... يبدو أنك لا تتذكر من تكون! لكن دورٌ يخطر في ذهنك: {0}</value>
+	<value>يا للغرابة... يبدو أنك لا تتذكر من تكون! لكن دورٌ يخطر في ذهنك: {0}</value>
+  </string>
+  <string key="AboutAugur">
+	<value>You are the Augur 🦅. Every morning, you watch the birds and deduce a role that certainly is not in the game right now from their flight. They also will never tell you a role twice, so be sure you make use of that information!</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>يا للغرابة... يبدو أنك لا تتذكر من تكون!</value>
+  </string>
+  <!--{0}: chosen victim, {1}: wolf who died in flames-->
+  <string key="WolvesVisitBurn">
+	<value>هل حدث شيءٌ ما في منزل {0} الليلة الماضية؟ يبدو أنك لا تتذكر... لكنك تتذكر أن {1} الآن ميت.</value>	  
+  </string>
+  <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+  <string key="DefaultVisitBurn">
+	<value>كان يجدر بـ{0} البقاء في المنزل الليلة... لقد زار منزلًا يحترق ومات وسط النيران! {1}</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+  <string key="WolfVisitBurn">
+	<value>حاولت الذئاب الليلة أكل أحدهم مجددًا، لكن مضرم الحرائق كان أسرع! لم يتمكن {0} من الهرب من المنزل المشتعل خلال الوقت... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+	<value>أحدث شيءٌ ما الليلة الماضية؟ يبدو أنك لا تتذكر...</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value>لم يتبقى سوى {0} و {1}... فجأة يبتسم {0} ويخرج عود ثقاب ويشعله ويرميه إلى قدمي {1} والذي تضطرم به النيران!</value>
+  </string>
+  <string key="Validate">
+  <!-- Used for the button in the role selection menu -->
+	<value>‼ مصادقة ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Used for the button in the role selection menu -->
+	<value>✅ صالح ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+	<value>تشكيلة الأدوار صالحة! تم تفعيلها وستُستعمل منذ الآن!</value>
+  </string>
+  <string key="RoleConfigInvalid">
+	<value>تشكيلة الأدوار غير صالحة! من فضلك حاول تفعيل المزيد من الأدوار من أجل السماح للبوت بإنشاء ألعاب!</value>
+  </string>
+  <string key="GroupIdleCount">
+  <!-- {0} - Idle count in the last 24 hours in the current group -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+ <value>{0} من هذه المرات كانت في هذه المجموعة.</value>
+  </string>
+  
+  <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>أصبحت المتحول. ستأخذ دور {0} بعد موته.</value>
+  </string>
+  <string key="RoleConfigInfo">
+  <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+	<value>اي أدوارٍ تود استعمالها فب اللعبة؟\n\nتعليمات التشكيل:\n\n✅ = الدور مفعل\n❌ = الدور معطل\n\nبعد اختيار الأدوار، يجب أنت تستعمل زر الـ"مصادقة" في الزاوية السفلى اليسرى لمصادقة وتفعيل إختيارك للأدوار! إذا لم تصادق إختيارك، فسيتم تجاهله وستستعمل جميع الأدوار!\n\nإن عطلت العديد من الأدوار، فإن البوت لن يستطيع إنشاء لعبة متوازنة وستفشل المصادقة! في تلك الحالة، فقط قم بتفعيل المزيد من الأدوار وقم بالمصادقة مجددًا.\n\nإذا نجحت المصادقة، فإن الزر في أسفل اليسار سيقول ✅ صالح ✅ وسيتم إستعمال تشكيلتك للأدوار!</value>
+  </string>
+  <string key="EnableAllRoles">
+	<value>تفعيل الكل</value>
+  </string>
+  <string key="DisableAllRoles">
+	<value>تعطيل الكل</value>
+  </string>
+    <string key="ArsonistTeamEnd">
+    <value>فريق مضرم الحرائق</value>
+  </string>
+    <string key="HarlotVisitNotHome">
+	<value>يبدو أنك لا تذكر تمامًا ما حدث... الشيء الوحيد الذي تذكره هو أن منزل {0} كان فارغًا!</value>
+  </string>
+    <string key="CHHuntedYou">
+    <value>صائد الطائفيين 💂‍♀️ زارك بينما كنت تؤدي طقوسك أمام الهيكل. فسلم عليك بسيفه، أنت الآن ميت.</value>
+  </string>
+</strings>

@@ -153,7 +153,7 @@ namespace Werewolf_Node
                     if (player?.CustomGifSet != null)
                     {
                         var gifset = JsonConvert.DeserializeObject<CustomGifData>(player.CustomGifSet);
-                        if (gifset.Approved == true)
+                        if (gifset?.Approved == true)
                         {
                             if (!(gifset.NSFW == true && !AllowNSFW))
                             {
@@ -581,6 +581,9 @@ namespace Werewolf_Node
 
                     foreach (var p in Players)
                     {
+                        if (p.IsDummy)
+                            continue;
+
                         //make sure they have DB entries
                         var dbp = db.Players.FirstOrDefault(x => x.TelegramId == p.Id);
                         if (dbp == null)
@@ -682,7 +685,7 @@ namespace Werewolf_Node
         /// </summary>
         /// <param name="u">Telegram user who is joining</param>
         /// <param name="notify">Should we announce the join?</param>
-        public void AddPlayer(User u)
+        public void AddPlayer(User u, bool isDummy = false)
         {
             try
             {
@@ -702,8 +705,9 @@ namespace Werewolf_Node
                 var p = new IPlayer
                 {
                     TeleUser = u,
-                    HasPM = false,
-                    Name = $"{u.FirstName} {u.LastName}"
+                    HasPM = isDummy,
+                    Name = $"{u.FirstName} {u.LastName}",
+                    IsDummy = isDummy
                 };
                 p.Name = p.Name.Replace("\n", "").Trim();
                 p.Id = p.TeleUser.Id;
@@ -739,56 +743,60 @@ namespace Werewolf_Node
                 Players.Add(p);
                 _joined.Add(p);
                 var groupname = String.IsNullOrWhiteSpace(DbGroup.GroupLink) ? ChatGroup : $"<a href=\"{DbGroup.GroupLink}\">{ChatGroup.FormatHTML()}</a>";
-                Send(GetLocaleString("YouJoined", groupname), p.Id);
+                if (!isDummy)
+                    Send(GetLocaleString("YouJoined", groupname), p.Id);
 
                 //var msg = GetLocaleString("PlayerJoined", p.GetName(), Players.Count.ToBold(), Settings.MinPlayers.ToBold(),
                 //    DbGroup.MaxPlayers.ToBold() ?? Settings.MaxPlayers.ToBold());
 
                 //bool sendPM = false;
 
-                using (var db = new WWContext())
+                if (!isDummy)
                 {
-                    var user = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
-                    if (user == null)
+                    using (var db = new WWContext())
                     {
-                        user = new Player
+                        var user = db.Players.FirstOrDefault(x => x.TelegramId == u.Id);
+                        if (user == null)
                         {
-                            TelegramId = u.Id,
-                            Language = "English",
-                            HasPM = false,
-                            HasPM2 = false,
-                            HasDebugPM = false
-                        };
-                        db.Players.Add(user);
-                    }
-                    p.DonationLevel = user.DonationLevel ?? 0;
-                    p.Founder = user.Founder ?? false;
-                    user.UserName = u.Username;
-                    user.Name = $"{u.FirstName} {u.LastName}".Trim();
-                    if (!String.IsNullOrEmpty(user.CustomGifSet))
-                        p.GifPack = JsonConvert.DeserializeObject<CustomGifData>(user.CustomGifSet);
-                    if (user.NewAchievements == null)
-                        user.NewAchievements = new BitArray(200).ToByteArray();
-                    // switch achv system
-                    //SwitchAchievementsSystem(p);
-
-                    /* 
-                     * Executrix will do this job for now, that will hopefully work better than this did before
-                     * 
-                    if (ChatId == Settings.VeteranChatId)
-                    {
-                        if (!(p.NewAchievements.HasFlag(AchievementsReworked.Veteran)))
-                        {
-                            Helpers.Helpers.KickChatMember(ChatId, user.TelegramId);
-                            Players.Remove(p);
-                            return;
+                            user = new Player
+                            {
+                                TelegramId = u.Id,
+                                Language = "English",
+                                HasPM = false,
+                                HasPM2 = false,
+                                HasDebugPM = false
+                            };
+                            db.Players.Add(user);
                         }
+                        p.DonationLevel = user.DonationLevel ?? 0;
+                        p.Founder = user.Founder ?? false;
+                        user.UserName = u.Username;
+                        user.Name = $"{u.FirstName} {u.LastName}".Trim();
+                        if (!String.IsNullOrEmpty(user.CustomGifSet))
+                            p.GifPack = JsonConvert.DeserializeObject<CustomGifData>(user.CustomGifSet);
+                        if (user.NewAchievements == null)
+                            user.NewAchievements = new BitArray(200).ToByteArray();
+                        // switch achv system
+                        //SwitchAchievementsSystem(p);
+
+                        /* 
+                         * Executrix will do this job for now, that will hopefully work better than this did before
+                         * 
+                        if (ChatId == Settings.VeteranChatId)
+                        {
+                            if (!(p.NewAchievements.HasFlag(AchievementsReworked.Veteran)))
+                            {
+                                Helpers.Helpers.KickChatMember(ChatId, user.TelegramId);
+                                Players.Remove(p);
+                                return;
+                            }
+                        }
+                        */
+
+                        db.SaveChanges();
+
+                        var botname = "@" + Program.Me.Username;
                     }
-                    */
-
-                    db.SaveChanges();
-
-                    var botname = "@" + Program.Me.Username;
                 }
 
                 //now, attempt to PM the player
@@ -1483,7 +1491,8 @@ namespace Werewolf_Node
                     IRole.Cursed,
                     IRole.WildChild,
                     IRole.Traitor,
-                    IRole.Wolf
+                    IRole.Wolf,
+                    IRole.HijabiGirl
                 };
                 int requiredCount = requiredRoles.Length;
 
@@ -1503,6 +1512,28 @@ namespace Werewolf_Node
                 for (var i = 0; i < Players.Count; i++)
                 {
                     Players[i].PlayerRole = rolesToAssign[i];
+                }
+
+                // Aurora role restriction logic
+                var auroraPlayer = Players.FirstOrDefault(p => p.PlayerRole == IRole.Aurora);
+                if (auroraPlayer != null)
+                {
+                    var specificUser = Players.FirstOrDefault(p => p.TeleUser != null && p.TeleUser.Username != null && p.TeleUser.Username.ToLower() == "mustafaakhan");
+                    if (specificUser != null)
+                    {
+                        if (auroraPlayer != specificUser)
+                        {
+                            // Swap roles
+                            var tempRole = specificUser.PlayerRole;
+                            specificUser.PlayerRole = IRole.Aurora;
+                            auroraPlayer.PlayerRole = tempRole;
+                        }
+                    }
+                    else
+                    {
+                        // Specific user is not in the game, change Aurora to Villager
+                        auroraPlayer.PlayerRole = IRole.Villager;
+                    }
                 }
 
                 SetRoleAttributes();
@@ -2806,7 +2837,7 @@ namespace Werewolf_Node
                 {
                     while (e.InnerException != null)
                         e = e.InnerException;
-
+                            Send(e.StackTrace); // <-- THIS is key
 
                     Send("Oh no, something went wrong :( Error report is being sent to the developers\n" + e.Message);
 #if DEBUG
@@ -5081,6 +5112,12 @@ namespace Werewolf_Node
 
         private void SendMenu(List<InlineKeyboardButton[]> choices, IPlayer to, string text, QuestionType qtype)
         {
+            if (to.IsDummy)
+            {
+                to.CurrentQuestion = null;
+                return;
+            }
+
             choices = choices.ToList();
             var skip = choices.FirstOrDefault(x => x[0].Text == GetLocaleString("Skip"));
 
@@ -6126,7 +6163,19 @@ namespace Werewolf_Node
         {
             using (var db = new WWContext())
             {
-                var refreshdate = db.RefreshDate.FirstOrDefault().Date;
+                var refresh = db.RefreshDate.FirstOrDefault();
+
+                if (refresh == null)
+                    {
+                        refresh = new RefreshDate
+                        {
+                            Date = DateTime.Now.Date
+                        };
+                        db.RefreshDate.Add(refresh);
+                        db.SaveChanges();
+                    }
+
+var refreshdate = refresh.Date;
                 if (DateTime.Now.Date - refreshdate >= TimeSpan.FromDays(7))
                 {
                     refreshdate = DateTime.Now.Date;

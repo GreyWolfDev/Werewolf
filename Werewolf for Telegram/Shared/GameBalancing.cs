@@ -186,7 +186,12 @@ namespace Shared
                         if (playerCount > 10)
                             rolesToAssign.Add(role);
                         break;
+                    case IRole.HijabiGirl:
+                        if (playerCount >= 6)
+                            rolesToAssign.Add(role);
+                        break;
                     case IRole.Spumpkin:
+                        rolesToAssign.Add(role);
                         break;
                     default:
                         rolesToAssign.Add(role);
@@ -308,6 +313,8 @@ namespace Shared
                     return 8;
                 case IRole.Spumpkin:
                     return 2;
+                case IRole.HijabiGirl:
+                    return 4;
                 case IRole.Aurora:
                     return 5;
                 default:

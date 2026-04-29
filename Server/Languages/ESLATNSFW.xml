@@ -1,0 +1,1381 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="Español (LatAm) NSFW" base="Español" variant="LatAm NSFW"/>
+  <string key="NotInGame" deprecated="true">
+    <value>No parece que estés en un partida...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>¡{0} ha iniciado un juego! Usa el botón para unirte a la diversión... y probablemente morir :P</value>
+    <value>¡Una nueva partida fue iniciada por {0}! ¡Únete para que te coman!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+   <value>¡{0} ha iniciado una partida caótica! Usa el botón para unirte a la diversión... y probablemente morir :P</value>
+   <value>¡Una nueva partida caótica fue iniciada por {0}! ¡Usa el botón para que te coman!</value>
+ </string>
+ <string key="NoJoinGameRunning" deprecated="true">
+  <value>¡No te puedes unir ahora! El juego ya empezó.</value>
+</string>
+<string key="AlreadyJoined" deprecated="true">
+  <value>¡Ya te habías unido!</value>
+</string>
+<string key="MinuteLeftToJoin">
+  <value>¡1 minuto restante para unirse a la partida!</value>
+</string>
+<string key="SecondsLeftToJoin">
+  <!-- 0 - remaining seconds (number) -->
+  <value>¡{0} segundos para unirse a la partida!</value>
+</string>
+<string key="NotEnoughPlayers">
+  <value>¡No hay suficientes jugadores, se cancela el juego!</value>
+</string>
+<string key="StartingGameWait">
+  <value>El juego está empezando, espera un poco mientras asigno los roles y actualizo la base de datos.</value>
+</string>
+<string key="BannedForExploit" deprecated="true">
+  <value>{0} has sido baneado por intentar hacer trampa (prohibidos nombres que inicien con /)</value>
+</string>
+<string key="ChangeNameToJoin">
+  <value>{0}, por favor, cambia tu nombre para unirte</value>
+</string>
+<string key="PlayerLimitReached">
+  <value>¡Lo siento, se ha alcanzado el límite de jugadores!</value>
+</string>
+<string key="PlayerJoined">
+  <!-- 0 - Player name -->
+  <!-- 1 - current players -->
+  <!-- 2 - Minimum players -->
+  <!-- 3 - Maximum players -->
+  <value>{0} se ha unido a la partida. {1} jugadores, {2} mínimo, {3} máximo</value>
+</string>
+<string key="PMTheBot">
+  <!-- 0 - Player name -->
+  <!-- 1 - bot username -->
+  <value>{0} haz click aquí: {1}, luego click en iniciar. Hasta que lo hagas, no te podré decir cuál es tu rol.</value>
+</string>
+<string key="DeadFlee">
+  <value>¡No puedes huir! ¡ESTÁS MUERTO! Vuelve a la tumba...  por Dios.</value>
+</string>
+<string key="Flee">
+  <value>¡{0} salió corriendo de miedo!</value>
+</string>
+<string key="PlayerRoleWas">
+  <value> {0} era {1}.</value>
+</string>
+<string key="CountPlayersRemain">
+  <value> {0} jugadores restantes.</value>
+</string>
+<string key="DidntAsk" deprecated="true">
+  <value>¡Oye, aún no te pregunto nada!</value>
+</string>
+<string key="NotPlaying">
+  <value>Parece que no estás jugando...</value>
+</string>
+<string key="NoPlayerName">
+  <value>¡No encuentro ningún jugador con ese nombre!</value>
+</string>
+<string key="AnswerNonValid" deprecated="true">
+  <value>¡Esta respuesta no es válida!</value>
+</string>
+<string key="WolfVotedKill">
+  <value> {0} ha votado comerse a {1}</value>
+</string>
+<string key="PlayerVotedLynch">
+  <value> {0} ha votado linchar a {1}</value>
+</string>
+<string key="IdleKill">
+  <value> {0} no ha votado 2 noches seguidas. Resulta que se abrió el intestino metiéndose cosas por la cola y {0} murió por desangramiento. {1}</value>
+</string>
+<string key="TraitorTurnWolf">
+  <value>¡¡Traidor!! Ahora eres el lobo...</value>
+</string>
+<string key="ChoiceAccepted">
+  <value>Ya has elegido.</value>
+</string>
+<string key="BeholderSeer">
+  <value>\nEl vidente es {0}.</value>
+</string>
+<string key="ApprenticeNowSeer">
+  <value>{0} era el Vidente. Como su aprendíz, es tu turno de convertirte en Vidente.</value>
+</string>
+<string key="BeholderNewSeer">
+  <value>{0} era un aprendíz, ahora ha llegado su turno de relevar a {1} como el nuevo Vidente.</value>
+</string>
+<string key="SeerSees">
+  <value>¡Percibes que {0} es {1}!</value>
+</string>
+<string key="AskLynch">
+  <value>¿A quién quieres linchar?</value>
+</string>
+<string key="AskDetect">
+  <value>¿A quién quieres investigar?</value>
+</string>
+<string key="AskShoot">
+  <value>¿A quién quieres disparar? {0} bala(s) restantes</value>
+</string>
+<string key="AskVisit">
+  <value>¿A quién quieres visitar?</value>
+</string>
+<string key="AskSee">
+  <value>¿A quién quieres percibir?</value>
+</string>
+<string key="AskGuard">
+  <value>¿A quién quieres proteger?</value>
+</string>
+<string key="AskEat">
+  <value>¿A quién quieres comerte?</value>
+</string>
+<string key="AskHunt">
+  <value>¿A quién quieres cazar?</value>
+</string>
+<string key="AskRoleModel">
+  <value>¿Quién quieres que sea tu modelo a seguir?</value>
+</string>
+<string key="AskConvert">
+  <value>¿A quién quieres convertir a tu secta?</value>
+</string>
+<string key="DiscussWith">
+  <!--Leave the leading spaces here please-->
+  <!-- 0 - teammate names -->
+  <value>  Asegúrate de discutir con {0}</value>
+</string>
+<string key="And">
+  <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+  <value> y </value>
+</string>
+<string key="RoleInfoCursed">
+  <value>Estás maldito. Por el momento, eres un campesino, pero si los lobos intentan matarte, te convertirás en otro hombre-lobo.</value>
+</string>
+<string key="RoleInfoDetective">
+  <value>Eres el detective. Durante el día, puedes elegir un jugador para investigar su rol. Sin embargo - si lo haces, ¡puede que tu rol se revele a los lobos! (40% de posibilidad)</value>
+</string>
+<string key="RoleInfoDrunk">
+  <value>¡Felicidades! ¡Eres el borracho del pueblo! (De verdad, todo el mundo lo sabe...).</value>
+</string>
+<string key="RoleInfoGuardianAngel">
+  <value>Eres el Ángel de la Guarda. Cada noche, podes elegir un jugador para proteger con la luz de beibi Yisus. Sin embargo, si eliges un lobo, hay un 50% de probabilidad de que mueras.</value>
+</string>
+<string key="RoleInfoGunner">
+  <value>Eres el justiciero. Tenes dos balas. Durante el día, podes elegir disparar a otro jugador. Todo el mundo oirá los disparos y sabrá que eres el justiciero (y no un lobo).</value>
+</string>
+<string key="RoleInfoHarlot">
+  <value>Eres la putita. Durante la noche, podrás elegir visitar a otro jugador para divertirse y verificar que no sea un lovo. Aunque, si visitas a un lobo o visitas a alguien que acaba de ser asesinado por el lobo, morirás. Pero si visitas a alguien y el lobo intenta ir a tu casa, te salvarás.</value>
+</string>
+<string key="RoleInfoTraitor">
+  <value>¡Traidor! Por ahora, eres un campesino, pero una vez los lobos mueran, te convertirás en hombre-lobo. Si la vidente te elige, puede que te identifique como lobo o no.</value>
+</string>
+<string key="RoleInfoWolf">
+  <value>¡¡Eres UN LOBO!! (Bien por ti). Cada noche puedes elegir comerte a alguien.</value>
+</string>
+<string key="RoleInfoSeer" >
+  <value >Eres el vidente. Cada noche podrás elegir un jugador para 'percibir' y su verdadero rol te será revelado.</value>
+</string>
+<string key="RoleInfoVillager" >
+  <value >Eres un simple campesino, condenado a pasar tus días labrando el campo y posiblemente ser comido.</value>
+</string>
+<string key="RoleInfoTanner" >
+  <value >Eres el Jack. Si consigues ser linchado, ¡ganas inmediatamente!</value>
+</string>
+<string key="RoleInfoWildChild" >
+  <value >¡Eres el niño salvaje! Elige un jugador para que sea tu ‘modelo a seguir’ - si ese jugador muere, te convertirás en hombre-lobo.</value>
+</string>
+<string key="RoleInfoBeholder" >
+  <value >Eres el observador, se te dirá quién es el (verdadero) vidente - ésta es tu única función.</value>
+</string>
+<string key="RoleInfoApprenticeSeer" >
+  <value >Eres el aprendiz de vidente. Si el (verdadero) vidente muere, tomarás su lugar como vidente.</value>
+</string>
+<string key="RoleInfoZombie" >
+  <value >Eres el Zombiea del pueblo. Cada noche puedes elegir a otro jugador para convertirlo en Zombiea. Si al final de la partida todos los jugadores vivos son Zombieas, ustedes ganan.</value>
+</string>
+<string key="RoleInfoZombieHunter" >
+  <value >Eres el cazador de Zombieas. ¡Tendrás que detener al culto antes de que conviertan a todos! Cada noche, puedes elegir un jugador; si es un Zombiea, ese jugador muere. Si los Zombieas tratan de convertirte, la última persona que se convirtió en Zombiea, muere.</value>
+</string>
+<string key="LynchTime" >
+  <value>El ocaso se acerca y los campesinos tratan de decidir a quién lincharán esta tarde...
+    ¡Todos tienen {0} segundos para votar!
+  </value>
+</string>
+<string key="DayTime" >
+  <value>Ya es de día. Tienen {0} segundos para discutir, hacer sus acusaciones o sólo platicar.</value>
+</string>
+<string key="NightTime" >
+  <value >Ya es de noche. Todo el mundo se va a dormir, agotados después de un día tan intenso. Jugadores nocturnos, ¡tienen {0} segundos para realizar sus acciones!</value>
+</string>
+<string key="LynchKill" >
+  <!-- 0 - player name -->
+  <!-- 1 - player role -->
+  <value >Los campesinos tienen su veredicto, entre tantas dudas y sospechas. {0} ha muerto. {1}.</value>
+</string>
+<string key="LynchTie" >
+  <value >Incapaces de tomar una decisión sobre el linchamiento, la multitud vuelve frustrada a pasar la noche en sus casas...</value>
+</string>
+<string key="NoLynchVotes" >
+  <value >Sospechoso... ¡nadie ha votado! Parece que no habrá linchamiento esta noche...</value>
+</string>
+<string key="DetectiveEaten" >
+  <value >Los campesinos se reúnen por la mañana pero no ven a {0}. Deambulan por su casa, hasta encontrarlo desmembrado, con un palo de escoba atravesándolo por la boca.</value>
+</string>
+<string key="GuardianEaten" >
+  <value >Llega la mañana y, para la consternación de todos, empalado en lo alto de la iglesia aparece {0}, el Ángel de la guarda.</value>
+</string>
+<string key="GunnerEaten" >
+  <value >Mientras que todo el mundo empieza a salir de sus casas, encuentran piezas de una escopeta desperdigadas... luego piernas... luego dedos... luego, flotando en la fuente de la plaza del pueblo, el cuerpo de {0}, asesinado por un Lobo. Se han quedado sin justiciero.</value>
+</string>
+<string key="SeerEaten" >
+  <value >Los aldeanos se despiertan en la mañana para encontrar los restos desmembrados de {0} esparcidos sobre una tabla de ouija y unas cartas de tarot. El Vidente ha muerto.</value>
+</string>
+<string key="DrunkEaten" >
+  <value >Todo el mundo se despierta con el olor a madera y alcohol quemado... ¡El bar está ardiendo! Tras apagar las llamas, encuentran los restos calcinados y completamente despedazados de {0}...</value>
+</string>
+<string key="FoolEaten" >
+  <value >Cuando amanece en la aldea, encuentran a {0} sentado sobre una ouija, pero con una baraja de.... ¿¿naipes?? ¡QUÉ TONTERÍA!</value>
+</string>
+<string key="DefaultEaten" >
+  <value>Al levantarse todo el mundo, un olor a mierda inunda el pueblo. Siguen el rastro hasta encontrar a {0} despedazado en el corral de cerdos, la cabeza no está. ÑAMÑAMÑAM {1}</value>
+</string>
+<string key="HunterKilledZombie">
+  <value>Un olor fétido viene de la casa de {0}...  los aldeanos aguantándose el vómito la inspeccionan y encuentran un cuerpo despedazado frente a un altar oscuro... ¡un Zombiea fue asesinado por el cazador!</value>
+</string>
+<string key="NoAttack" >
+  <value >Los campesinos se reúnen por la mañana en el centro del pueblo, suspirando de alivio. Parece que nadie fue atacado.</value>
+</string>
+<string key="CursedBitten" >
+  <value >Has sido mordido por los lobos. ¡Como estabas maldito ahora te has convertido en un lobo más!</value>
+</string>
+<string key="WolfTeam">
+  <value>Tu jauría: {0}</value>
+</string>
+<string key="CursedBittenToWolves" >
+  <value >¡{0} fue mordido.... pero estaba maldito y se ha convertido en un lobo más! ¡Felicidades por el nuevo compañero!</value>
+</string>
+<string key="WolvesEatYou" >
+  <value >¡Oh, no! ¡Los lobos te han comido! ÑAMÑAMÑAM</value>
+</string>
+<string key="WolvesEatDrunk" >
+  <value >¡Oh, no! ¡{0} era el borracho! Ahora los lobos están borrachos y no podrán atacar mañana en la noche por la resaca.</value>
+</string>
+<string key="GuardWolf" >
+  <value >¡Has intentado proteger a un lobo! El lobo te comió.</value>
+</string>
+<string key="GuardSaved" >
+  <value >¡Salvaste la vida de {0}!</value>
+</string>
+<string key="GuardNoAttack" >
+  <value >{0} no fue atacado anoche. Así que no has hecho nada.</value>
+</string>
+<string key="GuardEmptyHouse">
+  <value>¡Fuiste a proteger a {0}, pero no había nadie en casa!</value>
+</string>
+<string key="GuardSavedYou" >
+  <value >¡Tu Ángel de la guarda estuvo velando por ti anoche y luchó contra los lobos que te acechaban!</value>
+</string>
+<string key="HarlotEaten" >
+  <value >Parece que fue mala idea que la putita se quedara en casa a descansar. ¡{0} ha sido comida por los lobos!</value>
+</string>
+<string key="HarlotNotHome" >
+  <value >¡Ay!... ¡{0} no estaba en casa! Parece que te quedaste sin cena...</value>
+</string>
+<string key="HarlotFuckWolf" >
+  <value >Te escabulliste en la casa de {0} para divertirse un poco, pero te encontraste con un lobo. Has muerto.</value>
+</string>
+<string key="HarlotFuckedWolfPublic" >
+  <value >¡{0} se escabulló anoche en la casa equivocada! Su voluptuoso cuerpo fue encontrado completamente masticado en las puertas de la iglesia, qué triste :(</value>
+</string>
+<string key="HarlotFuckedVictimPublic" >
+  <value >{0} se metió anoche en la casa de {1} para pasar un buen rato. ¡Desafortunadamente, lo que se encontró fue a un hombre lobo comiéndose a {1}! El hombrelobo actuó rápidamente... {0} ha muerto.</value>
+</string>
+<string key="HarlotVisitNonWolf" >
+  <value >¡Después de una noche loca de sexo, perversión y de pegarle el sida a {0}, puedes asegurar que no es un lobo! (pero la tiene como de burro)</value>
+</string>
+<string key="HarlotVisitYou" >
+  <value >Estaba un bastante oscuro, así que no veías bien, pero a medianoche te despertaste con la putita metiéndose a la cama contigo. Cuando amanece, ella se ha ido.</value>
+</string>
+<string key="DetectiveCaught" >
+  <value >¡Cachaste a {0} husmeando por ahí! Él es el detective.</value>
+</string>
+<string key="DetectiveSnoop" >
+  <value >Tus investigaciones te han mostrado que {0} es {1}.</value>
+</string>
+<string key="HarlotShot" >
+  <value >Parece que el justiciero no disfrutó la noche con la putita. {0} ha tomado venganza y {1} ha muerto.</value>
+</string>
+<string key="DefaultShot" >
+  <value >De repente, se escucha el sonido de un disparo. La aldea entera voltea y ven a {0} de pie sobre el cadáver de {1} con una pistola apuntando aún a su cabeza mientras la sangre sale a borbotones {2}.</value>
+</string>
+<string key="WolfWins" isgif="true" >
+  <value >¡El lobo ha ganado!</value>
+</string>
+<string key="WolvesWin" isgif="true" >
+  <value >¡Los lobos han ganado!</value>
+</string>
+<string key="VillageWins" isgif="true" >
+  <value >¡Los campesinos han ganado! Todos los lobos han muerto...</value>
+</string>
+<string key="TannerWins" isgif="true" >
+  <value >¡Oh no! ¡Han linchado al Jack! Él gana la partida, qué estupidéz.</value>
+</string>
+<string key="RemainingPlayersEnd">
+  <value>Jugadores vivos restantes, roles, y equipos:</value>
+</string>
+<string key="ZombieVotedConvert" >
+  <value >{0} ha votado por convertir a {1}</value>
+</string>
+<string key="CultConvertZombieHunter">
+  <!-- 0 - Yougest Zombie (killed)'s name' -->
+  <!-- 1 - ZombieHunter's name -->
+  <value>{0} fue enviado para hacer tu trabajo sucio y convertir a {1}, pero, ¡era el cazador de Zombieas! ¡{0} está muerto!</value>
+</string>
+<string key="ZombieHunterKilledCultVisit">
+  <!-- 0 - Youngest Zombie's name -->
+  <!-- 1 - Number of Zombies left -->
+  <value>{0} vino a tu casa esta noche, listo para convertirte... pero le atravezaste la espada. Un Zombiea murió... {1} queda(n)!</value>
+</string>
+<string key="CultConvertYou">
+  <value>¡Los Zombieas te han convertido a su secta! Ahora eres un Zombiea. Cada noche tendrás la oportunidad de convertir a otro jugador.</value>
+</string>
+<string key="CultTeam">
+  <!-- 0 - Number of Zombies -->
+  <value>Zombieas: {0}</value>
+</string>
+<string key="CultJoin">
+  <value>¡{0} se ha unido a la secta!</value>
+</string>
+<string key="CultVisitEmpty">
+  <!-- 0 - Newest Zombie's name -->
+  <!-- 1 - target name -->
+  <value>{0} fue enviado a hacer tu trabajo sucio y hacer que {1} se uniera a la secta... ¡pero no había nadie en casa!</value>
+</string>
+<string key="CultWins" isgif="true">
+  <value >Todos los lobos han muerto y los únicos campesinos en pie son parte de la secta... ¡El culto ha ganado!</value>
+</string>
+<string key="HunterVisitDead">
+  <value>¡Fuiste a matar a {0}, pero ya estaba muerto!</value>
+</string>
+<string key="HunterFindZombie">
+  <value>Vas a la casa de {0}; y ves que está rezándole frente a un altar de un Dios desconocido... no lo piensas 2 vece y rápidamente clavas tu espada en el torso del Zombiea.</value>
+</string>
+<string key="HunterFailedToFind">
+  <value>Vas a casa de {0}, pero te das cuenta que no es un Zombiea, así que regresas a casa.</value>
+</string>
+<string key="WildChildToWolves">
+  <value>¡El guía de {0} acaba de morir! En un ataque de rabia, ¡se convierte en Hombre-Lobo!</value>
+</string>
+<string key="WildChildTransform">
+  <value>¡{0} ha muerto! En un ataque de rabia, ¡te has convertido en Hombre lobo! Tus nuevos compañeros son: {1}</value>
+</string>
+<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
+<string key="Villager">
+  <value>un Campesino 👱</value>
+</string>
+<string key="Drunk">
+  <value>el Borracho 🍻</value>
+</string>
+<string key="Harlot">
+  <value>la Putita 💋</value>
+</string>
+<string key="Seer">
+  <value>el Vidente 👳</value>
+</string>
+<string key="Traitor">
+  <value>el Traidor 🥸</value>
+</string>
+<string key="GuardianAngel">
+  <value>el Ángel de la Guarda 👼</value>
+</string>
+<string key="Detective">
+  <value>el Detective 🕵</value>
+</string>
+<string key="Wolf">
+  <value>un Hombre Lobo 🐺</value>
+</string>
+<string key="Cursed">
+  <value>el Maldito 😾</value>
+</string>
+<string key="Gunner">
+  <value>el Justiciero 🔫</value>
+</string>
+<string key="Tanner">
+  <value>el Jack 👺</value>
+</string>
+<string key="Fool">
+  <value>el Bufón 🃏</value>
+</string>
+<string key="WildChild">
+  <value>el Niño salvaje 👶</value>
+</string>
+<string key="Beholder">
+  <value>el Observador 👁</value>
+</string>
+<string key="ApprenticeSeer">
+  <value>el Aprendíz de Vidente 🙇</value>
+</string>
+<string key="Zombie">
+  <value>un Zombiea 👤</value>
+</string>
+<string key="ZombieHunter">
+  <value>el Cazador de Zombieas 💂</value>
+</string>
+<!-- These are for the player list -->
+<string key="RanAway">
+ <value>Huyó</value>
+</string>
+<string key="Dead">
+ <value>💀 Muerto</value>
+</string>
+<string key="Alive">
+ <value>😃 Vivo</value>
+</string>
+<string key="PlayersAlive">
+ <value>Jugadores vivos</value>
+</string>
+<!-- New strings 4 MAY 2016-->
+<string key="Mason">
+  <value>un Masón 👷</value>
+</string>
+<string key="RoleInfoMason">
+  <value>Eres un Mason. Si hay algún otro, sabrás quién es; si no, eres un campesino.</value>
+</string>
+<string key="MasonEaten">
+  <value>Cuando todos se levantan, encuentran el cuerpo de {0} metido entre unas piedras, hay sangre por todos lados. ¡Ha muerto un masón!</value>
+</string>
+<string key="MasonTeam">
+  <value>Los masones son: {0}</value>
+</string>
+<!-- new strings May 6 2016-->
+<string key="CultTargetDead">
+  <value>El miembro más nuevo del culto va a la casa de {0} para convertirlo, pero en cambio se topa con la casa hecha un desastre, sangre por doquier y un poco de pelaje de lobo pegado en la puerta...</value>
+</string>
+<string key="GuardBlockedWolf">
+  <value>La jauría va a casa de {0} para devorarlo, pero se topan con una imponente silueta. El ángel guardián logra repeler el ataque y la jauría se va con la cola entre las patas, derrotados.</value>
+</string>
+<!-- new strings May 9 2016-->
+<string key="CultUnableToConvert">
+  <value>Envías a {0} para intentar convertir a {1}, pero su fe es muy fuerte y no pudiste convertirlo.</value>
+</string>
+<!-- new string May 12 2016-->
+<string key="NameExists">
+  <value>@{1}, un jugador con el nombre {0} ya se ha unido. Por favor cambia tu nombre para unirte.</value>
+</string>
+<string key="HarlotDiscoverCult">
+  <value>Te metes a la casa de {0} para tener un poco de diversión, pero cuando te estás yendo, te das cuenta que tiene un altar muy extraño en uno de sus cuartos. Emite un brillo muy tenebroso...</value>
+</string>
+<!-- new string May 13 2016-->
+<string key="Was">
+  <value>era</value>
+</string>
+<string key="GenericDeathNoReveal">
+  <value>Todos despiertan por la mañana, y se dan cuenta que {0} no está... revisan su casa y encuentran sus restos.</value>
+  <value>En la mañana los campesinos se reúnen y encuentran los restos de {0}, parece que alguien o algo lo mató en la noche...</value>
+</string>
+<string key="MasonConverted">
+  <value>Qué raro... {0} no fue a la reunión de masones esta mañana...</value>
+</string>
+<!-- new string May 16 2016-->
+<string key="FleeDisabled">
+  <value>¡El admin deshabilitó poder huir durante la partida!</value>
+</string>
+<string key="IsDead"> <!-- used when gunner shoots a player -->
+  <value>está muerto</value>
+</string>
+<!-- MORE STRINGS May 16, 2016 -->
+<string key="AdminAdded" deprecated="true">
+  <value>{0} añadido a la lista de administración. Usa /config para cambiar los ajustes del grupo.</value>
+</string>
+<string key="AlreadyInGame">
+  <value>¡Ya estás en una partida en otro grupo! ({0})</value>
+</string>
+<string key="MultipleGames" deprecated="true">
+  <value>Tu grupo ha logrado iniciar varias partidas de algún modo...
+    Cerrando partidas de más.</value>
+</string>
+<string key="GroupQueue" deprecated="true">
+  <!-- 0 - target's name -->
+  <!-- 1 - target's name -->
+  <value>Tu grupo está en la cola de espera. Posición: {0} / {1}</value>
+</string>
+<string key="MaintBreak" deprecated="true">
+  <value>¡Perdonen, voy a empezar un breve periodo de mantenimiento. No pueden comenzar partidas ahora.\nEsperando que terminen {0} partidas...\nConsulta @greywolfdev para más información</value>
+</string>
+<string key="MaxGames" deprecated="true">
+  <value>Perdonen, se ha alcanzado el máximo de partidas simultáneas ({0}).\nPosición en la cola de espera: {1} / {1}</value>
+</string>
+<string key="SkipQueue" deprecated="true">
+  <value>¡{0} es un grupo privilegiado y se ha saltado la cola de espera!</value>
+</string>
+<string key="NoGame">
+  <value>No hay ninguna partida en curso. Comienza una nueva partida con /startgame o una partida caótica con /startchaos .</value>
+</string>
+<string key="GroupAdminOnly">
+  <value>Sólo los admins pueden usar este comando. Saca al bot del grupo y añádelo de nuevo, así tendrás privilegios de admin sobre el bot.</value>
+</string>
+<string key="ShuttingDown" deprecated="true">
+  <value>Después de esta partida, me apagaré para mantenimiento.</value>
+</string>
+<string key="ShuttingDownUpdate" deprecated="true">
+  <value>Después de esta partida, me apagaré un momento para actualizarme (automático).</value>
+</string>
+<string key="NullIdAdmin" deprecated="true">
+  <value>El identificador de usuario es nulo. ¿Seguro que estás enviando esto como una respuesta?</value>
+</string>
+<string key="AlreadyAdmin" deprecated="true">
+  <value>¡{0} ya es administrador/a!</value>
+</string>
+<string key="NotAdmin" deprecated="true">
+  <value>¡{0} no es administrador/a!</value>
+</string>
+<string key="AdminRemoved" deprecated="true">
+  <value>¡{0} ha sido eliminado de la lista de administración.</value>
+</string>
+<string key="LanguageSet" deprecated="true">
+  <value>Idioma cambiado a {0}.</value>
+</string>
+<string key="NoSeer">
+  <value>¡No hay Vidente!</value>
+</string>
+<string key="TimesUp">
+  <value>¡Se acabó el tiempo!</value>
+</string>
+<!-- new strings june 10 2016 -->
+<string key="RoleInfoCupid">
+  <value>Eres Cupido. Mandado a la Tierra con sólo unos calzones, un arco y dos flechas. Podrás elegir a 2 jugadores para que se amen por toda la eternidad. Si uno de ellos muere, el otro muere de tristeza.</value>
+</string>
+<string key="RoleInfoDoppelganger">
+  <value>Eres un Doppelgänger. La leyenda dice que tus ancestros podían cambiar de forma, cualquier forma que ellos quisieran. Has heredado algunas de sus capacidades. Escoge a un jugador y cuando él muera, tomarás su rol.</value>
+</string>
+<string key="RoleInfoHunter">
+  <value>Eres el Cazador del pueblo. No sueles dormir bien y jamás te irías a dormir sin tu rifle. Si te mueres, puedes elegir a alguien para que se vaya a la tumba contigo. Si te comen, existe la posibilidad de que mates a un hombre lobo, pero no podrás elegir a otro jugador para matar.</value>
+</string>
+<string key="RoleInfoSerialKiller">
+  <value>Eres el Asesino serial. Recientemente te escapaste de un manicomio local, tu meta es que todos mueran. Cada noche, podrás matar y añadir un cuerpo a tu colección de cadáveres.</value>
+</string>
+<string key="CupidChosen">
+  <value>¡Te has enamorado! Lo que sientes por {0} jamás desaparecerá de tu corazón. Si uno de los dos muere, el otro morirá de tristeza. Si uno de los dos gana, tu amor eterno también ganará.</value>
+  <value>¡Cupido te ha flechado! ¡Estás perdidamente enamorado de {0}! Si él muere, tu también. Si uno de los dos gana, ambos ganan.</value>
+</string>
+<string key="HunterLynchedChoice">
+  <value>La aldea ha decidido colgarte! Esta es tu última oportunidad, rápido ¡elige a alguien para dispararle y se vaya contigo a la tumba!</value>
+</string>
+<string key="HunterNoChoiceLynched">
+  <value>{0} intenta agarrar rápidamente su pistola, pero no lo logra a tiempo y muere con el sonoro crujir de su cuello...</value>
+</string>
+<string key="HunterSkipChoiceLynched">
+  <value>{0} saca su pistola y mira al pueblo... y no logra decidir a quién dispararle. Termina aceptando su destino y muere...</value>
+</string>
+<string key="HunterKilledFinalLynched">
+  <!-- 0 - hunter's name -->
+  <!-- 1 - target's name -->
+  <!-- 2 - target's role -->
+  <value>A medida que la soga se aprieta, el Cazador saca una pistola, apunta y le dispara a {1}! {0} muere colgado y {1} balaceado. {2}</value>
+</string>
+<string key="HunterShotChoice">
+  <value>¡Te estás asfixiando! Son tus últimos segundos, tienes la oportunidad de dispararle a alguien... ¡hazlo rápido!</value>
+</string>
+<string key="HunterNoChoiceShot">
+  <!-- 0 - target's name -->
+  <value>El golpe a {0} fue tan fuerte que ni pudo alcanzar su arma, ahora yace en un charco de sangre...</value>
+</string>
+<string key="HunterSkipChoiceShot">
+  <!-- 0 - hunter's name -->
+  <value>Mientras {0} yace en el suelo, dando sus últimos jadeos, no se decide por quién disparar... y termina aceptando su destino.</value>
+</string>
+<string key="HunterKilledFinalShot">
+  <!-- 0 - hunter -->
+  <!-- 1 - target's name -->
+  <!-- 2 - target's role -->
+  <value>Desangrándose, {0} cae al suelo.... pero no sin antes agarrar su pistola, y dispararle a {1}, quien recibe la bala entre las cejas. {2}</value>
+</string>
+<string key="HunterShotWolfMulti">
+  <!-- 0 - target's name -->
+  <value>Los lobos mataron al cazador en la noche, ¡pero el cazador es duro de matar así que no se fue sin llevarse a uno de esos malditos con él! {0} murió (lobo)</value>
+</string>
+<string key="HunterShotWolf">
+  <!-- 0 - target's name -->
+  <value>Un lobo trató de atacar al cazador en la noche, pero el cazador logró darle un balazo con su rifle al lobo {0}!</value>
+</string>
+<string key="SerialKillerKilledWolf">
+  <value>Los lobos planeaban tener un bocadillo nocturno, pero en lugar fueron visitados porel asesino serial! ¡{0} fue asesinado durante la pelea!</value>
+</string>
+<string key="DefaultKilled">
+  <!-- 0 - target's name -->
+  <!-- 1 - target's role -->
+  <value>Parecía una noche lo suficientemente tranquila para {0}, pero estaba equivocado. Los aldeanos se reúnen en la mañana para encontrar a {0} cortado de la cabeza a los pies, pero extrañamente le faltaba el hígado... ¡El asesino serial ha atacado de nuevo! {1}</value>
+</string>
+<string key="GuardBlockedKiller">
+  <!-- 0 - target's name -->
+  <value>Trataste de recoger el cuerpo de {0} para tu colección, ¡Pero te topaste con el Ángel Guardián! No has matado esta noche...</value>
+</string>
+<string key="CultConvertHunter">
+  <!-- 0 - Youngest Zombie's name -->
+  <!-- 1 - target's name -->
+  <value>El culto envía a {0} para tratar de convertir a {1}, pero en su lugar suena un disparo y el cuerpo de {0} ¡Sale disparado por la ventana! {0} está muerto...</value>
+</string>
+<string key="CultConvertSerialKiller">
+  <!-- 0 - Youngest Zombie's name -->
+  <!-- 1 - target's name -->
+  <value>El culto envía a {0} para tratar de convertir a {1}, pero en su lugar el cuerpo de {0} sale disparado por la ventana de la casa, ¡Con cuchillos clavados en todo el cuerpo! ¡PERO QUE PSICÓPATA! {0} está muerto...</value>
+  <value>{0} se escabulló a la casa de {1}, abre la puerta e inmediatamente ¡Es recibido por un maniático loco con un cuchillo! {1} hunde profundamente el cuchillo en los órganos de {0} en orden alfabético, ¡Riéndose como loco todo el tiempo! {0} está muerto...</value>
+</string>
+<string key="GuardKiller">
+  <value>Trataste de proteger al asesino serial, tu pago ¡89 veces puñaladas por la espalda! Estás muerto....</value>
+</string>
+<string key="HarlotFuckKiller">
+  <!-- 0 - target's name -->
+  <value>Te metes en la casa de {0} y comienzan a divertirse.  Todo va perfecto hasta que {0} saca un cuchillo y comienza a apuñalarte, ¡riendo como un maniático! Has muerto...</value>
+</string>
+<string key="HarlotFuckKillerPublic">
+  <value>El pueblo ve el cuerpo de {0}, sin vida en la plaza central con innumerables heridas de arma blanca. {0} está muerto/a.</value>
+</string>
+<string key="DGToMason">
+  <!-- 0 - target's name -->
+  <value>El doppelganger {0} es ahora un mason, ¡igual que tú!</value>
+</string>
+<string key="DGTransformToMason">
+  <!-- 0 - dead mason's name -->
+  <!-- 1 - mason collegues's name -->
+  <value>{0} ha muerto, y te has convertido en mason. Tus compañeros (si hay) son: {1}</value>
+</string>
+<string key="DGToCult">
+  <!-- 0 - new Zombie's name -->
+  <value>El Doppelgänger {0} se ha convertido en un Zombiea, ¡igual que tú!</value>
+</string>
+<string key="DGTransformToCult">
+  <!-- 0 - role's name -->
+  <!-- 1 - teammates's name -->
+  <value>{0} ha muerto y te has convertido en un Zombiea. Tus compañeros (si hay) son: {1}</value>
+</string>
+<string key="DGToWolf">
+  <!-- 0 - DG's name -->
+  <value>El Doppelgänger {0} ahora se ha convertido en un lobo, ¡igual que tú!</value>
+</string>
+<string key="DGTransformToWolf">
+  <!-- 0 - target's name -->
+  <!-- 1 - teammates's name -->
+  <value>{0} ha muerto, y ahora tu te transformas en un lobo. Tu jauría (si hay) son: {1}</value>
+</string>
+<string key="SerialKillerWins" isgif="true">
+  <value>¡La única persona viva es el asesino serial! ¡Él ha ganado!</value>
+</string>
+<string key="AskKill">
+  <value>¡A quién quieres matar esta noche?</value>
+</string>
+<string key="LoverDied">
+  <!-- 0 - dead's name -->
+  <!-- 1 - lover's name -->
+  <!-- 2 - roles -->
+  <value>En los últimos respiros de {0}, {1} corre y se pone de rodillas, llorando. No puede soportar la pérdida de su amado y se dispara con la pistola más cercana que encuentra. {2}</value>
+</string>
+<string key="AskDoppelganger">
+  <value>¿En quién te quieres convertir si ese jugador muere?</value>
+</string>
+<string key="AskCupid1">
+  <value>¿Quiénes quieres que sean los amantes? Elige al primer jugador</value>
+</string>
+<string key="AskCupid2">
+  <value>¿Quiénes quieres que sean los amantes? Elige al segundo jugador</value>
+</string>
+<string key="Hunter">
+  <value>el Cazador 🎯</value>
+</string>
+<string key="Cupid">
+  <value>Cupido 🏹</value>
+</string>
+<string key="SerialKiller">
+  <value>el Asesino Serial 🔪</value>
+</string>
+<string key="Doppelgänger">
+  <value>el Doppelgänger 🎭</value>
+</string>
+<string key="NewWCRoleModel">
+  <!-- 0 - target's name -->
+  <value>Te has convertido en el Niño Salvaje. Tu modelo a seguir es {0}.</value>
+</string>
+<string key="LoversWin">
+  <value>El Amor verdadero perdura! Los amantes han ganado!</value>
+</string>
+<string key="HunterKilledVisiter">
+  <!-- 0 - target's name -->
+  <!-- 1 - role -->
+  <value>En el centro de la plaza principal, encuentran el cuerpo de {0}, con múltiples disparos en el cuerpo. ¡Parece que intentaron acercarse sigilosamente al Cazador! Bueno, {1}.</value>
+</string>
+<string key="CultAttempt">
+  <value>Una silueta encapuchada intentó convertirte a su secta, pero tus creencias fueron mucho más fuertes.</value>
+</string>
+<string key="AlreadyOnWaitList">
+  <!-- 0 - target's name -->
+  <value>Ya estás en la lista de espera para {0}.</value>
+</string>
+<string key="AddedToWaitList">
+  <!-- 0 - target's name -->
+  <value>Has sido añadido a la lista de espera de {0}. Te mandaré un PM cuando inicie la siguiente partida.\nMientras esperas, ¿por qué no le echas un ojo a la tienda? https://teespring.com/stores/werewolf-for-telegram</value>
+</string>
+<string key="NotifyNewGame">
+  <!-- 0 - target's name -->
+  <value>Empezará una nueva partida en {0}.</value>
+</string>
+<string key="SerialKillerWinsOverpower">
+  <!-- 0 - SK's name -->
+  <!-- 1 - target's name -->
+  <value>Llega la mañana y los últimos dos aldeanos van hacia la plaza principal. {0} mira a {1} con una sonrisa muy perturbadora, saca su cuchillo y acuchilla a {1}.</value>
+</string>
+<string key="NoWinner" isgif="true">
+  <value>Todos en el pueblo han muerto... sólo quedan cadáveres. Nadie gana esta ronda, excepto los buitres...</value>
+</string>
+<string key="SKHunterEnd">
+  <!-- 0 - SK's name -->
+  <!-- 1 - Hunter's name -->
+  <value>A medida que el Sol sale, {0} y {1} caminan hacia la plaza central. {0} sujeta su cuchillo y corre hacia {1}. {1} rápidamente desenfunda y dispara hacia la cara de {0} mientras que él logra enterrar el cuchillo profundamente en {1}. Ambos muertos, con la villa vacía... No hay ganador</value>
+</string>
+<string key="RoleModelChosen">
+  <!-- 0 - target's name -->
+  <value>Has demorado demasiado decidiendo!, así que el moderador ha escogido por ti: {0}</value>
+</string>
+<string key="Won">
+  <value>Ganó</value>
+</string>
+<string key="Lost">
+  <value>Perdió</value>
+</string>
+<string key="IdleCount">
+  <!-- 0 - player's name -->
+  <!-- 1 - idle count -->
+  <value>El jugador {0} fue asesinado por no votar {1} veces en las ultimas 24 horas.</value>
+</string>
+<!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+-->
+<string key="AboutVG">
+  <value>Tu rol es muy simple - DEBES sobrevivir. Cada día tendrás la oportunidad de linchar al lobo.</value>
+</string>
+<string key="AboutSeer">
+  <value>¡Eres el vidente!. Cada noche, podrás seleccionar a un jugador y su rol te será revelado. Pero piensa bien si deberías decirle a los demás, si lo haces, los lobos probablemente tratarán de comerte primero!</value>
+</string>
+<string key="AboutWw">
+  <value>¡Te vas a divertir! Durante el dia, tratarás de engañar a los demas jugadores. Sin embargo, cada noche, ¡Seleccionarás un jugador para matar!\nNota: ¡Si seleccionas al Maldito, se convertirá en un lobo más! ¡Viva, mas amigos!\nSi atacas al Borracho, te emborracharás por tanto alcohol en su sangre y no podrás atacar la siguiente noche pues sufrirás de resaca! (Normalmente, esto significa que no podras atacar la siguiente noche, sin embargo si el Cachorro de lobo muere, podrás matar sólo una vez en su honor; sin resaca serían 2 veces cuando el cachorro muere).</value>
+</string>
+<string key="AboutHarlot">
+  <value>Siendo la prostituta (eres una puta...) tendrás la oportunidad de "visitar" a uno de los jugadores cada noche. Si no es un Lobo, lo sabrás (porque no morirás). Si visitas un Lobo, seras asesinado. Si visitas a un jugador el cual fue seleccionado por los lobos para ser asesinado, tu seras asesinado tambien. Sin embargo - si decides visitar a un jugador, y los lobos deciden asesinarte, sobreviviras! (Pues no estabas en casa)</value>
+</string>
+<string key="AboutDrunk">
+  <value>¡Maldito borracho! como el borracho, eres un aldeano más, PERO... si los lobos te asesinan, no podrán atacar la siguiente noche, ya que se emborracharán portanto alcohol en tu sangre.</value>
+</string>
+<string key="AboutCursed">
+  <value>Siendo el Maldito, eres un aldeano normal... solo hasta que los lobos decidan asesinarte. Una vez que lo hagan, te convertiras en uno de ellos! Libre para cazar en la noche... XD</value>
+</string>
+<string key="AboutTraitor">
+  <value>¡Eres un maldito traidor!. Si llegas al día en que todos los lobos mueran, te convertirás en un hombre lobo, ¡listo para matar en las noches a quienes eran tus compañeros!</value>
+</string>
+<string key="AboutGA">
+  <value>Eres el Angel Guardián! Cada noche, podrás seleccionar a un jugador para cuidarlo. Sin embargo sé cuidadoso - si seleccionas cuidar de un lobo, hay un 50% de probabilidad de que seas asesinado.</value>
+</string>
+<string key="AboutDetective">
+  <value>Eres un viejo detective. Cada dia, podrás investigar a otro jugador. Usa esto cuidadosamente dado que, hay un 40% de probabilidad de que los lobos te detecten!</value>
+</string>
+<string key="AboutGunner">
+  <value> ¿Así que te encanta disprar? Como el Justiciero, tienes 2 balas de plata al inicio del juego. Cada día, tendrás la oportunidad de disparar a otro jugador. Una vez que dispares, todos sabrán que eres el Justiciero ¡Piensa bien pues sólo tienes 2 balas!</value>
+</string>
+<string key="AboutTanner">
+  <value>El objetivo del Jack es simple: Ser Linchado. Si el Jack es linchado, el gana, punto final. Todos los demás pierden.</value>
+</string>
+<string key="AboutFool">
+  <value>Al inicio de la partida el Bufón pensará que él es el Vidente... y cuando seleccione ver el rol de alguien, verá un rol al azar.</value>
+</string>
+<string key="AboutCult">
+  <value>Como Zombiea, tu objetivo es convertir a otros jugadores (excepto Lobos) a tu culto. si al final del juego, todo los jugadores vivos son Zombieas - ¡el culto gana! </value>
+</string>
+<string key="AboutCH">
+  <value>Como Cazador de Zombieas, tu trabajo es cazar al Culto. Si el culto te intenta convertir, su miembro más reciente morirá. Cada noche podrás seleccionar a un jugador para investigar, pero si es Zombiea, morirá. </value>
+</string>
+<string key="AboutWC">
+  <value>Al inicio del juego, seleccionarás a otro jugador para que sea tu "modelo a seguir". Si ese jugador muere, te convertirás en un lobo del puro coraje.</value>
+¿</string>
+<string key="AboutAppS">
+  <value>Por ahora, eres un aldeano normal. Pero si el Vidente muere, te convertirás en el nuevo Vidente.</value>
+</string>
+<string key="AboutBH">
+  <value>Tu papel es saber quien es Vidente (el real, no el Bufón)</value>
+</string>
+<string key="AboutMason">
+  <value>El objetivo de un Mason es simple - Saber si hay otros masones. Si no hay, es un simple aldeano.</value>
+</string>
+<string key="AboutDG">
+  <value>Tus ancestros tenian la habilidad de transformarse en otros... mientras que tu no tienes sus habilidades completas, puedes seleccionar un jugador al inicio del juego. Si el jugador muere, podrás tomar su rol.
+	Nota: Si el jugador es convertido al culto, tu tomarás su rol original. Toda las demas reglas aplican: Si era Niño Salvaje y su modelo a seguir muere, te convertirás en lobo. Si no, sólo heredarás su modelo a seguir.
+	El culto no puede convertir al Doppelgänger (pero pueden hacerlo una vez que haya cambiado de rol). Además - el Doppelgänger NO puede ganar si no se ha transformado. Si al final del juego, el Doppelgänger sigue igual, perderá (La única excepción es si estás flechado y tu pareja gana).</value>
+</string>
+<string key="AboutCupid">
+  <value>Love is in the air. Siendo Cupid, eligirás a 2 jugadores al inicio del juego. Estos 2 jugadores se enamorarán enloquecidamente! Si uno de ellos muere, el otro muere de tristeza :(
+    Nota: Los enamorados obviamente sabrán de quién se enamoraron, pero no el rol que tiene su enamorado. Si los enamorados son los últimos dos vivos , ellos ganan, indistintamente del equipo al que pertenezcan. Si los enamorados son de equipos diferentes (aldeano + lobo) y el equipo de llobos gana, el amante (aldeano) también gana. TL;DR Si al menos uno de los dos está en el equipo ganador, los dos ganan.</value>
+</string>
+<string key="AboutHunter">
+  <value>Eres un jugador sanguinario. Siendo el Cazador, andas por tu cuenta. Sin embargo, cuando alguien te visita, puede ser que encuentren su muerte, ya que tu paranoia te hace dispararles. Si los lobos te atacan, tienes la oportunidad de llevarte a uno de ellos contigo. También, si mueres tienes la oportunidad de disparar a alguien antes de morir.
+	Nota: En cuestion de ataques de lobos, la probabilidad de matar a uno es de 30%. Si es un solo lobo la probabilidad de matarlo es de 30% (Y sobrevivir). Por cada lobo adicional, se aumenta un 20% (2 lobos = 50%, 3 = 70%, etc). Sin embargo - si hay multiples lobos, aunque puedas matar a uno de ellos, seguiras estando en desventaja y morirás.
+	Si el culto intenta convertirte, hay un 50% de probabilidad de que fallen. Si fallan, tienes un 50% de probabilidad de matar a uno de ellos!</value>
+</string>
+<string key="AboutSK">
+  <value>El asilo fue una tonteria. Una broma para ti!. Ahora eres libre, de regreso a lo que de verdad te da placer - ¡Asesinar! el Asesino Serial es un jugador solitario, en su propio equipo. Slo puede ganar si es el último jugador vivo (Excepto si está enamorado). Como el Asesino Serial, puedes matar a QUIEN SEA - Lobos, Cazadores, Justicieros, Angel de la guarda, lo que sea. Si los lobos tratan de atacarte, mataras a uno de ellos (al azar) y sobrevivirás.</value>
+</string>
+<string key="AboutPara">
+  <value>Para es un tonto desarrollador que le gusta ladrar a la gente. Quizá ha estado molestando a los lobos mucho tiempo... y molestar a los lobos es muy mala idea.</value>
+</string>
+<string key="EndTime">
+  <value>Duracion del juego: {0}</value>
+</string>
+<!--New strings, July the 8th -->
+
+<string key="Day">
+  <!--0 - Day -->
+  <value>Día {0}</value>
+</string>
+<string key="NodeShutsDown">
+  <value>Ocurrió un error y este nodo se ha apagado :/</value>
+</string>
+<string key="SentPrivate">
+  <value>Te he enviado un mensaje privado</value>
+</string>
+<string key="StartPM" deprecated="true">
+  <value>Favor de enviarme un mensaje privado asi yo podre enviarte uno: @werewolfbot</value>
+</string>
+<string key="PMTrue" deprecated="true">
+  <value>Thanks for starting me! I can PM you now.</value>
+</string>
+<string key="MustReplySmite" deprecated="true">
+  <value>You must reply to the user you want to smite</value>
+</string>
+<string key="WhatToDo">
+  <value>¿Que te gustaria hacer?</value>
+</string>
+<string key="JoinFromGroup">
+  <value>Debes unirte al juego desde el chat de grupo!</value>
+</string>
+<string key="StartFromGroup">
+  <value>Debes iniciar el juego desde el chat de grupo!</value>
+</string>
+<string key="PingInfo">
+  <value>Tiempo para recibir mensaje ping: {0}\nMensajes por segundo: {1}</value>
+</string>
+<string key="WhatLang">
+  <value>¿Qué idioma?\nActualmente: {0}</value>
+</string>
+<string key="WhatVariant">
+  <value>¿Qué variante?\nActual: {0}</value>
+</string>
+<string key="LangSet">
+  <value>Idioma seleccionado: {0}</value>
+</string>
+<string key="GetLang">
+  <value>¿Cuál archivo de idioma?</value>
+</string>
+<string key="NoNodes">
+  <value>No hay nodos en linea actualmente, favor de intentarlo en unos segundos mas</value>
+</string>
+<string key="GroupCommandOnly">
+  <value>Debes usar este comando en un grupo</value>
+</string>
+<string key="NotGlobalAdmin">
+  <value>No eres un admin global... </value>
+¿</string>
+<string key="NotPara">
+  <value>¡No eres Para!</value>
+</string>
+<string key="Yes">
+  <value>Sí</value>
+</string>
+<string key="No">
+  <value>No</value>
+</string>
+<string key="Allow">
+  <value>Permitir</value>
+</string>
+<string key="Disallow">
+  <value>Rechazar</value>
+</string>
+<string key="Show">
+  <value>Mostrar</value>
+</string>
+<string key="Hide">
+  <value>Ocultar</value>
+</string>
+<!-- Game Mode Choices-->
+<string key="NormalOnly">
+  <value>Sólo Normal</value>
+</string>
+<string key="ChaosOnly">
+  <value>Sólo Caos</value>
+</string>
+<string key="PlayerChoice">
+  <value>A eleccion del jugador</value>
+</string>
+
+<!-- Show Roles on End Game -->
+<string key="ShowNone">
+  <value>No mostrar ninguno</value>
+</string>
+<string key="ShowLiving">
+  <value>Sólo mostrar jugadores vivos</value>
+</string>
+<string key="ShowAll">
+  <value>Mostrar todo los jugadores</value>
+</string>
+
+<string key="Cancel">
+  <value>Cancelar</value>
+</string>
+<string key="AllowFleeQ">
+  <value>¿Quieres permitir que los jugadores puedan huir en media partida?\nNota: Los jugadores aún podrán volverse a unir mientras no inicie la partida\nActualmente {0} huir</value>
+</string>
+<string key="AllowFleeA">
+  <value>{0} huir despues de iniciar el juego</value>
+</string>
+<string key="MaxPlayersQ">
+  <value>¿Cuál es el máximo de jugadores por partida que deseas?\nActual: {0}</value>
+</string>
+<string key="MaxPlayersA">
+  <value>El máximo de jugadores es {0}</value>
+</string>
+<string key="ShowRolesDeathQ">
+  <value>Mostrar u ocultar rol de jugadores al morir?\nActual: {0}</value>
+</string>
+<string key="ShowRolesDeathA">
+  <value>Los roles seran {0} al morir.</value>
+</string>
+<string key="GameModeQ">
+  <value>¿Qué modo de juego tendrá el grupo?\nActual: {0}</value>
+</string>
+<string key="GameModeA">
+  <value>Modo de juego es {0}</value>
+</string>
+<string key="ShowRolesEndQ">
+  <value>¿Cómo quieres que los roles sean mostrados al terminar?\nActual: {0}</value>
+</string>
+<string key="ShowRolesEndA">
+  <value>Roles mostrados al final configurado en: {0}</value>
+</string>
+<string key="SetDayTimeQ">
+  <value>Selecciona el tiempo base (en segundos) para la fase de dia. Esto seguira siendo modificado basado en el numero de jugadores. \nConfiguacion por defecto: {0}\nActual: {1}</value>
+</string>
+<string key="SetDayTimeA">
+  <value>Tiempo base de dia ajustado a {0} segundos</value>
+</string>
+<string key="SetNightTimeQ">
+  <value>Selecciona el tiempo (en segundos) para la fase de noche. Configuracion por defecto: {0}\nActualmente: {1}</value>
+</string>
+<string key="SetNightTimeA">
+  <value>Tiempo de noche ajustado a {0} segundos</value>
+</string>
+<string key="SetLynchTimeQ">
+  <value>Selecciona el tiempo (en segundos) para el voto para linchar. Configuracion por defecto: {0}\nActualmente: {1}</value>
+</string>
+<string key="SetLynchTimeA">
+  <value>Tiempo de voto para linchar ajustado a {0} segundos</value>
+</string>
+<string key="AllowFoolQ">
+  <value>Permitir el rol Bufón?\nActual: {0}</value>
+</string>
+<string key="AllowFoolA">
+  <value>Bufón es un posible rol: {0}</value>
+</string>
+<string key="AllowTannerQ">
+  <value>Permitir Jack en las partidas?\nActualmente: {0}</value>
+</string>
+<string key="AllowTannerA">
+  <value>Jack como posible rol: {0}</value>
+</string>
+<string key="AllowCultQ">
+  <value>¿Permitir Zombieas en las partidas?\nActualmente: {0}</value>
+</string>
+<string key="AllowCultA">
+  <value>Zombieas como posible rol: {0}</value>
+</string>
+<string key="EnableSecretLynchQ">
+  <value>¿Permitir voto secteo al linchar?\nActualmente: {0}</value>
+</string>
+<string key="EnableSecretLynchA">
+  <value>Voto secreto al linchar: {0}</value>
+</string>
+<string key="ThankYou">
+  <value>Gracias, ten un buen dia :)</value>
+</string>
+<string key="WhatLangGroup">
+  <value>¿En que idioma deseas buscar un grupo para jugar?</value>
+</string>
+<string key="HereIsList">
+  <value>Aquí tienes los grupos para {0}:</value>
+</string>
+<string key="Members">
+  <value>Miembros</value>
+</string>
+<string key="StartMe">
+  <value>Por favor iniciame para que pueda mandarte mensaje privado</value>
+</string>
+<string key="PlayerNoPM">
+  <value>{0} ha fallado en iniciar el bot y ha sido removido del juego!</value>
+</string>
+<string key="LatestList">
+  <value>Aquí tienes la lista mas reciente</value>
+</string>
+<string key="UnableToGetList">
+  <value>No se puede obtener la lista más reciente</value>
+</string>
+<string key="YouJoined">
+  <!-- 0 - Group Name -->
+  <value>Te has unido exitosamente al juego en {0}</value>
+</string>
+<string key="Ping2">
+  <value>Tiempo para mandar mensaje ping: {0}</value>
+</string>
+
+<!-- Update 4.0-->
+<string key="RoleInfoMayor">
+  <value>Eres el Alcalde. Tu voto a la hora de linchar vale doble, ya que hayas dicho quién eres. Estás en el equipo de los aldeanos.</value>
+</string>
+<string key="RoleInfoPrince">
+  <value>Eres el Principe en secreto, has escapado de tu aburrida vida de lujos, pasando el tiempo con los aldeanos. Si tratan de lincharte, se darán cuenta de su error y nadie será linchado.</value>
+</string>
+<string key="RoleInfoClumsyGuy">
+  <value>Eres el Chico Torpe: Trataras de votar, pero hay un 50% de que votes por alguien quien no seleccionaste. A pesar de esto sigues siendo del equipo de aldeanos.</value>
+</string>
+<string key="RoleInfoSorcerer">
+  <value>Eres el Hechizero, prefieres aliarte con las criaturas de la noche que con los aldeanos. En la noche usarás tus podereses para encontrar a los lobos o al vidente. Solo ganarás si los lobos ganan. ¡Disfrutarás ayudar a los lobos devorar miserables aldeanos!</value>
+</string>
+<string key="RoleInfoBlacksmith">
+  <value>Eres el Herrero: el metalúrgico de la villa. Tienes un puñado de plata, suficiente para prevenir que los lobos ataquen por una noche. Durante el dia puedes elegir tirar este polvo al rededor del pueblo. Excluyendo esto no eres más que un aldeano.</value>
+</string>
+<string key="RoleInfoAlphaWolf">
+  <value>Eres el Lobo Alfa: el origen de la maldición. Tu mordida causa en los humanos una maldicion que los vuelve hombre-lobo. Cada noche seleccionarás un humano para atacar y asesinar, pero mientras estés con vida hay un 20% de probabilidad de convertir a tu victima en hombre-lobo.</value>
+</string>
+<string key="RoleInfoWolfCub">
+  <value>Eres el Cachorro de Lobo; ¡adorado por tu jauria! Como otros lobos, podrás seleccionar un aldeano para atacar y asesinar cada noche. Si mueres, tu jauria entrara en furia y atacara dos aldeanos la proxima noche. Seguirás muerto de todas formas.</value>
+</string>
+<string key="PrinceLynched">
+  <value>Mientras los aldeanos se preparan para linchar a {0}, él dice "Esperen! soy El Príncipe. Este anillo real, con el sello del rey lo prueba. Toda las noches estoy rodeado por sirvientes, así que no puedo ser malvado!" Sintiéndose tontos, los aldeanos se retiran como ovejas a sus casas.</value>
+</string>
+<string key="SorcererOther">
+  <value>Intentas ver a {0}, pero no puedes comprender qué es. Sin embargo sabes que no es lobo ni vidente...</value>
+</string>
+<string key="MayorReveal">
+  <value>{0} da un paso al frente y presenta el sello oficial del Alcalde, declarandose asimismo como tal. A partir de ahora, los votos de {0} contaran como dos.</value>
+</string>
+<string key="AskMayor">
+  <value>Haz clic en "Revelar" cuando estes listo para revelarte como el Alcalde.</value>
+</string>
+<string key="Reveal">
+  <value>Revelar</value>
+</string>
+<string key="SpreadDust">
+  <value>Deseas esparcir la plata hoy, deshabilitando a los lobos esta noche?</value>
+</string>
+<string key="BlacksmithSpreadSilver">
+  <value>Mientras que el resto de la aldea debate sobre los eventos ocurridos, se dan cuenta de {0} esparciendo la plata al rededor de la tierra. Al menos, por ahora, la villa no sufrira ataques de lobos. (Los lobos estan deshabilitados esta noche.)</value>
+</string>
+<string key="Mayor">
+  <value>el Alcalde 🎖</value>
+</string>
+<string key="Prince">
+  <value>el Príncipe 👑</value>
+</string>
+<string key="Sorcerer">
+  <value>el Hechicero 🔮</value>
+</string>
+<string key="ClumsyGuy">
+  <value>el Chico Torpe 🤕</value>
+</string>
+<string key="Blacksmith">
+  <value>el Herrero ⚒</value>
+</string>
+<string key="AlphaWolf">
+  <value>el Lobo Alfa ⚡️</value>
+</string>
+<string key="WolfCub">
+  <value>el Cachorro de Lobo 🐶</value>
+</string>
+<string key="PlayerBittenWolves">
+  <value>Cuando los lobos atacan a {0}, {1} detiene a todos, siendo el Lobo Alfa. {1} ordena a la jauria que {0} debe unirseles en vez de morir, asi que la jauria se va, dejando su infección. Su victima se convertira en un hombre lobo la siguiente noche.</value>
+</string>
+<string key="PlayerBitten">
+  <value>Has sido atacado por los lobos, pero el Lobo Alfa te ha escogido. En vez de ser asesinado, has sido infectado... y te convertiras en hombre-lobo mañana en la noche!</value>
+</string>
+<string key="BittenTurned">
+  <value>Mientras la noche cae, sientes un extraño cosquilleo y tu cuerpo duele mientras te tranformas... Eres ahora un hombre-lobo!</value>
+</string>
+<string key="AboutMayor">
+  <value>Como el Alcalde eres un pobre aldeano... hasta que te reveles. Entonces seras concedido con un voto que vale por dos a la hora de linchar! (Significa que tu voto es dos veces mas fuerte que el de todo los demas). Usa sabiamente tu poder para ayudar al equipo de los aldeanos!.</value>
+</string>
+<string key="AboutPrince">
+  <value>El Principe es un rol clave en la estrategia del equipo de la Aldea. Una vez que el principe sea linchado, su rol como Principe es revelado, y sobrevivira. Pero esto solo puede pasar una vez, si la aldea insiste en lincharlo, este morira.</value>
+</string>
+<string key="AboutSorcerer">
+  <value>Recuerdas al buen y viejo vidente? Bueno pues ahora tiene su contraparte en el equipo de los Lobos!. El Hechizero es el vidente de los lobos. Solo puede ver si alguien es Lobo o Vidente, y ganaran si el equipo de los Lobos gana.</value>
+</string>
+<string key="AboutClumsy">
+  <value>Eres el Chico Torpe. Quiza no deberias de tener tanto alcohol como desayuno. No puedes ver ni un carajo!. Puedes siquiera votar por la persona que quieres? (Tienes un 50% de probabilidad de votar por alguien aleatoreo.)</value>
+</string>
+<string key="AboutBlacksmith">
+  <value>Eres el Herrero. A través de los años, ni una hoja ni espada te ha dado tanta satisfacción como las hojas de plata que los elfos te pidieron.\nPuede que aún te quede un poco de polvo de plata. Quién sabe? Podría *prevenir que los lobos ataquen estanoche* 🤔</value>
+</string>
+<string key="AboutAlphaWolf">
+  <value>Eres el Lobo Alfa, el origen de la maldición, la maldición de maldiciones. Cada noche, existe un 20% de probabilidad de que muerdas lo que tu jaría esté cenando, y esa persona se unirá a tu jaría como hombre lobo en lugar de morir!</value>
+</string>
+<string key="AboutWolfCub">
+  <value>Qué lobito tan hermoso. _le hace cosquillas_ -aclara la garganta- Como iba diciendo, eres el Cachorro de Lobo. Si alguien te matara, mataría a dos personas. Eres demasiado lindo para morir. Ya no podría hacerte más cosquillas-</value>
+</string>
+
+<!-- new strings 06 nov-->
+<string key="DGTransformToAlpha">
+  <!-- 0 - target's name -->
+  <!-- 1 - teammates's name -->
+  <value>{0} ha muerto, ahora eres el Lobo Alba. Tu jauría (si hay) son: {1}</value>
+</string>
+<string key="DGTransformToWolfCub">
+  <!-- 0 - target's name -->
+  <!-- 1 - teammates's name -->
+  <value>{0} ha muerto, ahora eres el Cachorro de Lobo. Tu jauría (si hay) son: {1}</value>
+</string>
+
+<string key="VillageTeam" deprecated="true">
+  <value>Village Team</value>
+</string>
+<string key="NeutralTeam" deprecated="true">
+  <value>Neutral Team</value>
+</string>
+<string key="SerialKillerTeam" deprecated="true">
+  <value>SK Team</value>
+</string>
+<string key="CultTeam" deprecated="true">
+  <value>Cult Team</value>
+</string>
+<string key="TannerTeam" deprecated="true">
+  <value>Tanner Team</value>
+</string>
+
+<string key="VillageTeamEnd">
+  <value>Equipo del Pueblo</value>
+</string>
+<string key="NeutralTeamEnd">
+  <value>Equipo Neutral</value>
+</string>
+<string key="WolfTeamEnd">
+  <value>Equipo de Lobos</value>
+</string>
+<string key="SerialKillerTeamEnd">
+  <value>Equipo de Asesinos Seriales</value>
+</string>
+<string key="CultTeamEnd">
+  <value>Equipo de Zombieas</value>
+</string>
+<string key="TannerTeamEnd">
+  <value>Equipo de Jokers</value>
+</string>
+<string key="CultConvertWolf">
+  <value>Los Zombieas mandan a {0} para intentar convertir a {1}, pero en lugar de convertirlo, la cabeza de {0} sale volando por la ventana... ¿por qué será que el lobo pensó que eso no se podía comer?. {0} está muerto...</value>
+</string>
+
+<string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+  <!--{0} = Harlot name, {1} = SK's victim name-->
+  <value>{0} se mete a la casa de {1}, lista para una noche de pasión y se viene encontrando con un desconocido sacándole las tripas a {1}! El asesino serial decide satisfacer sexualmente a {0} ¡antes de añadir su corazón repleto de lujuria a su colección!</value>
+</string>
+
+
+<!--New Death Strings 05 DEC-->
+<string key="ApprenticeSeerEaten">
+  <value>Los aldeanos despiertan para encontrarse a {0} encorvado sobre una vieja Ouija mientras practicaba adivinación, sin cabeza. El aprendíz de vidente está muerto.</value>
+</string>
+<string key="BlacksmithKilled">
+  <value>Parece que {0}, el herrero local tuvo muy mala suerte. Cinco cuchillos, directamente sacado de la amería de {0}, fueron encontrados clavados en sus manos, pies y cabeza, todos clavados en su mesa de trabajo. Quizá el asesino serial estaba esperando expandir su colección de armas junto con su colección de órganos...</value>
+</string>
+<string key="ZombieKilled">
+  <value>{0} fue encontrado apuñalado muerto, con un candelabro junto a su altar. ¡El asesino serial ha atacado nuevamente, sin importar raza, idioma o religión! {0} era un Zombiea. </value>
+</string>
+<string key="CupidKilled">
+  <value>A la mañana siguiente, los aldeanos se desanimaron al encontrar a {0} (Cupido) partido de la cabeza a los pies. Curiosamente, el corazón no estaba...</value>
+</string>
+<string key="DrunkKilled">
+  <value>Los aldeanos esperaban encontrarse con {0} para felicitarlo por su delicioso Cognac Martell, pero todo lo que encontraron en la casa de {0} fue un cuchillo y un hígado rotos. Todos esos años de beber condujeron a un hígado tan duro que incluso el asesino serial no lo quiso...</value>
+</string>
+<string key="GuardianAngelKilled">
+  <value>{0} normalmente habría logrado luchar contra el asesino serial, pero parece que el halo del Ángel Guardián ya se ha desvanecido. {0} está muerto.</value>
+</string>
+<string key="GunnerKilled">
+  <value>¡Parece que {0} fue sorprendido tomando la siesta anoche! Anoche se escuchó un disparo, pero todo lo que quedaba eran los restos del justiciero, con un agujero de bala en la cabeza y una puñalada en el torso. Claramente el asesino serial ganó.</value>
+</string>
+<string key="MayorKilled">
+  <value>¡Hubo un asesinato! {0} ¡Encontraron al alcalde clavado con un cuchillo sobre la mesa mientras trabajaban durante la noche en su oficina! ¡Claramente es el asesino serial que exige venganza por el manicomio que le ha robado años de su vida!</value>
+</string>
+<string key="PrinceKilled">
+  <value>Las campanadas se escuchan por toda la aldea antes del amanecer, mientras guardias armados inundan las calles investigando la desaparición de príncipe {0}. No se encontraron pistas, pero se sospecha que hay un asesino serial suelto...</value>
+  <value>Los guardias de {0} fueron sorprendidos la noche anterior. Los restos reales de {0} fueron encontrados, colgados en varias partes del palacio, habiendo sido presa del cuchillo. Ninguna cantidad de sangre azul hubiera detenido la daga de un asesino serial.</value>
+</string>
+<string key="SeerKilled">
+  <value>Los aldeanos se despiertan con el hedor del cadáver podrido de {0}, dividido de la cabeza a los pies, puñaladas por todas partes. Extrañamente, el cerebro fue quirúrjicamente removido, como si fuera una premonición de que el pueblo ha perdido su cerebro más sabia. {0} era el Vidente.</value>
+</string>
+<string key="SorcererEaten">
+  <value>El sonido de aullidos tristes se puede escuchar en todo el pueblo. Se ha cometido un error. Los lobos han matado a uno de los suyos. El Hechicero {0} está muerto.</value>
+  <value>Gritos de "¡Soy tu aliado!" fueron escuchados anoche. Todo los que los aldeanos encontraron a la mañana siguiente fue un cuerpo exhumado y una bola mística rota, perteneciente a {0}, el Hechicero. El hambre supera a la camaradería ...</value>
+</string>
+<string key="WildChildEaten">
+  <value>¡ÑAM ÑAM ÑAM! ¡Los lobos se escucharon anoche, devorando a un niño salvaje, {0}, dejando atrás solo un esqueleto pequeño! El pueblo se preguntó si los lobos sentirían alguna culpa desgarrando al niño indefenso.</value>
+</string>
+<string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+  <value>Los aldeanos se despiertan por la mañana, solo para encontrar las partes separadas del cuerpo de {0}, el Cazador de Zombieas, en un carro a plena vista fuera del ayuntamiento. Lección aprendida: ¡no visites al asesino serial!</value>
+  <value>El cuerpo de {0}, el cazador de Zombieas, fue encontrado a mitad del pueblo, aunque cortado exactamente en cien pedazos. Comprobar si el asesino en serie era un Zombiea parecio no ser una buena idea...</value>
+</string>
+<string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
+  <value>Mientras parecía que los lobos decidieron mantenerse bien por una vez, castigar a {0}, un Zombiea que decidió enfrentar el problema con los lobos, resultó ser demasiado difícil de resistir. ¡La cabeza de {0} se convirtió en una cena exquisita, entregada a las puertas de los lobos!</value>
+  <value>¡El culto pensó que tenía un nuevo miembro en sus filas, pero estaban equivocados! {0}, un Zombiea, ¡Fue cortado en pedazos y colocado en la plaza del pueblo en la mañana!! Extrañamente, su "santo" libro fue encontrado apuñalado con un cuchillo, como si fuera una declaración para mostrar cuál era la religión triunfante. </value>
+</string>
+<string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
+  <value>¡El culto pensó que tendrían un nuevo miembro en sus filas, pero estaban equivocados! {0}, un Zombiea, ¡lo hicieron pedazos y fue regado en la plaza principal del pueblo! Extrañamente, su Biblia fue encontrada clavada con un cuchillo, como si fuera una declaración para mostrar de quién era la religión triunfante.</value>
+  <value>Anoche, el culto intentó convertir a la única persona en el pueblo más loco que ellos. Su miembro más nuevo intentó convertir el asesino serial, y él hizo una nueva obra de arte en la plaza principal del pueblo con las tripas de {0}.</value>
+</string>
+<string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+  <value>Se suponía que sería una noche donde {0} salvaría al pueblo de los asesinos seriales, ¡pero el halo de {0} se extinguió y sus alas cortadas por el asesino serial! Había una nota que decía "Pude protegerme mejor que tú"</value>
+</string>
+<string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+  <value>{0} intentó proteger al un lobo anoche. El pueblo se despierta y encuentra sólo las alas de {0} colgadas de la cruz de la iglesia. Claramente los lobos tuvieron una segunda cena enviada por Dios, completamente gratis y entregada a domicilio.</value>
+</string>
+
+<!--1vs1 finales-->
+<string key="HunterKillsWolfEnd">
+  <!--{0} = hunter's name, {1} = wolf's name-->
+  <value>Sabiendo que sólo {0} quedó, {1} intenta comerse a {0}, pero el entrenamiento militar de {0} y la paranoia es demasiada. Todo lo que queda es un cadáver con dos tiros en el torso y el último hombre en pie: ¡el cazador logró vengas al pueblo!</value>
+</string>
+<string key="WolfKillsHunterEnd">
+  <!--{0} = hunter's name, {1} = wolf's name-->
+  <value>Sabiendo que sólo quedaba {0}, {1} eligió un momento en el que la guardia de {0} estaba en su punto más bajo. Matar al último aldeano final resultó ser demasiado fácil para {1}, pues todo lo que queda es el cuerpo mutilado de {0}, el cazador, adornado con rasguños en la cara.</value>
+</string>
+<string key="CHKillsZombieEnd">
+  <!--{0} = last Zombie's name, {1} = CH's name -->
+  <value>{1} y {0} salen a la luz del día. Al ver una cruz reluciente que lleva puesta en el cuello de {0}, el cazador de Zombieas {1} saca su espada por última vez, poniendo fin a las retorcidas enseñanzas del culto que ha contaminado la aldea.</value>
+</string>
+
+<!-- Extend time -->
+<string key="SecondsAdded">
+  <!-- 0 - Seconds added by /extend command -->
+  <!-- 1 - Total seconds remaining -->
+  <value>Se extendió el tiempo {0} segundos!\nQueda {1} para unirse</value>
+</string>
+<string key="SecondsRemoved">
+  <!-- 0 - Seconds removed by /extend command -->
+  <!-- 1 - Total seconds remaining -->
+  <value>El tiempo para unirse se redujo por {0} segundos!\n{1} quedan para unirse</value>
+</string>
+<string key="CantExtend">
+  <value>¡Sólo los administradores del grupo pueden extender el tiempo más de una vez!</value>
+</string>
+<string key="AllowExtendQ">
+  <!--{0} = "Allow" / "Disallow" string-->
+  <value>¿Permitir que los juegadores extiendan el tiempo para unirse a la partida?\nActualmente: {0} extendiendo\nNota: Los Administradores siempre podrán extender el tiempo</value>
+</string>
+<string key="AllowExtendA">
+  <!--{0} = "Allow" / "Disallow" string-->
+  <value>{0} jugadores que pueden extender el tiempo</value>
+</string>
+<string key="MaxExtendQ">
+  <value>Elije el número máximo de segundos que se pueden agregar al temporizador de unión mediante el comando /extend .\nConfiguración inicial: {0}\nActualmente:{1}</value>
+</string>
+<string key="MaxExtendA">
+  <value>Lo máximo que se puede extender el tiempo son {0} segundos</value>
+</string>
+<string key="WolvesEatDrunkBlockSecondKill">
+  <value>Oh oh! {0} estaba ebrio! Ahora estás ebrio y no puedes atacar {1}...</value>
+</string>
+<string key="JoinButton">
+  <value>Unirse</value>
+</string>
+<string key="NotMember">
+  <value>No te puedes unir a esta partida porque no eres un miembro de {0}.</value>
+</string>
+<string key="JoinByButton">
+  <value>Por favor no uses comandos para unirte. Usa el botón.</value>
+</string>
+<string key="PlayerVoteCounts">
+  <value>{0} jugadores han votado, {1} total.</value>
+</string>
+<string key="NoAutoJoin">
+  <value>{0}, recuerda que de todas formas te tienes que unir a la partida usando el botón.</value>
+</string>
+<string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+  <value>No se pudo encontrar el grupo. Por favor ejecuta este comando en el grupo del que quieres dejar de esperar, o añade el link, id, o nombre de usuario junto al comando.</value>
+</string>
+<string key="DeletedFromWaitList">
+  <value>Has sido eliminado de la lista de espera por {0}.</value>
+</string>
+<string key="HaveJoined">
+  <!-- {0} = list of people who have joined -->
+  <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+  <value>{0}se acaba(n) de unir a la partida.</value>
+</string>
+<string key="AllowCult">
+  <value>Permitir Zombieas</value>
+</string>
+<string key="AllowTanner">
+  <value>Permitir Bufón</value>
+</string>
+<string key="AllowFool">
+  <value>Permitir Fool</value>
+</string>
+<string key="EnableSecretLynch">
+  <value>Habilitar Linchar en Secreto</value>
+</string>
+<string key="RandomMode">
+  <value>Habilitar el Modo Aleatorio</value>
+</string>
+<string key="AllowExtend">
+  <value>Permitir extender el tiempo para unirse a la partida</value>
+</string>
+<string key="ShowRolesDeath">
+  <value>Mostrar Roles cuando mueren</value>
+</string>
+<string key="AllowFlee">
+  <value>Permitir Huir</value>
+</string>
+<string key="ShowIDs">
+  <value>Mostrar IDs cuando se unan</value>
+</string>
+<string key="ShowIDsQ">
+  <value>Mostrar los IDs de los jugadores cuando se unan a la partida?\nActualmente: {0}</value>
+</string>
+<string key="ShowIDsA">
+  <value>{0} IDs</value>
+</string>
+
+<string key="All">
+  <!-- used when searching for groups in all the variants -->
+  <value>Todos</value>
+</string>
+<string key="RandomModeQ">
+  <value>Habilitar el modo aleatorio?\nCuando el modo aleatorio está habilitado, Partida caótica, selección secreta al linchar , mostrar los roles cuando mueren, permitir Culto / Fool / Bufón será determinado aleatoriamente cada que alguien inicia una partida.\Actualmente:{0}</value>
+</string>
+<string key="RandomModeA">
+  <value>Habilitar el modo aleatorio, cambiado a: {0}</value>
+</string>
+
+<string key="AllowNSFW">
+  <value>Permitir NSFW Gif</value>
+</string>
+<string key="AllowNSFWQ">
+  <value>Permitir NSFW gif?\nActualmente: {0}</value>
+</string>
+<string key="AllowNSFWA">
+  <value>{0} NSFW Gifs</value>
+</string>
+
+<string key="TannerEnd">
+  <!-- 0 - Tanner name -->
+  <value>Cuando la luz del Sol comienza a tocar el pueblo, {0} se despierta con el sonido del silencio. Al darse cuenta de que no quedaba nadie, {0} camina y camina, hasta que se queda solo en el medio del pueblo. Al mirar la vista de los cadáveres esparcidos por todo el pueblo, {0} suspira. Su sueño de toda la vida de ser elegido para ser linchado por los aldeanos está tan muerto como los aldeanos. Extiende la mano y toca la cuerda, que había tomado muchas vidas, con ternura, antes de deslizarla alrededor de su cuello y dejarse colgar libremente, con una sonrisa triste en la cara.</value>
+  <value>{0} se despierta al amanecer, solo. {0} ve cuán abyecto ha sido un fracaso, al no poder lograr que la aldea satisfaga sus deseos masoquistas de ser linchado a muerte. {0} agarra una cuerda y se ahorca, dándose cuenta de que nadie puede cumplir su sueño, ya que no queda nadie.</value>
+</string>
+<string key="SorcererEnd">
+  <!-- 0 - Sorcerer name -->
+  <value>{0} abrió los ojos, pero en lugar de escuchar el habitual bullicio del pueblo, todo estaba en silencio. Miró su aburrido techo, dándole tiempo a su cabeza de procesar lo que pasó. Todos estaban muertos. Los lobos estaban muertos. Con angustia en el corazón, {0} se levantó y empacó sus cosas antes de caminar hacia los límites del pueblo. Una lágrima resbaló por su mejilla, mientras {0} recordó cómo los lobos y él casi ganan. Por desgracia, era momento de comenzar una nueva vida, con una nueva jauría. {0} se deslizó en la oscuridad del bosque, lejos del ahora pueblo fantasma.</value>
+  <value>Todo el esfuerzo de {0}, los hombres lobo amigos de {0} yacían inmóviles y sin vida. Incluso si los lobos obtuvieron la victoria, no hay nadie con quien saborear la victoria, ni hay aldeanos vivos para burlarse de ellos. {0} mira dentro de la bola de cristal y desaparece silenciosamente, en una nube de niebla, en busca de nuevos lobos, nuevos aliados y nueva traición para cometer nuevos crímenes contra la humanidad.</value>
+</string>
+<string key="WhatVariantVets">
+    <value>¿Qué variante?\nActualmente: {0}\nComo has jugado más de 500 partidas también te puedes unir a: </value>
+  </string>
+  <string key="Skip">
+	<value>No votar</value>
+  </string>
+</strings>

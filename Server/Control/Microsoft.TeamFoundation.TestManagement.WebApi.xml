@@ -1,0 +1,2829 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.TeamFoundation.TestManagement.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageSummary">
+            <summary>
+            Represents the code coverage summary results
+            Used to publish or retrieve code coverage summary against a build
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageSummary.CoverageData">
+            <summary>
+            List of coverage data and details for the build
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageSummary.Build">
+            <summary>
+            Uri of build for which data is retrieved/published
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageSummary.DeltaBuild">
+            <summary>
+            Uri of build against which difference in coverage is computed
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageData">
+            <summary>
+            Represents the build configuration (platform, flavor) and coverage data for the build
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageData.CoverageStats">
+            <summary>
+            List of coverage data for the build
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageData.BuildPlatform">
+            <summary>
+            Platform of build for which data is retrieved/published
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageData.BuildFlavor">
+            <summary>
+            Flavor of build for which data is retrieved/published
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageStatistics">
+            <summary>
+            Represents the code coverage statistics for a particular coverage label (modules, statements, blocks, etc.)
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageStatistics.Label">
+            <summary>
+            Label of coverage data ("Blocks", "Statements", "Modules", etc.)
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageStatistics.Position">
+            <summary>
+            Position of label
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageStatistics.Total">
+            <summary>
+            Total units
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageStatistics.Covered">
+            <summary>
+            Covered units
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageStatistics.IsDeltaAvailable">
+            <summary>
+            Is delta valid
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageStatistics.Delta">
+            <summary>
+            Delta of coverage
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.CoverageQueryFlags">
+            <summary>
+            Used to choose which coverage data is returned by a QueryXXXCoverage() call.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.CoverageQueryFlags.Modules">
+            <summary>
+            If set, the Coverage.Modules property will be populated.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.CoverageQueryFlags.Functions">
+            <summary>
+            If set, the ModuleCoverage.Functions properties will be populated.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.CoverageQueryFlags.BlockData">
+            <summary>
+            If set, the ModuleCoverage.CoverageData field will be populated.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.DtlEnvironmentDetails">
+            <summary>
+            This is a temporary class to provide the details for the test run environment.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ITestAction.Id">
+            <summary>
+            An identifier for the action.  This id is unique within the test case
+            or component that contains this action.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ITestAction.Owner">
+            <summary>
+            An action has an owner, which may be a ITestCase or ISharedStep 
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.ITestActionGroup">
+            <summary>
+            Represents a group of actions, which, since a group is itself an action,
+            may contain other nested groups. The nesting is arbitrary, but of finite
+            depth (so a group may not directly or indirectly contain itself)
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ITestAttachment.Comment">
+            <summary>
+            Description of the attachment.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ITestAttachment.Name">
+            <summary>
+            Name of attachment on server.  Must be unique to the instance of the object attached to.
+            Should not contain path information.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ITestAttachment.Url">
+            <summary>
+            Uri for retrieving the contents of the attachment.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.ITestBase.CreateTestStep">
+            <summary>
+            Creates a new test step.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ITestBase.Actions">
+            <summary>
+            The actions required to complete the test case.  Could be a mixture of
+            groups, manual steps and shared step sets.
+            </summary>
+            <remarks>
+            The returned collection is modifiable, and on save those changes will
+            be sent to the server
+            </remarks>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.ITestBase.SaveActions(Microsoft.VisualStudio.Services.WebApi.Patch.Json.JsonPatchDocument)">
+            <summary>
+            Save all actions teststep and attachment as relations into json object
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.ITestBase.LoadActions(System.String,System.Collections.Generic.IList{Microsoft.TeamFoundation.TestManagement.WebApi.TestAttachmentLink})">
+            <summary>
+            Load actions with teststeps and attachments
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.ITestBase.GenerateXmlFromActions">
+            <summary>
+            Generate xml for all actions
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ITestStep.Title">
+            <summary>
+            One-line description of the action to perform.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ITestStep.ExpectedResult">
+            <summary>
+            One-line description of the expected result of this action.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ITestStep.Description">
+            <summary>
+            Longer description of the step (optional).
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ITestStep.TestStepType">
+            <summary>
+            Type of step.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.ITestStep.CreateAttachment(System.String,System.String)">
+            <summary>
+            Creates an attachment.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ITestStep.Attachments">
+            <summary>
+            Attachments to the step.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.IXmlStorage">
+            <summary>
+            This interface is supported by objects that can stream themselves to
+            and from XML. Poor mans serialization if you will.
+            
+            "Classic" serialization was not chosen since we don't want the burden
+            of code generation, either at runtime or build time.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.IXmlStorage.FromXml(System.Xml.XmlReader)">
+            <summary>
+            Given a reader, populate an object from its XML stored form
+            
+            May throw XmlException on failure
+            </summary>
+            <param name="reader">The source of the XML</param>
+            <returns>true if the operation succeeded</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.IXmlStorage.ToXml(System.Xml.XmlWriter)">
+            <summary>
+            Given a writer, store an objects state as XML
+            
+            May throw XmlException on failure
+            </summary>
+            <param name="writer"></param>
+            <returns>true if the operation succeeded</returns>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.ParameterizedStringPart">
+            <summary>
+            Represents one part of a ParameterizedString, each part can be
+            either a literal or a parameter reference. If a parameter reference,
+            then it has an "IgnoreValue" property, which may be true or false
+            
+            Developers Note: This must be immutable
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.ParameterizedStringPart.#ctor(System.String)">
+            <summary>
+            Construct a Part which represents literal text
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.ParameterizedStringPart.#ctor(System.String,System.Boolean)">
+            <summary>
+            Construct a Part which represents a Parameter usage
+            </summary>
+            <param name="name"></param>
+            <param name="ignoreValue"></param>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.XmlStorageHelper">
+            <summary>
+            Our XML backed objects know how to load and save themselves, but
+            only based on a reader or writer (this is so we can easily nest calls
+            to the IXmlStorage interface)
+            
+            This static class provides mechanisms to initiate the process by creating
+            the appropriate reader or writer, then passing that to the the object
+            which actually performs the bulk of the work
+            
+            This is also a central place to catch and handle exceptions
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.AggregatedDataForResultTrend.Duration">
+            <summary>
+            This is tests execution duration.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.Unspecified">
+            <summary>
+            Only used during an update to preserve the existing value.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.None">
+            <summary>
+            Test has not been completed, or the test type does not report
+            pass/failure.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.Passed">
+            <summary>
+            Test was executed w/o any issues.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.Failed">
+            <summary>
+            Test was executed, but there were issues.
+            Issues may involve exceptions or failed assertions.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.Inconclusive">
+            <summary>
+            Test has completed, but we can't say if it passed or failed.
+            May be used for aborted tests...
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.Timeout">
+            <summary>
+            The test timed out
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.Aborted">
+            <summary>
+            Test was aborted. 
+            This was not caused by a user gesture, but rather by a framework decision.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.Blocked">
+            <summary>
+            Test had it chance for been executed but was not, as ITestElement.IsRunnable == false.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.NotExecuted">
+            <summary>
+            Test was not executed. 
+            This was caused by a user gesture - e.g. user hit stop button.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.Warning">
+            <summary>
+            To be used by Run level results.
+            This is not a failure.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.Error">
+            <summary>
+            There was a system error while we were trying to execute a test.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.NotApplicable">
+            <summary>
+            Test is Not Applicable for execution.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.Paused">
+            <summary>
+            Test is paused.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.InProgress">
+            <summary>
+            Test is currently executing. Added this for TCM charts
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestOutcome.NotImpacted">
+            <summary>
+            Test is not impacted. Added fot TIA.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.RunFilter">
+            <summary>
+            This class is used to provide the filters used for discovery
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.RunFilter.SourceFilter">
+            <summary>
+            filter for the test case sources (test containers)
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.RunFilter.TestCaseFilter">
+            <summary>
+            filter for the test cases
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.ShallowReference">
+            <summary>
+            An abstracted reference to some other resource. This class is used to provide the build
+            data contracts with a uniform way to reference other resources in a way that provides easy
+            traversal through links.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ShallowReference.Id">
+            <summary>
+            Id of the resource
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ShallowReference.Name">
+            <summary>
+            Name of the linked resource (definition name, controller name, etc.)
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.ShallowReference.Url">
+            <summary>
+            Full http link to the resource
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.AttachmentType">
+            <summary>
+            The types of test attachments.        
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.TestMessageLogDetails">
+            <summary>
+            An abstracted reference to some other resource. This class is used to provide the build
+            data contracts with a uniform way to reference other resources in a way that provides easy
+            traversal through links.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestMessageLogDetails.EntryId">
+            <summary>
+            Id of the resource
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestMessageLogDetails.DateCreated">
+            <summary>
+            Date when the resource is created
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestMessageLogDetails.Message">
+            <summary>
+            Message of the resource
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.TestSettings">
+            <summary>
+            Represents the test settings of the run.
+            Used to create test settings and fetch test settings
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSettings.TestSettingsId">
+            <summary>
+            Test settings id. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSettings.TestSettingsName">
+            <summary>
+            Test settings name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSettings.TestSettingsContent">
+            <summary>
+            Test settings content. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSettings.Description">
+            <summary>
+            Description of the test settings. Used in create test settings.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSettings.AreaPath">
+            <summary>
+            Area path required to create test settings
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSettings.MachineRoles">
+            <summary>
+            Xml string of machine roles. Used in create test settings.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSettings.IsPublic">
+            <summary>
+            Indicates if the tests settings is public or private.Used in create test settings.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.SuiteEntry.SuiteId">
+            <summary>
+            Id for the suite
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.SuiteEntry.SequenceNumber">
+            <summary>
+            Sequence number for the test case or child suite in the suite
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.SuiteEntry.TestCaseId">
+            <summary>
+            Id of a test case in a suite
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.SuiteEntry.ChildSuiteId">
+            <summary>
+            Id of child suite in a suite
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.TestRunState">
+            <summary>
+            The types of states for test run.        
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestRunState.Unspecified">
+            <summary>
+            Only used during an update to preserve the existing value.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestRunState.NotStarted">
+            <summary>
+            The run is still being created.  No tests have started yet.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestRunState.InProgress">
+            <summary>
+            Tests are running.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestRunState.Completed">
+            <summary>
+            All tests have completed or been skipped.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestRunState.Aborted">
+            <summary>
+            Run is stopped and remaing tests have been aborted
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestRunState.Waiting">
+            <summary>
+            Run is currently initializing
+            This is a legacy state and should not be used any more
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestRunState.NeedsInvestigation">
+            <summary>
+            Run requires investigation because of a test point failure
+            This is a legacy state and should not be used any more
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.TestRunSubstate">
+            <summary>
+            The types of sub states for test run.
+            It gives the user more info about the test run beyond the high level test run state 
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.OpId">
+            <summary>
+            The ID of the operation
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.CreationDate">
+            <summary>
+            DateTime when the operation was started
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.CompletionDate">
+            <summary>
+            If the operation is complete, the DateTime of completion.
+            If operation is not complete, this is DateTime.MaxValue
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.State">
+            <summary>
+            Current state of the operation.
+            When State reaches Suceeded or Failed, the operation is complete
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.Message">
+            <summary>
+            If the operation has Failed, Message contains the reason for failure.
+            Null otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.ResultObjectType">
+            <summary>
+            The type of the object generated as a result of the Clone operation
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.DestinationObject">
+            <summary>
+            Shallow reference of the destination
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.SourceObject">
+            <summary>
+            Shallow reference of the source
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.DestinationPlan">
+            <summary>
+            Shallow reference of the destination
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.SourcePlan">
+            <summary>
+            Shallow reference of the source
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.DestinationProject">
+            <summary>
+            Shallow reference of the destination
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.SourceProject">
+            <summary>
+            Shallow reference of the source
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOperationInformation.Url">
+            <summary>
+            Url for geting the clone information
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.ResultObjectType">
+            <summary>
+            The top level entity that is being cloned as part of a Clone operation
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneStatistics.TotalTestCasesCount">
+            <summary>
+            Total number of test cases to be cloned
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneStatistics.ClonedTestCasesCount">
+            <summary>
+            Number of test cases cloned so far
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneStatistics.ClonedSharedStepsCount">
+            <summary>
+            Number of shared steps cloned so far.         
+            </summary>
+            <remarks>
+            When a test case is cloned, any shared step referenced by the test case is also cloned.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneStatistics.TotalRequirementsCount">
+            <summary>
+            Total number of requirements to be cloned
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneStatistics.ClonedRequirementsCount">
+            <summary>
+            Number of Requirments cloned so far.         
+            </summary>
+            <remarks>
+            This is done for requirement bases suite
+            </remarks>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOptions.RelatedLinkComment">
+            <summary>
+            Comment on the link that will link the new clone  test case to the original
+            Set null for no comment
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOptions.CopyAllSuites">
+            <summary>
+            copy all suites from a source plan
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOptions.CopyAncestorHierarchy">
+            <summary>
+            copy ancestor hieracrchy
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOptions.DestinationWorkItemType">
+            <summary>
+            Name of the workitem type of the clone
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOptions.CloneRequirements">
+            <summary>
+            If set to true requirements will be cloned
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.CloneOptions.OverrideParameters">
+            <summary>
+            Key value pairs where the key value is overridden by the value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration.Id">
+            <summary>
+            Id of the configuration
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration.Name">
+            <summary>
+            Name of the configuration
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration.Url">
+            <summary>
+            Url of Configuration Resource
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration.Project">
+            <summary>
+            Project to which the configuration belongs
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration.Description">
+            <summary>
+            Description of the configuration
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration.LastUpdatedBy">
+            <summary>
+            Last Updated By  Reference
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration.LastUpdatedDate">
+            <summary>
+            Last Updated Data
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration.Area">
+            <summary>
+            Area of the configuration
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration.IsDefault">
+            <summary>
+            Is the configuration a default for the test plans
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration.Revision">
+            <summary>
+            Revision of the the configuration
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration.Values">
+            <summary>
+            Dictionary of Test Variable, Selected Value
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration.State">
+            <summary>
+            State of the configuration
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfigurationState">
+            <summary>
+            Represents the state of an ITestConfiguration object.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfigurationState.Active">
+            <summary>
+            The configuration can be used for new test runs.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestConfigurationState.Inactive">
+            <summary>
+            The configuration has been retired and should not be used for new test runs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestVariable.Id">
+            <summary>
+            Id of the test variable
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestVariable.Name">
+            <summary>
+            Name of the test variable
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestVariable.Url">
+            <summary>
+            Url of the test variable
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestVariable.Project">
+            <summary>
+            Project to which the test variable belongs
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestVariable.Description">
+            <summary>
+            Description of the test variable
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestVariable.Revision">
+            <summary>
+            Revision
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestVariable.Values">
+            <summary>
+            List of allowed values
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.PropertyBag.Bag">
+            <summary>
+            Generic store for test session data
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.Id">
+            <summary>
+            Id of the test session
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.Title">
+            <summary>
+            Title of the test session
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.Url">
+            <summary>
+            Url of Test Session Resource
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.Project">
+            <summary>
+            Project to which the test session belongs
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.LastUpdatedBy">
+            <summary>
+            Last Updated By  Reference
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.LastUpdatedDate">
+            <summary>
+            Last updated date
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.StartDate">
+            <summary>
+            Start date
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.EndDate">
+            <summary>
+            Duration of the session
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.Area">
+            <summary>
+            Area path of the test session
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.Revision">
+            <summary>
+            Revision of the test session
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.Source">
+            <summary>
+            Source of the test session
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.State">
+            <summary>
+            State of the test session
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.Comment">
+            <summary>
+            Comments in the test session
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.Owner">
+            <summary>
+            Owner of the test session
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSession.PropertyBag">
+            <summary>
+            Generic store for test session data
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionState">
+            <summary>
+            Represents the state of the test session.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionState.Unspecified">
+            <summary>
+            Only used during an update to preserve the existing value.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionState.NotStarted">
+            <summary>
+            The session is still being created. 
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionState.InProgress">
+            <summary>
+            The session is running.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionState.Paused">
+            <summary>
+            The session has paused.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionState.Completed">
+            <summary>
+            The session has completed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionState.Declined">
+            <summary>
+            This is required for Feedback session which are declined
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionSource">
+            <summary>
+            Represents the state of the test session.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionSource.Unknown">
+            <summary>
+            Source of test session uncertain as it is stale
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionSource.XTDesktop">
+            <summary>
+            The session was created from Microsoft Test Manager exploratory desktop tool.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionSource.FeedbackDesktop">
+            <summary>
+            The session was created from feedback client.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionSource.XTWeb">
+            <summary>
+            The session was created from browser extension.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionSource.FeedbackWeb">
+            <summary>
+            The session was created from browser extension.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionSource.XTDesktop2">
+            <summary>
+            The session was created from web access using Microsoft Test Manager exploratory desktop tool.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionSource.SessionInsightsForAll">
+            <summary>
+            To show sessions from all supported sources.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionWorkItemReference.Id">
+            <summary>
+            Id of the workitem
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionWorkItemReference.Type">
+            <summary>
+            Type of the workitem
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionExploredWorkItemReference.StartTime">
+            <summary>
+            Time when explore of workitem was started.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionExploredWorkItemReference.EndTime">
+            <summary>
+            Time when exploration of workitem ended.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionExploredWorkItemReference.AssociatedWorkItems">
+            <summary>
+            Workitem references of workitems filed as a part of the current workitem exploration.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.SuiteEntryUpdateModel.SequenceNumber">
+            <summary>
+            Updated sequence number for the test case or child suite in the suite
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.SuiteEntryUpdateModel.TestCaseId">
+            <summary>
+            Id of a test case in a suite
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.TestManagement.WebApi.SuiteEntryUpdateModel.ChildSuiteId">
+            <summary>
+            Id of child suite in a suite
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetActionResultsAsync(System.String,System.Int32,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="iterationId"></param>
+            <param name="actionPath"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetActionResultsAsync(System.Guid,System.Int32,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="iterationId"></param>
+            <param name="actionPath"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestIterationResultAttachmentAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestAttachmentRequestModel,System.String,System.Int32,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="attachmentRequestModel"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="iterationId"></param>
+            <param name="actionPath"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestIterationResultAttachmentAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestAttachmentRequestModel,System.Guid,System.Int32,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="attachmentRequestModel"></param>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="iterationId"></param>
+            <param name="actionPath"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestResultAttachmentAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestAttachmentRequestModel,System.String,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="attachmentRequestModel"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestResultAttachmentAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestAttachmentRequestModel,System.Guid,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="attachmentRequestModel"></param>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultAttachmentContentAsync(System.String,System.Int32,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a test result attachment
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="attachmentId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultAttachmentContentAsync(System.Guid,System.Int32,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a test result attachment
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="attachmentId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultAttachmentsAsync(System.String,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns attachment references for test result.
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultAttachmentsAsync(System.Guid,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns attachment references for test result.
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultAttachmentZipAsync(System.String,System.Int32,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a test result attachment
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="attachmentId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultAttachmentZipAsync(System.Guid,System.Int32,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a test result attachment
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="attachmentId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestRunAttachmentAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestAttachmentRequestModel,System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="attachmentRequestModel"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestRunAttachmentAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestAttachmentRequestModel,System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="attachmentRequestModel"></param>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunAttachmentContentAsync(System.String,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a test run attachment
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="attachmentId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunAttachmentContentAsync(System.Guid,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a test run attachment
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="attachmentId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunAttachmentsAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns attachment references for test run.
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunAttachmentsAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns attachment references for test run.
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunAttachmentZipAsync(System.String,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a test run attachment
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="attachmentId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunAttachmentZipAsync(System.Guid,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Returns a test run attachment
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="attachmentId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetBugsLinkedToTestResultAsync(System.String,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetBugsLinkedToTestResultAsync(System.Guid,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetCloneInformationAsync(System.String,System.Int32,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="cloneOperationId"></param>
+            <param name="includeDetails"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetCloneInformationAsync(System.Guid,System.Int32,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="cloneOperationId"></param>
+            <param name="includeDetails"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CloneTestPlanAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestPlanCloneRequest,System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="cloneRequestBody"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CloneTestPlanAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestPlanCloneRequest,System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="cloneRequestBody"></param>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CloneTestSuiteAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestSuiteCloneRequest,System.String,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="cloneRequestBody"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="sourceSuiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CloneTestSuiteAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestSuiteCloneRequest,System.Guid,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="cloneRequestBody"></param>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="sourceSuiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetCoverageViewAsync(System.String,System.Int64,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] http://(tfsserver):8080/tfs/DefaultCollection/_apis/test/browse/containerId/filePath Request: HTML content of Code Coverage report
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="containerId"></param>
+            <param name="filePath"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetCoverageViewAsync(System.Guid,System.Int64,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] http://(tfsserver):8080/tfs/DefaultCollection/_apis/test/browse/containerId/filePath Request: HTML content of Code Coverage report
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="containerId"></param>
+            <param name="filePath"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetBuildCodeCoverageAsync(System.String,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="buildId"></param>
+            <param name="flags"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetBuildCodeCoverageAsync(System.Guid,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="buildId"></param>
+            <param name="flags"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetCodeCoverageSummaryAsync(System.String,System.Int32,System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="buildId"></param>
+            <param name="deltaBuildId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetCodeCoverageSummaryAsync(System.Guid,System.Int32,System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="buildId"></param>
+            <param name="deltaBuildId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateCodeCoverageSummaryAsync(Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageData,System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] http://(tfsserver):8080/tfs/DefaultCollection/_apis/test/CodeCoverage?buildId=10 Request: Json of code coverage summary
+            </summary>
+            <param name="coverageData"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="buildId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateCodeCoverageSummaryAsync(Microsoft.TeamFoundation.TestManagement.WebApi.CodeCoverageData,System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] http://(tfsserver):8080/tfs/DefaultCollection/_apis/test/CodeCoverage?buildId=10 Request: Json of code coverage summary
+            </summary>
+            <param name="coverageData"></param>
+            <param name="project">Project ID</param>
+            <param name="buildId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunCodeCoverageAsync(System.String,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="flags"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunCodeCoverageAsync(System.Guid,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="flags"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestConfigurationAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testConfiguration"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestConfigurationAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testConfiguration"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestConfigurationAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="testConfigurationId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestConfigurationAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="testConfigurationId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestConfigurationByIdAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="testConfigurationId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestConfigurationByIdAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="testConfigurationId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestConfigurationsAsync(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="continuationToken"></param>
+            <param name="includeAllProperties"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestConfigurationsAsync(System.Guid,System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="continuationToken"></param>
+            <param name="includeAllProperties"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestConfigurationAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration,System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testConfiguration"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="testConfigurationId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestConfigurationAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestConfiguration,System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testConfiguration"></param>
+            <param name="project">Project ID</param>
+            <param name="testConfigurationId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.AddCustomFieldsAsync(Microsoft.TeamFoundation.TestManagement.WebApi.CustomTestFieldDefinition[],System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="newFields"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.AddCustomFieldsAsync(Microsoft.TeamFoundation.TestManagement.WebApi.CustomTestFieldDefinition[],System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="newFields"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryCustomFieldsAsync(System.String,Microsoft.TeamFoundation.TestManagement.WebApi.CustomTestFieldScope,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="scopeFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryCustomFieldsAsync(System.Guid,Microsoft.TeamFoundation.TestManagement.WebApi.CustomTestFieldScope,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="scopeFilter"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestResultHistoryAsync(Microsoft.TeamFoundation.TestManagement.WebApi.ResultsFilter,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="filter"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestResultHistoryAsync(Microsoft.TeamFoundation.TestManagement.WebApi.ResultsFilter,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="filter"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestIterationAsync(System.String,System.Int32,System.Int32,System.Int32,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="iterationId"></param>
+            <param name="includeActionResults"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestIterationAsync(System.Guid,System.Int32,System.Int32,System.Int32,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="iterationId"></param>
+            <param name="includeActionResults"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestIterationsAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="includeActionResults"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestIterationsAsync(System.Guid,System.Int32,System.Int32,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="includeActionResults"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunLogsAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunLogsAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetResultParametersAsync(System.String,System.Int32,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="iterationId"></param>
+            <param name="paramName"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetResultParametersAsync(System.Guid,System.Int32,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="iterationId"></param>
+            <param name="paramName"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestPlanAsync(Microsoft.TeamFoundation.TestManagement.WebApi.PlanUpdateModel,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testPlan"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestPlanAsync(Microsoft.TeamFoundation.TestManagement.WebApi.PlanUpdateModel,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testPlan"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestPlanAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestPlanAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetPlanByIdAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetPlanByIdAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetPlansAsync(System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="owner"></param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="includePlanDetails"></param>
+            <param name="filterActivePlans"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetPlansAsync(System.Guid,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="owner"></param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="includePlanDetails"></param>
+            <param name="filterActivePlans"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestPlanAsync(Microsoft.TeamFoundation.TestManagement.WebApi.PlanUpdateModel,System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="planUpdateModel"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestPlanAsync(Microsoft.TeamFoundation.TestManagement.WebApi.PlanUpdateModel,System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="planUpdateModel"></param>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetPointAsync(System.String,System.Int32,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="pointIds"></param>
+            <param name="witFields"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetPointAsync(System.Guid,System.Int32,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="pointIds"></param>
+            <param name="witFields"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetPointsAsync(System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="witFields"></param>
+            <param name="configurationId"></param>
+            <param name="testCaseId"></param>
+            <param name="testPointIds"></param>
+            <param name="includePointDetails"></param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetPointsAsync(System.Guid,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="witFields"></param>
+            <param name="configurationId"></param>
+            <param name="testCaseId"></param>
+            <param name="testPointIds"></param>
+            <param name="includePointDetails"></param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestPointsAsync(Microsoft.TeamFoundation.TestManagement.WebApi.PointUpdateModel,System.String,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="pointUpdateModel"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="pointIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestPointsAsync(Microsoft.TeamFoundation.TestManagement.WebApi.PointUpdateModel,System.Guid,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="pointUpdateModel"></param>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="pointIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultDetailsForBuildAsync(System.String,System.Int32,System.String,System.String,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="buildId"></param>
+            <param name="publishContext"></param>
+            <param name="groupBy"></param>
+            <param name="filter"></param>
+            <param name="orderby"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultDetailsForBuildAsync(System.Guid,System.Int32,System.String,System.String,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="buildId"></param>
+            <param name="publishContext"></param>
+            <param name="groupBy"></param>
+            <param name="filter"></param>
+            <param name="orderby"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultDetailsForReleaseAsync(System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="releaseId"></param>
+            <param name="releaseEnvId"></param>
+            <param name="publishContext"></param>
+            <param name="groupBy"></param>
+            <param name="filter"></param>
+            <param name="orderby"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultDetailsForReleaseAsync(System.Guid,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="releaseId"></param>
+            <param name="releaseEnvId"></param>
+            <param name="publishContext"></param>
+            <param name="groupBy"></param>
+            <param name="filter"></param>
+            <param name="orderby"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetResultRetentionSettingsAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetResultRetentionSettingsAsync(System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateResultRetentionSettingsAsync(Microsoft.TeamFoundation.TestManagement.WebApi.ResultRetentionSettings,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="retentionSettings"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateResultRetentionSettingsAsync(Microsoft.TeamFoundation.TestManagement.WebApi.ResultRetentionSettings,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="retentionSettings"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.AddTestResultsToTestRunAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestCaseResult[],System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="results"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.AddTestResultsToTestRunAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestCaseResult[],System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="results"></param>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultByIdAsync(System.String,System.Int32,System.Int32,System.Nullable{Microsoft.TeamFoundation.TestManagement.WebApi.ResultDetails},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="detailsToInclude"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultByIdAsync(System.Guid,System.Int32,System.Int32,System.Nullable{Microsoft.TeamFoundation.TestManagement.WebApi.ResultDetails},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="testCaseResultId"></param>
+            <param name="detailsToInclude"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultsAsync(System.String,System.Int32,System.Nullable{Microsoft.TeamFoundation.TestManagement.WebApi.ResultDetails},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="detailsToInclude"></param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultsAsync(System.Guid,System.Int32,System.Nullable{Microsoft.TeamFoundation.TestManagement.WebApi.ResultDetails},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="detailsToInclude"></param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestResultsAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestCaseResult[],System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="results"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestResultsAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestCaseResult[],System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="results"></param>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultsByQueryAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestResultsQuery,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="query"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestResultsByQueryAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestResultsQuery,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="query"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestResultsReportForBuildAsync(System.String,System.Int32,System.String,System.Nullable{System.Boolean},Microsoft.TeamFoundation.TestManagement.WebApi.BuildReference,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="buildId"></param>
+            <param name="publishContext"></param>
+            <param name="includeFailureDetails"></param>
+            <param name="buildToCompare"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestResultsReportForBuildAsync(System.Guid,System.Int32,System.String,System.Nullable{System.Boolean},Microsoft.TeamFoundation.TestManagement.WebApi.BuildReference,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="buildId"></param>
+            <param name="publishContext"></param>
+            <param name="includeFailureDetails"></param>
+            <param name="buildToCompare"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestResultsReportForReleaseAsync(System.String,System.Int32,System.Int32,System.String,System.Nullable{System.Boolean},Microsoft.TeamFoundation.TestManagement.WebApi.ReleaseReference,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="releaseId"></param>
+            <param name="releaseEnvId"></param>
+            <param name="publishContext"></param>
+            <param name="includeFailureDetails"></param>
+            <param name="releaseToCompare"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestResultsReportForReleaseAsync(System.Guid,System.Int32,System.Int32,System.String,System.Nullable{System.Boolean},Microsoft.TeamFoundation.TestManagement.WebApi.ReleaseReference,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="releaseId"></param>
+            <param name="releaseEnvId"></param>
+            <param name="publishContext"></param>
+            <param name="includeFailureDetails"></param>
+            <param name="releaseToCompare"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestResultsSummaryForReleasesAsync(System.Collections.Generic.IEnumerable{Microsoft.TeamFoundation.TestManagement.WebApi.ReleaseReference},System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="releases"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestResultsSummaryForReleasesAsync(System.Collections.Generic.IEnumerable{Microsoft.TeamFoundation.TestManagement.WebApi.ReleaseReference},System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="releases"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestSummaryByRequirementAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestResultsContext,System.String,System.Collections.Generic.IEnumerable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="resultsContext"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="workItemIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestSummaryByRequirementAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestResultsContext,System.Guid,System.Collections.Generic.IEnumerable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="resultsContext"></param>
+            <param name="project">Project ID</param>
+            <param name="workItemIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryResultTrendForBuildAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestResultTrendFilter,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="filter"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryResultTrendForBuildAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestResultTrendFilter,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="filter"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryResultTrendForReleaseAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestResultTrendFilter,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="filter"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryResultTrendForReleaseAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestResultTrendFilter,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="filter"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunStatisticsAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunStatisticsAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestRunAsync(Microsoft.TeamFoundation.TestManagement.WebApi.RunCreateModel,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testRun"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestRunAsync(Microsoft.TeamFoundation.TestManagement.WebApi.RunCreateModel,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testRun"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestRunAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestRunAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunByIdAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunByIdAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunsAsync(System.String,System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="buildUri"></param>
+            <param name="owner"></param>
+            <param name="tmiRunId"></param>
+            <param name="planId"></param>
+            <param name="includeRunDetails"></param>
+            <param name="automated"></param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestRunsAsync(System.Guid,System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="buildUri"></param>
+            <param name="owner"></param>
+            <param name="tmiRunId"></param>
+            <param name="planId"></param>
+            <param name="includeRunDetails"></param>
+            <param name="automated"></param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestRunAsync(Microsoft.TeamFoundation.TestManagement.WebApi.RunUpdateModel,System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="runUpdateModel"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestRunAsync(Microsoft.TeamFoundation.TestManagement.WebApi.RunUpdateModel,System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="runUpdateModel"></param>
+            <param name="project">Project ID</param>
+            <param name="runId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestSessionAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestSession,Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testSession"></param>
+            <param name="teamContext">The team context for the operation</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestSessionsAsync(Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext,System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{Microsoft.TeamFoundation.TestManagement.WebApi.TestSessionSource},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="teamContext">The team context for the operation</param>
+            <param name="period"></param>
+            <param name="allSessions"></param>
+            <param name="includeAllProperties"></param>
+            <param name="source"></param>
+            <param name="includeOnlyCompletedSessions"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestSessionAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestSession,Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testSession"></param>
+            <param name="teamContext">The team context for the operation</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteSharedParameterAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="sharedParameterId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteSharedParameterAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="sharedParameterId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteSharedStepAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="sharedStepId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteSharedStepAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="sharedStepId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetSuiteEntriesAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="suiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetSuiteEntriesAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="suiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.ReorderSuiteEntriesAsync(System.Collections.Generic.IEnumerable{Microsoft.TeamFoundation.TestManagement.WebApi.SuiteEntryUpdateModel},System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="suiteEntries"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="suiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.ReorderSuiteEntriesAsync(System.Collections.Generic.IEnumerable{Microsoft.TeamFoundation.TestManagement.WebApi.SuiteEntryUpdateModel},System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="suiteEntries"></param>
+            <param name="project">Project ID</param>
+            <param name="suiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.AddTestCasesToSuiteAsync(System.String,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="testCaseIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.AddTestCasesToSuiteAsync(System.Guid,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="testCaseIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestCaseByIdAsync(System.String,System.Int32,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="testCaseIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestCaseByIdAsync(System.Guid,System.Int32,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="testCaseIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestCasesAsync(System.String,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestCasesAsync(System.Guid,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.RemoveTestCasesFromSuiteUrlAsync(System.String,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="testCaseIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.RemoveTestCasesFromSuiteUrlAsync(System.Guid,System.Int32,System.Int32,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="testCaseIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestSuiteAsync(Microsoft.TeamFoundation.TestManagement.WebApi.SuiteCreateModel,System.String,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testSuite"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestSuiteAsync(Microsoft.TeamFoundation.TestManagement.WebApi.SuiteCreateModel,System.Guid,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testSuite"></param>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestSuiteAsync(System.String,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestSuiteAsync(System.Guid,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestSuiteByIdAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="includeChildSuites"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestSuiteByIdAsync(System.Guid,System.Int32,System.Int32,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="includeChildSuites"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestSuitesForPlanAsync(System.String,System.Int32,System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="includeSuites"></param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="asTreeView"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestSuitesForPlanAsync(System.Guid,System.Int32,System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="includeSuites"></param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="asTreeView"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestSuiteAsync(Microsoft.TeamFoundation.TestManagement.WebApi.SuiteUpdateModel,System.String,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="suiteUpdateModel"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestSuiteAsync(Microsoft.TeamFoundation.TestManagement.WebApi.SuiteUpdateModel,System.Guid,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="suiteUpdateModel"></param>
+            <param name="project">Project ID</param>
+            <param name="planId"></param>
+            <param name="suiteId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetSuitesByTestCaseIdAsync(System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testCaseId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestCaseAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="testCaseId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestCaseAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="testCaseId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestSettingsAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestSettings,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testSettings"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestSettingsAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestSettings,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testSettings"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestSettingsAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="testSettingsId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestSettingsAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="testSettingsId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestSettingsByIdAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="testSettingsId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestSettingsByIdAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="testSettingsId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestVariableAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestVariable,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testVariable"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.CreateTestVariableAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestVariable,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testVariable"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestVariableAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="testVariableId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestVariableAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="testVariableId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestVariableByIdAsync(System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="testVariableId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestVariableByIdAsync(System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="testVariableId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestVariablesAsync(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.GetTestVariablesAsync(System.Guid,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestVariableAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestVariable,System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testVariable"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="testVariableId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.UpdateTestVariableAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestVariable,System.Guid,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="testVariable"></param>
+            <param name="project">Project ID</param>
+            <param name="testVariableId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.AddWorkItemToTestLinksAsync(Microsoft.TeamFoundation.TestManagement.WebApi.WorkItemToTestLinks,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="workItemToTestLinks"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.AddWorkItemToTestLinksAsync(Microsoft.TeamFoundation.TestManagement.WebApi.WorkItemToTestLinks,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="workItemToTestLinks"></param>
+            <param name="project">Project ID</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestMethodToWorkItemLinkAsync(System.String,System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="testName"></param>
+            <param name="workItemId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.DeleteTestMethodToWorkItemLinkAsync(System.Guid,System.String,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="testName"></param>
+            <param name="workItemId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestMethodLinkedWorkItemsAsync(System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="testName"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestMethodLinkedWorkItemsAsync(System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="testName"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestResultWorkItemsAsync(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID or project name</param>
+            <param name="workItemCategory"></param>
+            <param name="automatedTestName"></param>
+            <param name="testCaseId"></param>
+            <param name="maxCompleteDate"></param>
+            <param name="days"></param>
+            <param name="workItemCount"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestHttpClientBase.QueryTestResultWorkItemsAsync(System.Guid,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="project">Project ID</param>
+            <param name="workItemCategory"></param>
+            <param name="automatedTestName"></param>
+            <param name="testCaseId"></param>
+            <param name="maxCompleteDate"></param>
+            <param name="days"></param>
+            <param name="workItemCount"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestManagementHttpClient.#cctor">
+            <summary>
+            Creates the dictionary for all the exceptions that need to be serialized
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestManagementHttpClient.GetTestResultsByQueryAsync(Microsoft.TeamFoundation.TestManagement.WebApi.QueryModel,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            This API is deprecated at 2.3 version and is no more supported.
+            Sends REST based msg to Server for getting TestCaseResult objects based on query, project, includeResultDetails, includeIterationDetails, skip, and top
+            This method can be consumed in Post process.
+            </summary>
+            <param name="query"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="includeResultDetails"></param>
+            <param name="includeIterationDetails"></param>
+            <param name="skip"></param>
+            <param name="top"></param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestManagementHttpClient.GetTestRunsByQueryAsync(Microsoft.TeamFoundation.TestManagement.WebApi.QueryModel,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            This API is deprecated at 2.3 version and is no more supported.
+            </summary>
+            <param name="query"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="includeRunDetails"></param>
+            <param name="skip"></param>
+            <param name="top"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.TestManagement.WebApi.TestManagementHttpClient.BulkUpdateTestResultsAsync(Microsoft.TeamFoundation.TestManagement.WebApi.TestCaseResultUpdateModel,System.String,System.Int32,System.Collections.Generic.IEnumerable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            This API is deprecated at 2.3 version and is no more supported.
+            </summary>
+            <param name="result"></param>
+            <param name="project">Project ID or project name</param>
+            <param name="runId"></param>
+            <param name="resultIds"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.TestManagement.WebApi.TestManagementResourceIds.AreaId">
+            <summary>
+            Service area for all TestManagement REST endpoints
+            </summary>
+        </member>
+    </members>
+</doc>

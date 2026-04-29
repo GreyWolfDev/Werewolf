@@ -1,0 +1,1222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <language name="Russian Mafia" base="Русский" variant="Мафия"/>
+  <string key="JoinButton">
+    <!-- this is for a button, no markdown or html -->
+    <value>Присоединиться</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, нажми на кнопку — получишь результат. Если ты забыл — это кнопка ПРИСОЕДИНИТЬСЯ.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0}вступил в игру во время последних 30 секунд.</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Осталась всего одна минута! Всегда являйтесь на назначенные встречи вовремя.</value>
+    <value>Заряжай ствол, протирай ботинки до блеска и нажимай ПРИСОЕДИНИТЬСЯ! На всё у тебя лишь одна минута!</value>
+    <value>Скорее! Осталась всего 1 минута! Отправь главарей мафии в могилу, жми кнопку ПРИСОЕДИНИТЬСЯ.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>{0} секунд осталось! Нажимай быстрее «Присоединиться», чтобы выпустить пару пуль в чей-то живот!</value>
+    <value>Всего {0} секунд осталось до конца набора!</value>
+    <value>Осталось совсем чуть-чуть! {0} секунд до начала.</value>
+    <value>Осталось {0} секунд до конца набора! Нажми кнопку «Присоединиться».</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Говорят, вас, ребята, видели в компании копов. Вам нечего здесь делать.</value>
+    <value>Не так-то и просто попасть в мафиозный клан. Дон просил передать, что среди вас кого-то не хватает.</value>
+    <value>И это самая влиятельная группировка? В таком количестве даже и не помышляйте о серьёзных сделках.</value>
+    <value>Вас слишком мало, чтобы заинтересовать мафию. Опасность миновала.</value>
+  </string>
+  <string key="NotMember">
+    <value>Вы не можете присоединиться к данной игре, так как вы не являетесь участником {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Нажми на кнопку — получишь результат. Если ты забыл — это кнопка ПРИСОЕДИНИТЬСЯ.</value>
+  </string>
+  <string key="PMTheBot">
+    <value>\n{0}, пожалуйста, напиши мне ({1}) личное сообщение с текстом /start, так как тебя нет в моих записях. Для того чтобы КГБ мог связаться с тобой, ты должен сделать шаг первым. Этот бот пришлёт твою роль от него, ты сможешь голосовать и использовать свою роль…</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, пожалуйста, смени имя для того, чтобы продолжить играть.</value>
+    <value>Твоё имя не подходит для игры, {0}. Поменяй его.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Простите, максимальное количество игроков достигнуто!</value>
+  </string>
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Время ожидания увеличено на {0} секунд!\nОсталось {1} секунд.</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>Время ожидания уменьшено на {0} секунд!\nОсталось {1} секунд.</value>
+  </string>
+  <string key="CantExtend">
+    <value>Только админ может несколько раз увеличивать время ожидания!</value>
+  </string>
+  <string key="Flee">
+    <value>{0} побежал домой за пистолетом.</value>
+    <value>Пришёл Нагибатор 3000™ и сломал {0}!</value>
+    <value>{0} забыл, что нельзя говорить с властями.</value>
+    <value>Беги прочь, {0}, в тебе нет ни капли итальянской крови!</value>
+    <value>{0} не захотел целовать руку дону.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Всё, что тебе остаётся, — это ждать, пока дон пришлёт цветы на твою могилу.</value>
+    <value>За твоим телом уже выехал катафалк…</value>
+    <value>Куда ты собрался с дырой в затылке?</value>
+    <value>Связаться с мафией, кажется, было не самой хорошей идеей…</value>
+  </string>
+  <string key="FleeDisabled">
+    <value>Покидание игры во время самой игры запрещено, потому что было выключено админом!</value>
+    <value>Ты застрял в этой игре навечно. Ты не сможешь уйти, пока не выиграешь! Ну, или пока тебя не казнят/съедят/застрелят/дезинтегрируют/принесут в жертву сатане/похитят пришельцы/вонзят в тебя нож…</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>Осталось {0} игроков.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Ты уже в игре! ({0})</value>
+  </string>
+  <string key="NameExists">
+    <value>@{1}, игрок с именем {0} уже присоединился. Пожалуйста, поменяй имя, чтобы присоединиться.</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Только админ может использовать эту команду.</value>
+    <value>Ты не админ, только админ может использовать эту команду.</value>
+  </string>
+  <string key="ExitAnonymousMode">
+    <value>Нельзя играть анонимно! Пожалуйста, выйди из анонимного режима (или попроси отключить его администратора группы) и попробуй ещё раз.</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Ты подписался(лась) на появление следующей игры в группе {0}. Я оповещу тебя в ЛС при её появлении.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Похоже, что ты забыл(а), что ты подписан(а) на появление следующей игры в группе {0}.</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>Кто-то начал игру в группе {0}!</value>
+  </string>
+  <string key="GroupNotFound">
+    <value>Группа не найдена. Запустите эту команду в группе, которую вы хотите остановить в ожидании, или добавьте ссылку, идентификатор или имя пользователя рядом с командой.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Вы были удалены из списка ожидания для {0}.</value>
+  </string>
+  <string key="SentPrivate">
+    <value>КГБ что-то написал тебе в личку.</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Ты, кажись, перепутал(а) личку со мной с группой, раз ты пытаешься сыграть тут.</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Ты, кажись, перепутал(а) личку со мной с группой, раз ты отправил /startgame или /startchaos сюда.</value>
+  </string>
+  <string key="PingInfo">
+    <value>Время, за которое Telegram отправил сообщение боту: {0}\nКоличество сообщений в секунду: {1}.</value>
+  </string>
+  <string key="Ping2">
+    <!-- Update 4.0-->
+    <value>Время отправки ping-сообщения пользователю: {0}.</value>
+  </string>
+  <string key="GetLang">
+    <value>Файл какого языка ты хочешь получить?</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Извини, но ты можешь использовать эту команду только в какой-нибудь группе.</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Извини, но ты не являешься глобальным администратором игры.</value>
+  </string>
+  <string key="NotPara">
+    <value>Извини, но ты не являешься моим создателем (вот кто он: @Para949).</value>
+  </string>
+  <string key="LatestList">
+    <value>Это последний список.</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Не могу получить последний список.</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>На каком языке вы хотите найти группы по этой игре?</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Все</value>
+  </string>
+  <string key="HereIsList">
+    <value>Вот группы по этой игре на языке «{0}»:</value>
+  </string>
+  <string key="Members">
+    <value>Участник(а/ов)</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Что вы хотите настроить?</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>На сколько максимально можно увеличивать время ожидания командой /extend.\nПо умолчанию: {0}\nТекущее:{1}.</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Теперь будет {0} секунд.</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Основная длительность дня ({0}) выставлена.</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Выбери длительность голосования на казнь (в секундах). Настройка по умолчанию: {0}\nНастройка, выбранная на данный момент: {1}.</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Длительность голосования на казнь ({0}) выставлена.</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Выбери длительность ночи (в секундах). Настройка по умолчанию: {0}\nНастройка, выбранная в данный момент: {1}.</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Длительность ночи ({0}) выставлена.</value>
+  </string>
+  <string key="AllowFool">
+    <value>Разрешить Дурака (Комиссара Жибера)</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Разрешить роль «Комиссар Жибер (Дурак)» в игре?\nСтатус настройки: {0}.</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Нынешний статус настройки: {0}.</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Разрешить Самоубийцу (Должника)</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Разрешить роль «Должник (Самоубийца)» в игре?\nСтатус настройки: {0}.</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Нынешний статус настройки: {0}.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Разрешить фанатов ежей</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Разрешить фракцию «Фанаты ежей», а значит, и роль «Фанат ежей» в игре?\nСтатус настройки: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <!-- TODO: Вписать кастомные названия ролей в AllowThief, AllowArsonist и BurningOverkill. -->
+    <value>Нынешний статус настройки: {0}.</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Как ты хочешь показывать роли игроков в конце игры?\nВ данный момент выбрана настройка «{0}»</value>
+  </string>
+  <string key="ShowNone">
+    <value>Не показывать роли игроков в конце игры.</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Показывать в конце игры только роли живых игроков.</value>
+  </string>
+  <string key="ShowAll">
+    <value>Показывать роли всех игроков в конце игры.</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Выбрана настройка «{0}».</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Включить тайное голосование</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Включить тайное голосование? Текущий статус: {0}.</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Статус изменён. Новый статус: {0}.</value>
+  </string>
+  <string key="RandomMode">
+    <value>Включить Случайный режим</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Включить случайный режим?\nКогда случайный режим активирован, то Хаос, Тайное голосование, демонстрация ролей мервых игроков и разрешение секты (фанатов ежей)/«дурака» (Комиссара Жибера)/Самоубийцы (Должника) будет определяться случайным образом каждый раз при начале новой игр.\nТекущее:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Включение случайного режима, установленного для: {0}.</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Показать роли мертвых игроков</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Показывать или прятать роли при смерти игроков?\nТекущий статус настройки: {0}.\nЕсли статус равен «shown», то игра не будет прятать роли при смерти игроков.\nА статус «hidden» противоположен статусу «shown».</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Нынешний статус настройки: {0}.</value>
+  </string>
+  <string key="GroupSettings">
+    <value>Настройки группы</value>
+  </string>
+  <string key="Lang">
+    <value>Сменить язык</value>
+  </string>
+  <string key="WhatLang">
+    <value>Какой язык ты хочешь выбрать?\nНа данный момент используется {0} язык.</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Какой вариант языка вы хотите выбрать?\nИспользующийся вариант использующегося на данный момент языка: {0}.</value>
+  </string>
+  <string key="LangSet">
+    <value>Ты поставил язык «{0}».</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Какой режим игры хочешь ты использовать для своей группы?\nВ данный момент выбрана настройка «{0}».</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Использовать только нормальный режим.</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Использовать только режим хаоса.</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Позволить игрокам выбирать режим игры.</value>
+  </string>
+  <string key="GameModeA">
+    <value>Выбрана настройка «{0}».</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Какой максимум игроков ты хочешь выставить?\nВ данный момент в твоей группе выставлен максимум в {0} игроков.</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Ты выставил в своей группе максимум в {0} игроков.</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Разрешить продление времени</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Игрокам {0} увеличивать время.</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Разрешить Flee</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>Нынешний статус настройки: {0}.</value>
+  </string>
+  <string key="AllowNSFW">
+    <value>Разрешить NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+  <string key="Yes">
+    <value>Да.</value>
+  </string>
+  <string key="No">
+    <value>Нет.</value>
+  </string>
+  <string key="Allow">
+    <value>Разрешить.</value>
+  </string>
+  <string key="Disallow">
+    <value>Запретить.</value>
+  </string>
+  <string key="Show">
+    <value>Показывать.</value>
+  </string>
+  <string key="Hide">
+    <value>Спрятать.</value>
+  </string>
+  <string key="Cancel">
+    <value>Закрыть меню.</value>
+  </string>
+  <string key="ThankYou">
+    <value>Спасибо огромное тебе, хорошего дня и игр. :)</value>
+  </string>
+  <string key="Villager">
+    <!-- Original emoji is "👱", which is quite similiar, so I guess, we can omit it. -->
+    <value>Мирный житель 👨</value>
+    <value>Горожанин 👨</value>
+  </string>
+  <string key="Wolf">
+    <value>Мафия 🔫 (🐺)</value>
+  </string>
+  <string key="Drunk">
+    <value>Важный чиновник 🦃 (🍻)</value>
+    <value>Чиновник 🦃 (🍻)</value>
+  </string>
+  <string key="Seer">
+    <value>Комиссар 👮 (👳)</value>
+  </string>
+  <string key="Cursed">
+    <value>Сочувствующий 😬 (😾)</value>
+  </string>
+  <string key="Harlot">
+    <value>Куртизанка 💃 (💋)</value>
+  </string>
+  <string key="Beholder">
+    <value>Куратор комиссариата 😎 (👁)</value>
+    <value>Куратор 😎 (👁)</value>
+  </string>
+  <string key="Gunner">
+    <value>Аптекарь 💊 (🔫)</value>
+  </string>
+  <string key="Traitor">
+    <value>Мститель(ница) 👊 (🥸)</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Доктор 👩‍⚕ (👼)</value>
+  </string>
+  <string key="Detective">
+    <value>Детектив 🕵️</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Сержант 👨‍✈️ (🙇)</value>
+  </string>
+  <string key="Zombie">
+    <value>Фанат ежей 🦔 (👤)</value>
+  </string>
+  <string key="ZombieHunter">
+    <value>Наводчик ОБЭП 🤓 (💂)</value>
+  </string>
+  <string key="WildChild">
+    <value>Внебрачный сын мафии 👦 (👶)</value>
+  </string>
+  <string key="Fool">
+    <value>Комиссар Жибер 🤡 (🃏)</value>
+  </string>
+  <string key="Mason">
+    <value>Акционер 📈 (👷)</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Актёр 🕺 (🎭)</value>
+  </string>
+  <string key="Cupid">
+    <value>Купидон 👼 (🏹)</value>
+  </string>
+  <string key="Hunter">
+    <value>Параноик 👀 (🎯)</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Маньяк 🔪</value>
+  </string>
+  <string key="Tanner">
+    <value>Должник 😶 (👺)</value>
+  </string>
+  <string key="Mayor">
+    <value>Мэр 🏛 (🎖)</value>
+  </string>
+  <string key="Prince">
+    <value>Коррупционер 💸 (👑)</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Шпион 🕶 (🔮)</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Наркоман 💉 (🤕)</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Банкир 🏦 (⚒)</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Крестный отец 💎 (⚡️)</value>
+  </string>
+  <string key="WolfCub">
+    <value>Новобранец 🤠 (🐶)</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 жив</value>
+  </string>
+  <string key="Dead">
+    <value>💀 покинул нас</value>
+  </string>
+  <string key="RanAway">
+    <value>🏃 сбежал(а)</value>
+  </string>
+  <string key="Won">
+    <value>— Выиграл(а) 👍</value>
+  </string>
+  <string key="Lost">
+    <value>— Проиграл(а) 👎</value>
+  </string>
+  <string key="AboutVG">
+    <value>Горожанин. Простой игрок, работающий на богатого дядю и искренне ненавидящий мафию.</value>
+  </string>
+  <string key="AboutWw">
+    <value>Мафиози. Член мафиозной семьи, поставившей себе цель взять город под контроль.</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Влиятельный чиновник. Если его убьют, полиция будет на ушах и мафии придётся залечь на дно.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Комиссар. Каждую ночь он может остановить горожанина для того, чтобы проверить его документы и узнать, кто он.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Сочувствующий. Мечтает о том дне, когда мафия придёт к нему и предложит присоединиться к ней.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Куртизанка. Наивная душа, ищущая свою единственную половинку среди городских жителей.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Куратор. Знает, кто настоящий комиссар в городе.</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Аптекарь. Имеет 2 ампулы с сильным ядом и может использовать их днём для отравления любого из игроков. Аптекарь играет на стороне горожан и должен со всей серьёзностью отнестись к своему выбору.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Близкий тебе человек связан с семьёй мафии. Если его убьют — ты выйдешь на тропу мести.</value>
+  </string>
+  <string key="AboutGA">
+    <value>Доктор. Просто доктор. Может вылечить любую рану, но помочь самому себе не в состоянии.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Частный детектив. Горожанин, который ежедневно в дневное время может устроить слежку за любым из игроков, но есть 40% шанс, что мафия тоже узнает о его существовании.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Сержант. Подающий надежды сотрудник полиции. Займёт место комиссара после его ухода.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Хотите поговорить о ёжиках? Нет, вы хотите поговорить о ёжиках! И сейчас вам расскажут обо всех достоинствах ёжиков! У всех должны быть ёжики! Хочешь себе ёжика? — Спроси у меня, где его взять.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Задрал спам о ёжиках! Пора звать ОБЭП по их головы!</value>
+  </string>
+  <string key="AboutWC">
+    <value>Внебрачный сын мафиози; живёт с наставником. Если наставника убьют, то вернётся к отцу и станет мафиози.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Комиссар Жибер. «Комиссар». Ах-ха-ха-ха-ха.</value>
+  </string>
+  <string key="AboutMason">
+    <value>Акционер. Обычный горожанин. Посещает собрания акционеров, потому знает всех других держателей акций.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Актёр. Цель его существования — прожить жизнь за другого человека. Если ему не удастся это сделать — он проиграет.</value>
+  </string>
+  <string key="AboutCupid">
+    <value>Купидон. Селянин, который в начале игры соединяет сердца двух игроков;\nесли Купидон не выберет/не успеет выбрать будущих влюблённых, игра сама влюбит двух рандомных игроков;\nесли один из влюблённых выиграет, другой влюблённый тоже выиграет.</value>
+  </string>
+  <string key="AboutHunter">
+    <value>Параноик. Всегда ходит с пушкой. И постарается убить обидчика, если звёзды сложатся благосклонно.</value>
+  </string>
+  <string key="AboutSK">
+    <value>Маньяк. Кровь. Кишки. ФА-А-АРШ!!!1! Все должны быть мертвы!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Должник. Выигрывает, если скроется от кредиторов в тюрьме.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Эгей, это же разраб этой игрули! Вот его ник, чтобы ты мог с ним связаться: @Para949</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Мэр. Скромный житель до той поры, пока не разоблачит себя. Затем получает голос, считающийся за два во время суда.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Коррупционер. Если его попытаются арестовать — даст взятку и получит свободу. Взятку можно дать лишь один раз.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Шпион. Сочувствует мафии и постарается с ней объединиться. Ненавидит комиссара.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Наркоман. Руки трясутся и голосовать иногда получается не за того, за кого хотелось бы, а видения ёжиков сильно сбивают с толку.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Банкир. Один раз за игру может заблокировать счета мафии. Тогда мафия потратит ночь на финансовые проблемы вместо того, чтоб убивать кого-нибудь, но о банкире все сразу узнают.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Крёстный отец, глава мафиозной семьи собственной персоной. Иногда может набирать себе в семью новых соратников.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Новобранец в семье мафии. Она присматривается к нему и признаёт очень перспективным. Семья будет очень рассержена и убьёт двоих горожан, если по какой-либо причине новобранца не станет.</value>
+  </string>
+  <string key="RoleInfoVillager">
+    <value>Ты простой горожанин. За завтраком читаешь газету, а после завязываешь галстук и идешь на работу. День проходит в суете. Но ночью, когда ты лежишь в теплой постели, приходят страшные мысли о том, что однажды мафия каким-либо образом может тобой заинтересоваться…</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Мафия не дремлет! Толстосумы диктуют городу свои порядки! Пора взять власть в свои руки и показать, кто тут главный!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Вы влиятельный чиновник. Вам глубоко наплевать на то, что происходит в городе. Впрочем, мафия угрожает тайному бизнесу, потому вы на стороне мирных жителей.</value>
+  </string>
+  <string key="RoleInfoSeer">
+    <value>Ты комиссар! Каждую ночь ты можешь проверить документы человека и узнать его роль</value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Ты мирный житель. Но тебя достала текущая коррумпированная система. Мафия предлагает очистить власть от толстосумов. Тебе это нужно! Если мафия однажды постучится в твою дверь — ты радостно вступишь в их ряды.</value>
+    <value>Ты сочувствующий мафии, и ты охотно вступишь в их ряды, если они придут к тебе.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Однажды вы стали свидетелем ужасного преступления, и теперь мафия охотится на вас. Под видом куртизанки вам приходится скрываться у других горожан. Для того чтобы вас не раскрыли, пришлось освоить эту профессию.</value>
+  </string>
+  <string key="RoleInfoBeholder">
+    <value>Ты куратор из центрального управления. Ты знаешь имя настоящего комиссара, занимающегося проблемой мафии в городе. В общем, это твоя единственная функция.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Вы аптекарь. Специалист по отравлениям. Мафия давно хочет заполучить вас в свои ряды, однако вы стараетесь использовать свои знания лишь во благо. У вас есть 2 ампулы с сильнодействующим ядом. Выбирайте жертв, но помните, что после отравления вас сразу раскроют!</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Близкий вам человек состоит в рядах мафии. Если мафию вырежут — придётся брать револьвер и мстить жителям!</value>
+    <value>Пока ты тихий горожанин, но как только существование мафиозного клана окажется под угрозой — сам станешь мафиози!</value>
+    <value>Когда убьют всех мафиози, ты займёшь их место! Помни, комиссар может поверить, что ты простой горожанин, а может и начать подозревать в тесных связях с криминальными структурами…</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Вы доктор. Ваша цель — спасать людей от смерти. Конечно же, вы на стороне мирных жителей. Берегитесь мафиози: если они вас опознают (а вероятность этого — 50%) — то вы труп.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Ты частный детектив. Ты можешь выбрать игрока днём, чтобы узнать его роль. Но есть 40% вероятность того, что мафия обнаружит тебя!</value>
+    <value>Включи в себе детектива! Узнавай роли своих горожан днём и будь осторожен с мафиози, они могут вычислить тебя!</value>
+    <value>Вы частный детектив. Ночью в ваш кабинет вошла длинноногая брюнетка. От неё пахло сигаретой и неприятностями. Она рассказала, что её мужа убили местные мафиози, и попросила найти виновных. «Деньги не проблема», — сказала она, а значит, Вы в деле…</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer">
+    <value>Ты — сержант. Как только убьют комиссара, эта должность достанется тебе.</value>
+  </string>
+  <string key="RoleInfoZombie">
+    <value>ООО «Рога и иголки» — компания, где вы работаете, — предлагает уникальные разработки по выращиванию ксеноморфных ежей! Надо только рассказать о ней людям и объяснить, какие выгодные предложения и скидки они упускают!</value>
+    <value>Хотите поговорить о ёжиках? Нет, вы хотите поговорить о ёжиках! И сейчас вам расскажут обо всех достоинствах ёжиков! У всех должны быть ёжики! Хочешь себе ёжика? — Спроси у меня, где его взять.</value>
+  </string>
+  <string key="RoleInfoZombieHunter">
+    <value>ООО «Рога и иголки». Везде это ООО. Как же они достали своим спамом и навязчивой рекламой. Пора положить им конец, ведь ты — сотрудник ОБЭП, а у них наверняка есть грешки.</value>
+  </string>
+  <string key="RoleInfoWildChild">
+    <value>Ты внебрачный сын мафиози. Если твоего наставника убьют, придётся обратиться за помощью к мафии. Иначе тебе не выжить.</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>У тебя на руках имеется немного акций. Ты — мирный горожанин. Познакомиться с другими держателями акций ты можешь на собрании акционеров.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Ты актёр. Играть роли других людей — твоё призвание. Неважно, в кого именно придётся перевоплощаться, для тебя нет границ. Выбери игрока, а когда он умрёт, ты присвоишь его жизнь себе.</value>
+  </string>
+  <string key="RoleInfoCupid">
+    <value>Ты купидон. Сошёл(ла) на землю в одних штанах, с луком и двумя стрелами… Выбери тех двоих, кто будет любить друг друга до скончания века. Если один из них погибнет или будет осуждён, другой последует за ним.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Ты параноик. Посещения психолога прошли напрасно. Мысль, что кто-то хочет тебя убить, не даёт покоя. И у тебя всегда есть при себе старинный кольт. Если тебя всё же зацепят, ты сможешь выстрелить в последний раз…</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Новый житель в этом тихом милом городе… Никто даже не догадывается, что ты — маньяк. Убивать людей — твоё маленькое хобби. Ты не успокоишься, пока не насладишься смертью каждого!</value>
+  </string>
+  <string key="RoleInfoTanner">
+    <value>Ты набрал гору кредитов, а теперь не можешь с ними разобраться! Тебя ищут и полиция, и мафия! Пора скрываться! Самое надёжное место — тюрьма. Добейся, чтобы тебя посадили, и ты выиграешь!</value>
+  </string>
+  <string key="RoleInfoMayor">
+    <value>Вы мэр! Ваш голос оценивается вдвойне, но тем самым вы разоблачите себя. Вы в команде горожан.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Вы коррупционер. И у вас есть приличная сумма, чтобы один раз отмазать себя от суда.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Вы шпион. Заклятый враг комиссара. Найдите мафию и объединитесь с ней для убийств мирных жителей и полного контроля над городом. Ночью вы можете устроить слежку за одним из игроков. Однако ваши каналы смогут дать информацию лишь в том случае, когда преследуемая цель окажется либо мафиози, либо комиссаром…</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Вы наркоман. Между глюками ёжиков и радужных шаров вы пытаетесь определить, кто же из горожан настоящая мафия. Однако в таком состоянии вы голосуете лишь с 50% вероятностью отправить под суд нужного человека.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Вы Банкир. По желанию однократно можете заблокировать счета мафии. Тогда мафия потратит ночь на устранение финансовых проблем, вместо того чтобы убивать кого-нибудь, но все сразу о вас узнают.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Вы Крёстный отец мафиозной группировки. Иногда, где-то в 20% случаев, вы даруете жертве жизнь и шанс перейти на сторону мафии.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Вы новобранец. Самый юный член мафии и уже правая рука Крестного отца. Клан настолько дорожит вами, что в случае вашего ареста отомстит городу и убьёт сразу двоих жителей.</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <value>{0} начал(а) игру! Жми на кнопку ПРИСОЕДИНИТЬСЯ и погружайся в криминальный мир.</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <value>{0} поверг город в хаос! Нажимай кнопку ПРИСОЕДИНИТЬСЯ, чтобы сорвать большой куш или схлопотать пулю в лоб.</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true">
+    <value>Мафия тебя убила. Не переходи дорогу семье.</value>
+    <value>Мафиози убедительно поговорили с тобой и предоставили веские аргументы покинуть город.</value>
+  </string>
+  <string key="WolfWins" isgif="true">
+    <value>Мафиози держит город в страхе!</value>
+    <value>Мафия победила!</value>
+    <value>В этом городе отныне всё решает мафия!</value>
+  </string>
+  <string key="WolvesWin" isgif="true">
+    <value>Мафия победила!</value>
+    <value>Теперь мафия установит в городе свои порядки.</value>
+    <value>В этом городе отныне всё решает мафия!</value>
+  </string>
+  <string key="VillageWins" isgif="true">
+    <value>Все бандиты посажены в тюрьму или убиты, горожане выиграли!</value>
+  </string>
+  <string key="TannerWins" isgif="true">
+    <value>О нет! Должник уделал вас всех! Набрав кредитов, он скрылся в тюрьме! Должник победил!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value>Ми-ми-ми! Теперь у каждого дома живёт милый ксеноморфный ёжик. О нет, это были контролирующие сознание пришельцы! Теперь город полностью захвачен ксеноморфными ежами, и люди поклоняются им как божествам.</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>Всегда оглядывайтесь и не ходите вечерами в одиночку. Маньяк остался безнаказан!</value>
+  </string>
+  <string key="LoversWin" isgif="true">
+    <value>Настоящая любовь побеждает! Влюблённые выиграли!</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Все горожане мертвы, а сам город скоро останется лишь призраком на карте. Противостояние забрало жизни всех его участников.</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Да начнутся разборки! А перед этим подождите, пока распределяются роли.</value>
+    <value>Игра начинается, подождите, пока распределяются роли.</value>
+    <value>Внимание, в городе завелась мафия! Расправьтесь с преступностью! Не дайте мафии подмять под себя весь город!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>{0} был {1}!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} считает, что {1} нужно убрать.</value>
+    <value>{0} решил, что {1} — «маленькая проблема».</value>
+    <value>{0} думает, что {1} представляет угрозу.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} подозревает {1} в связях с мафией.</value>
+    <value>{0} недобро смотрит на {1}.</value>
+    <value>{0} махнул(а) рукой на {1}.</value>
+    <value>{0} что-то бормочет про {1}.</value>
+  </string>
+  <string key="IdleKill">
+    <value>{0} не голосовал(а) 2 дня подряд. КГБ расценивает это как серьезное преступление, и {0} неожиданно падает… {1}</value>
+    <value>КГБ заметил не голосовавшего 2 дня подряд {0} и расправился с ним!\nВсе в ужасе узнали, что {1}</value>
+    <value>После голосования все увидели лежащего {0} с табличкой в руках: «Меня покарал КГБ»!\nВсем на удивление, всё это время {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Они… мертвы. Всех убили. Пришло время мести!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Выбор принят.</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nУ тебя на руках документы, подтверждающие, что {0} — настоящий комиссар.</value>
+  </string>
+  <string key="NoSeer">
+    <value>Комиссар в отпуске!</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>{0} был(а) комиссаром. Теперь эта должность переходит к тебе.</value>
+    <value>Ты занял(а) место {0}! Настало твоё время засад и облав на мафию!</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>Хотя {0} и не мечтал об этом, но теперь пришло его(её) время стать комиссаром вместо {1} и бороться с мафией.</value>
+    <value>Комиссар {1} мертв. На его место встал(а) {0}.</value>
+  </string>
+  <string key="SeerSees">
+    <value>После проверки документов {0} и небольшой слежки стало ясно, что это {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Кого ты хочешь отправить под суд?</value>
+  </string>
+  <string key="AskEat">
+    <value>Кого нужно пристрелить?</value>
+  </string>
+  <string key="AskKill">
+    <value>Кого ты хочешь навечно излечить от грусти с помощью пары острых ножей?</value>
+    <value>Выбери того, чей крик сегодня будет звучать для тебя как колыбельная…</value>
+    <value>Хорошо зафиксированный пациент в анестезии не нуждается. Чьи молящие о пощаде глаза ты хочешь увидеть сегодня?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Кому ты хочешь рассказать о сверхвыгодных предложениях?</value>
+  </string>
+  <string key="AskSee">
+    <value>У кого собираешься проверить документы?</value>
+  </string>
+  <string key="AskVisit">
+    <value>Кого ты хочешь навестить?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Кому хочешь оказать медицинскую помощь?</value>
+  </string>
+  <string key="AskHunt">
+    <value>К кому ты пойдёшь?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Кто твой наставник?</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Чьими делами ты интересуешься и хотел бы продолжить их после его смерти?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Кого ты хочешь сделать влюблёнными до скончания века? Выбери первого игрока:</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Кого ты хочешь сделать влюблёнными до скончания века? Выбери второго игрока:</value>
+  </string>
+  <string key="AskDetect">
+    <value>Чьё алиби ты хочешь проверить?</value>
+  </string>
+  <string key="AskShoot">
+    <value>Кого ты хочешь отравить? Осталось {0} ампул(а, ы).</value>
+  </string>
+  <string key="AskMayor">
+    <value>Кликни «Разоблачиться», когда будешь готов разоблачить себя как мэра!</value>
+  </string>
+  <string key="Reveal">
+    <value>Разоблачиться</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Желаете заблокировать счета мафии этим днём, чтобы занять мафию на эту ночь?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <value> Обсуди свой выбор с {0}.</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith". again, leave the spaces!-->
+    <value> и </value>
+  </string>
+  <string key="LynchTime">
+    <value>Настал час суда!\nЕсть {0} секунд, чтобы сделать выбор, кого отправить за решётку!</value>
+    <value>«Прошу всех встать! Суд идёт!» — неожиданно прозвучало в зале. Горожане пришли сюда, чтобы наказать преступника. У горожан {0} секунд для того, чтобы сделать выбор!</value>
+    <value>Настал час суда! Жители собрались, чтобы сделать выбор…\nЕсть {0} секунд для этого решающего события!</value>
+    <value>Жители собрались у здания суда. Все взволнованы, никто не знает, чего ожидать сегодня от правосудия…\nЕсть {0} секунд, чтобы определиться!</value>
+  </string>
+  <string key="DayTime">
+    <value>Настал день… Время протестовать, делать заявления и сражаться за справедливость!\nУ вас есть {0} секунд…</value>
+    <value>День! Пора обсудить события ночи со своими соседями!\nУ вас есть {0} секунд…</value>
+  </string>
+  <string key="NightTime">
+    <value>Ночь! Все простые смертные легли спать. По темным улицам города не стоит ходить в одиночку…\nУ вас есть {0} секунд…</value>
+    <value>Зашло солнце, и все горожане разбрелись по домам. На охоту выходят опасные ребята!\nСегодня ночь будет идти {0} секунд…</value>
+  </string>
+  <string key="LynchKill">
+    <value>Жители отдали свои голоса в подозрениях и сомнениях… {0} посажен в тюрьму!\n{1}</value>
+  </string>
+  <string key="LynchTie">
+    <value>К сожалению, присяжные разошлись во мнениях. Сегодня никто не отправится за решетку…</value>
+    <value>Судья не смог вынести вердикт. Напуганные горожане расходятся по домам…</value>
+  </string>
+  <string key="NoLynchVotes">
+    <value>Как-то странно… Никто не проголосовал… Сегодня обойдемся без публичного слушания!</value>
+    <value>Совпадение? Не думаю! Мафия всех запугала, и сегодня никто не проголосовал.</value>
+  </string>
+  <string key="DetectiveEaten">
+    <value>Утром горожане вышли на улицу и не заметили {0}. Добравшись к нему домой, все увидели окровавленное тело {0} с бейджиком детектива на груди!</value>
+  </string>
+  <string key="GuardianEaten">
+    <value>Наступило утро… В одном из холодильников больничного морга было обнаружено тело {0} — это был доктор.</value>
+  </string>
+  <string key="GunnerEaten">
+    <value>Мертвые взгляды закоптившихся стекол встретили новый день — за ночь сгорела известнейшая аптека в городе. Поговаривают, что почерневшее тело {0}, аптекаря, опознали только по золотым часам на руке. Кому же понадобилось убивать этого уважаемого гражданина?</value>
+  </string>
+  <string key="SeerEaten">
+    <value>Полиция носится как ужаленная, ведь мафия убила {0} — комиссара.</value>
+    <value>Сегодняшняя ночь принесла мафии славу: заголовки утренних газет кричат о том, что убит комиссар {0}!</value>
+  </string>
+  <string key="DrunkEaten">
+    <value>На уши поставлена вся полиция: был убит известный чиновник {0}. Теперь мафия заляжет на дно.</value>
+  </string>
+  <string key="FoolEaten">
+    <value>«Господа, мы в дерьме!» — мафией был убит {0} — комиссар Жибер.</value>
+  </string>
+  <string key="DefaultEaten">
+    <value>Мафия этой ночью не спала и решала свои проблемы. В этот раз им перешел дорогу {0}! Не стоит злить мафию. {1}.</value>
+    <value>Этой ночью {0} решил примерить бетонные ботинки, и водолазы нашли его на дне. {1}.</value>
+  </string>
+  <string key="HunterKilledZombie">
+    <value>В доме выбита входная дверь, а внутри найдены тонны рекламных флаеров и литературы. Совершенно ясно, что ОБЭП нагрянул в дом {0}. Достал он уже всех спамом. Кстати, ООО «Рога и иголки» пре… так, о чём это я…</value>
+    <value>Разгневанные спамом соседи вызвали ОБЭП к {0}!</value>
+  </string>
+  <string key="NoAttack">
+    <value>Этой ночью город спал спокойно. Или нет?</value>
+  </string>
+  <string key="CursedBitten">
+    <value>К тебе пришла мафия и сделала предложение, от которого невозможно отказаться. И, конечно же, ты его принял. Теперь ты мафиози.</value>
+  </string>
+  <string key="CursedBittenToWolves">
+    <value>{0} принял наше предложение и принёс дону клятву верности. Теперь он один из нас.</value>
+  </string>
+  <string key="WolvesEatDrunk">
+    <value>{0} был важным чиновником. Полиция поставлена на уши, город ждут регулярные рейды, засады. Теперь нужно залечь на дно, чтоб не попасться властям.</value>
+  </string>
+  <string key="GuardWolf">
+    <value>Как только открылась дверь, ты увидел на пороге мафиози. Он всадил пулю тебе в лоб, не посмотрев, что ты врач.</value>
+  </string>
+  <string key="GuardSaved">
+    <value>Ты спас жизнь {0}!</value>
+  </string>
+  <string key="GuardNoAttack">
+    <value>{0} был полностью здоров, и его жизни ничего не угрожало.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>Ты попытался поинтересоваться здоровьем {0}, но его не было дома!</value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>Тебя убили! А, нет! Ты очнулся в больнице — врачи успели тебя спасти!</value>
+  </string>
+  <string key="HarlotEaten">
+    <value>Один из клиентов куртизанки оказался мафиози! {0} нашли на заднем дворе с дыркой во лбу.</value>
+  </string>
+  <string key="HarlotNotHome">
+    <value>Странно… {0} не был(а) дома! Придётся оправдываться перед доном…</value>
+  </string>
+  <string key="HarlotFuckWolf">
+    <value>Ты проскользнул домой к {0}, но он заявил, что не вызывал куртизанку, и всадил в тебя пулю! Ты мёртв(а)…</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic">
+    <value>Похоже, мафия решила пошалить и вызвала куртизанку. Но что-то пошло не так, и мафия избавилась от {0}.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic">
+    <value>{1} вызвал куртизанку, но вместе с ней пришла и мафия! Мафии свидетели не нужны, потому {0} тоже получил(а) свою пулю в затылок.</value>
+  </string>
+  <string key="HarlotVisitNonWolf">
+    <value>Вы провели отличную ночь с {0}, и, возможно, он станет постоянным клиентом.</value>
+    <value>Вы провели ужасную ночь с {0}. Постоянно что-то скрипело, соседи возмущались. Выстрелы мешали сосредоточится. Интересно, а мафия столь же ужасна?</value>
+  </string>
+  <string key="HarlotVisitYou">
+    <value>Было темно, поэтому ты мало что помнишь, но этой ночью кто-то оседлал тебя… И вы оба хорошо провели время!</value>
+    <value>Наконец к тебе пришла куртизанка. Думаю, ты знаешь, что с ней делать. А дальнейшее не публикуем.</value>
+  </string>
+  <string key="DetectiveCaught">
+    <value>Ты поймал кого-то, сующего свой нос в чужие дела. Это {0}! Он детектив!</value>
+  </string>
+  <string key="DetectiveSnoop">
+    <value>Твои выслеживания показали, что {0} — это {1}.</value>
+  </string>
+  <string key="HarlotShot">
+    <value>Куртизанка узнала слишком много грязных фантазий аптекаря {0}. Ужаснувшись утром, он добавил ей в кофе каплю яда. {1} мёртв(а)!</value>
+  </string>
+  <string key="DefaultShot">
+    <value>Вдруг {1} резко схватился за сердце и с хрипом повалился на землю. Спасти не удалось, смерть наступила быстро. Аптекарь {0} явно хорошо знает своё дело и точно рассчитал дозу яда. {2}.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Оставшиеся игроки, их роли и команды:</value>
+  </string>
+  <string key="ZombieVotedConvert">
+    <value>{0} хочет продать ёжиков и приобщить к бизнесу {1}.</value>
+  </string>
+  <string key="CultConvertZombieHunter">
+    <value>{0} был отправлен рассказывать о специальных предложениях {1}… Но тот вызвал ОБЭП, и {0} схватили и посадили в тюрьму!</value>
+  </string>
+  <string key="ZombieHunterKilledCultVisit">
+    <value>{0} очень хотел рассказать тебе о вложении средств в выращивание ксеноморфных ежей, но тут нагрянул ОБЭП, и {0} увели… Осталось {1}!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Ми-ми-ми! Эти ксеноморфные ёжики такие милые! Все должны узнать о них! А заодно о специальных предложениях ООО «Рога и иголки» по их выращиванию!</value>
+  </string>
+  <string key="CultTeam">
+    <value>Опытные коучи с огромным потенциалом, решающие массу различных кейсов в секунду и представляющие новейшую ультрасовременную социально ориентированную нанокомпанию ООО «Рога и иголки»: {0}.</value>
+  </string>
+  <string key="CultJoin">
+    <value>{0} купил себе ксеноморфного ёжика и хочет всем об этом рассказать!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>Ну что за люди пошли! {0} отправился к {1} рассказывать о высоких технологиях и преимуществах разведения ксеноморфных ежей, но того не оказалось дома!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>Ты отправился проверить {0}, но он оказался мёртвым!</value>
+  </string>
+  <string key="HunterFindZombie">
+    <value>Ты зашел к {0}, чтобы пригласить его(её) на дружескую встречу. Но вряд ли там будут рады тому, кто как попугай твердит лишь о ксеноморфных ёжиках. Пришлось вызвать ОБЭП, и {0} увезли для допроса.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Ты пришел к {0} за брошюрой по выращиванию ксеноморфных ёжиков. Сосед перерыл кипу бумаг, но так и не нашел в своём столе ничего подобного.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>Наставник игрока {0} умер, и он пришёл просить о помощи. Теперь он один из нас.</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0} умер! Мафия приняла тебя в свои ряды. Твоя новая семья: {1}.</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Живые игроки</value>
+  </string>
+  <string key="MasonEaten">
+    <value>Преступники искали большие деньги в доме {0}, не зная, что он(а) хранит их в виде ценных бумаг. Подвергнутое пыткам тело акционера найдено привязанным к стулу в собственной спальне. Под подозрением — куртизанка!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>Акционеры ОАО «Иголки и рога»: {0}.</value>
+  </string>
+  <string key="CultTargetDead">
+    <value>Отправив своего человека к {0}, вы опоздали: мафия нашла его раньше вас.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>Два выстрела в живот {0} — и вот он валяется на полу в луже крови. Работа выполнена — можно уходить. Но, возвращаясь к дону, ты услышал вой сирен — скорая мчит его в больницу. Похоже, {0} уцелел.</value>
+  </string>
+  <string key="CultUnableToConvert">
+    <value>{0} пришел к {1} чтобы рассказывать о достижениях компании, но, к сожалению, у того не хватило средств, чтобы купить себе ёжика.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>Ты проскользнул(а) домой к {0}, чтобы немного повеселиться… но на тебя упала коробка с рекламными листовками про ксеноморфных ёжиков, и ты в ужасе убежал(а) восвояси.</value>
+    <value>Ты отправился к {0}, чтобы приятно провести время за фильмами и чаем. После хорошей ночи, выходя из дома, ты заметил(а) маленькие иголки на полу.</value>
+  </string>
+  <string key="Was">
+    <value>был</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>{0} не вышел на работу.</value>
+    <value>Собравшись по утру, горожане обнаружили труп {0}… Этот человек погиб по непонятным причинам.</value>
+  </string>
+  <string key="MasonConverted">
+    <value>Странно… {0} не появился(лась) на общем собрании акционеров этим утром… O.o</value>
+  </string>
+  <string key="IsDead">
+    <value>покинул нас</value>
+  </string>
+  <string key="TimesUp">
+    <value>Время вышло!</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Ты был поражён любовью. {0} навсегда в твоей памяти, и любовь никогда не погаснет в твоём сердце… Ваша цель — выжить! Если один из вас погибнет или будет арестован — другой последует за ним.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Жители города решили отправить тебя за решетку! Это твой последний шанс. Выбери, в кого ты выстрелишь, пока тебя не схватили копы.</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} тянется за своим пистолетом в тот самый момент, когда его окружают полицейские. Но один из копов успевает выбить оружие. Параноику заламывают руки и запихивают его в полицейскую машину…</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0}, прищурившись, смотрит на людей, пожелавших ему зла. Он достает оружие, но никак не может решить, кому подарить последнюю пулю. В ужасе он роняет пистолет и в ту же секунду оказывается схвачен копами…</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>Под окнами квартиры параноика квартиры стоят три патрульные машины. Полицейские просят его выйти и добровольно сдаться. На тротуаре топчется толпа зевак. {0} знаком с одним из них и понимает, что без его помощи в этом деле не обошлось. Человек на балконе достает пистолет и стреляет в {1}. Меткий выстрел одного из полицейских забирает жизнь параноика. Однако {1} тоже успел получить свои 9 граммов свинца. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Твоя жизнь в большой опасности. Решайся на отчаянный шаг, пока ещё живой.</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>Ну что же ты, {0}, так сплоховал(а)? Ведь раньше ты ни на секунду не оставлял(а) своё оружие. О, вижу по твоей идеальной прическе — ты ждал кого-то в гости. Что же, смерть пришла на пару минут раньше…</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>{0} пытается нажать на курок. Но что же это? Осечка! Он(а) тратит последние секунды своей жизни на то, чтобы перезарядить оружие. Но дальше приходит лишь темнота…</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>Параноик {0} выхватывает пистолет и делает выстрел в {1}, который(ая) с хрипом падает, так и не успев понять, что же произошло. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>Мафия хотела убить параноика, и бдительность бедняги его всё же не подвела. Один из мафии — {0} — умер.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>Мафия попыталась устранить параноика, но тот успел вытащить ствол и пристрелить преступника {0}!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Все члены клана умеют пользоваться огнестрельным оружием. Однако не стоит недооценивать того, кто знает толк в ножах. Горло {0}, правой руки дона, поддалось, ножу как сливочное масло. Никогда не поворачивайтесь к маньяку спиной!</value>
+    <value>Говорят, этот добрейшей души человек добровольно впустил в своё жилище мафиози и даже предложил ему чашечку чаю с молоком. Однако тихий разговор закончился предсмертными конвульсиями: в груди беспечного члена мафии — {0} — торчат кухонные ножницы.</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>Как же хорошо сидеть вечерком в любимом кресле, укрыв ноги пледом и читая Шекспира. Для {0} это был как раз один из подобных вечеров. В тот момент он(а) даже не подозревал, что Маньяк уже приготовил верёвки, кляп и чемоданчик со столярными инструментами… Найденное утром изувеченное тело шокировало даже бывалых работников полиции… {1}.</value>
+    <value>Не стоит открывать дверь незнакомцам. Тем более не стоит приглашать их в свою квартиру. Свою ошибку {0} осознал далеко не сразу. Час приятнейшей беседы о книгах за чашкой кофе с интересным, начитанным человеком пролетел, как одно мгновение. «Мой любимый герой — Раскольников», — сказал гость и достал из чемоданчика топор… {1}.</value>
+    <value>{0} в тот вечер ждал(а) в гости коллег, чтобы отметить свой день рождения. Он(а) открыл(а) дверь, даже не спросив, кто пришёл. За букетом из белых роз пряталась сама смерть. Маньяк решил присоединиться к празднованию. {1}.</value>
+    <value>«Вы {0}? Для вас ценная бандероль!» — послышался голос за дверью. Маньяк хорошо подготовился к встрече — на нем была надета фуражка почтальона, а в руках он держал запечатанную коробку. Попасть в квартиру не составило большого труда. Смерть не требует подписи о вручении. {1}.</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>Ты направился в дом {0}, но увидел за окном у горожанина доктора. Хм-м… Такие свидетели тебе не нужны. Эта ночь прошла для тебя впустую…</value>
+  </string>
+  <string key="CultConvertHunter">
+    <value>Вдохновлённый тренингами успешных продаж, {0} показал образцы ксеноморфных ёжиков {1}, не зная, что у того аллергия на животных с колючками. Испуганные громким кашлем соседи немедленно прибежали и увидели, как {0} пытается сбежать под шумок. {0} забрал ОБЭП…</value>
+    <value>В дом к {1} нагрянул ОБЭП. Похоже, для {0} единственное выгодное предложение — это дать признательные показания!</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>«Посмотрите же, до чего милый ёжик. Вы любите животных?» — спросил {0} у жителя 113-й квартиры {1}. «Посмотрите же, до чего милый ножик. Вы любите стальные предметы?» — ответил ему хозяин комнаты.\n{0} нашли мёртвым в подвале этого дома. На остывающем теле пригрелись ёжики…</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Ты пришел, чтобы вылечить простого горожанина, а он оказался маньяком. Твои кишки уже маринуются в баночке…</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>Ты давно переписывался с {0}, считая собеседника приятным и образованным человеком. Настал долгожданный день встречи. Но вместо чая с имбирным печеньем и прослушивания пластинок тебе пришлось познать остроту всех инструментов в обитой клеёнкой комнате…</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Знакомое многим состоятельным гражданам тело куртизанки {0} было найдено на берегу реки завернутым в кровавую простынь. А ведь бедняге всего лишь хотелось начать новую жизнь! {0} погиб.</value>
+  </string>
+  <string key="DGToMason">
+    <value>{0} разбогател и купил себе часть акций. С этого дня он тоже будет посещать собрания акционеров.</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{0} погиб, переписав на тебя часть своих акций. Другие акционеры, если такие есть: {1}.</value>
+  </string>
+  <string key="DGToCult">
+    <value>{0}, актёр, искренне полюбил маленьких ёжиков. Отныне он(а) будет помогать тебе продвигать продукцию в массы.</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} перед смертью попросил присмотреть за его ёжиками. Теперь твой долг — ухаживать за ними! Другие любители колючих животных, если есть: {1}.</value>
+  </string>
+  <string key="DGToWolf">
+    <value>{0}, актёр, решил сыграть в игру с плохими парнями на стороне этих парней. Теперь он в семье.</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} погиб, попросив тебя передать кое-какие бумаги мафии. Теперь ты повязан с их грязными делами. Другие члены семьи, если есть: {1}.</value>
+  </string>
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} погиб, и вы с этого дня Крёстный отец!. Ваша семья (если мафия ещё осталась): {1}.</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} погиб, и вы стали Новобранцем в рядах мафии. Ваша семья (если мафия ещё осталась): {1}.</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>Ты узнал, что у тебя есть довольно близкий родственник среди мафии. Однако твой наставник запретил тебе контактировать с семьёй, и ты сможешь осуществить это только после его смерти. Твой наставник: {0}.</value>
+  </string>
+  <string key="LoverDied">
+    <value>«Без тебя, {0}, мне не мил белый свет! Я последую за тобой куда угодно — от тюрьмы до самой преисподней! — кричит {1} и рвёт на себе волосы. — Я клянусь тебе, мой самый родной человек, что всегда буду рядом», — говорит {1}. {2}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>Беспечность никого не доводила до добра. Стоило намного раньше обратить внимание на странное поведение соседа и обратиться в полицию. Что ж, сейчас для этого уже не осталось времени. Телефонный кабель перерезан, окна наглухо закрыты. {0} смотрит на {1}, добродушно улыбается и ставит чемоданчик с инструментами на край стола. {1} теряет сознание от ужаса, и это лучшее, что он может сделать в данный момент. Осталось только надеяться, что смерть будет милосердной…</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>Знаю, знаю, вам было очень интересно, сможет ли Маньяк одолеть Параноика. Дело было так. {0} воткнул шило в спину {1}. {1} всё же успел достать пистолет и выстрелить в {0}. И {0}, и {1} погибли, не дождавшись помощи. Улицы города зловеще пусты. Победителя нет…</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Кто-то попытался продать тебе чудесного ёжика, но у тебя не хватило денег для приобретения этого милашки!</value>
+  </string>
+  <string key="RoleModelChosen">
+    <value>Вы не успели сделать выбор, так что КГБ сделал выбор за вас: {0}.</value>
+  </string>
+  <string key="IdleCount">
+    <value>Игрок {0} был устранён КГБ за отсутствие голосов на вечерних голосованиях {1} раз(а) за последние 24 часа.</value>
+    <value>КГБ устранили {0} {1} раз(а) за последние 24 часа.</value>
+    <value>{1}. Именно это число обозначает количество смертей игрока {0} за отсутствие на голосованиях за последние 24 часа.</value>
+  </string>
+  <string key="EndTime">
+    <value>Вот столько времени вы потратили на игру: {0}.</value>
+  </string>
+  <string key="Day">
+    <value>День №{0}.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Как только горожане решили судить {0}, он(а) незаметно протянул(а) пухлую пачку хрустящих купюр помощнику комиссара. «Милый человек, ну что же вы сразу не сказали, что у вас железное алиби? Конечно же, на вас нет никакого греха. Вы полностью свободны», — пожал ему руку сотрудник полиции и отпустил.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Вы долго шпионили за {0}, но выяснили лишь одно — он и не комиссар, и не состоит в мафии.</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} шагнул вперёд и представил официальную печать мэра, обьявив себя таковым. Отныне голос, который отдал {0}, расценивается за два.</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>«Газеты! Свежие газеты! — кричал мальчишка на улице. — Скандал! {0} заблокировал банковские счета, принадлежащие уважаемым людям!» (Этой ночью мафия будет решать финансовые вопросы.)</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Как только мафия решила накормить {0} свинцом, {1}, Крестный отец, притормозил своих бравых ребят. {1} объяснил, почему {0} принесет семье гораздо больше пользы, будучи живым, и клан решил дать {0} шанс принять это предложение.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Крёстный отец сделал вам предложение, от которого невозможно отказаться, и сегодня вечером он ждёт вас с ответом.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Этим вечером вы пришли к Крёстному отцу, чтобы сообщить, что вы принимаете его предложение и просите его о дружбе. Отныне вы в семье.</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Команда горожан</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Команда нейтралов</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Семья</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Команда маньяков</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Рабы команды ежей</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Команда кредитных мошенников</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Похоже, что {0}, банкир, зря гулял по улицам без охраны. Всю ночь он предлагал маньяку выкуп за свою жизнь, но до утра так и не дотянул…</value>
+  </string>
+  <string key="ZombieKilled">
+    <value>{0} был закрыт в клетке с голодными ксеноморфными ёжиками и съеден ими заживо. У маньяка очень богатая фантазия!</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Утром горожане с ужасом обнаружили расчленённого купидона {0}. Как странно, где же его сердце?..</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Очередь из горожан стоит в кабинет к {0}, чтоб поставить печать на документах, но тот что-то больно долго не принимает никого. Один из посетителей осторожно приоткрыл дверь и ахнул —  чиновник {0} был задушен прямо на рабочем месте. Полиция считает погибшего жертвой рук маньяка.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>Сегодня к доктору {0} на приём пришел маньяк. Маньяк поставил врачу диагноз и провёл операцию: ампутация конечностей, удаление позвоночника.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Вечером к аптекарю {0} зашел таинственный покупатель и попытался приобрести хлороформ и набор игл. Получив необходимое, маньяк отблагодарил аптекаря скальпелем под ребро.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Утренние новости! Мэр {0} зарезан в собственном кабинете! Маньяк отомстил мэру, когда-то отказавшемуся выдать квартиру его престарелой матери.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Коррупционер {0} пропал без следа. Полиция разрабатывает версию о причастности маньяка к этому таинственному исчезновению.</value>
+    <value>Коррупционер застигнут врасплох. {0} погиб ужасной смертью от рук маньяка. Весь город боится выходить на улицу вечерами!</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Маньяку каким-то образом удалось напасть на комиссара {0}. Главный защитник горожан погиб. Когда-нибудь в честь тебя, {0}, назовут одну из городских улиц. Спи с миром.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Дон послал своих людей на встречу со шпионом. Однако ребята что-то напутали и привезли шпиона {0} к дону уже мёртвым…</value>
+    <value>«Эй, ребят, вы чего? Я же вам дело предлагаю. Отведите меня к дону, я буду разговаривать только с ним!» — убеждал шпион {0}, однако бравые ребята из мафии решили закончить эту встречу на месте. Шпион мертв.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>Иногда и мафия ошибается. {0}, внебрачный сын дона, погиб от случайной пули при разборках на улицах города. Дон вне себя от горя…</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+    <value>Проснувшись утром, горожане узнали, что {0}, работник ОБЭП, трагически погиб. Никогда не спрашивайте у маньяка про ёжиков.</value>
+    <value>Тело {0}, работника ОБЭП, было найдено в городском парке. Не стоило заходить к маньяку в гости и искать у него ксеноморфных ёжиков.</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>На этот раз мафиози передумали покупать маленького ёжика, а забрали его у {0} насильно. Фанат ежей бросил любимое дело и переехал в соседний город.</value>
+    <value>Отправляясь продавать ёжиков, {0} столкнулся в узком переулке с мафией!</value>
+    <value>Отправляясь продавать ёжиков, {0} столкнулся носом к носу с мафией. Мафиози убили фаната, забрав себе всю имевшуюся у него наличность и двух демонстрационных ежей.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Zombies convert the SK-->
+    <value>Радуясь продаже очередного ксеноморфного ёжика, фанаты ежей совершили ошибку: {0}, самый большой любитель ёжиков, талантливый продавец, коуч и бизнес-тренер, пригласил на собеседование человека, фанатеющего вовсе не от миленьких колючих созданий. Говорят, маньяк прошел собеседование и даже купил ёжика, прежде чем убить наставника…</value>
+    <value>Фанаты ежей ежедневно засовывали пачки листовок в почтовый ящик маньяка. Конечно, о том, что этот горожанин маньяк, они даже не подозревали. Психопат встретил одного из фанатов и пригласил к себе на беседу о ёжиках. {0} мёртв.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- used when GA guards SK -->
+    <value>Вечером {0} зашел к соседу за сахаром. Руки соседа были в крови. Доктор немедленно предложил свою помощь и переступил порог чужой квартиры. Больше {0} никто не видел живым…</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <!-- used when GA guards a wolf -->
+    <value>{0}, доктор, увидел на улице города окровавленного человека. Он подбежал к нему, чтобы оказать первую помощь. Но раненому мафиози не нужны свидетели — в этот момент жизнь врача оборвалась.</value>
+  </string>
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Зная, что параноик {0} слишком много знает, член клана {1} попытался убить его, но реакция не подвела {0}.</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Зная, что параноик {0} никогда не ходит без пушки, мафиози {1} выбрал время утреннего чая, когда {0} будет наиболее уязвим. Маленькая девочка в форме скаута с пачкой печенья в руках постучалась в дверь, предлагая купить сладости. Параноик убрал пушку, но, открыв дверь, вместо печенья получил пулю промеж глаз.</value>
+  </string>
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>При свете дня встретились {1} и {0}. Увидев странно пищащих ёжиков в руках у {0}, {1} подошел к нему и поговорил по душам. «Спасибо, дружище. Я отпущу всех своих ёжиков в лес. Их нельзя держать в клетках! И уж тем более зарабатывать на этом деньги», — ответил бывший фанат ежей и пошел писать заявление о ликвидации ООО «Рога и иголки».</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>О нет! {0} был важной шишкой! Полиция подняла на уши весь город, и мафии в эту ночь опасно высовываться за {1}…</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>Куртизанка {0} пришла в квартиру {1}, но какой-то незнакомец уже лежит в постели с {1}! {0} решила не мешать и скорее уйти, однако сделать этого не удалось — Маньяк захотел, чтобы Куртизанка присоединилась к ним и стала новой участницей его смертельной игры!</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>Фанаты ежей отправили {0} продать милого ёжика {1}, однако мафиози не растрогались мимимишностью колючего зверька. {0} сегодня не повезло — мафия до отвала накормила его свинцом.</value>
+  </string>
+  <string key="ApprenticeSeerEaten">
+    <value>Мафия давно точила зуб на сержанта {0}. Два выстрела в спину — и блестящая карьера в полиции закончена навсегда.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} игроков проголосовало, всего {1}.</value>
+  </string>
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>{0}, должник, очень обрадовался тому, что мафия мертва. «Теперь и деньги не придется никому отдавать», — радостно подумал {0}. Однако его радость была недолгой. Полицейские из соседнего города, где {0} успел набрать долгов, вот-вот заберут его прямо из собственной квартиры. В тюрьме окажется гораздо хуже, чем он себе представлял. А пока он открывает шампанское, даже не подозревая, что проиграл…</value>
+    <value>{0} просыпается с мыслью о том, что мафии пришел конец. {0} хочет уехать и начать новую жизнь без долгов. {0} даже не подозревает, что за те деньги, которые он задолжал мафии, на него объявлена охота, и в каждом из крупных городов уже есть желающие получить голову должника себе. Он проиграл…</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} понимает: все пароли раскрыты, все явки провалены. Мафия мертва. {0} встаёт и собирает свой чемодан, прежде чем покинуть город навсегда. Слёзы наворачиваются на глаза, когда {0} вспоминает, как же близко он(а) и мафия были к победе. Единственный выход для шпиона — исчезнуть навсегда… {0} покидает квартиру лишь с небольшим чемоданом. Пустые стекла домов молчаливо глядят ему вслед.</value>
+    <value>Несмотря на все усилия {0}, друзья {0} — мафиози — давно мертвы… Шпион набирает несколько номеров подряд, но на том конце провода не отвечают. {0} складывает рубашки в небольшой чемоданчик и покидает квартиру практически налегке. Наверняка в других местах тоже есть мафия. И она нуждается в помощи таких, как он…</value>
+  </string>
+  <string key="Skip">
+    <value>Пропуск</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>Не стоит вмешиваться в разборки, когда они идут полным ходом!</value>
+    <value>Пока ты заряжал свою пушку — разборки прошли мимо тебя. Ты опоздал(а)…</value>
+  </string>
+  <string key="StartPM" deprecated="true">
+    <value>Сперва нужно получить разрешение у КГБ, написав мне (@werewolfbot)!</value>
+  </string>
+  <string key="PMTrue" deprecated="true">
+    <value>Теперь ты на крючке у КГБ и можешь получать от них послания и играть.</value>
+  </string>
+</strings>

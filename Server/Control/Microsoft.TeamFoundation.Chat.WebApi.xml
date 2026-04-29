@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.TeamFoundation.Chat.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClient.JoinRoomAsync(System.Int32,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Join a team room
+            </summary>
+            <param name="roomIdentifier">Identifier of the room</param>
+            <param name="userId">Identifier of the user</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.DeleteMessageAsync(System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Delete a given chat message
+            </summary>
+            <param name="roomId">Id of the room</param>
+            <param name="messageId">Id of the message to delete</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.GetChatRoomMessagesAsync(System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Retrieve a listing of all chat messages in a given room
+            </summary>
+            <param name="roomId">Id of the room</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.GetChatRoomMessageByIdAsync(System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Retrieve information on a single chat message
+            </summary>
+            <param name="roomId">Id of the room</param>
+            <param name="messageId">Id of the message to retrieve</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.SendMessageToRoomAsync(Microsoft.TeamFoundation.Chat.WebApi.MessageData,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Post message to a room
+            </summary>
+            <param name="messageUpdate">Content of the message to post</param>
+            <param name="roomId">Id of the room</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.UpdateChatMessageAsync(Microsoft.TeamFoundation.Chat.WebApi.MessageData,System.Int32,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Update a given chat message
+            </summary>
+            <param name="messageUpdate">New message content</param>
+            <param name="roomId">Id of the room</param>
+            <param name="messageId">Id of the message</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.CreateChatRoomAsync(Microsoft.TeamFoundation.Chat.WebApi.RoomData,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Create a single chat room
+            </summary>
+            <param name="roomUpdate">Information to create the room</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.DeleteChatRoomAsync(System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Delete a given chat room
+            </summary>
+            <param name="roomId">Id of the room</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.GetRoomsAsync(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.GetChatRoomByIdAsync(System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Retrieve information on a single chat room
+            </summary>
+            <param name="roomId">Id of the room to retrieve</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.UpdateChatRoomAsync(Microsoft.TeamFoundation.Chat.WebApi.RoomData,System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Update information on a single chat room
+            </summary>
+            <param name="roomUpdate">Room information</param>
+            <param name="roomId">Id of the room to update</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.GetChatRoomUsersAsync(System.Int32,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Retrieve a listing of all chat users
+            </summary>
+            <param name="roomId">Id of the room</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.GetChatRoomUserByIdAsync(System.Int32,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Retrieve information on a single chat user
+            </summary>
+            <param name="roomId">Id of the room</param>
+            <param name="userId">TfId of the user</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.JoinRoomAsync(Microsoft.TeamFoundation.Chat.WebApi.UserData,System.Int32,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Joins a user to a given room
+            </summary>
+            <param name="userUpdate">user model information</param>
+            <param name="roomId">Id of the room</param>
+            <param name="userId">TfId of the user</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Chat.WebApi.ChatHttpClientBase.LeaveRoomAsync(System.Int32,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Leaves a user from a given room
+            </summary>
+            <param name="roomId">Id of the room</param>
+            <param name="userId">TfId of the user</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Message.Id">
+            <summary>
+            Message Id
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Message.Content">
+            <summary>
+            Message content
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Message.MessageType">
+            <summary>
+            Message Type, currently only plain text is supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Message.PostedTime">
+            <summary>
+            Message posted time
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Message.PostedRoomId">
+            <summary>
+            Id of the room in which message is posted
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Message.PostedBy">
+            <summary>
+            User who posted the message. May be null if message came from a system account
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Chat.WebApi.MessageType.Normal">
+            <summary>
+            A normal message that is sent by a user in plain text
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Chat.WebApi.MessageType.System">
+            <summary>
+            A system message like User Entered and User Left Room
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Chat.WebApi.MessageType.Notification">
+            <summary>
+            A notification from a TFS event
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Chat.WebApi.MessageType.Error">
+            <summary>
+            An error messsage.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Room.Id">
+            <summary>
+            Id of the room
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Room.Name">
+            <summary>
+            Name of the room
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Room.Description">
+            <summary>
+            Description of the room
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Room.LastActivity">
+            <summary>
+            Last activity in the room
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Room.CreatedBy">
+            <summary>
+            Room creator user
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Room.CreatedDate">
+            <summary>
+            Room creation date
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Room.HasAdminPermissions">
+            <summary>
+            Admin permissions for current user
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.Room.HasReadWritePermissions">
+            <summary>
+            Read/Write permissions for current user
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.RoomData.Name">
+            <summary>
+            Name of the room
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.RoomData.Description">
+            <summary>
+            Description of the room
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.User.RoomId">
+            <summary>
+            Id of the Room
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.User.UserRef">
+            <summary>
+            The shallow reference for the user
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.User.LastActivity">
+            <summary>
+            Last activity time
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.User.JoinedDate">
+            <summary>
+            Time when user joined the room
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Chat.WebApi.User.IsOnline">
+            <summary>
+            A value indicating whether the user is online or not.
+            </summary>
+        </member>
+    </members>
+</doc>

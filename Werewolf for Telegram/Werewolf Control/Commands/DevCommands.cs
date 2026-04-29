@@ -241,6 +241,43 @@ namespace Werewolf_Control
             game?.Kill();
         }
 
+        [Attributes.Command(Trigger = "adddummy", DevOnly = true, InGroupOnly = true)]
+        public static void AddDummy(Update u, string[] args)
+        {
+#if !DEBUG
+            var game = Bot.GetGroupNodeAndGame(u.Message.Chat.Id);
+            if (game == null)
+            {
+                Send("No game is currently waiting in this group.", u.Message.Chat.Id);
+                return;
+            }
+
+            if (game.State != GameState.Joining)
+            {
+                Send("Dummy players can only be added while the game is still joining.", u.Message.Chat.Id);
+                return;
+            }
+
+            var count = 0;
+            if (args.Length > 1)
+                int.TryParse(args[1], out count);
+            if (count <= 0)
+                count = Math.Max(0, 5 - game.PlayerCount);
+            count = Math.Min(count, Math.Max(0, Settings.MaxPlayers - game.PlayerCount));
+
+            if (count == 0)
+            {
+                Send("No dummy players were added; the game is already at the relevant player limit.", u.Message.Chat.Id);
+                return;
+            }
+
+            var added = game.AddDummyPlayers(count);
+            Send($"Added {added} dummy player(s).", u.Message.Chat.Id);
+#else
+            Send("Dummy players are only available in DEBUG builds.", u.Message.Chat.Id);
+#endif
+        }
+
         [Attributes.Command(Trigger = "stopnode", GlobalAdminOnly = true)]
         public static void StopNode(Update u, string[] args)
         {

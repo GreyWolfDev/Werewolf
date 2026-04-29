@@ -1,0 +1,2126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+  <language name="Trempats" base="Català" variant="Català Trempats" owner="@TrempatsUPF" code="ca"/>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} ha començat un nou tram de diades! Uneix-t'hi per divertir-te una estona... i probablement ser llepat 😛</value>
+    <value>{0} ha començat un tram de diades nou! Uneix-t'hi perquè et llepin!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>{0} ha començat un nou tram de diades caòtic! Uneix-t'hi per divertir-te una estona... i probablement ser llepat 😛</value>
+    <value>{0} ha començat un nou tram de diades caòtic nova! Uneix-t'hi perquè et llepin!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Resta 1 minut per unir-s'hi.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>Resten {0} segons per unir-s'hi.</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>No hi ha prou trempis, es cancel·la el tram de diades! Bomba de fum!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Comença el tram de diades, espereu mentre s'assignen els rols i s'actualitza la base de dades.</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, canvia de nom per unir-t'hi.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>S'ha arribat al nombre màxim de trempis! No queda ni un tap per omplir!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} s'ha unit al tram de diades. {1} trempis, {2} mínim, {3} màxim.</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0} Prem el botó Inicia de sota o obre'm una conversa a {1}, per poder enviar-te un missatge privat amb el teu rol. No podràs unir-te al tram de diades fins que no ho facis.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>No pots fugir! T'HAN LLEPAT! Treu-te la faixa ja... renoi!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>{0} ha fet bomba de fum! Fins dilluns!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} era {1}.</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>Trempis restants: {0}.</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Sembla que no estàs preparat per aquest tram...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>No s'ha trobat cap trempi amb aquest nom!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} ha votat llepar a {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} ha votat fer-li un toc de castells a {1}.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} no ha anat a dos assajos consecutius. La colla ho ha considerat un crim terrible, i {0} queda expulsat/da del tram de diades. HashtagEspavila! {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Tu, trempazu!!! Ara ets veterà/na...</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Elecció acceptada.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\El primer vent 💨 és {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} era primer vent. Com a segon vent, ara et converteixes en el primer vent 💨.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} era segon vent, i ara ha passat a ocupar l'espai de {1} com a primer vent 💨.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Has vist que {0} és {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Qui es mereix un toc de castells?</value>
+  </string>
+  <string key="AskDetect">
+    <value>A qui vols investigar?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>A qui vols anular-li la matrícula? Mesures disciplinàries restants: {0}.</value>
+  </string>
+  <string key="AskVisit">
+    <value>A qui vols pescar avui?</value>
+  </string>
+  <string key="AskSee">
+    <value>De qui vols endevinar el rol?</value>
+  </string>
+  <string key="AskGuard">
+    <value>A qui vols donar pit?</value>
+  </string>
+  <string key="AskEat">
+    <value>A qui vols llepar?</value>
+  </string>
+  <string key="AskHunt">
+    <value>A quina canalla vols posar a terces?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Qui serà el teu padrí/na?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Qui vols convertir en kanalla?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Assegura't de discutir-ho amb {0}.</value>
+  </string>
+  <string key="And">
+    <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> i </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Ets el Coloniavirus 😷. Ara mateix ets avellana, però si els veterans/nes decideixen llepar-te, et convertiràs en un veterà/na.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Ets part de Comi Altos Vuelos 🕵✈️. Durant les diades, pots triar un jugador per revelar-ne el rol. Però si ho fas, pot ser que els veterans/es descobreixin quin és el teu rol! (40% de probabilitats)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>L'enhorabona! Ets part de la Comi Beguda 🍻! Si els veterans/es et llepen tens tant alchol en sang que s'emborratxaran de cop. Per tant, a la següent diada no podràn llepar a ningú.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Ets contrafort 💪. A cada diada pots donar pit a un trempi (salvar-lo). Però si dones pit a un veterà, tens un 50% de probabilitats de que et llepi.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Ets la Queralt del SACU 🔫. Tens dues bales. Durant la setmana, pots triar disparar a un trempi. Tothom sentirà els trets, i sabrà que ets del SACU (i no un/a veterà/na).</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Ei, trapella! Ets el Pescanova 💋. Durant l'animació de diada, pots triar visitar un altre trempi, per verificar que no és un veterà/na. Però si visites un veterà/na, o visites algú que està sent llepat per un veterà/na, seràs llepat. Però si surts de pesca, i un veterà/na et busca per llepar-te, no et trobarà i sobreviuràs.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Trempazu 🥸! Per ara, ets avellana, però quan morin tots els veterans i veteranes, els trairàs i et convertiràs en veterà/na. Si el vent endevina qui ets, pot ser que t'identifiqui com a veterà/na o pot ser que no.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>ETS VETERÀ/NA 🧍!! (bé per tu). Cada diada pots triar llepar algú.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value>Ets primer vent 💨. Cada diada pots triar endevinar el rol d'un trempi.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>Ets una miserable avellana 🌰, condemnat a passar la resta del tram de diades vestit de marró sense poder fer res en especial, simplement pot ser que et vinguin a llepar.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value>Ets un SAD Canguret 🦘. Si et fan un toc de castells, guanyes automàticament!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>Ets enxaneta 🙋! Tria un jugador perquè sigui el teu padrí. Si el teu padrí desapareix del tram de diades, et convertiràs en VETERÀ/NA.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>Ets el Fempinyapp 🍍, sabràs qui és el vent en tot moment. És la teva única funció.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>Ets el segon vent 💨💨. Si el vent mor, ocuparàs el seu lloc com a primer vent.</value>
+  </string>
+  <string key="RoleInfoZombie" >
+    <value>Ets kanalla 👤. Cada diada pots triar un jugador per convertir-lo en kanalla. Si tots els jugadors vius al final del tram de diades són kanalla, guanyen.</value>
+  </string>
+  <string key="RoleInfoZombieHunter" >
+    <value>Ets cap de troncs 🌴, i intentes evitar que la kanalla de la colla converteixi a tothom! Cada diada pots triar un trempi per posar-lo al tronc. Si és kanalla, es converteix en tronc, peta i se'n va de la diada amb ambulància (es queda sense tram). Si la kanalla intenta convertir-te, el membre més recent de la kanalla és el que es queda sense tram.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>S'acosta una nova diada, i els avellanes es reuneixen per decidir qui es mereix un toc de castells aquesta setmana...\nTeniu {0} segons per votar!</value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value>Bona ressaca. És el dia següent de la diada i teniu una setmana fins la següent. Teniu {0} segons per fer-vos acusacions, defensar-vos o simplement parlar 💬. </value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value>Ha començat una nova diada. Tothom a plaça, ansiosos i ansioses per un altre diadot. Trempis especials: teniu {0} segons per fer malifetes!😈</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>Les avellanes han dit qui pensen que es mereix un toc de castells, entre dubtes i sospites. {0} ha quedat KO per tot el tram de diades. {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value>Incapaços de prendre una decisió sobre qui es mereix el toc de castells, tots els trempis van a plaça per començar una nova diada...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>Alguna cosa fa mala espina, no ha votat ningú! Aquesta nit els trempis no faran un toc de castells a ningú (Cobardes 🐔)...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value>Les avellanes es reuneixen al matí, però no veuen {0}. S'acosten a casa seva, i troben {0} amb tot de babes per la cara i amb una vella placa d'Altos Vuelos clavada enmig del coll.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value>Arriba l'alba, i per a la sorpresa de tothom, lligat a un tronc hi apareix {0}, el contrafort 💪, llepat.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value>Quan els trempis surten de casa, troben una caixa on s'hi guarden els altaveus, l'obren, i hi troben {0}, tot llepat/da de dalt a baix. Ha estat víctima de l'atac d'uns veterans i veteranes. Heu perdut la Queralt del SACU 🔫.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value>Les avellanes es desperten al matí, i troben les restes babejades de {0} sobre una taula. El vent 💨 està KO per tot el tram de diades.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value>Tothom es desperta amb l'olor d'alcohol i babes... la barra està destruïda! Després de netejar-ne l'alcohol, hi troben les restes de {0}, destrossades. La Comi Beguda 🍻 no estarà disponible en tot el tram.</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value>El sol surt, i els avellanes troben el cos de {0} immòbil sobre una taula ... es pensava que us tenia a tots controlats però no hi veu tant com els vents. QUINA AGULLA 💉 MÉS EMPANADA!</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Quan tots els trempis es lleven, senten una pudor horrible. Segueixen l'olor i troben {0} llepat a la zona de motxilles. MLEM, MLEM, MELEM! (https://www.youtube.com/watch?v=OtiKq69xPV8)\n{1}</value>
+  </string>
+  <string key="HunterKilledZombie">
+    <!-- 0 - victim name -->
+    <value>Uns forts crits provenen de la casa de {0}... les avellanes la inspeccionen i hi troben a la persona en qüestió magullada al llit. El cap de troncs 🌴 ha posat a una persona de kanalla👤 de terces i aquesta ha petat i s'ha hagut d'anar de la diada en ambulància. Queda out de tot el tram de diades!</value>
+  </string>
+  <string key="NoAttack" >
+    <value>Les avellanes es reuneixen el dilluns següent a la Gutemberg, amb sospirs d'alleujament. Sembla que a aquesta diada no hi ha hagut cap persona llepada 👅.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>Els veterans/es t'han llepat. Com que estaves malalt del coloniavirus, ara ells i elles també en tenen i t'has convertit en veterà/na! 🧍</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value>Heu llepat a {0}... però tenia el Coloniavirus 😷, us ha contagiat i s'ha convertit en veterà/na! Enhorabona, teniu una nova persona a l'equip!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value>Oh, no! Els veterans i veteranes t'han llepat. MLEM, MLEM, MLEM! (https://www.youtube.com/watch?v=OtiKq69xPV8)</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value>Oh, no! {0} era de Comi Beguda 🍻! Ara aneu com una sopa, i no podreu llepar a la propera diada...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value>Has donat pit a un/a veterà/na i t'ha llepat!</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value>Has salvat la vida de {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value>Ningú no ha intentant llepar {0}, així que no has fet res útil.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>Has intentat donar pit a {0}, però no era a la diada!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value>A l'animació, un/a contrafort et donava pit i ha lluitat per evitar que et llepéssin!</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value>El Pescanova ha triat una mala nit per no lligar amb algú. Els i les veteranes t'han llepat {0}!</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value>Que estrany... {0} no era a l'animació! Avui no llepareu a ningú...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value>T'apropes a {0} per gaudir d'una mica de diversió, però no te'n recordaves que era vetarà/na i t'ha llepat. Has quedat fora del tram de diades.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value>A l'animació, {0} ha intentat lligar amb la persona equivocada! Troben les restes del Pescanova {0} babejades a la porta del local... que trist 😞</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value>{0} s'apropa a {1} per tenir una mica de diversió i reduir l'estrès. En lloc d'això, {0} es troba a un/a vetarà/na llepant a {1}! El/la veterà/na es gira cap a {0} i salta... {0} està ple/na de babes.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value>Descobreixes que {0} no és un/a veterà/na, ja que hi has cardat ben a gust durant als labavos de la discoteca!(Sense que us pilli el segurata 😏)</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value>Eren passades les 12 i has anat als labavos de la discoteca per cardar amb el/la Pescanova. Tots dos heu acabat i us heu retirat silenciosament...🚬</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value>Has descobert que {0} tafanejava! Ha de ser d'Altos Vuelos ✈️!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>En tafanejar, has descobert que {0} és {1} 👀.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value>Sembla que {0} va agafar una malaltia de transmissió sexual després d'una nit amb el/la Pescanova! La Queralt del SACU se n'ha venjat. {1} ha quedat expulsat del tram de diades.</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>De sobte, se sent un tret. Les avellanes es giren i veuen {0} sobre el cos de {1}, amb la pistola encara apuntant al cap. {2}</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value>El veterà/na ha guanyat!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value>Els veterans/nes han guanyat!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value>Les avellanes han guanyat!</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value>Oh, no! Heu fet un toc de castells al Canguret🦘! El Zoo i la UPF clausuren Trempats i cancel·len el tram de diades. Sad violinets, però el Canguret ha guanyat aquest cop.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Jugadors vius restants, rols i equip:</value>
+  </string>
+  <string key="ZombieVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value>{0} ha votat convertir {1}.</value>
+  </string>
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
+    <value>{0} havia de fer la feina bruta, i parlar amb {1}... però era el cap de troncs! Així que el cap de troncs l'ha posat a terces, {0} ha petat i s'ha hagut d'anar en ambulància. Una persona de kanalla queda out de tot el tram de diades!</value>
+  </string>
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{0} ha vingut cap a tu aquesta diada, amb la intenció de que formis part del pom... però l'has obligat a anar al tronc del castell i ha petat. Una persona de kanalla ha quedat fora del tram de diades... restants: {1}!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>T'han convertit a la secta kanalla! Ara ets kanalla. Cada diada, tindràs l'oportunitat de convertir un altre trempi.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of Zombies -->
+    <value>Kanalla: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new Zombie's name -->
+    <value>{0} s'ha unit a la secta kanalla!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest Zombie's name -->
+    <!-- 1 - target name -->
+    <value>{0} havia de fer la feina bruta, i convertir a {1}... però no ha vingut a la diada!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >Tots els veterans/es han quedat KO(ai l'edat...), i l'única gent que resta viva ha estat convertida en kanalla... Ha guanyat la kanalla!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>Has intentat deixar KO a {0}, però ja estava expulsat del tram de diades!</value>
+  </string>
+  <string key="HunterFindZombie">
+    <!-- 0 - target name -->
+    <value>Has anat a deixar KO a {0} quan estava fent un pom elevat en mig de la discoteca. Ràpidament has fet que s'et begui sobre el pom provocant que un membre de la kanalla acabés enterrat entre les motxilles.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>Has anat a buscar a {0}, però no està fent cap pom elevat, simplement balla "La Gozadera" a la tarima 🕺💃. Ho deixes estar, convençut/da que {0} no és de kanalla.</value>
+  </string>
+  <string key="WildChildToWolves">
+    <!-- 0 - Werechild's name -->
+    <value>El padrí/na de {0} ha estat expulsat del tram de diades! Ple de ràbia i orfe, s'ha convertit en veterà/na!🧍</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>{0} ha estat expulsat del tram de diades! Ple de ràbia i orfe, t'has convertit en veterà/na! Altres veterans i veteranes: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
+  <!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>Avellana 🌰</value>
+  </string>
+  <string key="Drunk">
+    <value>Comi Beguda 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Pescanova 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Vent 💨</value>
+  </string>
+  <string key="Traitor">
+    <value>Trempazu 🥸</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Contrafort 💪</value>
+  </string>
+  <string key="Detective">
+    <value>Altos Vuelos 🕵✈️</value>
+  </string>
+  <string key="Wolf">
+    <value>Veterà/na 🧍</value>
+  </string>
+  <string key="Cursed">
+    <value>Coloniavirus 😷</value>
+  </string>
+  <string key="Gunner">
+    <value>Queralt del SACU🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>SAD Canguret 🦘</value>
+  </string>
+  <string key="Fool">
+    <value>Agulla 💉</value>
+  </string>
+  <string key="WildChild">
+    <value>Enxaneta 🙋</value>
+  </string>
+  <string key="Beholder">
+    <value>Fempinyapp 🍍</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Segon vent 💨💨</value>
+  </string>
+  <string key="Zombie">
+    <value>Kanalla 👤</value>
+  </string>
+  <string key="ZombieHunter">
+    <value>Cap de Troncs 🌴</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value>ha fet bomba de fum</value>
+  </string>
+  <string key="Dead">
+    <value>💀 expulsat del tram</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 està a assaig</value>
+  </string>
+  <string key="PlayersAlive">
+    <value>Jugadors al tram de diades</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>cordó obert 🔓</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Fas de cordó obert 🔓. Si hi ha altres cordons oberts, sabreu qui sou. Si no, ets una avellana 🌰.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Totes les avellanes es lleven, i troben el cos de {0} enterrat en una pila de motxilles, amb esquitxades de baba de veterà pertot arreu. Un dels cordons oberts ha estat llepat!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  Els cordons oberts són: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest Zombies name -->
+    <value>El membre més recent de la kanalla mira de convertir {0} anant a parlar amb ell/a entre rondes, però es troba una autèntica ruïna, baba pertot arreu i pèls de veterà/na al costat de les aigües...</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>Tots els veterans i veteranes s'ha dirigit a la tarima, on estava {0}, per llepar-li la cara, però els rep una figura ben forta, fornida i leial. El/la contrafort es defensa i torneu derrotats i derrotades.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Envieu {0} per intentar convertir {1}, però el seu vertígen era massa greu i no heu pogut convertir-la ☹️</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, un trempi amb el nom {0} ja s'ha unit al tram de diades. Canvia de nom per unir-t'hi.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Durant l'animació t'has apropat a {0} per divertir-te una mica... però quan ja te n'anaves, t'adones que corre a fer un pom elevat...👤</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Quan tothom es desperta al matí, us adoneu que {0} no dóna senyals de vida... Li envieu un telegram i descobriu que {0} ja no pot tornar a estar a una diada.</value>
+    <value>En reunir-vos a la platja quan surt el sol, trobeu a {0}. Aquesta diada passada ha estat l'última per a ell/a...</value>
+  </string>
+  <string key="MasonConverted">
+    <!-- 0 - mason's name -->
+    <value>Que estrany... {0} no ha fet de cordó obert durant la diada... 😯</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>L'administrador del grup ha desactivat l'opció de fugir mentre el tram de diades és actiu!</value>
+  </string>
+  <string key="IsDead">
+    <!-- used when gunner shoots a player -->
+    <value>ha quedat explusat del tram de diades.</value>
+  </string>
+
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>Ja ets en un tram de diades! ({0})</value>
+  </string>
+  <string key="NoGame">
+    <value>No hi ha cap tram de diades actiu. Comença un tram nou amb /startgame o comença un tram caòtic amb /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Només un administrador del grup pot fer servir aquesta ordre.</value>
+  </string>
+  <string key="NoSeer">
+    <value>No hi ha cap vent!</value>
+  </string>
+  <string key="TimesUp">
+    <value>S'ha acabat el temps!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Ets el Cap de Canalla 🏹. Amb tota la intel·ligència estratègica possible, has de triar qui seran els dosos perquè suïn junts i s'estimin tot el tram. Si un d'ells ja no pot continuar venint al tram, l'altre tampoc anirà per pena(O per què ja hauran quedat 😏).</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Ets l'alumne de secundària 🎭. Vols convertir-te en una cosa més guai. Tria un trempi, i quan aquesta persona no pugui continuar al tram, prendràs el seu rol.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Ets la Boirina 🍾. Sempre estàs preparada per quan algú et ve a buscar amb ganes de gresca. Això sí, si et beuen s'emborratxen tant que queden KO per la resta del tram de diades. Si ets prohibida pel que queda de tram, pots triar que algú begui el que queda de tu i sigui expulsat amb tu. Si et llepen, tens una possibilitat de deixar al veterà KO, però no podràs deixar KO a ningú més.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Ets Folreti 🔪. T'acaben de dir que formes part del folre, el teu objectiu és destrossar la soca i resta de trempis per a que no continuïn el que queda de tram. Cada diada pots afegir el cos d'un trempi a la teva col·lecció.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Has estat escollit pel cap de canalla. Els moments de suor amb {0} mai no s'esborraran del teu cor. Si un dels dos no pot continuar anant a diades, l'altre tampoc hi anirà per pena. Si un dels dos guanya, tots dos guanyeu.</value>
+    <value>L'elecció del cap de canalla és clara: ets un dels dos dossos del tram! T'has enamorat bojament de {0}! Si un dels dos no pot anar a diades, l'altre tampoc ho farà per pena. Si un dels dos guanya, tots dos guanyeu.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Les avellanes han decidit fer un toc de castells amb tu! Quedaràs buida en breus així que aquesta és la teva última oportunitat: tria la persona que et beurà i que es quedarà sense diades com tu.</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} busca entre la multitud qui és el trempi que més es mereix quedar-se sense diades, però no aconsegueix decidir-se a temps. Les avellanes buiden l'ampolla de boirina 🍾 a la pica del lavabo, quina mort més solitària...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} busca entre la multitud qui es mereix quedar-se sense diades, però decideix que vol que tots els trempis puguin gaudir del que queda de tram. Les avellanes buiden l'ampolla de boirina 🍾 a la pica del lavabo, quin malgast de líquid...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>TicTac, TicTac... {0} estàs trigant molt i les avellanes s'estan cansant. T'estan a punt de llençar a la brossa quan crides: ""{1}, escullo a {1}!". Ràpidament agafen a {1} i li fan un toc de castells. Al acabar està tant KO que no es recuperarà fins després de diades, pobre {2}.  </value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>T'han foradat l'ampolla 🍾! En els teus darrers moments, tens l'oportunitat de que algú begui del forat... no perdis el temps!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>Han destrossat massa {0}, tant, que ningú ha pogut beure del líquid 🍾 que quedava a l'ampolla...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>{0} no aconsegueix decidir qui l'ha de beure i accepta el seu destí.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Tot buidant-se, {0} cau a terra... però no sense fer que algú begui la {2} que queda a l'ampolla. Aquest algú és {1}, que acaba tant malament la nit que ja no tornarà a les següents diades. </value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>Els veterans/es han intentat llepar la Boirina en aquesta diada, així que un d'ells i elles s'ha emborratxat massa ràpid! {0} ha quedat KO.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>El veterà/na ha intentat llepar la boirina durant l'animació, anava de guais i ha hagut d'acabar la diada al costat d'una tassa de vàter. {0} no hi serà a les properes diades, s'estarà recuperant de la forta ressaca!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Els veterans/es volien llepar a gent duarant l'animació, però s'els ha creuat un/a folreti massa motivat/da! {0} ha quedat destrossat/da en la lluita i no podrà estar a les pròximes diades.</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Semblava una diada prou tranquil·la per a {0}, però s'equivocava de ple. Les avellanes es troben al matí i descobreixen el cos de {0} magullat per totes parts. Ahir va formar part de la soca... Casualidad? No lo creo. El Folreti ha tornat a fer de les seves! {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Has intentat afegir el cos de {0} a la teva col·lecció, però el contrafort t'ho ha impedit! Aquesta nit no pots destrossar a ningú...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>La Kanalla envia a {0} per intentar convertir {1}, però a través de la porta se senten glops de {0}. Per una escletxa, la Kanalla veu el cos de {0} KO als labavos! {0} ha quedat KO per la boirina...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>La Kanalla envia {0} per intentar convertir {1}, de cop tothom comença a posar-se a la soca i obliguen a {0} a posar-s'hi també. Quan acaba la ronda la Kanalla es troba el cos de {0} magullat en un racó, QUE S'HA DE CUIDAR LA SOCA FOLRETIS! {0} es queda liciat pel que queda de tram de diades.</value>
+    <value>{0} va amb decisió a convertir {1}, però de cop {1} li demana que faci l'escaleta i al pujar-s'hi a sobre li destrossa l'esquena. {0} ha hagut d'anar a l'ambulància i ràpid se l'emporten a l'hospital. Minuts després ens informa que haurà de deixar els castells per una temporada. 😮</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Has intentat donar pit a un folreti però ell/a t'ha demanat que facis l'escaleta i t'ha destrossat el genoll. Hauràs de prescindir de diades per una temporada...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Vas amb {0} i comences a passar-t'ho bé. Tot sembla genial fins que {0}, un folreti, diu de fer un pilar i et destrossa l'esquena! Vas a urgències del mal que et fa... CIAO, CIAO DIADES!</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>El cos de {0} apareix a plaça amb incomptables magulladures. {0} haurà d'abandonar el tram de diades.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>L'alumne de secundària un dia fa un taller amb Trempats i entra a la colla. {0} fa de cordó obert, com tu!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} no pot anar a diades, i tu ocupes la seva posició de cordó obert. Els teus companys que també fan de cordó obert (si n'hi ha) són: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new Zombie's name -->
+    <value>L'alumne de secundària {0} un dia fa un taller amb Trempats i entra a la colla. És molt àgil i ràpidament entra a la secta Kanalla, com tu!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} no pot anar a diades, i tu ocupes la seva posició de kanalla. Els teus companys de la secta Kanalla (si n'hi ha) són: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>En un taller que ha fet Trempats, l'alumne de secundària {0} s'ha guanyat la vostra confiança així que l'accepteu al vostre grup de veterans/es!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} no pot anar a diades, i tu aprofites per guanyar-te la confiança dels veterans i veteranes de la colla així que t'accepten al seu grup. Els teus companys (si n'hi ha) veterans/es són: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>L'única persona que pot continuar anant a diades és el folreti! Ha guanyat!</value>
+  </string>
+  <string key="AskKill">
+    <value>A qui vols destrossar aquesta nit?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>{0} truca a {1} el matí següent per explicar-li què ha passat. {1} no s'ho pot creure i plorant decideix que sense ell/a no anirà a diades. Ningú compenetra amb ell tant bé en tots sentits (GUIÑO, GUIÑO). {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>En qui et vols transformar si no pot continuar el tram de diades?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Qui vols que siguin dosos? Tria el primer trempi.</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Qui vols que siguin dosos? Tria el segon trempi.</value>
+  </string>
+  <string key="Hunter">
+    <value>Boirina 🍾</value>
+  </string>
+  <string key="Cupid">
+    <value>Cap de Canalla 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Folreti 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Alumne de Secundària 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>T'has convertit en l'enxaneta. El teu padrí és {0}.</value>
+  </string>
+  <string key="LoversWin" isgif="true">
+    <value>El veritable amor resisteix! Els dosos han guanyat💕!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value>Trobeu el cos de {0} a la zona de motxilles ben emborratxat. Sembla que ha vegut una mica de boirina! La ressaca li durarà tant que no pot tornar a venir a diades.  Bé, {1}.</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Una figura encaputxada ha intentat convertir-te en Kanalla, però el teu vertigen és massa fort com per pujar allà dalt.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Ja ets a la llista d'espera per a {0}.</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Se t'ha afegit a la llista d'espera per a {0}. T'enviarem un missatge privat quan el següent tram de diades comenci.</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>Comença un nou tram de diades per {0}.</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>El dilluns arriba i les dues últimes avellanes que resten es troben a la Gutenberg. {0} mira {1} amb un gran somriure, proposa de fer un pilar i destrossa l'esquena de {1}🔪.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Totes les avellanes han mort... no resten res més que cossos. Ningú guanya aquest tram de diades, excepte els voltors...🤔</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Dilluns, {0} i {1} arriben a la Gutenberg. {0} s'enfaixa i córre cap a {1}. Comença a veure de l'ampolla i quan s'adona del que està fent la tira a terra i hi salta a sobre, però és massa tard: la Boirina està destrossada i el Folreti emborratxat de l'elixir de la mort. Tots dos acaben KO, la colla és buida 🎉, no hi ha guanyador/a...</value>
+  </string>
+  <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>No has triat, així que el moderador ha triat per tu: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Ha guanyat</value>
+  </string>
+  <string key="Lost">
+    <value>Ha perdut</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>El trempi {0} ha estat vetat del tram de diades per no votar {1} vegades en les darreres 24 hores.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+  -->
+  <string key="AboutVG">
+    <value>Avellana 🌰 \nEl teu rol és simple: intenta sobreviure. Cada setmana tindràs una oportunitat per fer un toc de castells un veterà/na.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Vent 💨 \nEts el vent. A cada diada pots triar un trempi i se't revelarà el seu rol. Vés amb compte: si els veterans/es se n'assabenten, et voldran llepar!</value>
+  </string>
+  <string key="AboutWw">
+    <value>Veterano 🧍\nT'ho passaràs bé! Durant la setmana has d'intentar enganyar la resta d'avellanes. Però, durant diades, triaràs algú per llepar-lo!\nNota: si llepeu el Coloniavirus 😷 us contagieu i es tornarà un veterà/na com vosaltres!Visca!\nSi llepeu a Comi Beguda 🍻, no podreu llepar a ningú durant la diada següent perquè estareu de ressaca! (Normalment, això vol dir que no podreu atacar la diada següent, però si el Nouvatx ha estat assassinat i Comi Beguda era la teva primera opció, no podràs llepar el segon trempi, i podràs continuar llepant durant la diada següent.)</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Pescanova 💋 \nCom a Pescanova, podràs lligar amb algú cada diada. Si no és un veterà/na, ho sabràs (perquè sobreviuràs!). Si lligues amb un veterà, et lleparà. Si lligues amb el trempi que els veterans i veteranes volen llepar, també et lleparan a tu (quin trio més bonic). Però si lligues amb algú i els veterans et volien llepar, com no et trobaran enlloc, sobreviuràs!</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Boirina 🍾\nMaleïda Boirina! Com a Boirina, ets una simple avellana. Però si els veterans i veteranes et llepen, quedaran fets una sopa (a causa de la teva alta concentració d'alcohol) i no podran matar ningú durant la diada següent, encara tindran ressaca.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Coloniavirus 😷\nCom a Coloniavirus, ets una avellana normal... fins que els veterans i veteranes et llepin. Quan ho facin, estaran contagiats i seràs veterà/na com ells i elles! Ara podràs començar a llepar a la gent durant diades... 😂</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Trempazu 🥸\nEts un Trempazu malparit. Si sobrevius fins que tots els veterans i veteranes no puguin anar a diades, tu et convertiràs en un veterà i podràs llepar els teus antics companys durant diades!</value>
+  </string>
+  <string key="AboutGA">
+    <value>Contrafort 💪\nEts Contrafort! Cada diada pots triar protegir un trempi. Vés amb compte: si tries protegir un veterà, hi ha un 50% de probabilitats que et llepi.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Altos Vuelos 🕵✈️\nEts de la Comi Altos Vuelos. Pots investigar un altre trempi cada diada. Vés amb compte: hi ha un 40% de probabilitats que els veterans i veteranes t'enxampin!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Queralt del SACU🔫\nEts de les d’enfadar-se ràpid, eh? Com a Queralt del SACU, se't donen dues mesures disciplinàries al començament de la partida. Cada setmana podràs anular-li la martícula a un trempi fent que deixi de ser membre de la colla i, òbviament, no pugui anar a diades. Quan ho facis, tothom veurà pel grup de Telegram que aquesta persona ja no és estudiant i sabrà que ets del SACU! Vés amb compte, només tens dues mesures disciplinàries!
+</value>
+  </string>
+  <string key="AboutTanner">
+    <value>SAD Canguret 🦘\nL'objectiu del Canguret és fàcil: vol aconseguir que el matin. Si les avellanes decideixen fer un toc de castells al Canguret, ell guanya i la resta perd. Així de simple.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Agulla 💉\nA l'Agulla se li diu que és el Vent... quan tria un jugador durant diades, se li diu un rol aleatori.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Kanalla 👤\nCom a Kanalla, el teu objectiu és convertir tots els altres trempis (excepte els veterans i veteranes) a la secta. Si al final de la partida tots els trempis vius són Kanalla, la secta guanya.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Cap de Troncs 🌴\nLa teva feina és acabar amb la secta Kanalla. Si la secta intenta convertir-te, el seu membre més recent no podrà continuar el tram de diades. Cada nit pots intentar que un trempi passi a terces: si és Kanalla petarà, s'haurà d'anar de la diada amb ambulància i no podrà continuar el tram de diades per lisiat/da.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Enxaneta 🙋\nAl començament del tram de diades triaràs el teu padrí. Si aquesta persona no pot continuar el tram de diades, et convertiràs en veterà/na.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Segon vent 💨💨\nDe moment, ets una avellana normal🌰. Però si el primer vent es lesiona i no pot anar a diades, et convertiràs en el nou primer vent.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Fempinyapp 🍍\nSabràs qui és el primer vent en tot moment (el de debò, no l'agulla).</value>
+  </string>
+  <string key="AboutMason">
+    <value>Cordó obert 🔓\nEls cordons oberts són simples avellanes però, com poden mirar al castell i a la resta de la pinya, saben qui són la resta de cordons oberts.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Alumne de Secundària 🎭\nEncara estàs a la ESO i vols convertir-te en una cosa més guai. Tria un trempi, i quan aquesta persona no pugui continuar al tram, prendràs el seu rol.\nNota: si el jugador havia estat convertit a la secta kanalla, prendràs el seu rol original. La resta de regles s'apliquen: si era l'enxaneta i el seu padrí no pot anar més a diades, et convertiràs en veterà; si no, heretaràs el seu padrí.\nLa secta kanalla no pot convertir l'alumne de secundaria (però pot convertir-lo quan ja s'ha transformat). L'alumne de secundaria ha de transformar-se per poder guanyar (excepte si el cap de canalla el posa a dosos).</value>
+  </string>
+  <string key="AboutCupid">
+    <value>Cap de Canalla 🏹\nL'amor i la compenetració està present a Trempats. Com a Cap de Canalla, triaràs dos trempis al començament del tram de diades, que hauran de treballar plegats durant tot el tram! La confianza y el roce hace el cariño així que si un d'ells no pot anar a diades, l'altre no hi anirà tampoc per pena 😢\nNota: els dosos saben qui és l'altre, però no saben el seu rol. Si els dosos són els últims dos trempis al tram, guanyen. Si els dosos eren a equips diferents (avellanes + veterans/es) i un equip guanya (veterans/es), l'altre dos (avellana) també guanya. En resum, si un dels dos dos és de l'equip guanyador, guanyen tots dos.</value>
+  </string>
+  <string key="AboutHunter">
+    <value>Boirina 🎯\nEts un brevatge destinat a deixar KO a la penya. Si algú altre et visita, pot acabar KO. Si els veterans et llepen, tens l'opció d'endur-te'n un amb tu. Si t'envas del tram de diades d'una altra manera, pots deixar KO a un altre trempi.\nNota: si un vetera t'ataca, la probabilitat de deixar-lo KO comença al 30%. Si hi ha un sol veter, el caçador té un 30% de probabilitats deixar-lo KO (i sobreviure per una altre diada). Per cada veterà addicional, s'hi afegeix un 20% (2 llops = 50%, 3 = 70%, etcètera). Però si hi ha múltiples veterans, encara que KO un, se t'acabaràn igualment perquè et superen en nombre.\nSi la Kanalla t'intenta convertir, hi ha un 50% de probabilitats que no ho aconsegueixi. Llavors, hi ha un 50% de probabilitats que puguis deixar un membre KO per la resta del tram!</value>
+  </string>
+  <string key="AboutSK">
+    <value>Folreti 🔪\nQue s'ha de cuidar la soca... Vaja, quin acudit. Tu pujes al folre i ho fas el millor que pots i si destrosses uns quants trempis pel camí millor que millor. Ets un jugador solitari, tens el teu propi equip. Només pots guanyar si ets l'últim trempi viu (excepció: dosos). Com a Folreti, pots destrossar a QUALSEVOL personatge: veterans/es, boirina, Queralt del SACU, contraforts, qui sigui. Si els veterans i veteranes t'intenten llpar, tu destrossaràs a un (aleatori) i sobreviuràs.</value>
+  </string>
+  <string key="AboutPara">
+    <value>En Para és un desenvolupador idiota a qui li agrada bordar a la gent. Potser ha estat massa temps amb els llops... Estar amb llops és molt mala idea. (No se que collons diu 😂)</value>
+  </string>
+  <string key="EndTime">
+    <value>Durada de la partida: {0}</value>
+  </string>
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Dia {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>S'ha produït un error i aquest node s'ha aturat 😕</value>
+  </string>
+  <string key="SentPrivate">
+    <value>T'he enviat un missatge privat.</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Què vols fer?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Has d'unir-te a un tram de diades des del xat d'un grup!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Has de començar un tram de diades des del xat d'un grup!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Temps per rebre el missatge de ping: {0}\nMissatges per segon: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Quin idioma?\nActual: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Quina variant?\nActual: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Idioma establert a {0}.</value>
+  </string>
+  <string key="GetLang">
+    <value>Quin fitxer d'idioma vols?</value>
+  </string>
+  <string key="NoNodes">
+    <value>No hi ha cap node en línia ara mateix, torna-ho a provar d'aquí a uns segons.</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Has de fer servir aquesta ordre en un grup</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>No ets un administrador global...</value>
+  </string>
+  <string key="NotPara">
+    <value>No ets en Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sí</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Permet</value>
+  </string>
+  <string key="Disallow">
+    <value>No permetis</value>
+  </string>
+  <string key="Show">
+    <value>Mostra</value>
+  </string>
+  <string key="Hide">
+    <value>Amaga</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Només normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Només caòtic</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>A elecció del jugador</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>No en mostris cap</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostra només els dels trempis vius</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostra els de tots els trempis</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancel·la</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Vols permetre bombes de fum una vegada ha començat el tram?\nNota: els trempis encara podran fer bombes de fum durant la fase d'unir-s'hi.\nActual: {0} fugir</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>Fer bombes de fum després de començar el tram definit a: {0}</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Quants trempis vols definir com a màxim?\nActual: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Màxim de trempis definit a {0}.</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Vols mostrar o amagar els rols en no poder anar al tram de diades?\nActual: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Mostra els rols en no poder anar al tram de diades definit a: {0}</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Quin mode de joc ha de tenir el grup?\nActual: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Mode de joc definit a {0}.</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Com vols que es mostrin els rols al final?\nActual: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>'Mostra els rols al final' definit a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Tria el temps base (en segons) per a la setmana. Tot i això, es modificarà segons el nombre de trempis.\nValor per defecte: {0}\nActual: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Temps base de la setmana definit a {0} segons.</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Tria el temps (en segons) per a les diades. Valor per defecte: {0}\nActual: {1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Temps de les diades definit a {0} segons.</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Tria el temps (en segons) per a les votacions del toc de castells. Valor per defecte: {0}\nActual: {1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Temps per a les votacions del toc de castells definit a {0} segons.</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Vols permetre l'agulla com a opció de rol?\nActual: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Agulla com a rol definit a: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Vols permetre el Canguret com a opció de rol?\nActual: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Canguret com a rol definit a: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Vols permetre ser Kanalla com a opció de rol?\nActual: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Kanalla com a rol definit a: {0}</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Vols activar el toc de castells secret?\nActual: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Activació del toc de castells secret definit a: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Gràcies, que tinguis un bon dia :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>En quin idioma vols cercar un grup per jugar-hi?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Aquests són els grups de {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membres</value>
+  </string>
+  <string key="StartMe">
+    <value>Obre'm conversa perquè et pugui enviar un missatge privat.(😏)</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} no ha pogut obrir conversa amb el bot i se l'ha eliminat del tram de diades!</value>
+  </string>
+  <string key="LatestList">
+    <value>Aquesta és la darrera llista.</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>No s'ha pogut obtenir la darrera llista.</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>T'has unit al tram de diades de {0}.</value>
+  </string>
+  <string key="Ping2">
+    <value>Temps per enviar un missatge de ping: {0}</value>
+  </string>
+
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Ets Presi 🎖. El teu vot durant el toc de castells val el doble, una vegada t'hagis revelat. Ets a l'equip de les avellanes.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Ets Cap de Colla 👑 en secret: escapant-te de la teva vida avorrida i pomposa a la cúpula de Trempats, passes les setmanes entre les avellanes. Si intenten votar-te per fer-te un toc de castells, s'adonaran del seu error, i no es farà toc de castells a ningú.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Ets un Pàjaru 🤕. Intentaràs votar, però hi ha un 50% de probabilitats que votis per algú altre i no per qui volies. Ets a l'equip de les avellanes🌰.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Ets la Haru 🔮, la qual cosa fa que t'aliïs amb els més veterans de la colla i no amb les avellanes. Durant diades, faràs servir el teu poder per trobar els veterans/es i el vent. Només guanyaràs si guanyen els veterans/es. Gaudeix ajudant els veterans i veteranes a llepar les miserables avellanes.</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Ets Comi Seguretat ⚒, el que posa ordre a la cua del sopar. Tens un xiulet per evitar que els veterans/es sembrin el caos a la cua i llepin però només el pots fer servir en una diada (la de Trempats). Durant la setmana, pots triar si agafar el xiulet o no. A part d'això, ets una avellana normal🌰.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Ets Pitroig 🐦, l'origen de la colla (i de les llepades). La teva llepada mestra causa la conversió els trempis en veterans/es. Cada diada triaràs un trempi a qui llepar (i que quedi fora del tram de diades). Però mentre siguis viu, la teva víctima té un 20% de probabilitats de convertir-se en veterà.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Ets Nouvatx 🐶, adorat pel conjunt de veterans i veteranes. De la mateixa manera que els altres veterans/es, cada diada triaràs una avellana a qui llepar. Si per alguna raó ja no pots participar a les diades següents, els veterans i veteranes entraran en còlera i lleparan dues persones a la diada següent, ALS NOUVATXS NO SE'LS TOCA! Però continuaràs sense poder finalitzar el tram.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Quan les avellanes comencen a fer el toc de castells a {0}, aquest diu: “Espereu! Sóc el cap de colla. Aquesta acta de l'assamblea de setembre n'és una prova. Cada setmana faig que la diada vagi sobre rodes. Per tant, no puc fer un toc de castells, em necessiteu per acabar el tram.” Sentint-se inútils, les avellanes es retiren a casa seva.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Intentes mirar {0}, però no veus clar qui pot ser. Però no és ni veterà/na ni vent...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} fa un pas endavant i mostra l'acta de l'assamblea de setembre que l'acredita com a presi, declarant-se com a tal. A partir d'ara, els vots de {0} a l'hora de votar pel toc de castells valdran el doble.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Prem "Revela'm" quan vulguis revelar-te com a presi.</value>
+  </string>
+  <string key="Reveal">
+    <value>Revela'm</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Vols agafar el xiulet avui, fent que els veterans i veteranes no puguin llepar a la cua del sopar?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Mentre la resta de avellanes debaten sobre els esdeveniments, s'adonen que {0} porta el xiulet a la butxaca de la camisa, el portarà a la propear diada. Per ara, almenys, la colla no patirà llepades dels veterans i veteranes. (A la propera diada els veterans no poden llepar)</value>
+  </string>
+  <string key="Mayor">
+    <value>Presi 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Cap de Colla 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>la Haru 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>un Pàjaru 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Comi Seguretat ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Pitroig 🐦</value>
+  </string>
+  <string key="WolfCub">
+    <value>Nouvatx 👶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Mentre els veterans/es llepen a {0}, {1} atura a tothom, com a pitroig que és. {1} diu a tots els veterans i veteranes que {0} s'hauria d'unir a ells en lloc de ser llepat. Es convertirà en veterà durant la següent diada.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>T'han llepat els veterans/es, però el pitroig t'ha elegit. En lloc d'acabar el tram ara, t'han escollit per unir-te al seu grup... i et convertiràs en veterà demà a la diada!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Mentre et desenfaixes notes un estrany formigueig a la panxa... Ara ja ets veterà/na!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Com a presi🎖, ets una miserable avellana🌰, fins que et reveles. Llavors, els teus vots per als tocs de castells valen per dos (és a dir, el teu vot és el doble de poderós que els de la resta). Utilitza aquest poder sàviament per ajudar l'equip de les avellanes.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>El cap de colla 👑 és un rol clau a l'estratègia de l'equip de les avellanes. Quan es fa un toc de castells al cap de colla, es descobreix el seu rol, i continua podent anar al tram de diades. No obstant això, només pot passar una vegada: si les avellanes insisteixen a fer-li un toc de castells, quedarà KO.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Recordes el vent? Bé, ara té la seva contrapartida a l'equip dels veterns. La Haru 🔮 és la "vident" dels que tenen més experiència a la colla. Només pot veure si algú és un veterà/na o vent, i guanya amb els veterans i veteranes.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Ets un pàjaru 🤕. Potser no hauries d'anar tant perdut per la vida. Vols dir que votes a la persona que realment vols? (Tens un 50% de probabilitats de votar per algú aleatori.)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Ets comi seguretat ⚒. Al llarg dels anys, cap pinganillo ni cap ullleres de sol t'ha donat tanta satisfacció com el xiulet que et va donar junta.\n Qui sap? Pot ser que el xiulet *eviti que els veterans llepin a la cuadel sopar a la diada* 🤔
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Ets pitroig 🐦, l'origen de la conversió de trempis en veterans, la font de les llepades. Cada diada, hi ha un 20% de possibilitats que llepis i que aquest trempi es converteixi en veterà/na en lloc de deixar de venir a diades!
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Quin Nouvatx 👶 més bufóóó! _l'acarona_ -cof cof- Com deia, ets el nouvatx i _li cau el micròfon_ ...No m'hi puc resistir. Em sembla que si algú et fes un toc de castells, faria que els veterans/es volguessin llepar dues vegades. Ets massa bufó per deixar de venir a diades. No podria tornar a acaronar-te.</value>
+  </string>
+
+  <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ja no podrà anar a diades, i et transformes en el pitroig. Els teus companys veterans (si n'hi ha) són: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ja no podrà anar a diades, i et transformes en nouvatx. Els teus companys veterans (si n'hi ha) són: {1}</value>
+  </string>
+
+  <string key="VillageTeamEnd">
+    <value>Equip d'avellanes</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Equip neutral</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Equip dels veterans/es</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Equip del Folreti</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Equip de la secta Kanalla</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Equip del Canguret</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>La secta Kanalla envia a {0} per intentar convertir a {1}, però en lloc d'això, {0} torna amb tot de babes a la cara... Crec que ha anat a buscar a la persona equivocada... els veterans i veteranes se les saben totes!</value>
+  </string>
+
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} va a lligar amb {1}, preparant-se per a una nit de passió, però s'hi troba amb un folreti fent un pilar sobre {1}! El Folreti decideix després lligar amb {0} abans de destrossar l'esquena del Pescanova i deixar-lo sense poder acabar el tram.</value>
+  </string>
+
+
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Les avellanes es desperten i veuen un Whatsapp de {0} al grup de trempats: "Trempis em sap greu però al final tinc un hombro dislocat." El segon vent es queda sense diades. HashtagTrueFact</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Sembla que {0}, membre de Comi Seguretat, ha tingut molt mala sort. Resulta que a la diada, mentre vigilava la porta d'entrada al local, una persona li va venir per redere i va pujar-s'hi a sobre intentant fer un pilar. Resultat: esquena rebentada i fi del tram de diades per ell/a. Aquests folretis... Quan aprendran a no fer mal?</value>
+  </string>
+  <string key="ZombieKilled">
+    <value>Han trobat el cos de {0} rebentat al costat de la soca. El folreti ha tornat a fer mal a algú, {0} era kanalla pero el folreti li ha demanat si podia fer l'escaleta i... Adéu diades.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>L'endemà al matí, a les avellanes se'ls va partir el cor en trobar {0}, que també tenia el càrrec de cap de canalla, amb el cos magullat... Algú no sap cuidar la soca...</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Les avellanes esperaven trobar {0} per fer ús de la barra lliure, però a la barra només es troben a {0} destrossat perquè algú no ha sapigut cuidar la soca.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>Normalment, {0} hauria aconseguit lluitar contra el folreti, però aquest cop no. L'esquena de {0} ha quedat destrossada i es perdrà les següents diades.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Sembla que la diada passada, {0} dormia! Durant la diada, s'ha sentit un tret, però només hi havia la Queralt del SACU, atrotinada de l'esquena. Queda clar que el Folreti s'ha passat l'Universitat.</value>
+  </string>
+  <string key="MayorKilled">
+    <value> Ni la cúpula es salva! Han trobat {0}, el/la presi, morint-se de dolor a la zona de motxilles! Queda clar que ha estat el Folreti, quan aprendrà?</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>El Telegram treu fum, on està el/la cap de colla, {0}?. No n'han trobat cap pista, però se sospita que el folreti ha fet de les seves...</value>
+    <value>Durant aquesta diada passada, el cap de colla, {0}, ha hagut d'anar a l'hospital. Sembla ser que per culpa del folreti haurem de prescindir d'ell el que queda de tram.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Les avellanes es desperten i troben al {0} quiexant-se de mal a la clavícula. Curiosament, ahir va haver un 2d7f... Folre, res a declarar? {0} era el vent.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Arreu de la colla se senten crits tristesa. Hi ha hagut un error. Els veterans n'han eliminat un dels seus. La Haru {0} ha d'abandonar el tram.</value>
+    <value>Aquesta diada passada s'han sentit crits de "Sóc la vostra aliada!" i aquest matí s'ha sabut que {0}, la Haru, ha estat llepada per totes bandes. Alguns no saben d'aliances...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>MLEM, MLEM, MLEM, MLEM! Aquesta diada s'ha sentit als veterans i veteranes llepar. Han llepat a l'enxaneta, {0}! Les avellanes es pregunten si els vetarans i vetaranes no se sentien culpables de deixar la colla sense persona que pugui fer l'aleta.</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+    <!--used when CH visits SK-->
+    <value>Les avellanes es desperten de bon matí, però troben un missatge al Telegram de {0}, el cap de troncs. Lliçó apresa: no intentis posar al tronc a un Folreti!</value>
+    <value>El cos de {0}, el cap de troncs, ha estat destrossat durant la passada diada. No sembla bona idea comprovar si un folreti pot fer de terces...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+    <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>Tot i que semblava que els vetarans/es havien decidit ser bons per una vegada, era difícil resistir-se a castigar {0}, un de kanalla que havia decidit cercar problemes amb els veterans i veteranes intnetant-los convertir a la secta.</value>
+    <value>A aquesta diada, la kanalla s'ha trobat problemes inesperats. El seu membre més nou ha tingut la mala sort d'anar a buscar a un veterà/na durant l'única animació que els veterans i veteranes havien decidit no llepar a ningú.. Malauradament per a {0}, els veterans/es no tenen gens d'interès a unir-se a la kanalla.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+    <!--used when Zombies convert the SK-->
+    <value>La kanalla pensava que tindria un nou membre entre les seves files, però s'equivocava! {0}, un sectari de kanalla, ha aparegut aquest matí destrossat a la guten! Sembla que als folretis no els hi agrada que els vulguin canviar de posició.</value>
+    <value>A la passada animació, la kanalla ha intentat convertir l'única persona de la colla més boja que els seus membres. El seu membre més nou ha intentat convertir un folreti, i aquest ha fet una nova obra d'art amb l'esquena de {0}.</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <!-- used when GA guards SK -->
+    <value>Se suposava que havia de ser una diada en què {0} salvaria la colla dels malvats, però {0}, el/la contrafort, ha estat ferit pel folre... que estrany... Enmig, una nota: "Puc protegir-me jo mateix millor del que pots fer-ho tu."</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <!-- used when GA guards a wolf -->
+    <value>A aquesta passada diada, {0} ha intentat donar pit a un veterà/na. La colla s'ha llevat i ha descobert que el contrafort va acabar ple de babes ahir a la nit.</value>
+  </string>
+
+  <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sabent que només resta {0}, {1} intenta llepar a {0}, però {0} emborratxa ràpidament a {1}, resulta ser massa! Només resta una última persona dempeus: la boirina, victoriósa!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sabent que només resta {0}, {1} ha triat un moment en que {0} estava casi buida. Eliminar l'última avellana ha estat fàcil per a {1}.</value>
+  </string>
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>{1} i {0} caminen durant el dia. L'honrat {1} treu el fempinya per posar la kanalla com a terça, posant fi a la rebuscada kanalla que ha contaminat la colla.</value>
+  </string>
+
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>El temps per unir-s'hi s'ha allargat {0} segons!\nEn resten {1} per unir-s'hi.</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>El temps per unir-s'hi s'ha escurçat {0} segons!\nEn resten {1} per unir-s'hi.</value>
+  </string>
+  <string key="CantExtend">
+    <value>Només els administradors del grup poden allargar el temps més d'una vegada!</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Vols permetre que els trempis allarguin el temps per unir-s'hi?\nActual: {0} allargar\nNota: els administradors sempre el poden allargar.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>Els trempis poden allargar el temps per unir-s'hi definit a: {0}</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Tria el nombre màxim de segons que es poden afegir al temporitzador per unir-s'hi amb una sola ordre /extend.\nValor per defecte: {0}\nActual: {1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Temps màxim per afegir definit a {0} segons.</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh, no! {0} era de Comi Beguda! Ara esteu amb ressaca, i no podeu llepar {1}...</value>
+  </string>
+  <string key="JoinButton">
+    <value>Uneix-t'hi</value>
+  </string>
+  <string key="NotMember">
+    <value>No et pots unir a aquest tram de diades perquè no sembles ser membre de {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>No facis servir les ordres per unir-t'hi. Fes servir aquest botó.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} trempis han votat, {1} en total.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, recorda que també hauràs d'unir-t'hi fent servir el botó.</value>
+  </string>
+  <string key="GroupNotFound">
+    <!--This string might need rewording from some native speaker-->
+    <value>No s'ha trobat el grup. Fes servir aquesta ordre al grup on vulguis deixar d'esperar, o afegeix un enllaç, identificador o nom d'usuari a l'ordre.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Se t'ha esborrat de la llista d'espera de {0}.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>S'han unit al tram en els darrers 30 segons: {0}</value>
+  </string>
+  <string key="AllowCult">
+    <value>Permet la kanalla</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Permet el canguret</value>
+  </string>
+  <string key="AllowFool">
+    <value>Permet l'agulla</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Permet toc de castells secret</value>
+  </string>
+  <string key="RandomMode">
+    <value>Activa el mode aleatori</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Permet allargar el temps</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostra rols en morir</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Permet bombes de fum</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Mostra els ident. en unir-s'hi</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Vols mostrar els identificadors dels trempats quan s'uneixin al tram de diades?\nActual: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>Mostra els identificadors definit a: {0}</value>
+  </string>
+
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Tots</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Vols activar el mode aleatori?\nQuan s'activa el mode aleatori, el tram caòtic, el toc de castells secret, mostrar els rols en morir, i permetre la kanalla / l'agulla / el canguret es triaran aleatòriament cada vegada que algú comenci un tram de diades.\nActual: {0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Activació del mode aleatori definida a: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Permet paquets de GIFs NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Vols permetre que els jugadors tinguin paquets de GIFs NSFW?\nActual: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>GIFs NSFW definit a: {0}</value>
+  </string>
+
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Quan el sol comença a brillar, {0} es desperta enmig del més absolut silenci. En adonar-se que ja no hi ha ningú, {0} camina i camina, fins que es troba en soledat enmig de la Gespa. {0} dóna un cop d'ull a totes les baixes de la colla, i sospira. El seu somni de morir pel toc de castells de les avellanes s'ha esvaït, igual que la resta d'avellanes. Estira les mans i toca la gespa, que tants trempis ha vist deixar el tram de diades, amb cura, abans de pujar al terrat de les aigües i tirar-se al buit.</value>
+    <value>{0} es lleva a l'alba, en solitud. {0} veu que la seva vida ha estat un error, sent incapaç de fer que les avellanes satisfessin els seus desitjos masoquistes de patir un toc de castells fins a la mort. {0} agafa una corda i es penja, adonant-se que ningú pot fer realitat el seu somni, ja que ja no hi ha ningú.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>{0} obre els ulls, però en lloc de veure el habitual caos al grup de Telegram de la colla del dia de després d'una diada, hi ha silenci. Mira fixament l'avorrit sostre, deixant que la realitat es faci evident a poc a poc. Tothom ha abandonat el tram de diades. Els veterans i veteranes ja no hi són. Amb una punxada al cor, {0} s'aixeca, recull les coses i camina cap a l'upperdiagonal. A {0} li surt una llàgrima dels ulls quan recorda com de prop ha estat, juntament amb els veterans i veteranes, de la victòria. Però és hora de començar una nova vida i recollir les coses. {0} desapareix ciutat amunt, lluny de la tranquil·la colla de la Universitat Pompeu Fabra.</value>
+    <value>Tot i els esforços de {0}, els amics veterans de {0} romanen immòbils i sense venir a diades. Encara que els veterans han portat la victòria, no hi ha ningú amb qui assaborir l'èxit, ni cap avellana viu de qui riure's. {0} mira de prop la bola de cristall, i desapareix silenciosament, en un núvol de boira, a la recerca de nous veterans i veteranes, nous aliats, i nous trucs per cometre nous crims contra la humanitat.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Quina variant?\nActual: {0}\nCom que has jugat més de 500 trams de diades, també pots unir-te a: </value>
+  </string>
+  <string key="Skip">
+    <value>Omet</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} no pot anar a més diades, i tu et transformes en el tronketi. Els teus companys (si n'hi ha): {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Has vist que {0} NO és {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Vols que a aquesta diada tots els jugadors s'adormin i perdin el tren?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Mentre les avellanes parlen, {0} se'n torna a casa seva i comença a entonar una suau melodia amb la gralla. Aquesta diada, tothom s'adormirà molt profundament, perdreu el tren i ningú podrà realitzar les seves accions a la diada.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Tothom se'n va cap a casa, però estan tan exhaustos que tot just poden arribar al llit. S'adormen tan profundament que ni tan sols recorden haver anat a dormir...</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>Vols permetre Comi Material com a opció de rol?\nActual: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Comi Material com a opció de rol definit a: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Vols que Comi Material es pugui fer servir cada diada?\nActual: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Comi material cada nit definit a: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Permet el comi material</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Comi material complet</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Ets Tribunero 👱🌚! Ets una avellana, però com que passes la major part de la diada desenfaixat i birra en mà, senyal de persona molt veterana, el vent es confondrà i pensarà que ets un veterà/na! Oh, no...</value>
+  </string>
+  <string key="WolfMan">
+    <value>Tribunero 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Ets una avellana, però com que passes la major part de la diada desenfaixat i birra en mà, senyal de persona molt veterana, el vent es confondrà i pensarà que ets un veterà/na! Oh, no...</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Ets Tronketi 🧍🌝! Ets un Veterà/na, però el vent es confondrà i pensarà que ets una avellana 🌰</value>
+  </string>
+  <string key="Lycan">
+    <value>Tronketi 🧍🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>El Tronketi 🧍🌝 és un veterà/na, però el vent el veurà com si fos una avellana.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Ets Comi Comunicació 🌀. Cada diada pots triar observar algú, però només podràs veure què NO és. El rol que se't dirà pertanyerà a algú altre del joc que encara va a diades, de manera que para atenció al rol, ja que vol dir que qui el tingui, encara és viu 🙂</value>
+  </string>
+  <string key="Oracle">
+    <value>Comi Comunicació 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>La comi comunicació 🌀 sabrà quin rol NO té algú, triant entre rols que encara són vius a la partida.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Ets Músic 💤. Una vegada per tram, pots fer servir la gralla per adormir profundament tothom (quina ironia), de manera que perdran el tren i no podran fer servir els seus rols durant la pròxima diada.</value>
+  </string>
+  <string key="Sandman">
+    <value>Músic 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Una vegada per partida, el o la músic 💤 pot fer que tots els jugadors dormin tan profundament que perdran el tren i no podran executar cap acció durant la pròxima diada.</value>
+  </string>
+
+  <!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoImam">
+    <value>Ets Comi Amabilitat ☮️. Pots triar si vols convèncer a tothom de la vila perquè no es faci un toc de castells a ningú. Només pots fer-ho una vegada.</value>
+  </string>
+  <string key="Imam">
+    <value>Comi Amabilitat ☮️</value>
+  </string>
+  <string key="AboutImam">
+    <value>La Comi Amabilitat ☮️ pot triar si vol convèncer tothom de la vila perquè no es faci un toc de castells a ningú. Només pot fer-ho una vegada.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>Ets Aveiaio/a 👴👵. Pots sobreviure a una llepada dels veterans i veteranes una vegada (a tu no et prenen el pèl), però a la segona et lleparan i quedaràs vetat de diades. Si la Queralt del SACU o la boirina intenten que et quedis sense diades amb les seves habilitats, perdran els poders; ja no tenen cap efecte en tu (estigues orgullós/a) i passaran a ser una avellana normal.</value>
+  </string>
+  <string key="WiseElder">
+    <value>Aveiaio/a 👴👵</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>L'aveiaio/a 👴👵pot sobreviure a una llepada dels veterans i veteranes una vegada (a ell/a no li prenen el pèl), però a la segona el lleparan i quedarà vetat de diades. Si la Queralt del SACU o la boirina intenten que et quedis sense diades amb les seves habilitats, perdran els poders; ja no tenen cap efecte en tu (estigues orgullós/a) i passaran a ser una avellana normal.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>Ets Comi Material😈! Pots robar el rol d'un trempi durant la primera diada, i convertir-lo en una avellana!</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Ets membre de la Comi Material😈! Com que el mode [Comi material complet] està activat, tens un 50% de probabilitat de robar el rol d'un trempi durant cada diada. Si tens èxit, aquell trempi serà la nova comi material i continuarà els robatoris!</value>
+  </string>
+  <string key="Thief">
+    <value>Comi Material 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Per defecte, la comi material 😈 pot robar el rol d'un jugador durant la primera diada, i convertir-lo en una avellana.\nSi s'activa el mode [Comi material complet], té un 50% de probabilitat de robar el rol d'un trempi durant cada diada. Si té èxit, aquell trempi serà la nova comi material i continuarà els robatoris!</value>
+  </string>
+
+  <string key="AskImam">
+    <value>Vols fer que no es pugui fer un toc de castells a ningú a aquesta diada?</value>
+  </string>
+  <string key="ImamNoLynch">
+    <!-- {0} - Imam's name -->
+    <value>La Comi Amabilitat, {0}, fa una profunda xerrada sobre l'amistat i la confiança davant de tota la colla. Emocionats i emocionades per la seva xerrada, decideixen que avui no es farà un toc de castells a ningú!</value>
+  </string>
+  <string key="ImamNoLynchNow">
+    <value>A causa de l'emotiva xerrada de la comi amabilitat, avui s'ometrà el toc de castells!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+    <!-- 0 - Wise Elder's name -->
+    <value>Heu intentat llepar a {0}, però, malauradament, era aveiaio/a! {0} ha evitat la llepada amb èxit, i per sort, no us ha reconegut.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Els veterans i veteranes t'han intentat llepar, però no has esdevingut aveiaio/a sent una presa fàcil per als intrusos! Has evitat la llepada amb èxit, però, malauradament, no has reconegut cap atacant.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+    <!-- {0} - Hunter's Name -->
+    <!-- {1} - Wise Elder's Name -->
+    <value>La Boirina, {0}, ha fet que un aveiaio/a, {1}, la begui. {0} veu que no ha fet cap efecte a {1} i decideix deixar les seves habilitats de boirina. Ha abandonat el tram com una simple avellana.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+    <!-- {0} - Gunner's Name -->
+    <!-- {1} - Wise Elder's Name -->
+    <value>La Queralt del SACU, {0}, ha anulat la matrícula a un aveiaio/a, {1}. {0} es posa a plorar amb molta pena, penedint-se del seu error, i decideix marxar del SACU, convertint-se en una simple avellana.</value>
+  </string>
+
+  <string key="ThiefStealFailed">
+    <!-- {0} - The name of the thief's target -->
+    <value>Has intentat robar el rol de {0}, però, malauradament, has fallat...</value>
+  </string>
+  <string key="ThiefStealDead">
+    <!-- {0} - The name of the thief's target -->
+    <value>Has intentat robar el rol de {0}, però {0} ja no pot anar a diades...</value>
+  </string>
+  <string key="ThiefStoleRole">
+    <!-- {0} - The name of the thief's target -->
+    <value>Has robat satisfactòriament el rol de {0}!</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} ja no és el teu company, i {1} ara és cordó obert, com tu!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Els teus companys (si n'hi ha) són: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
+    <value>{0} ja no és el teu company, i {1} ara és kanalla, com tu!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} ja no és el teu company, i {1} ara és veterà/na, com tu!</value>
+  </string>
+  <string key="ThiefEnd">
+    <!-- 0 - Thief's name -->
+    <value>Mentre {0} passeja per la Guten, descobreix que ja no hi ha més rols divertits per robar. Se'n va ràpidament del campus a la recerca d'un altre campus on poder tornar a començar la seva gran carrera.</value>
+  </string>
+  <string key="ThiefStealChosen">
+    <!-- 0 - target's name -->
+    <value>L'objectiu del teu robatori ara és {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>A qui vols robar el rol?</value>
+  </string>
+
+  <string key="SecretLynchResultEach">
+    <!-- 0 - Number of votes -->
+    <!-- 1 - Player got lynched -->
+    <!-- 2 - A list of players who voted {1} -->
+    <value>{0} vots han estat per a {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+    <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Resultats de la votació pel toc de castells d'aquesta setmana:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+    <!-- 0 - Number of votes -->
+    <!-- 1 - Player got lynched -->
+    <value>{0} vots han estat per a {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Recompte de vots</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Quan el toc de castells secret està activat, vols mostrar el recompte de vots al final del toc de castells?\nActual: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Recompte de vots al final del toc de castells secret: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secret: Votants</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Quan el toc de castells secret està activat i es mostra el recompte de vots, vols mostrar el nom dels votants de cada trempi votat?\nActual: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Nom dels votants al recompte de vots del toc de castells secret: {0}</value>
+  </string>
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
+    <value>Que estrany... En el moment en què comenceu a discutir qui convertir en aquesta diada, us adoneu que {0} no hi és! Què li ha passat?</value>
+  </string>
+
+  <string key="Peace">
+  <!-- Used for Imam's button -->
+    <value>Pau!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
+    <value>S'ha omès el toc de castells d'avui perquè la Comi Amabilitat ha fet una xerrada emotiva!</value>
+  </string>
+
+  <string key="ThiefStoleYourRoleThief">
+    <value>T'han robat el rol! Ara ets la nova comi material i a la diada vinent podràs robar un rol!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>T'han robat el rol! Ara ets una avellana.</value>
+  </string>
+
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Au! T'ha pujat a l'esquena el folreti de la colla!</value>
+    <value>El folreti t'ha parat una emboscada i t'ha deixat destrossat!</value>
+  </string>
+
+  <string key="ThiefTeamEnd">
+    <value>Equip de la comi material</value>
+  </string>
+
+  <string key="StealKiller">
+    <value>Has intentat robar un rol... però el teu objectiu era el folreti! T'ha vist prop seu, i en menys d'un minut, t'ha destrossat...</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>La Comi Material, {0}, ha intentat robar el rol al Folreti! No ha anat gaire bé: {0} ha rebut múltiples magulladures, i ara no pot venir a diades...</value>
+  </string>
+  <string key="BeholderSeerStolen">
+    <value>La Comi Amabilitat ha robat el rol del vent! Ara {0} és el vent i {1} ja no té les seves habilitats!</value>
+  </string>
+
+  <!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+    <value>Comi Crits 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+    <value>La Comi Crits 🤯 és la que crea xivarri a la colla. Quan començen a cridar, la colla sencera es descontrola. Per poder estar tranquils, aquell dia faran dos tocs de castells!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+    <value>Ets Comi Crits 🤯. Com a comi problemàtica de la colla, et trobes en plena ebullició d'energia i hormones. Un dia, quan et sentis especialment molest per tot, pots causar molt de xivarri, i aquell dia, la vila farà dos tocs de castells.</value>
+  </string>
+  <string key="AskTroublemaker">
+    <value>Vols fer xivarri, avui?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+    <value>{0}, Comi Crits 🤯, està causant xivarri! Correu i xiscleu de satisfacció! Avui fareu dos tocs de castells!</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+    <value>A causa de la Comi Crits, avui fareu dos tocs de castells! Amb sort, demà tornarà a ser un dia tranquil.</value>
+  </string>
+  <string key="Chemist">
+    <value>Comi Gespa 🍁</value>
+  </string>
+  <string key="AboutChemist">
+    <value>La Comi Gespa 🍁 és un grup de persones a qui els hi agrada fer experiments socials amb substàncies una mica il·legals. Aquests experiments funcionen de la seguent manera: es fan dos porros: un normal i corrent i l'altre amb substàncies que poden deixar tant KO a la persona que el fuma (el puma) que aquesta no tornarà a venir a cap diada. Un cop per diada, s'obliga a altra gent a fumar-se'n un, mentre ell es fuma l'altra. Un dels dos continuarà al tram de diades i l'altre quedarà KO. Bona sort, si et ve amb un porro!</value>
+  </string>
+  <string key="RoleInfoChemist">
+    <value>Ets Comi Gespa 🍁! Tens un gran amor per fer experiments socials amb substàncies una mica il·legals i t'agrada l'adrenalina de jugar amb la teva continuitat al tram de diades... Però només una mica! Fas dos porros, un normal i l'altre amb substàncies que poden deixar KO, que tenen exactament el mateix aspecte. Cada diada, tries un trempi i l'obligues a fumar amb tu, per veure si té sort i sobreviu. Però si el teu convidat tria el porro bona, tu et fumaràs el que deixa KO i hauràs d'abandonar el tram de diades. Bona sort!</value>
+  </string>
+  <string key="ChemistBrewing">
+    <value>Mentre les altres avellanes se'n van a la diada, tu encara ets al laboratori, fent els porros per a aquesta nit. Assegura't que no t'enxampi cap veterà/na!</value>
+  </string>
+  <string key="AskChemist">
+    <value>Qui seria un bon convidat i company de porros, avui?</value>
+  </string>
+  <string key="ChemistTargetDead">
+    <value>Has anat a buscar a {0} per fumar junts, però quan hi has arribat, ja estava KO!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+    <value>T'ha visitat Comi Gespa 🍁, {0}! T'ha volgut obligar a fumar. Però en lloc de fumar, tu t'has pujat sobre d'ell ràpidament i li has destrossat l'esquena. Pel que sembla, ell ja anava una mica perjudicat i tu has estat molt ràpid 🤷‍♂️</value>
+  </string>
+  <string key="ChemistSK">
+    <value>Has anat a buscar a {0} perquè fumés amb tu, però era folreti i t'ha saltat a sobre destrossant-te l'esquena! 🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+    <value>La Comi Gespa 🍁, {0}, ha provat d'obligar al folreti a jugar a un joc. Sembla que el folreti no tenia ganes de jugar-hi... Han trobat {0} amb dolors molt greus a l'esquena, i els dos porros encara dins la rinyo!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+    <value>Ha vingut a parlar amb tu la Comi Gespa 🍁, t'ha obligat a triar un porro i has triat el que deixa KO. Quina manera més trista de deixar diades...</value>
+  </string>
+  <string key="ChemistSuccess">
+    <value>T'has acostat a {0} per fer que triés un porro! Ha triat el que et deixa KO i tu te n'has tornat a l'animació, feliç de tenir bones habilitats de joc. Aquest joc no és cap ximpleria!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+    <value>La Comi Gespa 🍁 ha anat a parlar amb {0} durant l'animació, i {0} ha triat el porro que et deixa KO! La Comi Gespa encara podrà continuar anant a diades, però {0} no. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+    <value>Se t'ha acostat Comi Gespa 🍁, {0}, i t'ha obligat a triar un porro. Després d'un moment de dubtes, has triat el bo! Quina sort!</value>
+  </string>
+  <string key="ChemistFail">
+    <value>T'has acostat a {0} i l'has obligat a triar un porro! Però ha triat el porro bo! Per tant, tu t'has fumat e porro que deixa KO i has de deixar d'anar a diades per una temporada. Ho hauries pogut fer més bé...</value>
+  </string>
+    <string key="ChemistFailPublic">
+    <value>Han trobat Comi Gespa 🍁, {0}, a la zona de motxilles KO! Pel que sembla, {0} ha tingut mala sort i s'ha fumat el porro equivocat durant la seva "xerrada"" nocturna! Resa perquè no li hagis comprat mai cap gram...</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+    <value>A {0} no l'has trobat enlloc! Trist/a te'n tonrnes a casa a fumar-te el bo tot sol.</value>
+  </string>
+  <string key="ZombiesList">
+    <value>Els sectaris ara són: {0}</value>
+  </string>
+  <string key="SnowWolf">
+    <value> Ets un habitual de Dresden 💚</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Ets l'habitual de Dresden 💚. Cada diada, enlloc de quedar-te a l'animació t'envas a Dresden i t'emportes a un altre trempi. Això farà que aquest trempi no pugui desenvolupar el seu rol activament. No obstant això, la teva víctima ha vist l'error garrafal que és marxar a Dresden i no es deixarà enganyar durant 2 diades seguides.</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>L'habitual de Dresden 💚 és un trempi nascut al Vallès Occidental (el bo). Per tant, domina l'art d'enxixar als trempis per a que vagin a Dresden. Com que no n'hi ha gaires, l'habitual de Dresden actua en solitari. Com que l'enxixat/da haurà marxat de la diada, no podrà dur a terme el seu rol. Tot i això, durant les 2 següents diades el trempi enxixat no es deixarà enganyar per anar a Dresden durant diades .</value>
+  </string>
+  <string key="AskFreeze">
+    <value>A qui vols emportar-te durant aquesta diada?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>El grup de veterans i veteranes està format per {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>El grup de veterans i veteranes està format per {0} i l'habitual de Dresden {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} ja no podrà anar a més diades, i tu et transformes en Pitroig. Els teus companys d'equip són: {1} i l'habitual de Dresden {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} ja no podrà anar a més diades, i tu et transformes en Nouvatx. Els teus companys d'equip són: {1} i l'habitual de Dresden {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} ja no podrà anar a més diades, i tu et transformes en Veterà/na. Els teus companys d'equip són: {1} i l'habitual de Dresden {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} ja no podrà anar a més diades, i tu et transformes en Tronketi. Els teus companys d'equip són: {1} i l'habitual de Dresden {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} ja no podrà anar a més diades, i tu et transformes en el l'habitual de Dresden. Els teus companys d'equip (si n'hi ha) són: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>L'alumne de secundària, {0}, s'ha convertit en l'habitual de Dresden!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} ja no podrà anar a més diades! Amb molta ràbia, t'has convertit en veterà/na! Els teus nous companys d'equip són: {1} i l'habitual de Dresden {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} ja no és company d'equip, i {1} s'ha convertit en el nou habitual de Dresden!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Tot just et dirigies cap a un trempi molt sexy i t'ha enxixat per anar a Dresden 💚. Gaudeixes de la vesprada, però al dia següent, en veure el Telegram, decideixes que no toranaràs a marxar d'una Diada en unes setmanes.</value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Quan estaves acabant de liar-te els dos porros, ha vingut l'habitual de Dresden 💚 i t'ha enxixat. Està clar que no els malgastareu, però aquest cop no podràs deixar KO a ningú.</value>
+  </string>
+  <string key="ZombieFrozen">
+    <value>Tot just quan anaves a intentar embaucar a algú perquè fes un pom elevat, ha vingut l'habitual de Dresden 💚. La resta de la Kanalla et troba a faltar per fer un pom a terra amb un nou trempi. Per les històries d'Instagram veuen que ho estàs donant tot a Dresden, aixì que assumeixen que avui no seràs d'ajut.</value>
+  </string>
+  <string key="CHFrozen">
+    <value>Quan per fi anaves a posar de terces a un membre de Kanalla, ha vingut l'habitual de Dresden 💚 i t'ha enxixat. Decideixes per una nit no donar-li més voltes al assuntu, però per a la següent diada podràs continuar amb el teu objectiu...</value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Tot just quan anaves a observar als trempis per a descobrir els seus rols, ha vingut l'habitual de Dresden 💚 i t'ha enxixat. Et fa ràbia no poder descobrir quins objectius té cada trempi, però aquesta nit prefereixes petar-ho al Vallès.</value>
+  </string>
+  <string key="GAFrozen">
+    <value>Tot just quan pensaves donar pit a algú, ha vingut l'habitual de Dresden 💚 i t'ha conveçut per anar-hi. Avui no has ajudat a ningú però com a mínim has anat a Dresden.</value>
+  </string>
+  <string key="SKFrozen">
+    <value>Mentre admiraves la quantitat de persones que hi hauria avui a la soca, ha vingut l'habitual de Dresden 💚 i t'ha enxixat per anar a Dresden... Quina ràbia! amb la de gent que podries haver destrossat en aquesta diada...</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Mentre et desplaçaves sigilosament per la diada, ha vingut l'habitual de Dresden 💚 i has acabat petant-te l'animació. Per sort, era prou fosc perquè no t'hagi reconegut ningú dels qui han passat pel costat.</value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>Durant la diada, mentre ballaves "Sexo" a la tarima, ha vingut l'habitual de Dresden 💚 i t'ha enxixat per fer bomba de fum i anar-hi. L'endemà no tens remordiments perquè no t'ha afectat gens ens els teus objectius, igualment ho has petat a la tarima!</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>T'has dirigit cap a {0} per anar cap a Dresden, però t'ha rebut una figura ben tossuda, forta i fornida que es volia quedar a la diada. El contrafort pot amb tu i et quedes a la diada derrotat i amb mono de Dresden.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Has anat a buscar a {0} i l'has aconseguit enganyar perquè vingu amb tu a Dresden! Durant aquesta diada, no podrà fer servir les seves accions nocturnes (si en té).</value>
+  </string>
+  <string key="SnowFrozeKiller">
+    <value>La darrera diada, l'habitual de Dresden 💚, {0}, ha intentat emportar-se a algú, però aquest algú era el Folreti... i aquest no s'ha pogut contenir de fer un pilar i destrossar l'esquena a {0}!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+    <value>Com que tots els altres veterans i veteranes es perdran diades, ets l'únic a l'equip! Per tal de poder tenir carn fresca d'avellanes, decideixes convertir-te en un veterà/na normal a partir d'ara, i dedicar cada diada a llepar en lloc de marxar a Dresden!</value>
+  </string>
+  <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>Durant la diada, l'habitual de Dresden 💚, {0}, ha provat d'emportar-se una ampolla de boirina amb ell/a, pel camí ha començat a beure i abans d'entrar a Dresden ha caigut KO a l'acera! La boirina ha pogut amb ell/a aquest cop...</value>
+  </string>
+  <string key="Lang">
+    <value>Canvia l'idioma</value>
+  </string>
+  <string key="Mode">
+    <value>Canvia el mode de joc</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Màxim de trempis</value>
+  </string>
+  <string key="EndRoles">
+    <value>Mostra rols en acabar</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Temps màxim per unir-s'hi</value>
+  </string>
+  <string key="DayTimer">
+    <value>Durada de la setmana</value>
+  </string>
+  <string key="NightTimer">
+    <value>Durada de la diada</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Durada del toc de castells</value>
+  </string>
+  <string key="RoleConfig">
+    <value>Configuració dels rols</value>
+  </string>
+  <string key="Mechanics">
+    <value>Mecàniques del joc</value>
+  </string>
+  <string key="GroupSettings">
+    <value>Configuració del grup</value>
+  </string>
+  <string key="Timers">
+    <value>Durades del tram de diades</value>
+  </string>
+  <string key="Done">
+    <value>Fet!</value>
+  </string>
+  <string key="Back">
+    <value>Endarrere</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Reordena aleat. llista de trempis</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Vols que la llista de trempis es reordeni aleatòriament cada vegada? Actual: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>La llista de trempis es reordenarà aleatòriament cada vegada: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+    <value>Ets membre de la Comi Sanitat ☠️. Cada diada, durant l'animació, certifiques la baixa de tota la gent que ha deixat de poder anar a diades des de l'anterior vegada (sí, fins i tot els veterans llepadors es mereixen ser donats de baixa). Com que ets fora tota la diada, els veterans i la secta Kanalla no et podran trobar, llevat que no tinguis res a fer (per exemple, si tothom continua podent anar a diada), en aquest cas, estaràs a l'animació. Tothom qui et busqui té la possibilitat de fer-se mal pel camí i necessitar dels teus coneixaments en primers auxilis. Depenent de quantes baixes hagis certificat hi ha més probabilitat o menys de que es facin mal. A més, la probabilitat es redueix a la meitat si és algú que pertany a l'equip d'avellanes 🌰 com tu. Però com que ets fora durant l'animació, els veterans/es o el folreti poden veure't i matar-te, i com més baixes apuntis, més probable és. I pel que sembla, el folreti et pot trobar tant si ets a casa com si no, però almenys pot ser que caigui pel camí i es faci mal a la cama, provocant que perdi el control sobre qui serà la víctima a la diada següent...</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+    <value>Ets Comi Sanitat ☠️. La teva responsabilitat és certificar les baixes de la colla.  No obstant això, sovint pot ser que la gent que et busqui et vingui lesionada i que es quedin sense tram de diades. Almenys, els veterans no et poden llepar, perquè ets fora tota la nit.</value>
+  </string>
+  <string key="GraveDigger">
+    <value>Comi Sanitat ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>Tothom ja està donat de baixa, no hi ha cap persona nova. Tot està tal com ha d'estar, a aquesta diada pots anar a l'animació ben bé.</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+    <value>Fins ben entrada l'animació, apuntes a {0} a la llista de baixes. Ara ja pot descansar i veure les diades per streaming.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+    <value>Tot just quan sorties del local per apuntar els qui s'han lesionat a la llista de baixes, l'habitual de Dresden 💚 t'ha enxixat i marxeu cap a Cerdanyola. Els lesionats romandran sense estar a la llista una altra diada...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+    <value>El grup de veterans i veteranes va a buscar a {0}, però no el troben. L'única cosa que troben és un post-it amb les baixes a terra...</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+    <value>El grup de veterans i veteranes va a buscar a {0}, però de camí, {1} ensopega i es lesiona. S'ha quedat sense tram de diades! </value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+    <value>Just quan volies tornar a la festa, sents uns crits de dolor a la llunyania... El veterà/na {0} ha caigut i no podrà anar a les següents diades!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+    <value>Has rebentat a {0} pujant-t'hi a sobre, però després has ensopegat i t'has fet mal, res greu però ara la cama et fa mal.</value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+    <value>Quan volies pujar per {0} i així lesionar-lo, t'ha aparegut un dolor molt fort a la cama. Decideixes pujar a la persona més propera, {1}, per acabar amb això quan abans millor.</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+    <value>després de molt buscar trobes a {0}, però el contrafort està amb ell/a! Mires de pujar a {0}, però no tens cap possibilitat. Aquesta diada ha estat una diada molt dolenta per a tu... Però bona per la soca!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+    <value>Una altra diada sense poder fer que algú begui de tu, et tenen por! Acabes a la basura perquè {0} no vol que deixis KO a més gent... En el moment ho saps: s'han acabat les diades per tu.</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+    <value>Després d'una altra diada màgica, estàs anant a la discoteca quan veus una ampolla de boirina a terra. Ràpidament llences a {0} a la brossa, no vols més gent KO a diades.</value>
+  </string>
+  <!--{0}: Zombie-->
+  <string key="CultFell">
+    <value>Retornes d'una altra diada màgica, quan de sobte sents un crit des de la llunyania! T'afanyes a anar-hi, i hi trobes a {0} amb el turmell regirat. Però quina mena de secta kanalla intenta convertir na Comi Sanitat?</value>
+  </string>
+  <!--{0}: Zombie who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+    <value>Buscant a {1}, {0} decideix de sobte que seria bona idea fer un salt mortal. Al fer-lo, caus malament i et regires el turmell! Tot i així, no acabes tenint res, ibuprofeno i al carrer. Podràs continuar fent castells.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+    <value>Buscant a {0} per fumar, mires de recordar quin dels porros és el que deixa KO i ensopegues, t'has toçat el turmell. Abans que puguis dir res Comi Sanitat anota la teva baixa per diades.</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+    <value>Quan et dirigeixes cap a casa, veus a {0} fer una calada d'un peta tant profunda que se li peta un pulmó. Per sort el pots socórrer, però té pinta que es perdrà la resta del tram</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+    <value>Treus a passajar la canya amb intenció de pescar. Fas un gest tant brusc, que et lesiones. Sort que {0} és de Comi Sanitat!</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+    <value>Sembla que l'ofici de Comi Sanitat no es pren descansos. ?? nse com dirho Veus com {0}, el Pescanova,  s'ha lesionat intentant pescar-te!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+    <value>Intentant pescar a {0}, veus que ha de portar a algú a l'Hospital. Sembla que {0} passarà la resta de la diada ocupat!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+    <value>Avui és ben clar que la fortuna no t'ha somrigut... Només volies donar pit a {0}, però t'has torçat el peu. Sort que era Comi Sanitat</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+    <value>Tu anaves tant tranquil per la vida quan de cop, veus a {0}, el Contrafort, Torçar-se el peu quan venia a donar-te pit. N'hi ha que veure com va la jubantut.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+    <value>Intentes prendre el rol de {0}, però et concentres massa a no fer cap soroll i et menges una columna i et trenques el nas! A més de no passar desapercebut, Comi Sanitat t'ha de guarir. Et perds la resta del tram!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+    <value>Tot i que {0}, membre de Comi Material, ha provat de robar-te el rol aquesta nit, s'ha menjat una columna s'ha trencat el nas. No podrà participar a la resta del tram.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+    <value>El pròxim cop que vulguis deixar un piti a algú, vigila no et torcis el peu. T'ha de venir Comi Sanitat a portar-te a l'Hospital Central. Et perdràs la resta del tram de diades</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key="ArsonistFellDigger">
+    <value>Notes que arriba olor de piti als teus narius. Amb preocupació, cerques per la zona i hi trobes {0}, membre de Comi Piti, que s'ha fet un es-15. Almenys ja notornarà a participar en una diada.</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+    <value>Mirant el Telegram us n'adoneu que una {0} ha hagut de ser atesa per Comi Sanitat ☠️ la nit anterior. Relacionar-se amb Comi Sanitat sembla esport de risc!{1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+    <value>Quan el Pescanova {0} havia acabat de pescar, anava tant encisat amb la vida que no ha vist un potat i s'ha trencat el coxxxis. Sort de Comi Sanitat que l'hi ha pogut aplicar els primers auxilis. Potser hauria d'anar tant encantat per la vida!</value>
+  </string>
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
+    <value>El membre de Kanalla {0} ha intentat fer un pom elevat, però s'ha caigut cual fruita i s'ha trencat el bulb raquidi. Mentre la resta de la secta sortia corrents, Comi Sanitat ha anat a socorre'l.</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+    <value>Comi Material, {0}, volia recollir tants objectes perduts que li ha pillat un pinçament a la L4. Per sort, Comi Sanitat se l'ha endut al quiropràctic més proper. {0} ja no robarà participarà més durant el tram!</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+    <value>Quan els veteranos es disposen a llepar a una inocent avellana, {0} rellisca amb un gel que no s'havia desfet entre boques, i es trenca el dit petit de la mà dreta. Sort que Comi Sanitat està preparada per a tot. Estar clar que {0} no lleparà a ningú més durant aquest tram ! {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+    <value>Tu et dediques a fer la teva feina, ajudar a les avellanes més lastres, quan de sobte el folreti et demana fer un pilar. En aquest cas ets tu qui acaba destruït i no podràs participar a la resta del tram.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+    <value>Un cop has acabat de destruïr a la teva victima, veus que {0} de Comi Sanitat està venint a socórrer a la victima. Seguint el teu instint, decideixes que avui hi haurà dues víctimes...</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+    <value>Tu et dediques a fer la teva feina, quan de sobte un llop et salta a l'esquena i et mata!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+    <value>La llopada corre pel cementiri, i de sobte s'adona que hi ha {0}, l'enterramorts. Abans que pugui reaccionar, un de vosaltres li salta a l'esquena i el mata d'una mossegada.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+    <value>{0} de Comi Sanitat no apareix a l'assaig de dilluns. S'ha tornat a adormir? Quan aneu pregunteu per Telegram, descobriu que els veteranos l'han llepat ben llepat...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+    <value>{0} no és a l'animació... Potser s'ha adormit? Aneu a veure què fa, i trobeu que està mort de dolor perquè algú ha pujat a la seva esquena...</value>
+  </string>
+  <string key="AllowArsonist">
+    <value>Permet Comi Piti</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistQ">
+    <value>Vols permetre Comi Piti? Actual: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistA">
+    <value>Comi Piti definit com a {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+    <value>Piromania assassina</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillQ">
+    <value>Vols permetre la Comi Piti i el Folreti al mateix tram de diades? Pot ser mortal! 😈 Actual: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillA">
+    <value>Comi Piti i Folreti al mateix tram de diades definit com a {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+    <value>Ets de la Comi Piti🔥. Com el Folreti, ets l'únic del teu equip. Cada diada, pots donar un dels teus pitis. Quan una o més persones tenen pitis pots encendre'ls-hi a tots i fer que quedin expulsats de la discoteca per fumar dins (consequencia: ha d'abandonar el tram de diades). Si algú estava parlant amb ells en aquell moment també queden expulsats del tram de diades per còmplices. Guanyes si ets l'única persona restant.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+    <value>Ets de la Comi Piti 🔥. Cada diada, pots donar un piti o encendre tots els que has donat anteriorment, fent que tots els que estiguin fumant els facin fora de la discoteca. Només guanyaràs si ets l'únic supervivent.</value>
+  </string>
+  <string key="Arsonist">
+    <value>la Comi Piti 🔥</value>
+  </string>
+  <string key="AskArsonist">
+    <value>Vols donar un altre piti o vols encendre els pitis donats anteriorment?</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key ="ArsonistVisitKiller">
+    <value>La Comi Piti, {0}, ha provat d'encendre el piti del Folreti... No ha sobreviscut.</value>
+  </string>
+  <string key="Spark">
+    <value>Encèn el flamigell</value>
+  </string>
+  <!--{0}: person whose house was doused-->
+  <string key="Doused">
+    <value>Has donat un piti a {0}!</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+    <value>Estaves fumant un piti de la Comi Piti però, per sort, el contrafort hi era i l'ha apagat abans que els segurates de la discoteca t'enxampéssin!</value>
+  </string>
+  <!--{0}: saved person-->
+  <string key="GuardSavedFromFire">
+    <value>No esperaves pas que {0} anés a fumar un piti enmig de la discoteca, però llençant-lo a terra ràpidament l'has salvat dels segurates! Ningú no podrà dir que siguis un mal protector...</value>
+  </string>
+  <!--{0}: person whose house was cleaned-->
+  <string key="CleanDoused">
+    <value>A aquesta diada, no has hagut de protegir a {0} de cap enemic, així que has tingut temps de requisar-li el piti de la Comi Piti que tenia redere l'orella...</value>
+  </string>
+  <!--{0}: list of people who died in the flames-->
+  <string key="Burning"> <!--La colla es desperta amb una mica de marron a sobre... Ahir van ser expulsades de la discoteca (i, per tant del tram de diades) les següents persones -->
+    <value>És un nou dia, i tothom s'explica les batalletes. Tot i això, hi ha un grup que l'últim que se'n sap es que van anar a comprar tabac, paper i boquilles per a Comi Piti. Sembla que els han fet anar a Andorra, pel que no els veurem en les següents diades:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+    <value>L'única persona restant és la Comi Piti, damunt d'una muntanya de burilles. La Comi Piti guanya...</value>
+  </string>
+  <string key="Burn" isgif="true">
+    <value>Hauries d'haver tingut més cap! Els material per a pitis es deixa, no es regala...</value>
+  </string>
+  <string key="Augur">
+    <value>la Macrotècnica 🦅</value>
+  </string>
+  <!--{0}: role that is not part of the village-->
+  <string key="AugurSees">
+    <value>Quan mires al mòbil tens una notificació del fempinya que diu: "Ara mateix falta un "{0}" a les diades".</value>
+    <value>El fempinya t'avisa que no hi ha cap "{0}" al tram ara mateix.</value>
+  </string>
+  <string key="AboutAugur">
+    <value>Ets la Macrotècnica 🦅. Cada dia de diada, quan mires al mòbil tens una notificació del fempinya que diu: "Ara mateix falta un " " a les diades". El fempinya no et dirà mai un rol dues vegades, així que assegura't de fer servir bé aquesta informació!</value>
+  </string>
+  <string key="RoleInfoAugur">
+    <value>Ets la Macrotècnica 🦅. Tens el poder de veure coses, però força diferent del vent o la Comi Comunicació. Ets l'única persona que pot veure rols que no són al tram de diades, i no en veuràs cap de repetit!</value>
+  </string>
+  <string key="AugurSeesNothing">
+    <value>Avui no hi ha cap notificació del fempinya. Segurament, això vol dir que ja has vist tots els rols que no són al tram...</value>
+  </string>
+  <!--{0}: chosen victim, {1}: wolf who died in flames-->
+  <string key="WolvesVisitBurn">
+    <value>El grup de veterans i veteranes intenteu llepar a {0}, però de sobte veieu marxa a l'estanc d'Andorra més proper. De fons podeu veure a {1}, riure maleficament ja que per fi se li retornaran tots els pitis que ha deixat.</value>
+  </string>
+  <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+  <string key="DefaultVisitBurn">
+    <value>{0} no hauria d'haver demanat tants pitis a {1} durant aquesta animació... L'excursió a Andorra farà que {0} es perdi la resta de diades...</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+  <string key="WolfVisitBurn">
+    <value>Els veterans i veteranes han provat de llepar a algú aquesta nit, però la Comi Piti ha estat més ràpid! {0} ha hagut d'anar a comprar material de piti a Andorra... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+    <value>Tot i que encara no saps qui és Comi Gespa, tens ben segur que no tornarà a equivocar-se mai més d'una manera tan miserable deixant KO a un aveiaio (es aixi???). La Comi Gespa ha deixat la herba i ha esdevingut una avellana normal!</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+    <value>Només resten {0} i {1}... De sobte, {0} somriu, treu l'encenador i encen el piti de {1}, que minuts després és expulsat de la discoteca!</value>
+  </string>
+  <string key="ArsonistTeamEnd">
+    <value>Equip de la Comi Piti</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+    <value>Has anat a divertir-te una mica amb {0}, però no l'has trobat!</value>
+  </string>
+  <string key="Validate">
+  <!-- Used for the button in the role selection menu -->
+    <value>‼ Valida ‼</value>
+  </string>
+  <string key="Valid">
+  <!-- Used for the button in the role selection menu -->
+    <value>✅ Vàlida ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+    <value>La configuració dels rols és vàlida! S'ha activat i s'utilitzarà a partir d'ara.</value>
+  </string>
+  <string key="RoleConfigInvalid">
+    <value>La configuració dels rols no és vàlida! Prova d'activar més rols per permetre que el robot creï jocs equilibrats!</value>
+  </string>
+
+  <string key="GroupIdleCount">
+  <!-- {0} - Idle count in the last 24 hours in the current group -->
+  <!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+    <value>{0} d'aquestes morts han estat en aquest grup.</value>
+  </string>
+
+  <string key="NewDGRoleModel">
+    <!-- 0 - target's name -->
+    <value>T'has convertit en l'estudiant de secundària. Prendràs el rol de {0} després que t'assebentis que no pot anar a les diades que queden.</value>
+  </string>
+  <string key="RoleConfigInfo">
+  <!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+    <value>Quins rols vols utilitzar a la partida?\n\nTutorial de la configuració:\n\n✅ = Rol activat\n❌ = Rol desactivat\n\nDesprés de seleccionar els rols, cal que utilitzis el botó VALIDA a la cantonada inferior esquerra per a validar la selecció de rols! Si no valides la selecció, s'ignorarà i s'utilitzaran tots els rols!\n\nSi desactives massa rols, el bot no podrà crear una partida equilibrada i la validació fallarà. En aquest cas, activa més rols i torna-la a validar.\n\nSi la validació és correcta, el botó inferior esquerre mostrarà ✅ Vàlida ✅ i s'utilitzarà la configuració de rols especificada!</value>
+  </string>
+  <string key="EnableAllRoles">
+	<value>Activa'ls tots</value>
+  </string>
+  <string key="DisableAllRoles">
+	<value>Desactiva'ls tots</value>
+  </string>
+</strings>

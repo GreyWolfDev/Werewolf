@@ -1,0 +1,1724 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+	<!--Creado por @Y_erik y @Lilxin.-->
+<strings>
+  <language name="Spanish One Piece" base="Español" variant="One Piece" code="es" isDefault="true"/>
+  <string key="NotInGame">
+    <value>No parece que estés intentando encontrar el One Piece ahora mismo...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>¡{0} ha empezado una aventura! Pulsa el botón para unirte a la diversión… ¡y probablemente encontrar el One Piece!</value>
+    <value>¡{0} ha iniciado una nueva aventura! ¡Pulsa el botón para unirte a la aventura!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+   <!-- 0 - Player name -->
+   <value>¡{0}Ha comenzado el caos en la Grand Line ! Pulsa el botón para unirte a la aventura… y probablemente encontrar el One Piece :P</value>
+   <value>¡{0} El caos se ha apoderado de Raftel! ¡Pulsa el botón para empezar la busqueda del tesoro!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>¡No te puedes unir ahora! Ya hay una aventura en curso.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>¡Ya has subido al barco!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Queda 1 minuto para unirse.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>Quedan {0} segundos para unirse.</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>¡No hay suficientes piratas dispuestos a cumplir sus sueños!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>La aventura está empezando, espera un segundo mientras asigno los roles y actualizo la base de datos.</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>{0} ha explotado por comer 2 frutas del diablo (prohibidos nombres con /).</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, por favor, cambia tu nombre para unirte.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>¡Lo siento, ya no caben mas piratas en el barco!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} se ha unido a la aventura. {1} piratas, {2} mínimo, {3} máximo.</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0}, por favor, mándame un privada (@{1}) con /start. No tengo constancia de haberte escrito por privado antes. Para que pueda enviarte mensajes necesito, que me hables tú primero.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>¡No puedes huir! ¡Ya te han echado del barco!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>¡{0} ha saltado por la borda!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} era {1}.</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} piratas restantes.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>¡Hey, aún no te he preguntado nada!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>No parece que estés intentando encontrar el One Piece...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>¡No encuentro ningún pirata con ese nombre!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>¡Esta respuesta no es válida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} Ha desaparecido por obra de la Yami Yami no Mi {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} ha decidido atacar a {1}.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} no ha peleado dos noches seguidas. Al parecer ha perdido su voluntad para pelear y {0} ha sido derrotado.\n{1}.</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>¡¡¡Tú, Shilliew the Rain!!! Con la caida de Kurohige te haces cargo de la banda para intentar eliminar al resto de los Piratas.</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Ya has elegido. No hay vuelta atrás.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nSabes que Viola es {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} era Viola y ha sido derrotada. Ahora que no esta, es tu turno de despertar tu tercer ojo.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} era Pudding, ahora que ha despertado su tercer ojo {1} ha logrado igualar la Clairvoyance de Viola.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>¡Despues de usar la Clairvoyance descubres que {0} es {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>¿A quién quieres atacar?</value>
+  </string>
+  <string key="AskDetect">
+    <value>¿A quién quieres investigar?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>¿A quien quieres dispararle? {0} Kayaku Boshi restantes.</value>
+  </string>
+  <string key="AskVisit">
+    <value>¿A quién le quieres robar?</value>
+  </string>
+  <string key="AskSee">
+    <value>¿Con quien quieres usar la Clairvoyance?</value>
+  </string>
+  <string key="AskGuard">
+    <value>¿A quién quieres proteger?</value>
+  </string>
+  <string key="AskEat">
+    <value>¿A quién absorber con la Yami Yami no mi?</value>
+  </string>
+  <string key="AskHunt">
+    <value>¿A quien quieres pedirle que sea tu nakama?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>¿Quién quieres que sea tu señal?</value>
+  </string>
+  <string key="AskConvert">
+    <value>¿A quién quieres unir al ejercito de Gekko Moria?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>Asegúrate de hablarlo con {0}.</value>
+  </string>
+  <string key="And"> 
+	<!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> y </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Eres Catalina Devon 😼. Por el momento, eres un Pirata retirado, pero si Kurohige se encuentra contigo no dudaras en unirte a el.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Eres Nico Robin 🕵️‍♂️. Durante el día, puedes elegir a otro pirata para investigarlo. Sin embargo, si lo haces, tienes un 40% de probabilidad de que Kurohige se entere y trate de absorberte con la Yami Yami no mi.</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>¡Enhorabuena! ¡Eres Kokoro 🍻! Prefieres pasarte el dia bebiendo sake en lugar de buscar el One Piece. (En realidad, todo el mundo lo sabe...).</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Eres Portgas D. Ace 👼. Cada noche, puedes elegir a otro pirata para protegerlo. Sin embargo, si eliges a un pirata de Kurohige existe un 50% de probabilidad de que termines absorbido por la Yami Yami no mi.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Eres Ussop 🔫. Tienes dos Kayako Boshi. Durante el día, puedes elegir lanzar un proyectil a otro pirata para derrotarlo. Todo el mundo oirá el disparo y sabrán que eres Ussop (y no un pirata de Kurohige).</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Eres Nami 💋. Durante la noche puedes visitar a otro pirata para robarlo y sabrás si tiene o no el poder de la Yami Yami no mi consigo (no es pirata de Kurohige) Si visitas a un pirata de Kurohige o a su víctima esa noche, tambien seras absorbida por la oscuridad. Por otro lado, si esa noche Kurohige te ataca, no te encontrarán y seguiras de pie en Raftel.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>¡Eres Shilliew the Rain 🥸! Por ahora, eres un marine, pero una vez el resto de piratas de Kurohige sean derrotados, te convertirás en uno de ellos. Si el viola usa su Clairvoyance contigo, puede que te identifique como pirata del Kurohige o no.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>¡¡Eres un pirata de Kurohige 🐺!! (bien por ti). Cada noche podrás usar la Yami Yami no mi de tu jefe para absorber a un pirata rival. MUAJAJAJAJA</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value>Eres Viola 👳‍♂️. Cada noche podras usar tu Clairvoyance en alguien para saber cuales son sus intenciones.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value>Eres un Pirata Simple 👱‍♂️. Estás condenado a pasar tus días ayudando a Luffy... y a ser absorbido por Kurohige.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value>Eres Pandaman 👺. Si consigues ser derrotado causaras una serie cameos quitandole el protagonismo a Luffy y ganaras automaticamente. </value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value>¡Eres Van Augur 👶! Elige un pirata para que sea tu señal; si es derrotado, localizaras al resto de los piratas de Kurohige y pelearas a su lado</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value>Eres Rebecca 👁. Como sobrina de Viola sabras donde localizarla.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value>Eres Pudding 🙇‍♂️. Si Viola es derrotada, despertaras tu tercer ojo y podras sustituir su Clairvoyance.</value>
+  </string>
+  <string key="RoleInfoZombie" >
+    <value>Eres un zombie de Gekko Moria 👤. Cada noche puedes elegir a otro pirata para robarle su sombra y ponerla en el cuerpo de un zombie. Si al final de la aventura todos los Piratas que no han sido derrotados son zombies encontraran el One Piece.</value>
+  </string>
+  <string key="RoleInfoZombieHunter" >
+    <value>Eres Luffy 💂‍♂️ ¡Hay un muchos piratas en Raftel y tu trataras de reclutar nuevos nakama! Cada noche, elige a otro pirata para invitarlo a tu banda; si es un zombie de Gekko Moria, le haras comer sal y sera derrotado. Si un zombie de Gekko Moria trata de robarte tu sombra, el último miembro que fue zombificado terminara comiendo sal.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>La hora de la pelea se acerca y los piratas deberan decidir a quién atacaran esta tarde... ¡Todo el mundo tiene {0} segundos para decidir a partir de ahora!</value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value>Ha llegado el día. Tienen {0} segundos para buscar el One Piece y hacer una estretegia.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value>Cae la noche. Todo el mundo se dirige a su campamento agotado después de un día tan intenso. Piratas nocturnos, ¡tienen {0} segundos para realizar sus acciones!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>La batalla ha terminado y {0} ha sido derrotado {1}.</value>
+  </string>
+  <string key="LynchTie" >
+    <value>La batalla esta muy equilibrada y nadie ha sido derrotado el dia de hoy.</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value>¡Qué extraño, nadie ha atacado a nadie! Por lo que nadie es derrotado el dia de hoy...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value>Los Mugiwaras comienzan la exploracion de Raftel por la mañana. Pero no ven a {0}. Nico Robin ha sido absorbida por la Yami Yami no mi.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value>Llega la mañana y para la consternacion de todos los Mugiwaras la Vive card de Ace se comienza a deteriorar. {0} (Ace) ha sido absorbido por la Yami Yami no mi.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value>Mientras todo el mundo empieza a salir de sus campamentos, se encuentran diversos proyectiles dispersos. Los Mugiwaras buscan a {0} y no lo han encontrado. Han perdido a {0} (Ussop).</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value>Los Mugiwaras se despiertan en la mañana para enconcontrarse con {0}, sin embargo no logran localizarla. Viola ha sido absorbida por la Yami Yami no mi.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value>Todo el mundo se despierta con el olor a Sake barato derramado por todo el lugar… {0} (Kokoro) a sido absorbida por la Yami Yami no mi. [No sin antes emborrachar a Kurohige]</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value>Mientras que el sol sale en Raftel, los mugiwaras no logran encontrae a {0} (Chopper), solo encuentran sus Rumble Balls tiradas, parece que trato de forzar su Akuma no mi ¡¡¡QUÉ NECIO!!!. Chopper ha sido absorbido por la Yami Yami no mi</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Al empezar el nuevo dia los Mugiwaras notan que {0} no aparece. ¡Parece que ha sido absorbido por la Yami Yami no mi!, {1}.</value>
+  </string>
+  <string key="HunterKilledZombie">
+    <!-- 0 - victim name -->
+    <value>Un cadaver aparece en Raftel, {0} ha sido obligado a comer sal. ¡Un zombie de Gekko Moria ha sido derrotado por Luffy.</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Los Mugiwaras se reúnen por la mañana, suspirando de alivio. Parece que esta noche nadie ha desaparecido.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value>Te has encontrado con los piratas de Kurohige. ¡Estos te han convencido de dejar el retiro y unirte a ellos!.</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Tus Aliados: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >¡Trataste de atacar a {0}... pero desististe al ver que se trataba de Catalina Devon y le has convencido de ayudarte! ¡Felicidades por tu nuevo aliado!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true">
+    <value>¡Oh, no! ¡Has sido absorbido por la Yami Yami no mi!</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value>¡Oh, no! ¡{0} era Kokoro! Ahora estan borrachos y no podran atacar a nadie mañana por la noche.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >¡Has intentado proteger a un pirata de Kurohige! Has tenido mala suerte y acabaste perdido en la oscuridad de Kurohige. :(</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value>¡Has salvado a {0} de ser absorbido por la Yami Yami no mi!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >{0} no fue atacado anoche. Básicamente, no has hecho nada.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>¡Fuiste a proteger a {0}, pero estaba visitando a otro pirata.</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >¡Ace 👼 estuvo velando por ti anoche y luchó contra un atacante! (Fuiste elegido por un atacante — Doflamingo o un pirata de Kurohige—, pero te salvaron).</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value>Nami 💋 decidió tomarse la noche libre y no salir a robar. ¡¡Pero qué gran error!! ¡A {0} la han absorbido por obra de la Yami Yami no mi.</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value>¡Ups! ¡{0} no estaba! Te quedaste sin derrotar a alguien. [Estaba robando a otro pirata].</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value>Te escabulliste en el campamento de {0} para robarle, pero te encontraste con los piratas de Kurohige. Has sido absorbida por la Yami Yami no mi (has visitado a un pirata de Kurohige).</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value >¡{0} se escabulló anoche en el campamento equivocado! Nadie ha vuelto a ver su cuerpo avaricioso paseando por Raftel (Visitó a un pirata de Kurohige)</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value >{0} se escabulló anoche en el campamento de {1} para pasar robarle sus tesoros. ¡Desafortunadamente, lo que se encontró fue a los piratas de Kurohige que se estaban atacando a {1}! ¡Se percataron de su presencia y la gata ladrona termino absorbida por la Yami Yami no mi. {0} ha sido derrotada.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value >¡Después obtener un jugoso botin de {0}, puedes aseYamir que no es un pirata de Kurohige!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >En mitad de la noche soñaste que te quedabas en bancarrota, Nami 💋 te estaba robando. ¡Pero al despertarte te diste cuenta de que no fue un sueño! Por desgracia, la noche era oscura y no pudiste ver bien por donde se fue. En cuanto encontro algunas joyas se fue en silencio. [Nami te ha visitado].</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value >¡Has descubierto a {0} husmeando por ahí! ¡Es Nico Robin 🕵️‍♂️!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value>Tus investigaciones te han mostrado que {0} es {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value >Parece que Ussop 🔫 se ha quedado sin dinero para nuevas armas después de haber sido robado por Nami 💋. {0} se ha tomado la venganza por su mano y {1} ha sido derrotada. [{0} es Ussop 🔫 y ha eliminado a {1} (Nami 💋)].</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value >De repente, el sonido de una explosion inunda el aire. Los Mugiwaras se giran para ver a {0} de pie sobre el cuerpo derrotado de {1} con quemaduras en la cara. {2}. [{0} es Ussop y ha disparado una Kayako Boshi a {1}].</value>
+  </string>
+  <string key="WolfWins" isgif="true">
+    <value >¡El One Piece ha sido encontrado por los piratas de Kurohige!</value>
+  </string>
+  <string key="WolvesWin" isgif="true">
+    <value >¡El One Piece ha sido encontrado por los piratas de Kurohige!</value>
+  </string>
+  <string key="VillageWins" isgif="true">
+    <value >¡Los Mugiwaras han encontrado el One Piece!</value>
+  </string>
+  <string key="TannerWins" isgif="true">
+    <value >¡Oh, no! ¡Has derrotado a Pandaman de forma estúpida! Este comienza a aparecer en una cantidad masiva de cameos dandole todo el protagonismo del manga y haciendo que encuentre el One Piece.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Piratas restantes, roles y equipos:</value>
+  </string>
+  <string key="ZombieVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} ha votado por robarle su sombra a {1}.</value>
+  </string>
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
+    <value>{0} fue enviado para hacer tu trabajo sucio y robarle la sombra a {1}...; sin embargo, ¡se trataba de Luffy ¡{0} fue obligado a tragar sal y ha sido derrotado!</value>
+  </string>
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{0} vino a tu campamento esta noche para robarte la sombra… pero lo encerraste en una torikago y le hiciste comer sal. Un zombie de Gekko Moria ha sido derrotado… ¡Queda(n) {1}!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>¡Los zombies de Gekko Moria te han robado la sombra! Has sido zombificado y ahora eres uno de ellos 👤. Cada noche tendrás ocasión de robarle la sombra a otro pirata.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of Zombies -->
+    <value>Zombies de Gekko Moria: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new Zombie's name -->
+    <value>¡{0} se ha unido al ejercito de Moria!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest Zombie's name -->
+    <!-- 1 - target name -->
+    <value>{0} fue enviado a hacer tu trabajo sucio y robsrle la sombra a {1}... ¡pero no había nadie en el campamento!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >Todos las amenazas al ejecito de Gekko Moria han sido eliminadas y los únicos piratas en pie han sido transformados en zombies ¡Thiller Bark ha ganado!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>¡Fuiste a tratar de unir a tu banda a {0}, pero ya habia sido derrotado.</value>
+  </string>
+  <string key="HunterFindZombie">
+    <!-- 0 - target name -->
+    <value>Vas a buscar a {0} y te lo encuentras adorando un cartel de busqueda de Gekko Moria. Rápidamente, lo obligas a comer sal para derrotarlo. [{0} era un zombie de Gekko Moria].</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>Vas a buscar {0} para invitarlo a ser tu nakama, sin embargo este te ha ignorado. No notas que sea un zombie de Gekko Moria, por lo que te vuelves al Thousand Sunny.</value>
+  </string>
+  <string key="WildChildToWolves"> 
+    <!-- 0 - Werechild's name -->
+    <value>¡{0} acaba de ser derrotado! Esa era su señal para que se reuna con los piratas de Kurohige y pelee a tu lado.</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>¡{0} ha sido derrotado! Esa era tu señal para reunirte con los piratas de Kurohige. Tus aliados son: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
+  <string key="Villager">
+    <value>Pirata Simple 👱‍♂️</value>
+  </string>
+  <string key="Drunk">
+    <value>Kokoro 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Nami 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Viola 👳‍♂️</value>
+  </string>
+  <string key="Traitor">
+    <value>Shilliew the Rain 🥸</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Ace 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Nico Robin 🕵️‍♂️</value>
+  </string>
+  <string key="Wolf">
+    <value>Pirata de Kurohige 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Catalina Devon 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Ussop 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Pandaman 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Chopper 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Van Augur 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Rebecca 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Pudding 🙇‍♂️</value>
+  </string>
+  <string key="Zombie">
+    <value>Zombie de Gekko Moria 👤</value>
+  </string>
+  <string key="ZombieHunter">
+    <value>Luffy 💂‍♂️</value>
+  </string>
+<!-- These are for the player list -->
+  <string key="RanAway">
+   <value>🏃‍♂️ Escapo</value>
+ </string>
+ <string key="Dead">
+   <value>💀 Derrotado</value>
+ </string>
+ <string key="Alive">
+   <value>💃 En pie</value>
+ </string>
+ <string key="PlayersAlive">
+   <value>Piratas en Raftel</value>
+ </string>
+<!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Miembro de la Franky Family👷‍♂️</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Eres miembro de la Franky Family 👷‍♂️. Si hay otro, sabrás quién es. En caso contrario eres un aliado de los Mugiwara mas.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Cuando todo el mundo se levanta, notan que {0} ha desaparecido ¡Un miembro de la Franky Family👷‍♂️ ha sido derrotado!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>Miembros de la Franky Family👷‍♂️: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest Zombies name -->
+    <value>El miembro más reciente del ejercito de Gekko Moria fue a robarle su sombra a {0}, pero parece ser que alguien llego antes que el.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>Los piratas de Kurohige se dirigen al campamento de {0} para derrotarlo, pero se encuentran con un muro enorme de fuego. Portgas D. Ace les impide el paso.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Enviaste a {0} para intentar robarle su sombra a {1}; sin embargo, era demasiado fuerte y fue imposible unirlo al ejercito de Gekko Moria :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, un pirata con el nombre {0} ya se ha unido. Por favor, cambia tu nombre para unirte.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Te escabulliste anoche al campamento de {0} para pasar robarle sus tesoros, pero notaste que solo habia carteles de busqueda de cierto Shichibukai… [{0} es un zombie de Gekko Moria].</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Todo el mundo se despierta a la mañana siguiente y se percata de que {0} no aparece por ningún sitio. Al buscar en su campamento, observan que esta vacio.</value>
+    <value>Mientras todos comienzan a explorar Raftel y el sol asciende en el cielo, se encuentran las pertenencias de {0}, que de alguna forma desaparecio anoche.</value>
+  </string>
+  <string key="MasonConverted">
+     <!-- 0 - mason's name -->
+    <value>¡Qué raro! {0} no apareció esta mañana en la reunión de la Franky Family. No es super.</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>¡God Enel ha decidido que no está permitido abandonar la isla en mitad de una aventura!</value>
+  </string>
+  <string key="IsDead"> 
+    <!-- used when gunner shoots a player -->
+    <value>ha sido derrotado</value>
+  </string>
+  
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} ha sido añadido a la lista de administración. Usa /config para cambiar los ajustes del grupo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>¡Ya estás en una aventura en otro grupo!\nGrupo: {0}</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Se han comenzado varias aventuras a la vez… Acabando con los excesos.</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Tu grupo está en la cola de espera. Posición: {0} / {1}.</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>¡Perdonad! Voy a empezar un breve periodo de mantenimiento. No podréis comenzar aventuras a partir de ahora.\nEsperando que terminen {0} aventuras...\nConsulta werewolfdev para más información.</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Perdonad, se ha alcanzado el máximo de aventuras simultáneas ({0}).\nPosición en la cola de espera: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>¡{0} es un grupo privilegiado y se ha saltado la cola de espera!</value>
+  </string>
+  <string key="NoGame">
+    <value>Nadie esta intentando encontrar el One Piece ahora mismo. Comienza una nueva aventura con /startgame o una aventura caótica con /startchaos.</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Solo la administración puede usar este comando. Echa al bot y añádelo de nuevo. Se te incluirá como administrador.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Después de esta aventura, no estaré disponible por razones de mantenimiento.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Después de esta aventura, no estaré disponible durante un corto periodo de tiempo porque debo actualizarme (automático).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>El identificador de usuario es nulo. ¿Estás seguro de que quieres enviar esto como una respuesta?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>¡{0} ya es administrador/a!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>¡{0} no es administrador/a!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>¡{0} ha sido eliminado de la lista de administración!</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Idioma cambiado a {0}.</value>
+  </string>
+  <string key="NoSeer">
+	<value>¡No encuentras a Viola!</value>
+  </string>
+  <string key="TimesUp">
+	<value>¡Se acabó el tiempo!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Eres Sanji 🏹. Eres todo un cabellero con las chicas. Ademas puedes aliar a dos personas durante la busqueda del One Piece, si una es derrotada la otra tambien lo sera. Pero si una gana la otra persona tambien ganara.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Eres Mr. 2 🎭. Tienes el poder de la Mane Mane no mi. Elige a un pirata, si es derrotado lo suplantaras.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Eres Roronoa Zoro 🎯. Nunca bajas la guardia, ya que sabes que siempre pueden ser atacados. Si eres derrotado, puedes atacar a alguien con tu Santoryu y dejarlo fuera de combate. Si un pirata de Kurohige te ataca durante la noche, tienes una oportunidad de cortarlo, pero no podrás escoger a quién.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Eres Donquixote Doflamingo 🔪. Hace poco que escapaste de Impel Down, tu objetivo es que todos los demás mueran. Cada noche, puedes usar la Ito Ito no mi para eliminar a alguien.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Has formado una alianza con {0}. Si uno de los dos es derrotado, el otro lo tambien lo sera. Si estando vivos los dos, uno de los dos encuentra el One Piece, el otro lo encontrara también.</value>
+	<value>Has formado una alianza con {0}. Si uno de los dos es derrotado, el otro lo tambien lo sera. Si estando vivos los dos, uno de los dos encuentra el One Piece, el otro lo encontrara también.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>¡Has sido derrotado en la batalla! Sin embargo aun puedes lanzar un 720 Pound do Hou, ¡escoge a quién llevarte atacar!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} trata de atacar a alguien mas, pero se ha perdido al momento de lanzar el ataque y nadie mas es derrotado.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} trata de atacar a alguien mas, pero se ha perdido al momento de lanzar el ataque y nadie mas es derrotado.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Mientras {0} esta siendo atacado, en un movimiento inesperado le lanza un 720 Pound do Hou {1} y cae derrotado ! {1} ha sido derrotado {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>¡Has sido derrotado! En tus últimos momentos, puedes escoger a quién llevarte contigo. ¡Hazlo rápido!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>{0} Trata de atacar a alguien mas, pero se ha perdido al momento de lanzar el ataque y nadie mas es derrotado</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>{0} Trata de atacar a alguien mas, pero se ha perdido al momento de lanzar el ataque y nadie mas es derrotado.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Mientras los piratas atacan a {0}, {0} se mueve sin que le vean y derrota a {1}, {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>Los piratas de Kurohige intentaron atacar a Roronoa Zoro anoche, ¡pero gracias a sus reflejos consiguio usar su Santoryu contra uno de los atacantes. {0} ha sido derrotado y era un pirata de Kurohige.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>{0} intentó atacar a Roronoa Zoro anoche, ¡pero acabo siendo victima del marimo! {0} era un pirara de Kurohige</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Los piratas de Kurohige intentaron atacar a alguien por la noche, ¡pero en vez de eso, fueron recibidos por Donquixote Doflamingo! ¡{0} fue asesinado en la pelea! [Un pirata de Kurohige ha muerto]</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Parecía una noche tranquila para {0}, pero se equivocaba. Al dia siguiente encontraron su cuerpo cortado en pedazos. ¡Doflamingo ha atacado de nuevo!. {1}.</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Quisiste usar la Ito Ito no mi con {0}, ¡pero Ace lo protegió! Y no has podido asesinarlo.</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>Los zombies de Gekko Moria envían a {0} para intentar robarle la sombra a {1}, sin embargo fueron recibidos por Roronoa Zoro y {0} acaba siendo derrotado. {0} ha sido obligado a comer sal.</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>Los zombies de Gekko Moria envían a {0} para intentar robarle su sombra a {1}, pero en vez de eso, el cuerpo de {0} sale volando por la isla, ¡con hilos disperos por todo el cuerpo! ¡QUÉ PSICÓPATA! {0} ha muerto.</value>
+	<value>Los zombies de Gekko Moria envían a {0} para intentar robarle su sombra a {1}, pero en vez de eso, el cuerpo de {0} sale volando por la isla, ¡con hilos disperos por todo el cuerpo! ¡QUÉ PSICÓPATA! {0} ha muerto.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Intentaste proteger a Doflamingo ¡pero él te asesino con la Ito Ito no mi!</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Te metes en el campamento de {0} y empiezas a revisar sus pertenencias. Todo va estupendamente hasta que {0} genera hilos y ¡empieza a mutilarte riendo como un maníaco! Has muerto.</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>{0} intentó robarle sus smiles a Doflamingo. {0} ha muerto.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>Mr. 2 {0} se ha convertido en miembro de la Franky Family, ¡igual que tú!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} ha sido derrotado y tú te conviertes en un miembro de la Franky Family. Tus compañeros de desmantelamiento (si los hay) son: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new Zombie's name -->
+    <value>Mr. 2 {0} se ha convertido en zombie de Gekko Moria, ¡igual que tú!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha sido derrotado y tú te conviertes en zombie de Gekko Moria. Tus compañeros (si los hay) son: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Mr. 2 {0} se ha convertido en un pirata de Kurohige ¡igual que tú!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha sido derrotado, por lo que, ¡te conviertes en un pirata de Kurohige! Tus compañeros (si los hay) son: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>¡La última persona en pie es Donquixote Doflamingo!</value>
+  </string>
+  <string key="AskKill">
+    <value>¿A quién quieres matar esta noche?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Mientras los piratas ven que {0} ha sido derrotado, descubren que tiene una alianza con {1}. Por lo tanto, ambos han sido derrotados. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>¿A quien suplantar si es derrotado?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>¿Quienes quieren que formen una alianza?\nEscoge al primer pirata:</value>
+  </string>
+  <string key="AskCupid2">
+    <value>¿Quienes quieren que formen una alianza?\nEscoge al segundo pirata:</value>
+  </string>
+  <string key="Hunter">
+    <value>Roronoa Zoro 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Sanji 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Doflamingo 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Mr. 2 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Eres Van Augur 👶. Tu señal es {0}</value>
+  </string>
+  <string key="LoversWin" isgif="true">
+    <value>¡Triunfa la alianza pirata! ¡Los aliados han ganado!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value> Mientras los piratas recorren la isla, encuentran el campamento de {0} vacio. Parece que visito a Roronoa Zoro y fue derrotado. {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Una fiYami putrefacta trató de robarte tu sombra, pero tu fuerza es demasiada y has sobrevivido al ataque.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Ya estás en la lista de espera del grupo: {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Has sido añadido a la lista de WANTED de los marines. Te llamaremos por Den Den Mushi cuando inicie la proxima aventura.\nGrupo: {0}</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>¡Está empezando una aventura nueva!\nGrupo: {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Llega la mañana y los dos piratas que quedan salen a explorar la isla. {0} mira a {1}, con una gran sonrisa en su cara, genera hilos y acaba con {1}.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Todos han sido derrotados… no queda nadie en pie. Nadie encuentra el One Piece.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Cuando sale el sol, {0} y {1} caminan por Raftel. {0} saca sus hilos, ataca a {1}. Mientras {1} se defiende con un 720 Pound do Hou. Ambos son derrotados y no hay ganador.</value>
+  </string>
+   <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>No has elegido un rol, el moderador eligió por ti: {0}</value>
+  </string>
+  <string key="Won">
+   <value>Ganó</value>
+  </string>
+  <string key="Lost">
+    <value>Perdió</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>El pirata {0} ha sido derrotado por no atacar durante las ultimas {1} peleas.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Eres un Pirata Simple👱‍♂️: Tu funcion es intentar encontrar el One Piece. Cada día tendrás la oportunidad de derrotar a un pirata de Kurohige.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Eres Viola 👳‍♂️. En este rol, cada noche, deberás elegir a un pirata y se revelará su rol mediante tu Clairvoyance.</value>
+  </string>
+  <string key="AboutWw">
+    <value>¡Te vas a divertir! 🐺 Cada día, podrás engañar a los demás piratas. Y por las noches, ¡elegirás a un pirata para absorberlo en la oscuridad!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Como Nami 💋, tendrás la oportunidad de robarle a otro pirata cada noche. Si no es pirata de Kurohige lo sabrás (¡porque seguirás en la isla!). Si te metes al campamento de un pirata de Kurohige, seras derrotada. Si visitas al elegido por un pirata de Kurohige, a ti también te derrotara. De todas formas, si sales de noche y los piratas de Kurohige te eligen, seguiras en la isla. [No estabas en tu campamento]</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>¡Maldita Kokoro 🍻! Aunque eres borracha, aún eres aliada de luffy. Pero si los piratas de Kurohige deciden atacarte, no podrán derrotar a nadie la noche siguiente, ya que estarán borrachos por tu altísima coleccion de sake que se tomaran.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Como Catalina Devon 😼, eres un pirata retirado. hasta que los piratas de Kurohige te llamen. Cuando lo hayan hecho, ¡tú también te convertirás en uno de ellos! Serás libre para derrotar a alguien todas las noches.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Eres Shilliew the Rain 🥸, Si te mantienes lo suficiente en Raftel, cuando los piraras de Kurohige hayan sido derrotados, dejaras atras a los marines y te convertiras en uno, ¡listo para derrotar a los demas piratas cada noche!</value>
+  </string>
+  <string key="AboutGA">
+    <value>¡Eres Portgas D. Ace 👼! Cada noche, elegirás un pirata para proteger. Ten cuidado si eliges proteger a un piraya de Kurohige, tienes un 50% de probabilidades de ser derrotado.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Eres Nico Robin 🕵️‍♂️. Cada día, tendrás la oportunidad de investigar a otro pirata. Pero ten cuidado, ¡ya que existe un 40% de probabilidades de que los piratas de Kurohige te descubran!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Felicidades, ¡Eres Ussop 🔫! Tienes 2 Kayako Boshi. Cada día tendrás la oportunidad de derrotar a otro pirata. Cuando lo hagas, ¡todos sabrán que eres Ussop. Elige con cuidado: solo tienes 2 munciones!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>El objetivo de Pandaman 👺 es sencillo: hacer cameos. Si te derrotan, haras tantos cameos como te sea posible quitandole el protagonismo de la serie a todos los demas.</value>
+  </string>
+  <string key="AboutFool">
+    <value>Chopper 🃏 tiene un excelente olfato, sin embargo ultimamente ha comido demasiado algodon de azucar, cuando elija a alguien para investigarlo se confundira de persona.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Como zombie de Gekko Moria 👤, tu objetivo es robarle la sombra a todos los demas piratas (excepto a los piratas de Kurohige). Si al final de la aventura todos los piratas en pie son zombies, Thiller Bark gana.</value>
+  </string>
+  <string key="AboutCH">
+    <value>💂‍♂️ Tu sueño es convertirte en el Rey de los Piratas. Si un zombie de Gekko Moria te ataca, su miembro más reciente sera obligado a comer sal. Cada noche escogerás a que pirata vas a invitar a ser tu nakama. Si es un zombie, sera derrotado.</value>
+  </string>
+  <string key="AboutWC">
+    <value>👶 Al iniciar la busqueda, elegirás a alguien para ser tu señal. Si lo derrotan, te reuniras con los pirataa de Kurohige</value>
+  </string>
+  <string key="AboutAppS">
+    <value>🙇‍♂️Por ahora eres un pirata normal. Pero, si derrotan a Viola, despertaras tu tercer ojo y podras sustituir su Clarvoyance</value>
+  </string>
+  <string key="AboutBH">
+    <value>👁 Sabras quien tiene la Clairvoyance.</value>
+  </string>
+  <string key="AboutMason">
+    <value>El trabajo de la Franky Family 👷‍♂️ es simple: se conocen entre ellos y se coordinan con los mugiwaras.</value>
+  </string>
+  <string key="AboutDG">
+    <value>🎭 Tienes el poder de la Mane Mane no mi. Podras suplantar a un pirata cuando este sea derrotado.</value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      🏹 Eres todo un caballero con las damas y ademas formas alianzas piratas (como los demas Vinsmoke), si un miembro de dicha alianza es derrotado , el otra tambien lo sera. Pero si uno gana la otra persona tambien ganara. </value>
+  </string>
+  <string key="AboutHunter">
+    <value>Eres Roronoa Zoro 🎯. Nunca bajas la guardia, ya que sabes que siempre pueden ser atacados. Si eres derrotado, puedes atacar a alguien con tu Santoryu y dejarlo fuera de combate. Si un pirata de Kurohige te ataca durante la noche, tienes una oportunidad de cortarlo, pero no podrás escoger a quién.</value>
+  </string>
+  <string key="AboutSK">
+    <value>Eres Donquixote Doflamingo 🔪. Hace poco que escapaste de Impel Down, tu objetivo es que todos los demás mueran. Cada noche, puedes usar la Ito Ito no mi para eliminar a alguien.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para es el desarrollador majadero al que le gusta ladrarle a la gente.</value>
+  </string>
+  <string key="EndTime">
+    <value>Duración de la aventura: {0}</value>
+  </string>
+  
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Día {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Ha ocurrido un error y este nodo se cerrará :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Te he enviado un privi.</value>
+  </string>
+  <string key="StartPM">
+    <value>Por favor, envíame un privi para que pueda hablarte ;)</value>
+  </string>
+  <string key="PMTrue">
+    <value>¡Gracias por iniciarme! Ahora puedo enviarte privis.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Debes responder al usuario al que quieres castigar.</value>
+  </string>
+  <string key="WhatToDo">
+    <value>¿Qué quieres hacer, eh?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>¡Debes unirte a un juego desde un grupo de chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>¡Debes empezar un juego desde un grupo de chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tiempo que tarda Telegram en enviarme un mensaje: {0}\nMensajes por segundo: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>¿Qué idioma?\nActualmente: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>¿Qué variante?\nActualmente: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Idioma puesto: {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>¿Qué archivo de idioma quieres?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Ahora mismo no hay nodos online, por favor, inténtalo de nuevo pasados unos segundos</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>¡Este comando solo se puede usar en un grupo!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>No eres un administrador global.</value>
+  </string>
+  <string key="NotPara">
+    <value>¡Quita de aquí, tú no eres Albert!</value>
+  </string>
+  <string key="Yes">
+    <value>Sí</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Está permitido</value>
+  </string>
+  <string key="Disallow">
+    <value>No está permitido</value>
+  </string>
+  <string key="Show">
+    <value>Mostrar</value>
+  </string>
+  <string key="Hide">
+    <value>Ocultar</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Solo modo normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo modo caótico</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Elección del jugador</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>No mostrar ninguno</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostrar solo los jugadores vivos</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostrar todos los jugadores</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancelar</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>¿Permitir que los jugadores abandonen el juego después de que haya empezado la aventura?\nNota: Los jugadores aún podrán huir durante el join. \nActualmente: Los jugadores {0} pueden huir</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Los jugadores {0} tienen permitida la huida después de comenzar el juego.</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>¿Cuántos jugadores pueden jugar como máximo en una aventura?\nActualmente: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>El máximo de jugadores está establecido en {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>¿Mostrar o esconder los roles a la muerte?\nActualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Los roles están en {0} a la muerte.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>¿En qué modo de juego estará el grupo?\nActualmente: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modo de juego establecido a {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>¿Cómo quieres que se muestren los roles al final de la aventura?\nActualmente: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Mostrar roles al final establecido a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Elige la duración de las acciones diurnas (en segundos). Aun así, quedará modificado en base al número de jugadores.\nPor defecto: {0}\nActualmente: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Duración de las acciones durante el día: {0} segundos.</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Elige la duración de la noche.\nPor defecto: {0}\nActualmente:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Duración de la noche: {0} segundos.</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Elige la duración del linchamiento.\nPor defecto: {0}\nActualmente:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Duración de la Expulsion: {0} segundos.</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>¿Permitir a Cletus Spuckler?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Cletus Spucklers ahora: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>¿Permitir a Pandaman 👺?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Pandaman ahora: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>¿Permitir zombies de Gekko Moria?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Zombies de Gekko Moria ahora: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Gracias, que tengas un buen día :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>¿En qué idioma quieres que esté el grupo en el que vas a jugar?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Aquí tienes una lista para {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Miembros</value>
+  </string>
+  <string key="StartMe">
+    <value>Por favor ábreme una conversación para que pueda enviarte mensajes privados</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>¡{0} no me abrió una conversación y ha sido eliminado del juego!</value>
+  </string>
+  <string key="LatestList">
+    <value>Aquí tienes la última lista de jugadores:</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>No se pudo obtener la última lista de jugadores.</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>¡Te has unido correctamente a la aventura!\nGrupo: {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Duración en enviar el mensaje: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Eres Iceburg🎖. Eres el alcalde de Water 7, una vez que te reveles como tal podras atacar 2 veces a un pirata.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Eres Vivi 👑. Dejaste tu aburrida vida en Arabasta para embarcarte a una aventura. Si intentan atacarte, se arrepentirán y nadie será derrotado.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Eres Cobby 🤕. Tienes dos pies izquierdos, al atacar tienes un 50% de probabilidades de atacar a otro pirata distinto al que elegiste. Aun así, eres un aliado de Mugiwara.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Eres Jesus Burguess 🔮. Eres el espia de Kurohige, ademas buscas Akuma no mi interesantes. Por la noche buscaras a los piratas de Kurohige o a la usuaria de la Clairvoyance (Viola).</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Eres Franky ⚒. El carpintero de los Mugiwaras, por una vez en toda la aventura podrás reforzar todos los campamentos con tus suuuuper inventos para que los piratas de Kurohige no puedan derrotar a nadie.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Eres Kurohige ⚡️. Eres el líder tu malvada banda pirata. Tu ansia de poder es lo que te motiva a encontrar el One Piece. Cada noche, podrás elegir un pirata para absorberlo en la oscuridad generada por la Yami Yami no mi, pero existe un 20% de que la convenzas para que se convierta en un aliado tuyo.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Eres Laffite 🐶 ¡¡Tus aliados te aprecian!! Como el resto de los piratas de Kurohige, elegirás a un pirata para atacarlo cada noche. Si eres derrotado, tus aliados entrarán en cólera y atacarán a dos piratas la próxima noche.</value>
+  </string>
+   <string key="PrinceLynched">
+    <value>Mientras todos en Raftel comienzan a atacar a {0}, de repente dice: «¡Esperen, soy la princesa Nefertari Vivi de Arabasta! Este anillo real, junto con el sello del gobierno mundial que lo demuestran.». Avergonzados, los piratas se marchan a sus campamentos.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Intentas espiar a {0}, pero no puedes distinguir bien que hace. Sin embargo, sabes que no es un pirata de Kurohige ni usuario de la Clairvoyance.</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} da un paso al frente y muestra su placa de la alcaldía, que demuestra que es el alcalde de Water 7. Desde ahora, los ataques de {0} a la hora de la batalla contarán el doble.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Haz clic en «Revelar rol» cuando quieras revelarte al pueblo como el alcalde de Water 7.</value>
+  </string>
+  <string key="Reveal">
+    <value>Revelar rol</value>
+  </string>
+  <string key="SpreadDust">
+    <value>¿Quieres reforzar los campamentos y asi evitar que los piratas de Kurohige ataquen?</value>
+  </string>
+    <string key="BlacksmithSpreadSilver">
+    <value>Mientras el dia transcurre, de repente ven a {0}, que se pone a construir suuuuper refuerzos en los campamentos. Por ahora, los mugiwaras estan a salvo. Los piratas de Kurohige no atacan esta noche.</value>
+  </string>
+  <string key="Mayor">
+    <value>Iceburg 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Vivi 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Jesus Burguess 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Coby 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Franky ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Kurohige ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Laffite 🐶</value>
+  </string>
+   <string key="PlayerBittenWolves">
+    <value>Mientras los piratas de Kurohige intentan absorber con la Yami Yami no mi a {0}, {1} los detiene y les dice todos que {0} debería unirse a ellos, por lo que los demás aceptan y dejan que {0} siga viviendo. Se convertirá en pirata de Kurohige la próxima noche.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Los piratas de Kurohige intentaron derrotarte, pero el mismo Yonkou te escogió. En lugar de absorberte en la oscuridad has sido obligado a unirte a el ¡y te convertirás en uno de sus aliados la próxima noche!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Mientras cae la noche, te diriges hacia la oscuridad que genera la Yami Yami no mi !Ahora eres un enemigo de los Mugiwaras!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Como Iceburg🎖. Eres el alcalde de Water 7, una vez que te reveles como tal podras atacar 2 veces a un pirata.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Eres Vivi 👑. Dejaste tu aburrida vida en Arabasta para embarcarte a una aventura. Si intentan atacarte, se arrepentirán y nadie será derrotado.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Eres Jesus Burgues 🔮. Eres el espia de Kurohige y buscar Akuma no mi interesantes. Por la noche buscaras a los piratas de Kurohige o a la usuaria de la Clairvoyance (Viola).</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Eres Cobby 🤕. Tienes dos pies izquierdos, al atacar tienes un 50% de probabilidades de atacar a otro pirata distinto al que elegiste. Aun así, eres un aliado de Mugiwara.</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Eres Franky ⚒. El carpintero de los Mugiwaras, por una vez en toda la aventura podrás reforzar todos los campamentos con tus suuuuper inventos para que los piratas de Kurohige no puedan derrotar a nadie.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Eres Kurohige ⚡️. Eres el líder tu malvada banda pirata. Tu ansia de poder es lo que te motiva a encontrar el One Piece. Cada noche, podrás elegir un pirata para absorberlo en la oscuridad generada por la Yami Yami no mi, pero existe un 20% de que la convenzas para que se convierta en un aliado tuyo.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Eres Laffite 🐶 ¡¡Tus aliados te aprecian!! Como el resto de los piratas de Kurohige, elegirás a un pirata para atacarlo cada noche. Si eres derrotado, tus aliados entrarán en cólera y atacarán a dos piratas la próxima noche.</value>
+  </string>
+
+<!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha sido derrotado, por lo que has suplantado al mismisimo Kurohige Tus aliados (si los hay) son: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha sido derrotado, por lo que te has suplantado a Laffite. Tus aliados (si los hay) son: {1}</value>
+  </string>
+  
+  <string key="VillageTeam">
+    <value>Equipo de los Mugiwaras</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Equipo neutral</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Equipo de Kurohige</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Equipo de Doflamingo</value>
+  </string>
+  <string key="CultTeam">
+    <value>Equipo de Gekko Moria</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Equipo de Pandaman</value>
+  </string>
+  
+  
+  <string key="VillageTeamEnd">
+    <value>Equipo de los Mugiwaras</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Equipo neutral</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Equipo de Kurohige</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Equipo de Doflamingo</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Equipo de Gekko Moria</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Equipo de Pandaman</value>
+  </string>
+  
+  <string key="CultConvertWolf">
+    <value>Los zombies de Gekko Moria envían a {0} para intentar robarle su sombra a {1}, pero en su lugar, {0} es absorbido por la Yami Yami no mi.</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} se metió en el campamento de {1} para robarle todos sus tesoros, pero en lugar de eso, se encontró un montón de smiles y muchos hilos generados por la Ito Ito no mi {0}, la gata ladrona no volvio a aparecer en Raftel.</value>
+  </string>
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Los piratas recorren Raftel y se encuentran con los chocolates de {0} parece que Pudding fue absorbida por la Yami Yami no mi sin despertar su tercer ojo.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Parece que {0}, Franky, ha tenido muy mala suerte durante la noche, ya que sus partes roboticas han aparecido dispersas por todo el lugar. Parece que Doflamingo le ha atacado.</value>
+  </string>
+  <string key="ZombieKilled">
+    <value>{0} fue destazado en varios pedazos mientras veia un cartel de Gekko Moria. ¡Doflamingo ha atacado de nuevo! {0} era un zombie de Gekko Moria.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>A la mañana siguiente, los piratas encuentran decenas de cigarrillos dispersos en todo el lugar, parece que Sanji fue atacado por Doflamingo, {0} ha sido derrotado por Donquixote Doflamingo.</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Los aldeanos esperaban quedar con la vieja Kokoro, {0}, pero no ha sido vista nuevamente en la isla. Parece que Doflamingo se ha encargado de eliminarla.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} normalmente habría luchado contra Doflamingo, pero es irónico que hasta el halo de fuego que rodeaba a Ace se haya extinguido. {0} ha sido derrotado.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>¡Parece que {0} fue sorprendido anoche! Se escuchó una explosión, pero solo se pudieron encontrar las herramientas del Capitán Ussop. Es evidente que Doflamingo ha ganado.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>¡Magnicidio! Los piratas se han encontrado con que {0}, nuestro excelentísimo ilustrísimo señor alcalde, no aparece. Al parecer los hilos generados por Doflamingo tuvieron que ver en esto.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>La princesa Nefertari Vivi ha desaparecido, en su lugar se han encontrado algunos restos de hilos generados por la Ito Ito no mi, parece que Doflamingo ha atacado de nuevo. {0} era Vivi.</value>
+    <value>La princesa Nefertari Vivi ha desaparecido, en su lugar se han encontrado algunos restos de hilos generados por la Ito Ito no mi, parece que Doflamingo ha atacado de nuevo. {0} era Vivi.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>La usuaria de la Clairvoyance no aparece esta mañana en la isla. Es de suponer que Donquixote Doflamingo ha atacado nuevamente ya que hay hilos dispersos en todo su campamento. {0} era Viola</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Al parecer los piratas de Kurohige han atacado a su espía. Jesus Burguess ha sido absorbido por la oscuridad de la Yami Yami no mi. {0} era Jesus Burguess.</value>
+    <value>Al parecer los piratas de Kurohige han atacado a su espía. Jesus Burguess ha sido absorbido por la oscuridad de la Yami Yami no mi. {0} era Jesus Burguess.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>Amanece y los piratas encuentran el rifle de Van Augur. Parece que anoche fue absorbido por error por la Yami Yami no mi, un gran error. {0} Era Van Augur</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>El sombrero de paja de Luffy aparece tirado en medio de la isla, al parecer esta rodeado de hilos de la Ito Ito no mi {0}. Lección aprendida: ¡no hay que invitar a Doflamingo a ser tu nakama.</value>
+    <value>El sombrero de paja de Luffy aparece tirado en medio de la isla, al parecer esta rodeado de hilos de la Ito Ito no mi {0}. Lección aprendida: ¡no hay que invitar a Doflamingo a ser tu nakama.</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>Aunque parecía que los piratas de Kurohige habían decidido quedarse en su campamento, un zombie de Gekko Moria decidió visitarlos. ¡{0} Ha sido absorbido por la Yami Yami no mi!</value>
+    <value>Aunque parecía que los piratas de Kurohige habían decidido quedarse en su campamento, un zombie de Gekko Moria decidió visitarlos. ¡{0} Ha sido absorbido por la Yami Yami no mi!</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
+    <value>Al parecer los zombies de Gekko Moria intentaron tener una nueva sombra entre sus filas, pero, ¡estaban equivocados! {0}, un zombie de Gekko Moria, fue descuartizado y sus restos fueron esparcidos por toda la isla!</value>
+    <value>Al parecer los zombies de Gekko Moria intentaron tener una nueva sombra entre sus filas, pero, ¡estaban equivocados! {0}, un zombie de Gekko Moria, fue descuartizado y sus restos fueron esparcidos por toda la isla!</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Se suponía que iba a ser una noche donde {0}, Ace, salvaría a alguien con su Hikken... sin embargo se acerco demasiado a Doflamingo y puño de fuego no ha sido visto de nuevo.</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>Ace,{0}, trató de proteger a un aliado de Kurohige. Al parecer fue absorbido por la oscuridad de la Yami Yami no mi.</value>  
+</string>
+  
+    <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sabiendo que solo quedaba {0} en Raftel, {1} intenta absorberlo con la Yami Yami no mi, pero {0} lanza un 720 Pound do Hou para que {1} salga volando de la isla. ¡Los Mugiwaras han ganado!!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{1} sabe que en Raftel solo queda {0}, así que aprovecha mientras {0} está tomando una siesta para absorberlo con la Yami Yami no mi.</value>
+  </string>
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>{1} y {0} se encuentran en el centro de la isla. Sin embargo, {1} hoy no tiene ganas de perder su sombra y antes de que {0} haga algo, se abalanza sobre él, lo incapacita y lo hace comer sal. {0} era el último zombie de Gekko Moria en pie.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>El tiempo para unirse a la aventura ha aumentado {0} segundos.\n{1} para unirse.</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>El tiempo para unirse ha bajado {0} segundos.\n{1} para unirse.</value>
+  </string>
+  <string key="CantExtend">
+    <value>Solo los administradores de este nuestro grupo pueden aumentar el tiempo para unirse más de una vez.</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>¿Permitir que los jugadores aumenten el tiempo para unirse?\nActualmente: {0} aumentar el tiempo\nNota: Los administradores siempre podrán aumentar el tiempo para unirse.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} que los jugadores aumenten el tiempo para unirse.</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Elige el máximo de segundos permitidos para añadir al tiempo de unirse a la aventura para cada vez que se le dé a /extend.\nPor defecto: {0}\nActualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>El máximo de tiempo se ha establecido en {0} segundos.</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>¡Oh, no! {0} era Kokoro, y al derrotarle, les inicia una sed increíble que han saciado con sake. Esta noche no atacan a nadie mas. {1}.</value>
+  </string>
+    <string key="JoinButton"><!-- this is for a button, no markdown or html -->
+    <value>¡Súbete al Barco!</value>
+  </string>
+    <string key="NotMember">
+    <value>No puedes unirte a la aventura porque parece que no perteneces a {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>¡A ver cuántas veces tendré que repetir esto! Dejad de usar join, ahora hay un botón que lo sustituye. Superadlo ya.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} jugadores han atacado, {1} en total.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>¿Activar linchamientos secretos?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>La activación de linchamientos secretos está: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, no olvides que para unirte a la aventura tienes que pulsar el botón aunque la hayas iniciado.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>No pude encontrar el grupo. Por favor, usa este comando en el grupo del que quieres dejar de esperar, o añade enlace, id o nombre de usuario al lado del comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Se te ha eliminado de la lista de espera de {0}.</value>
+  </string>
+    <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} se ha(n) subido al barco en los últimos 30 segundos.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Permitir zombies de Gekko Moria</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Permitir Pandaman</value>
+  </string>
+  <string key="AllowFool">
+    <value>Permitir Chopper</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Activar linchamiento secreto</value>
+  </string>
+  <string key="RandomMode">
+    <value>Activar modo aleatorio</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Permitir extender el tiempo</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostrar los roles al morir</value>
+  </string>
+ <string key="AllowFlee">
+    <value>Permitir salir del juego</value>
+  </string>
+    <string key="ShowIDs">
+    <value>Mostrar IDs durante el join.</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>¿Mostrar los IDs de los jugadores conforme se vayan uniendo?\nActualmente: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Todas</value>
+  </string>
+    <string key="RandomModeQ">
+    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una aventura, se asignarán aleatoriamente los siguientes parámetros: aventuras caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan Zombieas, necio o veterano.\nActualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modo aleatorio: {0}</value>
+  </string>
+    <string key="AllowNSFW">
+    <value>Permitir packs de GIFs NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>¿Permitir que los jugadores tengan packs de GIFs NSFW?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} GIFs NSFW</value>
+  </string>
+  
+    <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Con el albor del nuevo día, {0} se despierta en medio de un gran silencio. Dándose cuenta de que no nadie queda que vea sus cameos.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>Al parecer {0} ha quedado solo en Raftel, no queda nadie a quien espiar o robarle sus Akuma no mi.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>¿Qué variante?\nActualmente: {0}\nComo has jugado 500 juegos, puedes acceder también a: </value>
+  </string>
+  <string key="Skip">
+	<value>Omitir</value>
+  </string>
+  
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha sido derrotado, por lo que te has transformado en Doc Q. Tu equipo (si la hay) es: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>¡Tu alma te dicen que {0} NO es {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>¿Quieres lanzar la arena por toda la isla para que nadie pueda hacer nada durante la noche?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>{0} comienza a generar arena por obra de la Suna Suna no mi dejando toda la isla cubierta, solo por hoy nadie puede salir de noche.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Cae la noche y la isla esta totalmente cubierta por arena, nadie puede salir hoy de su campamento</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>¿Permitir a Trafalgar Law?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>El Trafalgar Law ahora: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>¿Usar la Ope Ope no mi cada noche?\nActualmente: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>La Ope Ope no mi puede usarse cada noche: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Permitir Trafalgar Law</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Modo «Ope Ope no mi completa»</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Eres Aokiji 👱🌚, aparentemente estas aliado con Kurohige (aunque todo sea un engaño) sin embargo Viola te vera como un Pirata de Kurohige. Pero eres un aliado mas de Mugiwara mas ¡oh no!</value>
+  </string>
+  <string key="WolfMan">
+    <value>Aokiji 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Aokiji 👱🌚, aparentemente esta aliado con Kurohige (aunque todo sea un engaño) sin embargo Viola lo vera como un Pirata de Kurohige. Pero es un aliado de Mugiwara mas ¡oh no!</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>¡Eres Doc Q 🐺🌝! Eres de la tripulación de Kurohige, sin embargo al estar siempre pasivo y sobre tu caballo, Viola te confundirá con un aliado de Mugiwara mas. :)</value>
+  </string>
+  <string key="Lycan">
+    <value>Doc Q 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Doc Q 🐺🌝 es de la tripulación de Kurohige, sin embargo al estar siempre pasivo y sobre su caballo, Viola lo confundirá con un aliado de Mugiwara mas.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Eres Brook 🌀. Gracias a la Life Life no mi puedes separar tu alma de tu cuerpo y durante las noches fisgonear en los otros campamentos, sin embargo ya que no tienes ojos (porque estas muerto yohohoho) solo veras piratas que aun no han sido derrotados, así que presta atención al nombre, porque significa que aún esta por ahi. :)</value>
+  </string>
+  <string key="Oracle">
+    <value>Brook 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Brook 🌀 gracias a la Life Life no mi puedes separar su alma de su cuerpo y durante las noches fisgonear en los otros campamentos, sin embargo ya que no tiene ojos (porque esta muerto yohohoho) solo vera piratas que aun no han sido derrotados.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Eres Cocodrile 💤. Una única vez podras liberare todo el poder de la Suna Suna no mi, haciendo que nadie pueda salir de su campamento esa noche debido a la arena.</value>
+  </string>
+  <string key="Sandman">
+    <value>Cocodrile 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Cocodrile 💤. Una única vez podra liberar todo el poder de la Suna Suna no mi, haciendo que nadie pueda salir de su campamento esa noche debido a la arena.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoImam">
+    <value>Eres Px-0 ☮. Eres una de las nuevas armas del Dr. Vegapunk, con un gran poder que puede pacificar cualquier batalla, cosa que podrás hacer una única vez durante la aventura.</value>
+  </string>
+  <string key="Imam">
+    <value>Px-0 ☮</value>
+  </string>
+  <string key="AboutImam">
+    <value>Px-0 ☮. Es una de las nuevas armas del Dr. Vegapunk, con un gran poder que puede pacificar cualquier batalla, cosa que podrá hacer una única vez durante la aventura.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>Eres Tsuru 📚. Gracias a la Woshu Woshu no mi, podrás evadir al ataque de los piratas de Kurohige una única vez; la siguiente vez no tendrás tanta suerte. Si Ussop o Zoro te derrotan perderán su voluntad de pelear y se convertiran en piratas comunes.</value>
+  </string>
+  <string key="WiseElder">
+    <value>Tsuru 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>Tsuru 📚. Gracias a la Woshu Woshu no mi, podrá evadir al ataque de los piratas de Kurohige una única vez; la siguiente vez no tendrá tanta suerte. Si Ussop o Zoro le derrotan perderán su voluntad de pelear y se convertiran en piratas comunes..</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>¡Eres Trafalgar D. Water Law 😈! Gracias a la Ope Ope no mi puedes robar el corazón del pirata que elijas durante la primera noche y convertirlo en un pirata simple.</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>¡Eres Trafalgar D. Water Law 😈! Dado que la Ope Ope no mi esta totalmente activada, tienes un 50% de posibilidades de robar el corazon de algún jugador cada noche. Si lo consigues, dicho jugador se convertirá en el nuevo portador de la Ope Ope no mi.</value>
+  </string>
+  <string key="Thief">
+    <value>Trafalgar Law 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Por defecto, Trafalgar Law 😈 puede robar el corazon del pirata que elija durante la primera noche y convertirlo en un pirata simple.\nSi la Ope Ope no mi esta totalmente activada, cada noche tendrá un 50% de posibilidades de robar corazones. Si lo consigue, el pirata afectado, se convertirá en el nuevo portador de la Ope Ope no mi.</value>
+  </string>
+    
+  <string key="AskImam">
+    <value>¿Quieres detener la batalla?</value>
+  </string>
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
+    <value>Px-0 ☮, {0} ha empezado a disparar lasers a toda la zona de batalla, solo por hoy nadie peleara.</value>
+  </string>
+  <string key="ImamNoLynchNow">
+    <value>Gracias a las acciones de Px-0 ☮, nadie peleara hoy en Raftel.</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Intentaste entrar en el campamento de {0}, ¡pero desgraciadamente Tsuru 📚 se encontraba ahí! {0} impidió con éxito el ataque, pero, afortunadamente, no han reconocido a ninguno de ustedes.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Los piratas de Kurohige te atacaron, ¡pero afortunadamente eres Tsuru 📚 e impidiste con éxito el ataque, pero no reconociste a ninguno de los atacantes.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Zoro 🎯, {0}, ataco a Tsuru 📚, {1}. {0} ha perdido su voluntad de pelear y se ha convertido en un simple pirata.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Ussop 🔫, {0} le lanzo una Kayako Boshi a Tsuru 📚, {1}. {0} ha perdido su voluntad de pelear y se ha convertido en un simple pirata.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Intentaste robarle el corazon a {0}, pero no lo conseguiste.</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Intentaste robarle el corazon a {0}, pero {0} ya habia sido derrotado.</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - The new role -->
+    <value>¡Te han robado el corazon! Ahora eres {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Le robaste con éxito el corazon a {0}.</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} ya no forma parte de la familia, y {1} se ha convertido en un miembro de la Franky Family.</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Tus compañeros desmanteladores (si los hay) son: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
+    <value>{0} ha recuperado su sombra, y {1} se ha convertido en un zombie de Gekko Moria, ¡como tú!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} ya no forma parte de tu tripulacion, y {1} se ha convertido en un pirata de Kurohige, ¡como tú!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Tus compañeros (si los hay) son: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>{0} deambula por Raftel, y de pronto se da cuenta de que ya no quedan corazones que robar.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Tu objetivo del Shambles ahora es {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>¿A quién quieres robarle el corazo ?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} ataques para {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>El resultado de la batalla de hoy:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} ataques para {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secreto: Recuento de ataques</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>¿Mostrar el recuento de ataques al final de la batalla secreta cuando estos estén activados?\nActualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Cuando la batalla secreta este activada, el recuento al final será del siguiente modo: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secreto: Piratas</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>¿Mostrar el nombre del pirata por cada ataque efectuado cuando la batalla secreta estén activada y se muestre el recuento de ataques?\nActualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Cuando la batalla secreta este activada y se muestre el recuento de ataques, el nombre del pirata por cada ataque efectuado será del siguiente modo: {0}</value>
+  </string>
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
+	<value>¡Qué extraño! Mientras decide  a quién robarle la sombra esta noche, se dan cuenta de que… ¡{0} ha recuperado su sombra! 🤔</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Imam's button -->
+	<value>¡Evitar el combate!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
+	<value>¡Px-0 ha decidio traer al resto de los Imamas y este día no habra combate!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>¡Te han robado el corazón! ¡Ahora posees el poder de la Ope Ope no Mi y puedes robar el corazón de quien te plazca.</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>¡Te han robado el corazón y ademas lo han intercambiado por el de un Pirata Simple, ¡prepárate para ser un seguidor del sombrero de paja!</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+   	<value>¡Muy Mal! Doflamingo te ha encerrado en la Torikago para que mueras.</value>
+       <value>Mmm... ¿Haz intentado meterte en los asuntos de Doflamingo?</value>
+  </string>
+  <string key="ThiefTeamEnd">
+	<value>Equipo del ladrón</value>
+  </string>
+  
+    <string key="StealKiller">
+    <value>¡Has intentado robar el corazón equivocado! ¡era el de Doflamingo! En cuestión de segundos has pasado de estar robando su corazón, a acabar sin extremidades por entrometerte con sus Smiles.</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>¡OH NO! ¡Parece que Law se entrometió demasiado en los planes de Doflamingo, este ha acabado con él despedazandolo y cosiendo sus extremidades hasta su muerte! Hemos perdido el poder de la Ope Ope no mi. {0} era Trafalgar Law.</value>
+  </string>
+    <string key="BeholderSeerStolen">
+	<value>Trafalgar Law ha robado el corazon de {0} y ha obtenido la Clairvoyance, mientras que {1} ha perdido sus habilidades</value>
+  </string>
+</strings>

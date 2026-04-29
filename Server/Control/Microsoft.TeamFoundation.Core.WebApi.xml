@@ -1,0 +1,1024 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.TeamFoundation.Core.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.InvalidProxyUriException">
+            <summary>
+            This exception is shown whenever a project with a given id does not exist or if the user has insufficient 
+            rights to access it.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.Internal.CssUtils.IsValidCssNodeName(System.String)">
+            <summary>
+            Is this a valid CSS Node Name?
+            
+            Preconditions: name is non-null and non-empty
+            
+            (re-factored slightly from code by LakshmiP)
+            </summary>
+            <param name="name">the name</param>
+            <returns>true if valid, false if invalid</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.Internal.CssUtils.IsValidProjectName(System.String)">
+            <summary>
+            Is this a valid project name for PCW?
+            
+            </summary>
+            <param name="projectName">the desired name for the project</param>
+            <returns>true if valid, false if invalid</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.Internal.CssUtils.TryCreateUri(System.String,System.UriKind,System.Uri@)">
+            <summary>
+            Safe wrapper for Uri.TryCreate
+            Uri.TryCreate throws System.IndexOutOfRangeException when given garbage characters in .NET 4.5.1 (Bug 623235)
+            </summary>
+            <param name="uriString">the String representing the Uri</param>
+            <param name="uriKind">the type of the Uri </param>
+            <param name="result">extracted Uri if successful, null otherwise</param>
+            <returns>A Boolean value that is true if the Uri was successfully created; otherwise, false</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TeamHttpClientBase.GetTeamMembersAsync(System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="projectId"></param>
+            <param name="teamId"></param>
+            <param name="top"></param>
+            <param name="skip"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TeamHttpClientBase.CreateTeamAsync(Microsoft.TeamFoundation.Core.WebApi.WebApiTeam,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Creates a team
+            </summary>
+            <param name="team">The team data used to create the team.</param>
+            <param name="projectId">The name or id (GUID) of the team project in which to create the team.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TeamHttpClientBase.DeleteTeamAsync(System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Deletes a team
+            </summary>
+            <param name="projectId">The name or id (GUID) of the team project containing the team to delete.</param>
+            <param name="teamId">The name of id of the team to delete.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TeamHttpClientBase.GetTeamAsync(System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Gets a team
+            </summary>
+            <param name="projectId"></param>
+            <param name="teamId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TeamHttpClientBase.GetTeamsAsync(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="projectId"></param>
+            <param name="top"></param>
+            <param name="skip"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TeamHttpClientBase.UpdateTeamAsync(Microsoft.TeamFoundation.Core.WebApi.WebApiTeam,System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Updates a team's name and/or description
+            </summary>
+            <param name="teamData"></param>
+            <param name="projectId">The name or id (GUID) of the team project containing the team to update.</param>
+            <param name="teamId">The name of id of the team to update.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProcessHttpClient.GetProcessByIdAsync(System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Retrieve process by id
+            </summary>
+            <param name="processId"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProcessHttpClient.GetProcessesAsync(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TemporaryDataHttpClient.CreateTemporaryDataAsync(Microsoft.TeamFoundation.Core.WebApi.TemporaryDataDTO,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Create a new temporary data.
+            </summary>
+            <param name="requestBody">The data of temporary artifact in json format.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TemporaryDataHttpClient.CreateTemporaryDataAsync(Microsoft.TeamFoundation.Core.WebApi.TemporaryDataDTO,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Create a new temporary data with the provided guid
+            </summary>
+            <param name="requestBody">The data of temporary artifact in json format.</param>
+            <param name="id">New temporary data Id</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TemporaryDataHttpClient.GetTemporaryDataAsync(System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API] Get a temporary artifact.
+            </summary>
+            <param name="id">The ID of the temporary artifact.</param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.IdentityMruHttpClient.CreateIdentityMruAsync(Microsoft.TeamFoundation.Core.WebApi.IdentityData,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="mruData"></param>
+            <param name="mruName"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.IdentityMruHttpClient.DeleteIdentityMruAsync(Microsoft.TeamFoundation.Core.WebApi.IdentityData,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="mruData"></param>
+            <param name="mruName"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.IdentityMruHttpClient.GetIdentityMruAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="mruName"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.IdentityMruHttpClient.UpdateIdentityMruAsync(Microsoft.TeamFoundation.Core.WebApi.IdentityData,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="mruData"></param>
+            <param name="mruName"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.ProjectCollectionHttpClient">
+            <summary>
+            HttpClient to get collections.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProjectCollectionHttpClient.GetProjectCollection(System.String,System.Object)">
+            <summary>
+            Get the project collection with the specified id/name.
+            </summary>
+            <param name="id">The collection id/name to search for.</param>
+            <param name="userState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProjectCollectionHttpClient.GetProjectCollections(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object)">
+            <summary>
+            Get all project collections for the requested application.
+            </summary>
+            <param name="top"></param>
+            <param name="skip"></param>
+            <param name="userState"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCapabilitiesConstants">
+            <summary>
+            Used to help build the capabilities for a project.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCapabilitiesConstants.VersionControlCapabilityName">
+            <summary>
+            The name of the capability for version control.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCapabilitiesConstants.VersionControlCapabilityAttributeName">
+            <summary>
+            The name of the attribute for the version control type.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCapabilitiesConstants.VersionControlGitEnabledAttributeName">
+            <summary>
+            The name of the attribute that indicates if Git is enabled
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCapabilitiesConstants.VersionControlTfvcEnabledAttributeName">
+            <summary>
+            The name of the attribute that indicates if TFVC is enabled
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCapabilitiesConstants.ProcessTemplateCapabilityName">
+            <summary>
+            The name of the capability for process templates.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCapabilitiesConstants.ProcessTemplateCapabilityTemplateNameAttributeName">
+            <summary>
+            The name of the attribute for the process template name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCapabilitiesConstants.ProcessTemplateCapabilityTemplateTypeIdAttributeName">
+            <summary>
+            The name of the attribute for the process template type ID.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TfsRequestContextItemsKeys.RequestTeam">
+            <summary>
+            Key used in the root request context's Items property bag to store the TeamFoundationTeam associated with the request (if any)
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TfsRequestContextItemsKeys.RequestProject">
+            <summary>
+            Key used in the root request context's Items property bag to store the ProjectInfo of the project associated with the request (if any)
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TfsSettingsScopeNames.Project">
+            <summary>
+            Project-scoped settings use this as the scope name
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TfsSettingsScopeNames.Team">
+            <summary>
+            Team-scoped settings use this as the scope name
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TfsSettingsScopeNames.Repository">
+            <summary>
+            Repo-scoped settings use this as the scope name
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.ProjectException">
+            <summary>
+            Base ProjectException.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProjectException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes an exception from serialized data
+            </summary>
+            <param name="info">object holding the serialized data</param>
+            <param name="context">context info about the source or destination</param>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.ProjectDoesNotExistException">
+            <summary>
+            This exception is shown whenever a project with a given id does not exist or if the user has insufficient 
+            rights to access it.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.ProjectDoesNotExistWithNameException">
+            <summary>
+            This exception is shown whenever a project with invalid name is referenced
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.ProjectAlreadyExistsException">
+            <summary>
+            This exception is shown when a project with the given name already exists.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.ProjectWorkPendingException">
+            <summary>
+            This exception is shown whenever a project operation cannot be performed due to work queue operations pending
+            For example if project 'foo' was renamed to 'bar' but this update has not yet been processed by all Tfs components
+              then renaming a project into 'foo' would be blocked (though technically name 'foo' is not occupied by any projects)
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProxyHttpClient.CreateOrUpdateProxyAsync(Microsoft.TeamFoundation.Core.WebApi.Proxy,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="proxy"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProxyHttpClient.DeleteProxyAsync(System.String,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="proxyUrl"></param>
+            <param name="site"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProxyHttpClient.GetProxiesAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            [Preview API]
+            </summary>
+            <param name="proxyUrl"></param>
+            <param name="userState"></param>
+            <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.TeamNotFoundException">
+            <summary>
+            This exception is shown whenever a team with a given id or name does not exist or if the user has insufficient 
+            rights to access it.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.DefaultTeamNotFoundException">
+            <summary>
+            This exception is shown whenever a project doesn't have a default team.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.InvalidTeamNameException">
+            <summary>
+            The value provided for the team name is not valid.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.InvalidTeamDescriptionException">
+            <summary>
+            The value provided for the team description is not valid.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.TeamAlreadyExistsException">
+            <summary>
+            This exception is shown whenever a team is created, but another team with requested name already exists.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.TeamSecurityException">
+            <summary>
+            This exception is thrown when the user do not have permission on team.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TeamHttpClient.GetTeams(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object)">
+            <summary>
+            Get all teams under a certain project. This has been deprecated and clients should instead use the <c>GetTeamsAsync</c> method.
+            </summary>
+            <param name="projectId"></param>
+            <param name="userState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TeamHttpClient.GetTeam(System.String,System.String,System.Object)">
+            <summary>
+            Get a specific team under a project. This has been deprecated and clients should instead use the <c>GetTeamAsync</c> method.
+            </summary>
+            <param name="projectId"></param>
+            <param name="teamId"></param>
+            <param name="userState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TeamHttpClient.GetTeamMembers(System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object)">
+            <summary>
+            Get the members for a specific team. This has been deprecated and clients should instead use the <c>GetTeamMembersAsync</c> method.
+            </summary>
+            <param name="projectId"></param>
+            <param name="teamId"></param>
+            <param name="userState"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.ProjectHttpClient">
+            <summary>
+            HttpClient for get, edit, create, delete project.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProjectHttpClient.GetProject(System.String,System.Nullable{System.Boolean},System.Boolean,System.Object)">
+            <summary>
+            Get project with the specified id or name, optionally including capabilities.
+            </summary>
+            <param name="id">The name or id of the project.</param>
+            <param name="includeCapabilities">Include capabilities (such as source control) in the team project result.</param>
+            <param name="includeHistory">Search within renamed projects (that had such name in the past).</param>
+            <param name="userState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProjectHttpClient.GetProjects(System.Nullable{Microsoft.TeamFoundation.Core.WebApi.ProjectState},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Object)">
+            <summary>
+            Get projects with the specified state.
+            </summary>
+            <param name="stateFilter">Filter on team projects in a specific team project state.</param>
+            <param name="top"></param>
+            <param name="skip"></param>
+            <param name="userState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProjectHttpClient.GetProjectHistory(System.Int64,System.Object)">
+            <summary>
+            Get recorded project changes since the provided revision (inclusive).
+            </summary>
+            <param name="minRevision">Starting revision for the changes to return</param>
+            <param name="userState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProjectHttpClient.QueueCreateProject(Microsoft.TeamFoundation.Core.WebApi.TeamProject,System.Object)">
+            <summary>
+            Queue a project creation with a specific Name, Abbreviation, Capabilities.VersionControl, Capabilities.ProcessTemplate, and optionally Description.
+            </summary>
+            <param name="projectToCreate">The project to create.</param>
+            <param name="userState"></param>
+            <returns>Reference to the create operation.</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProjectHttpClient.QueueDeleteProject(System.Guid,System.Object)">
+            <summary>
+            Queue a project deletion.
+            </summary>
+            <param name="projectId">The project id of the project to delete.</param>
+            <param name="userState"></param>
+            <returns>Reference to the delete operation.</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProjectHttpClient.UpdateProject(System.Guid,Microsoft.TeamFoundation.Core.WebApi.TeamProject,System.Object)">
+            <summary>
+            Update an existing project's name, abbreviation, or description.
+            </summary>
+            <param name="projectToUpdateId">The project id of the project to update.</param>
+            <param name="projectUpdate">The updated project.</param>
+            <param name="userState"></param>
+            <returns>Reference to the update operation.</returns>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.TaggingWebApiConstants">
+            <summary>
+            Constants for the Tagging WebApi interface.
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TaggingHelper.TagSeparators">
+            <summary>
+            Tag seperator characters
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TaggingHelper.MaxTagNameLength">
+            <summary>
+            Max length for a Tag Name
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TaggingHelper.DefaultTagDefinitionLimit">
+            <summary>
+            Max number of tag definitions allowed per account
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.TaggingHelper.TagLimitRegistryPath">
+            <summary>
+            Registry setting to override the default tag limit
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TaggingHelper.SplitTagText(System.String)">
+            <summary>
+            Splits a string of tags and their delimiters into a collection of individual tag values
+            </summary>
+            <param name="text">The string to split</param>
+            <returns>A collection of tag names</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TaggingHelper.FormatTagsValue(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Return a user friendly string representing a set of tags (does not reorder tags)
+            </summary>
+            <param name="tags">A collection of tag names</param>
+            <returns>delimiter joined string representing the tags.</returns>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.TaggingHttpClient">
+            <summary>
+            Client proxy for the <em>tagging</em> WebApi interface.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TaggingHttpClient.GetTagAsync(System.Guid,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Get a tag by its ID.
+            </summary>
+            <param name="scopeId">The tagging scope.</param>
+            <param name="tagId">The tag's Id.</param>
+            <param name="userState">Optional user state that is passed to the async call.</param>
+            <param name="cancellationToken">Optional cancellation token that is passed to the async call.</param>
+            <returns>A <c>Task</c> which returns the tag matching the <paramref name="scopeId"/> and <paramref name="tagId"/>.</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TaggingHttpClient.GetTagAsync(System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Get a tag by its name.
+            </summary>
+            <param name="scopeId">The tagging scope.</param>
+            <param name="name">The tag name</param>
+            <param name="userState">Optional user state that is passed to the async call.</param>
+            <param name="cancellationToken">Optional cancellation token that is passed to the async call.</param>
+            <returns>A <c>Task</c> which returns the tag matching the <paramref name="scopeId"/> and <paramref name="name"/>.</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TaggingHttpClient.GetTagsAsync(System.Guid,System.Boolean,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Get all tags within a scope.
+            </summary>
+            <param name="scopeId">The tagging scope.</param>
+            <param name="includeInactive"></param>
+            <param name="userState">Optional user state that is passed to the async call.</param>
+            <param name="cancellationToken">Optional cancellation token that is passed to the async call.</param>
+            <returns>A <c>Task</c> which returns the list of tag matching the <paramref name="scopeId"/>.</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TaggingHttpClient.CreateTagAsync(System.Guid,System.String,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Create a tag.
+            </summary>
+            <param name="scopeId">The tagging scope.</param>
+            <param name="name">The tag name</param>
+            <param name="userState">Optional user state that is passed to the async call.</param>
+            <param name="cancellationToken">Optional cancellation token that is passed to the async call.</param>
+            <returns>A <c>Task</c> which returns the newly created tag.</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TaggingHttpClient.UpdateTagAsync(System.Guid,System.Guid,System.String,System.Nullable{System.Boolean},System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Update a tag's information.
+            </summary>
+            <param name="scopeId">The tagging scope.</param>
+            <param name="tagId">The tag's Id.</param>
+            <param name="name">The new name of the tag.</param>
+            <param name="active">The new active status fo the tag.</param>
+            <param name="userState">Optional user state that is passed to the async call.</param>
+            <param name="cancellationToken">Optional cancellation token that is passed to the async call.</param>
+            <returns>A <c>Task</c> which returns the updated tag.</returns>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TaggingHttpClient.DeleteTagAsync(System.Guid,System.Guid,System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Delete a tag.
+            </summary>
+            <param name="scopeId">The tagging scope.</param>
+            <param name="tagId">The tag's Id.</param>
+            <param name="userState">Optional user state that is passed to the async call.</param>
+            <param name="cancellationToken">Optional cancellation token that is passed to the async call.</param>
+            <returns>A <c>Task</c> which completes when the tag has been deleted.</returns>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.WebApiCreateTagRequestData">
+            <summary>
+            The representation of data needed to create a tag definition which is sent across the wire.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.WebApiTagDefinition">
+            <summary>
+            The representation of a tag definition which is sent across the wire.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.WebApiTagDefinitionList">
+            <summary>
+            The representation for a collection of tag definitions which is sent across the wire.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiProject.Collection">
+            <summary>
+            Reference to collection which contains this project
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiProject.DefaultTeam">
+            <summary>
+            Default team for this project
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiProject.Capabilities">
+            <summary>
+            Set of capabilities this project has
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiProject.TfsUri">
+            <summary>
+            Tfs Uri to this project - useful when querying teams
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiConnectedService.Name">
+            <summary>
+            Id/Name of the connection service. For Ex: Subscription Id for Azure Connection
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiConnectedService.FriendlyName">
+            <summary>
+            Friendly Name of service connection
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiConnectedService.Project">
+            <summary>
+            The project associated with this service
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiConnectedService.Description">
+            <summary>
+            Extra description on the service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiConnectedService.Kind">
+            <summary>
+            The kind of service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiConnectedService.ServiceUri">
+            <summary>
+            Optional uri to connect directly to the service such as https://windows.azure.com
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiConnectedService.AuthenticatedBy">
+            <summary>
+            The user who did the OAuth authentication to created this service
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiProjectCollection.Description">
+            <summary>
+            Project collection description
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiProjectCollection.State">
+            <summary>
+            Project collection state
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiProjectCollectionRef.Id">
+            <summary>
+            Collection Guid
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiProjectCollectionRef.Name">
+            <summary>
+            Collection Name
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiProjectCollectionRef.Url">
+            <summary>
+            Collection REST Url
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiProjectCollectionRef.CollectionUrl">
+            <summary>
+            Collection Tfs Url (Host Url)
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiConnectedServiceDetails.ConnectedServiceMetaData">
+            <summary>
+            Meta data for service connection
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiConnectedServiceDetails.EndPoint">
+            <summary>
+            Optional uri to connect directly to the service such as https://windows.azure.com
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiConnectedServiceDetails.CredentialsXml">
+            <summary>
+            Credential info
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiTeam.Description">
+            <summary>
+            Team description
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiTeam.IdentityUrl">
+            <summary>
+            Identity REST API Url to this team
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiTeamRef.Id">
+            <summary>
+            Team (Identity) Guid. A Team Foundation ID.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiTeamRef.Name">
+            <summary>
+            Team name
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.WebApiTeamRef.Url">
+            <summary>
+            Team REST API Url
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.ConnectedServiceKind.Custom">
+            <summary>
+            Custom or unknown service
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.ConnectedServiceKind.AzureSubscription">
+            <summary>
+            Azure Subscription
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.ConnectedServiceKind.Chef">
+            <summary>
+            Chef Connection
+            </summary>
+        </member>
+        <member name="F:Microsoft.TeamFoundation.Core.WebApi.ConnectedServiceKind.Generic">
+            <summary>
+            Generic Connection
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.ProjectInfo">
+            <summary>
+            Contains information of the project
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.ProjectInfo.Revision">
+            <summary>
+            Current revision of the project
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.ProjectInfo.UserId">
+            <summary>
+            Identity of the user that initiated project operation resulting in this project info
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.ProjectInfo.KnownNames">
+            <summary>
+            Names which may be used to lookup this project
+            This is a subset of all names that this project ever had (excluding the names that are now used for other projects)
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.ProjectInfo.IsProjectForUpdate">
+            <summary>
+            This is true when the project was created by calling ProjectInfo.GetProjectForUpdate. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProjectProperty.NormalizePropertyNameFilters(System.Collections.Generic.IEnumerable{System.String}@,System.String)">
+            <summary>
+            Removes leading/trailing spaces from array values and checks if the passed values are non-null and non-empty
+            </summary>
+            <param name="propertyNameFilters"> project property name filters </param>
+            <param name="parameterName">name of the incomming parameter(used in exception generation) </param>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.ProjectProperty.NormalizeProperties(System.Collections.Generic.IList{Microsoft.TeamFoundation.Core.WebApi.ProjectProperty}@,System.String)">
+            <summary>
+            Extracts a project properties
+            
+            Removes leading/trailing spaces from array values and checks if the passed values are non-null and non-empty
+            </summary>
+            <param name="properties"> project properties </param>
+            <param name="parameterName">name of the incomming parameter(used in exception generation) </param>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.Proxy.Url">
+            <summary>
+            The URL of the proxy server
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.Proxy.FriendlyName">
+            <summary>
+            The friendly name of the server
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.Proxy.Site">
+            <summary>
+            This is a string representation of the site
+            that the proxy server is located in (e.g. "NA-WA-RED")
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.Proxy.Description">
+            <summary>
+            This is a description string
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.ProxyAuthorization.AuthorizationUrl">
+            <summary>
+            Gets or sets the endpoint used to obtain access tokens from the configured token service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.ProxyAuthorization.ClientId">
+            <summary>
+            Gets or sets the client identifier for this proxy.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.ProxyAuthorization.PublicKey">
+            <summary>
+            Gets or sets the public key used to verify the identity of this proxy. Only specify on hosted.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.ProxyAuthorization.Identity">
+            <summary>
+            Gets or sets the user identity to authorize for on-prem.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.TeamProject">
+            <summary>
+            Represents a Team Project object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TeamProject.#ctor(Microsoft.TeamFoundation.Core.WebApi.TeamProjectReference)">
+            <summary>
+            Initializes a team project from a team project reference.
+            </summary>
+            <param name="projectReference">Reference upon which to base this project.</param>
+            <remarks>Will create the reference links object and add the self reference.</remarks>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProject.Capabilities">
+            <summary>
+            Set of capabilities this project has (such as process template &amp; version control).
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProject.Links">
+            <summary>
+            The links to other objects related to this object.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProject.DefaultTeam">
+            <summary>
+            The shallow ref to the default team.
+            </summary>        
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProject.TfsUri">
+            <summary>
+            Tfs Uri to this project - useful when querying teams.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCollection">
+            <summary>
+            Data contract for a TeamProjectCollection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCollection.#ctor(Microsoft.TeamFoundation.Core.WebApi.TeamProjectCollectionReference)">
+            <summary>
+            Initializes a team project collection from a team project collection reference.
+            </summary>
+            <param name="projectCollectionRef">Reference upon which to base this project collection.</param>
+            <remarks>Will create the reference links object and add the self reference.</remarks>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCollection.Description">
+            <summary>
+            Project collection description.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCollection.State">
+            <summary>
+            Project collection state.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCollection.Links">
+            <summary>
+            The links to other objects related to this object.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCollectionReference">
+            <summary>
+            Reference object for a TeamProjectCollection.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCollectionReference.Id">
+            <summary>
+            Collection Id.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCollectionReference.Name">
+            <summary>
+            Collection Name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectCollectionReference.Url">
+            <summary>
+            Collection REST Url.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.TeamProjectReference">
+            <summary>
+            Represents a shallow reference to a TeamProject.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.TeamProjectReference.#ctor">
+            <summary>
+            Default constructor to ensure we set up the project state correctly for serialization.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectReference.Id">
+            <summary>
+            Project identifier.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectReference.Abbreviation">
+            <summary>
+            Project abbreviation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectReference.Name">
+            <summary>
+            Project name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectReference.Description">
+            <summary>
+            The project's description (if any).
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectReference.Url">
+            <summary>
+            Url to the full version of the object.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectReference.State">
+            <summary>
+            Project state.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.TeamProjectReference.Revision">
+            <summary>
+            Project revision.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext">
+            <summary>
+            The Team Context for an operation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext.ProjectId">
+            <summary>
+            The Team Project ID.  Required if Project is not set.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext.Project">
+            <summary>
+            The team project Id or name.  Ignored if ProjectId is set.
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext.TeamId">
+            <summary>
+            The Team Id
+            </summary>
+        </member>
+        <member name="P:Microsoft.TeamFoundation.Core.WebApi.Types.TeamContext.Team">
+            <summary>
+            The Team Id or name.  Ignored if TeamId is set.
+            </summary>
+        </member>
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.TemporaryDataCreatedDTO">
+            <summary>
+            A data transfer object that stores the metadata associated with the creation of temporary data.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Microsoft.TeamFoundation.Core.WebApi.TemporaryDataCreatedDTO.Id" -->
+        <!-- Badly formed XML comment ignored for member "P:Microsoft.TeamFoundation.Core.WebApi.TemporaryDataCreatedDTO.Url" -->
+        <!-- Badly formed XML comment ignored for member "P:Microsoft.TeamFoundation.Core.WebApi.TemporaryDataCreatedDTO.ExpirationDate" -->
+        <member name="T:Microsoft.TeamFoundation.Core.WebApi.TemporaryDataDTO">
+            <summary>
+            A data transfer object that stores the metadata associated with the temporary data.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Microsoft.TeamFoundation.Core.WebApi.TemporaryDataDTO.Value" -->
+        <!-- Badly formed XML comment ignored for member "P:Microsoft.TeamFoundation.Core.WebApi.TemporaryDataDTO.Origin" -->
+        <!-- Badly formed XML comment ignored for member "P:Microsoft.TeamFoundation.Core.WebApi.TemporaryDataDTO.ExpirationSeconds" -->
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.#cctor">
+            Creates the resource manager instance.
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.Get(System.String)">
+            Returns a localized string given a resource string name.
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.GetInt(System.String)">
+            Returns a localized integer given a resource string name.
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.GetBool(System.String)">
+            Returns a localized string given a resource string name.
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.Format(System.String,System.Object[])">
+            A little helper function to alleviate some typing associated with loading resources and
+            formatting the strings.  In DEBUG builds, it also asserts that the number of format
+            arguments and the length of args match.
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.CSS_EMPTY_ARGUMENT(System.Object)">
+            <summary>
+            TF200001: The following argument cannot be empty: {0}.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.CSS_INVALID_NAME(System.Object)">
+            <summary>
+            TF50316: The following name is not valid: {0}. Verify that the name does not exceed the maximum character limit, only contains valid characters, and is not a reserved name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.CSS_INVALID_PROJECT_PROPERTY_NAME">
+            <summary>
+            TF297004: You must specify a valid name for the project property. The name must not contain more than 256 Unicode characters.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.CSS_INVALID_URI(System.Object,System.Object)">
+            <summary>
+            &lt;value&gt;TF200004: The following argument is not valid: {0}. The following uniform resource identifier (URI) in the argument is not valid: {1}.  Verify that the name of the URI is valid and that the URI exists in the Web service.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.ProjectUriIdError(System.Object)">
+            <summary>
+            Project id {0} was not a guid
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.CSS_PROJECT_WORK_PENDING(System.Object)">
+            <summary>
+            VS402392: Project operation may not be performed due to ongoing work for the team project {0}. Wait a few minutes and try again.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.ProjectDoesNotExist(System.Object)">
+            <summary>
+            The project with id &apos;{0}&apos; does not exist, or you do not have permission to access it.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.CSS_PROJECT_DOES_NOT_EXIST_NAME(System.Object)">
+            <summary>
+            TF200016: The following project does not exist: {0}. Verify that the name of the project is correct and that the project exists on the specified Team Foundation Server.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.CSS_PROJECT_DOES_NOT_EXIST_URI(System.Object)">
+            <summary>
+            TF200015: The following project does not exist: {0}. Verify that the uniform resource identifier (URI) is correct.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.CSS_PROJECT_ALREADY_EXISTS(System.Object)">
+            <summary>
+            TF200019: The following project already exists on the Team Foundation Server: {0}. You cannot create a new project with the same name as an existing project. Provide a different name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.TeamFoundation.Core.WebApi.WebApiResources.InvalidNameNotRecognized(System.Object)">
+            <summary>
+            TF200041: You have specified a name, {0}, that contains character(s) that are not recognized. Specify a name that only contains characters that are supported by the database collation setting and try again.
+            </summary>
+        </member>
+    </members>
+</doc>

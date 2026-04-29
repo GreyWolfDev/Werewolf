@@ -1,0 +1,2494 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- Translators: Nico (@me_el_nino), Niklas (@nik_ist_toll), Pikachu (@BlackPika), Nathalie (@NathaPrinzessin)-->
+<strings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <language name="Deutsch (Pokémon)" base="Deutsch" variant="Pokémon" owner="" code="de" isDefault="false"/>
+  <string key="NotInGame">
+        <!-- Nicht implementiert? * -->
+    <value>Es scheint, als wärst du gerade nicht in einem Spiel...</value>
+	</string>
+  <string key="PlayerStartedGame">
+        <!-- 0 - Player name -->
+    <value>Trainer {0} hat ein Spiel gestartet! Verwende den Join Knopf um dem Kampf beizutreten und der Allerbeste zu werden!
+        </value>
+    <value>Ein neues Spiel wurde von {0} gestartet! Verwende den Join Knopf und werde der Pokémon Meister!!
+        </value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+        <!-- 0 - Player name -->
+    <value>{0} hat ein Chaosspiel gestartet! Verwende den Join Knopf um einem Spiel beizutreten und der beste Pokémon Trainer zu werden!
+        </value>
+    <value>Ein neues Chaosspiel wurde von {0} gestartet! Verwende den Join Knopf und werde der Pokémon Meister!!
+        </value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Beitritt nicht möglich! Das Spiel läuft bereits.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Du bist schon beigetreten!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Noch 1 Minute! Benutze den Join Knopf, um beizutreten</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+        <!-- 0 - remaining seconds (number) -->
+    <value>Nur noch {0} Sekunden verbleiben!</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Es wurden nicht genügend Trainer gefunden. Das Spiel ist bis auf weiteres verschoben!
+        </value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Der Kampf startet, bitte warte bis ich dir dein Pokémon zuteile und die Datenbank aktualisiere.
+        </value>
+  </string>
+  <string key="BannedForExploit">
+        <!-- 0 - Player name -->
+    <value>{0} wurde wegen der Ausnutzung eines Fehlers gebannt (kein Name startet mit /)
+        </value>
+  </string>
+  <string key="ChangeNameToJoin">
+        <!-- 0 - Player name -->
+    <value>{0}, bitte ändere deinen Namen um beizutreten.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sorry, das maximale Trainerlimit wurde erreicht!</value>
+  </string>
+  <string key="PlayerJoined">
+        <!-- 0 - Player name -->
+        <!-- 1 - current players -->
+        <!-- 2 - Minimum players -->
+        <!-- 3 - Maximum players -->
+    <value>{0} ist dem Spiel beigetreten. {1} Trainer, mindestens {2}, maximal {3}.
+        </value>
+  </string>
+  <string key="PMTheBot">
+        <!-- 0 - Player name -->
+        <!-- 1 - bot username -->
+    <value>{0}, tippe auf auf den "Start Me!"-Knopf oder auf {1} und dann auf "Starten", damit ich dir dein Pokémon verraten kann. Vorher kannst du dem Spiel nicht beitreten.
+        </value>
+  </string>
+  <string key="DeadFlee">
+    <value>Du kannst dein Pokémon nicht mehr freilassen. Es wurde schon besiegt!
+        </value>
+  </string>
+  <string key="Flee">
+        <!-- 0 - Player name -->
+    <value>Der Trainer {0} hat sein Pokémon zurück in die Wildnis entlassen!
+        </value>
+  </string>
+  <string key="PlayerRoleWas">
+        <!-- 0 - Player name -->
+        <!-- 1 - Player role -->
+    <value>{0}'s Pokémon war ein {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+        <!-- 0 - Number of players -->
+    <value>{0} Trainer verbleibend.</value>
+  </string>
+  <string key="WolfVotedKill">
+        <!-- 0 - wolf teammate name -->
+        <!-- 1 - Victim name -->
+    <value>{0} hat dafür gestimmt, einen Pokémon Kampf mit {1} zu starten.
+        </value>
+    <value>{0} will {1}'s Pokémon angreifen.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+        <!-- 0 - Voter name -->
+        <!-- 1 - Target name -->
+    <value>{0} hat gewählt, {1}'s Pokémon zurück in die Wildnis zu schicken.</value>
+  </string>
+  <string key="IdleKill">
+        <!-- 0 - player name -->
+        <!-- 1 - player role -->
+    <value>{0} hat 2 Nächte hintereinander nicht abgestimmt. "Mit dem will ich nichts mehr zu tun haben." dachte {1}
+        </value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Team Rocket hat alle seine Mitglieder verloren. Für dich ist jetzt die Zeit gekommen, um Team Rocket wieder zu altem Glanz zu verhelfen! 🐺
+        </value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Wahl akzeptiert.</value>
+  </string>
+  <string key="BeholderSeer">
+        <!-- 0 - seer name -->
+    <value>\nDer Besitzer von Simsala ist {0}. 👳</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+        <!-- 0 - seer name -->
+    <value>{0}'s Simsala wurde besiegt! Dein Kadabra hat genug Erfahrung gesammelt und hat sich zu einem Simsala entwickelt 👳!
+        </value>
+  </string>
+  <string key="BeholderNewSeer">
+        <!-- 0 - apprentice name -->
+        <!-- 1 - seer name -->
+        <!-- Ähm... Simsala entwickelt sich durch Tausch, nicht Exp... -->
+    <value>{1}'s Simsala wurde besiegt, {0}'s Kadabra 🙇 hat sich zu einem Simsala entwickelt und übernimmt nun dessen Aufgabe!
+        </value>
+  </string>
+  <string key="SeerSees">
+        <!-- 0 - player name -->
+        <!-- 1 - player role -->
+    <value>Du erkennst, dass das Pokémon von {0} ein {1} ist!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Wessen Pokémon möchtest du zurück in die Wildnis entlassen?
+        </value>
+  </string>
+  <string key="AskDetect">
+    <value>Fukano setzt Schnüffler ein. Wer ist das Ziel deiner Attacke?
+        </value>
+    <value>An wem soll Fukano heimlich schnüffeln?</value>
+  </string>
+  <string key="AskShoot">
+        <!-- 0 - bullet count -->
+    <value>Wessen Pokémon möchtest du mit Hydropumpe besiegen? Du hast noch {0} AP für diese Attacke.
+        </value>
+  </string>
+  <string key="AskVisit">
+    <value>In wessen Haus schlüpfst du heimlich, um dich im Dunklen mit dessen Pokémon "anzufreunden"?
+        </value>
+  </string>
+  <string key="AskSee">
+    <value>Das Pokémon welches Trainers soll mit Gesichte erkannt werden?
+        </value>
+  </string>
+  <string key="AskGuard">
+    <value>Wessen Pokémon soll Pantimos diese Nacht mit seinem Lichtschild beschützen?
+        </value>
+  </string>
+  <string key="AskEat">
+    <value>Mehr und mehr Macht, DAS wollen wir! Wähle aus, welches Pokémon du diese Nacht zum Kampf fordern willst.
+        </value>
+    <value>Jetzt gibt es Ärger, und es kommt noch härter! Entscheided euch, wessen Pokémon ihr heute hinterhältig attackiert.
+        </value>
+    <value>Wir schaffen wildes Chaos in allen Ecken, zerstören Hoffnung und verbreiten Angst und Schrecken! Wen soll Team Rocket heute Nacht das Fürchten lehren?
+        </value>
+    <value>Die Macht der Gerechtigkeit wird verdrängt durch das Universum der Dunkelheit! Wessen Licht der Hoffnung löscht du heute Nacht aus?
+        </value>
+  </string>
+  <string key="AskHunt">
+    <value>Was denkst du, welcher Trainer ein geklontes Mewtu hat? Dein Mew spürt es für dich auf.
+        </value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Wessen Pokémon ist dein einziger Freund?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Welchen Trainer willst du von B.L.O.N.D. überzeugen und ihm ein geklontes Mewtu schenken?
+        </value>
+  </string>
+  <string key="DiscussWith">
+        <!--Leave the leading spaces here please -->
+        <!-- 0 - teammate names -->
+    <value>Diskutiere deine Entscheidung mit {0}</value>
+  </string>
+  <string key="And">
+        <!--this is paired with "DiscussWith". again, leave the spaces! -->
+    <value> und </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Du besitzt ein Rettan 😾 und möchtest gerne Mitglied bei Team Rocket sein, allerdings wollten die dich nicht.
+Wenn Team Rocket dich angreift entwickelt sich dein Rettan jedoch zu einem Arbok, woraufhin Team Rocket dich aufnimmt.
+        </value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Du besitzt ein junges Fukano 🕵 und kommst frisch aus der Polizeischule. Mit seiner Spürnase und deiner Intuition kannst du jeden Tag ein Pokémon eines Trainers beschnüffeln.
+Da ihr allerdings sehr unerfahren seid, könnt ihr bei eurer Suche zu 40% von Team Rocket entdeckt werden.
+        </value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Du besitzt ein Smettbo 🍻 namens Happy. Happy und du seid unzertrennlich und mit seinen großen Augen, durchschaut es immer, wenn bei dir etwas nicht in Ordnung ist.
+In einem Kampf gegen Team Rocket ist Smettbo chancenlos, kann aber Schlafpuder gegen sie einsetzen, sodass deren Pokémon wenigstens die nächste Nacht verschlafen.
+        </value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Du besitzt ein Pantimos 👼. Nachdem es seine Zirkuskarriere aufgegeben hat, hat es sich bei dir niedergelassen und hilft dir bei Haushaltsarbeiten.
+Nachts schickst du es zu anderen Trainern, da es sich lautlos in deren Haus schleichen kann und sie mit seinem Lichtschild beschützt. Bedenke jedoch wer deine Freunde sind, ein Angriff von Team Rocket gewinnst du nur mit einer Chance von 50%.
+        </value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Du besitzt ein Turtok 🔫. Aus seinen 2 Kanonen auf dem Rücken kann es je einmal Hydropumpe einsetzen, um das Pokémon eines anderen Trainers zu besiegen. Allerdings is das Plätschern so laut, dass im Nachhinein jeder weiß, dass du der Besitzer des Turtoks bist.
+        </value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Du besitzt ein Piepi 💋. Dieses nachtaktive Pokémon hat eine betörende Ausstrahlung und kann sich nachts zu anderen Trainern schleichen, um sich mit deren Pokémon anzufreunden.
+Wenn du nicht zuhause bist, kann Team Rocket dich nicht bekämpfen. Gerätst du aber bei deinem Besuch in einen Kampf, so wird das andere Pokémon dich besiegen.
+        </value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Du bist Giovannis Sohn Silber 🥸. Mit deinem Golbat reist du durch die Gegend und versuchst den Respekt deines Vaters zu gewinnen.Sollte Team Rocket besiegt werden, so ist deine Chance gekommen das Team wieder aufzubauen.
+Falls du bis zum Ende kein Mitglied wirst, so erkennt dich Team Rocket nicht als einer der ihren an. Da du deine Absichten gut verbergen kannst und auch zusätzlich ein Karpador  besitzt, kannst du entweder als harmlos oder böse erkannt werden.
+        </value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>Du bist ein Mitglied von Team Rocket 🐺! Die Liebe und die Wahrheit verurteilst du. So schnell wie das Licht greifst du mit deinen Kameraden jede Nacht einen Trainer an, der sein Pokémon liebt.
+        </value>
+    <value>Du bist ein Team Rocket Rüpel 🐺! Du willst über die Erde regieren und deinen eigenen Staat kreieren. Jede Nacht attackierst du das Pokémon eines anderen Trainers, um alle aus dem Weg zu räumen, die sich deinen Idealen in den Weg stellen.
+        </value>
+    <value>Du bist ein Team Rocket Rüpel 🐺! Noch gehört das Klauen der Kirschen in Nachbars Garten zu deinen größten Leistungen, aber du hoffst, Giovanni eines Tages mit deinen Taten zu beeindrucken.
+        </value>
+  </string>
+  <string key="RoleInfoSeer">
+    <value>Du besitzt ein weises Simsala 👳. Jeden Tag kann dein Simsala ein anderes Pokémon mit Gesichte erkennen, du musst es nur fragen.
+        </value>
+  </string>
+  <string key="RoleInfoVillager">
+    <value>Du besitzt ein Karpador 👱. Dieses kann die "äußerst" effektive Attacke Platscher, die absolut gar nichts bewirkt. Falls du angegriffen wirst, verlierst du jeden Kampf.
+        </value>
+    <value>Du besitzt ein Karpador 👱. Dieses ist im Kampf absolut nutzlos, ist nicht einmal niedlich und wenn es heimlich nachts in dein Bett kriecht wachst du zitternd vor Nässe auf. Da hast du wohl Pech auf der ganzen Linie.
+        </value>
+    <value>Du besitzt ein Karpador 👱. Deine Mutter hat dich leider angelogen, du wirst niemals der Allerbeste werden.
+        </value>
+  </string>
+  <string key="RoleInfoTanner">
+    <value>Du besitzt ein widerspenstiges Pikachu 👺, welches dir auch ab und an einen kräftigen Elektroschock verpasst. Da es den Pokéball auf den Tod nicht leiden kann, besteht sein einziges Ziel darin, wieder in die Freiheit entlassen zu werden.
+        </value>
+  </string>
+  <string key="RoleInfoWildChild">
+    <value>Du besitzt ein verspieltes Gengar 👶. Es ist zwar übermütig und rotzfrech, hat aber ein gutes Herz. Weil sich die meisten allerdings vor ihm fürchten, hat es Mühe Freunde zu finden.
+Wähle deinen einzigen wahren Freund, zu dem du aufschaust. Sollte er einen Kampf verlieren, verbittert Gengar und ihr tretet Team Rocket bei.
+        </value>
+  </string>
+  <string key="RoleInfoBeholder">
+    <value>Du besitzt ein schüchternes Abra 👁. Es mag keine Leute und wird dir in einem Kampf keine Hilfe sein. Es besitzt allerdings die wichtige Fähigkeit, den Trainer von Simsala ausfindig zu machen.
+        </value>
+  </string>
+  <string key="RoleInfoApprenticeSeer">
+    <value>Du besitzt ein erfahrenes Kadabra 🙇. Sollte Simsala in einem Kampf besiegt werden, wird es sich entwickeln und in dessen Fußstapfen treten.
+        </value>
+  </string>
+  <string key="RoleInfoZombie">
+    <value>Du bist der größenwahnsinnige Wissenschaftler Dr. Fuji 👤. In deinem geheimen Labor hast du ein kampflustiges Mewtu aus einem Fossil geklont. Um der Wissenschaft zu neuer Macht zu verhelfen hast du den B.L.O.N.D. gegründet, den Bund für die langfristige Oligarchie der naturwissenschaftlichen Domäne.
+Jede Nacht kannst du einem Spieler eine Mitgliedschaft und ein Mewtu anbieten. Du gewinnst wenn nur noch Blondies übrig sind.
+        </value>
+  </string>
+  <string key="RoleInfoZombieHunter">
+    <value>Du hast ein wildes Mew 💂 im Wald getroffen. Da es dein gutherziges Wesen erkannt hat, schließt es sich dir an und bittet dich darum, ihm zu helfen, alle Klone von Mewtu zu besiegen.
+        </value>
+  </string>
+  <string key="LynchTime">
+        <!-- 0 - number of seconds -->
+    <value>Nur einer kann der Allerbeste sein! Entscheidet wer des Titels nicht würdig ist und sein Pokémon in die Freiheit entlassen soll. Alle haben nun {0} Sekunden um ihre Stimme abzugeben!
+        </value>
+  </string>
+  <string key="DayTime">
+        <!-- 0 - number of seconds -->
+    <value>Hmm hmm... Alle Trainer haben nun {0} Sekunden, um zu diskutieren, welche Trainer ihr Pokémon nicht mehr verdient haben.
+        </value>
+  </string>
+  <string key="NightTime">
+        <!-- 0 - number of seconds -->
+    <value>Die Sonne geht unter und die Nacht senkt sich über das Dorf. Während die meisten Trainer sich jetzt mit ihrem Pokémon ins Bett kuscheln, rüstet sich Team Rocket für den Kampf und die nachtaktiven Pokémon ziehen um die Häuser. Jeder hat {0} Sekunden, um eine Entscheidung zu treffen.
+        </value>
+  </string>
+  <string key="LynchKill">
+        <!-- 0 - player name -->
+        <!-- 1 - player role -->
+    <value>Die Trainer sind sich einig, dass {0} zu schwach ist, und beschließen, das Pokémon des Trainers freizulassen. {1} genießt nun die Freiheit. {0} fällt in Ohnmacht.
+        </value>
+    <value>Nach reiflicher Überlegung entscheiden sich die Trainer, {1} in die Freiheit zu entlassen. {0} fällt in Ohnmacht.
+        </value>
+    <value>Gemeinsam kreisen die Trainer {0} ein, welcher zitternd sein Pokémon umklammert. Mit vereinten Kräften wird {1} aus seinen Händen gerissen und frei gelassen. {0} fällt in Ohnmacht
+        </value>
+  </string>
+  <string key="LynchTie">
+    <value>Die Trainer konnten sich nicht einigen, welches Pokémon sie freilassen wollen. Alle verschwinden wieder in ihren Häusern, um ihre Pokémon zu trainieren.
+        </value>
+  </string>
+  <string key="NoLynchVotes">
+    <value>Alle Trainer sind gut genug für ihre Pokémon. Niemand hat eine Stimme abgegeben.
+        </value>
+  </string>
+  <string key="DetectiveEaten">
+        <!-- 0 - victim name -->
+    <value>Team Rocket 🐺 hat {0}'s Fukano 🕵️ beim Schnüffeln entdeckt und schickt Tentoxa in den Kampf. Tentoxa's Blubbstrahl ist sehr effektiv, Fukano wurde besiegt. {0} fällt in Ohnmacht.
+        </value>
+  </string>
+  <string key="GuardianEaten">
+        <!-- 0 - victim name -->
+    <value>Team Rocket 🐺 hat {0}'s Pantimos 👼 aufgestöbert. Leider schlagen alle Versuche von Pantimos sich zu beschützen fehl und es wird von Arbok gebissen. {0}'s Pantimos wurde besiegt.
+        </value>
+  </string>
+  <string key="GunnerEaten">
+        <!-- 0 - victim name -->
+    <value>Team Rocket 🐺 hat nachts mit Turtok 🔫 gekämpft. Weil es die Nachtruhe nicht stören wollte, hat es die mächtige Attacke Hydropumpe nicht eingesetzt und konnte so nichts gegen das  Rasierblatt von Sarzenia ausrichten. {0}'s Turtok wurde besiegt.
+        </value>
+  </string>
+  <string key="SeerEaten">
+        <!-- 0 - victim name -->
+    <value>Oh Nein! Team Rocket 🐺 hat {0}'s Simsala 👳 entdeckt und Omot in den Kampf geschickt. Mit seinem Blutsauger hat es alle verbleibende Energie aus Simsalas Körper gesaugt. {0}'s Simsala wurde besiegt.
+        </value>
+  </string>
+  <string key="DrunkEaten">
+        <!-- 0 - victim name -->
+    <value>Team Rocket hat {0} gefunden. Team Rocket schickt Sleimok in den Kampf. Sleimok benutzt Schlammbad. {0}'s Smettbo Happy 🍺 nutzt noch in der letzten Sekunde Schlafpulver und wird daraufhin besiegt. Team Rocket kann in der nächsten Nacht keine Unruhe stiften.
+        </value>
+  </string>
+  <string key="FoolEaten">
+        <!-- 0 - victim name -->
+    <value>Team Rocket 🐺 haben {0} angegriffen. Team Rocket schickte Bibor in den Kampf. Nach einem kurzen, aber harten Kampf setzt Bibor die entscheinde Attacke Nadelrakete ein! Als {0} aus seiner Ohnmacht erwacht und nach seinem Simsala schauen will, findet er neben sich bloß ein besiegtes Enton 🃏. Entsetzt schlägt {0} die Hände über dem Kopf zusammen, Enton hat ihn mit Hypnose hinters Licht geführt, welche Blamage!
+        </value>
+  </string>
+  <string key="DefaultEaten">
+        <!-- 0 - victim name -->
+        <!-- 1 - victim role -->
+    <value>Team Rocket 🐺 ist heute Nacht in {0}'s Haus eingedrungen. Team Rocket hat Schlurp in den Kampf geschickt. Schlurp hat {1} von hinten überrascht, ihm seine Zunge um den Hals gewunden und mit seinem Wickel zugedrückt, bis das andere Pokémon keine Luft mehr bekommen hat. {0} fällt in Ohnmacht.
+        </value>
+  </string>
+  <string key="HunterKilledZombie">
+        <!-- 0 - victim name -->
+    <value>Mew 💂 hat bei {0} einen Klon von Mewtu 👤 gefunden! Mew merkt, dass das Pokémon leidet und verhilft ihm zur Besserung. {0} hat sein Pokémon verloren und wird kurzer Hand aus dem Team B.L.O.N.D. geworfen.
+        </value>
+  </string>
+  <string key="NoAttack">
+    <value>Am nächsten Morgen haben noch alle Trainer ihr Pokémon dabei.
+	Es scheint, als ob in dieser Nacht keine Pokémon-Kämpfe stattgefunden haben.
+        </value>
+  </string>
+  <string key="CursedBitten">
+    <value>Glücklicherweise hat Team Rocket 🐺 dich gefunden und fordert dich zum Kampf heraus. Dein Rettan hat sich zu Arbok entwickelt! Team Rocket nimmt dich jetzt endlich in ihr Team auf.
+        </value>
+  </string>
+  <string key="WolfTeam">
+        <!-- 0 - teammate names -->
+    <value>Deine Team Rocket Kameraden: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves">
+        <!-- 0 - victim name -->
+    <value>{0} ist mit seinem Arbok 😾 Team Rocket beigetreten. Heißt euer neues Mitglied willkommen!
+        </value>
+  </string>
+  <string key="WolvesEatYou">
+    <value>Team Rocket hat dich gefunden und fordert dich zu einem Pokémonkampf heraus. Du hast verloren.
+        </value>
+    <value>Ein lautes Geräusch lässt dich aus dem Schlaf hochfahren. Team Rocket hat sich in dein Haus geschlichen und dich hinterhältig angegriffen. Dein Pokémon wurde besiegt.
+        </value>
+  </string>
+  <string key="WolvesEatDrunk">
+        <!-- 0 - victim name -->
+    <value>{0}'s Smettbo Happy 🍺 hat Schlafpuder eingesetzt, du verschläfst den ganzen nächsten Tag. Du Schlafmütze!
+        </value>
+  </string>
+  <string key="GuardWolf">
+    <value>Pantimos hat versucht Smogon mit seinem Lichtschild zu schützen, aber Team Rocket 🐺 lässt es blitzschnell mit Schlammbad kontern.
+Dein Pantimos wurde besiegt.
+        </value>
+  </string>
+  <string key="GuardSaved">
+        <!-- 0 - saved player name -->
+    <value>Pantimos wendet Lichtschild auf {0}'s Pokémon an und ihr entkommt aus dem Pokémonkampf. Noch einmal Glück gehabt!
+        </value>
+  </string>
+  <string key="GuardNoAttack">
+        <!-- 0 - player name -->
+    <value>{0}'s Pokémon wurde nicht angegriffen. Du hattest nichts zu tun.</value>
+    <value>Du sitzt die ganze Nacht mit {0}'s Pokémon zusammen und spielst Karten, ein Angriff von Team Rocket bleibt jedoch aus.
+        </value>
+  </string>
+  <string key="GuardEmptyHouse">
+        <!-- 0 - player name -->
+    <value>Pantimos möchte {0}'s Pokémon helfen, aber kann es nicht finden!
+        </value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>Pantimos 👼 hat dein Pokémon mit seinem Lichtschild gerettet. Ihr konntet aus dem Pokémonkampf fliehen.
+        </value>
+  </string>
+  <string key="HarlotEaten">
+        <!-- 0 - player name -->
+    <value>Ausnahmsweise wollte Piepi 💋 sich einen gemütlichen Abend zuhause machen. Nachdem es zwei ganze Pizzen im Alleingang verdrückt hatte, war es viel zu vollgefressen, um auch nur vom Fernseher aufzuschauen als Team Rocket 🐺 plötzlich ins Wohnzimmer platzte. Da hatte Team Rocket wohl leichtes Spiel. {0}'s Piepi wurde besiegt.
+        </value>
+  </string>
+  <string key="HarlotNotHome">
+        <!-- 0 - player name -->
+    <value>Voll gerüstet für den Kampf tritt Team Rocket 🐺 die Tür zu {0}'s Haus ein, nur um ihn selig schnarchend vorzufinden, von seinem Pokémon fehlt allerdings jede Spur. Merkwürdig... 💋
+        </value>
+  </string>
+  <string key="HarlotFuckWolf">
+        <!-- 0 - player name -->
+    <value>Piepi 💋 ist wieder einmal nachts unterwegs, um neue Freunde zu finden. Voller Vorfreude schlüpft es in das Haus von {0} um mit dessen Pokémon zu spielen. Allerdings trifft es im Haus auf Team Rocket 🐺, dass sich für seine nächtliche Tour rüstet. Bevor es wieder verschwinden kann wird es von Sleimok's Schlammbad getroffen und besiegt.
+        </value>
+  </string>
+  <string key="HarlotFuckedWolfPublic">
+        <!-- 0 - player name -->
+    <value>Als das Dorf aufwacht, hören alle ein herzzerreißendes Schluchzen aus {0}'s Haus kommen. 
+Schnell sind alle zur Stelle und entdecken {0} tränenüberströmt in einer Ecke kauern mit einem verschleimten Bündel in den Armen. Piepi 💋 ist diese Nacht in das falsche Haus geraten und wurde von Sleimok's Schlammbad 🐺 besiegt.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic">
+        <!-- 0 - harlot name -->
+        <!-- 1 - victim name -->
+    <value>{0}'s Piepi 💋 wollte in {1}'s Haus schleichen, um dessen Pokémon zu besuchen. Stattdessen platzte es mitten in einen Kampf mit Team Rocket 🐺. 
+Bevor es Zeit hat zu reagieren, setzt Team Rocket's Nidoking die Attacke Doppelkick ein. {0}'s Piepi wurde besiegt.</value>
+  </string>
+  <string key="HarlotVisitNonWolf">
+        <!-- 0 - target name -->
+    <value>Piepi stattet {0}'s Pokémon einen nächtlichen Besuch ab. Gemeinsam schauen sie einen schnulzigen Liebesfilm und lästern über ihre Trainer. Danach kehrt Piepi unversehrt nach Hause zurück.
+        </value>
+    <value>Piepi besucht {0}'s Pokémon und sie liefern sich einen erbitterten Kampf um den Titel des Mario-Kart-Champions. Auf einmal macht das andere Pokémon allerdings schlapp und pennt mitten im Spiel ein. Diese Gelegenheit lässt sich Piepi natürlich nicht entgehen. Blitzeschnell zückt es einen Edding und dekoriert das Gesicht des anderen mit einem netten 'Kunstwerk'. Danach kehrt es nach Hause zurück.
+        </value>
+  </string>
+  <string key="HarlotVisitYou">
+    <value>Piepi 💋 hat heute Nacht dein Pokémon besucht. Du lässt ihnen ihre Privatsphäre, hörst sie aber die ganze Nacht lang kichern. Sie scheinen wohl Spass gehabt zu haben...
+        </value>
+    <value>Als du aufwachst, entdeckst du eine hässliche Krakelei im Gesicht deines Pokémons. Nur mit viel Seife und Schrubben gelingt es dir, diese abzuwaschen. Da hatte wohl jemand nächtlichen Besuch...💋
+        </value>
+  </string>
+  <string key="DetectiveCaught">
+        <!-- 0 - detective name -->
+    <value>Du erwischt {0}'s Fukano 🕵 beim Schnüffeln! Zeit ihm den Garaus zu machen!
+        </value>
+  </string>
+  <string key="DetectiveSnoop">
+        <!-- 0 - target name -->
+        <!-- 1 - target role -->
+    <value>Dein Fukano eröffnet dir, dass {0}'s Pokémon ein {1} ist.
+        </value>
+    <value>Fukano flüstert dir ins Ohr: "{0}'s Pokémon ist ein {1}." Zur Belohnung gibts du ihm ein Leckerli und kraulst es liebevoll hinter den Ohren.
+        </value>
+    <value>Aufgeregt mit dem schwanz wedelnd kommt dein Fukano von {0}'s Haus zurück und rennt aufgeregt um dich herum. Nachdem du es beruhigt hast, verrät es dir, dass es ein {1} erschnüffelt hat.
+        </value>
+    <value>Fukano erklärt dir, dass der Duft an {0}'s Klamotten eindeutig von einem {1} stammen muss.
+        </value>
+  </string>
+  <string key="HarlotShot">
+        <!-- 0 - gunner's name -->
+        <!-- 1 - Harlot's name -->
+    <value>Auf einmal hört man ein lautes Plätschern. Alle fahren herum und sehen {0}'s Turtok 🔫 an der Tür zu {1}'s Haus stehen. Sekunden später wird Piepi 💋 aus der Tür geschwemmt, es wurde durch Turtoks Hydropumpe besiegt.
+        </value>
+  </string>
+  <string key="DefaultShot">
+        <!-- 0 - Gunner's name -->
+        <!-- 1 - target name -->
+        <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>Plötzlich durchbricht ein lauter Ruf die abendliche Stille. {0} ruft: "Los Turtok, Hydropumpe!" 🔫 Augenblicklich folgt ein ohrenbetäubendes Rauschen und Plätschern. Mit nassen Füßen schauen die versammelten Trainer auf {2}, welches besiegt auf dem Dorfplatz liegt. {1} fällt in Ohnmacht.
+        </value>
+  </string>
+  <string key="WolfWins">
+    <value>Team Rocket hat es mit letzter Kraft und einem verbleibenden Trainer und Pokémon doch noch geschafft, alle anderen Trainer zu besiegen!
+        </value>
+  </string>
+  <string key="WolvesWin">
+    <value>Wir wollen über die Erde regieren und unseren eigenen Staat kreieren! Liebe und Wahrheit verurteilen wir! Mehr und mehr Macht, DAS wollen wir! Team Rocket 🐺 hat gewonnen.
+        </value>
+  </string>
+  <string key="VillageWins">
+    <value>Glückwunsch, die Trainer haben gewonnen! Das war wohl mal wieder einen Schuss in den Ofen für Team Rocket. Aber das lassen sie bestimmt nicht auf sich sitzen.
+        </value>
+  </string>
+  <string key="TannerWins">
+    <value>Ihr habt Pikachu 👺 freigelassen. Funkensprühend rennt es davon und steckt dabei das Dorf in Brand. Es scheint, ihr habt heute andere Prioritäten, als den besten Pokémon Trainer zu finden.
+        </value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Verbleibende Trainer, Pokémon und Team:</value>
+  </string>
+  <string key="ZombieVotedConvert">
+        <!-- 0 - Voter's name -->
+        <!-- 1 - target name -->
+    <value>{0} hat dafür abgestimmt, {1} ins Team aufzunehmen.</value>
+  </string>
+  <string key="CultConvertZombieHunter">
+        <!-- 0 - Yougest Zombie (killed)'s name' -->
+        <!-- 1 - ZombieHunter's name -->
+    <value>{0}'s Mewtu wurde losgeschickt, um {1} in das Team B.L.O.N.D. aufzunehmen, doch der Trainer besaß ein Mew 💂! {0}'s Mewtu wurde mit Leichtigkeit besiegt. {0} fällt in Ohnmacht.
+        </value>
+  </string>
+  <string key="ZombieHunterKilledCultVisit">
+        <!-- 0 - Youngest Zombie's name -->
+        <!-- 1 - Number of Zombies left -->
+    <value>{0} kam mit einem geklonten Mewtu 👤 zu dir und versuchte dich für B.L.O.N.D. zu rekrutieren. Mew jedoch erlöste Mewtu von seinen Qualen und {0} fiel in Ohnmacht! {1} Blondies verbleiben!
+        </value>
+  </string>
+  <string key="CultConvertYou">
+    <value>B.L.O.N.D. (Bund für die langfristige Oligarchie der naturwissenschaftlichen Domäne) kam zu dir und lockte dich mit einem geklonten Mewtu 👤 in ihr Team. Du verschmähtest dein Pokémon und wähltest Mewtu. Es ist nun deine Aufgabe, neue Trainer in dein Team zu locken.
+        </value>
+    <value>Glückwunsch, neben einem geklonten Pokémon bekommst du auch so gleich deine Mitgliedschaft im Team B.L.O.N.D 👤 (Bund für die langfristige Oligarchie der naturwissenschaftlichen Domäne) bestätigt. Du bist so begeistert von der Organisation, dass du dich sofort freiwillig dazu bereit erklärst neue Mitglieder zu finden.
+        </value>
+  </string>
+  <string key="CultTeam">
+        <!-- 0 - Number of Zombies -->
+    <value>Blondies: {0}</value>
+    <value>Deine Teamkameraden sind: {0}</value>
+  </string>
+  <string key="CultJoin">
+        <!-- 0 - new Zombie's name -->
+    <value>{0} wurde in Team B.L.O.N.D. aufgenommen!</value>
+    <value>{0} ist eurem Team beigetreten. Heißt euer neues Mitglied herzlich willkommen!
+        </value>
+  </string>
+  <string key="CultVisitEmpty">
+        <!-- 0 - Newest Zombie's name -->
+        <!-- 1 - target name -->
+    <value>{0} und Mewtu wurden geschickt, um {1} ins Team zu holen, aber keiner war zu Hause... Pech gehabt!
+        </value>
+  </string>
+  <string key="CultWins">
+    <value>Team Rocket wurde besiegt, jedoch gehören die übrigen Spieler alle zu Team B.L.O.N.D.! B.L.O.N.D. hat gewonnen!!!
+        </value>
+  </string>
+  <string key="HunterVisitDead">
+        <!-- 0 - target name -->
+    <value>Mew 💂 überprüft {0}'s Pokémon, doch dieses wurde bereits besiegt und zurück in die Freiheit entlassen.
+        </value>
+  </string>
+  <string key="HunterFindZombie">
+        <!-- 0 - target name -->
+    <!-- 0 - target name -->
+    <value>Mew 💂 überprüfte {0}'s Pokémon und entdeckte ein geklontes Mewtu! Mew befreit Mewtu von seinen Qualen und {0} fällt in Ohnmacht.
+        </value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Mew überprüfte {0}'s Pokémon und fand ein normales Pokémon. Erleichtert und zufrieden kehrt Mew zurück.
+        </value>
+  </string>
+  <string key="WildChildToWolves">
+        <!-- 0 - Werechild's name -->
+    <value>{0}'s einziger Freund hat gerade einen Pokémon-Kampf verloren! {0} verlor alle Hoffnung und trat Team Rocket bei.
+        </value>
+    <value>Gemeinsam sind wir Team Rocket, so schnell wie das Licht! Gebt lieber auf und bekämpft uns nicht! {0}'s bester Freund hat sein Pokémonkampf verloren. {0} tritt bedingungslos Team Rocket bei.
+        </value>
+  </string>
+  <string key="WildChildTransform">
+        <!-- 0 - role's name -->
+        <!-- 0 - teamate's names -->
+    <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf,-->
+    <value>{0} hat einen Pokémon-Kampf verloren! Aus völliger Verzweiflung beschließt du, Team Rocket beizutreten! Deine neuen Kameraden sind: {1}
+        </value>
+    <value>Dein einziger Freund {0} hat seinen wichtigsten Pokémonkampf verloren! Du verlierst deine ganze Hoffnung und trittst Team Rocket bei. Deine neuen Teamkollegen sind: {1}
+        </value>
+  </string>
+  <string key="Villager">
+    <value>Karpador 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Smettbo 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Piepi 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Simsala 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Golbat 🥸</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Pantimos 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Fukano 🕵️</value>
+  </string>
+  <string key="Wolf">
+    <value>Smogon 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Rettan 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Turtok 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Pikachu 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Enton 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Gengar 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Abra 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Kadabra 🙇</value>
+  </string>
+  <string key="Zombie">
+    <value>Mewtu 👤</value>
+  </string>
+  <string key="ZombieHunter">
+    <!-- These are for the player list -->
+    <value>Mew 💂</value>
+  </string>
+  <string key="RanAway">
+    <value>Geflohen</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Ohnmächtig</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Kampfbereit</value>
+  </string>
+  <string key="PlayersAlive">
+    <!-- New strings 4 MAY 2016 -->
+    <value>Lebend</value>
+  </string>
+  <string key="Mason">
+    <value>süßes Pokémon 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Du besitzt ein anmutiges Ponita 👷. Genau wie seine feurige Mähne und sein feuriger Schweif, bist du Feuer und Flamme mit ihm. Da du niedliche Pokémon liebst bist du ein Mitglied im Pokémon Fan Club. Deine Clubmitglieder solltest du kennen.</value>
+    <value>Du besitzt ein super niedliches Quapsel 👷. Mit seiner putzigen Art und Weise hast du es sofort in dein Herz geschlossen. Da du niedliche Pokémon liebst bist du ein Mitglied im Pokémon Fan Club.</value>
+    <value>Du besitzt ein zuckersüßes Nidoran ♀ 👷. Auf der Suche nach einem Nidoran ♂ bist du dem Pokémon Fan Club beigetreten. Vielleicht hast du ja Glück und findest dort eins.</value>
+    <value>Du besitzt ein putziges Porenta 👷. Mit seinem Porreestab und seiner putzigen Art zu marschieren hat es dein Herz gestohlen. Mit ihm willst du im Pokémon Fan Club angeben.</value>
+    <value>Du besitzt ein schüchternes Nidoran ♂ 👷. Auf der Suche nach einem Nidoran ♀ bist du dem Pokémon Fan Club beigetreten. Vielleicht hast du ja Glück und findest dort eins, was deinem verfällt?</value>
+  </string>
+  <string key="MasonEaten">
+        <!-- 0 - dead man's name -->
+    <value>Team Rocket hat {0} gefunden. Team Rocket 🐺 schickte Schlurp in den Kampf! Schlurp würgte {0}'s Pokémon bis es das Bewusstsein verlor. Der Pokémon Fan Club 👷 beklagt heute den Verlust eines treuen Mitgliedes.
+        </value>
+  </string>
+  <string key="MasonTeam">
+    <!-- new strings May 6 2016 -->
+    <value>Die anderen Mitglieder im Pokémon Fan Club sind: {0}</value>
+  </string>
+  <string key="CultTargetDead">
+        <!-- 0 - Youngest Zombies name -->
+    <value>Euer neuestes Mitglied ging zu {0} und versuchte, ihn mit einem geklonten Mewtu ins Team zu locken. Doch der Trainer war nicht mehr bei Bewusstsein, da sein Partner bereits besiegt wurde.
+        </value>
+  </string>
+  <string key="GuardBlockedWolf">
+        <!-- 0 - target's name -->
+    <!-- new strings May 9 2016 -->
+    <value>Heute Nacht hat Team Rocket versucht gegen {0} zu kämpfen. Bevor es allerdings zum Kampf kommt, taucht Pantimos 👼 auf und schützte das Pokémon mit einem Lichtschild.
+        </value>
+  </string>
+  <string key="CultUnableToConvert">
+        <!-- 0 - newest -->
+        <!-- 1 - target's name -->
+    <!-- new string May 12 2016 -->
+    <value>Ihr sendet {0} mit aus, um das Pokémon des Trainers {1} gegen ein Mewtu auszutauschen. Doch was ist das? Das Pokémon und sein Trainer verbinden eine zu große Liebe und wollen eurem Team nicht beitreten.
+        </value>
+  </string>
+  <string key="NameExists">
+        <!-- 0 - target's name -->
+        <!-- 1 - name -->
+    <value>@{1}, ein Trainer mit dem gleichen Namen {0} ist bereits beigetreten. Bitte änder deinen Namen, um als Trainer beizutreten.
+        </value>
+  </string>
+  <string key="HarlotDiscoverCult">
+        <!-- 0 - target's name -->
+    <!-- new string May 13 2016 -->
+    <value>Piepi geht zu {0} und versucht sich mit seinem Pokémon anzufreunden. Jedoch findet es nur ein geklontes Mewtu 👤 vor! Piepi rennt geschockt zurück.
+        </value>
+    <value>Piepi ist mal wieder unterwegs, um sich mit Pokémon aus der Umgebung anzufreunden. Es schlüpft in das Haus von {0} und entdeckt dort ein unfreundlich aussehendes, geklontes Pokémon 👤. Geschockt läuft es schnell wieder nach Hause und berichtet dir von dem Vorfall.
+        </value>
+  </string>
+  <string key="Was">
+    <value>hatte ein</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+        <!-- 0 - Dead's name -->
+    <value>{0}'s Pokémon wurde in die Wildnis freigelassen, keiner weiß warum. Der Trainer fällt in Ohnmacht.
+        </value>
+  </string>
+  <string key="MasonConverted">
+        <!-- 0 - mason's name -->. 
+    <!-- new string May 16 2016 -->
+    <value>Komisch ... {0} hatte heute beim Fan Club Treffen nicht wie üblich sein süßes Pokémon dabei, sondern ein hässliches Mewtu 👤. Sehr verdächtig!
+        </value>
+    <value>{0} ist mit einem geklonten Mewtu 👤 bei eurem täglichen Treffen aufgetaucht. Als größte Pokémon Fans bemerkt ihr das natürlich alle sofort und werft {0} hochkantig aus dem Fan Club raus. Geschieht dem Verräter recht!
+        </value>
+  </string>
+  <string key="FleeDisabled">
+    <value>Wer will denn hier wie ein Feigling aus dem Pokémonkampf fliehen? Nix da, du bleibst hier.
+        </value>
+    <value>Fliehen während eines laufenden Spiels ist nicht möglich.
+        </value>
+    <value>Du willst doch deinem Team nicht in den Rücken fallen. Du bleibst hier, denn Verräter werden nicht geduldet!
+        </value>
+  </string>
+  <string key="IsDead">
+        <!-- used when gunner shoots a player -->
+    <!-- MORE STRINGS May 16, 2016 -->
+    <value>wurde besiegt</value>
+  </string>
+  <string key="AdminAdded">
+        <!-- 0 - target's name -->
+    <value>{0} wurde zur Admin Liste hinzugefügt. Nutze /config um Einstellungen zu ändern.
+        </value>
+  </string>
+  <string key="AlreadyInGame">
+        <!-- 0 - target's name -->
+    <value>Du bist schon in einem Spiel! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Deine Gruppe hat es geschafft, mehrere Spiele gleichzeitig zu starten...
+        </value>
+  </string>
+  <string key="GroupQueue">
+        <!-- 0 - target's name -->
+        <!-- 1 - target's name -->
+    <value>Your group is currently in the queue. Position: {0} / {1}
+        </value>
+  </string>
+  <string key="MaintBreak">
+        <!-- 0 - target's name -->
+    <value>Sorry, I'm about to start a short maintenance break, you can't start a game right now.\nWaiting on {0} games to end...\nGo to @@greywolfdev for more information
+        </value>
+  </string>
+  <string key="MaxGames">
+        <!-- 0 - target's name -->
+        <!-- 1 - target's name -->
+    <value>Sorry, max concurrent games has been reached ({0}). \nPosition in queue: {1} / {1}
+        </value>
+  </string>
+  <string key="SkipQueue">
+        <!-- 0 - target's name -->
+    <value>{0} is a preferred group, and has skipped the queue!</value>
+  </string>
+  <string key="NoGame">
+    <value>There is no game running. Start a new game with /startgame or start a chaos game with /startchaos
+        </value>
+    <value>Es wurde noch kein Spiel gestartet. Starte ein neues Spiel mit /startgame oder starte ein Chaosspiel mit /startchaos
+        </value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Only a group admin can run this command.</value>
+    <value>Nur ein Admin kann diesen Befehl ausführen.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Nach dem Spiel schalte ich mich für eine Wartung ab.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Nach diesem Spiel schalte ich mich für ein Update ab.</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId was null. Are you sure you sent this as a reply?</value>
+  </string>
+  <string key="AlreadyAdmin">
+        <!-- 0 - target's name -->
+    <value>{0} is already an admin!</value>
+  </string>
+  <string key="NotAdmin">
+        <!-- 0 - target's name -->
+    <value>{0} is not an admin!</value>
+  </string>
+  <string key="AdminRemoved">
+        <!-- 0 - target's name -->
+    <value>{0} removed from admin list.</value>
+  </string>
+  <string key="LanguageSet">
+        <!-- 0 - language's name -->
+    <value>Language set to {0}</value>
+  </string>
+  <string key="NoSeer">
+    <value>Leider besitzt kein Trainer ein Simsala!</value>
+  </string>
+  <string key="TimesUp">
+    <!-- new strings june 10 2016 -->
+    <value>Die Zeit ist abgelaufen!</value>
+  </string>
+  <string key="RoleInfoCupid">
+    <value>Du besitzt ein Hypno 🏹. Du kannst Hypno losschicken, um 2 Pokémon zu hypnotisieren, sodass sie für immer in Liebe verfallen sind. Falls eines davon besiegt wird, fällt das andere in Ohnmacht.
+        </value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Du besitzt ein Ditto 🎭. Dein Ditto muss sich in ein Pokémon eines bestimmten Trainers, den du wählst, verwandeln. Andernfalls ist es traurig und kann nicht kämpfen. Falls es sich transformiert, wechselst du gleichzeitig das Team.
+        </value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Du besitzt ein geladenes Lektrobal 🎯. Mit seinen unkontrollierten Ausbrüchen kannst du Team Rocket in die Flucht schlagen. Aber wie schon gesagt: seine Ausbrüche sind leider unkontrolliert, du kannst auch Pech haben und Lektrobals Attacke geht daneben und Team Rocket besiegt dich. Dein Lektrobal hat aber noch eine Besonderheit: Es kann noch ein letztes Mal angreifen bevor es in die Wildnis freigelassen wird.
+        </value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Du bist der mächtige Trainer mit dem Dragoran 🔪. Da du keine Konkurrenz neben dir zulässt, hast du dir zum Ziel gesetzt, alle anderen Pokémon und Trainer zu besiegen.
+        </value>
+    <value>Du bist der amtierende Pokémonmeister und besitzt ein Dragoran 🔪. Du hast es dir selbst zur Aufgabe gemacht, alle Pokémontrainer zu besiegen und ihre Pokémon in die Flucht zu jagen. Jede Nacht kannst du dir deinen nächsten Gegner aussuchen und gegen sie antreten. Insgeheim weißt du natürlich, dass dein Dragoran das stärkste Pokémon ist und locker mit jedem anderen fertig wird.
+        </value>
+  </string>
+  <string key="CupidChosen">
+    <value>In der Nacht hattest du Besuch von einem Hypno 🏹. Dieses stand vor deinem Pokémon, hat seinen Ring vor dessen Augen pendeln lassen und immer wieder gemurmelt: "Du liebst {0}´s Pokémon. Du liebst es abgöttisch. Falls dieses besiegt wird, so fällst du in Ohnmacht."
+        </value>
+    <value>Dein Pokémon hat sich unsterblich in das Pokémon von {0} verliebt ❤️. Wenn es besiegt wird, will dein Pokémon nicht allein sein und flieht mit seiner Liebe in die Wildnis.
+        </value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Die Trainer haben entschieden Lektrobal 🎯 in die Wildnis zu entlassen. Du kannst dein Lektrobal noch einen Pokémonkampf bestreiten lassen, bevor es dich verlassen muss.
+        </value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} befiehlt Lektrobal Explosion einzusetzen, doch zu spät! Lektrobal ist bereits in die Freiheit entflohen.
+        </value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} hat sich entschieden, die letzte Attacke von Lektrobal nicht einzusetzen. Lektrobal wird in die Freiheit entlassen.
+        </value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+        <!-- 0 - hunter's name -->
+        <!-- 1 - target's name -->
+        <!-- 2 - target's role -->
+    <value>Bevor Lektrobal in die Wildnis entlassen wird, gibt {0} ein letztes Kommando: Explosion! Lektrobal setzt Explosion ein! {2} wurde besiegt und {1} fällt ihn Ohnmacht.
+        </value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Dein Lektrobal wird zurück in die Freiheit entlassen. Du hast die Chance mit ihm noch einen letzten Pokémonkampf gegen einen Trainer deiner Wahl zu bestreiten.
+        </value>
+  </string>
+  <string key="HunterNoChoiceShot">
+        <!-- 0 - target's name -->
+    <value>{0}'s Lektrobal fällt in Ohnmacht bevor sein Trainer ihm eine Attacke zurufen konnte.
+        </value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+        <!-- 0 - hunter's name -->
+    <value>{0} zögert eine Weile. Mit dem Wissen, dass Lektrobal jeden Pokémonkampf verlieren wird, lässt der Trainer es bleiben.
+        </value>
+  </string>
+  <string key="HunterKilledFinalShot">
+        <!-- 0 - hunter -->
+        <!-- 1 - target's name -->
+        <!-- 2 - target's role -->
+    <value>Kurz bevor {0} besiegt wird, befiehlt er seinem Lektrobal Explosion einzusetzen! Während Lektrobal von seiner eigenen Attacke besiegt wird, greift es {2} an. {1} fällt in Ohnmacht.
+        </value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>{0} hat seinem Mewtu 👤 befohlen {1} anzugreifen! Ohne zu wissen wie stark der Gegner sein wird, geht es mit ihm in den Kampf. Da erscheint ein Dragoran 🔪 und setzt Wutanfall ein. Das Mewtu wurde besiegt.
+        </value>
+    <value>B.L.O.N.D. schickte {0} zu {1} mit dem Auftrag dessen Pokémon gegen ein Mewtu einzutauschen. Doch {0} traf leider auf den aktuellen Pokémon-Meister, der darüber gar nicht erfreut war. 
+Sofort befahl er seinem Dragoran 🔪 anzugreifen, um zu beweisen, dass er der Stärkere ist. {0}'s Mewtu 👤 wurde besiegt.</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+        <!-- 0 - target's name -->
+    <value>Team Rocket 🐺 hat letzte Nacht Lektrobal 🎯 attackiert. Obwohl es besiegt wurde konnte es vor seiner Niederlage noch {0}'s Pokémon besiegen.
+        </value>
+  </string>
+  <string key="HunterShotWolf">
+        <!-- 0 - target's name -->
+    <value>Team Rocket 🐺 hat versucht Lektrobal 🎯 zu besiegen, allerdings waren sie diesem nicht gewachsen und {0}'s Pokémon wurde besiegt.
+	</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Team Rocket 🐺 war so töricht, den aktuellen Pokémonmeister zum Kampf zu fordern. Leider waren sie der Stärke von Dragoran's Drachenwut 🔪 nicht gewachsen. {0}'s Pokémon wurde besiegt.
+        </value>
+  </string>
+  <string key="DefaultKilled">
+        <!-- 0 - target's name -->
+        <!-- 1 - target's role -->
+    <value>Der gefürchtete Pokémonmeister hat wieder mit seinem Dragoran 🔪 zugeschlagen. Neben einem totalen Chaos in der Stadt, sieht man {0} ohnmächtig neben seinem Pokémon liegen. {1} wurde besiegt.
+        </value>
+  </string>
+  <string key="GuardBlockedKiller">
+        <!-- 0 - target's name -->
+    <value>Du und dein Dragoran 🔪 habt {0} als neues Opfer ausgewählt.
+Doch was ist das? Plötzlich, erscheint wie aus dem Nichts ein helles Lichtschild vor deinem Dragoran. Pantimos 👼 macht euch einen Strich durch die Rechnung. Kein Kampf für euch heute Nacht!
+        </value>
+  </string>
+  <string key="CultConvertHunter">
+        <!-- 0 - Youngest Zombie's name -->
+        <!-- 1 - target's name -->
+    <value>B.L.O.N.D. schickte {0} um {1} zu überreden sein Pokémon gegen ein Mewtu einzutauschen. Aber {1} wurde wütend und ging mit seinem Lektrobal auf den Gegner los. 
+Da {0} dem Donner seines Gegners nicht gewachsen war wurde er mit seinem Mewtu besiegt.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Pantimos 👼 versuchte letzte Nacht Dragoran 🔪 zu beschützen, aber Dragoran braucht keinen Schutz. Es benutzt Wutanfall, um Pantimos zu besiegen. Dumm gelaufen.
+        </value>
+  </string>
+  <string key="HarlotFuckKiller">
+        <!-- 0 - target's name -->
+    <value>Piepi 💋 schlüpfte in das Haus von {0} und wollte sich mit dem dort lebenden Pokémon anfreunden, doch es hat die Rechnung ohne Dragoran 🔪 gemacht. {0} schreckt aus dem Schlaf hoch und greift sofort an. Piepi wurde besiegt.
+        </value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+        <!-- 0 - harlot's name -->
+    <value>Am Morgen findet man das Piepi 💋 von {0} vollkommen verprügelt vor. Scheinbar hat Piepi versucht sich mit dem Dragoran 🔪 des Meisters anzufreuden..
+        </value>
+  </string>
+  <string key="DGToMason">
+        <!-- 0 - target's name -->
+    <value>{0}'s Ditto hat sich in ein zuckersüßes Nidoran 👷 verwandelt. Daraufhin nehmt ihr es in euren Club auf, schließlich gibt es ja eine Lücke zu füllen.
+        </value>
+    <value>{0}'s Ditto hat sich in ein anmutiges Ponita 👷 verwandelt. Daraufhin nehmt ihr es in euren Club auf, schließlich gibt es ja eine Lücke zu füllen.
+        </value>
+    <value>{0}'s Ditto hat sich in ein schüchternes, aber super niedliches Quapsel 👷 verwandelt. Daraufhin nehmt ihr es in euren Club auf, schließlich gibt es ja eine Lücke zu füllen.
+        </value>
+    <value>{0}'s Ditto hat sich in ein putziges Porenta 👷 verwandelt. Daraufhin nehmt ihr es in euren Club auf, schließlich gibt es ja eine Lücke zu füllen.
+        </value>
+  </string>
+  <string key="DGTransformToMason">
+        <!-- 0 - dead mason's name -->
+        <!-- 1 - mason collegues's name -->
+    <value>{0}'s Pokémon wurde besiegt. Darauhin hat sich dein Ditto in ein süßes Pokémon 👷 verwandelt. Endlich kannst du deinen größten Traum wahr werden lassen und dem Pokémon Fan Club beitreten!
+Die anderen Mitglieder sind: {1}</value>
+  </string>
+  <string key="DGToCult">
+        <!-- 0 - new Zombie's name -->
+    <value>{0}'s Ditto hat Wandler eingesetzt und sieht nun aus wie ein Mewtu 👤. Daraufhin nimmt dich B.L.O.N.D. in ihre Reihen auf und macht dich zu einem vollwertigen Mitglied!
+        </value>
+  </string>
+  <string key="DGTransformToCult">
+        <!-- 0 - role's name -->
+        <!-- 1 - teammates's name -->
+    <value>{0}'s Mewtu wurde besiegt, allerdings hat sich nun dein Ditto in ein Mewtu 👤 verwandelt und so kannst du endlich dem Team B.L.O.N.D beitreten. Die anderen Mitglieder sind (soweit vorhanden): {1}
+        </value>
+  </string>
+  <string key="DGToWolf">
+        <!-- 0 - DG's name -->
+    <value>{0}'s Ditto hat sich ein Pokémon von Team Rocket 🐺 verwandelt. Ihr findet das zwar merkwürdig, allerdings nehmt ihr {0} gerne auf.
+        </value>
+  </string>
+  <string key="DGTransformToWolf">
+        <!-- 0 - target's name -->
+        <!-- 1 - teammates's name -->
+    <value>{0}'s Pokémon wurde besiegt und deswegen hat sich dein Ditto in ein Pokémon von Team Rocket 🐺 verwandelt. Nun hast du endlich auch einen Grund und ein starkes Pokémon um dich Team Rocket anzuschließen. Die anderen Mitglieder sind: {1}
+        </value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>Du hast alle Pokémonkämpfe gewonnen! Glückwunsch, du bist wirklich der einzig wahre Pokémonchamp 🔪, aber das wusstest du ja schon.
+        </value>
+  </string>
+  <string key="AskKill">
+    <value>Mit wem möchtest du dich heute messen?
+        </value>
+  </string>
+  <string key="LoverDied">
+        <!-- 0 - dead's name -->
+        <!-- 1 - lover's name -->
+        <!-- 2 - roles -->
+    <value>{0}'s Pokémon ist kampfunfähig. Bewegungslos sieht Trainer {1} mit an, wie sein Pokémon ❤️ voller Schock über den Verlust seines geliebten Partners ❤️ ebenfalls durch die Wirkung der Hypnose umfällt. {2} wurde besiegt und {1} fällt in Ohnmacht
+        </value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>Dein Ditto soll sich verwandeln. Nur in welches Pokémon? Du hast die Wahl. Suche dir einen Trainer aus, um zu entscheiden in welches Pokémon sich dein Ditto verwandeln soll, wenn dieses im Kampf besiegt wird.
+        </value>
+  </string>
+  <string key="AskCupid1">
+    <value>Wen soll dein Hypno mit seinem Ring hypnotisieren und verlieben? Wähle nun den ersten Trainer. Sein Pokémon verfällt einem anderen.
+        </value>
+  </string>
+  <string key="AskCupid2">
+    <value>Zu einer schönen Liebesgeschichte gehören natürlich immer zwei Pokémon. Also wähle den zweiten Trainer weise. Sein Pokémon wird einem anderen verfallen.
+        </value>
+  </string>
+  <string key="Hunter">
+    <value>Lektrobal 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Hypno 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Dragoran 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Ditto 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+        <!-- 0 - target's name -->
+    <value>Glückwunsch, dein Ditto verwandelt sich in ein Gengar. Dein einziger Freund ist {0}.
+        </value>
+  </string>
+  <string key="LoversWin">
+    <value>Ein Happy End für die Verliebten! Die verliebten Pokémon bleiben auf Ewig zusammen ❤️. Wer weiß, vielleicht gelingt den Trainern ja eine Pokémonzucht? Wir werden es nie erfahren.
+        </value>
+  </string>
+  <string key="HunterKilledVisiter">
+        <!-- 0 - target's name -->
+        <!-- 1 - role -->
+    <value>Lektrobal hat als Eindringling das Pokémon von {0} entdeckt. Lektrobal benutzt Donner! {1}.
+        </value>
+  </string>
+  <string key="CultAttempt">
+    <value>Eine verschleierte Gestalt tauchte heute Nacht an deiner Haustür auf und wollte dich für den B.L.O.N.D. rekrutieren. Du liebst dein Pokémon jedoch zu sehr, um es für ein Mewtu aufzugeben.
+        </value>
+  </string>
+  <string key="AlreadyOnWaitList">
+        <!-- 0 - target's name -->
+    <value>{0} steht bereits auf der Warteliste. Ein bisschen Geduld hatnoch keinem geschadet.
+        </value>
+  </string>
+  <string key="AddedToWaitList">
+        <!-- 0 - target's name -->
+    <value>{0} wurde zur Warteliste hinzugefügt. Ein bisschen Geduld noch, bald fangen neue Pokémonkämpfe an. Damit du das auch auf gar keinen Fall vergisst, schicke ich dir eine PM zur Erinnerung.
+        </value>
+  </string>
+  <string key="NotifyNewGame">
+        <!-- 0 - target's name -->
+    <value>Ein neues Spiel startet in {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+        <!-- 0 - SK's name -->
+        <!-- 1 - target's name -->
+    <value>{0} und sein Dragoran treten im finalen Kampf gegen {1}'s Pokémon an. Die beiden Pokémon schenken sich nichts und liefern sich einen erbitterten Kampf. Am Ende konnte {1}'s Pokémon aber natürlich nichts gegen die unbändige Kraft von Dragorans Drachenwut ausrichten. {1}'s Pokémon wurde besiegt.
+        </value>
+  </string>
+  <string key="NoWinner">
+    <value>Kein Trainer hat ein kampffähiges Pokémon mehr. Alle haben verloren. Damit das nicht noch einmal passiert üben wir es doch in einem neuen Spiel.
+        </value>
+  </string>
+  <string key="SKHunterEnd">
+        <!-- 0 - SK's name -->
+        <!-- 1 - Hunter's name -->
+    <value>Der letzte und finale Kampf zwischen {0} und {1} wird ausgetragen. {0}  tritt mit seinem Dragoran an, der Gegner {1} entscheidet sich für sein Lektrobal. "Los Lektrobal, Explosion!", ruft {1} mit voller Kraft heraus. {0} reagiert schnell, und lässt sein Dragoran zum finalen Stoß ausholen, doch was ist das? Dragoran braucht zu lange und wird von Lektrobals Explosion umgehauen! Beide Pokémon gehen K.O.
+        </value>
+  </string>
+  <string key="RoleModelChosen">
+        <!-- 0 - target's name -->
+    <value>Du hast vergessen zu wählen, Dummerchen. Deshalb hat der Zufall für dich {0} ausgesucht.
+        </value>
+  </string>
+  <string key="Won">
+    <value>Gewonnen</value>
+  </string>
+  <string key="Lost">
+    <value>Verloren</value>
+  </string>
+  <string key="IdleCount">
+        <!-- 0 - player's name -->
+        <!-- 1 - idle count -->
+    <!--New strings 7th of July-->
+    <value>{0}'s Pokémon hat entschieden, dass sein Trainer nicht gut genug für es sei, da er {1} mal in den letzten 24 Stunden nicht abgestimmt hat, und verschwindet daher in die Wildnis.
+        </value>
+  </string>
+  <string key="AboutVG">
+    <value>Du besitzt bloß ein Karpador 👱. Deine Aufgabe ist einfach, versuche unauffällig zu bleiben und nicht von Team Rocket angegriffen zu werden, da du jegliche Kämpfe in die du verwickelst wirst verlierst. Jeden Tag hast du die Chance, das Pokémon eines Trainers in die Wildnis zu entlassen.
+        </value>
+  </string>
+  <string key="AboutSeer">
+    <value>Du besitzt ein Simsala 👳. Dieses beherrscht die Attacke Gesichte. Jede Nacht kannst du einen Trainer auswählen, auf dessen Pokémon du die Attacke anwendest. Simsala erkennt dann die Identität dieses Pokémons. Aber Achtung; gehe weise mit deinem Wissen um. Dank der starken Attacke von Simsala bist du natürlich ein interessantes Angriffsziel und ein besiegtes Pokémon nutzt niemandem etwas.
+        </value>
+  </string>
+  <string key="AboutWw">
+    <value>Du bist ein Mitglied von Team Rocket 🐺. Du willst über die Erde regieren und deinen eigenen Staat kreiern. Liebe und Wahrheit verurteilst du, mehr und mehr Macht, das willst du. Dein Ziel ist es also, Team Rocket an die Macht zu bringen. Du gewinnst das Spiel, wenn mindestens die Hälfte des Dorfes zu Team Rocket gehört (und kein Pokémonmeister oder Turtok mehr zugegen ist).
+Gemeinsam mit den anderen Mitgliedern deines Teams stattet ihr jede Nacht einem anderen Trainer einen Besuch ab und attackiert dessen Pokémon. Da jedes Mitglied von eurem Oberhaupt persönlich ausgebildet worden ist, wisst ihr alles, was es über Typen Vor- und Nachteile zu wissen gibt.  Dementsprechend habt ihr für fast jedes Angriffsziel eine sehr effektive Attacke zur Hand und gewinnt fast jeden Kampf.
+Lediglich das Dragoran des Pokémon-Meisters und in 25% der Fälle das Lektrobal können dir was anhaben. Falls du ein Smettbo angreifst, wird es Schlafpuder gegen dich einsetzen, weshalb du die nächste Nacht verschläfst und niemanden angreifen kannst. Findest du  das Rettan und greifst es an, so wird es sich  entwickeln und du  gewinnst ein neues Mitglied für euer Team. Ein Hoch auf neue Freunde!
+        </value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Du besitzt ein Piepi 💋. Mit seinem niedlichen Aussehen und seiner verführerischen Art zieht es alle anderen Pokémon in seinen Bann. Natürlich geniesst es die Aufmerksamkeit der anderen Pokémon und kann jede Nacht ein anderes Pokémon besuchen, um ihm den Kopf zu verdrehen und es näher kennen zu lernen. Besuchst du jedoch das Hause eines Team Rocket Mitgliedes oder ein Haus, was in dieser Nacht von Team Rocket angegriffen wird, so wirst du angegriffen und besiegt werden. Wenn Team Rocket jedoch dein Haus besucht, werden sie es leer vorfinden und dir nichts anhaben können.
+        </value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Du besitzt ein Smettbo 🍻. Dieses niedliche Pokémon ist absolut gutmütig und wird sich niemals freiwillig in einen Kampf verstricken. Die meiste Zeit des Tages verbringt es damit, leichtfüssig durch die Luft zu schweben und Blütenpollen zu sammeln oder tagzuträumen. Solltest du von Team Rocket angegriffen werden, wird es sie zwar nicht besiegen können, kann allerdings Schlafpuder gegen sie einsetzen. Die Pokémon werden dadurch für 24 Stunden ausser Gefecht gesetzt und können in der nächsten Nacht nicht gegen andere Trainer in den Kampf geschickt werden. Gegen Dragoran ist dein Schlafpuder jedoch wirkungslos.
+        </value>
+  </string>
+  <string key="AboutCursed">
+    <value>Du besitzt ein Rettan 😾. Wie jeder andere Trainer trainierst du täglich dein Pokémon, um der Allerbeste zu werden. Um schneller voran zu kommen, hast du dein Glück auch schon bei Team Rocket versucht, die wollten dich aber nicht, weil du zu schwach warst. Das ist nicht spurlos an dir vorübergegangen, weshalb du Team Rocket gerne ausgelöscht sehen würdest.
+Wenn Team Rocket jedoch beschliesst, dich in der Nacht anzugreifen, wird sich dein Rettan zu einem Arbok entwickeln. Team Rocket wird deine Stärke erkennen und dir anbieten bei ihnen mitzumachen. Da du keine nachtragende Person bist, wirst du deinen Groll wegstecken und freudig zustimmen. Von da an ist dein Ziel das gleiche wie das eines jeden anderen Team Rocket Mitglieds.
+        </value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Du bist Silber (Giovannis Sohn) und besitzt ein hinterhältiges Golbat 🥸. Dein ganzes Leben hast du nur versucht zu erreichen, dass dein Vater stolz auf dich ist, allersdings ohne Erfolg. So fristet du dein Dasein als langweiliger Trainer solange Team Rocket noch existiert. Aufgrund dieses tristen Lebens hast du zwar nicht die Aura des Bösen, aber deine Seele ist verdorben, weswegen Simsala misstrauisch werden kann und dich entweder als böse oder als gut erkennen wird
+Doch sobald das gesamte Team Rocket besiegt wurde ist deine Zeit gekommen und du fängst an, Team Rocket wieder aufzubauen und in seinem Namen weiterzukämpfen.
+        </value>
+  </string>
+  <string key="AboutGA">
+    <value>Du besitzt ein Pantimos 👼. Aufgrund seines aussergewöhnnlichen Erscheinungsbildes und seiner wortkargen Art wird es oft missverstanden. Wer Pantimos deshalb meidet ohne es zu kennen tut ihm allerdings Unrecht. Selbstlos wie es ist, verwendet es seine Spezialattacke Lichtschild ausschliesslich dafür, um andere Pokémon vor Team Rocket und Dragoran zu beschützen.
+Jede Nacht kannst du einen Trainer wählen, dessen Pokémon von Pantimos beschützt werden soll. Sollte Team Rocket oder Dragoran in der gleichen Nacht dieses Pokémon angreifen wollen, so werden sie an Pantimos Lichtschild scheitern und beide Pokémon werden unbeschadet aus dem Kampf fliehen können. Da Pantimos sich auf den Schutz des anderen Pokémons konzentriert, kann es sich selbst jedoch nicht verteidigen, falls es angegriffen wird. 
+Bedenke also wem du vertraust, denn wenn du versuchst Dragoran zu beschützen, so wird es dich besiegen und wenn du versuchst ein Pokémon von Team Rocket zu beschützen, so entkommst du einem  Kampf nur mit einer Chance von 50%.
+        </value>
+  </string>
+  <string key="AboutDetective">
+    <value>Du besitzt ein Fukano 🕵️. Jeden Tag kannst du dein Fukano beauftragen, einen Trainer genau zu untersuchen, du kleiner Schnüffler. Jedoch kann es sein, dass Team Rocket euch beide beim Schnüffeln erwischt, da diese aufmerksam sind. Die Chance entdeckt zu werden beträgt 40%.
+        </value>
+  </string>
+  <string key="AboutGunner">
+    <value>Du besitzt ein Turtok 🔫. Dieses starke Pokémon hat zwei riesige Kanonen auf dem Rücken. Allerdings ist derWasservorrat begrenzt, sodass es dir nur möglich ist 2 mal damit zu feuern und auch nur tagsüber und nicht am gleichen Tag. Jedoch solltest du vorsichtig mit dieser Kraft umgehen, da du bei einem Einsatz für alle offenbarst wirst und du natürlich auch Verbündete damit besiegen kannst.
+        </value>
+  </string>
+  <string key="AboutTanner">
+    <value>Du besitzt ein aufmüpfiges Pikachu 👺. Dieses kann es absolut nicht leiden, wenn es in einem Ball eingesperrt ist. Deswegen besteht sein einziges Ziel darin, freigelassen zu werden. Falls das passiert so hat es gewonnen und alle anderen verloren!
+        </value>
+  </string>
+  <string key="AboutFool">
+    <value>Du besitzt ein Enton 🃏. Dieses unattraktive Pokémon leidet permanent unter höllischen Kopfschmerzen und hat Angst, dass niemand es behalten möchte. Deshalb hat es dich unter Hypnose gesetzt und dich in den Glauben versetzt, der Besitzer eines mächtigen und nützlichen Simsalas zu sein. Enton versucht zwar Simsalas Attacke nachzuahmen, kann sich aber wegen seinen Kopfschmerzen kaum konzentrieren.
+Es wird dir lediglich ein zufälliges, noch im Spiel verbliebenes Pokémon nennen. Sollte es dir zu einem Trainer das richtige Pokémon nennen, so ist das purer Zufall.
+        </value>
+  </string>
+  <string key="AboutCult">
+    <value>Du bist Mitglied im B.L.O.N.D. 👤, dem Bund für die langfristige Oligarchie der naturwissenschaftlichen Domäne, welcher von Mr. Fuji ins Leben gerufen wurde. Du und die anderen Mitglieder werden im Volksmund auch als Blondies bezeichnet. Euer Ziel ist es, mehr Anerkennung und Macht für die Wissenschaft zu erwirken. Deshalb erhält jeder Blondie ein von euch geklontes, mächtiges Mewtu und ihr versucht täglich neue Mitglieder zu rekrutieren.
+Erst wenn alle Pokémon, die euch noch Konkurrenz machen könnten (Team Rocket, Mew, Dragoran) besiegt worden sind und alle verbleibenden Trainer ein Mewtu besitzen habt ihr gewonnen. Es wird jeweils das neueste Mitglied ausgeschickt, um neue Mitglieder zu rekrutieren.
+Gewisse Trainer haben jedoch einen starken Willen und lieben ihr Pokémon zu sehr, weshalb sie den Beitritt in den B.L.O.N.D. ablehnen. Während diese dich lediglich ignorieren, werden andere Trainer dich auch angreifen, wenn du versuchst sie zu überreden (Dragoran, Mew, Lektrobal 25%).
+        </value>
+  </string>
+  <string key="AboutCH">
+    <value>Du besitzt ein Mew 💂. Dieses mächtige und friedliebende Pokémon möchte die Ordnung in der Pokémonwelt wiederherstellen und die unnatürlichen Klone von Mewtu beseitigen. Es hat dich aufgrund deiner Gutmütigkeit dafür ausgesucht, ihm zu helfen. Da die Mewtus aus seiner DNA geklont worden sind, kann es mit Hilfe seiner psychokinetischen Fähigkeiten erkennen, ob sich in einem Haus ein geklontes Mewtu aufhält.
+Jede Nacht könnt ihr also einen Trainer besuchen, um zu überprüfen, ob er ein Mewtu besitzt. Sollte dies der Fall sein, greift ihr an und Mew wird mit seiner großen Willensstärke den Sieg über Mewtu davontragen. Falls Mew allerdings Dragoran überprüft, so wird es von ihm angegriffen und besiegt werden.
+        </value>
+  </string>
+  <string key="AboutWC">
+    <value>Du besitzt ein Gengar 👶. Dieses verspielte Geist-Pokémon hat meist nur Unsinn im Kopf und möchte den ganzen Tag spielen. Deswegen hat es auch einen Lieblingsspielkameraden. Falls sein Freund allerdings aus dem Spiel scheidet, so wird Gengar depressiv und möchte nichts mehr unternehmen. Aus Frust schließt du dich dann Team Rocket an.
+        </value>
+  </string>
+  <string key="AboutAppS">
+    <value>Du besitzt ein Kadabra 🙇. Obwohl dieses bereits sehr stark ist, hat es sich noch nicht in ein Simsala entwickelt. Das liegt zu einem Großteil daran, dass es bereits ein Simsala im Dorf gibt und deswegen die Kräfte deinen Kadabras noch nicht benötigt werden.
+Sollte das Simsala aber ausgetauscht (Trainer tritt B.L.O.N.D. bei) oder besiegt werden, so seht ihr eure Zeit gekommen und dein Kadabra entwickelt sich zu einem Simsala und führt dessen Bestimmung weiter.
+        </value>
+  </string>
+  <string key="AboutBH">
+    <value>Du besitzt ein Abra 👁. Dieses relativ schwache Pokémon hat nur eine Fähigkeit. Mithilfe dieser Fähigkeit kann es immer spüren ob es aktuell ein Simsala im Dorf gibt und welcher Trainer dieses kontrolliert.
+        </value>
+  </string>
+  <string key="AboutMason">
+    <value>Du besitzt ein sehr süßes Pokémon 👷. Da du alle süßen Pokémon liebst und sehen möchtest, hast du dich mit anderen Trainern, die ebenfalls süße Pokémon besitzen zusammengeschlossen und einen FanClub gegründet. Da ihr tägliche Clubtreffen abhaltet kennt ihr euch untereinander sehr gut. Deswegen bekommst du es auch mit, wenn plötzlich ein Mitglied mit einem anderen Pokémon auftaucht.
+        </value>
+  </string>
+  <string key="AboutDG">
+    <value>Du besitzt ein Ditto 🎭. Da Ditto selbst keine Attacken beherrscht, musst du zu Beginn des Spiels einen Mitspieler wählen, dessen Pokémon dein Ditto kopieren soll sobald derjenige aus dem Spiel ausscheidet. Auch wenn du von diesem kaugummiartig aussehenden Pokémon erstmal enttäuscht sein magst, bedenke, dass es die einzige Möglichkeit ist, eine einzigartige Rolle ein zweites Mal ins Spiel zu bringen und du so unerwartete Wendungen erzielen kannst.
+Da Ditto allerdings auf die perfekte Imitation spezialisiert ist, kannst du nicht gewinnen solange es seine Fähigkeit nicht eingesetzt hat.
+        </value>
+  </string>
+  <string key="AboutCupid">
+    <value>Liebe liegt in der Luft oder vielleicht auch nur eine Illusion davon. Mit deinem Hypno 🏹 beeinflusst du 2 Pokémon, so dass diese sich unsterblich ineinander verlieben. Aufgrund dieser starke Liebe verliert das andere Pokémon jegliche Lust zu kämpfen, wenn sein Partner besiegt wird und wird dadurch für den Trainer unbrauchbar und dieser fällt daraufhin in Ohnmacht.
+        </value>
+  </string>
+  <string key="AboutHunter">
+    <value>Du besitzt ein aufmerksames Lektrobal 🎯. Aufgrund seiner Aufmerksamkeit ist es möglich, dass du einen nächtlichen Angriff oder Abwerbversuch rechtzeitig erkennst und mit etwas Glück deinen Besucher besiegen kannst. Falls du am Tag besiegst oder freigelassen wirst, kannst du eine letzte Attacke auf ein verbleibendes Pokémon einsetzen und dieses besiegen.
+Notiz: Die Chance einen Angriff von Team Rocket zu überleben liegt bei 30% falls es nur ein Mitglied hat. Für jedes weitere Mitglied steigt die Chance um 20%. Falls ein Mitglied der Angreifer nicht besiegt wird, so besiegt dieses dich. Falls dich B.L.O.N.D. versucht zu überzeugen ein Mewtu zu nehmen, so gelingt dies nur zu 50% und falls du widerstehst so kannst du zu 50% einen der Mitglieder besiegen.
+        </value>
+  </string>
+  <string key="AboutSK">
+    <value>Du bist der Pokémon Champion 🔪. Da du diese Stelle und deinen Ruf behalten willst, ist es dein Ziel alle andere Trainer mit deinem mächtigen Dragoran zu besiegen. Zudem gehörst du keinem Team an, da du auf keine Hilfe angewiesen bist.
+Falls dich Team Rocket angreift, können sie den Überraschungseffekt ausnutzen und dich mit einer Chance von 20% besiegen. Falls du überlebst, besiegst du einen von ihnen. Alle weiteren nächtlichen Besucher räumst du mit großer Genauigkeit aus dem Weg.
+        </value>
+  </string>
+  <string key="AboutPara">
+    <value>Para ist nur ein verrückter Entwickler, der gerne Leute anbellt. Vielleicht hat er sich auch einfach ein wenig zu oft mit Werwölfen angelegt... Man sollte sich nicht mit Werwölfen anlegen. Was? Ein Pokémon? Nein, da verwechselst du etwas... Para ist doch kein Paras!</value>
+  </string>
+  <string key="EndTime">
+    <!--New strings, July the 8th -->
+    <value>Spieldauer: {0}</value>
+  </string>
+  <string key="Day">
+        <!--0 - Day -->
+    <value>Tag {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Irgendetwas muss schief gelaufen sein... dieser Knoten hat sich abgeschaltet :/
+        </value>
+  </string>
+  <string key="SentPrivate">
+    <value>Ich habe dir privat eine Nachricht geschickt :)</value>
+  </string>
+  <string key="StartPM">
+    <value>Bitte klick mich an, damit ich dir schreiben kann: @werewolfbot
+        </value>
+  </string>
+  <string key="PMTrue">
+    <value>Vielen Dank, jetzt kann ich dir schreiben!</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Du musst auf den User antworten, den du aus dem Spiel nehmen willst!
+        </value>
+  </string>
+  <string key="WhatToDo">
+    <value>Was hast du vor?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Du musst in einem Gruppenchat beitreten ;)</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Du kannst ein Spiel nur in einer Gruppe starten.</value>
+  </string>
+  <string key="PingInfo">
+    <value>Reaktionszeit von Telegram: {0}\nNachrichten pro Sekunde: {1}
+        </value>
+  </string>
+  <string key="WhatLang">
+    <value>Welche Sprache?\nAktuell: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Welche Variante?\nAktuell: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Die Sprache ist nun {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Welche Sprachversion möchtest du haben?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Momentan sind keine Knoten verfügbar, probier es doch in ein paar Sekunden nochmal :/
+        </value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Du musst dieses Kommando in einer Gruppe ausführen.</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Du bist kein globaler Admin...</value>
+  </string>
+  <string key="NotPara">
+    <value>Du bist nicht Paras!</value>
+  </string>
+  <string key="Yes">
+    <value>Ja</value>
+  </string>
+  <string key="No">
+    <value>Nein</value>
+  </string>
+  <string key="Allow">
+    <value>Erlauben</value>
+  </string>
+  <string key="Disallow">
+    <value>Nicht erlauben</value>
+  </string>
+  <string key="Show">
+    <value>Zeigen</value>
+  </string>
+  <string key="Hide">
+    <!-- Game Mode Choices-->
+    <value>Verstecken</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Nur normale Spiele</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Nur Chaos Spiele</value>
+  </string>
+  <string key="PlayerChoice">
+    <!-- Show Roles on End Game -->
+    <value>Spieler Auswahl</value>
+  </string>
+  <string key="ShowNone">
+    <value>Keine zeigen</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Nur von lebenden Spielern zeigen</value>
+  </string>
+  <string key="ShowAll">
+    <value>Alle zeigen</value>
+  </string>
+  <string key="Cancel">
+    <value>Abbrechen</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Fliehen nach Starten des Spiels erlauben?\nAnmerkung: Spieler können immer noch während der Beitrittsphase fliehen\nAktuell: {0}
+        </value>
+  </string>
+  <string key="AllowFleeA">
+    <value>Spieler düfen während des Spiels fliehen.\nNeue Einstellung: {0}
+        </value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Wie viele Trainer dürfen maximal einem Spiel beitreten?\nAktuell: {0}
+        </value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Maximale Traineranzahl auf {0} festgelegt.</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Sollen Rollen nach dem Tod eines Spielers angezeigt werden?\nAktuell: {0}
+        </value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Die Rollen werden nach dem Tod {0} angezeigt.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>In welchem Modus wollt ihr spielen?\nAktuell: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Spielmodus auf {0} festgelegt.</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Wie willst du die Rollenverteilung am Ende darstellen?\nAktuell: {0}
+        </value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Rollenverteilung am Ende wie folgt: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Wähle die Basiszeit (in Sekunden) für den Tag. Dies kann allerdings immer noch anhand der Spielerzahl angepasst werden. \nMinimaldauer dafür ist 60 Sekunden. Standardeinstellung: {0}\nAktuell: {1}
+        </value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Die Basiszeit für den Tag beträgt nun {0} Sekunden.</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Wähle die Zeitdauer (in Sekunden) für die Nacht.Standardeinstellung: {0}.
+Aktuell: {1}.</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Die Zeit für die Nacht beträgt nun {0} Sekunden</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Wähle die Zeitdauer (in Sekunden) für die Freilassungs-Abstimmung.
+Standardeinstellung: {0}. Aktuell: {1}.
+        </value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Die Zeit für die Freilassungs-Abstimmung beträgt nun {0} Sekunden
+        </value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Möchtest du Enton als Rolle zulassen?\nAktuell: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Einstellung für Enton: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Möchtest du Pikachu als Rolle zulassen?\nAktuell: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Einstellung für Pikachu: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Möchtest du Blondies als Rolle zulassen?\nMomentan: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Einstellung für Blondies: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Danke, ich wünsche dir einen schönen Tag :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>In welcher Sprache willst du spielen?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Das sind die Gruppen für {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Mitglieder</value>
+  </string>
+  <string key="StartMe">
+    <value>Bitte starte mich, dass ich dir Nachrichten schicken kann.
+        </value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} hat den Bot nicht gestartet und wurde deshalb aus dem Spiel entfernt!
+        </value>
+  </string>
+  <string key="LatestList">
+    <value>Hier ist die letzte Liste.</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Es ist nicht möglich, die letzte Liste aufzurufen.</value>
+  </string>
+  <string key="YouJoined">
+        <!-- 0 - Group Name -->
+    <value>Du bist einem Spiel in {0} beigetreten.</value>
+  </string>
+  <string key="Ping2">
+    <!-- Update 4.0-->
+    <value>Zeit zum Senden der Ping Nachricht: {0}</value>
+  </string>
+  <string key="RoleInfoMayor">
+    <value>Du besitzt ein rotes Garados 🎖. Da dich das ganze Dorf verehrt bzw fürchtet, zählt deine Stimme doppelt, allerdings erst wenn du gezeigt hast, dass du der Trainer des einzigartigen roten Garados bist.
+        </value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Du besitzt ein Vulnona 👑. Dieses wunderschöne Geschöpf ist viel zu hübsch und majestätisch um es freizulassen. Wenn die anderen versuchen dein Pokémon freizulassen dann werden sie von seiner Schönheit geblendet und lassen es sein. Allerdings geht das nur einmal!
+        </value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Du besitzt ein träges Flegmon 🤕. Da sich Pokémon und Trainer bekanntlich sehr ähnlich sind, bist du ebenso faul und verpeilt. So kann es sein, dass du eine andere Person wählst, als du wolltest, da du langsamer denkst und nicht so genau verstanden hast, was du tust.
+        </value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Dein Pokémon ist ein Porygon 🔮. Als Verbündeter des Team Rockets versuchst du einerseits deine Verbündeten zu finden und andererseits euren größten Gegner, den Trainer des Simsalas. Dein Ziel ist es natürlich, zusamen mit Team Rocket zu gewinnen.
+        </value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Du besitzt ein Pummeluff ⚒. Diese knuffige rosa Pokémon hat eine große Freude daran, anderen das Gesicht zu bemalen, wenn diese schlafen. Damit es dies schafft, kann es einmal im Spiel tagsüber singen und so Team Rocket so schläfrig machen, dass dieses nächste Nacht schläft und angemalt werden kann.
+Allerdings wirkt das bei allen anderen nicht, da diese sich bereits mit Ohrstöpsel gewappnet haben.
+        </value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Du bist Giovanni, der mächtige Anführer von Team Rocket 🐺⚡️ und wie jeder mächtige Herrscher der Geschichte, besitzt du eine anmutige Raubkatze, nämlich Snobilikat. Als Chef der Organisation liegt es in deinem Ermessen, wen du als neues Mitglied aufnehmen willst. Deswegen kann es sein, dass du bei einem Angriff von Team Rocket zu 20% beschließt, dass du diesen Trainer gerne in deinem Team haben willst.
+Allerdings dauert dieser Rekrutierungsvorgang einen ganzen Tag und ihr könnt euer neues Mitglied erst in der nächsten Nacht offiziell in euren Reihen begrüßen.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Du bist ein Rocket Rüpel, der die ehrenvolle Aufgabe hat, dem sprechenden Mauzi 🐶 als persönlicher Assistent zur Seite zu stehen.
+Solltest du versagen und Mauzi wird besiegt oder freigelassen, wird das gesamte Team Rocket über den Verlust ihres geliebten Maskottchen in Rage versetzt. In ihrer Wut werden sie in der nächsten Nacht gleich zwei Ziele angreifen.</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Als das Dorf {0} zwingen will, sein Pokémon freizulassen, präsentiert dieser dem Dorf stolz sein Vulnona 👑 und dieses begeistert alle mit seiner atemberaubenden Schönheit, sodass jeder vergisst, dass man dieses Pokémon freilassen wollte und nach Hause geht.
+        </value>
+  </string>
+  <string key="SorcererOther">
+    <value>Dein Porygon versucht herauszufinden, was {0} für ein Pokémon besitzt, scheitert jedoch kläglich. Alles was es sagen kann, ist, dass es weder zu Team Rocket gehört noch ein Simsala ist.
+        </value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} tritt vor und zeigt allen sein Pokémon. Das ganze Dorf erkennt, dass er das einzigartige rote Garados 🎖 besitzt und deswegen gilt fortan bei jeder Wahl seine Stimme doppelt.
+        </value>
+  </string>
+  <string key="AskMayor">
+    <value>Wenn du verkünden willst, dass du der Trainer des mächtigen roten Garados bist, klick einfach auf den Button. Wann immer du willst.
+        </value>
+  </string>
+  <string key="Reveal">
+    <value>Offenbare das Garados</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Möchtest du das Pummeluff singen lassen und damit Team Rocket nachts handlungsunfähig machen?
+        </value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Während die Trainer noch über die Ereignisse der letzen Nacht diskutieren, tritt plötzlich {0} vor und lässt sein Pummeluff ⚒ ein wundervolles Lied singen. Zum Glück haben die meisten Trainer Ohrstöpsel in den Ohren und werden verschont. Team Rocket scheint dies jedoch versäumt zu haben und wird heute Nacht selig schlafen.
+        </value>
+  </string>
+  <string key="Mayor">
+    <value>Garados 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Vulnona 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Porygon 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Flegmon 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Pummeluff ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Snobilikat 🐺⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Mauzi 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Während das Team Rocket {0} angreift, schreitet plötzlich {1} ein und offenbart sich als Giovanni 🐺⚡️. Er teilt den Mitgliedern mit, dass er {0} als neues Mitglied haben will und sich der Aufgabe widmet diesen zu überzeugen. Daraufhin zieht Team Rocket von dannen und freut sich nächste Nacht auf das neue Mitglied.
+        </value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Du wurdest von Team Rocket attackiert. Allerdings hat Giovanni 🐺⚡️ dich auserwählt. Deswegen wirst du nicht besiegt, sondern von Giovanni überzeugt, sodass du dich in der nächsten Nacht dem Team anschließt!
+        </value>
+  </string>
+  <string key="BittenTurned">
+    <value>Während es Nacht wird, kommt Giovanni 🐺⚡️ erneut vorbei und übergibt dir die Pokémon, die jedes Mitglied von Team Rocket besitzt. Ab sofort bist du ein vollwertiges Mitglied!
+        </value>
+  </string>
+  <string key="AboutMayor">
+    <value>Wie jeder normale Trainer besaßt du mal ein Karpador. Allerdings hatte dieses eine andere Farbe und hat sich inzwischen zum legendären roten Garados entwickelt 🎖. Allerdings weiß das keiner, bis du es den Leuten zeigst. Falls du dich den anderen Trainern zeigst, so erkennen diese deine Besonderheit an und lassen deswegen deine Stimme in Abstimmungen doppelt zählen. Allerdings kommt mit großer Macht auch immer große Verantwortung.
+        </value>
+  </string>
+  <string key="AboutPrince">
+    <value>Als du einmal in der Wildnis umhergewandert bist, bist du plötzlich auf das wunderschönste Pokémon gestoßen, das du jemals gesehen hast. Du hast alles daran gesetzt es zu fangen und bist nun stolzer Besitzer eines Vulnonas 👑. Falls nun die anderen Trainer entscheiden sollten, dass du dein Pokémon freilassen sollst, so zeigst du ihnen das Vulnona und geblendet von seiner Schönheit lassen sie davon ab, es in die Wildnis zu entlassen.
+Aber Achtung ⚠️: Beim zweiten Mal ist dein Vulnona nichts Besonderes mehr und da die Trainer sich dann bereits an seiner Schönheit satt gesehen haben, werden sie dich zwingen es freizulassen.
+        </value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Erinnert ihr euch an das mächtige Simsala? Leider hat Team Rocket es nicht geschafft, eins zu fangen. Stattdessen haben sie versucht, ein mächtigeres Pokémon mit diesen Fähigkeiten zu erschaffen. Der Prototyp Porygon 🔮 ist allerdings noch nicht ausgereift und nur in der Lage festzustellen, ob ein Pokémon ein Simsala ist oder zu Team Rocket gehört.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Du bist ein bisschen trottelig und verpeilt. Dazu passt auch dein Pokémon sehr gut, denn du hast ein Flegmon 🤕. Sollte es zu einer Abstimmung kommen, so kann es sein, dass du dich vertust und einen anderen Trainer wählst als du wolltest. Genauer gesagt stimmen deine Wahlen nur zu 50% mit deinem Vorhaben überein.
+        </value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Dein Pokémon ist eine kleine rosa Kugel mit Armen und Beinen, die leidenschaftlich gerne singt und Schlafende bekritzelt. Richtig, dein Pokémon ist ein Pummeluff ⚒. Einmal im Spiel kannst du ihm befehlen tagsüber zu singen und so alle einzuschläfern, die diesen Gesang hören.
+Dies zeigt allerdings nur bei Team Rocket Wirkung, da sich die restlichen Trainer mit Ohrstöpsel schützen und Team Rocket keine hat. Vor deren Angriffen seid ihr dann in der nächsten Nacht geschützt.
+        </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Du bist Giovanni, der mächtige Anführer einer riesigen Verbrecherbande 🐺⚡️. Als der Anfüherer ist es deswegen auch dein Job, neue Trainer zu rekrutieren. Wenn ihr nachts loszieht und einen Trainer bekämpft kann es sein, dass du von seinem Kampfstil beeindruckt bist und ihn rekrutierst.
+Dieser Vorgang dauert allerdings einen gesamten Tag und du findest durchschnittlich auch nur etwa 20% der Trainer beeindruckend.
+        </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Als Rocket Rüpel ist es deine Aufgabe, das sprechenden Mauzi 🐶  zu füttern, sein Fell zu bürsten und ihm jeden Wunsch von den Lippen abzulesen. Kurz gesagt, du sollst den Liebling von Team Rocket bei Laune halten.
+Da alle Team Rocket Mitglied total vernarrt in Mauzi sind, werden sie nicht mehr zu halten sein, wenn ihm etwas zustoßen sollte. Ihre Rache wird fürchterlich sein und sie werden ihre Wut in der nächsten Nacht gleich an zwei Zielen auslassen.
+        </value>
+  </string>
+  <string key="DGTransformToAlpha">
+        <!-- 0 - target's name -->
+        <!-- 1 - teammates's name -->
+    <value>{0}'s Pokémon wurde besiegt und dein Ditto wird zu einem Snobilikat. Dadurch übernimmst du die Rolle von Giovanni 🐺⚡️ und musst Team Rocket anführen. Deine Untergebenen (falls vorhanden) sind: {1}
+        </value>
+  </string>
+  <string key="DGTransformToWolfCub">
+        <!-- 0 - target's name -->
+        <!-- 1 - teammates's name -->
+    <value>{0}'s Pokémon wurde besiegt und dein Ditto verwandelt sich daraufhin in ein Mauzi 🐶. Ab sofort bist du ein waschechtes Mitglied von Team Rocket. Deine neuen Kollegen (falls vorhanden) sind: {1}
+        </value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Team Dorftrottel</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Team Verlierer</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Team Rocket</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Team PokémonMeister</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Team B.L.O.N.D.</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Team Pikachu</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>Ihr entsendet in dieser Nacht {0}, um {1} ein Mewtu anzudrehen und diesen so für B.L.O.N.D. zu rekrutieren, in der Hoffnung, dass dies eine einfache Aufgabe ist, der selbst euer neuestes Mitglied gewachsen ist. Jedoch findet am Morgen das gesamte Dorf ein von Schrammen übersähtes und besiegtes Mewtu. 
+So wird euch sofort klar, dass sich {0} wohl heute Nacht mit Team Rocket 🐺 angelegt hat. Von denen solltet Ihr euch in Zukunf lieber fernhalten!
+        </value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+    <!-- New Death Strings 05 Nov -->
+    <value>{0}'s Piepi schlüpfte heute Nacht in das Haus von {1}, um mit dessen Pokémon zu spielen und etwas Spaß zu haben 💋. Allerdings findet sich Piepi plötzlich in einem Kampf zwischen Dragoran 🔪 und {1}'s Pokémon wieder.
+Mit einem blitzschnellen Angriff besiegt Dragoran Piepi und das andere Pokémon. Dadurch ist Dragoran's Trainer heute Nacht 2 Schritte näher an den Meistertitel gekommen.
+        </value>
+  </string>
+  <string key="ApprenticeSeerEaten">
+    <value>Als der Morgen anbricht finden die Trainer ein besiegtes Pokémon in der Dorfmitte vor und daneben liegt {0} ohnmächtig. Überall sind Einstichspuren zu sehen wie von Omot's Blutsauger 🐺. Von der Ferne sieht das Pokémon wie ein Simsala aus, als die Trainer jedoch näherkommen sehen sie, dass es nur Kadabra ist 🙇. Glück gehabt.
+        </value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Am Morgen, nachdem alle aufgestanden sind, fällt auf, dass {0} bei der morgendlichen Versammlung fehlt. Auf der Suche nach dem Trainer findet man ihn in seinem Haus bewusstlos neben seinem Pummeluff ⚒. Da wollte wohl jemand verhindern, dass in diesem Dorf gesungen wird und hat deswegen das Pummeluff mit Drachenwut 🔪 besiegt.
+        </value>
+    <value>Am Morgen, nachdem alle aufgestanden, merken die Trainer, dass von {0} jegliche Spur fehlt. Sofort beginnt eine Suchaktion. Schließlich findet man ein besiegtes Pummeluff ⚒ und daneben einen bewusstlosen Trainer, der sich bei genauerem Hinsehen als der Gesuchte entpuppt.
+Es scheint fast, als hätte jemand genug davon, den ganzen Tag mit Ohrstöpsel in den Ohren rumzulaufen und deswegen sein Dragoran 🔪 auf Pummeluff gehetzt.
+        </value>
+  </string>
+  <string key="ZombieKilled">
+    <value>Ihr findet einen ohnmächtigen Trainer namens {0} und neben ihm ein besiegtes Mewtu 👤 .Scheinbar war dieses dem kräftigen Hyperstrahl von Dragoran 🔪 nicht gewachsen. Immerhin kann so der B.L.O.N.D. nicht so schnell gewinnen.
+        </value>
+  </string>
+  <string key="CupidKilled">
+    <value>Oh nein, das arme Hypno 🏹! Bewusstlos liegt der Trainer {0} neben seinem besiegten Pokémon. Mit der linken Hand umklammert er die Reste eines Pendels, das durch die Wucht von Hyperstrahl zerschmettert wurde. Scheinbar hat jemand in diesem Dorf etwas gegen Gedankenmanipulation und hat seinem Dragoran 🔪 befohlen, Hypno auszuschalten.
+        </value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Obwohl {0}'s Smettbo 🍻 eigentlich keine wirkliche Gefahr für Dragoran 🔪 darstellt, hat dieses Smettbo mit einem kräftigen Feuersturm ordentlich zugesetzt und besiegt. Sein Trainer liegt bewusstlos daneben, das tränenüberströmte Gesicht in den versengten Flügeln vergraben. {0} ist wohl aus dem Rennen.
+        </value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>Als sich die Trainer am Morgen versammeln fehlt {0}. Relativ schnell wird dieser gefunden und neben ihm ein besiegtes Pantimos 👼 mit weit aufgerissenen Augen, das sonst so friedliche Gesicht ist zu einer angsterfüllten Fratze verzerrt. Diese Nacht hätte es wohl selbst einen Retter vor dem mächtigen Dragoran 🔪 brauchen können.
+        </value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Auch wenn sich {0} mit seinem Turtok 🔫 für unbesiegbar gehalten hat, muss der Trainer jetzt wieder auf den Boden der Tatsachen zurück kommen. Offensichtlich war auch für das starke Turtok der Donner von Dragoran 🔪 zuviel. So scheidet eine weitere starke Rolle aus dem Spiel aus.
+        </value>
+  </string>
+  <string key="MayorKilled">
+    <value>Was ist das? Eine lange rote Schlange von der Dampf hervortritt liegt am Boden. Bei genauerer Betrachtung erkennt ihr, dass es sich um ein rotes Garados 🎖 handelt. Nicht weit entfernt liegt auch {0}, der Trainer des Garados. Auch dieses hatte keine Chance gegen den Donner von Dragoran 🔪. Nieder mit der Bürokratie.
+        </value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Lautes Glockengeläut weckt die Trainer früh am Morgen auf. Mitten auf dem Dorfplatz liegt ein gesteinigtes Vulnona 👑 neben seinem bewusstlosen Trainer {0}.  Da kann es wohl jemand nicht leiden, wenn er Konkurrenz hat, selbst wenn es nur im Bereich der Schönheit ist.
+Zugegebenermaßen ist Dragoran mit seiner Wampe und seinen etwas klein geratenen Flügeln alles andere als ein Augenschmaus. Dafür ist Dragoran 🔪 unangefochten der Stärkste und hat Vulnona locker mit Steinschlag besiegt. Damit verliert das Dorf leider auch ein Teil seines Glanzes.
+        </value>
+  </string>
+  <string key="SeerKilled">
+    <value>Ob das Simsala 👳 von {0} seinen Tod mit seinen erstaunlichen Seherkräften wohl vorher gesehen hat? Falls es so war, so reichte die Zeit wohl nicht mehr, sich eine passende Schutz Strategie auszudenken und Simsala wurde vom Hyperstrahl des Dragoran 🔪 besiegt.
+So werden die restlichen Trainer wohl ohne seine Psykräfte auskommen müssen, ein schmerzlicher Verlust!</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Was ist wohl in der letzten Nacht passiert? Offenbar hat sich Team Rocket 🐺 ein Missgeschick erlaubt, denn sie haben sich in der Hausnummer vertan und ihr eigenes Labor verwüstet und dabei {0}'s Prototypen Porygon 🔮 zerstört. 
+Während diese Tat für alle Trainer unverständlich ist, wird sich Team Rocket wohl noch lange ärgern, sich ins eigene Fleisch geschnitten zu haben. Wären sie heute Nacht mal lieber inaktiv gewesen...</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>An diesem Morgen finden die Trainer ein seltsam blau verfärbtes Pokémon, dessen Zunge seitlich aus dem Mund hängt. Es scheint, als ob Team Rocket's Arbok 🐺 {0}'s Gengar 👶 mit eisernem Griff umklammert und dann bewusstlos gebissen hat.
+        </value>
+  </string>
+  <string key="SerialKillerKilledCH">
+        <!-- used when CH visits SK -->
+    <value>Als das Dorf erwacht, findet man {0} neben seinem treuen aber völlig verkokelten Mew 💂 liegen. Wie es scheint, hat es Dragoran 🔪 gar nicht gerne wenn es nachts Besuch bekommt. Bleibt zu hoffen, dass das nicht zu einem Sieg von B.L.O.N.D. führt.
+        </value>
+  </string>
+  <string key="CultConvertWolfPublic">
+        <!-- used when Zombies convert the wolves, only if wolves stayed home -->
+    <value>Heute Nacht war wohl keine gute Nacht für den Kult. Das neueste Mitglied hatte den Auftrag jemandem ein geklontes Mewtu anzudrehen, aber blöderweise besuchte {0} Team Rocket 🐺. Diese hatten eigentlich vor in der Nacht daheim zu bleiben und einen Filmabend zu machen statt zu kämpfen. Aber wenn ihr Opfer schon zu ihnen kommt und dreist versucht, einen der ihren abzuwerben, dann machen sie halt eine Ausnahme und besiegen diesen als Warnung für die anderen. Deswegen findet man neben {0} ein völlig zerbissenes Mewtu 👤 vor.
+        </value>
+  </string>
+  <string key="CultConvertKillerPublic">
+        <!-- used when Zombies convert the SK -->
+    <value>Sieh an, sieh an, auch Wissenschaftler machen mal dumme Fehler. Vielleicht hätte jemand dem Grünschnabel vom B.L.O.N.D. sagen sollen, dass es nicht die beste Strategie ist, beim amtierenden Pokémonmeister einfach zur Vordertür hereinzuspazieren und ihm ein Mewtu anzubieten... 
+Ein verrücktes Lachen klang {0} in den Ohren als sein Mewtu 👤 durch die Wucht von Dragoran's Drachenwut 🔪 gegen die Wand geschleudert wurde, danach verlor er das Bewusstsein. Immerhin kann er so für die anderen Mitglieder vom B.L.O.N.D. als abschreckendes Beispiel dienen.
+        </value>
+  </string>
+  <string key="GAGuardedKiller">
+    <value>Heute Nacht ist {0}'s Pantimos 👼 ein fataler Fehler unterlaufen, denn es stand auf der falschen Seite des Lichtschildes. Dragoran 🔪 hat die Gelegenheit natürlich genutzt, einen Schritt näher daran zu kommen, der letzte verbleibende Trainer zu sein, und hat es kurzerhand aus dem Weg geräumt. Dabei hat Pantimos es doch nur gut gemeint...
+        </value>
+  </string>
+  <string key="GAGuardedWolf">
+        <!-- Clearly the wolves had an extra meal god-sent, free-of-charge, to their homes. -->
+    <!--1vs1 finales-->
+    <value>Eigentlich wollte Pantimos 👼 heute endlich für eine friedliche Nacht sorgen, denn es hatte genug davon, dass alle seine Freunde immer Team Rocket 🐺 zum Opfer fielen. Ironischerweise lief es dabei selbst in die Arme und verhalf ihnen so zu einem weiteren Sieg, ohne dass sie einen Finger krumm machen mussten. {0} konnte den Anblick seines Partners, dem Omot alles Blut ausgesaugt hatte, nicht ertragen und fiel in Ohnmacht.
+        </value>
+  </string>
+  <string key="HunterKillsWolfEnd">
+        <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Im Wissen dass nur noch {0} mit seinem Lektrobal 🎯 {1} und damit Team Rocket 🐺 am Sieg hindern kann, greift {1} todesmutig {0} an. Allerdings kann Lektrobal deutlich schneller reagieren und besiegt mit einer starken Attacke das gegnerische Pokémon. Nachdem auch {0} in Ohnmacht gefallen ist, gewinnt {1} zusammen mit seinen Verbündeten.
+        </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+        <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Im Wissen dass nur noch Trainer {0} mit seinem Lektrobal 🎯 {1} und damit Team Rocket 🐺 am Sieg hindern kann, greift {1} todesmutig {0} an. Auch wenn es {0} schafft früher anzugreifen, zeigt der Donner von Lektrobal bei dem Nidoking von {1} keinerlei Wirkung und so kann dieses das Lektrobal mit Schaufler besiegen.
+        </value>
+  </string>
+  <string key="CHKillsZombieEnd">
+        <!--{0} = last Zombie's name, {1} = CH's name -->
+    <!-- Extend time -->
+    <value>{1} und {0} treffen sich im Tageslicht. {1} schickt sein Mew 💂 in den Kampf und {0} sein Mewtu. Allerdings hat das Mewtu keine Chance gegen das Mew und wird besiegt. Dadurch fällt auch das letzte Mitglied von B.L.O.N.D. in Ohnmacht. {1} und die ungeklonten Pokémon haben gewonnen.
+        </value>
+  </string>
+  <string key="SecondsAdded">
+        <!-- 0 - Seconds added by /extend command -->
+        <!-- 1 - Total seconds remaining -->
+
+    <value>Die Zeit, um beizutreten, wurde um {0} Sekunden erhöht.\nJetzt habt ihr noch {1} Sekunden, um beizutreten!
+        </value>
+  </string>
+  <string key="SecondsRemoved">
+        <!-- 0 - Seconds removed by /extend command -->
+        <!-- 1 - Total seconds remaining -->
+    <value>Die Zeit, um beizutreten, wurde um {0} Sekunden verringert.\n{1} verbleiben, um dem Spiel beizutreten!
+        </value>
+  </string>
+  <string key="CantExtend">
+    <value>Nur Gruppenadmins können die Zeit mehr als einmal pro Spiel erhöhen.
+        </value>
+  </string>
+  <string key="AllowExtendQ">
+        <!--{0} = "Allow" / "Disallow" string-->
+    <value>Dürfen Spieler die Zeit, um beizutreten, erhöhen?\nAktuell: {0}\nBeachte: Admins können die Zeit immer erhöhen
+        </value>
+  </string>
+  <string key="AllowExtendA">
+        <!--{0} = "Allow" / "Disallow" string-->
+    <value>Spieler dürfen die Zeit erhöhen.\nNeue Einstellung: {0}</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Wie viele Sekunden darf der /extend-Befehl bei einem Aufruf maximal hinzufügen?\nStandard: {0}\nAktuell: {1}
+        </value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Die maximale /extend-Zeit liegt jetzt bei {0} Sekunden.</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>Oh Shit. {0} war der Trainer mit dem Smettbo 🍻 und das hat euch nach eurem Angriff direkt eingeschläfert. So bleibt wohl auch der 2. Kampf aus. Was für ein Glück {1} doch hat.
+        </value>
+  </string>
+  <string key="NotPlaying">
+    <value>Du scheinst nicht in einem Spiel zu sein...</value>
+  </string>
+  <!-- NO USERNAMES IN THE LANGFILE
+  <string key="NoPlayerName">
+    <value>Sollte diese Nachricht erscheinen, bitte an @Laceygirl weiterleiten! Vielen Dank :) | Ich kann keinen Spieler mit diesem Namen finden!</value>
+  </string>
+  -->
+  <string key="JoinButton">
+    <value>Join</value>
+  </string>
+  <string key="NotMember">
+    <value>Hey Du! Komm erstmal in die Gruppe {0} und lass uns da weiter reden. So kannst Du dem Spiel zumindest nicht beitreten.</value>
+  </string>
+  <string deprecated="true" key="VillageTeam">
+    <value>Village Team</value>
+  </string>
+  <string deprecated="true" key="NeutralTeam">
+    <value>Neutral Team</value>
+  </string>
+  <string deprecated="true" key="SerialKillerTeam">
+    <value>SK Team</value>
+  </string>
+  <string deprecated="true" key="CultTeam" />
+        <!-- 0 - Number of Zombies -->
+  <string deprecated="true" key="TannerTeam">
+    <value>Tanner Team</value>
+  </string>
+  
+    <string key="JoinByButton">
+    <value>Das Beitreten von Spielen über den Join Befehl ist nicht länger möglich, klicke auf den Knopf "Join" und dann auf "Starten", um dem Spiel beizutreten.</value>
+  </string>
+  
+  <string key="PlayerVoteCounts">
+    <value>{0} Trainer haben gewählt, {1} Trainer gesamt.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Geheimes Lynchen aktivieren?\nMomentan: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Aktivierung des geheimen Lnychens ist jetzt: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, bitte denke daran, dass du ebenfalls über den Join Knopf joinen musst.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>Gruppe konnte nicht gefunden werden. Führe diesen Befehl entweder in der entsprechenden Gruppe aus, oder füge die Gruppen ID, den Link oder den Benutzernamen an.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Du wurdest von der Warteliste für {0} entfernt.</value>
+  </string>
+  <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>Nun im Kampf um den Titel "Bester Trainer" beteiligt: {0}</value>
+  </string>
+    <string key="AllowCult">
+    <value>Erlaube B.L.O.N.D.</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Erlaube Pikachu</value>
+  </string>
+  <string key="AllowFool">
+    <value>Erlaube Enton</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Erlaube Geheimes Freilassen</value>
+  </string>
+  <string key="RandomMode">
+    <value>Erlaube Random Mode</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Erlaube Extending Timer</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Zeige Rollen bei Tod</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Erlaube Fliehen</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Show IDs on joining</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Show IDs of players while they join the game?\nCurrent: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>All</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Enable random mode?\nWhen random mode is enabled, Chaos, Secret Lynch, Show Roles on Death, and Allow Cult / Fool / Tanner will be randomly determined everytime someone starts a game.\nCurrent:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Enabling of random mode set to: {0}</value>
+  </string>
+
+  <string key="AllowNSFW">
+    <value>Allow NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Allow players to have NSFW gif packs?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+
+  <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Als {0} am nächsten Tag das Haus verlässt, wird ihm schlagartig bewusst, dass er der letzte verbleibende Trainer ist. Erzürnt über die Tatsache, dass es ihm nicht gelungen ist, von den anderen Trainern freigelassen zu werden, jagt Pikachu 👺 einen mächtigen Donnerschlag durch seinen Pokéball. Von diesem heftigen Stromstoss getroffen fällt nun auch der letzte Trainer in Ohnmacht. Das kleine Pikachu wird wohl für immer in seinem Ball bleiben müssen. </value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name --> 
+    <value>Am nächsten Morgen erwacht {0} und stellt fest, dass er der letzte verbleibende Trainer ist. Da er nur ein Wissenschaftler bei Team Rocket ist, kann er diesen Sieg nicht ohne seine Kameraden feiern. Resigniert packt er seine Sachen und macht sich mit seinem Porygon 🔮 auf, um im nächsten Dorf nach neuen Gefährten zu suchen.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Welche Variante?\nAktuell: {0}\nDa du bereits über 500 Pokémonkämpfe bestritten hast, kannst du jetzt auch hier beitreten: </value>
+  </string>
+  <string key="Skip">
+    <value>Pokémon im Ball lassen</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0}'s Pokémon wurde besiegt. Deswegen verwandelt sich dein Ditto in ein Sleima 🐺🌝. Dein Teamkameraden bei Team Rocket sind: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>Entoron 🌀 erkennt, dass {0} kein {1} hat.</value>
+  </string>
+  <string key="AskSandman">
+    <value>Möchtest du deinem Sandan befehlen, heute Nacht die Attacke Sandsturm einzusetzen?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Während sich alle Trainer unterhalten, sehen sie auf einmal, wie {0} sein Sandan 💤 aus dem Pokéball lässt und ihm etwas zuflüstert. Obwohl sie die Worte auf die Distanz nicht ausmachen können, wird allen klar, dass es diese Nacht einen heftigen Sandsturm geben wird und sie in ihren Kellern Schutz suchen sollten.</value>
+  </string>
+  <string key="SandmanNight">
+  <value>Als die Trainer sich gemütlich auf den Heimweg machen, frischt der Wind plötzlich auf und alles wird mit einer feinen Sandschicht 💤 überdeckt. Im Nu löst sich die Versammlung auf und jeder huscht in seinen Keller, um dort den Sturm auszuharren.  Es verspricht eine ereignislose Nacht zu werden, denn nicht einmal Psychokräfte können diesen dichten Sturm durchdringen. Somit schlafen alle Trainer ein, die Pokémon sicher im Ball verwahrt.</value>
+  </string>
+  
+  <string key="AllowThiefQ">
+    <value>Allow thief as a role option?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Thief as a role set to: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Thief can be used every night?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Thief will play every night: {0}</value>	
+  </string>
+  <string key="AllowThief">
+    <value>Allow Thief</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Thief Full Game</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Du besitzt ein Smogmog 👱🌚. Da allgemein bekannt ist, dass Smogon zu den Pokémon des Team Rocket gehört, denken viele, dass auch die Weiterentwicklung zu den Schurken zählt. Selbst Simsala wird sich dadurch täuschen lassen und dich für ein Mitglied von Team Rocket halten.</value>
+    </string>
+  <string key="WolfMan">
+    <value>Smogmog 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Dein Pokémon ist ein Smogmog 👱🌚. Als seine Weiterentwicklung bist du natürlich auch deutlich stärker und da das schwächere Smogon zu Team Rocket gehört, ist es für den Trainer des Simsala selbstverständlich, dass für seine Weiterentwicklung das gleiche gilt. Nur das schlaue Fukano erkennt, dass du eigentlich kein Mitglied von Team Rocket bist.</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>Du besitzt ein Sleima 🐺🌝. Es ist zwar bekannt, dass Sleimok zu Team Rocket gehört, aber dein Sleima ist noch viel süßer und unschuldiger. Deswegen gelingt es dir auch, Simsala zu täuschen, sodass dieses dich nicht für ein Mitglied von Team Rocket hält. Was für ein Glück für dich!</value>
+  </string>
+  <string key="Lycan">
+    <value>Sleima 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Du bist der Trainer eines Sleima 🐺🌝. Da Sleima die deutlich schwächere Vorentwicklung von Sleimok ist und Team Rocket bekanntlich keine schwachen Pokémon besitzt, gelingt es dir, Simsala in die Irre zu führen und deine bösen Absichten zu verschleiern. Nur Fukano kann das wahre Wesen deines Pokémon erkennen.</value>
+  </string>
+  <string key="RoleInfoOracle">
+  <value>Du besitzt ein Entoron 🌀. Obwohl es deutlich stärker ist als seine Vorentwicklung, kann es mit seinen Psychokräften Simsala nicht das Wasser reichen. Wenn es das Pokémon eines Trainers untersucht, kann es lediglich eine bestimmte Spezies ausschliessen, die somit im Besitz eines anderen Trainers sein muss.</value>
+  </string>
+  <string key="Oracle">
+    <value>Entoron 🌀</value>   
+  </string>
+  <string key="AboutOracle">
+    <value>Dein Pokémon ist ein Entoron 🌀, die Weiterentwicklung von Enton. Es ist immerhin nicht so hinterlistig wie seine Vorentwicklung, die dir vorgaukelt, ein Simsala zu haben. Dennoch ist es auch nicht so mächtig wie ein Simsala und kann nur feststellen, dass ein Trainer ein gewisses Pokémon nicht hat. Immerhin erkennt es bloß Pokémon, die noch nicht freigelassen oder besiegt wurden.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Dein Pokémon ist ein Sandan 💤. Dieses süße kleine Pokémon kann mit seiner Attacke einen mächtigen Sandsturm entfesseln. Dieser ist so stark, dass sich kein Trainer aus dem Haus traut und auch keine Psychokräfte in der Lage sind, diesen zu durchdringen. Deswegen ist in dieser Nacht kein Pokémon in der Lage, eine Aktion auszuführen.</value>
+  </string>
+  <string key="Sandman">
+    <value>Sandan 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Du bist im Besitz eines Sandans 💤. Man sieht es diesem Pokémon zwar nicht an, aber es ist in der Lage mächtige Sandstürme zu erzeugen. Da dies aber viel Anstrengung kostet, kann die Attacke nur einmal pro Spiel eingesetzt werden. Dieser Sandsturm ist so mächtig, dass es kein Durchkommen gibt, weder für die Trainer noch für die Psychokräfte ihrer Pokémon. Deswegen passiert in dieser Nacht absolut gar nichts.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoImam">
+    <Value>Du bist der Trainer eines Relaxos. Dieses Relaxo kann eine besondere Art der Attacke Rückentzug. Es kann dadurch verhindern, dass eines der Pokémon freigelassen wird. Jedoch kann es das nur einmal einsetzen und jeder weiß danach dass du ein Relaxo hast, also nutze diese weise.</Value>
+  </string>
+  <string key="Imam">
+    <value>Relaxo ☮️</value>
+  </string>
+  <string key="AboutImam">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>Du besitzt ein Onix 📚 mit der Fähigkeit Robustheit. Aufgrund dieser Fähigkeit ist es deinem Pokémon möglich, die erste Attacke von Team Rocket mit 1 HP zu überleben. </value>
+  </string>
+  <string key="WiseElder">
+    <value>Onix 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value></value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>Dein Pokémon ist ein Zubat 😈. Da es Zubats wie Sand am Meer gibt, willst du es nicht haben. Deswegen befiehlst du deinem Zubat in der Nacht den Pokéball eines anderen Trainers zu klauen und lässt es danach frei. Der andere Trainer bekommt aber als Entschädigung wenigstens ein Karpador als neues Pokémon.</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Dein Pokémon ist ein Zubat 😈. Da es Zubats wie Sand am Meer gibt, willst du es nicht haben. Deswegen befiehlst du deinem Zubat in der Nacht, seinen Pokéball mit dem eines anderen Trainers zu tauschen, dann kann dieser sich darüber ärgern. </value>
+  </string>
+  <string key="Thief">
+    <value>Zubat 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value></value>
+  </string>
+  
+  <string key="AskImam">
+    <value>Möchtest du deinem Relaxo befehlen Rückentzug einzusetzen und damit das heutige freilassen zu verhindern.</value>
+  </string>
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
+    <value> Da der Trainer des Relaxos Pokémon so sehr liebt befiehlt er seinem Relaxo die Attacke Rückentzug einzusetzen. Deshalb sieht das ganze Dorf wie das Relaxo ☮️ von {0} zu jedem anderen Trainer geht und dort eine Attacke einsetzt. Danach ist es den Trainer nichtmehr möglich eines der Pokémon freizulassen. Daraufhin beschließen die Trainer die heutige Versammlung ausfallen zu lassen.</value>
+  </string>
+  <string key="ImamNoLynchNow">
+    <value>Da das Relaxo ja Rückentzug eingesetzt hat, ist es den Trainer nicht möglich ein Pokémon freizulassen und deswegen schlafen alle bereits friedlich zu der Zeit in der eigentlich die Versammlung ist.</value>
+  </string>
+
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value> Ihr greift in der Nacht {0} an. Doch das Onix 📚 des Trainers stellt sich euch in den Weg. Ihr befehlt eurem Sarzenia Solarstrahl einzusetzen. Allerdings überlebt das Onix diese mächtige Attacke und bevor es zum Gegenschlag ausholen kann, flieht ihr.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Team Rocket 🐺 hat dich und dein Pokémon in der Nacht angegrifen. Doch da dein Onix 📚 die Fähigkeit Robustheit besitzt hat es den einen nächtlichen Angriff überlebt und bevor du nach dem Rechten sehen kannst, sind die Mitglieder schon wieder geflohen.</value>
+  </string>
+
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Kurz bevor die anderen Trainer {0} zwingen sein Lektrobal 🎯 freizulassen, befiehlt dieser seinem Pokémon noch das Pokémon von {1} zu besiegen. Nachdem alle sehen wie das Onix 📚 von {1} besiegt wird, nehmen die Trainer das Lektrobal weg und geben {0} ein Karpador, welches sie darauf freilassen. So wird vielleicht nie beknnt dass dieser Trainer mal ein Lektrobal besaß. Sondern überall wird er nur als Karpador 👱 Trainer zu sehen sein. Vlt kann man so diese Schmach überwinden..</value>
+  </string>
+
+
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Kurz vor dem Anbruch des Abends hören die anderen Trainer ein Plätschern und sehen noch wie die Hydropumpe aus der 2. Kanone mit voller Wucht das Onix 📚 trifft. Daraufhin fällt {1} in Ohnmacht und die anderen Trainer nehmen {0} den  Pokéball und damit das Turtok 🔫 weg und drücken ihm ein Karpador 👱 in die Hand. So ein schusseliger Trainer darf nicht im Besitz eines so starkes Pokémon sein...</value>
+  </string>
+  <string key="ThiefStealFailed">   
+  <!-- {0} - The name of the thief's target -->
+    <value>Du hast deinem Zubat 😈 zwar befohlen den Pokéball von {0} mit deinem zu vertauschen, allerdings scheint selbst das für Zubat zu schwer zu sein, denn am nächsten morgen hast du immernoch ein Zubat</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Dein Zubat 😈 hat in der Nacht versucht den Pokéball von {0} mit deinem zu vertauschen, allerdings als das Zubat ankam tobte noch ein Pokémonkampf, deswegen hat es sich schnell zurückgezogen.</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - The new role -->
+    <value>Als du am nächsten Tag aufwachst und dein Pokémon rauslässt, fällt dir auf, dass du plötzlich ein {0} hast. Scheinbar hat dir da ein Trainer einen Streich gespielt.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+  <!-- {1} - The new role -->
+    <value>Als du am nächsten Tag aufwachst und dein Pokémon rauslässt, fällt dir auf, dass du plötzlich ein hast. Scheinbar war dein Zubat doch mal für was gut und {0} hat nun ein anderes Pokémon.</value>
+  </string>
+  <string key="ThiefToMason">
+  <!-- 0 - old mason's name -->
+  <!-- 1 - new mason's name -->
+    <value>Als {0} am nächsten Morgen in den FanClub kommt fällt euch sofort auf, dass dieser kein süßes Pokémon mehr hat, deswegen schmeißt ihr ihn aus dem Club. Zusätzlich fällt euch auf das {1} plötzlich ein süßes Pokémon hat und deswegen ersetzt {1} die Stelle von {0}.</value>
+  </string>
+  <string key="ThiefTransformToMason">
+  <!-- 0 - mason collegues's name -->
+    <value>Der FanClub nimmt dich mit deinem neuen Pokémon herzlich in seinen Kreis auf. Die anderen Mitglieder sind: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+  <!-- 0 - old Zombie's name -->
+  <!-- 1 - new Zombie's name -->   
+    <value>Am nächsten Tag fällt euch auf, dass {0} nicht mehr im Besitz eines Mewtu ist und deswegen schmeißt ihr ihn aus dem B.L.O.N.D. Allerdings seht ihr auch das {1} plötzlich ein Mewtu hat, also nehmt ihr ihn auf.</value>
+  </string>
+  <string key="ThiefToWolf">
+  <!-- 0 - old wolf's name -->
+  <!-- 1 - new wolf's name -->
+    <value>{0} ist nicht länger ein Mitglied bei Team Rocket, aber dafür nehmt ihr {1} auf. Warum wisst ihr auch nicht, aber er hat halt jetzt das richtige Pokémon für eine Aufnahme.</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+  <!-- 0 - teammates's name -->
+    <value>Die anderen Mitglieder im Team Rocket sind: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>Als {0} mit seinem Zubat durch das Dorf wandert, realisiert der Trainer plötzlich dass alle im Dorf in Ohnmacht gefallen sind. Dadurch wird ihm auch klar, dass er sein Zubat wohl nie los wird und deshalb beschließt er das Dorf zu verlassen und an einem anderen Ort nach Opfer zu suchen.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Der Trainer von dem du das Pokémon haben willst ist {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Das Pokémon von welchem Trainer willst du haben?</value>
+  </string>
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+  <value>{0} Trainer haben für {1} gestimmt:\n{2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Das Freilass-Ergebnis ergab:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} Trainer haben für {1} gestimmt.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secret: Votes Count</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+	<value>When secret lynch is turned on, show the vote count at the end of the lynch?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+	<value>When secret lynch is turned on, the vote count at the end of the lynch will: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+	<value>Secret: Voters</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+	<value>When secret lynch is turned on and the vote count is showing, show the voter's name for every voted player?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>When secret lynch is turned on and the vote count is showing, the voter's name for every voted player will: {0}</value>
+  </string>
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
+    <value>Als ihr euch nachts zu einer Abstimmung trefft, fällt euch auf, dass {0} fehlt. Was wohl mit ihm passiert ist und wo dieser gerade ist?</value>
+  </string>
+  <string key="Peace">
+  <!-- Used for Imam's button -->
+    <value>Attacke einsetzen.</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+    <!-- Used in PM if the Imam uses his ability during lynch phase -->
+    <value>Durch die mächtige Attacke des Relaxo sind heute alle Pokémon vor einem freilassen sicher.</value>
+  </string>
+ <string key="ThiefStoleYourRoleThief">
+    <value>Als du am nächsten Tag aufwachst und dein Pokémon rauslässt, fällt dir auf, dass du plötzlich ein Zubat 😈 hast. Scheinbar hatte da ein Trainer keine Lust auf ein Zubat, genauso wie du jetzt. Aber nun kannst du dir einfach auch ein neues Pokémon besorgen in der nächsten Nacht und an jemand anderen das Zubat abgeben.</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Als du am nächsten Tag aufwachst und dein Pokémon rauslässt, fällt dir auf, dass du plötzlich ein Karpador 👱 hast. Scheinbar hat dir da ein Trainer einen Streich gespielt.</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>In der Nacht wachst du plötzlich auf und siehst wie dein Pokémon verzweifelt versucht das Dragoran 🔪 abzuwehren. Aber es hat keine Chance und nachdem es besiegt ist, fällst du in Ohnmacht.</value>
+  </string>
+  
+  <string key="ThiefTeamEnd">
+	<value>Thief Team</value>
+  </string>
+   <string key="StealKiller">
+    <value>Dein Zubat hat in der Nacht versucht den Pokéball von Dragoran 🔪 zu klauen. Allerdings war der Trainer aufmerksam und deswegen wurde dein Zubat davor besiegt.</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>{0}, der Trainer des Zubat 😈 hat in der heutigen Nacht versucht den Pokéball von Dragoran 🔪 zu klauen. Allerdings war sein Trainer davon nicht begeistert und hat das Zubat besiegt. Daraufhin fiel {0} in Ohnmacht.</value>
+  </string>
+  <string key="BeholderSeerStolen">
+	<value>Scheinbar hat sich ein Zubat 😈 den Pokéball von {1} gekrallt und damit {0} zum neuen Trainer des Simsala gemacht.</value>
+  </string>
+  
+  <!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+	<value>Krakeelo 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>The Troublemaker is the raging teenager in town. When they start yelling, the whole village gets out of control. To gain silence, they will lynch twice that day!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>Du bist ein Trainer mit einem Krakeelo 🤯. Dein Pokémon kann mit der Attacke Aufruhr die anderen Trainer in Unruhe versetzen. Um sich abzureagieren, werden die aufgewühlten Trainer an diesem Tag zwei Pokémon freilassen bevor sie schlafen können.</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>Möchtest du die Attacke Aufruhr einsetzen?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>Durch einen Befehl von Trainer {0} versetzt dessen Krakeelo 🤯 alle Trainer in Aufruhr. Diese können deswegen nicht nach dem ersten Freilassen einschlafen und überbrücken die Zeit durch ein erneutes Freilassen.</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>Da die restlichen Trainer immernoch in Aufruhr 🤯 sind, folgt nun die zweite Freilassphase.</value>
+  </string>
+  <string key="Chemist">
+	<value>Botogel 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>The chemist is a quite crazy person who likes to brew potions and mess up with them. They mix two potions and force other people to choose one to drink, while the chemist will drink the other. However, while one solution is just tasting like rosebuds, the other one is going to kill you instantly. Good luck when they visit you!</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>Du besitzt ein Botogel 👨‍🔬! Da dieser Vogel es mag Geschenke zu machen, bereitet es in einer Nacht zwei Überraschungen vor und besucht damit in der nächsten Nacht ein anderes Pokémon. Allerdings ist eines der beiden Geschenke explosiv und besiegt dein oder das andere Pokémon, je nachdem wer es öffnet.</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>>Während alle Trainer und Pokémon in ihre Häuser zurückkehren um zu schlafen, legt sich dein Botogel 👨‍🔬 nicht schlafen. Dieses möchte lieber die Nacht nutzen um die Geschenke für morgen fertig zu machen.</value>
+  </string>
+  <string key="AskChemist">
+	<value>Wessen Pokémon soll dein Botogel heute ein Geschenk machen? </value>
+  </string>
+  <string key="ChemistTargetDead">
+	<value>Dein Botogel ist grad auf dem Weg zu {0}. Aber kurz bevor es dort ankommt, hört es Kampflärm und zieht sich deswegen wieder zurück.</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>Das Botogel 👨‍🔬 von Trainer {0} hat euch in der Nacht besucht um deinem Pokémon ein Geschenk zu machen. Allerdings hatte Dragoran keine Lust auf Geschenke und hat das Pokémon besiegt!</value>
+  </string>
+  <string key="ChemistSK">
+	<value>Dein Botogel hat in der Nacht {0} besucht. Doch das Dragoran 🔪 dieses Trainer wollte wohl keins der Geschenke und hat deswegen dein Pokémon besiegt. Daraufhin fällst du in Ohnmacht.</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<value>Als die Trainer am nächsten Morgen aufwachen, sehen sie ein besiegtes Botogel 👨‍🔬	. Dieses hat aber noch beide Geschenke und wurde offensichtlich von einer Drachen-Attacke besiegt. Daraus lässt sich schlussfolgern, dass es versucht hat Dragoran 🔪 eines der Geschenke anzudrehen. Aber das mächtige Dragoran will sowas nicht. Nachdem {0} nicht in den Reihen der Trainer vertreten ist, muss dieses wohl der Trainer von Botogel gewesen sein.</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>Dein Pokémon wurde in der Nacht von einem Botogel 👨‍🔬 besucht. Da dein Pokémon leider besiegt ist, hat es wohl das falsche Geschenk gewählt. Du fällst daraufhin in Ohnmacht.</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>Botogel hat in der Nacht {0} besucht und dessem Pokémon ein Geschenk gemacht. Zum Glück für dich hat dieses das explosive Geschenk genommen und wurde besiegt. Es geht doch nichts über den Nervenkitzel!</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+	<value>Das Botogel 👨‍🔬 war heute Nacht bei {0} und dessen Pokémon hat sich für das falsche der beiden Geschenke entschieden und ist so explodiert worden. Somit treibt das Botogel weiterhin sein Unwesen. {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>Dein Pokémon wurde in der Nacht von einem Botogel 👨‍🔬 besucht. Aber zu deinem Glück hat dein Pokémon das richtige Geschenk gewählt und so wurde das Botogel besiegt. Da hatte {0} wohl kein Glück.</value>
+  </string>
+  <string key="ChemistFail">
+	<value>Dein Botogel hat in der Nacht {0} besucht und zu deinem Unglück hat dein Pokémon das falsche Geschenk gewählt und wurde von der Explosion besiegt. Du fällst in Ohnmacht</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>Das Botogel 👨‍🔬 von {0} liegt besiegt auf dem Boden. Es scheint eine Explosion abbekommen zu haben. Da hatte wohl der Besuchte Glück.</value>
+  </string>	
+  <string key="ChemistTargetEmpty">
+	<value>{0}'s Pokémon war nicht zuhause! Deswegen ist Botogel mit beiden Geschenken im Schlepptau wieder nach Hause gegangen. In der nächsten Nacht halt dann.</value>
+  </string>
+  <string key="ZombiesList">
+	<value>Die Mitglieder von B.L.O.N.D. sind aktuell: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>Sniebel 🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Du bist ein Team Rocket Rüpel der gerade von Johto nach Kanto versetzt wurde. Da du deine Kollegen kaum kennst, bevorzugst du es alleine zu agieren und mit deinem Sniebel 🐺☃️ Unheil anzurichten. Deswegen gehst du separat zu deinen Kollegen noch alleine in der Nacht los und frierst das Pokémon eines Trainers ein. Das ist doch schon böse, so wie du es magst. Allerdings kannst du das selbe Pokémon erst 2 Nächte später erneut einfrieren.</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>The Snow Wolf 🐺☃️ is an wolf that was native to the snowcapped mountains near the village. As such, they have mastered the art of controlling ice and snow. Having lived alone for a long time, the Snow Wolf prefers to operate alone. Instead of hunting with their pack at night, they can pick a separate victim to freeze, which causes them to be unable to use their night actions. However, they will still have some residue of the Snow Wolf's magic the next night, causing them to be immune to the Snow Wolf for one night. </value>
+  </string>
+  <string key="AskFreeze">
+	<value>Wessen Pokémon soll Sniebel einfrieren	?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>Die Mitglieder von Team Rocket sind: {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>Die Mitglieder von Team Rocket sind {0} und der Trainer von Sniebel ist {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0}'s Pokémon wurde besiegt. Deswegen verwandelt sich dein Ditto in ein Snobilikat. Dadurch übernimmst du die Rolle von Giovanni 🐺⚡️ und musst Team Rocket anführen. Deine Untergebenen (falls vorhanden) sind {1} und der Trainer von Sniebel ist {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0}'s Pokémon wurde besiegt. Deswegen verwandelt sich dein Ditto in ein Mauzi 🐶. Die Mitglieder von Team Rocket sind {1} und der Trainer von Sniebel ist {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0}'s Pokémon wurde besiegt. Deswegen verwandelt sich dein Ditto in ein Pokémon von Team Rocket 🐺. Die Mitglieder von Team Rocket sind {1} und der Trainer von Sniebel ist {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0}'s Pokémon wurde besiegt. Deswegen verwandelt sich dein Ditto in ein Sleima 🐺🌝. Die Mitglieder von Team Rocket sind {1} und der Trainer von Sniebel ist {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0}'s Pokémon wurde besiegt. Deswegen verwandelt sich dein Ditto in ein Sniebel 🐺☃️. Die Mitglieder von Team Rocket sind (falls vorhanden) sind: {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>{0}'s Ditto hat sich in ein Sniebel 🐺☃️ verwandelt. Da ihr gerade erst ein Trainer mit einem Sniebel verloren habt, nehmt ihr den neuen Trainer gerne auf.</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} hat einen Pokémon-Kampf verloren! Aus völliger Verzweiflung beschließt du, Team Rocket beizutreten! Die Mitglieder von Team Rocket sind {1} und der Trainer von Sniebel ist {2}}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} ist nicht länger eines eurer Mitglieder, aber dafür hat sich {1} ein Sniebel 🐺☃️ beschafft und wird von euch aufgenommen.</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Du wachst mitten in der Nacht auf, weil es plötzlich so kalt wird. Als du nach deinem Piepi schaust, findest du es eingefroren vor. Du heizt den Ofen an und stellst den Eisblock 🐺☃️ vors Feuer. Bis zum nächsten Morgen wird das schon aufgetaut sein.</value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Du wachst in der Nacht durch dein Botogel auf. Dieses nimmt dich mit in das Zimmer wo die Geschenke lagern. Diese stecken komplett in einem Eisblock 🐺☃️ fest. Da du dagegen nichts tun kannst, beruhigst du dein Botogel und gehst wieder schlafen.</value>
+  </string>
+  <string key="ZombieFrozen">
+    <value>Als du in der Nacht aufwachst, fröstelt es dich ein bisschen. Der Grund wird dir schnell klar, denn die Wände sind mit Eis überzogen 🐺☃️ und dein Mewtu schwebt schmollend im Zimmer. Dieses hat wohl in der Nacht nicht die Chance einen neuen Anwärter für Team B.L.O.N.D. zu bekehren.</value>
+  </string>
+  <string key="CHFrozen">
+    <value>Als du in der Nacht aufwachst, findest du ein halb erfrorenes Mew vor. Tja auch das auserwählte Pokémon hatte nicht die Kraft sich der Eisattcke des Sniebel 🐺☃️ zu erwehren und bleibt in dieser Nacht besser daheim.</value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Als du in der Nacht aufwachst, findest du eine Eiskugel in deinem Zimmer vor. In dieser steckt dein Pokémon. Scheinbar hat dieses die kommende Gefahr gespürt und konnte sich in eine schützende Kugel retten. Allerdings ist diese komplett eingefroren 🐺☃️ und so muss dein Pokémon warten bis die Kugel wieder auftaut. Damit es nicht zu lange dauert machst du ein Feuer und stellst die Eiskugel davor.</value>
+  </string>
+  <string key="GAFrozen">
+    <value>Als du in der Nacht aufwachst und kurz nach draußen schaust, siehst du, dass dein Haus sich unter einer Eiskuppel 🐺☃️ befindet. Als du nach deinem Pantimos schaust. findest du dieses komplett erschöpft vor. Es scheint so, als ob dieses das Haus durch sein Schutzschild geschützt hat. So ist ihm nichts passiert aber er kann auch niemand anderem zu Hilfe kommen.</value>
+  </string>
+  <string key="SKFrozen">
+    <value>Du wachst in der Nacht durch ein helles Licht auf. Kurz siehst du noch wie dein Dragoran mit einem starken Feuersturm versucht die Eisattacke abzuwehren, doch dann wird es dunkel. Als du nachschaust siehst du, dass es eingefroren ist, aber immernoch eine kleine Flamme langsam den Eisblock 🐺☃️ schmilzt. Das wird wohl die restliche Nacht dauern.</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Du wachst in der Nacht auf und hörst immer wieder ein dumpfes Geschräusch. Als du nachschaust sieht du dein Zubat, dass immer wieder gegen das offene Fenster fliegt. Bei genauer Hinschauen sieht du, dass vor dem Fenster eine Eisscheibe 🐺☃️ ist. So gibt es kein Rauskommen für dein Pokémon in dieser Nacht.</value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>Als du in der Nacht durch plötzliche Kälte aufwachst, siehst du dein Pokémon auf seinem Schlafplatz unter einer dicken Eisschicht 🐺☃️. Damit es diesem schnell wieder besser geht, machst du den Ofen an und lässt so dein Pokémon wieder auftauen.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>Du und dein Sniebel 🐺☃️ wart auf dem Weg zu {0}, um dessen Pokémon in dieser Nacht außer Gefecht zu setzen. Gerade als dein Sniebel seine Eisattacke einsetzen möchte, erkennst du, dass ihr unter einem Schutzschild 👼 steckt und euch selbst einfrieren würdet. Schnell brichst du den Angriff ab und nachdem sich das Schild auflöst geht ihr nach Hause.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Du und dein Sniebel 🐺☃️ sind zu {0} gegangen. Dort hat dein Pokémon mithilfe seiner Eisattacke den Gegner in dieser Nacht außer Gefecht gesetzt.</value>
+  </string>
+  <string key="SnowFrozeKiller">
+    <value>Als ihr euch am nächsten Morgen versammelt, fehlt {0}. Nach einer Suche findet man ihn und neben ihm liegt ein Sniebel 🐺☃️. Allerdings scheint dieses von einem mächtigen Drachenpokémon🔪 besiegt worden zu sein. </value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>Nachdem nun kein Team Rocket Mitglied mehr bei Bewusstsein ist, gehst du los und holst dir ein Smogon. Zusammen mit deinen Pokémon übernimmst du nun das Team Rocket und führst es zu neuem Glanz.</value>
+  </string>
+  <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>Am nächsten Morgen liegt {0} auf dem Boden. Neben ihm liegt ein sehr mitgenommenes Sniebel 🐺☃️. Dieses sieht aus als ob es eine heftige Konfrontation hatte, mit einem Lektrobal 🎯. The snow wolf {0} tried to freeze the hunter last night, but the hunter was able to catch them and take them down with their rifle!</value>
+  </string>
+    <string key="Lang">
+    <value>Change Language</value>
+  </string>
+  <string key="Mode">
+    <value>Change Game Mode</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Set Max Players</value>
+  </string>
+  <string key="EndRoles">
+    <value>Show Roles At Game End</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Set Max Extend Time</value>
+  </string>
+  <string key="DayTimer">
+    <value>Set Day Timer</value>
+  </string>
+  <string key="NightTimer">
+    <value>Set Night Timer</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Set Lynch Timer</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Role Configuration</value>
+  </string>
+  <string key="Mechanics">
+	<value>Game Mechanics</value>
+  </string>
+  <string key="GroupSettings">
+	<value>Group Settings</value>
+  </string>
+  <string key="Timers">
+	<value>Game Timers</value>
+  </string>
+  <string key="Done">
+	<value>Done!</value>
+  </string>
+  <string key="Back">
+	<value>Back</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Shuffle Player List</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Shuffle player list every time? Current: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>Player list will be shuffled every time: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+	<value>Du besitzt ein Tragosso ☠️. Da dein Tragosso schon früh seine Mutter verlor, hat es eine ganz besondere Beziehung zum Tod. Deswegen möchte es dafür sorgen, dass jeder  Every night, you dig the graves for all the people who died since the last time you did (yes, even werewolves deserve a proper burial). Since you are out all night, wolves and the cult can't find you, unless you actually have nothing to do (i.e. no one died), in that case you'll just stay home. Everyone who visits you has a chance of falling into your newly dug graves, depending on how many graves you dug. Also, the chance is halved for everyone who has good intentions toward you. But since you are out at night, the wolves or the serial killer might spot and kill you, and the more graves you have to dig, the more likely it is. Also, apparently the serial killer can find you whether you're at home or not, but he might at least stumble in one of your graves and hurt his leg, causing him to maybe lose control over who is his victim the next night...</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>You are the Grave Digger ☠️. It is your responsibility to get rid of the villages' dead bodies. You dig a grave for everyone who was killed since last night. However, you usually get too tired to finish the grave, so it remains uncovered. Some visitors might fall in and die... At least, the wolves can't eat you since you are out all night.</value>
+  </string>
+  <string key="GraveDigger">
+	<value>Tragosso ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>The dead are buried, and the living are not. Everything is as it should be, and you can get a good night's sleep.</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+	<value>Until late into the night, you dig the grave(s) for {0}. May their souls come to rest and their bodies lie in peace.</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>As you left your house to bury those who passed away, a gust of wind blew in from the shadows, causing you to freeze. Unable to move, you waited for the sun to go up and thaw you. The dead will have to be restless for yet another night...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+	<value>The pack heads to the house of {0}, just to find that they are not home. All you can see is a candle shining lonely on a grave...</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+	<value>The pack heads to the house of {0}, but on the way there, {1} suddenly steps into a bear trap, falls into an open grave and gets impaled by a silver spear!</value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+	<value>As you just want to close the grave you dug all night, you notice a foul stench, different from the usual smell of dead bodies... The wolf {0} fell into the grave and died!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+	<value>You cut the liver out of {0}'s body, but on your way back you leaned too far over an unfinished grave and stumbled into it. Maybe you shouldn't have looked for the liver of the corpse... Now your leg really hurts.</value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+	<value>On your way to the house of {0}, a sharp pain surges through your leg. You decide to just go to the nearest house, which appears to be {1}'s, murder them and hurry home.</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+	<value>You arrive at {0}'s house, just to see the guardian angel standing in front of it! You try to fight, but you stand no chance. Tonight really was a bad night for you...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+	<value>Another night without being able to slay one of those bloody Zombies! Frustrated, you walk over the graveyard, without noticing the bear trap until it closes around your ankle. You scream and struggle, but it's too late. You fall backwards into a grave that {0} left open and the sound of your neck breaking is the last thing you hear before everything goes black.</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+	<value>After another tiring night, you walk back to your home with the sun already rising. Just before you arrive, you notice a sword lying on the ground next to an unfinished grave. Inside that grave you see the dead body of {0}. The Zombie hunter should not have suspected you...</value>
+  </string>
+  <!--{0}: Zombie-->
+  <string key="CultFell">
+	<value>You return from another tiring night, when suddenly you hear a scream from one of your unfinished graves! You hurry there, just to find {0} lying dead in an unfinished grave. What kind of cult tries to convert a grave digger, anyway?</value>
+  </string>
+  <!--{0}: Zombie who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+	<value>On your way to {1}'s house, {0} suddenly decides that it would be a good idea to burn down the church as well. They lead you through the graveyard when suddenly a bear trap snaps around their ankle! All you can hear is their scream before they fall into a grave and you run for your lives.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+	<value>As you are on your way to {0}'s house, you try to remember which of your drinks was the poisonous one again and stumble, falling into an open grave where a silver spear pierces right through your heart. Before you can make a sound, you are dead.</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+	<value>"I could use a glass of wine now", you think to yourself. A strange feeling lets you look into a grave next to you, and as if fate heard your wish, a bottle of wine lies inside! Too bad there's also {0}'s dead body... Suddenly, you lost all your appetite.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+	<value>You put your favorite lipstick on and head to {0}'s house to have a little fun. Sadly, you don't get far enough, as you step into a bear trap and fall into a grave on the way... Talk about occupational risk!</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+	<value>Apparently fate doesn't want you to have fun... Not only that you have to dig graves all night, you even find {0}, the harlot, dead in one of your unfinished graves. No fun for you tonight!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+	<value>You wander to {0}'s house, carefully avoiding all the open graves, but when you arrive, their house is empty... Apparently {0} is out all night digging graves again!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+	<value>Fortune surely didn't favor you tonight... You just wanted to watch over {0}, but instead you fell into an open grave after stepping into a bear trap and died! Why does the grave digger even have to secure some graves?</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+	<value>On your way home, you notice a feather lying around on the ground... You don't have to search long to find {0}, the guardian angel, lying dead inside one of your graves! Sometimes your "security measurements" really go off on the wrong people.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+	<value>You sneak through the graveyard on your way to steal {0}'s role, but you're too focused on not making a sound to notice the bear trap that clanks around your ankle! Not enought that your stealth is surely broken, you even fall into the grave next to you and break your neck!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+	<value>Good thing you put security measurements around your graves... {0} tried to steal your role last night, but they were caught in your bear trap and fell into your grave! Maybe now the village will believe you that your traps are actually necessary.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+	<value>You should watch your step when you go to douse someones house next time... You stepped into a bear trap, fell into a grave and got a silver spear right through your heart! Serves you right, you little pyromaniac.</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key="ArsonistFellDigger">
+	<value>From one of your graves you notice a smell of kerosene. Alarmed, you hurry there and find {0}, the arsonist, lying dead inside. At least your house stayed clean...</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+	<value>One of the graves on the graveyard contained too many people tonight... Apperently {0} tried to visit the grave digger, fell into a grave and died! {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+	<value>As the harlot {0} went home after a night of fun they tried to take a shortcut through the local graveyard. They must have been still a bit dizzy that they didn't see the uncovered grave until they felt no grounds under her next step. Maybe they should have taken that daytime job they got offered yesterday!</value>
+  </string>
+  <!--{0}: Zombie who died-->
+  <string key="CultFellPublic">
+	<value>The cults tried to burn the church, but as {0} led the group through the graveyard, a bear trap snapped around his ankle!  He screamed when he fell into an open grave and the other Zombies fled in terror...</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+	<value>Maybe {0} the thief was trying to steal from the dead. Maybe it was karma. All we know is that he lurked around the graveyard when the trap snapped his leg. While falling into the grave, he wondered whether he should have brought a partner in crime for this job. {0} wont be stealing any more for sure!</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+	<value>As the wolf pack goes out for a hunt, {0} smells potential prey and doesn't notice the bear trap that snaps around their ankle! Surprised, {0} falls over into the grave, where the tip of a silver spear meets their head. Luckily the grave digger keeps his graves secured! {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>You're just trying to do your job, when suddenly a crazy killer spots and stabs you! What a pity...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+	<value>As you walk past the graveyard with blood on your knife, you notice {0}, the grave digger. Following your instinct, you decide there will be two victims for you today...</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>You're just trying to do your job, when suddenly a wolf jumps onto you from behind and kills you!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+	<value>The packs runs across the graveyard, as they suddenly notice {0}, the grave digger. Before they can react, one of you jumps on their back and kills them with one bite.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+	<value>{0} doesn't show up to the town meeting. Have they overslept again? As you go look for them, you find them lying dead on the graveyard, the shovel still in their hands. It seems they were surprised by wolves in the night...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+	<value>{0} is missing today... Did they maybe oversleep? You go look for them and find them dead on the graveyard, still holding their shovel. It seems they died from several stabbing wounds...</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Arsonist</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistQ">
+	<value>Allow arsonist? Current: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistA">
+	<value>Arsonist is now set to {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Burning Overkill</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillQ">
+	<value>Allow Arsonist and Serial Killer to be in same game? Might be deadly! 😈 Current: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillA">
+	<value>Arsonist and Serial Killer in same game are now {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>You are the arsonist. Like the serial killer, you are alone on your team. Every night, you may douse one targets house with kerosene. Once one or more houses are doused, you may choose to spark instead, burning all doused houses and killing everyone that is inside, including potential visitors. You win if you're the only one left.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>Du hast ein Entei 🔥. Dieses Pokémon verfügt über eine mächtige Feuerattacke mit der es ganze Häuser zerstören kann. Das kommt dir ganz gelegen. da du alle anderen Trainer nicht magst. Deswegen schreibst du in der Nacht entweder einen Namen auf eine Liste oder schickst dein Entei los um diese Häuser dieser Trainer anzubrennen.</value>
+  </string>
+  <string key="Arsonist">
+	<value>Entei 🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>Möchtest du einen neuen Namen der Liste hinzufügen oder alle auf der Liste stehenden Häuser anbrennen?</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key ="ArsonistVisitKiller">
+	<value>The arsonist {0} tried to douse the house of the serial killer... He didn't quite survive that.</value>
+  </string>
+  <string key="Spark">
+	<value>Feuersturm einsetzen</value>
+  </string>
+  <!--{0}: person whose house was doused-->
+  <string key="Doused">
+	<value>Du hast erfolgreich {0} auf deine Liste geschrieben</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>A fire broke out in your house, but luckily the guardian angel was there and extinguished it right away! They'd make a good firefighter, if they weren't so busy protecting people...</value>
+  </string>
+  <!--{0}: saved person-->
+  <string key="GuardSavedFromFire">
+	<value>You didn't quite expect a fire to break out when you went to visited {0}, but you saved them nevertheless! Ain't nobody gonna call you a bad protector...</value>
+  </string>
+  <!--{0}: person whose house was cleaned-->
+  <string key="CleanDoused">
+	<value>You didn't have to fight off any enemies at {0}'s house tonight, so you had time to look around a bit and noticed that the house was doused in kerosene! Since you got nothing better to do, you cleaned the house for them...</value>
+  </string>
+  <!--{0}: list of people who died in the flames-->
+  <string key="Burning">
+	<value>The village awakens to the smell of fire... It's burning! You try to extinguish the fire altogether, but you're too late to save the people whose houses were mysteriously doused in kerosene. Today you mourn the deaths of the following people:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>The only one left is the arsonist, standing on a pile of ashes. The arsonist wins...</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>You should have kept a fire extinguisher! Now your house burnt down and you died inside...</value>
+  </string>
+  <string key="Augur">
+	<value>Natu 🦅</value>
+  </string>
+  <!--{0}: role that is not part of the village-->
+  <string key="AugurSees">
+	<value>As you look into the skies, you see the birds form a very unusual pattern. That can only mean that {0} is not in the village.</value>
+	<value>The birds tell you that {0} is not part of the village right now.</value>
+  </string>
+  <string key="AboutAugur">
+	<value>Du besitzt ein Natu 🦅. Dieses Pokémon liegt Kräfte technisch zwischen Simsala und Entoron. So ist es zwar in der Lage alle Pokémon die sich im Dorf befinden zu erkennen, aber kann die Pokémon nicht den Trainer zuordnen. Aber so kann es dir nach jeder Nacht immerhin ein Pokémon verraten das nicht im Dorf zu finden ist.</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>Du besitzt ein Natu 🦅. Dieses Pokémon liegt Kräfte technisch zwischen Simsala und Entoron. So ist es zwar in der Lage alle Pokémon die sich im Dorf befinden zu erkennen, aber kann die Pokémon nicht den Trainer zuordnen. Aber so kann es dir nach jeder Nacht immerhin ein Pokémon verraten das nicht im Dorf zu finden ist.</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>Am nächsten Morgen möchte dein Natu dir einfach keine neuen Informationen geben. Es sieht so aus, als ob bereits alle nicht im Dorf lebenden Pokémon bekannt sind.</value>
+  </string>
+  <!--{0}: chosen victim, {1}: wolf who died in flames-->
+  <string key="WolvesVisitBurn">
+	<value>The pack storms into {0}'s house, when suddenly you notice smoke. You try to escape, but it's too late for {1}, who dies in the flames.</value>	  
+  </string>
+  <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+  <string key="DefaultVisitBurn">
+	<value>{0} should have stayed home tonight... They visited a burning house and died in the flames! {1}</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+  <string key="WolfVisitBurn">
+	<value>The wolves tried to eat someone tonight again, but the arsonist was quicker! {0} couldn't escape from the burning house in time... {1}</value>
+  </string>
+</strings>

@@ -1,0 +1,2216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings>
+  <language name="Persian university" base="فارسی" variant="دانشجویی" owner="@minorf - @velemon_kon" code="fa" />
+  <!-- This variant is being developed continuously by minor(mumivand)  -->
+  <string key="NotInGame">
+    <value>حاجی تو که توی چالش نیستی !</value>
+  </string>
+  <string key="PlayerStartedGame">
+<!-- 0 - Player name -->
+    <value>یک چالش توسط {0} ساخته شده . فراموش نکنین در دانشگاه ثبت نام کنین تا بتونین در چالش وزیر که بین اعضای یکی از دانشگاه های مطرح کشور در حال آماده سازی هست ، شرکت کنین !!</value>
+  </string>
+  <string key="PlayerStartedChaosGame">
+<!-- 0 - Player name -->
+    <value>یک چالش با حالت آشوب توسط {0} ساخته شده . فراموش نکنین در دانشگاه ثبت نام کنین تا بتونین در چالش وزیر که بین اعضای یکی از دانشگاه های مطرح کشور در حال آماده سازی هست ، شرکت کنین !!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>آدمی که سر وقت وارد چالش نمیشه درب دانشگاه به رویش بسته میشه ... آخی !</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>شما قبلا وارد دانشگاه شدی عزیز جان !!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value> فقط یک دقیقه دیگه تا باز شدن دانشگاه ، باقی مونده   </value>
+  </string>
+  <string key="SecondsLeftToJoin">
+<!-- 0 - remaining seconds (number) -->
+    <value>فقط {0} ثانیه دیگه وقت دارید که وارد دانشگاه شید ...</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>دانشگاه تعطیله عزیزان ... تعداد به حد نصاب نرسید 😰</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>آخ جون .... دانشگاه برای برگزاری چالش باز شد 😃 کمی صبر کنید تا نقش ها و وظایف تون رو بهتون بگم</value>
+  </string>
+  <string key="BannedForExploit">
+<!-- 0 - Player name -->
+    <value>من {0} رو بلاک کردم چون میخواست منو از کار بندازه ! کسی حق نداره اسمشو با / شروع کنه</value>
+  </string>
+  <string key="ChangeNameToJoin">
+<!-- 0 - Player name -->
+    <value>{0} جان ! اسمتو عوض کن تا بتونی در دانشگاه ثبت نام کنی</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>شرمندم ، ظرفیت ثبت نام پر شده</value>
+  </string>
+  <string key="PlayerJoined">
+<!-- 0 - Player name -->
+<!-- 1 - current players -->
+<!-- 2 - Minimum players -->
+<!-- 3 - Maximum players -->
+    <value>خب خوش اومدی {0} ما الان {1} نفر عضو داریم که حداقل باید {2} تا باشن و حداکثر {3} تا</value>
+  </string>
+  <string key="PMTheBot">
+<!-- 0 - Player name -->
+<!-- 1 - bot username -->
+    <value>جناب {0} لطفا روی این {1} کلیک کن و شروع رو بزن وگرنه نمیتونم بهت بگم نقشت چیه</value>
+  </string>
+  <string key="DeadFlee">
+    <value>حاجی تو که قبلا اخراج شدی ! دوباره که نمی تونی اخراج بشی ! برگرد خونه تون</value>
+  </string>
+  <string key="Flee">
+<!-- 0 - Player name -->
+    <value>واقعا که ! {0} از دانشگاه فرار کرد !  😝</value>
+  </string>
+  <string key="PlayerRoleWas">
+<!-- 0 - Player name -->
+<!-- 1 - Player role -->
+    <value>خب اینطور که معلومه {0} نقشش {1} بود</value>
+  </string>
+  <string key="CountPlayersRemain">
+<!-- 0 - Number of players -->
+    <value>حالا {0} نفر باقی موندن</value>
+  </string>
+  <string key="DidntAsk">
+    <value>من که هنوز ازت چیزی نخواستم</value>
+  </string>
+  <string key="NotPlaying">
+    <value>توی چالش نیستی دوست عزیز</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>همچین عضوی نداشتیم</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>جوابت قابل قبول نیست</value>
+  </string>
+  <string key="WolfVotedKill">
+<!-- 0 - wolf teammate name -->
+<!-- 1 - Victim name -->
+    <value>دکتر {0} نظرش اینه {1} رو از دانشگاه اخراج کنید</value>
+  </string>
+  <string key="PlayerVotedLynch">
+<!-- 0 - Voter name -->
+<!-- 1 - Target name -->
+    <value>خب {0} نظرش اینه که {1} اخراج بشه</value>
+  </string>
+  <string key="IdleKill">
+<!-- 0 - player name -->
+<!-- 1 - player role -->
+    <value>خب از اونجایی که {0} دو شب متوالی غیبت داشته ، به درد لای جرز میخوره و باید از دانشگاه اخراج بشه . {1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>تو استاد راهنما بودی اما چون همه استادا مردند ، تو استاد جدید دانشگاه میشی !</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>انتخاب پذیرفته شد</value>
+  </string>
+  <string key="BeholderSeer">
+<!-- 0 - seer name -->
+    <value>>\n کاراموز بایگانی کسی نیست جز {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+<!-- 0 - seer name -->
+    <value>جان دل ! {0} بلاخره اخراج شد و به آرزوهات رسیدی ، الان تو کارآموز بایگانی هستی</value>
+  </string>
+  <string key="BeholderNewSeer">
+<!-- 0 - apprentice name -->
+<!-- 1 - seer name -->
+    <value>عزیزم {0} خبره بود و الان به جای {1} کارآموز بایگانی هست</value>
+  </string>
+  <string key="SeerSees">
+<!-- 0 - player name -->
+<!-- 1 - player role -->
+    <value>جالبه بدونی {0} نقشش {1} هستش</value>
+  </string>
+  <string key="AskLynch">
+    <value>دوست داری کی رو از دانشگاه اخراج کنی؟</value>
+  </string>
+  <string key="AskDetect">
+    <value>نقش چه کسی را می خوای بفهمی ؟</value>
+  </string>
+  <string key="AskShoot">
+<!-- 0 - bullet count -->
+    <value>چه کسی رو می خوای اخراج کنی ( اذیتت می کنه )  ؟ اجازه اخراج {0} نفر رو داری</value>
+  </string>
+  <string key="AskVisit">
+    <value>ای شیطون می خوای بری پیش کی ؟</value>
+  </string>
+  <string key="AskSee">
+    <value>می خوای از نقش چه کسی مطلع بشی؟</value>
+  </string>
+  <string key="AskGuard">
+    <value>از حقوق چه کسی می خوای دفاع کنی ؟</value>
+  </string>
+  <string key="AskEat">
+    <value>کیو میخوای از دانشگاه اخراج کنی؟</value>
+  </string>
+  <string key="AskHunt">
+    <value>با کی میخوای راجع به اهدافت حرف بزنی؟</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>حدس می زنی چه کسی بالاخره از دانشگاه اخراج میشه ؟</value>
+  </string>
+  <string key="AskConvert">
+    <value>کیو میخوای معتاد کنی؟</value>
+  </string>
+  <string key="DiscussWith">
+<!--Leave the leading spaces here please-->
+<!-- 0 - teammate names -->
+    <value>  اول مطمئن شو با {0} هماهنگ کردی</value>
+  </string>
+  <string key="And">
+<!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> و </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>تو آدم فروش کلاسی ، از اون آدم هایی که تا سریع یک چیزی از بقیه همکلاسی هاشون ببینن فوری میرن به استادا لو میدن که به گوش روسای دانشگاه برسه .‌ اگر در این بین ، یکی از استادا تصمیم بگیره اخراجت کنه بخاطر پاچه خواری های زیادی که قبلا بهشون کردی تبدیل به استاد میشی . به به ... !!</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>تو المپیادی هستی ، در اصل مهمترین مهره دانشجو ها .‌ هر روز میتونی از نقش یه نفر مطلع بشی ... اما به احتمال 40% ممکنه که استادا بفهمن ، گاهی توی کارشون سرک میکشی !!!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>تو بیچاره هستی ... بدبخت ترین دانشجویی که تو عمرم دیدم . هر ترم 20  واحد کلاس داری ، شبا کار میکنی ، سر کلاسا با یه عینک ته استکانی ساکت به درس گوش میدی ... کاری هم به کار کسی نداری ... ! اگر استادا تو رو اخراج کنند تا یک روز عذاب وجدان میگیرن و نمیتونند کسی رو از دانشگاه اخراج کنند ......</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>تو مدافع حقوق دانشجویی هستی . اگر استادا یا مسئولین دانشگاه بخوان کسی رو اخراج کنن ، تو میتونی با اونا حرف بزنی و منصرفشون کنی . در صورتی که بجای دفاع از یه دانشجو ، از یه استاد دفاع کنی ... به احتمال ۵۰ درصد اخراج میشی</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>تو بچه وزیری ... پولدار ، خوشگل و خوشتیپ . پدرت این حق رو بهت داده که تا دو نفر ( اونهایی که اذیتت می کنن ) ، به راحتی از دانشگاه اخراج کنی . همچنین پشت تریبون می تونی اعلام کنی چه کسانی توسط خودت و پدرت اخراج شدند 😁</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>تو دانشجوی اهل دلی 💋 هر شب میری اتاق یک نفر و باهاش صفا می کنی . اگر استاد و رئیس دانشگاه باشه از دانشگاه اخراج میشی ولی اگر دانشجو باشه اتفاقی برات نمیوفته 😜 مراقب باش ! و شیطونی نکن</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>استاد راهنمای کثیف!!! تو الان مثل بقیه دانشجو ها سر کلاس میشینی و کسی نمیدونه که کارت دقیقا چیه... فقط میدونند که استادا هوات رو خیلی دارن...</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>تو استادی ! هر شب یه بدبخت رو اخراج کن</value>
+  </string>
+  <string key="RoleInfoSeer">
+    <value> تو کارآموز بایگانی هستی ، کسی که نزدیک به فارغ التحصیل شدنه و به سوابق دانشجوها و مسئولین دانشگاه دسترسی داره . هر شب می تونی سوابق و نقش یکی از اعضای دانشگاه رو پیدا کنی . </value>
+  </string>
+  <string key="RoleInfoVillager">
+    <value>تو مشروط هستی ... در اصل هیچی نیستی🙂</value>
+  </string>
+  <string key="RoleInfoTanner">
+    <value> تو هکری ، تنها هدفت اینه که تمام اطلاعات دانشگاه رو برملا کنی و به همه ثابت کنی که چقدر در زمینه حفاظت اطلاعات ضعیف عمل کردن . اگر دانشجوها یا مسئولین دانشگاه ها با اکثریت آرا بخوان از دانشگاه اخراجت کنند تو هم تمام اطلاعاتشون رو برملا میکنی و اون ها رو به گاج میدی !!! </value>
+  </string>
+  <string key="RoleInfoWildChild">
+    <value>تو قمار بازی ، از همون دانشجویایی که روی کوچکترین مسائل دانشگاه هم شرط بندی می کنه .  اگر بتونی درست حدس بزنی چه کسی بالاخره از دانشگاه اخراج میشه ... تبدیل به استاد میشی !!</value>
+  </string>
+  <string key="RoleInfoBeholder">
+    <value>تو روابط عمومی هستی 🗣️ بهت میگم که کی کارآموز بایگانی هست . به کمکش برو و مثبتش کن تا چالشو ببره</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer">
+    <value>تو خبره هستی ، همان کسی که نزدیک فارغ التحصیل شدنه و منتظره  کارآموزی دوستش ( کارآموزی بایگانی ) تمام بشه تا جای او را بگیره . فعلا یک دانشجوی ساده هستی و آرزو می کنی هر چه زودتر کارآموزیش تموم بشه تا از بلاتکلیفی دربیاری و جاشو بگیری .</value>
+  </string>
+  <string key="RoleInfoZombie">
+    <value>تو انگل دانشگاهی ! هر شب با دوستات بساط میکنی تا  یه نفر دیگه رو به گروهت دعوت کنی ... اگه همه ی دانشجوها معتاد بشن دانشگاه تعطیل میشه و تو میبری !</value>
+  </string>
+  <string key="RoleInfoZombieHunter">
+    <value>تو انگل شناس ( دانشجوی ارشد انگل شناسی ) هستی . وظیفه اصلی تو مبارزه با انگل های دانشگاه هست تا بقیه دانشجو ها را از معتاد شدن دور کنی و محیطی عاری از معتادین فراهم کنی . هر شب می تونی بری از یکی از اعضا دانشگاه تست اعتیاد بگیری . در صورتی که معتاد بود فوری اخراجش می کنی اما اگر معتاد نبود یا طرف استاد بود زنده می مونی . در صورتی که انگل ها تو را بخوان معتاد کنن ، جدیدترین معتاد دانشگاه را می کشی . یادت باشه اگر بری از رئیس دانشگاه تست بگیری ، بخاطر توهینی که بهش کردی ، فوری اخراج میشی .</value>
+  </string>
+  <string key="LynchTime">
+<!-- 0 - number of seconds -->
+    <value>
+آسمان دانشگاه کم کم در حال تاریک شدنه ... اعضا برای رای گیری در کنار هم جمع میشن . شما {0} ثانیه وقت دارین رای بدین که کیو میخواین اخراج کنین !
+    </value>
+  </string>
+  <string key="DayTime">
+<!-- 0 - number of seconds -->
+    <value>خورشید طلوع کرد و خروس ها به صدا دراومدن 🐓 زمان گفتن ظن های فضایی تون فرا رسید . شما {0} ثانیه وقت دارین بحث کنین</value>
+  </string>
+  <string key="NightTime">
+<!-- 0 - number of seconds -->
+    <value>شب شد و ستاره تو آسمون نشسته 🌟 شب کارها {0} ثانیه وقت دارین ، هر کاری میخواین زودتر انجام بدین .</value>
+  </string>
+  <string key="LynchKill">
+<!-- 0 - player name -->
+<!-- 1 - player role -->
+    <value>اعضای دانشگاه با کلی شک و تردید رای خودشونو دادن و {0} رو از دانشگاه اخراج کردن ... . {1}</value>
+  </string>
+  <string key="LynchTie">
+    <value>اعضای دانشگاه بعد از مدت ها فکر ، آخرشم نتوانستند یه تصمیم قاطع بگیرن . در نتیجه کسی اخراج نشد و همه برگشتن اتاق هاشون</value>
+  </string>
+  <string key="NoLynchVotes">
+    <value>عجب اوضاعی ! هیشکی رای نداد و برگشتن اتاق هاشون</value>
+  </string>
+  <string key="DetectiveEaten">
+<!-- 0 - victim name -->
+    <value>در شب گذشته ، المپیادی یعنی {0} توسط استادا اخراج میشه و از ادامه حضور در دانشگاه محروم میشه ... رفیق در آرامش بشی ، انشاءالله انتقامتو می گیرن ☹️</value>
+  </string>
+  <string key="GuardianEaten">
+<!-- 0 - victim name -->
+    <value>اعضای دانشگاه میبینند استادا در شب گذشته ، مدافع حقوق دانشجویی یعنی {0} رو به شدیدترین شکل ممکن از دانشگاه اخراج کردن 🥺🥺</value>
+  </string>
+  <string key="GunnerEaten">
+<!-- 0 - victim name -->
+    <value>بازی بازی با دم شیرم بازی ؟ دانشجو ها میبینن که استادا ، فرزند وزیر یعنی {0} رو از دانشگاه اخراج کردن و نامبرده الان در جزایر هاوایی در حال غصه خوردن میباشد !</value>
+  </string>
+  <string key="SeerEaten">
+<!-- 0 - victim name -->
+    <value>دیشب استادا کارآموز بایگانی رو اخراج کردند 😔 شاد باشی ای رفیق قدیمی ، ای {0} ...</value>
+  </string>
+  <string key="DrunkEaten">
+<!-- 0 - victim name -->
+    <value>دانشگاهیان صبح زود متوجه میشن ، دانشجوی بیچاره دانشگاه {0} توسط استادهای آشغال از دانشگاه اخراج شده 😰</value>
+  </string>
+  <string key="FoolEaten">
+<!-- 0 - victim name -->
+    <value>سوت سوتک احمق دانشگاه یعنی {0} رو میبینیم که روی زمین افتاده ... به نظر میرسه که دیگه احمقی توی دانشگاه نیست تا سوژه ی همگان باشه . استادهای آشغال اخراجش کردند 😰😰</value>
+  </string>
+  <string key="DefaultEaten">
+<!-- 0 - victim name -->
+<!-- 1 - victim role -->
+    <value>آخه این عضو دانشگاه بدبخت به شما چیکار داشت که اخراجش کردین آشغالا ! یه گوشه نشسته بود داشت کتابشو می خوند . در آرامش باشی {0} عضو دانشگاه خوبی بودی 😢😢 {1}</value>
+  </string>
+  <string key="HunterKilledZombie">
+<!-- 0 - victim name -->
+    <value>اینطور که معلومه انگل شناس دیشب یکی از انگل های دانشگاه یعنی {0}‌ رو شناسایی و فوری اخراجش کرده !!!</value>
+  </string>
+  <string key="NoAttack">
+    <value>در اوج ناباوری کسی از دانشگاه اخراج نشد !!! 😃</value>
+  </string>
+  <string key="CursedBitten">
+    <value>بلاخره پاچه خواری هات به استادا جواب داد ، قبول کردن مثل خودشون استاد بشی ... برو حالشو ببر !!</value>
+  </string>
+  <string key="WolfTeam">
+<!-- 0 - teammate names -->
+    <value>باقی استادا عبارتند از : {0}</value>
+  </string>
+  <string key="CursedBittenToWolves">
+<!-- 0 - victim name -->
+    <value>از اونجایی که {0} پاچه خواری های زیادی برات کرده ، بجا اینکه اخراجش کنی ، قبول می کنی مثل تو استاد باشه !</value>
+  </string>
+  <string key="WolvesEatYou">
+    <value>🤬 استادا اخراجت کردند...عیب نداره جامعه رفتگرم میخواد !!! 🤬</value>
+    <value>🤬 استادا اخراجت کردند ، باید تا آخر عمرت بنایی کنی عزیزم !!! 🤬</value>
+    <value>🤬 استادا اخراجت کردند ،باید بری کهنه بچه بشوری گلم !!! 🤬</value>
+  </string>
+  <string key="WolvesEatDrunk">
+<!-- 0 - victim name -->
+    <value>اوه اوه {0} بیچاره بود ... الان دیگه عذاب وجدان نمیذاره ، کسی رو اخراج کنی فردا ...</value>
+  </string>
+  <string key="GuardWolf">
+    <value>ننوچ نوچ نوچ 😞 رفتی از حقوق استادا بجای دانشجو ها دفاع کنی ؟ نتیجه این شد که اخراج شدی گلم !! حالا باید بری از حقوق کارگران دفاع کنی عزیزم 😢</value>
+  </string>
+  <string key="GuardSaved">
+<!-- 0 - saved player name -->
+    <value>تو رفتی از حقوق {0} دفاع کردی و نداشتی اخراج بشه . ایول !</value>
+  </string>
+  <string key="GuardNoAttack">
+<!-- 0 - player name -->
+    <value>کسی قصد نداشت که {0} رو اخراج کنه ....</value>
+  </string>
+  <string key="GuardEmptyHouse">
+<!-- 0 - player name -->
+    <value>رفتی که از حقوق {0} دفاع کنی منتها توی اتاقش نبود !</value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>دیشب میخواستن اخراجت کنند منتها مدافع حقوق دانشجویی نذاشت 😃</value>
+  </string>
+  <string key="HarlotEaten">
+<!-- 0 - player name -->
+    <value>دانشجوی اهل دل {0} دیشب برای استراحت موند اتاقش 😋 استادا رفتن اخراجش کردن😞</value>
+  </string>
+  <string key="HarlotNotHome">
+<!-- 0 - player name -->
+    <value>خب انگار {0} رفته دنبال حال کردن و احوالپرسی ، توی اتاقش نیست</value>
+  </string>
+  <string key="HarlotFuckWolf">
+<!-- 0 - player name -->
+    <value>رفتی اتاق {0} که باهاش حال کنی و کارای خاک بر سری انجام بدی ولی تا اومدی شلوارت رو کشیدی پایین ، فهمیدی {0} استاده !! با لگد از اتاقت پرتت کرد بیرون و از دانشگاه هم اخراج شدی ☹️☹️</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic">
+<!-- 0 - player name -->
+    <value>دانشجوی اهل دل یعنی {0} دیشب رفت پیش یکی از استاتید 😳 استاد عزیز هم یک حالی بهش داد و از دانشگاه اخراجش کرد !!</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic">
+<!-- 0 - harlot name -->
+<!-- 1 - victim name -->
+    <value>دانشجوی اهل دل {0} دیشب رفت اتاق {1} که یه حالی بهش بده منتها استادا به اتاق {1} میرن و جفتشون رو اخراج می کنن !!
+</value>
+  </string>
+  <string key="HarlotVisitNonWolf">
+<!-- 0 - target name -->
+    <value>از اونجایی که دیشب پیش {0} خیلی خوش گذشت ، تابلوئه که از اساتید و مسئولین دانشگاه نبود وگرنه اخراج میشدی !</value>
+  </string>
+  <string key="HarlotVisitYou">
+    <value>دیشب دانشجوی اهل دل اومد پیشت ، کلی باهاش حال کردی !</value>
+  </string>
+  <string key="DetectiveCaught">
+<!-- 0 - detective name -->
+    <value>مچ {0} رو موقع فضولی گرفتی. </value>
+  </string>
+  <string key="DetectiveSnoop">
+<!-- 0 - target name -->
+<!-- 1 - target role -->
+    <value>متوجه شدی {0} چیزی نیست جز یه {1}</value>
+  </string>
+  <string key="HarlotShot">
+<!-- 0 - gunner's name -->
+<!-- 1 - Harlot's name -->
+    <value>به نظر میرسه دانشجوی اهل دل ، خیلی خوب نتونست دل بچه وزیر یعنی {0} رو به دست بیاره . بچه وزیر از نفوذش توی دانشگاه استفاده کرد و دانشجوی اهل دل عزیز یعنی {1} رو اخراج کرد !</value>
+  </string>
+  <string key="DefaultShot">
+<!-- 0 - Gunner's name -->
+<!-- 1 - target name -->
+<!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>با دیدن اعلامیه فراخون بر روی بیلبورد دانشگاه همه توی سالن آمفی تئاتر جمع میشن .... بچه وزیر {0} به دستور پدرش {1} از دانشگاه اخراج کرد . {1} چیزی نبود جز یک {2}</value>
+  </string>
+  <string key="WolfWins">
+    <value>استاد عزیز به تنهایی بودجه یکسال دانشگاه رو مال خودش کرد !!</value>
+  </string>
+  <string key="WolvesWin">
+    <value>عا ... بودجه یک سال دانشگاه ماله استادا شد !!</value>
+  </string>
+  <string key="VillageWins">
+    <value>هورا ... بودجه یکسال دانشگاه بین دانشجو ها تقسیم شد و مسئولین به درک واصل شدن !!</value>
+  </string>
+  <string key="TannerWins">
+    <value>شما هکر رو اخراج کردید ... اونم همه ی فیلم های خاک بر سریتون رو گذاشت تو تلگرام و منجر به اخراج همتون شد . بودجه یکساله دانشگاه ، ماله هکر شد !!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>اعضای باقی مونده عبارت اند از : </value>
+  </string>
+  <string key="ZombieVotedConvert">
+<!-- 0 - Voter's name -->
+<!-- 1 - target name -->
+    <value>نظر {0} اینه که {1} رو معتاد کنید</value>
+  </string>
+  <string key="CultConvertZombieHunter">
+<!-- 0 - Yougest Zombie (killed)'s name' -->
+<!-- 1 - ZombieHunter's name -->
+    <value>خب {0} رفت که {1} رو به دسته انگل های دانشگاه دعوت کنه ولی {1} انگل شناس بود ... فوری اخراج شد !! ☹️</value>
+  </string>
+  <string key="ZombieHunterKilledCultVisit">
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - Number of Zombies left -->
+    <value>دیشب {0} اومد معتادت کنه ولی تو راپورتش رو دادی و از دانشگاه اخراجش کردی ! {1}  معتاد باقی مونده</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>تو الان انگل دانشگاه هستی ! و هر شب میتونی یکی دیگه رو هم مثل خودت معتاد و بدبخت کنی</value>
+  </string>
+  <string key="CultTeam">
+<!-- 0 - Number of Zombies -->
+    <value>معتاد ها: {0}</value>
+  </string>
+  <string key="CultJoin">
+<!-- 0 - new Zombie's name -->
+    <value>تونستی {0} معتاد کنی</value>
+  </string>
+  <string key="CultVisitEmpty">
+<!-- 0 - Newest Zombie's name -->
+<!-- 1 - target name -->
+    <value>خب {0} به اتاق {1} رفت تا اونو هم مثل خودتون معتاد کنه،  اما نتونست {1} رو توی اتاقش پیدا کنه!</value>
+  </string>
+  <string key="CultWins">
+    <value>انگل ها بودجه یکسال دانشگاه رو به تصاحب بردن !!</value>
+  </string>
+  <string key="HunterVisitDead">
+<!-- 0 - target name -->
+    <value>رفتی {0} رو اخراج کنی ولی دیدی پرونده زیر بغل داره  از دانشگاه میره. </value>
+  </string>
+  <string key="HunterFindZombie">
+<!-- 0 - target name -->
+<!-- 0 - target name -->
+    <value>رفتی اتاق {0} و دیدی داره مواد میکشه ... تو هم اعصابت خورد شد ، فوری اخراجش کردی !</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>رفتی اتاق {0} و دیدی داره مثل یک دانشجوی خوب درس میخونه ... بلی ایشون انگل دانشگاه نیست .</value>
+  </string>
+  <string key="WildChildToWolves">
+<!-- 0 - Werechild's name -->
+    <value>چون {0} به درستی تونست حدس بزنه چه کسی بالاخره از دانشگاه اخراج میشه ، مثل شما تبدیل به استاد شد . تبریک می گم !!</value>
+  </string>
+  <string key="WildChildTransform">
+<!-- 0 - role's name -->
+<!-- 0 - teamate's names -->
+    <value>چون تونستی به درستی حدس بزنی {0} بالاخره از دانشگاه اخراج میشه الان تبدیل به استاد شدی . باقی استادا عبارتند از : {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
+<!-- Do NOT change the emoji's, even if you are translating werewolf in a non-standard mode! -->
+  <string key="Villager">
+    <value>مشروط 👱(👱)</value>
+  </string>
+  <string key="Drunk">
+    <value>بیچاره 🧤(🍻)</value>
+  </string>
+  <string key="Harlot">
+    <value>دانشجوی اهل دل 💋(💋)</value>
+  </string>
+  <string key="Seer">
+    <value>کارآموز بایگانی 🤵🏻(👳)</value>
+  </string>
+  <string key="Traitor">
+    <value>استاد راهنما🥸(🥸)</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>مدافع حقوق دانشجویی 👼(👼)</value>
+  </string>
+  <string key="Detective">
+    <value>المپیادی👨‍🎓(🕵)</value>
+  </string>
+  <string key="Wolf">
+    <value>استاد 🧑‍🏫(🐺)</value>
+  </string>
+  <string key="Cursed">
+    <value>آدم فروش 🧟‍♂️(😾)</value>
+  </string>
+  <string key="Gunner">
+    <value>بچه وزیر  🧛‍♂️ (🔫)</value>
+  </string>
+  <string key="Tanner">
+    <value>هکر 👺(👺)</value>
+  </string>
+  <string key="Fool">
+    <value>احمق🃏(🃏)</value>
+  </string>
+  <string key="WildChild">
+    <value>قمار باز🤳(👶)</value>
+  </string>
+  <string key="Beholder">
+    <value>روابط عمومی 🗣️(👁)</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>خبره 🙆‍♂️(🙇)</value>
+  </string>
+  <string key="Zombie">
+    <value>انگل 🚬(👤)</value>
+  </string>
+  <string key="ZombieHunter">
+<!-- These are for the player list -->
+    <value>انگل شناس💂(💂)</value>
+  </string>
+  <string key="RanAway">
+    <value>فرار کرده</value>
+  </string>
+  <string key="Dead">
+    <value>اخراج شده‌ 🤬</value>
+  </string>
+  <string key="Alive">
+    <value>مشغول کار 🙂</value>
+  </string>
+  <string key="PlayersAlive">
+<!-- New strings 4 MAY 2016-->
+    <value>اعضای رسمی</value>
+  </string>
+  <string key="Mason">
+    <value>بسیجی 👷(👷)</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>تو بسیجی هستی و اگر بسیجی های دیگه ای هم توی دانشگاه باشند تو اون ها رو میشناسی!! </value>
+  </string>
+  <string key="MasonEaten">
+<!-- 0 - dead man's name -->
+    <value>صبح شده و همه دانشجو ها به دانشگاه میان و میبینن ، {0} یکی از اعضای فعال بسیج دانشجویی به دلایل نامعلومی اخراج شده!!</value>
+  </string>
+  <string key="MasonTeam">
+<!-- new strings May 6 2016-->
+    <value>  بسیجی های دیگه عبارتند از: {0}</value>
+  </string>
+  <string key="CultTargetDead">
+<!-- 0 - Youngest Zombies name -->
+    <value>عضو جدید انگل های دانشگاه رفت به اتاق {0} که معتادش کنه ولی دید که پرونده زیر بغل داره با اشک از دانشگاه میره ... نکن این کارو خب 😐😂
+</value>
+  </string>
+  <string key="GuardBlockedWolf">
+<!-- 0 - target's name -->
+<!-- new strings May 9 2016-->
+    <value>دیشب استادا میخواستند {0} رو اخراج کنند ولی مدافع حقوق دانشجویی مثل یک مرد اجازه نداد‌ ...</value>
+  </string>
+  <string key="CultUnableToConvert">
+<!-- 0 - newest  -->
+<!-- 1 - target's name -->
+<!-- new string May 12 2016-->
+    <value>دیشب {0} رو فرستادین که {1} رو معتاد کنه ولی {1}قبول نکرد.</value>
+  </string>
+  <string key="NameExists">
+<!-- 0 - target's name -->
+<!-- 1 - name -->
+    <value>جناب {0} @{1} یه بازیکن هم اسم تو توی بازیه، اسمتو عوض کن تا بتونی وارد بازی بشی</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+<!-- 0 - target's name -->
+<!-- new string May 13 2016-->
+    <value>دیشب رفتی اتاق {0} و دیدی که داره مواد میکشه ... سریع زیپ شلوارت رو کشیدی بالا و آروم آروم اومدی بیرون که ایدزی نشی !!!</value>
+  </string>
+  <string key="Was">
+    <value>چیزی نبود جز یک</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+<!-- 0 - Dead's name -->
+    <value>دیشب {0} اخراج شد</value>
+    <value>دیشب {0} اخراج شد</value>
+  </string>
+  <string key="MasonConverted">
+<!-- 0 - mason's name -->
+<!-- new string May 16 2016-->
+    <value>عجیبه! {0} امروز نیومد سر جلسه، به نظر میرسه که یک چیزهایی توی زندگیش هست که نمیخواد شما بدونید!</value>
+  </string>
+  <string key="FleeDisabled">
+    <value>شرمنده نمیتونی از دانشگاه فرار کنی</value>
+  </string>
+  <string key="IsDead">
+<!-- used when gunner shoots a player -->
+<!-- MORE STRINGS May 16, 2016 -->
+    <value>اخراج شده</value>
+  </string>
+  <string key="AdminAdded">
+<!-- 0 - target's name -->
+    <value>خب {0} به لیست ادمینها اضافه شد . /config رو بزن تا وارد تنظیمات بشی</value>
+  </string>
+  <string key="AlreadyInGame">
+<!-- 0 - target's name -->
+    <value>در حال حاضر توی چالش هستی ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>گروه چند تا بازی رو با هم شروع کرده، سیاهی لشکرا کشته میشن</value>
+  </string>
+  <string key="GroupQueue">
+<!-- 0 - target's name -->
+<!-- 1 - target's name -->
+    <value>گروهتون تو صفه. رتبه: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+<!-- 0 - target's name -->
+    <value>ببخشید من در حال تعمیر هستم. زود برمیگردم. \nمنتظر {0} بازی هستم تا تموم بشن...\nبرای اطلاعات بیشتر به  @greywolfdev مراجعه کنید</value>
+  </string>
+  <string key="MaxGames">
+<!-- 0 - target's name -->
+<!-- 1 - target's name -->
+    <value>عذر میخوام حداکثر اعضا عضو شدن ({0}) .  \n رتبه در صف :  {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+<!-- 0 - target's name -->
+    <value>گروه {0} گروه برگزیدس و از صف خارج میشه</value>
+  </string>
+  <string key="NoGame">
+    <value>هیچ چالشی در حال برگزاری نیست . با زدن /startgame یا /startchaos یه چالش رو شروع کن</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>این دستور مخصوص ادمینه</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>این بازی که تموم بشه واسه تعمیرات از دسترس خارج میشم ببخشید</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>بعد از این بازی واسه آپدیت، از دسترس خارج میشم</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>مطمئنی درست ریپلای کردی؟</value>
+  </string>
+  <string key="AlreadyAdmin">
+<!-- 0 - target's name -->
+    <value>{0} همین الانش هم ادمینه</value>
+  </string>
+  <string key="NotAdmin">
+<!-- 0 - target's name -->
+    <value>{0} که ادمین نیست</value>
+  </string>
+  <string key="AdminRemoved">
+<!-- 0 - target's name -->
+    <value>{0} از لیست ادمینا خارج شد</value>
+  </string>
+  <string key="LanguageSet">
+<!-- 0 - language's name -->
+    <value>زبان بازی به {0} تغییر کرد</value>
+  </string>
+  <string key="NoSeer">
+    <value>کارآموز بایگانی نداریم !</value>
+  </string>
+  <string key="TimesUp">
+<!-- new strings june 10 2016 -->
+    <value>وقت تموم شد!</value>
+  </string>
+  <string key="RoleInfoCupid">
+    <value>تو مسئول تنظیم پروژه هستی 🕺 دو نفرو انتخاب کن تا مهمترین پروژه سال دانشگاه رو اجرا کنن ! اگر یکی از این دو نفر اخراج بشه ، نفر بعدی هم باهاش اخراج میشه و پروژه می خوابه . در صورتی هم که این دو نفر تا پایان پروژه اخراج نشن ، بودجه یکسال دانشگاه رو مال خودشون می کنن یا بین هم تیمی هاشون تقسیم می کنن . ببینم می تونی گل بکاری با درست انتخاب کردنت !</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>تو خفت گیری ! از اون دانشجوهایی که منتظرن هر چه زودتر آدم مورد نظرش از دانشگاه اخراج بشه تا فوری جاشو بگیره .</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>تو آمارگیری ، از اعضای دانشگاه مثل یک پلیس پرس و جو می کنی تا بتوانی مسئولین دانشگاه رو که به شکل دانشجو ها دراومدن رو شناسایی کنی . هنگامی که اخراجت کردن شانس اینو داری که یکی از مسئولین دانشگاه رو با خودت اخراج کنی . البته اگر استادا اخراجت کنن داستان کمی فرق داره !</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>تو رئیس دانشگاه هستی . هر شب یکی از اعضا را اخراج کن تا در نهایت فقط خودت بمونی و بودجه یکسال دانشگاه رو برای خودت برادری !</value>
+  </string>
+  <string key="CupidChosen">
+    <value>مسئول تنظیم پروژه ، تو و {0} برای اجرای مهمترین پروژه سال دانشگاه انتخاب کرده ! حالا اگر با هم موفق بشید پروژه رو به اتمام برسونین ، بودجه یکسال دانشگاه بین شما دو نفر یا بین هم تیمی هاتون تقسیم میشه ولی اگر یکی از شما بنا به دلایلی اخراج بشه ... نفر بعدی هم همراهش اخراج میشه و مهمترین پروژه سال دانشگاه می خوابه .</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>اعضای احمق تصمیم گرفتند که تو رو از دانشگاه اخراج کنند ، میخوای پته کی رو بریزی روی آب؟</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>آمارگیر عزیزمون {0} میتونست یه نفر دیگه رو همراه با خودش اخراج کنه ولی وجدانش اجازه نداد . سرش و انداخت پایین و از دانشگاه رفت</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>آمارگیر عزیز لحظاتی قبل از اخراجش می خواست یک استاد رو همراه با خودش اخراج کنه ولی مطمئن نبود واسه همین دیگه بیخیال شد و رفت . در آرامش باشی {0}</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+<!-- 0 - hunter's name -->
+<!-- 1 - target's name -->
+<!-- 2 - target's role -->
+    <value>آمارگیر یعنی {0} لحظاتی قبل از اخراجش تصمیم گرفت {1} رو همراه با خودش اخراج کنه به امید اینکه یکی از مسئولین رو همراه با خودش اخراج کرده باشه . {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>درسته که از دانشگاه اخراجت کردند ولی هنوز هم میتونی پته یکی از مسئولین بریزی روی آب و اون رو هم از دانشگاه اخراج کنی</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+<!-- 0 - target's name -->
+    <value>اینقدر آمارگیر عزیزمون {0} به طرز فجیعی اخراج شد که حتی وقت نکرد یک نفر دیگه رو همراه با خودش اخراجه کنه</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+<!-- 0 - hunter's name -->
+    <value>آمارگیر عزیزمون {0} میتونست یه نفر دیگه رو همراه با خودش اخراج کنه ولی وجدانش اجازه نداد . سرش و انداخت پایین و از دانشگاه رفت</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+<!-- 0 - hunter -->
+<!-- 1 - target's name -->
+<!-- 2 - target's role -->
+    <value>آمارگیر یعنی {0} لحظاتی قبل از اخراجش تصمیم گرفت {1} رو همراه با خودش اخراج کنه . {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <value>انگل عزیزمون یعنی {0} رفت سراغ  {1} که معتادش کنه اما {1} رئیس دانشگاه دراومد !!! یکی زد توی گوشش و از دانشگاه اخراجش کرد ☹️
+</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+<!-- 0 - target's name -->
+    <value>استادا آمارگیر را اخراج کردن ولی اون ( آمارگیر ) در آخرین لحضه تونست یکی از یاراشون ( استادا ) یعنی {0} همراه با خودش اخراج کنه .</value>
+  </string>
+  <string key="HunterShotWolf">
+<!-- 0 - target's name -->
+    <value>استادا تصمیم گرفتند آمارگیر را اخراج کنند ولی آمارگیر در آخرین لحضه توانست یکی از استادا یعنی {0} اخراج کنه .</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>در میان درگیری میان استادا و رئیس دانشگاه ، {0} توسط رئیس اخراج شد</value>
+  </string>
+  <string key="DefaultKilled">
+<!-- 0 - target's name -->
+<!-- 1 - target's role -->
+    <value>اعضا متوجه میشن که {0} به دستور مخفی رئیس دانشگاه ، اخراج شده . {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+<!-- 0 - target's name -->
+    <value>رفتی {0} رو اخراج کنی ولی مدافع حقوق دانشجویان نذاشت!</value>
+  </string>
+  <string key="CultConvertHunter">
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - target's name -->
+    <value>معتاد عزیزمون {0} رفت که {1} هم مثل خودش معتاد کنه منتها {1} آمارش رو گرفت و به دانشگاه لوش داد . {0} اخراج شد</value>
+  </string>
+  <string key="GuardKiller">
+    <value>عقل که نباشد جان در عذاب است ... آخه میری  از حقوق رئیس دانشگاه دفاع کنی ؟ معلومه که بجای طرفداری ، اخراجت میکنه !</value>
+  </string>
+  <string key="HarlotFuckKiller">
+<!-- 0 - target's name -->
+    <value>رفتی اتاق {0} که باهاش حال کنی اما تا اومدی خودی نشون بدی ... متوجه شدی رئیس دانشگاه است !!!! اونم سریع بخاطر حرکتت ، به ۹۶ روش سامورایی نمودت و فوری اخراجت کرد</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>دانشجوی اهل دلمون {0} رفت اتاق رئیس دانشگاه که یک حالی بهش بده ... منتها رئیس دانشگاه به 96 روش سامورایی نمودش سپس از دانشگاه اخراجش کرد ! 🔫😭</value>
+  </string>
+  <string key="DGToMason">
+<!-- 0 - target's name -->
+    <value>خفت گیر عزیز یعنی {0} هم الان به جمعتون پیوست و بسیجی شد</value>
+  </string>
+  <string key="DGTransformToMason">
+<!-- 0 - dead mason's name -->
+<!-- 1 - mason collegues's name -->
+    <value>آخ جون ... بلاخره {0} اخراج شد و تونستی جایگاهش رو تصاحب کنی . چون اون بسیجی بود تو هم بسیجی شدی . بقیه بسیجی ها عبارت اند از : {1}</value>
+  </string>
+  <string key="DGToCult">
+<!-- 0 - new Zombie's name -->
+    <value>به به ... خفت گیر ( {0} ) چون می خواست جایگاه یکی از انگل ها رو تصاحب کنه ، الان مثل شما معتاد شده . خوشا به سعادتون فضانوردان عزیز 😁</value>
+  </string>
+  <string key="DGTransformToCult">
+<!-- 0 - role's name -->
+<!-- 1 - teammates's name -->
+    <value>آخ جون ... بلاخره {0} اخراج شد و تونستی جایگاهش رو تصاحب کنی . چون اون انگل بود تو هم انگل شدی . حضور پر ثمرت رو به خانواده تبریک می گم . بقیه انگل ها عبارت اند از : {1}</value>
+  </string>
+  <string key="DGToWolf">
+<!-- 0 - DG's name -->
+    <value>خفت گیر عزیز یعنی {0} بعد از یک دوره فشرده به جمعتون پیوست و استاد شد</value>
+  </string>
+  <string key="DGTransformToWolf">
+<!-- 0 - target's name -->
+<!-- 1 - teammates's name -->
+    <value>آخ جون ... بلاخره {0} اخراج شد و تونستی بعد از یک دوره فشرده جایگاهش رو تصاحب کنی . چون اون استاد بود تو هم استاد شدی . بقیه استادا عبارت اند از : {1}</value>
+  </string>
+  <string key="SerialKillerWins">
+    <value>رئیس دانشگاه تونست همه رو اخراج کنه ... بودجه یکسال دانشگاه ، ماله او شد !!</value>
+  </string>
+  <string key="AskKill">
+    <value>رئیس جان ، کیو میخوای امشب اخراج کنی؟</value>
+  </string>
+  <string key="LoverDied">
+<!-- 0 - dead's name -->
+<!-- 1 - lover's name -->
+<!-- 2 - roles -->
+    <value>با اخراج {0} ، همکارش یعنی {1} هم از دانشگاه اخراج شد و مهمترین پروژه دانشگاه خوابید . {1} چیزی نبود جز یک {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>میخوای جایگاه کی رو توی دانشگاه تصاحب کنی؟</value>
+  </string>
+  <string key="AskCupid1">
+    <value>نفر اول رو برای پروژه انتخاب کن</value>
+  </string>
+  <string key="AskCupid2">
+    <value>نفر دوم رو برای پروژه انتخاب کن</value>
+  </string>
+  <string key="Hunter">
+    <value>آمارگیر 🎯(🎯)</value>
+  </string>
+  <string key="Cupid">
+    <value>مسئول تنظیم پروژه 🕺(💘)</value>
+  </string>
+  <string key="SerialKiller">
+    <value>رئیس دانشگاه 💪(🔪)</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>خفت گیر 🎭(🎭)</value>
+  </string>
+  <string key="NewWCRoleModel">
+<!-- 0 - target's name -->
+    <value>تو قماربازی و حدس زدی {0} زودتر اخراج میشه</value>
+  </string>
+  <string key="LoversWin">
+    <value>آماده برپایی یه جشن و افتتاحیه باشید ... مهمترین پروژه سال دانشگاه با موفقیت به پایان رسید . بودجه یکسال دانشگاه فقط به همکاران پروژه میرسه !!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+<!-- 0 - target's name -->
+<!-- 1 - role -->
+    <value>خب دیشب {0} رفت اتاق آمارگیر فضولی کنه .... ولی آمارگیر ، سریع آمارشو گرفت و اخراجش کرد . {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>یک انگل میخواست تو رو هم معتاد کنه ولی خب ... تو بچه خوبی هستی و از این کارا نمیکنی . بشین شیر کاکائوت رو بخور گلم 😂</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+<!-- 0 - target's name -->
+    <value>تو که تو لیست انتظار گروه {0} هستی گل من</value>
+  </string>
+  <string key="AddedToWaitList">
+<!-- 0 - target's name -->
+    <value>به لیست انتظار گروه {0} اضافه شدی . به محض اینکه یه چالش جدید ساخته بشه ، بهت پیام میدم .</value>
+  </string>
+  <string key="NotifyNewGame">
+<!-- 0 - target's name -->
+    <value>هورا یه چالش جدید توی گروه {0} شروع شده . بدو در دانشگاه ثبت نام کن تا ته دیگش تموم نشده 😂</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+<!-- 0 - SK's name -->
+<!-- 1 - target's name -->
+    <value>فقط دو نفر از اعضای دانشگاه زنده موندن . رئیس دانشگاه {0} با قدرت وارد میشه و  {1} رو از دانشگاه اخراج میکنه</value>
+  </string>
+  <string key="NoWinner">
+    <value>همه از دانشگاه اخراج شدند و هیچ کس برنده نشد...</value>
+  </string>
+  <string key="SKHunterEnd">
+<!-- 0 - SK's name -->
+<!-- 1 - Hunter's name -->
+    <value>فقط رئیس دانشگاه و آمارگیر توی دانشگاه باقی موندن . رئیس دانشگاه یعنی {0} با یک لبخند ژکوند میره که {1} رو از دانشگاه اخراج کنه منتها آمارگیر در آخرین لحظات ... پرونده رسوایی مالی رئیس دانشگاه رو روی میز وزیر میذاره و موجب میشه که هر دو از دانشگاه اخراج بشن . هیچ کس توی دانشگاه باقی نمی مونه و دانشگاه تعطیل میشه</value>
+  </string>
+  <string key="RoleModelChosen">
+<!-- 0 - target's name -->
+    <value>من خودم برات بهترین انتخاب رو کردم ...برو حالشو ببر! {0}</value>
+  </string>
+  <string key="Won">
+    <value>برنده</value>
+  </string>
+  <string key="Lost">
+    <value>بازنده</value>
+  </string>
+  <string key="IdleCount">
+<!-- 0 - player's name -->
+<!-- 1 - idle count -->
+<!--New strings 7th of July-->
+<!--If you are translating werewolf in a non-standard mode (eg. Mafia, Pokémon and similar) please put the role and the emoji in front of the string.
+  For example in Mafia, AboutMason would be:
+  Caporegime 👷\nYou are a caporegime blah blah
+  -->
+    <value>خب {0} ریده با این بازی کردنش ! طی 24 ساعته گذشته {1} بار به خاطر غیبت داشتن ، اخراج شده</value>
+  </string>
+  <string key="AboutVG">
+    <value>مشروط 👱 نقش بسیار ساده ای داره و در اصل هیچی نیست 😐 در صورتی که تلاش کنه زنده بمونه ... شانس اینو داره ، یکی یا چند تا از مسئولین دانشگاه رو اخراج کنه</value>
+  </string>
+  <string key="AboutSeer">
+    <value>کارآموز بایگانی 🤵🏻 نزدیک به فارغ التحصیل شدنه و به سوابق دانشجوها و مسئولین دانشگاه دسترسی داره . هر شب می تونه سوابق و نقش یکی از اعضای دانشگاه رو پیدا کنه .</value>
+  </string>
+  <string key="AboutWw">
+    <value>استاد 🧑‍🏫 هرشب میتونه بره یه بدبخت رو از دانشگاه اخراج کنه ولی اگه بیچاره رو اخراج کنه ، شب بعدش نمی تونه هیچ کسیو اخراج کنه . آدم فروش رو اخراج کنه ، اونم استاد میشه ! در صورتی که بخواد رئیس دانشگاه بیرون کنه ، احتمال اخراج کردنش بسیار کمه و ممکنه خودش اخراج بشه 😱</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>دانشجوی اهل دل 💋 هر شب میره اتاق یه نفر و باهاش صفا می کنه . اگر استاد و رئیس دانشگاه باشه از دانشگاه اخراج میشه ولی اگر دانشجو باشه اتفاقی براش نمیوفته 😜</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>بیچاره 🧤 بدبخت ترین دانشجویی که تو عمرتون دیدین . اگر استادا اخراجش کنن تا یه روز بخاطر عذاب وجدان ... توانایی اینکه کسی رو از دانشگاه اخراج کنن رو ندارن ......</value>
+  </string>
+  <string key="AboutCursed">
+    <value>آدم فروش 🧟‍♂️ از اون آدم هایی هست که تا سریع یک چیزی از بقیه همکلاسی هاشون ببینن فوری میرن به استادا لو میدن که به گوش روسای دانشگاه برسه .‌ در صورتی که استادا اخراجش کنن مثل خودشون استاد میشه . به به ... !</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>استاد راهنما🥸 یه دانشجوی ساده هست که استادا خیلی هواشو دارن ولی بعد از اینکه همه ی استادا از دانشگاه اخراج بشن ، استاد میشه !</value>
+  </string>
+  <string key="AboutGA">
+    <value>مدافع حقوق دانشجویی 👼 استادا یا مسئولین رو از اخراج کردن دانشجوها منصرف می کنه . اگر به اشتباه بجای دفاع از یه دانشجو ، از یه استاد دفاع کنه ... به احتمال ۵۰ درصد اخراج میشه </value>
+  </string>
+  <string key="AboutDetective">
+    <value>المپیادی 👨‍🎓 در اصل مهمترین مهره دانشجو هاست .‌ هر روز میتونه از نقش یه نفر مطلع بشه ... اما به احتمال 40% ممکنه که استادا بفهمن ، گاهی توی کارشون سرک میکشه !!!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>بچه وزیر 🧛‍♂️ پولدار ، خوشگل و خوشتیپ هستش . پدرش این حقو بهش داده که تا دو نفر ( اونهایی که اذیتش می کنن ) به راحتی از دانشگاه اخراج کنه 😁</value>
+  </string>
+  <string key="AboutTanner">
+    <value>هکر 👺 تنها هدفش اینه که تمام اطلاعات دانشگاه رو برملا کنه و به همه ثابت کنه که چقدر در زمینه حفاظت اطلاعات ضعیف عمل کردن . در صورتی که با اکثریت آرا اعدام بشه ، اعضای دانشگاه رو به گاج میده و تمام اطلاعات دانشگاه رو برملا می کنه !!</value>
+  </string>
+  <string key="AboutFool">
+    <value>احمق🃏همان دانشجویی که توی چالش بهش گفته میشه ( تو کارآموز بایگانی هستی ) اما در اصل سرکار گذاشته شده . وقتی سعی میکنه نقش یه نفر رو بفهمه یه نقش به صورت تصادفی بهش گفته میشه .</value>
+  </string>
+  <string key="AboutCult">
+    <value>انگل دانشگاه 🚬 هر شب با دوستاش بساط میکنه تا یه نفر دیگه رو مثل خودش معتاد کنه ...  . اگه بتونه همه ی دانشجوها را معتاد کنه ، برنده میشه  !</value>
+  </string>
+  <string key="AboutCH">
+    <value>انگل شناس ( دانشجوی ارشد انگل شناسی ) 💂‍♂️ وظیفه داره تو مبارزه با انگل های دانشگاه پیروز بشه تا بقیه دانشجو ها را از معتاد شدن دور کنه و محیطی عاری از معتادین فراهم کنه .</value>
+  </string>
+  <string key="AboutWC">
+    <value>قمار باز 🤳 از همون دانشجویایی هست که روی کوچکترین مسائل دانشگاه هم شرط بندی می کنن .  اگر بتونه به درستی حدس بزنه چه کسی بالاخره از دانشگاه اخراج میشه ... تبدیل به استاد میشه !!</value>
+  </string>
+  <string key="AboutAppS">
+    <value>خبره 🙆‍♂️ همان کسی که نزدیک فارغ التحصیل شدنه و منتظره کارآموزی دوستش ( کارآموز بایگانی ) تمام بشه تا جای او را بگیره . البته تا قبل از اخراج شدن دوستش یک دانشجوی ساده است .</value>
+  </string>
+  <string key="AboutBH">
+    <value>روابط عمومی 🗣️ بهش گفته میشه کی کارآموز بایگانی هستش </value>
+  </string>
+  <string key="AboutMason">
+    <value>بسیجی 👷 یه دانشجوی ساده هست با این تفاوت که اگر بسیجی های دیگه ای هم توی دانشگاه باشن ، اون ها رو میشناسه !!</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+خفت گیر 🎭 منتظره تا سریع جایگاه فرد مورد نظرشو تصاحب کنه یعنی تا وقتی که اون فرد زنده است تلاش می کنه تا به شکلی اخراجش کنه !
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+مسئول تنظیم پروژه🕺دو نفرو برای اجرای مهمترین پروژه سال دانشگاه انتخاب می کنه . اگر یکی از این دو نفر اخراج بشه ، نفر بعدی هم باهاش اخراج میشه و پروژه می خوابه . در صورتی هم که این دو نفر تا پایان پروژه اخراج نشن ، بودجه یکسال دانشگاه رو مال خودشون می کنن یا بین هم تیمی هاشون تقسیم می کنن .
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+آمارگیر 🎯 از اعضای دانشگاه مثل یک پلیس پرس و جو می کنه تا بتونه مسئولین دانشگاه رو که به شکل دانشجو ها دراومدن رو شناسایی کنه . اگر اعضا ، اخراجش ( اجماعش ) کنن شانس اینو داره که یکی از مسئولین دانشگاه رو با خودش اخراج کنه . در صورتی که استادا اخراجش کنن ... اگر تعداد استادا یکی باشه سی درصد  احتمالش هست که اون استاد اخراج بشه و خودش زنده بمونه . به ازای هر یه استاد بیست درصد بیشتر شانس داره که یک استاد رو اخراج کنه ولی دیگه خودش توی دانشگاه نمی تونه بمونه .
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>رئیس دانشگاه 💪 آزاده تا هر کاری که دلش می خواد بکنه . هدفش اینه که تمام دانشجو ها و مسئولین رو از دانشگاه اخراج کنه تا بودجه  یکسال دانشگاه رو برای خودش برداره ... . البته اگر یکی از استادا بخوان اخراجش کنن ، یکی از اونا رو به گاج میده ( اخراج می کنه ) .</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para is a silly developer that likes to bark at people.  Maybe he's been messing with werewolves too long....Messing with werewolves is a very bad idea.</value>
+  </string>
+  <string key="EndTime">
+<!--New strings, July the 8th -->
+    <value>\nمدت زمان چالش : {0}</value>
+  </string>
+  <string key="Day">
+<!--0 - Day -->
+    <value>روز {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>بابا هر دکمه ای که دم دستتون میاد نزنین خو . ریدین تو ربات ری استارت شد</value>
+  </string>
+  <string key="SentPrivate">
+    <value>عضو محترم دانشگاه ، بیا پی وی</value>
+  </string>
+  <string key="StartPM">
+    <value>یه پی ام بهم بده تا بتونم بهت پی ام بدم @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>مرسی اومدی پی وی. دیگه میتونم بهت پی ام بدم</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>باید اونی که میخوای از بازی بندازی بیرون رو ریپلای کنی</value>
+  </string>
+  <string key="WhatToDo">
+    <value>چکارم داری ؟ </value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>باید توی گروه در دانشگاه ثبت نام کنی ، دوست عزیز !</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>باید چالشو توی گروه ثبت نام کنی</value>
+  </string>
+  <string key="PingInfo">
+    <value>زمان پاسخ دهی : {0}\nپیام در ثانیه : {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>چه زبانی رو میخوای انتخاب کنی؟ \nزبان فعلی: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>چه نوع ترجمه ای رو میخوای؟\n نسخه فعلی: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>زبان به {0} تغییر پیدا کرد</value>
+  </string>
+  <string key="GetLang">
+    <value>کدوم فایل زبان رو میخوای؟</value>
+  </string>
+  <string key="NoNodes">
+    <value>سرور به گاج رفت. چند ثانیه دیگه دوباره امتحان کن</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>باید این دستور رو توی گروه وارد کنی</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>عضو محترم دانشگاه تو که گلوبال ادمین نیستی</value>
+  </string>
+  <string key="NotPara">
+    <value>عضو محترم دانشگاه تو که گلوبال ادمین نیستی</value>
+  </string>
+  <string key="Yes">
+    <value>آره</value>
+  </string>
+  <string key="No">
+    <value>نه</value>
+  </string>
+  <string key="Allow">
+    <value>فعال</value>
+  </string>
+  <string key="Disallow">
+    <value>غیرفعال</value>
+  </string>
+  <string key="Show">
+    <value>نشون بده</value>
+  </string>
+  <string key="Hide">
+<!-- Game Mode Choices-->
+    <value>مخفی کن</value>
+  </string>
+  <string key="NormalOnly">
+    <value>فقط عادی</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>فقط آشوب</value>
+  </string>
+  <string key="PlayerChoice">
+<!-- Show Roles on End Game -->
+    <value>اعضا تعیین کنن</value>
+  </string>
+  <string key="ShowNone">
+    <value>هیچ نقشی رو نشون نده</value>
+  </string>
+  <string key="ShowLiving">
+    <value>فقط نقش اعضا اخراج نشده رو نشون بده</value>
+  </string>
+  <string key="ShowAll">
+    <value>نقش همه رو نشون بده</value>
+  </string>
+  <string key="Cancel">
+    <value>بازگشت</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>اعضای دانشگاه اجازه داشته باشن از چالش فرار کنن ؟\n حالت فعلی : {0}\n حواست باشه قبل از شروع کامل چالش میتونن فرار کنن</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>اعضا میتونن وسط بازی فرار کنن : {0}</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>حداکثر تعداد اعضا چقدر باشه ؟ الان حداکثر {0} نفر میتونن تو چالش باشن</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>حداکثر تعداد اعضا به {0} تغییر کرد</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>نقش ها رو موقع اخراج شدن اعضا ، چطوری نشون بدم ؟ \n حالت فعلی : {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>نشون دادن نقش ها بعد از اخراج هر یک از اعضا : {0}</value>
+  </string>
+  <string key="GameModeQ">
+    <value>حالت چالش چی باشه ؟ \n حالت فعلی : {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>حالت چالش تغییر کرد به : {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>نقش ها رو آخر چالش چطوری نشون بدم ؟ \n حالت فعلی : {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>نمایش نقش ها آخر چالش تغییر داده شد به : {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>هر روز چند ثانیه طول بکشه ؟ اگه تعداد اعضا زیاد باشه حداقل 60 ثانیه به این زمان اضافه میشه \n زمان پیش فرض : {0} \n زمان تنظیم شده : {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>طول روز به {0} ثانیه تغییر کرد</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>هر شب چند ثانیه طول بکشه؟ \n زمان پیش فرض : {0} \n زمان تنظیم شده : {1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>طول شب به {0} ثانیه تغییر کرد</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>هر رای گیری چند ثانیه طول بکشه؟ \n زمان پیش فرض : {0} \n زمان تنظیم شده : {1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>طول رای گیری به {0} ثانیه تغییر کرد</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>نقش احمق فعال باشه؟ \n حالت فعلی : {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>نقش احمق : {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>نقش هکر فعال باشه ؟ \n حالت فعلی : {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>نقش هکر : {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>نقش انگل فعال باشه ؟ \n حالت فعلی : {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>نقش انگل : {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>دمت گرم . روز خوبی داشته باشی</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>به دنبال چه زبانی برای گروه خودتون هستید ؟!</value>
+  </string>
+  <string key="HereIsList">
+    <value>Here are the groups for {0}:</value>
+  </string>
+  <string key="Members">
+    <value>اعضا</value>
+  </string>
+  <string key="StartMe">
+    <value>لطفا من رو استارت کنید تا بتونم براتون پیام ارسال کنم</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} ربات رو استارت نکرد برای همین از چالش حذف شد</value>
+  </string>
+  <string key="LatestList">
+    <value>لیست اعضا اینجاست</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>عدم نمایش لیست اعضا</value>
+  </string>
+  <string key="YouJoined">
+<!-- 0 - Group Name -->
+    <value>شما با موفقیت وارد چالش در گروه {0} شدید</value>
+  </string>
+  <string key="Ping2">
+<!-- Update 4.0-->
+    <value>Time to send ping message: {0}</value>
+  </string>
+  <string key="RoleInfoMayor">
+    <value>تو دانشجوی ترم آخری🎖حرفت توی دانشگاه خیلی برو داره ... به خاطر همین رایت دو تا شمرده میشه وقتی اعلام نقش می کنی . برو حالشو ببر 😨</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>تو بچه پولداری ! 🤑 دفعه ی اولی که بخوان از دانشگاه اخراجت ( اجماعت ) کنن ، پول بابات به کمکت میاد و نمیذاره که اخراج بشی اما بار دوم ، بای بای دانش.... ! 😁😂</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>تو خوابالو هستی 🤕 سر کلاس ها همیشه میگیری میخوابی . کلاس ها و استادا هم به هیچ جات نیست ! ممکنه که حواست نباشه ، اشتباهی به یکی دیگه رای بدی ... لعنتی !</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>تو آبدارچی هستی 👨🏼‍💼 ! باید هر چه زودتر سعی کنی کارآموز بایگانی رو پیدا کنی و با لو دادنش ( نخ دادن ) به استادا ، کمک کنی از دانشگاه اخراجش کنن . نمی تونی نقش بقیه رو بفهمی اما با چایی بردن شبانه برای اعضای دانشگاه ، می تونی استادا و کارآموز بایگانی رو شناسایی کنی . ببینم زرنگی یا تو زرد در میای !</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>تو رئیس شورای دانشجویی هستی 👮‍♂️ هر زمان ( روز ) که دلت خاص می تونی یک جلسه برگزار کنی . شب آن روز استادا نمیتونن کسی رو اخراج کنن !</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>تو پروفسور 👴🏻 هستی ، استاد استادا ، وقتی که میخوای یکی رو اخراج کنی اول پروندش رو با دقت میخونی ... اگر ازش خوشت بیاد میتونی طوری تعلیمش بدی که توی مدت کوتاهی مثل یک استاد زبردست بشه ... طبق محاسبات آماری 20% احتمال داره که از یکی خوشت بیاد !</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>تو عضو هیت علمی 👨‍💻 هستی ، یه استاد با سطح علمی بالا و فعال ... اگر از دانشگاه اخراج بشی ، انقدر اوضاع بهم ریخته میشه که استادها میتونند دو نفر رو روز بعد اخراج  کنند</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>اعضای دانشگاه می خواستن {0} رو اخراج کنن ولی اون آخرین لحظه گفت "صبر کنید ! من بچه پولدارم ...  تازه کلی هم پارتی دارم ... چطور میتونین اخراجم کنین ... بی شعورا ! " </value>
+  </string>
+  <string key="SorcererOther">
+    <value>خب {0} نه استاده نه کارآموز بایگانی ! بیشتر بگرد !</value>
+  </string>
+  <string key="MayorReveal">
+    <value>توجه ! {0} دانشجوی ترمِ آخره ، حواستون باشه که می خواد سریع پشتش رای بدین و حرفشو بخونید . از این به بعد هم رای هاش دو تا حساب میشه .... 😨😁</value>
+  </string>
+  <string key="AskMayor">
+    <value>دوست داری به همه بگی ، دانشجوی ترم آخری گلم؟ 😁</value>
+  </string>
+  <string key="Reveal">
+    <value>اعلام کردن</value>
+  </string>
+  <string key="SpreadDust">
+    <value>دوست داری امشب یک جلسه شورا برگزار کنی ؟ </value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>رئیس شورای دانشجویی 👮‍♂️ {0} بسیار محترم ، امشب یک جلسه شورا برگزار میکنه و استادا هم دیگه امشب نمیتونن کسی رو اخراج کنن !</value>
+  </string>
+  <string key="Mayor">
+    <value>دانشجوی ترم آخر 🎖(🎖)</value>
+  </string>
+  <string key="Prince">
+    <value>بچه پولدار 🤑(👑)</value>
+  </string>
+  <string key="Sorcerer">
+    <value>آبدارچی 👨🏼‍💼(🔮)</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>خوابالو 🤕(🤕)</value>
+  </string>
+  <string key="Blacksmith">
+    <value>رئیس شورای دانشجویی 👮‍♂️(⚒)</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>پروفسور 👴🏻(⚡️)</value>
+  </string>
+  <string key="WolfCub">
+    <value>هیئت علمی 👨‍💻(🐶)</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>استادها تصمیم گرفتند که {0} رو اخراج کنند ولی ، پروفسور {1} اونارو متوقف کرد، و تصمیم گرفت که دانشجوی مذکور رو طوری تعلیم بده که تبدیل به یک استاد بشه!</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>استادا تصمیم گرفتند که شما رو اخراج کنند ولی پروفسور شما رو برای استادی انتخاب کرد !</value>
+  </string>
+  <string key="BittenTurned">
+    <value>تبریک میگم شما هم الان تبدیل به یک استاد شدید که میتونید بقیه دانشجو ها رو با لذت اخراج کنید . شما هم از اون استاد هایی هستید که اول عقده بودن بعد دست و پا در آوردن !!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>دانشجوی ترم آخر 🎖 زمانی که خودشو به عنوان دانشجوی ترم آخری معرفی کنه ، می تونه به هر یک از اعضا 2 تا رای بده ! ( فقط زمانی که اعلام کنه دانشجوی ترم آخره )</value>
+  </string>
+  <string key="AboutPrince">
+    <value>بچه پولدار 🤑 از اون کسانی که پارتی زیاد داره . در صورتی که بخوان دفعه اول با رای اکثریت از دانشگاه اخراجش کنن ، پول و پارتی به کمکش میاد اما دفعه دوم ... !</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>آبدارچی👨🏼‍💼به استادا کمک می کنه تا کارآموز بایگانی رو هر چه زودتر پیدا و اخراجش کنن .</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>خوابالو 🤕 سر کلاس ها همیشه میگیره میخوابه ، کلاس و استادا به هیچ جاش نیست . ممکنه که حواسش نباشه و اشتباهی به یکی دیگه رای بده ... لعنتی  !</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>رئیس شورای دانشجویی 👮‍♂️ می تونه با یک شب برگزاری شورا ، جلوی کار استادا ( اخراج کردن ) رو تا یک شب بگیره</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>پروفسور 👴🏻 استاد استادا هست .  در صورتی که از پرونده یکی خوشش بیاد به احتمال 20% می تونه جوری تعلیمش بده که تبدیل به استاد بشه . </value>
+  </string>
+  <string key="AboutWolfCub">
+<!-- new strings 06 nov-->
+    <value>هیئت علمی 👨‍💻 یک استاد با سطح علمی بالا و فعال هست . اگر اخراج بشه بخاطر بهم ریختن اوضاع ، استادا میتونن دو نفر رو روز بعد اخراج  کنند .. </value>
+  </string>
+  <string key="DGTransformToAlpha">
+<!-- 0 - target's name -->
+<!-- 1 - teammates's name -->
+    <value>آخ جون ... بلاخره {0} اخراج شد و تونستی بعد از یک دوره فشرده جایگاهش رو تصاحب کنی . چون اون پروفسور بود تو هم پروفسور شدی . بقیه استادا عبارت اند از : {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+<!-- 0 - target's name -->
+<!-- 1 - teammates's name -->
+    <value>آخ جون ... بلاخره {0} اخراج شد و تونستی بعد از یک دوره فشرده جایگاهش رو تصاحب کنی . چون اون عضو هیئت علمی بود تو هم عضو هیئت علمی شدی . بقیه استادا عبارت اند از : {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>گروه دانشجوها</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>گروه بی طرف</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>گروه رئیس دانشگاه</value>
+  </string>
+  <string key="TannerTeam">
+    <value>گروه هکر</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>گروه دانشجوها</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>گروه بی طرف</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>گروه استادا</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>گروه رئیس دانشگاه</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>گروه انگل ها</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>گروه هکر</value>
+  </string>
+  <string key="CultConvertWolf">
+    <value>دیشب انگل های دانشگاه {0} رو فرستادن تا {1} رو معتاد کنه ، اما دیگه {0} برنگشت . انگل ها متوجه میشن {1} استاده و باعث اخراج دوستشون شده ☹️
+</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+<!-- used when Harlot visit's SK's victim, and dies -->
+<!--{0} = Harlot name, {1} = SK's victim name-->
+<!--New Death Strings 05 DEC-->
+    <value>دیشب {0} به اتاق {1} رفت که یه شب خوب رو باهم سپری کنن ولی رئیس دانشگاه اومد به {0} حمله کرد و هر دو تاشون رو به چندین روش غیر ممکن مورد عنایت قرار داد سپس هر دو رو با هم اخراج کرد . یک آدم چقدر می تونه کثیف باشه !!!!</value>
+  </string>
+  <string key="ApprenticeSeerEaten">
+    <value>دانشجو ها میبینند که {0} از دانشگاه اخراج شده ...  خبره عزیزم ، می دونم که خیلی آرزو کردی جانشین دوستت بشی اما مملکت نون خشکی هم میخواد به هر حال 😐☹️ !</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>متاسفانه دیشب رئیس شورای دانشجویی {0} توسط رئیس دانشگاه اخراج شد !</value>
+  </string>
+  <string key="ZombieKilled">
+    <value>دیشب رئیس دانشگاه یکی از انگل های دانشگاه یعنی {0} رو از دانشگاه اخراج کرد !!!</value>
+  </string>
+  <string key="CupidKilled">
+    <value>اعضای دانشگاه می بینن ، دیشب {0} توسط رئیس دانشگاه اخراج شده با اینکه قبلا وظیفه اصلیشو انجام داده بود ! {0} چیزی نبود جز یک مسئول تنظیم پروژه . در آرامش باشی رفیق ❤️</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>دیشب بیچاره مون یعنی {0} توسط رئیس دانشگاه اخراج شد . کثیف تر از رئیس هم مگه داریم 😞</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>دیشب رئیس دانشگاه تصمیم گرفت که  مدافع حقوق دانشجویی یعنی {0}  رو از دانشگاه اخراج کنه ... خیلی دردناکه حتی از نمره ی 9.75 هم دردناک تره ... !</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>رئیس دانشگاه با یک تماس تلفنی به وزیر ، گفت که فرزندت یعنی {0} از دانشگاه اخراجه ... این حجم از دل و جرات بی سابقس !!!</value>
+  </string>
+  <string key="MayorKilled">
+    <value>دانشجوی ترم آخر یعنی {0} توسط رئیس دانشگاه ، اخراج شد ... عجب دوره زمونه ای شده ... بدبخت 10 ترم درس خونده بود . چی کار به تو داشت میذاشتی اون مدرکش رو بگیره ذوق کنه</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>بچه پولدار {0} وقتی که داشت با ماشین شاستی بلندش توی خیابونای دانشگاه ویراژ میداد یک هو رئیس دانشگاه رو دید که از دور نگاش میکرد . وقتی که از ماشین پیاده شد ... به رئیس دانشگاه گفت ، رئیس کی بودی تو ؟؟؟ رئیس دانشگاهم با یک حرکت اون رو از دانشگاه اخراج کرد !</value>
+  </string>
+  <string key="SeerKilled">
+    <value>دانشجوها دارن میرن که از {0} در مورد محیط و نحوه کارآموزیش سوال بپرسن اما متوجه میشن دیشب توسط رئیس دانشگاه به قتل رسیده . در آرامش باشی {0} عزیز ، کارآموز بایگانی خوبی بودی 😰</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>دیشب دیگه خبری از آبدارچی و چایی بردناش نبود تا اینکه فرداش صدای فریاد استادا توی کل دانشگاه وحشت انداخته بود ! استاد های حرفه ای، آبدارچی بیچاره {0} که طرف اونها بوده رو به جای دانشجو ها اخراج کردند 😰</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>استاد های مبتدی دیشب به اشتباه {0} که دانشجوی قمار باز بود را اخراج کردند !!</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+<!--used when CH visits SK-->
+    <value>انگل شناس {0} مشغول تحقیق روی دانشجوهای مختلف بود تا اینکه رئیس دانشگاه متوجه میشه که داره اون رو بررسی میکنه .  اینکارش توهین تلقی میشی و توسط رئیس اخراج میشه</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>دیشب {0} رفت که استادا رو معتاد کنه منتها استادا پوسترش رو توی کل دانشگاه پخش کردند و با خفت اخراجش کردند تا درس عبرتی بشه برای آیندگان !</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+<!--used when Zombies convert the SK-->
+    <value>انگل ها شب قبل {0} مامور کردند تا عضو به توافق رسیده را معتاد کنن منتها دیگه خبری ازش نشد . تا اینکه امروز باقی اعضا متوجه میشن که {0} بدلیل مصرف زیاد مواد مخدر و دعوت رئیس دانشگاه به معتاد شدن از دانشگاه اخراج شده !!!</value>
+  </string>
+  <string key="GAGuardedKiller">
+<!-- used when GA guards SK -->
+    <value>شب قبل {0} میخواست که از حقوق یکی از دانشجو ها دفاع کنه منتها اتاق اشتباهی رو انتخاب کرد ... نامبرده رفت از حقوق رئیس دانشگاه دفاع کنه !!!!</value>
+  </string>
+  <string key="GAGuardedWolf">
+<!-- used when GA guards a wolf -->
+<!--1vs1 finales-->
+    <value>شب قبل {0} تلاش کرد که از حقوق یه استاد بجای دانشجو ها دفاع کنه 😭 استاد هم به محض اطلاع از کارش از دانشگاه اخراجش میکنه ...</value>
+  </string>
+  <string key="HunterKillsWolfEnd">
+<!--{0} = hunter's name, {1} = wolf's name-->
+    <value>آمارگیر {0} توی دانشگاه با {1} تنها مونده ! {1} میره که آمارگیر رو اخراج کنه اما آمارگیر سریع متوجهش میشه ... پرونده رسوایی اخلاقی {1} روی میز وزیر می‌زاره . استاد عزیز هم قبل از اینکه بتونه کسی رو اخراج کنه از دانشگاه میره و دانشجو ها برنده میشن 🎉</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+<!--{0} = hunter's name, {1} = wolf's name-->
+    <value>آمارگیر {0} توی دانشگاه با {1} تنها مونده ! {1} میره که آمارگیر رو اخراج کنه اما آمارگیر سریع متوجهش میشه ... تا می خواد بره پرونده رسوایی اخلاقی {1} روی میز وزیر بزاره ... استاد عزیز به سرعت نور اخراجش میکنه !!!</value>
+  </string>
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
+<!-- Extend time -->
+    <value>تنها انگل دانشگاه {0} داشت برای خودش کنار منقل مواد میکشید که ناگهان دانشجوی انگل شناسی {1} اون رو از دانشگاه اخراج کرد ... !</value>
+  </string>
+  <string key="SecondsAdded">
+<!-- 0 - Seconds added by /extend command -->
+<!-- 1 - Total seconds remaining -->
+    <value>به زمان ثبت نام در دانشگاه ، {0} ثانیه افزوده شد /n{1}  برای ثبت نام در دانشگاه باقی مانده</value>
+  </string>
+  <string key="SecondsRemoved">
+<!-- 0 - Seconds removed by /extend command -->
+<!-- 1 - Total seconds remaining -->
+    <value>از زمان ثبت نام در دانشگاه ، {0} ثانیه کاهش یافت /n{1}  برای ثبت نام در دانشگاه باقی مانده</value>
+  </string>
+  <string key="CantExtend">
+    <value>فقط ادمین های گروه قادر به تغییر زمان ثبت نام در دانشگاه هستن !</value>
+  </string>
+  <string key="AllowExtendQ">
+<!--{0} = "Allow" / "Disallow" string-->
+    <value>آیا به اعضا اجازه میدین زمان چالش رو تغییر بدن ؟ /n حالت فعلی : {0} /n ادمین ها همیشه می تونن زمان چالش رو تغییر بدن </value>
+  </string>
+  <string key="AllowExtendA">
+<!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} : اعضا می تونن زمان چالش رو تغییر بدن</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Choose maximum number of seconds which can be added to joining timer by a single /extend command.\nDefault setting: {0}\nCurrent:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>حداکثر زمان به روی {0} ست شد.</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>اوه اوه {0} بیچاره بود ... الان دیگه عذاب وجدان نمیذاره ، کسی رو اخراج کنی فردا {1} ...</value>
+  </string>
+  <string key="JoinButton">
+    <value>ثبت نام کنید !</value>
+  </string>
+  <string key="NotMember">
+    <value>شما نمیتوانی در دانشگاه ثبت نام کنی چون که ممبر نیستی {0} .</value>
+  </string>
+  <string key="JoinByButton">
+    <value>لطفا از دستورات ربات استفاده نکنید روی - ثبت نام کنید ! - کلیک کنید تا وارد دانشگاه بشید .</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>تعداد اعضایی که رای دادن ، {0} از {1} می‌باشد </value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>رای گیری مخفیانه روشن باشد ؟ /n حالت فعلی : {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>رای گیری مخفیانه تنظیم شد در حالت : {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, توجه داشته باش که شما وارد بازی شدید توسط زدن دکمه زیر بنر بازی.</value>
+  </string>
+  <string key="GroupNotFound">
+<!--This string might need rewording from some native speaker-->
+    <value>متاسفانه گروه یافت نشد . این دستور را در داخل گروهای بازی بزنید.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>شما از لیست انتظار پاک شدید {0}.</value>
+  </string>
+  <string key="HaveJoined">
+<!-- {0} = list of people who have joined -->
+    <value>{0} در دانشگاه ثبت نام کردن </value>
+  </string>
+  <string key="AllowCult">
+    <value>انگل</value>
+  </string>
+  <string key="AllowTanner">
+    <value>هکر</value>
+  </string>
+  <string key="AllowFool">
+    <value>احمق</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>رای مخفیانه</value>
+  </string>
+  <string key="RandomMode">
+    <value>رندوم مود</value>
+  </string>
+  <string key="AllowExtend">
+    <value>تغییر زمان ثبت نام</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>افشای نقش </value>
+  </string>
+  <string key="AllowFlee">
+    <value>فرار کردن از دانشگاه</value>
+  </string>
+  <string key="ShowIDs">
+    <value>نمایش آی دی </value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>دوست داری آی دی ها در هنگام ثبت نام نمایش داده شون ؟ \n حالت فعلی : {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>نمایش آی دی : {0}</value>
+  </string>
+  <string key="All">
+<!-- used when searching for groups in all the variants -->
+    <value>همه</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>دوست داری چالش های رندوم انجام بدی ؟ برای مثال رای دادن مخفی ، وجود هکر و... در چالش به صورت رندوم خواهد بود /n حالت فعلی : {0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>وضعیت رندوم مود تنظیم شد : {0}</value>
+  </string>
+  <string key="AllowNSFW">
+    <value>گیف پک های بی ادبانه</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>اجازه میدی گیف پک های بی ادبانه به همه ی اعضا نشان داده بشه ؟ /n حالت فعلی : {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>گیف پک های بی ادبانه : {0}</value>
+  </string>
+  <string key="TannerEnd">
+<!-- 0 - Tanner name -->
+    <value>{0} به اطراف با بهت نگاه میکنه ، دیگه کسی نیست که بهش رای بده و برنده بشه . مات و مبهوت به اکانت های هک شده دانشجو ها فکر میکنه و بعدش برای همیشه از دانشگاه میره ....!</value>
+  </string>
+  <string key="SorcererEnd">
+<!-- 0 - Sorcerer name -->
+    <value>{0} از خواب بلند میشه و احساس میکنه که دانشگاه خیلی آروم تر از قبل شده ... متوجه میشه دیگه کسی نمونده که بتونه براش چایی بریزه ، به همین دلیل خودش با پای خودش از دانشگاه میره ...</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>چه زبانی؟\nCurrent: {0}\nاز اونجایی که 500 تا بازی انجام دادی میتونی عضو بشی در: </value>
+  </string>
+  <string key="Skip">
+<!-- New Roles, April 2018 -->
+    <value>skip</value>
+  </string>
+  <string key="DGTransformToLycan">
+<!-- 0 - target's name -->
+<!-- 1 - teammates's name -->
+    <value>آخ جون ... بلاخره {0} اخراج شد و تونستی بعد از یک دوره فشرده جایگاهش رو تصاحب کنی . چون اون حق التدرس بود تو هم حق التدرس شدی . بقیه استادا عبارت اند از : {1}</value>
+  </string>
+  <string key="NegSeerSees">
+<!-- 0 - target's name -->
+<!-- 1 - role that they are not -->
+    <value>فهمیدی که {0} ، {1} نیست</value>
+  </string>
+  <string key="AskSandman">
+    <value>میخوای امشب همه رو به کما ببری ؟ </value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>با خوندن این ورد توسط {0} , اعضای دانشگاه کم کم چشم هاشون رو به سنگینی می‌ره و در راه اتاقشون رو به زمین می افتن . دیگه توانی برای کسی نمی مونه که از توانایی هاش استفاده کنه ... تا اینکه سر جای فعلی خود به کما میرن تا خود صبح .</value>
+  </string>
+  <string key="SandmanNight">
+    <value>همانطور که همه به اتاق هاشون میروند و به سختی خودشون رو به تختشون می رسانن ، در خواب سنگین فرو میرن به طوری که فراموش میکنن حتی خوابشون برده</value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>نقش جیب بر فعال باشه ؟ /n حالت فعلی : {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>نقش جیب بر : {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>جیب بر هرشب فعال باشه ؟ /n حالت فعلی : {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>جیب بر هر شب فعال است : {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>جیب بری</value>
+  </string>
+  <string key="ThiefFull">
+    <value>جیب بر شبانه</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>تو استاد نمایی👱🌚!
+در اصل از مشروط هم حقیرتر و بدبخت تر ولی از اونجایی که وقت زیادی در کلاس های درس تلف کردی و سوابق دانشجویی پر و پیمونی داری ، کارآموز بایگانی تو رو استاد می بینه .</value>
+  </string>
+  <string key="WolfMan">
+    <value>استاد نما 👱🌚(👱🌚)</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>استاد نما👱🌚 در اصل از مشروط هم حقیرتر و بدبخت تره ولی از اونجایی که وقت زیادی در کلاس های درس تلف کرده و سوابق دانشجویی پر و پیمونی داره ، کارآموز بایگانی استاد می بینش .</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>
+تو حق التدریس هستی 👨🏻🌝
+با تیم استادا هستی اما از اونجایی که شبیه دانشجو های ساده رفتار می کنی و سابقه خیلی زیادی هم نداری ، کارآموز بایگانی تو رو مشروط می بینه .‌</value>
+  </string>
+  <string key="Lycan">
+    <value>حق التدریس 👨🏻🌝(🐺🌝)</value>
+  </string>
+  <string key="AboutLycan">
+    <value>
+حق التدریس👨🏻🌝 با تیم استادا هست اما از اونجایی که شبیه دانشجو های ساده رفتار می کنه و سابقه خیلی زیادی هم نداره ، کارآموز بایگانی او را مشروط می بینه .‌</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>تو ورزشکار دانشگاهتونی 🙇 بدلیل اینکه زیاد ورزش کردی و مغزت را نرمش دادی می تونی هر شب راجب نقش هایی که بقیه ندارن فکر کنی . یادت باشه وقتی به نتیجه میرسی یکی از اعضا اون نقشو نداره ، همون نقش هنوز تو بازی هست پس هواست به نقش هایی که بعد از نتیجه بهشون رسیدی باشه</value>
+  </string>
+  <string key="Oracle">
+    <value>ورزشکار 🙇(🌀)</value>
+  </string>
+  <string key="AboutOracle">
+    <value>ورزشکار 🙇 بدلیل اینکه زیاد ورزش کرده و مغزش رو نرمش داده ... می تونه هر شب راجب نقش هایی که بقیه ندارن فکر کنه . نقش هایی که به ذهنش میرسه ، هنوز تو بازی هستن .</value>
+  </string>
+  <string key="RoleInfoSandman">
+    <value>تو شعبده باز هستی 🤹‍♂️ تنها یکبار در روز می تونی از جادوت استفاده کنی و یه شب همه را به کما ببری تا هیچکس همون شب نتونه کاری انجام بده . هواست باشه همون روزی که مقدمات شورا دانشجویی در حال انجام است ، از قدرتت استفاده نکنی</value>
+  </string>
+  <string key="Sandman">
+    <value>شعبده باز 🤹‍♂️(💤)</value>
+  </string>
+  <string key="AboutSandman">
+<!-- NOT IMPLEMENTED YET -->
+    <value>شعبده باز 🤹‍♂️ تنها یکبار در روز می تونه از جادوش استفاده کنه و یه شب همه را به کما ببره تا هیچکس همون شب نتونه کاری انجام بده . </value>
+  </string>
+  <string key="RoleInfoImam">
+    <value>
+تو حقوقدان هستی 👨🏻‍⚖️ هر موقع که عشقت کشید می تونی با قدرت بیان و دفاع خوب ، اعضای دانشگاه رو متقاعد کنی که رای ندن ... در نتیجه کسی از دانشگاه اخراج نمیشه . هواست باشه بیخودی سخنرانی نکنی چون ممکنه زود از دانشگاه اخراج بشی 😐😂</value>
+  </string>
+  <string key="Imam">
+    <value>حقوقدان 👨🏻‍⚖️( ☮️ )</value>
+  </string>
+  <string key="AboutImam">
+    <value>
+حقوقدان 👨🏻‍⚖️ میتونه با قدرت بیان و دفاع خوب ، اعضای دانشگاه رو از یک شب رای دادن منصرف کنه ... در نتیجه کسی از دانشگاه اخراج نمیشه در اون شب . </value>
+  </string>
+  <string key="RoleInfoWiseElder">
+    <value>تو دانشجوی خردمندی📚وقتی استادا برای بار اول بخوان اخراجت کنن به در بسته می خورن ، ولی دفعه دوم به راحتی آب خوردن و با یه اردنگی اخراجت می کنن ! اگه یکی از دانشجوهایی که قابلیت خاص داره ، از دانشگاه اخراجت کنه شلوارشو بخاطر عذاب وجدان زیاد‌ کثیف می کنه و قابلیتش به فنا میره (مشروط میشه) .</value>
+  </string>
+  <string key="WiseElder">
+    <value>دانشجوی خردمند 📚(📚)</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>دانشجوی خردمند📚 یکی از افراد مهم هست تا جایی که حتی وزیر هم پشتش در میاد . اگر استادا بخوان برای بار اول اخراجش کنن به در بسته می خورن ولی دفعه دوم به راحتی آب خوردن و با یه اردنگی اخراجش می کنن ! اگه یکی از دانشجوهایی که قابلیت خاص داره ، از دانشگاه اخراجش کنه شلوارشو بخاطر عذاب وجدان زیاد‌ کثیف می کنه و قابلیتش به فنا میره (مشروط میشه) .</value>
+  </string>
+  <string key="RoleInfoThief">
+    <value>تو جیب بری 😈 میتونی بسته به شانست کارت دانشجویی یکی از دانشجو ها ، کارت شناسایی یکی از استادا یا انگل های دانشگاه رو بدزدی . نقش کسی که کارتشو دزدیدی مال تو میشه و اون به یک مشروط تبدیل میشه .</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>تو جیب بر 😈 هستی
+از اونجا که حالت جیب بری ( دزد ) برای هرشب فعاله ، شما 50 درصد شانس دارید که کارت دانشجویی متعلق به دانشجو های دانشگاه رو بدزدی . اگه شما کارت یکی از دانشجو ها رو با موفقیت بدزدید نقش هاتون جا به جا میشه و اون شخص هم مجبور میشه هر شب به جای شما به سرقت کارت دانشجوهای دیگه بپردازه و سرقت کارت ها ادامه پیدا می کنه . یادت باشه رفتن به سراغ رئیس دانشگاه و باغچه بان یعنی حکم اخراج !!</value>
+  </string>
+  <string key="Thief">
+    <value>جیب بر 😈(😈)</value>
+  </string>
+  <string key="AboutThief">
+    <value>جیب بر 😈 
+اگه حالت جیب بری ( دزد ) برای هرشب فعال باشه ، جیب بر 50 درصد شانس داره که کارت دانشجویی متعلق به دانشجو های دانشگاه رو بدزده . اگه بره کارت یکی از دانشجو ها رو با موفقیت بدزده ، نقش هاشون جا به جا میشه ... اون شخص هم مجبور میشه ، هر شب به جای جیب بر قبلی به سرقت کارت دانشجوهای دیگه بپردازه تا همینجوری سرقت کارت ها ادامه پیدا کنه . ولی اگه حالت دزد هرشب فعال نباشه کسی که کارتش دزدیده میشه تبدیل به مشروط میشه و چرخه جیب بری ادامه پیدا نمیکنه .</value>
+  </string>
+  <string key="AskImam">
+    <value>این دکمه رو فشار بده و یه سخنرانی در مورد حقوق دانشجوها انجام بده . یادت باشه وقتی این کار رو بکنی ، جلوی رای دادن اعضای دانشگاه رو می گیری و کسی اعدام نمیشه همچنین یک قدم به سمت اخراج شدن پیش میری . خواهشاً ، درست و بجا استفاده کن 😐</value>
+  </string>
+  <string key="ImamNoLynch">
+<!-- {0} - Imam's name -->
+    <value>حقوقدان 👨🏻‍⚖️ عزیز ، {0} ، یه سخنرانی تاثیر گذار در مورد حقوق دانشجو ها ، بخشیدن ها و اعتماد به هم میکنه . اعضای دانشگاه قانع میشن  که امروز رای ندن و کسی اعدام نشه 😎</value>
+  </string>
+  <string key="ImamNoLynchNow">
+    <value>به خاطر سخنرانی پر احساس ، شور انگیز و منطقی حقوقدان عزیزمون 👨🏻‍⚖️️ امروز رای گیری نداریم !
+</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+<!-- 0 - Wise Elder's name -->
+    <value>شما می خواستین {0} رو اخراج کنین اما متاسفانه اون دانشجوی خردمند 📚 بود و یک شصت خیره کننده جلوی چشم هاتون گرفت اما خوشبختانه هیچ کدومتون رو نشناخت .</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>استادا می خواستن از دانشگاه اخراجت کنن😨 اما کور خوندن و نمی دونستن که تو دانشجوی خردمند 📚 هستی و تجربه های زیادی داری 😏 تو بهشون انگشت شصت نشون دادی ، جلوشون وایسادی و مجبورشون کردی این یک بار رو از اخراج کردنت منصرف بشن چون تجربه و دانشت به نفع دانشگاهشونه (مثلا دلداری به استادا ) 😁</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+<!-- {0} - Hunter's Name -->
+<!-- {1} - Wise Elder's Name -->
+    <value>آمارگیر🎯 {0} تصمیم گرفت دانشجوی خردمند📚{1} همراه با خودش اخراج کنه اما نمی دونست اون مورد عنایت وزیر هست و پارتی زیاد داره . به همین خاطر قابلیتش ازش گرفته میشه و تبدیل به مشروط میشه !!</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+<!-- {0} - Gunner's Name -->
+<!-- {1} - Wise Elder's Name -->
+    <value>بچه وزیر 🧛‍♂️ {0} تصمیم گرفت صمیمی ترین دوست پدرش ( دانشجوی خردمند 📚 ) {1} رو اخراج کنه 😳 پدرش به محض اطلاع بخاطر این حرکت زشت و تبر زدنش ، اختیارشو ازش می گیره و تبدیل به مشروط میشه .  {0} به پهنای صورت گریه میکنه و تو سر خودش میزنه .</value>
+  </string>
+  <string key="ThiefStealFailed">
+<!-- {0} - The name of the thief's target -->
+    <value>تو سعی کردی کارت {0} رو از جیبش بدزدی اما موفق نشدی این کارو انجام بدی ...</value>
+  </string>
+  <string key="ThiefStealDead">
+<!-- {0} - The name of the thief's target -->
+    <value>تو سعی کردی کارت {0} رو از جیبش بدزدی اما موفق نشدی این کارو انجام بدی ... چون {0} مرده😐</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+<!-- {0} - The new role -->
+    <value>😑کارت شما دزدیده شد! شما الان {0} هستید.</value>
+  </string>
+  <string key="ThiefStoleRole">
+<!-- {0} - The name of the thief's target -->
+<!-- {1} - The new role -->
+    <value>😁تو با موفقیت کارت {0} رو دزدیدی. </value>
+  </string>
+  <string key="ThiefToMason">
+<!-- 0 - old mason's name -->
+<!-- 1 - new mason's name -->
+    <value>آخ {0} دیگه همتیمی شما نیست به جاش {1} بسیجی شده دقیقا مثل شماها 😐</value>
+  </string>
+  <string key="ThiefTransformToMason">
+<!-- 0 - mason collegues's name -->
+    <value>هم تیمی های شما(درصورت وجود) عبارت اند از:{0}.</value>
+  </string>
+  <string key="ThiefToCult">
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
+    <value>آخ {0} دیگه همتیمی شما نیست به جاش {1} یه انگل شده درست مثل شماها .‌ هواستون باشه لوتون نده 😐</value>
+  </string>
+  <string key="ThiefToWolf">
+<!-- 0 - old wolf's name -->
+<!-- 1 - new wolf's name -->
+    <value>آخ {0} دیگه همتیمی شما نیست به جاش {1} استاد شده دقیقا مثل شماها  . هواستون باشه لوتون نده 😐</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+<!-- 0 - teammates's name -->
+    <value>هم تیمی های شما(درصورت وجود) عبارت اند از:{0}.</value>
+  </string>
+  <string key="ThiefEnd">
+<!-- 0 - Thief's name -->
+    <value>{0} در اطراف دانشگاه میچرخه اما دیگه هیچ کارتی نیست که کش بره ، همه اخراج شدن . {0} سریعا دانشگاه رو ترک میکنه🚶🏻</value>
+  </string>
+  <string key="ThiefStealChosen">
+<!-- 0 - target's name -->
+    <value>تو {0} رو انتخاب کردی که کارتشو بدزدی</value>
+  </string>
+  <string key="AskThief">
+    <value>کارت کیو میخوای بدزدی ؟</value>
+  </string>
+  <string key="SecretLynchResultEach">
+<!-- 0 - Number of votes -->
+<!-- 1 - Player got lynched -->
+<!-- 2 - A list of players who voted {1} -->
+    <value>این {0} نفر رای دادن به {1}:{2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+<!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>نتیجه رای های امروز عبارت اند از :
+      {0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+<!-- 0 - Number of votes -->
+<!-- 1 - Player got lynched -->
+    <value>این {0} نفر رای دادن به {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>حالت رای مخفی:تعداد  رای ها</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>وقتی حالت رای مخفی روشن است . تعداد رای ها در اخر رای گیری نشان داده بشه ؟ /n حالت فعلی : {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>وقتی حالت رای مخفی روشن است . تعداد رای ها در اخر رای گیری نشان داده خواهد شد : {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>حالت رای مخفی: رای دهندگان</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>وقتی حالت رای مخفی روشن است ، تعداد رای ها در اخر رای گیری نشان داده خواهد شد . نام رای دهندگان به هر عضو ، نشان داده شود ؟ /n حالت فعلی : {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>وقتی حالت رای مخفی روشن است ، تعداد رای ها در اخر رای گیری نشان داده خواهد شد . نام رای دهندگان به هر عضو نشان داده خواهد شد : {0}</value>
+  </string>
+  <string key="ZombieBitten">
+<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
+    <value>عجیبه .... امشب جمع شدین که تصمیم بگیرید کیو معتاد کنید اما متوجه شدین که {0} اینجا نیست ! یعنی چه اتفاقی براش افتاده ؟ 🤔</value>
+  </string>
+  <string key="Peace">
+<!-- Used for Imam's button -->
+    <value>سخنرانی</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+<!-- Used in PM if the Imam uses his ability during lynch phase -->
+    <value>به خاطر سخنرانی بسیار تأثیرگذار و عمیق حقوقدان 👨🏻‍⚖️ امروز رای گیری نداریم !</value>
+  </string>
+  <string key="ThiefStoleYourRoleThief">
+    <value>متاسفانه کارت دانشجویی شما دزدیده شده 😑 شما الان به جای اون کسی که به شما زده ، جیب بر 😈 هستی و باید از شب بعد تلاش کنی کارت یکی رو بدزدی و چرخه دزدی از دانشجو ها را ادامه بدی 😁</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>😑 متاسفانه کارت شما دزدیده شده . شما الان یه مشروط 👱 هستی . برو بشین درستو بخون</value>
+  </string>
+  <string key="SerialKillerKilledYou">
+    <value>صدای مشکوک قدم زدن ها ، کار خودشو کرد ... دیشب به بدترین شکل ممکن توسط رئیس دانشگاه اخراج شدی !!!</value>
+  </string>
+  <string key="ThiefTeamEnd">
+    <value>گروه جیب بر</value>
+  </string>
+  <string key="StealKiller">
+    <value>اوه ... میخواستی کارت یکی رو بدزدی اما طرف رئیس دانشگاه در اومد 😐 تا هر جا که جا داشتی زدت و خون بالا آوردی بعدش هم اخراجت کرد .  اخه کسی از رئیس دانشگاه هم کارت میدزده ؟؟؟</value>
+  </string>
+  <string key="ThiefStoleKiller">
+<!-- used when Thief steals SK -->
+    <value>جیب بر {0} ، رفت پیش یکی که کارتشو بدزده اما ای دل غافل که به کاهدون زده ، طرف رئیس دانشگاه بود . آنقدر زدش تا خون بالا آورد سپس اخراجش کرد 😶</value>
+  </string>
+  <string key="BeholderSeerStolen">
+<!-- New roles 28.12.2018 -->
+    <value>جیب بر نقش کارآموز بایگانی رو دزدیده 😶 ! {0} الان کارآموز جدیده و {1} دیگه نمیتونه از نقش بقیه اطلاع پیدا کنه . </value>
+  </string>
+  <string key="Troublemaker">
+    <value>مشکل ساز  🤯(🤯)</value>
+  </string>
+  <string key="AboutTroublemaker">
+    <value>مشکل ساز 🤯 از اون دانشجوهایی که همه توی دانشگاه از دستش کفری هستن . وقتی عصبانی هست یه فریاد بلند تو کل دانشگاه می‌کشه . همان روز اعضای دانشگاه دو بار رای گیری می کنن تا به آرامش برسه !</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+    <value>تو مشکل سازی 🤯 از اون دانشجوهایی که همه توی دانشگاه از دستش کفری هستن . وقتی عصبانی هستی ، یه فریاد بلند تو کل دانشگاه می‌کشی . همون روز اعضای دانشگاه دو بار رای گیری می کنن تا تو به آرامش برسی !</value>
+  </string>
+  <string key="AskTroublemaker">
+    <value> میخوای امروز فریاد بزنی؟ </value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+    <value>مشکل ساز {0} 🤯 فریاد بلندی تو دانشگاه کشید و توجه اعضای دانشگاه رو از اینکه خیلی عصبانی هست جلب می کنه . امروز دو بار رای گیری می کنید تا به آرامش برسه !</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+    <value> بخاطر فریاد مشکل ساز ، شما امروز دوبار رای میدین . به امید اینکه تسلی بخش او باشین   </value>
+  </string>
+  <string key="Chemist">
+    <value>برادر زاده وزیر 👨‍🔬(👨‍🔬) </value>
+  </string>
+  <string key="AboutChemist">
+    <value>برادر زاده وزیر 👨‍🔬هر شب یا یک شب در میان با یکی از اعضای انتخابی دانشگاه شرط بندی می کنه ... هر کدام از آنها که شرط بندی رو ببازه ،  به حکم وزیر اخراج میشه !!!</value>
+  </string>
+  <string key="RoleInfoChemist">
+    <value>تو برادر زاده وزیر هستی 👨‍🔬به حکم وزیر هرشب دو تا نوشیدنی مشابه اما با طعم های مختلف با رنگ یکسان ( سیب و گلابی ) آماده می کنی . سپس به انتخاب خودت در هر شب یا یک شب درمیان می تونی یکی از اعضا دانشگاه را مجبور کنی تا در مورد طعم نوشیدنی ها شرط بندی کنه . اگر یکی از شماها شرط بندی را ببازه به حکم وزیر اخراج میشه ! امیدوارم انتخاب خوبی داشته باشی و گرفتار مسئول های دانشگاه نشی !</value>
+  </string>
+  <string key="ChemistBrewing">
+    <value> در حالی که اعضای دانشگاه به خوبی و خوشی در خواب بسر می برن ، شما مشغول آماده سازی نوشیدنی ها برای فردا شب هستید .</value>
+  </string>
+  <string key="AskChemist">
+    <value> امشب کی میتونه یه میزبان و شریک خوب توی شرط بندی باشه؟ </value>
+  </string>
+  <string key="ChemistTargetDead">
+    <value> تو به اتاق {0} رفتی تا باهم نوشیدنی بخورید اما اون ، مرده بود !  </value>
+  </string>
+  <string key="ChemistVisitYouSK">
+    <value>  برادر زاده وزیر 👨‍🔬 یعنی {0} اومد پیش تو که باهات سر نوشیدنی ها شرطبندی کنه اما تو این کارشو توهین تلقی کردی و فوری اخراجش کردی !</value>
+  </string>
+  <string key="ChemistSK">
+    <value>اوه ، اوه 😐 تو رفتی به {0} یعنی رئیس دانشگاه سم دادی . اونم درجا تو رو بخاطر توهینی که بهش کردی ، اخراج کرد !</value>
+  </string>
+  <string key="ChemistSKPublic">
+    <value> برادر زاده وزیر 👨‍🔬 یعنی {0} ، رئیس دانشگاه به شرطبندی دعوت کرد اما او این کارو توهین تلقی کرد و فوری اخراجش کرد ! </value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+    <value> آخ آخ ... برادر زاده وزیر امشب به سراغت اومد و پاپیچت شد 👨‍🔬 مجبورت کرد تا در شرطبندیش شرکت کنی ولی متاسفانه شرطو باختی . چه روش غم انگیزی برای ترک دانشگاه 😭 </value>
+  </string>
+  <string key="ChemistSuccess">
+    <value>شما به دیدن {0} رفتید و به شرطبندی دعوتش کردید . خوشبختانه اون شرطو باخت و اخراج شد . شما در راه برگشت به اتاق تان خدا خدا می کنید که تبر نزده باشید 🥺</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+<!-- {0} - Chemist's victim -->
+<!-- {1} - Will be replaced by "(victim) was (role)" -->
+    <value>برادر زاده وزیر 👨‍🔬 به دیدن {0} رفت تا به شرطبندی دعوتش کنه اما {0} شرطو باخت و به حکم وزیر اخراج شد . {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+    <value>برادر زاده وزیر 👨‍🔬 یعنی {0} به دیدن شما آمد تا مجبورت به انجام شرطبندی کنه اما بعد از لحظه ای تردید و نفرین کردن ، شرطو بردی ! خوش به حالت ! 😁😂</value>
+  </string>
+  <string key="ChemistFail">
+    <value> شما به دیدن {0} رفتی و به او حق شرطبندی دادی ... متاسفانه اون شرطو برد و منجر به اخراج شدنت توسط عموت شد 😳 شاید باید کار بهتری انجام می دادی !</value>
+  </string>
+  <string key="ChemistFailPublic">
+    <value> وزیر با ناراحتی و خشم ، مجبور شد برادر زاده خودشو یعنی {0} از دانشگاه اخراج کنه 🤦 ظاهراً {0} دیشب بدشانش بوده و شرطو باخته</value>
+  </string>
+  <string key="ChemistTargetEmpty">
+    <value>رفتی که با {0} شرطبندی کنی اما توی اتاقش نبود !</value>
+  </string>
+  <string key="ZombiesList">
+    <value> انگل های دانشگاه درحال حاضر : {0}</value>
+  </string>
+  <string key="SnowWolf">
+    <value> دکتر 👨‍⚕(🐺☃️)</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>تو دکتر هستی 👨‍⚕ ! با استفاده از هیپنوتیزم می تونی جلوی کار بقیه ( قابلیت های دیگران ) را بگیری اما یادت باشه که دوشب پشت سر هم نمی تونی جلوی کار یک نفر را بگیری .</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>دکتر👨‍⚕با استفاده از هیپنوتیزم می تونه جلوی کار بقیه ( قابلیت های دیگران ) را بگیره  اما نمی تونه دوشب پشت سر هم جلوی کار یک شخص یکسان بگیره  . توی تیم استادا هست</value>
+  </string>
+  <string key="AskFreeze">
+    <value> میخوای امشب کی رو هیپنوتیزم کنی؟ </value>
+  </string>
+  <string key="WolfPackList">
+    <value>استادا عبارتند از : {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value> استادا عبارتند از : {0} و دکتر {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value> آخ جون ... بلاخره {0} اخراج شد و تونستی بعد از یک دوره فشرده جایگاهش رو تصاحب کنی . چون اون پروفسور بود تو هم پروفسور  شدی . بقیه استادا عبارت اند از : {1} و دکتر {2} </value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>آخ جون ... بلاخره {0} اخراج شد و تونستی بعد از یک دوره فشرده جایگاهش رو تصاحب کنی . چون اون عضو هیئت علمی بود تو هم عضو هیئت علمی  شدی . بقیه استادا عبارت اند از : {1} و دکتر {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>آخ جون ... بلاخره {0} اخراج شد و تونستی بعد از یک دوره فشرده جایگاهش رو تصاحب کنی . چون اون استاد بود تو هم استاد شدی . بقیه استادا عبارت اند از : {1} و دکتر {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>آخ جون ... بلاخره {0} اخراج شد و تونستی بعد از یک دوره فشرده جایگاهش رو تصاحب کنی . چون اون حق التدرس بود تو هم حق التدرس شدی . بقیه استادا عبارت اند از : {1} و دکتر {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>آخ جون ... بلاخره {0} اخراج شد و تونستی بعد از یک دوره فشرده جایگاهش رو تصاحب کنی . چون اون دکتر بود تو هم دکتر شدی . {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>خفت گیر عزیز یعنی {0} بعد از یک دوره فشرده ، دکتر شد ! </value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>چون تونستی به درستی حدس بزنی {0} بالاخره از دانشگاه اخراج میشه الان تبدیل به استاد شدی . استادا عبارتند از: {1} و دکتر {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>کارت {0} رو دزدیدن و حالا {1} بجای اون تبدیل به دکتر شده ! هواستون باشه یار قبلی تون لوتون نده 😐 </value>
+  </string>
+  <string key="HarlotFrozen">
+    <value> هنگامی که درب اتاقتو باز میکنی متوجه نیروی عجیب دکتر میشی ، هیپنوتیزم شدی 👨‍⚕ ! تو در سکوت خیابان دانشگاه ، منتظر طلوع آفتاب میمانی .</value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>هنگامی که وسایل خودتو رو برای خوردن نوشیدنی جمع میکردی ... متوجه هیپنوتیزم شدن توسط دکتر میشی👨‍⚕! از گوشه ی چشم نوشیدنی هاتو می بینی که ناگهان بدنت شل تر میشه و به خواب میری . بزودی خورشید طلوع میکنه و دیگه مشکلی نداری</value>
+  </string>
+  <string key="ZombieFrozen">
+    <value>وقتی که داشتی برای دعوت کردن آماده میشدی دکتر را می بینی که داره هیپنوتیزمت می کنه 👨‍⚕! هم تیمی هات بهت قول دادند که امشب کارشون رو خوب انجام بدن .</value>
+  </string>
+  <string key="CHFrozen">
+    <value> هنگامی که داشتی تستر خودتو جهت بررسی برمیداشتی ... متوجه حضور دکتر میشی 👨‍⚕! اعضای بدنت در حال شل شدن هستش ، گویا داری به خواب میری . هیپنوتیزم شدی و امشب هیچ کاری از دستت برنمیاد !!!  </value>
+  </string>
+  <string key="SeeingFrozen">
+<!-- used for seer, fool, oracle and sorcerer -->
+    <value>لحظه ای که در حال چک کردن بودی ... متوجه حضور شیطانی دکتر بودی که از پشت پنجره ها داشت هیپنوتیزمت می کرد تا جلوی کارتو بگیره . بیخیال شو و غصه نخور ، فردا با طلوع خورشید دوباره می تونی به راحتی چک کنی و ازش انتقام بگیری</value>
+  </string>
+  <string key="GAFrozen">
+    <value> هنگامی که داشتی می رفتی از اخراج یه دانشجو توسط مسئولین جلوگیری کنی متوجه حضور دکتر میشی 👨‍⚕ ! او شما رو هیپنوتیزم کرد تا کم کم به خواب بری ... امشب هیچ کاری از دستت برنمیاد </value>
+  </string>
+  <string key="SKFrozen">
+    <value>همانطور که داشتی فکر می کردی کیو اخراج کنی متوجه حضور دکتر میشی که با شجاعت تمام ، هیپنوتیزمت کرد 👨‍⚕ !! هنگامی که صبح شد می تونی با بیشترین رنج و عذاب ، اخراجش کنی که یاد بگیره دیگه سربه‌سر رئیس دانشگاه نزاره</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>هنگامی که در اطراف دانشگاه مشغول کارت دزدی بودی ، حضور ناگهانی دکتر رو می بینی که فوری ، نیروی عجیبش ( هیپنوتیزم ) رو بهت منتقل می کنه👨‍⚕ ! همینجا به خواب میری و نمی تونی بقیه کارتو در امشب انجام بدی  </value>
+  </string>
+  <string key="DefaultFrozen">
+<!-- used for all roles without (every-)night action -->
+    <value>دیشب وقتی که داشتی کپه مرگتو می ذاشتی ... متوجه شدی یکی پشت دره و به زور می خواد هیپنوتیزمت کنه .‌ کمی که آگاه تر میشی ، می بینی اون دکتر هست 👨‍⚕ ! بعد از هیپنوتیزم و تسلیم شدنت بیهوش میشی و دکتر اتاقت رو ترک میکنه ....</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>میخواستی {0} رو هیپنوتیزم کنی اما توی اتاقش با جناب مدافع حقوق دانشجویی مواجه شدی ... اون باهات صحبت کرد و منصرفت کرد ! 🤷‍♂️</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>امشب با استفاده از هیپنوتیزم ، جلوی کار کردن {0} رو گرفتی !</value>
+  </string>
+  <string key="SnowFrozeKiller">
+    <value>دکتر {0} درحال حرکت به سمت اتاق رئیس دانشگاه بود اما رئیس قبل از رسیدنش متوجهش شد و بخاطر اون کار توهین آمیزش ، فوری اخراجش کرد !</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+    <value> چون همه استادا اخراج شدن و فقط تو موندی ، دیگه لازم نیست کسی رو هیپنوتیزم کنی ... بجاش میتونی یک به یک اعضا را اخراج کنی  </value>
+  </string>
+  <string key="SnowFrozeHunter">
+<!-- 0 - target's name -->
+    <value>دکتر {0} شب گذشته تلاش کرد تا آمارگیر رو هیپنوتیزم کنه ، اما آمارگیر سریع آمارش رو گرفت و تونست سریع اخراجش کنه !</value>
+  </string>
+  <string key="Lang">
+    <value>تغییر زبان بازی </value>
+  </string>
+  <string key="Mode">
+    <value>تغییر مود چالش</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>تنظیم حداکثر تعداد اعضا</value>
+  </string>
+  <string key="EndRoles">
+    <value>نمایش نقش ها در انتهای چالش</value>
+  </string>
+  <string key="MaxExtend">
+    <value>حداکثر زمان اضافه</value>
+  </string>
+  <string key="DayTimer">
+    <value>تنظیم مدت زمان روز</value>
+  </string>
+  <string key="NightTimer">
+    <value>تنظیم مدت زمان شب </value>
+  </string>
+  <string key="LynchTimer">
+    <value>تنظیم مدت زمان رای گیری</value>
+  </string>
+  <string key="RoleConfig">
+    <value>تنظیمات نقش ها</value>
+  </string>
+  <string key="Mechanics">
+    <value>مکانیک چالش</value>
+  </string>
+  <string key="GroupSettings">
+    <value>تنظیمات گروه</value>
+  </string>
+  <string key="Timers">
+    <value>زمان های چالش</value>
+  </string>
+  <string key="Done">
+    <value>پایان</value>
+  </string>
+  <string key="Back">
+    <value>بازگشت</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>لیست نامنظم اعضا</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>در همه مواقع لیست اعضا تغییر کند ؟ /n حالت فعلی : {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>لیست اعضا باید همیشه تغییر کند {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+    <value>باغچه بان 🌲 برای هر فردی که از دانشگاه اخراج میشه توی زمین خاکی جدید دانشگاه درخت می کاره تا سرانجام سرسبز بشه و رونق بگیره . بعضی از بازدید کننده هاش ممکنه توی باغچه بیوفتن بخاطر گود های زیادی که داره . استادا نمی تونن اخراجش کنن بخاطر اینکه تمام شب بیرونه .</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+    <value>تو باغچه بان هستی 🌲 برای هر فردی که از دانشگاه اخراج میشه توی زمین خاکی جدید دانشگاه درخت می کاری تا سرانجام سرسبز بشه و رونق بگیره . بعضی از بازدید کننده های شما ممکنه توی باغچه بیوفتن بخاطر گود های زیادی که داره ... ولی حداقل چون تمام شب رو بیرون هستی استادا نمی تونن شما رو اخراج کنن .</value>
+  </string>
+  <string key="GraveDigger">
+    <value>باغچه بان 🌲(☠️)</value>
+  </string>
+  <string key="DigNoGraves">
+<!--{0}: list of people who died since last grave-->
+    <value>درخت ها کاشته شدن و همه چیز همونطوره که باید باشه . پس میتونی با خیال راحت بخوابی .</value>
+  </string>
+  <string key="DigGraves">
+    <value>شما تا دیروقت برای {0} درخت می کارین . به امید اینکه زودتر شاهد سرسبزی باشی و یادشون رو گرامی بداری</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+    <value> همانطور که مشغول کمی استراحت بعد از کار هستی ... متوجه حضور دکتر میشی که با انرژی عجیبش تو رو هیپنوتیزم ( بی حرکت ) می کنه اما نگران نباش ، با طلوع خورشید انرژی اش بی اثر میشه و دوباره می تونی درخت بکاری . </value>
+  </string>
+  <string key="GraveDiggerNotHome">
+<!--{0}: grave digger-->
+    <value>هنگامی که رفتید {0} رو اخراج کنید متوجه میشید توی اتاقش نیست . تنها چیزی که اونجا می بینید چند تا وسیله باغبانی هست ...</value>
+  </string>
+  <string key="WolfFellWolves">
+<!--{0}: grave digger, {1}: wolf who fell into the grave-->
+    <value>شما به اتاق {0} رفتید اما {1} در راه توی چاله و چوله های باغچه ی جدید دانشگاه می افته !</value>
+  </string>
+  <string key="WolfFell">
+<!--{0}: the wolf who fell into the grave-->
+    <value> هنگامی که داشتی وسایلتو جمع می کردی متوجه کت توی باغچه میشی که شبیه کت یکی از استادا هست . مثه اینکه {0} توی چاله های باغچه دانشگاه افتاده و مقدمات اخراجش فراهم شده ! </value>
+  </string>
+  <string key="KillerStumbled">
+<!--{0}: grave digger-->
+    <value>در اطراف اتاق {0} یک لحظه هواستون پرت میشه و درون چاله و چوله های باغچه جدید دانشگاه می افتی . قبل از اینکه باغچه بان متوجه افتادنت تو چاله ها بشه ، خودتو نجات میدی اما پات بشدت آسیب دیده . شاید نباید به دنبال {0} می‌رفتید !</value>
+  </string>
+  <string key="KillerRandomKill">
+<!--{0}: intended victim, {1}: actual victim-->
+    <value> هنگامی که در راه اتاق {0} بودی ، درد شدیدی در پات احساس کردی پس تصمیم میگیری به نزدیک ترین اتاق یعنی اتاق {1} بروی ... حالا اون رو کشتی و با عجله به اتاقت برمیگردی  </value>
+  </string>
+  <string key="GuardBlockedRandomKiller">
+<!--{0}: victim-->
+    <value>شما به اتاق {0} رفتی اما مدافع حقوق دانشجویی اونجا بود و جلوی کارتو گرفت به اندازه ای که هیچ شانسی برات باقی نذاشت . امشب واقعا شب بدی برات بود .</value>
+  </string>
+  <string key="HunterFell">
+<!--{0}: grave digger-->
+    <value>یه شب دیگه بدون اینکه بتونید انگلی را اخراج کنید به سمت اتاقتون میرید ... ناامید در اطراف باغچه های جدید دانشگاه قدم میزنید . ناگهان به داخل یکی از چاله های باغچه می افتید  . شما فریاد میزنید و {0} به سراغ شما میاد اما خیلی دیر شده . شما بخاطر اینکه تو چاله افتادی , اخراجی عزیزم !</value>
+  </string>
+  <string key="HunterFellDigger">
+<!--{0}: cult hunter-->
+    <value>بعد از یک شب خسته کننده قبل از اینکه وارد اتاقتان شوید تستری رو داخل باغچه جدید دانشگاه می بینی ... مثل اینکه دانشجوی انگل شناس یعنی {0} قبلا بخاطر افتادن توی چاله و چوله های باغچه دانشگاه اخراج شده !</value>
+  </string>
+  <string key="CultFell">
+<!--{0}: Zombie-->
+    <value>صدای فریادی را از درون باغچه های جدید دانشگاه می شنوی ، با عجله به آنجا میری و {0} را می بینی که در چاله و چوله ها باغچه افتاده . آخه کدوم انگلی میخواد یه باغچه بان رو معتاد کنه ؟!</value>
+  </string>
+  <string key="CultConvertGraveDigger">
+<!--{0}: Zombie who fell, {1}: grave digger-->
+    <value>در راه اتاق {1} ناگهان {0} تصمیم می گیره به مسجد دانشگاه بره اما در چاله و چوله های باغچه جدید دانشگاه می افته . صدای فریاد او رو قبل از افتادن می شنوید اما برای نجات خود فرار می کنید !</value>
+  </string>
+  <string key="ChemistFell">
+<!--{0}: grave digger-->
+    <value>همانطور که در راه اتاق {0} بودید به شرط بندی داشتید فکر می کردید تا اینکه درون باغچه جدید دانشگاه می افتید . قبل از اینکه فریادی بزنی ، برای اخراج شدنت ، ناراحت‌ و غمگینی ☹️😰</value>
+  </string>
+  <string key="ChemistFellDigger">
+<!--{0}: chemist-->
+    <value>برادرزاده وزیر {0} دیشب به بدترین شکل تو چاله و چوله های باغچه جدید دانشگاه افتاد و اخراج شد . خدا به داداش برسه بخاطر شنیدن غرهای مادرش 😐😂</value>
+  </string>
+  <string key="HarlotFell">
+<!--{0}: grave digger-->
+    <value>رفتی تا با {0} اوقات خوشی را بگذرونی اما در راه توی چاله و چوله های باغچه جدید دانشگاه می افتی . اخراجی عزیزم 😐</value>
+  </string>
+  <string key="HarlotFellDigger">
+<!--{0}: harlot-->
+    <value>متاسفانه سرنوشت نذاشت دانشجوی اهل دل {0} آخرین حالشو ببره . بدیل افتادن در چاله و چوله های جدید دانشگاه اخراج شد 😰😰</value>
+  </string>
+  <string key="HarlotVisitDigger">
+<!--{0}: grave digger-->
+    <value>شما به اتاق {0} رفتید ، خوشبختانه به سلامت از باغچه های جدید دانشگاه گذشتی اما وقتی وارد شدید با اتاق خالی روبرو بودید ! ظاهرا {0} تمام شب رو مشغول بوده  </value>
+  </string>
+  <string key="GAFell">
+<!--{0}: grave digger-->
+    <value>متاسفانه امشب هیچ شانسی نداشتی ... رفتی که از حقوق {0} دفاع کنی منتها توی راه در چاله و چوله های باغچه ی جدید دانشگاه می افتی و اخراج میشی بخاطرش ☹️☹️</value>
+  </string>
+  <string key="GAFellDigger">
+<!--{0}: guardian angel-->
+    <value>در راه اتاقت متوجه رکوردر در داخل باغچه میشی ، سخت نیست تا بفهمی مدافع حقوق دانشجو یعنی {0} تو چاله و چوله ها افتاده 😐</value>
+  </string>
+  <string key="ThiefFell">
+<!--{0}: grave digger-->
+    <value> در اطراف باغچه جدید دانشگاه می خواستی کارت شناسایی {0} را بدزدی اما از بخت بدت درون چاله و چوله های باغچه می افتی . اخراجی عزیزم 😐😐</value>
+  </string>
+  <string key="ThiefFellDigger">
+<!--{0}: thief-->
+    <value> شب گذشته {0} با نهایت تمام تلاشش کرد تا کارت شناسایی تو بدزده اما درون چاله و چوله های باغچه افتاد ... اخراج شد !! </value>
+  </string>
+  <string key="ArsonistFell">
+    <value>روزگار عاقب جواب آدم هایی که برای دیگران بد می خواد رو میده ... درون چاله و چوله های باغچه ی جدید دانشگاه افتادی و مقدمات اخراجت فراهم شد . یکم آدم شو و درست زندگی کن همانند یک آدم پاک و شریف !</value>
+  </string>
+  <string key="ArsonistFellDigger">
+<!--{0}: arsonist-->	
+    <value> دیشب {0} اومد تا از نزدیک رفتار هاتو چک کنه تا بتونه گزارش سنگین دقیقی برای پاپوش درست کردن برات بنویسه اما درون چاله و چوله های باغچه افتاد . دفترچه و خودکاری که ازش باقی مونده رو به سرعت می سوزنی و بابت اخراج شدنش ، مست و خوشحال میشی</value>
+  </string>
+  <string key="DefaultFellPublic">
+<!--{0}: person that died, {1}: "(person) was (role)"-->
+    <value>ظاهرا {0} تلاش کرد به دیدن باغچه بان بره اما درون چاله و چوله های باغچه جدید دانشگاه افتاد و اخراج شد . چیزی نبود جز یک {1}</value>
+  </string>
+  <string key="HarlotFellPublic">
+ <!--{0}: harlot-->
+    <value>دانشجوی اهل دل {0} ناکام از دانشگاه اخراج شد 😐 ظاهرا دیشب درون چاله و چوله های باغچه ی جدید دانشگاه می افته . یادت گرامی ای {0} 😰 </value>
+  </string>
+  <string key="ZombieFellPublic">
+<!--{0}: Zombie who died-->
+    <value> انگل ها قصد داشتند مسجد دانشگاه را آتیش بزنن اما {0} که گروه رو هدایت میکرد درون چاله و چوله های باغچه جدید دانشگاه افتاد و اخراج شد .‌ بقیه انگل ها برای فرار از اخراج شدن و افتادن تو گور ، فرار کردند .</value>
+  </string>
+  <string key="ThiefFellPublic">
+<!--{0}: thief-->
+    <value>جیب بر {0} در اطراف باغچه جدید دانشگاه ، مشغول کارت دزدی بود تا اینکه درون چاله و چوله های دانشگاه می افته !!</value>
+  </string>
+  <string key="WolfFellPublic">
+ <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->	
+    <value>استادا آماده اخراج کردن بودند اما ناگهان {0} درون چاله های باغچه ی جدید دانشگاه می افته . {0} چیزی نبود جز یک‌ {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou">
+<!--{0}: grave digger-->
+    <value> اوه 😲 رئیس دانشگاه رو بی اعتنا می کنی ؟! اخراج شدی تا یاد بگیری همیشه احترام بالا سریتو داشته باشی مخصوصا وقتی که به شدت عصبانیه 😐😂</value>
+  </string>
+  <string key="SerialKillerSpotted">
+    <value>با عصبانیت و قلبی پر از کینه مشغول قدم زدن در کنار باغچه جدید دانشگاه بودی که ناگهان متوجه میشی باغچه بان {0} از روی عمد تو رو بی اعتنا کرده ... این کارش به شدت به عصبانیت اضافه می کنه تا جایی که تصمیم می گیری امشب دو تا اخراجی داشته باشی که یکیش همون باغچه بون باشه </value>
+  </string>
+  <string key="WolvesSpottedYou">
+<!--{0}: grave digger-->
+    <value> شما تلاش میکنید کار خود را انجام دهید اما ناگهان گرگی از پشت شما رو میکشه </value>
+  </string>
+  <string key="WolvesSpotted">
+<!--{0}: grave digger-->
+    <value>درحال گذر از باغچه های دانشگاه بودید که متوجه باغچه بان {0} شدید که مشغول کاشت درخت برای یادبود اخراج شده ها بود ... شما از این کارش خوشتون نمیاد ، یکی از شما سریع باهاش تندی می کنه و فوری از دانشگاه اخراجش می کنه</value>
+  </string>
+  <string key="WolvesSpottedDiggerPublic">
+<!--{0}: grave digger-->
+    <value> دیشب استادا در بین راه به باغچه بان {0} بر میخورن که مشغول کاشت درخت های یادبود بود ... این کارش به شدت آنها رو عصبانی می کنه تا جایی که تصمیم می گیرن در کنار هدف خودشون آن رو هم همزمان اخراج کنن !! </value>
+  </string>
+  <string key="KillerSpottedDiggerPublic">
+    <value>دیشب باغچه بان {0} به دلیل بی محلی کردن و نادیده گرفتن رئیس دانشگاه اخراج شد !! </value>
+  </string>
+  <string key="AllowArsonist">
+<!--{0}: Allow/Disallow-->
+    <value> رئیس حراست </value>
+  </string>
+  <string key="AllowArsonistQ">
+<!--{0}: Allow/Disallow-->
+    <value>رئیس حراست فعال باشد ؟ حالت فعلی : {0}</value>
+  </string>
+  <string key="AllowArsonistA">
+    <value> رئیس حراست اکنون {0} شد </value>
+  </string>
+  <string key="BurningOverkill">
+<!--{0}: Allow/Disallow-->
+    <value>مولتی چالش</value>
+  </string>
+  <string key="BurningOverkillQ">
+<!--{0}: Allow/Disallow-->
+    <value>رئیس دانشگاه و رئیس حراست در یک چالش فعال باشن ؟ ممکنه خیلی خیلی چالشی باشه ! 😈 \n حالت فعلی : {0}</value>
+  </string>
+  <string key="BurningOverkillA">
+    <value>رئیس دانشگاه و رئیس حراست هم اکنون در یک چالش {0} هستن .</value>
+  </string>
+  <string key="AboutArsonist">
+    <value> رئیس حراست 🧔 هدفش اینه که هر شب ، گزارش دروغ برای یکی از اعضا دانشگاه بنویسه و آماده اخراجش کنه تا در نهایت با ستاره دار کردن و ایجاد مشکل برای تک تک اعضا ، همشون رو اخراج کنه ! اگر بتونه کل افراد دانشگاه رو از سر راه برداره ، بودجه یکسال دانشگاه مال اون میشه ‌</value>
+  </string>
+  <string key="RoleInfoArsonist">
+    <value>تو رئیس حراست هستی 🧔 هدفت اینه که هر شب ، گزارش دروغ برای یکی از اعضا دانشگاه بنویسی و آماده اخراجش کنی . می تونی همه گزارش ها را نگهداری کنی و یکدفعه برای اخراج همشون اقدام کنی یا اینکه تا یک گزارش نوشتی فردا شب اقدام به اخراج کنی . اگر بتونی کل افراد دانشگاه را از سر راه برداری ، بودجه یکسال دانشگاه مال تو میشه ‌😁</value>
+  </string>
+  <string key="Arsonist">
+    <value>رئیس حراست 🧔(🔥)</value>
+  </string>
+  <string key="AskArsonist">
+<!--{0}: arsonist-->
+    <value>میخوای یه گزارش دیگه هم بنویسی یا میخوای با یه ارائه گزارش همشون رو اخراج کنی ؟</value>
+  </string>
+  <string key="ArsonistVisitKiller">
+    <value>رئیس حراست یعنی {0} تلاش کرد تا برای رئیس دانشگاه یک گزارش سنگین رد کنه اما رئیس دانشگاه سریع متوجه توهین و حقه اش شد سپس با یک شوت اخراجش کرد</value>
+  </string>
+  <string key="Spark">
+<!--{0}: person whose house was doused-->
+    <value> ارائه </value>
+  </string>
+  <string key="Doused">
+    <value> تونستی یک گزارش خوب و سنگین برای {0} بنویسی </value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+<!--{0}: saved person-->
+    <value>رئیس حراست مشغول پاپوش درست کردن برای شما بود ! اما خوشبختانه مدافع حقوق بشر اونجا بود و تونست منصرفش کنه . برو حالشو ببر 😁</value>
+  </string>
+  <string key="GuardSavedFromFire">
+<!--{0}: person whose house was cleaned-->
+    <value>انتظار نداشتی وقتی برای دفاع از حقوق {0} میری ، پاپوش درست کردن براش رو ببینی . اما خوشبختانه به خوبی تونستی رئیس حراست رو منصرف کنی.</value>
+  </string>
+  <string key="CleanDoused">
+<!--{0}: list of people who died in the flames-->
+    <value>در اتاق {0} رئیس حراست رو می بینی که مشغول پاپوش درست کردنه اما به خوبی تونستی منصرفش کنی !</value>
+  </string>
+  <string key="Burning">
+    <value>ااعضا متوجه اطلاعیه جدید بر روی بیلبورد عمومی دانشگاه میشن . ظاهرا دیشب رئیس حراست برای چند نفر گزارش سنگین رد کرد و باعث شد از دانشگاه اخراج بشن . در آرامش باشید : \n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+    <value>خنده های شیطانی رئیس حراست گویا خبری از چیزی می دهد .‌ او تونست به تنهایی کل اعضای دانشگاه رو اخراج کنه و بودجه یکساله دانشگاه رو برای خودش برداره !!</value>
+  </string>
+  <string key="Burn">
+    <value>میگن سر بی گناه بالای دار نمیره اما دروغ گفتن ... رئیس حراست بر علیه ات پرونده سازی کرد و منجر به اخراجت از دانشگاه شد !!!</value>
+  </string>
+  <string key="Augur">
+<!--{0}: role that is not part of the village-->
+    <value>غیبگو 🙅🏻‍♂️(🦅)</value>
+  </string>
+  <string key="AugurSees">
+    <value> همانطور که به آسمان نگاه میکنید متوجه فرم عجیب پرنده ها میشوید. این فقط میتونه به این معنی باشه که {0} توی روستا نیست. </value>
+    <value> پرنده ها بهت گفتن که {0} توی روستا نیست. </value>
+  </string>
+  <string key="AboutAugur">
+    <value>غیبگو 🙅🏻‍♂️اوایل روز که میشه روی پله های دانشکده علوم میشینه و از شکل پرنده هایی که بر روی فراز آسمان دانشگاه در حال پرواز هستن ... تشخیص میده چه کسانی یا چه نقش هایی توی دانشگاه حضور ندارن البته تا وقتی که تعداد اخراج شده ها از دانشگاه نسبتا پایین باشه !</value>
+  </string>
+  <string key="RoleInfoAugur">
+    <value>تو غیبگو 🙅🏻‍♂️هستی ! اوایل روز که میشه روی پله های دانشکده علوم میشینی و از شکل پرنده هایی که بر روی فراز آسمان دانشگاه در حال پرواز هستن ... تشخیص میدی چه کسانی یا چه نقش هایی توی دانشگاه حضور ندارن ! البته اگر تعداد اخراج شده ها از دانشگاه بالا بره و فقط خودت بمونی دیگه قادر به تشخیص نیستی</value>
+  </string>
+  <string key="AugurSeesNothing">
+<!--{0}: chosen victim, {1}: wolf who died in flames-->
+    <value>امروز در آسمان هیچ پرنده ای نیست . احتمالا این معنی رو میده که شما همه ی نقش ها ( کسانی ) که توی دانشگاه نیستن رو دیدی</value>
+  </string>
+  <string key="WolvesVisitBurn">
+<!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+    <value>استاد {1} میره که {0} از دانشگاه اخراج کنه اما می بینه که رئیس حراست پاپوش سنگینی براش درست کرده و اخراجش کرده  . رئیس حراست هم برای اینکه شاهدی از خودش و کثیف کاریش باقی نمونه ، {1} رو همراه اون اخراج می کنه !</value>
+  </string>
+  <string key="DefaultVisitBurn">
+<!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+    <value>احتمالا بهتر بود {0} توی اتاقش  میموند ... اون چیزی رو دید که نباید می دید . عقل که نباشه اخراج در پیشه  {1}</value>
+  </string>
+  <string key="WolfVisitBurn">
+    <value>استادا سعی کردن دیشب کسی رو اخراج کنن اما ظاهرا انتخاب اشتباهی داشتن و متوجه پاپوش رئیس حراست شدن . {0} برای اینکه رئیس حراست لو نده و مشکل بزرگی براش درست نکنه ، اخراج شد ! {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+    <value>اگه نگران سطح بازی برادر زاده وزیر  هستی که شاید نفر بعدی یک دانشجوی بی گناه دیگه باشه 😏 می تونم این نوید رو بهت بدم که دیگه قرار نیست برادر زاده وزیر چنین اشتباهی کنه چون از کارش کنار کشیده شده و حالا تبدیل به یه مشروطی شده !!</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+    <value> فقط {0} و {1} در دانشگاه باقی موندن ... ناگهان {0} از ته دل قهقهه می‌زنه و گزارش سنگینی که از قبل برای {1} نوشته رو فوری ارائه میده سپس باعث میشه از دانشگاه اخراج بشه </value>
+  </string>
+  <string key="ArsonistTeamEnd">
+    <value>تیم رئیس حراست</value>
+  </string>
+  <string key="HarlotVisitNotHome">
+    <value>شما به اتاق {0} رفتی که یکم شیطونی کنید 😅 اما کسی نبود</value>
+  </string>
+  <string key="Validate">
+<!-- Used for the button in the role selection menu -->
+    <value>‼ تصدیق کردن ‼</value>
+  </string>
+  <string key="Valid">
+<!-- Used for the button in the role selection menu -->
+    <value>✅ معتبر ✅</value>
+  </string>
+  <string key="RoleConfigValid">
+    <value>تنظیمات پیکر بندی نقش در حالت معتبر قرار دارد  و در حال حاضر استفاده می شود</value>
+  </string>
+  <string key="RoleConfigInvalid">
+    <value>تنظیمات پیکربندی نقش ها در حالت نامعتبر است ! لطفا این حالت را روشن کنید . نقش های بیشتر به بات کمک می کند تا چالش رو بهتر بالانس کنه .</value>
+  </string>
+  <string key="GroupIdleCount">
+<!-- {0} - Idle count in the last 24 hours in the current group -->
+<!-- This string is appended to the "IdleCount" string, make sure this string fits as next sentence after "IdleCount" -->
+    <value>تا الان {0} بار در این گروه کشته شده است.</value>
+  </string>
+  <string key="NewDGRoleModel">
+<!-- 0 - target's name -->
+    <value>تو خفت گیری ! از اون دانشجوهایی که منتظرن هر چه زودتر آدم مورد نظرش از دانشگاه اخراج بشه تا فوری جاشو بگیره . آدم مورد نظرت هم کسی نیست جز {0}</value>
+  </string>
+  <string key="RoleConfigInfo">
+<!-- Info for translators: Look at the <string key="Valid"> for the bottom left button's text after the validation succeeded -->
+    <value>از کدام نقش ها می خواهید در چالش استفاده کنید ؟ /n آموزش پیکربندی : ✅ = نقش فعال است ❌ = نقش غیرفعال است /n بعد از انتخاب نقش ها ،  نیاز دارید که با دکمه تصدیق کردن انتخاب های خود رو تایید کنید .‼️ تصدیق کردن‼️ واقع در گوشه سمت چپ رو فشار دهید تا نقش های انتخابی خود رو فعال کنید . اگر انتخاب خود رو تایید نکنید ، انتخاب های قبلی نادیده گرفته میشود و همه نقش ها در چالش استفاده می شود . اگر بیش از حد نقشها را غیر فعال کنید ، ربات قادر به ایجاد یک بازی متعادل نخواهد بود و تایید شکست خواهد خورد . در این حالت نقش های بیشتری رو فعال کنید . اگر اعتبار سنجی معتبر باشد دکمه سمت چپ پایین به شکل ✅ معتبر ✅ در می آد ، در این حالت تنظیمات شما به درستی اعمال شده و مورد استفاده قرار می گیره .‌</value>
+  </string>
+  <string key="EnableAllRoles">
+    <value>فعال کردن همه</value>
+  </string>
+  <string key="DisableAllRoles">
+    <value>غیر فعال کردن همه</value>
+  </string>
+  <string key="CHHuntedYou">
+    <value>انگل شناس💂‍♂️ تو رو توی اتاقت مشغول مواد کشیدن دید ! آنقدر توی دنیای دیگه بودی که حتی متوجه حکم اخراجی که فوری برات صادر کرد نشدی</value>
+  </string>
+  <string key="ExitAnonymousMode">
+    <value>شما نمیتوانید به صورت ادمین مخفی از این بات استفاده کنید!!لطفا از این حالت خارج شوید (یا از کسی که این حالت را برای شما فعال کرده بخواهید این کار را برای شما انجام دهد) و دوباره تلاش کنید</value>
+  </string>
+  <string key="AskArsonistNoDoused">
+    <value>دوست داری برای چه کسی گزارش بنویسی ؟</value>
+  </string>
+  <string key="AlreadyDousedList">
+    <value>موفق شدی برای این افراد گزارش سنگین بنویسی : \n{0}</value>
+  </string>
+  <string key="DoppelgangerEnd">
+    <value>آدم واقعا چقدر می تونه بدبخت و بدشانش باشه که نتونه تنها کاری که براش ساخته شده رو انجام بده ؟ {0} در حال حاضر در دانشگاه تنهاست و کسی نیست که خفتش کنه ☹️</value>
+  </string>
+</strings>

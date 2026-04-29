@@ -1,0 +1,1736 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+	<!--Basado en el lenguaje de Los Simpson de @WerewolfZBot. Editado y corregido por @Y_erik. Agregados varios por @malwod.-->
+<strings>
+  <language name="Spanish Simpson" base="Español" variant="Simpson" code="es" isDefault="true"/>
+  <string key="NotInGame">
+    <value>No parece que estés intentando salvar Springfield ahora mismo...</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <!-- 0 - Player name -->
+    <value>¡{0} ha empezado una partida! Pulsa el botón para unirte a la diversión… ¡y probablemente ser expulsado de Springfield!</value>
+    <value>¡{0} ha iniciado una nueva partida! ¡Pulsa el botón para intentar salvar la ciudad!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+   <!-- 0 - Player name -->
+   <value>¡{0}Ha comenzado el caos en Springfield ! Pulsa el botón para unirte a la diversión… y probablemente ser expulsado de Springfield :P</value>
+   <value>¡{0} El caos se ha apoderado de Springdield! ¡Pulsa el botón para intentar salvar la ciudad!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>¡No te puedes unir ahora! Ya hay ciudadanos salvando Springfield.</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>¡Ya te has unido!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>Queda 1 minuto para unirse.</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <!-- 0 - remaining seconds (number) -->
+    <value>Quedan {0} segundos para unirse.</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>¡No hay suficientes ciudadanos dispuestos a salvar la ciudad!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>El juego está empezando, espera un segundo mientras asigno los roles y actualizo la base de datos.</value>
+  </string>
+  <string key="BannedForExploit">
+    <!-- 0 - Player name -->
+    <value>{0} ha sido expulsado de Springfield por intentar hacer trampas (prohibidos nombres con /).</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <!-- 0 - Player name -->
+    <value>{0}, por favor, cambia tu nombre para unirte.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>¡Lo siento, ya no cabe mas gente en la ciudsd!</value>
+  </string>
+  <string key="PlayerJoined">
+    <!-- 0 - Player name -->
+    <!-- 1 - current players -->
+    <!-- 2 - Minimum players -->
+    <!-- 3 - Maximum players -->
+    <value>{0} se ha unido a la partida. {1} jugadores, {2} mínimo, {3} máximo.</value>
+  </string>
+  <string key="PMTheBot">
+    <!-- 0 - Player name -->
+    <!-- 1 - bot username -->
+    <value>{0}, por favor, mándame un privi (@{1}) con /start. No tengo constancia de haberte escrito por privado antes. Para que pueda enviarte mensajes necesito, que me hables tú primero.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>¡No puedes huir! ¡Ya te han expulsado de Springfield!</value>
+  </string>
+  <string key="Flee">
+    <!-- 0 - Player name -->
+    <value>¡{0} ha huido presa del pánico!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <!-- 0 - Player name -->
+    <!-- 1 - Player role -->
+    <value>{0} era {1}.</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <!-- 0 - Number of players -->
+    <value>{0} jugadores restantes.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>¡Hey, aún no te he preguntado nada!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>No parece que estés intentando salvar la ciudad...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>¡No encuentro ningún jugador con ese nombre!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>¡Esta respuesta no es válida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <!-- 0 - wolf teammate name -->
+    <!-- 1 - Victim name -->
+    <value>{0} ha sacado a los perros para que se coman a{1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <!-- 0 - Voter name -->
+    <!-- 1 - Target name -->
+    <value>{0} ha votado expulsar a {1}.</value>
+  </string>
+  <string key="IdleKill">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>{0} no ha votado dos noches seguidas. Los demas ciudadanos han visto esto como un crimen terrible y {0} ha sido expulsado de Springfield.\n{1}.</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>¡¡¡Tú, Grimes!!! Con la caida del Sr.Burns te haces cargo de la central para intentar eliminar a los ciudadanos.</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Ya has elegido. No hay vuelta atrás.</value>
+  </string>
+  <string key="BeholderSeer">
+    <!-- 0 - seer name -->
+    <value>\nSabes que Lisa Simpson es {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <!-- 0 - seer name -->
+    <value>{0} era Lisa Simpson y ha sido expulsada de Springfield.Ahora que no esta, es tu turno de convertirte en el genio de la clase.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <!-- 0 - apprentice name -->
+    <!-- 1 - seer name -->
+    <value>{0} era Martin Prince, ahora ha llegado su turno de relevar a {1} como el nuevo Genio.</value>
+  </string>
+  <string key="SeerSees">
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value>¡Despues de estudiar las listas de ciudadanos descubres que {0} es {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>¿A quién quieres expulsar de la ciudad?</value>
+  </string>
+  <string key="AskDetect">
+    <value>¿A quién quieres investigar?</value>
+  </string>
+  <string key="AskShoot">
+    <!-- 0 - bullet count -->
+    <value>¿A quién quieres lanzar una tarta? {0} tartas(s) restantes.</value>
+  </string>
+  <string key="AskVisit">
+    <value>¿A quién quieres visitar?</value>
+  </string>
+  <string key="AskSee">
+    <value>¿A quién quieres estudiar?</value>
+  </string>
+  <string key="AskGuard">
+    <value>¿A quién quieres proteger?</value>
+  </string>
+  <string key="AskEat">
+    <value>¿A quién quieres mandar a los perros?</value>
+  </string>
+  <string key="AskHunt">
+    <value>¿A quién quieres dar caza?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>¿Quién quieres que sea tu maestro?</value>
+  </string>
+  <string key="AskConvert">
+    <value>¿A quién quieres convertir a la orden del lider?</value>
+  </string>
+  <string key="DiscussWith">
+    <!--Leave the leading spaces here please-->
+    <!-- 0 - teammate names -->
+    <value>  Asegúrate de hablarlo con {0}.</value>
+  </string>
+  <string key="And"> 
+	<!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> y </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Eres Wailon Smithers 😼. Por el momento, eres ayudas a Springfiled, pero si el Sr.Burns llama a tu puerta no dudaras en unirte a el.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Eres Rex Banner 🕵️‍♂️. Durante el día, puedes elegir un ciudadano de Springfield para investigarlo. Sin embargo, si lo haces, tienes un 40% de probabilidad de que el Sr.Burns se entere y te mande a los perros.</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>¡Enhorabuena! ¡Eres Homero Simpson 🍻! Prefieres pasarte el dia en el Bar de Moe a estar en casa junto a tu familia.(en realidad, todo el mundo lo sabe...).</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Eres Maude Flanders 👼. Cada noche, puedes elegir a un ciudadano de Springfield para proteger. Sin embargo, si eliges al Sr.Burns existe un 50% de probabilidad de que te mande a los perros.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Eres El Hombre Pay 🔫. Tienes dos tartas. Durante el día, puedes elegir lanzar una tarta conmocionadora a otro ciudadano para expulsarlo. Todo el mundo oirá los tartazos y sabrán que eres El Hombre Pay (y no el Sr.Burns).</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>¡Putón! Eres Edna Krabappel 💋. Durante la noche puedes visitar a un Springfieldiano y sabrás si es un buen ciudadano (no es aliado del Sr.Burns) Si visitas a un aliado del Sr.Burns o a su víctima esa noche, tambien seras expulsado por los perros. Por otro lado, si esa noche el Sr.Burns te manda a los perros y tratan de expulsarte, no te encontrarán en casa y seguiras viviendo en Springfield.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>¡Eres Frank Grimes 🥸! Por ahora, eres un ciudadano mas, pero una vez el resto de aliados del Sr.Burns sean expulsados, te convertirás en uno de ellos. Si el genio te elige, puede que te identifique como aliado del Sr.Burns o no.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>¡¡ERES Tony el Gordo 🐺!! (bien por ti). Cada noche podrás mandar tu mafia a un ciudadano de springfield. MUAJAJAJAJA</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Eres Lisa Simpson 👳‍♂️. Cada noche estudiaras a los ciudadanos de springfield para saber si son buenos springfieldianos o aliados del Sr.Burns.</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >Eres un simple Springfieldiano 👱‍♂️. Estás condenado a pasar tus días viendo la tele... y a ser expulsado por el Sr.Burns.</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >Eres Abe Simpson 👺. Si consigues ser expulsado de Sprinfield volveras para atormentar a todos los ciudadanos y ganaras automaticamente (Y posiblemente nadie se quede contigo en springfield)</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >¡Eres Bart Simpson 👶! Elige un ciudadano para que sea tu -Maestro-; si es expulsado, usaras todo lo aprendido para ayudar al Sr.Burns a expulsar a todos de la ciudad,</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Eres Seymour Skinner 👁. Como profesor del colegio sabras quien es el genio del colegio (Lisa Simpson). Esa es tu unica funcion.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Eres Martin Prince 🙇‍♂️. Si Lisa Simpson es expulsada de la ciudad, ocuparás su puesto como genio del colegio.</value>
+  </string>
+  <string key="RoleInfoZombie" >
+    <value >Eres un miembro de la secta del lider 👤. Cada noche puedes elegir a otro jugador para convertirlo en un sectario. Si al final de la partida todos los jugadores vivos sois sectarios tomareis Springfield.</value>
+  </string>
+  <string key="RoleInfoZombieHunter" >
+    <value >Eres Clancy Wiggum 💂‍♂️, ¡Hay un sectario en el pueblo que está tratando de convertir a todos a su secta! Cada noche, elige un jugador; si es un sectario, ese jugador muere. Si un sectario trata de convertirte, el último miembro que se unió a la secta es expulsado de la ciudad.</value>
+  </string>
+  <string key="LynchTime" >
+    <!-- 0 - number of seconds -->
+    <value>
+      El ocaso se acerca y los ciudadanos tratan de decidir a quién expulsaran esta tarde... ¡Todo el mundo tiene {0} segundos para votar a partir de ahora!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <!-- 0 - number of seconds -->
+    <value >Ha llegado el día. Tenéis {0} segundos para discutir y hacer vuestras acusaciones y defensas.</value>
+  </string>
+  <string key="NightTime" >
+    <!-- 0 - number of seconds -->
+    <value >Cae la noche. Todo el mundo se dirige a su cama agotado después de un día tan intenso. Ciudadanos nocturnos, ¡tenéis {0} segundos para realizar vuestras acciones!</value>
+  </string>
+  <string key="LynchKill" >
+    <!-- 0 - player name -->
+    <!-- 1 - player role -->
+    <value >Los ciudadanos tienen su veredicto, entre tantas dudas y sospechas, {0} ha sido expulsado de Springfield {1}.</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Incapaces de tomar una decisión sobre a quien expulsar, la multitud vuelve frustrada a pasar la noche en sus casas... [Empate en las votaciones].</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >¡Qué extraño, nadie ha votado! Nadie es expulsado esta noche...</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <!-- 0 - victim name -->
+    <value >Los ciudadanos se reúnen por la mañana, pero no ven a {0}. Miran toda su casa, hasta descubir que anoche fue expulsado de Springfield. Rex Banner abandona Springfield.</value>
+  </string>
+  <string key="GuardianEaten" >
+    <!-- 0 - victim name -->
+    <value >Llega la mañana y, para la consternacion de todos un mensaje aparece en la iglesia {0}, Maude Flanders ha sido expulsada de Springfield.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <!-- 0 - victim name -->
+    <value >Mientras que todo el mundo empieza a salir de sus casas, se encuentran trozos de tarta desperdigados. Los ciudadanos miran la casa de {0} y la encuentran vacia. Habeis perdido a {0}, El Hombre Pay.</value>
+  </string>
+  <string key="SeerEaten" >
+    <!-- 0 - victim name -->
+    <value >Los aldeanos se despiertan en la mañana para encontrarse los libros de {0}, esparcidos sobre un mapa de springfield y los nombres de los ciudadanos. Lisa Simpson ha sido expulsada de Springfield.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <!-- 0 - victim name -->
+    <value >Todo el mundo se despierta con el olor a madera y alcohol quemado… ¡El bar está ardiendo! Tras apagar las llamas, no son capaces de encontrar a {0}. Homero Simpson a sido expulsado de la ciudad.[No sin antes emborrachar al Sr.Burns]</value>
+  </string>
+  <string key="FoolEaten" >
+    <!-- 0 - victim name -->
+    <value >Mientras que el sol sale en la aldea, encontráis los libros de {0} , pero con un mapa de... ¿¿¿Shelbyville??? ¡¡¡QUÉ NECIO!!!. Cletus Spuckler ha sido expulsado de Springfield</value>
+  </string>
+  <string key="DefaultEaten" >
+    <!-- 0 - victim name -->
+    <!-- 1 - victim role -->
+    <value>Al levantarse todo el mundo, un silencio terrible inunda Sprinfield. Los ciudadanos exploran las casas hasta encontrar la de {0} vacia. ¡Un Springfieldiano ha sido expulsado! {1}.</value>
+  </string>
+  <string key="HunterKilledZombie">
+    <!-- 0 - victim name -->
+    <value>Un gran silencio viene de la casa de {0}. Los ciudadanos la inspeccionan hasta encontrar una foto del lider frente a un altar oscuro. ¡Un sectario ha sido expulsado por Clancy Wiggums.</value>
+  </string>
+  <string key="NoAttack" >
+    <value >Los ciudadanos se reúnen por la mañana en la plaza de Jeremias Springfield, suspirando de alivio. Parece que esta noche el Sr.Burns estaba contento y no saco a los perros.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Has sido llamado por el Sr. Burns ⚡. ¡Como no puedes decirle que no al Sr.Burns te has hecho aliado suyo!</value>
+  </string>
+  <string key="WolfTeam">
+    <!-- 0 - teammate names -->
+    <value>Tus Aliados: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <!-- 0 - victim name -->
+    <value >¡Mandaste los perros a casa de {0}... pero los paraste a tiempo al ver a Smithers y le has obligado a ayudarte! ¡Felicidades por vuestro nuevo aliado!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true">
+    <value >¡Oh, no! ¡Has sido expulsado de Springfield!</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <!-- 0 - victim name -->
+    <value >¡Oh, no! ¡{0} era Homero Simpson! Ahora estáis borrachos y no podreis expulsar a nadie mañana por la noche.</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >¡Has intentado proteger a un aliado del Sr.Burns! Has tenido mala suerte y... te ha expulsado de Springfield. :(</value>
+  </string>
+  <string key="GuardSaved" >
+    <!-- 0 - saved player name -->
+    <value >¡Has salvado a {0} de ser expulsado!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <!-- 0 - player name -->
+    <value >{0} no fue expulsado anoche. Básicamente, no has hecho nada.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <!-- 0 - player name -->
+    <value>¡Fuiste a proteger a {0}, pero no había nadie en casa! [Estaba visitando a otro jugador].</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >¡Maude Flanders 👼 estuvo velando por ti anoche y luchó contra el atacante que intento expulsarte! (Fuiste elegido por un atacante — Bob Patiño o un Aliado del Sr.Burns—, pero te salvaron).</value>
+  </string>
+  <string key="HarlotEaten" >
+    <!-- 0 - player name -->
+    <value >Edna Krabappel 💋 decidió tomarse la noche libre y quedarse en casa. ¡¡Pero qué gran error!! ¡A {0} la han expulsado de la ciudad [No actuó esa noche y un atacante la expulso de la ciudad].</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <!-- 0 - player name -->
+    <value >¡Ups! ¡{0} no estaba en casa! Te quedaste sin expulsar a nadie. [Estaba visitando a otro ciudadano].</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <!-- 0 - player name -->
+    <value >Te escabulliste en la casa de {0} para divertirte un rato, pero te encontraste con un aliado del Sr.Burns. Has sido expulsado de la ciudad (has visitado a un aliado del Sr.Burns).</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <!-- 0 - player name -->
+    <value >¡{0} se escabulló anoche en la casa equivocada! Nadie ha vuelto a ver su cuerpo lujurioso paseando por Springfield (Visitó a un enemigo aliado del Sr.Burns.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <!-- 0 - harlot name -->
+    <!-- 1 - victim name -->
+    <value >{0} se escabulló anoche en la casa de {1} para pasar un buen rato y liberar el estrés. ¡Desafortunadamente, lo que se encontró fue a un aliado del Sr.Burns que se estaba expulsandl a {1}! ¡El aliado de Burns se percato de tu presencia… {0} ha sido expulsado de la ciudad.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <!-- 0 - target name -->
+    <value >¡Después de una noche loca de sexo y perversión con {0}, puedes asegurar que no es un aliado del Sr.Burns!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >En mitad de la noche soñaste que la Edna Krabappel 💋 te estaba cabalgando. ¡Pero. al despertarte te diste cuenta de que no fue un sueño! Por desgracia, la noche era oscura y no pudiste ver bien su cara. En cuanto terminasteis, se fue en silencio para dejarte a solas con tus pensamientos. ¡y una buena satisfacción en el cuerpo! [Edna te ha visitado].</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <!-- 0 - detective name -->
+    <value >¡Has pillado a {0} husmeando por ahí! ¡Es Rex Banner 🕵️‍♂️!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <!-- 0 - target name -->
+    <!-- 1 - target role -->
+    <value >Tus investigaciones te han mostrado que {0} es {1}.</value>
+  </string>
+  <string key="HarlotShot" >
+    <!-- 0 - gunner's name -->
+    <!-- 1 - Harlot's name -->
+    <value >Parece que El Hombre Pay 🔫 no quedo satisfecho después de pasar la noche con Edna Krabappel 💋. {0} se ha tomado la venganza por su mano y {1} ha sido expulsado de la ciudad. [{0} es El Hombre Pay 🔫 y ha eliminado a {1}].</value>
+  </string>
+  <string key="DefaultShot" >
+    <!-- 0 - Gunner's name -->
+    <!-- 1 - target name -->
+    <!-- 2 - Target's revealed name ( Target was a role) -->
+    <value >De repente, el sonido de un tartazo inunda el aire. La aldea se gira para ver a {0} de pie sobre el cuerpo somnoliento de {1} con una tarta en su cara. {2}. [{0} es El Hombre Pay y ha expulsado a {1}].</value>
+  </string>
+  <string key="WolfWins" isgif="true">
+    <value >¡Springfield ha caido en manos del Sr.Burns y sus Aliados.!</value>
+  </string>
+  <string key="WolvesWin" isgif="true">
+    <value >¡Springfield ha caido en manos del Sr.Burns y sus Aliados.!</value>
+  </string>
+  <string key="VillageWins" isgif="true">
+    <value >¡Los ciudadanos han expulsado a todos los peligros! Podéis volver en paz a vuestras casas, ¡Springfield esta a salvo! :)</value>
+  </string>
+  <string key="TannerWins" isgif="true">
+    <value >¡Oh, no! ¡Habéis linchado a Abe Simpson! De forma estúpida comienza a contar sus historias, todos abandonan springfield y él gana la ciudad.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Ciudadanos restantes, roles y equipos:</value>
+  </string>
+  <string key="ZombieVotedConvert" >
+    <!-- 0 - Voter's name -->
+    <!-- 1 - target name -->
+    <value >{0} ha votado convertir a {1}.</value>
+  </string>
+  <string key="CultConvertZombieHunter">
+    <!-- 0 - Yougest Zombie (killed)'s name' -->
+    <!-- 1 - ZombieHunter's name -->
+    <value>{0} fue enviado para hacer tu trabajo sucio y convertir a {1}...; sin embargo, ¡era Clancy Wiggums ¡{0} ha sido expulsado de la ciudad!</value>
+  </string>
+  <string key="ZombieHunterKilledCultVisit">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - Number of Zombies left -->
+    <value>{0} vino a tu casa esta noche para que te unieras a su causa…, pero enterraste tu cuchillo en su pecho. Un sectario ha muerto… ¡Queda(n) {1}!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>¡Los sectarios te han convertido a la secta del lider! Ahora eres un sectario 👤. Cada noche tendrás ocasión de convertir a otro ciudadano.</value>
+  </string>
+  <string key="CultTeam">
+    <!-- 0 - Number of Zombies -->
+    <value>Sectarios: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <!-- 0 - new Zombie's name -->
+    <value>¡{0} se ha unido a la Secta!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <!-- 0 - Newest Zombie's name -->
+    <!-- 1 - target name -->
+    <value>{0} fue enviado a hacer tu trabajo sucio y convertir a {1}..., ¡pero no había nadie en casa!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >Todos las amenazas a la Secta del Lider han sido eliminadas y los únicos ciudadanos en pie han sido transformados en Sectarios ¡La Secta ha ganado! nananana ¡LIDER!</value>
+  </string>
+  <string key="HunterVisitDead">
+    <!-- 0 - target name -->
+    <value>¡Fuiste a mirar en la casa de {0}, pero ya ha sido expulsado de la ciudad.</value>
+  </string>
+  <string key="HunterFindZombie">
+    <!-- 0 - target name -->
+    <value>Vas a la casa de {0} y te lo encuentras orando frente al altar del lider… Rápidamente, lo llevas a fuera de casa para expulsarlo de la ciudad. [{0} era un sectario].</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <!-- 0 - target name -->
+    <value>Vas a casa de {0}, pero no hay ningún cántico misterioso. No es un sectario, por lo que te vuelves a casa.</value>
+  </string>
+  <string key="WildChildToWolves"> 
+    <!-- 0 - Werechild's name -->
+    <value>¡El maestro de {0} acaba de ser expulsado! En un ataque de rabia, ¡se convierte en un aliado del Sr.Burns!</value>
+  </string>
+  <string key="WildChildTransform">
+    <!-- 0 - role's name -->
+    <!-- 0 - teamate's names -->
+    <value>¡{0} ha sido expulsado! En un ataque de rabia, ¡han decidido unirte al Sr. Burns! Tus nuevos aliados son: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
+  <string key="Villager">
+    <value>un Springfieldiano 👱‍♂️</value>
+  </string>
+  <string key="Drunk">
+    <value>Homero Simpson 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Edna Krabappel 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Lisa Simpson 👳‍♂️</value>
+  </string>
+  <string key="Traitor">
+    <value>Frank Grimes 🥸</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Maude Flanders 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Rex Banner 🕵️‍♂️</value>
+  </string>
+  <string key="Wolf">
+    <value>Tony el Gordo 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Wailon Smithers 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>El Hombre Pay 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Abe Simpson 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Cletus Spuckler 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Bart Simpson 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Seymour Skinner 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Martin Prince 🙇‍♂️</value>
+  </string>
+  <string key="Zombie">
+    <value>Un sectario 👤</value>
+  </string>
+  <string key="ZombieHunter">
+    <value>Clancy Wiggum 💂‍♂️</value>
+  </string>
+<!-- These are for the player list -->
+  <string key="RanAway">
+   <value>🏃‍♂️ Escapo</value>
+ </string>
+ <string key="Dead">
+   <value>💀 Muerto</value>
+ </string>
+ <string key="Alive">
+   <value>💃 Vivo</value>
+ </string>
+ <string key="PlayersAlive">
+   <value>Ciudadanos en Springfield</value>
+ </string>
+<!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Un Magio 👷‍♂️</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Eres un miembro de los Magios 👷‍♂️. Si hay otro, sabrás quién es; en caso contrario, eres un Springfieldiano más.</value>
+  </string>
+  <string key="MasonEaten">
+    <!-- 0 - dead man's name -->
+    <value>Cuando todo el mundo se levanta, encuentran la casa de {0} totalmente vacia ¡Uno de vuestros Magios 👷‍♂️ ha sido expulsado de la ciudad!</value>
+  </string>
+  <string key="MasonTeam">
+    <value>Los Magios 👷‍♂️ son son: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <!-- 0 - Youngest Zombies name -->
+    <value>El miembro más reciente de la secta fue a convertir a {0} a su casa, pero parece ser que alguien llego antes que el.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <!-- 0 - target's name -->
+    <value>Los aliados del Sr.Burns se dirigen a la casa de {0} para expulsar a alguien de la ciudad, pero se encuentran con una figura alta y brillante armada hasta los dientes. Maude Flanders os impide la entrada y volvéis a vuestro cubil derrotados.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <!-- 0 - newest  -->
+    <!-- 1 - target's name -->
+    <value>Enviasteis a {0} para intentar convertir a {1}; sin embargo, su voluntad era demasiado fuerte y fue imposible unirlo a vuestra causa :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <!-- 0 - target's name -->
+    <!-- 1 - name -->
+    <value>@{1}, un jugador con el nombre {0} ya se ha unido. Por favor, cambia tu nombre para unirte.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <!-- 0 - target's name -->
+    <value>Te escabulliste anoche a la casa de {0} para pasar un buen rato, pero cuando te fuiste, notaste algo extraño: un extraño altar escondido en un cuarto con un brillo extraño… [{0} es un sectario].</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value>era</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <!-- 0 - Dead's name -->
+    <value>Todo el mundo se despierta a la mañana siguiente y se percata de que {0} no aparece por ningún sitio. Al buscar en su casa, observais que esta vacia.</value>
+    <value>Mientras los aldeanos se reúnen y el sol asciende en el cielo, se encuentran los restos de {0}, que, de alguna forma, fue expulsado anoche de la ciudad.</value>
+  </string>
+  <string key="MasonConverted">
+     <!-- 0 - mason's name -->
+    <value>¡Qué raro! {0} no apareció esta mañana en la reunión de Magios. O.o</value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value>¡Va a ser que no! ¡El administrador del grupo ha decidido que no está permitido abandonar el juego en mitad de una partida!</value>
+  </string>
+  <string key="IsDead"> 
+    <!-- used when gunner shoots a player -->
+    <value>ha sido expulsado</value>
+  </string>
+  
+  <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <!-- 0 - target's name -->
+    <value>{0} añadido a la lista de administración. Usa /config para cambiar los ajustes del grupo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <!-- 0 - target's name -->
+    <value>¡Ya estás en una partida en otro grupo!\nGrupo: {0}</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Se han comenzado varias partidas a la vez… Acabando con los excesos.</value>
+  </string>
+  <string key="GroupQueue">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Tu grupo está en la cola de espera. Posición: {0} / {1}.</value>
+  </string>
+  <string key="MaintBreak">
+    <!-- 0 - target's name -->
+    <value>¡Perdonad! Voy a empezar un breve periodo de mantenimiento. No podréis comenzar partidas a partir de ahora.\nEsperando que terminen {0} partidas...\nConsulta werewolfdev para más información.</value>
+  </string>
+  <string key="MaxGames">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's name -->
+    <value>Perdonad, se ha alcanzado el máximo de partidas simultáneas ({0}).\nPosición en la cola de espera: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <!-- 0 - target's name -->
+    <value>¡{0} es un grupo privilegiado y se ha saltado la cola de espera!</value>
+  </string>
+  <string key="NoGame">
+    <value>Nadie esta intentando salvar Springfield ahoraismo. Comienza una nueva partida con /startgame o una partida caótica con /startchaos.</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Solo la administración puede usar este comando. Echa al bot y añádelo de nuevo. Se te incluirá como administrador.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Después de esta partida, no estaré disponible por razones de mantenimiento.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Después de esta partida, no estaré disponible durante un corto periodo de tiempo porque debo actualizarme (automático).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>El identificador de usuario es nulo. ¿Estás seguro de que quieres enviar esto como una respuesta?</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <!-- 0 - target's name -->
+    <value>¡{0} ya es administrador/a!</value>
+  </string>
+  <string key="NotAdmin">
+    <!-- 0 - target's name -->
+    <value>¡{0} no es administrador/a!</value>
+  </string>
+  <string key="AdminRemoved">
+    <!-- 0 - target's name -->
+    <value>¡{0} ha sido eliminado de la lista de administración!</value>
+  </string>
+  <string key="LanguageSet">
+    <!-- 0 - language's name -->
+    <value>Idioma cambiado a {0}.</value>
+  </string>
+  <string key="NoSeer">
+	<value>¡No encuentras a Lisa Simpson!</value>
+  </string>
+  <string key="TimesUp">
+	<value>¡Se acabó el tiempo!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+  <string key="RoleInfoCupid">
+    <value>Eres Milhouse Van Houtten 🏹. Tu deber comenzar el rumor de que dos ciudadanos son pareja. Pero cuidado, si uno de esos dos ciudadanos es expulsado de la ciudad, el otro le acompañara.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Eres Hugo Simpson 🎭. Desde que naciste has sido la sombra de bart, pero ahora todo ha cambiado. Elige a un ciudadano de Spriengfield, si es expulsado lo suplantaras y podras salir del desvan!.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Eres Moe Szyslak 🎯. No duermes bien, ya que sabea que nadie te aprecia. Si eres injustamente expulsado, puedes escoger a alguien para llevarte de la ciudad como venganza. Si un aliado del Sr.Burns te expulsa, tienes una oportunidad de asustarlo tanto con tu fealdad que el mismo huya de springfield, pero no podrás escoger a quién.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Eres Bob Patiño 🔪. Hace poco que escapaste del manicomio local, tu objetivo es que todos los demás mueran (En especial Bart Simpson). Cada noche, puedes añadir un cuerpo a tu colección.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>Has escuchado falsos rumores por la ciudad de tu relacion con {0}. Si uno de los dos es expulsado,el otro lo acompañara. Si estando vivos los dos, uno de los dos gana, el otro ganará también.</value>
+	<value>¡Los rumores de Milhouse Van Houten te han alcanzado! ¡Sus falsos rumores cuentan que estas locamente enamorado(a) de {0}! Si es expulsado, tú también. Si estáis vivos y uno de los dos gana, ¡los dos ganaréis!</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>¡Los aldeanos han decidido expulsarte! Esta es tu última oportunidad, ¡escoge a quién llevarte contigo mientras te marchas!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} trata de alcanzar de llevarse a alguien de la ciudad mientras nadie mira, pero es tan torpe que no consigue hacerlo y se marcha solo.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} Mira a la multitud... y no puede escoger a quien llevarse consigo.Se va de la ciudad aceptando su destino.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <!-- 0 - hunter's name -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Mientras {0} se marcha de la ciudad, en un movimiento inesperado secuestra a {1} y se lo lleva de la ciudad ! {1} se ha ido de la ciudad. {2}</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>¡Has sido expulsado! En tus últimos momentos, puedes escoger a quién llevarte contigo. ¡Hazlo rápido!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <!-- 0 - target's name -->
+    <value>A {0} le dolio tanto su expulsion de la ciudad, que no pudo llevarse a nadie consigo,mientras yacía en un charco de lagrimas...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <!-- 0 - hunter's name -->
+    <value>Mientras {0} yace ahí, luchando por quedarse en la ciudad! no puede decidir a quién llevarse consigo.Se va aceptando su destino.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <!-- 0 - hunter -->
+    <!-- 1 - target's name -->
+    <!-- 2 - target's role -->
+    <value>Mientras los ciudadanos discuten para expulsar a {0}, {0} se mueve sin que le vean y se lleva a {1} de la ciudad. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <!-- 0 - target's name -->
+    <value>Los aliados del Sr. Burns intentaron atacar a Moe Szyslak anoche, ¡pero gracias a su fealdad consiguio que un aliado de burns huyera preso del panico. {0} ha sido expulsado y era un aliado del Sr.Burns.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <!-- 0 - target's name -->
+    <value>{0} intentó atacar a Moe Szyslak anoche, ¡pero salio corriendo al ver la cara de Moe! {0} era un aliado del Sr.Burns</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Los aliados del Sr.Burns intentaron expulsar a alguien por la noche, ¡pero en vez de eso, fueron recibidos por Bob Patiño! ¡{0} fue asesinado en la pelea! [Un aliado del Sr.Burns ha muerto]</value>
+  </string>
+  <string key="DefaultKilled">
+    <!-- 0 - target's name -->
+    <!-- 1 - target's role -->
+    <value>Parecía una noche tranquila para {0}, pero se equivocaba. Los ciudadanos se reunieron por la mañana y se lo encontraron cortado en pedazos. Curiosamente le faltaba el hígado y un riñón… ¡Bob Patiño ha atacado de nuevo! {1}.</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <!-- 0 - target's name -->
+    <value>Quisiste incorporar el cuerpo de {0} para tu colección, ¡pero el Maude Flanders lo protegió! No ha habido muertes esta noche.</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>Los Sectarios envían a {0} para intentar convertir a {1}, pero en vez de eso, suena un grito y ¡{0} sale saltando por la ventana! {0} ha huido corriendo de la ciudad.</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>Los Sectarios envían a {0} para intentar convertir a {1}, pero en vez de eso, el cuerpo de {0} sale volando por la ventana, ¡con cuchillos clavados por todo el cuerpo! ¡QUÉ PSICÓPATA! {0} ha muerto.</value>
+	<value>{0} se cuela en casa de {1}, abre la puerta, ¡¡y es recibido por un loco con un cuchillo!! {1} hunde el cuchillo en cada uno de los órganos internos de {0} por orden alfabético, ¡carcajeando todo el tiempo! {0} ha muerto.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Intentaste proteger a Bob Patiño ¡pero él te acuchilló 98 veces! Me parece que has muerto.</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <!-- 0 - target's name -->
+    <value>Te cuelas en la casa de {0} y empiezas a tener un poco de diversión. Todo va estupendamente hasta que. {0} saca un cuchillo y ¡empieza a acuchillarte 98 veces riendo como un maníaco! Has muerto.</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>{0} intentó divertirse esta noche, pero se topó con Bob Patiño. {0} ha muerto.</value>
+  </string>
+  <string key="DGToMason">
+    <!-- 0 - target's name -->
+    <value>Hugo Simpson (el doble) {0} se ha convertido en Magio, ¡igual que tú!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <!-- 0 - dead mason's name -->
+    <!-- 1 - mason collegues's name -->
+    <value>{0} ha sido expulsado y tú te conviertes en un Magio. Tus compañeros de equipo (si los hay) son: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <!-- 0 - new Zombie's name -->
+    <value>Hugo Simpson (doble) {0} se ha convertido en sectario, ¡igual que tú!</value>
+  </string>
+  <string key="DGTransformToCult">
+    <!-- 0 - role's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha sido expulsado y tú te conviertes en sectario. Tus compañeros de equipo (si los hay) son: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <!-- 0 - DG's name -->
+    <value>Hugo Simpson (doble) {0} se ha convertido en aliado del Sr.Burns ¡igual que tú!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha sido expulsado, por lo que, ¡te conviertes en un aliado del Sr.Burns! Tus compañeros de equipo (si los hay) son: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>¡La última persona en pie es Bob Patiño ¡Ha ganado!</value>
+  </string>
+  <string key="AskKill">
+    <value>¿A quién quieres matar esta noche?</value>
+  </string>
+  <string key="LoverDied">
+    <!-- 0 - dead's name -->
+    <!-- 1 - lover's name -->
+    <!-- 2 - roles -->
+    <value>Mientras los ciudadanos expulsan de la ciudad a {0}, recuerdan los rumores de Milhouse y para prevenir traidores expulsan tambien a {1}. Ambos han sido expulsados. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>¿En quién te quieres convertir si es expulsado?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>¿Sobre quien quieres difundir falsos rumores?\nEscoge al primer jugador:</value>
+  </string>
+  <string key="AskCupid2">
+    <value>¿A quién vas a convertie en falsa pareja?\nEscoge al segundo jugador:</value>
+  </string>
+  <string key="Hunter">
+    <value>Moe Szyslak 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Milhouse Van Houten 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Bob Patiño 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Hugo Simpson (doble) 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <!-- 0 - target's name -->
+    <value>Eres Bart Simpson 👶. Tu Modelo a seguir es {0}</value>
+  </string>
+  <string key="LoversWin" isgif="true">
+    <value>¡Triunfa el falso amor! ¡Los supuestos amantes han ganado!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <!-- 0 - target's name -->
+    <!-- 1 - role -->
+    <value> Mientras los aldeanos hacen la ronda diaria, encuentran la casa de {0} vacia. Parece que visito a Moe Szyslak y huyo asustado de la ciudad ! {1}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Una figura encapuchada trató de convertirte a su secta, pero tu fe es demasiado fuerte y has resistido a sus oraciones y convicciones.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <!-- 0 - target's name -->
+    <value>Ya estás en la lista de espera del grupo: {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <!-- 0 - target's name -->
+    <value>Has sido añadido a la lista de espera. Te enviaré un mensaje directo cuando empiece la próxima partida.\nGrupo: {0}</value>
+  </string>
+  <string key="NotifyNewGame">
+    <!-- 0 - target's name -->
+    <value>¡Está empezando una partida nueva!\nGrupo: {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <!-- 0 - SK's name -->
+    <!-- 1 - target's name -->
+    <value>Llega la mañana y los dos ciudadanos que quedan salen a la plaza. {0} mira a {1}, con una gran sonrisa en su cara, saca un cuchillo y acaba con {1}.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Todos han sido expulsados… no queda nadie en springfield. Nadie gana.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <!-- 0 - SK's name -->
+    <!-- 1 - Hunter's name -->
+    <value>Cuando sale el sol, {0} y {1} caminan hacia el pueblo. {0} saca su cuchillo, y salta sobre {1}.mientras {0} se lanza y clava el cuchillo profundamente en {1}. Despues {0} Huye de la ciudad traumado por la fealdad de {1}. no hay ganador.</value>
+  </string>
+   <string key="RoleModelChosen">
+    <!-- 0 - target's name -->
+    <value>No has elegido un rol, el moderador eligió por ti: {0}</value>
+  </string>
+  <string key="Won">
+   <value>Ganó</value>
+  </string>
+  <string key="Lost">
+    <value>Perdió</value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>El jugador {0} ha sido asesinado por no votar {1} veces en las últimas 24 horas.</value>
+  </string>
+  <!--New strings 7th of July-->
+  <string key="AboutVG">
+    <value>Tu rol es simple 👱‍♂️: intenta sobrevivir. Cada día tendrás la oportunidad de expulsar a un aliado del Sr.Burns.</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Eres Lisa simpson 👳‍♂️. En este rol, cada noche, deberás elegir a un jugador y se revelará su rol. Saca a la luz tu rol con cuidado: Si revelas que eres un genio, ¡los aliados del Sr.Burns intentarán expulsarte!</value>
+  </string>
+  <string key="AboutWw">
+    <value>¡Te vas a divertir! Cada día, podrás engañar a los demás jugadores. Y por las noches, ¡elegirás a un jugador para mandarle a tu Mafia! Nota: Si mandas a la mafia a expulsar a Homero Simpson, se beberan la cervezs que sobra y no podrás mandarlos la siguiente noche, ¡ya que estarán durmiendo la mona! Si atacas a Smithers, ¡se convertirá en aliado, ¡como tú! ¡Hurra, amigos!</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Como Edna Krabappel 💋, tendrás la oportunidad de «visitar» a otro ciudadano cada noche. Si no es aliado del Sr.Burns , lo sabrás (¡porque seguirás en la ciudad!). Si visitas un aliado del Sr.Burns, seras expulsada de la ciudad. Si visitas al elegido por un aliado de Burns, a ti también te expulsara. De todas formas, si te vas de visita y los aliados de Burns te eligen, seguiras en la ciudad. [No estabas en casa]</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>¡Maldito Homero Simpson 🍻! Como el borracho del pueblo, aún eres un ciudsdano. Pero si los aliados del Sr.Burns deciden expulsarte, no podrán expulsar a nadie la noche siguiente, ya que estarán borrachos por tu altísima coleccion de alcohol que se tomaran.</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Como Wailon Smithers 😼, eres un ciudadano normal. hasta que los aliados del Sr.Burns te llamen. Cuando lo hayan hecho, ¡tú también te convertirás en uno de ellos! Serás libre para expulsar a alguien todas las noches.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Eres Frank Grimes 🥸, Si te mantienes lo suficiente en la ciudad, cuando los aliados del Sr.Burns hayan sido expulsados, te convertirás en uno, ¡listo para expulsar a tus antiguos aliados cada noche!</value>
+  </string>
+  <string key="AboutGA">
+    <value>¡Eres Maude Flanders 👼! Cada noche, elegirás un ciudadano para proteger. Ten cuidado si eliges proteger a un aliado del Sr.Burns, tienes un 50% de probabilidades de ser expulsado de la ciudad.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Viejo sabueso, eres Rex Banner 🕵️‍♂️. Cada día, tendrás la oportunidad de investigar a otro jugador. Pero ten cuidado, ¡ya que existe un 40% de probabilidades de que los aliados del Sr.Burns te descubran!</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Felicidades, ¡Eres El Hombre Pay 🔫! Tienes 2 tartas al principio del juego. Cada día tendrás la oportunidad de darle un tartazo a otro ciudadano. Cuando lo hagas, ¡todos sabrán que eres el El Hombre Pay. Elige con cuidado: solo tienes 2 tartas!</value>
+  </string>
+  <string key="AboutTanner">
+    <value>El objetivo de Abe Simpson 👺 es sencillo: ser expulsado. Si te expulsan, ganas la partida. Punto. Todos los demás pierden.</value>
+  </string>
+  <string key="AboutFool">
+    <value>A Cletus Spuckler 🃏 se le dice que es un genio. Cuando elija a alguien para estudiar su rol, se le dirá uno al azar.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Como sectario 👤, tu objetivo es convertir a todos los demás jugadores (excepto a los aliados del Sr.Burns) a tu secta. Si al final de la partida todos los jugadores vivos son sectarios, la secta del lider gana.</value>
+  </string>
+  <string key="AboutCH">
+    <value>💂‍♂️ Tu trabajo es acabar con los sectarios. Si un sectario te ataca, su miembro más reciente sera expulsado de la ciudad. Cada noche escogerás a que ciudadano vas a «cazar»; si es sectario, sera expulsado.</value>
+  </string>
+  <string key="AboutWC">
+    <value>👶Al principio del juego, elegirás a alguien para ser tu «modelo a seguir». Si lo expulsan, te convertirás en aliado del Sr.Burns</value>
+  </string>
+  <string key="AboutAppS">
+    <value>🙇‍♂️Por ahora eres un Springfieldiano corriente. Pero, si expulsan a Lisa Simpson, te convertirás en el nuevo genio del colegio</value>
+  </string>
+  <string key="AboutBH">
+    <value>👁 Se te comunicará quien es Lisa Simpson (la de verdad, no Cletus Spuckler).</value>
+  </string>
+  <string key="AboutMason">
+    <value>El trabajo de los Magios 👷‍♂️ es simple: se conocen entre ellos y se coordinan con los ciudadanos. Por lo demás, son simples Springfieldianos.</value>
+  </string>
+  <string key="AboutDG">
+    <value>
+      🎭 Desde que naciste, siempre ha sido la sombra de Bart. Pero ya no, ahora podras elegir un ciudadano y si es expulsado suplantaras su indentidad y de una vez por todas podras salir del desvan donde llevas encerrado toda la vida.
+      Nota: Si el jugador se convierte en Sectario, obtendrás su rol original. Para los demás se aplicarán las reglas normales: si era Bart Simpson y su modelo a seguir está expulsado,te convertirás en aliado del Sr.Burns. Si no, heredarás su modelo a seguir.
+      Los Sectarios no puede convertir a Hugo Simpson (el doble) [pero sí después de cambiar de rol]). Cuidado: Hugo Simpson no podrá ganar si no ha cambiado de rol. Si al finalizar el juego, Hugo sigue siendo el doble, pierde (excepción: amantes).
+    </value>
+  </string>
+  <string key="AboutCupid">
+    <value>
+      🏹 El falso amor está en el aire. Como Milhouse Van Houten, elegirás dos jugadores al principio de la partida para difundir falsos rumores sobre una supuesta relacion entre ellos. Si uno de los dos es expulsado, el otro tambien.
+      Nota: Los falsos amantes se conocerán entre sí, pero no sabrán sus roles. Si los falsos amantes son los dos únicos supervivientes, ganarán, independientemente de sus equipos. Si están en distintos equipos (ciudadano + aliado del Sr.Burns) , y un equipo gana (Aliados del Sr.Burns), el falso amante(ciudadano) también ganará.
+	  Si, estando vivos los dos, al menos uno de los amantes está en el equipo ganador, ganarán ambos.
+    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      🎯 Jugador vengativo y de aspecto poco agraciado. Como Moe Szyslak, formas tu propio equipo. Y cuando alguien venga a visitarte, puede que se encuentren con tu feo rostro y huyan del miedo, ya que con tu cara podras expulsar a alguien. Si son los aliados del Sr.Burns los que quieren expulsarte, tienes una oportunidad de llevarte a uno por delante con tu feo rostro. Además, si te echan o te mata Bob Patiño, tendrás la oportunidad de llevarte a alguien contigo mientras eres eliminado.
+      Nota: Para los ataques de los aliados del Sr.Burns la probabilidad empieza en un 30%. Si solo hay un aliado, Moe tiene un 30% de probabilidad de expulsarlo (y seguir en la ciudad). Por cada aliado de Burns adicional, suma un 20% (2 aliados = 50%, 3 = 70%, etc). Ten en cuenta que si hay varios aliados de Burns, aunque expulses a uno, te superan en número y seras expulsado tambien.
+      Si los sectarios intentan convertirte, tienen un 50% de probabilidad de fallar. Si fallan, ¡tú tendrás un 50% de probabilidad de expulsar a uno!
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>El manicomio era una idiotez. Menudo chiste. Pero ahora eres libre, estás de vuelta a tus asuntos: ¡matar! Bob Patiño 🔪 conforma su propio equipo individual. Ganará si es el último jugador en pie (excepción: amantes). Como Actoe secundario Bob, podrás matar a CUALQUIERA: Aliado de Burns,Moe Szyslak, El Hombre Pay, Maude Flanders, etc., quien sea. Si los aliados del Sr.Burns te intentan expulsar, matarás a uno de ellos (aleatorio) y sobrevivirás.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para es el desarrollador majadero al que le gusta ladrarle a la gente (y con razón: a ver si lo dejáis jugar, eh). Puede que haya estado jugando con los Aliados del Sr.Burns demasiado tiempo. Jugar con Burns es una MUY mala idea.</value>
+  </string>
+  <string key="EndTime">
+    <value>Duración de la partida: {0}</value>
+  </string>
+  
+  <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>Día {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Ha ocurrido un error y este nodo se cerrará :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Te he enviado un privi.</value>
+  </string>
+  <string key="StartPM">
+    <value>Por favor, envíame un privi para que pueda hablarte ;)</value>
+  </string>
+  <string key="PMTrue">
+    <value>¡Gracias por iniciarme! Ahora puedo enviarte privis.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Debes responder al usuario al que quieres castigar.</value>
+  </string>
+  <string key="WhatToDo">
+    <value>¿Qué quieres hacer, eh?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>¡Debes unirte a un juego desde un grupo de chat!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>¡Debes empezar un juego desde un grupo de chat!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tiempo que tarda Telegram en enviarme un mensaje: {0}\nMensajes por segundo: {1}</value>
+  </string>
+  <string key="WhatLang">
+    <value>¿Qué idioma?\nActualmente: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>¿Qué variante?\nActualmente: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Idioma puesto: {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>¿Qué archivo de idioma quieres?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Ahora mismo no hay nodos online, por favor, inténtalo de nuevo pasados unos segundos</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>¡Este comando solo se puede usar en un grupo!</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>No eres un administrador global.</value>
+  </string>
+  <string key="NotPara">
+    <value>¡Quita de aquí, tú no eres Albert!</value>
+  </string>
+  <string key="Yes">
+    <value>Sí</value>
+  </string>
+  <string key="No">
+    <value>No</value>
+  </string>
+  <string key="Allow">
+    <value>Está permitido</value>
+  </string>
+  <string key="Disallow">
+    <value>No está permitido</value>
+  </string>
+  <string key="Show">
+    <value>Mostrar</value>
+  </string>
+  <string key="Hide">
+    <value>Ocultar</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Solo modo normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Solo modo caótico</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Elección del jugador</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>No mostrar ninguno</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostrar solo los jugadores vivos</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostrar todos los jugadores</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancelar</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>¿Permitir que los jugadores abandonen el juego después de que haya empezado la partida?\nNota: Los jugadores aún podrán huir durante el join. \nActualmente: Los jugadores {0} pueden huir</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose -->
+    <value>Los jugadores {0} tienen permitida la huida después de comenzar el juego.</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>¿Cuántos jugadores pueden jugar como máximo en una partida?\nActualmente: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>El máximo de jugadores está establecido en {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>¿Mostrar o esconder los roles a la muerte?\nActualmente: {0}</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Los roles están en {0} a la muerte.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>¿En qué modo de juego estará el grupo?\nActualmente: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modo de juego establecido a {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>¿Cómo quieres que se muestren los roles al final de la partida?\nActualmente: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Mostrar roles al final establecido a: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Elige la duración de las acciones diurnas (en segundos). Aun así, quedará modificado en base al número de jugadores.\nPor defecto: {0}\nActualmente: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Duración de las acciones durante el día: {0} segundos.</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Elige la duración de la noche.\nPor defecto: {0}\nActualmente:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Duración de la noche: {0} segundos.</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Elige la duración del linchamiento.\nPor defecto: {0}\nActualmente:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Duración de la Expulsion: {0} segundos.</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>¿Permitir a Cletus Spuckler?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Cletus Spucklers ahora: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>¿Permitir Abe Simpson 👺?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Abe Simpson ahora: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>¿Permitir la secta del Lider?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>La secta ahora: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Gracias, que tengas un buen día :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>¿En qué idioma quieres que esté el grupo en el que vas a jugar?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Aquí tienes una lista para {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Miembros</value>
+  </string>
+  <string key="StartMe">
+    <value>Por favor ábreme una conversación para que pueda enviarte mensajes privados</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>¡{0} no me abrió una conversación y ha sido eliminado del juego!</value>
+  </string>
+  <string key="LatestList">
+    <value>Aquí tienes la última lista de jugadores:</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>No se pudo obtener la última lista de jugadores.</value>
+  </string>
+  <string key="YouJoined">
+    <!-- 0 - Group Name -->
+    <value>¡Te has unido correctamente a la partida!\nGrupo: {0}</value>
+  </string>
+  <string key="Ping2">
+    <value>Duración en enviar el mensaje: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Eres Joe Quimby🎖. Tu voto a la hora de expulsar a un ciudadano contará el doble una vez hayas revelado tu posicion a los Springfieldianos. Estás en el equipo de los ciudadanos.</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Eres Marge Simpson 👑. Dejaste tu aburrida vida por echar el día con los ciudadanos. Si intentan expulsarte, se arrepentirán y nadie será expulsado.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Eres el Ralph Wiggum 🤕. Al votar, tienes un 50% de probabilidades de votar por otro ciudadano distinto al que elegiste. Aun así, eres un ciudadano.</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Eres Nelson Muntz 🔮. Prefieres aliarte con el Sr.Burns en vez de con los aldeanos. Por la noche usarás tus poderes para encontrar a los aliados del Sr.Burns o a Lisa Simpson. Solo ganas si los aliados del Sr.Burns ganan. ¡¡Disfruta ayudando a Burns a librarse de los miserables Springfieldianos.!</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Eres Ned Flanders ⚒. El mas cristiano de Springfield. Utilizas la fe y la ayuda de tu dios para impedir que lls aliados del Sr.Burns expulsen a alguien.Durante el dia podras rezar para pedir que no expulsen la siguiente nochde.Aparte de eso, eres un simple Springfieldiano.</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Eres el Sr.Burns ⚡️. Eres el origen de la maldición. Tu ansia de poder es la causa de la enfermedad que convierte a los aldeanos en aliados. Cada noche, podrás elegir un ciudsdano para expulsarlo, pero mientras estés en la ciudad, existe un 20% de que obligues de que se convierta en un aliado tuyo.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Eres Snake 🐶 ¡¡Tus aliados te aprecian!! Como el resto de aliados del Sr.Burns, elegirás a un ciudadano para expulsarlo cada noche. Si eres expulsado, tus aliados entrarán en cólera y expulsaran a dos aldeanos la próxima noche. Por desgracia, no cambiara tu expulsion.</value>
+  </string>
+   <string key="PrinceLynched">
+    <value>Mientras el pueblo empieza a planear expulsar a {0}, de repente dice: «¡Esperad, soy Marge Simpson! Este anillo real, junto con el sello de Springfield lo demuestran.». Avergonzados, los ciudadanos se marchan a sus casas.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Intentas mirar a {0}, pero no puedes distinguir qué es. Sin embargo, sabes que no es un aliado del Sr.Burns ni Lisa simpson.</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} da un paso al frente y muestra su placa de la alcaldía, que demuestra que es el alcalde del pueblo. Desde ahora, los votos de {0} a la hora de linchar contarán el doble.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Haz clic en «Revelar rol» cuando quieras revelarte al pueblo como el alcalde.</value>
+  </string>
+  <string key="Reveal">
+    <value>Revelar rol</value>
+  </string>
+  <string key="SpreadDust">
+    <value>¿Quieres rezar para ayudar pueblo y asi evitar que los aliados de Sr.Burns echen a alguien esta noche?</value>
+  </string>
+    <string key="BlacksmithSpreadSilver">
+    <value>Mientras los aldeanos discuten sobre los hechos acontecidos, de repente ven a {0}, que se pone a rezar por el pueblo.Por ahora, el pueblo esta a salvo. aliados del Sr.Burns no atacan esta noche.</value>
+  </string>
+  <string key="Mayor">
+    <value>Joe Quimby 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Marge Simpson 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Nelson Muntz 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Ralph Wiggum 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Ned Flanders ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>El Sr.Burns ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Snake 🐶</value>
+  </string>
+   <string key="PlayerBittenWolves">
+    <value>Mientras los aliados del Sr.Burns intentan expulsar a {0}, {1} los detiene ya que es el Lider del Grupo {1} les dice todos que {0} debería unirse a ellos en lugar de ser expulsado, por lo que los demas aceptan y dejan que {0} siga viviendo en Springfield. Se convertirá en aliado la próxima noche.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Los aliados del Sr.Burns intentaron expulsarte, pero el mismo Sr.Burns te escogió. En lugar de expulsarte has sido obligado a unirte a el ¡y te convertirás en un aliado la próxima noche!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Mientras cae la noche, te diriges a la cental nuclear pars unirte al Sr.Burns !Ahora eres un enemigo de la ciudad!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Como alcalde 🎖 eres un simple Springfieldiano,hasta que decidas revelarte. A partir de ese momento tus votos contarán el doble (por lo que tu voto será doblemente poderoso que el de cualquier otro jugador). Usa ese poder sabiamente para ayudar a la ciudad.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Marge Simpson 👑 es un rol clave en la estrategia del equipo de Springfield. Si lo expulsan, su rol será revelado y seguira en el pueblo. A partir de entonces sólo podrá ser expulsado por la noche (un aliado del Sr. Burns o Bob Patiño) o por Moe Szyslak.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>¿Recuerdas a Lisa Simpson? Pues bueno, ahora tiene a su némesis en el equipo del Sr.Burns. Nelson Mutz 🔮 es el soplon de los aliados del Sr.Burns. Solo puede ver si alguien es aliado de Burn o Lisa Simpson y gana cuando los aliados de Burns ganan.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Eres Ralph Wiggum 🤕. Quizá no debiste haberte golpeado tanto contra aquel arbol. No te has quedado muy cuerdo desde entonces. Puedes al menos votar por la persona que quieres? (tienes 50% de probabilidades elegir a otra persona al azar).</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Eres Ned Flanders ⚒. Durante los años, ningún versiculo de la biblia te habia dado tanta satisfacción. \nDurante el dia podras rezar en la plaza del pueblo para que los aliados del Sr.Burns no expulsen a alguien esta noche.</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Eres el Sr.Burns ⚡️. El origen de la maldad, la perdición de los perdidos. Mientras estés vivo, al expulsar a alguien, existe un 20% de probabilidades de que esa persona se una a ti para ayudarte.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Eres Snake 🐶, un aliado de Burns. Si alguien te expulsa de la ciudad, les daras a los aliados del Sr.Burns dos víctimas para expulsar.</value>
+  </string>
+
+<!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha sido expulsado de la ciudad, por lo que has suplantado al Sr.Burns. Tus aliados(si los hay) son: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha sido expulsado de la ciudad, por lo que te has suplantado a Snake.Tus aliados (si los hay) son: {1}</value>
+  </string>
+  
+  <string key="VillageTeam">
+    <value>Equipo de Springfield</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Equipo neutral</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Equipo del Sr.Burns</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Equipo de Bob Patiño</value>
+  </string>
+  <string key="CultTeam">
+    <value>Equipo de la secta del lider</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Equipo de Abe Simpson </value>
+  </string>
+  
+  
+  <string key="VillageTeamEnd">
+    <value>Equipo de Springfield</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Equipo neutral</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Equipo del Sr.Burns</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Equipo del Bob Patiño</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Equipo de la secta del lider</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Equipo de Abe Simpson</value>
+  </string>
+  
+  <string key="CultConvertWolf">
+    <value>Los Sectarios envían a {0} para intentar convertir a {1}, pero en su lugar, {0} es expulsado de la ciudad. Me pregunto si pensaban que {0} era inexpulsable porque ahora lo esta.</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic"> <!-- used when Harlot visit's SK's victim, and dies -->
+    <!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>{0} se metió en la casa de {1} para pasar una noche de pasión y locura, pero en lugar de eso, se encontró a un ser misterioso, sacado de un manicomio, ¡que se dedica a extraer los órganos vitales de las personas! Aun así, Bob Patiño decide satisfacer los deseos de {0}, y le deja pasar su última noche de travesuras, antes de añadir el corazón de Edna Krabappel a su colección!</value>
+  </string>
+  
+  
+  <!--New Death Strings 05 DEC-->
+  <string key="ApprenticeSeerEaten">
+    <value>Los Springfieldianos se despiertan y se encuentra los libros de {0} sobre un mapa de springfield de segunda mano mientras estudiaba a los ciudadanos.Martin Prince ha muerto.</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Parece que {0}, Ned Flanders, ha tenido muy mala suerte durante la noche, ya que se lo ha encontrado en su mesa de herrería junto con 5 cuchillos, sacados de su armería clavados en manos, pies y cabeza. Tal vez Bob Patiño tenía la esperanza de ampliar su colección de armas y órganos con el corazón, hígado y estómago de {0}.</value>
+  </string>
+  <string key="ZombieKilled">
+    <value>{0} fue apuñalado hasta la muerte con un candelabro al lado de su altar. ¡Bob Patiño ha atacado de nuevo, sin importar la raza, el idioma o la religión! {0} era un sectario.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>A la mañana siguiente, los aldeanos se levantaron destrozados al encontrar a Millhouse Van Houten, {0}, dividido en dos. Curiosamente, le faltaba el corazón.</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Los aldeanos esperaban quedar con su borracho preferido, {0}, pero lo único que encontraron en su casa fue un cuchillo y un hígado encima de la mesa. Tantos años bebiendo hicieron que el hígado estuviera tan podrido que ni Bob Patiño lo quiso.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} normalmente habría luchado contra Bob Patiño, pero es irónico que hasta el halo que rodeaba a Maude Flanders se haya extinguido. {0} ha muerto.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>¡Parece que {0} fue sorprendido anoche! Se escuchó un tartazo, pero solo se pudo encontrar los restos de lo que parece ser El Hombre Pay, con la boca llena de tarta y una puñalada al torso. Es evidente que Bob Patiño ha ganado.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>¡Magnicidio! Los ciudadanos se han encontrado a {0}, nuestro excelentísimo ilustrísimo señor alcalde, apuñalado por la espalda mientras ordenaba sobres en su despacho por la noche. Parece que Bob Patiño se ha vengado por todos los años que pasó metido dentro de un manicomio por culpa suya.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>Suenan las campanas en todo el pueblo antes del amanecer. La policia de Springfield inunda las calles investigando la desaparición de, Su Majestad Marge Simpson {0}. No se descubrieron pistas, pero se sospecha que Bob Patiño anda suelto. La Princesa ha muerto.</value>
+    <value>Parece ser que los gusrdias del Marge Simpson se han dormido esta noche. Se han encontrado los restos de {0} colgados en varias habitaciones del palacio. Resulta que, a pesar de todo, Marge sigue siendo un simple mortal más a manos de Bob Patiño.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Los aldeanos se despiertan con el hedor del cadáver podrido de {0}. El cuerpo, acuchillado 94 veces, fue decapitado. Extrañamente, el cerebro fue extraído cuidadosamente, todos sus mapas y libros han sido quemados. {0} era Lisa Simpson</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Se oyen gritos de Burns por todo el pueblo… Los aliados del Sr.Burns han expulsado a {0}, un gran error, ya que era de los suyos. Nelson Muntz ha sido expulsado</value>
+    <value>Anoche se escucharon unos gritos agudos: «¡Soy tu aliado, tolái!». A la mañana siguiente, los ciudadanos encontraron una de las casas vacias y con la puerta abierta. Pertenecía a {0}, Nelson Muntz. Un error que pagaran.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>Amanace y los ciudadanos de springfield encuentran el monopatin de Bart Simpson en medio de la plaza. Parece que anoche fue expulsado de la ciudad por el Sr.Burns, un gran error ya que podrian llegar a ser aliados. {0} Era Bart Simpson</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Los ciudadanos se despertaron por la mañana y se encontraron los restos del cuerpo de {0}, Clancy Wiggum, cortados en pedazos en un carro al lado del ayuntamiento. Lección aprendida: ¡no hay que visitar a Bob Patiño.</value>
+    <value>El cuerpo de {0}, Clancy Wiggum, fue encontrado en el centro de la ciudad cortado en un centenar de piezas. Comprobar si Bob Patiño era un sectario no parece ser una buena idea.</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>Aunque parecía que los aliados del Sr.Burns habían decidido quedarse en casa, un sectario decidió visitarlos, siendo demasiado difícil de resistir para ellos.¡{0} Ha sido expulsado de la ciudad!</value>
+    <value>Los Sectarios se encontraron con problemas inesperados anoche. Su miembro más reciente, {0}, tuvo la desgracia de visitar a un aliado del Sr.Burns, justo la noche que habían decidido quedarse en casa. Desafortunadamente para la secta, los aliados de Burns no tienen ningún interés en unirse al nuevo movimiento religioso y era una oportunidad que no podían dejar pasar. {0} ha sido expulsado de la ciudad.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
+    <value>Los Sectarios pensaban que tendrían un nuevo miembro en sus filas, pero, ¡estaban equivocados! {0}, un sectario, fue descuartizado y sus restos fueron esparcidos por todo el pueblo! Extrañamente, el libro «santo» estaba junto a un cuchillo, como muestra clara de qué religión es la que manda.</value>
+    <value>Anoche, la secta trató de convertir al ciudadano más loco del pueblo. Su miembro más reciente, {0}, trató de convertir a Bob Patiño, y este hizo una nueva obra de arte en la plaza de Jeremias Springfield, exhibiendo todos los órganos internos al los ciudadanos</value>
+  </string>
+  <string key="GAGuardedKiller"> <!-- used when GA guards SK -->
+    <value>Se suponía que iba a ser una noche donde {0}, Maude Flanders, salvaría a algun ciudadano de los los aliados del Sr.Burns, pero Bob Patiño extinguió su halo y le arrancó las alas! A la izquierda del cuerpo dejó una nota que decía: «Protegeme esta Socia».</value>
+  </string>
+  <string key="GAGuardedWolf"> <!-- used when GA guards a wolf -->
+    <value>Maude Flanders,{0}, trató de proteger a un aliado del Sr.Burns anoche. Al amanecer los Springfieldianos encontraron la casa de {0} vacia. Sin comerlo ni beberlo, los aliados del Sr.Burns han expulsado a otro miembro de la ciudad.</value>  
+</string>
+  
+    <!--1vs1 finales-->
+  <string key="HunterKillsWolfEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Sabiendo que solo quedaba {0} en Springfield, {1} intenta expulsarlo, pero {0} lleva años manteniendo su fealdad y se las arregla para que {1} huya atemorizado de la ciudad. ¡Los Springfieldianos han ganado!
+    </value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+    <!--{0} = hunter's name, {1} = wolf's name-->
+    <value>{1} sabe que en Springfield solo queda {0}, así que aprovecha mientras {0} está enfrascado trabajando en arreglar su rostro y se mete en en su casa para expulsarle de la ciudad a {0}.</value>
+  </string>
+  <string key="CHKillsZombieEnd">
+    <!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>{1} y {0} se encuentran en la plaza de Jeremias Springfield. Sin embargo, {1} hoy no tiene ganas de sermones y antes de que {0} saque su libro del lider, se abalanza sobre él, lo incapacita y lo expulsa de la ciudad {0} era el último sectario en pie.</value>
+  </string>
+  
+  <!-- Extend time -->
+  <string key="SecondsAdded">
+    <!-- 0 - Seconds added by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+    <value>El tiempo para unirse a salvar Springfield ha aumentado {0} segundos.\n{1} para unirse.</value>
+  </string>
+  <string key="SecondsRemoved">
+    <!-- 0 - Seconds removed by /extend command -->
+    <!-- 1 - Total seconds remaining -->
+     <value>El tiempo para unirse ha bajado {0} segundos.\n{1} para unirse.</value>
+  </string>
+  <string key="CantExtend">
+    <value>Solo los administradores de este nuestro grupo pueden aumentar el tiempo para unirse más de una vez.</value>
+  </string>
+  <string key="AllowExtendQ">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>¿Permitir que los jugadores aumenten el tiempo para unirse?\nActualmente: {0} aumentar el tiempo\nNota: Los administradores siempre podrán aumentar el tiempo para unirse.</value>
+  </string>
+  <string key="AllowExtendA">
+    <!--{0} = "Allow" / "Disallow" string-->
+    <value>{0} que los jugadores aumenten el tiempo para unirse.</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>Elige el máximo de segundos permitidos para añadir al tiempo de unirse a la partida para cada vez que se le dé a /extend.\nPor defecto: {0}\nActualmente:{1}</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>El máximo de tiempo se ha establecido en {0} segundos.</value>
+  </string>
+
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>¡Oh, no! {0} era Homero Simpson, y, al expulsarle, os ha provocado una sed increible que habeis saciado con alcohol. Esta noche no podreis expulsar a nadie.{1}.</value>
+  </string>
+    <string key="JoinButton"><!-- this is for a button, no markdown or html -->
+    <value>¡Salvemos a Springfield!</value>
+  </string>
+    <string key="NotMember">
+    <value>No puedes unirte al juego porque parece que no pertecenes a {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>¡A ver cuántas veces tendré que repetir esto! Dejad de usar join, ahora hay un botón que lo sustituye. Superadlo ya.</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} jugadores han votado, {1} en total.</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>¿Activar linchamientos secretos?\nCurrent: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>La activación de linchamientos secretos está: {0}</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, no olvides que para unirte a la partida tienes que pulsar el botón aunque la hayas iniciado.</value>
+  </string>
+  <string key="GroupNotFound"> <!--This string might need rewording from some native speaker-->
+    <value>No pude encontrar el grupo. Por favor, usa este comando en el grupo del que quieres dejar de esperar, o añade enlace, id o nombre de usuario al lado del comando.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Se te ha eliminado de la lista de espera de {0}.</value>
+  </string>
+    <string key="HaveJoined">
+    <!-- {0} = list of people who have joined -->
+    <value>{0} se ha(n) unido en los últimos 30 segundos.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Permitir culto</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Permitir Veterano</value>
+  </string>
+  <string key="AllowFool">
+    <value>Permitir Necio</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Activar linchamiento secreto</value>
+  </string>
+  <string key="RandomMode">
+    <value>Activar modo aleatorio</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Permitir extender el tiempo</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Mostrar los roles al morir</value>
+  </string>
+ <string key="AllowFlee">
+    <value>Permitir salir del juego</value>
+  </string>
+    <string key="ShowIDs">
+    <value>Mostrar IDs durante el join.</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>¿Mostrar los IDs de los jugadores conforme se vayan uniendo?\nActualmente: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  <string key="All">
+    <!-- used when searching for groups in all the variants -->
+    <value>Todas</value>
+  </string>
+    <string key="RandomModeQ">
+    <value>¿Permitir modo aleatorio?\nCuando el modo aleatorio está activado, cada vez que alguien inicie una partida, se asignarán aleatoriamente los siguientes parámetros: partidas caóticas, linchamientos secretos, que se muestren los roles tras morir y que se permitan Zombieas, necio o veterano.\nActualmente:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Modo aleatorio: {0}</value>
+  </string>
+    <string key="AllowNSFW">
+    <value>Permitir packs de GIFs NSFW</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>¿Permitir que los jugadores tengan packs de GIFs NSFW?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} GIFs NSFW</value>
+  </string>
+  
+    <string key="TannerEnd">
+    <!-- 0 - Tanner name -->
+    <value>Con el albor del nuevo día, {0} se despierta en medio de un gran silencio. Dándose cuenta de que no queda nadie que escuche sus historias sin fin.</value>
+  </string>
+  <string key="SorcererEnd">
+    <!-- 0 - Sorcerer name -->
+    <value>Los ojos de {0} se abren, no queda nadie a quien molestar en Springfield.</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>¿Qué variante?\nActualmente: {0}\nComo has jugado 500 juegos, puedes acceder también a: </value>
+  </string>
+  <string key="Skip">
+	<value>Omitir</value>
+  </string>
+  <!-- New Roles, April 2018 -->
+  <string key="DGTransformToLycan">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} ha sido expulsado, por lo que te has transformado en Tony en Foma. Tu equipo (si la hay) es: {1}</value>
+  </string>
+  <string key="NegSeerSees">
+    <!-- 0 - target's name -->
+    <!-- 1 - role that they are not -->
+    <value>¡Tus experimentos te dicen que {0} NO es {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>¿Quieres dormir a todo Springfield con tus historias esta noche?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>Mientras Springfield discute, {0} toma el control de la junta y comienza a proyectar fotos de sus vacaciones. Esta noche, todos caerán en un sueño profundo, y nadie podrá realizar acciones nocturnas.</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Cae la noche y los habitantes apenas llegan a sus camas por el agotamiento. Se quedan dormidos profundamente, ni siquiera recuerdan haberse ido a dormir…</value>
+  </string>
+
+  <string key="AllowThiefQ">
+    <value>¿Permitir ladrón?\nActualmente: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>El ladrón ahora: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>¿Usar el ladrón cada noche?\nActualmente: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>El ladrón puede usarse cada noche: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Permitir ladrón</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Modo «Ladrón completo»</value>
+  </string>
+
+  <string key="RoleInfoWolfMan">
+    <value>Eres Larry Burns 👱🌚, al ser el hijo del Sr Burns Lisa simpson te vera como un aliado del Sr. Burns, sin embargo eres un Sprinfildeano mas. ¡oh no!</value>
+  </string>
+  <string key="WolfMan">
+    <value>Larry Burns 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Larry Burns 👱🌚 es un Springfieldeano mas, sin embargo Lisa Simpson puede verlo como un aliado del Sr. Burns.</value>
+  </string>
+
+  <string key="RoleInfoLycan">
+    <value>¡Eres Tony en Forma 🐺🌝! Eres del equipo del Sr Burns, sin embargo Lisa Simpson te confundira con un springfildeano mas. :)</value>
+  </string>
+  <string key="Lycan">
+    <value>Tony en Forma 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Tony en forma 🐺🌝 es del equipo del Sr. Burns, pero Lisa simpsons lo vera como un springfieldeano mas.</value>
+  </string>
+
+  <string key="RoleInfoOracle">
+    <value>Eres el Profesor Frink 🌀. Has inventado una maquina que te dice quien queda en Springfield, sin embargo la maquina da informacion equivocada y verás a otro Springfieldeano que este todavía en la ciudad, así que presta atención al nombre, porque significa que aún esta por ahi. :)</value>
+  </string>
+  <string key="Oracle">
+    <value>Profesor Frink 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>El Profesor Frink 🌀 será informado del nombre de alguien NO es, y ese habitante es alguien que aun esta en Springfild.</value>
+  </string>
+
+  <string key="RoleInfoSandman">
+    <value>Eres Selma Bouvier 💤. Una única vez en la partida podrás dormir profundamente a todos al proyectar las diapositivas de tus vacaciones, haciendo que nadie pueda usar sus acciones esa noche.</value>
+  </string>
+  <string key="Sandman">
+    <value>Selma Bouvier 💤</value>
+  </string>
+  <string key="AboutSandman">
+    <value>Una vez por partida, Selma Bouvier 💤 puede dormir profundamente a todos los jugadores, de modo que nadie pueda realizar acciones esa noche.</value>
+  </string>
+
+<!-- NOT IMPLEMENTED YET -->
+  <string key="RoleInfoImam">
+    <value>Eres Maggie Simpson ☮. Tienes el poder de ser adorable y hacer que todos se olviden de echar a un ciudadano. Pero solo podrás hacerlo una vez.</value>
+  </string>
+  <string key="Imam">
+    <value>Maggie Simpson ☮</value>
+  </string>
+  <string key="AboutImam">
+    <value>Maggie Simpson ☮ puede persuadir a sus vecinos para que nadie sea expulsado de Springfield. Pero solo podrá hacerlo una vez.</value>
+  </string>
+
+  <string key="RoleInfoWiseElder">
+    <value>Eres Mona Simpson 📚. Podrás evadir al ataque del Sr. Burns una única vez; la siguiente vez no tendrás tanta suerte. Si El Hombre Pay o Moe Szyslak te echan de la ciudad, se convertirán en Springfieldeanos comunes.</value>
+  </string>
+  <string key="WiseElder">
+    <value>Mona Simpson 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>Mona Simpson 📚 podrá evadir al ataque del Sr. Burns una única vez; la siguiente vez que el equipo del Sr. Burns quieran echarla podrán hacerlo. Si el El Hombre Pay o Moe la echan, se convertirán en Springfieldeanos comunes.</value>
+  </string>
+
+  <string key="RoleInfoThief">
+    <value>¡Eres el Gato 😈! Puedes robar el rol del jugador que elijas durante la primera noche y convertirlo en un Springfieldeano.</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>¡Eres el Gato 😈! Dado que el modo «Ladrón completo» está activado, tienes un 50% de posibilidades de robar el rol de algún jugador cada noche. Si lo consigues, dicho jugador se convertirá en el nuevo Gato y seguirá con los robos.</value>
+  </string>
+  <string key="Thief">
+    <value>el Gato 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Por defecto, el Gato 😈 puede robar el rol del jugador que elija durante la primera noche y convertirlo en un Springfieldeano.\nSi el modo «Ladrón completo» está activado, cada noche tendrá un 50% de posibilidades de robar roles. Si lo consigue, el jugador afectado, se convertirá en el nuevo Gato y continuará confundiendo a la aldea.</value>
+  </string>
+    
+  <string key="AskImam">
+    <value>¿Quieres evitar que se eche a alguien de Springfield?</value>
+  </string>
+  <string key="ImamNoLynch">
+  <!-- {0} - Imam's name -->
+    <value>Maggie Simpson ☮, {0}, se ha puesto el traje princesa y esta siendo la sensacion entre los vecinos, Springfield olvida votar y no se echa a nadie este dia.</value>
+  </string>
+  <string key="ImamNoLynchNow">
+    <value>A causa del enternecedor espectaculo de Maggie Simpson ☮, nadie sera expulsado por hoy.</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+  <!-- 0 - Wise Elder's name -->
+    <value>Intentasteis entrar en la casa de {0}, ¡pero desgraciadamente Mona Simpson 📚 se encontraba ahí! {0} impidió con éxito el ataque, pero, afortunadamente, no han reconocido a ninguno de vosotros.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Los perros del Sr burns te atacaron, ¡pero afortunadamente eras Mona Simpson 📚 e impidiste con éxito el ataque, pero no reconociste a ninguno de los atacantes.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+  <!-- {0} - Hunter's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>Moe Szyslak 🎯, {0}, asusto con su fealdad a Mona Simpson 📚, {1}. {0} solloza con gran tristeza, lamentando su grave error ya que se ha convertido en un Springfieldeano mas.</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+  <!-- {0} - Gunner's Name -->
+  <!-- {1} - Wise Elder's Name -->
+    <value>El Hombre Pay 🔫, {0} le lanzo una tarta a Mona Simpson 📚, {1}. {0} solloza con gran tristeza, lamentando su grave error ya que se ha convertido en un Springfieldeano mas.</value>
+  </string>
+  
+  <string key="ThiefStealFailed">
+  <!-- {0} - The name of the thief's target -->
+    <value>Intentaste robarle el rol a {0}, pero no lo conseguiste.</value>
+  </string>
+  <string key="ThiefStealDead">
+  <!-- {0} - The name of the thief's target -->
+    <value>Intentaste robarle el rol a {0}, pero {0} ya no esta en Springfield.</value>
+  </string>
+  <string key="ThiefStoleYourRole">
+  <!-- {0} - The new role -->
+    <value>¡Te han robado el rol! Ahora eres {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+  <!-- {0} - The name of the thief's target -->
+    <value>Le robaste con éxito el rol a {0}.</value>
+  </string>
+  <string key="ThiefToMason">
+    <!-- 0 - old mason's name -->
+    <!-- 1 - new mason's name -->
+    <value>{0} ya no forma parte de tu equipo, y {1} se ha convertido en un Magio y trabajaréis mano a mano.</value>
+  </string>
+  <string key="ThiefTransformToMason">
+    <!-- 0 - mason collegues's name -->
+    <value>Tus compañeros (si los hay) son: {0}</value>
+  </string>
+  <string key="ThiefToCult">
+    <!-- 0 - old Zombie's name -->
+    <!-- 1 - new Zombie's name -->
+    <value>{0} ya no forma parte de tu equipo, y {1} se ha convertido en Sectario, ¡como tú!</value>
+  </string>
+  <string key="ThiefToWolf">
+    <!-- 0 - old wolf's name -->
+    <!-- 1 - new wolf's name -->
+    <value>{0} ya no forma parte de tu equipo, y {1} se ha convertido en Tony el Gordo, ¡como tú!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+    <!-- 0 - teammates's name -->
+    <value>Tus compañeros (si los hay) son: {0}</value>
+  </string>
+  <string key="ThiefEnd">
+  <!-- 0 - Thief's name -->
+    <value>{0} deambula por Springield, y de pronto se da cuenta de que ya no quedan roles divertidos que robar, por lo que, rápidamente, recoge sus cosas y se va en busca de otro lugar donde retomar su ilustre carrera profesional.</value>
+  </string>
+  <string key="ThiefStealChosen">
+  <!-- 0 - target's name -->
+    <value>Tu objetivo de robo ahora es {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>¿A quién quieres robarle el rol?</value>
+  </string>
+  
+  <string key="SecretLynchResultEach">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+  <!-- 2 - A list of players who voted {1} -->
+    <value>{0} votos para {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+  <!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>El resultado de los votos de hoy:\n{0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+  <!-- 0 - Number of votes -->
+  <!-- 1 - Player got lynched -->
+    <value>{0} votos para {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Secreto: Recuento de votos</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>¿Mostrar el recuento de votos al final de la votacion secreta cuando estos estén activados?\nActualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Cuando las votaciones secretas estén activadas, el recuento al final de estos será del siguiente modo: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Secreto: Votantes</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>¿Mostrar el nombre del votante por cada jugador votado cuando las votaciones secretas estén activadas y se muestre el recuento de votos?\nActualmente: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Cuando las votaciones secretas estén activadas y se muestre el recuento de votos, el nombre del votante por cada jugador votado será del siguiente modo: {0}</value>
+  </string>
+  <string key="ZombieBitten">
+  <!-- {0} - Zombie that was bitten by the Alpha Wolf -->
+	<value>¡Qué extraño! Mientras discutís a quién convertir esta noche, os dais cuenta de que… ¡{0} no está por aquí! 🤔 ¿Qué le habrá pasado?</value>
+  </string>
+  
+  <string key="Peace">
+  <!-- Used for Imam's button -->
+	<value>¡Ser Adorable!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+  <!-- Used in PM if the Imam uses his ability during lynch phase -->
+	<value>Hoy no habrá votaciones gracias al tierno espectaculo de Maggie Simpson!</value>
+  </string>
+  
+  <string key="ThiefStoleYourRoleThief">
+    <value>¡Te han robado el rol! ¡Ahora eres el nuevo ladrón 😈 y podrás robar un rol la próxima noche!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>¡Te han robado el rol! Ahora eres un Springfieldeano mas!</value>
+  </string>
+  
+  <string key="SerialKillerKilledYou" isgif="true">
+   	<value>Bob Patiño te ha tendido una emboscada, te ha inmovilizado ¡y te ha cosido a puñaladas!</value>
+  </string>
+  <string key="ThiefTeamEnd">
+	<value>Equipo del ladrón</value>
+  </string>
+  
+    <string key="StealKiller">
+    <value>Has intentado robar un rol, pero... ¡era el de Bob Patiño! En cuestión de segundos has pasado de estar acechando su casa a acabar apuñado por entrometerte en sus asuntos.</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>¡El gato, {0}, intentó robar el rol de Bob Patiño! Pero parece que le salió el tiro por la culata: encontráis el cuerpo de {0} apuñalado por todas partes...</value>
+  </string>
+    <string key="BeholderSeerStolen">
+	<value>El gato ha robado los libros de Lisa Simpson! {0} es ahora el genio de Springfield, y {1} ha sido echado de M.E.N.S.A.</value>
+  </string>
+</strings>

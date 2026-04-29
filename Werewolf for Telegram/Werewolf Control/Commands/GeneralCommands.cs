@@ -329,16 +329,6 @@ namespace Werewolf_Control
                                 return;
                             }
 
-                            var canSend = (chatmember as ChatMemberRestricted)?.CanSendMessages;
-
-                            if (chatmember.Status == ChatMemberStatus.Left || chatmember.Status == ChatMemberStatus.Kicked || (chatmember.Status == ChatMemberStatus.Restricted && !(canSend ?? true)))
-                            {
-                                Bot.Send(
-                                    GetLocaleString("NotMember", GetLanguage(u.Message.From.Id), game.ChatGroup.ToBold()),
-                                    u.Message.Chat.Id);
-                                return;
-                            }
-
                             game.AddPlayer(u, gameid);
                             return;
                         }

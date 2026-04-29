@@ -1,0 +1,1180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+   Esse modo foi feito para todos os amantes e fãs de Harry Potter. Espero que se divirtam
+   Feito por @fklopper, @TiaDinha, @istella, @dotheurro, @rodrigodvarte, @So1Real
+-->
+<strings>
+  <language name="Harry Potter" base="Português" variant="Harry Potter"/>
+  <string key="NotInGame">
+    <value> O ano letivo em Hogwarts ainda não começou. Inicie um ano letivo normal com /startgame ou um ano caótico com /startchaos</value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+    <value>{0} iniciou um novo ano letivo! Use /join para embarcar no Expresso de Hogwarts... e provavelmente levar um Avada Kedavra</value>
+    <value>Um novo ano letivo foi iniciado por {0}! Use /join para participar do embarque no Expresso de Hogwarts!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+    <value>{0} começou um ano letivo caótico em Hogwarts. Use /join para começar as aulas... e provavelmente levar um Avada Kedavra</value>
+    <value>Um novo ano letivo caótico foi iniciado por {0}! Use /join para entrar em Hogwarts!</value>
+  </string>
+  <string key="NoJoinGameRunning">
+    <value>Essa não, você perdeu a hora! O Expresso de Hogwarts já partiu. Use /nextgame para receber uma mensagem no privado quando uma nova Batalha for iniciada!</value>
+  </string>
+  <string key="AlreadyJoined">
+    <value>Você já embarcou no Expresso de Hogwarts!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 minuto restando para embarcar, use /join</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+    <value>{0} segundos restando para embarcar, use /join</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Poucos bruxos foram para Hogwarts, nada de especial aconteceu lá esse ano. Cancelando a partida!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>o Ano letivo em Hogwarts está iniciando, por favor aguarde enquanto eu, o Chapéu Seletor distribuo os papéis.</value>
+  </string>
+  <string key="BannedForExploit">
+    <value>{0} está expulso(a) por tentar explorar partes proibidas em Hogwarts (não são permitidos nomes iniciados por /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+    <value>{0}, o Chapéu Seletor não lhe reconhece, por favor mude seu nome para participar da seleção </value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Sinto muito, o número máximo de bruxos foi atingido!</value>
+  </string>
+  <string key="PlayerJoined">
+    <value>{0} embarcou no Expresso de Hogwarts. {1} bruxos embarcaram, {2} mínimo, {3} máximo</value>
+  </string>
+  <string key="PMTheBot">
+    <value>\n{0} por favor, envie uma coruja no privado ({1}) dizendo start, pois você ainda não está registrado em Hogwarts.  Para que eu possa te enviar corujas privadas, você deve me enviar uma coruja primeiro.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Você não pode fugir! VOCÊ ESTÁ MORTO(A)!  Volte para seu corpo, seu fantasma brincalhão. Parece até o Pirraça...</value>
+  </string>
+  <string key="Flee">
+    <value>{0} aparatou de volta pra casa!</value>
+  </string>
+  <string key="PlayerRoleWas">
+    <value>{0} era {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+    <value>{0} bruxos em Hogwarts .</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Ei, não te perguntei nada ainda!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Parece que você não embarcou no Expresso de Hogwarts...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Eu não consegui encontrar um(a) bruxo(a) com esse nome!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>Essa resposta não é válida!</value>
+  </string>
+  <string key="WolfVotedKill">
+    <value>{0} votou para lançar um Avada Kedavra em {1}</value>
+  </string>
+  <string key="PlayerVotedLynch">
+    <value>{0} votou para mandar {1} para Azkaban</value>
+  </string>
+  <string key="IdleKill">
+    <value>{0} não votou por 2 noites seguidas.  Forças do bem julgaram isso como coisa de bruxos das trevas e então {0} cai de repente, morto(a).\n{1}</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Rabicho, seu traidor!!! Agora você é um Comensal da Morte..</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Opção aceita</value>
+  </string>
+  <string key="BeholderSeer">
+    <value>\nO Professor de Adivinhação é {0}</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+    <value>{0} era Professor de Adivinhação, o Clarividente. Como aprendiz, você pega sua bola de cristal e se torna o novo Professor de Adivinhação.</value>
+  </string>
+  <string key="BeholderNewSeer">
+    <value>{0} era o Firenze e agora tomou o lugar de {1} como novo Professor de Adivinhação.</value>
+  </string>
+  <string key="SeerSees">
+    <value>Você vê que {0} é {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Quem você gostaria de mandar para Azkaban?</value>
+  </string>
+  <string key="AskDetect">
+    <value>Quem você gostaria de seguir?</value>
+  </string>
+  <string key="AskShoot">
+    <value>Em quem você gostaria de lançar um Sectumsempra? {0} feitiço(s) restantes</value>
+  </string>
+  <string key="AskVisit">
+    <value>A quem você gostaria de fazer uma visitinha no dormitório?</value>
+  </string>
+  <string key="AskSee">
+    <value>Quem você gostaria de ver?</value>
+  </string>
+  <string key="AskGuard">
+    <value>Quem você gostaria de proteger?</value>
+  </string>
+  <string key="AskEat">
+    <value>Quem você gostaria de lançar um Avada Kedavra?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Quem você gostaria de investigar com o patrono?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Quem será seu grande exemplo?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Quem você gostaria de dar o beijo da morte e substituir por um Dementador?</value>
+  </string>
+  <string key="DiscussWith"><!--Leave the leading spaces here please-->
+    <value>  Lembre-se de combinar com {0}</value>
+  </string>
+  <string key="And"> <!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> e </value>
+  </string>
+ <string key="RoleInfoCursed">
+    <value>Você é Dolores Umbrige, você foi amaldiçoada. Por enquanto você é um simples professor de Hogwarts, 
+           mas se você for torturado pelos Comensais, você receberá a marca negra e se tornará um Comensal da Morte.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Você é Hermione Granger, e joga por Hogwarts. Durante o dia, você pode escolher um Bruxo para seguir e descobrir o que eles são. 
+           No entanto, ao fazer isso, você pode ser descoberta pelos Comensais da Morte!</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Parabéns, você é Horácio Slughorn! Você colocou poções em frascos errados e acabou bebendo. 
+           Se os Comensais te atacarem, eles sentirão os efeitos de suas poções e não vão conseguir atacar ninguém na noite seguinte!</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Você é Lilian Potter , e seu papel é proteger Hogwarts. Durante a noite, você pode escolher um bruxo para proteger, mesmo que isso signifique perder a sua vida.  
+           Porém, se você for proteger um Comensal da Morte, você poderá ter um destino pior que a morte.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Você é Sirius Black.  Você possui 2 feitiços para ajudar Hogwarts.  
+           Durante o dia, você pode lançar um Sectumsempra em alguém. Todo mundo ouvirá os gritos de agonia da vítima e saberão que você é Sirius Black.</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value> Danada! Você é a Cho Chang, uma das bruxas mais cortejadas de Hogwarts. Durante a noite, você poderá escolher alguém para encantar com a poção Viritaserum 
+            e descobrir se o bruxo é ou não um Comensal da Morte.  Porém, se você tentar encantar um Comensal, ou alguém que está sendo atacado(a) pelos Comensais, você irá morrer.  
+            Se você encantar alguém e os Comensais tentarem te matar no seu dormitório, você irá sobreviver (já que não estava lá).</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Você é Pedro Pettigrew, o grande traidor! Por enquanto, você é um animago vivendo clandestinamente como um rato, 
+           mas assim que todos os Comensais estiverem mortos, você se revelará um Comensal.  
+           Se o Professor de Adivinhação ou Firenze vir você, você pode ou não ser identificado(a) por eles como um Comensal da Morte.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>VOCÊ É UM COMENSAL!! Que oportuno! Durante a noite você pode escolher um bruxo para torturar e matar, junto com seu clã, os Comensais da Morte.</value>
+  </string>
+  <string key="RoleInfoSeer" >
+    <value >Você é Professor de Adivinhação , seu papel é guiar Hogwarts na empreitada contra os Comensais da Morte.  
+            Durante a noite, você pode escolher alguém para 'ver', e ter seu papel revelado a você. Se revele com cautela, porque os Comensais estão loucos pra matar você!</value>
+  </string>
+  <string key="RoleInfoVillager" >
+    <value >Você é um simples Bruxo, condenado a passar seus dias estudando feitiços esperando para ser morto pelos Comensais da Morte. Uma vez por dia você pode votar em alguém pra mandar para Azkaban, use seu voto com sabedoria!</value>
+  </string>
+  <string key="RoleInfoTanner" >
+    <value >Você é Severo Snape, seu time é você mesmo!  Se você for pra Azkaban, você ganha automaticamente, sozinho. Seu egoista!</value>
+  </string>
+  <string key="RoleInfoWildChild" >
+    <value >Você é Draco Malfoy! Escolha alguém para você 'Seguir' - se ele(a) morrer ou for enviado para Azkaban, o ódio tomará conta de você e se juntará aos Comensais da Morte.</value>
+  </string>
+  <string key="RoleInfoBeholder" >
+    <value >Você é Rony Weasley, você saberá quem é o verdadeiro Professor de Adivinhação (e não o Argus Filch). Use isso para ajudar seu time, Hogwarts!</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer" >
+    <value >Você é Firenze, aprendiz de Adivinhação, e joga por Hogwarts.  Caso o professor de adivinhação morra, você tomará seu lugar como Professor.</value>
+	</string>
+  <string key="RoleInfoZombie" >
+  <value >Você é um dos Dementadores. Durante a noite, você poderá escolher alguém para dar o beijo da morte e substituí-lo por um Dementador. Se todos os jogadores restantes ao final do jogo forem substituídos por Dementadores, eles vencem!</value>
+  </string>
+  <string key="RoleInfoZombieHunter" >
+    <value >Os Dementadores estão em Hogwarts tentando sugar toda a felicidade e espalhar o medo e tristeza, e você, Remo Lupin, deve defender a escola!  Durante a noite você poderá usar o feitiço do patrono para investigar um Bruxo.  Se ele(a) for um Dementador, ele(a) morre.  Caso os dementadores forem atacar você, o Dementador mais fraco irá morrer.</value>
+  </string>
+
+  <string key="LynchTime" >
+    <value >A noite se aproxima e os Bruxos em Hogwarts se reunem para decidir quem irá para Azkaban hoje...Todo mundo tem agora {0} segundos para votar!
+    </value>
+  </string>
+  <string key="DayTime" >
+    <value >Amanheceu em Hogwarts.  Vocês têm agora {0} segundos para fazer suas acusações / defesas / discutir.</value>
+  </string>
+  <string key="NightTime" >
+    <value >Caiu a noite.  Todos vão dormir bastante cansados após mais um dia bem estressante. Vocês têm {0} segundos para usar suas ações!</value>
+  </string>
+  <string key="LynchKill" >
+    <value >Os Bruxos votaram, em meio a dúvidas e suspeitas. {0} foi enviado para Azkaban {1}</value>
+  </string>
+  <string key="LynchTie" >
+    <value >Incapazes de chegar a uma decisão final sobre quem mandar para Azkaban, os bruxos revoltados retornam para seus dormitórios, frustrados...</value>
+  </string>
+  <string key="NoLynchVotes" >
+    <value >Alguma coisa está cheirando mal, ninguém votou!  Ninguém será enviado para Azkaban hoje.....</value>
+  </string>
+  <string key="DetectiveEaten" >
+    <value >Os alunos e professores se reúnem durante a manhã, mas ninguém consegue achar {0} entre eles.  Eles correm para seu dormitório e encontram {0} despedaçado, com uma varinha enfiado em sua goela. {0} era a Hermione Granger!</value>
+  </string>
+  <string key="GuardianEaten" >
+    <value >A manhã chega e, para a surpresa de todos, empalado no topo da torre de Astronomia estava o corpo de {0}, Lilian J. Potter, sem vida.</value>
+  </string>
+  <string key="GunnerEaten" >
+    <value >Todos saem de seus quartos e então encontram uma varinha partida ao meio... em seguida pernas... então dedos...  e flutuando no lago de Hogwarts, o corpo de {0}, morto(a) pelos Comensais da Morte.  Vocês perderam o Sirius Black.</value>
+  </string>
+  <string key="SeerEaten" >
+    <value >Os alunos e professores acordam ao amanhecer e encontram {0} morta em cima de uma mesa de búzios e com cartas de tarô espalhadas pelo chão. O Professor de Adivinhação está morto.</value>
+  </string>
+  <string key="DrunkEaten" >
+    <value >Todos acordam com um forte cheiro de madeira em chamas...  O escritório de Horacio Slughorn está pegando fogo!!!!  Após apagar o incêndio, os restos de {0} são encontrados, tostadinhos....</value>
+  </string>
+  <string key="FoolEaten" >
+    <value >À medida que o sol se levanta sobre Hogwarts, os alunos encontram {0} deitado(a) em cima de uma mesa usada, COM UM GRAVETO NA MÃO E CARTAS DO FEITIÇO EXPRESSO ESPALHADAS NO CHÃO??? HAHAHAHAH QUE TROUXA, {0} era o Argus Filch</value>
+  </string>
+  <string key="DefaultEaten" >
+    <value>À medida que todos se levantam para fazer suas tarefas diarias, sentem um cheiro horrível.  Eles seguem o cheiro para encontrar {0} esquartejado(a) na floresta.  AVADA KEDAVRA.\n{1}</value>
+  </string>
+  <string key="HunterKilledZombie">
+    <value>O dormitório de {0} está bastante frio... Os alunos e professores decidem então entrar lá e sentem um vazio, como se não existisse mais felicidade no mundo... Deixando claro que Remo Lupin conjurou o seu Patrono, enchendo o local de luz e enviando o Dementador de volta para Azkaban. </value>
+  </string>
+  <string key="NoAttack" >
+    <value >Os alunos e professores se juntam no Salão Principal durante a manhã e dão um suspiro de alívio - parece que não houve nenhum ataque na última noite.</value>
+  </string>
+  <string key="CursedBitten" >
+    <value >Você foi atacado(a) pelos Comensais da Morte.  Por estar amaldiçoado(a), você se tornou um Comensal!</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Seu(s) parceiro(s) Comensais(s) são: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves" >
+    <value >{0} foi atacado(a)... Mas estava amaldiçoado(a) e se tornou um Comensal da Morte! Parabéns pelo seu novo companheiro!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true" >
+    <value >Ah não!  Os Comensais da Morte te atacaram. AVADA KEDAVRA</value>
+  </string>
+  <string key="WolvesEatDrunk" >
+    <value >Ah não! {0} estava bêbado(a)!  Agora você está bêbado(a) e não poderá atacar na próxima noite...</value>
+  </string>
+  <string key="GuardWolf" >
+    <value >Você tentou proteger um Comensal!  O Comensal da Morte te deu um Avada Kedavra!</value>
+  </string>
+  <string key="GuardSaved" >
+    <value >Você salvou a vida de {0}!</value>
+  </string>
+  <string key="GuardNoAttack" >
+    <value >{0} não foi atacado(a), então você não fez nada muito útil. Dessa vez.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+    <value>Você foi proteger {0}, mas ele(a) não estava em seu dormitório!</value>
+  </string>
+  <string key="GuardSavedYou" >
+    <value >Lilian J. Potter estava cuidando de você na noite passada e espantou os Comensais da Morte! Que bênção!</value>
+  </string>
+  <string key="HarlotEaten">
+    <value >Cho Chang escolheu um péssimo dia para tirar folga e ficar no dormitório.  {0} foi atacado(a) pelos Comensais da Morte !</value>
+  </string>
+  <string key="HarlotNotHome" >
+    <value >Estranho... {0} não estava no dormitório!  Sem jantar pra você hoje...</value>
+  </string>
+  <string key="HarlotFuckWolf" >
+    <value >Você foi no dormitório de {0} para beijar um pouco e descobrir algumas verdades, mas descobriu tarde demais que ele(a) era um Comensal da Morte.  Você está morto(a).</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic" >
+    <value >{0} foi no dormitório errado noite passada! Com um frasco de Veritaserum no bolso, {0} foi encontrado pregado cruelmente na porta do Salão Principal...  que triste :(</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic" >
+    <value >{0} foi dormir na casa de {1}, pronto(a) para ter um pouco de diversão e descobrir verdades.  Entretanto, ele(a) encontrou um Comensal da Morte atacando {1}!  O Comensal da Morte se vira rapidamente em direção a {0} e....  {0} está morta.</value>
+  </string>
+  <string key="HarlotVisitNonWolf" >
+    <value >Você percebe que {0} não é um Comensal da Morte, já que seus beijos o convenceu a beber a poção e revelar a verdade!</value>
+  </string>
+  <string key="HarlotVisitYou" >
+    <value >No meio da noite uma Bruxa entra no seu dormitório e te dá algo pra beber em troca de um beijo. Você estava muito sonolento para reconhecer, mas a voz dela era tão doce que você não pôde recusar a responder algumas perguntas. Assim, após o beijo, a bruxa acabou saindo de fininho.</value>
+  </string>
+  <string key="DetectiveCaught" >
+    <value >Você flagrou {0} xeretando por aí! {0} é a Hermione Granger, a detetive!</value>
+  </string>
+  <string key="DetectiveSnoop" >
+    <value >Sua bisbilhotada provou que {0} é {1}</value>
+  </string>
+  <string key="HarlotShot" >
+    <value >Parece que {0} não gostou de ser visitado pela Cho Chang! Sirius Black ficou louco e se vingou. {1} está morto(a).</value>
+  </string>
+  <string key="DefaultShot" >
+    <value >De repente, um feitiço é disparado.  Os alunos se viram para ver {0} de pé em cima do corpo de {1}, com a varinha ainda apontada para a cabeça.  {2}.</value>
+  </string>
+  <string key="WolfWins" isgif="true" >
+    <value >O Comensal da Morte venceu!</value>
+  </string>
+  <string key="WolvesWin" isgif="true" >
+    <value >Os Comensais da Morte venceram!</value>
+  </string>
+  <string key="VillageWins" isgif="true" >
+    <value >Os Bruxos venceram! Todos os Comensais da Morte morreram....</value>
+  </string>
+  <string key="TannerWins" isgif="true" >
+    <value >Ah não! Vocês mandaram o Suicida para Azkaban!  Ele venceu o jogo, SEUS ARGUS FILCH!</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Jogadores restantes, papéis e lado:</value>
+  </string>
+  <string key="ZombieVotedConvert" >
+    <value >{0} votou para dar o beijo da morte e substituir {1} por um Dementador.</value>
+  </string>
+  <string key="CultConvertZombieHunter">
+    <value>{0} foi enviado(a) para dar o beijo da morte e substituir {1} por um Dementador... Entretanto, ele era Remo Lupin, e tinha uma ótima maneira de afastar Dementadores! {0} voltou para Azkaban!</value>
+  </string>
+  <string key="ZombieHunterKilledCultVisit">
+    <value>{0} foi ao seu escritório na noite passada, pronto(a) para te dar o beijo da morte e te substituir....  Mas você tinha um ótimo jeito de se proteger. Um dos Dementadores voltou para Azkaban... {1} restante(s)!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Você recebeu o beijo da morte de um Dementador e foi substituído(a) por um deles.  Durante a noite, você poderá tentar dar o beijo da morte e substituir outros bruxos.</value>
+  </string>
+  <string key="CultTeam">
+    <value>Dementadores: {0}</value>
+  </string>
+  <string key="CultJoin">
+    <value>{0} recebeu o beijo da morte e foi substituido por um Dementador!</value>
+  </string>
+  <string key="CultVisitEmpty">
+    <value>{0} foi enviado(a) para dar o beijo da morte e substituir {1}... Mas ele não estava em seu dormitório!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value >Todos os Bruxos morreram e as únicos sobreviventes são os Dementadores... Os Dementadores venceram! </value>
+  </string>
+  <string key="HunterVisitDead">
+    <value>Você foi investigar {0}, mas chegando lá se deparou apenas com os sentimentos de tristeza e solidão!</value>
+  </string>
+  <string key="HunterFindZombie">
+    <value>Você invade o quarto de {0} e sente um ar de tristeza e depressão no lugar. Você sabe muito bem o que fazer nessas ocasiões: invocar o feitiço do Patrono.</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Você entra no dormitório de {0} mas não se sente vazio e infeliz.  {0} não faz parte dos Dementadores... Ainda...</value>
+  </string>
+  <string key="WildChildToWolves">
+    <value>O grande exemplo de vida de {0} acabou de morrer! Em seu ataque de fúria, ele(a) se tornou um Comensal da Morte!</value>
+  </string>
+  <string key="WildChildTransform">
+    <value>{0} foi morto(a)! Num ataque de fúria, você se torna um Comensal da Morte! Seus novos companheiros são: {1}</value>
+  </string>
+  <!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
+  <string key="Villager">
+    <value>Simples Bruxo👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Horácio Slughorn 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Cho Chang 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Professor de Adivinhação 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Pedro Pettigrew 🥸</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Lilian J. Potter 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Hermione Granger 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>Comensal da Morte 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Dolores Umbrigde 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Sirius Black 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Severo Snape 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Argus Filch 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Draco Malfoy 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Rony Weasley 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Firenze 🙇</value>
+  </string>
+  <string key="Zombie">
+    <value>um Dementador 👤</value>
+  </string>
+  <string key="ZombieHunter">
+    <value>Remo Lupin 💂</value>
+  </string>
+  <!-- These are for the player list -->
+  <string key="RanAway">
+    <value> Aparatou </value>
+  </string>
+  <string key="Dead">
+    <value>💀 *MORTO(A)*</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 Vivo(a)</value>
+  </string>
+   <string key="PlayersAlive">
+    <value>Jogadores vivos</value>
+  </string>
+  <!-- New strings 4 MAY 2016-->
+  <string key="Mason">
+    <value>Armada de Dumbledore 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Você é um membro da Armada de Dumbledore, uma sociedade secreta de Bruxos que se reuniram para ajudar Hogwarts contra ataques.  Se houver outros da Armada, você reconhecerá seu nome.  Caso contrário, você será um simples bruxo.</value>
+  </string>
+  <string key="MasonEaten">
+    <value> À medida que todos se levantam durante a manhã, o corpo de {0} é encontrado próximo à Sala Precisa, com sua varinha sobre o peito, partida ao meio e um caderno de anotações com alguns feitiços. Um dos membros da Armada está morto.</value>
+  </string>
+  <string key="MasonTeam">
+    <value>  A Armada de Dumbledore é formada por: {0}</value>
+  </string>
+  <!-- new strings May 6 2016-->
+  <string key="CultTargetDead">
+    <value>O membro mais recente dos Dementadores corre para o quarto de {0} para dar o beijo da morte e substituí-lo(a) por um Dementador, mas encontra uma bagunça, muito sangue e pedacinhos... Seu alvo virou vítima de um Ritual!</value>
+  </string>
+  <string key="GuardBlockedWolf">
+    <value>A corja se dirige ao quarto de {0}, para o ataque, mas lá dá de cara com uma criatura alta, elevada e cercada por luz, armada com uma espada e uma varinha. Lilian J. Potter sai em defesa do alvo e, após uma luta repleta de efeitos de luz, o lado perdedor foge para casa.</value>
+  </string>
+  <!-- new strings May 9 2016-->
+  <string key="CultUnableToConvert">
+    <value>{0} foi enviado(a) para dar o beijo da morte e substituir {1} por um Dementador mas o patrono dele era forte de mais. :(</value>
+  </string>
+  <!-- new string May 12 2016-->
+  <string key="NameExists">
+    <value>@{1}, um(a) bruxo(a) com nome {0} já se juntou à Batalha. Por favor mude seu nome para poder entrar em Hogwarts.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+    <value>Você foi ao dormitório de {0} para beijar um pouco, mas ao chegar você sentiu uma sensação de vazio, como se sua alma deixasse seu corpo. Na volta para o Salão Comunal de Corvinal você decide comer um sapo de chocolate...</value>
+  </string>
+  <!-- new string May 13 2016-->
+  <string key="Was">
+    <value> era </value>
+  </string>
+  <string key="GenericDeathNoReveal">
+    <value>À medida que todos se levantam e saem de seus quartos durante a manhã, percebem a ausência de {0}... Quando checam seu dormitório, encontram seu corpo sem vida.</value>
+  </string>
+  <string key="MasonConverted">
+    <value>Estranho.... {0} não apareceu na Sala Precisa esta manhã... </value>
+  </string>
+  <!-- new string May 16 2016-->
+  <string key="FleeDisabled">
+    <value> Você tenta aparatar, mas deveria saber que isso não é possível em Hogwarts. Com os Comensais da Morte por aqui, as saídas estão fechadas para NINGUÉM fugir! Boa sorte com isso!</value>
+  </string>
+  <string key="IsDead"> <!-- used when gunner shoots a player -->
+    <value>Está morta!</value>
+  </string>
+    <!-- MORE STRINGS May 16, 2016 -->
+  <string key="AdminAdded">
+    <value>{0} foi adicionado(a) na lista de admins. Você pode agora usar /config para alterar as configurações do jogo.</value>
+  </string>
+  <string key="AlreadyInGame">
+    <value>Você já está em uma Batalha! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Múltiplas batalhas foram iniciadas ao mesmo tempo. Fechando os extras.</value>
+  </string>
+  <string key="GroupQueue">
+    <value>Seu grupo está na fila.  Posição: {0} de {1}</value>
+  </string>
+  <string key="MaintBreak">
+    <value>Desculpe, estou prestes a iniciar uma pequena pausa para manutenção, você não pode iniciar um jogo agora.\nEsperando {0} jogos terminarem...\nVá em @greywolfdev para mais informações (em inglês)</value>
+  </string>
+  <string key="MaxGames">
+    <value>Desculpe, o número máximo de batalhas simultâneas foi atingido ({0}).  \nPosição na fila: {1} / {1}</value>
+  </string>
+  <string key="SkipQueue">
+    <value>{0} é um grupo preferencial e pulou a fila!</value>
+  </string>
+  <string key="NoGame">
+    <value>Não há um ano letivo em Hogwarts no momento. Inicie um novo jogo normal com /startgame ou caótico com /startchaos</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Somente um Diretor(a) pode usar este comando.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>Após esta batalha, estarei desligando o bot brevemente para manutenção.</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>Após esta batalha, estarei desligando o bot brevemente para uma atualização (automatizada).</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>ID do aluno ou professor não encontrado.  Verifique se você enviou o comando como resposta.</value>
+  </string>
+  <string key="AlreadyAdmin">
+    <value>{0} já é um(a) Diretor(a)!</value>
+  </string>
+  <string key="NotAdmin">
+    <value>{0} não é um(a) Diretor(a)!</value>
+  </string>
+  <string key="AdminRemoved">
+    <value>{0} foi removido da lista de Diretores.</value>
+  </string>
+  <string key="LanguageSet">
+    <value>Idioma alterado para {0}</value>
+  </string>
+    <string key="NoSeer">
+	<value>O Professor de Adivinhação não está presente na escola!</value>
+  </string>
+  <string key="TimesUp">
+	<value>Tempo esgotado!</value>
+  </string>
+  <!-- new strings june 10 2016 -->
+     <string key="RoleInfoCupid">
+    <value>Você é a Luna Lovegood. Enviada à Hogwarts com seu óculos spectrespecs e a poção da amortencia, você poderá escolher dois Bruxos que irão se amar pelo resto do ano letivo. Se um deles morrer, o outro morrerá de tristeza. Depois de unir dois pombinhos, você pode voltar a seguir sua vida como um simples Bruxo. </value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Você é Nymphadora Tonks, uma metamorfomaga, capaz de modificar sua própria aparência sem a utilização de feitiços ou poções. Escolha um bruxo e quando ele morrer você assumirá o papel dele em Hogwarts.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Você é Olho-Tonto Moody! Sua varinha é a sua amante e está com ela o tempo todo, até dorme com ela! Se você morrer, pode escolher um bruxo para matar. E se os Comensais da Morte te visitarem a noite, você não é alguém que aceitaria ir sozinho, mas no escuro, não consegue escolher quem matar.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Você é Gellert Grindelwald, você está sozinho e os outros bruxos não são mais que seus brinquedinhos. Toda noite você pode escolher um jogador para lançar um Avada Kedavra e adicionar para sua coleção de corpos.</value>
+  </string>
+  <string key="CupidChosen">
+    <value>O amor está no ar!! Você foi enfeitiçado. O rosto de {0} não sai da sua cabeça. Seu objetivo agora é a sobrevivência dos dois. Se um de vocês for morto ou enviado para Azkaban o outro irá acompanhar, para que possam ficar juntos.</value>
+    <value>O amor está no ar!! Você foi enfeitiçado. O rosto de {0} não sai da sua cabeça. Seu objetivo agora é a sobrevivência dos dois. Se um de vocês for morto ou enviado para Azkaban o outro irá acompanhar, para que possam ficar juntos.</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Hogwarts resolveu mandar você para Azkaban! É a sua última chance de dar uso para sua querida varinha!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} tenta alcançar sua varinha enquanto é julgado, mas seus dedos estão cansados e antes de alcançá-la, é enviado para Azkaban, sendo anunciada sua prisão...</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} saca sua varinha, e aponta para a multidão... Seus olhos de atirador tentam decidir quem ele vai levar com ele. Mas ele aceita seu fim, sozinho...</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+    <value>Prestes a ser enviado(a) para Azkaban, {0} saca sua varinha e, rápido como o bote de uma cobra, lança um feitiço em {1}! "Sectumsempra..." diz Olho-Tonto Moody para {1}, o(a) {2}, que cai duro no chão. </value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Você foi ferido mortalmente! Com seu último suspiro, você pode levar um bruxo com você... Sejá rápido!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+    <value>{0} recebeu um ferimento profundo, tanto que ele não conseguiu nem mesmo sacar sua varinha, caindo duro no chão...</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+    <value>{0}, calmo como se o sangue saindo de sua barriga não fosse nada, decide não dar seu último feitiço, aceitando seu destino...</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+    <value>{0} cai no chão, ferido mortalmente... Mas antes de morrer, ele puxa sua varinha e dá um feitiço certeiro em {1}, que cai duro no chão, com uma marca na testa. {2}</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+    <value>AAAAH! AAAH! Hogwarts ouve sons de agonia a noite! Os Comensais da Morte atacaram a pessoa errada, o Olho-Tonto Moody não iria embora sozinho, levou {0}, um(a) Comensal da Morte, junto com ele.</value>
+  </string>
+  <string key="HunterShotWolf">
+    <value>O Comensal da Morte tentou atacar a pessoa errada a noite passada! O Olho-Tonto Moody sabe se proteger muito bem e deixou um presentinho pra Hogwarts, o corpo de {0}!</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Os Comensais da Morte tentaram atacar a pessoa errada noite passada! {0} é encontrado sem suas roupas pendurado na parede, quase dá pra sentir pena do Comensal da Morte! O Gellert Grindelwald ganhou um novo corpo na sua coleção.</value>
+  </string>
+  <string key="DefaultKilled">
+    <value>Pareceu uma noite normal, mas onde está {0}? Os alunos se reúnem no quarto de {0}, e encontram seu corpo na banheira cheia de sangue com seus orgãos boiando... Gellert Grindelwald se divertiu essa noite... {1}</value>
+  </string>
+  <string key="GuardBlockedKiller">
+    <value>Você foi jogar um joguinho com {0}. Mas chegando lá, a Lilian J. Potter acabou com sua diversão! Sem brincadeiras essa noite...</value>
+  </string>
+  <string key="CultConvertHunter">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>Os Dementadores mandam {0} para dar o beijo da morte e substituir {1} por um Dementador. Chegando lá {0} é recebido com um Avada Kedavra bem no peito! {0} está morto(a)...</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+    <!-- 0 - Youngest Zombie's name -->
+    <!-- 1 - target's name -->
+    <value>Os Dementadores mandam {0} para dar o beijo da morte e substituir {1} por um Dementador. Chegando lá {0} descobre que foi uma perda de tempo, ele só sente ódio e fúria, sem ter o que fazer {0} retornou para seu quarto...</value>
+    <value>Os Dementadores mandam {0} para dar o beijo da morte e substituir {1} por um Dementador. Chegando lá {0} descobre que foi uma perda de tempo, ele só sente ódio e fúria, sem ter o que fazer {0} retornou para seu quarto...</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Você tentou proteger o bruxo errado. Gellert Grindelwald te convida para ser cobaia de um experimento terrível. O tipo que você morre no final...</value>
+  </string>
+  <string key="HarlotFuckKiller">
+    <value>Você visitou o dormitório de {0} para se divertir um pouco. Mas essa noite só {0} vai se divertir com você, enquanto ele lançava um Crucio sobre seu corpo. Você morreu, mas se te serve de consolo, ele pareceu se divertir muito essa noite...</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>{0} visitou o dormitório errado, o que era pra ser uma noite de beijos e diversão se tornou numa noite amedrontadora, Gellert Grindelwald se divertiu muito essa noite.</value>
+  </string>
+  <string key="DGToMason">
+    <value>{0}, a Nymphadora Tonks, agora se tornou um membro da Armada de Dumbledore, assim como você!</value>
+  </string>
+  <string key="DGTransformToMason">
+    <value>{0} morreu, e você agora é um membro da Armada de Dumbledore.  Seus companheiros (se houver) são: {1}</value>
+  </string>
+  <string key="DGToCult">
+    <value>{0}, a Nymphadora Tonks foi substituída por um Dementador.</value>
+  </string>
+  <string key="DGTransformToCult">
+    <value>{0} morreu, aceite que você entrou para os Dementadores. Seus novos companheiros (se houver) são: {1}</value>
+  </string>
+  <string key="DGToWolf">
+    <value>Nymphadora Tonks {0} se tornou Comensal da Morte, mais um para o clã!</value>
+  </string>
+  <string key="DGTransformToWolf">
+    <value>{0} morreu e você se transformou em Comensal da Morte!!!  Seu novo clã é: {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>O único sobrevivente foi o Gellert Grindelwald! Ele se divertiu muito com essa brincadeirinha, porque não existe diversão melhor que vencer, em especial quando isso envolve matar todos vocês!</value>
+  </string>
+  <string key="AskKill">
+    <value>Quem você quer matar essa noite?</value>
+  </string>
+  <string key="LoverDied">
+    <value>{0} dá seu último suspiro olhando no fundo dos olhos de seu amado(a), {1}, que segura seu corpo de joelhos. {1} não aguenta a dor, e, com uma varinha, lança um Avada Kedavra em si próprio... Eles ficarão juntos, mesmo no mundo dos mortos. {2}</value>
+  </string>
+  <string key="AskDoppelganger">
+    <value> Quem você escolherá para se transformar?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>Quem será o casal? Escolha o primeiro amante.</value>
+  </string>
+  <string key="AskCupid2">
+    <value>Quem será o casal? Escolha o segundo amante.</value>
+  </string>
+  <string key="Hunter">
+    <value>Olho-Tonto Moody 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Luna Lovegood 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Gellert Grindelwald 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Nymphadora Tonks 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+    <value>Você se tornou Draco Malfoy.  Seu modelo exemplar é {0}</value>
+  </string>
+  <string key="LoversWin">
+    <value>Os amantes venceram! Queriam o que né? O Amor sempre vence!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+    <value>Quando acordam, vocês encontram {0} largado no meio do Salão Principal, parecendo uma peneira por causa do Sectumsempra. Parece que alguém visitou o Olho-Tonto Moody e se deu mal! {1}</value>
+  </string>
+  
+  <string key="CultAttempt">
+    <value>No meio da noite você sente uma tristeza, um vazio, como se a sua felicidade estivesse sendo sugada. Você usa seu patrono, e fica protegido.</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+    <value>Você já está na lista de espera para {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+    <value>Você foi adicionado à lista de espera para {0}. enviarei uma coruja para você quando o próximo ano letivo começar.</value>
+  </string>
+  <string key="NotifyNewGame">
+    <value>O Expresso Hogwarts já vai sair em {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+    <value>A manhã chega à Hogwarts e somente dois bruxos restaram na escola. {0} olha para {1}, um sorriso sinistro abre em sua face, ele puxa a varinha e lança um Crucio, brincando com {1}, até que decide usar a terceira maldição imperdoável em {1}, que agora está morto.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Todos em Hogwarts morreram... Ninguém venceu essa Batalha... A não ser, talvez, os urubus.</value>
+  </string>
+  <string key="SKHunterEnd">
+    <value>O sol nasce no horizonte, {0} e {1} são os únicos sobreviventes.  {0} se aproxima sorridente de {1}, e o convida para uma brincadeira.  {1} rápido como o trovão saca sua varinha e lança um feitiço mortal em {0}. {0}, com seu último suspiro, joga um Avada Kedavra em {1}. Ambos morreram, o dia acaba e não houve nenhum vencedor para contar história...</value>
+  </string>
+    <string key="RoleModelChosen">
+    <value>Você não decidiu a tempo, então o Chapéu Seletor escolheu por você: {0}</value>
+  </string>
+  <string key="Won">
+  
+    <value> Ganhou </value>
+  </string>
+  <string key="Lost">
+    <value> Perdeu </value>
+  </string>
+  <string key="IdleCount">
+    <!-- 0 - player's name -->
+    <!-- 1 - idle count -->
+    <value>O Bruxo {0} não votou e foi morto por isso {1} vezes nas últimas 24 horas.</value>
+	</string>
+<!--Novas Strings, feitas dia 07/06/2016. Traduzidas dia 09/06/2016-->
+  <string key="AboutVG">
+    <value>Você é um simples bruxo, condenado a passar seus dias estudando/dando aulas em Hogwarts esperando para ser morto pelos Comensais, seus inimigos. Uma vez por dia você pode votar em alguém pra mandar pra Azkaban, use seu voto com sabedoria!</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Você é Professor de Adivinhação, o Clarividente, seu papel é guiar Hogwarts na empreitada contra os Comensais.  Durante a noite, você pode escolher alguém para 'ver', e ter seu papel revelado a você. Se revele com cautela, porque os Comensais da Morte estão loucos pra matar você!</value>
+  </string>
+  <string key="AboutWw">
+    <value>VOCÊ É UM COMENSAL!! Que oportuno! Durante a noite você pode escolher um bruxo para torturar e matar, junto com seu clã, os Comensais da Morte.</value>
+  </string>
+  <string key="AboutHarlot">
+    <value> Danada! Você é a Cho Chang, uma das bruxas mais cortejadas de Hogwarts. Durante a noite, você poderá escolher alguém para encantar com a poção Viritaserum e descobrir se o bruxo é ou não um Comensal da Morte.  Porém, se você tentar encantar um Comensal, ou alguém que está sendo atacado(a) pelos Comensais, você irá morrer.  Se você encantar alguém e os Comensais tentarem te matar no seu dormitório, você irá sobreviver (já que não estava lá).</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Parabéns, você é Horácio Slughorn! Você colocou poções em frascos errados e acabou bebendo. Se os Comensais te atacarem, eles sentirão os efeitos de suas poções e não vão conseguir atacar ninguém na noite seguinte! </value>
+  </string>
+  <string key="AboutCursed">
+    <value>Você é Dolores Umbrigde e foi Amaldiçoado. Por enquanto você é um professor, mas se você por atacado pelos Comensais, você se tornará um Comensal da Morte também.</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Você é Rabicho, o grande traidor! Por enquanto, você é um simples professor, mas assim que todos os Comensais estiverem mortos, você se transformará em um deles.  Se a vidente vir você, você pode ou não ser identificado(a) por ela como Comensal da Morte .</value>
+  </string>
+  <string key="AboutGA">
+    <value>Você é Lilian Potter , e seu papel é proteger Hogwarts. Durante a noite, você pode escolher um bruxo para proteger, mesmo que isso signifique perder a sua vida.  Porém, se você for proteger um Comensal da Morte, você poderá ter um destino pior que a morte.</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Você é a Hermione Granger, e joga por Hogwarts. Durante o dia, você pode escolher uma pessoa para investigar e descobrir seu papel.  No entanto, ao fazer isso, você pode ser descoberto pelos Comensais! (40% de chance)</value>
+  </string>
+  <string key="AboutGunner">
+    <value>SECTUMSEMPRA, você é o Sirius Black.  Você possui 2 feitiços para ajudar Hogwarts. Durante o dia, você pode lançar um Sectumsempra em um(a) jogador(a). Todo mundo ouvirá os gritos da vítima e saberão que você é Sirius Black.</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Você é Severo Snape, seu time é você mesmo!  Se você for pra Azkaban, você ganha automaticamente, sozinho. Seu egoista!</value>
+  </string>
+  <string key="AboutFool">
+    <value>O Argus Filch diz que é um bruxl.... Quando ele faz um feitiço, nafa acontece.</value>
+  </string>
+  <string key="AboutCult">
+    <value>Você é um dos dementadores.  Durante a noite, você poderá escolher alguém para converter aos Comensais. Se todos os jogadores restantes ao final do jogo forem dos Comensais, eles vencem!</value>
+  </string>
+  <string key="AboutCH">
+    <value>Os Dementadores estão em Hogwarts tentando sugar toda a felicidade e espalhar o medo e tristeza, e você, Remo Lupin, deve defender a escola!  Durante a noite você poderá usar o feitiço do patrono para investigar um Bruxo.  Se ele(a) for um Dementador, ele(a) morre.  Caso os dementadores forem atacar você, o Dementador mais fraco irá morrer.</value>
+  </string>
+  <string key="AboutWC">
+    <value>Você é Draco Malfoy! Escolha alguém para você se 'afeiçoar' - se ele(a) morrer, você se transformará em Comensal da Morte.</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Você é Firenze, e joga por Hogwarts.  Caso o Professor de Adivinhação morra, você tomará seu lugar como professor.</value>
+  </string>
+  <string key="AboutBH">
+    <value>Você é Rony Weasley. Você saberá quem é o verdadeiro Professor de Adivinhação (e não o Argus Filch). Use isso para ajudar seu time, Hogwarts!</value>
+  </string>
+  <string key="AboutMason">
+    <value>Você é um membro da Armada de Dumbledore, uma sociedade secreta de Comensais que se reuniu para ajudar Hogwarts contra ataques.  Se houver outros da Armada, você reconhecerá seu nome.  Caso contrário, você será um simples bruxo.</value>
+  </string>
+  <string key="AboutDG">
+    <value>Você é Nymphadora Tonks, uma metamorfomaga, capaz de modificar sua própria aparência sem a utilização de feitiços ou poções. Escolha um jogador, quando ele morrer você assumirá o papel dele em Hogwarts.</value>
+  </string>
+  <string key="AboutCupid">
+    <value>Você é Luna Lovegood. Enviada à Hogwarts com seu óculos spectrespecs, e a poção da amortencia, você poderá escolher dois Bruxos que irão se amar pelo resto do ano letivo. Se um deles morrer, o outro morrerá de tristeza. Depois de unir dois pombinhos, você pode voltar a seguir sua vida como um simples Bruxo.    </value>
+  </string>
+  <string key="AboutHunter">
+    <value>
+      Você é Olho-Tonto Moody! Sua varinha é a sua amante e você está com ela o tempo todo, até dorme com ela! Se você morrer, pode escolher alguém para matar. E se os Comensais da Morte te visitarem a noite, você não é alguém que aceitaria ir sozinho, mas no escuro, você não consegue escolher quem matar.
+    </value>
+  </string>
+  <string key="AboutSK">
+    <value>Você é Gellert Grindelwald. Seu time é você mesmo e os outros jogadores não são mais que seus brinquedinhos. Toda noite você pode escolher um jogador para matar e adicionar para sua coleção de corpos.</value>
+  </string>
+  <string key="AboutPara">
+    <value>Para é  desenvolvedor desse jogo, e ele gosta de latir pras pessoas. Talvez ele tenha ficado muito tempo com lobos... Mexer com lobisomens não é uma idéia muito boa, né?</value>
+  </string>
+  <string key="EndTime">
+    <value>Duração do jogo: {0}</value>
+  </string>
+ 
+ 
+    <!--New strings, July the 8th -->
+
+  <string key="Day">
+    <!--0 - Day -->
+    <value>{0}º dia</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Alguma coisa deu errado, e esse modo desligou :/</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Eu te enviei uma coruja no privado</value>
+  </string>
+  <string key="StartPM">
+    <value>Por favor me envie uma coruja no privado para eu conseguir te enviar mensagens: @werewolfbot</value>
+  </string>
+  <string key="PMTrue">
+    <value>Obrigado por me ativar! Agora eu posso te enviar corujas exclusivas.</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Você precisa usar o comando smite como resposta ao usuário que quer aniquilar</value>
+  </string>
+  <string key="WhatToDo">
+    <value>O que você quer fazer?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Você precisa estar em um grupo para se juntar a uma partida nele!</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Você precisa começar uma partida dentro de um grupo!</value>
+  </string>
+  <string key="PingInfo">
+    <value>Tempo de processamento da mensagem: {0}\nUso de CPU atual: {1}%\nMensagens por segundo: {2}</value>
+  </string>
+  <string key="WhatLang">
+    <value>Que língua?\nAtual: {0}</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Que variante?\nAtual: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Idioma definido como {0}</value>
+  </string>
+  <string key="GetLang">
+    <value>Pegar que arquivo de idioma?</value>
+  </string>
+  <string key="NoNodes">
+    <value>Não há modos ligados no momento, por favor tente novamente dentro de alguns segundos</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Você precisa acionar esse comando em um grupo</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Você não é um administrador global...</value>
+  </string>
+  <string key="NotPara">
+    <value>Você não é o Para!</value>
+  </string>
+  <string key="Yes">
+    <value>Sim</value>
+  </string>
+  <string key="No">
+    <value>Não</value>
+  </string>
+  <string key="Allow">
+    <value>Permitir</value>
+  </string>
+  <string key="Disallow">
+    <value>Não permitir</value>
+  </string>
+  <string key="Show">
+    <value>Mostrar</value>
+  </string>
+  <string key="Hide">
+    <value>Não mostrar</value>
+  </string>
+  <!-- Game Mode Choices-->
+  <string key="NormalOnly">
+    <value>Apenas Normal</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Apenas Caos</value>
+  </string>
+  <string key="PlayerChoice">
+    <value>Escolha do jogador</value>
+  </string>
+
+  <!-- Show Roles on End Game -->
+  <string key="ShowNone">
+    <value>Não mostrar nenhum</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Mostrar apenas os papéis de jogadores vivos</value>
+  </string>
+  <string key="ShowAll">
+    <value>Mostrar os papéis de todos os jogadores</value>
+  </string>
+
+  <string key="Cancel">
+    <value>Cancelar</value>
+  </string>
+  <string key="AllowFleeQ">
+    <!-- note, there is NO space after {0}.  This is on purpose # editem isso quando der pra traduzir o "not"# -->
+    <value>Você quer permitir fugas após o início de uma partida?\nLembre-se que jogadores sempre poderão fugir antes do início da partida!\nAtual: Players can {0}flee</value>
+  </string>
+  <string key="AllowFleeA">
+    <!-- note, there is NO space after {0}.  This is on purpose  # editem isso quando der pra traduzir o "not" # -->
+    <value>{0} serão permitidos jogadores deixarem a partida após começar um jogo</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Que quantidade de jogadores você gostaria de definir como a máxima?\nAtual: {0}</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Número máximo de jogadores definido como {0}</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Mostrar ou não os papéis dos jogadores quando morrerem?\nAtual: {0}</value>
+  </string>
+  <!-- # editem isso quando der pra traduzir o shown/hidden # -->
+  <string key="ShowRolesDeathA">
+    <value>Papéis dos jogadores serão {0} quando morrerem.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Qual modo de jogo estará ativo no grupo?\nAtual: {0}</value>
+  </string>
+  <string key="GameModeA">
+    <value>Modo de jogo definido como {0}</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Como você quer que os papéis de jogadores sejam revelados ao fim do jogo?\nAtual: {0}</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Revelação dos papéis definida como: {0}</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Escolha a duração base (em segundos) do dia.   Ela ainda será modificada de acordo com o número de jogadores.\nO tempo mínimo adicionado de acordo com os jogadores é de 60 segundos.  Configuração padrão: {0}\nAtual: {1}</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Duração base do dia definida como {0} segundos</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Escolha a duração (em segundos) da noite. Configuração Padrão: {0}\nAtual:{1}</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Duração da noite definida como {0} segundos</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Escolha a duração (em segundos) da votação. Configuração padrão: {0}\nAtual:{1}</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Duração da votação definida como {0} segundos</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Permitir o Trouxa como um papel possível?\nAtual: {0}</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Existência do Trouxa definida como: {0}</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Permitir o Suicida como um papel possível?\nAtual: {0}</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Existência do Suicida definida como: {0}</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Permitir a Seita como um papel possível?\nAtual: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Existência a Seita definido como: {0}</value>
+  </string>
+  <string key="ThankYou">
+    <value>Obrigado e tenha um bom jogo!</value>
+  </string>
+   <string key="WhatLangGroup">
+    <value>Você quer procurar um grupo jogando em que idioma?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Aqui estão os grupos jogando em {0}:</value>
+  </string>
+  <string key="Members">
+    <value>Membros:</value>
+  </string>
+  <string key="StartMe">
+    <value>Por favor me mande start no privado para eu poder te enviar mensagens.</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} não iniciou o bot, e foi removido(a) do jogo!</value>
+  </string>
+  <string key="LatestList">
+    <value>Aqui está a lista mais recente de bruxos</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Não fui capaz de obter a lista de jogadores, você tem certeza de que o jogo já começou?</value>
+  </string>
+  <string key="YouJoined">
+    <value>Você se juntou à Batalha em {0}</value>
+  </string>
+    <string key="Ping2">
+    <value>Tempo até o envio da mensagem de ping: {0}</value>
+  </string>
+  
+  <!-- Update 4.0-->
+  <string key="RoleInfoMayor">
+    <value>Você é o Dumbledore. Seu voto durante o julgamento para Azkaban contará duas vezes, uma vez que você se revelou. Você faz parte do time de Hogwarts.</value>
+  </string>
+
+  <string key="RoleInfoPrince">
+    <value>Você é secretamente Harry Potter, o Príncipe, escapando de sua vida aborrecida com seus tios trouxas, passa o dia com os alunos de Hogwarts, onde se sente em casa. Se eles tentarem enviá-lo à Azkaban, perceberão seu erro e ninguém será mandado para Azkaban.</value>
+  </string>
+
+  <string key="RoleInfoClumsyGuy">
+    <value>Você é Neville Longbottom, o Desajeitado: Você vai tentar votar, mas há uma chance de 50% de votar em outro bruxo do que você pretendia. Mesmo assim, você está no time de Hogwarts, talvez você precise do seu Lembrol para votar...</value>
+  </string>
+
+  <string key="RoleInfoSorcerer">
+    <value>Você é Bellatrix Lestrange, a Feiticeira, e se junta aos Comensais da Morte pela noite, ao invés dos professores. À noite, você usará seu poder para encontrar os Comensais da Morte ou a Vidente. Você ganha somente se os Comensais da Morte ganharem. Desfrute de ajudar a exterminar esses miseráveis ​​alunos. Crianças travessas devem ser punidas! </value>
+  </string>
+
+  <string key="RoleInfoBlacksmith">
+    <value> BABUINOS BOBOCAS BALBUCIANDO EM BANDO!!!!Você é Minerva MacGonagall. Durante os anos, você sempre quis usar uma combinação de feitiços e agora surgiu a oportunidade. Você irá usar o feitiço Protego Totalum que cria uma barreira protetora em volta de Hogwarts. Perfeita para proteger dos ataques dos Comensais da Morte.</value>
+  </string>
+
+  <string key="RoleInfoAlphaWolf">
+    <value>Você é o Lord Voldemort, a origem de todo mal. Seu poder é a causa da maldição que transforma bruxos em comensais da Morte. Cada noite, você vai escolher um bruxo para atacar e matar, mas, enquanto você estiver vivo, sua vítima tem uma chance de 20% de se transformar em um Comensal da Morte.</value>
+  </string>
+
+  <string key="RoleInfoWolfCub">
+    <value>Você é a Nagini, adorada por seu mestre e protegida pelos Comensais. Você vai poder escolher um Bruxo para atacar e matar todas as noites. Se acontecer de você ser morta, seus protetores ao verem seu corpo no chão, vingarão sua morte, atacando dois Bruxos na noite seguinte. </value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Hogwarts se prepara para mandar {0} à Azkaban, que grita, "Esperem! Eu sou o Harry Potter. Essa cicatriz, na minha testa, prova isso. Eu sou o garoto que sobreviveu à Voldemort uma vez, não posso ser enviado à Azkaban". Se sentindo tolos, todos em Hogwarts voltam para seus quartos.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Você tenta ver {0}, mas não consegue entender direito o que ele é. Tudo o que sabe é que ele não é Professor de Adivinhação nem Comensal da Morte...</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} dá um passo à frente e mostra o selo oficial de Dumbledore, declarando que é ele. De agora em diante, os votos de {0} para enviar alguém à Azkaban serão contados duas vezes.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Clique em "Revelar" quando estiver pronto para se revelar como Dumbledore.</value>
+  </string>
+  <string key="Reveal">
+    <value>Revelar</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Você quer lançar o Protego Totalum, impedindo os Comensais da Morte de atacarem essa noite?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Enquanto o resto de Hogwarts debate sobre o que está acontecendo, {0} lança o feitiço protetor Protego Totalum, que protegerá a Escola do ataque de Comensais por uma noite. "Eu sempre quis fazer isso!".</value>
+  </string>
+  <string key="Mayor">
+    <value>Dumbledore 🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Harry Potter 👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Bellatrix Lestrange 🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Neville Longbottom 🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Minerva MacGonagall ⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Voldemort ⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Nagini 🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Os Comensais da Morte começaram a atacar {0}, mas, de repente, {1}, o Lord Voldemort, manda todos pararem. Ele diz aos seus seguidores que {0} deveria ganhar a marca negra ao invés de morrer, então todos voltam aos seus dormitórios, deixando sua vítima torturada para trás. {0} vai virar Comensal da Morte amanhã de noite.</value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Você foi atacado por Comensais da Morte, mas Lord Voldemort te escolheu. Ao invés de ser morto, você ganhará a marca negra... e vai se juntar aos Comensais da Morte amanhã à noite!</value>
+  </string>
+  <string key="BittenTurned">
+    <value>O sol se põe, e você começa a sentir a sua marca negra ardendo, o que logo dá espaço à dor... Agora você é um Comensal da Morte!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Como Alvo Dumbledore, o diretor, você exercerá seu papel até se revelar. Então você poderá ter o seu voto contado duas vezes na hora de mandar alguém para Azkaban (ou seja, o seu voto é duas vezes mais poderoso que qualquer um). Use o seu poder sabiamente para ajudar o Time de Hogwarts.</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Harry Potter é uma parte importante do Time de Hogwarts. Assim que tentam mandá-lo para Azkaban, ele mostrará sua cicatriz, lembrando ao povo quem ele é. Assim, só poderá ser morto durante a noite, ou pelo Olho-Tonto Moody.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Você se lembra da boa e velha Vidente? Bem, agora os Comensais tem uma, e é Bellatrix Lestrange. Ela pode apenas 'ver' os Comensais e o Professor de Adivinhação, e é do time dos Comensais.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Você é Neville Longbottom. Você não deveria ter bebido tanto de manhã. Agora você não consegue enxergar nada. Será que você consegue votar na pessoa certa na hora de mandar alguém para Azkaban? (Você tem chance de 50% de votar na pessoa errada)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>BABUINOS BOBOCAS BALBUCIANDO EM BANDO!!!!Você é Minerva MacGonagall. Durante os anos, você sempre quis usar uma combinação de feitiços e agora surgiu a oportunidade. Você irá usar o feitiço Protego Totalum que cria uma barreira protetora em volta de Hogwarts. Perfeita para proteger dos ataques dos Comensais da Morte.
+    </value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Você é Lord Voldemort, a origem de todo mal. Seu poder é a causa da marca negra que transforma bruxos em comensais da Morte. Cada noite, você vai escolher um bruxo para atacar e matar, mas, enquanto você estiver vivo, sua vítima tem uma chance de 20% de se transformar em um comensal da morte.
+    </value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Você é Nagini, adorada por seu mestre e protegida pelos Comensais. Você vai poder escolher um Bruxo para atacar e matar todas as noites. Se acontecer de você ser morta, seus protetores ao verem seu corpo no chão, vingarão a sua morte, atacando dois Bruxos na noite seguinte..</value>
+  </string>
+
+ <!-- new strings 06 nov-->
+  <string key="DGTransformToAlpha">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} morreu, e você se transformou em Lord Voldemort.  Os seus companheiros (se houver) são: {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+    <!-- 0 - target's name -->
+    <!-- 1 - teammates's name -->
+    <value>{0} morreu, e você se transformou em Nagini.  Os seus companheiros (se houver) são: {1}</value>
+  </string>
+  <string key="VillageTeam">
+    <value>Time de Hogwarts</value>
+  </string>
+  <string key="NeutralTeam">
+    <value>Time Neutro</value>
+  </string>
+  <string key="WolfTeam">
+    <value>Time dos Comensais da Morte</value>
+  </string>
+  <string key="SerialKillerTeam">
+    <value>Time Gellert Grindelwald.</value>
+  </string>
+  <string key="CultTeam">
+    <value>Time dos Dementadores</value>
+  </string>
+  <string key="TannerTeam">
+    <value>Time Rabicho</value>
+  </string>
+  - <string key="VillageTeamEnd">
+  <value>Time de Hogwarts</value> 
+  </string>
+- <string key="NeutralTeamEnd">
+  <value>Time Neutro</value> 
+  </string>
+- <string key="WolfTeamEnd">
+  <value>Time dos Comensais da Morte</value> 
+  </string>
+- <string key="SerialKillerTeamEnd">
+  <value>Time Gellert Grindelwald.</value> 
+  </string>
+- <string key="CultTeamEnd">
+  <value>Time dos Dementadores</value> 
+  </string>
+- <string key="TannerTeamEnd">
+  <value>Time Rabicho</value> 
+  </string>
+  <string key="CultConvertWolf">
+  <value>Os Dementadores enviam {0} para dar o beijo da morte em {1} e substítuí-lo para um Dementador, mas em vez disso, ele não sente nada {0} retornou para seu lugar de descanso...</value> 
+  </string>
+    <string key="ApprenticeSeerEaten">
+    <value>Hogwarts acorda e encontra o corpo de Firenze todo ensaguentado, é um dia triste na escola... {0} morreu!</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Parece que {0}, a Minerva MacGonagall, é bem azarada. Marcas de feitiços foram encontradas no seu corpo. E diversas varinhas desapareceram, o Gellert Grindelwald fez a festa!</value>
+  </string>
+  <string key="ZombieKilled">
+    <value>De manhã todos encontram {0} empalado em um candelabro. O Serial Killer não se importa com religião, todos são brinquedinhos para ele! A Seita vai sentir falta de {0}...</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Os bruxos ficam de coração partido ao ver {0}, a Luna Lovegood morta. Estranho o fato de seu coração estar faltando, claramente mais uma obra macabra de Gellert Grindelwald.</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>{0}, o Bêbado teve o seu fígado retirado cirurgicamente e colocado em uma garrafa de pinga. Obviamente mais uma brincadeira do Serial Killer que deve ter adorado seu novo drink. </value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>{0} é encontrado com grandes fendas onde antes houveram suas asas. {0}, o Anjo Guardião, está morto, e a noite agora é mais sombria.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Na calada da noite vocês ouvem um tiro na casa de {0}, a Atiradora! Seus sonhos são tormentosos depois de encontra-la com um buraco na testa, e a arma embaralhada em suas entranhas, mais uma vítima do Serial Killer.</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Houve um terrível assassinato! {0}, o Prefeito foi encontrado assado com uma maçã na boca! O Serial Killer finalmente conseguiu vingança pelos anos preso no hospício.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>O sino toca por toda a Aldeia antes do nascer do sol. Os soldados do Rei estão em todo lugar investigando a morte de {0}, o Príncipe. E nenhuma pista foi encontrada ainda, além do chapéu de bobo da corte na cabeça decepada do Principe, com a assintaura em sangue "Serial Killer" na parede.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>A Aldeia acorda para ver o corpo de {0}, a Vidente, morta. No lugar de seu cérebro, uma bola de cristal. O Serial Killer é assustador!</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Os gritos de desespero e raiva do Voldemort podem ser ouvidos e sentidos por toda Hogwarts. Parece que um erro foi cometido e os Comensais mataram um aliado. A Bellatrix Lestrange, {0}, está morta.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>AVADA KEDAVRA! Não há crueldade grande o suficiente para os Comensais. {0}, o Draco Malfoy, morreu, e o que sobrou foram apenas suas vestes de aluno da Sonserina e sua varinha quebrada! Que crueldade!</value>
+  </string>
+  <string key="SerialKillerKilledCH"> <!--used when CH visits SK-->
+    <value>Hogwarts acordou essa manhã só para encontrar um corpo torturado e morto no leito do Lago negro. {0}, o Inquisidor, investigou o bruxo errado. Gellert Grindwald utilizou todos os feitiços de tortura que se pode imaginar.</value>
+  </string>
+  <string key="CultConvertWolfPublic"> <!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>Péssima escolha dos dementadores ao visitar um Comensal que decidiu ficar no seu dormitório durante a noite. {0} retornou para Azkaban. Os comensais parecem conhecer uma boa forma de afastar os dementadores.</value>
+  </string>
+  <string key="CultConvertKillerPublic"> <!--used when Zombies convert the SK-->
+    <value>De manhã os bruxos acordam em meio a barulhos, todos vão atras da causa e param próximo ao Salgueiro lutador. Eles polarizam ao ver alguém afastar um Dementador. Os dementadores devem pensar bem em quem visitar, pois, Gellert Grindelwald não se importa com a raça, todos são experimentos para ele! Os dementadores perderam o {0}...</value>
+  </string>
+  <string key="GAGuardedKiller">
+    <value>{0} se deparou de frente com pessoa errada durante a noite. Foram encontradas marcas estranhas nas paredes do corredor que levava para um dos dormitórios, e a investigação dos professores concluiu que alguém destruiu o espírito protetor de Lilian J. Potter. Um bilhete com os dizeres "Gellert Grindwald esteve aqui" foi encontrado no local.</value>
+  </string>
+  <string key="GAGuardedWolf">
+    <value>{0} foi proteger um Comensal ontem à noite. Hogwarts acordou e apenas encontrou o corpo de {0} com marcas da maldição Cruciatus!! Os Comensais não gostam de pessoas protetoras.</value>
+  </string>
+</strings>

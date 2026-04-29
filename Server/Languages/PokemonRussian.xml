@@ -1,0 +1,2154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<strings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- Last edited by Balmer -->
+  <language name="Pokemon Russian" base="Русский" variant="Покéмон" owner="Efosamark" />
+  <string key="NotInGame">
+    <value>Ты еще не состоишь ни в какой лиге Покéмонов... </value>
+  </string>
+  <string key="PlayerStartedGame" isgif="true">
+<!-- 0 - Player name -->
+    <value>[Нормальная]{0} разбудил Профессора Оука! Жми ПРИСОЕДИНИТЬСЯ чтобы получить своего Покéмона!</value>
+  </string>
+  <string key="PlayerStartedChaosGame" isgif="true">
+<!-- 0 - Player name -->
+    <value>[Хаос]Доктор Виллоу был пробужден тренером {0}! Жми ПРИСОЕДИНИТЬСЯ чтобы получить одного из множества Покéмонов!</value>
+  </string>
+  <string key="NoJoinGameRunning" deprecated="true">
+    <value>Ты не можешь сейчас присоединиться! Покéмоны уже розданы!</value>
+  </string>
+  <string key="AlreadyJoined" deprecated="true">
+    <value>Ты уже в очереди за своим Покéболом!</value>
+  </string>
+  <string key="MinuteLeftToJoin">
+    <value>1 минута чтобы ПРИСОЕДИНИТЬСЯ</value>
+  </string>
+  <string key="SecondsLeftToJoin">
+<!-- 0 - remaining seconds (number) -->
+    <value>{0} секунд чтобы ПРИСОЕДИНИТЬСЯ</value>
+  </string>
+  <string key="NotEnoughPlayers">
+    <value>Недостаточно тренеров, отменяю сбор Лиги Покéмонов!</value>
+  </string>
+  <string key="StartingGameWait">
+    <value>Лига Покéмонов запущена, дождись получения своего покебола.</value>
+  </string>
+  <string key="BannedForExploit">
+<!-- 0 - Player name -->
+    <value>{0} забанен за использование эксплойта (имена не должны начинаться с /)</value>
+  </string>
+  <string key="ChangeNameToJoin">
+<!-- 0 - Player name -->
+    <value>{0}, пожалуйста, измени свое имя чтобы присоединиться.</value>
+  </string>
+  <string key="PlayerLimitReached">
+    <value>Извини, максимальное количество тренеров достигнуто!</value>
+  </string>
+  <string key="PlayerJoined">
+<!-- 0 - Player name -->
+<!-- 1 - current trainers -->
+<!-- 2 - Minimum trainers -->
+<!-- 3 - Maximum trainers -->
+    <value>{0} присоединился к игре.\nСейчас у нас {1} тренеров, нам нужно минимум {2} тренеров чтобы собрать Лигу Покéмонов, максимум {3}. ПРИСОЕДИНИТЬСЯ</value>
+  </string>
+  <string key="PMTheBot">
+<!-- 0 - Player name -->
+<!-- 1 - bot username -->
+    <value>{0} Пожалуйста нажми на кнопку внизу или на {1} чтобы получить Покéмона. Ты не можешь стать частью Лиги Покéмонов без этого.</value>
+  </string>
+  <string key="DeadFlee">
+    <value>Ты не можешь выпустить своего Покéмона, твой Покéмон уже выбит!</value>
+  </string>
+  <string key="Flee">
+<!-- 0 - Player name -->
+    <value>{0} сдался и отпустил его/ее Покéмона на свободу!</value>
+  </string>
+  <string key="PlayerRoleWas">
+<!-- 0 - Player name -->
+<!-- 1 - Player role -->
+    <value>{0} с {1}</value>
+    <value>{0} и его/ее {1}</value>
+  </string>
+  <string key="CountPlayersRemain">
+<!-- 0 - Number of trainers -->
+    <value>{0} тренеров осталось.</value>
+  </string>
+  <string key="DidntAsk">
+    <value>Хей я еще ничего не спросил!</value>
+  </string>
+  <string key="NotPlaying">
+    <value>Похоже ты еще не в игре...</value>
+  </string>
+  <string key="NoPlayerName">
+    <value>Я не могу найти игрока с таким именем!</value>
+  </string>
+  <string key="AnswerNonValid">
+    <value>Это не корректный ответ!</value>
+  </string>
+  <string key="WolfVotedKill">
+<!-- 0 - wolf teammate name -->
+<!-- 1 - Victim name -->
+    <value>{0} проголосовал за начало битвы Покéмонов с {1}.</value>
+  </string>
+  <string key="PlayerVotedLynch">
+<!-- 0 - Voter name -->
+<!-- 1 - Target name -->
+    <value>{0} проголосовал за то чтобы отправить Покéмона {1} на волю.</value>
+  </string>
+  <string key="IdleKill">
+    <value>{0} не голосовал два дня подряд. {1} решил, что этот тренер недостаточно хорош и бросил его!</value>
+  </string>
+  <string key="TraitorTurnWolf">
+    <value>Команда Ракета 🐺 потеряла всех своих членов, настало твое время вернуть Команде Ракета былую славу!</value>
+  </string>
+  <string key="ChoiceAccepted">
+    <value>Выбор принят.</value>
+  </string>
+  <string key="BeholderSeer">
+<!-- 0 - seer name -->
+    <value>\nВладелец Алаказама 👳 - {0}.</value>
+  </string>
+  <string key="ApprenticeNowSeer">
+<!-- 0 - seer name -->
+    <value>Алаказам тренера {0} был выбит! Твой Кадабра набрал достаточно опыта и эволюционировал в Алаказама! </value>
+  </string>
+  <string key="BeholderNewSeer">
+<!-- 0 - apprentice name -->
+<!-- 1 - seer name -->
+    <value>Как только Алаказам тренера {1} был выбит, Кадабра {0} эволюционировал в Алаказама 👳!</value>
+  </string>
+  <string key="SeerSees">
+<!-- 0 - player name -->
+<!-- 1 - player role -->
+    <value>Ты видишь что у тренера {0} - Покéмон {1}!</value>
+  </string>
+  <string key="AskLynch">
+    <value>Чьего Покéмона ты хочешь отпустить на свободу?</value>
+  </string>
+  <string key="AskDetect">
+    <value>За кем ты хочешь отправить следить своего Ратикейта?</value>
+  </string>
+  <string key="AskShoot">
+<!-- 0 - bullet count -->
+    <value>На чьем Покéмоне Снорлакс должен использовать Гипер Луч? У тебя осталось {0} PP.</value>
+  </string>
+  <string key="AskVisit">
+    <value>С каким тренером ты хочешь подружиться?</value>
+  </string>
+  <string key="AskSee">
+    <value>На ком твой Покемон должен использовать Провидение?</value>
+  </string>
+  <string key="AskGuard">
+    <value>На ком Мистер Мим должен использовать Барьер?</value>
+  </string>
+  <string key="AskEat">
+    <value>Время для Команды Ракета выбрать тренера для битвы! На кого вы хотите напасть?</value>
+  </string>
+  <string key="AskHunt">
+    <value>Кто из тренеров владеет клоном Мьюту  и кого следует убрать твоему Мью?</value>
+  </string>
+  <string key="AskRoleModel">
+    <value>Кто из тренеров твой любимый семпай?</value>
+  </string>
+  <string key="AskConvert">
+    <value>Кого из тренеров ты хочешь нанять на фабрику клонирования Мьюту?</value>
+  </string>
+  <string key="DiscussWith">
+<!--Leave the leading spaces here please-->
+<!-- 0 - teammate names -->
+    <value> Обсуди выбор с {0}</value>
+  </string>
+  <string key="And">
+<!--this is paired with "DiscussWith".  again, leave the spaces!-->
+    <value> и </value>
+  </string>
+  <string key="RoleInfoCursed">
+    <value>Ты получил Пиджеота 😾! Но ты всегда хотел присоединиться к Команде Ракета (их Легендарные Птицы сильнее твоей птицы xD), если они придут к тебе - ты бросишь своего Пиджеота и присоединишься к Команде Ракета.</value>
+  </string>
+  <string key="RoleInfoDetective">
+    <value>Ты офицер Дженни, работник полиции Покесити. Твой покемон Ратикейт 🕵, ты можешь послать его проверить любого тренера, но есть шанс что Команда Ракета узнает об этом. (40% шанс)</value>
+  </string>
+  <string key="RoleInfoDrunk">
+    <value>Ты получил Баттерфри 🍻, ты можешь попросить Баттерфри использовать Сонную Пыльцу на Команду Ракета если они тебя атакуют.</value>
+  </string>
+  <string key="RoleInfoGuardianAngel">
+    <value>Ты получил Мистера Мима 👼. Ты можешь выбрать тренера, на которого будет наложен Барьер. Если ты выберешь члена Команды Ракета, есть 50% шанс того, что ты проиграешь Битву Покéмонов.</value>
+  </string>
+  <string key="RoleInfoGunner">
+    <value>Ты получил Снорлакса 🔫. Снорлакс имеет 2 заряда Гипер Луча. Ты можешь использовать его на чужом Покéмоне. Все это увидят и будут знать, что у тебя Снорлакс (Ну, хотя бы не у Команды Ракета)</value>
+  </string>
+  <string key="RoleInfoHarlot">
+    <value>Ты получил Джиглипаффа 💋! Джиглипафф любит заводить друзей и каждую ночь ты можешь выбрать тренера, с которым подружится Джиглипафф. Но если ты навестишь Команду Ракета или тренера, с которым у них битва, Джиглипафф будет выбит. Если ты выпустишь Джиглипафф, Команда Ракета не сможет вызвать тебя на битву.</value>
+  </string>
+  <string key="RoleInfoTraitor">
+    <value>Ты получил Визинга 🥸! Пока ты добрый тренер, но когда Команда Ракета потерпит поражение, ты займешь их место! Если Алаказам использует Провидение на тебя, есть вероятность что ты будешь показан как член Команды Ракета.</value>
+  </string>
+  <string key="RoleInfoWolf">
+    <value>ТЫ ЧАСТЬ КОМАНДЫ РАКЕТА 🐺!!! В твоем распоряжении Легендарные Птицы: Молтрес, Запдос и Артикуно. Ты можешь выбрать тренера - цель для битвы каждый день.</value>
+  </string>
+  <string key="RoleInfoSeer">
+    <value>Ты получил Алаказама 👳! Каждый день ты можешь использовать Провидение и проверить Покéмона, которым тренер владеет.</value>
+  </string>
+  <string key="RoleInfoVillager">
+    <value>Ты получил Маджикарпа 👱. =( Ты не можешь выиграть ни одну битву Покéмонов. Плескайся до конца времен!</value>
+  </string>
+  <string key="RoleInfoTanner">
+    <value>Ты получил Тауроса 👺. Ты победишь только если ты сможешь выпустить его наволю и уничтожить Покесити!</value>
+  </string>
+  <string key="RoleInfoWildChild">
+    <value>Ты получил Мяута 👶. Выбери семпая, с которого ты берешь пример. Если он проиграет битву Покéмонов - ты утратишь всякую надежду и присоединишься к Команде Ракета.</value>
+  </string>
+  <string key="RoleInfoBeholder">
+    <value>Ты получил Абра 👁. Абра может только обнаружить тренера с Алаказамом - это его единственная способность.</value>
+  </string>
+  <string key="RoleInfoApprenticeSeer">
+    <value>Ты получил Кадабру 🙇. Когда Алаказам будет выбит, твой Кадабра эволюционирует!</value>
+  </string>
+  <string key="ApprenticeSeerEaten">
+    <value>Утром тренеры собрались, чтобы попрощаться с {0}. Его Кадабра 🙇 был повержен в битве Покéмонов этой ночью.</value>
+  </string>
+  <string key="RoleInfoZombie">
+    <value>Ты из организации, занимающейся клонированием Мьюту 👤. Каждый день ты можешь выбрать тренера и попытаться нанять в команду по клонированию Мьюту. Если Покéмоны станут Мьюту - твоя злая организация победит.</value>
+  </string>
+  <string key="RoleInfoZombieHunter">
+    <value>Ты наткнулся на Мью 💂! Мью нуждается в твоей помощи по очистке всех клонированных Мьюту.</value>
+  </string>
+  <string key="LynchTime">
+<!-- 0 - number of seconds -->
+    <value>Время пришло! Пора освободить ещё одного Покéмона, от его тренера, который слишком слаб, чтобы справиться с ним! 
+ У вас есть {0} секунд чтобы проголосовать!
+    </value>
+  </string>
+  <string key="DayTime">
+<!-- 0 - number of seconds -->
+    <value>Хмм хмм~ У всех тренеров есть {0} секунд чтобы решить кто из тренеров не достоин своих Покéмонов.</value>
+  </string>
+  <string key="NightTime">
+<!-- 0 - number of seconds -->
+    <value>Время битвы! Выбери Покéмона для битвы! или повеселись со своим Покéмоном. У тебя есть {0} секунд!!</value>
+  </string>
+  <string key="LynchKill">
+<!-- 0 - player name -->
+<!-- 1 - player role -->
+    <value>Тренеры сделали свой выбор, и решили что {0} не достоин своего покебола. У {1}</value>
+  </string>
+  <string key="LynchTie">
+    <value>Тренеры не смогли решить чьего Покéмона выпустить на волю и вернулись к тренировке своих Покéмонов.</value>
+  </string>
+  <string key="NoLynchVotes">
+    <value>Все тренеры достаточно хороши для своих Покéмонов. Нет голосов!!!</value>
+  </string>
+  <string key="DetectiveEaten">
+<!-- 0 - victim name -->
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Запдоса! Запдос использует Удар Молнии. Ратикейт 🕵 офицера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно! Артикуно использует Снежный Вихрь. Ратикейт 🕵 офицера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Молтрес! Молтрес использует Огненное Сердце. Ратикейт 🕵 офицера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно, Запдоса и Молтрес! Легендарные птицы используют Древнюю Силу. Ратикейт 🕵 офицера {0} выбит!</value>
+  </string>
+  <string key="GuardianEaten">
+<!-- 0 - victim name -->
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Запдоса! Запдос использует Электрические Кольца. Мистер Мим 👼 тренера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно! Артикуно использует Метелицу. Мистер Мим 👼 тренера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Молтрес! Молтрес использует Огненный Шар. Мистер Мим 👼 тренера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно, Запдоса и Молтрес! Легендарные птицы используют Древнюю Силу. Мистер Мим 👼 тренера {0} выбит!</value>
+  </string>
+  <string key="GunnerEaten">
+<!-- 0 - victim name -->
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Запдоса! Запдос использует Зап Пушку. Снорлакс 🔫 тренера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно! Артикуно использует Снежное Торнадо. Снорлакс 🔫 тренера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Молтрес! Молтрес использует Огненный Дождь. Снорлакс 🔫 тренера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно, Запдоса и Молтрес! Легендарные птицы используют Древнюю Силу. Снорлакс 🔫 тренера {0} выбит!</value>
+  </string>
+  <string key="SeerEaten">
+<!-- 0 - victim name -->
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Запдоса! Запдос использует Электрошок. Алаказам 👳 тренера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно! Артикуно использует Замораживание. Алаказам 👳 тренера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Молтрес! Молтрес использует Тепловую Волну. Алаказам 👳 тренера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно, Запдоса и Молтрес! Легендарные птицы используют Древнюю Силу. Алаказам 👳 тренера {0} выбит!</value>
+  </string>
+  <string key="DrunkEaten">
+<!-- 0 - victim name -->
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Запдоса! Запдос использует Дикую Энергию. Баттерфри 🍻 тренера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно! Артикуно использует Ледяной Шторм. Баттерфри 🍻 тренера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Молтрес! Молтрес использует Огненный Шторм. Баттерфри 🍻 тренера {0} выбит!</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно, Запдоса и Молтрес! Легендарные птицы используют Древнюю Силу. Баттерфри 🍻 тренера {0} выбит!</value>
+  </string>
+  <string key="FoolEaten">
+<!-- 0 - victim name -->
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно! Артикуно использует Чтение Мыслей. Алаказам тренера {0} оказался Псайдаком под прикрытием! {0} был одурачен!</value>
+  </string>
+  <string key="DefaultEaten">
+<!-- 0 - victim name -->
+<!-- 1 - victim role -->
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Запдоса! Запдос использует Электро Луч. {0} выбит! {1}</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно! Артикуно использует Ледяной Луч. {0} выбит! {1}</value>
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Молтрес! Молтрес использует Огненный Луч. {0} выбит! {1}</value>
+  </string>
+  <string key="HunterKilledZombie">
+<!-- 0 - victim name -->
+    <value>Мью нашел клонированного Мьюту! Мью освободил клонированного Мьюту от {0}.</value>
+  </string>
+  <string key="NoAttack">
+    <value>За последний час не проходило Битв Покéмонов.</value>
+  </string>
+  <string key="CursedBitten">
+    <value>Во время встречи с Командой Ракета ты решил бросить своего Пиджеота и присоединиться к ним!</value>
+  </string>
+  <string key="WolfTeam">
+<!-- 0 - teammate names -->
+    <value>Твои партнер(ы) в Команде Ракета: {0}</value>
+  </string>
+  <string key="CursedBittenToWolves">
+<!-- 0 - victim name -->
+    <value>{0} присоединился к Команде Ракета! Поприветсвуйте своего нового члена!</value>
+  </string>
+  <string key="WolvesEatYou" isgif="true">
+    <value>Команда Ракета нашла тебя и начала Битву Покéмонов. К сожалению ты проиграл. =(</value>
+  </string>
+  <string key="WolvesEatDrunk">
+<!-- 0 - victim name -->
+    <value>Баттерфри тренера {0} использовала сонную пыльцу на тебя и ты проспал следующую битву.</value>
+  </string>
+  <string key="GuardWolf">
+    <value>Мистер Мим пытался использовать Барьер на Команде Ракета, но их Запдос использовал Зап Пушку. Твой Мистер Мим выбит!</value>
+  </string>
+  <string key="GuardSaved">
+<!-- 0 - saved player name -->
+    <value>Мистер Мим использовал Барьер на Покéмоне {0} и тот успешно избежал битвы!</value>
+  </string>
+  <string key="GuardNoAttack">
+<!-- 0 - player name -->
+    <value>Покéмон тренера {0} не был атакован, так что ты ничем не помог.</value>
+  </string>
+  <string key="GuardEmptyHouse">
+<!-- 0 - player name -->
+    <value>Мистер Мим отправился помочь Покéмону {0}, но не смог его найти!</value>
+  </string>
+  <string key="GuardSavedYou">
+    <value>Мистер Мим использовал Барьер на твоем Покéмоне и помог избежать Битвы Покéмонов!</value>
+  </string>
+  <string key="HarlotEaten">
+<!-- 0 - player name -->
+    <value>Джиглипафф выбрал неправильного Покéмона, чтобы подружиться. Джиглипафф тренера {0} был атакован Командой Ракета!</value>
+  </string>
+  <string key="HarlotNotHome">
+<!-- 0 - player name -->
+    <value>Какой странный розовый домик... Жаль, что в нём не оказалось покéмона тренера {0}!</value>
+  </string>
+  <string key="HarlotFuckWolf">
+<!-- 0 - player name -->
+    <value>Джиглипафф отправился подружиться с Покéмоном {0} но был атакован Командой Ракета! Джиглипафф выбит.</value>
+  </string>
+  <string key="HarlotFuckedWolfPublic">
+<!-- 0 - player name -->
+    <value>Джиглипафф тренера {0} выбрал неправильного Покéмона, чтобы подружиться! Джиглипафф выбит после битвы с Легендарными Птицами.</value>
+  </string>
+  <string key="HarlotFuckedVictimPublic">
+<!-- 0 - harlot name -->
+<!-- 1 - victim name -->
+    <value>Джиглипафф тренера {0} пытался подружиться с Покéмоном {1}. Вместо этого Джиглипафф нашла Команду Ракета в битве против Покéмона {1}. Молтрес использует Огненный Вихрь. Джиглипафф тренера {0} выбит.</value>
+  </string>
+  <string key="HarlotVisitNonWolf">
+<!-- 0 - target name -->
+    <value>Джиглипафф подружилась с Покéмоном {0}, так как они не из Команды Ракета. Джиглипафф счастливо вернулась.</value>
+  </string>
+  <string key="HarlotVisitYou">
+    <value>Джиглипафф пришла подружиться с твоим Покéмоном и ты видишь как они весело играют вместе.</value>
+  </string>
+  <string key="DetectiveCaught">
+<!-- 0 - detective name -->
+    <value>Ты поймал Ратикейта офицера {0} вынюхивающего вас, но он ускользнул. Время преподать урок!</value>
+  </string>
+  <string key="DetectiveSnoop">
+<!-- 0 - target name -->
+<!-- 1 - target role -->
+    <value>Твой Ратикейт доложил, что {0} с {1}.</value>
+  </string>
+  <string key="HarlotShot">
+<!-- 0 - gunner's name -->
+<!-- 1 - Harlot's name -->
+    <value>Внезапно, Гипер Луч осветил весь город. {0} приказал Снорлаксу 🔫 использовать Гипер Луч на Джиглипафф тренера {1}. Джиглипафф выбит.</value>
+  </string>
+  <string key="DefaultShot">
+<!-- 0 - Gunner's name -->
+<!-- 1 - target name -->
+<!-- 2 - Target's revealed name ( Target was a role) -->
+    <value>Внезапно, Гипер Луч осветил весь город. {0} приказал Снорлаксу 🔫 использовать Гипер Луч на {1}. {2}.</value>
+  </string>
+  <string key="WolfWins" isgif="true">
+    <value>Команда Ракета Победила!</value>
+  </string>
+  <string key="WolvesWin" isgif="true">
+    <value>Команда Ракета Победила!</value>
+  </string>
+  <string key="VillageWins" isgif="true">
+    <value>Тренеры Победили!</value>
+  </string>
+  <string key="TannerWins" isgif="true">
+    <value>О НЕТ! Вы выпустили Тауроса 👺 обратно на волю и он уничтожил весь город.</value>
+  </string>
+  <string key="RemainingPlayersEnd">
+    <value>Оставшиеся в живых тренеры, Покéмоны и команда:</value>
+  </string>
+  <string key="ZombieVotedConvert">
+<!-- 0 - Voter's name -->
+<!-- 1 - target name -->
+    <value>{0} предлагает нанять {1}</value>
+  </string>
+  <string key="CultConvertZombieHunter">
+<!-- 0 - Yougest Zombie (killed)'s name' -->
+<!-- 1 - ZombieHunter's name -->
+    <value>Мьюту тренера {0} отправился заманить {1} в вашу команду... Тем не менее, у него/ее есть Мью! {0} потерял своего Мьюту и был уволен!</value>
+  </string>
+  <string key="ZombieHunterKilledCultVisit">
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - Number of Zombies left -->
+    <value>{0} пришел к тебе с клонированным Мьюту пытаясь нанять тебя на их злобную фабрику клонирования. Мью освободил Мьюту от {0}!! {1} работников фабрики осталось!</value>
+  </string>
+  <string key="CultConvertYou">
+    <value>Работник фабрики клонирования пришел к тебе и уговорил тебя присоединиться к их команде с клонированным Мьюту. Ты бросил своего Покéмоны и выбрал Мьюту. Теперь твоя работа заманить больше тренеров в команду.</value>
+  </string>
+  <string key="CultTeam">
+<!-- 0 - Number of Zombies -->
+    <value>Работники фабрики клонирования: {0}</value>
+  </string>
+  <string key="CultJoin">
+<!-- 0 - new Zombie's name -->
+    <value>{0} присоединился к команде!</value>
+  </string>
+  <string key="CultVisitEmpty">
+<!-- 0 - Newest Zombie's name -->
+<!-- 1 - target name -->
+    <value>{0} и Мьюту отправились заманить {1}... но никого не было дома!</value>
+  </string>
+  <string key="CultWins" isgif="true">
+    <value>Команда Ракета потерпела поражение, но оставшиеся тренеры все работники фабрики клонирования! Фабрика Клонов Мьюту победила!!!</value>
+  </string>
+  <string key="HunterVisitDead">
+<!-- 0 - target name -->
+    <value>Мью отправился за Покéмоном тренера {0}, но они уже выбиты!</value>
+  </string>
+  <string key="HunterFindZombie">
+<!-- 0 - target name -->
+    <value>Мью ушел искать {0} и увидел, что у него/неё клонированный Мьюту! Мью освободил Мьюту от {0}!</value>
+  </string>
+  <string key="HunterFailedToFind">
+    <value>Мью ушел искать {0} и увидел, что у него/неё не клонированный Покéмон! Мью успокоился и мирно вернулся.</value>
+  </string>
+  <string key="WildChildToWolves">
+<!-- 0 - Werechild's name -->
+    <value>Семпай тренера {0} только что проиграл Битву Покéмонов! {0} утратил всякую надежду и присоединился к Команде Ракета!</value>
+  </string>
+  <string key="WildChildTransform">
+<!-- 0 - role's name -->
+<!-- 1 - teamate's names -->
+    <value>{0} только что проиграл Битву Покéмонов! Утратив всякую надежду ты присоединился к Команде Ракета! Твоя новая команда: {1}</value>
+  </string>
+<!-- Villager, Drunk, Harlot, Seer, Traitor, GuardianAngel, Detective, Wolf, Cursed, Gunner, Tanner, Fool, WildChild, Beholder, ApprenticeSeer, Zombie, ZombieHunter-->
+  <string key="Villager">
+    <value>Маджикарп 👱</value>
+  </string>
+  <string key="Drunk">
+    <value>Баттерфри 🍻</value>
+  </string>
+  <string key="Harlot">
+    <value>Джиглипафф 💋</value>
+  </string>
+  <string key="Seer">
+    <value>Алаказам 👳</value>
+  </string>
+  <string key="Traitor">
+    <value>Визинг 🥸</value>
+  </string>
+  <string key="GuardianAngel">
+    <value>Мистер Мим 👼</value>
+  </string>
+  <string key="Detective">
+    <value>Ратикейт 🕵</value>
+  </string>
+  <string key="Wolf">
+    <value>Команда Ракета 🐺</value>
+  </string>
+  <string key="Cursed">
+    <value>Пиджеот 😾</value>
+  </string>
+  <string key="Gunner">
+    <value>Снорлакс 🔫</value>
+  </string>
+  <string key="Tanner">
+    <value>Таурос 👺</value>
+  </string>
+  <string key="Fool">
+    <value>Псайдак 🃏</value>
+  </string>
+  <string key="WildChild">
+    <value>Мяут 👶</value>
+  </string>
+  <string key="Beholder">
+    <value>Абра 👁</value>
+  </string>
+  <string key="ApprenticeSeer">
+    <value>Кадабра 🙇</value>
+  </string>
+  <string key="Zombie">
+    <value>Мьюту 👤</value>
+  </string>
+  <string key="ZombieHunter">
+<!-- These are for the player list -->
+    <value>Мью 💂</value>
+  </string>
+  <string key="RanAway">
+    <value>Сбежал</value>
+  </string>
+  <string key="Dead">
+    <value>💀 Выбит</value>
+  </string>
+  <string key="Alive">
+    <value>🙂 В Лиге</value>
+  </string>
+  <string key="PlayersAlive">
+<!-- New strings 4 MAY 2016-->
+    <value>Участники Лиги</value>
+  </string>
+  <string key="Mason">
+    <value>Пикачу 👷</value>
+  </string>
+  <string key="RoleInfoMason">
+    <value>Ты получил Пикачу 👷 и ты знаешь, кто из тренеров в клубе Пикачу: </value>
+  </string>
+  <string key="MasonEaten">
+<!-- 0 - dead man's name -->
+    <value>Команда Ракета нашла {0}. Команда Ракета отправляет Артикуно! Артикуно использует Снежное Торнадо. Пикачу тренера {0} выбит!</value>
+  </string>
+  <string key="MasonTeam">
+<!-- new strings May 6 2016-->
+    <value>  Члены клуба Пикачу: {0}</value>
+  </string>
+  <string key="CultTargetDead">
+<!-- 0 - Youngest Zombies name -->
+    <value>Ваш самый новый член направился к {0} и попытался заманить его в команду с помощью Мьюту. Но вы нашли его Покéмона только что выбитым и тренера, потерявшего всякую надежду найти нового Покéмона.</value>
+  </string>
+  <string key="GuardBlockedWolf">
+<!-- 0 - target's name -->
+<!-- new strings May 9 2016-->
+    <value>Команда Ракета направилась к {0} и вызвала его на Битву Покéмонов. Мистер Мим появился из ниоткуда и применил Барьер. Вы неспособны сражаться с ним и отступаете...</value>
+  </string>
+  <string key="CultUnableToConvert">
+<!-- 0 - newest  -->
+<!-- 1 - target's name -->
+<!-- new string May 12 2016-->
+    <value>Вы отправили {0} и его/ее Мьюту чтобы они попытались заманить {1}, но их связь с Покéмоном была слишком сильной, и они не захотели присоединяться к вашей команде. :(</value>
+  </string>
+  <string key="DGTransformToAlpha">
+<!-- 0 - target's name -->
+<!-- 1 - teammates's name -->
+    <value>{0}, лидер Команды Ракета потерпел поражение, и настала ваша очередь возглавить Команду Ракета. Ваши сокомандники (если есть): {1}</value>
+  </string>
+  <string key="DGTransformToWolfCub">
+<!-- 0 - target's name -->
+<!-- 1 - teammates's name -->
+    <value>{0} покинул Покéсити, и ваш Поригон🐶 выбрал вас в качестве нового тренера. Ваши сокомандники (если они ещё остались): {1}</value>
+  </string>
+  <string key="NameExists">
+<!-- 0 - target's name -->
+<!-- 1 - name -->
+    <value>@{1}, игрок с именем {0} уже присоединился. Пожалуйста, поменяй имя, чтобы присоединиться.</value>
+  </string>
+  <string key="HarlotDiscoverCult">
+<!-- 0 - target's name -->
+<!-- new string May 13 2016-->
+    <value>Джиглипафф направилась к {0} и попыталась подружиться с его/ее Покéмоном, но поняла что это клонированный Мьюту! Джиглипафф в шоке побежала домой.</value>
+  </string>
+  <string key="Was">
+    <value>был</value>
+  </string>
+  <string key="GenericDeathNoReveal">
+<!-- 0 - Dead's name -->
+    <value>Покéмон тренера {0} выбит. Никто не знает почему...~</value>
+  </string>
+  <string key="MasonConverted">
+<!-- 0 - mason's name -->
+<!-- new string May 16 2016-->
+    <value>Странно... {0} не привел своего Пикачу на собрание клуба этим утром... O.o</value>
+  </string>
+  <string key="FleeDisabled">
+    <value>Покинуть игру во время игры нельзя! Собери их всех!</value>
+  </string>
+  <string key="IsDead">
+<!-- used when gunner shoots a player -->
+<!-- MORE STRINGS May 16, 2016 -->
+    <value>выбит</value>
+  </string>
+  <string key="AdminAdded">
+<!-- 0 - target's name -->
+    <value>{0} добавлен в список админов. Используй /config, чтобы изменить настройки группы.</value>
+  </string>
+  <string key="AlreadyInGame">
+<!-- 0 - target's name -->
+    <value>Ты уже в игре! ({0})</value>
+  </string>
+  <string key="MultipleGames">
+    <value>Ваша группа умудрилась начать несколько игр. Уничтожаю лишние...</value>
+  </string>
+  <string key="GroupQueue">
+<!-- 0 - target's name -->
+<!-- 1 - target's name -->
+    <value>Ваша группа в данный момент в очереди. Позиция: {0} / {1}</value>
+  </string>
+  <string key="MaintBreak">
+<!-- 0 - target's name -->
+    <value>Простите, сейчас будет короткий перерыв на техническое обслуживание. \nОсталось {0} незаконченных игр...\nБольше информации на @greywolfdev.</value>
+  </string>
+  <string key="MaxGames">
+<!-- 0 - target's name -->
+<!-- 1 - target's name -->
+    <value>Максимум одновременых игр достиг лимита ({0}). \nПозиция в очереди: {1} / {1}.</value>
+  </string>
+  <string key="SkipQueue">
+<!-- 0 - target's name -->
+    <value>{0} предпочитаемая группа! Очередь пропущена, и игра запущена.</value>
+  </string>
+  <string key="NoGame">
+    <value>Нет запущенной игры. Начни новую обычную игру с /startgame или начни игру в режиме хаос с /startchaos.</value>
+  </string>
+  <string key="GroupAdminOnly">
+    <value>Только админ может использовать эту команду.</value>
+  </string>
+  <string key="ShuttingDown">
+    <value>После этой игры, будет небольшой перерыв для технического обслуживания...</value>
+  </string>
+  <string key="ShuttingDownUpdate">
+    <value>После этой игры я выключюсь для обновления на момент. (автоматизированно)</value>
+  </string>
+  <string key="NullIdAdmin">
+    <value>UserId был null. Ты уверен что отправил это как ответ?</value>
+  </string>
+  <string key="AlreadyAdmin">
+<!-- 0 - target's name -->
+    <value>{0} уже админ!</value>
+  </string>
+  <string key="NotAdmin">
+<!-- 0 - target's name -->
+    <value>{0} не админ!</value>
+  </string>
+  <string key="AdminRemoved">
+<!-- 0 - target's name -->
+    <value>{0} удалён из списка админов.</value>
+  </string>
+  <string key="LanguageSet">
+<!-- 0 - language's name -->
+    <value>Язык установлен на {0}.</value>
+  </string>
+  <string key="NoSeer">
+    <value>Без Алаказама 👳!</value>
+  </string>
+  <string key="TimesUp">
+<!-- new strings june 10 2016 -->
+    <value>Время вышло!</value>
+  </string>
+  <string key="RoleInfoCupid">
+    <value>Ты получил Хаунтера 🏹. Ты можешь выбрать двух тренеров и использовать Узы Судьбы на их Покéмонах. Когда один Покéмон будет выбит, другой последует за ним.</value>
+  </string>
+  <string key="RoleInfoDoppelganger">
+    <value>Ты получил Дитто 🎭. Выбери тренера. Когда его/ее Покéмон будет выбит, Дитто сможет трансформироваться в него и присоединиться к их команде, если они в ней состояли.</value>
+  </string>
+  <string key="RoleInfoHunter">
+    <value>Ты получил Генгара 🎯. Ты профессиональный тренер. Ты можешь выиграть битву против Команды Ракета и также можешь использовать способность прежде чем Генгар сбежит или проиграет битву.</value>
+  </string>
+  <string key="RoleInfoSerialKiller">
+    <value>Ты Мастер Покéмонов, который владеет Драгонайтом 🔪. Твоя цель - выиграть все Битвы Покéмонов и стать лучшим!</value>
+  </string>
+  <string key="CupidChosen">
+<!-- 0 - lover's name -->
+    <value>Узы Судьбы применены на твоего Покéмона! Если Покéмон тренера {0} проиграет битву и будет повержен - твой Покéмон будет тоже выбит!</value>
+    <value>Твой Покéмон был связан Узами Судьбы с Покéмоном тренера {0}. Если его/ее Покéмон падет - твой пойдет за ним!</value>
+  </string>
+  <string key="HunterLynchedChoice">
+    <value>Город решил отпустить твоего Генгара! Отдай последнюю команду Генгару в последней Битве Покéмонов перед его уходом!</value>
+  </string>
+  <string key="HunterNoChoiceLynched">
+    <value>{0} раздумывал над последней командой слишком долго. Генгар убежал на волю.</value>
+  </string>
+  <string key="HunterSkipChoiceLynched">
+    <value>{0} решил не отдавать последней команды своему Генгару. Генгар наконец снова свободен.</value>
+  </string>
+  <string key="HunterKilledFinalLynched">
+<!-- 0 - hunter's name -->
+<!-- 1 - target's name -->
+<!-- 2 - target's role -->
+    <value>Прежде чем Генгар ушел на волю, {0} приказал Генгару использовать Теневой Удар! Генгар использовал Теневой Удар! {2} выбит и {1} отключился.</value>
+  </string>
+  <string key="HunterShotChoice">
+    <value>Генгар уходит на волю. Отдай ему последнюю команду в последней Битве Покéмонов с другим тренером!</value>
+  </string>
+  <string key="HunterNoChoiceShot">
+<!-- 0 - target's name -->
+    <value>Генгар тренера {0} был выбит прежде чем он/она смогла дать какую-либо команду.</value>
+  </string>
+  <string key="HunterSkipChoiceShot">
+<!-- 0 - hunter's name -->
+    <value>{0}, зная, что он все равно проиграл битву, он решил не давать последнюю команду Генгару.</value>
+  </string>
+  <string key="HunterKilledFinalShot">
+<!-- 0 - hunter -->
+<!-- 1 - target's name -->
+<!-- 2 - target's role -->
+    <value>{0} приказал Генгару использовать Проклятье! {0} и {1} были выбиты. {2}</value>
+  </string>
+  <string key="CultConvertSerialKiller">
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - target's name -->
+    <value>{0} приказал Мьюту атаковать {1} не зная его могущества и силы его Покéмона! Драгонайт появился. Драгонайт использовал Ярость! Мьюту повержен!</value>
+    <value>Фабрика клонирования посылает {0} чтобы заманить {1} в команду, но вместо этого {1} разозлился и приказал Драгонайту начать битву Покéмонов! {0} и его/ее Мьюту повержены.</value>
+  </string>
+  <string key="HunterShotWolfMulti">
+<!-- 0 - target's name -->
+    <value>Команда Ракета бросила вызов тренеру с Генгаром! {0} не хватило опыта и он/она проиграл/а битву.</value>
+  </string>
+  <string key="HunterShotWolf">
+<!-- 0 - target's name -->
+    <value>Команда Ракета бросила вызов тренеру с Генгаром! {0} не хватило опыта и он/она проиграл/а битву.</value>
+  </string>
+  <string key="SerialKillerKilledWolf">
+    <value>Команда Ракета бросила вызов тренеру с Драгонайтом! Драгонайт был слишком силен и {0} проиграл битву даже с силой трех Легендарных Птиц! Позор!</value>
+  </string>
+  <string key="DefaultKilled">
+<!-- 0 - target's name -->
+<!-- 1 - target's role -->
+    <value>{0} бегал по городу и кричал, что он самый сильный тренер. К сожалению, нашелся тренер сильнее. Драгонайт получил легкую победу. {0} и его покемон повержены! {1}.</value>
+  </string>
+  <string key="GuardBlockedKiller">
+<!-- 0 - target's name -->
+    <value>Ты и твой Драгонайт направились к {0} и вызвали его на битву Покéмонов. Мистер Мим появился из ниоткуда, применил Барьер и они исчезли. Сегодня без битвы.</value>
+  </string>
+  <string key="CultConvertHunter">
+<!-- 0 - Youngest Zombie's name -->
+<!-- 1 - target's name -->
+    <value>Фабрика клонирования посылает {0} чтобы заманить {1} в команду, но вместо этого {1} разозлился и приказал Генгару начать битву Покéмонов! {0} и его/ее Мьюту повержены.</value>
+  </string>
+  <string key="GuardKiller">
+    <value>Мистер Мим попытался использовать Барьер на Драгонайте, но Драгонайт использовал Ярость на Мистере Миме раньше! Мистер Мим повержен.</value>
+  </string>
+  <string key="HarlotFuckKiller">
+<!-- 0 - target's name -->
+    <value>Джиглипафф отправлся к {0} желая подружиться. У {0} были... свои представления о дружбе. Джиглипафф проиграл битву и был выбит.</value>
+  </string>
+  <string key="HarlotFuckKillerPublic">
+    <value>Джиглипафф выбрал не лучшего Покéмона чтобы подружиться. Джиглипафф тренера {0} был повержен после яростной битвы с Драгонайтом.</value>
+  </string>
+  <string key="DGToMason">
+<!-- 0 - target's name -->
+    <value>Дитто {0} превратился в Пикачу и присоединился к клубу!</value>
+  </string>
+  <string key="DGTransformToMason">
+<!-- 0 - dead mason's name -->
+<!-- 1 - mason collegues's name -->
+    <value>Пикачу тренера {0} был повержен, и Дитто трансформировался в Пикачу. Твоя команда (если есть): {1}</value>
+  </string>
+  <string key="DGToCult">
+<!-- 0 - new Zombie's name -->
+    <value>Дитто тренера {0} трансформировался в Мьюту и присоединился к команде!</value>
+  </string>
+  <string key="DGTransformToCult">
+<!-- 0 - role's name -->
+<!-- 1 - teammates's name -->
+    <value>{0} и его Мьюту были повержены и дитто трансформировался в Мьюту. Твоя команда (если есть): {1}</value>
+  </string>
+  <string key="DGToWolf">
+<!-- 0 - DG's name -->
+    <value>Дитто {0} транформировался в одну из Легендарных Птиц и присоединился к команде!</value>
+  </string>
+  <string key="DGTransformToWolf">
+<!-- 0 - target's name -->
+<!-- 1 - teammates's name -->
+    <value>Покéмон {0} был повержен и Дитто трансформировался в одну из Легендарных Птиц. Твоя команда (если есть кто): {1}</value>
+  </string>
+  <string key="SerialKillerWins" isgif="true">
+    <value>Ты выиграл ВСЕ битвы! Ты действительно Покéмон МАСТЕР!!!</value>
+  </string>
+  <string key="AskKill">
+    <value>С кем ты хочешь сразиться этой ночью?</value>
+    <value>Кого ты вызовешь на поединок?</value>
+    <value>Кто сегодня будет твоим соперником?</value>
+  </string>
+  <string key="LoverDied">
+<!-- 0 - dead's name -->
+<!-- 1 - lover's name -->
+<!-- 2 - roles -->
+    <value>Как только Покéмон {0} выбыл, {1} ушёл из Лиги Покéмонов следом из-за действия Уз Судьбы. {2} </value>
+  </string>
+  <string key="AskDoppelganger">
+    <value>В чьего Покéмона Дитто должен превратиться после его поражения?</value>
+  </string>
+  <string key="AskCupid1">
+    <value>На кого Хаунтер должен применить Узы Судьбы? Выбери первого тренера.</value>
+  </string>
+  <string key="AskCupid2">
+    <value>На кого Хаунтер должен применить Узы Судьбы? Выбери второго тренера.</value>
+  </string>
+  <string key="Hunter">
+    <value>Генгар 🎯</value>
+  </string>
+  <string key="Cupid">
+    <value>Хаунтер 🏹</value>
+  </string>
+  <string key="SerialKiller">
+    <value>Драгонайт 🔪</value>
+  </string>
+  <string key="Doppelgänger">
+    <value>Дитто 🎭</value>
+  </string>
+  <string key="NewWCRoleModel">
+<!-- 0 - target's name -->
+    <value>Твой Дитто трансформировался в Мяута 👶. Твой семпай - {0}</value>
+  </string>
+  <string key="LoversWin" isgif="true">
+    <value>Узы судьбы оказались сильнее всех невзгод. Пара победила!</value>
+  </string>
+  <string key="HunterKilledVisiter">
+<!-- 0 - target's name -->
+<!-- 1 - role -->
+    <value>Генгар нашел Покéмона и он использовал Теневой Удар! {1} выбит. Его тренер - {0}</value>
+  </string>
+  <string key="CultAttempt">
+    <value>Работник фабрики клонов попытался заманить тебя с помощью Мьюту, но твоя связь с Покéмоном слишком сильна!</value>
+  </string>
+  <string key="AlreadyOnWaitList">
+<!-- 0 - target's name -->
+    <value>Ты обязательно получишь уведомление о сборе Лиги Покéмонов в {0}</value>
+  </string>
+  <string key="AddedToWaitList">
+<!-- 0 - target's name -->
+    <value>Ты подписался(лась) на следующую раздачу Покéмонов в группе {0}. Я оповещу тебя в ЛС при её появлении.</value>
+  </string>
+  <string key="NotifyNewGame">
+<!-- 0 - target's name -->
+    <value>Лига Покéмонов собирается в {0}</value>
+  </string>
+  <string key="SerialKillerWinsOverpower">
+<!-- 0 - SK's name -->
+<!-- 1 - target's name -->
+    <value>{0} с его/ее Драгонайтом начали финальную битву Покéмонов. {1} и его Покéмон не способны противостоять непреодолимой	мощи Драгонайта. {0} выиграл битву.</value>
+  </string>
+  <string key="NoWinner" isgif="true">
+    <value>Ни одного тренера ни осталось...</value>
+  </string>
+  <string key="SKHunterEnd">
+<!-- 0 - SK's name -->
+<!-- 1 - Hunter's name -->
+    <value>Последняя Битва Покéмонов между {0} и {1}. {0} выбирает Драгонайта и {1} выбирает Генгара. Генгар использовал Узы Судьбы на себе и Драгонайте! Как только Драгонайт нанес свой последний удар... Оба Покéмоны были повержены. =_= </value>
+  </string>
+  <string key="RoleModelChosen">
+<!-- 0 - target's name -->
+    <value>Ты не смог выбрать семпая, так что судьба решила за тебя: {0}</value>
+  </string>
+  <string key="Won">
+    <value>Выиграл</value>
+  </string>
+  <string key="Lost">
+    <value>Проиграл</value>
+  </string>
+  <string key="IdleCount">
+<!-- 0 - player's name -->
+<!-- 1 - idle count -->
+<!--New strings 7th of July-->
+    <value>Покéмон тренера {0} был отпущен на волю, так как его тренер не голосовал {1} за последние 24 часа.</value>
+  </string>
+  <string key="AboutVG">
+    <value>Ты - начинающий тренер. Твой Покéмон - Маджикарп. Однажды он обязательно эволюционирует, но пока всё что он можешь делать - это Плескаться.(Простой игрок, цель которого - выжить и изгнать всех членов Команды Ракета).</value>
+  </string>
+  <string key="AboutSeer">
+    <value>Ваш Покéмон - Алаказам. Его способность - Провидение - способность видеть Покéмонов других игроков.(Провидец)</value>
+  </string>
+  <string key="AboutWw">
+    <value>Команда Ракета - воплощенеие зла. Ваша задача - победить каждого тренера, по одному за ночь. (Волк)</value>
+  </string>
+  <string key="AboutHarlot">
+    <value>Ваш Покéмон - Джиглипафф, она очень любит заводить друзей. Каждую ночь она ходит в гости к тренерам и их Покéмонам чтобы повеселиться. Но если вы отправите ее к Команде Ракета/Тренеру Драгонайта - она будет повержена. (Блудница)</value>
+  </string>
+  <string key="AboutDrunk">
+    <value>Ваш Покéмон - Баттерфри. Если Команда Ракета нападет на вас - Баттерфри использует Сонную Пыльцу и будет повержена, а Команда Ракета не сможет атаковать следующей ночью. (Пьяница)</value>
+  </string>
+  <string key="AboutCursed">
+    <value>Твой Покéмон - Пиджеот. Ты ждешь, когда Команда Ракета придет к тебе чотбы примкнуть к ним. (Проклятый)</value>
+  </string>
+  <string key="AboutTraitor">
+    <value>Твой Покéмон - Визинг. Ты терпеливо ждешь, когда Команда Ракета лишится всех своих членов и ты сам станешь частью Команды Ракета! (Предатель)</value>
+  </string>
+  <string key="AboutGA">
+    <value>Твой Покéмон - Мистер Мим. Ты можешь наложить Барьер на Покéмона и спасти его от нападения. \nНо если ты попытаешься спасти тренера Команды Ракета, то с 50% вероятностью будешь побежден! \nЕсли твой Покéмон попробует защитить Драгонайта - он будет выбит. (Ангел)</value>
+  </string>
+  <string key="AboutDetective">
+    <value>Твой Покéмон - Ратикейт. Ты  - добрый тренер, и каждый день можешь отправить своего Покéмона узнать, какой Покéмон у другого тренера. Если он найдёт Команду Ракета -  есть 40% шанс что они узнают, кто тренер Ратикейта. (Детектив)</value>
+  </string>
+  <string key="AboutGunner">
+    <value>Твой Покéмон - Снорлакс! Он может использовать Гипер Луч и моментально испепелить Покéмона другого тренера, но у него только два РР (два выстрела)! (Охотник)</value>
+  </string>
+  <string key="AboutTanner">
+    <value>Твой Покéмон - Таурос! Твоя задача заставить тренеров выбрать тебя на голосовании и освободить Тауроса.(Самоубийца)</value>
+  </string>
+  <string key="AboutFool">
+    <value>Твой Покéмон - Псайдак. Он использует свои способности на тебе, и ты видишь его как Алаказама! (тренер, которому в начале игры говорят, что у него Алаказам, но вместо правильных Покéмонов такой тренер будет узнавать рандомные). (Дурак)</value>
+  </string>
+  <string key="AboutCult">
+    <value>Ты - работник Фабрики Клонирования, и твой Покéмон - клонированный Мьюту. Твоя задача - завербовать остальных тренеров к вам на Фабрику и победить Команду Ракета.</value>
+  </string>
+  <string key="AboutCH">
+    <value>Твой Покéмон - Мью. Твоя задача найти всех Работников Фабрики клонов и их Клонированных Мьюту и освободить их.(селянин, который каждую ночь ходит к игрокам;\nесли такой игрок подойдёт к сектанту, первый убьёт второго;\nесли такого игрока попытаются завербовать сектанты, первый убьёт последнего завербованного сектанта).</value>
+  </string>
+  <string key="AboutWC">
+    <value>Твой Покéмон - Мяут. Ты выбираешь себе пример, и если он проиграет в Битве Покéмонов - ты примкнешь к Команде Ракета.Если тренер не выбирает «пример для подражания», игра выберет рандомного игрока для этой цели. (Дикий Ребенок)</value>
+  </string>
+  <string key="AboutAppS">
+    <value>Твой Покéмон - Кадабра. После поражения Покéмона Алаказам твой Покéмон эволюционирует в него. (Ученик Провидца)</value>
+  </string>
+  <string key="AboutBH">
+    <value>Твой Покéмон - Абра. Его единственная способность - увидеть, кто из тренеров владеет Алаказамом. (Очевидец)</value>
+  </string>
+  <string key="AboutMason">
+    <value>Твой Покéмон - Пикачу! Ты - член Клуба Пикачу и знаешь всех остальных тренеров, которым так же выпал Пикачу. (Каменщик)</value>
+  </string>
+  <string key="AboutDG">
+    <value>Твой Покéмон - Дитто. В начале игры выбери тренера, и после его поражения Дитто трансформируется в его Покéмона (Двойник)(\nесли Двойник не выберет/не успеет выбрать игрока, роль которого Двойник возьмёт, игра сделает это сама, выбрав рандомного игрока;\nесли Двойник получит роль Дикого Ребёнка, «примером для подражания» первому станет игрок, которого выбрал второй;\nДвойника нельзя завербовать нетрансформированным, также Двойник не может выиграть, если он не трансформировался).</value>
+  </string>
+  <string key="AboutCupid">
+    <value>Твой Покéмон - Хаунтер! Его способность - Узы Судьбы связывает двух тренеров и их Покéмонов. Если один из них будет повержен или победит - второй разделит его учесть. (Купидон) \nесли Купидон не выберет/не успеет выбрать будущих влюблённых, игра сама влюбит двух рандомных игроков;\nесли один из влюблённых выиграет, другой влюблённый тоже выиграет).</value>
+  </string>
+  <string key="AboutHunter">
+    <value>Твой Покéмон - Генгар! Этот Покéмон наполнен решимостью, так что перед тем, как выбыть из игры он даст своему тренеру нанести последний удар (Ковбой) \n(селянин, который может при нападении волка с 30% шансом убить волка;\nпри смерти, Ковбой может забрать жизнь любого игрока;\nесли на Ковбоя нападёт бóльшее, чем один, количество волков, за каждого волка к шансу убийства прибавляется по 20%, в этом случае Ковбой убьёт рандомного волка;\nесли секта попытается завербовать Ковбоя, есть 50% шанс, что секта не сможет завербовать Ковбоя, в этом случае у Ковбоя есть 50% шанс убить последнего завербованного Сектанта).</value>
+  </string>
+  <string key="AboutSK">
+    <value>Твой Покéмон - Драгонайт! Вместе с ним вы должны стать самыми сильными и уничтожить всех остальных тренеров! Каждую ночь ты можешь выбирать одного тренера, на которого хочешь напасть. Если кто-то решит наведаться к тебе домой - он также будет повержен! (Серийный Убийца) .</value>
+  </string>
+  <string key="AboutPara">
+    <value>Эгей, это же разраб этой игрули! Вот его ник, чтобы ты мог с ним связаться: @Para949</value>
+  </string>
+  <string key="EndTime">
+<!--New strings, July the 8th -->
+    <value>Игра длилась: {0}</value>
+  </string>
+  <string key="Day">
+<!--0 - Day -->
+    <value>День {0}</value>
+  </string>
+  <string key="NodeShutsDown">
+    <value>Произошла ошибка, узел был отключён!</value>
+  </string>
+  <string key="SentPrivate">
+    <value>Вау, ты получил личное сообщение!</value>
+    <value>Мне кажется самое время проверить личку...</value>
+  </string>
+  <string key="StartPM">
+    <value>Пожалуйста, свяжитесь со мной (@werewolfbot), чтобы получить возможность СОБРАТЬ ИХ ВСЕХ!.</value>
+  </string>
+  <string key="PMTrue">
+    <value>Спасибо, теперь я могу выдать тебе Покéмона, когда придет время</value>
+  </string>
+  <string key="MustReplySmite">
+    <value>Ты должен ответить на сообщение тренера, которого ты хочешь лишить Покéмона.</value>
+  </string>
+  <string key="WhatToDo">
+    <value>Что вы хотите настроить?</value>
+  </string>
+  <string key="JoinFromGroup">
+    <value>Ты, кажись, перепутал(а) личку со мной с группой, раз ты пытаешься сыграть тут.</value>
+  </string>
+  <string key="StartFromGroup">
+    <value>Ты, кажись, перепутал(а) личку со мной с группой, раз ты отправил /startgame или /startchaos сюда.</value>
+  </string>
+  <string key="PingInfo">
+    <value>Время, за которое Telegram отправил сообщение боту: {0}\nКоличество сообщений в секунду: {1}.</value>
+  </string>
+  <string key="WhatLang">
+    <value>Какой язык ты хочешь выбрать?\nНа данный момент используется {0} язык.</value>
+  </string>
+  <string key="WhatVariant">
+    <value>Какой вариант языка вы хотите выбрать?\nИспользующийся вариант использующегося на данный момент языка: {0}</value>
+  </string>
+  <string key="LangSet">
+    <value>Ты поставил язык «{0}».</value>
+  </string>
+  <string key="GetLang">
+    <value>Файл какого языка ты хочешь получить?</value>
+  </string>
+  <string key="NoNodes">
+    <value>В данный момент ни один узел не находится в онлайне.</value>
+  </string>
+  <string key="GroupCommandOnly">
+    <value>Извини, но ты можешь использовать эту команду только в какой-нибудь группе.</value>
+  </string>
+  <string key="NotGlobalAdmin">
+    <value>Извини, но ты не являешься глобальным администратором игры.</value>
+  </string>
+  <string key="NotPara">
+    <value>Ты не @Para949!</value>
+  </string>
+  <string key="Yes">
+    <value>Да</value>
+  </string>
+  <string key="No">
+    <value>Нет</value>
+  </string>
+  <string key="Allow">
+    <value>Разрешить</value>
+  </string>
+  <string key="Disallow">
+    <value>Запретить</value>
+  </string>
+  <string key="Show">
+    <value>Показать</value>
+  </string>
+  <string key="Hide">
+<!-- Game Mode Choices-->
+    <value>Скрыть</value>
+  </string>
+  <string key="NormalOnly">
+    <value>Использовать только нормальный режим.</value>
+  </string>
+  <string key="ChaosOnly">
+    <value>Использовать только режим хаоса.</value>
+  </string>
+  <string key="PlayerChoice">
+<!-- Show Roles on End Game -->
+    <value>Позволить игрокам выбирать режим игры.</value>
+  </string>
+  <string key="ShowNone">
+    <value>Не показывать роли игроков в конце игры.</value>
+  </string>
+  <string key="ShowLiving">
+    <value>Показывать в конце игры только роли живых игроков.</value>
+  </string>
+  <string key="ShowAll">
+    <value>Показывать роли всех игроков в конце игры.</value>
+  </string>
+  <string key="Cancel">
+    <value>Закрыть меню.</value>
+  </string>
+  <string key="AllowFleeQ">
+    <value>Хочешь ли ты, чтобы игроки могли сами выходить из игры?\nСтатус настройки: {0}\nЕсли статус настройки равен «not», значит, никто не сможет самостоятельно выйти из игры.\nЕсли статус настройки пуст, значит, игроки смогут самостоятельно выходить из игры.\nP.S.: Да, это баг, который случайно вставлен разрабом.</value>
+  </string>
+  <string key="AllowFleeA">
+    <value>Нынешний статус настройки: {0}.</value>
+  </string>
+  <string key="MaxPlayersQ">
+    <value>Какой максимум игроков ты хочешь выставить?\nВ данный момент в твоей группе выставлен максимум {0} игроков.</value>
+  </string>
+  <string key="MaxPlayersA">
+    <value>Ты выставил в своей группе максимум {0} игроков.</value>
+  </string>
+  <string key="ShowRolesDeathQ">
+    <value>Показывать или прятать роли при смерти игроков?\nТекущий статус настройки: {0}.\nЕсли статус равен «shown», то игра не будет прятать роли при смерти игроков.\nА статус «hidden» противоположен статусу «shown».</value>
+  </string>
+  <string key="ShowRolesDeathA">
+    <value>Нынешний статус настройки: {0}.</value>
+  </string>
+  <string key="GameModeQ">
+    <value>Какой режим игры хочешь ты использовать для своей группы?\nВ данный момент выбрана настройка «{0}».</value>
+  </string>
+  <string key="GameModeA">
+    <value>Выбрана настройка «{0}».</value>
+  </string>
+  <string key="ShowRolesEndQ">
+    <value>Как ты хочешь показывать роли игроков в конце игры?\nВ данный момент выбрана настройка «{0}»</value>
+  </string>
+  <string key="ShowRolesEndA">
+    <value>Выбрана настройка «{0}».</value>
+  </string>
+  <string key="SetDayTimeQ">
+    <value>Выбери основную длительность дня (в секундах). Она всё ещё может модифицироваться, основываясь на количестве игроков.\nМинимальной длительностью, основывающейся на игроках - 60 секунд. Настройка по умолчанию: {0}\nНастройка, выбранная на данный момент: {1}.</value>
+  </string>
+  <string key="SetDayTimeA">
+    <value>Основная длительность дня ({0}) выставлена.</value>
+  </string>
+  <string key="SetNightTimeQ">
+    <value>Выбери длительность ночи (в секундах). Настройка по умолчанию: {0}\nНастройка, выбранная в данный момент: {1}.</value>
+  </string>
+  <string key="SetNightTimeA">
+    <value>Длительность ночи ({0}) выставлена.</value>
+  </string>
+  <string key="SetLynchTimeQ">
+    <value>Выбери длительность голосования на казнь (в секундах). Настройка по умолчанию: {0}\nНастройка, выбранная на данный момент: {1}.</value>
+  </string>
+  <string key="SetLynchTimeA">
+    <value>Длительность голосования на казнь ({0}) выставлена.</value>
+  </string>
+  <string key="AllowFoolQ">
+    <value>Разрешить роль "Псайдак"(Дурак) в игре?\nСтатус настройки: {0}.</value>
+  </string>
+  <string key="AllowFoolA">
+    <value>Нынешний статус настройки: {0}.</value>
+  </string>
+  <string key="AllowTannerQ">
+    <value>Разрешить роль "Таурос"(Самоубийца) в игре?\nСтатус настройки: {0}.</value>
+  </string>
+  <string key="AllowTannerA">
+    <value>Нынешний статус настройки: {0}.</value>
+  </string>
+  <string key="AllowCultQ">
+    <value>Разрешить фракцию «Фабрика Мьюту»(Секта), а значит и покемона «Мьюту» в игре?\nСтатус настройки: {0}</value>
+  </string>
+  <string key="AllowCultA">
+    <value>Нынешний статус настройки: {0}.</value>
+  </string>
+  <string key="ThankYou">
+    <value>Спасибо огромное тебе, хорошего дня и игр. :)</value>
+  </string>
+  <string key="WhatLangGroup">
+    <value>На каком языке вы хотите найти группы по этой игре?</value>
+  </string>
+  <string key="HereIsList">
+    <value>Вот группы по этой игре на языке «{0}»:</value>
+  </string>
+  <string key="Members">
+    <value>Участник(а/ов)</value>
+  </string>
+  <string key="StartMe">
+    <value>Пожалуйста, стартуй меня, чтобы я мог писать тебе личные сообщения.</value>
+  </string>
+  <string key="LatestList">
+    <value>Это последний список.</value>
+  </string>
+  <string key="PlayerNoPM">
+    <value>{0} не стартовал бота, он будет удалён из игры!</value>
+  </string>
+  <string key="UnableToGetList">
+    <value>Не могу получить последний список.</value>
+  </string>
+  <string key="YouJoined">
+<!-- 0 - Group Name -->
+    <value>Ты встал в очередь за Покéмоном в группе "{0}".</value>
+  </string>
+  <string key="Ping2">
+<!-- Update 4.0-->
+    <value>Время отправки ping-сообщения пользователю: {0}.</value>
+  </string>
+  <string key="RoleInfoMayor">
+    <value>Вы - Мэр Покéсити! Ваш Покéмон - Бульбазавр 🎖. Как только Вы раскроете себя, у Вас будет 2 голоса!</value>
+  </string>
+  <string key="RoleInfoPrince">
+    <value>Ты получил королевского Найнтелза. Другие тренеры не могут освободить твоего Покéмона без твоего согласия, а даже если попытаюстся - Найнтелз это проигнорирует в первый раз.</value>
+  </string>
+  <string key="RoleInfoClumsyGuy">
+    <value>Ты получил Слоупока 🤕. Вы, как его тренер, тоже попали под влияние его способностей! В течении голосования вы можете выбрать не того тренера!!!</value>
+  </string>
+  <string key="RoleInfoSorcerer">
+    <value>Ты получил Джинкс 🔮. У Джинкс есть особенность вынюхивать Алаказама и Команду Ракета. Так как ты всегда ненавидел тренеров, сильнее тебя, ты - союзник Команды Ракета.</value>
+  </string>
+  <string key="SorcererEnd">
+<!-- 0 - Sorcerer name -->
+    <value>Утро для {0} начинается не с кофе. Вместо суеты боев - пустые арены. Поиски Джинкс не привели к успеху - она ушла вместе с последними членами Команды Ракета. Без своего Покéмона, без Команды Ракета у {0} нет ни одной причины, чтобы оставаться здесь. Оставив свой Покéдекс на столе, {0} молча покинул Покéсити...</value>
+    <value>Годы тренировок, невероятные усилия - все для того чтобы попасть в Команду Ракета. Но без Команды Р нет и необходимости быть тренером. Осознав это, {0} отпускает свою Джинкс на волю и уходит из Лиги Покéмонов</value>
+  </string>
+  <string key="WhatVariantVets">
+    <value>Какой из вариантов?\nТекущий: {0}\nТак как ты сыграл более 500 игр, ты так же можешь присоединиться к: </value>
+  </string>
+  <string key="Skip">
+    <value>Пропустить</value>
+  </string>
+  <string key="HarlotFuckedKilledPublic">
+<!-- used when Harlot visit's SK's victim, and dies -->
+<!--{0} = Harlot name, {1} = SK's victim name-->
+    <value>Джиглипафф тренера {0} зашел в гости к {1} в самый разгар битвы с Драгонайтом! Неумолимая Ярости Драгонайта выбила обоих Покéмонов.</value>
+  </string>
+  <string key="TannerEnd">
+<!-- 0 - Tanner name -->
+    <value>У {0} была одна цель: заставить других тренеров освободить его Покéмона добровольно. Они должны были познать истинную силу Тауроса. Они должны были увидеть угрозу, которую несут Покéмоны. Но теперь все тренеры были повержены и Покéсити совершенно опустел. Не имея возможности избавиться от своего Тауроса, {0} обиженно уходит в закат на поиски новой возможности.</value>
+  </string>
+  <string key="VillageTeamEnd">
+    <value>Команда Добрых Тренеров</value>
+  </string>
+  <string key="NeutralTeamEnd">
+    <value>Команда Нейтральных Тренеров</value>
+  </string>
+  <string key="WolfTeamEnd">
+    <value>Команда Ракета</value>
+  </string>
+  <string key="SerialKillerTeamEnd">
+    <value>Владельцы Драгонайта</value>
+  </string>
+  <string key="CultTeamEnd">
+    <value>Команда Фабрики Клонирования</value>
+  </string>
+  <string key="TannerTeamEnd">
+    <value>Владельцы Тауроса</value>
+  </string>
+  <string key="AllowNSFW">
+    <value>Разрешить NSFW Gif Packs</value>
+  </string>
+  <string key="AllowNSFWQ">
+    <value>Разрешить игрока играть с NSFW gif packs?\nТекущее: {0}</value>
+  </string>
+  <string key="AllowNSFWA">
+    <value>{0} NSFW Gifs</value>
+  </string>
+  <string key="AllowExtend">
+    <value>Разрешить продление времени</value>
+  </string>
+  <string key="ShowRolesDeath">
+    <value>Показать роли мертвых игроков</value>
+  </string>
+  <string key="AllowFlee">
+    <value>Разрешить Flee</value>
+  </string>
+  <string key="ShowIDs">
+    <value>Показывать IDs присоединившихся</value>
+  </string>
+  <string key="ShowIDsQ">
+    <value>Показывать IDs при присоединении к игре?\nТекущее: {0}</value>
+  </string>
+  <string key="ShowIDsA">
+    <value>{0} IDs</value>
+  </string>
+  <string key="All">
+<!-- used when searching for groups in all the variants -->
+    <value>All</value>
+  </string>
+  <string key="BlacksmithKilled">
+    <value>Оглушающие споры не смогли защитить Вайплюм и ее тренера {0} от мощи Драгонайта. Тренер {0} покинул Покéсити.</value>
+  </string>
+  <string key="RandomModeQ">
+    <value>Включить случайный режим?\nКогда случайный режим активирован, то Хаос, Тайное голосование, демонстрация ролей мервых игроков и разрешение секты/"дурака"/Самоубийцы будет определяться случайным образом каждый раз при начале новой игр. \nТекущее:{0}</value>
+  </string>
+  <string key="RandomModeA">
+    <value>Включение случайного режима, установленного для: {0}</value>
+  </string>
+  <string key="RoleInfoBlacksmith">
+    <value>Ты получил Вайлплюма ⚒! У Вайлплюм есть способность Оглушающие Споры, которая останавливает Команду Ракета от атак ночью!</value>
+  </string>
+  <string key="RoleInfoAlphaWolf">
+    <value>Ты - Джованни, босс Команды Ракета и владелец Райдона ⚡️! Используя его невероятные харизматичные способности (сарказм), ты способен убедить тренера присоединиться к Команде Ракета с 20% шансом.</value>
+  </string>
+  <string key="RoleInfoWolfCub">
+    <value>Ты работник Игрового Уголка Ракеты и твой покемон Поригон🐶 (стоит 9999С)! Если твой Покéмон будет побежден или освобожден - Команда Ракета будет в ярости и атакует двух тренеров следующей ночью!</value>
+  </string>
+  <string key="PrinceLynched">
+    <value>Как только народ решает отпуситить {0} он вокскликнул "Погодите! У меня королевский Найнтелз, который защищает Покéсити!". Тренеры пожалели о своем решении и оставили Найнтелза со своим хозяином.</value>
+  </string>
+  <string key="SorcererOther">
+    <value>Ты пытаешься взглянуть на {0}, но не можешь понять, что за Покéмон у него. Но это точно не Команда Ракета или Алаказам.</value>
+  </string>
+  <string key="MayorReveal">
+    <value>{0} делает шаг вперед и показывается своего КАВАЙНОГО Шайни Бульбазавра, доказав что он Мэр Покéсити! С этого момента голос {0} считается за два.</value>
+  </string>
+  <string key="AskMayor">
+    <value>Нажми "Разоблачиться" когда захочешь похвастаться своим Шайни Бульбазавром и обьявить себя Мэром.</value>
+  </string>
+  <string key="Reveal">
+    <value>Разоблачиться</value>
+  </string>
+  <string key="SpreadDust">
+    <value>Хочешь ли ты распылить Оглушающие Споры сегодня и вывести из строя Команду Ракета сегодня?</value>
+  </string>
+  <string key="BlacksmithSpreadSilver">
+    <value>Пока все обсуждали, чьего Покéмона освободить они внезапно заметили, что {0} приказал своей Вайлплюм распылить Оглушающие Споры повсюду. Это помешает творить зло Команде Ракета этой ночью.</value>
+  </string>
+  <string key="Mayor">
+    <value>Бульбазавр🎖</value>
+  </string>
+  <string key="Prince">
+    <value>Найнтелз👑</value>
+  </string>
+  <string key="Sorcerer">
+    <value>Джинкс🔮</value>
+  </string>
+  <string key="ClumsyGuy">
+    <value>Слоупок🤕</value>
+  </string>
+  <string key="Blacksmith">
+    <value>Вайлплюм⚒</value>
+  </string>
+  <string key="AlphaWolf">
+    <value>Райдон⚡️</value>
+  </string>
+  <string key="WolfCub">
+    <value>Поригон🐶</value>
+  </string>
+  <string key="PlayerBittenWolves">
+    <value>Как только Команды Ракета атаковала {0}, {1} Джованни остановил всех. {1} убедил {0} присоединиться к Команде Ракета и получить Легендарную Птицу. </value>
+  </string>
+  <string key="PlayerBitten">
+    <value>Ты был атакован Командой Ракета, но Джованни посчитал тебя ценным тренером и пригласил тебя присоединиться к Команде Ракета.</value>
+  </string>
+  <string key="BittenTurned">
+    <value>Как только ты зашел в штаб-квартиру Команды Ракета, тебе выпала возможность выбрать одну из Легендарных Птиц. Теперь ты часть Команды Ракета!!!</value>
+  </string>
+  <string key="AboutMayor">
+    <value>Как Мэр, Вы получили Шайни Бульбазавра! Пока вы не покажете его остальным тренерам днем - Вы обычный мирный тренер. Как только вы сделаете это, ваш голос во время голосования будет считаться за два. Используйте эту силу во благо!</value>
+  </string>
+  <string key="AboutPrince">
+    <value>Вы, как наследник древнего королевского рода получили Найнтелза. Когда на голосовании принято решение освободить вашего Покéмона, то вы показываете его общественности, и он остается с вами. Тем не менее, это может произойти только один раз: если тренеры настоят на своём решении, то Найнтелз уйдет.</value>
+  </string>
+  <string key="AboutSorcerer">
+    <value>Вы получили Джинкс! Этот Покéмон - это пророк Команды Ракета. Она может узнать только, является ли Покéмон Аброй или частью Команды Ракета.</value>
+  </string>
+  <string key="AboutClumsy">
+    <value>Вы получили Слоупока! Пусть он и очень милый, но его "тормозящие мозговые волны" распространились и на вас. Вы даже не всегда можете правильно указать пальцем в тренера! (У вас 50% шанс проголосовать за случайного игрока.)</value>
+  </string>
+  <string key="AboutBlacksmith">
+    <value>Ваш Покéмон - Вайплюма. Она имеет уникальную способность - Оглушающие Споры, которая оглушает Команду Ракета на одну ночь! Но у Вайлплюм только один РР! Это значит что за всю игру вы сможете использовать эту способность только один раз!(Вы можете защитить селян от волков на одну ночь, рассыпав серебряную пыль днём, при этом ваша роль будет раскрыта.)</value>
+  </string>
+  <string key="AboutAlphaWolf">
+    <value>Вы - Джованни, лидер Команды Ракета! Ваш Покéмон - Райдон! Пока вы в Покéсити, жертва нападения Команды Ракета может быть переманена в вашу команду с 20% вероятностью. Такой тренер становится членом Команды Р следующей ночью, при этом он не может сразу же атаковать.</value>
+  </string>
+  <string key="AboutWolfCub">
+    <value>Вы - Работник Игрового Уголка Ракеты и Ваш Покéмон - Поригон🐶! Вы любимец Команды Ракета, и если кто-то посмеет отобрать вашего Покéмона - тренерам не сдобровать! - каждый член Команды Ракета будет атаковать по 2 тренера следующей ночью!</value>
+  </string>
+  <string key="ZombieKilled">
+    <value>Клонированные Мьюту пусть и сильны, но мощь Драгонайта в разы сильнее. Работник фабрики клонирования {0} узнал это на собственной шкуре.</value>
+  </string>
+  <string key="CupidKilled">
+    <value>Наутро тренеры с ужасом обнаружили {0}, плачущим над его поверженным Хаунтером. Невероятные способности его Покéмона оказались бесполезны перед силой Драгонайта.</value>
+  </string>
+  <string key="DrunkKilled">
+    <value>Тренеры забежали в дом к {0}, расчитывая увидеть прекрасные крылья его/ее Баттерфри, но обнаружили только собирающегося тренера, поверженного Покéмона и отпечатки лап Драгонайта.</value>
+  </string>
+  <string key="GuardianAngelKilled">
+    <value>У Барьера Мистера Мима есть одно интересное свойство - его нельзя применить на себя. Этот нюанс и стал фатальным для {0} и его Покéмона.</value>
+    <value>Мистер Мим искусно использовал Барьер на других, но себя защитить он не смог.  {0}  и его Мистер Мим выбиты.</value>
+  </string>
+  <string key="GunnerKilled">
+    <value>Ночью {0} был застан врасплох! Тренер пытался разбудить Снорлакса, но тот спал всю битву с Драгонайтом. Повержен во сне... Не лучший титул</value>
+  </string>
+  <string key="MayorKilled">
+    <value>Поражение! Мэру {0} и его Шайни Бульбазавру пришлось сразиться с Драгонайтом прямо у себя в кабинете! Вся власть должна быть в руках одного тренера, и тренер Драгонайта решил убрать конкурента.</value>
+  </string>
+  <string key="PrinceKilled">
+    <value>На рассвете {0}, тренер королевского Найнтелза, столкнулся с неслыханной наглостью: Драгонайт и его тренер ворвались в его покои. Принц хотел преподать урок, но сам стал жертвой собственного пылкого нрава. {0} и его Найнтелз выбит.</value>
+    <value>В поисках достойного противника тренер Драгонайта решил напасть на членов Королевской семьи. Их Легендарные Покéмоны славились невообразимой мощью, но даже ее не хватило {0} и его Найнтелзу, чтобы выиграть в этой битве. {0} повержен.</value>
+  </string>
+  <string key="SeerKilled">
+    <value>Наутро в толпу в панике вбегает {0} и неразборчиво кричит. Спустя пару минут вы смогли выянить, что ночью его атаковал Драгонайт с его тренером. {0} проиграл эту битву. Покебол с его Алаказамом 👳 злой тренер забрал как трофей.</value>
+  </string>
+  <string key="SorcererEaten">
+    <value>Ночью вы услышали тихий плач. Команда Ракета атаковала своего сообщника. {0} и его Джинкс выбиты.</value>
+  </string>
+  <string key="WildChildEaten">
+    <value>Прошлой ночью Команда Ракета решила пополнить колекцию трофеев Мяутом. Маленький тренер {0} и его беззащитный Мяут стали жертвами этого бесжалостного порыва.</value>
+  </string>
+  <string key="SerialKillerKilledCH">
+<!--used when CH visits SK-->
+    <value>Проснувшись утром тренеры заметили нехватку одного тренера. {0}, владелец могущественного Мью, проиграл битву Драгонайту! А вместе с этим село лишилось единственного борца с Фабрикой Клонирования...</value>
+  </string>
+  <string key="CultConvertWolfPublic">
+<!--used when Zombies convert the wolves, only if wolves stayed home-->
+    <value>{0}, работник фабрики клонирования, решил пойти на риск: наведаться в штаб-квартиру Команды Ракета! Игра не стоила свеч, а Команда Р заимела интересный трофей. {0} повержен!</value>
+    <value>Первое правило работников фабрики клонирования - НЕ СОВАТЬСЯ К КОМАНДЕ РАКЕТА!!! Стажер {0} не очень любил читать правила, за что и поплатился.</value>
+  </string>
+  <string key="CultConvertKillerPublic">
+<!--used when Zombies convert the SK-->
+    <value>Стажер фабрики клонирования {0} перепутал список домов для вербовки с черным списком домов. Первым оказался адрес тренера Драгонайта, что быстро прервало рабочий день {0}. {0} и его Мьюту выбиты.</value>
+    <value>"Не ходите дети, в этот дом гулять, там живет ужасный Драгонайт!". Не послушав предупреждения {0} решил пригласить пополнить ряды тренера Драгонайта. За свою дерзость он поплатился Покéмоном. {0} и его Мьюту выбиты.</value>
+  </string>
+  <string key="GAGuardedKiller">
+<!-- used when GA guards SK -->
+    <value>Ночью {0} и его Мистер Мим попытались запечатать Драгонайта с помощью Барьера раз и навсегда, но Дыхание Дракона пробило и Барьер, и Мистера Мима. {0} и Мистер Мим повержены!</value>
+  </string>
+  <string key="GAGuardedWolf">
+<!-- used when GA guards a wolf -->
+    <value>Мистер Мим тренера {0} пытался защитить Барьером члена Команды Ракета. {0} даже и подумать не мог, какой грандиозной ловушкой это обернется. {0} и Мистер Мим повержены!</value>
+  </string>
+  <string key="HunterKillsWolfEnd">
+<!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Ослепленный успехом, последний тренер команды Ракета {1} попытался напасть на {0}, но как только битва началась Генгар тренера {0} использовал свою способность и выбил Покéмона тренера {1}, оставшись последним Покéмон Мастером в Покéсити!</value>
+  </string>
+  <string key="WolfKillsHunterEnd">
+<!--{0} = hunter's name, {1} = wolf's name-->
+    <value>Зная, что остался только {0} и его Генгар , {1} дождался пока Генгар упадет в спячку. Команда Ракета превратила эту спячку в вечный сон. </value>
+  </string>
+  <string key="CHKillsZombieEnd">
+<!--{0} = last Zombie's name, {1} = CH's name -->
+    <value>Поутру на главной площади встретились {1} и {0}. Выполняя рабочую установку фабрики, {0} достал свой Покéбол и продемострировал своего Мьюту. {1} выпустил Мью, выбил последнего клонированного Мьюьту и прервал порочный цикл.</value>
+  </string>
+  <string key="SecondsAdded">
+<!-- 0 - Seconds added by /extend command -->
+<!-- 1 - Total seconds remaining -->
+    <value>Время ожидания увеличено на {0} секунд!\nОсталось {1}.</value>
+  </string>
+  <string key="SecondsRemoved">
+<!-- 0 - Seconds removed by /extend command -->
+<!-- 1 - Total seconds remaining -->
+    <value>Время ожидания уменьшено на {0} секунд!\nОсталось {1}.</value>
+  </string>
+  <string key="CantExtend">
+    <value>Только админ может несколько раз увеличивать время ожидания!</value>
+  </string>
+  <string key="AllowExtendQ">
+<!--{0} = "Allow" / "Disallow" string-->
+    <value>Разрешить игрокам увеличивать время ожидания?\nТекущее состояние: {0} \nNote: Админы всегда смогут увеличивать время ожидания.</value>
+  </string>
+  <string key="AllowExtendA">
+<!--{0} = "Allow" / "Disallow" string-->
+    <value>Игрокам {0} увеличивать время.</value>
+  </string>
+  <string key="MaxExtendQ">
+    <value>На сколько максимально можно увеличивать время ожидания командой /extend.\nПо умолчанию: {0}\nТекущее:{1}.</value>
+  </string>
+  <string key="MaxExtendA">
+    <value>Теперь будет {0} секунд.</value>
+  </string>
+  <string key="WolvesEatDrunkBlockSecondKill">
+    <value>О нет! Последним движением Баттерфри тренера {0} использовала Сонную Пыльцу и твой Покéмон уснул. Ты не сможешь устраивать битв целых {1}.</value>
+  </string>
+  <string key="JoinButton">
+<!-- this is for a button, no markdown or html -->
+    <value>Присоединиться</value>
+  </string>
+  <string key="NotMember">
+    <value>Вы не можете присоединиться к данной игре, так как вы не являетесь участником {0}.</value>
+  </string>
+  <string key="JoinByButton">
+    <value>Пожалуйста, не используйте команды для присоединения. Нажмите на кнопку "Присоединиться".</value>
+  </string>
+  <string key="EnableSecretLynchQ">
+    <value>Включить тайное голосование? Текущий статус: {0}</value>
+  </string>
+  <string key="EnableSecretLynchA">
+    <value>Статус изменён. Новый статус: {0}</value>
+  </string>
+  <string key="PlayerVoteCounts">
+    <value>{0} игроков проголосовало, всего {1}.</value>
+  </string>
+  <string key="NoAutoJoin">
+    <value>{0}, пожалуйста, помните, что вам придётся присоединиться с помощью кнопки.</value>
+  </string>
+  <string key="GroupNotFound">
+    <value>Группа не найдена. Запустите эту команду в группе, которую вы хотите остановить в ожидании, или добавьте ссылку, идентификатор или имя пользователя рядом с командой.</value>
+  </string>
+  <string key="DeletedFromWaitList">
+    <value>Вы были удалены из списка ожидания для {0}.</value>
+  </string>
+  <string key="HaveJoined">
+<!-- {0} = list of people who have joined -->
+<!-- NOTE: No space between {0} and joined. It will be added in the code if necessary-->
+    <value>{0} вступил в игру во время последних 30 секунд.</value>
+  </string>
+  <string key="AllowCult">
+    <value>Разрешить Фабрику Клонов?</value>
+  </string>
+  <string key="AllowTanner">
+    <value>Разрешить Тауроса</value>
+  </string>
+  <string key="AllowFool">
+    <value>Разрешить Псайдака</value>
+  </string>
+  <string key="EnableSecretLynch">
+    <value>Включить тайное голосование</value>
+  </string>
+  <string key="RandomMode">
+    <value>Включить Случайный режим</value>
+  </string>
+  <string key="CultConvertWolf">
+<!-- New Roles, April 2018 -->
+    <value>Фабрика Клонирования отправила стажёра {0} вербовать {1}, однако тот, как член Команды Ракета принял это как вызов. {0} повержен.</value>
+  </string>
+  <string key="DGTransformToLycan">
+<!-- 0 - target's name -->
+<!-- 1 - teammates's name -->
+    <value>{0} умер и ваш покемон превратился в Гаярдоса. Ваши товарищи по команде (если есть): {1}</value>
+  </string>
+  <string key="NegSeerSees">
+<!-- 0 - target's name -->
+<!-- 1 - role that they are not -->
+    <value>Эггзегутор видит, что {0} НЕ {1}!</value>
+  </string>
+  <string key="AskSandman">
+    <value>Вы хотите отправить всех покемонов на медицинское обследование этой ночью?</value>
+  </string>
+  <string key="SandmanSleepAll">
+    <value>ВНИМАНИЕ! {0} приказал(а) своему Ченси уведомить всех тренеров: В связи с эпидемией покегриппа, все должны сдать своих покемонов для прохождения медицинского обследования в Поке Центре. Этой ночью все битвы будут отменены!</value>
+  </string>
+  <string key="SandmanNight">
+    <value>Все тренеры сдали своих покемонов в Поке Центр. Вам нечего беспокоиться, Сестра Джой позаботилась о вашем любимце. Эпидемия отступила и уже утром все покемоны вернулись к своим хозяевам.</value>
+  </string>
+  <string key="AllowThiefQ">
+    <value>Разрешить Мачампа?\nCurrent: {0}</value>
+  </string>
+  <string key="AllowThiefA">
+    <value>Роль мачампа установлена как: {0}</value>
+  </string>
+  <string key="ThiefFullQ">
+    <value>Мачамп может быть использован каждую ночь?\nCurrent: {0}</value>
+  </string>
+  <string key="ThiefFullA">
+    <value>Мачамп будет активен каждую ночь: {0}</value>
+  </string>
+  <string key="AllowThief">
+    <value>Разрешить Мачампа</value>
+  </string>
+  <string key="ThiefFull">
+    <value>Полная версия Мачампа</value>
+  </string>
+  <string key="RoleInfoWolfMan">
+    <value>Вы получили Лапраса. Вы добрый тренер, но из-за слабого действия Провидения в море, Алаказам всегда путает вашего покемона с подводной лодкой Команды Ракета.</value>
+  </string>
+  <string key="WolfMan">
+    <value>Лапрас 👱🌚</value>
+  </string>
+  <string key="AboutWolfMan">
+    <value>Ваш покемон - Лапрас. Вы добрый тренер, но из-за слабого действия провиденния в море, Алаказам всегда путает вашего покемона с подводной лодкой Команды Ракета.</value>
+  </string>
+  <string key="RoleInfoLycan">
+    <value>Вы получили Гаярдоса🐺🌝. Вы Капитан секретной подводной лодки Команды Ракета. Из-за слабого действия Провидения в морских глубинах, Алаказам определяет вашего покемона Маджикарпом.</value>
+  </string>
+  <string key="Lycan">
+    <value>Гаярдос 🐺🌝</value>
+  </string>
+  <string key="AboutLycan">
+    <value>Вы работник секретной подводной лодки команды Ракета. Ваш покемон - Гаярдос. Из-за слабого действия  провиденния в морских глубинах, Алаказам определяет вашего покемона Мэджикарпом.</value>
+  </string>
+  <string key="RoleInfoOracle">
+    <value>Вы получили Эггзегутора. У него есть уникальная способность Экстрасенсорити. Он может указать на тренера и на покемона(участника Лиги), который этому тренеру не принадлежит.</value>
+  </string>
+  <string key="Oracle">
+    <value>Экзеггутор 🌀</value>
+  </string>
+  <string key="AboutOracle">
+    <value>Ваш покемон - Экзеггутор. Благодаря своим экстрасенсорным способностям, он может определить покемона участника турнира и тренера которому этот покемон не пренадлежит.</value>
+  </string>
+  <string key="RoleInfoSandman">
+<!-- NOT IMPLEMENTED YET -->
+    <value>Вы сестра Джой, мирный работник Поке Центра. Ваш покемон Ченси 💤 может, один раз за игру, раздать уведомления всем тренерам о прохождении медицинского обследования в Поке Центре. В эту ночь все битвы будут отменены.</value>
+  </string>
+  <string key="Sandman">
+    <value>Ченси 💤</value>
+  </string>
+  <string key="AboutSandman">
+<!-- NOT IMPLEMENTED YET -->
+    <value>Вы сестра Джой, мирный работник Поке Центра. Ваш покемон Ченси 💤 может раздать уведомления всем тренерам о прохождении медицинского обследования в Поке Центре (один раз за игру). В эту ночь все битвы будут отменены.</value>
+  </string>
+  <string key="RoleInfoImam">
+    <value>Ваш покемон Вапореон ☮️. Вы опытый и всеми уважаемый Чемпион предыдущих Лиг! Ваш авторитет позволяет убедить всех тренеров не отпускать чьего-либо покемона. Это можно сделать только один раз.</value>
+  </string>
+  <string key="Imam">
+    <value>Вапореон ☮️</value>
+  </string>
+  <string key="AboutImam">
+    <value> Вы можете убедить всех тренеров не отпускать чьего-либо покемона (Отменить голосование). Это можно сделать только один раз.</value>
+  </string>
+  <string key="RoleInfoWiseElder">
+    <value>Ваш покемон - Венузавр 📚. Благодаря его сильнейшей атаке - Солнечный Луч, один раз за лигу, вы можете отбить атаки Легендарных Птиц команды Ракета - на второй раз Венузавр будет повержен, так как не успеет востановиться к следующей битве. Если Снорлакс или Генгар атакуют вас своими способностями, Венузавр применит свою атаку на них! В итоге глубокого нокаута, таким тренерам прийдется довольствоваться резервными Меджикарпами и плескаться до конца Лиги.</value>
+  </string>
+  <string key="WiseElder">
+    <value>Венузавр 📚</value>
+  </string>
+  <string key="AboutWiseElder">
+    <value>Венузавр 📚. Благодаря его сильнейшей атаке - Солнечный Луч, один раз за лигу, вы можете отбить атаки Легендарных Птиц команды Ракета - на второй раз Венузавр будет повержен, так как не успеет востановиться к следующей битве. Если Снорлакс или Генгар атакуют вас своими способностями, Венузавр применит свою атаку на них! В итоге глубокого нокаута, таким тренерам прийдется довольствоваться резервными Меджикарпами и плескаться до конца Лиги.</value>
+  </string>
+  <string key="RoleInfoThief">
+    <value>Ваш покемон Мачамп😈! Обладатель этого покемона, что бы попасть в Лигу, должен вызвать случайного тренера на ночную дуэль! В случае победы (50%) вы забираете покемона соперника и занимаете его место в Лиге. А потерпевший тренер остается в Лиге с резервным Мэджикарпом.</value>
+  </string>
+  <string key="RoleInfoThiefFull">
+    <value>Мачамп 😈! Так как режим [Полный вор] включен, вы получаете 50% шанс забрать покемона тренера Лиги каждую ночь (через ночную Дуэль), если это удастся, этот тренер получит Мачампа и продолжит дуэли, а вы займете его место в Лиге с его Покемоном! Тренер который остается в конце с Мачампом - проигрывает! В обычном режиме [Вор] побежденый соперник останется с Мэджикарпом.</value>
+  </string>
+  <string key="Thief">
+    <value>Мачамп 😈</value>
+  </string>
+  <string key="AboutThief">
+    <value>Мачамп 😈! В режиме[Полный вор] , вы получаете 50% шанс забрать покемона тренера Лиги каждую ночь (через ночную Дуэль), если это удастся, этот тренер получит Мачампа и продолжит дуэли, а вы займете его место в Лиге с его Покемоном! Тренер который остается в конце с Мачампом - проигрывает! В обычном режиме [Вор] побежденый соперник останется с резервны Мэджикарпом!</value>
+  </string>
+  <string key="AskImam">
+    <value>Нажмите эту кнопку, когда вы захотите воспользоваться своим Чемпионским правом, отменить голосование!</value>
+  </string>
+  <string key="ImamNoLynch">
+<!-- {0} - Imam's name -->
+    <value>Уважаемый и опытный Чемпион ☮️, {0}, выходит на главную площадь Покесити! Выступает с пламенной речью о дружбе и уважении перед тренерами Лиги. Его верный красавец Вапореон, отблескивая лазурными бликами на солнце, все время сопровождает своего тренера! Вдохновленнная толпа расходится по своим домам, сегодня голосования не будет!</value>
+  </string>
+  <string key="ImamNoLynchNow">
+    <value>Из-за сердечной речи Уважаемого тренера Вапореона, этап голосования будет пропущен сегодня!</value>
+  </string>
+  <string key="WolvesTriedToEatWiseElder">
+<!-- 0 - Wise Elder's name -->
+    <value>Вы попытались напасть на {0}, но, к сожалению Венузавр📚! {0} успешно применил против вас Солнечный Луч, к счастью из-за яркой вспышки и внезапности, тренер не разглядел никого из вас.</value>
+  </string>
+  <string key="WolvesAteWiseElderPM">
+    <value>Команда Ракета пыталась напасть на вас, но вы не стали бы мудрым тренером Венузавра, будучи легко поверженым злодеями! Ваш покемон успешно использует Солнечный Луч и и отбивает атаку! Но, к сожалению, из-за яркой вспышки, вы не узнали нападавших.</value>
+  </string>
+  <string key="HunterKilledWiseElder">
+<!-- {0} - Hunter's Name -->
+<!-- {1} - Wise Elder's Name -->
+    <value>Генгар 🎯, {0} использует Теневой Луч против Венузавра📚 {1} , не подозревая каким фиаско для него это обернется. Венузавр в ответ использует Солнечный Луч. Когда две мощнейшие атаки настигают друг друга, образуется гигантский взрыв.. Оба покемона повержены! Тренер {0} понимает, что у него еще есть Мэджикарп в резерве, но решает покинуть Лигу, уступив дорогу более сильным тренерам 👱</value>
+  </string>
+  <string key="GunnerShotWiseElder">
+<!-- {0} - Gunner's Name -->
+<!-- {1} - Wise Elder's Name -->
+    <value>Снорлакс 🔫, {0} использует Гипер Луч против Венузавра📚 {1} , не подозревая каким фиаско для него это обернется. Венузавр в ответ использует Солнечный Луч. Когда две мощнейшие атаки настигают друг друга, образуется гигантский взрыв.. Оба покемона повержены! Тренер {0} продолжает участие  в Лиге с резервным Мэджикарпом 👱</value>
+  </string>
+  <string key="ThiefStealFailed">
+<!-- {0} - The name of the thief's target -->
+    <value>Вы вызвали тренера {0} на дуэль покемонов, но, к сожалению, ваш Мачамп не смог одолеть более сильного соперника... </value>
+  </string>
+  <string key="ThiefStealDead">
+<!-- {0} - The name of the thief's target -->
+    <value>Вы пытались вызвать {0} на Дуэль Покемонов, но к сожалению {0} уже не в Лиге...</value>
+  </string>
+  <string deprecated="true" key="ThiefStoleYourRole">
+<!-- {0} - The new role -->
+    <value>Тренер Мачампа бросил вам вызов! Самоуверенно вы принимаете Дуэль! К сожалению вы терпите фиаско 🤕 Теперь ваш покемон {0}.</value>
+  </string>
+  <string key="ThiefStoleRole">
+<!-- {0} - The name of the thief's target -->
+    <value>Ваш Мачамп приносит вам победу! Вы попадаете в Лигу, забрав покемона у {0}!</value>
+  </string>
+  <string key="ThiefToMason">
+<!-- 0 - old mason's name -->
+<!-- 1 - new mason's name -->
+    <value>{0} лишился своего Пикачу и покинул клуб, а {1} теперь стал новым обладателем Пикачу и вступил в клуб, как и вы!</value>
+  </string>
+  <string key="ThiefTransformToMason">
+<!-- 0 - mason collegues's name -->
+    <value>Ваши товарищи по клубу (если есть): {0}</value>
+  </string>
+  <string key="ThiefToCult">
+<!-- 0 - old Zombie's name -->
+<!-- 1 - new Zombie's name -->
+    <value>{0} лишился своего Мьюту, а {1} теперь стал новым обладателем Мьюту, как и вы!</value>
+  </string>
+  <string key="ThiefToWolf">
+<!-- 0 - old wolf's name -->
+<!-- 1 - new wolf's name -->
+    <value>{0} покинул(а) Команду Ракета, а {1} присоединил(ась)ся к вам!</value>
+  </string>
+  <string key="ThiefTransformNewTeammates">
+<!-- 0 - teammates's name -->
+    <value>Ваши товарищи по команде (если есть): {0}</value>
+  </string>
+  <string key="ThiefEnd">
+<!-- 0 - Thief's name -->
+    <value>Мачамп и его тренер {0} поняли, что для них больше нет соперников для дуэлей в этом городе. Они быстро покинули Покесити и уехали покорять новые горизонты!</value>
+  </string>
+  <string key="ThiefStealChosen">
+<!-- 0 - target's name -->
+    <value>Ваш соперник для дуэли теперь {0}.</value>
+  </string>
+  <string key="AskThief">
+    <value>Кого из тренеров вы хотите вызвать на дуэль покемонов?</value>
+  </string>
+  <string key="SecretLynchResultEach">
+<!-- 0 - Number of votes -->
+<!-- 1 - Player got lynched -->
+<!-- 2 - A list of players who voted {1} -->
+    <value>{0} голосов против {1}: {2}</value>
+  </string>
+  <string key="SecretLynchResultFull">
+<!-- 0 - A list of "SecretLynchResultEach" or "SecretLynchResultNumber" -->
+    <value>Результат голосования на сегодняшний день: \n {0}</value>
+  </string>
+  <string key="SecretLynchResultNumber">
+<!-- 0 - Number of votes -->
+<!-- 1 - Player got lynched -->
+    <value>{0} голосов против {1}.</value>
+  </string>
+  <string key="SecretLynchShowVotes">
+    <value>Скрыть: Количество голосов</value>
+  </string>
+  <string key="SecretLynchShowVotesQ">
+    <value>Когда секретное голосование включено, показать количество голосов в конце голосования?\nСейчас: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotesA">
+    <value>Когда секретное голосование включено, подсчет голосов в конце линч будет: {0}</value>
+  </string>
+  <string key="SecretLynchShowVoters">
+    <value>Скрыть: Проголосовавшие</value>
+  </string>
+  <string key="SecretLynchShowVotersQ">
+    <value>Когда секретное голосование включено и подсчет голосов отображается, укажите имя избирателя для каждого проголосовавшего игрока?\nCurrent: {0}</value>
+  </string>
+  <string key="SecretLynchShowVotersA">
+    <value>Когда секретное голосование включено и подсчет голосов отображается, имя избирателя для каждого проголосовавшего игрока будет: {0}</value>
+  </string>
+  <string key="ZombieBitten">
+<!-- {0} - Zombie that was bitten by the Alpha Wolf -->
+    <value>Странно ... Вы начинаете обсуждать, кого клонировать сегодня вечером, вы понимаете, что {0} здесь нет! Что с ними случилось?</value>
+  </string>
+  <string key="Peace">
+<!-- Used for Imam's button -->
+    <value>Слава Чемпиону и его Лазурному Вапореону!</value>
+  </string>
+  <string key="LynchPeaceTimeout">
+<!-- Used in PM if the Imam uses his ability during lynch phase -->
+    <value>Сегодняшнее голосование пропущенно из-за вдохновляющей речи Чемпиона прошлой Лиги, тренера Вапореона!</value>
+  </string>
+  <string key="ThiefStoleYourRoleThief">
+    <value>Вы проиграли в дуэли покемонов и обменялись питомцами! Теперь вы новый тренер Мачампа 😈 и можете вызвать кого либо на дуэль!</value>
+  </string>
+  <string key="ThiefStoleYourRoleVillager">
+    <value>Мачамп одолел вашего покемона и тренер забрал его, в качестве победителя! Вы теперь обладатель Мэджикарпа 👱, плескайтесь до конца времен.</value>
+  </string>
+  <string key="SerialKillerKilledYou" isgif="true">
+    <value>Стук-стук, вашу резиденцию посетил Драгонайт! Вы выбываете</value>
+    <value>Ваш покемон был сильным... Но Драгонайт сильнее. Вы выбываете из лиги!</value>
+  </string>
+  <string key="ThiefTeamEnd">
+    <value>Команда Мачампа</value>
+  </string>
+  <string key="StealKiller">
+    <value>Ва пытались забрать покемона... у владельца Драгонайта! Это была крайне неудачная идея! Мачамп повержен</value>
+  </string>
+  <string key="ThiefStoleKiller">
+    <!-- used when Thief steals SK -->
+    <value>Владелец Мачампа {0}, пытался забрать себе Драгонайта! {0} был очень наивен и больше никогда не повторит такой ошибки...</value>
+  </string>
+  <string key="BeholderSeerStolen">
+	<value>Тренер Мачампа победил Алаказама! {0} теперь владелец Алаказама, а {1} остался с Мачампом...</value>
+  </string>
+  
+  <!-- New roles 28.12.2018 -->
+  <string key="Troublemaker">
+	<value>Дроузи 🤯</value>
+  </string>
+  <string key="AboutTroublemaker">
+	<value>Дроузи может убедить жителей, что прошедшее голосование было всего-лишь сном, а настоящее только начинается, таким образом освободив двух покемонов за день!</value>
+  </string>
+  <string key="RoleInfoTroublemaker">
+	<value>Ваш покемон - Дроузи 🤯. Дроузи один раз за игру может убедить жителей, что прошедшее голосование им приснилось, а настоящее только вот-вот начнётся. Под действием способностей твоего Дроузи все участники Лиги освободят в этот день двух Покемонов от своих тренеров.</value>
+  </string>
+  <string key="AskTroublemaker">
+	<value>Будет ли сегодня твой Дроузи 🤯 использовать свои способности на тренеров Лиги?</value>
+  </string>
+  <string key="TroublemakerDoubleLynch">
+	<value>{0} и его Дроузи 🤯 что-то делают в стороне. Всё вокруг начинает казаться каким-то нереальным...</value>
+  </string>
+  <string key="TroubleDoubleLynchNow">
+	<value>Дроузи убедил вас, что предыдущего голосования не было, вы лишь видели его во сне. Хм... Наверное, так и есть... Пора кого-нибудь освободить! </value>
+  </string>
+  <string key="Chemist">
+	<value>Зубат 👨‍🔬</value>
+  </string>
+  <string key="AboutChemist">
+	<value>Зубат 👨‍🔬 может использовать Луч Замешательства против других Покемонов. Луч Замешательства сбивает Покемона противника с толку. Есть шанс, что сбитый с толку Покемон атакует сам себя, но в замешательстве он может попасть и по Зубату! Если к твоему Покемону на бой придет Зубат, тебя может спасти только удача!</value>
+  </string>
+  <string key="RoleInfoChemist">
+	<value>Твой Покемон - Зубат 👨‍🔬. Он может использовать Луч Замешательства против других Покемонов. Луч Замешательства сбивает Покемона твоего противника с толку. Есть шанс, что сбитый с толку Покемон атакует сам себя, но в замешательстве он может попасть и по твоему Зубату! К сожалению, Зубат - довольно слабый Покемон, поэтому в ночь перед попыткой отправить Зубата на битву с другим Покемоном ты решаешь его немного потренировать. Удачи!</value>
+  </string>
+  <string key="ChemistBrewing">
+	<value>Пока все остальные Покемоны и их тренеры собираются спать, ты решаешь потратить всю ночь на тренировку своего Зубата 👨‍🔬. Остаётся только надеяться, что к тебе не нагрянет Команда Ракета</value>
+  </string>
+  <string key="AskChemist">
+	<value>Кому ты и твой Зубат 👨‍🔬 сегодня бросите вызов?</value>
+  </string>
+  <string key="ChemistTargetDead">
+	<value>Ты пришел к тренеру {0}, чтобы скомандовать своему Зубату использовать Луч Замешательства, но к сожалению Покемон этого тренера уже выбит!</value>
+  </string>
+  <string key="ChemistVisitYouSK">
+	<value>Тренер {0} с Зубатом 👨‍🔬 вызывает тебя на бой! Зубат пытается использовать Луч Замешательства против твоего Покемона, но Драгонайт куда быстрее и сильнее Зубата. Зубат терпит поражение!</value>
+  </string>
+  <string key="ChemistSK">
+	<value>Ты отправил своего Зубата 👨‍🔬 на бой с Покемоном тренера {0}, но его Драгонайт оказался Зубату не по зубам! Твой Зубат пал жертвой грозного Драгонайта! 🔪</value>
+  </string>
+  <string key="ChemistSKPublic">
+	<value>Тренер {0} попытался заставить своего Зубата 👨‍🔬 использовать Луч Замешательства против Драгонайта. Но Драгонайт оказался быстрее и атаковал первым... Зубат тренера {0} был выбит, так и не успев применить свою атаку!</value>
+  </string>
+  <string key="ChemistVisitYouSuccess">
+	<value>Владелец Зубата 👨‍🔬 вызывает тебя на бой! Зубат использует Луч Замешательства против твоего Покемона, и теперь он сбит с толку. В замешательстве, твой Покемон наносит урон сам себе. Очень жаль, но тренер Зубата победил в этой битве...</value>
+  </string>
+  <string key="ChemistSuccess">
+	<value>Ты вызываешь на бой тренера {0} и приказываешь Зубату 👨‍🔬 использовать Луч Замешательства против Покемона противника! Сбитый с толку Покемон наносит урон сам себе, и ты одерживаешь победу! Радуясь своей удаче, ты возвращаешься домой с победой.</value>
+  </string>
+  <string key="ChemistSuccessPublic">
+  <!-- {0} - Chemist's victim -->
+  <!-- {1} - Will be replaced by "(victim) was (role)" -->
+	<value>Сегодня ночью тренер с Зубатом 👨‍🔬 вызвал на бой тренера {0}. Зубат использовал Луч Замешательства, и сбитый с толку Покемон тренера {0} оказался жертвой собственных атак. Какой нелепый конец... {1}</value>
+  </string>
+  <string key="ChemistVisitYouFail">
+	<value>Тренер {0} отправил своего Зубата 👨‍🔬 на поединок с твоим Покемоном! Зубат использовал Луч Замешательства, и твой Покемон теперь сбит с толку. Он пытается атаковать Зубата в ответ, и ему это удается. Удача сегодня на твоей стороне, ты выиграл битву!</value>
+  </string>
+  <string key="ChemistFail">
+	<value>Ты вызвал на бой тренера {0} и твой Зубат использовал в битве Луч Замешательства. К сожалению, это не помешало сбитому с толку Покемону противника попасть в Зубата ответной атакой. Ты побежден! Может, тебе следовало научить Зубата другим атакам?..</value>
+  </string>
+  <string key="ChemistFailPublic">
+	<value>Зубат 👨‍🔬 тренера {0} повержен! Очевидно, {0} напрасно испытывал свою удачу, сегодня она была явно не на его стороне... </value>
+  </string>
+  <string key="ChemistTargetEmpty">
+	<value>Тренера {0} не было дома! Ты отправляешься домой со своим Зубатом, проклиная безуспешный и неудачный поход.</value>
+  </string>
+  <string key="ZombiesList">
+	<value>Список сотрудников Фабрики Клонирования: {0}</value>
+  </string>
+  <string key="SnowWolf">
+	<value>Арбок 🐺☃️</value>
+  </string>
+  <string key="RoleInfoSnowWolf">
+    <value>Твой Покемон - Арбок 🐺☃. Каждую ночь, пока твои коллеги из Команды Ракета кого-то атакуют, ты можешь приказать Арбоку использовать Свирепый Взгляд, чтобы парализовать чьего-либо Покемона. Парализованный Покемон не сможет совершать в эту ночь никаких действий, если у него таковые есть. К сожалению, одного и того же Покемона нельзя парализовать две ночи подряд.</value>
+  </string>
+  <string key="AboutSnowWolf">
+    <value>Арбок 🐺☃ - Покемон члена Команды Ракета. Владелец Арбока немного не сходится во взглядах со своими коллегами, поэтому предпочитает работать в одиночку. Вместо того, чтобы нападать на других тренеров, он приказывает Арбоку парализовывать врагов с помощью атаки Свирепый Взгляд. Парализованный Покемон не сможет совершать ночью никаких действий, если у него таковые есть. Одного и того же Покемона нельзя парализовать две ночи подряд.</value>
+  </string>
+  <string key="AskFreeze">
+	<value>На ком Арбоку следует применить Свирепый Взгляд сегодня?</value>
+  </string>
+  <string key="WolfPackList">
+    <value>Состав Команды Ракета: {0}</value>
+  </string>
+  <string key="WolfPackSnowList">
+    <value>Состав Команды Ракета: {0}. Тренера Арбока {1}</value>
+  </string>
+  <string key="DGTransformToAlphaWithSnow">
+    <value>{0} потерпел поражение. Твой Дитто превратился в Райдона. Пришло твое время, чтобы стать новым лидером Команды Ракета! Твои коллеги: {1}. Владелец Арбока: {2}</value>
+  </string>
+  <string key="DGTransformToWolfCubWithSnow">
+    <value>{0} потерпел поражение. Твой Дитто превратился в Поригона. Твои коллеги: {1}. Владелец Арбока: {2}</value>
+  </string>
+  <string key="DGTransformToWolfWithSnow">
+    <value>{0} потерпел поражение. Твой Дитто превратился в одного из Покемонов Команды Ракета. Твои коллеги: {1}. Владелец Арбока: {2}</value>
+  </string>
+  <string key="DGTransformToLycanWithSnow">
+    <value>{0} потерпел поражение. Твой Дитто превратился в Гаярдоса. Твои коллеги: {1}. Владелец Арбока: {2}</value>
+  </string>
+  <string key="DGTransformToSnowWolf">
+    <value>{0} потерпел поражение. Твой Дитто превратился в Арбока. Твои коллеги (если они есть): {1}</value>
+  </string>
+  <string key="DGToSnowWolf">
+    <value>Дитто тренера {0} превратился в Арбока!</value>
+  </string>
+  <string key="WildChildSnowTransform">
+    <value>{0} потерпел поражение! В ярости, ты переходишь на сторону Команды Ракета! Твои коллеги: {1}. Владелец Арбока: {2}</value>
+  </string>
+  <string key="ThiefToSnowWolf">
+    <value>{0} больше не твой коллега, {1} - новый владелец Арбока!</value>
+  </string>
+  <string key="HarlotFrozen">
+    <value>Ты открываешь дверь, чтобы выпустить своего Джиглипаффа поискать себе друзей, но Джиглипафф чувствует, что за ним кто-то следит. Свирепый Взгляд Арбока 🐺☃ парализует твоего Джиглипаффа. Ты переживаешь за своего бездвижного Покемона, но, к счастью, к утру паралич проходит. </value>
+  </string>
+  <string key="ChemistFrozen">
+    <value>Потренировав своего Зубата, ты собираешься отправиться с ним на бой против другого тренера. Однако, ты замечаешь в окне два жутких огромных светящихся глаза. Арбок 🐺☃ использует против Зубата Свирепый Взгляд, и твой Покемон теперь парализован! Кажется, битву придется отложить до следующего раза. Вздыхая, ты ждешь, когда же паралич наконец пройдет. На рассвете ты замечаешь, что твой Зубат снова может двигаться.</value>
+  </string>
+  <string key="ZombieFrozen">
+    <value>Приготовившись отправиться в путь со своим клонированным Мьюту, ты чувствуешь на себе чей-то Свирепый Взгляд. Арбоку 🐺☃ удается парализовать твоего Мьюту. Другие владельцы Клонированных Мьюту зашли за тобой по пути на Фабрику, но увидев, что твой Мьюту парализован, лишь посмеялись, пообещали, что справятся без тебя, и оставили вас дома. К утру твой Мьюту смог перебороть паралич, и ты стыдливо выходишь на улицу.</value>
+  </string>
+  <string key="CHFrozen">
+    <value>Вместе с Мью ты собираешься отправиться на поиски владельцев Клонированных Мьюту, но твоего Мью парализует Свирепый Взгляд притаившегося в дверях Арбока 🐺☃. К сожалению, Мью смог перебороть паралич лишь к утру, а владельцы Клонированных Мьюту тем временем продолжают расширять свои ряды...</value>
+  </string>
+  <string key="SeeingFrozen">
+  <!-- used for seer, fool, oracle and sorcerer -->
+    <value>Ты приказываешь своему Покемону применить Провидение, но внезапно твой Покемон оказывается парализован! Арбок 🐺☃ применил на нем свой Свирепый Взгляд. Это затуманило разум твоего Покемона, поэтому ты не смог ничего узнать о Покемоне другого тренера. К счастью, твой Покемон освободился от паралича с восходом солнца.</value>
+  </string>
+  <string key="GAFrozen">
+    <value>Ты приказываешь Мистеру Миму использовать Барьер, но ему это не удается, потому что проползавший рядом Арбок 🐺☃ парализовал его своим Свирепым Взглядом. Тебе повезло, и к утру Мистеру Миму стало значительно лучше.</value>
+  </string>
+  <string key="SKFrozen">
+    <value>Радуясь, что твой Драгонайт - самый сильный Покемон в городе, ты собрался отправиться за победой над очередным слабым тренером. Но что-то пошло не так. Твой Драгонайт упал навзничь. Его парализовал Свирепый Взгляд проползающего неподалеку Арбока 🐺☃. Проклиная тренера, использовавшего такую подлую тактику, ты ощущаешь в себе отчаянное желание во что бы то ни стало найти его и одержать над ним победу. К утру твой Драгонайт наконец смог перебороть паралич.</value>
+  </string>
+  <string key="ThiefFrozen">
+    <value>Пока ты выбирал себе противника для дуэли, к твоему Мачампу подкрался Арбок 🐺☃ и парализовал его своим Свирепым Взглядом! На рассвете паралич отступил, и ты вместе с Мачампом поспешил домой. </value>
+  </string>
+  <string key="DefaultFrozen">
+  <!-- used for all roles without (every-)night action -->
+    <value>Пока твой Покемон собирался отправиться спать, к нему подкрался Арбок 🐺☃ и парализовал его своим Свирепым Взглядом. Тебе и твоему Покемону это не доставило больших неудобств, так как вы всё равно собирались отправляться на покой. Твой Покемон бездвижно пролежал всю ночь в своей постели, но ты позаботился о том, чтобы ему было удобно. К утру вы оба проснулись как ни в чём не бывало.</value>
+  </string>
+  <string key="GuardBlockedSnowWolf">
+    <value>Ты приказал своему Арбоку парализовать Покемона тренера {0}, но его Покемон был защищен Барьером. Арбок возвращается к тебе ни с чем.</value>
+  </string>
+  <string key="SuccessfulFreeze">
+    <value>Твой Арбок напал на Покемона тренера {0} и парализовал его Свирепым Взглядом! Этот Покемон не сможет совершать ночью никаких действий, даже если собирался</value>
+  </string>
+  <string key="SnowFrozeKiller">
+	<value>Арбок тренера {0} попытался парализовать Покемона противника Свирепым Взглядом, но этим Покемоном оказался Драгонайт! Он вовремя заметил нападавшего Арбока и успел атаковать первым. Арбок тренера {0} повержен!</value>
+  </string>
+  <string key="SnowWolfTurnWolf">
+	<value>К сожалению, все другие члены Команды Ракета лишились своих Покемонов, и ты остался последним. Тебе пора перходить из обороны в нападение, поэтому ты перестаешь всего лишь парализовывать противников, вызывая их на полноценный бой!</value>
+  </string>
+    <string key="SnowFrozeHunter">
+    <!-- 0 - target's name -->
+    <value>Арбок тренера {0} попытался парализовать Генгара Свирепым Взглядом, но на Генгара это не подействовало, и Арбок был выбит его внезапной атакой!</value>
+  </string>
+  <string key="Lang">
+    <value>Изменить язык</value>
+  </string>
+  <string key="Mode">
+    <value>Изменить режим игры</value>
+  </string>
+  <string key="MaxPlayer">
+    <value>Максимальное количество игроков</value>
+  </string>
+  <string key="EndRoles">
+    <value>Показывать роли в конце игры</value>
+  </string>
+  <string key="MaxExtend">
+    <value>Максимальное продление сбора</value>
+  </string>
+  <string key="DayTimer">
+    <value>Дневной таймер</value>
+  </string>
+  <string key="NightTimer">
+    <value>Ночной таймер</value>
+  </string>
+  <string key="LynchTimer">
+    <value>Таймер голосования</value>
+  </string>
+  <string key="RoleConfig">
+	<value>Настройка ролей</value>
+  </string>
+  <string key="Mechanics">
+	<value>Механика игры</value>
+  </string>
+  <string key="GroupSettings">
+	<value>Настройки группы</value>
+  </string>
+  <string key="Timers">
+	<value>Таймеры игры</value>
+  </string>
+  <string key="Done">
+	<value>Готово!</value>
+  </string>
+  <string key="Back">
+	<value>Назад</value>
+  </string>
+  <string key="ShufflePlayerList">
+    <value>Перемешать список игроков</value>
+  </string>
+  <string key="ShufflePlayerListQ">
+    <value>Перемешивать список игроков каждый раз? Сейчас: {0}</value>
+  </string>
+  <string key="ShufflePlayerListA">
+    <value>Список игроков будет перемешан каждый раз: {0}</value>
+  </string>
+  <string key="AboutGraveDigger">
+	<value>Твой покемон - Диглетт ☠️. Каждую ночь Диглетт убирает с улиц города все выброшенные покеболы и закапывает их. Когда же они все научатся не бросать их на дороге? Если с последней ночи никто не уходил из Покесити, ты остаёшься дома и тебя смогут найти команда Ракета и работники Фабрики Мьюту. Каждый, кто посещает тебя ночью, в которую Диглетт копает свежие ямы, имеет шанс провалиться в них. Так как ты всю ночь будешь находиться на улице, тебя могут случайно заметить команда Ракета или Драгонайт. Но если Драгонайт идёт к тебе - он всё равно тебя найдёт, вне зависимости от того дома ты или нет, но он хотя бы может сломать себе ногу, что помешает ему выбрать жертву следующей ночью...</value>
+  </string>
+  <string key="RoleInfoGraveDigger">
+	<value>Твой покемон - Диглетт ☠️. Ты взял на себя обязанность убирать с улиц все покеболы, брошенные там тренерами. Каждый брошенный покебол Диглетт закапывает в землю. Однако, свежие ямы могут быть достаточно рыхлыми и кто-нибудь может в них провалиться... Но по крайней мере команда Ракета не найдёт тебя дома, если ты работаешь...</value>
+  </string>
+  <string key="GraveDigger">
+	<value>Диглетт ☠️</value>
+  </string>
+  <string key="DigNoGraves">
+    <value>Какой хороший день, сегодня никто не покидал Покесити. Можно отдохнуть...</value>
+  </string>
+  <!--{0}: list of people who died since last grave-->
+  <string key="DigGraves">
+	<value>Всю ночь ты закапываешь брошенные покеболы за тренерами {0}. Когда же они перестанут бросать их на улице?</value>
+  </string>
+  <string key="GraveDiggerFrozen">
+	<value>Ты собирался выйти из дома и выполнить свою работу, как вдруг увидел неподалёку Арбока 🐺☃. Твой Диглетт ☠️ застыл на месте, но, к счастью, к утру он оказался снова в строю. Что ж, придётся завтра сделать двойную работу...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GraveDiggerNotHome">
+	<value>Команда Ракета подошла к дому тренера {0}, но его там не оказалось. Всё, что вы увидели - это какие-то вырытые ямы вокруг...</value>
+  </string>
+  <!--{0}: grave digger, {1}: wolf who fell into the grave-->
+  <string key="WolfFellWolves">
+	<value>Команда Ракета подошла к дому тренера {0}, но на пути туда, {1} внезапно провалился под землю в одну из глубоких ям!</value>
+  </string>
+  <!--{0}: the wolf who fell into the grave-->
+  <string key="WolfFell">
+	<value>Ты решил посмотреть на работу своего Диглетта ☠️, но неожиданно обнаружил на дне ямы {0}, тренера команды Ракета!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerStumbled">
+	<value>После славной победы над {0}, ты возвращался домой, но твоя нога попала в свежевыкопанную яму. Теперь она очень сильно болит, надеюсь, это не перелом...</value>
+  </string>
+  <!--{0}: intended victim, {1}: actual victim-->
+  <string key="KillerRandomKill">
+	<value>Ты собирался пойти к {0}, но внезапно острая боль вернулась и пронзила твою ногу. Ты решил изменить свои планы и пойти к ближайшему тренеру - это оказался {1}. И быстрее домой!</value>
+  </string>
+  <!--{0}: victim-->
+  <string key="GuardBlockedRandomKiller">
+	<value>Ты прибыл к дому {0}, но вход был перекрыт барьером Мистера Мима 👼! Сегодня абсолютно точно не твой день...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HunterFell">
+	<value>Ещё одна ночь потрачена впустую! Расстроившись из-за неудачи, ты не смотришь под ноги и проваливаешься в свежевыкопанную яму. Опять этот {0} не следит за своим Диглеттом ☠️!</value>
+  </string>
+  <!--{0}: cult hunter-->
+  <string key="HunterFellDigger">
+	<value>Возвращаясь домой, ты замечаешь, что с одной из ям, выкопанных твоим Диглеттом ☠️, что-то не то. Приблизившись, ты видишь в ней Мью тренера {0}. Не стоило ему тебя подозревать...</value>
+  </string>
+  <!--{0}: Zombie-->
+  <string key="CultFell">
+	<value>Возвращаясь домой, ты замечаешь, что в одной из ям, выкопанных твоим Диглеттом ☠️, находится Мьюту. Работник Фабрики {0} пытался нанять тебя. Как это глупо! В этом городе ещё так много другой работы для тебя!</value>
+  </string>
+  <!--{0}: Zombie who fell, {1}: grave digger-->
+  <string key="CultConvertGraveDigger">
+	<value>По дороге к дому {1}, {0} внезапно решает осмотреться на месте. Но ему стоило смотреть под ноги, чтобы не провалиться в одну из ям, выкопанных Диглеттом! Вы быстро убегаете подальше от этого дома.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ChemistFell">
+	<value>Этой ночью ты выбрал своей целью покемона тренера {0}. Подходя к его дому ты на секунду закрыл глаза, помолившись неведомым богам о том, чтобы в этот раз всё получилось как надо. Это оказалось роковой ошибкой - ты провалился в яму, выкопанную Диглеттом ☠️!</value>
+  </string>
+  <!--{0}: chemist-->
+  <string key="ChemistFellDigger">
+	<value>Ты вышел посмотреть на работу своего Диглетта, но вместо пустой ямы обнаружил на дне лежащего там {0}.</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotFell">
+	<value>Твоя Джиглипафф пошла подружиться с {0}. Но она была недостаточно внимательна, подходя к его дому и провалилась в одну из ям...</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellDigger">
+	<value>Кажется, твой Диглетт не очень хорошо понимает как надо заводить друзей. Когда ты вышел из дома, ты обнаружил Джиглипафф тренера {0} в одной из выкопанных ям...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="HarlotVisitDigger">
+	<value>Твоя Джиглипафф подошла к дому {0}, аккуратно обходя все ямы, но его самого дома не оказалось... Кажется, он не очень хочет дружить!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="GAFell">
+	<value>Кажется, судьба сегодня решила сыграть с тобой злую шутку. Ты сказал Мистеру Миму защитить {0}, но кто бы защитил его самого от падения в яму?</value>
+  </string>
+  <!--{0}: guardian angel-->
+  <string key="GAFellDigger">
+	<value>Около своего дома ты обнаруживаешь в яме Мистера Мима тренера {0}. Жалко... А с другой стороны, как он собирался тебя защищать, если себя спасти не смог?</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ThiefFell">
+	<value>Ты прокрадывался к дому {0}, чтобы забрать его покемона и старался красться тихо, чтобы он тебя не заметил, но при этом недостаточно смотрел под ноги и провалился в одну из ям!</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellDigger">
+	<value>Сегодня ночью Мачамп тренера {0} пытался забрать твоего покемона, но провалился в яму! Иногда твой Диглетт всё-таки может себя защитить!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="ArsonistFell">
+	<value>Гипно подбирался к дому очередного тренера, но не смотрел под ноги и провалился в яму, выкопанную Диглеттом. Наверное, ему стоило меньше думать о будущем...</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key="ArsonistFellDigger">
+	<value>В одной из свежевыкопанных ям ты замечаешь Гипно тренера {0}. Он хотел затуманить разум твоего Диглетта! Теперь он не сможет никому навредить!</value>
+  </string>
+  <!--{0}: person that died, {1}: "(person) was (role)"-->
+  <string key="DefaultFellPublic">
+	<value>Диглетт выкопал слишком большие ямы этой ночью... Сегодня в одной из них вы увидели {0}, который хотел прийти к нему в гости, но провалился! {1}</value>
+  </string>
+  <!--{0}: harlot-->
+  <string key="HarlotFellPublic">
+	<value>Кажется, Диглетт сегодня был настроен не очень дружелюбно! Вы обнаружили Джиглипафф тренера {0} в одной из его ям!</value>
+  </string>
+  <!--{0}: Zombie who died-->
+  <string key="ZombieFellPublic">
+	<value>Работник Фабрики Мьюту {0} хотел предложить работу на фабрике владельцу Диглетта, но увидел вместо этого его работу. Изнутри.</value>
+  </string>
+  <!--{0}: thief-->
+  <string key="ThiefFellPublic">
+	<value>Интересно, Мачамп тренера {0} пытался забрать Диглетта или найти что-нибудь в одной из его ям? Этого мы уже не узнаем. Мы видим только результат этого. Под землёй.</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(person) was (role)" to specify what kind of wolf-->
+  <string key="WolfFellPublic">
+	<value>Сегодня команда Ракета потеряла одного из своих тренеров в неравной борьбе с ямой. {0} пытался добраться до Диглетта, но провалился на задании. Буквально. {1}</value>
+  </string>
+  <string key="SerialKillerSpottedYou" isgif="true">
+	<value>Твой Диглетт невовремя выполз из своей норы и был замечен проходящим мимо Драгонайтом. Какая досада...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="SerialKillerSpotted">
+	<value>Возвращаясь домой, ты заметил Диглетта тренера {0}. Что ж, одним днём меньше до цели...</value>
+  </string>
+  <string key="WolvesSpottedYou" isgif="true">
+	<value>Твой Диглетт выполз из своей норы как раз в то время, когда мимо проходила команда Ракета. Глупо вышло...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpotted">
+	<value>Возвращаясь домой, команда Ракета заметила Диглетта тренера {0}. Нужное место, нужное время!</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="WolvesSpottedDiggerPublic">
+	<value>{0} не пришёл на сбор Покесити. Ночью его Диглетт был обнаружен командой Ракета во время работы...</value>
+  </string>
+  <!--{0}: grave digger-->
+  <string key="KillerSpottedDiggerPublic">
+	<value>{0} не пришёл на сбор Покесити. Ночью его Диглетт был случайно обнаружен Драгонайтом...</value>
+  </string>
+  <string key="AllowArsonist">
+	<value>Гипно</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistQ">
+	<value>Включить роль Гипно(Arsonist)? Сейчас: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="AllowArsonistA">
+	<value>Гипно: {0}.</value>
+  </string>
+  <string key="BurningOverkill">
+	<value>Гипно и Драгонайт</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillQ">
+	<value>Разрешить Гипно и Драгонайта в одной игре? Сейчас: {0}</value>
+  </string>
+  <!--{0}: Allow/Disallow-->
+  <string key="BurningOverkillA">
+	<value>Гипно и Драгонайт в одной игре: {0}.</value>
+  </string>
+  <string key="AboutArsonist">
+	<value>Твой покемон - Гипно 🔥. Ты - одиночка, который хочет выпустить как можно больше покемонов на волю. Каждую ночь Гипно может применить Гипноз на одном из покемонов, причём так, чтобы тот не запомнил этой встречи. Как только один или несколько покемонов загипнотизированы, Гипно может приказать им всем покинуть своих тренеров.</value>
+  </string>
+  <string key="RoleInfoArsonist">
+	<value>Твой покемон - Гипно 🔥. Каждую ночь Гипно может применить Гипноз на одном из покемонов или заставить всех загипнотизированных покемонов уйти от своих тренеров. Ты победишь, если все остальные покемоны уйдут от своих тренеров.</value>
+  </string>
+  <string key="Arsonist">
+	<value>Гипно 🔥</value>
+  </string>
+  <string key="AskArsonist">
+	<value>Загипнотизировать ещё одного покемона или отпустить всех загипнотизированных?</value>
+  </string>
+  <!--{0}: arsonist-->
+  <string key ="ArsonistVisitKiller">
+	<value>Гипно {0} попытался загипнотизировать Драгонайта, но что-то пошло не так...</value>
+  </string>
+  <string key="Spark">
+	<value>Отпустить!</value>
+  </string>
+  <!--{0}: person whose house was doused-->
+  <string key="Doused">
+	<value>Твой Гипно применил Гипноз на покемоне тренера {0}!</value>
+  </string>
+  <string key="GuardSavedYouFromFire">
+	<value>Твой покемон неожиданно стал сам не свой и решил уйти от тебя, но тут из ниоткуда появился Мистер Мим, который применил Гипноз и очистил разум твоего покемона.</value>
+  </string>
+  <!--{0}: saved person-->
+  <string key="GuardSavedFromFire">
+	<value>Ты видишь, что под действием Гипноза, покемон тренера {0} хочет уйти от него! Ты приказал Мистеру Майму разгипнотизировать его.</value>
+  </string>
+  <!--{0}: person whose house was cleaned-->
+  <string key="CleanDoused">
+	<value>Сегодня твоему Мистеру Майму не пришлось применять Барьер, защищая {0}, однако, присмотревшись к его покемону, он заметил, что тот был загипнотизирован! Мистер Майм применил свой Гипноз и разгипнотизировал его. Что ж, это тоже доброе дело...</value>
+  </string>
+  <!--{0}: list of people who died in the flames-->
+  <string key="Burning">
+	<value>Жители Покесити в недоумении. Некоторые покемоны покинули своих тренеров в эту ночь:\n{0}</value>
+  </string>
+  <string key="ArsonistWins">
+	<value>Во всём городе остался только один покемон - Гипно. Он побеждает!</value>
+  </string>
+  <string key="Burn" isgif="true">
+	<value>Твой покемон покинул тебя, повинуясь какому-то неведомому зову...</value>
+	<value>Ты проснулся посреди ночи и заметил, что твой покемон покинул тебя...</value>
+  </string>
+  <string key="Augur">
+	<value>Старми 🦅</value>
+  </string>
+  <!--{0}: role that is not part of the village-->
+  <string key="AugurSees">
+	<value>Твой Старми опять отправляет какие-то сигналы в ночное небо. Через некоторое время он сообщает тебе, что {0} отсутствует в Покесити.</value>
+	<value>Когда свет, исходящий от твоего Старми немного бледнеет, ты узнаёшь, что {0} явно нет в Покесити.</value>
+  </string>
+  <string key="AboutAugur">
+	<value>Твой покемон - Старми 🦅. Каждую ночь он отправляет какие-то радиопослания в космос и каким-то образом узнаёт какого покемона сейчас нет в Покесити. При этом он ни разу не повторяется!</value>
+  </string>
+  <string key="RoleInfoAugur">
+	<value>Твой покемон - Старми 🦅. Старми по ночам общается с космосом и благодаря этому, ты можешь узнать кого из покемонов сейчас нет в Покесити! Запоминай его информацию, она не повторяется!</value>
+  </string>
+  <string key="AugurSeesNothing">
+	<value>Сегодня твой Старми не отправлял сигнал в небо... Кажется, все остальные покемоны сейчас в Покесити!</value>
+  </string>
+  <!--{0}: chosen victim, {1}: wolf who died in flames-->
+  <string key="WolvesVisitBurn">
+	<value>Команда Ракета пришла в дом {0} и начала искать свою цель, как внезапно из дома вышел {1} и сообщил, что дома никого нет. Вы покинули это место, но {1} не вернулся вместе с вами, а пропал где-то по дороге. Как это странно!</value>	  
+  </string>
+  <!--{0}: person who died because they visited a burning house, {1}: "(person) was (role)"-->
+  <string key="DefaultVisitBurn">
+	<value>{0}, подходя к дому своей цели, обнаружил, что его покемон бросил своего тренера и куда-то уходит! Твой покемон решил проследовать за ним и узнать в чём дело, но больше не вернулся... {1}</value>
+  </string>
+  <!--{0}: wolf who died, {1}: "(wolf) was (role)" to specify what kind of wolf it is-->
+  <string key="WolfVisitBurn">
+	<value>Команда Ракета посетила ночью очередного тренера только для того, чтобы увидеть его покемона, уходящего вдаль! {0} решил последовать за ним и больше никто его никогда не видел... {1}</value>
+  </string>
+  <string key="ChemistKillWiseElder">
+	<value>Сегодня ночью Зубат напал на тренера Венузавра! Тренер Зубата осознал свою ошибку и теперь довольствуется резервным Магикарпом.</value>
+  </string>
+  <string key="ArsonistWinsOverpower">
+	<value>И вот в Покесити остались только {0} и {1}... {0} приказал своему Гипно использовать Гипноз и покемон тренера {1} покинул его! {0} победил!</value>
+  </string>
+  <string key="ArsonistTeamEnd">
+    <value>Владельцы Гипно</value>
+  </string>
+</strings>

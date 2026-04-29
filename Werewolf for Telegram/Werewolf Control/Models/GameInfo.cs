@@ -40,6 +40,35 @@ namespace Werewolf_Control.Models
             n.Broadcast(json);
         }
 
+        public int AddDummyPlayers(int count)
+        {
+            var n = Bot.Nodes.FirstOrDefault(x => x.ClientId == NodeId);
+            if (n == null || count <= 0) return 0;
+
+            var added = 0;
+            for (var i = 1; added < count; i++)
+            {
+                var id = -1000 - i;
+                if (Users.Contains(id)) continue;
+
+                var user = new User
+                {
+                    Id = id,
+                    IsBot = false,
+                    FirstName = "Dummy",
+                    LastName = i.ToString(),
+                    Username = $"debug_dummy_{i}"
+                };
+
+                Users.Add(id);
+                var json = JsonConvert.SerializeObject(new PlayerJoinInfo { User = user, GameId = Guid, IsDummy = true });
+                n.Broadcast(json);
+                added++;
+            }
+
+            return added;
+        }
+
         public void ForceStart()
         {
             var json = JsonConvert.SerializeObject(new ForceStartInfo { GroupId = GroupId });

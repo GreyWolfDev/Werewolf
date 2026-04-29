@@ -419,7 +419,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(SolutionDir)Languages\*.xml" "$(ProjectDir)bin\Languages\" /i /y
-xcopy "$(SolutionDir)Updater\bin\$(configuration)\Update.exe" "$(ProjectDir)Resources\" /i /y</PostBuildEvent>
+if exist "$(SolutionDir)Updater\bin\$(configuration)\Update.exe" xcopy "$(SolutionDir)Updater\bin\$(configuration)\Update.exe" "$(ProjectDir)Resources\" /i /y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
