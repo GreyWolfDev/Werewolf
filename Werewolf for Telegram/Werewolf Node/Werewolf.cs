@@ -896,10 +896,10 @@ namespace Werewolf_Node
                 //2 - gameid
                 //3 - QuestionTypeId
                 //4 - choiceid
-                var player = Players.FirstOrDefault(x => x.Id == query.From.Id && !x.IsDead);
-
                 QuestionType qtype = (QuestionType)int.Parse(args[3]);
                 string choice = args[4];
+
+                var player = Players.FirstOrDefault(x => x.Id == query.From.Id && (!x.IsDead || (qtype == QuestionType.AuroraRevive && x.PlayerRole == IRole.Aurora)));
 
                 if (player == null) return;
 
@@ -5437,6 +5437,11 @@ namespace Werewolf_Node
                         msg = GetLocaleString("AskVisitImam");
                         qtype = QuestionType.VisitImam;
                         break;
+                    case IRole.Aurora:
+                        targets = targetBase.ToList();
+                        msg = GetLocaleString("AskAurora");
+                        qtype = QuestionType.AuroraTouch;
+                        break;
                     case IRole.Chemist:
                         if (player.HasUsedAbility)
                         {
@@ -5613,9 +5618,9 @@ namespace Werewolf_Node
             auroraChoices.AddRange(possibleTargets.Select(x => new[] { InlineKeyboardButton.WithCallbackData(x.Name, $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.AuroraRevive}|{x.Id}") }));
             auroraChoices.Add(new[] { InlineKeyboardButton.WithCallbackData(GetLocaleString("Skip"), $"vote|{Program.ClientId}|{Guid}|{(int)QuestionType.AuroraRevive}|-1") });
 
+            aurora.Choice = 0;
             SendMenu(auroraChoices, aurora, GetLocaleString("AskAuroraRevive"), QuestionType.AuroraRevive);
 
-            aurora.Choice = 0;
             //aurora gets 30 seconds to choose
             for (int i = 0; i < 30; i++)
             {
