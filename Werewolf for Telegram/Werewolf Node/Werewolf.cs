@@ -1480,8 +1480,9 @@ namespace Werewolf_Node
                 //force roles for testing
                 IRole[] requiredRoles = new IRole[]
                 {
-                    IRole.Barkeep,
-                    IRole.Arsonist
+                    IRole.Chef,
+                    IRole.Wolf,
+                    IRole.Harlot
                 };
                 int requiredCount = requiredRoles.Length;
 
@@ -4214,7 +4215,7 @@ namespace Werewolf_Node
             // we determine the OLD chef here, so even if thief steals, the previous chef takes priority
             // i.e. technically, by role order: Thief is last.
             var chef = Players.FirstOrDefault(x => x.PlayerRole == IRole.Chef & !x.IsDead);
-            var chefTarget = Players.FirstOrDefault(x => x.Id == chef?.Choice);
+            var chefTarget = Players.FirstOrDefault(x => x.IsActionTracked && (!x.IsDead || x.DiedLastNight));
             // Special cases: a grave digger digging graves, and an arsonist sparking do not *visit* anyone,
             // but still leave their house!
             bool chefTargetLeft = (chefTarget?.PlayerRole == IRole.GraveDigger && chefTarget?.DugGravesLastNight > 0) ||
@@ -4284,33 +4285,32 @@ namespace Werewolf_Node
             #region Chef Night (By role order: Thief is last! If stolen, old chef still takes priority!)
             if (chef != null && !chef.Frozen)
             {
-                var target = Players.FirstOrDefault(x => x.IsActionTracked && !x.IsDead);
-                if (target != null)
+                if (chefTarget != null) // send action tracking result to chef regardless of whether the target is already dead by now or not.
                 {
-                    bool leftHouse = chefTargetLeft || target.VisitingSameNightCount > 0;
-                    int visitors = target.BeingVisitedSameNightCount;
+                    bool leftHouse = chefTargetLeft || chefTarget.VisitingSameNightCount > 0;
+                    int visitors = chefTarget.BeingVisitedSameNightCount;
 
                     string actionTracked;
                     if (leftHouse)
                     {
                         if (visitors > 1)
-                            actionTracked = GetLocaleString("ActionTrackNotHomeVisitedByMul", target.GetName(), visitors);
+                            actionTracked = GetLocaleString("ActionTrackNotHomeVisitedByMul", chefTarget.GetName(), visitors);
                         else if (visitors == 1)
-                            actionTracked = GetLocaleString("ActionTrackNotHomeVisitedByOne", target.GetName());
+                            actionTracked = GetLocaleString("ActionTrackNotHomeVisitedByOne", chefTarget.GetName());
                         else
-                            actionTracked = GetLocaleString("ActionTrackNotHomeNotVisited", target.GetName());
+                            actionTracked = GetLocaleString("ActionTrackNotHomeNotVisited", chefTarget.GetName());
                     }
                     else
                     {
                         if (visitors > 1)
-                            actionTracked = GetLocaleString("ActionTrackHomeVisitedByMul", target.GetName(), visitors);
+                            actionTracked = GetLocaleString("ActionTrackHomeVisitedByMul", chefTarget.GetName(), visitors);
                         else if (visitors == 1)
-                            actionTracked = GetLocaleString("ActionTrackHomeVisitedByOne", target.GetName());
+                            actionTracked = GetLocaleString("ActionTrackHomeVisitedByOne", chefTarget.GetName());
                         else
                         {
-                            actionTracked = GetLocaleString("ActionTrackHomeNotVisited", target.GetName());
+                            actionTracked = GetLocaleString("ActionTrackHomeNotVisited", chefTarget.GetName());
 
-                            chef.FoodWastedOnPlayers.Add(target.Id);
+                            chef.FoodWastedOnPlayers.Add(chefTarget.Id);
                             if (chef.FoodWastedOnPlayers.Count >= 3)
                                 AddAchievement(chef, AchievementsReworked.FoodWaste);
                         }
@@ -4320,7 +4320,7 @@ namespace Werewolf_Node
                     if (visitors >= 3)
                         AddAchievement(chef, AchievementsReworked.TrafficControl);
 
-                    if (target.DiedLastNight)
+                    if (chefTarget.DiedLastNight)
                         AddAchievement(chef, AchievementsReworked.DefinitelyDead);
                 }
 
