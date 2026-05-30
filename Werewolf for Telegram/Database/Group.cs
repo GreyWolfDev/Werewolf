@@ -25,6 +25,7 @@ namespace Database
         public int Id { get; set; }
         public string Name { get; set; }
         public long GroupId { get; set; }
+        public Nullable<int> GroupTopicId { get; set; }
         public Nullable<bool> Preferred { get; set; }
         public string Language { get; set; }
         public Nullable<bool> DisableNotification { get; set; }

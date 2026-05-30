@@ -32,6 +32,7 @@ namespace Werewolf_Control.Helpers
         public static User Me;
         public static DateTime StartTime = DateTime.UtcNow;
         public static bool Running = true;
+        public static Dictionary<long, int?> ChatTopicIdCache = new Dictionary<long, int?>();
         public static long CommandsReceived = 0;
         public static long MessagesProcessed = 0;
         public static long MessagesReceived = 0;
@@ -102,6 +103,7 @@ namespace Werewolf_Control.Helpers
                         c.InGroupOnly = ca.InGroupOnly;
                         c.LangAdminOnly = ca.LangAdminOnly;
                         c.AllowAnonymousAdmins = ca.AllowAnonymousAdmins;
+                        c.AllowOutsideConfiguredTopic = ca.AllowOutsideConfiguredTopic;
                         Commands.Add(c);
                     }
                 }
@@ -513,6 +515,24 @@ namespace Werewolf_Control.Helpers
         {
             //MessagesSent++;
             //message = message.Replace("`",@"\`");
+
+            // Try to load GroupTopicId from the database if no thread ID is provided, with caching
+            if (messageThreadId == null)
+            {
+                if (ChatTopicIdCache.ContainsKey(id))
+                    messageThreadId = ChatTopicIdCache[id];
+                else
+                    using (var db = new WWContext())
+                    {
+                        var group = db.Groups.FirstOrDefault(g => g.GroupId == id);
+                        if (group?.GroupTopicId != null)
+                        {
+                            messageThreadId = group.GroupTopicId;
+                            ChatTopicIdCache[id] = messageThreadId;
+                        }
+                    }   
+            }
+
             if (clearKeyboard)
             {
                 //var menu = new ReplyKeyboardRemove() { RemoveKeyboard = true };

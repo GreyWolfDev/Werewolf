@@ -1,4 +1,4 @@
-using Database;
+﻿using Database;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -23,6 +23,60 @@ namespace Werewolf_Control
 {
     public static partial class Commands
     {
+        [Attributes.Command(Trigger = "settopic", GroupAdminOnly = true, InGroupOnly = true)]
+        public static void SetTopic(Update update, string[] args)
+        {
+            long chatId = update.Message.Chat.Id;
+            int? topicId = update.Message.MessageThreadId;
+
+            // TODO: allow general topic? some group may use general topic for game.
+            if (topicId == null)
+            {
+                Bot.Send(GetLocaleString("SetTopicCmdNotInGeneral",GetLanguage(chatId)).ToBold(), chatId, messageThreadId: 0);
+                return;
+            }
+
+            using (var db = new WWContext())
+            {
+                var group = db.Groups.FirstOrDefault(g => g.GroupId == chatId);
+                if (group == null)
+                {
+                    group = MakeDefaultGroup(chatId, update.Message.Chat.Title, "settopic_cmd");
+                    db.Groups.Add(group);
+                }
+
+                group.GroupTopicId = topicId;
+                Helpers.Bot.ChatTopicIdCache[chatId] = topicId;
+                db.SaveChanges();
+            }
+
+            Bot.Send(GetLocaleString("SetTopicSuccess",GetLanguage(chatId)).ToBold(), chatId, messageThreadId: topicId.Value);
+        }
+
+        [Attributes.Command(Trigger = "remtopic", GroupAdminOnly = true, InGroupOnly = true)]
+        public static void RemoveTopic(Update update, string[] args)
+        {
+            long chatId = update.Message.Chat.Id;
+            int? topicId = update.Message.MessageThreadId;
+
+            using (var db = new WWContext())
+            {
+                var group = db.Groups.FirstOrDefault(g => g.GroupId == chatId);
+                if (group == null)
+                {
+                    group = MakeDefaultGroup(chatId, update.Message.Chat.Title, "remtopic_cmd");
+                    db.Groups.Add(group);
+                }
+
+                group.GroupTopicId = null;
+                Helpers.Bot.ChatTopicIdCache[chatId] = null;
+                db.SaveChanges();
+            }
+
+            Bot.Send(GetLocaleString("SetTopicSuccess", GetLanguage(chatId)).ToBold(), chatId, messageThreadId: topicId ?? 0);
+        }
+
+
         [Attributes.Command(Trigger = "smite", GroupAdminOnly = true, Blockable = true, InGroupOnly = true, AllowAnonymousAdmins = true)]
         public static void Smite(Update u, string[] args)
         {
