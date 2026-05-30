@@ -12,6 +12,7 @@ using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using Werewolf_Node.Helpers;
 using Werewolf_Node.Models;
+using Werewolf_Control.Models;
 using Shared;
 using Telegram.Bot;
 
@@ -253,6 +254,25 @@ namespace Werewolf_Node
                 SendPlayerList(true);
 
                 new Thread(GameTimer).Start();
+
+                using (var db = new WWContext())
+                {
+                    var notify = db.NotifyGames.Where(x => x.GroupId == update.Message.Chat.Id).ToList();
+                    var groupName = update.Message.Chat.Title.ToBold();
+                    if (update.Message.Chat.Username != null)
+                        groupName += $" @{update.Message.Chat.Username}";
+                    else if (grp.GroupLink != null)
+                        groupName = $"<a href=\"{grp.GroupLink}\">{update.Message.Chat.Title}</a>";
+                    foreach (var n in notify)
+                    {
+                        if (n.UserId != update.Message.From.Id)
+                            Send(GetLocaleString("NotifyNewGame", grp.Language, groupName), n.UserId);
+                        Thread.Sleep(500);
+                    }
+
+                    db.SaveChanges();
+                }
+
             }
             catch (Exception ex)
             {
