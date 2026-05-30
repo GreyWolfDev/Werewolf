@@ -213,7 +213,7 @@ namespace Werewolf_Node
                                 }
                                 catch (Exception e)
                                 {
-                                    Bot.SendTextMessageAsync(chatId: ErrorGroup, text: $"Error Occured during Node <code>{ClientId}</code> processing <code>GameStartInfo</code>:\n\n{e.ToString()}\n\nData:\n{gsi.ToString()}", parseMode: ParseMode.Html);
+                                    Bot.SendTextMessageAsync(chatId: ErrorGroup, text: $"Error Occurred during Node <code>{ClientId}</code> processing <code>GameStartInfo</code>:\n\n{e.ToString()}\n\nData:\n{gsi.ToString()}", parseMode: ParseMode.Html);
                                 }
                                 break;
                             case "ForceStartInfo":

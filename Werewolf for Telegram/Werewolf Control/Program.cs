@@ -392,7 +392,7 @@ namespace Werewolf_Control
 
                     if (!MaintMode)
                     {
-                        if (Nodes.Where(x => !x.ShuttingDown).All(x => x.Games.Count >= Settings.NewNodeThreshhold))
+                        if (Nodes.Where(x => !x.ShuttingDown).All(x => x.Games.Count >= Settings.NewNodeThreshold))
                         {
                             NewNode();
                             Thread.Sleep(5000); //give the node time to register

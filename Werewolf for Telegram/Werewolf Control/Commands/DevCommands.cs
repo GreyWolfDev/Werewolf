@@ -152,7 +152,7 @@ namespace Werewolf_Control
 
 
         [Attributes.Command(Trigger = "maintenance", DevOnly = true)]
-        public static void Maintenenace(Update u, string[] args)
+        public static void Maintenance(Update u, string[] args)
         {
             //stop accepting all new games.
             Program.MaintMode = !Program.MaintMode;
