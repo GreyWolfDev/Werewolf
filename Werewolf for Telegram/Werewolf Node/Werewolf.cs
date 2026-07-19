@@ -3251,8 +3251,8 @@ namespace Werewolf_Node
 
             #region Wolf Night - Non-snow wolves
             var wolves = nightPlayers.GetPlayersForRoles(WolfRoles).ToList();
-            var voteWolves = wolves.Where(x => !x.Drunk);
-            var voteWolvesCount = voteWolves.Count();
+            var voteWolves = wolves.Where(x => !x.Drunk).ToList();
+            var voteWolvesCount = voteWolves.Count;
             WolfCubKilled = false;
             List<long> wolfChoices = new List<long>();
 
@@ -4220,7 +4220,7 @@ namespace Werewolf_Node
             bool chefTargetLeft = chefTarget != null &&
                                   ((chefTarget.PlayerRole == IRole.GraveDigger && chefTarget.DugGravesLastNight > 0) ||
                                    (chefTarget.PlayerRole == IRole.Arsonist && chefTarget.Choice == -2) ||
-                                   (WolfRoles.Contains(chefTarget.PlayerRole) && wolfChoices.Any()));
+                                   (voteWolves.Contains(chefTarget) && wolfChoices.Any()));
 
             #region Thief Night
             var thief = Players.FirstOrDefault(x => x.PlayerRole == IRole.Thief && !x.IsDead);
