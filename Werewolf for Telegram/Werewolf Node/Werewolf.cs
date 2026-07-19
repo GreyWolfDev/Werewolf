@@ -3283,7 +3283,7 @@ namespace Werewolf_Node
                 int eatCount = 0;
                 foreach (var choice in wolfChoices.Where(x => x != 0 && x != -1))
                 {
-                    voteWolves = wolves.Where(x => !x.Drunk && !x.IsDead);
+                    voteWolves = wolves.Where(x => !x.Drunk && !x.IsDead).ToList();
                     if (!voteWolves.Any()) break; //if wolf dies from first choice, and was alone...
                     var target = Players.FirstOrDefault(x => x.Id == choice);
                     IPlayer visitorWuff;
