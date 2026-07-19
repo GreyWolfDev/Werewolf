@@ -4220,7 +4220,7 @@ namespace Werewolf_Node
             bool chefTargetLeft = chefTarget != null &&
                                   ((chefTarget.PlayerRole == IRole.GraveDigger && chefTarget.DugGravesLastNight > 0) ||
                                    (chefTarget.PlayerRole == IRole.Arsonist && chefTarget.Choice == -2) ||
-                                   (voteWolves.Contains(chefTarget) && wolfChoices.Any()));
+                                   (voteWolves.Contains(chefTarget) && wolfChoices.Any(x => x != 0 && x != 1)));
 
             #region Thief Night
             var thief = Players.FirstOrDefault(x => x.PlayerRole == IRole.Thief && !x.IsDead);
