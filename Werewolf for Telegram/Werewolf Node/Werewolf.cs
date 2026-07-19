@@ -3254,12 +3254,11 @@ namespace Werewolf_Node
             var voteWolves = wolves.Where(x => !x.Drunk);
             var voteWolvesCount = voteWolves.Count();
             WolfCubKilled = false;
+            List<long> wolfChoices = new List<long>();
 
             if (voteWolves.Any())
             {
                 var votechoice = voteWolves.Where(x => (x.Choice != 0 && x.Choice != -1) || (x.Choice2 != 0 && x.Choice2 != -1));
-
-                List<long> choices = new List<long>();
 
                 //choice1
                 foreach (var w in votechoice)
@@ -3268,7 +3267,7 @@ namespace Werewolf_Node
                     foreach (var pl in p)
                         pl.Votes++;
                 }
-                choices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
+                wolfChoices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
 
 
                 //choice2 (will be 0 if wolfcub wasn't killed)
@@ -3276,13 +3275,13 @@ namespace Werewolf_Node
                     p.Votes = 0;
                 foreach (var w in votechoice)
                 {
-                    var p = Players.Where(x => x.Id == w.Choice2 && x.Id != choices[0]);
+                    var p = Players.Where(x => x.Id == w.Choice2 && x.Id != wolfChoices[0]);
                     foreach (var pl in p)
                         pl.Votes++;
                 }
-                choices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
+                wolfChoices.Add(Players.Where(x => x.Votes > 0).OrderByDescending(x => x.Votes).FirstOrDefault()?.Id ?? 0);
                 int eatCount = 0;
-                foreach (var choice in choices.Where(x => x != 0 && x != -1))
+                foreach (var choice in wolfChoices.Where(x => x != 0 && x != -1))
                 {
                     voteWolves = wolves.Where(x => !x.Drunk && !x.IsDead);
                     if (!voteWolves.Any()) break; //if wolf dies from first choice, and was alone...
@@ -3334,7 +3333,7 @@ namespace Werewolf_Node
                                                 GetRandomImage(VillagerDieImages), target.Id);
                                             foreach (var w in voteWolves)
                                             {
-                                                var secondvictim = Players.FirstOrDefault(x => x.Id == choices[1]);
+                                                var secondvictim = Players.FirstOrDefault(x => x.Id == wolfChoices[1]);
                                                 Send(
                                                     target != (secondvictim ?? target) ? //if the drunk is the first victim out of two, they block the second one. let's tell wolves
                                                     GetLocaleString("WolvesEatDrunkBlockSecondKill", target.GetName(), secondvictim.GetName()) :
@@ -3508,7 +3507,7 @@ namespace Werewolf_Node
                     var cub = Players.GetPlayersForRoles(new[] { IRole.WolfCub }, false).OrderByDescending(x => x.TimeDied).FirstOrDefault(x => x.IsDead);
                     if (cub != null)
                         AddAchievement(cub, AchievementsReworked.IHelped);
-                    if (Players.Count(x => choices.Contains(x.Id) && x.Bitten) == 2)
+                    if (Players.Count(x => wolfChoices.Contains(x.Id) && x.Bitten) == 2)
                         AddAchievement(voteWolves.FirstOrDefault(x => x.PlayerRole == IRole.AlphaWolf), AchievementsReworked.IncreaseThePack);
                 }
 
@@ -4216,10 +4215,12 @@ namespace Werewolf_Node
             // i.e. technically, by role order: Thief is last.
             var chef = Players.FirstOrDefault(x => x.PlayerRole == IRole.Chef & !x.IsDead);
             var chefTarget = Players.FirstOrDefault(x => x.IsActionTracked && (!x.IsDead || x.DiedLastNight));
-            // Special cases: a grave digger digging graves, and an arsonist sparking do not *visit* anyone,
-            // but still leave their house!
-            bool chefTargetLeft = (chefTarget?.PlayerRole == IRole.GraveDigger && chefTarget?.DugGravesLastNight > 0) ||
-                                  (chefTarget?.PlayerRole == IRole.Arsonist && chefTarget?.Choice == -2);
+            // Special cases: a grave digger digging graves, an arsonist sparking, and a wolf in a pack trying to eat someone
+            // do not *visit* anyone, but still leave their house!
+            bool chefTargetLeft = chefTarget != null &&
+                                  ((chefTarget.PlayerRole == IRole.GraveDigger && chefTarget.DugGravesLastNight > 0) ||
+                                   (chefTarget.PlayerRole == IRole.Arsonist && chefTarget.Choice == -2) ||
+                                   (WolfRoles.Contains(chefTarget.PlayerRole) && wolfChoices.Any()));
 
             #region Thief Night
             var thief = Players.FirstOrDefault(x => x.PlayerRole == IRole.Thief && !x.IsDead);
