@@ -186,7 +186,8 @@ namespace Werewolf_Control
             }
         }
 
-        [Command(Trigger = "stopwaiting", Blockable = true)]
+        // allowing outside topic, as it doesn't response into topic command was ran. dm user that their next game notification is turned off
+        [Command(Trigger = "stopwaiting", Blockable = true, AllowOutsideConfiguredTopic = true)]
         public static void StopWaiting(Update update, string[] args)
         {
             long groupid = 0;

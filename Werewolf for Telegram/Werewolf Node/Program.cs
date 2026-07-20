@@ -380,23 +380,24 @@ namespace Werewolf_Node
             }
         }
 
-        internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null, bool notify = false, bool preview = false)
+        internal static async Task<Telegram.Bot.Types.Message> Send(string message, long id, bool clearKeyboard = false, InlineKeyboardMarkup customMenu = null, Werewolf game = null, bool notify = false, bool preview = false, int? messageThreadId = null)
         {
             //MessagesSent++;
             //message = message.FormatHTML();
             //message = message.Replace("`",@"\`");
+
             if (clearKeyboard)
             {
                 var menu = new ReplyKeyboardRemove();
-                return await Bot.SendTextMessageAsync(chatId: id, text: message, replyMarkup: menu, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
+                return await Bot.SendTextMessageAsync(chatId: id, text: message, replyMarkup: menu, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify, messageThreadId: messageThreadId);
             }
             else if (customMenu != null)
             {
-                return await Bot.SendTextMessageAsync(chatId: id, text: message, replyMarkup: customMenu, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
+                return await Bot.SendTextMessageAsync(chatId: id, text: message, replyMarkup: customMenu, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify, messageThreadId: messageThreadId);
             }
             else
             {
-                return await Bot.SendTextMessageAsync(chatId: id, text: message, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify);
+                return await Bot.SendTextMessageAsync(chatId: id, text: message, disableWebPagePreview: !preview, parseMode: ParseMode.Html, disableNotification: notify, messageThreadId: messageThreadId);
             }
         }
 
