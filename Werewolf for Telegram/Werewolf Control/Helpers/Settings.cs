@@ -96,9 +96,9 @@ namespace Werewolf_Control.Helpers
         /// How many games on each node before starting a new node (to be added later)
         /// </summary>
 #if DEBUG
-        public static int NewNodeThreshhold = 10;
+        public static int NewNodeThreshold = 10;
 #else
-        public static int NewNodeThreshhold = 30;
+        public static int NewNodeThreshold = 30;
 #endif
         public static int ShutDownNodesAt = 15;
 

@@ -563,7 +563,7 @@ namespace Werewolf_Control
                 else
                 {
                     score -= (undist + dndist) / 2;
-                    result += $"\nLevenshtein Distince:\nUsernames: {undist}\nDisplay name: {dndist}\n\n";
+                    result += $"\nLevenshtein Distance:\nUsernames: {undist}\nDisplay name: {dndist}\n\n";
                 }
 
 
@@ -832,7 +832,7 @@ namespace Werewolf_Control
                     pack.DenyReason = reason;
                     var msg = $"Approval Status: ";
                     var by = db.Players.FirstOrDefault(x => x.TelegramId == pack.ApprovedBy);
-                    msg += "Dispproved By " + by.Name + " for: " + pack.DenyReason;
+                    msg += "Disapproved By " + by.Name + " for: " + pack.DenyReason;
                     p.CustomGifSet = JsonConvert.SerializeObject(pack);
                     db.SaveChanges();
                     Bot.Send(msg, pid);
