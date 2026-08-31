@@ -3134,6 +3134,13 @@ namespace Werewolf_Node
                             }
                             else
                             {
+                                // Count towards the Helpful Paranoia achievement on kill
+                                target.HasShotHunterAttacker++;
+                                if (target.HasShotHunterAttacker == 2)
+                                {
+                                    AddAchievement(target, AchievementsReworked.HelpfulParanoia);
+                                }
+                                
                                 KillPlayer(snowwolf, KillMthd.HunterShot, killer: target, diedByVisitingKiller: true);
                             }
                         }
