@@ -5143,7 +5143,7 @@ namespace Werewolf_Node
                 to.CurrentQuestion = (new QuestionAsked
                 {
                     QType = qtype,
-                    ValidAnswers = choices.Select(x => x[0].CallbackData).ToArray(),
+                    ValidAnswers = choices.SelectMany(x => x.Select(y => y.CallbackData)).ToArray(),
                     MessageId = msgId
                 });
             }
