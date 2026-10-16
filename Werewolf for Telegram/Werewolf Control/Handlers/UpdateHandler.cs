@@ -862,7 +862,7 @@ namespace Werewolf_Control.Handler
                                     Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.VillagersWin), caption: "Village Wins");
                                     Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.WolfWin), caption: "Single Wolf Wins");
                                     Thread.Sleep(250);
-                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.WolvesWin), caption: "Wolf new InputFileId(pack.Wins)");
+                                    Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.WolvesWin), caption: "Wolf Pack Wins");
                                     Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.SKKilled), caption: "SK Killed");
                                     Thread.Sleep(250);
                                     Bot.Api.SendDocumentAsync(chatId: id, document: new InputFileId(pack.ArsonistWins), caption: "Arsonist Wins");
