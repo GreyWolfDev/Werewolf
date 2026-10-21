@@ -1372,7 +1372,7 @@ namespace Werewolf_Node
                             msg =
                                 $"{GetLocaleString("PlayersAlive")}: {players.Count(x => !x.IsDead)}/{players.Count}\n";
                             var loveEmojiList = new List<string> { "❤️", "🧡", "💛", "💚", "💙", "💜", "🤎" };
-                            var loveEmoji = IsDateAnywhere(14, 2, 2021) ? loveEmojiList[Program.R.Next(0, loveEmojiList.Count)] : "❤️";
+                            var loveEmoji = GameBalancing.IsDateAnywhere(14, 2, 2021) ? loveEmojiList[Program.R.Next(0, loveEmojiList.Count)] : "❤️";
                             if (ShufflePlayerList)
                             {
                                 msg += players.Where(x => x.IsDead).OrderBy(x => x.TimeDied)
@@ -1469,7 +1469,7 @@ namespace Werewolf_Node
 
                 // special roles for events
                 // valentines this time
-                if (IsDateAnywhere(14, 02, 2021) && !rolesToAssign.Any(x => x == IRole.Cupid))
+                if (GameBalancing.IsDateAnywhere(14, 02, 2021) && !rolesToAssign.Any(x => x == IRole.Cupid))
                 {
                     var toReplace = rolesToAssign.FindIndex(x => x == IRole.Villager || x == IRole.Mason);
                     if (toReplace != -1) rolesToAssign[toReplace] = IRole.Cupid;
@@ -1628,6 +1628,9 @@ namespace Werewolf_Node
                 {
                     // ReSharper disable once UnusedVariable
                     var result = Program.Send(msg, p.Id, true).Result;
+
+                    if (p.PlayerRole == IRole.Spumpkin)
+                        AddAchievement(p, AchievementsReworked.TodaysSpecial);
                 }
                 catch (AggregateException ae)
                 {
@@ -4800,7 +4803,7 @@ namespace Werewolf_Node
                     {
                         if (forbidden)
                             AddAchievement(w, AchievementsReworked.ForbiddenLove);
-                        if (IsDateAnywhere(14, 02, 2020))
+                        if (GameBalancing.IsDateAnywhere(14, 02, 2020))
                             AddAchievement(w, AchievementsReworked.TodaysSpecial);
                         w.Won = true;
                         var p = GetDBGamePlayer(w, db);
@@ -5017,7 +5020,7 @@ namespace Werewolf_Node
                     case ITeam.Lovers:
                         msg += GetLocaleString("LoversWin");
                         game.Winner = "Lovers";
-                        if (IsDateAnywhere(14, 2, 2021))
+                        if (GameBalancing.IsDateAnywhere(14, 2, 2021))
                             LoversWin = new List<string> { "CgACAgQAAxkBY4AFS2Am26QAAVRzfm3kG7wxS9Mq7PFpsAACnQIAAkAwtVI_dFDRMF2c_h4E" };
                         SendWithQueue(msg, GetRandomImage(LoversWin));
                         break;
@@ -5887,15 +5890,6 @@ namespace Werewolf_Node
                 }
                 _longHaulReached = true;
             }
-        }
-
-        /// <summary>
-        /// True if right now it's the specified date in any timezone on the world.
-        /// </summary>
-        public static bool IsDateAnywhere(int day, int month, int? year = null)
-        {
-            var dates = new[] { DateTime.UtcNow.AddHours(-11), DateTime.UtcNow, DateTime.UtcNow.AddHours(14) };
-            return dates.Any(x => x.Day == day && x.Month == month && (!year.HasValue || x.Year == year.Value));
         }
 
         public int DBGameId { get; set; }

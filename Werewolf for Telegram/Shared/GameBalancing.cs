@@ -187,6 +187,9 @@ namespace Shared
                             rolesToAssign.Add(role);
                         break;
                     case IRole.Spumpkin:
+                        // Available for almost a week around Halloween every year
+                        if (IsDateAnywhere(28, 10) || IsDateAnywhere(29, 10) || IsDateAnywhere(30, 10) || IsDateAnywhere(31, 10))
+                            rolesToAssign.Add(role);
                         break;
                     default:
                         rolesToAssign.Add(role);
@@ -315,6 +318,15 @@ namespace Shared
                 default:
                     throw new ArgumentOutOfRangeException(nameof(role), role, null);
             }
+        }
+
+        /// <summary>
+        /// True if right now it's the specified date in any timezone on the world.
+        /// </summary>
+        public static bool IsDateAnywhere(int day, int month, int? year = null)
+        {
+            var dates = new[] { DateTime.UtcNow.AddHours(-11), DateTime.UtcNow, DateTime.UtcNow.AddHours(14) };
+            return dates.Any(x => x.Day == day && x.Month == month && (!year.HasValue || x.Year == year.Value));
         }
     }
 }
