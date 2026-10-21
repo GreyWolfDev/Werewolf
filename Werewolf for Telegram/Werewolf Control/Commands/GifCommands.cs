@@ -502,7 +502,7 @@ namespace Werewolf_Control
             // Donations re-enable preparation 2025-08-08
             var menu = new Menu();
             Bot.Api.SendTextMessageAsync(chatId: q?.From.Id ?? m.From.Id,
-                text: "How much would you like to donate?  Please enter a whole number, in TON (XTR), in reply to this message",
+                text: "How much would you like to donate?  Please enter a whole number, in Telegram Stars, in reply to this message",
                 replyMarkup: new ForceReplyMarkup());
         }
 
@@ -552,7 +552,7 @@ namespace Werewolf_Control
             {
                 Bot.Api.SendTextMessageAsync(chatId: m.From.Id,
                     text: "Invalid input.\n" +
-                    "How much would you like to donate?  Please enter a whole number, in TON (XTR), in reply to this message",
+                    "How much would you like to donate?  Please enter a whole number, in Telegram Stars, in reply to this message",
                     replyMarkup: new ForceReplyMarkup());
             }
 

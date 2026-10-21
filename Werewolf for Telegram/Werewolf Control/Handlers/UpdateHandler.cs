@@ -464,7 +464,7 @@ namespace Werewolf_Control.Handler
                             else if (update.Message.Chat.Type == ChatType.Private &&
                                      (update.Message?.ReplyToMessage?.From?.Id ?? 0) == Bot.Me.Id &&
                                      (update.Message?.ReplyToMessage?.Text?.Contains(
-                                          "Please enter a whole number, in TON (XTR)") ?? false))
+                                          "Please enter a whole number, in Telegram Stars") ?? false))
                             {
                                 Bot.MessagesProcessed++;
                                 Commands.ValidateDonationAmountNew(update.Message);
@@ -664,7 +664,7 @@ namespace Werewolf_Control.Handler
             {
                 var q2 = message.SuccessfulPayment;
                 var amt2 = q2.TotalAmount;
-                Bot.Send($"Successfully received {amt2} TON from you! YAY!", message.From.Id);
+                Bot.Send($"Successfully received {amt2} Telegram Stars from you! YAY!", message.From.Id);
                 return;
             }
             var q = message.SuccessfulPayment;
