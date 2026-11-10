@@ -231,10 +231,26 @@ namespace Werewolf_Control
             }
 
             //now check for mentions
-            foreach (var ent in update.Message.Entities.Where(x => x.Type == MessageEntityType.TextMention))
+           
+foreach (var ent in update.Message.Entities)
+{
+    switch (ent.Type)
+    {
+        case MessageEntityType.Mention:
+            var username = update.Message.Text.Substring(ent.Offset + 1, ent.Length - 1);
+            using (var db = new WWContext())
             {
-                ids.Add(ent.User.Id);
+                var id = db.Players.FirstOrDefault(x => x.UserName == username)?.TelegramId ?? 0;
+                if (id != 0)
+                    ids.Add(id);
             }
+            break;
+
+        case MessageEntityType.TextMention:
+            ids.Add(ent.User.Id);
+            break;
+    }
+}
 
             //check for reply
             if (update.Message.ReplyToMessage != null)
